@@ -26,12 +26,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ip extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout E;
     public LinearLayout F;
-    public org.telegram.ui.Components.d90 G;
+    public org.telegram.ui.Components.g90 G;
     public org.telegram.ui.Cells.s8 H;
     public org.telegram.ui.Cells.f9 I;
     public org.telegram.ui.Cells.c7 J;
@@ -74,7 +74,7 @@ public final class ip extends org.telegram.ui.ActionBar.n2 implements Notificati
     public org.telegram.ui.ActionBar.v0 n;
     public boolean n0;
     public HashMap o0;
-    public org.telegram.ui.Components.z60 p0;
+    public org.telegram.ui.Components.c70 p0;
     public xo q0;
     public org.telegram.ui.Components.pr r;
     public ValueAnimator r0;
@@ -513,9 +513,9 @@ public final class ip extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.H.setVisibility(0);
             this.I.setVisibility(0);
             this.y.setPadding(0, 0, 0, this.V ? 0 : AndroidUtilities.dp(7.0f));
-            org.telegram.ui.Components.d90 d90Var = this.G;
+            org.telegram.ui.Components.g90 g90Var = this.G;
             TLRPC.TL_chatInviteExported tL_chatInviteExported = this.l0;
-            d90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
+            g90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
             this.G.c(this.l0, this.Z);
             cp cpVar = this.f;
             cpVar.setVisibility((this.V || cpVar.a.length() == 0) ? 8 : 0);
@@ -576,10 +576,10 @@ public final class ip extends org.telegram.ui.ActionBar.n2 implements Notificati
         ap apVar = new ap(this, context, this.h, this.resourceProvider);
         this.fragmentView = apVar;
         apVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        org.telegram.ui.Components.mo0 mo0Var = (org.telegram.ui.Components.mo0) this.fragmentView;
-        mo0Var.setFillViewport(true);
-        mo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
-        this.actionBar.setAdaptiveBackground(mo0Var);
+        org.telegram.ui.Components.oo0 oo0Var = (org.telegram.ui.Components.oo0) this.fragmentView;
+        oo0Var.setFillViewport(true);
+        oo0Var.addView(this.h, new FrameLayout.LayoutParams(-1, -2));
+        this.actionBar.setAdaptiveBackground(oo0Var);
         this.h.setOrientation(1);
         boolean z10 = this.n0;
         if (z10) {
@@ -682,9 +682,9 @@ public final class ip extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.F = linearLayout4;
         linearLayout4.setOrientation(1);
         this.y.addView(this.F, w7.y5.n(-1, -2));
-        org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(context, this, null, true, ChatObject.isChannel(this.X));
-        this.G = d90Var;
-        d90Var.setDelegate(new bp(this, context));
+        org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(context, this, null, true, ChatObject.isChannel(this.X));
+        this.G = g90Var;
+        g90Var.setDelegate(new bp(this, context));
         this.G.d(0, null, false);
         this.F.addView(this.G);
         cp cpVar = new cp(this, context, this.resourceProvider);

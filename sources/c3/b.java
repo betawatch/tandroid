@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -623,14 +623,14 @@ public abstract class b {
                     pVar.a(10, w10, bArr);
                     p0Var = new q3.i(ja0Var).c(i11, bArr);
                 } else {
-                    pVar.l(w10);
+                    pVar.j(w10);
                 }
                 i10 += i11;
             } catch (EOFException unused) {
             }
         }
         pVar.p();
-        pVar.l(i10);
+        pVar.j(i10);
         if (p0Var == null || p0Var.a.length == 0) {
             return null;
         }

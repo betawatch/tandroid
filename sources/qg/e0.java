@@ -3,9 +3,9 @@ package qg;
 import org.telegram.ui.au0;
 import org.telegram.ui.jr0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class e0 implements pg.d1 {
+public final class e0 implements pg.e1 {
     public final /* synthetic */ jr0 a;
     public final /* synthetic */ au0 b;
 
@@ -14,12 +14,12 @@ public final class e0 implements pg.d1 {
         this.a = jr0Var;
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final void a() {
         this.a.run();
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final void b() {
         f0 f0Var = this.b.X0;
         if (f0Var != null) {
@@ -27,7 +27,7 @@ public final class e0 implements pg.d1 {
         }
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final void c() {
         au0 au0Var = this.b;
         if (au0Var.k1) {
@@ -38,7 +38,7 @@ public final class e0 implements pg.d1 {
         }
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final boolean d() {
         au0 au0Var = this.b;
         boolean z10 = au0Var.S0 == null;
@@ -48,14 +48,14 @@ public final class e0 implements pg.d1 {
         return z10;
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final void e() {
         au0 au0Var = this.b;
         au0Var.F0.a.e();
         au0Var.l1.setViewHidden(false);
     }
 
-    @Override // pg.d1
+    @Override // pg.e1
     public final void f() {
         au0 au0Var = this.b;
         if (au0Var.S0 != null) {

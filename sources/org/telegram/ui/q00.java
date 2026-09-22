@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q00 extends FrameLayout {
     public final /* synthetic */ r00 a;
@@ -29,16 +29,16 @@ public final class q00 extends FrameLayout {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false)));
         addView(imageView, w7.y5.d(54, 44.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
-        vh.o oVar = new vh.o(context);
-        oVar.setTypeface(AndroidUtilities.bold());
-        oVar.setTextSize(1, 20.0f);
+        vh.n nVar = new vh.n(context);
+        nVar.setTypeface(AndroidUtilities.bold());
+        nVar.setTextSize(1, 20.0f);
         int i10 = org.telegram.ui.ActionBar.j6.j5;
-        oVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        oVar.setGravity(1);
-        oVar.setText(r00Var.R(oVar));
+        nVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        nVar.setGravity(1);
+        nVar.setText(r00Var.R(nVar));
         MessagesController.DialogFilter dialogFilter = r00Var.X;
-        oVar.h = (dialogFilter == null || !dialogFilter.title_noanimate) ? 0 : 26;
-        addView(oVar, w7.y5.d(-2, -2.0f, 49, 20.0f, 84.0f, 20.0f, 0.0f));
+        nVar.h = (dialogFilter == null || !dialogFilter.title_noanimate) ? 0 : 26;
+        addView(nVar, w7.y5.d(-2, -2.0f, 49, 20.0f, 84.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setText(r00Var.Y.isEmpty() ? LocaleController.getString(R.string.FolderLinkShareSubtitleEmpty) : LocaleController.getString(R.string.FolderLinkShareSubtitle));
         textView.setLines(2);

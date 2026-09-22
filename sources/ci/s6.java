@@ -17,10 +17,10 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.pg0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.sg0;
 import org.telegram.ui.Components.z20;
 import org.telegram.ui.a00;
 import org.telegram.ui.i91;
@@ -35,7 +35,7 @@ import org.telegram.ui.xd1;
 import org.telegram.ui.xn;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class s6 extends View implements le.d {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class s6 extends View implements le.d {
     }
 
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         setVisibility(f7 > 0.0f ? 0 : 8);
         setAlpha(f7);
     }
@@ -120,11 +120,11 @@ public final class s6 extends View implements le.d {
                 Paint paint = (Paint) this.b;
                 paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
                 canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(10.0f), paint);
-                pg0 pg0Var = (pg0) this.c;
-                pg0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+                sg0 sg0Var = (sg0) this.c;
+                sg0Var.setBounds(0, 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 canvas.save();
                 canvas.translate((getWidth() - AndroidUtilities.dp(10.0f)) / 2.0f, (getHeight() - AndroidUtilities.dp(10.0f)) / 2.0f);
-                pg0Var.draw(canvas);
+                sg0Var.draw(canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -350,11 +350,11 @@ public final class s6 extends View implements le.d {
                 canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * z20Var.E) + AndroidUtilities.dp(35.0f), paint7);
             case 7:
                 canvas.drawColor(855638016);
-                d90 d90Var = (d90) this.c;
-                FrameLayout frameLayout = d90Var.n;
+                g90 g90Var = (g90) this.c;
+                FrameLayout frameLayout = g90Var.n;
                 FrameLayout frameLayout2 = (FrameLayout) this.b;
-                float[] fArr = d90Var.I;
-                d90.a(frameLayout, frameLayout2, fArr);
+                float[] fArr = g90Var.I;
+                g90.a(frameLayout, frameLayout2, fArr);
                 canvas.save();
                 float y3 = frameLayout.getY() + ((View) frameLayout.getParent()).getY();
                 if (y3 < 1.0f) {
@@ -583,7 +583,7 @@ public final class s6 extends View implements le.d {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                return drawable == ((pg0) this.c) || super.verifyDrawable(drawable);
+                return drawable == ((sg0) this.c) || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -603,13 +603,13 @@ public final class s6 extends View implements le.d {
         this.a = 0;
         Paint paint = new Paint(1);
         this.b = paint;
-        pg0 pg0Var = new pg0(10);
-        this.c = pg0Var;
+        sg0 sg0Var = new sg0(10);
+        this.c = sg0Var;
         paint.setColor(-1);
         paint.setShadowLayer(1.0f, 0.0f, 0.0f, 419430400);
         paint.setStyle(Paint.Style.STROKE);
-        pg0Var.setCallback(this);
-        pg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        sg0Var.setCallback(this);
+        sg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

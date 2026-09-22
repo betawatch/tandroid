@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pe implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -66,9 +66,9 @@ public final /* synthetic */ class pe implements RequestDelegate {
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                                     znVar3.showDialog(alertDialog$Builder.a);
-                                    lk lkVar = znVar3.Y;
-                                    if (lkVar != null) {
-                                        lkVar.b1(null, null, false);
+                                    mk mkVar = znVar3.Y;
+                                    if (mkVar != null) {
+                                        mkVar.b1(null, null, false);
                                         znVar3.e9(true);
                                         break;
                                     }
@@ -118,9 +118,9 @@ public final /* synthetic */ class pe implements RequestDelegate {
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                                     znVar3.showDialog(alertDialog$Builder.a);
-                                    lk lkVar = znVar3.Y;
-                                    if (lkVar != null) {
-                                        lkVar.b1(null, null, false);
+                                    mk mkVar = znVar3.Y;
+                                    if (mkVar != null) {
+                                        mkVar.b1(null, null, false);
                                         znVar3.e9(true);
                                         break;
                                     }
@@ -170,9 +170,9 @@ public final /* synthetic */ class pe implements RequestDelegate {
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                                     znVar32.showDialog(alertDialog$Builder.a);
-                                    lk lkVar = znVar32.Y;
-                                    if (lkVar != null) {
-                                        lkVar.b1(null, null, false);
+                                    mk mkVar = znVar32.Y;
+                                    if (mkVar != null) {
+                                        mkVar.b1(null, null, false);
                                         znVar32.e9(true);
                                         break;
                                     }
@@ -222,9 +222,9 @@ public final /* synthetic */ class pe implements RequestDelegate {
                                     alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
                                     alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                                     znVar32.showDialog(alertDialog$Builder.a);
-                                    lk lkVar = znVar32.Y;
-                                    if (lkVar != null) {
-                                        lkVar.b1(null, null, false);
+                                    mk mkVar = znVar32.Y;
+                                    if (mkVar != null) {
+                                        mkVar.b1(null, null, false);
                                         znVar32.e9(true);
                                         break;
                                     }

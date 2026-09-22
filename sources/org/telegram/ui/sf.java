@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class sf implements View.OnClickListener {
                 zn.X((zn) obj2, (String) obj);
                 break;
             case 2:
-                zn.a1((zn) obj2, (org.telegram.ui.Components.v70) obj);
+                zn.a1((zn) obj2, (org.telegram.ui.Components.y70) obj);
                 break;
             case 3:
                 org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) obj2;
@@ -163,21 +163,21 @@ public final /* synthetic */ class sf implements View.OnClickListener {
                 ((Runnable) obj).run();
                 break;
             case 16:
-                org.telegram.ui.Components.i8.F((org.telegram.ui.Components.i8) obj2, (float[]) obj);
+                org.telegram.ui.Components.i8.E((org.telegram.ui.Components.i8) obj2, (float[]) obj);
                 break;
             case 17:
                 org.telegram.ui.Components.i8 i8Var = (org.telegram.ui.Components.i8) obj2;
                 i8Var.getClass();
-                ((org.telegram.ui.Components.v70) obj).u();
+                ((org.telegram.ui.Components.y70) obj).u();
                 i8Var.t0(6);
                 break;
             case 18:
-                org.telegram.ui.Components.z90 z90Var = (org.telegram.ui.Components.z90) obj;
+                org.telegram.ui.Components.ca0 ca0Var = (org.telegram.ui.Components.ca0) obj;
                 org.telegram.ui.Components.i8 i8Var2 = ((org.telegram.ui.Components.z7) obj2).F;
                 i10 = ((org.telegram.ui.ActionBar.f3) i8Var2).currentAccount;
                 LaunchActivity launchActivity = i8Var2.G0;
-                if (MessagesController.getInstance(i10).getTotalDialogsCount() > 10 && !TextUtils.isEmpty(z90Var.getText().toString())) {
-                    String charSequence = z90Var.getText().toString();
+                if (MessagesController.getInstance(i10).getTotalDialogsCount() > 10 && !TextUtils.isEmpty(ca0Var.getText().toString())) {
+                    String charSequence = ca0Var.getText().toString();
                     if (launchActivity.O().getLastFragment() instanceof uy) {
                         uy uyVar = (uy) launchActivity.O().getLastFragment();
                         int totalDialogsCount = uyVar.getMessagesController().getTotalDialogsCount();
@@ -240,10 +240,10 @@ public final /* synthetic */ class sf implements View.OnClickListener {
             case 21:
                 org.telegram.ui.Components.ld ldVar = (org.telegram.ui.Components.ld) obj2;
                 FrameLayout frameLayout = (FrameLayout) obj;
-                org.telegram.ui.Components.v70 v70Var = ldVar.X0;
-                if (v70Var == null || !v70Var.D()) {
+                org.telegram.ui.Components.y70 y70Var = ldVar.X0;
+                if (y70Var == null || !y70Var.D()) {
                     ldVar.d1.e(true);
-                    org.telegram.ui.Components.v70 F = org.telegram.ui.Components.v70.F(frameLayout, new ai.d(), ldVar.V0);
+                    org.telegram.ui.Components.y70 F = org.telegram.ui.Components.y70.F(frameLayout, new ai.d(), ldVar.V0);
                     ldVar.X0 = F;
                     F.s = 0;
                     F.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.TimerPeriodHint));
@@ -394,7 +394,7 @@ public final /* synthetic */ class sf implements View.OnClickListener {
                 break;
             default:
                 ((org.telegram.ui.Components.fs) obj2).B0 = !r12.B0;
-                ((org.telegram.ui.Components.k61) obj).N(true);
+                ((org.telegram.ui.Components.m61) obj).N(true);
                 break;
         }
     }

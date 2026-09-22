@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class q {
     public final File a;
@@ -108,15 +108,15 @@ public final class q {
         }
         this.l = j3;
         ah.b bVar = this.e;
-        o0 o0Var = (o0) bVar.b;
-        k0 k0Var = (k0) bVar.c;
-        synchronized (o0Var.f) {
+        q0 q0Var = (q0) bVar.b;
+        m0 m0Var = (m0) bVar.c;
+        synchronized (q0Var.f) {
             try {
-                long j10 = k0Var.c;
+                long j10 = m0Var.c;
                 long j11 = j3 - j10;
-                if (j11 > 0 && !k0Var.d) {
-                    k0Var.c = j3;
-                    o0Var.j.execute(new a3.g0(o0Var, k0Var, j10, j11, 3));
+                if (j11 > 0 && !m0Var.d) {
+                    m0Var.c = j3;
+                    q0Var.j.execute(new a3.g0(q0Var, m0Var, j10, j11, 3));
                 }
             } finally {
             }

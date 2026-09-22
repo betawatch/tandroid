@@ -23,10 +23,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.tj;
+import org.telegram.ui.uj;
 import w7.q;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -76,11 +76,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         arrayList.clear();
     }
 
-    public final void b(int i10, long j3, ViewGroup viewGroup, tj tjVar) {
+    public final void b(int i10, long j3, ViewGroup viewGroup, uj ujVar) {
         this.d = j3;
         this.e = i10;
         this.f = viewGroup;
-        this.h = tjVar;
+        this.h = ujVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x022d  */

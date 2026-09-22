@@ -6,15 +6,15 @@ import java.util.List;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.g40;
 import org.telegram.ui.i60;
 import s4.c1;
 import s4.j;
-import zg.k0;
-import zg.o0;
+import zg.l0;
+import zg.p0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f extends j {
     public final /* synthetic */ h F;
@@ -30,7 +30,7 @@ public final class f extends j {
 
     @Override // s4.f1
     public final void w(c1 c1Var) {
-        o0 o0Var;
+        p0 p0Var;
         g gVar;
         int i10;
         h hVar = this.F;
@@ -41,7 +41,7 @@ public final class f extends j {
         if (list != null && b10 >= 0 && b10 < list.size()) {
             groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
         }
-        if (groupCallMessage == null || (o0Var = groupCallMessage.visibleReaction) == null) {
+        if (groupCallMessage == null || (p0Var = groupCallMessage.visibleReaction) == null) {
             return;
         }
         View view = c1Var.a;
@@ -50,13 +50,13 @@ public final class f extends j {
         }
         i60 i60Var = ((g40) gVar).a;
         Context context = i60Var.getContext();
-        pk0 pk0Var = i60Var.K;
+        sk0 sk0Var = i60Var.K;
         i10 = ((f3) i60Var).currentAccount;
-        k0 k0Var = new k0(context, null, pk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
-        k0.B = k0Var;
-        k0Var.i.setTag(R.id.parent_tag, 1);
-        i60Var.container.addView(k0Var.i);
-        k0Var.s = true;
-        k0Var.y = System.currentTimeMillis();
+        l0 l0Var = new l0(context, null, sk0Var, (c) view, null, 0.0f, 0.0f, p0Var, i10, 1, false);
+        l0.B = l0Var;
+        l0Var.i.setTag(R.id.parent_tag, 1);
+        i60Var.container.addView(l0Var.i);
+        l0Var.s = true;
+        l0Var.y = System.currentTimeMillis();
     }
 }

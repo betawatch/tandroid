@@ -14,15 +14,15 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.p5;
-import org.telegram.ui.rk;
+import org.telegram.ui.sk;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class z1 extends FrameLayout {
     public final ImageView a;
     public final TextView b;
-    public final rk c;
+    public final sk c;
     public p5 d;
     public String e;
     public boolean f;
@@ -40,14 +40,14 @@ public final class z1 extends FrameLayout {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         addView(textView, y5.d(-1, -2.0f, 55, 68.0f, 7.0f, 54.0f, 0.0f));
-        rk rkVar = new rk(this, context, 6);
-        this.c = rkVar;
-        rkVar.setTextColor(j6.w0(null, j6.y6, false));
-        rkVar.setTextSize(1, 13.0f);
-        rkVar.setMaxLines(1);
-        rkVar.setEllipsize(truncateAt);
-        rkVar.setPivotX(0.0f);
-        addView(rkVar, y5.d(-1, -2.0f, 55, 68.0f, 30.0f, 54.0f, 0.0f));
+        sk skVar = new sk(this, context, 6);
+        this.c = skVar;
+        skVar.setTextColor(j6.w0(null, j6.y6, false));
+        skVar.setTextSize(1, 13.0f);
+        skVar.setMaxLines(1);
+        skVar.setEllipsize(truncateAt);
+        skVar.setPivotX(0.0f);
+        addView(skVar, y5.d(-1, -2.0f, 55, 68.0f, 30.0f, 54.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.ic_ab_other);

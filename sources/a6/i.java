@@ -33,6 +33,7 @@ import androidx.lifecycle.a0;
 import b5.p;
 import ci.a7;
 import ci.d7;
+import ci.m;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.internal.g0;
@@ -46,7 +47,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.v;
 import ei.d5;
-import fb.n;
 import i2.i0;
 import ii.d2;
 import ii.d6;
@@ -85,20 +85,21 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.q71;
-import org.telegram.ui.Components.sa0;
-import org.telegram.ui.Components.t71;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.va0;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.m01;
 import org.telegram.ui.rz0;
 import r0.l1;
+import r0.n;
 import v7.u7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa0, q71, k0, v0, OnCompleteListener, n, r0.n, db.n, ii.k0, u3 {
+public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, va0, s71, k0, v0, OnCompleteListener, n, db.n, he.c, ii.k0, u3 {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -107,15 +108,15 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         this.a = i10;
     }
 
-    public static synchronized i T(Context context) {
-        i V;
+    public static synchronized i S(Context context) {
+        i W;
         synchronized (i.class) {
-            V = V(context.getApplicationContext());
+            W = W(context.getApplicationContext());
         }
-        return V;
+        return W;
     }
 
-    public static synchronized i V(Context context) {
+    public static synchronized i W(Context context) {
         synchronized (i.class) {
             i iVar = c;
             if (iVar != null) {
@@ -128,7 +129,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     }
 
     @Override // ii.k0
-    public r9 B() {
+    public r9 A() {
         switch (this.a) {
             case 25:
                 q3 q3Var = ((z) this.b).O;
@@ -145,24 +146,16 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // ii.u3
-    public void C() {
-        d2 d2Var = (d2) this.b;
-        d2.Z(d2Var, false, true);
-        int i10 = d2Var.I0;
-        d2Var.x0(i10 != 2 ? i10 : 0, true);
-    }
-
     @Override // a3.m0
-    public void D() {
-        i0 i0Var = ((a3.n) this.b).W;
-        if (i0Var != null) {
-            i0Var.a();
+    public void B() {
+        a3.n nVar = (a3.n) this.b;
+        if (nVar.n1 != null) {
+            nVar.N0(0, 1);
         }
     }
 
     @Override // ii.k0
-    public void E(CharSequence charSequence) {
+    public void C(CharSequence charSequence) {
         switch (this.a) {
             case 25:
                 q3 q3Var = ((z) this.b).O;
@@ -188,24 +181,20 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     }
 
     @Override // ii.u3
-    public v70 F(View view) {
-        return v70.H((d2) this.b, view);
-    }
-
-    @Override // ii.u3
-    public void G() {
+    public void D() {
         d2 d2Var = (d2) this.b;
-        d2Var.z0();
-        d2Var.C0();
+        d2.Z(d2Var, false, true);
+        int i10 = d2Var.I0;
+        d2Var.x0(i10 != 2 ? i10 : 0, true);
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public boolean H() {
+    public boolean E() {
         return true;
     }
 
     @Override // ii.k0
-    public q9 I() {
+    public q9 F() {
         switch (this.a) {
             case 25:
                 return (z) this.b;
@@ -215,20 +204,12 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     }
 
     @Override // ii.u3
-    public void J(t3 t3Var, View view) {
-        d2 d2Var = (d2) this.b;
-        v70 H = v70.H(d2Var, view);
-        H.Q = true;
-        d2Var.x0 = j4.c(H, d2Var, d2Var.getParentActivity(), d2Var.getResourceProvider(), t3Var, false);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.k0
-    public com.google.android.gms.common.api.internal.e L(com.google.android.gms.common.api.internal.e eVar) {
-        throw new IllegalStateException("GoogleApiClient is not connected yet.");
+    public y70 G(View view) {
+        return y70.H((d2) this.b, view);
     }
 
     @Override // ii.k0
-    public ii.a M() {
+    public ii.a H() {
         switch (this.a) {
             case 25:
                 return ((z) this.b).a;
@@ -237,8 +218,23 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
+    @Override // ii.u3
+    public void I() {
+        d2 d2Var = (d2) this.b;
+        d2Var.z0();
+        d2Var.C0();
+    }
+
+    @Override // a3.m0
+    public void J() {
+        i0 i0Var = ((a3.n) this.b).W;
+        if (i0Var != null) {
+            i0Var.a();
+        }
+    }
+
     @Override // ii.k0
-    public boolean N() {
+    public boolean K() {
         switch (this.a) {
             case 25:
                 z zVar = (z) this.b;
@@ -262,9 +258,17 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         return false;
     }
 
-    @Override // org.telegram.ui.Components.sa0
-    public void O(int i10, int i11, CharSequence charSequence, boolean z10) {
-        ci.g gVar = ((ci.m) this.b).f;
+    @Override // ii.u3
+    public void L(t3 t3Var, View view) {
+        d2 d2Var = (d2) this.b;
+        y70 H = y70.H(d2Var, view);
+        H.Q = true;
+        d2Var.x0 = j4.c(H, d2Var, d2Var.getParentActivity(), d2Var.getResourceProvider(), t3Var, false);
+    }
+
+    @Override // org.telegram.ui.Components.va0
+    public void M(int i10, int i11, CharSequence charSequence, boolean z10) {
+        ci.g gVar = ((m) this.b).f;
         if (gVar == null) {
             return;
         }
@@ -279,6 +283,41 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         } catch (Exception e) {
             FileLog.e(e);
         }
+    }
+
+    @Override // ii.k0
+    public void N(int i10, int i11) {
+        switch (this.a) {
+            case 25:
+                z zVar = (z) this.b;
+                q3 q3Var = zVar.O;
+                if (q3Var != null) {
+                    ii.a aVar = zVar.a;
+                    h2 h2Var = q3Var.a.J3;
+                    if (h2Var != null) {
+                        h2Var.f(i10, i11);
+                        break;
+                    }
+                }
+                break;
+            default:
+                u4 u4Var = (u4) this.b;
+                p3 p3Var = u4Var.N;
+                if (p3Var != null) {
+                    ii.a aVar2 = u4Var.a;
+                    h2 h2Var2 = p3Var.a.J3;
+                    if (h2Var2 != null) {
+                        h2Var2.f(i10, i11);
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.k0
+    public com.google.android.gms.common.api.internal.e O(com.google.android.gms.common.api.internal.e eVar) {
+        throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
     @Override // r0.n
@@ -376,37 +415,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         return r0.i0.h(view, d != d10 ? l1Var.f(l1Var.b(), d10, l1Var.c(), l1Var.a()) : l1Var);
     }
 
-    @Override // ii.k0
-    public void Q(int i10, int i11) {
-        switch (this.a) {
-            case 25:
-                z zVar = (z) this.b;
-                q3 q3Var = zVar.O;
-                if (q3Var != null) {
-                    ii.a aVar = zVar.a;
-                    h2 h2Var = q3Var.a.J3;
-                    if (h2Var != null) {
-                        h2Var.f(i10, i11);
-                        break;
-                    }
-                }
-                break;
-            default:
-                u4 u4Var = (u4) this.b;
-                p3 p3Var = u4Var.N;
-                if (p3Var != null) {
-                    ii.a aVar2 = u4Var.a;
-                    h2 h2Var2 = p3Var.a.J3;
-                    if (h2Var2 != null) {
-                        h2Var2.f(i10, i11);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    public da.a R(JSONObject jSONObject) {
+    public da.a Q(JSONObject jSONObject) {
         da.c bVar;
         int i10 = jSONObject.getInt("settings_version");
         if (i10 != 3) {
@@ -418,7 +427,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         return bVar.s2((na.d) this.b, jSONObject);
     }
 
-    public db.i S(Object obj) {
+    public db.i R(Object obj) {
         db.g gVar = ((gb.a0) this.b).b;
         gVar.getClass();
         if (obj == null) {
@@ -430,25 +439,8 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         return nVar.u();
     }
 
-    public synchronized void U() {
-        synchronized (this) {
-            try {
-                b bVar = (b) this.b;
-                ReentrantLock reentrantLock = bVar.a;
-                reentrantLock.lock();
-                try {
-                    bVar.b.edit().clear().apply();
-                } finally {
-                    reentrantLock.unlock();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
     @Override // ii.k0
-    public void W() {
+    public void T() {
         switch (this.a) {
             case 25:
                 z zVar = (z) this.b;
@@ -481,6 +473,23 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
+    public synchronized void V() {
+        synchronized (this) {
+            try {
+                b bVar = (b) this.b;
+                ReentrantLock reentrantLock = bVar.a;
+                reentrantLock.lock();
+                try {
+                    bVar.b.edit().clear().apply();
+                } finally {
+                    reentrantLock.unlock();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
     @Override // ai.fc
     public void Z(long j3, int i10, e5 e5Var) {
         rz0 rz0Var = (rz0) this.b;
@@ -504,7 +513,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
                 cVar.writeToParcel(obtain, 0);
                 cVar2.G0(obtain, 1);
                 break;
-            case 22:
+            case 21:
                 g7.f fVar = (g7.f) this.b;
                 h7.f fVar2 = new h7.f(0, (TaskCompletionSource) obj2);
                 h7.d dVar = (h7.d) ((h7.e) obj).u();
@@ -530,7 +539,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // ii.k0, ii.h1
+    @Override // ii.k0
     public void c(i1 i1Var) {
         switch (this.a) {
             case 25:
@@ -562,7 +571,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     @Override // ii.u3
     public void d(v3 v3Var, View view) {
         d2 d2Var = (d2) this.b;
-        v70 H = v70.H(d2Var, view);
+        y70 H = y70.H(d2Var, view);
         H.Q = true;
         d2Var.getParentActivity();
         d2Var.getResourceProvider();
@@ -650,10 +659,34 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         m0Var.a.lock();
         try {
             m0Var.m = new g0(m0Var, m0Var.j, m0Var.k, m0Var.d, m0Var.l, m0Var.a, m0Var.c);
-            m0Var.m.z();
+            m0Var.m.v();
             m0Var.b.signalAll();
         } finally {
             m0Var.a.unlock();
+        }
+    }
+
+    @Override // ii.k0
+    public void g0() {
+        switch (this.a) {
+            case 25:
+                z zVar = (z) this.b;
+                q3 q3Var = zVar.O;
+                if (q3Var != null) {
+                    ii.a aVar = zVar.a;
+                    w3.P1(q3Var.a);
+                    break;
+                }
+                break;
+            default:
+                u4 u4Var = (u4) this.b;
+                p3 p3Var = u4Var.N;
+                if (p3Var != null) {
+                    ii.a aVar2 = u4Var.a;
+                    w3.P1(p3Var.a);
+                    break;
+                }
+                break;
         }
     }
 
@@ -696,28 +729,22 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void j(int i10) {
-        x xVar = (x) this.b;
-        Lock lock = xVar.o;
-        lock.lock();
-        try {
-            if (xVar.n) {
-                xVar.n = false;
-                x.k(xVar, i10);
-            } else {
-                xVar.n = true;
-                xVar.d.onConnectionSuspended(i10);
-            }
-            lock.unlock();
-        } catch (Throwable th2) {
-            lock.unlock();
-            throw th2;
+    @Override // androidx.lifecycle.a0
+    public void i0(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        e0 e0Var = (e0) this.b;
+        Handler handler = e0Var.A0;
+        q4 q4Var = e0Var.B0;
+        handler.removeCallbacks(q4Var);
+        TextView textView = e0Var.G0;
+        if (textView != null) {
+            textView.setText(charSequence);
         }
+        handler.postDelayed(q4Var, 2000L);
     }
 
     @Override // androidx.activity.result.b
-    public void k(Object obj) {
+    public void j(Object obj) {
         switch (this.a) {
             case 5:
                 Map map = (Map) obj;
@@ -769,27 +796,23 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // ii.k0
-    public void k0() {
-        switch (this.a) {
-            case 25:
-                z zVar = (z) this.b;
-                q3 q3Var = zVar.O;
-                if (q3Var != null) {
-                    ii.a aVar = zVar.a;
-                    w3.P1(q3Var.a);
-                    break;
-                }
-                break;
-            default:
-                u4 u4Var = (u4) this.b;
-                p3 p3Var = u4Var.N;
-                if (p3Var != null) {
-                    ii.a aVar2 = u4Var.a;
-                    w3.P1(p3Var.a);
-                    break;
-                }
-                break;
+    @Override // com.google.android.gms.common.api.internal.v0
+    public void k(int i10) {
+        x xVar = (x) this.b;
+        Lock lock = xVar.o;
+        lock.lock();
+        try {
+            if (xVar.n) {
+                xVar.n = false;
+                x.k(xVar, i10);
+            } else {
+                xVar.n = true;
+                xVar.d.onConnectionSuspended(i10);
+            }
+            lock.unlock();
+        } catch (Throwable th2) {
+            lock.unlock();
+            throw th2;
         }
     }
 
@@ -805,20 +828,6 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     @Override // ii.u3
     public void m(int i10) {
         ((d2) this.b).o0(74, i10);
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void m0(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        e0 e0Var = (e0) this.b;
-        Handler handler = e0Var.A0;
-        q4 q4Var = e0Var.B0;
-        handler.removeCallbacks(q4Var);
-        TextView textView = e0Var.G0;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-        handler.postDelayed(q4Var, 2000L);
     }
 
     @Override // ii.u3
@@ -889,28 +898,28 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public void onStateChanged(boolean z10, int i10) {
         d7 d7Var = (d7) this.b;
         a7 a7Var = d7Var.L;
         AndroidUtilities.cancelRunOnUIThread(a7Var);
-        t71 t71Var = d7Var.y;
-        if (t71Var == null || !t71Var.y()) {
+        v71 v71Var = d7Var.y;
+        if (v71Var == null || !v71Var.y()) {
             return;
         }
         AndroidUtilities.runOnUIThread(a7Var);
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((d7) this.b).i();
     }
@@ -923,28 +932,8 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         d2Var.x0(2, true);
     }
 
-    @Override // fb.n
-    public Object p2() {
-        Class cls = (Class) this.b;
-        try {
-            return fb.s.a.a(cls);
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to create instance of " + cls + ". Registering an InstanceCreator or a TypeAdapter for this type, or adding a no-args constructor may fix this problem.", e);
-        }
-    }
-
-    @Override // b5.p
-    public String[] q() {
-        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public Paint.FontMetricsInt s() {
-        return ((ci.m) this.b).f.getEditText().getPaint().getFontMetricsInt();
-    }
-
     @Override // ii.u3
-    public void t(ii.a aVar) {
+    public void q(ii.a aVar) {
         d2 d2Var = (d2) this.b;
         if (aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(d2Var)) {
             vi viVar = new vi(d2Var.getParentActivity(), d2Var, false, false, false, d2Var.getResourceProvider());
@@ -957,16 +946,18 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         }
     }
 
-    @Override // a3.m0
-    public void v() {
-        a3.n nVar = (a3.n) this.b;
-        if (nVar.n1 != null) {
-            nVar.N0(0, 1);
-        }
+    @Override // b5.p
+    public String[] r() {
+        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
+    }
+
+    @Override // org.telegram.ui.Components.va0
+    public Paint.FontMetricsInt t() {
+        return ((m) this.b).f.getEditText().getPaint().getFontMetricsInt();
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public void z() {
+    public void v() {
         com.google.android.gms.common.api.internal.m0 m0Var = (com.google.android.gms.common.api.internal.m0) this.b;
         Iterator it = m0Var.f.values().iterator();
         while (it.hasNext()) {
@@ -980,7 +971,7 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
         this.b = eVar;
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public void onRenderedFirstFrame() {
     }
 
@@ -1018,14 +1009,14 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     }
 
     @Override // a3.m0
-    public void K() {
+    public void U() {
     }
 
     @Override // ii.u3
     public void w() {
     }
 
-    @Override // org.telegram.ui.Components.sa0
+    @Override // org.telegram.ui.Components.va0
     public /* synthetic */ void P(String str) {
     }
 
@@ -1037,11 +1028,11 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     public /* synthetic */ void b(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.s71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1053,27 +1044,27 @@ public final class i implements m0, s, fc, a0, androidx.activity.result.b, p, sa
     public void y(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.q71
-    public void onError(t71 t71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.s71
+    public void onError(v71 v71Var, Exception exc) {
     }
 
     @Override // ii.u3
     public void x(i1 i1Var, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.sa0
-    public /* synthetic */ void A(TLRPC.TL_document tL_document, String str, Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.sa0
+    @Override // org.telegram.ui.Components.va0
     public /* synthetic */ void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public void r(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.va0
+    public /* synthetic */ void z(TLRPC.TL_document tL_document, String str, Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

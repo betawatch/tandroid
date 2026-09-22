@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ja0 implements GenericProvider, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.yc0, Utilities.Callback2Return, org.telegram.ui.Components.dw0, pg.i0, q3.g, q9.e {
+public final /* synthetic */ class ja0 implements GenericProvider, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.bd0, Utilities.Callback2Return, org.telegram.ui.Components.fw0, pg.i0, q3.g, q9.e {
     public final /* synthetic */ int a;
 
     public /* synthetic */ ja0(int i10) {
@@ -59,12 +59,12 @@ public final /* synthetic */ class ja0 implements GenericProvider, org.telegram.
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public String e(int i10) {
         return i10 == 0 ? LocaleController.getString(R.string.AutoLockDisabled) : i10 == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i10 == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i10 == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i10 == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void g(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
@@ -124,7 +124,7 @@ public final /* synthetic */ class ja0 implements GenericProvider, org.telegram.
         return ((Integer) obj).intValue() == 0 ? yh.w7.X0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public /* synthetic */ void n() {
+    @Override // org.telegram.ui.Components.fw0
+    public /* synthetic */ void l() {
     }
 }

@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.s90;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
@@ -55,7 +55,7 @@ public final class w extends FrameLayout {
         addView(o6Var, y5.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new p90(AndroidUtilities.dp(90.0f), o6Var), 0, 1, 33);
+        spannableString.setSpan(new s90(AndroidUtilities.dp(90.0f), o6Var), 0, 1, 33);
         o6 o6Var2 = new o6(context, false, true, true);
         this.e = o6Var2;
         int i10 = j6.z6;
@@ -64,7 +64,7 @@ public final class w extends FrameLayout {
         addView(o6Var2, y5.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new p90(AndroidUtilities.dp(70.0f), o6Var2), 0, 1, 33);
+        spannableString2.setSpan(new s90(AndroidUtilities.dp(70.0f), o6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
         rk.n(i10, f6Var, textView, 1, 16.0f);

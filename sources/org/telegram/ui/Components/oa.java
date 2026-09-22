@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class oa {
     public FloatBuffer e;
@@ -67,8 +67,8 @@ public final class oa {
             GLES20.glUniformMatrix4fv(jaVar.l, 1, false, fArr, 0);
         }
         GLES20.glUniform1f(jaVar.m, c10 == 0 ? 0.0f : 1.0f);
-        pg.f1.a(jaVar.h, this.l);
-        pg.f1.a(jaVar.i, this.m);
+        pg.g1.a(jaVar.h, this.l);
+        pg.g1.a(jaVar.i, this.m);
         synchronized (this.k) {
             GLES20.glUniformMatrix4fv(jaVar.d, 1, false, this.j, 0);
         }
@@ -86,8 +86,8 @@ public final class oa {
             GLES20.glUniform2f(jaVar.f, this.a, this.b);
             GLES20.glUniform2f(jaVar.g, f7, f10);
             GLES20.glUniform1i(jaVar.j, 0);
-            pg.f1.a(jaVar.h, this.l);
-            pg.f1.a(jaVar.i, this.m);
+            pg.g1.a(jaVar.h, this.l);
+            pg.g1.a(jaVar.i, this.m);
             GLES20.glUniform1f(jaVar.k, 0.0f);
             synchronized (this.k) {
                 GLES20.glUniformMatrix4fv(jaVar.d, 1, false, this.j, 0);

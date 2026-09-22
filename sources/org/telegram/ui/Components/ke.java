@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotForumHelper;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ke extends FrameLayout {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class ke extends FrameLayout {
                 return (f4Var == null || f4Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.k0.dispatchTouchEvent(motionEvent);
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.J || chatActivityEnterView2.S4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                if (!chatActivityEnterView2.J || chatActivityEnterView2.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -72,7 +72,7 @@ public final class ke extends FrameLayout {
         switch (this.a) {
             case 1:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.J || chatActivityEnterView.S4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
+                if (!chatActivityEnterView.J || chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
                     return false;
                 }
                 return super.onTouchEvent(motionEvent);

@@ -31,6 +31,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import pg.c1;
 import u2.p1;
 import v7.j0;
 import y9.w0;
@@ -38,7 +39,7 @@ import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class t implements z3.m {
     public static t f;
@@ -80,7 +81,7 @@ public final class t implements z3.m {
     }
 
     @Override // z3.m
-    public int I() {
+    public int K() {
         switch (this.a) {
         }
         return 2;
@@ -779,7 +780,7 @@ public final class t implements z3.m {
     public Task k(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new ka.c(callable, 28));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new o0.b(callable, 23));
             this.c = continueWith.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWith;
@@ -788,7 +789,7 @@ public final class t implements z3.m {
     public Task l(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new ka.c(callable, 28));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new o0.b(callable, 23));
             this.c = continueWithTask.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWithTask;
@@ -799,20 +800,20 @@ public final class t implements z3.m {
         int i10 = this.a;
     }
 
-    @Override // z3.m
-    public /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return j0.a(this, bArr, i11);
-    }
-
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((ka.c) this.e).toString();
+                return ((o0.b) this.e).toString();
             default:
                 return super.toString();
         }
+    }
+
+    @Override // z3.m
+    public /* synthetic */ z3.d u(int i10, int i11, byte[] bArr) {
+        switch (this.a) {
+        }
+        return j0.a(this, bArr, i11);
     }
 
     public /* synthetic */ t(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
@@ -843,7 +844,7 @@ public final class t implements z3.m {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new p8.b(this, 8));
+        executorService.execute(new c1(this, 7));
     }
 
     public t(List list) {
@@ -943,9 +944,9 @@ public final class t implements z3.m {
         }
     }
 
-    public t(ka.c cVar, Object obj, Object obj2, Object[] objArr) {
+    public t(o0.b bVar, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = cVar;
+        this.e = bVar;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;

@@ -29,11 +29,11 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.voip.o;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.mb1;
 import org.telegram.ui.na1;
 import org.telegram.ui.of;
@@ -73,7 +73,7 @@ import yh.s;
 import yh.s0;
 import yh.w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -107,23 +107,23 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 0:
                 b bVar = (b) this.b;
                 ArrayList arrayList = (ArrayList) obj;
-                arrayList.add(w51.D(0, AndroidUtilities.dp(12.0f)));
-                arrayList.add(w51.j(1, bVar.Z));
-                arrayList.add(w51.D(2, AndroidUtilities.dp(12.0f)));
-                arrayList.add(w51.s(3, LocaleController.getString(R.string.CommunityChatVisibilitySection)));
+                arrayList.add(y51.D(0, AndroidUtilities.dp(12.0f)));
+                arrayList.add(y51.j(1, bVar.Z));
+                arrayList.add(y51.D(2, AndroidUtilities.dp(12.0f)));
+                arrayList.add(y51.s(3, LocaleController.getString(R.string.CommunityChatVisibilitySection)));
                 bVar.c0 = arrayList.size();
                 String string = LocaleController.getString(R.string.CommunityChatVisibilityVisible);
                 boolean z13 = bVar.b0;
-                w51 x10 = w51.x(151, string, LocaleController.getString(z13 ? R.string.CommunityChatVisibilityVisibleBotInfo : R.string.CommunityChatVisibilityVisibleInfo));
+                y51 x10 = y51.x(151, string, LocaleController.getString(z13 ? R.string.CommunityChatVisibilityVisibleBotInfo : R.string.CommunityChatVisibilityVisibleInfo));
                 x10.K(!bVar.Y);
                 arrayList.add(x10);
-                w51 x11 = w51.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(z13 ? R.string.CommunityChatVisibilityHiddenBotInfo : R.string.CommunityChatVisibilityHiddenInfo));
+                y51 x11 = y51.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityChatVisibilityHidden), LocaleController.getString(z13 ? R.string.CommunityChatVisibilityHiddenBotInfo : R.string.CommunityChatVisibilityHiddenInfo));
                 x11.K(bVar.Y);
                 arrayList.add(x11);
-                arrayList.add(w51.A(6, LocaleController.getString(R.string.CommunityChatVisibilityCannotChange)));
+                arrayList.add(y51.A(6, LocaleController.getString(R.string.CommunityChatVisibilityCannotChange)));
                 break;
             case 1:
-                ((ArrayList) obj).add(w51.j(0, ((c) this.b).X));
+                ((ArrayList) obj).add(y51.j(0, ((c) this.b).X));
                 break;
             case 2:
                 Utilities.themeQueue.postRunnable(new x1(11, (String[]) this.b, (Utilities.Callback2) obj2));
@@ -131,15 +131,15 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 3:
                 x xVar = (x) this.b;
                 ArrayList arrayList2 = (ArrayList) obj;
-                arrayList2.add(w51.j(1, xVar.a0));
-                arrayList2.add(w51.j(3, xVar.d0));
+                arrayList2.add(y51.j(1, xVar.a0));
+                arrayList2.add(y51.j(3, xVar.d0));
                 if (xVar.i0 != null) {
-                    arrayList2.add(w51.j(2, xVar.b0));
+                    arrayList2.add(y51.j(2, xVar.b0));
                     break;
                 }
                 break;
             case 4:
-                w3.J1((w3[]) this.b, (ArrayList) obj, (k61) obj2);
+                w3.J1((w3[]) this.b, (ArrayList) obj, (m61) obj2);
                 break;
             case 5:
                 w3 w3Var = (w3) this.b;
@@ -152,7 +152,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 while (i17 < size) {
                     Object obj3 = arrayList3.get(i17);
                     i17++;
-                    Object obj4 = ((w51) obj3).G;
+                    Object obj4 = ((y51) obj3).G;
                     if (obj4 instanceof ii.a) {
                         arrayList5.add((ii.a) obj4);
                     }
@@ -289,7 +289,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 i iVar = kVar.y;
                 ArrayList arrayList12 = kVar.x;
                 if (!kVar.b && arrayList12.isEmpty()) {
-                    arrayList11.add(w51.k(kVar.d));
+                    arrayList11.add(y51.k(kVar.d));
                 }
                 SharedPreferences sharedPreferences = kVar.getContext().getSharedPreferences("webhistory", 0);
                 ArrayList arrayList13 = new ArrayList();
@@ -321,7 +321,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 arrayList12.size();
                 arrayList13.size();
                 if (!arrayList12.isEmpty()) {
-                    arrayList11.add(w51.k(kVar.v));
+                    arrayList11.add(y51.k(kVar.v));
                 }
                 int i29 = 0;
                 while (i29 < arrayList12.size()) {
@@ -351,7 +351,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         }
                     };
                     int i31 = d.a;
-                    w51 J = w51.J(d.class);
+                    y51 J = y51.J(d.class);
                     J.z = 1;
                     J.l = str;
                     J.D = onClickListener;
@@ -363,7 +363,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                     i29++;
                 }
                 if (!arrayList13.isEmpty()) {
-                    arrayList11.add(w51.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new o(kVar, i12)));
+                    arrayList11.add(y51.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new o(kVar, i12)));
                     int i32 = 0;
                     while (i32 < arrayList13.size()) {
                         final String str2 = (String) arrayList13.get(i32);
@@ -392,7 +392,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             }
                         };
                         int i34 = d.a;
-                        w51 J2 = w51.J(d.class);
+                        y51 J2 = y51.J(d.class);
                         J2.z = 0;
                         J2.l = str2;
                         J2.D = onClickListener2;
@@ -407,12 +407,12 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 if (iVar != null) {
                     ArrayList arrayList15 = iVar.a;
                     if (!arrayList15.isEmpty()) {
-                        arrayList11.add(w51.q(LocaleController.getString(R.string.WebSectionBookmarks)));
+                        arrayList11.add(y51.q(LocaleController.getString(R.string.WebSectionBookmarks)));
                         for (int i35 = 0; i35 < arrayList15.size(); i35++) {
                             MessageObject messageObject = (MessageObject) arrayList15.get(i35);
                             if (!TextUtils.isEmpty(k.a(messageObject))) {
                                 int i36 = g.a;
-                                w51 J3 = w51.J(g.class);
+                                y51 J3 = y51.J(g.class);
                                 J3.z = 3;
                                 J3.q = true;
                                 J3.H = messageObject;
@@ -420,9 +420,9 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             }
                         }
                         if (!iVar.f) {
-                            arrayList11.add(w51.o(arrayList11.size(), 32));
-                            arrayList11.add(w51.o(arrayList11.size(), 32));
-                            arrayList11.add(w51.o(arrayList11.size(), 32));
+                            arrayList11.add(y51.o(arrayList11.size(), 32));
+                            arrayList11.add(y51.o(arrayList11.size(), 32));
+                            arrayList11.add(y51.o(arrayList11.size(), 32));
                             break;
                         }
                     }
@@ -441,7 +441,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 if (arrayList17 != null && !arrayList17.isEmpty()) {
                     int dp = AndroidUtilities.dp(13.0f) + ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(68.0f));
                     int dp2 = AndroidUtilities.dp(88.0f) + fVar.l0;
-                    arrayList16.add(w51.D(0, dp2));
+                    arrayList16.add(y51.D(0, dp2));
                     int i37 = dp - dp2;
                     int size5 = arrayList17.size();
                     int i38 = 0;
@@ -453,7 +453,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                                 i37 -= AndroidUtilities.dp(44.0f);
                                 boolean containsKey = fVar.j0.containsKey(tL_help_country.iso2);
                                 int i39 = e.a;
-                                w51 J4 = w51.J(e.class);
+                                y51 J4 = y51.J(e.class);
                                 J4.l = tL_help_country.iso2;
                                 J4.G = tL_help_country;
                                 J4.e = containsKey;
@@ -461,7 +461,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             }
                         }
                     }
-                    arrayList16.add(w51.D(1, Math.max(0, i37)));
+                    arrayList16.add(y51.D(1, Math.max(0, i37)));
                     break;
                 }
                 break;
@@ -469,8 +469,8 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 ArrayList arrayList18 = (ArrayList) obj;
                 na1 na1Var = ((th.g) this.b).Y;
                 if (na1Var != null) {
-                    arrayList18.add(w51.C(AndroidUtilities.dp(12.0f)));
-                    arrayList18.add(w51.h(0, 0, na1Var));
+                    arrayList18.add(y51.C(AndroidUtilities.dp(12.0f)));
+                    arrayList18.add(y51.h(0, 0, na1Var));
                     break;
                 }
                 break;
@@ -486,13 +486,13 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         GiftAuctionController.Auction auction = cVar.Y;
                         vy0 vy0Var = new vy0(24, cVar, tL_StarGiftAuctionAcquiredGift);
                         int i40 = xh.a.a;
-                        w51 J5 = w51.J(xh.a.class);
+                        y51 J5 = y51.J(xh.a.class);
                         J5.G = tL_StarGiftAuctionAcquiredGift;
                         J5.H = auction;
                         J5.D = vy0Var;
                         arrayList19.add(J5);
                     }
-                    arrayList19.add(w51.C(AndroidUtilities.dp(16.0f)));
+                    arrayList19.add(y51.C(AndroidUtilities.dp(16.0f)));
                     break;
                 }
                 break;
@@ -502,21 +502,21 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 13:
                 ArrayList arrayList20 = (ArrayList) obj;
                 arrayList20.add(((m) this.b).Y);
-                arrayList20.add(w51.C(AndroidUtilities.dp(16.0f)));
+                arrayList20.add(y51.C(AndroidUtilities.dp(16.0f)));
                 break;
             case 14:
-                ((ArrayList) obj).add(w51.j(-1, ((v) this.b).Z));
+                ((ArrayList) obj).add(y51.j(-1, ((v) this.b).Z));
                 break;
             case 15:
-                ((ArrayList) obj).add(w51.j(-1, ((c0) this.b).Z));
+                ((ArrayList) obj).add(y51.j(-1, ((c0) this.b).Z));
                 break;
             case 16:
-                ((r1) this.b).U((ArrayList) obj, (k61) obj2);
+                ((r1) this.b).U((ArrayList) obj, (m61) obj2);
                 break;
             case 17:
                 o2 o2Var = (o2) this.b;
                 ArrayList arrayList21 = (ArrayList) obj;
-                yr0 yr0Var = o2Var.a;
+                bs0 bs0Var = o2Var.a;
                 l5 l5Var = o2Var.e;
                 if (l5Var != null) {
                     if ((!l5Var.e || l5Var.g != 783) && l5Var.l.size() <= 0) {
@@ -538,14 +538,14 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj9;
                             boolean z18 = o2Var.d;
                             int i43 = i1.a;
-                            w51 J6 = w51.J(i1.class);
+                            y51 J6 = y51.J(i1.class);
                             J6.u = 1;
                             J6.z = 0;
                             J6.G = savedStarGift;
                             J6.q = true;
                             J6.f = false;
                             J6.r = z18;
-                            J6.h = o2Var.n && (o2Var.e != yr0Var.d || savedStarGift.pinned_to_top);
+                            J6.h = o2Var.n && (o2Var.e != bs0Var.d || savedStarGift.pinned_to_top);
                             arrayList21.add(J6);
                             i41--;
                             if (i41 == 0) {
@@ -558,21 +558,21 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             while (true) {
                                 if (i44 < (i41 <= 0 ? 3 : i41)) {
                                     i44++;
-                                    w51 o9 = w51.o(i44, 34);
+                                    y51 o9 = y51.o(i44, 34);
                                     o9.u = 1;
                                     arrayList21.add(o9);
                                 }
                             }
                         }
                     }
-                    if (yr0Var.d == o2Var.e) {
-                        arrayList21.add(w51.C(AndroidUtilities.dp(20.0f)));
-                        if (yr0Var.c == UserConfig.getInstance(o2Var.b).getClientUserId()) {
+                    if (bs0Var.d == o2Var.e) {
+                        arrayList21.add(y51.C(AndroidUtilities.dp(20.0f)));
+                        if (bs0Var.c == UserConfig.getInstance(o2Var.b).getClientUserId()) {
                             int v02 = j6.v0(j6.z6, o2Var.c);
                             String string3 = LocaleController.getString(R.string.ProfileGiftsInfo);
                             int dp3 = AndroidUtilities.dp(24.0f);
                             int i45 = p2.a;
-                            w51 J7 = w51.J(p2.class);
+                            y51 J7 = y51.J(p2.class);
                             J7.l = string3;
                             J7.z = 17;
                             J7.B = v02;
@@ -582,18 +582,18 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             J7.q = false;
                             arrayList21.add(J7);
                         }
-                        arrayList21.add(w51.C(AndroidUtilities.dp(82.0f)));
+                        arrayList21.add(y51.C(AndroidUtilities.dp(82.0f)));
                     } else if (!arrayList21.isEmpty()) {
-                        arrayList21.add(w51.C(AndroidUtilities.dp(82.0f)));
+                        arrayList21.add(y51.C(AndroidUtilities.dp(82.0f)));
                     }
                     if (!arrayList21.isEmpty()) {
-                        arrayList21.add(0, w51.C(AndroidUtilities.dp(o2Var.I ? 42.0f : 12.0f)));
+                        arrayList21.add(0, y51.C(AndroidUtilities.dp(o2Var.I ? 42.0f : 12.0f)));
                     }
                     if (o2Var.f.getSpanCount() != max2) {
                         AndroidUtilities.runOnUIThread(new v1(o2Var, max2, 1));
                     }
-                    yr0Var.o();
-                    yr0Var.post(new q1(yr0Var, 18));
+                    bs0Var.o();
+                    bs0Var.post(new q1(bs0Var, 18));
                     break;
                 }
                 break;
@@ -610,50 +610,50 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                     arrayList23.add(i1.a(0, (TL_stars.TL_starGiftUnique) obj10, false, false, false, true, false));
                 }
                 if (v3Var.t || !v3Var.u) {
-                    w51 o10 = w51.o(-1, 34);
+                    y51 o10 = y51.o(-1, 34);
                     o10.u = 1;
                     arrayList23.add(o10);
-                    w51 o11 = w51.o(-2, 34);
+                    y51 o11 = y51.o(-2, 34);
                     o11.u = 1;
                     arrayList23.add(o11);
-                    w51 o12 = w51.o(-3, 34);
+                    y51 o12 = y51.o(-3, 34);
                     o12.u = 1;
                     arrayList23.add(o12);
                     if (v3Var.d.isEmpty()) {
-                        w51 o13 = w51.o(-4, 34);
+                        y51 o13 = y51.o(-4, 34);
                         o13.u = 1;
                         arrayList23.add(o13);
-                        w51 o14 = w51.o(-5, 34);
+                        y51 o14 = y51.o(-5, 34);
                         o14.u = 1;
                         arrayList23.add(o14);
-                        w51 o15 = w51.o(-6, 34);
+                        y51 o15 = y51.o(-6, 34);
                         o15.u = 1;
                         arrayList23.add(o15);
-                        w51 o16 = w51.o(-7, 34);
+                        y51 o16 = y51.o(-7, 34);
                         o16.u = 1;
                         arrayList23.add(o16);
-                        w51 o17 = w51.o(-8, 34);
+                        y51 o17 = y51.o(-8, 34);
                         o17.u = 1;
                         arrayList23.add(o17);
-                        w51 o18 = w51.o(-9, 34);
+                        y51 o18 = y51.o(-9, 34);
                         o18.u = 1;
                         arrayList23.add(o18);
-                        w51 o19 = w51.o(-10, 34);
+                        y51 o19 = y51.o(-10, 34);
                         o19.u = 1;
                         arrayList23.add(o19);
-                        w51 o20 = w51.o(-11, 34);
+                        y51 o20 = y51.o(-11, 34);
                         o20.u = 1;
                         arrayList23.add(o20);
-                        w51 o21 = w51.o(-12, 34);
+                        y51 o21 = y51.o(-12, 34);
                         o21.u = 1;
                         arrayList23.add(o21);
-                        w51 o22 = w51.o(-13, 34);
+                        y51 o22 = y51.o(-13, 34);
                         o22.u = 1;
                         arrayList23.add(o22);
-                        w51 o23 = w51.o(-14, 34);
+                        y51 o23 = y51.o(-14, 34);
                         o23.u = 1;
                         arrayList23.add(o23);
-                        w51 o24 = w51.o(-15, 34);
+                        y51 o24 = y51.o(-15, 34);
                         o24.u = 1;
                         arrayList23.add(o24);
                     }
@@ -675,33 +675,33 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 l5 l5Var6 = m4Var.Y;
                 if (l5Var6 != null) {
                     ArrayList arrayList26 = l5Var6.l;
-                    arrayList25.add(w51.C(AndroidUtilities.dp(16.0f)));
+                    arrayList25.add(y51.C(AndroidUtilities.dp(16.0f)));
                     if (l5Var6.i && arrayList26.isEmpty()) {
-                        w51 o25 = w51.o(1, 34);
+                        y51 o25 = y51.o(1, 34);
                         o25.u = 1;
                         arrayList25.add(o25);
-                        w51 o26 = w51.o(2, 34);
+                        y51 o26 = y51.o(2, 34);
                         o26.u = 1;
                         arrayList25.add(o26);
-                        w51 o27 = w51.o(3, 34);
+                        y51 o27 = y51.o(3, 34);
                         o27.u = 1;
                         arrayList25.add(o27);
-                        w51 o28 = w51.o(4, 34);
+                        y51 o28 = y51.o(4, 34);
                         o28.u = 1;
                         arrayList25.add(o28);
-                        w51 o29 = w51.o(5, 34);
+                        y51 o29 = y51.o(5, 34);
                         o29.u = 1;
                         arrayList25.add(o29);
-                        w51 o30 = w51.o(6, 34);
+                        y51 o30 = y51.o(6, 34);
                         o30.u = 1;
                         arrayList25.add(o30);
-                        w51 o31 = w51.o(7, 34);
+                        y51 o31 = y51.o(7, 34);
                         o31.u = 1;
                         arrayList25.add(o31);
-                        w51 o32 = w51.o(8, 34);
+                        y51 o32 = y51.o(8, 34);
                         o32.u = 1;
                         arrayList25.add(o32);
-                        w51 o33 = w51.o(9, 34);
+                        y51 o33 = y51.o(9, 34);
                         o33.u = 1;
                         arrayList25.add(o33);
                         f7 = 68.0f;
@@ -715,7 +715,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj11;
                             if (!savedStarGift2.collection_id.contains(Integer.valueOf(m4Var.X))) {
                                 int i49 = i1.a;
-                                w51 J8 = w51.J(i1.class);
+                                y51 J8 = y51.J(i1.class);
                                 J8.u = z12 ? 1 : 0;
                                 J8.z = z11 ? 1 : 0;
                                 J8.G = savedStarGift2;
@@ -741,14 +741,14 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             while (true) {
                                 if (i51 < (i47 <= 0 ? 3 : i47)) {
                                     i51++;
-                                    w51 o34 = w51.o(i51, 34);
+                                    y51 o34 = y51.o(i51, 34);
                                     o34.u = 1;
                                     arrayList25.add(o34);
                                 }
                             }
                         }
                     }
-                    arrayList25.add(w51.C(AndroidUtilities.dp(f7)));
+                    arrayList25.add(y51.C(AndroidUtilities.dp(f7)));
                     break;
                 }
                 break;
@@ -758,18 +758,18 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
             case 22:
                 s sVar = (s) this.b;
                 ArrayList arrayList27 = (ArrayList) obj;
-                arrayList27.add(w51.k(sVar.Y));
+                arrayList27.add(y51.k(sVar.Y));
                 arrayList27.add(q.a(LocaleController.getString(R.string.ExplainStarsFeature1Title), LocaleController.getString(R.string.ExplainStarsFeature1Text), R.drawable.msg_gift_premium));
                 arrayList27.add(q.a(LocaleController.getString(R.string.ExplainStarsFeature2Title), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ExplainStarsFeature2Text), new q1(sVar, 23)), true), R.drawable.msg_bot));
                 arrayList27.add(q.a(LocaleController.getString(R.string.ExplainStarsFeature3Title), LocaleController.getString(R.string.ExplainStarsFeature3Text), R.drawable.menu_unlock));
                 arrayList27.add(q.a(LocaleController.getString(R.string.ExplainStarsFeature4Title), LocaleController.getString(R.string.ExplainStarsFeature4Text), R.drawable.menu_feature_paid));
-                arrayList27.add(w51.C(AndroidUtilities.dp(68.0f)));
+                arrayList27.add(y51.C(AndroidUtilities.dp(68.0f)));
                 break;
             case 23:
                 ArrayList arrayList28 = (ArrayList) obj;
-                w51 w51Var = ((a0) this.b).v0;
-                if (w51Var != null) {
-                    arrayList28.add(w51Var);
+                y51 y51Var = ((a0) this.b).v0;
+                if (y51Var != null) {
+                    arrayList28.add(y51Var);
                     break;
                 }
                 break;
@@ -785,7 +785,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 r rVar3 = s0Var.e0;
                 ArrayList arrayList33 = s0Var.c0;
                 if (arrayList33 != null && arrayList32 != null && arrayList31 != null) {
-                    arrayList29.add(w51.C(AndroidUtilities.dp(315.0f)));
+                    arrayList29.add(y51.C(AndroidUtilities.dp(315.0f)));
                     rVar3.a = 0;
                     rVar3.c();
                     rVar2.a = 0;
@@ -794,7 +794,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                     rVar.c();
                     int i52 = s0Var.j0.r;
                     if (i52 == 0) {
-                        arrayList29.add(w51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z20 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList33.size()))));
+                        arrayList29.add(y51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z20 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList33.size()))));
                         int size9 = arrayList33.size();
                         int i53 = 0;
                         while (i53 < size9) {
@@ -803,7 +803,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             arrayList29.add(p0.a(i52, new o0((TL_stars.starGiftAttributeBackdrop) rVar3.c(), (TL_stars.starGiftAttributePattern) rVar2.c(), (TL_stars.starGiftAttributeModel) obj12)));
                         }
                         if (!arrayList30.isEmpty()) {
-                            arrayList29.add(w51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z20 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList33.size()))));
+                            arrayList29.add(y51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(z20 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList33.size()))));
                             int size10 = arrayList30.size();
                             while (i14 < size10) {
                                 Object obj13 = arrayList30.get(i14);
@@ -813,7 +813,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                             break;
                         }
                     } else if (i52 == 1) {
-                        arrayList29.add(w51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountBackdrops", arrayList32.size()))));
+                        arrayList29.add(y51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountBackdrops", arrayList32.size()))));
                         int size11 = arrayList32.size();
                         while (i15 < size11) {
                             Object obj14 = arrayList32.get(i15);
@@ -822,7 +822,7 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                         }
                         break;
                     } else if (i52 == 2) {
-                        arrayList29.add(w51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountSymbols", arrayList31.size()))));
+                        arrayList29.add(y51.g(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GiftPreviewCountSymbols", arrayList31.size()))));
                         int size12 = arrayList31.size();
                         while (i16 < size12) {
                             Object obj15 = arrayList31.get(i16);
@@ -843,16 +843,16 @@ public final /* synthetic */ class a implements Utilities.Callback2 {
                 }
                 break;
             case 26:
-                ((w7) this.b).H0((ArrayList) obj, (k61) obj2);
+                ((w7) this.b).H0((ArrayList) obj, (m61) obj2);
                 break;
             case 27:
-                ((h7) this.b).R((ArrayList) obj, (k61) obj2);
+                ((h7) this.b).R((ArrayList) obj, (m61) obj2);
                 break;
             case 28:
-                ((l7) this.b).R((ArrayList) obj, (k61) obj2);
+                ((l7) this.b).R((ArrayList) obj, (m61) obj2);
                 break;
             default:
-                ((m7) this.b).R((ArrayList) obj, (k61) obj2);
+                ((m7) this.b).R((ArrayList) obj, (m61) obj2);
                 break;
         }
     }

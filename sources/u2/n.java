@@ -2,7 +2,7 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class n implements e1 {
     public final e9.a1 a;
@@ -55,7 +55,7 @@ public final class n implements e1 {
     }
 
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean q(i2.r0 r0Var) {
         boolean z10;
         boolean z11 = false;
         do {
@@ -73,7 +73,7 @@ public final class n implements e1 {
                 long d10 = ((m) a1Var.get(i10)).a.d();
                 boolean z12 = d10 != Long.MIN_VALUE && d10 <= r0Var.a;
                 if (d10 == d || z12) {
-                    z10 |= ((m) a1Var.get(i10)).a.p(r0Var);
+                    z10 |= ((m) a1Var.get(i10)).a.q(r0Var);
                 }
                 i10++;
             }
@@ -83,7 +83,7 @@ public final class n implements e1 {
     }
 
     @Override // u2.e1
-    public final long s() {
+    public final long t() {
         int i10 = 0;
         long j3 = Long.MAX_VALUE;
         long j10 = Long.MAX_VALUE;
@@ -93,13 +93,13 @@ public final class n implements e1 {
                 break;
             }
             m mVar = (m) a1Var.get(i10);
-            long s10 = mVar.a.s();
+            long t10 = mVar.a.t();
             e9.i0 i0Var = mVar.b;
-            if ((i0Var.contains(1) || i0Var.contains(2) || i0Var.contains(4)) && s10 != Long.MIN_VALUE) {
-                j3 = Math.min(j3, s10);
+            if ((i0Var.contains(1) || i0Var.contains(2) || i0Var.contains(4)) && t10 != Long.MIN_VALUE) {
+                j3 = Math.min(j3, t10);
             }
-            if (s10 != Long.MIN_VALUE) {
-                j10 = Math.min(j10, s10);
+            if (t10 != Long.MIN_VALUE) {
+                j10 = Math.min(j10, t10);
             }
             i10++;
         }
@@ -115,14 +115,14 @@ public final class n implements e1 {
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
+    public final void v(long j3) {
         int i10 = 0;
         while (true) {
             e9.a1 a1Var = this.a;
             if (i10 >= a1Var.d) {
                 return;
             }
-            ((m) a1Var.get(i10)).u(j3);
+            ((m) a1Var.get(i10)).v(j3);
             i10++;
         }
     }

@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class la1 extends FrameLayout {
     public final Window a;
@@ -45,7 +45,7 @@ public abstract class la1 extends FrameLayout {
         this.h = new u41(context, 3);
         kg.c cVar = new kg.c(getContext(), f6Var);
         this.d = cVar;
-        cVar.d.setOnTouchListener(new org.telegram.ui.Components.el0());
+        cVar.d.setOnTouchListener(new org.telegram.ui.Components.hl0());
         final int i11 = 0;
         cVar.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
             public final /* synthetic */ la1 b;
@@ -140,7 +140,7 @@ public abstract class la1 extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s5, f6Var));
         this.b.setDateSelectionListener(new ol0(this, 20));
         this.b.t0.d(false, false);
-        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.el0());
+        this.b.t0.setOnTouchListener(new org.telegram.ui.Components.hl0());
         final int i13 = 1;
         this.b.t0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
             public final /* synthetic */ la1 b;
@@ -379,7 +379,7 @@ public abstract class la1 extends FrameLayout {
                 org.telegram.ui.Components.s00 s00Var = ka1Var.a;
                 s00Var.setText(str3);
                 s00Var.a(fVar.n, false);
-                s00Var.setOnTouchListener(new org.telegram.ui.Components.el0());
+                s00Var.setOnTouchListener(new org.telegram.ui.Components.hl0());
                 s00Var.setOnClickListener(new vy0(7, ka1Var, fVar));
                 s00Var.setOnLongClickListener(new ai.q3(6, ka1Var, fVar));
             }

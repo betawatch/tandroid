@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he implements org.telegram.ui.tj0, org.telegram.ui.oy {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class he implements org.telegram.ui.tj0, org.telegr
 
     @Override // org.telegram.ui.tj0
     public void a(ArrayList arrayList) {
-        int i10 = ChatActivityEnterView.m5;
+        int i10 = ChatActivityEnterView.n5;
         if (arrayList.isEmpty()) {
             return;
         }
@@ -60,7 +60,7 @@ public final /* synthetic */ class he implements org.telegram.ui.tj0, org.telegr
 
     @Override // org.telegram.ui.oy
     public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
-        int i12 = ChatActivityEnterView.m5;
+        int i12 = ChatActivityEnterView.n5;
         if (!arrayList.isEmpty()) {
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
             ChatActivityEnterView chatActivityEnterView = this.a;

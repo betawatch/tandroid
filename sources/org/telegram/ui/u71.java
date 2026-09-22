@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u71 extends g.p {
     public final /* synthetic */ w71 c;
@@ -14,11 +14,11 @@ public final class u71 extends g.p {
         int i11;
         w71 w71Var = this.c;
         org.telegram.ui.Components.nz nzVar = w71Var.X;
-        org.telegram.ui.Components.k61 k61Var = w71Var.d0;
-        if (k61Var == null) {
+        org.telegram.ui.Components.m61 m61Var = w71Var.d0;
+        if (m61Var == null) {
             return nzVar.J;
         }
-        org.telegram.ui.Components.w51 G = k61Var.G(i10 - 1);
+        org.telegram.ui.Components.y51 G = m61Var.G(i10 - 1);
         return (G == null || (i11 = G.u) == -1) ? nzVar.J : i11;
     }
 }

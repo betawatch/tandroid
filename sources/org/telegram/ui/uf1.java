@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class uf1 extends og.b {
     public final /* synthetic */ fg1 d;
@@ -19,7 +19,7 @@ public final class uf1 extends og.b {
         this.d = fg1Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 3;
@@ -147,13 +147,13 @@ public final class uf1 extends og.b {
             if (i10 == 2) {
                 tf1 tf1Var = new tf1(this, fg1Var.getParentActivity());
                 fg1Var.E0 = tf1Var;
-                return new org.telegram.ui.Components.fl0(tf1Var);
+                return new org.telegram.ui.Components.il0(tf1Var);
             }
             org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(viewGroup.getContext(), null);
             t00Var.setViewType(24);
             t00Var.setIsSingleCell(true);
             t00Var.w = true;
-            return new org.telegram.ui.Components.fl0(t00Var);
+            return new org.telegram.ui.Components.il0(t00Var);
         }
         cg1 cg1Var = new cg1(fg1Var, viewGroup.getContext(), false);
         if (i10 == 3) {
@@ -166,6 +166,6 @@ public final class uf1 extends og.b {
         z10 = ((org.telegram.ui.ActionBar.n2) fg1Var).inPreviewMode;
         cg1Var.k0 = z10;
         cg1Var.setArchivedPullAnimation(fg1Var.w);
-        return new org.telegram.ui.Components.fl0(cg1Var);
+        return new org.telegram.ui.Components.il0(cg1Var);
     }
 }

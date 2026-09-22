@@ -1,856 +1,395 @@
 package n2;
 
-import android.content.ComponentName;
-import android.content.ContentProviderClient;
-import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.graphics.SurfaceTexture;
-import android.net.Uri;
+import android.media.ResourceBusyException;
+import android.media.UnsupportedSchemeException;
 import android.os.Build;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.text.SpannableStringBuilder;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import b2.q0;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.os.Handler;
+import android.os.Looper;
+import b2.r0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import gg.b2;
-import hg.k0;
-import java.lang.reflect.Array;
+import e9.m0;
+import e9.o1;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.bf0;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.cf0;
-import org.telegram.ui.Components.g60;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.jc0;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.jq0;
-import org.telegram.ui.Components.ok0;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.q71;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.qq0;
-import org.telegram.ui.Components.sa0;
-import org.telegram.ui.Components.t71;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.m9;
-import org.telegram.ui.ts0;
-import org.telegram.ui.u9;
-import org.telegram.ui.web.d1;
-import pg.b1;
-import pg.e1;
-import r7.z;
-import s4.c1;
-import s4.f1;
-import s4.h1;
-import s4.o0;
-import s4.p0;
-import yh.s2;
-import yh.y3;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import m4.q0;
+import n4.y;
+import w7.b0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public class e implements o0.a, j71, c5, sa0, lg.o, q71, b2, u9, com.google.android.gms.common.api.internal.s, h1, w2.a, jq0, ok0 {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class e implements m {
+    public int E;
+    public q F;
+    public b G;
+    public b H;
+    public Looper I;
+    public Handler J;
+    public byte[] K;
+    public j2.k L;
+    public volatile androidx.mediarouter.app.c M;
+    public final UUID a;
+    public final q0 b;
+    public final com.google.firebase.messaging.m c;
+    public final HashMap d;
+    public final boolean e;
+    public final int[] f;
+    public final boolean h;
+    public final y n;
+    public final qb.b r;
+    public final android.support.v4.media.c s;
+    public final long v;
+    public final ArrayList w;
+    public final Set x;
+    public final Set y;
 
-    public /* synthetic */ e(int i10, boolean z10) {
-        this.a = i10;
+    public e(UUID uuid, com.google.firebase.messaging.m mVar, HashMap hashMap, boolean z10, int[] iArr, boolean z11, qb.b bVar) {
+        uuid.getClass();
+        e2.d.a("Use C.CLEARKEY_UUID instead", !b2.i.b.equals(uuid));
+        this.a = uuid;
+        this.b = t.d;
+        this.c = mVar;
+        this.d = hashMap;
+        this.e = z10;
+        this.f = iArr;
+        this.h = z11;
+        this.r = bVar;
+        this.n = new y(25);
+        this.s = new android.support.v4.media.c(this, 29);
+        this.w = new ArrayList();
+        this.x = Collections.newSetFromMap(new IdentityHashMap());
+        this.y = Collections.newSetFromMap(new IdentityHashMap());
+        this.v = 300000L;
     }
 
-    public static e B(float f7, int i10) {
-        Point point = AndroidUtilities.displaySize;
-        int i11 = (int) (point.x * f7);
-        int i12 = (int) (point.y * f7);
-        if (i11 == i12) {
-            return new e(i11, i12, new int[0]);
+    public static boolean c(b bVar) {
+        bVar.p();
+        if (bVar.o != 1) {
+            return false;
         }
-        if (i10 == 3) {
-            return new e(i11, i12, new int[]{i12, i11});
-        }
-        return (i10 == 1) == (i11 < i12) ? new e(i11, i12, new int[0]) : new e(i12, i11, new int[0]);
+        f g10 = bVar.g();
+        g10.getClass();
+        Throwable cause = g10.getCause();
+        return (cause instanceof ResourceBusyException) || b0.c(cause);
     }
 
-    public static float[] y(ArrayList arrayList) {
-        double d;
-        double d10;
-        float f7;
-        double[] dArr;
-        ArrayList arrayList2;
-        float f10;
-        int i10;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            PointF pointF = (PointF) arrayList.get(i11);
-            pointF.x *= 255.0f;
-            pointF.y *= 255.0f;
-        }
-        int size2 = arrayList.size();
-        double d11 = 1.0d;
-        if (size2 <= 0 || size2 == 1) {
-            d = 1.0d;
-            d10 = 6.0d;
-            f7 = 255.0f;
-            dArr = null;
-        } else {
-            double[][] dArr2 = (double[][]) Array.newInstance((Class<?>) Double.TYPE, size2, 3);
-            double[] dArr3 = new double[size2];
-            double[] dArr4 = dArr2[0];
-            dArr4[1] = 1.0d;
-            double d12 = 0.0d;
-            dArr4[0] = 0.0d;
-            dArr4[2] = 0.0d;
-            int i12 = 1;
-            while (true) {
-                i10 = size2 - 1;
-                if (i12 >= i10) {
-                    break;
-                }
-                PointF pointF2 = (PointF) arrayList.get(i12 - 1);
-                PointF pointF3 = (PointF) arrayList.get(i12);
-                int i13 = i12 + 1;
-                double d13 = d11;
-                PointF pointF4 = (PointF) arrayList.get(i13);
-                double[] dArr5 = dArr2[i12];
-                float f11 = pointF3.x;
-                double d14 = d12;
-                double d15 = f11 - pointF2.x;
-                dArr5[0] = d15 / 6.0d;
-                float f12 = pointF4.x;
-                dArr5[1] = (f12 - r14) / 3.0d;
-                double d16 = f12 - f11;
-                dArr5[2] = d16 / 6.0d;
-                float f13 = pointF4.y;
-                float f14 = pointF3.y;
-                dArr3[i12] = ((f13 - f14) / d16) - ((f14 - pointF2.y) / d15);
-                i12 = i13;
-                d11 = d13;
-                d12 = d14;
-            }
-            d = d11;
-            double d17 = d12;
-            d10 = 6.0d;
-            f7 = 255.0f;
-            dArr3[0] = d17;
-            dArr3[i10] = d17;
-            double[] dArr6 = dArr2[i10];
-            dArr6[1] = d;
-            dArr6[0] = d17;
-            dArr6[2] = d17;
-            for (int i14 = 1; i14 < size2; i14++) {
-                double[] dArr7 = dArr2[i14];
-                double d18 = dArr7[0];
-                int i15 = i14 - 1;
-                double[] dArr8 = dArr2[i15];
-                double d19 = d18 / dArr8[1];
-                dArr7[1] = dArr7[1] - (dArr8[2] * d19);
-                dArr7[0] = d17;
-                dArr3[i14] = dArr3[i14] - (d19 * dArr3[i15]);
-            }
-            for (int i16 = size2 - 2; i16 >= 0; i16--) {
-                double[] dArr9 = dArr2[i16];
-                double d20 = dArr9[2];
-                int i17 = i16 + 1;
-                double[] dArr10 = dArr2[i17];
-                double d21 = d20 / dArr10[1];
-                dArr9[1] = dArr9[1] - (dArr10[0] * d21);
-                dArr9[2] = d17;
-                dArr3[i16] = dArr3[i16] - (d21 * dArr3[i17]);
-            }
-            dArr = new double[size2];
-            for (int i18 = 0; i18 < size2; i18++) {
-                dArr[i18] = dArr3[i18] / dArr2[i18][1];
+    public static ArrayList f(b2.o oVar, UUID uuid, boolean z10) {
+        ArrayList arrayList = new ArrayList(oVar.d);
+        for (int i10 = 0; i10 < oVar.d; i10++) {
+            b2.n nVar = oVar.a[i10];
+            if ((nVar.a(uuid) || (b2.i.c.equals(uuid) && nVar.a(b2.i.b))) && (nVar.e != null || z10)) {
+                arrayList.add(nVar);
             }
         }
-        int length = dArr.length;
-        if (length < 1) {
-            arrayList2 = null;
-            f10 = 0.0f;
-        } else {
-            arrayList2 = new ArrayList(length + 1);
-            int i19 = 0;
-            while (i19 < length - 1) {
-                PointF pointF5 = (PointF) arrayList.get(i19);
-                int i20 = i19 + 1;
-                PointF pointF6 = (PointF) arrayList.get(i20);
-                int i21 = (int) pointF5.x;
-                while (true) {
-                    float f15 = pointF6.x;
-                    if (i21 < ((int) f15)) {
-                        float f16 = i21;
-                        PointF pointF7 = pointF5;
-                        double d22 = f15 - pointF5.x;
-                        double d23 = (f16 - r12) / d22;
-                        double d24 = d - d23;
-                        int i22 = length;
-                        double[] dArr11 = dArr;
-                        float f17 = (float) (((((((d23 * d23) * d23) - d23) * dArr11[i20]) + ((((d24 * d24) * d24) - d24) * dArr11[i19])) * ((d22 * d22) / d10)) + (pointF6.y * d23) + (pointF7.y * d24));
-                        if (f17 > f7) {
-                            f17 = 255.0f;
-                        } else if (f17 < 0.0f) {
-                            f17 = 0.0f;
-                        }
-                        arrayList2.add(new PointF(f16, f17));
-                        i21++;
-                        dArr = dArr11;
-                        pointF5 = pointF7;
-                        length = i22;
-                    }
-                }
-                i19 = i20;
-            }
-            f10 = 0.0f;
-            arrayList2.add((PointF) k0.g(1, arrayList));
-        }
-        float f18 = ((PointF) arrayList2.get(0)).x;
-        if (f18 > f10) {
-            for (int i23 = (int) f18; i23 >= 0; i23--) {
-                arrayList2.add(0, new PointF(i23, 0.0f));
-            }
-        }
-        float f19 = ((PointF) k0.g(1, arrayList2)).x;
-        if (f19 < f7) {
-            for (int i24 = ((int) f19) + 1; i24 <= 255; i24++) {
-                arrayList2.add(new PointF(i24, 255.0f));
-            }
-        }
-        float[] fArr = new float[arrayList2.size()];
-        int size3 = arrayList2.size();
-        for (int i25 = 0; i25 < size3; i25++) {
-            PointF pointF8 = (PointF) arrayList2.get(i25);
-            float sqrt = (float) Math.sqrt(Math.pow(pointF8.x - pointF8.y, 2.0d));
-            if (pointF8.x > pointF8.y) {
-                sqrt = -sqrt;
-            }
-            fArr[i25] = sqrt;
-        }
-        return fArr;
+        return arrayList;
     }
 
-    @Override // s4.h1
-    public View C(int i10) {
-        return ((o0) this.b).q(i10);
-    }
-
-    @Override // s4.h1
-    public int D(View view) {
-        return o0.y(view) + ((ViewGroup.MarginLayoutParams) ((p0) view.getLayoutParams())).rightMargin;
-    }
-
-    public void E(aa.a aVar) {
-        h8.j jVar = (h8.j) this.b;
-        jVar.a = aVar;
-        Iterator it = jVar.c.iterator();
-        while (it.hasNext()) {
-            ((x6.e) it.next()).b();
-        }
-        jVar.c.clear();
-        jVar.b = null;
-    }
-
-    @Override // gg.b2
-    public boolean F(int i10) {
-        return i10 == ((qq0) this.b).r;
-    }
-
-    public boolean H(int i10, int i11, Bundle bundle) {
-        return false;
-    }
-
-    public void I(c1 c1Var, q0 q0Var, q0 q0Var2) {
-        boolean z10;
-        c1 U;
-        int i10;
-        RecyclerView recyclerView = (RecyclerView) this.b;
-        recyclerView.b.k(c1Var);
-        recyclerView.h(c1Var);
-        c1Var.q(false);
-        f1 f1Var = (f1) recyclerView.c0;
-        f1Var.getClass();
-        int i11 = q0Var.a;
-        int i12 = q0Var.b;
-        View view = c1Var.a;
-        int left = q0Var2 == null ? view.getLeft() : q0Var2.a;
-        int top = q0Var2 == null ? view.getTop() : q0Var2.b;
-        if (c1Var.j() || (i11 == left && i12 == top)) {
-            int i13 = c1Var.h;
-            int i14 = -1;
-            if (i13 != -1) {
-                for (int i15 = 0; i15 < recyclerView.getChildCount(); i15++) {
-                    View childAt = recyclerView.getChildAt(i15);
-                    if (childAt != null && (U = recyclerView.U(childAt)) != null && !U.j() && (i10 = U.h) >= 0 && i10 < i13 && i10 > i14) {
-                        i14 = i10;
-                    }
-                }
-            }
-            c1Var.i = (c1Var.h - i14) + (i14 * MediaDataController.MAX_STYLE_RUNS_COUNT);
-            f1Var.s(c1Var, q0Var);
-            z10 = true;
-        } else {
-            view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
-            z10 = f1Var.r(c1Var, q0Var, i11, i12, left, top);
-        }
-        if (z10) {
-            recyclerView.m0();
-        }
-    }
-
-    @Override // org.telegram.ui.u9
-    public String I0() {
-        return ((d1) this.b).i0;
-    }
-
-    @Override // org.telegram.ui.Components.c5
-    public void J(int i10, int i11, boolean z10) {
-        ((ChatActivityEnterView) this.b).T0(i10, z10, 0, true, 0L);
-    }
-
-    @Override // org.telegram.ui.u9
-    public void K(String str) {
-        d1 d1Var = (d1) this.b;
-        try {
-            d1Var.P = System.currentTimeMillis();
-            d1Var.z("qr_text_received", new JSONObject().put("data", str));
-        } catch (JSONException e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // lg.o
-    public void L(boolean z10) {
-        ((cf0) this.b).c.setAspectLock(z10);
-    }
-
-    public void M(c1 c1Var) {
-        RecyclerView recyclerView = (RecyclerView) this.b;
-        o0 o0Var = recyclerView.x;
-        View view = c1Var.a;
-        of.e eVar = recyclerView.b;
-        lf.h hVar = o0Var.a;
-        ka.c cVar = (ka.c) hVar.b;
-        int indexOfChild = ((RecyclerView) cVar.b).indexOfChild(view);
-        if (indexOfChild >= 0) {
-            if (((e6.n) hVar.c).F(indexOfChild)) {
-                hVar.Y(view);
-            }
-            cVar.h0(indexOfChild);
-        }
-        eVar.g(view);
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public void O(int i10, int i11, CharSequence charSequence, boolean z10) {
-        vi viVar = (vi) this.b;
-        if (viVar.m1() == null) {
-            return;
-        }
-        try {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(viVar.m1().getText());
-            spannableStringBuilder.replace(i10, i11 + i10, charSequence);
-            if (z10) {
-                Emoji.replaceEmoji(spannableStringBuilder, viVar.m1().getEditText().getPaint().getFontMetricsInt(), false);
-            }
-            viVar.m1().setText(spannableStringBuilder);
-            viVar.m1().setSelection(i10 + charSequence.length());
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // gg.b2
-    public void a(int i10) {
-        qq0 qq0Var = (qq0) this.b;
-        uq0 uq0Var = qq0Var.K;
-        qq0Var.s = i10;
-        if (qq0Var.v != i10) {
-            qq0Var.d.clear();
-        }
-        int i11 = qq0Var.J;
-        if (qq0Var.h() != 0 || qq0Var.e.e() || qq0Var.I) {
-            uq0Var.x0.b(i11);
-        } else {
-            uq0Var.Q.e(false, true);
-        }
-        qq0Var.l();
-        int i12 = uq0.a1;
-        uq0Var.K0(true);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        switch (this.a) {
-            case 16:
-                g8.e eVar = (g8.e) this.b;
-                z zVar = (z) ((r7.k) obj).u();
-                r7.f fVar = new r7.f(1, (TaskCompletionSource) obj2);
-                Parcel O0 = zVar.O0();
-                r7.d.c(O0, eVar);
-                r7.d.d(O0, fVar);
-                O0.writeString(null);
-                zVar.S0(O0, 63);
-                break;
-            default:
-                s6.f fVar2 = new s6.f(0, (TaskCompletionSource) obj2);
-                s6.e eVar2 = (s6.e) ((s6.h) obj).u();
-                s6.a aVar = (s6.a) this.b;
-                Parcel I0 = eVar2.I0();
-                k7.a.d(I0, fVar2);
-                k7.a.c(I0, aVar);
-                eVar2.J0(I0, 1);
-                break;
-        }
-    }
-
-    @Override // w2.a
-    public long b(long j3) {
-        ArrayList arrayList = (ArrayList) this.b;
-        if (arrayList.isEmpty()) {
-            return Long.MIN_VALUE;
-        }
-        if (j3 < ((z3.a) arrayList.get(0)).b) {
-            return ((z3.a) arrayList.get(0)).b;
-        }
-        for (int i10 = 1; i10 < arrayList.size(); i10++) {
-            z3.a aVar = (z3.a) arrayList.get(i10);
-            long j10 = aVar.b;
-            long j11 = aVar.b;
-            if (j3 < j10) {
-                long j12 = ((z3.a) arrayList.get(i10 - 1)).d;
-                return (j12 == -9223372036854775807L || j12 <= j3 || j12 >= j11) ? j11 : j12;
-            }
-        }
-        long j13 = ((z3.a) e9.q.l(arrayList)).d;
-        if (j13 == -9223372036854775807L || j3 >= j13) {
-            return Long.MIN_VALUE;
-        }
-        return j13;
-    }
-
-    @Override // s4.h1
-    public int c(View view) {
-        return o0.x(view) - ((ViewGroup.MarginLayoutParams) ((p0) view.getLayoutParams())).leftMargin;
-    }
-
-    @Override // w2.a
-    public void clear() {
-        ((ArrayList) this.b).clear();
-    }
-
-    @Override // o0.a
-    public void close() {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient != null) {
-            contentProviderClient.release();
-        }
-    }
-
-    @Override // w2.a
-    public i0 d(long j3) {
-        int v = v(j3);
-        if (v == 0) {
-            g0 g0Var = i0.b;
-            return a1.e;
-        }
-        z3.a aVar = (z3.a) ((ArrayList) this.b).get(v - 1);
-        long j10 = aVar.d;
-        if (j10 == -9223372036854775807L || j3 < j10) {
-            return aVar.a;
-        }
-        g0 g0Var2 = i0.b;
-        return a1.e;
-    }
-
-    @Override // lg.o
-    public void d0(boolean z10) {
-        cf0 cf0Var = (cf0) this.b;
-        cf0Var.getClass();
-        bf0 bf0Var = cf0Var.a;
-        if (bf0Var != null) {
-            ((ts0) bf0Var).a(z10);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002f  */
-    @Override // w2.a
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean e(z3.a aVar, long j3) {
-        boolean z10;
-        int size;
-        ArrayList arrayList = (ArrayList) this.b;
-        long j10 = aVar.b;
-        e2.d.b(j10 != -9223372036854775807L);
-        if (j10 <= j3) {
-            long j11 = aVar.d;
-            if (j11 == -9223372036854775807L || j3 < j11) {
-                z10 = true;
-                for (size = arrayList.size() - 1; size >= 0; size--) {
-                    if (j10 >= ((z3.a) arrayList.get(size)).b) {
-                        arrayList.add(size + 1, aVar);
-                        return z10;
-                    }
-                    if (((z3.a) arrayList.get(size)).b <= j3) {
-                        z10 = false;
-                    }
-                }
-                arrayList.add(0, aVar);
-                return z10;
-            }
-        }
-        z10 = false;
-        while (size >= 0) {
-        }
-        arrayList.add(0, aVar);
-        return z10;
-    }
-
-    @Override // org.telegram.ui.u9
-    public /* synthetic */ boolean e1(String str, m9 m9Var) {
-        return false;
-    }
-
-    @Override // s4.h1
-    public int g() {
-        return ((o0) this.b).D();
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        zg.t tVar = (zg.t) this.b;
-        tVar.a.ab(null, tVar.e, tVar.b, view, 0.0f, 0.0f, o0Var, false, z10, z11, false);
-        AndroidUtilities.runOnUIThread(new s2(this, 9));
-    }
-
-    @Override // w2.a
-    public long i(long j3) {
-        ArrayList arrayList = (ArrayList) this.b;
-        if (arrayList.isEmpty() || j3 < ((z3.a) arrayList.get(0)).b) {
-            return -9223372036854775807L;
-        }
-        for (int i10 = 1; i10 < arrayList.size(); i10++) {
-            long j10 = ((z3.a) arrayList.get(i10)).b;
-            if (j3 == j10) {
-                return j10;
-            }
-            if (j3 < j10) {
-                z3.a aVar = (z3.a) arrayList.get(i10 - 1);
-                long j11 = aVar.d;
-                return (j11 == -9223372036854775807L || j11 > j3) ? aVar.b : j11;
-            }
-        }
-        z3.a aVar2 = (z3.a) e9.q.l(arrayList);
-        long j12 = aVar2.d;
-        return (j12 == -9223372036854775807L || j3 < j12) ? aVar2.b : j12;
-    }
-
-    @Override // lg.o
-    public void i0() {
-        bf0 bf0Var = ((cf0) this.b).a;
-        if (bf0Var != null) {
-            PhotoViewer photoViewer = ((ts0) bf0Var).a;
-            if (photoViewer.c2 == 1) {
-                photoViewer.H2 = true;
-                photoViewer.p3();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.j71
-    public void invalidate() {
-        ((u1) ((org.telegram.ui.Cells.h1) this.b).b).invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i l() {
-        return null;
-    }
-
-    @Override // w2.a
-    public void m(long j3) {
-        ArrayList arrayList = (ArrayList) this.b;
-        int v = v(j3);
-        if (v == 0) {
-            return;
-        }
-        long j10 = ((z3.a) arrayList.get(v - 1)).d;
-        if (j10 == -9223372036854775807L || j10 >= j3) {
-            v--;
-        }
-        arrayList.subList(0, v).clear();
-    }
-
-    @Override // org.telegram.ui.u9
-    public void onDismiss() {
-        d1 d1Var = (d1) this.b;
-        d1Var.z("scan_qr_popup_closed", null);
-        d1Var.h0 = false;
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public void onStateChanged(boolean z10, int i10) {
-        qk0 qk0Var = (qk0) this.b;
-        if (z10 && qk0Var.n.n() >= 0) {
-            qk0Var.w = true;
-        }
-        pg0 pg0Var = qk0Var.f;
-        jc0 jc0Var = qk0Var.x;
-        pg0Var.a(z10, true);
-        AndroidUtilities.cancelRunOnUIThread(jc0Var);
-        if (z10) {
-            AndroidUtilities.runOnUIThread(jc0Var, 16L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    public void p() {
-        pg.c1 c1Var = ((e1) this.b).d;
-        if (c1Var != null) {
-            b1 b1Var = c1Var.s;
-            if (b1Var != null) {
-                c1Var.cancelRunnable(b1Var);
-                c1Var.s = null;
-            }
-            b1 b1Var2 = new b1(c1Var, 1);
-            c1Var.s = b1Var2;
-            c1Var.postRunnable(b1Var2, 1L);
-        }
-    }
-
-    @Override // o0.a
-    public Cursor q(Uri uri, String[] strArr, String[] strArr2) {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient == null) {
-            return null;
-        }
-        try {
-            return contentProviderClient.query(uri, strArr, "query = ?", strArr2, null, null);
-        } catch (RemoteException e) {
-            Log.w("FontsProvider", "Unable to query the content provider", e);
-            return null;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public Paint.FontMetricsInt s() {
-        return ((vi) this.b).E0.getEditText().getPaint().getFontMetricsInt();
-    }
-
-    public s0.d t(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.jq0
-    public void t0() {
-        pc k10 = ((y3) this.b).getBulletinFactory().k(false);
-        k10.t = true;
-        k10.j();
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 12:
-                return "ProviderMetadata{ componentName=" + ((ComponentName) this.b).flattenToShortString() + " }";
-            default:
-                return super.toString();
-        }
-    }
-
-    public s0.d u(int i10) {
-        return null;
-    }
-
-    public int v(long j3) {
-        ArrayList arrayList = (ArrayList) this.b;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (j3 < ((z3.a) arrayList.get(i10)).b) {
-                return i10;
-            }
-        }
-        return arrayList.size();
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i w() {
-        return null;
-    }
-
-    @Override // s4.h1
-    public int x() {
-        o0 o0Var = (o0) this.b;
-        return o0Var.m - o0Var.E();
-    }
-
-    @Override // lg.o
-    public void z() {
-        bf0 bf0Var = ((cf0) this.b).a;
-        if (bf0Var != null) {
-            ((ts0) bf0Var).a.e0.invalidate();
-        }
-    }
-
-    public /* synthetic */ e(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public void onRenderedFirstFrame() {
-    }
-
-    public /* synthetic */ e(s6.g gVar, s6.a aVar) {
-        this.a = 21;
-        this.b = aVar;
-    }
-
-    public e(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 18:
-                if (Build.VERSION.SDK_INT >= 26) {
-                    this.b = new s0.e(this);
-                    break;
+    @Override // n2.m
+    public final void C(Looper looper, j2.k kVar) {
+        synchronized (this) {
+            try {
+                Looper looper2 = this.I;
+                if (looper2 == null) {
+                    this.I = looper;
+                    this.J = new Handler(looper);
                 } else {
-                    this.b = new jh0(this);
+                    e2.d.g(looper2 == looper);
+                    this.J.getClass();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        this.L = kVar;
+    }
+
+    @Override // n2.m
+    public final int M0(b2.s sVar) {
+        h(false);
+        q qVar = this.F;
+        qVar.getClass();
+        int l02 = qVar.l0();
+        b2.o oVar = sVar.v;
+        if (oVar == null) {
+            int h = r0.h(sVar.r);
+            int i10 = 0;
+            while (true) {
+                int[] iArr = this.f;
+                if (i10 >= iArr.length) {
+                    i10 = -1;
                     break;
                 }
-            case 24:
-                this.b = new ArrayList();
-                break;
-            case 26:
-                this.b = new CopyOnWriteArrayList();
-                break;
-            default:
-                this.b = new o2.d(5, 1.0f, false);
-                break;
+                if (iArr[i10] == h) {
+                    break;
+                }
+                i10++;
+            }
+            if (i10 == -1) {
+                return 0;
+            }
+        } else if (this.K == null) {
+            UUID uuid = this.a;
+            if (f(oVar, uuid, true).isEmpty()) {
+                if (oVar.d == 1 && oVar.a[0].a(b2.i.b)) {
+                    e2.a.n("DefaultDrmSessionMgr", "DrmInitData only contains common PSSH SchemeData. Assuming support for: " + uuid);
+                }
+                return 1;
+            }
+            String str = oVar.c;
+            if (str != null && !"cenc".equals(str) && (!"cbcs".equals(str) ? "cbc1".equals(str) || "cens".equals(str) : Build.VERSION.SDK_INT < 25)) {
+                return 1;
+            }
+        }
+        return l02;
+    }
+
+    @Override // n2.m
+    public final g Z0(j jVar, b2.s sVar) {
+        h(false);
+        e2.d.g(this.E > 0);
+        e2.d.h(this.I);
+        return a(this.I, jVar, sVar, true);
+    }
+
+    public final g a(Looper looper, j jVar, b2.s sVar, boolean z10) {
+        ArrayList arrayList;
+        if (this.M == null) {
+            this.M = new androidx.mediarouter.app.c(this, looper, 5);
+        }
+        b2.o oVar = sVar.v;
+        int i10 = 0;
+        b bVar = null;
+        if (oVar == null) {
+            int h = r0.h(sVar.r);
+            q qVar = this.F;
+            qVar.getClass();
+            if (qVar.l0() != 2 || !r.c) {
+                int[] iArr = this.f;
+                while (true) {
+                    if (i10 >= iArr.length) {
+                        i10 = -1;
+                        break;
+                    }
+                    if (iArr[i10] == h) {
+                        break;
+                    }
+                    i10++;
+                }
+                if (i10 != -1 && qVar.l0() != 1) {
+                    b bVar2 = this.G;
+                    if (bVar2 == null) {
+                        g0 g0Var = i0.b;
+                        b e = e(a1.e, true, null, z10);
+                        this.w.add(e);
+                        this.G = e;
+                    } else {
+                        bVar2.b(null);
+                    }
+                    return this.G;
+                }
+            }
+            return null;
+        }
+        if (this.K == null) {
+            arrayList = f(oVar, this.a, false);
+            if (arrayList.isEmpty()) {
+                c cVar = new c("Media does not support uuid: " + this.a);
+                e2.a.f("DefaultDrmSessionMgr", "DRM error", cVar);
+                if (jVar != null) {
+                    jVar.d(cVar);
+                }
+                return new n(new f(6003, cVar));
+            }
+        } else {
+            arrayList = null;
+        }
+        if (this.e) {
+            ArrayList arrayList2 = this.w;
+            int size = arrayList2.size();
+            int i11 = 0;
+            while (true) {
+                if (i11 >= size) {
+                    break;
+                }
+                Object obj = arrayList2.get(i11);
+                i11++;
+                b bVar3 = (b) obj;
+                if (Objects.equals(bVar3.a, arrayList)) {
+                    bVar = bVar3;
+                    break;
+                }
+            }
+        } else {
+            bVar = this.H;
+        }
+        if (bVar != null) {
+            bVar.b(jVar);
+            return bVar;
+        }
+        b e7 = e(arrayList, false, jVar, z10);
+        if (!this.e) {
+            this.H = e7;
+        }
+        this.w.add(e7);
+        return e7;
+    }
+
+    @Override // n2.m
+    public final void b() {
+        q bVar;
+        h(true);
+        int i10 = this.E;
+        this.E = i10 + 1;
+        if (i10 != 0) {
+            return;
+        }
+        if (this.F == null) {
+            UUID uuid = this.a;
+            this.b.getClass();
+            try {
+                try {
+                    bVar = new t(uuid);
+                } catch (w unused) {
+                    e2.a.e("FrameworkMediaDrm", "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
+                    bVar = new qb.b(13);
+                }
+                this.F = bVar;
+                bVar.d(new l.d(this, 5));
+                return;
+            } catch (UnsupportedSchemeException e) {
+                throw new w(e);
+            } catch (Exception e7) {
+                throw new w(e7);
+            }
+        }
+        if (this.v == -9223372036854775807L) {
+            return;
+        }
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.w;
+            if (i11 >= arrayList.size()) {
+                return;
+            }
+            ((b) arrayList.get(i11)).b(null);
+            i11++;
         }
     }
 
-    public e(int i10, int i11, int[] iArr) {
-        this.a = 4;
-        g60[] g60VarArr = new g60[(iArr.length / 2) + 1];
-        this.b = g60VarArr;
-        g60 g60Var = new g60(i10, i11);
-        int i12 = 0;
-        g60VarArr[0] = g60Var;
-        while (i12 < iArr.length / 2) {
-            int i13 = i12 + 1;
-            int i14 = i12 * 2;
-            ((g60[]) this.b)[i13] = new g60(iArr[i14], iArr[i14 + 1]);
-            i12 = i13;
+    public final b d(List list, boolean z10, j jVar) {
+        this.F.getClass();
+        boolean z11 = this.h | z10;
+        q qVar = this.F;
+        byte[] bArr = this.K;
+        Looper looper = this.I;
+        looper.getClass();
+        j2.k kVar = this.L;
+        kVar.getClass();
+        b bVar = new b(this.a, qVar, this.n, this.s, list, z11, z10, bArr, this.d, this.c, looper, this.r, kVar);
+        bVar.b(jVar);
+        if (this.v != -9223372036854775807L) {
+            bVar.b(null);
+        }
+        return bVar;
+    }
+
+    public final b e(List list, boolean z10, j jVar, boolean z11) {
+        b d = d(list, z10, jVar);
+        boolean c10 = c(d);
+        long j3 = this.v;
+        Set set = this.y;
+        if (c10 && !set.isEmpty()) {
+            o1 it = m0.v(set).iterator();
+            while (it.hasNext()) {
+                ((g) it.next()).a(null);
+            }
+            d.a(jVar);
+            if (j3 != -9223372036854775807L) {
+                d.a(null);
+            }
+            d = d(list, z10, jVar);
+        }
+        if (c(d) && z11) {
+            Set set2 = this.x;
+            if (!set2.isEmpty()) {
+                o1 it2 = m0.v(set2).iterator();
+                while (it2.hasNext()) {
+                    ((d) it2.next()).release();
+                }
+                if (!set.isEmpty()) {
+                    o1 it3 = m0.v(set).iterator();
+                    while (it3.hasNext()) {
+                        ((g) it3.next()).a(null);
+                    }
+                }
+                d.a(jVar);
+                if (j3 != -9223372036854775807L) {
+                    d.a(null);
+                }
+                return d(list, z10, jVar);
+            }
+        }
+        return d;
+    }
+
+    public final void g() {
+        if (this.F != null && this.E == 0 && this.w.isEmpty() && this.x.isEmpty()) {
+            q qVar = this.F;
+            qVar.getClass();
+            qVar.release();
+            this.F = null;
         }
     }
 
-    public e(Context context, GestureDetector.OnGestureListener onGestureListener) {
-        this.a = 15;
-        this.b = new GestureDetector(context, onGestureListener, null);
+    public final void h(boolean z10) {
+        if (z10 && this.I == null) {
+            e2.a.o("DefaultDrmSessionMgr", "DefaultDrmSessionManager accessed before setPlayer(), possibly on the wrong thread.", new IllegalStateException());
+            return;
+        }
+        Thread currentThread = Thread.currentThread();
+        Looper looper = this.I;
+        looper.getClass();
+        if (currentThread != looper.getThread()) {
+            e2.a.o("DefaultDrmSessionMgr", "DefaultDrmSessionManager accessed on the wrong thread.\nCurrent thread: " + Thread.currentThread().getName() + "\nExpected thread: " + this.I.getThread().getName(), new IllegalStateException());
+        }
     }
 
-    @Override // org.telegram.ui.Components.jq0
-    public /* synthetic */ void U() {
+    @Override // n2.m
+    public final l k0(j jVar, b2.s sVar) {
+        e2.d.g(this.E > 0);
+        e2.d.h(this.I);
+        d dVar = new d(this, jVar);
+        Handler handler = this.J;
+        handler.getClass();
+        handler.post(new ki.l(10, dVar, sVar));
+        return dVar;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ void o() {
-    }
-
-    public e(Context context, Uri uri) {
-        this.a = 1;
-        this.b = context.getContentResolver().acquireUnstableContentProviderClient(uri);
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ void G(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public /* synthetic */ void P(String str) {
-    }
-
-    @Override // org.telegram.ui.u9
-    public /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public /* synthetic */ void onSeekFinished(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public /* synthetic */ void onSeekStarted(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public void onError(t71 t71Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public /* synthetic */ void A(TLRPC.TL_document tL_document, String str, Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.sa0
-    public /* synthetic */ void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // n2.m
+    public final void release() {
+        h(true);
+        int i10 = this.E - 1;
+        this.E = i10;
+        if (i10 != 0) {
+            return;
+        }
+        if (this.v != -9223372036854775807L) {
+            ArrayList arrayList = new ArrayList(this.w);
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                ((b) arrayList.get(i11)).a(null);
+            }
+        }
+        o1 it = m0.v(this.x).iterator();
+        while (it.hasNext()) {
+            ((d) it.next()).release();
+        }
+        g();
     }
 }

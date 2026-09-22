@@ -12,7 +12,7 @@ import m4.q;
 import m4.r;
 import m4.z;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
         this.a = i10;
     }
 
-    public static /* bridge */ /* synthetic */ AudioDeviceInfo d(Object obj) {
+    public static /* bridge */ /* synthetic */ AudioDeviceInfo c(Object obj) {
         return (AudioDeviceInfo) obj;
     }
 
@@ -35,7 +35,7 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, e1 {
     }
 
     @Override // m4.z
-    public void c(q qVar, int i10) {
+    public void d(q qVar, int i10) {
         switch (this.a) {
             case 25:
                 qVar.getClass();

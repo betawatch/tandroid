@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qg implements q0.a {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class qg implements q0.a {
                 znVar.getClass();
                 if (num.intValue() != 0) {
                     znVar.Bc(true);
-                    znVar.F(num.intValue(), 0, 0, 0, false, true);
+                    znVar.E(num.intValue(), 0, 0, 0, false, true);
                     break;
                 } else {
                     znVar.l1 = 0;
@@ -39,7 +39,7 @@ public final /* synthetic */ class qg implements q0.a {
                         znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
                     }
                     znVar2.Ac(true);
-                    znVar2.F(num2.intValue(), 0, 0, 0, false, true);
+                    znVar2.E(num2.intValue(), 0, 0, 0, false, true);
                     break;
                 } else {
                     znVar2.m1 = 0;

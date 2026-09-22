@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class dc1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -184,16 +184,16 @@ public final class dc1 extends LinearLayout {
                             }
                         }
                         if (i10 != indexOfChild) {
-                            org.telegram.ui.Components.xm0 xm0Var = scrollSlidingTextTabStrip.b;
+                            org.telegram.ui.Components.zm0 zm0Var = scrollSlidingTextTabStrip.b;
                             sparseIntArray.get(i10);
-                            xm0Var.getClass();
+                            zm0Var.getClass();
                         }
                     }
                 } else if (motionEvent.getAction() == 1) {
                     View view3 = scrollSlidingTextTabStrip.c0;
                     if (view3 != null) {
                         final int i12 = 0;
-                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
+                        view3.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.xm0
                             public final /* synthetic */ dc1 b;
 
                             {
@@ -222,7 +222,7 @@ public final class dc1 extends LinearLayout {
                     View view4 = scrollSlidingTextTabStrip.c0;
                     if (view4 != null) {
                         final int i13 = 1;
-                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.vm0
+                        view4.animate().translationX(0.0f).translationY(0.0f).setDuration(320L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.xm0
                             public final /* synthetic */ dc1 b;
 
                             {
@@ -291,11 +291,11 @@ public final class dc1 extends LinearLayout {
                 }
                 return super.drawChild(canvas, view, j3);
             case 8:
-                org.telegram.ui.Components.um0 um0Var = (org.telegram.ui.Components.um0) this.b;
-                if (view instanceof org.telegram.ui.Components.ox0) {
-                    ((org.telegram.ui.Components.ox0) view).a(um0Var.i0);
+                org.telegram.ui.Components.wm0 wm0Var = (org.telegram.ui.Components.wm0) this.b;
+                if (view instanceof org.telegram.ui.Components.qx0) {
+                    ((org.telegram.ui.Components.qx0) view).a(wm0Var.i0);
                 }
-                if (view == um0Var.s) {
+                if (view == wm0Var.s) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j3);
@@ -468,7 +468,7 @@ public final class dc1 extends LinearLayout {
             case 11:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.h41) this.b).c.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.j41) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -537,10 +537,10 @@ public final class dc1 extends LinearLayout {
     public void setVisibility(int i10) {
         switch (this.a) {
             case 10:
-                org.telegram.ui.Components.jx0 jx0Var = (org.telegram.ui.Components.jx0) this.b;
-                org.telegram.ui.Components.v9 v9Var = jx0Var.b;
+                org.telegram.ui.Components.lx0 lx0Var = (org.telegram.ui.Components.lx0) this.b;
+                org.telegram.ui.Components.v9 v9Var = lx0Var.b;
                 if (getVisibility() == 8 && i10 == 0) {
-                    jx0Var.c();
+                    lx0Var.c();
                     if (LiteMode.isEnabled(3)) {
                         v9Var.getImageReceiver().startAnimation();
                     }

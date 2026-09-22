@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.i70;
-import org.telegram.ui.Components.m81;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.l70;
+import org.telegram.ui.Components.o81;
+import org.telegram.ui.Components.z81;
 import org.telegram.ui.bi1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class l6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final class l6 implements ValueAnimator.AnimatorUpdateListener {
                 ((org.telegram.ui.Components.v9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 8:
-                w0 w0Var = ((i70) this.b).e.d;
+                w0 w0Var = ((l70) this.b).e.d;
                 int i11 = w0Var.E1;
                 if (i11 != -1 && (view = w0Var.F1) != null) {
                     w0Var.j1(i11, view);
@@ -90,17 +90,17 @@ public final class l6 implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 9:
-                x81 x81Var = (x81) this.b;
-                View[] viewArr = x81Var.e;
-                if (x81Var.x) {
+                z81 z81Var = (z81) this.b;
+                View[] viewArr = z81Var.e;
+                if (z81Var.x) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    x81Var.c = abs;
-                    m81 m81Var = x81Var.M;
-                    if (m81Var != null) {
-                        m81Var.e(abs, x81Var.d, x81Var.b);
+                    z81Var.c = abs;
+                    o81 o81Var = z81Var.M;
+                    if (o81Var != null) {
+                        o81Var.e(abs, z81Var.d, z81Var.b);
                     }
                 }
-                x81Var.x(false);
+                z81Var.x(false);
                 break;
             case 10:
                 org.telegram.ui.Components.voip.u1 u1Var = (org.telegram.ui.Components.voip.u1) this.b;

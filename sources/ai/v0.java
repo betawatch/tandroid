@@ -19,7 +19,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dj0;
 import org.telegram.ui.rf;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -225,7 +225,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ii.o4 o4Var = (ii.o4) this.b;
                 ii.a aVar2 = o4Var.a;
                 if (aVar2 != null && (m4Var = o4Var.G) != null) {
-                    ((ii.s3) m4Var).a.h3.t(aVar2);
+                    ((ii.s3) m4Var).a.h3.q(aVar2);
                     break;
                 }
                 break;

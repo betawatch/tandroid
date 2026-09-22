@@ -4,18 +4,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ko implements Utilities.Callback {
-    public final /* synthetic */ v70 a;
+    public final /* synthetic */ y70 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 f;
 
-    public /* synthetic */ ko(v70 v70Var, int i10, long j3, long j10, org.telegram.ui.zn znVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.a = v70Var;
+    public /* synthetic */ ko(y70 y70Var, int i10, long j3, long j10, org.telegram.ui.zn znVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.a = y70Var;
         this.b = i10;
         this.c = j3;
         this.d = j10;

@@ -1,28 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.graphics.Canvas;
+import android.view.View;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class pz0 {
-    public final int a;
-    public final int b;
+public interface pz0 extends org.telegram.ui.Cells.ca {
+    void attach(View view);
 
-    public pz0(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
+    void detach(View view);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || pz0.class != obj.getClass()) {
-            return false;
-        }
-        pz0 pz0Var = (pz0) obj;
-        return this.b == pz0Var.b && this.a == pz0Var.a;
-    }
+    void draw(Canvas canvas, View view);
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
+    int getEmojiOnlyCount();
+
+    void setRow(int i10);
+
+    void setX(int i10);
+
+    void setY(int i10);
 }

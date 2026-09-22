@@ -9,7 +9,7 @@ import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m extends jf.a {
     public static final Logger r = Logger.getLogger(m.class.getName());
@@ -32,7 +32,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:108:0x023f, code lost:
     
-        r2.d.E0(r2.a.e());
+        r2.d.A0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x0215, code lost:
     
@@ -40,7 +40,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x024e, code lost:
     
-        r2.d.E0(r2.a.e());
+        r2.d.A0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:113:0x0259, code lost:
     
@@ -100,7 +100,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x025a, code lost:
     
-        r8.E0(r13);
+        r8.A0(r13);
      */
     /* JADX WARN: Removed duplicated region for block: B:124:0x028c  */
     /* JADX WARN: Removed duplicated region for block: B:177:0x0323  */
@@ -147,12 +147,12 @@ public final class m extends jf.a {
                 iVar.b = 0;
                 iVar.c = 0;
                 long j13 = dVar.b;
-                a4.m mVar = new a4.m(dVar, 27);
+                android.support.v4.media.c cVar = new android.support.v4.media.c(dVar, 26);
                 byte[] bArr = new byte[3];
                 int i11 = 0;
                 for (int i12 = 3; i11 < i12; i12 = 3) {
                     long j14 = j13;
-                    int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr, i11, 3 - i11);
+                    int read = ((com.google.firebase.messaging.d) cVar.b).read(bArr, i11, 3 - i11);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -164,50 +164,50 @@ public final class m extends jf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte x02 = mVar.x0();
-                iVar.a = x02;
-                if (x02 != 2 && x02 != 3 && x02 != 4) {
-                    throw new c(k0.h(x02, "Unsupported ID3v2 version: "));
+                byte s02 = cVar.s0();
+                iVar.a = s02;
+                if (s02 != 2 && s02 != 3 && s02 != 4) {
+                    throw new c(k0.h(s02, "Unsupported ID3v2 version: "));
                 }
-                byte x03 = mVar.x0();
-                byte x04 = mVar.x0();
-                int B0 = mVar.B0();
-                iVar.b = B0 + 10;
-                if (x02 == 2) {
-                    iVar.d = (x04 & 128) != 0;
-                    iVar.e = (x04 & 64) != 0;
-                    b11 = x03;
+                byte s03 = cVar.s0();
+                byte s04 = cVar.s0();
+                int w02 = cVar.w0();
+                iVar.b = w02 + 10;
+                if (s02 == 2) {
+                    iVar.d = (s04 & 128) != 0;
+                    iVar.e = (s04 & 64) != 0;
+                    b11 = s03;
                 } else {
-                    iVar.d = (x04 & 128) != 0;
-                    if ((x04 & 64) == 0) {
-                        b11 = x03;
-                        b12 = x04;
-                    } else if (x02 == 3) {
-                        int A0 = mVar.A0();
-                        mVar.x0();
-                        mVar.x0();
-                        mVar.A0();
-                        b11 = x03;
-                        b12 = x04;
-                        mVar.E0(A0 - 6);
+                    iVar.d = (s04 & 128) != 0;
+                    if ((s04 & 64) == 0) {
+                        b11 = s03;
+                        b12 = s04;
+                    } else if (s02 == 3) {
+                        int u02 = cVar.u0();
+                        cVar.s0();
+                        cVar.s0();
+                        cVar.u0();
+                        b11 = s03;
+                        b12 = s04;
+                        cVar.A0(u02 - 6);
                     } else {
-                        b11 = x03;
-                        b12 = x04;
-                        mVar.E0(mVar.B0() - 4);
+                        b11 = s03;
+                        b12 = s04;
+                        cVar.A0(cVar.w0() - 4);
                     }
-                    if (x02 >= 4 && (b12 & 16) != 0) {
+                    if (s02 >= 4 && (b12 & 16) != 0) {
                         iVar.c = 10;
-                        iVar.b = B0 + 20;
+                        iVar.b = w02 + 20;
                     }
                 }
                 int i13 = (int) (dVar.b - j15);
                 gVar.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(x02), Integer.valueOf(b11));
+                String.format("2.%d.%d", Integer.valueOf(s02), Integer.valueOf(b11));
                 int i14 = iVar.b;
                 if (iVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (x02 >= 4 || !iVar.d) {
+                if (s02 >= 4 || !iVar.d) {
                     logger = logger2;
                     hVar = new h(nVar, i13, (i14 - i13) - iVar.c, iVar);
                 } else {
@@ -234,7 +234,7 @@ public final class m extends jf.a {
                     hVar = new h(new ByteArrayInputStream(bArr2, 0, i17), i13, i17, iVar);
                     logger = logger2;
                 }
-                a4.m mVar2 = (a4.m) hVar.d;
+                android.support.v4.media.c cVar2 = (android.support.v4.media.c) hVar.d;
                 mf.a aVar2 = (mf.a) hVar.b;
                 while (true) {
                     try {
@@ -263,7 +263,7 @@ public final class m extends jf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                mVar2.E0(aVar.e());
+                                cVar2.A0(aVar.e());
                                 i10 = iVar.c;
                                 if (i10 > 0) {
                                 }
@@ -309,7 +309,7 @@ public final class m extends jf.a {
                         aVar = aVar2;
                     }
                 }
-                mVar2.E0(aVar.e());
+                cVar2.A0(aVar.e());
                 i10 = iVar.c;
                 if (i10 > 0) {
                     nVar.skip(i10);

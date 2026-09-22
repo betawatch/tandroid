@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h2 {
-    public final a4.m a;
+    public final android.support.v4.media.c a;
     public boolean e;
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
@@ -24,8 +24,8 @@ public final class h2 {
     public final i2.g0 g = new i2.g0(this, 6);
     public g2 d = b();
 
-    public h2(a4.m mVar) {
-        this.a = mVar;
+    public h2(android.support.v4.media.c cVar) {
+        this.a = cVar;
     }
 
     public static void e(TL_iv.PageBlock pageBlock) {
@@ -204,8 +204,8 @@ public final class h2 {
             }
         }
         e2 e2Var = g2Var.b;
-        a4.m mVar = this.a;
-        w3 w3Var = (w3) mVar.b;
+        android.support.v4.media.c cVar = this.a;
+        w3 w3Var = (w3) cVar.b;
         w3Var.n3.f(false);
         ArrayList arrayList3 = w3Var.l3;
         arrayList3.clear();
@@ -217,7 +217,7 @@ public final class h2 {
         }
         w3Var.h3.onContentChanged();
         this.f = false;
-        ((w3) mVar.b).h3.G();
+        ((w3) cVar.b).h3.I();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -243,8 +243,8 @@ public final class h2 {
     public final g2 b() {
         e2 e2Var;
         m0 m0Var;
-        a4.m mVar = this.a;
-        ArrayList arrayList = ((w3) mVar.b).l3;
+        android.support.v4.media.c cVar = this.a;
+        ArrayList arrayList = ((w3) cVar.b).l3;
         HashMap hashMap = new HashMap();
         g2 g2Var = this.d;
         if (g2Var != null) {
@@ -281,7 +281,7 @@ public final class h2 {
             }
             f2VarArr[i10] = new f2(aVar.a, byteArray, aVar.c, aVar.d, aVar.e, aVar.f, aVar.i, aVar.g, aVar.h != null ? new ArrayList(aVar.h) : null, new ArrayList(arrayList2));
         }
-        View findFocus = ((w3) mVar.b).findFocus();
+        View findFocus = ((w3) cVar.b).findFocus();
         if (findFocus instanceof i1) {
             ?? r12 = (i1) findFocus;
             int selectionStart = r12.getSelectionStart();
@@ -357,7 +357,7 @@ public final class h2 {
         }
         this.c.clear();
         this.d = b10;
-        ((w3) this.a.b).h3.G();
+        ((w3) this.a.b).h3.I();
     }
 
     public final void d() {
@@ -382,7 +382,7 @@ public final class h2 {
         i2.g0 g0Var = this.g;
         AndroidUtilities.cancelRunOnUIThread(g0Var);
         AndroidUtilities.runOnUIThread(g0Var, 800L);
-        ((w3) this.a.b).h3.G();
+        ((w3) this.a.b).h3.I();
     }
 
     public final void h() {
@@ -412,7 +412,7 @@ public final class h2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((w3) this.a.b).h3.G();
+        ((w3) this.a.b).h3.I();
     }
 
     public final void k() {

@@ -23,7 +23,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k2.u;
+import ki.e0;
 import u2.b1;
 import u2.c0;
 import u2.c1;
@@ -34,13 +34,13 @@ import u2.p1;
 import v7.j0;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements d0, d1, v2.g {
     public static final Pattern P = Pattern.compile("CC([1-4])=(.+)");
     public static final Pattern Q = Pattern.compile("([1-4])=lang:(\\w+)(,.+)?");
     public final a5.a E;
-    public final n2.k F;
+    public final n2.j F;
     public c0 G;
     public u2.n J;
     public m2.c K;
@@ -50,7 +50,7 @@ public final class b implements d0, d1, v2.g {
     public final int a;
     public final a5.a b;
     public final g2.c0 c;
-    public final n2.n d;
+    public final n2.m d;
     public final qb.b e;
     public final t f;
     public final long h;
@@ -65,7 +65,7 @@ public final class b implements d0, d1, v2.g {
     public l[] I = new l[0];
     public final IdentityHashMap y = new IdentityHashMap();
 
-    public b(int i10, m2.c cVar, t tVar, int i11, a5.a aVar, g2.c0 c0Var, n2.n nVar, n2.k kVar, qb.b bVar, a5.a aVar2, long j3, y2.n nVar2, y2.d dVar, ob.a aVar3, u uVar, j2.k kVar2) {
+    public b(int i10, m2.c cVar, t tVar, int i11, a5.a aVar, g2.c0 c0Var, n2.m mVar, n2.j jVar, qb.b bVar, a5.a aVar2, long j3, y2.n nVar, y2.d dVar, ob.a aVar3, e0 e0Var, j2.k kVar) {
         int i12;
         int i13;
         int[][] iArr;
@@ -74,22 +74,22 @@ public final class b implements d0, d1, v2.g {
         s[] sVarArr2;
         m2.f e;
         Integer num;
-        n2.n nVar3 = nVar;
+        n2.m mVar2 = mVar;
         this.a = i10;
         this.K = cVar;
         this.f = tVar;
         this.L = i11;
         this.b = aVar;
         this.c = c0Var;
-        this.d = nVar3;
-        this.F = kVar;
+        this.d = mVar2;
+        this.F = jVar;
         this.e = bVar;
         this.E = aVar2;
         this.h = j3;
-        this.n = nVar2;
+        this.n = nVar;
         this.r = dVar;
         this.w = aVar3;
-        this.x = new o(cVar, uVar, dVar);
+        this.x = new o(cVar, e0Var, dVar);
         aVar3.getClass();
         g0 g0Var = i0.b;
         a1 a1Var = a1.e;
@@ -115,13 +115,13 @@ public final class b implements d0, d1, v2.g {
             List list4 = aVar4.f;
             m2.f e7 = e("http://dashif.org/guidelines/trickmode", list3);
             e7 = e7 == null ? e("http://dashif.org/guidelines/trickmode", list4) : e7;
-            int intValue = (e7 == null || (num = (Integer) hashMap.get(Long.valueOf(Long.parseLong(e7.b)))) == null || !a(aVar4, (m2.a) list2.get(num.intValue()))) ? i15 : num.intValue();
+            int intValue = (e7 == null || (num = (Integer) hashMap.get(Long.valueOf(Long.parseLong(e7.b)))) == null || !b(aVar4, (m2.a) list2.get(num.intValue()))) ? i15 : num.intValue();
             if (intValue == i15 && (e = e("urn:mpeg:dash:adaptation-set-switching:2016", list4)) != null) {
                 String str = e.b;
                 String str2 = e2.d0.a;
                 for (String str3 : str.split(",", -1)) {
                     Integer num2 = (Integer) hashMap.get(Long.valueOf(Long.parseLong(str3)));
-                    if (num2 != null && a(aVar4, (m2.a) list2.get(num2.intValue()))) {
+                    if (num2 != null && b(aVar4, (m2.a) list2.get(num2.intValue()))) {
                         intValue = Math.min(intValue, num2.intValue());
                     }
                 }
@@ -237,7 +237,7 @@ public final class b implements d0, d1, v2.g {
                 s sVar = ((m2.m) arrayList3.get(i27)).a;
                 int i29 = i24;
                 r a2 = sVar.a();
-                a2.R = nVar3.M0(sVar);
+                a2.R = mVar2.M0(sVar);
                 sVarArr5[i27] = new s(a2);
                 i27++;
                 size2 = i28;
@@ -292,7 +292,7 @@ public final class b implements d0, d1, v2.g {
             }
             i25++;
             size2 = i30;
-            nVar3 = nVar;
+            mVar2 = mVar;
             i24 = i13;
             list2 = list9;
         }
@@ -313,7 +313,7 @@ public final class b implements d0, d1, v2.g {
         this.v = (a[]) create.second;
     }
 
-    public static boolean a(m2.a aVar, m2.a aVar2) {
+    public static boolean b(m2.a aVar, m2.a aVar2) {
         int i10 = aVar.b;
         List list = aVar.c;
         int i11 = aVar2.b;
@@ -517,11 +517,16 @@ public final class b implements d0, d1, v2.g {
     @Override // u2.d0
     public final void k(c0 c0Var, long j3) {
         this.G = c0Var;
-        c0Var.b(this);
+        c0Var.a(this);
+    }
+
+    @Override // u2.d1
+    public final void l(e1 e1Var) {
+        this.G.l(this);
     }
 
     @Override // u2.d0
-    public final long l() {
+    public final long m() {
         v2.h[] hVarArr = this.H;
         int length = hVarArr.length;
         for (int i10 = 0; i10 < length; i10++) {
@@ -538,20 +543,15 @@ public final class b implements d0, d1, v2.g {
         return -9223372036854775807L;
     }
 
-    @Override // u2.d1
-    public final void m(e1 e1Var) {
-        this.G.m(this);
-    }
-
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
-        return this.J.p(r0Var);
+    public final boolean q(i2.r0 r0Var) {
+        return this.J.q(r0Var);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r9v10, types: [e9.i0] */
     @Override // u2.d0
-    public final long q(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long r(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
         int i10;
         boolean z10;
         int[] iArr;
@@ -782,24 +782,24 @@ public final class b implements d0, d1, v2.g {
     }
 
     @Override // u2.d0
-    public final p1 r() {
+    public final p1 s() {
         return this.s;
     }
 
     @Override // u2.e1
-    public final long s() {
-        return this.J.s();
+    public final long t() {
+        return this.J.t();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0056, code lost:
     
-        if (r3 < (((r10.w() + r8) + r11) - 1)) goto L19;
+        if (r3 < (((r10.M() + r8) + r11) - 1)) goto L19;
      */
     @Override // u2.d0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long t(long j3, i2.p1 p1Var) {
+    public final long u(long j3, i2.p1 p1Var) {
         long j10;
         long j11 = j3;
         v2.h[] hVarArr = this.H;
@@ -823,13 +823,13 @@ public final class b implements d0, d1, v2.g {
                         long d = iVar.d();
                         if (d != 0) {
                             e2.d.h(hVar3);
-                            long s10 = hVar3.s(j11, iVar.e) + j12;
-                            long f7 = iVar.f(s10);
+                            long t10 = hVar3.t(j11, iVar.e) + j12;
+                            long f7 = iVar.f(t10);
                             if (f7 < j11) {
                                 if (d != -1) {
                                     e2.d.h(hVar3);
                                 }
-                                j10 = iVar.f(s10 + 1);
+                                j10 = iVar.f(t10 + 1);
                                 return p1Var.a(j11, f7, j10);
                             }
                             j10 = f7;
@@ -848,7 +848,7 @@ public final class b implements d0, d1, v2.g {
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
+    public final void v(long j3) {
         int i10;
         v2.h[] hVarArr = this.H;
         int length = hVarArr.length;
@@ -888,6 +888,6 @@ public final class b implements d0, d1, v2.g {
             i10 = i11;
             i11 = i10 + 1;
         }
-        this.J.u(j3);
+        this.J.v(j3);
     }
 }

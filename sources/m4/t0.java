@@ -3,14 +3,14 @@ package m4;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.u81;
-import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.rc;
 import org.telegram.ui.sc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t0 implements e2.h {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class t0 implements e2.h {
 
     @Override // e2.h
     public final void accept(Object obj) {
-        v81 v81Var;
+        x81 x81Var;
         switch (this.a) {
             case 0:
                 ((j1) obj).K0((b2.e) this.c, this.b);
@@ -64,12 +64,12 @@ public final /* synthetic */ class t0 implements e2.h {
                 }
                 break;
             default:
-                w81 w81Var = (w81) this.c;
+                y81 y81Var = (y81) this.c;
                 View view3 = (View) obj;
-                w81Var.v.getClass();
+                y81Var.v.getClass();
                 int S = RecyclerView.S(view3);
-                if (view3 instanceof u81) {
-                    ((u81) view3).setReordering(this.b && (v81Var = w81Var.y) != null && ((l.d) v81Var).H(S));
+                if (view3 instanceof w81) {
+                    ((w81) view3).setReordering(this.b && (x81Var = y81Var.y) != null && ((ki.e0) x81Var).d(S));
                     break;
                 }
                 break;

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import m.j2;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.pd0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -114,10 +114,10 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
                 }
                 break;
             default:
-                md0 md0Var = (md0) obj;
-                md0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                md0Var.h = md0Var.e.getCurrentItem();
-                md0.a(md0Var, md0Var.h, 0);
+                pd0 pd0Var = (pd0) obj;
+                pd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                pd0Var.h = pd0Var.e.getCurrentItem();
+                pd0.a(pd0Var, pd0Var.h, 0);
                 break;
         }
     }

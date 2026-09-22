@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class lz extends LinearLayout {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -34,15 +34,15 @@ public final class lz extends LinearLayout {
         setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        w7.b6.b(frameLayout, 0.05f, 1.25f);
+        w7.a6.b(frameLayout, 0.05f, 1.25f);
         addView(frameLayout, w7.y5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
         this.c = v9Var;
-        v9Var.setImageDrawable(new org.telegram.ui.Components.hj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        v9Var.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout.addView(v9Var, w7.y5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         int i10 = org.telegram.ui.ActionBar.j6.z6;
-        TextView b10 = w7.d6.b(context, 14.0f, i10, true, null);
+        TextView b10 = w7.c6.b(context, 14.0f, i10, true, null);
         b10.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.TopicsLayoutTabs, b10), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout2.addView(b10, w7.y5.e(-2, -2, 17));
         FrameLayout frameLayout3 = new FrameLayout(context);
@@ -53,20 +53,20 @@ public final class lz extends LinearLayout {
         frameLayout3.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.v0(i11, f6Var)));
         frameLayout2.addView(frameLayout3, w7.y5.e(-2, 26, 17));
         int i12 = org.telegram.ui.ActionBar.j6.g6;
-        TextView b11 = w7.d6.b(context, 14.0f, i12, true, null);
+        TextView b11 = w7.c6.b(context, 14.0f, i12, true, null);
         b11.setText(LocaleController.getString(R.string.TopicsLayoutTabs));
         frameLayout3.addView(b11, w7.y5.e(-2, -2, 17));
         frameLayout.addView(frameLayout2, w7.y5.d(-2, 26.0f, 49, 0.0f, 182.0f, 0.0f, 0.0f));
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.e = frameLayout4;
-        w7.b6.b(frameLayout4, 0.05f, 1.25f);
+        w7.a6.b(frameLayout4, 0.05f, 1.25f);
         addView(frameLayout4, w7.y5.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.v9 v9Var2 = new org.telegram.ui.Components.v9(context);
         this.f = v9Var2;
-        v9Var2.setImageDrawable(new org.telegram.ui.Components.hj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
+        v9Var2.setImageDrawable(new org.telegram.ui.Components.kj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout4.addView(v9Var2, w7.y5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout5 = new FrameLayout(context);
-        TextView b12 = w7.d6.b(context, 14.0f, i10, true, null);
+        TextView b12 = w7.c6.b(context, 14.0f, i10, true, null);
         b12.setPadding(org.telegram.ui.Cells.c1.c(12.0f, R.string.TopicsLayoutList, b12), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout5.addView(b12, w7.y5.e(-2, -2, 17));
         FrameLayout frameLayout6 = new FrameLayout(context);
@@ -74,7 +74,7 @@ public final class lz extends LinearLayout {
         frameLayout6.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         frameLayout6.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.j6.v0(i11, f6Var)));
         frameLayout5.addView(frameLayout6, w7.y5.e(-2, 26, 17));
-        TextView b13 = w7.d6.b(context, 14.0f, i12, true, null);
+        TextView b13 = w7.c6.b(context, 14.0f, i12, true, null);
         b13.setText(LocaleController.getString(R.string.TopicsLayoutList));
         frameLayout6.addView(b13, w7.y5.e(-2, -2, 17));
         frameLayout4.addView(frameLayout5, w7.y5.d(-2, 26.0f, 49, 0.0f, 182.0f, 0.0f, 0.0f));
@@ -127,7 +127,7 @@ public final class lz extends LinearLayout {
         if (z10) {
             v9Var = v9Var2;
         }
-        org.telegram.ui.Components.hj0 lottieAnimation = v9Var.getImageReceiver().getLottieAnimation();
+        org.telegram.ui.Components.kj0 lottieAnimation = v9Var.getImageReceiver().getLottieAnimation();
         if (lottieAnimation != null) {
             if (lottieAnimation.t() > (z10 ? 0.85f : 0.8f)) {
                 lottieAnimation.T(0.0f, false);

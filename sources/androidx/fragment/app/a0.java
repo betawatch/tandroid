@@ -55,10 +55,10 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.xr0;
+import org.telegram.ui.Components.zr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -108,9 +108,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                xr0 xr0Var = uVar.W;
+                zr0 zr0Var = uVar.W;
                 t8 t8Var = uVar.a;
-                xr0Var.a(t8Var == null ? "" : t8Var.E);
+                zr0Var.a(t8Var == null ? "" : t8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -209,10 +209,10 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (i13 > arrayList3.size() - 1) {
                     q2Var.k = 0;
                 }
-                zg.f0 f0Var = q2Var.j;
-                f0Var.e((zg.o0) arrayList3.get(q2Var.k));
+                zg.g0 g0Var = q2Var.j;
+                g0Var.e((zg.p0) arrayList3.get(q2Var.k));
                 q2Var.j = q2Var.i;
-                q2Var.i = f0Var;
+                q2Var.i = g0Var;
                 q2Var.p.invalidate();
                 return;
             case 15:
@@ -260,7 +260,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 23:
                 nc ncVar = (nc) this.b;
                 ncVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                ncVar.w0.f0(AndroidUtilities.emptyMotionEvent());
+                ncVar.w0.J(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
                 oc ocVar = ((nb) this.b).k0;

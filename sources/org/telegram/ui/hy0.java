@@ -10,10 +10,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class hy0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.vl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public s4.c0 b;
     public gy0 c;
     public org.telegram.ui.Components.mz d;
@@ -38,7 +38,7 @@ public final class hy0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (getParentActivity() == null) {
             return;
         }
-        org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(this, view);
+        org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(this, view);
         H.W(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false)));
         int i10 = this.y;
         H.l(0, LocaleController.getString(R.string.Unblock), new rx0(4, this, l4), i10 == 1);
@@ -122,20 +122,20 @@ public final class hy0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             mzVar.setText(LocaleController.getString(R.string.NoContacts));
         }
         frameLayout.addView(this.d, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.a = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.q1();
         this.a.setItemSelectorColorProvider(new ey0(this));
         this.a.setEmptyView(this.d);
-        org.telegram.ui.Components.vl0 vl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         s4.c0 c0Var = new s4.c0(1, false);
         this.b = c0Var;
-        vl0Var2.setLayoutManager(c0Var);
+        yl0Var2.setLayoutManager(c0Var);
         this.a.setVerticalScrollBarEnabled(false);
-        org.telegram.ui.Components.vl0 vl0Var3 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var3 = this.a;
         gy0 gy0Var = new gy0(this, context);
         this.c = gy0Var;
-        vl0Var3.setAdapter(gy0Var);
+        yl0Var3.setAdapter(gy0Var);
         this.a.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 27));
@@ -154,7 +154,7 @@ public final class hy0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.Components.vl0 vl0Var;
+        org.telegram.ui.Components.yl0 yl0Var;
         if (i10 != NotificationCenter.updateInterfaces) {
             if (i10 == NotificationCenter.blockedUsersDidLoad) {
                 this.d.c();
@@ -164,10 +164,10 @@ public final class hy0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             return;
         }
         int intValue = ((Integer) objArr[0]).intValue();
-        if (((MessagesController.UPDATE_MASK_AVATAR & intValue) == 0 && (MessagesController.UPDATE_MASK_NAME & intValue) == 0) || (vl0Var = this.a) == null) {
+        if (((MessagesController.UPDATE_MASK_AVATAR & intValue) == 0 && (MessagesController.UPDATE_MASK_NAME & intValue) == 0) || (yl0Var = this.a) == null) {
             return;
         }
-        int childCount = vl0Var.getChildCount();
+        int childCount = yl0Var.getChildCount();
         for (int i12 = 0; i12 < childCount; i12++) {
             View childAt = this.a.getChildAt(i12);
             if (childAt instanceof org.telegram.ui.Cells.c5) {
@@ -177,7 +177,7 @@ public final class hy0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.yl0 getListViewForSimpleGlass() {
         return this.a;
     }
 

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                 FrameLayout frameLayout = a00Var2.a;
                 if (frameLayout.getBackground() instanceof RippleDrawable) {
                     frameLayout.getBackground().setState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled});
-                    a00Var2.postDelayed(new cj(a00Var2, 29), 180L);
+                    a00Var2.postDelayed(new dj(a00Var2, 29), 180L);
                 }
                 float[] fArr = a00Var2.y;
                 if (a00Var2.x == null && a00Var2.s != null) {
@@ -78,7 +78,7 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
                         org.telegram.ui.ActionBar.n1 n1Var = new org.telegram.ui.ActionBar.n1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                         a00Var2.x = n1Var;
-                        n1Var.setOnDismissListener(new org.telegram.ui.Components.z80(a00Var2, s6Var, overlayContainerView, f7Var, 1));
+                        n1Var.setOnDismissListener(new org.telegram.ui.Components.c90(a00Var2, s6Var, overlayContainerView, f7Var, 1));
                         a00Var2.x.setOutsideTouchable(true);
                         a00Var2.x.setFocusable(true);
                         a00Var2.x.setBackgroundDrawable(new ColorDrawable(0));
@@ -177,9 +177,9 @@ public final /* synthetic */ class uz implements View.OnClickListener {
                     n1Var3.d(true);
                 }
                 if (a00Var6.s != null) {
-                    org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(a00Var6.getContext(), LocaleController.getString(R.string.InviteByQRCode), a00Var6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-                    ti0Var.m(R.raw.qr_code_logo);
-                    ti0Var.show();
+                    org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(a00Var6.getContext(), LocaleController.getString(R.string.InviteByQRCode), a00Var6.s, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+                    wi0Var.m(R.raw.qr_code_logo);
+                    wi0Var.show();
                     break;
                 }
                 break;

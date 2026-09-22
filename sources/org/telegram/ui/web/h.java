@@ -19,10 +19,10 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.z5;
 import org.telegram.ui.Components.v9;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements z5 {
     public final f6 a;
@@ -42,7 +42,7 @@ public final class h extends FrameLayout implements z5 {
         super(context);
         this.v = new Paint(1);
         this.a = f6Var;
-        b6.b(this, 0.03f, 1.25f);
+        a6.b(this, 0.03f, 1.25f);
         v9 v9Var = new v9(context);
         this.b = v9Var;
         v9Var.setRoundRadius(AndroidUtilities.dp(6.0f));

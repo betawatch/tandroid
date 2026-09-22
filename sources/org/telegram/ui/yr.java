@@ -14,7 +14,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class yr extends Drawable {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -43,7 +43,7 @@ public final class yr extends Drawable {
         this.h = paint2;
         Path path = new Path();
         this.i = path;
-        this.m = new org.telegram.ui.Components.d6(new cj(this, 12), 320L, org.telegram.ui.Components.qr.h, 0);
+        this.m = new org.telegram.ui.Components.d6(new dj(this, 12), 320L, org.telegram.ui.Components.qr.h, 0);
         xr xrVar = new xr(0, this);
         this.a = f6Var;
         this.d = context.getResources().getDrawable(i10).mutate();

@@ -31,14 +31,14 @@ import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u0 extends n2 {
     public static final int U = -1;
@@ -80,7 +80,7 @@ public final class u0 extends n2 {
     public boolean T;
     public pr a;
     public org.telegram.ui.ActionBar.v0 b;
-    public s61 c;
+    public u61 c;
     public gg.c2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -141,9 +141,9 @@ public final class u0 extends n2 {
         }
     }
 
-    public static void W(final u0 u0Var, w51 w51Var, final View view) {
-        if (w51Var.g && !u0Var.v.h(w51Var)) {
-            int i10 = w51Var.d;
+    public static void W(final u0 u0Var, y51 y51Var, final View view) {
+        if (y51Var.g && !u0Var.v.h(y51Var)) {
+            int i10 = y51Var.d;
             if (i10 == U) {
                 a0 a0Var = u0Var.v;
                 u0Var.I = true;
@@ -166,8 +166,8 @@ public final class u0 extends n2 {
                 u0Var.Y(true);
                 return;
             }
-            if (w51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) u0Var.N.get(w51Var.x);
+            if (y51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) u0Var.N.get(y51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -1009,17 +1009,17 @@ public final class u0 extends n2 {
         this.s.setTranslationY(AndroidUtilities.dp(8.0f));
         gg.c2 c2Var = new gg.c2(true);
         this.d = c2Var;
-        c2Var.a = new a6.m(this, 24);
+        c2Var.a = new pb.c(this, 25);
         a0 a0Var = new a0(this, new n0(this, 3));
         this.v = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        s61 s61Var = new s61(this, new bi.v(this, 24), new q0(this, 3), null);
-        this.c = s61Var;
-        s61Var.q1();
-        s61 s61Var2 = this.c;
-        s61Var2.Y2.r = false;
-        frameLayout.addView(s61Var2, y5.c(-1.0f, -1));
+        u61 u61Var = new u61(this, new bi.v(this, 24), new q0(this, 3), null);
+        this.c = u61Var;
+        u61Var.q1();
+        u61 u61Var2 = this.c;
+        u61Var2.Y2.r = false;
+        frameLayout.addView(u61Var2, y5.c(-1.0f, -1));
         this.actionBar.z(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;

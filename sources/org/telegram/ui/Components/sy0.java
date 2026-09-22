@@ -1,86 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class sy0 {
-    public final int a;
-    public final org.telegram.ui.Cells.w0 b;
-    public final org.telegram.ui.ActionBar.f6 c;
-    public final hj0 d;
-    public TL_account.TL_birthday e;
-    public u01 f;
-    public u01[] g;
-    public u01[] h;
-    public boolean i;
-    public u01 j;
-    public final RectF k = new RectF();
-    public final Paint l = new Paint(1);
-    public final yc m;
+public final class sy0 extends FrameLayout {
+    public float E;
+    public float F;
+    public ValueAnimator G;
+    public ValueAnimator H;
+    public com.google.firebase.messaging.m I;
+    public float J;
+    public boolean K;
+    public org.telegram.ui.Components.voip.h L;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public ci.eb f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView v;
+    public View w;
+    public int x;
+    public org.telegram.ui.Cells.fa y;
 
-    public sy0(int i10, org.telegram.ui.Cells.w0 w0Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.a = i10;
-        this.b = w0Var;
-        this.c = f6Var;
-        hj0 hj0Var = new hj0(R.raw.cake, AndroidUtilities.dp(66.0f), AndroidUtilities.dp(66.0f), true, null);
-        this.d = hj0Var;
-        hj0Var.H(false);
-        this.m = new yc(w0Var);
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i10 = this.x;
+        int i11 = org.telegram.ui.ActionBar.j6.Vi;
+        if (i10 != org.telegram.ui.ActionBar.j6.w0(null, i11, false)) {
+            this.x = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+        }
+        this.y.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        this.w.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d7, false));
     }
 
-    public final void a(Canvas canvas) {
-        int dp = AndroidUtilities.dp(66.0f);
-        org.telegram.ui.Cells.w0 w0Var = this.b;
-        int width = (w0Var.getWidth() - dp) / 2;
-        int dp2 = AndroidUtilities.dp(13.0f) + dp;
-        hj0 hj0Var = this.d;
-        hj0Var.setBounds(width, AndroidUtilities.dp(13.0f), width + dp, dp2);
-        hj0Var.draw(canvas);
-        this.f.c((w0Var.getWidth() - this.f.l()) / 2.0f, AndroidUtilities.dp(19.0f) + dp, 1.0f, -1, canvas);
-        int j3 = (int) (this.f.j() + AndroidUtilities.dp(19.0f) + dp + AndroidUtilities.dp(17.0f));
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.g.length; i11++) {
-            i10 = (int) (Math.max(this.g[i11].l(), this.h[i11].l()) + AndroidUtilities.dp(9.0f) + AndroidUtilities.dp(9.0f) + i10);
-        }
-        int width2 = (w0Var.getWidth() - i10) / 2;
-        int i12 = 0;
-        while (i12 < this.g.length) {
-            float max = Math.max(this.g[i12].l(), this.h[i12].l()) + AndroidUtilities.dp(9.0f) + AndroidUtilities.dp(9.0f);
-            float f7 = width2;
-            float f10 = (max / 2.0f) + f7;
-            int i13 = (int) (f7 + max);
-            u01 u01Var = this.g[i12];
-            u01Var.c(f10 - (u01Var.l() / 2.0f), j3, 0.75f, -1, canvas);
-            u01 u01Var2 = this.h[i12];
-            u01Var2.c(f10 - (u01Var2.l() / 2.0f), AndroidUtilities.dp(16.0f) + j3, 1.0f, -1, canvas);
-            i12++;
-            width2 = i13;
-        }
-        if (this.i) {
-            int dp3 = AndroidUtilities.dp(38.0f) + j3;
-            canvas.save();
-            float l4 = this.j.l() + AndroidUtilities.dp(26.0f);
-            float dp4 = AndroidUtilities.dp(30.0f);
-            float f11 = dp3;
-            RectF rectF = this.k;
-            rectF.set((w0Var.getWidth() - l4) / 2.0f, f11, (w0Var.getWidth() + l4) / 2.0f, f11 + dp4);
-            float a2 = this.m.a(0.1f);
-            canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-            float f12 = dp4 / 2.0f;
-            canvas.drawRoundRect(rectF, f12, f12, this.l);
-            this.j.c(rectF.left + AndroidUtilities.dp(13.0f), rectF.centerY(), 1.0f, -1, canvas);
-            canvas.restore();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        com.google.firebase.messaging.m mVar = this.I;
+        if (mVar != null) {
+            mVar.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) mVar.c;
+            if (animatorSet.isRunning()) {
+                return;
+            }
+            animatorSet.start();
         }
     }
 
-    public final void b() {
-        d5.m(this.b.getContext(), LocaleController.getString(R.string.DateOfBirth), LocaleController.getString(R.string.DateOfBirthAddToProfile), this.e, new x2(this, 11), null, true, false, this.c).a.show();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        com.google.firebase.messaging.m mVar = this.I;
+        if (mVar != null) {
+            mVar.a = false;
+            ((AnimatorSet) mVar.c).cancel();
+        }
     }
 }

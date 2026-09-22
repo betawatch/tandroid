@@ -34,10 +34,10 @@ import org.telegram.ui.Components.vd;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.xe;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j0 extends org.telegram.ui.ActionBar.f3 {
     public final int E;
@@ -114,14 +114,14 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
         this.n = g0Var;
         g0Var.setInAppInsetsController(iVar);
         g0Var.setOverrideHint(LocaleController.getString(R.string.GiftMessageAddHint));
-        g0Var.x4 = false;
+        g0Var.y4 = false;
         this.containerView.setClipChildren(false);
         this.containerView.setClipToPadding(false);
-        g0Var.w4 = false;
-        g0Var.h2 = !AndroidUtilities.isInMultiwindow && ((znVar = g0Var.O2) == null || !znVar.isInBubbleMode());
+        g0Var.x4 = false;
+        g0Var.i2 = !AndroidUtilities.isInMultiwindow && ((znVar = g0Var.P2) == null || !znVar.isInBubbleMode());
         g0Var.U0(false, false, false);
         g0Var.f1(true, false);
-        g0Var.y1.setPadding(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(20.0f), 0);
+        g0Var.z1.setPadding(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(20.0f), 0);
         g0Var.getSendButton().setAlpha(0.0f);
         g0Var.getEditField().setMaxLines(3);
         g0Var.setCustomWindowView(this.container);
@@ -337,8 +337,8 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
             }
         });
         this.containerView.addView(imageView, y5.e(56, 56, 53));
-        b6.b(frameLayout, 0.05f, 1.2f);
-        b6.a(imageView);
+        a6.b(frameLayout, 0.05f, 1.2f);
+        a6.a(imageView);
         ViewGroup viewGroup3 = this.containerView;
         r5.d dVar = new r5.d(this, 16);
         WeakHashMap weakHashMap = r0.i0.a;

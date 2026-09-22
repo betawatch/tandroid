@@ -19,7 +19,7 @@ import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.ok;
 import p4.s0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -78,11 +78,11 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
                 g7 g7Var = (g7) this.b;
-                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (a6.m) g7Var.i));
+                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (k2.e) g7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((k2.u) ((m4.k0) this.b).k.b).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((ki.e0) ((m4.k0) this.b).k.b).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;

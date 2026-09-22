@@ -5,19 +5,19 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import tg.r;
 import u4.g;
-import w9.o;
-import w9.w;
+import w9.p;
+import w9.x;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ boolean a;
-    public final /* synthetic */ o b;
+    public final /* synthetic */ p b;
     public final /* synthetic */ da.b c;
 
-    public b(boolean z10, o oVar, da.b bVar) {
+    public b(boolean z10, p pVar, da.b bVar) {
         this.a = z10;
-        this.b = oVar;
+        this.b = pVar;
         this.c = bVar;
     }
 
@@ -26,11 +26,11 @@ public final class b implements Callable {
         if (!this.a) {
             return null;
         }
-        o oVar = this.b;
-        ExecutorService executorService = oVar.k;
+        p pVar = this.b;
+        ExecutorService executorService = pVar.k;
         int i10 = 3;
-        g gVar = new g(i10, oVar, this.c);
-        ExecutorService executorService2 = w.a;
+        g gVar = new g(i10, pVar, this.c);
+        ExecutorService executorService2 = x.a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         executorService.execute(new r(gVar, executorService, taskCompletionSource, i10));
         taskCompletionSource.getTask();

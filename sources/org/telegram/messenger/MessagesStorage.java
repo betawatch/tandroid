@@ -50,7 +50,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class MessagesStorage extends BaseController {
     public static final String[] DATABASE_TABLES;
@@ -113,22 +113,22 @@ public class MessagesStorage extends BaseController {
     private static volatile MessagesStorage[] Instance = new MessagesStorage[4];
     private static final Object[] lockObjects = new Object[4];
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public interface BooleanCallback {
         void run(boolean z10);
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public interface IntCallback {
         void run(int i10);
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public interface LongCallback {
         void run(long j3);
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public static class ReadDialog {
         public int date;
         public int lastMid;
@@ -138,7 +138,7 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public class SavedReactionsUpdate {
         TLRPC.TL_messageReactions last;
         TLRPC.TL_messageReactions old;
@@ -151,12 +151,12 @@ public class MessagesStorage extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public interface StringCallback {
         void run(String str);
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public static class TopicKey {
         public long dialogId;
         public long topicId;
@@ -3382,7 +3382,7 @@ public class MessagesStorage extends BaseController {
                                                 int i14 = 0;
                                                 while (i14 < TLdeserialize.reactions.results.size()) {
                                                     TLRPC.ReactionCount reactionCount = TLdeserialize.reactions.results.get(i14);
-                                                    if (zg.q0.c(messagePeerReaction.reaction, reactionCount.reaction)) {
+                                                    if (zg.r0.c(messagePeerReaction.reaction, reactionCount.reaction)) {
                                                         int i15 = reactionCount.count - 1;
                                                         reactionCount.count = i15;
                                                         if (i15 <= 0) {
@@ -10107,28 +10107,28 @@ public class MessagesStorage extends BaseController {
             iVar2.b();
             if (tL_messageReactions != null && tL_messageReactions.results != null && tL_messageReactions.reactions_as_tags) {
                 for (int i11 = 0; i11 < tL_messageReactions.results.size(); i11++) {
-                    zg.o0 d = zg.o0.d(tL_messageReactions.results.get(i11).reaction);
+                    zg.p0 d = zg.p0.d(tL_messageReactions.results.get(i11).reaction);
                     iVar.k(d, d.h);
                 }
             }
             if (tL_messageReactions2 != null && tL_messageReactions2.results != null && tL_messageReactions2.reactions_as_tags) {
                 for (int i12 = 0; i12 < tL_messageReactions2.results.size(); i12++) {
-                    zg.o0 d10 = zg.o0.d(tL_messageReactions2.results.get(i12).reaction);
+                    zg.p0 d10 = zg.p0.d(tL_messageReactions2.results.get(i12).reaction);
                     iVar2.k(d10, d10.h);
                 }
             }
             for (int i13 = 0; i13 < iVar.m(); i13++) {
                 long j3 = iVar.j(i13);
-                zg.o0 o0Var = (zg.o0) iVar.n(i13);
-                if (!iVar2.d(j3) && getMessagesController().updateSavedReactionTags(savedReactionsUpdate.topic_id, o0Var, false, false)) {
+                zg.p0 p0Var = (zg.p0) iVar.n(i13);
+                if (!iVar2.d(j3) && getMessagesController().updateSavedReactionTags(savedReactionsUpdate.topic_id, p0Var, false, false)) {
                     hashSet.add(Long.valueOf(savedReactionsUpdate.topic_id));
                     z10 = true;
                 }
             }
             for (int i14 = 0; i14 < iVar2.m(); i14++) {
                 long j10 = iVar2.j(i14);
-                zg.o0 o0Var2 = (zg.o0) iVar2.n(i14);
-                if (!iVar.d(j10) && getMessagesController().updateSavedReactionTags(savedReactionsUpdate.topic_id, o0Var2, true, false)) {
+                zg.p0 p0Var2 = (zg.p0) iVar2.n(i14);
+                if (!iVar.d(j10) && getMessagesController().updateSavedReactionTags(savedReactionsUpdate.topic_id, p0Var2, true, false)) {
                     hashSet.add(Long.valueOf(savedReactionsUpdate.topic_id));
                     z10 = true;
                 }
@@ -10146,29 +10146,29 @@ public class MessagesStorage extends BaseController {
         a0.i iVar2 = new a0.i();
         if (tL_messageReactions != null && tL_messageReactions.results != null && tL_messageReactions.reactions_as_tags) {
             for (int i10 = 0; i10 < tL_messageReactions.results.size(); i10++) {
-                zg.o0 d = zg.o0.d(tL_messageReactions.results.get(i10).reaction);
+                zg.p0 d = zg.p0.d(tL_messageReactions.results.get(i10).reaction);
                 iVar.k(d, d.h);
             }
         }
         if (tL_messageReactions2 != null && tL_messageReactions2.results != null && tL_messageReactions2.reactions_as_tags) {
             for (int i11 = 0; i11 < tL_messageReactions2.results.size(); i11++) {
-                zg.o0 d10 = zg.o0.d(tL_messageReactions2.results.get(i11).reaction);
+                zg.p0 d10 = zg.p0.d(tL_messageReactions2.results.get(i11).reaction);
                 iVar2.k(d10, d10.h);
             }
         }
         boolean z10 = false;
         for (int i12 = 0; i12 < iVar.m(); i12++) {
             long j10 = iVar.j(i12);
-            zg.o0 o0Var = (zg.o0) iVar.n(i12);
+            zg.p0 p0Var = (zg.p0) iVar.n(i12);
             if (!iVar2.d(j10)) {
-                z10 = getMessagesController().updateSavedReactionTags(j3, o0Var, false, false) || z10;
+                z10 = getMessagesController().updateSavedReactionTags(j3, p0Var, false, false) || z10;
             }
         }
         for (int i13 = 0; i13 < iVar2.m(); i13++) {
             long j11 = iVar2.j(i13);
-            zg.o0 o0Var2 = (zg.o0) iVar2.n(i13);
+            zg.p0 p0Var2 = (zg.p0) iVar2.n(i13);
             if (!iVar.d(j11)) {
-                z10 = getMessagesController().updateSavedReactionTags(j3, o0Var2, true, false) || z10;
+                z10 = getMessagesController().updateSavedReactionTags(j3, p0Var2, true, false) || z10;
             }
         }
         if (z10) {
@@ -25837,7 +25837,7 @@ public class MessagesStorage extends BaseController {
         updateUnreadReactionsCountInternal("reaction_mentions", "reaction_mentions_topics", "unread_reactions", "unread_reactions", j3, j10, i10, z10);
     }
 
-    /* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
     public static class Hole {
         public int end;
         public int start;

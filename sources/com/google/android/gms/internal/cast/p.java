@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -267,11 +267,11 @@ public final /* synthetic */ class p implements Runnable {
                             a5.a aVar = new a5.a(10, 2);
                             cf.c cVar = (cf.c) a1Var.b;
                             aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-                            cf.c.E(cVar, new y6(aVar));
-                            x6 F = cVar.F();
+                            cf.c.D(cVar, new y6(aVar));
+                            x6 E = cVar.E();
                             b bVar2 = new b(new a(i12));
-                            bVar2.c = F.h;
-                            F.c.add(bVar2);
+                            bVar2.c = E.h;
+                            E.c.add(bVar2);
                             break;
                     }
                 }
@@ -309,7 +309,7 @@ public final /* synthetic */ class p implements Runnable {
                 c0Var.postDelayed(tVar, 10000L);
                 return;
             case 1:
-                l.f fVar = (l.f) ((l.d) this.e).a;
+                l.f fVar = (l.f) ((l.d) this.e).b;
                 l.n nVar2 = (l.n) this.c;
                 l.e eVar = (l.e) this.b;
                 if (eVar != null) {
@@ -323,10 +323,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((ka.c) this.b).c0((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((o0.b) this.b).j((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((ka.c) this.b).c0((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((o0.b) this.b).j((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (m5.e) this.d);

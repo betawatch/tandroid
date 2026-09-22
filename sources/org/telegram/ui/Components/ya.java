@@ -5,9 +5,9 @@ import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ya extends ul0 {
+public final class ya extends xl0 {
     public final /* synthetic */ int c;
     public final Context d;
     public final Object e;
@@ -24,7 +24,7 @@ public final class ya extends ul0 {
     public void B(s4.j0 j0Var) {
         switch (this.c) {
             case 0:
-                ((ul0) this.e).B(new xa(this, j0Var));
+                ((xl0) this.e).B(new xa(this, j0Var));
                 break;
             default:
                 super.B(j0Var);
@@ -32,11 +32,11 @@ public final class ya extends ul0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         switch (this.c) {
             case 0:
-                return ((ul0) this.e).D(c1Var);
+                return ((xl0) this.e).D(c1Var);
             default:
                 return c1Var.f == 0;
         }
@@ -46,7 +46,7 @@ public final class ya extends ul0 {
     public final int h() {
         switch (this.c) {
             case 0:
-                return ((ul0) this.e).h() + 1;
+                return ((xl0) this.e).h() + 1;
             default:
                 return ((ArrayList) this.e).size();
         }
@@ -60,7 +60,7 @@ public final class ya extends ul0 {
                 if (i10 == (abVar.P ? h() - 1 : 0)) {
                     return -1000;
                 }
-                return ((ul0) this.e).j(i10 - (!abVar.P ? 1 : 0));
+                return ((xl0) this.e).j(i10 - (!abVar.P ? 1 : 0));
             default:
                 return 0;
         }
@@ -72,7 +72,7 @@ public final class ya extends ul0 {
             case 0:
                 ab abVar = (ab) this.f;
                 if (i10 != (abVar.P ? h() - 1 : 0)) {
-                    ((ul0) this.e).v(c1Var, i10 - (!abVar.P ? 1 : 0));
+                    ((xl0) this.e).v(c1Var, i10 - (!abVar.P ? 1 : 0));
                     break;
                 }
                 break;
@@ -89,18 +89,18 @@ public final class ya extends ul0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return i10 == -1000 ? new fl0(new ci.eb((ab) this.f, this.d)) : ((ul0) this.e).x(viewGroup, i10);
+                return i10 == -1000 ? new il0(new ci.eb((ab) this.f, this.d)) : ((xl0) this.e).x(viewGroup, i10);
             default:
                 ij ijVar = new ij(this, this.d);
                 ijVar.b = false;
-                return new fl0(ijVar);
+                return new il0(ijVar);
         }
     }
 
-    public ya(ab abVar, ul0 ul0Var, Context context) {
+    public ya(ab abVar, xl0 xl0Var, Context context) {
         this.c = 0;
         this.f = abVar;
-        this.e = ul0Var;
+        this.e = xl0Var;
         this.d = context;
     }
 }

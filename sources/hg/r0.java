@@ -19,15 +19,15 @@ import org.telegram.ui.Components.bc;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.yx0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ih1;
 import org.telegram.ui.st;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,7 +75,7 @@ public final /* synthetic */ class r0 implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
                 PhotoViewer.t1().J2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList2, 0, 11, false, new wx0(), (zn) obj3);
+                PhotoViewer.t1().f2(arrayList2, 0, 11, false, new yx0(), (zn) obj3);
                 PhotoViewer.t1().X0(document, z10 ? document : null, false, null);
                 st q6 = st.q();
                 if (!z10) {
@@ -150,7 +150,7 @@ public final /* synthetic */ class r0 implements Runnable {
                             String formatString = nVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new t51(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new v51(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                             bcVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 pc.g(n2Var2, bcVar, 2750).j();

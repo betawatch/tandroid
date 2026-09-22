@@ -28,29 +28,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.c5;
 import org.telegram.ui.Components.d8;
-import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.i8;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.ko;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nk0;
-import org.telegram.ui.Components.ok0;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.y7;
-import org.telegram.ui.Components.yc0;
 import org.telegram.ui.Components.z7;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fd0;
-import org.telegram.ui.mj;
+import org.telegram.ui.nj;
 import org.telegram.ui.o20;
 import org.telegram.ui.pc0;
 import org.telegram.ui.pn0;
@@ -60,9 +60,9 @@ import org.telegram.ui.xm0;
 import org.telegram.ui.yg0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCallback, yc0, ImageReceiver.ImageReceiverDelegate, c5, ll0, kl0, a2, fd0, gl0, ml0 {
+public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCallback, bd0, ImageReceiver.ImageReceiverDelegate, c5, ol0, nl0, a2, fd0, jl0, pl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -96,7 +96,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 9:
@@ -108,25 +108,25 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
-        pk0 pk0Var = (pk0) this.c;
+        sk0 sk0Var = (sk0) this.c;
         if (this.b == 5) {
-            pk0Var.getClass();
+            sk0Var.getClass();
             return false;
         }
-        ok0 ok0Var = pk0Var.g0;
-        if (ok0Var == null || !(view instanceof nk0)) {
+        rk0 rk0Var = sk0Var.g0;
+        if (rk0Var == null || !(view instanceof qk0)) {
             return false;
         }
-        ok0Var.h(pk0Var, ((nk0) view).e, true, false);
+        rk0Var.h(sk0Var, ((qk0) view).e, true, false);
         return true;
     }
 
@@ -167,7 +167,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         h5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public String e(int i10) {
         Calendar calendar = (Calendar) this.c;
         calendar.clear();
@@ -250,12 +250,12 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         h5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.jl0
     public int run() {
         s4.c0 c0Var = ((pc0) this.c).c;
         int dp = AndroidUtilities.dp(60.0f);
@@ -270,7 +270,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         tg.m1 m1Var = (tg.m1) this.c;
         o20 o20Var = m1Var.d0;
@@ -314,7 +314,7 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        zn znVar = ((mj) this.c).b;
+        zn znVar = ((nj) this.c).b;
         int i10 = this.b;
         if (i10 == 15 && ChatObject.isChannel(znVar.e)) {
             TLRPC.Chat chat = znVar.e;
@@ -341,17 +341,17 @@ public final /* synthetic */ class s implements e2.m, MessagesStorage.BooleanCal
         this.b = i10;
     }
 
-    public /* synthetic */ s(mj mjVar, int i10, boolean z10) {
+    public /* synthetic */ s(nj njVar, int i10, boolean z10) {
         this.a = 3;
-        this.c = mjVar;
+        this.c = njVar;
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void q(float f7) {
     }
 

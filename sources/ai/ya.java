@@ -13,15 +13,15 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ch0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cj;
+import org.telegram.ui.dj;
 import org.telegram.ui.r80;
 import org.telegram.ui.ss;
 import org.telegram.ui.u60;
 import org.telegram.ui.vq;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ya implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class ya implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new gg.e1(tL_error, tLObject, (ArrayList) obj3, this.b, (AtomicInteger) obj4, (ArrayList) obj, (vq) obj2));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new cb((zg0) obj4, (Integer[]) obj, this.b, tLObject, (ArrayList) obj3, (TLRPC.PollAnswerVoters) obj2));
+                AndroidUtilities.runOnUIThread(new cb((ch0) obj4, (Integer[]) obj, this.b, tLObject, (ArrayList) obj3, (TLRPC.PollAnswerVoters) obj2));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.ActionBar.b2) obj4, tLObject, this.b, (TLRPC.Document) obj3, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj2));
@@ -89,7 +89,7 @@ public final /* synthetic */ class ya implements RequestDelegate {
                 break;
             case 12:
                 int i12 = this.b;
-                AndroidUtilities.runOnUIThread(new cb(i12, 13, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj, (cj) obj3, (org.telegram.ui.ActionBar.d5) obj2, tLObject));
+                AndroidUtilities.runOnUIThread(new cb(i12, 13, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj, (dj) obj3, (org.telegram.ui.ActionBar.d5) obj2, tLObject));
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new xh.o0((ci.d) obj4, (org.telegram.ui.ActionBar.f3[]) obj, this.b, (TLObject) obj3, (String) obj2, 1));

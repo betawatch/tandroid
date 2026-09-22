@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n00 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -95,7 +95,7 @@ public final class n00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
     }
 
-    public static void G(n00 n00Var) {
+    public static void F(n00 n00Var) {
         View view = n00Var.f;
         TextView textView = n00Var.d;
         ai.w0 w0Var = n00Var.b;
@@ -110,9 +110,9 @@ public final class n00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        fl0 fl0Var = (fl0) w0Var.H(childAt);
+        il0 il0Var = (il0) w0Var.H(childAt);
         int top = childAt.getTop();
-        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (top < 0 || il0Var == null || il0Var.b() != 0) {
             n00Var.J(true);
         } else {
             n00Var.J(false);

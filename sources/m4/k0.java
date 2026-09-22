@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k0 extends n4.p {
     public static final int w;
@@ -173,7 +173,7 @@ public final class k0 extends n4.p {
                 Looper myLooper = Looper.myLooper();
                 yVar.Z(new n4.n(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
                 ((n4.r) yVar.a).a.setMediaButtonReceiver(foregroundService);
-                yVar.b = new k2.u(context, yVar);
+                yVar.b = new ki.e0(context, yVar);
                 this.k = yVar;
                 if (i10 >= 31 && componentName != null) {
                     e0.h0.g(yVar, componentName);

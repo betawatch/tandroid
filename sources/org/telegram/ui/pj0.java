@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pj0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -215,8 +215,8 @@ public final /* synthetic */ class pj0 implements Utilities.Callback {
                     SharedConfig.saveConfig();
                     themeActivity.N0 = true;
                     ((Dialog) atomicReference.get()).dismiss();
-                    org.telegram.ui.Components.vl0 vl0Var = themeActivity.b;
-                    if (vl0Var != null && vl0Var.G && (L = vl0Var.L(themeActivity.M)) != null) {
+                    org.telegram.ui.Components.yl0 yl0Var = themeActivity.b;
+                    if (yl0Var != null && yl0Var.G && (L = yl0Var.L(themeActivity.M)) != null) {
                         themeActivity.a.v(L, themeActivity.M);
                         break;
                     }
@@ -249,7 +249,7 @@ public final /* synthetic */ class pj0 implements Utilities.Callback {
             case 12:
                 org.telegram.ui.web.j2 j2Var = (org.telegram.ui.web.j2) obj3;
                 j2Var.getClass();
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.cn0(j2Var, (org.telegram.ui.web.i2) obj2, (Bitmap) obj, 23));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.en0(j2Var, (org.telegram.ui.web.i2) obj2, (Bitmap) obj, 23));
                 break;
             case 13:
                 xh.r1 r1Var = (xh.r1) obj3;
@@ -272,10 +272,10 @@ public final /* synthetic */ class pj0 implements Utilities.Callback {
                 }
                 break;
             case 15:
-                org.telegram.ui.Components.yr0 yr0Var = (org.telegram.ui.Components.yr0) obj3;
+                org.telegram.ui.Components.bs0 bs0Var = (org.telegram.ui.Components.bs0) obj3;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
                 String str5 = (String) obj;
-                yh.k5 k5Var = yr0Var.e;
+                yh.k5 k5Var = bs0Var.e;
                 int i18 = tL_starGiftCollection.collection_id;
                 k5Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -286,7 +286,7 @@ public final /* synthetic */ class pj0 implements Utilities.Callback {
                 updatestargiftcollection.title = str5;
                 ConnectionsManager.getInstance(i19).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str5;
-                yr0Var.f(true);
+                bs0Var.f(true);
                 break;
             case 16:
                 xh.z4 z4Var = (xh.z4) obj3;

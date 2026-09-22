@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -132,13 +132,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                     fb.d.l(jsonTree, bVar);
                     return;
                 }
-                fb.m mVar = jsonTree.i().a;
-                if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
+                fb.n nVar = jsonTree.i().a;
+                if (nVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
                 db.l lVar = new db.l();
                 lVar.o(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new db.m(simpleName));
-                Iterator it = ((fb.k) mVar.entrySet()).iterator();
+                Iterator it = ((fb.l) nVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
                     lVar.o((String) entry.getKey(), (db.i) entry.getValue());

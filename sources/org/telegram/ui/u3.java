@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.u3 {
     public ValueAnimator E;
@@ -137,12 +137,12 @@ public final class u3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
 
     public final void g(org.telegram.ui.ActionBar.n2 n2Var) {
         zn znVar;
-        lk lkVar;
+        mk mkVar;
         this.r = false;
         this.b = n2Var;
         n2Var.getResourceProvider();
-        if ((n2Var instanceof zn) && (lkVar = (znVar = (zn) n2Var).Y) != null) {
-            lkVar.P();
+        if ((n2Var instanceof zn) && (mkVar = (znVar = (zn) n2Var).Y) != null) {
+            mkVar.P();
             znVar.Y.n0(true, false, true);
         }
         org.telegram.ui.ActionBar.i3 i3Var = this.e;

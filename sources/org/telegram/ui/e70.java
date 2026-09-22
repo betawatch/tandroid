@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, le.d, View.OnClickListener, ph.d {
     public boolean E;
@@ -68,7 +68,7 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public final le.b c;
     public int c0;
     public ai.n4 d;
-    public org.telegram.ui.Components.ie0 d0;
+    public org.telegram.ui.Components.le0 d0;
     public ci.s6 e;
     public boolean e0;
     public org.telegram.ui.Components.b20 f;
@@ -81,14 +81,14 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public boolean k0;
     public int l0;
     public int m0;
-    public org.telegram.ui.Components.vl0 n;
+    public org.telegram.ui.Components.yl0 n;
     public int n0;
     public final Rect o0;
     public final ah.i p0;
     public final fh.d q0;
     public s4.c0 r;
     public ah.o r0;
-    public org.telegram.ui.Components.jx0 s;
+    public org.telegram.ui.Components.lx0 s;
     public final ArrayList s0;
     public final RectF t0;
     public final RectF u0;
@@ -169,9 +169,9 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             return;
         }
         if (i10 == 0 && c70Var.F != 0 && !c70Var.n) {
-            org.telegram.ui.Components.ie0 ie0Var = new org.telegram.ui.Components.ie0(context, e70Var, e70Var.I, e70Var.G, j10 != 0);
-            e70Var.d0 = ie0Var;
-            e70Var.showDialog(ie0Var);
+            org.telegram.ui.Components.le0 le0Var = new org.telegram.ui.Components.le0(context, e70Var, e70Var.I, e70Var.G, j10 != 0);
+            e70Var.d0 = le0Var;
+            e70Var.showDialog(le0Var);
             return;
         }
         if (view instanceof org.telegram.ui.Cells.h4) {
@@ -305,7 +305,7 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         if (Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBlurEnabled() || (dVar = e70Var.q0) == null) {
             return;
         }
-        dVar.y(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom);
+        dVar.v(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom);
         int alpha = paint.getAlpha();
         paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
         canvas.drawRect(rectF, paint);
@@ -313,7 +313,7 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 != 3) {
             if (i10 == 4) {
                 g0();
@@ -433,33 +433,33 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(context, null);
         t00Var.setViewType(6);
         t00Var.w = false;
-        org.telegram.ui.Components.jx0 jx0Var = new org.telegram.ui.Components.jx0(context, t00Var, 1, null);
-        this.s = jx0Var;
-        jx0Var.addView(t00Var);
+        org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(context, t00Var, 1, null);
+        this.s = lx0Var;
+        lx0Var.addView(t00Var);
         this.s.e(true, false);
         this.s.d.setText(LocaleController.getString(R.string.NoResult));
         j0Var.addView(this.s);
         this.r = new s4.c0(1, false);
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.n = vl0Var;
-        vl0Var.setFastScrollEnabled(0);
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.n = yl0Var;
+        yl0Var.setFastScrollEnabled(0);
         this.n.setEmptyView(this.s);
-        org.telegram.ui.Components.vl0 vl0Var2 = this.n;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.n;
         c70 c70Var = new c70(this, context);
         this.v = c70Var;
-        vl0Var2.setAdapter(c70Var);
+        yl0Var2.setAdapter(c70Var);
         this.n.setLayoutManager(this.r);
         this.n.setVerticalScrollBarEnabled(false);
         this.n.setClipToPadding(false);
         this.n.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        org.telegram.ui.Components.vl0 vl0Var3 = this.n;
+        org.telegram.ui.Components.yl0 yl0Var3 = this.n;
         float f7 = -this.a;
-        j0Var.addView(vl0Var3, w7.y5.d(-1, -1.0f, 119, 0.0f, f7, 0.0f, f7));
+        j0Var.addView(yl0Var3, w7.y5.d(-1, -1.0f, 119, 0.0f, f7, 0.0f, f7));
         this.n.setOnItemClickListener(new ai.o6(17, this, context));
         this.n.setOnScrollListener(new h3(this, 13));
-        org.telegram.ui.Components.vl0 vl0Var4 = this.n;
-        vl0Var4.Y1 = true;
-        vl0Var4.Z1 = 0;
+        org.telegram.ui.Components.yl0 yl0Var4 = this.n;
+        yl0Var4.Y1 = true;
+        yl0Var4.Z1 = 0;
         org.telegram.ui.Components.y10 y10Var = new org.telegram.ui.Components.y10(context, this.resourceProvider, false);
         this.y = y10Var;
         if (z11 || z12 || z10) {
@@ -514,9 +514,9 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         j0Var.addView(this.actionBar);
         j0Var.addView(this.f, w7.y5.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
         j0Var.addView(this.h);
-        org.telegram.ui.Components.vl0 vl0Var5 = this.n;
-        Objects.requireNonNull(vl0Var5);
-        this.r0 = new ah.o(vl0Var5, j0Var, new xs(vl0Var5, i10));
+        org.telegram.ui.Components.yl0 yl0Var5 = this.n;
+        Objects.requireNonNull(yl0Var5);
+        this.r0 = new ah.o(yl0Var5, j0Var, new xs(yl0Var5, i10));
         this.n.D0(new u60(this, i16));
         ci.s6 s6Var = new ci.s6(context, this.parentLayout);
         this.e = s6Var;
@@ -705,9 +705,9 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.h.getSpansContainer(), 0, new Class[]{org.telegram.ui.Components.m30.class}, null, null, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.s.d, 4, null, null, null, null, org.telegram.ui.ActionBar.j6.G6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.s.e, 4, null, null, null, null, i13));
-        org.telegram.ui.Components.ie0 ie0Var = this.d0;
-        if (ie0Var != null) {
-            arrayList.addAll(ie0Var.getThemeDescriptions());
+        org.telegram.ui.Components.le0 le0Var = this.d0;
+        if (le0Var != null) {
+            arrayList.addAll(le0Var.getThemeDescriptions());
         }
         return arrayList;
     }
@@ -894,7 +894,7 @@ public class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                     String format = String.format("%d", Integer.valueOf(this.Z.m()));
                     int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                     if (indexOf >= 0) {
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.t51(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.v51(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
                     }
                     b2Var.T = spannableStringBuilder;
                 } else {

@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class o8 implements View.OnClickListener {
                 break;
             case 2:
                 l9 l9Var2 = this.b;
-                org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(l9Var2, l9Var2.F);
+                org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(l9Var2, l9Var2.F);
                 H.s = 8;
                 if (l9Var2.getUserConfig().showCallsTab) {
                     H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new k8(l9Var2, 1), false);

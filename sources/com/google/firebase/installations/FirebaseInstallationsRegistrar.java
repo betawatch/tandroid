@@ -17,16 +17,16 @@ import q9.s;
 import qa.c;
 import qa.d;
 import r9.i;
-import w7.q8;
+import w7.p8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(b bVar) {
-        return new c((h) bVar.a(h.class), bVar.c(e.class), (ExecutorService) bVar.i(new s(a.class, ExecutorService.class)), new i((Executor) bVar.i(new s(m9.b.class, Executor.class))));
+        return new c((h) bVar.b(h.class), bVar.e(e.class), (ExecutorService) bVar.m(new s(a.class, ExecutorService.class)), new i((Executor) bVar.m(new s(m9.b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -43,6 +43,6 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         i0 a10 = q9.a.a(na.d.class);
         a10.b = 1;
         a10.f = new v(dVar, 18);
-        return Arrays.asList(b10, a10.b(), q8.a(LIBRARY_NAME, "17.2.0"));
+        return Arrays.asList(b10, a10.b(), p8.a(LIBRARY_NAME, "17.2.0"));
     }
 }

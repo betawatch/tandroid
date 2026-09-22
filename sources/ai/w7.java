@@ -18,7 +18,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class w7 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int h = 0;
@@ -72,7 +72,7 @@ public final class w7 extends org.telegram.ui.ActionBar.f3 {
         p0Var.H = false;
         p0Var.e.getDrawable().y = false;
         p0Var.setIcon(R.raw.unlock_icon);
-        w7.b6.a(p0Var);
+        w7.a6.a(p0Var);
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         if (currentUser.premium) {
             q(false);

@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class b10 extends FrameLayout {
     public final boolean a;
@@ -75,26 +75,26 @@ public final class b10 extends FrameLayout {
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
         if (string != null) {
             f7 = 15.33f;
-            u01 u01Var = new u01(a10.a(string), 15.33f, AndroidUtilities.bold());
-            u01Var.s(a10Var);
-            u01Var.a.setColor(l1);
-            a10Var.e = u01Var;
+            w01 w01Var = new w01(a10.a(string), 15.33f, AndroidUtilities.bold());
+            w01Var.s(a10Var);
+            w01Var.a.setColor(l1);
+            a10Var.e = w01Var;
         } else {
             f7 = 15.33f;
         }
         CharSequence a2 = a10.a(spannableStringBuilder);
-        u01 u01Var2 = new u01(a2, f7, AndroidUtilities.bold());
-        u01Var2.s(a10Var);
-        TextPaint textPaint3 = u01Var2.a;
+        w01 w01Var2 = new w01(a2, f7, AndroidUtilities.bold());
+        w01Var2.s(a10Var);
+        TextPaint textPaint3 = w01Var2.a;
         textPaint3.setColor(w02);
-        a10Var.f = u01Var2;
-        u01Var2.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(a2, textPaint3.getFontMetricsInt(), false), arrayList, textPaint3.getFontMetricsInt()));
-        u01Var2.p(z11 ? 26 : 0);
+        a10Var.f = w01Var2;
+        w01Var2.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(a2, textPaint3.getFontMetricsInt(), false), arrayList, textPaint3.getFontMetricsInt()));
+        w01Var2.p(z11 ? 26 : 0);
         if (string2 != null) {
-            u01 u01Var3 = new u01(a10.a(string2), 15.33f, AndroidUtilities.bold());
-            u01Var3.s(a10Var);
-            u01Var3.a.setColor(l1);
-            a10Var.h = u01Var3;
+            w01 w01Var3 = new w01(a10.a(string2), 15.33f, AndroidUtilities.bold());
+            w01Var3.s(a10Var);
+            w01Var3.a.setColor(l1);
+            a10Var.h = w01Var3;
         }
         float dp = AndroidUtilities.dp(3.0f);
         fArr[3] = dp;

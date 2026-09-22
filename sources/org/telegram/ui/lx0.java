@@ -6,7 +6,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class lx0 {
     public final TLRPC.TL_premiumSubscriptionOption a;
@@ -14,8 +14,8 @@ public final class lx0 {
     public long c;
     public long d;
     public long e;
-    public c5.o f;
-    public c5.n g;
+    public c5.n f;
+    public c5.m g;
     public int h;
 
     public lx0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
@@ -23,25 +23,25 @@ public final class lx0 {
     }
 
     public final void a() {
-        c5.o oVar = this.f;
-        if (oVar != null && this.g == null) {
-            ArrayList arrayList = oVar.h;
+        c5.n nVar = this.f;
+        if (nVar != null && this.g == null) {
+            ArrayList arrayList = nVar.h;
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                c5.n nVar = (c5.n) obj;
-                String str = ((c5.l) nVar.b.a.get(0)).d;
+                c5.m mVar = (c5.m) obj;
+                String str = ((c5.l) ((ArrayList) mVar.b.b).get(0)).d;
                 int i11 = this.a.months;
                 if (i11 != 12) {
                     Locale locale = Locale.ROOT;
                     if (str.equals("P" + i11 + "M")) {
-                        this.g = nVar;
+                        this.g = mVar;
                         return;
                     }
                 } else if (str.equals("P1Y")) {
-                    this.g = nVar;
+                    this.g = mVar;
                     return;
                 }
             }
@@ -58,8 +58,8 @@ public final class lx0 {
             return "";
         }
         a();
-        c5.n nVar = this.g;
-        return nVar == null ? "" : ((c5.l) nVar.b.a.get(0)).c;
+        c5.m mVar = this.g;
+        return mVar == null ? "" : ((c5.l) ((ArrayList) mVar.b.b).get(0)).c;
     }
 
     public final int c() {
@@ -100,11 +100,11 @@ public final class lx0 {
             return 0L;
         }
         a();
-        c5.n nVar = this.g;
-        if (nVar == null) {
+        c5.m mVar = this.g;
+        if (mVar == null) {
             return 0L;
         }
-        return ((c5.l) nVar.b.a.get(0)).b;
+        return ((c5.l) ((ArrayList) mVar.b.b).get(0)).b;
     }
 
     public final long h() {

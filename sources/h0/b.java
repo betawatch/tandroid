@@ -16,7 +16,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -116,7 +116,7 @@ public abstract class b {
                 i(xmlResourceParser);
             }
             List h = h(resources, resourceId);
-            return new g(new o0.d(string, string2, string3, h), string4 != null ? new o0.d(string, string2, string4, h) : null, integer, integer2, string5);
+            return new g(new o0.e(string, string2, string3, h), string4 != null ? new o0.e(string, string2, string4, h) : null, integer, integer2, string5);
         }
         ArrayList arrayList = new ArrayList();
         while (xmlResourceParser.next() != 3) {

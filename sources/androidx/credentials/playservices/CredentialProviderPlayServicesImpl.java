@@ -28,15 +28,16 @@ import kotlin.jvm.internal.p;
 import org.json.JSONException;
 import rd.l;
 import v0.j;
-import v0.n;
+import v0.o;
 import v0.q;
 import v0.r;
+import v0.s;
 import w0.a;
 import w0.c;
 import w0.h;
-import w7.i8;
+import w7.h8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -161,7 +162,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        i7.b a2 = i8.a(this.context);
+        i7.b a2 = h8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;
@@ -174,7 +175,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         com.google.android.gms.common.api.internal.h.a();
         v e = w.e();
         e.d = new k6.c[]{i7.d.a};
-        e.c = new xa.c(a2, 25);
+        e.c = new xa.c(a2, 24);
         e.b = false;
         e.a = 1554;
         a2.e(1, e.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
@@ -270,7 +271,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             h7.g gVar2 = new h7.g(context, h7.g.k, aVar, com.google.android.gms.common.api.i.c);
             v e = w.e();
             e.d = new k6.c[]{q7.b.b};
-            e.c = new a6.i(fVar, 22);
+            e.c = new a6.i(fVar, 21);
             e.a = 32704;
             Task e7 = gVar2.e(1, e.a());
             i.d(e7, "doWrite(...)");
@@ -290,7 +291,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             }
             b7.a aVar2 = new b7.a(context, b7.a.k, aVar, new com.google.android.gms.common.api.internal.a());
             v e10 = w.e();
-            e10.c = new a4.m(aVar2, d);
+            e10.c = new android.support.v4.media.c(aVar2, d);
             e10.a = 5407;
             aVar2.e(0, e10.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 26)).addOnFailureListener(new ah.b(9, eVar3, cancellationSignal));
         } catch (JSONException e11) {
@@ -320,20 +321,20 @@ public final class CredentialProviderPlayServicesImpl implements j {
         }
     }
 
-    public void onGetCredential(Context context, q pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, r pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(pendingGetCredentialHandle, "pendingGetCredentialHandle");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onPrepareCredential(n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onPrepareCredential(o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(request, "request");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onSignalCredentialState(r request, Executor executor, v0.i iVar) {
+    public void onSignalCredentialState(s request, Executor executor, v0.i iVar) {
         i.e(request, "request");
         throw null;
     }
@@ -353,24 +354,24 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     @Override // v0.j
-    public void onGetCredential(Context context, n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(request, "request");
-        List<v0.p> list = request.a;
+        List<q> list = request.a;
         i.e(executor, "executor");
         i.e(callback, "callback");
         Companion.getClass();
         if (g.a(cancellationSignal)) {
             return;
         }
-        for (v0.p pVar : list) {
+        for (q qVar : list) {
         }
         Companion.getClass();
-        for (v0.p pVar2 : list) {
+        for (q qVar2 : list) {
         }
         if (!isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION)) {
             Companion.getClass();
-            for (v0.p pVar3 : list) {
+            for (q qVar3 : list) {
             }
             new c1.e(context).g(request, cancellationSignal, executor, callback);
             return;
@@ -386,11 +387,11 @@ public final class CredentialProviderPlayServicesImpl implements j {
         Bundle i10 = a4.a.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
         i10.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", request.b);
         i10.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
-        List<v0.p> list2 = list;
+        List<q> list2 = list;
         ArrayList arrayList = new ArrayList(hd.i.d(list2));
-        for (v0.p pVar4 : list2) {
-            pVar4.getClass();
-            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
+        for (q qVar4 : list2) {
+            qVar4.getClass();
+            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", qVar4.a, qVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, i10, null, new ResultReceiver(null));
         Context context2 = aVar.e;
@@ -398,7 +399,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         h7.g gVar = new h7.g(context2, h7.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
         v e = w.e();
         e.d = new k6.c[]{q7.b.a};
-        e.c = new a4.m(getCredentialRequest, 17);
+        e.c = new android.support.v4.media.c(getCredentialRequest, 16);
         e.a = 32701;
         Task e7 = gVar.e(0, e.a());
         i.d(e7, "doRead(...)");

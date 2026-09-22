@@ -2,9 +2,9 @@ package hh;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.tj;
+import org.telegram.ui.uj;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class a {
     public RecyclerView a;
@@ -44,7 +44,7 @@ public final class a {
         this.d = i10;
     }
 
-    public final void e(tj tjVar) {
-        this.a = tjVar;
+    public final void e(uj ujVar) {
+        this.a = ujVar;
     }
 }

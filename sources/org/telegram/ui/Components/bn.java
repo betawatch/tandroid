@@ -8,7 +8,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bn implements org.telegram.ui.qt {
     public final /* synthetic */ int a;
@@ -110,8 +110,8 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final v70 i(ci.n6 n6Var) {
-        v70 F = v70.F(n6Var, null, new View(this.b.getContext()));
+    public final y70 i(ci.n6 n6Var) {
+        y70 F = y70.F(n6Var, null, new View(this.b.getContext()));
         F.s = 0;
         F.t = false;
         int i10 = R.drawable.msg_replace;

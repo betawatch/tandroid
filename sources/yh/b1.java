@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.r00;
 import org.telegram.ui.Components.r50;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.v9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -141,8 +141,8 @@ public final /* synthetic */ class b1 implements Runnable {
                 ImageReceiver imageReceiver = (g3Var == null || (f3Var = g3Var.c) == null) ? null : ((i3) f3Var).d;
                 v9 v9Var = v3Var.d[0];
                 if (imageReceiver != null && v9Var != null && v9Var.getImageReceiver() != null) {
-                    hj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                    hj0 lottieAnimation2 = v9Var.getImageReceiver().getLottieAnimation();
+                    kj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                    kj0 lottieAnimation2 = v9Var.getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     } else if (lottieAnimation2 == null && lottieAnimation != null) {

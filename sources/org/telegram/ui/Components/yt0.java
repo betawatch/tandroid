@@ -1,83 +1,56 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yt0 implements gg.b2, org.telegram.ui.Cells.b5 {
-    public final /* synthetic */ au0 a;
+public final class yt0 extends LinearLayout {
+    public final TextView a;
+    public final ImageView b;
+    public boolean c;
 
-    public /* synthetic */ yt0(au0 au0Var) {
-        this.a = au0Var;
+    public yt0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        setOrientation(1);
+        setGravity(17);
+        addView(imageView, w7.y5.n(-2, -2));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
+        textView.setGravity(17);
+        textView.setTextSize(1, 17.0f);
+        textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        addView(textView, w7.y5.t(-2, -2, 17, 0, 24, 0, 0));
     }
 
-    @Override // gg.b2
-    public /* synthetic */ boolean F(int i10) {
-        return true;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+        this.c = true;
+        if (AndroidUtilities.isTablet()) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        } else if (rotation == 3 || rotation == 1) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
+        } else {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        }
+        this.c = false;
+        super.onMeasure(i10, i11);
     }
 
-    @Override // gg.b2
-    public void a(int i10) {
-        au0 au0Var = this.a;
-        au0Var.l();
-        if (i10 != 1) {
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
             return;
         }
-        int i11 = au0Var.r - 1;
-        au0Var.r = i11;
-        if (i11 != 0) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            jv0 jv0Var = au0Var.s;
-            cu0[] cu0VarArr = jv0Var.k0;
-            if (i12 >= cu0VarArr.length) {
-                return;
-            }
-            cu0 cu0Var = cu0VarArr[i12];
-            if (cu0Var.F == 7) {
-                if (au0Var.h == 0) {
-                    cu0Var.w.e(false, true);
-                } else {
-                    jv0Var.z(cu0Var.h, 0, null);
-                }
-            }
-            i12++;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.b5
-    public boolean e(org.telegram.ui.Cells.c5 c5Var, boolean z10) {
-        int intValue = ((Integer) c5Var.getTag()).intValue();
-        au0 au0Var = this.a;
-        TLObject E = au0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return au0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, c5Var);
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i l() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i w() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ void G(ArrayList arrayList) {
+        super.requestLayout();
     }
 }

@@ -22,14 +22,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.dk;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -190,8 +190,8 @@ public final /* synthetic */ class t3 implements Runnable {
                     if (tL_error == null) {
                         dk dkVar = okVar.r;
                         d7Var.e(false, true);
-                        k90 k90Var = d7Var.e;
-                        vh.o oVar = d7Var.d;
+                        n90 n90Var = d7Var.e;
+                        vh.n nVar = d7Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         nkVar.G = messages_messages.next_rate;
                         dk dkVar2 = dkVar;
@@ -231,13 +231,13 @@ public final /* synthetic */ class t3 implements Runnable {
                         nkVar.V = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(nkVar.K) && this.f == 0 && j3 == 0) {
-                                oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                k90Var.setVisibility(0);
-                                k90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
+                                n90Var.setVisibility(0);
+                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
-                                oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                k90Var.setVisibility(0);
-                                k90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                                n90Var.setVisibility(0);
+                                n90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -284,11 +284,11 @@ public final /* synthetic */ class t3 implements Runnable {
                             break;
                         }
                     } else {
-                        vh.o oVar2 = d7Var.d;
-                        k90 k90Var2 = d7Var.e;
-                        oVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        k90Var2.setVisibility(0);
-                        k90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        vh.n nVar2 = d7Var.d;
+                        n90 n90Var2 = d7Var.e;
+                        nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        n90Var2.setVisibility(0);
+                        n90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         d7Var.e(false, true);
                         break;
                     }

@@ -37,9 +37,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class un extends ni implements zv0, NotificationCenter.NotificationCenterDelegate {
+public final class un extends ni implements bw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int m1 = 0;
     public int A0;
     public int B0;
@@ -469,7 +469,7 @@ public final class un extends ni implements zv0, NotificationCenter.Notification
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
+    public final void D(ni niVar) {
         vi viVar = this.b;
         try {
             viVar.X0.getTitleTextView().setBuildFullLayout(true);
@@ -487,12 +487,12 @@ public final class un extends ni implements zv0, NotificationCenter.Notification
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void G() {
+    public final void F() {
         this.s.y0(1);
     }
 
-    @Override // org.telegram.ui.Components.zv0
-    public final void H(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.bw0
+    public final void G(int i10, boolean z10) {
         boolean z11;
         if (this.I) {
             if (i10 > AndroidUtilities.dp(50.0f) && this.e1 && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
@@ -821,7 +821,7 @@ public final class un extends ni implements zv0, NotificationCenter.Notification
                 kz kzVar = this.E;
                 kzVar.P.C0();
                 kzVar.I.scrollTo(0, 0);
-                kzVar.F(1);
+                kzVar.E(1);
                 kzVar.Q.h1(0, 0);
                 this.E.t(false);
                 if (z10) {
@@ -1082,34 +1082,34 @@ public final class un extends ni implements zv0, NotificationCenter.Notification
     }
 
     public final void g0(int i10, Utilities.CallbackReturn callbackReturn, int i11, int i12) {
-        v70 F = v70.F(this, null, new View(getContext()));
+        y70 F = y70.F(this, null, new View(getContext()));
         F.s = 0;
         F.t = false;
         F.c(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia), new sm(this, i10, 1), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new sm(this, i10, 2), true);
-        mm0 mm0Var = new mm0(getContext(), this.a);
-        F.p = new org.telegram.ui.re(mm0Var, 1);
+        om0 om0Var = new om0(getContext(), this.a);
+        F.p = new org.telegram.ui.re(om0Var, 1);
         F.S = AndroidUtilities.dp(185.0f);
         F.Y();
-        mm0Var.e(F);
-        Drawable drawable = (Drawable) callbackReturn.run(mm0Var.s);
-        ch.d c10 = mm0Var.n.c(null, null, false);
-        c10.o(eh.b.k(mm0Var.b));
+        om0Var.e(F);
+        Drawable drawable = (Drawable) callbackReturn.run(om0Var.s);
+        ch.d c10 = om0Var.n.c(null, null, false);
+        c10.o(eh.b.k(om0Var.b));
         c10.p(AndroidUtilities.dp(8.0f));
         c10.j.e = true;
         c10.q(AndroidUtilities.dp(16.0f));
-        mm0Var.F = c10;
-        mm0Var.E = drawable;
+        om0Var.F = c10;
+        om0Var.E = drawable;
         Point point = AndroidUtilities.displaySize;
         int i13 = (point.x - i11) / 2;
         int i14 = (point.y - i12) / 2;
         int i15 = i11 + i13;
         int i16 = i12 + i14;
         c10.setBounds(i13 - AndroidUtilities.dp(8.0f), i14 - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f) + i15, AndroidUtilities.dp(8.0f) + i16);
-        mm0Var.E.setBounds(i13, i14, i15, i16);
-        ((FrameLayout.LayoutParams) mm0Var.x.getLayoutParams()).gravity = 1;
-        mm0Var.L = true;
-        mm0Var.show();
+        om0Var.E.setBounds(i13, i14, i15, i16);
+        ((FrameLayout.LayoutParams) om0Var.x.getLayoutParams()).gravity = 1;
+        om0Var.L = true;
+        om0Var.show();
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -1125,10 +1125,10 @@ public final class un extends ni implements zv0, NotificationCenter.Notification
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View G = fc1Var.G(childAt);
-        fl0 fl0Var = (fl0) (G == null ? null : fc1Var.U(G));
+        il0 il0Var = (il0) (G == null ? null : fc1Var.U(G));
         int y3 = (((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(20.0f);
-        int i10 = (y3 <= 0 || fl0Var == null || fl0Var.b() != 1) ? 0 : y3;
-        if (y3 < 0 || fl0Var == null || fl0Var.b() != 1) {
+        int i10 = (y3 <= 0 || il0Var == null || il0Var.b() != 1) ? 0 : y3;
+        if (y3 < 0 || il0Var == null || il0Var.b() != 1) {
             y3 = i10;
         }
         return AndroidUtilities.dp(25.0f) + y3;

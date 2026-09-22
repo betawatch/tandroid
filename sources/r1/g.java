@@ -27,9 +27,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import w7.a7;
+import w7.z6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -829,7 +829,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + a7.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + z6.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -966,7 +966,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + a7.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + z6.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -1487,8 +1487,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = a7.b(cVar4.g(this.g));
-                long[] b11 = a7.b(cVar5.g(this.g));
+                long[] b10 = z6.b(cVar4.g(this.g));
+                long[] b11 = z6.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;

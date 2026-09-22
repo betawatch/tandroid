@@ -14,10 +14,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.dp;
-import org.telegram.ui.Components.j70;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.m30;
+import org.telegram.ui.Components.m70;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.vi;
@@ -26,7 +26,7 @@ import org.telegram.ui.zn;
 import s4.c1;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final class x implements View.OnClickListener {
                 if (!(c10.e instanceof p4.p)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                k2.u b10 = c10.d.b(vVar);
+                k2.e b10 = c10.d.b(vVar);
                 if (b10 == null || (oVar = (p4.o) b10.b) == null || !oVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
@@ -108,7 +108,7 @@ public final class x implements View.OnClickListener {
                     if (!(c11.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    k2.u b11 = c11.d.b(vVar2);
+                    k2.e b11 = c11.d.b(vVar2);
                     if (!DesugarCollections.unmodifiableList(c11.d.v).contains(vVar2) || b11 == null || ((oVar2 = (p4.o) b11.b) != null && !oVar2.c)) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + vVar2);
                     } else if (DesugarCollections.unmodifiableList(c11.d.v).size() <= 1) {
@@ -128,7 +128,7 @@ public final class x implements View.OnClickListener {
                     if (!(c12.e instanceof p4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    k2.u b12 = c12.d.b(vVar3);
+                    k2.e b12 = c12.d.b(vVar3);
                     if (DesugarCollections.unmodifiableList(c12.d.v).contains(vVar3) || b12 == null || (oVar3 = (p4.o) b12.b) == null || !oVar3.d) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + vVar3);
                     } else {
@@ -243,25 +243,25 @@ public final class x implements View.OnClickListener {
                 mpVar.Y.r1.addView(mpVar.Z, y5.e(-1, -2, 80));
                 return;
             case 9:
-                j70 j70Var = (j70) this.b;
+                m70 m70Var = (m70) this.b;
                 m30 m30Var = (m30) view;
                 if (m30Var.y) {
-                    j70Var.j0 = null;
-                    j70Var.f0.l(m30Var.getUid());
-                    j70Var.U.b(m30Var);
-                    j70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(j70Var.d);
+                    m70Var.j0 = null;
+                    m70Var.f0.l(m30Var.getUid());
+                    m70Var.U.b(m30Var);
+                    m70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(m70Var.d);
                     return;
                 }
-                m30 m30Var2 = j70Var.j0;
+                m30 m30Var2 = m70Var.j0;
                 if (m30Var2 != null) {
                     m30Var2.a();
                 }
-                j70Var.j0 = m30Var;
+                m70Var.j0 = m30Var;
                 m30Var.b();
                 return;
             default:
-                ((d90) this.b).e.callOnClick();
+                ((g90) this.b).e.callOnClick();
                 return;
         }
     }

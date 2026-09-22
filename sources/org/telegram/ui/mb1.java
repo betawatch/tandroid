@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mb1 implements Comparator {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final /* synthetic */ class mb1 implements Comparator {
             case 24:
                 return Long.compare(((TLRPC.PollAnswer) obj).shuffle_hash ^ Long.MIN_VALUE, ((TLRPC.PollAnswer) obj2).shuffle_hash ^ Long.MIN_VALUE);
             case 25:
-                return (int) (zg.p0.k((TLObject) obj) - zg.p0.k((TLObject) obj2));
+                return (int) (zg.q0.k((TLObject) obj) - zg.q0.k((TLObject) obj2));
             default:
                 long j13 = ((zh.a) obj2).c;
                 long j14 = ((zh.a) obj).c;

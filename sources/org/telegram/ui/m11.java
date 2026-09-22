@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class m11 extends FrameLayout {
     public final Matrix E;
@@ -146,14 +146,14 @@ public final class m11 extends FrameLayout {
             paint3.setColor(this.a);
             int a2 = this.h.a(this.e, false);
             int a10 = this.n.a(this.f, false);
-            org.telegram.ui.Components.nh0 nh0Var = profileActivity.a0;
-            if (nh0Var != null) {
+            org.telegram.ui.Components.qh0 qh0Var = profileActivity.a0;
+            if (qh0Var != null) {
                 int i11 = this.H;
                 boolean z10 = this.c;
-                if (nh0Var.S == null || nh0Var.Q != i11 || nh0Var.R != z10) {
-                    nh0Var.Q = i11;
-                    nh0Var.R = z10;
-                    nh0Var.g();
+                if (qh0Var.S == null || qh0Var.Q != i11 || qh0Var.R != z10) {
+                    qh0Var.Q = i11;
+                    qh0Var.R = z10;
+                    qh0Var.g();
                 }
             }
             int width = getWidth() / 2;

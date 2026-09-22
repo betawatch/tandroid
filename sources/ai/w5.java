@@ -30,16 +30,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.j41;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xr;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.as;
 import org.telegram.ui.vr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class w5 extends xr {
     public boolean c;
@@ -167,13 +167,13 @@ public final class w5 extends xr {
             }
             if ((f6Var3.C1 || f6Var3.S1.h(f6Var3.B1)) && !d6Var.f && (storyItem = d6Var.a) != null) {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
-                v70 v70Var = new v70(actionBarPopupWindow$ActionBarPopupWindowLayout2, f6Var);
-                v70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 8), false);
-                v70Var.k();
+                y70 y70Var = new y70(actionBarPopupWindow$ActionBarPopupWindowLayout2, f6Var);
+                y70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 8), false);
+                y70Var.k();
                 x8 B = f6Var3.getStoriesController().B(f6Var3.B1, true);
                 x8 B2 = f6Var3.S1.B(f6Var3.B1, false);
-                v70.f(v70Var, B, hashSet, B2 != null && B2.a(), new a3.k0(w5Var, f6Var, storyItem, 2), new e4(w5Var, hashSet, storyItem, f6Var, 1));
-                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(v70Var.B);
+                y70.f(y70Var, B, hashSet, B2 != null && B2.a(), new a3.k0(w5Var, f6Var, storyItem, 2), new e4(w5Var, hashSet, storyItem, f6Var, 1));
+                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(y70Var.B);
                 org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(0, f6Var3.getContext(), w5Var.d, false, false);
                 f6Var3.E3 = f1Var;
                 f1Var.g(LocaleController.getString(R.string.StoriesAlbumAddToAlbum), R.drawable.menu_album_add, null);
@@ -578,7 +578,7 @@ public final class w5 extends xr {
                             }
                             storyItem3 = d6Var.a;
                             if (storyItem3 != null) {
-                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, j41.A())) {
+                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, l41.A())) {
                                     org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, LocaleController.getString(R.string.HideTranslation), false, w5Var.d).setOnClickListener(new j5(w5Var, 4));
                                 } else if (MessagesController.getInstance(f6Var3.C2).getTranslateController().canTranslateStory(d6Var.a)) {
                                     actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -768,7 +768,7 @@ public final class w5 extends xr {
             return;
         }
         Context context = f6Var.getContext();
-        eh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        hh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         final of.b bVar = new of.b(2, this, actionBarPopupWindow$ActionBarPopupWindowLayout);
         as asVar = new as();
         org.telegram.ui.ActionBar.f1[] f1VarArr = new org.telegram.ui.ActionBar.f1[5];

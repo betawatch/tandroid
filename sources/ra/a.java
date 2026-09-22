@@ -1,20 +1,19 @@
 package ra;
 
 import androidx.recyclerview.widget.RecyclerView;
-import c5.b0;
-import hh.h;
+import c5.a0;
 import java.io.Serializable;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
-import k2.u;
-import l.d;
+import k2.e;
+import ki.e0;
 import org.telegram.messenger.BuildVars;
 import s4.c1;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a {
     public static boolean i = true;
@@ -77,14 +76,14 @@ public final class a {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((h) this.f).a((s4.a) arrayList.get(i10));
+            ((e) this.f).q((s4.a) arrayList.get(i10));
         }
         m(arrayList);
         this.b = 0;
     }
 
     public void d() {
-        h hVar = (h) this.f;
+        e eVar = (e) this.f;
         c();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -92,22 +91,22 @@ public final class a {
             s4.a aVar = (s4.a) arrayList.get(i10);
             int i11 = aVar.a;
             if (i11 == 1) {
-                hVar.a(aVar);
-                hVar.c(aVar.b, aVar.d);
+                eVar.q(aVar);
+                eVar.C(aVar.b, aVar.d);
             } else if (i11 == 2) {
-                hVar.a(aVar);
+                eVar.q(aVar);
                 int i12 = aVar.b;
                 int i13 = aVar.d;
-                RecyclerView recyclerView = hVar.a;
+                RecyclerView recyclerView = (RecyclerView) eVar.b;
                 recyclerView.f0(i12, i13, true);
                 recyclerView.w0 = true;
                 recyclerView.t0.c += i13;
             } else if (i11 == 4) {
-                hVar.a(aVar);
-                hVar.b(aVar.b, aVar.d, aVar.c);
+                eVar.q(aVar);
+                eVar.x(aVar.b, aVar.d, aVar.c);
             } else if (i11 == 8) {
-                hVar.a(aVar);
-                hVar.d(aVar.b, aVar.d);
+                eVar.q(aVar);
+                eVar.G(aVar.b, aVar.d);
             }
         }
         m(arrayList);
@@ -116,7 +115,7 @@ public final class a {
 
     public void e(s4.a aVar) {
         int i10;
-        b0 b0Var = (b0) this.c;
+        a0 a0Var = (a0) this.c;
         int i11 = aVar.a;
         if (i11 == 1 || i11 == 8) {
             throw new IllegalArgumentException("should not dispatch add or move for pre layout");
@@ -140,7 +139,7 @@ public final class a {
                 s4.a j3 = j(i16, o9, aVar.c, i14);
                 f(j3, i12);
                 j3.c = null;
-                b0Var.i(j3);
+                a0Var.i(j3);
                 if (aVar.a == 4) {
                     i12 += i14;
                 }
@@ -152,27 +151,27 @@ public final class a {
         }
         Object obj = aVar.c;
         aVar.c = null;
-        b0Var.i(aVar);
+        a0Var.i(aVar);
         if (i14 > 0) {
             s4.a j10 = j(aVar.a, o9, obj, i14);
             f(j10, i12);
             j10.c = null;
-            b0Var.i(j10);
+            a0Var.i(j10);
         }
     }
 
     public void f(s4.a aVar, int i10) {
-        h hVar = (h) this.f;
-        hVar.a(aVar);
+        e eVar = (e) this.f;
+        eVar.q(aVar);
         int i11 = aVar.a;
         if (i11 != 2) {
             if (i11 != 4) {
                 throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
             }
-            hVar.b(i10, aVar.d, aVar.c);
+            eVar.x(i10, aVar.d, aVar.c);
         } else {
             int i12 = aVar.d;
-            RecyclerView recyclerView = hVar.a;
+            RecyclerView recyclerView = (RecyclerView) eVar.b;
             recyclerView.f0(i10, i12, true);
             recyclerView.w0 = true;
             recyclerView.t0.c += i12;
@@ -253,7 +252,7 @@ public final class a {
     }
 
     public s4.a j(int i10, int i11, Object obj, int i12) {
-        s4.a aVar = (s4.a) ((b0) this.c).a();
+        s4.a aVar = (s4.a) ((a0) this.c).a();
         if (aVar != null) {
             aVar.a = i10;
             aVar.b = i11;
@@ -270,35 +269,35 @@ public final class a {
     }
 
     public void k(s4.a aVar) {
-        h hVar = (h) this.f;
+        e eVar = (e) this.f;
         ((ArrayList) this.e).add(aVar);
         int i10 = aVar.a;
         if (i10 == 1) {
-            hVar.c(aVar.b, aVar.d);
+            eVar.C(aVar.b, aVar.d);
             return;
         }
         if (i10 == 2) {
             int i11 = aVar.b;
             int i12 = aVar.d;
-            RecyclerView recyclerView = hVar.a;
+            RecyclerView recyclerView = (RecyclerView) eVar.b;
             recyclerView.f0(i11, i12, false);
             recyclerView.w0 = true;
             return;
         }
         if (i10 == 4) {
-            hVar.b(aVar.b, aVar.d, aVar.c);
+            eVar.x(aVar.b, aVar.d, aVar.c);
         } else if (i10 == 8) {
-            hVar.d(aVar.b, aVar.d);
+            eVar.G(aVar.b, aVar.d);
         } else {
             throw new IllegalArgumentException("Unknown update op type for " + aVar);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x021b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x021d, code lost:
     
         if (((java.util.ArrayList) r15.e.d).contains(r8.a) != false) goto L138;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x028a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x028e, code lost:
     
         if (((java.util.ArrayList) r13.e.d).contains(r15.a) != false) goto L165;
      */
@@ -327,11 +326,11 @@ public final class a {
         boolean z12;
         Object obj;
         s4.a aVar;
-        b0 b0Var = (b0) this.c;
-        h hVar = (h) this.f;
-        d dVar = (d) this.g;
+        a0 a0Var = (a0) this.c;
+        e eVar = (e) this.f;
+        e0 e0Var = (e0) this.g;
         ArrayList arrayList = (ArrayList) this.d;
-        dVar.getClass();
+        e0Var.getClass();
         while (true) {
             int size = arrayList.size() - 1;
             boolean z13 = false;
@@ -353,8 +352,8 @@ public final class a {
                 break;
             }
             int i14 = size + 1;
-            a aVar2 = (a) dVar.a;
-            b0 b0Var2 = (b0) aVar2.c;
+            a aVar2 = (a) e0Var.b;
+            a0 a0Var2 = (a0) aVar2.c;
             s4.a aVar3 = (s4.a) arrayList.get(size);
             s4.a aVar4 = (s4.a) arrayList.get(i14);
             int i15 = aVar4.a;
@@ -406,7 +405,7 @@ public final class a {
                         if (aVar4.d == 0) {
                             arrayList.remove(i14);
                             aVar4.c = null;
-                            b0Var2.i(aVar4);
+                            a0Var2.i(aVar4);
                         }
                     }
                 }
@@ -474,7 +473,7 @@ public final class a {
                             arrayList.set(size, aVar4);
                             arrayList.remove(i14);
                             aVar3.c = obj;
-                            b0Var2.i(aVar3);
+                            a0Var2.i(aVar3);
                         }
                     }
                 }
@@ -508,7 +507,7 @@ public final class a {
                                 } else {
                                     arrayList.remove(size);
                                     aVar4.c = null;
-                                    b0Var2.i(aVar4);
+                                    a0Var2.i(aVar4);
                                 }
                                 if (j3 != null) {
                                     arrayList.add(size, j3);
@@ -557,7 +556,7 @@ public final class a {
                 int i46 = 0;
                 char c11 = 65535;
                 while (i45 < i44) {
-                    RecyclerView recyclerView = hVar.a;
+                    RecyclerView recyclerView = (RecyclerView) eVar.b;
                     c1 M = recyclerView.M(i45, true);
                     if (M != null) {
                     }
@@ -591,7 +590,7 @@ public final class a {
                 }
                 if (i46 != aVar5.d) {
                     aVar5.c = null;
-                    b0Var.i(aVar5);
+                    a0Var.i(aVar5);
                     aVar5 = j(2, i43, null, i46);
                 }
                 if (c11 == 0) {
@@ -606,7 +605,7 @@ public final class a {
                 int i50 = 0;
                 char c12 = 65535;
                 while (i47 < i48) {
-                    RecyclerView recyclerView2 = hVar.a;
+                    RecyclerView recyclerView2 = (RecyclerView) eVar.b;
                     c1 M2 = recyclerView2.M(i47, true);
                     if (M2 != null) {
                     }
@@ -632,7 +631,7 @@ public final class a {
                 if (i50 != aVar5.d) {
                     Object obj2 = aVar5.c;
                     aVar5.c = null;
-                    b0Var.i(aVar5);
+                    a0Var.i(aVar5);
                     aVar5 = j(4, i49, obj2, i50);
                 }
                 if (c12 == 0) {
@@ -655,13 +654,13 @@ public final class a {
         for (int i10 = 0; i10 < size; i10++) {
             s4.a aVar = (s4.a) arrayList.get(i10);
             aVar.c = null;
-            ((b0) this.c).i(aVar);
+            ((a0) this.c).i(aVar);
         }
         arrayList.clear();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0039  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -669,17 +668,17 @@ public final class a {
         String str;
         re.b bVar = re.b.e;
         if (i) {
-            u uVar = (u) this.f;
-            if (uVar == null) {
+            e eVar = (e) this.f;
+            if (eVar == null) {
                 try {
-                    u uVar2 = new u(23, false);
-                    uVar2.b = new SoftReference(new String[3]);
-                    this.f = uVar2;
+                    e eVar2 = new e(21);
+                    eVar2.b = new SoftReference(new String[3]);
+                    this.f = eVar2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) uVar.b).get();
+                String[] strArr = (String[]) ((SoftReference) eVar.b).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -733,11 +732,11 @@ public final class a {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        u uVar3 = (u) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) uVar3.b).get();
+                        e eVar3 = (e) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) eVar3.b).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            uVar3.b = new SoftReference(strArr2);
+                            eVar3.b = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }
@@ -756,7 +755,7 @@ public final class a {
     public int o(int i10, int i11) {
         int i12;
         int i13;
-        b0 b0Var = (b0) this.c;
+        a0 a0Var = (a0) this.c;
         ArrayList arrayList = (ArrayList) this.e;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             s4.a aVar = (s4.a) arrayList.get(size);
@@ -818,12 +817,12 @@ public final class a {
                 if (i18 == aVar2.b || i18 < 0) {
                     arrayList.remove(size2);
                     aVar2.c = null;
-                    b0Var.i(aVar2);
+                    a0Var.i(aVar2);
                 }
             } else if (aVar2.d <= 0) {
                 arrayList.remove(size2);
                 aVar2.c = null;
-                b0Var.i(aVar2);
+                a0Var.i(aVar2);
             }
         }
         return i10;
@@ -839,14 +838,14 @@ public final class a {
         }
     }
 
-    public a(h hVar) {
+    public a(e eVar) {
         this.a = 3;
-        this.c = new b0(30, 6);
+        this.c = new a0(30, 6);
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.b = 0;
         this.h = BuildVars.DEBUG_VERSION ? new ArrayList() : null;
-        this.f = hVar;
-        this.g = new d(this);
+        this.f = eVar;
+        this.g = new e0(this, 20);
     }
 }

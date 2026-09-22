@@ -23,11 +23,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u70;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements u70 {
+public class xa extends NestedScrollView implements x70 {
     public final org.telegram.ui.Cells.ba W;
     public final o1.k a0;
     public final wa b0;
@@ -195,7 +195,7 @@ public class xa extends NestedScrollView implements u70 {
         }
     }
 
-    @Override // org.telegram.ui.Components.u70
+    @Override // org.telegram.ui.Components.x70
     public final void a(RectF rectF) {
         va vaVar;
         wa waVar = this.b0;
@@ -214,7 +214,7 @@ public class xa extends NestedScrollView implements u70 {
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.u70
+    @Override // org.telegram.ui.Components.x70
     public final void b(Canvas canvas, float f7) {
         va vaVar;
         wa waVar = this.b0;

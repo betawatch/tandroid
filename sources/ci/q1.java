@@ -14,9 +14,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.az0;
 import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.vm;
-import org.telegram.ui.Components.yy0;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.a20;
 import org.telegram.ui.az;
@@ -26,7 +26,7 @@ import org.telegram.ui.pn0;
 import org.telegram.ui.st;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class q1 implements View.OnTouchListener {
                 s10 = st.q().s(motionEvent, r0.h, (vm) this.c, r0.N, ((tv) this.b).resourcesProvider);
                 break;
             case 4:
-                s11 = st.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((yy0) this.b).b);
+                s11 = st.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((az0) this.b).b);
                 break;
             case 5:
                 az azVar = (az) this.b;

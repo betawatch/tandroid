@@ -25,7 +25,7 @@ import zd.t;
 import zd.t1;
 import zd.u1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class zzde implements h0 {
     private final /* synthetic */ s zza;
@@ -92,19 +92,19 @@ public final class zzde implements h0 {
         return b0.b;
     }
 
-    public final he.b getOnAwait() {
+    public final he.c getOnAwait() {
         t tVar = (t) this.zza;
         tVar.getClass();
         kotlin.jvm.internal.s.a(3, r1.a);
         kotlin.jvm.internal.s.a(3, s1.a);
-        return new he.c(tVar);
+        return new a6.i(tVar, 22);
     }
 
     public final he.a getOnJoin() {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
         kotlin.jvm.internal.s.a(3, t1.a);
-        return new xa.c(u1Var, 24);
+        return new he.b(u1Var);
     }
 
     @Override // zd.f1

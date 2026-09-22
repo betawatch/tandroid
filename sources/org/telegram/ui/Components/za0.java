@@ -1,44 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class za0 extends ReplacementSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class za0 implements Menu {
+    public final y70 a;
+    public final x2 b;
+    public final Runnable c;
 
-    public /* synthetic */ za0(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
+    public za0(y70 y70Var, x2 x2Var, Runnable runnable) {
+        this.a = y70Var;
+        this.b = x2Var;
+        this.c = runnable;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
+    @Override // android.view.Menu
+    public final MenuItem add(int i10) {
+        return null;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return ((bb0) this.b).x;
-            case 1:
-                return (int) ((org.telegram.ui.uj0) this.b).n0;
-            default:
-                return (int) ((tg.m1) this.b).t0;
+    @Override // android.view.Menu
+    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem findItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem getItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final boolean hasVisibleItems() {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performIdentifierAction(int i10, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final int size() {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
+        Runnable runnable = this.c;
+        if (runnable == null || !org.telegram.ui.ActionBar.x4.r.contains(Integer.valueOf(i11)) || !MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            kd kdVar = new kd(this, i11, 4);
+            y70 y70Var = this.a;
+            y70Var.c(0, charSequence, kdVar, false);
+            if (runnable != null && org.telegram.ui.ActionBar.x4.r.contains(Integer.valueOf(i11))) {
+                y70Var.M(runnable);
+            }
         }
+        return null;
     }
 
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
+        return null;
     }
 
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(CharSequence charSequence) {
+        return null;
     }
 
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, int i13) {
+        add(i10, i11, i12, LocaleController.getString(i13));
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final void clear() {
+    }
+
+    @Override // android.view.Menu
+    public final void close() {
+    }
+
+    @Override // android.view.Menu
+    public final void removeGroup(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void removeItem(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setQwertyMode(boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupEnabled(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupVisible(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
     }
 }

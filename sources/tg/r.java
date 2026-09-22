@@ -28,11 +28,11 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.j90;
-import org.telegram.ui.Components.l90;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.TwoStepVerificationActivity;
 import xh.d2;
 import xh.o2;
@@ -40,7 +40,7 @@ import xh.v3;
 import yh.u5;
 import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -89,21 +89,21 @@ public final /* synthetic */ class r implements Runnable {
                 dVar.a();
                 break;
             case 2:
-                vh.o oVar = (vh.o) obj3;
-                l90 l90Var = (l90) obj2;
+                vh.n nVar = (vh.n) obj3;
+                o90 o90Var = (o90) obj2;
                 ClickableSpan clickableSpan = (ClickableSpan) obj;
-                j90 j90Var = oVar.y;
-                if (j90Var != null && oVar.E == l90Var) {
-                    j90Var.a(clickableSpan);
-                    oVar.E = null;
-                    oVar.s.d(true);
+                m90 m90Var = nVar.y;
+                if (m90Var != null && nVar.E == o90Var) {
+                    m90Var.a(clickableSpan);
+                    nVar.E = null;
+                    nVar.s.d(true);
                     break;
                 }
                 break;
             case 3:
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj;
                 try {
-                    ((Task) ((u4.g) obj3).call()).continueWith((Executor) obj2, new w9.v(2, taskCompletionSource));
+                    ((Task) ((u4.g) obj3).call()).continueWith((Executor) obj2, new w9.w(2, taskCompletionSource));
                     break;
                 } catch (Exception e) {
                     taskCompletionSource.setException(e);
@@ -112,7 +112,7 @@ public final /* synthetic */ class r implements Runnable {
             case 4:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 n2 n2Var = (n2) obj;
-                ((yr0) obj3).H = -1;
+                ((bs0) obj3).H = -1;
                 if (tL_error2 != null) {
                     xc.a0(n2Var).d0(tL_error2, false);
                     break;
@@ -121,13 +121,13 @@ public final /* synthetic */ class r implements Runnable {
             case 5:
                 o2 o2Var = (o2) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                yr0 yr0Var = o2Var.a;
-                yr0Var.e.k(o2Var.e.d, savedStarGift);
-                ((v70) obj).u();
-                yr0Var.n();
-                TL_stars.TL_starGiftCollection c10 = yr0Var.e.c(o2Var.e.d);
+                bs0 bs0Var = o2Var.a;
+                bs0Var.e.k(o2Var.e.d, savedStarGift);
+                ((y70) obj).u();
+                bs0Var.n();
+                TL_stars.TL_starGiftCollection c10 = bs0Var.e.c(o2Var.e.d);
                 if (c10 != null) {
-                    xc.a0(yr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, y3.D1(savedStarGift.gift), c10.title))).j();
+                    xc.a0(bs0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, y3.D1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;

@@ -38,20 +38,20 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.Components.u40;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dv0;
 import org.telegram.ui.sr;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class p extends n2 implements t40, NotificationCenter.NotificationCenterDelegate, le.d {
     public u40 E;
@@ -64,7 +64,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
     public final le.b a;
     public long b;
     public v7 c;
-    public s61 d;
+    public u61 d;
     public String e;
     public boolean f;
     public boolean h;
@@ -83,12 +83,12 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.K = new m(this);
     }
 
-    public static boolean U(p pVar, w51 w51Var, View view) {
+    public static boolean U(p pVar, y51 y51Var, View view) {
         long j3;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = w51Var.G;
+        Object obj = y51Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -111,7 +111,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         int b10 = u0.b(pVar.currentAccount, j10);
         boolean z13 = b10 == 1 || b10 == 2;
         if (z12 || z13) {
-            v70 F = v70.F(pVar.c, null, view);
+            y70 F = y70.F(pVar.c, null, view);
             F.l(R.drawable.msg_viewintopic, LocaleController.getString(z10 ? R.string.CommunityMenuViewBot : z11 ? R.string.CommunityMenuViewChannel : R.string.CommunityMenuViewGroup), new g(pVar, j10, 1), z13);
             F.m(z12, R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new l(pVar, z10, z11, j10, 0));
             F.W(pVar.d.W0(view, true));
@@ -121,10 +121,10 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         return false;
     }
 
-    public static void V(p pVar, w51 w51Var) {
+    public static void V(p pVar, y51 y51Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = w51Var.d;
+        int i10 = y51Var.d;
         if (i10 == 140) {
             if (pVar.E.h() || (chatPhoto = (chat = pVar.getMessagesController().getChat(Long.valueOf(pVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -190,7 +190,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
             u0.e(pVar.J, pVar, pVar.currentAccount, pVar.H);
             return;
         }
-        Object obj = w51Var.G;
+        Object obj = y51Var.G;
         if (obj instanceof TLRPC.Chat) {
             pVar.presentFragment(zn.R9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -215,7 +215,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         this.G.setAlpha(f7);
         this.G.setScaleX(AndroidUtilities.lerp(0.75f, 1.0f, f7));
         this.G.setScaleY(AndroidUtilities.lerp(0.75f, 1.0f, f7));
@@ -351,7 +351,7 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.G.setVisibility(8);
         this.G.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         this.G.setOnClickListener(new v0(this, 17));
-        b6.a(this.G);
+        a6.a(this.G);
         this.actionBar.addView(this.G, y5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
         s6 s6Var = new s6(this, context);
         this.s = s6Var;
@@ -363,12 +363,12 @@ public final class p extends n2 implements t40, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, y5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        s61 s61Var = new s61(this, new i(this, i10), new j(this), new j(this));
-        this.d = s61Var;
-        s61Var.setClipToPadding(false);
-        s61 s61Var2 = this.d;
-        s61Var2.Y2.r = false;
-        s61Var2.q1();
+        u61 u61Var = new u61(this, new i(this, i10), new j(this), new j(this));
+        this.d = u61Var;
+        u61Var.setClipToPadding(false);
+        u61 u61Var2 = this.d;
+        u61Var2.Y2.r = false;
+        u61Var2.q1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, y5.c(-1.0f, -1));
         this.c.addView(this.actionBar, y5.e(-1, -2, 48));

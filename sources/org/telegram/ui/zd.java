@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class zd extends org.telegram.ui.Components.hd0 {
+public final class zd extends org.telegram.ui.Components.kd0 {
     public final /* synthetic */ int L;
     public final /* synthetic */ Object M;
 
@@ -21,15 +21,15 @@ public final class zd extends org.telegram.ui.Components.hd0 {
         switch (this.L) {
             case 0:
                 ke keVar = (ke) this.M;
-                org.telegram.ui.Components.s61 s61Var = keVar.a1;
+                org.telegram.ui.Components.u61 u61Var = keVar.a1;
                 fi.o oVar = keVar.Y0;
                 if (oVar != null && !oVar.isFocusable()) {
                     oVar.setFocusable(true);
                     oVar.setFocusableInTouchMode(true);
-                    int y12 = s61Var.y1(3);
-                    if (y12 >= 0 && y12 < s61Var.Y2.x.size()) {
-                        s61Var.C0();
-                        s61Var.y0(y12);
+                    int y12 = u61Var.y1(3);
+                    if (y12 >= 0 && y12 < u61Var.Y2.x.size()) {
+                        u61Var.C0();
+                        u61Var.y0(y12);
                     }
                     oVar.requestFocus();
                 }

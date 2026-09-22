@@ -25,7 +25,7 @@ import org.telegram.ui.Components.v9;
 import w7.y5;
 import yf.f0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements z5 {
     public static final /* synthetic */ int F = 0;
@@ -53,7 +53,7 @@ public final class h extends FrameLayout implements z5 {
         if (Build.VERSION.SDK_INT >= 31) {
             fh.d dVar = new fh.d(null);
             this.s = dVar;
-            dVar.i(AndroidUtilities.dp(7.0f), f0.a());
+            dVar.h(AndroidUtilities.dp(7.0f), f0.a());
             dVar.h = true;
             cVar = new ah.c(dVar);
         } else {
@@ -83,8 +83,8 @@ public final class h extends FrameLayout implements z5 {
         ch.d c10 = cVar.c(textView, null, false);
         dh.e eVar = new dh.e(f6Var);
         eVar.e = new d2.c(8);
-        eVar.f(1627389951, 1358954495);
-        eVar.e(603979776, 603979776);
+        eVar.e(1627389951, 1358954495);
+        eVar.d(603979776, 603979776);
         eVar.c(0, 0);
         eVar.n = 0.0f;
         eVar.r = 0.0f;
@@ -128,7 +128,7 @@ public final class h extends FrameLayout implements z5 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.e(j3);
+                                s0Var.a(j3);
                                 break;
                             }
                         }
@@ -140,7 +140,7 @@ public final class h extends FrameLayout implements z5 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.e(j10);
+                                s0Var2.a(j10);
                                 break;
                             }
                         }
@@ -188,7 +188,7 @@ public final class h extends FrameLayout implements z5 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.e(j3);
+                                s0Var.a(j3);
                                 break;
                             }
                         }
@@ -200,7 +200,7 @@ public final class h extends FrameLayout implements z5 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.e(j10);
+                                s0Var2.a(j10);
                                 break;
                             }
                         }
@@ -266,7 +266,7 @@ public final class h extends FrameLayout implements z5 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.e(j3);
+                                s0Var.a(j3);
                                 break;
                             }
                         }
@@ -278,7 +278,7 @@ public final class h extends FrameLayout implements z5 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.e(j10);
+                                s0Var2.a(j10);
                                 break;
                             }
                         }
@@ -326,7 +326,7 @@ public final class h extends FrameLayout implements z5 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.e(j3);
+                                s0Var.a(j3);
                                 break;
                             }
                         }
@@ -338,7 +338,7 @@ public final class h extends FrameLayout implements z5 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.e(j10);
+                                s0Var2.a(j10);
                                 break;
                             }
                         }
@@ -398,7 +398,7 @@ public final class h extends FrameLayout implements z5 {
             super.drawChild(a2, view, j3);
             a2.restore();
             a2.drawColor(TLObject.FLAG_29);
-            dVar.c();
+            dVar.b();
         }
         return super.drawChild(canvas, view, j3);
     }

@@ -1,24 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.content.Context;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class tk extends org.telegram.ui.Components.yk0 {
-    public final /* synthetic */ zn l;
+public final class tk extends org.telegram.ui.Components.w61 {
+    public final /* synthetic */ zn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tk(zn znVar, tj tjVar, wj wjVar) {
-        super(tjVar, wjVar);
-        this.l = znVar;
+    public tk(zn znVar, Context context) {
+        super(context);
+        this.N = znVar;
     }
 
-    public final void f(int i10) {
-        if (this.l.Pa) {
-            if (i10 == 0) {
-                i10 = 1;
-            } else if (i10 == 1) {
-                i10 = 0;
-            }
-        }
-        this.b = i10;
+    @Override // org.telegram.ui.Components.w61
+    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
+        return this.N.ea;
     }
 }

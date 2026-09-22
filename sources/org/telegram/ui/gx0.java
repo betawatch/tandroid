@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class gx0 extends org.telegram.ui.Components.vl0 {
+public final class gx0 extends org.telegram.ui.Components.yl0 {
     public final Paint X2;
     public final Path Y2;
     public final /* synthetic */ jx0 Z2;
@@ -28,7 +28,7 @@ public final class gx0 extends org.telegram.ui.Components.vl0 {
         this.Y2 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Path path = this.Y2;
         path.rewind();
@@ -42,7 +42,7 @@ public final class gx0 extends org.telegram.ui.Components.vl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (this.Z2.n.q0 >= 1.0f) {
             return false;
@@ -50,7 +50,7 @@ public final class gx0 extends org.telegram.ui.Components.vl0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.Z2.n.q0 >= 1.0f) {
             return false;
@@ -58,7 +58,7 @@ public final class gx0 extends org.telegram.ui.Components.vl0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         PremiumPreviewFragment premiumPreviewFragment = this.Z2.n;

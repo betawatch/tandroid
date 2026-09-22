@@ -37,10 +37,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static o20 b;
@@ -50,7 +50,7 @@ public abstract class ia {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static u01 i;
+    public static w01 i;
     public static int j;
     public static BitmapDrawable m;
     public static final o20[] a = new o20[2];
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new u01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new w01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            u01 u01Var = i;
+            w01 w01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            u01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            w01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }

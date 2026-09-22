@@ -26,12 +26,12 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r00;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.dc1;
 import org.telegram.ui.q20;
 import org.telegram.ui.r20;
@@ -45,7 +45,7 @@ import yh.u5;
 import yh.v7;
 import yh.w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class i extends r20 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
@@ -75,7 +75,7 @@ public final class i extends r20 implements NotificationCenter.NotificationCente
     }
 
     public static void x0(i iVar, int i10) {
-        w51 G;
+        y51 G;
         e eVar = iVar.f0;
         if (eVar == null || (G = eVar.G(i10)) == null) {
             return;
@@ -100,16 +100,16 @@ public final class i extends r20 implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void C0(ArrayList arrayList, k61 k61Var) {
+    public final void C0(ArrayList arrayList, m61 m61Var) {
         if (getParentActivity() == null) {
             return;
         }
         u5 y3 = u5.y(this.currentAccount, true);
         eb ebVar = (eb) super.r0(getParentActivity());
-        w51 w51Var = new w51(-2);
-        w51Var.c = ebVar;
-        arrayList.add(w51Var);
-        arrayList.add(w51.k(this.U));
+        y51 y51Var = new y51(-2);
+        y51Var.c = ebVar;
+        arrayList.add(y51Var);
+        arrayList.add(y51.k(this.U));
         boolean z10 = this.T;
         if (z10) {
             e2.w(R.string.TopUpViaFragmentInfo, arrayList);
@@ -117,13 +117,13 @@ public final class i extends r20 implements NotificationCenter.NotificationCente
         boolean O = y3.O(0);
         this.d0 = O;
         if (!O) {
-            arrayList.add(w51.l(this.S));
+            arrayList.add(y51.l(this.S));
             return;
         }
         if (!z10) {
-            arrayList.add(w51.B(null));
+            arrayList.add(y51.B(null));
         }
-        arrayList.add(w51.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
+        arrayList.add(y51.p(this.R, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
     }
 
     public final void D0() {

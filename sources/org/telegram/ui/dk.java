@@ -1,28 +1,77 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class dk implements Runnable {
-    public final /* synthetic */ zn a;
+public final class dk extends org.telegram.ui.Cells.w0 {
+    public final /* synthetic */ zn l2;
 
-    public dk(zn znVar) {
-        this.a = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dk(Context context, org.telegram.ui.ActionBar.f6 f6Var, zn znVar) {
+        super(context, f6Var, false);
+        this.l2 = znVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zn znVar = this.a;
-        MessageObject messageObject = znVar.d5;
-        if (messageObject == null || znVar.T8 == null) {
+    @Override // org.telegram.ui.Cells.w0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        zn znVar = this.l2;
+        if (znVar.B8 != null) {
             return;
         }
-        int max = Math.max(0, messageObject.messageOwner.ttl_period - (znVar.getConnectionsManager().getCurrentTime() - znVar.d5.messageOwner.date));
-        znVar.T8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
-        AndroidUtilities.runOnUIThread(znVar.U8, 1000L);
+        float y3 = ((znVar.x0.getY() + znVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
+        if (y3 <= 0.0f) {
+            super.onDraw(canvas);
+        } else if (y3 < getMeasuredHeight()) {
+            canvas.save();
+            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
+            super.onDraw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
+        }
+        zn znVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
+        if (kVar.s() || znVar.A9()) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Cells.w0, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
+        }
+        zn znVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
+        if (kVar.s() || znVar.A9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        setVisibility(f7 > 0.0f ? 0 : 4);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

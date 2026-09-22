@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class wp extends z4.g {
     public vp w0;
 
     public wp(Context context) {
         super(context);
-        b(new up((yh0) this));
+        b(new up((bi0) this));
     }
 
     @Override // z4.g

@@ -1,20 +1,20 @@
 package x1;
 
 import android.util.Log;
-import c5.x;
+import c5.w;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b extends FutureTask {
     public final /* synthetic */ a a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(a aVar, x xVar) {
-        super(xVar);
+    public b(a aVar, w wVar) {
+        super(wVar);
         this.a = aVar;
     }
 

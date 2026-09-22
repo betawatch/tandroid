@@ -5,7 +5,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import c5.c0;
+import c5.b0;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.internal.clearcut.t;
 import com.google.android.gms.internal.clearcut.z1;
@@ -14,7 +14,7 @@ import g7.q;
 import hg.k0;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -160,7 +160,7 @@ public abstract class b extends Binder implements IInterface {
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 }
-                c0 c0Var = (c0) this;
+                b0 b0Var = (b0) this;
                 if (i10 != 1) {
                     return false;
                 }
@@ -170,7 +170,7 @@ public abstract class b extends Binder implements IInterface {
                 if (dataAvail > 0) {
                     throw new BadParcelableException(k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                c0Var.b.a(Integer.valueOf(readInt));
+                b0Var.b.a(Integer.valueOf(readInt));
                 return true;
             case 4:
                 if (i10 <= 16777215) {

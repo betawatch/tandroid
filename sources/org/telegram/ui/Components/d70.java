@@ -1,133 +1,93 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class d70 extends ul0 {
-    public final /* synthetic */ j70 c;
+public final class d70 extends c71 {
+    public float f;
+    public float h;
+    public final Paint n;
+    public float r;
+    public org.telegram.ui.Cells.f3 s;
+    public final /* synthetic */ m70 v;
 
-    public d70(j70 j70Var) {
-        this.c = j70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d70(m70 m70Var, Context context) {
+        super(m70Var, context);
+        this.v = m70Var;
+        this.n = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 3 || i10 == 1;
-    }
-
-    public final TLObject E(int i10) {
-        int i11;
-        int i12;
-        j70 j70Var = this.c;
-        if (j70Var.m0 == null) {
-            return (TLObject) j70Var.e0.get(i10 - j70Var.Y);
+    @Override // org.telegram.ui.Components.c71, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10;
+        m70 m70Var = this.v;
+        int i11 = m70Var.y;
+        i10 = ((org.telegram.ui.ActionBar.f3) m70Var).backgroundPaddingTop;
+        m70Var.V.setTranslationY(AndroidUtilities.dp(64.0f) + AndroidUtilities.dp(6.0f) + (i11 - i10));
+        float f7 = m70Var.o0 + m70Var.u0;
+        lx0 lx0Var = m70Var.s;
+        if (lx0Var.getVisibility() != 0) {
+            this.f = f7;
+            this.h = f7;
+        } else if (this.h != f7) {
+            this.h = f7;
+            this.r = (f7 - this.f) * 0.10666667f;
         }
-        TLRPC.Dialog dialog = (TLRPC.Dialog) j70Var.n0.get(i10 - j70Var.Y);
-        if (DialogObject.isUserDialog(dialog.id)) {
-            i12 = ((org.telegram.ui.ActionBar.f3) j70Var).currentAccount;
-            return MessagesController.getInstance(i12).getUser(Long.valueOf(dialog.id));
-        }
-        i11 = ((org.telegram.ui.ActionBar.f3) j70Var).currentAccount;
-        return MessagesController.getInstance(i11).getChat(Long.valueOf(-dialog.id));
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.c.c0;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        j70 j70Var = this.c;
-        if (i10 == j70Var.X) {
-            return 1;
-        }
-        j70Var.getClass();
-        if (i10 == 0) {
-            return 2;
-        }
-        if (i10 >= j70Var.Y && i10 < j70Var.Z) {
-            return 3;
-        }
-        if (i10 == j70Var.b0) {
-            return 4;
-        }
-        return i10 == j70Var.a0 ? 5 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 == 2) {
-            view.requestLayout();
-            return;
-        }
-        if (i11 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
-        TLObject E = E(i10);
-        Object object = h4Var.getObject();
-        long j3 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
-        j70 j70Var = this.c;
-        h4Var.e(E, null, null, i10 != j70Var.Z);
-        long j10 = E instanceof TLRPC.User ? ((TLRPC.User) E).id : E instanceof TLRPC.Chat ? -((TLRPC.Chat) E).id : 0L;
-        if (j10 != 0) {
-            a0.i iVar = j70Var.T;
-            if (iVar == null || iVar.h(j10) < 0) {
-                h4Var.c(j70Var.f0.h(j10) >= 0, j3 == j10);
-                h4Var.setCheckBoxEnabled(true);
+        float f10 = this.f;
+        float f11 = this.h;
+        if (f10 != f11) {
+            float f12 = this.r;
+            float f13 = f10 + f12;
+            this.f = f13;
+            if (f12 > 0.0f && f13 > f11) {
+                this.f = f11;
+            } else if (f12 >= 0.0f || f13 >= f11) {
+                invalidate();
             } else {
-                h4Var.c(true, false);
-                h4Var.setCheckBoxEnabled(false);
+                this.f = f11;
             }
         }
+        lx0Var.setTranslationY(m70Var.y + this.f);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = viewGroup.getContext();
-        if (i10 != 2) {
-            j70 j70Var = this.c;
-            if (i10 == 3) {
-                view = new org.telegram.ui.Cells.h4(context, 1, 0, j70Var.m0 != null);
-            } else if (i10 == 4) {
-                view = new View(context);
-            } else if (i10 != 5) {
-                org.telegram.ui.Cells.z4 z4Var = new org.telegram.ui.Cells.z4(context);
-                z4Var.b(LocaleController.getString(R.string.VoipGroupCopyInviteLink), R.drawable.msg_link, 7, true);
-                int i11 = org.telegram.ui.ActionBar.j6.n5;
-                z4Var.a(i11, i11);
-                view = z4Var;
-            } else {
-                c70 c70Var = new c70(context, null, 0, null, 0);
-                c70Var.setLayoutParams(new s4.p0(-1, -1));
-                c70Var.e.setVisibility(8);
-                org.telegram.ui.fu fuVar = j70Var.m0;
-                vh.o oVar = c70Var.d;
-                if (fuVar != null) {
-                    oVar.setText(LocaleController.getString(R.string.FilterNoChats));
-                } else {
-                    oVar.setText(LocaleController.getString(R.string.NoContacts));
-                }
-                c70Var.setAnimateLayoutChange(true);
-                view = c70Var;
-            }
-        } else {
-            view = new ci.eb(this, context, 18);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        m70 m70Var = this.v;
+        if (view != m70Var.V) {
+            return super.drawChild(canvas, view, j3);
         }
-        return new fl0(view);
+        canvas.save();
+        canvas.clipRect(0.0f, view.getY() - AndroidUtilities.dp(4.0f), getMeasuredWidth(), view.getY() + m70Var.k0 + 1.0f);
+        canvas.drawColor(i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false), (int) (m70Var.h0 * 255.0f)));
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d7, false), (int) (m70Var.h0 * 255.0f));
+        Paint paint = this.n;
+        paint.setColor(k10);
+        canvas.drawRect(0.0f, view.getY() + m70Var.k0, getMeasuredWidth(), view.getY() + m70Var.k0 + 1.0f, paint);
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.ui.Cells.f3 f3Var = this.s;
+        if (f3Var != null) {
+            ((h71) f3Var.b).b = true;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        if (view == this.v.t0 && this.s == null) {
+            this.s = new org.telegram.ui.Cells.f3(view);
+        }
     }
 }

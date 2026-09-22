@@ -4,12 +4,12 @@ import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class x0 extends a {
     public final g2.g h;
     public final r5.d i;
-    public final n2.n j;
+    public final n2.m j;
     public final qb.b k;
     public final int l;
     public final b2.s m;
@@ -20,11 +20,11 @@ public final class x0 extends a {
     public g2.c0 r;
     public b2.k0 s;
 
-    public x0(b2.k0 k0Var, g2.g gVar, r5.d dVar, n2.n nVar, qb.b bVar, int i10, b2.s sVar) {
+    public x0(b2.k0 k0Var, g2.g gVar, r5.d dVar, n2.m mVar, qb.b bVar, int i10, b2.s sVar) {
         this.s = k0Var;
         this.h = gVar;
         this.i = dVar;
-        this.j = nVar;
+        this.j = mVar;
         this.k = bVar;
         this.l = i10;
         this.m = sVar;
@@ -49,7 +49,7 @@ public final class x0 extends a {
         f0Var2.getClass();
         Uri uri = f0Var2.a;
         e2.d.h(this.g);
-        return new v0(uri, createDataSource, new lf.h((c3.r) this.i.b), this.j, new n2.k(this.d.c, 0, f0Var), this.k, b(f0Var), this, dVar, f0Var2.f, this.l, this.m, e2.d0.Q(f0Var2.h), null);
+        return new v0(uri, createDataSource, new lf.h((c3.r) this.i.b), this.j, new n2.j(this.d.c, 0, f0Var), this.k, b(f0Var), this, dVar, f0Var2.f, this.l, this.m, e2.d0.Q(f0Var2.h), null);
     }
 
     @Override // u2.a
@@ -64,9 +64,9 @@ public final class x0 extends a {
         myLooper.getClass();
         j2.k kVar = this.g;
         e2.d.h(kVar);
-        n2.n nVar = this.j;
-        nVar.C(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.j;
+        mVar.C(myLooper, kVar);
+        mVar.b();
         u();
     }
 
@@ -76,9 +76,9 @@ public final class x0 extends a {
         if (v0Var.N) {
             for (b1 b1Var : v0Var.K) {
                 b1Var.k();
-                n2.h hVar = b1Var.h;
-                if (hVar != null) {
-                    hVar.a(b1Var.e);
+                n2.g gVar = b1Var.h;
+                if (gVar != null) {
+                    gVar.a(b1Var.e);
                     b1Var.h = null;
                     b1Var.g = null;
                 }

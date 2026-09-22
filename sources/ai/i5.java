@@ -53,11 +53,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,14 +76,14 @@ public final /* synthetic */ class i5 implements Runnable {
 
     private final void a() {
         AudioTrack audioTrack = (AudioTrack) this.b;
-        k2.n nVar = (k2.n) this.c;
+        k2.o oVar = (k2.o) this.c;
         Handler handler = (Handler) this.d;
-        k2.k kVar = (k2.k) this.e;
+        k2.l lVar = (k2.l) this.e;
         try {
             audioTrack.flush();
             audioTrack.release();
-            if (nVar != null && handler.getLooper().getThread().isAlive()) {
-                handler.post(new gg.x1(26, nVar, kVar));
+            if (oVar != null && handler.getLooper().getThread().isAlive()) {
+                handler.post(new gg.x1(26, oVar, lVar));
             }
             synchronized (k2.f0.o0) {
                 try {
@@ -97,8 +97,8 @@ public final /* synthetic */ class i5 implements Runnable {
                 }
             }
         } catch (Throwable th2) {
-            if (nVar != null && handler.getLooper().getThread().isAlive()) {
-                handler.post(new gg.x1(26, nVar, kVar));
+            if (oVar != null && handler.getLooper().getThread().isAlive()) {
+                handler.post(new gg.x1(26, oVar, lVar));
             }
             synchronized (k2.f0.o0) {
                 try {
@@ -459,7 +459,7 @@ public final /* synthetic */ class i5 implements Runnable {
     }
 
     private final void h() {
-        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (v70) this.e);
+        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (y70) this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:346:0x08d2, code lost:
@@ -1225,9 +1225,9 @@ public final /* synthetic */ class i5 implements Runnable {
                 ii.r rVar2 = (ii.r) this.b;
                 ii.a aVar2 = (ii.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                v70 v70Var = (v70) this.e;
+                y70 y70Var = (y70) this.e;
                 rVar2.r.W4(aVar2, pageBlock);
-                v70Var.u();
+                y70Var.u();
                 return;
             case 19:
                 a();

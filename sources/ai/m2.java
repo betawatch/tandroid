@@ -25,13 +25,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.vv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class m2 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final tv0 X = new tv0(new w1(1), new w1(2));
-    public static final tv0 Y = new tv0(new w1(3), new w1(4));
+    public static final vv0 X = new vv0(new w1(1), new w1(2));
+    public static final vv0 Y = new vv0(new w1(3), new w1(4));
     public static final m2 Z;
     public boolean E;
     public boolean F;
@@ -65,7 +65,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
     public d2 v;
     public int w;
     public ScaleGestureDetector x;
-    public n2.e y;
+    public l.d y;
 
     static {
         m2 m2Var = new m2();
@@ -116,7 +116,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         if (i12 >= 23) {
             m2Var.x.setStylusScaleEnabled(false);
         }
-        m2Var.y = new n2.e(context, new i2(scaledTouchSlop));
+        m2Var.y = new l.d(context, new i2(scaledTouchSlop));
         f0 f0Var = new f0(context, 1);
         f0Var.b = new Path();
         m2Var.e = f0Var;

@@ -21,12 +21,12 @@ import org.telegram.ui.Components.j40;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.qe;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import yf.h0;
 import yf.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements le.d {
     public static final int[] H;
@@ -227,7 +227,7 @@ public class e extends FrameLayout implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 99) {
             invalidate();
             return;
@@ -376,7 +376,7 @@ public class e extends FrameLayout implements le.d {
                     } else if (i10 == 3) {
                         d.setContentDescription(LocaleController.getString(R.string.BroadcastGroupInfo));
                     }
-                    b6.b(d, 0.13f, 2.0f);
+                    a6.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);
                     d.setOnClickListener(new o4(this, i10, 3));
                     addView(d, y5.c(56.0f, 56));

@@ -1,428 +1,178 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.SparseArray;
 import android.view.View;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class zu0 extends bu0 {
-    public final HashSet f3;
-    public final ArrayList g3;
-    public final ArrayList h3;
-    public final ArrayList i3;
-    public TextPaint j3;
-    public StaticLayout k3;
-    public float l3;
-    public float m3;
-    public ai.rc n3;
-    public int o3;
-    public final ArrayList p3;
+public final class zu0 extends ul0 {
+    public final Context r;
+    public final /* synthetic */ lv0 s;
 
-    public zu0(Context context) {
-        super(context, null);
-        this.f3 = new HashSet();
-        this.g3 = new ArrayList();
-        this.h3 = new ArrayList();
-        this.i3 = new ArrayList();
-        this.p3 = new ArrayList();
+    public zu0(lv0 lv0Var, Context context) {
+        this.s = lv0Var;
+        this.r = context;
     }
 
-    public abstract boolean A1();
-
-    public abstract boolean B1();
-
-    public boolean C1() {
-        return true;
+    @Override // org.telegram.ui.Components.gl0
+    public final String F(int i10) {
+        return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:206:0x0114, code lost:
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(yl0 yl0Var, float f7, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final int M(int i10) {
+        av0[] av0VarArr = this.s.t1;
+        if ((av0VarArr[3].c.size() == 0 && !av0VarArr[3].g) || i10 >= av0VarArr[3].c.size()) {
+            return 1;
+        }
+        av0 av0Var = av0VarArr[3];
+        return ((ArrayList) av0Var.d.get(av0Var.c.get(i10))).size() + (i10 == 0 ? 0 : 1);
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final Object O(int i10, int i11) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final int P(int i10, int i11) {
+        av0[] av0VarArr = this.s.t1;
+        if (av0VarArr[3].c.size() == 0 && !av0VarArr[3].g) {
+            return 5;
+        }
+        if (i10 < av0VarArr[3].c.size()) {
+            return (i10 == 0 || i11 != 0) ? 4 : 3;
+        }
+        return 6;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0034, code lost:
     
-        if (getAnimateToColumnsCount() > getColumnsCount()) goto L49;
+        if (r0[1] != false) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00fd, code lost:
-    
-        if (getAnimateToColumnsCount() >= getColumnsCount()) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0116, code lost:
-    
-        r23 = 0;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x028a  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x03c8 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0718  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x071e  */
-    @Override // org.telegram.ui.Components.ha, org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ul0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void dispatchDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        float f11;
-        int i15;
-        float f12;
-        float f13;
-        boolean z10;
-        int i16;
-        Float valueOf = Float.valueOf(1.0f);
-        dl0 movingAdapter = getMovingAdapter();
-        dl0 supportingAdapter = getSupportingAdapter();
-        if (!C1() || getAdapter() != movingAdapter) {
-            for (int i17 = 0; i17 < getChildCount(); i17++) {
-                View childAt = getChildAt(i17);
-                int p5 = jv0.p(childAt);
-                if (p5 != 0 && getMessageAlphaEnter() != null) {
-                    if (getMessageAlphaEnter().get(p5, null) != null) {
-                        f7 = getMessageAlphaEnter().get(p5, valueOf).floatValue();
-                        if (!(childAt instanceof org.telegram.ui.Cells.l7)) {
-                            ((org.telegram.ui.Cells.l7) childAt).setEnterAnimationAlpha(f7);
-                        } else if (childAt instanceof org.telegram.ui.Cells.k7) {
-                            ((org.telegram.ui.Cells.k7) childAt).setEnterAnimationAlpha(f7);
-                        }
-                    }
-                }
-                f7 = 1.0f;
-                if (!(childAt instanceof org.telegram.ui.Cells.l7)) {
-                }
+    public final int R() {
+        av0[] av0VarArr = this.s.t1;
+        int i10 = 1;
+        if (av0VarArr[3].c.size() == 0 && !av0VarArr[3].g) {
+            return 1;
+        }
+        int size = av0VarArr[3].c.size();
+        if (!av0VarArr[3].c.isEmpty()) {
+            boolean[] zArr = av0VarArr[3].i;
+            if (zArr[0]) {
             }
-            super.dispatchDraw(canvas);
+            return size + i10;
+        }
+        i10 = 0;
+        return size + i10;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final View T(int i10, View view) {
+        lv0 lv0Var = this.s;
+        if (view == null) {
+            view = new org.telegram.ui.Cells.w3(this.r, 28, lv0Var.F1);
+        }
+        if (i10 == 0) {
+            view.setAlpha(0.0f);
+            return view;
+        }
+        if (i10 < lv0Var.t1[3].c.size()) {
+            view.setAlpha(1.0f);
+            ((org.telegram.ui.Cells.w3) view).setText(LocaleController.formatSectionDate(((MessageObject) ((ArrayList) lv0Var.t1[3].d.get((String) lv0Var.t1[3].c.get(i10))).get(0)).messageOwner.date));
+        }
+        return view;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean V(int i10, int i11, s4.c1 c1Var) {
+        av0[] av0VarArr = this.s.t1;
+        if (av0VarArr[3].c.size() != 0 || av0VarArr[3].g) {
+            return i10 == 0 || i11 != 0;
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final void W(int i10, int i11, s4.c1 c1Var) {
+        lv0 lv0Var = this.s;
+        av0[] av0VarArr = lv0Var.t1;
+        int i12 = c1Var.f;
+        View view = c1Var.a;
+        if (i12 == 6 || i12 == 5) {
             return;
         }
-        float measuredHeight = getMeasuredHeight();
-        boolean A1 = A1();
-        HashSet hashSet = this.f3;
-        ArrayList arrayList = this.h3;
-        ArrayList arrayList2 = this.i3;
-        ArrayList arrayList3 = this.g3;
-        ArrayList arrayList4 = this.p3;
-        if (A1) {
-            int i18 = -1;
-            int i19 = -1;
-            int i20 = -1;
-            for (int i21 = 0; i21 < getChildCount(); i21++) {
-                int S = RecyclerView.S(getChildAt(i21));
-                if (S >= 0 && (S > i20 || i20 == -1)) {
-                    i20 = S;
-                }
-                if (S >= 0 && (S < i19 || i19 == -1)) {
-                    i19 = S;
-                }
-            }
-            int i22 = 0;
-            i11 = -1;
-            while (true) {
-                f10 = measuredHeight;
-                if (i22 >= getSupportingListView().getChildCount()) {
-                    break;
-                }
-                bu0 supportingListView = getSupportingListView();
-                View childAt2 = getSupportingListView().getChildAt(i22);
-                supportingListView.getClass();
-                int S2 = RecyclerView.S(childAt2);
-                int i23 = i19;
-                if (S2 >= 0 && (S2 > i18 || i18 == -1)) {
-                    i18 = S2;
-                }
-                if (S2 >= 0 && (S2 < i11 || i11 == -1)) {
-                    i11 = S2;
-                }
-                i22++;
-                i19 = i23;
-                measuredHeight = f10;
-            }
-            i12 = i19;
-            if (i12 < 0 || i11 < 0 || getPinchCenterPosition() < 0) {
-                i16 = 0;
-                i13 = 0;
-            } else {
-                int i24 = i18;
-                int ceil = (int) Math.ceil(movingAdapter.h() / getColumnsCount());
-                int i25 = i20;
-                int ceil2 = (int) Math.ceil(movingAdapter.h() / getAnimateToColumnsCount());
-                int pinchCenterPosition = ((getPinchCenterPosition() / getAnimateToColumnsCount()) - (i11 / getAnimateToColumnsCount())) - ((getPinchCenterPosition() / getColumnsCount()) - (i12 / getColumnsCount()));
-                i13 = (i12 / getColumnsCount()) - pinchCenterPosition < 0 ? pinchCenterPosition : pinchCenterPosition;
-                if ((i11 / getAnimateToColumnsCount()) + i13 < 0) {
-                }
-                if (((i24 / getColumnsCount()) + i13 >= ceil && getAnimateToColumnsCount() > getColumnsCount()) || ((i25 / getAnimateToColumnsCount()) - i13 >= ceil2 && getAnimateToColumnsCount() < getColumnsCount())) {
-                    i13 = 0;
-                }
-                i16 = (int) ((getAnimateToColumnsCount() - getColumnsCount()) * ((getPinchCenterPosition() % getColumnsCount()) / (getColumnsCount() - 1)));
-            }
-            arrayList4.clear();
-            hashSet.clear();
-            arrayList3.clear();
-            arrayList.clear();
-            arrayList2.clear();
-            this.o3 = 0;
-            for (int i26 = 0; i26 < getSupportingListView().getChildCount(); i26++) {
-                View childAt3 = getSupportingListView().getChildAt(i26);
-                if (childAt3.getTop() <= getMeasuredHeight() && childAt3.getBottom() >= 0) {
-                    if (childAt3 instanceof org.telegram.ui.Cells.u7) {
-                        arrayList4.add((org.telegram.ui.Cells.u7) childAt3);
-                    } else if (childAt3 instanceof TextView) {
-                        this.o3++;
-                    }
-                }
-            }
-            arrayList3.addAll(arrayList4);
-            cl0 fastScroll = getFastScroll();
-            if (fastScroll != null && fastScroll.getTag() != null) {
-                float H = movingAdapter.H(this);
-                float H2 = supportingAdapter.H(getSupportingListView());
-                float f14 = movingAdapter.E(this) ? 1.0f : 0.0f;
-                float f15 = supportingAdapter.E(getSupportingListView()) ? 1.0f : 0.0f;
-                fastScroll.setProgress((getChangeColumnsProgress() * H2) + ((1.0f - getChangeColumnsProgress()) * H));
-                fastScroll.setVisibilityAlpha((getChangeColumnsProgress() * f15) + ((1.0f - getChangeColumnsProgress()) * f14));
-            }
-            i10 = i16;
-        } else {
-            f10 = measuredHeight;
-            i10 = 0;
-            i11 = 0;
-            i12 = 0;
-            i13 = 0;
-        }
-        for (int i27 = 0; i27 < getChildCount(); i27++) {
-            View childAt4 = getChildAt(i27);
-            if (childAt4.getTop() > getMeasuredHeight() || childAt4.getBottom() < 0) {
-                if (childAt4 instanceof org.telegram.ui.Cells.u7) {
-                    org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) getChildAt(i27);
-                    u7Var.v = null;
-                    u7Var.S = 0.0f;
-                    u7Var.T = 0;
-                    u7Var.setTranslationX(0.0f);
-                    u7Var.setTranslationY(0.0f);
-                    u7Var.j(1.0f, !A1());
-                }
-            } else if (childAt4 instanceof org.telegram.ui.Cells.u7) {
-                org.telegram.ui.Cells.u7 u7Var2 = (org.telegram.ui.Cells.u7) getChildAt(i27);
-                z1(u7Var2);
-                MessageObject messageObject = u7Var2.getMessageObject();
-                if (messageObject == null || getMessageAlphaEnter() == null) {
-                    f12 = 2.0f;
-                } else {
-                    f12 = 2.0f;
-                    if (getMessageAlphaEnter().get(messageObject.getId(), null) != null) {
-                        f13 = getMessageAlphaEnter().get(messageObject.getId(), valueOf).floatValue();
-                        boolean A12 = A1();
-                        if (u7Var2.w != f13) {
-                            u7Var2.w = f13;
-                            if (!A12) {
-                                u7Var2.invalidate();
-                            }
-                        }
-                        if (A1()) {
-                            int a2 = (((s4.r) u7Var2.getLayoutParams()).a() % getColumnsCount()) + i10;
-                            int animateToColumnsCount = (getAnimateToColumnsCount() * (((((s4.r) u7Var2.getLayoutParams()).a() - i12) / getColumnsCount()) + i13)) + a2 + this.o3;
-                            if (a2 >= 0 && a2 < getAnimateToColumnsCount() && animateToColumnsCount >= 0 && animateToColumnsCount < arrayList4.size()) {
-                                float lerp = AndroidUtilities.lerp(1.0f, (((org.telegram.ui.Cells.u7) arrayList4.get(animateToColumnsCount)).getMeasuredWidth() - AndroidUtilities.dpf2(f12)) / (u7Var2.getMeasuredWidth() - AndroidUtilities.dpf2(f12)), getChangeColumnsProgress());
-                                float left = u7Var2.getLeft();
-                                float top = u7Var2.getTop();
-                                float left2 = ((org.telegram.ui.Cells.u7) arrayList4.get(animateToColumnsCount)).getLeft();
-                                float top2 = ((org.telegram.ui.Cells.u7) arrayList4.get(animateToColumnsCount)).getTop();
-                                u7Var2.setPivotX(0.0f);
-                                u7Var2.setPivotY(0.0f);
-                                u7Var2.j(lerp, !A1());
-                                u7Var2.setTranslationX(getChangeColumnsProgress() * (left2 - left));
-                                u7Var2.setTranslationY(getChangeColumnsProgress() * (top2 - top));
-                                org.telegram.ui.Cells.u7 u7Var3 = (org.telegram.ui.Cells.u7) arrayList4.get(animateToColumnsCount);
-                                float changeColumnsProgress = getChangeColumnsProgress();
-                                int animateToColumnsCount2 = getAnimateToColumnsCount();
-                                u7Var2.v = u7Var3;
-                                u7Var2.S = changeColumnsProgress;
-                                u7Var2.T = animateToColumnsCount2;
-                                hashSet.add((org.telegram.ui.Cells.u7) arrayList4.get(animateToColumnsCount));
-                                arrayList2.add(u7Var2);
-                                canvas.save();
-                                canvas.translate(u7Var2.getX(), u7Var2.getY());
-                                u7Var2.draw(canvas);
-                                canvas.restore();
-                                if (u7Var2.getY() < f10) {
-                                    f10 = u7Var2.getY();
-                                }
-                                z10 = true;
-                                if (!z10) {
-                                    if (A1()) {
-                                        arrayList.add(u7Var2);
-                                    }
-                                    u7Var2.v = null;
-                                    u7Var2.S = 0.0f;
-                                    u7Var2.T = 0;
-                                    u7Var2.setTranslationX(0.0f);
-                                    u7Var2.setTranslationY(0.0f);
-                                    u7Var2.j(1.0f, !A1());
-                                }
-                            }
-                        }
-                        z10 = false;
-                        if (!z10) {
-                        }
-                    }
-                }
-                f13 = 1.0f;
-                boolean A122 = A1();
-                if (u7Var2.w != f13) {
-                }
-                if (A1()) {
-                }
-                z10 = false;
-                if (!z10) {
-                }
-            }
-        }
-        float f16 = 255.0f;
-        if (A1() && !arrayList3.isEmpty()) {
-            float changeColumnsProgress2 = getChangeColumnsProgress() + ((1.0f - getChangeColumnsProgress()) * (getAnimateToColumnsCount() / getColumnsCount()));
-            float changeColumnsProgress3 = getChangeColumnsProgress() + ((1.0f - getChangeColumnsProgress()) * (((getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f)) / ((getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f))));
-            float measuredWidth = getMeasuredWidth() / getColumnsCount();
-            float measuredWidth2 = getMeasuredWidth() / getAnimateToColumnsCount();
-            float ceil3 = (float) (((Math.ceil(getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f)) * changeColumnsProgress3) + AndroidUtilities.dpf2(2.0f));
-            if (B1()) {
-                ceil3 *= 1.25f;
-            }
-            float f17 = ceil3;
-            int i28 = 0;
-            while (i28 < arrayList3.size()) {
-                org.telegram.ui.Cells.u7 u7Var4 = (org.telegram.ui.Cells.u7) arrayList3.get(i28);
-                if (hashSet.contains(u7Var4)) {
-                    f11 = changeColumnsProgress3;
-                    i15 = i28;
-                } else {
-                    u7Var4.v = null;
-                    u7Var4.S = 0.0f;
-                    u7Var4.T = 0;
-                    int a10 = ((s4.r) u7Var4.getLayoutParams()).a() % getAnimateToColumnsCount();
-                    int i29 = a10 - i10;
-                    int a11 = ((((s4.r) u7Var4.getLayoutParams()).a() - i11) / getAnimateToColumnsCount()) - i13;
-                    canvas.save();
-                    canvas.translate((getChangeColumnsProgress() * a10 * measuredWidth2) + ((1.0f - getChangeColumnsProgress()) * i29 * measuredWidth), (a11 * f17) + f10);
-                    u7Var4.j(changeColumnsProgress3, !A1());
-                    if (i29 < getColumnsCount()) {
-                        f11 = changeColumnsProgress3;
-                        i15 = i28;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, u7Var4.getMeasuredWidth() * changeColumnsProgress2, u7Var4.getMeasuredHeight() * changeColumnsProgress2, (int) (getChangeColumnsProgress() * 255.0f), 31);
-                        u7Var4.draw(canvas);
-                        canvas.restore();
-                    } else {
-                        f11 = changeColumnsProgress3;
-                        i15 = i28;
-                        u7Var4.draw(canvas);
-                    }
-                    canvas.restore();
-                }
-                i28 = i15 + 1;
-                changeColumnsProgress3 = f11;
-            }
-        }
-        super.dispatchDraw(canvas);
-        if (A1()) {
-            float changeColumnsProgress4 = (1.0f - getChangeColumnsProgress()) + (getChangeColumnsProgress() * (getColumnsCount() / getAnimateToColumnsCount()));
-            float changeColumnsProgress5 = (1.0f - getChangeColumnsProgress()) + (getChangeColumnsProgress() * (((getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f)) / ((getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f))));
-            float ceil4 = (float) (((Math.ceil(getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f)) * changeColumnsProgress5) + AndroidUtilities.dpf2(2.0f));
-            if (B1()) {
-                ceil4 *= 1.25f;
-            }
-            float f18 = ceil4;
-            float measuredWidth3 = getMeasuredWidth() / getColumnsCount();
-            float measuredWidth4 = getMeasuredWidth() / getAnimateToColumnsCount();
-            int i30 = 0;
-            while (i30 < arrayList.size()) {
-                org.telegram.ui.Cells.u7 u7Var5 = (org.telegram.ui.Cells.u7) arrayList.get(i30);
-                int a12 = ((s4.r) u7Var5.getLayoutParams()).a() % getColumnsCount();
-                int a13 = ((((s4.r) u7Var5.getLayoutParams()).a() - i12) / getColumnsCount()) + i13;
-                int i31 = a12 + i10;
-                canvas.save();
-                u7Var5.j(changeColumnsProgress5, !A1());
-                canvas.translate((getChangeColumnsProgress() * i31 * measuredWidth4) + ((1.0f - getChangeColumnsProgress()) * a12 * measuredWidth3), (a13 * f18) + f10);
-                if (i31 < getAnimateToColumnsCount()) {
-                    i14 = i30;
-                    canvas.saveLayerAlpha(0.0f, 0.0f, u7Var5.getMeasuredWidth() * changeColumnsProgress4, u7Var5.getMeasuredHeight() * changeColumnsProgress4, (int) ((1.0f - getChangeColumnsProgress()) * f16), 31);
-                    u7Var5.draw(canvas);
-                    canvas.restore();
-                } else {
-                    i14 = i30;
-                    u7Var5.draw(canvas);
-                }
-                canvas.restore();
-                i30 = i14 + 1;
-                f16 = 255.0f;
-            }
-            if (arrayList2.isEmpty()) {
+        ArrayList arrayList = (ArrayList) av0VarArr[3].d.get((String) av0VarArr[3].c.get(i10));
+        int i13 = c1Var.f;
+        if (i13 == 3) {
+            MessageObject messageObject = (MessageObject) arrayList.get(0);
+            if (view instanceof org.telegram.ui.Cells.w3) {
+                ((org.telegram.ui.Cells.w3) view).setText(LocaleController.formatSectionDate(messageObject.messageOwner.date));
                 return;
             }
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (getChangeColumnsProgress() * 255.0f), 31);
-            for (int i32 = 0; i32 < arrayList2.size(); i32++) {
-                org.telegram.ui.Cells.u7 u7Var6 = (org.telegram.ui.Cells.u7) arrayList2.get(i32);
-                if (u7Var6.v != null) {
-                    canvas.save();
-                    canvas.translate(u7Var6.getX(), u7Var6.getY());
-                    u7Var6.v.j(((u7Var6.getMeasuredWidth() - AndroidUtilities.dp(2.0f)) * u7Var6.x) / (u7Var6.v.getMeasuredWidth() - AndroidUtilities.dp(2.0f)), false);
-                    u7Var6.v.draw(canvas);
-                    canvas.restore();
-                }
+            return;
+        }
+        if (i13 != 4) {
+            return;
+        }
+        if (i10 != 0) {
+            i11--;
+        }
+        if (!(view instanceof org.telegram.ui.Cells.o7) || i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
+        MessageObject messageObject2 = (MessageObject) arrayList.get(i11);
+        o7Var.y = i11 != arrayList.size() - 1 || (i10 == av0VarArr[3].c.size() - 1 && av0VarArr[3].g);
+        o7Var.e();
+        o7Var.b0 = messageObject2;
+        o7Var.requestLayout();
+        if (lv0Var.C1) {
+            o7Var.f(lv0Var.Z0[(messageObject2.getDialogId() > lv0Var.j1 ? 1 : (messageObject2.getDialogId() == lv0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject2.getId()) >= 0, !lv0Var.b1);
+        } else {
+            o7Var.f(false, !lv0Var.b1);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.w3 w3Var;
+        lv0 lv0Var = this.s;
+        org.telegram.ui.ActionBar.f6 f6Var = lv0Var.F1;
+        Context context = this.r;
+        if (i10 == 3) {
+            w3Var = new org.telegram.ui.Cells.w3(context, 28, f6Var);
+        } else if (i10 == 4) {
+            org.telegram.ui.Cells.o7 o7Var = new org.telegram.ui.Cells.o7(context, 0, f6Var);
+            o7Var.setDelegate(lv0Var.S1);
+            w3Var = o7Var;
+        } else {
+            if (i10 == 5) {
+                yt0 M = lv0.M(3, lv0Var.j1, context, f6Var);
+                M.setLayoutParams(new s4.p0(-1, -1));
+                return new il0(M);
             }
-            canvas.restore();
+            t00 t00Var = new t00(context, f6Var);
+            t00Var.setIsSingleCell(true);
+            t00Var.w = false;
+            t00Var.setViewType(5);
+            w3Var = t00Var;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ha, org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        dl0 movingAdapter = getMovingAdapter();
-        if (C1() && getAdapter() == movingAdapter && A1() && (view instanceof org.telegram.ui.Cells.u7)) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    public int getAnimateToColumnsCount() {
-        return 3;
-    }
-
-    public float getChangeColumnsProgress() {
-        return 0.0f;
-    }
-
-    public int getColumnsCount() {
-        return 3;
-    }
-
-    public SparseArray<Float> getMessageAlphaEnter() {
-        return null;
-    }
-
-    public dl0 getMovingAdapter() {
-        return null;
-    }
-
-    public int getPinchCenterPosition() {
-        return 0;
-    }
-
-    public dl0 getSupportingAdapter() {
-        return null;
-    }
-
-    public bu0 getSupportingListView() {
-        return null;
-    }
-
-    public void z1(org.telegram.ui.Cells.u7 u7Var) {
+        return com.google.android.gms.internal.vision.e2.k(w3Var, w3Var, -1, -2);
     }
 }

@@ -9,16 +9,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.c80 {
+public final /* synthetic */ class f50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.f80 {
     public final /* synthetic */ l50 a;
 
     public /* synthetic */ f50(l50 l50Var) {
         this.a = l50Var;
     }
 
-    @Override // org.telegram.ui.Components.c80
+    @Override // org.telegram.ui.Components.f80
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         i60 i60Var = this.a.b;
         ChatObject.Call call = i60Var.a1;

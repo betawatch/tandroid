@@ -26,12 +26,12 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.cg;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.ky;
+import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.un;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bd;
 import org.telegram.ui.gl0;
@@ -41,7 +41,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.vq;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
-                int i15 = ChatActivityEnterView.m5;
+                int i15 = ChatActivityEnterView.n5;
                 if (user2 != null) {
                     TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
                     tL_messages_sendBotRequestedPeer.peer = MessagesController.getInstance(chatActivityEnterView.Q).getInputPeer(messageObject.messageOwner.peer_id);
@@ -160,7 +160,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user2.id);
                     cg cgVar = new cg(bundle, user2, user, j10);
-                    zn znVar = chatActivityEnterView.O2;
+                    zn znVar = chatActivityEnterView.P2;
                     if (znVar != null) {
                         znVar.presentFragment(cgVar);
                         break;
@@ -208,7 +208,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 9:
-                jv0.m((jv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (v70) obj2, (e9) obj);
+                lv0.m((lv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (y70) obj2, (e9) obj);
                 break;
             case 10:
                 uy uyVar = (uy) obj5;

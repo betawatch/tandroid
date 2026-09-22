@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 import v7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -68,12 +68,12 @@ public abstract class u {
         boolean z10 = false;
         boolean z11 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            c5.r rVar = (c5.r) arrayList.get(i10);
+            c5.q qVar = (c5.q) arrayList.get(i10);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
             z11 |= !TextUtils.isEmpty(null);
-            if (rVar.b.equals("first_party")) {
+            if (qVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }

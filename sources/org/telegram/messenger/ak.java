@@ -5,13 +5,13 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.fd0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.ln;
 import org.telegram.ui.pn0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ak implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a = 0;
@@ -60,16 +60,16 @@ public final /* synthetic */ class ak implements org.telegram.ui.ActionBar.a2 {
                     break;
                 }
             default:
-                cd0 cd0Var = (cd0) obj4;
-                cd0 cd0Var2 = (cd0) obj3;
-                cd0 cd0Var3 = (cd0) obj2;
+                fd0 fd0Var = (fd0) obj4;
+                fd0 fd0Var2 = (fd0) obj3;
+                fd0 fd0Var3 = (fd0) obj2;
                 gg.d2 d2Var = (gg.d2) obj;
                 if (z10) {
-                    org.telegram.ui.Components.d5.d(cd0Var, cd0Var2, cd0Var3);
+                    org.telegram.ui.Components.d5.d(fd0Var, fd0Var2, fd0Var3);
                 }
-                int value = cd0Var3.getValue();
-                int value2 = cd0Var2.getValue();
-                int value3 = cd0Var.getValue();
+                int value = fd0Var3.getValue();
+                int value2 = fd0Var2.getValue();
+                int value3 = fd0Var.getValue();
                 pn0 pn0Var = (pn0) d2Var.c;
                 int i13 = d2Var.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) d2Var.d;
@@ -94,11 +94,11 @@ public final /* synthetic */ class ak implements org.telegram.ui.ActionBar.a2 {
         this.f = contentsettings;
     }
 
-    public /* synthetic */ ak(boolean z10, cd0 cd0Var, cd0 cd0Var2, cd0 cd0Var3, gg.d2 d2Var) {
+    public /* synthetic */ ak(boolean z10, fd0 fd0Var, fd0 fd0Var2, fd0 fd0Var3, gg.d2 d2Var) {
         this.b = z10;
-        this.c = cd0Var;
-        this.d = cd0Var2;
-        this.e = cd0Var3;
+        this.c = fd0Var;
+        this.d = fd0Var2;
+        this.e = fd0Var3;
         this.f = d2Var;
     }
 }

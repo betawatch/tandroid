@@ -4,10 +4,10 @@ import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
-import w7.j9;
-import w7.m8;
+import w7.i9;
+import w7.l8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class l1 extends AbstractSet {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public abstract class l1 extends AbstractSet {
                 }
                 return z10;
             case 1:
-                return m8.a(this, collection);
+                return l8.a(this, collection);
             default:
-                return j9.a(this, collection);
+                return i9.a(this, collection);
         }
     }
 

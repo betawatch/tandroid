@@ -1,22 +1,25 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import org.telegram.messenger.FourierTransform;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class s71 {
-    public final ByteBuffer c;
-    public long e;
-    public final /* synthetic */ t71 f;
-    public final FourierTransform.FFT a = new FourierTransform.FFT(1024, 48000.0f);
-    public final float[] b = new float[1024];
-    public int d = 0;
+public interface s71 {
+    void onError(v71 v71Var, Exception exc);
 
-    public s71(t71 t71Var) {
-        this.f = t71Var;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(8192);
-        this.c = allocateDirect;
-        allocateDirect.position(0);
-    }
+    void onRenderedFirstFrame();
+
+    void onRenderedFirstFrame(j2.a aVar);
+
+    void onSeekFinished(j2.a aVar);
+
+    void onSeekStarted(j2.a aVar);
+
+    void onStateChanged(boolean z10, int i10);
+
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
 }

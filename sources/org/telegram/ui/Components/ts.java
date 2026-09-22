@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class ts extends k61 {
+public abstract class ts extends m61 {
     public final int N;
     public final int O;
     public final ArrayList P;
@@ -29,16 +29,16 @@ public abstract class ts extends k61 {
     public String b0;
     public final xp c0;
 
-    public ts(vl0 vl0Var, Context context, int i10, int i11) {
-        super(vl0Var, context, i10, 0, false, null, null);
+    public ts(yl0 yl0Var, Context context, int i10, int i11) {
+        super(yl0Var, context, i10, 0, false, null, null);
         this.P = new ArrayList();
         this.Q = new ArrayList();
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.V = new ArrayList();
-        go0 go0Var = (go0) this;
-        this.c0 = new xp(go0Var, 6);
-        this.s = new d(go0Var, 9);
+        io0 io0Var = (io0) this;
+        this.c0 = new xp(io0Var, 6);
+        this.s = new d(io0Var, 9);
         this.N = i10;
         this.O = i11;
         N(false);

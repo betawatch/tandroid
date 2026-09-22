@@ -21,12 +21,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.rk0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.rv0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class y1 extends j {
     public final Bitmap A0;
@@ -41,13 +41,13 @@ public final class y1 extends j {
     public final int s0;
     public boolean t0;
     public final d6 u0;
-    public final uv0 v0;
+    public final wv0 v0;
     public final int w0;
     public boolean x0;
     public final d6 y0;
     public final ai.f0 z0;
 
-    public y1(Context context, PointF pointF, uv0 uv0Var, String str, int i10) {
+    public y1(Context context, PointF pointF, wv0 wv0Var, String str, int i10) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -61,7 +61,7 @@ public final class y1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.r0 = str;
-        this.v0 = uv0Var;
+        this.v0 = wv0Var;
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, y5.c(-1.0f, -1));
@@ -92,7 +92,7 @@ public final class y1 extends j {
         return this.s0;
     }
 
-    public uv0 getBaseSize() {
+    public wv0 getBaseSize() {
         return this.v0;
     }
 
@@ -121,10 +121,10 @@ public final class y1 extends j {
     }
 
     @Override // qg.j
-    public rk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new rk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -134,14 +134,14 @@ public final class y1 extends j {
         getScale();
         AndroidUtilities.dp(64.0f);
         float w10 = rk.w(dp, 2.0f, getPositionX(), scaleX);
-        return new rk0(w10, rk.w(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + w10) - w10, dp2 * scaleX);
+        return new uk0(w10, rk.w(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + w10) - w10, dp2 * scaleX);
     }
 
     @Override // qg.j
     public final void k() {
-        uv0 uv0Var = this.v0;
-        float f7 = uv0Var.a / 2.0f;
-        float f10 = uv0Var.b / 2.0f;
+        wv0 wv0Var = this.v0;
+        float f7 = wv0Var.a / 2.0f;
+        float f10 = wv0Var.b / 2.0f;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -164,9 +164,9 @@ public final class y1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        uv0 uv0Var = this.v0;
-        float f7 = uv0Var.a;
-        float f10 = uv0Var.b;
+        wv0 wv0Var = this.v0;
+        float f7 = wv0Var.a;
+        float f10 = wv0Var.b;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -221,7 +221,7 @@ public final class y1 extends j {
         }
     }
 
-    public y1(Context context, PointF pointF, uv0 uv0Var, TLObject tLObject) {
+    public y1(Context context, PointF pointF, wv0 wv0Var, TLObject tLObject) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -235,7 +235,7 @@ public final class y1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.q0 = tLObject;
-        this.v0 = uv0Var;
+        this.v0 = wv0Var;
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, y5.c(-1.0f, -1));

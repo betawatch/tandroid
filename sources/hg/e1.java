@@ -26,19 +26,19 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.tp;
+import org.telegram.ui.Components.u61;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public int F;
     public boolean G;
-    public s61 a;
+    public u61 a;
     public pr b;
     public org.telegram.ui.ActionBar.v0 c;
     public boolean d;
@@ -71,8 +71,8 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
             this.c.setScaleX(V ? 1.0f : 0.0f);
             this.c.setScaleY(V ? 1.0f : 0.0f);
         }
-        s61 s61Var = this.a;
-        if (s61Var == null || s61Var.Y2 == null) {
+        u61 u61Var = this.a;
+        if (u61Var == null || u61Var.Y2 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -160,7 +160,7 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
     }
 
     public final void X() {
-        k61 k61Var;
+        m61 m61Var;
         if (this.v) {
             return;
         }
@@ -187,9 +187,9 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
             this.d = false;
         }
         Y();
-        s61 s61Var = this.a;
-        if (s61Var != null && (k61Var = s61Var.Y2) != null) {
-            k61Var.N(true);
+        u61 u61Var = this.a;
+        if (u61Var != null && (m61Var = u61Var.Y2) != null) {
+            m61Var.N(true);
         }
         this.v = true;
     }
@@ -280,12 +280,12 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         frameLayout4.addView(this.s, y5.c(-1.0f, -1));
         this.h.addView(this.n, y5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Y();
-        s61 s61Var = new s61(this, new bi.v(this, 26), new z0(this, i12), null);
-        this.a = s61Var;
-        s61Var.q1();
-        s61 s61Var2 = this.a;
-        s61Var2.Y2.r = false;
-        frameLayout.addView(s61Var2, y5.c(-1.0f, -1));
+        u61 u61Var = new u61(this, new bi.v(this, 26), new z0(this, i12), null);
+        this.a = u61Var;
+        u61Var.q1();
+        u61 u61Var2 = this.a;
+        u61Var2.Y2.r = false;
+        frameLayout.addView(u61Var2, y5.c(-1.0f, -1));
         this.actionBar.z(this.a, true);
         X();
         this.fragmentView = frameLayout;

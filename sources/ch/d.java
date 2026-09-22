@@ -23,7 +23,7 @@ import v7.v7;
 import w7.q;
 import yf.e0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -359,7 +359,7 @@ public abstract class d extends Drawable {
         canvas.clipPath(cVar.k);
         canvas.translate(rect2.left, rect2.top);
         canvas.translate(-f15, -f17);
-        aVar.y(canvas, f15, f17, f19, f21);
+        aVar.v(canvas, f15, f17, f19, f21);
         canvas.restore();
         if (Color.alpha(l12) > 0) {
             Paint paint4 = this.q;
@@ -547,9 +547,9 @@ public abstract class d extends Drawable {
             return;
         }
         this.e = aVar.H();
-        this.d = this.c.m();
-        this.f = this.c.a();
-        this.g = this.c.d();
+        this.d = this.c.x();
+        this.f = this.c.b();
+        this.g = this.c.g();
     }
 
     public void m() {

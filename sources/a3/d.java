@@ -39,15 +39,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.lx;
 import org.telegram.ui.uy;
 import v7.i8;
 import v7.j8;
-import w7.b8;
+import w7.a8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.D();
+                ((f) this.b).g.J();
                 return;
             case 1:
                 ((w) this.b).k--;
@@ -185,7 +185,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((h90) this.b).d(true);
+                ((k90) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -253,11 +253,11 @@ public final /* synthetic */ class d implements Runnable {
                 androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) this.b;
                 synchronized (pVar.d) {
                     try {
-                        if (pVar.h == null) {
+                        if (pVar.n == null) {
                             return;
                         }
                         try {
-                            o0.h d = pVar.d();
+                            o0.i d = pVar.d();
                             int i11 = d.e;
                             if (i11 == 2) {
                                 synchronized (pVar.d) {
@@ -272,11 +272,11 @@ public final /* synthetic */ class d implements Runnable {
                                 t7.u uVar = pVar.c;
                                 Context context = pVar.a;
                                 uVar.getClass();
-                                o0.h[] hVarArr = {d};
+                                o0.i[] iVarArr = {d};
                                 i8 i8Var = i0.e.a;
-                                b8.a("TypefaceCompat.createFromFontInfo");
+                                a8.a("TypefaceCompat.createFromFontInfo");
                                 try {
-                                    Typeface b10 = i0.e.a.b(context, hVarArr, 0);
+                                    Typeface b10 = i0.e.a.b(context, iVarArr, 0);
                                     Trace.endSection();
                                     MappedByteBuffer e = j8.e(pVar.a, d.a);
                                     if (e == null || b10 == null) {
@@ -288,14 +288,14 @@ public final /* synthetic */ class d implements Runnable {
                                         Trace.endSection();
                                         synchronized (pVar.d) {
                                             try {
-                                                v7.w wVar = pVar.h;
+                                                v7.w wVar = pVar.n;
                                                 if (wVar != null) {
                                                     wVar.b(tVar);
                                                 }
                                             } finally {
                                             }
                                         }
-                                        pVar.b();
+                                        pVar.a();
                                         return;
                                     } finally {
                                         int i13 = n0.g.a;
@@ -309,11 +309,11 @@ public final /* synthetic */ class d implements Runnable {
                         } catch (Throwable th3) {
                             synchronized (pVar.d) {
                                 try {
-                                    v7.w wVar2 = pVar.h;
+                                    v7.w wVar2 = pVar.n;
                                     if (wVar2 != null) {
                                         wVar2.a(th3);
                                     }
-                                    pVar.b();
+                                    pVar.a();
                                     return;
                                 } finally {
                                 }

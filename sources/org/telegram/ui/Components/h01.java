@@ -1,39 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class h01 extends ReplacementSpan {
-    public float a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Paint d;
+public final class h01 implements TextWatcher {
+    public final /* synthetic */ o01 a;
 
-    public h01(int i10, Paint paint, String str) {
-        this.b = str;
-        this.c = i10;
-        this.d = paint;
+    public h01(o01 o01Var) {
+        this.a = o01Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float f10 = (i12 + i14) / 2.0f;
-        float dp = AndroidUtilities.dp(19.0f);
-        paint.setColor(this.c);
-        float f11 = dp / 2.0f;
-        canvas.drawRoundRect(f7, f10 - f11, f7 + this.a + AndroidUtilities.dp(11.33f), f10 + f11, f11, f11, this.d);
-        canvas.drawText(this.b, AndroidUtilities.dpf2(5.66f) + f7, i14 - AndroidUtilities.dp(6.0f), paint);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        o01 o01Var = this.a;
+        o6 o6Var = o01Var.n;
+        if (o01Var.x) {
+            return;
+        }
+        String trim = editable.toString().trim();
+        if (trim.length() > 16) {
+            o6Var.setText("-" + (trim.length() - 16));
+            trim = trim.substring(0, 16);
+        } else {
+            o6Var.setText("");
+        }
+        Utilities.Callback callback = o01Var.w;
+        if (callback != null) {
+            callback.run(trim);
+        }
+        MessageObject messageObject = o01Var.r;
+        if (messageObject != null) {
+            messageObject.forceUpdate = true;
+            o01Var.d.X3(messageObject, null, false, false, false, false);
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        float dpf2 = AndroidUtilities.dpf2(11.33f);
-        float measureText = paint.measureText(this.b);
-        this.a = measureText;
-        return (int) (dpf2 + measureText);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

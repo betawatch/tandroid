@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l extends lb.a {
     public static final k I = new k();
@@ -131,7 +131,7 @@ public final class l extends lb.a {
     @Override // lb.a
     public final void b() {
         F(3);
-        L(((fb.k) ((db.l) J()).a.entrySet()).iterator());
+        L(((fb.l) ((db.l) J()).a.entrySet()).iterator());
     }
 
     @Override // lb.a, java.io.Closeable, java.lang.AutoCloseable

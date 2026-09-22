@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -33,7 +33,7 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList q6 = new m5.e(16, context, new n2.e(MlKitComponentDiscoveryService.class, 14)).q();
+            ArrayList q6 = new m5.e(16, context, new fb.e(MlKitComponentDiscoveryService.class)).q();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             ja0 ja0Var = q9.e.A;
@@ -42,7 +42,7 @@ public final class g {
             arrayList2.add(q9.a.c(gVar2, g.class, new Class[0]));
             q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, ja0Var);
             gVar2.a = gVar3;
-            gVar3.g(true);
+            gVar3.d(true);
             gVar = c;
         }
         return gVar;
@@ -51,7 +51,7 @@ public final class g {
     public final Object a(Class cls) {
         n6.l.j("MlKitContext has been deleted", c == this);
         n6.l.h(this.a);
-        return this.a.a(cls);
+        return this.a.b(cls);
     }
 
     public final Context b() {

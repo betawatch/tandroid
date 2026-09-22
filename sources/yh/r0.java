@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.d {
     public static final /* synthetic */ int s = 0;
@@ -39,7 +39,7 @@ public final class r0 extends oh.c implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         b();
         invalidate();
     }

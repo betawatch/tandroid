@@ -1,50 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class jj0 extends Drawable {
+public final /* synthetic */ class jj0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ kj0 c;
+    public final /* synthetic */ kj0 b;
 
-    public jj0(kj0 kj0Var, int i10, int i11) {
-        this.c = kj0Var;
+    public /* synthetic */ jj0(kj0 kj0Var, int i10) {
         this.a = i10;
-        this.b = i11;
+        this.b = kj0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect rect = AndroidUtilities.rectTmp2;
-        int centerX = getBounds().centerX();
-        float f7 = this.a;
-        int dp = centerX - (AndroidUtilities.dp(f7) / 2);
-        int centerY = getBounds().centerY();
-        float f10 = this.b;
-        rect.set(dp, centerY - (AndroidUtilities.dp(f10) / 2), (AndroidUtilities.dp(f7) / 2) + getBounds().centerX(), (AndroidUtilities.dp(f10) / 2) + getBounds().centerY());
-        kj0 kj0Var = this.c;
-        kj0Var.c.setImageCoords(rect);
-        kj0Var.c.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c.c.setAlpha(i10 / 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.c.setColorFilter(colorFilter);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kj0 kj0Var = this.b;
+                kj0Var.getClass();
+                try {
+                    yf.e eVar = kj0Var.B0;
+                    if (eVar != null) {
+                        eVar.b();
+                    }
+                } catch (Throwable unused) {
+                }
+                AndroidUtilities.runOnUIThread(kj0Var.z0);
+                break;
+            case 1:
+                kj0 kj0Var2 = this.b;
+                kj0Var2.P = null;
+                kj0Var2.p();
+                break;
+            case 2:
+                kj0.h(this.b);
+                break;
+            case 3:
+                kj0.e(this.b);
+                break;
+            case 4:
+                kj0.d(this.b);
+                break;
+            case 5:
+                kj0.f(this.b);
+                break;
+            default:
+                this.b.m();
+                break;
+        }
     }
 }

@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class j71 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -170,7 +170,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
     public final x51 r0;
     public s61 r1;
     public int s;
-    public final org.telegram.ui.Components.yk0 s0;
+    public final org.telegram.ui.Components.bl0 s0;
     public Rect s1;
     public final View t0;
     public final OvershootInterpolator t1;
@@ -300,13 +300,13 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
     }
 
     public static void a(j71 j71Var, int i10, int i11) {
-        org.telegram.ui.Components.yk0 yk0Var = j71Var.s0;
+        org.telegram.ui.Components.bl0 bl0Var = j71Var.s0;
         x51 x51Var = j71Var.r0;
         View m10 = x51Var.m(i10);
         int L0 = x51Var.L0();
         if ((m10 == null && Math.abs(i10 - L0) > 72.0f) || !SharedConfig.animationsEnabled()) {
-            yk0Var.b = x51Var.L0() < i10 ? 0 : 1;
-            yk0Var.d(i10, i11, false, false);
+            bl0Var.b = x51Var.L0() < i10 ? 0 : 1;
+            bl0Var.d(i10, i11, false, false);
         } else {
             ci.m1 m1Var = new ci.m1(j71Var, j71Var.h0.getContext(), 4);
             m1Var.a = i10;
@@ -428,7 +428,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         MediaDataController.getInstance(i10).getStickerSet((TLRPC.InputStickerSet) new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
         MediaDataController.getInstance(i10).getDefaultEmojiStatuses();
         MediaDataController.getInstance(i10).checkDefaultTopicIcons();
-        org.telegram.ui.Components.hx0.x3.fetch(i10, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.xw0
+        org.telegram.ui.Components.jx0.x3.fetch(i10, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.zw0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArrayList<TLRPC.EmojiGroup> arrayList;
@@ -769,8 +769,8 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                     arrayList7 = new ArrayList();
                     int i36 = 0;
                     while (i36 < arrayList22.size()) {
-                        if (((zg.o0) arrayList22.get(i36)).e) {
-                            arrayList7.add((zg.o0) arrayList22.remove(i36));
+                        if (((zg.p0) arrayList22.get(i36)).e) {
+                            arrayList7.add((zg.p0) arrayList22.remove(i36));
                             i36--;
                         }
                         i36++;
@@ -780,13 +780,13 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                     } else {
                         for (int i37 = 0; i37 < 16; i37++) {
                             if (!arrayList22.isEmpty()) {
-                                arrayList14.add((zg.o0) arrayList22.remove(0));
+                                arrayList14.add((zg.p0) arrayList22.remove(0));
                             }
                         }
                     }
                     for (i19 = 0; i19 < arrayList14.size(); i19++) {
                         arrayList11 = arrayList11;
-                        arrayList11.add(Long.valueOf((((zg.o0) arrayList14.get(i19)).hashCode() * 13) - 5632));
+                        arrayList11.add(Long.valueOf((((zg.p0) arrayList14.get(i19)).hashCode() * 13) - 5632));
                     }
                     int size2 = arrayList14.size() + this.u0;
                     this.u0 = size2;
@@ -798,7 +798,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                                 z15 = true;
                                 break;
                             } else {
-                                if (((zg.o0) arrayList22.get(i21)).g != 0) {
+                                if (((zg.p0) arrayList22.get(i21)).g != 0) {
                                     z15 = false;
                                     break;
                                 }
@@ -821,7 +821,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                         this.b = this.u0;
                         arrayList15.addAll(arrayList22);
                         for (i22 = 0; i22 < arrayList15.size(); i22++) {
-                            arrayList11.add(Long.valueOf((((zg.o0) arrayList15.get(i22)).h * 13) + (z15 ? 4235 : -3142)));
+                            arrayList11.add(Long.valueOf((((zg.p0) arrayList15.get(i22)).h * 13) + (z15 ? 4235 : -3142)));
                         }
                         int size3 = arrayList15.size() + this.u0;
                         this.u0 = size3;
@@ -835,7 +835,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                         this.E = this.u0;
                         this.J0 = arrayList7;
                         for (i20 = 0; i20 < arrayList7.size(); i20++) {
-                            arrayList11.add(Long.valueOf(((zg.o0) arrayList7.get(i20)).c * 19));
+                            arrayList11.add(Long.valueOf(((zg.p0) arrayList7.get(i20)).c * 19));
                         }
                         int size4 = arrayList7.size() + this.u0;
                         this.u0 = size4;
@@ -1879,13 +1879,13 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         ofFloat.addUpdateListener(new m51(this, i10));
         this.U1.addListener(new gp0(this, 21));
         n51 n51Var = new n51(this, i10);
-        zg.e0.f = true;
-        zg.e0.e = true;
-        zg.e0.g = false;
-        if (zg.e0.d) {
-            zg.e0.d = false;
+        zg.f0.f = true;
+        zg.f0.e = true;
+        zg.f0.g = false;
+        if (zg.f0.d) {
+            zg.f0.d = false;
         }
-        zg.e0.c = n51Var;
+        zg.f0.c = n51Var;
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.W1.lock();
         this.U1.setDuration(800L);
@@ -1970,7 +1970,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         this.H = h71Var;
     }
 
-    public void setRecentReactions(List<zg.o0> list) {
+    public void setRecentReactions(List<zg.p0> list) {
         this.R0 = list;
         B(false, true, true);
     }
@@ -2000,9 +2000,9 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         }
     }
 
-    public void setSelectedReaction(zg.o0 o0Var) {
+    public void setSelectedReaction(zg.p0 p0Var) {
         this.J.clear();
-        this.J.add(o0Var);
+        this.J.add(p0Var);
         g61 g61Var = this.h0;
         if (g61Var != null) {
             for (int i10 = 0; i10 < g61Var.getChildCount(); i10++) {
@@ -2025,14 +2025,14 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         }
     }
 
-    public void setSelectedReactions(HashSet<zg.o0> hashSet) {
+    public void setSelectedReactions(HashSet<zg.p0> hashSet) {
         this.J = hashSet;
         HashSet hashSet2 = this.K;
         hashSet2.clear();
         ArrayList arrayList = new ArrayList(hashSet);
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (arrayList.get(i10) != null && ((zg.o0) arrayList.get(i10)).g != 0) {
-                hashSet2.add(Long.valueOf(((zg.o0) arrayList.get(i10)).g));
+            if (arrayList.get(i10) != null && ((zg.p0) arrayList.get(i10)).g != 0) {
+                hashSet2.add(Long.valueOf(((zg.p0) arrayList.get(i10)).g));
             }
         }
     }
@@ -2501,16 +2501,16 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                 w51Var.setVisibility(8);
                 u41Var3.addView(w51Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
                 this.a0.addView(u41Var3, w7.y5.d(-1, -1.0f, 48, 0.0f, (i15 != 8 || i15 == 13 || i15 == 14) ? 0.0f : (1.0f / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-                org.telegram.ui.Components.yk0 yk0Var = new org.telegram.ui.Components.yk0(g61Var, x51Var);
-                this.s0 = yk0Var;
-                yk0Var.i = new ci.l1(this, 1);
-                yk0Var.h = new o51(this);
+                org.telegram.ui.Components.bl0 bl0Var = new org.telegram.ui.Components.bl0(g61Var, x51Var);
+                this.s0 = bl0Var;
+                bl0Var.i = new ci.l1(this, 1);
+                bl0Var.h = new o51(this);
                 z51 z51Var = new z51(this, i15, context, f6Var, num);
                 g61Var.o1(z51Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
                 w51Var.o1(z51Var, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-                org.telegram.ui.Components.bn0 bn0Var = new org.telegram.ui.Components.bn0(this, i10, 2);
-                g61Var.setOnItemClickListener(bn0Var);
-                w51Var.setOnItemClickListener(bn0Var);
+                org.telegram.ui.Components.dn0 dn0Var = new org.telegram.ui.Components.dn0(this, i10, 2);
+                g61Var.setOnItemClickListener(dn0Var);
+                w51Var.setOnItemClickListener(dn0Var);
                 a61 a61Var = new a61(this, context, z11);
                 this.f0 = a61Var;
                 a61Var.setTranslationY(-AndroidUtilities.dp(52.0f));
@@ -2582,7 +2582,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
                         } else {
                             z13 = true;
                         }
-                        zg.e0.g = z13;
+                        zg.f0.g = z13;
                     }
                     B(z13, false, z13);
                 }
@@ -2667,16 +2667,16 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         w51Var.setVisibility(8);
         u41Var32.addView(w51Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         this.a0.addView(u41Var32, w7.y5.d(-1, -1.0f, 48, 0.0f, (i15 != 8 || i15 == 13 || i15 == 14) ? 0.0f : (1.0f / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.yk0 yk0Var2 = new org.telegram.ui.Components.yk0(g61Var2, x51Var3);
-        this.s0 = yk0Var2;
-        yk0Var2.i = new ci.l1(this, 1);
-        yk0Var2.h = new o51(this);
+        org.telegram.ui.Components.bl0 bl0Var2 = new org.telegram.ui.Components.bl0(g61Var2, x51Var3);
+        this.s0 = bl0Var2;
+        bl0Var2.i = new ci.l1(this, 1);
+        bl0Var2.h = new o51(this);
         z51 z51Var2 = new z51(this, i15, context, f6Var, num);
         g61Var2.o1(z51Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
         w51Var.o1(z51Var2, (long) (ViewConfiguration.getLongPressTimeout() * 0.25f));
-        org.telegram.ui.Components.bn0 bn0Var2 = new org.telegram.ui.Components.bn0(this, i10, 2);
-        g61Var2.setOnItemClickListener(bn0Var2);
-        w51Var.setOnItemClickListener(bn0Var2);
+        org.telegram.ui.Components.dn0 dn0Var2 = new org.telegram.ui.Components.dn0(this, i10, 2);
+        g61Var2.setOnItemClickListener(dn0Var2);
+        w51Var.setOnItemClickListener(dn0Var2);
         a61 a61Var2 = new a61(this, context, z11);
         this.f0 = a61Var2;
         a61Var2.setTranslationY(-AndroidUtilities.dp(52.0f));
@@ -2722,7 +2722,7 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
         while (i10 < size) {
             String str = arrayList.get(i10);
             i10++;
-            this.J.add(zg.o0.b(str));
+            this.J.add(zg.p0.b(str));
         }
         g61 g61Var = this.h0;
         if (g61Var != null) {
@@ -2749,6 +2749,6 @@ public abstract class j71 extends FrameLayout implements NotificationCenter.Noti
     public void setPressed(boolean z10) {
     }
 
-    public void r(s61 s61Var, zg.o0 o0Var) {
+    public void r(s61 s61Var, zg.p0 p0Var) {
     }
 }

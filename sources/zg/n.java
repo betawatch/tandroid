@@ -5,10 +5,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.as0;
 import yh.u3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n extends p1 {
     public final /* synthetic */ u3 x;
@@ -45,7 +45,7 @@ public final class n extends p1 {
     public final void g(int i10, boolean z10) {
         q qVar = (q) this.x.c;
         qVar.w.setVisibility(0);
-        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new ds0(16, this, z10)).start();
+        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new as0(17, this, z10)).start();
     }
 
     @Override // org.telegram.ui.ActionBar.p1

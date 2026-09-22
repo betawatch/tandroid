@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class h01 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -58,14 +58,14 @@ public final class h01 extends org.telegram.ui.ActionBar.j {
         int i18;
         Runnable runnable;
         int i19;
-        org.telegram.ui.Components.zs0 zs0Var;
+        org.telegram.ui.Components.bt0 bt0Var;
         if (this.b.getParentActivity() == null) {
             return;
         }
         if (i10 == -1) {
             ProfileActivity profileActivity = this.b;
             l01 l01Var = profileActivity.O;
-            if (l01Var == null || (zs0Var = l01Var.I0) == null || !zs0Var.n0) {
+            if (l01Var == null || (bt0Var = l01Var.I0) == null || !bt0Var.n0) {
                 profileActivity.finishFragment();
                 return;
             } else {
@@ -160,11 +160,11 @@ public final class h01 extends org.telegram.ui.ActionBar.j {
             linearLayout.setOrientation(1);
             linearLayout.setClipChildren(false);
             linearLayout.setClipToPadding(false);
-            org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-            linearLayout.addView(kj0Var, w7.y5.t(110, 110, 17, 0, 21, 0, 11));
-            kj0Var.f(R.raw.raised_hand, 110, 110, null);
-            kj0Var.setAutoRepeat(false);
-            kj0Var.d();
+            org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+            linearLayout.addView(nj0Var, w7.y5.t(110, 110, 17, 0, 21, 0, 11));
+            nj0Var.f(R.raw.raised_hand, 110, 110, null);
+            nj0Var.setAutoRepeat(false);
+            nj0Var.d();
             TextView textView2 = new TextView(context);
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setGravity(17);
@@ -505,10 +505,10 @@ public final class h01 extends org.telegram.ui.ActionBar.j {
         if (i10 == 39) {
             Bundle g10 = org.telegram.ui.Cells.c1.g(2, TeXSymbolParser.TYPE_ATTR);
             g10.putLong("dialog_id", -this.b.f1);
-            org.telegram.ui.Components.ja0 ja0Var = new org.telegram.ui.Components.ja0(g10, null);
+            org.telegram.ui.Components.ma0 ma0Var = new org.telegram.ui.Components.ma0(g10, null);
             ProfileActivity profileActivity13 = this.b;
-            ja0Var.c = profileActivity13.u2;
-            profileActivity13.presentFragment(ja0Var);
+            ma0Var.c = profileActivity13.u2;
+            profileActivity13.presentFragment(ma0Var);
             return;
         }
         if (i10 == 20) {
@@ -1039,9 +1039,9 @@ public final class h01 extends org.telegram.ui.ActionBar.j {
             ImageLocation imageLocation3 = (ImageLocation) arrayList5.get(realPosition2);
             arrayList5.remove(realPosition2);
             arrayList5.add(0, imageLocation3);
-            org.telegram.ui.Components.e71 e71Var = (org.telegram.ui.Components.e71) arrayList4.get(realPosition2);
+            org.telegram.ui.Components.g71 g71Var = (org.telegram.ui.Components.g71) arrayList4.get(realPosition2);
             arrayList4.remove(realPosition2);
-            arrayList4.add(0, e71Var);
+            arrayList4.add(0, g71Var);
             Integer num = (Integer) arrayList3.get(realPosition2);
             arrayList3.remove(realPosition2);
             arrayList3.add(0, num);

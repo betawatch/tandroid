@@ -5,11 +5,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -61,10 +61,10 @@ public final /* synthetic */ class p0 implements Runnable {
                 ((MessagesController) this.e).lambda$deleteSavedDialog$144(this.b, this.c, (TLRPC.InputPeer) this.f, this.d, (int[]) this.h);
                 break;
             case 2:
-                v70 v70Var = (v70) this.e;
+                y70 y70Var = (y70) this.e;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.h;
-                v70Var.u();
+                y70Var.u();
                 int i10 = this.d;
                 MessagesController messagesController = MessagesController.getInstance(i10);
                 long j11 = this.b;
@@ -106,8 +106,8 @@ public final /* synthetic */ class p0 implements Runnable {
         this.h = iArr;
     }
 
-    public /* synthetic */ p0(v70 v70Var, int i10, long j3, long j10, zn znVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.e = v70Var;
+    public /* synthetic */ p0(y70 y70Var, int i10, long j3, long j10, zn znVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = y70Var;
         this.d = i10;
         this.b = j3;
         this.c = j10;

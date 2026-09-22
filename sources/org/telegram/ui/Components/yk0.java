@@ -1,270 +1,199 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
-import android.os.Message;
-import android.util.SparseArray;
 import android.view.View;
-import java.lang.ref.WeakReference;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class yk0 {
-    public final /* synthetic */ int a;
-    public int b;
-    public boolean c;
-    public boolean d;
-    public final Object e;
-    public final Object f;
-    public Object g;
-    public Object h;
-    public Object i;
-    public final Object j;
-    public Object k;
+public final class yk0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ s4.h0 a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ zk0 d;
+    public final /* synthetic */ bl0 e;
 
-    public yk0(vl0 vl0Var, s4.c0 c0Var) {
-        this.a = 0;
-        this.j = new SparseArray();
-        this.k = new HashMap();
-        this.e = vl0Var;
-        this.f = c0Var;
+    public yk0(bl0 bl0Var, s4.h0 h0Var, ArrayList arrayList, boolean z10, zk0 zk0Var) {
+        this.e = bl0Var;
+        this.a = h0Var;
+        this.b = arrayList;
+        this.c = z10;
+        this.d = zk0Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void a() {
-        switch (this.a) {
-            case 0:
-                ValueAnimator valueAnimator = (ValueAnimator) this.g;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                vl0 vl0Var = (vl0) this.e;
-                vl0Var.setVerticalScrollBarEnabled(true);
-                vl0Var.X1 = false;
-                s4.h0 adapter = vl0Var.getAdapter();
-                if (adapter instanceof wk0) {
-                    ((wk0) adapter).E();
-                }
-                this.g = null;
-                int childCount = vl0Var.getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = vl0Var.getChildAt(i10);
-                    childAt.setTranslationY(0.0f);
-                    if (childAt instanceof org.telegram.ui.Cells.p4) {
-                        ((org.telegram.ui.Cells.p4) childAt).c(false, false);
-                    }
-                }
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        final ArrayList arrayList;
+        int height;
+        long min;
+        View view2;
+        bl0 bl0Var = this.e;
+        HashMap hashMap = (HashMap) bl0Var.k;
+        yl0 yl0Var = (yl0) bl0Var.e;
+        yl0Var.removeOnLayoutChangeListener(this);
+        final ArrayList arrayList2 = new ArrayList();
+        yl0Var.C0();
+        int childCount = yl0Var.getChildCount();
+        int i18 = 0;
+        int i19 = 0;
+        int i20 = 0;
+        int i21 = 0;
+        boolean z10 = false;
+        while (true) {
+            arrayList = this.b;
+            if (i18 >= childCount) {
                 break;
-            default:
-                p4.q qVar = (p4.q) this.e;
-                if (!this.c && !this.d) {
-                    this.d = true;
-                    if (qVar != null) {
-                        qVar.h(0);
-                        qVar.d();
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    public void b() {
-        c0.k kVar;
-        p4.v vVar = (p4.v) this.f;
-        int i10 = this.b;
-        WeakReference weakReference = (WeakReference) this.j;
-        p4.x.b();
-        if (this.c || this.d) {
-            return;
-        }
-        p4.e eVar = (p4.e) weakReference.get();
-        if (eVar == null || eVar.g != this || ((kVar = (c0.k) this.k) != null && kVar.isCancelled())) {
-            a();
-            return;
-        }
-        this.c = true;
-        eVar.g = null;
-        p4.e eVar2 = (p4.e) weakReference.get();
-        if (eVar2 != null) {
-            HashMap hashMap = eVar2.b;
-            if (eVar2.d == vVar) {
-                Message obtainMessage = eVar2.a.obtainMessage(263, vVar);
-                obtainMessage.arg1 = i10;
-                obtainMessage.sendToTarget();
-                p4.q qVar = eVar2.e;
-                if (qVar != null) {
-                    qVar.h(i10);
-                    eVar2.e.d();
-                }
-                if (!hashMap.isEmpty()) {
-                    for (p4.q qVar2 : hashMap.values()) {
-                        qVar2.h(i10);
-                        qVar2.d();
-                    }
-                    hashMap.clear();
-                }
-                eVar2.e = null;
             }
-        }
-        p4.e eVar3 = (p4.e) weakReference.get();
-        if (eVar3 == null) {
-            return;
-        }
-        p4.b bVar = eVar3.a;
-        p4.v vVar2 = (p4.v) this.g;
-        eVar3.d = vVar2;
-        eVar3.e = (p4.q) this.e;
-        p4.v vVar3 = (p4.v) this.h;
-        if (vVar3 == null) {
-            Message obtainMessage2 = bVar.obtainMessage(262, new q0.b(vVar, vVar2));
-            obtainMessage2.arg1 = i10;
-            obtainMessage2.sendToTarget();
-        } else {
-            Message obtainMessage3 = bVar.obtainMessage(264, new q0.b(vVar3, vVar2));
-            obtainMessage3.arg1 = i10;
-            obtainMessage3.sendToTarget();
-        }
-        eVar3.b.clear();
-        eVar3.g();
-        eVar3.l();
-        ArrayList arrayList = (ArrayList) this.i;
-        if (arrayList != null) {
-            eVar3.d.n(arrayList);
-        }
-    }
-
-    public void c(int i10, int i11, boolean z10) {
-        d(i10, i11, z10, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public void d(int i10, int i11, boolean z10, boolean z11) {
-        s4.h0 h0Var;
-        long j3;
-        HashMap hashMap = (HashMap) this.k;
-        SparseArray sparseArray = (SparseArray) this.j;
-        s4.c0 c0Var = (s4.c0) this.f;
-        vl0 vl0Var = (vl0) this.e;
-        if (vl0Var.X1) {
-            return;
-        }
-        if (vl0Var.getItemAnimator() != null) {
-            if (z11) {
-                s4.m0 itemAnimator = vl0Var.getItemAnimator();
-                tk0 tk0Var = new tk0(this, i10, i11, z10);
-                boolean k10 = itemAnimator.k();
-                if (k10) {
-                    itemAnimator.b.add(tk0Var);
-                } else {
-                    d(i10, i11, z10, false);
-                }
-                if (k10) {
-                    return;
-                }
-            } else if (vl0Var.getItemAnimator().k()) {
-                return;
+            View childAt = yl0Var.getChildAt(i18);
+            arrayList2.add(childAt);
+            if (childAt.getTop() < i19) {
+                i19 = childAt.getTop();
             }
-        }
-        if (this.b == -1) {
-            c0Var.i1(i10, i11, z10);
-            return;
-        }
-        int childCount = vl0Var.getChildCount();
-        if (childCount == 0 || !MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
-            c0Var.i1(i10, i11, z10);
-            return;
-        }
-        boolean z12 = this.b == 0;
-        vl0Var.setScrollEnabled(false);
-        ArrayList arrayList = new ArrayList();
-        sparseArray.clear();
-        s4.h0 adapter = vl0Var.getAdapter();
-        hashMap.clear();
-        int i12 = 0;
-        while (i12 < childCount) {
-            View childAt = vl0Var.getChildAt(i12);
-            arrayList.add(childAt);
-            c0Var.getClass();
-            sparseArray.put(s4.o0.H(childAt), childAt);
-            if (adapter == null || !(adapter.b || this.c)) {
-                h0Var = adapter;
-            } else {
-                if (this.c) {
-                    int b10 = ((s4.p0) childAt.getLayoutParams()).a.b();
-                    if (b10 < 0) {
-                        h0Var = adapter;
-                        i12++;
-                        adapter = h0Var;
-                    } else {
-                        h0Var = adapter;
-                        j3 = adapter.i(b10);
-                    }
-                } else {
-                    h0Var = adapter;
-                    j3 = ((s4.p0) childAt.getLayoutParams()).a.e;
-                }
-                hashMap.put(Long.valueOf(j3), childAt);
+            if (childAt.getBottom() > i20) {
+                i20 = childAt.getBottom();
             }
             if (childAt instanceof org.telegram.ui.Cells.p4) {
-                ((org.telegram.ui.Cells.p4) childAt).c(true, true);
+                ((org.telegram.ui.Cells.p4) childAt).c(true, false);
             }
-            i12++;
-            adapter = h0Var;
+            s4.h0 h0Var = this.a;
+            if (h0Var != null && (h0Var.b || bl0Var.c)) {
+                yl0Var.getClass();
+                long i22 = h0Var.i(RecyclerView.S(childAt));
+                if (hashMap.containsKey(Long.valueOf(i22)) && (view2 = (View) hashMap.get(Long.valueOf(i22))) != 0) {
+                    if (view2 instanceof org.telegram.ui.Cells.p4) {
+                        ((org.telegram.ui.Cells.p4) view2).c(false, false);
+                    }
+                    arrayList.remove(view2);
+                    w7.z5 z5Var = (w7.z5) bl0Var.i;
+                    if (z5Var != null) {
+                        z5Var.d(view2);
+                    }
+                    int top = childAt.getTop() - view2.getTop();
+                    if (top != 0) {
+                        i21 = top;
+                    }
+                    z10 = true;
+                }
+            }
+            i18++;
         }
-        s4.h0 h0Var2 = adapter;
-        vl0Var.C0();
-        vl0Var.p0();
-        ra.a aVar = vl0Var.d;
-        aVar.m((ArrayList) aVar.d);
-        aVar.m((ArrayList) aVar.e);
-        aVar.b = 0;
-        of.e eVar = vl0Var.b;
-        s4.h0 h0Var3 = vl0Var.w;
-        eVar.d(h0Var3, h0Var3);
-        vl0Var.t0.f = true;
-        vl0Var.e.S();
-        eVar.l();
-        wk0 wk0Var = h0Var2 instanceof wk0 ? (wk0) h0Var2 : null;
-        c0Var.i1(i10, i11, z10);
-        if (h0Var2 != null) {
-            h0Var2.l();
+        hashMap.clear();
+        int size = arrayList.size();
+        int i23 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i24 = 0;
+        int i25 = 0;
+        while (i25 < size) {
+            Object obj = arrayList.get(i25);
+            i25++;
+            View view3 = (View) obj;
+            int bottom = view3.getBottom();
+            int top2 = view3.getTop();
+            if (bottom > i24) {
+                i24 = bottom;
+            }
+            if (top2 < i23) {
+                i23 = top2;
+            }
+            if (view3.getParent() == null) {
+                yl0Var.addView(view3);
+                ((s4.c0) bl0Var.f).M(view3);
+            }
+            if (view3 instanceof org.telegram.ui.Cells.p4) {
+                ((org.telegram.ui.Cells.p4) view3).c(true, true);
+            }
         }
-        vl0Var.C0();
-        vl0Var.setVerticalScrollBarEnabled(false);
-        w7.z5 z5Var = (w7.z5) this.i;
-        if (z5Var != null) {
-            z5Var.c();
+        int i26 = i23 == Integer.MAX_VALUE ? 0 : i23;
+        w7.z5 z5Var2 = (w7.z5) bl0Var.i;
+        if (z5Var2 != null) {
+            z5Var2.b();
         }
-        vl0Var.X1 = true;
-        if (wk0Var != null) {
-            wk0Var.c = true;
-            wk0Var.d = false;
-            wk0Var.e.clear();
-            wk0Var.f.clear();
+        if (arrayList.isEmpty()) {
+            height = Math.abs(i21);
+        } else {
+            boolean z11 = this.c;
+            if (!z11) {
+                i24 = yl0Var.getHeight() - i26;
+            }
+            height = (z11 ? -i19 : i20 - yl0Var.getHeight()) + i24;
         }
-        vl0Var.addOnLayoutChangeListener(new vk0(this, h0Var2, arrayList, z12, wk0Var));
-    }
-
-    public void e(w7.z5 z5Var) {
-        this.i = z5Var;
-    }
-
-    public yk0(p4.e eVar, p4.v vVar, p4.q qVar, int i10, p4.v vVar2, Collection collection) {
-        this.a = 1;
-        this.k = null;
-        this.c = false;
-        this.d = false;
-        this.j = new WeakReference(eVar);
-        this.g = vVar;
-        this.e = qVar;
-        this.b = i10;
-        this.f = eVar.d;
-        this.h = vVar2;
-        this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.web.r0(this, 9), 15000L);
+        final int paddingBottom = yl0Var.getPaddingBottom();
+        ValueAnimator valueAnimator = (ValueAnimator) bl0Var.g;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            ((ValueAnimator) bl0Var.g).cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        bl0Var.g = ofFloat;
+        final boolean z12 = this.c;
+        final int i27 = height;
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xk0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                boolean z13;
+                int i28;
+                bl0 bl0Var2 = yk0.this.e;
+                yl0 yl0Var2 = (yl0) bl0Var2.e;
+                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                ArrayList arrayList3 = arrayList;
+                int size2 = arrayList3.size();
+                int i29 = 0;
+                while (true) {
+                    z13 = z12;
+                    i28 = i27;
+                    if (i29 >= size2) {
+                        break;
+                    }
+                    View view4 = (View) arrayList3.get(i29);
+                    float y3 = view4.getY();
+                    if (view4.getY() + view4.getMeasuredHeight() >= 0.0f && y3 <= yl0Var2.getMeasuredHeight()) {
+                        if (z13) {
+                            view4.setTranslationY((-i28) * floatValue);
+                        } else {
+                            view4.setTranslationY(i28 * floatValue);
+                        }
+                    }
+                    i29++;
+                }
+                int paddingBottom2 = paddingBottom - yl0Var2.getPaddingBottom();
+                ArrayList arrayList4 = arrayList2;
+                int size3 = arrayList4.size();
+                for (int i30 = 0; i30 < size3; i30++) {
+                    View view5 = (View) arrayList4.get(i30);
+                    if (z13) {
+                        view5.setTranslationY(((1.0f - floatValue) * i28) + paddingBottom2);
+                    } else {
+                        view5.setTranslationY((1.0f - floatValue) * (-i28));
+                    }
+                }
+                yl0Var2.invalidate();
+                al0 al0Var = (al0) bl0Var2.h;
+                if (al0Var != null) {
+                    al0Var.a();
+                }
+            }
+        });
+        ((ValueAnimator) bl0Var.g).addListener(new ai.z(28, this, arrayList2));
+        if (!bl0Var.d) {
+            if (z10) {
+                min = 600;
+            } else {
+                long measuredHeight = (long) (((i27 / yl0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
+                min = Math.min(measuredHeight >= 300 ? measuredHeight : 300L, 1300L);
+            }
+            ((ValueAnimator) bl0Var.g).setDuration(min);
+            ((ValueAnimator) bl0Var.g).setInterpolator(qr.h);
+        } else if (z10) {
+            ((ValueAnimator) bl0Var.g).setDuration(150L);
+            ((ValueAnimator) bl0Var.g).setInterpolator(qr.g);
+        } else {
+            long measuredHeight2 = (long) (((i27 / yl0Var.getMeasuredHeight()) + 1.0f) * 200.0f);
+            ((ValueAnimator) bl0Var.g).setDuration(Math.min(measuredHeight2 >= 300 ? measuredHeight2 : 300L, 1300L));
+            ((ValueAnimator) bl0Var.g).setInterpolator(qr.h);
+        }
+        ((ValueAnimator) bl0Var.g).start();
     }
 }

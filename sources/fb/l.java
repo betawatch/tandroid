@@ -1,86 +1,138 @@
 package fb;
 
+import j$.util.Objects;
+import java.util.AbstractSet;
+import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class l implements Map.Entry {
-    public l a;
-    public l b;
-    public l c;
-    public l d;
-    public l e;
-    public final Object f;
-    public final boolean h;
-    public Object n;
-    public int r;
+public final class l extends AbstractSet {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
 
-    public l(boolean z10) {
-        this.f = null;
-        this.h = z10;
-        this.e = this;
-        this.d = this;
+    public /* synthetic */ l(n nVar, int i10) {
+        this.a = i10;
+        this.b = nVar;
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object obj2 = this.f;
-            if (obj2 != null ? obj2.equals(entry.getKey()) : entry.getKey() == null) {
-                Object obj3 = this.n;
-                if (obj3 == null) {
-                    if (entry.getValue() == null) {
-                        return true;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        switch (this.a) {
+            case 0:
+                this.b.clear();
+                break;
+            default:
+                this.b.clear();
+                break;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0034 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean contains(Object obj) {
+        m a2;
+        switch (this.a) {
+            case 0:
+                if (!(obj instanceof Map.Entry)) {
+                    return false;
+                }
+                n nVar = this.b;
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                m mVar = null;
+                if (key != null) {
+                    try {
+                        a2 = nVar.a(key, false);
+                    } catch (ClassCastException unused) {
                     }
-                } else if (obj3.equals(entry.getValue())) {
+                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
+                        mVar = a2;
+                    }
+                    return mVar == null;
+                }
+                a2 = null;
+                if (a2 != null) {
+                    mVar = a2;
+                }
+                if (mVar == null) {
+                }
+            default:
+                return this.b.containsKey(obj);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        switch (this.a) {
+            case 0:
+                return new k(this.b, 0);
+            default:
+                return new k(this.b, 1);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean remove(Object obj) {
+        m a2;
+        switch (this.a) {
+            case 0:
+                if (!(obj instanceof Map.Entry)) {
+                    return false;
+                }
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                n nVar = this.b;
+                m mVar = null;
+                if (key != null) {
+                    try {
+                        a2 = nVar.a(key, false);
+                    } catch (ClassCastException unused) {
+                    }
+                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
+                        mVar = a2;
+                    }
+                    if (mVar != null) {
+                        return false;
+                    }
+                    nVar.c(mVar, true);
                     return true;
                 }
-            }
+                a2 = null;
+                if (a2 != null) {
+                    mVar = a2;
+                }
+                if (mVar != null) {
+                }
+            default:
+                n nVar2 = this.b;
+                m mVar2 = null;
+                if (obj != null) {
+                    try {
+                        mVar2 = nVar2.a(obj, false);
+                    } catch (ClassCastException unused2) {
+                    }
+                }
+                if (mVar2 != null) {
+                    nVar2.c(mVar2, true);
+                }
+                return mVar2 != null;
         }
-        return false;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.f;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.n;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        Object obj = this.f;
-        int hashCode = obj == null ? 0 : obj.hashCode();
-        Object obj2 = this.n;
-        return (obj2 != null ? obj2.hashCode() : 0) ^ hashCode;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        if (obj == null && !this.h) {
-            throw new NullPointerException("value == null");
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        switch (this.a) {
         }
-        Object obj2 = this.n;
-        this.n = obj;
-        return obj2;
-    }
-
-    public final String toString() {
-        return this.f + "=" + this.n;
-    }
-
-    public l(boolean z10, l lVar, Object obj, l lVar2, l lVar3) {
-        this.a = lVar;
-        this.f = obj;
-        this.h = z10;
-        this.r = 1;
-        this.d = lVar2;
-        this.e = lVar3;
-        lVar3.d = this;
-        lVar2.e = this;
+        return this.b.d;
     }
 }

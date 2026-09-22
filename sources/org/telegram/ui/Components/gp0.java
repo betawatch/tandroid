@@ -1,31 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class gp0 implements qb {
-    public final /* synthetic */ pc a;
-    public final /* synthetic */ ef b;
+public final class gp0 extends s4.s0 {
+    public final /* synthetic */ ef a;
 
-    public gp0(ef efVar, pc pcVar) {
-        this.b = efVar;
-        this.a = pcVar;
+    public gp0(ef efVar) {
+        this.a = efVar;
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void c() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void a(pc pcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void b() {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ef efVar = this.a;
+        View view = efVar.u;
+        boolean z10 = efVar.w.I0() != 0;
+        Boolean bool = efVar.x;
+        if (bool == null || z10 != bool.booleanValue()) {
+            view.animate().cancel();
+            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
+            efVar.x = Boolean.valueOf(z10);
+        }
     }
 }

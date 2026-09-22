@@ -15,36 +15,36 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wa;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.zn;
 import s4.j;
 import w7.y5;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h extends ab implements NotificationCenter.NotificationCenterDelegate {
     public final zf.a X;
     public final d1 Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public k61 b0;
+    public m61 b0;
 
     public h(Context context, f6 f6Var, zf.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, f6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        vl0Var.setPadding(i10, 0, i10, 0);
+        yl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.g(this, 7));
         j jVar = new j();
         jVar.m = false;
@@ -109,9 +109,9 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        k61 k61Var = this.b0;
-        if (k61Var != null) {
-            k61Var.N(false);
+        m61 m61Var = this.b0;
+        if (m61Var != null) {
+            m61Var.N(false);
         }
     }
 
@@ -119,9 +119,9 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            k61 k61Var = this.b0;
-            if (k61Var != null) {
-                k61Var.N(true);
+            m61 m61Var = this.b0;
+            if (m61Var != null) {
+                m61Var.N(true);
             }
             zf.a s10 = u5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
@@ -159,7 +159,7 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
-        lk lkVar;
+        mk mkVar;
         if (u5.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
@@ -172,8 +172,8 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
         n2 R = LaunchActivity.R();
         if (R instanceof zn) {
             zn znVar = (zn) R;
-            if (znVar.x9() && (lkVar = znVar.Y) != null) {
-                lkVar.P();
+            if (znVar.x9() && (mkVar = znVar.Y) != null) {
+                mkVar.P();
             }
         }
         super.show();
@@ -182,10 +182,10 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
-        this.b0 = k61Var;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
+        this.b0 = m61Var;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

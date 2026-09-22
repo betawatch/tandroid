@@ -9,6 +9,7 @@ import b2.n;
 import b2.r;
 import b2.r0;
 import b2.s0;
+import c3.b0;
 import c3.h0;
 import c3.i0;
 import c3.l;
@@ -18,7 +19,7 @@ import c3.q;
 import c3.s;
 import c3.t;
 import c3.x;
-import c5.b0;
+import c5.a0;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.m;
 import e2.d0;
@@ -45,7 +46,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import z3.k;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -59,8 +60,8 @@ public final class d implements o {
     public long C;
     public long D;
     public long E;
-    public b0 F;
-    public b0 G;
+    public a0 F;
+    public a0 G;
     public boolean H;
     public boolean I;
     public int J;
@@ -134,7 +135,7 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new ka.c(this, 24);
+        bVar.d = new o0.b(this, 19);
         this.f = kVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
@@ -167,8 +168,8 @@ public final class d implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        b0 b0Var = new b0(8, (byte) 0);
-        v vVar = (v) b0Var.c;
+        a0 a0Var = new a0(8, (byte) 0);
+        v vVar = (v) a0Var.c;
         l lVar = (l) pVar;
         long j3 = lVar.c;
         long j10 = 1024;
@@ -176,35 +177,35 @@ public final class d implements o {
             j10 = j3;
         }
         int i10 = (int) j10;
-        lVar.i(vVar.a, 0, 4, false);
+        lVar.h(vVar.a, 0, 4, false);
         long z10 = vVar.z();
-        b0Var.b = 4;
+        a0Var.b = 4;
         while (true) {
             if (z10 != 440786851) {
-                int i11 = b0Var.b + 1;
-                b0Var.b = i11;
+                int i11 = a0Var.b + 1;
+                a0Var.b = i11;
                 if (i11 == i10) {
                     break;
                 }
-                lVar.i(vVar.a, 0, 1, false);
+                lVar.h(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
-                long h = b0Var.h(lVar);
-                long j11 = b0Var.b;
+                long h = a0Var.h(lVar);
+                long j11 = a0Var.b;
                 if (h != Long.MIN_VALUE && (j3 == -1 || j11 + h < j3)) {
                     while (true) {
-                        long j12 = b0Var.b;
+                        long j12 = a0Var.b;
                         long j13 = j11 + h;
                         if (j12 < j13) {
-                            if (b0Var.h(lVar) != Long.MIN_VALUE) {
-                                long h10 = b0Var.h(lVar);
+                            if (a0Var.h(lVar) != Long.MIN_VALUE) {
+                                long h10 = a0Var.h(lVar);
                                 if (h10 < 0 || h10 > 2147483647L) {
                                     break;
                                 }
                                 if (h10 != 0) {
                                     int i12 = (int) h10;
-                                    lVar.t(i12, false);
-                                    b0Var.b += i12;
+                                    lVar.s(i12, false);
+                                    a0Var.b += i12;
                                 }
                             } else {
                                 break;
@@ -496,7 +497,7 @@ public final class d implements o {
         int i18;
         String str5;
         com.google.android.gms.internal.clearcut.e a10;
-        c3.b0 tVar;
+        b0 tVar;
         int i19;
         long[] jArr;
         d dVar3 = this;
@@ -564,9 +565,9 @@ public final class d implements o {
                             bVar.g = eVar.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        ka.c cVar = bVar.d;
+                        o0.b bVar2 = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = cVar.b;
+                        Object obj2 = bVar2.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -682,51 +683,51 @@ public final class d implements o {
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            ka.c cVar2 = bVar.d;
+                            o0.b bVar3 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar4 = (d) cVar2.b;
+                            d dVar4 = (d) bVar3.b;
                             e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
-                                    c cVar3 = new c();
-                                    cVar3.n = -1;
-                                    cVar3.o = -1;
-                                    cVar3.p = -1;
-                                    cVar3.q = -1;
-                                    cVar3.r = -1;
-                                    cVar3.s = 0;
-                                    cVar3.t = -1;
-                                    cVar3.u = 0.0f;
-                                    cVar3.v = 0.0f;
-                                    cVar3.w = 0.0f;
-                                    cVar3.x = null;
-                                    cVar3.y = -1;
-                                    cVar3.z = false;
-                                    cVar3.A = -1;
-                                    cVar3.B = -1;
-                                    cVar3.C = -1;
-                                    cVar3.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                                    cVar3.E = 200;
-                                    cVar3.F = -1.0f;
-                                    cVar3.G = -1.0f;
-                                    cVar3.H = -1.0f;
-                                    cVar3.I = -1.0f;
-                                    cVar3.J = -1.0f;
-                                    cVar3.K = -1.0f;
-                                    cVar3.L = -1.0f;
-                                    cVar3.M = -1.0f;
-                                    cVar3.N = -1.0f;
-                                    cVar3.O = -1.0f;
-                                    cVar3.Q = 1;
-                                    cVar3.R = -1;
-                                    cVar3.S = 8000;
-                                    cVar3.T = 0L;
-                                    cVar3.U = 0L;
-                                    cVar3.X = true;
-                                    cVar3.Y = "eng";
-                                    dVar4.x = cVar3;
-                                    cVar3.a = dVar4.w;
+                                    c cVar = new c();
+                                    cVar.n = -1;
+                                    cVar.o = -1;
+                                    cVar.p = -1;
+                                    cVar.q = -1;
+                                    cVar.r = -1;
+                                    cVar.s = 0;
+                                    cVar.t = -1;
+                                    cVar.u = 0.0f;
+                                    cVar.v = 0.0f;
+                                    cVar.w = 0.0f;
+                                    cVar.x = null;
+                                    cVar.y = -1;
+                                    cVar.z = false;
+                                    cVar.A = -1;
+                                    cVar.B = -1;
+                                    cVar.C = -1;
+                                    cVar.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
+                                    cVar.E = 200;
+                                    cVar.F = -1.0f;
+                                    cVar.G = -1.0f;
+                                    cVar.H = -1.0f;
+                                    cVar.I = -1.0f;
+                                    cVar.J = -1.0f;
+                                    cVar.K = -1.0f;
+                                    cVar.L = -1.0f;
+                                    cVar.M = -1.0f;
+                                    cVar.N = -1.0f;
+                                    cVar.O = -1.0f;
+                                    cVar.Q = 1;
+                                    cVar.R = -1;
+                                    cVar.S = 8000;
+                                    cVar.T = 0L;
+                                    cVar.U = 0L;
+                                    cVar.X = true;
+                                    cVar.Y = "eng";
+                                    dVar4.x = cVar;
+                                    cVar.a = dVar4.w;
                                 } else if (i25 == 187) {
                                     dVar4.H = false;
                                 } else if (i25 == 19899) {
@@ -746,8 +747,8 @@ public final class d implements o {
                                     dVar4.s = position;
                                     dVar4.r = j10;
                                 } else if (i25 == 475249515) {
-                                    dVar4.F = new b0(2, (byte) 0);
-                                    dVar4.G = new b0(2, (byte) 0);
+                                    dVar4.F = new a0(2, (byte) 0);
+                                    dVar4.G = new a0(2, (byte) 0);
                                 } else if (i25 == 524531317 && !dVar4.y) {
                                     if (!dVar4.d || dVar4.C == -1) {
                                         dVar4.e0.X1(new t(dVar4.v));
@@ -768,7 +769,7 @@ public final class d implements o {
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            cVar.W(i24, bVar.a(pVar2, (int) j12));
+                            bVar2.h(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 3) {
@@ -787,7 +788,7 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar5 = (d) cVar.b;
+                            d dVar5 = (d) bVar2.b;
                             if (i24 == 134) {
                                 dVar5.d(i24);
                                 dVar5.x.c = str;
@@ -806,7 +807,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            cVar.G(i24, (int) bVar.g, pVar2);
+                            bVar2.b(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -819,7 +820,7 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar6 = (d) cVar.b;
+                            d dVar6 = (d) bVar2.b;
                             if (i24 == 181) {
                                 dVar6.d(i24);
                                 dVar6.x.S = (int) intBitsToFloat;
@@ -888,9 +889,9 @@ public final class d implements o {
                             bVar.e = 0;
                         }
                     } else {
-                        ka.c cVar4 = bVar.d;
+                        o0.b bVar4 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar7 = (d) cVar4.b;
+                        d dVar7 = (d) bVar4.b;
                         SparseArray sparseArray = dVar7.c;
                         e2.d.h(dVar7.e0);
                         if (i28 != 160) {
@@ -2706,18 +2707,18 @@ public final class d implements o {
                                 }
                             } else if (i28 == 25152) {
                                 dVar7.d(i28);
-                                c cVar5 = dVar7.x;
-                                if (cVar5.i) {
-                                    c3.g0 g0Var = cVar5.k;
+                                c cVar2 = dVar7.x;
+                                if (cVar2.i) {
+                                    c3.g0 g0Var = cVar2.k;
                                     if (g0Var == null) {
                                         throw s0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
                                     }
-                                    cVar5.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
+                                    cVar2.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
                                 }
                             } else if (i28 == 28032) {
                                 dVar7.d(i28);
-                                c cVar6 = dVar7.x;
-                                if (cVar6.i && cVar6.j != null) {
+                                c cVar3 = dVar7.x;
+                                if (cVar3.i && cVar3.j != null) {
                                     throw s0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i28 == 357149030) {
@@ -2736,9 +2737,9 @@ public final class d implements o {
                             } else if (i28 == 475249515) {
                                 if (!dVar7.y) {
                                     q qVar2 = dVar7.e0;
-                                    b0 b0Var = dVar7.F;
-                                    b0 b0Var2 = dVar7.G;
-                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
+                                    a0 a0Var = dVar7.F;
+                                    a0 a0Var2 = dVar7.G;
+                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || a0Var == null || (i19 = a0Var.b) == 0 || a0Var2 == null || a0Var2.b != i19) {
                                         tVar = new t(dVar7.v);
                                     } else {
                                         int[] iArr = new int[i19];
@@ -2747,8 +2748,8 @@ public final class d implements o {
                                         long[] jArr4 = new long[i19];
                                         int i54 = 0;
                                         while (i54 < i19) {
-                                            jArr4[i54] = b0Var.f(i54);
-                                            jArr2[i54] = b0Var2.f(i54) + dVar7.s;
+                                            jArr4[i54] = a0Var.f(i54);
+                                            jArr2[i54] = a0Var2.f(i54) + dVar7.s;
                                             i54++;
                                             jArr4 = jArr4;
                                         }
@@ -2789,9 +2790,9 @@ public final class d implements o {
                                 dVar7.G = null;
                             }
                         } else if (dVar7.J == 2) {
-                            c cVar7 = (c) sparseArray.get(dVar7.P);
-                            cVar7.Z.getClass();
-                            if (dVar7.U > 0 && "A_OPUS".equals(cVar7.c)) {
+                            c cVar4 = (c) sparseArray.get(dVar7.P);
+                            cVar4.Z.getClass();
+                            if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
                                 v vVar3 = dVar7.p;
                                 byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
                                 vVar3.getClass();
@@ -2803,14 +2804,14 @@ public final class d implements o {
                             }
                             int i62 = 0;
                             while (i62 < dVar7.N) {
-                                long j17 = dVar7.K + ((cVar7.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
                                 int i63 = dVar7.R;
                                 if (i62 == 0 && !dVar7.T) {
                                     i63 |= 1;
                                 }
                                 int i64 = dVar7.O[i62];
                                 int i65 = i60 - i64;
-                                dVar7.e(cVar7, j17, i63, i64, i65);
+                                dVar7.e(cVar4, j17, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }

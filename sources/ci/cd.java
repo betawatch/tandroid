@@ -11,13 +11,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class cd extends View {
-    public final hj0 a;
+    public final kj0 a;
     public final org.telegram.ui.Components.n6 b;
     public final Paint c;
     public final Paint d;
@@ -39,14 +39,14 @@ public final class cd extends View {
         paint.setStrokeWidth(AndroidUtilities.dpf2(2.66f));
         paint.setShadowLayer(AndroidUtilities.dpf2(3.0f), 0.0f, AndroidUtilities.dp(1.66f), 805306368);
         paint2.setColor(855638016);
-        hj0 hj0Var = new hj0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.a = hj0Var;
-        hj0Var.R(this);
-        hj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        hj0Var.h = true;
-        hj0Var.P(0);
-        hj0Var.J(true);
-        hj0Var.start();
+        kj0 kj0Var = new kj0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.a = kj0Var;
+        kj0Var.R(this);
+        kj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
+        kj0Var.h = true;
+        kj0Var.P(0);
+        kj0Var.J(true);
+        kj0Var.start();
         org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(true, true, false, false);
         this.b = n6Var;
         n6Var.k(0.3f, 250L, qrVar);
@@ -63,16 +63,16 @@ public final class cd extends View {
         this.b.q(LocaleController.getString((z10 || z11) ? R.string.TrashHintRelease : R.string.TrashHintDrag), true, true);
         boolean z12 = z10 && !z11;
         this.f = z12;
-        hj0 hj0Var = this.a;
+        kj0 kj0Var = this.a;
         if (z12) {
-            if (hj0Var.a0 > 34) {
-                hj0Var.N(0, false, false);
+            if (kj0Var.a0 > 34) {
+                kj0Var.N(0, false, false);
             }
-            hj0Var.P(33);
-            hj0Var.start();
+            kj0Var.P(33);
+            kj0Var.start();
         } else {
-            hj0Var.P(z11 ? 66 : 0);
-            hj0Var.start();
+            kj0Var.P(z11 ? 66 : 0);
+            kj0Var.start();
         }
         invalidate();
     }
@@ -86,9 +86,9 @@ public final class cd extends View {
         canvas.drawCircle(width, height, e, this.d);
         canvas.drawCircle(width, height, e, this.c);
         float dp2 = AndroidUtilities.dp(48.0f) / 2.0f;
-        hj0 hj0Var = this.a;
-        hj0Var.setBounds((int) (width - dp2), (int) (height - dp2), (int) (width + dp2), (int) (dp2 + height));
-        hj0Var.draw(canvas);
+        kj0 kj0Var = this.a;
+        kj0Var.setBounds((int) (width - dp2), (int) (height - dp2), (int) (width + dp2), (int) (dp2 + height));
+        kj0Var.draw(canvas);
         int dp3 = (int) (height + dp + AndroidUtilities.dp(7.0f));
         int width2 = getWidth();
         int height2 = getHeight();

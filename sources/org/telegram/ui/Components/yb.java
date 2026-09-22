@@ -5,9 +5,9 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class yb extends pk0 {
+public final class yb extends sk0 {
     public final /* synthetic */ int l1 = 0;
     public final /* synthetic */ Object m1;
 
@@ -17,7 +17,7 @@ public final class yb extends pk0 {
         this.m1 = stVar;
     }
 
-    @Override // org.telegram.ui.Components.pk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sk0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         pc pcVar;
         switch (this.l1) {
@@ -36,7 +36,7 @@ public final class yb extends pk0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.sk0
     public void j() {
         switch (this.l1) {
             case 1:
@@ -62,7 +62,7 @@ public final class yb extends pk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.sk0
     public void m() {
         switch (this.l1) {
             case 0:

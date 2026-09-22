@@ -8,7 +8,7 @@ import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.l;
-import c5.x;
+import c5.w;
 import e0.p0;
 import g0.c;
 import g0.e;
@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 import u4.g;
 import u4.h;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -114,7 +114,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
 
     @Override // g0.e
     public final List b() {
-        return (List) this.d.submit(new x(this, 3)).get();
+        return (List) this.d.submit(new w(this, 3)).get();
     }
 
     @Override // g0.e
@@ -172,7 +172,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         if (TextUtils.isEmpty(hVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new x(hVar, 4)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new w(hVar, 4)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }

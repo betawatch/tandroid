@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class j7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public i7 E;
@@ -40,7 +40,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
     public g9 G;
     public int H;
     public boolean I;
-    public final al0 J;
+    public final dl0 J;
     public final jc K;
     public final t6 L;
     public final u6 M;
@@ -90,7 +90,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         p6 p6Var = new p6(this, context, dVar);
         this.r = p6Var;
         p6Var.setClipToPadding(false);
-        this.J = new al0(p6Var, true);
+        this.J = new dl0(p6Var, true);
         pz pzVar = new pz(p6Var, 0);
         this.x = pzVar;
         p6Var.setLayoutManager(pzVar);
@@ -397,14 +397,14 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z12 = u6Var.a;
-        am0 am0Var = y6Var.v;
+        dm0 dm0Var = y6Var.v;
         if (z12) {
             i7 i7Var = this.E;
             i10 = (i7Var == null || !i7Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        am0Var.a(i10, z10);
+        dm0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */

@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.g21;
-import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.i21;
+import org.telegram.ui.Components.nx0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 if (iArr[0] == this.b && iArr[1] > 0) {
                     tvVar.dismiss();
-                    pc.g(n2Var2, new lx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    pc.g(n2Var2, new nx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
@@ -135,7 +135,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new g21(this.b, context, f6Var, savedStarGift, 18), f6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new i21(this.b, context, f6Var, savedStarGift, 18), f6Var, null));
                     zcVar.setText(spannableStringBuilder);
                     break;
                 }

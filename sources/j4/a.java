@@ -4,7 +4,7 @@ import e9.a1;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
@@ -31,7 +31,7 @@ public final class a implements c3.o {
         int i10 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.i(vVar.a, 0, 10, false);
+            lVar.h(vVar.a, 0, 10, false);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -39,15 +39,15 @@ public final class a implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            lVar.t(w10, false);
+            lVar.s(w10, false);
         }
         lVar.f = 0;
-        lVar.t(i10, false);
+        lVar.s(i10, false);
         int i11 = i10;
         loop1: while (true) {
             int i12 = 0;
             while (true) {
-                lVar.i(vVar.a, 0, 6, false);
+                lVar.h(vVar.a, 0, 6, false);
                 vVar.J(0);
                 if (vVar.D() != 2935) {
                     break;
@@ -68,9 +68,9 @@ public final class a implements c3.o {
                 if (f7 == -1) {
                     break loop1;
                 }
-                lVar.t(f7 - 6, false);
+                lVar.s(f7 - 6, false);
             }
-            lVar.t(i11, false);
+            lVar.s(i11, false);
         }
         return false;
     }

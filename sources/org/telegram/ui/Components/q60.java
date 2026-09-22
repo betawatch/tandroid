@@ -1,27 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class q60 extends d90 {
-    public final /* synthetic */ u60 L;
+public final class q60 extends s4.s0 {
+    public final /* synthetic */ s4.c0 a;
+    public final /* synthetic */ c70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q60(u60 u60Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f3 f3Var, boolean z10) {
-        super(context, n2Var, f3Var, false, z10);
-        this.L = u60Var;
+    public q60(c70 c70Var, s4.c0 c0Var) {
+        this.b = c70Var;
+        this.a = c0Var;
     }
 
-    @Override // org.telegram.ui.Components.d90
-    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        z60 z60Var = this.L.c;
-        org.telegram.ui.ActionBar.d3 d3Var = z60Var.container;
-        f6Var = ((org.telegram.ui.ActionBar.f3) z60Var).resourcesProvider;
-        pc Q = new xc(d3Var, f6Var).Q(i10, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        c70 c70Var = this.b;
+        c70.O(c70Var);
+        if (!c70Var.R || c70Var.Q) {
+            return;
+        }
+        if (c70Var.S - this.a.N0() < 10) {
+            c70Var.X();
+        }
     }
 }

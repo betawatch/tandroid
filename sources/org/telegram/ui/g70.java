@@ -7,9 +7,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g70 implements org.telegram.ui.Components.kl0, fd0 {
+public final /* synthetic */ class g70 implements org.telegram.ui.Components.nl0, fd0 {
     public final /* synthetic */ l70 a;
 
     public /* synthetic */ g70(l70 l70Var) {
@@ -25,7 +25,7 @@ public final /* synthetic */ class g70 implements org.telegram.ui.Components.kl0
         l70Var.T = messageMedia.address;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         boolean z10 = view instanceof org.telegram.ui.Cells.fa;
         l70 l70Var = this.a;
@@ -61,12 +61,12 @@ public final /* synthetic */ class g70 implements org.telegram.ui.Components.kl0
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

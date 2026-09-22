@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final /* synthetic */ class og implements Runnable {
                 if (!MediaController.getInstance().isRecordingPaused()) {
                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
                 }
-                if (chatActivityEnterView.r4) {
-                    chatActivityEnterView.I3 = true;
+                if (chatActivityEnterView.s4) {
+                    chatActivityEnterView.J3 = true;
                 }
                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                chatActivityEnterView.Y2.b1(0);
-                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
+                chatActivityEnterView.Z2.b1(0);
+                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
                 if (slideTextView != null) {
                     slideTextView.setEnabled(false);
                     break;
@@ -160,7 +160,7 @@ public final /* synthetic */ class og implements Runnable {
                 break;
             case 19:
                 ChatActivityEnterView chatActivityEnterView2 = ((rf) obj).f;
-                int i12 = ChatActivityEnterView.m5;
+                int i12 = ChatActivityEnterView.n5;
                 chatActivityEnterView2.p1();
                 break;
             case 20:

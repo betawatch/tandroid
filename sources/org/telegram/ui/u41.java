@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u41 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -163,17 +163,17 @@ public final class u41 extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var2));
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
         addView(textView, w7.y5.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
-        org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(getContext(), null);
-        k90Var.setText(charSequence);
-        k90Var.setTextSize(1, 14.0f);
+        org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(getContext(), null);
+        n90Var.setText(charSequence);
+        n90Var.setTextSize(1, 14.0f);
         int i12 = org.telegram.ui.ActionBar.j6.Pi;
         f6Var3 = ((org.telegram.ui.ActionBar.f3) v41Var).resourcesProvider;
-        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var3));
+        n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var3));
         int i13 = org.telegram.ui.ActionBar.j6.gc;
         f6Var4 = ((org.telegram.ui.ActionBar.f3) v41Var).resourcesProvider;
-        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i13, f6Var4));
-        k90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        k90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(k90Var, w7.y5.d(-2, -2.0f, z10 ? 5 : 3, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f));
+        n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i13, f6Var4));
+        n90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        n90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        addView(n90Var, w7.y5.d(-2, -2.0f, z10 ? 5 : 3, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f));
     }
 }

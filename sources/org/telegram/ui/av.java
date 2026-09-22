@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class av extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -18,8 +18,8 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
     public static final int[] v = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
     public static final int[] w = {R.string.LocalVideoCache, R.string.LocalDocumentCache, R.string.LocalPhotoCache, R.string.MessagesSettings, R.string.LocalMusicCache, R.string.LocalAudioCache, R.string.CallsDataUsage};
     public static final int[] x = {2, 5, 4, 1, 7, 3, 0};
-    public org.telegram.ui.Components.x81 a;
-    public org.telegram.ui.Components.w81 b;
+    public org.telegram.ui.Components.z81 a;
+    public org.telegram.ui.Components.y81 b;
     public FrameLayout c;
     public View d;
     public final pe.b e;
@@ -46,9 +46,9 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ro(this, 19));
         ai.x5 x5Var = new ai.x5(context, 23);
         x5Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.a7));
-        org.telegram.ui.Components.x81 x81Var = new org.telegram.ui.Components.x81(context, null);
-        this.a = x81Var;
-        x81Var.setAdapter(new xu(this));
+        org.telegram.ui.Components.z81 z81Var = new org.telegram.ui.Components.z81(context, null);
+        this.a = z81Var;
+        z81Var.setAdapter(new xu(this));
         this.c = new FrameLayout(context);
         this.b = this.a.n(-2, true);
         x5Var.addView(this.a, w7.y5.e(-1, -1, 119));
@@ -66,14 +66,14 @@ public final class av extends org.telegram.ui.ActionBar.n2 {
         c10.q(AndroidUtilities.dp(18.0f));
         frameLayout.setBackground(c10);
         li.b baseSimpleGlass = getBaseSimpleGlass();
-        org.telegram.ui.Components.x81 x81Var2 = this.a;
+        org.telegram.ui.Components.z81 z81Var2 = this.a;
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         org.telegram.ui.ActionBar.f6 f6Var = this.resourceProvider;
         baseSimpleGlass.e = x5Var;
-        baseSimpleGlass.f = x81Var2;
+        baseSimpleGlass.f = z81Var2;
         li.i iVar = baseSimpleGlass.a;
         iVar.getClass();
-        x81Var2.Q.add(new li.e(iVar));
+        z81Var2.Q.add(new li.e(iVar));
         kVar2.setCenterTitleAndGlass(true);
         kVar2.M(baseSimpleGlass.b, eh.b.m(f6Var), false);
         kVar2.setAddToContainer(false);

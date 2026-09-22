@@ -14,14 +14,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class k6 extends FrameLayout {
     public final /* synthetic */ z6 E;
     public final org.telegram.ui.Components.o6 a;
     public final TextView[] b;
     public final RectF c;
-    public final org.telegram.ui.Components.o90 d;
+    public final org.telegram.ui.Components.r90 d;
     public Float e;
     public Float f;
     public final org.telegram.ui.Components.d6 h;
@@ -39,7 +39,7 @@ public final class k6 extends FrameLayout {
         this.E = z6Var;
         this.b = new TextView[3];
         this.c = new RectF();
-        this.d = new org.telegram.ui.Components.o90();
+        this.d = new org.telegram.ui.Components.r90();
         org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
         this.h = new org.telegram.ui.Components.d6(this, 450L, qrVar);
         this.n = new org.telegram.ui.Components.d6(this, 450L, qrVar);
@@ -225,10 +225,10 @@ public final class k6 extends FrameLayout {
             rectF = rectF3;
             a(AndroidUtilities.dp(AndroidUtilities.lerp(1, 2, d)), AndroidUtilities.dp(2.0f), canvas, paint, rectF2);
         }
-        org.telegram.ui.Components.o90 o90Var = this.d;
-        o90Var.d(rectF);
-        o90Var.setAlpha((int) (255.0f * alpha * d));
-        o90Var.draw(canvas);
+        org.telegram.ui.Components.r90 r90Var = this.d;
+        r90Var.d(rectF);
+        r90Var.setAlpha((int) (255.0f * alpha * d));
+        r90Var.draw(canvas);
         int i12 = org.telegram.ui.ActionBar.j6.h7;
         int d12 = i0.a.d(0.75f, org.telegram.ui.ActionBar.j6.w0(null, i12, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         Paint paint2 = this.w;

@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
             default:
                 m1 m1Var2 = this.b;
                 m1Var2.o0 = (String) obj;
-                p8.b bVar = m1Var2.w0;
-                AndroidUtilities.cancelRunOnUIThread(bVar);
-                AndroidUtilities.runOnUIThread(bVar, 350L);
+                pg.c1 c1Var = m1Var2.w0;
+                AndroidUtilities.cancelRunOnUIThread(c1Var);
+                AndroidUtilities.runOnUIThread(c1Var, 350L);
                 break;
         }
     }

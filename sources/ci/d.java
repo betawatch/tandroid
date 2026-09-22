@@ -19,22 +19,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.be;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public class d extends FrameLayout implements n90 {
+public class d extends FrameLayout implements q90 {
     public boolean E;
     public int F;
     public ai.ba G;
     public float H;
     public ValueAnimator I;
     public boolean J;
-    public o90 K;
+    public r90 K;
     public boolean L;
     public float M;
     public boolean N;
@@ -108,7 +108,7 @@ public class d extends FrameLayout implements n90 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.n90
+    @Override // org.telegram.ui.Components.q90
     public final boolean c() {
         return this.N;
     }
@@ -241,24 +241,24 @@ public class d extends FrameLayout implements n90 {
         if (this.L) {
             if (this.N) {
                 if (this.K == null) {
-                    o90 o90Var = new o90(this.a);
-                    this.K = o90Var;
-                    o90Var.setCallback(this);
-                    o90 o90Var2 = this.K;
-                    o90Var2.t = 2.0f;
-                    o90Var2.C = true;
-                    o90Var2.w.setStrokeWidth(0.0f);
+                    r90 r90Var = new r90(this.a);
+                    this.K = r90Var;
+                    r90Var.setCallback(this);
+                    r90 r90Var2 = this.K;
+                    r90Var2.t = 2.0f;
+                    r90Var2.C = true;
+                    r90Var2.w.setStrokeWidth(0.0f);
                     this.K.e(org.telegram.ui.ActionBar.j6.l1(0.02f, -1), org.telegram.ui.ActionBar.j6.l1(0.375f, -1));
                 }
-                o90 o90Var3 = this.K;
-                o90Var3.c = -1L;
-                o90Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                r90 r90Var3 = this.K;
+                r90Var3.c = -1L;
+                r90Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.K.j(this.b);
                 this.K.draw(canvas);
             } else {
-                o90 o90Var4 = this.K;
-                if (o90Var4 != null) {
-                    o90Var4.a();
+                r90 r90Var4 = this.K;
+                if (r90Var4 != null) {
+                    r90Var4.a();
                     this.K.draw(canvas);
                     if (this.K.b()) {
                         this.K.b = -1L;
@@ -465,7 +465,7 @@ public class d extends FrameLayout implements n90 {
         this.c0 = (int) (f7 * 255.0f);
     }
 
-    @Override // org.telegram.ui.Components.n90
+    @Override // org.telegram.ui.Components.q90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             if (this.L) {
@@ -552,7 +552,7 @@ public class d extends FrameLayout implements n90 {
         this.c0 = 255;
         this.s = z10;
         this.a = f6Var;
-        w7.b6.b(this, 0.02f, 1.2f);
+        w7.a6.b(this, 0.02f, 1.2f);
         View view = new View(context);
         this.r = view;
         addView(view, w7.y5.c(-1.0f, -1));

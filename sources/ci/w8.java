@@ -12,9 +12,9 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.s90;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class w8 extends FrameLayout {
     public final Paint a;
@@ -61,17 +61,17 @@ public final class w8 extends FrameLayout {
         int textColor = o6Var.getTextColor();
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        p90 p90Var = new p90(AndroidUtilities.dp(200.0f), o6Var);
-        p90Var.e = 0.8f;
-        p90Var.a(org.telegram.ui.ActionBar.j6.l1(0.4f, textColor), org.telegram.ui.ActionBar.j6.l1(0.08f, textColor));
-        spannableString.setSpan(p90Var, 0, spannableString.length(), 33);
+        s90 s90Var = new s90(AndroidUtilities.dp(200.0f), o6Var);
+        s90Var.e = 0.8f;
+        s90Var.a(org.telegram.ui.ActionBar.j6.l1(0.4f, textColor), org.telegram.ui.ActionBar.j6.l1(0.08f, textColor));
+        spannableString.setSpan(s90Var, 0, spannableString.length(), 33);
         int textColor2 = o6Var2.getTextColor();
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        p90 p90Var2 = new p90(AndroidUtilities.dp(140.0f), o6Var2);
-        p90Var2.e = 0.8f;
-        p90Var2.a(org.telegram.ui.ActionBar.j6.l1(0.4f, textColor2), org.telegram.ui.ActionBar.j6.l1(0.08f, textColor2));
-        spannableString2.setSpan(p90Var2, 0, spannableString2.length(), 33);
+        s90 s90Var2 = new s90(AndroidUtilities.dp(140.0f), o6Var2);
+        s90Var2.e = 0.8f;
+        s90Var2.a(org.telegram.ui.ActionBar.j6.l1(0.4f, textColor2), org.telegram.ui.ActionBar.j6.l1(0.08f, textColor2));
+        spannableString2.setSpan(s90Var2, 0, spannableString2.length(), 33);
         ImageView imageView3 = new ImageView(context);
         this.f = imageView3;
         imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));

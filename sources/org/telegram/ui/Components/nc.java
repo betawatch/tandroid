@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class nc extends lb {
     public Runnable a;
@@ -32,7 +32,7 @@ public final class nc extends lb {
             org.telegram.messenger.rk.l(R.string.UndoNoCaps, textView, 16);
             float f7 = z11 ? 34.0f : 12.0f;
             boolean z12 = LocaleController.isRTL;
-            w7.f6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
+            w7.e6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
             addView(textView, w7.y5.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }
         if (z11) {
@@ -42,7 +42,7 @@ public final class nc extends lb {
             if (!z10) {
                 imageView.setBackground(org.telegram.ui.ActionBar.j6.f0((F0 & 16777215) | 419430400, 1, -1));
             }
-            w7.f6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            w7.e6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
             addView(imageView, w7.y5.h(56.0f, 48.0f, 16));
         }
         setOnClickListener(new f0(this, 6));

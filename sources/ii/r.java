@@ -40,22 +40,22 @@ import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.ph;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.ug;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xh;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.dj0;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class r extends ni implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
     public int E;
     public i1 F;
     public int G;
-    public v70 H;
+    public y70 H;
     public int I;
     public boolean J;
     public int K;
@@ -280,7 +280,7 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
+    public final void D(ni niVar) {
         this.b.X0.setTitle("");
         this.r.Y2.N(false);
         V(false);
@@ -288,7 +288,7 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void G() {
+    public final void F() {
         this.r.y0(0);
     }
 
@@ -298,7 +298,7 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
         MessageObject messageObject;
         MessageObject messageObject2;
         SendMessageChatArguments sendMessageChatArguments;
-        lk lkVar;
+        mk mkVar;
         int i12 = this.n;
         boolean richEditorAllowed = MessagesController.getInstance(i12).richEditorAllowed();
         w3 w3Var = this.r;
@@ -337,8 +337,8 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
                     }
                 } else {
                     org.telegram.ui.ActionBar.n2 n2Var2 = viVar.f0;
-                    if ((n2Var2 instanceof zn) && (lkVar = ((zn) n2Var2).Y) != null) {
-                        lkVar.R0(c5.k(w3Var.l3), z10, i10, i11);
+                    if ((n2Var2 instanceof zn) && (mkVar = ((zn) n2Var2).Y) != null) {
+                        mkVar.R0(c5.k(w3Var.l3), z10, i10, i11);
                         viVar.dismiss(true);
                         return true;
                     }
@@ -359,10 +359,10 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
         return !this.r.l3();
     }
 
-    public final void P(v70 v70Var, a aVar, TL_iv.PageBlock pageBlock, int i10, String str, int i11, v70 v70Var2) {
-        v70Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i10, null, str, new ai.i5(this, aVar, pageBlock, v70Var2, 18));
-        v70Var.y().a.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
-        v70Var.y().a.setTextSize(1, i11);
+    public final void P(y70 y70Var, a aVar, TL_iv.PageBlock pageBlock, int i10, String str, int i11, y70 y70Var2) {
+        y70Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i10, null, str, new ai.i5(this, aVar, pageBlock, y70Var2, 18));
+        y70Var.y().a.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD));
+        y70Var.y().a.setTextSize(1, i11);
     }
 
     public final boolean Q() {
@@ -502,11 +502,11 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
         }
         TL_iv.RichMessage k22 = w3Var.k2();
         AccountInstance.getInstance(this.n).getMediaDataController().saveDraft(znVar.a(), znVar.B7(znVar.n5), "", null, null, null, null, 0L, false, false, k22);
-        lk lkVar = znVar.Y;
-        if (lkVar == null) {
+        mk mkVar = znVar.Y;
+        if (mkVar == null) {
             return true;
         }
-        lkVar.setRichDraftPreview(k22);
+        mkVar.setRichDraftPreview(k22);
         return true;
     }
 
@@ -1026,13 +1026,13 @@ public final class r extends ni implements NotificationCenter.NotificationCenter
     public final void y(int i10, int i11) {
         int dp;
         int i12;
-        v70 v70Var;
+        y70 y70Var;
         boolean z10 = this.L;
         vi viVar = this.b;
         boolean z11 = viVar.r1.R() > AndroidUtilities.dp(20.0f);
         this.L = z11;
-        if (!z11 && z10 && (v70Var = this.H) != null) {
-            v70Var.u();
+        if (!z11 && z10 && (y70Var = this.H) != null) {
+            y70Var.u();
             this.H = null;
         }
         if (this.L || this.E > AndroidUtilities.dp(20.0f)) {

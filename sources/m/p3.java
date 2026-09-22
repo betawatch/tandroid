@@ -14,10 +14,10 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -49,9 +49,9 @@ public final class p3 implements n5.b {
 
     public void a() {
         c(null);
-        v70 v70Var = (v70) this.c;
-        if (v70Var != null) {
-            v70Var.u();
+        y70 y70Var = (y70) this.c;
+        if (y70Var != null) {
+            y70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -95,8 +95,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(d6 d6Var, String str) {
-        v70 v70Var;
-        v70 v70Var2;
+        y70 y70Var;
+        y70 y70Var2;
         if (str == null) {
             a();
             return;
@@ -107,13 +107,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(d6Var);
-        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (v70Var2 = (v70) this.c) != null && v70Var2.D()) {
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (y70Var2 = (y70) this.c) != null && y70Var2.D()) {
             return;
         }
-        if (((d6) this.f) == d6Var && (v70Var = (v70) this.c) != null && v70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((d6) this.f) == d6Var && (y70Var = (y70) this.c) != null && y70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(d6Var, a2);
-            ((v70) this.c).O();
+            ((y70) this.c).O();
             return;
         }
         a();
@@ -124,7 +124,7 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(d6Var, a2);
-        v70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
+        y70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
@@ -173,7 +173,7 @@ public final class p3 implements n5.b {
     public p3(String str, ba.c cVar, com.google.firebase.messaging.t tVar) {
         this.d = new com.google.firebase.messaging.m(this, false);
         this.e = new com.google.firebase.messaging.m(this, true);
-        this.f = new c5.b0(10, (byte) 0);
+        this.f = new c5.a0(10, (byte) 0);
         this.h = new AtomicMarkableReference(null, false);
         this.c = str;
         this.a = new x9.f(cVar);

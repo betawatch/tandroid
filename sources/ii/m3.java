@@ -8,11 +8,11 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.HashtagSearchController;
-import org.telegram.ui.Components.ih0;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.lh0;
+import org.telegram.ui.Components.na0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.ai0;
 import org.telegram.ui.ee;
 import org.telegram.ui.fr0;
@@ -23,7 +23,7 @@ import org.telegram.ui.ss;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final class m3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).a(recyclerView, i10);
-                ((ka0) this.c).D.getClass();
+                ((na0) this.c).D.getClass();
                 break;
         }
     }
@@ -126,10 +126,10 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 1:
-                s61 s61Var = ((ee) this.c).a;
-                if (s61Var.canScrollVertically(1)) {
-                    for (int i14 = 0; i14 < s61Var.getChildCount(); i14++) {
-                        if (!(s61Var.getChildAt(i14) instanceof t00)) {
+                u61 u61Var = ((ee) this.c).a;
+                if (u61Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < u61Var.getChildCount(); i14++) {
+                        if (!(u61Var.getChildAt(i14) instanceof t00)) {
                         }
                     }
                     break;
@@ -173,18 +173,18 @@ public final class m3 extends s4.s0 {
                 break;
             case 3:
                 uy uyVar = (uy) this.b;
-                ih0 ih0Var = (ih0) this.c;
-                s61 s61Var2 = ih0Var.c;
-                if (!(TextUtils.isEmpty(ih0Var.w) ? ih0Var.e : ih0Var.n).isEmpty()) {
-                    if (s61Var2.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < s61Var2.getChildCount(); i17++) {
-                            if (!(s61Var2.getChildAt(i17) instanceof t00)) {
+                lh0 lh0Var = (lh0) this.c;
+                u61 u61Var2 = lh0Var.c;
+                if (!(TextUtils.isEmpty(lh0Var.w) ? lh0Var.e : lh0Var.n).isEmpty()) {
+                    if (u61Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < u61Var2.getChildCount(); i17++) {
+                            if (!(u61Var2.getChildAt(i17) instanceof t00)) {
                             }
                         }
                     }
-                    ih0Var.a(false);
+                    lh0Var.a(false);
                 }
-                if (s61Var2.K1 && !ih0Var.Q && uyVar.getParentActivity() != null) {
+                if (u61Var2.K1 && !lh0Var.Q && uyVar.getParentActivity() != null) {
                     AndroidUtilities.hideKeyboard(uyVar.getParentActivity().getCurrentFocus());
                     break;
                 }
@@ -243,7 +243,7 @@ public final class m3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                ((ka0) this.c).D.b(recyclerView, i10, i11);
+                ((na0) this.c).D.b(recyclerView, i10, i11);
                 break;
             default:
                 xh.o2 o2Var = (xh.o2) this.c;
@@ -257,7 +257,7 @@ public final class m3 extends s4.s0 {
                     }
                     o2Var.e.a();
                 }
-                ((yr0) this.b).o();
+                ((bs0) this.b).o();
                 break;
         }
     }

@@ -33,9 +33,9 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, oy, v4, org.telegram.ui.Components.c5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.yj0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, vg1 {
+public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, oy, v4, org.telegram.ui.Components.c5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, vg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -85,11 +85,11 @@ public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yj0
+    @Override // org.telegram.ui.Components.bk0
     public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
-        gi giVar = (gi) this.b;
+        hi hiVar = (hi) this.b;
         MessageObject messageObject = (MessageObject) this.c;
-        zn znVar = giVar.p;
+        zn znVar = hiVar.p;
         Bundle bundle = new Bundle();
         if (j3 > 0) {
             bundle.putLong("user_id", j3);
@@ -245,9 +245,9 @@ public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, o
                 }
             case 25:
                 TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) this.b;
-                org.telegram.ui.Components.cd0 cd0Var = (org.telegram.ui.Components.cd0) this.c;
+                org.telegram.ui.Components.fd0 fd0Var = (org.telegram.ui.Components.fd0) this.c;
                 int i12 = encryptedChat.ttl;
-                int value = cd0Var.getValue();
+                int value = fd0Var.getValue();
                 if (value >= 0 && value < 16) {
                     encryptedChat.ttl = value;
                 } else if (value == 16) {
@@ -290,7 +290,7 @@ public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, o
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
         xn xnVar = (xn) this.b;
-        org.telegram.ui.Components.kc0 kc0Var = (org.telegram.ui.Components.kc0) this.c;
+        org.telegram.ui.Components.nc0 nc0Var = (org.telegram.ui.Components.nc0) this.c;
         Pair pair = (Pair) obj;
         xnVar.getClass();
         if (pair == null) {
@@ -302,8 +302,8 @@ public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, o
         if (d4Var == null || longValue != d4Var.i(xnVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        kc0Var.x = bitmap;
-        kc0Var.i();
+        nc0Var.x = bitmap;
+        nc0Var.i();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -449,9 +449,9 @@ public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        mj mjVar = (mj) this.b;
+        nj njVar = (nj) this.b;
         long j3 = ((TLRPC.User) this.c).id;
-        zn znVar = mjVar.b;
+        zn znVar = njVar.b;
         long j10 = znVar.d4;
         if (j3 != j10) {
             return;

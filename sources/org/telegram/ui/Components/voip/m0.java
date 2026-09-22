@@ -34,20 +34,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.u6;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.en0;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.a40;
 import org.telegram.ui.i60;
 import org.telegram.ui.w30;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public boolean A0;
@@ -133,7 +133,7 @@ public abstract class m0 extends FrameLayout {
         this.O = 1.0f;
         this.V = true;
         final a40 a40Var = (a40) this;
-        this.h0 = new u6(a40Var, 28);
+        this.h0 = new u6(a40Var, 27);
         this.y0 = 1.0f;
         this.K0 = new UndoView[2];
         this.F = recyclerView;
@@ -874,12 +874,12 @@ public abstract class m0 extends FrameLayout {
                                     uVar2.setScaleY(0.5f);
                                     uVar2.E = true;
                                 }
-                                cn0 cn0Var = new cn0(this, uVar, uVar2, 17);
+                                en0 en0Var = new en0(this, uVar, uVar2, 17);
                                 if (pVar.d.isFirstFrameRendered()) {
-                                    AndroidUtilities.runOnUIThread(cn0Var, 250L);
-                                    uVar8.m0.add(cn0Var);
+                                    AndroidUtilities.runOnUIThread(en0Var, 250L);
+                                    uVar8.m0.add(en0Var);
                                 } else {
-                                    cn0Var.run();
+                                    en0Var.run();
                                 }
                                 d();
                                 this.y = uVar8;
@@ -918,7 +918,7 @@ public abstract class m0 extends FrameLayout {
                         ofFloat2.addListener(new k0(this, uVar82, uVar));
                         if (uVar2 != null) {
                         }
-                        cn0 cn0Var2 = new cn0(this, uVar, uVar2, 17);
+                        en0 en0Var2 = new en0(this, uVar, uVar2, 17);
                         if (pVar.d.isFirstFrameRendered()) {
                         }
                         d();
@@ -984,12 +984,12 @@ public abstract class m0 extends FrameLayout {
                     uVar11.setScaleX(0.5f);
                     uVar11.setScaleY(0.5f);
                     uVar11.E = true;
-                    wn0 wn0Var = new wn0(28, this, uVar11);
+                    yn0 yn0Var = new yn0(28, this, uVar11);
                     if (uVar11.a.d.isFirstFrameRendered()) {
-                        wn0Var.run();
+                        yn0Var.run();
                     } else {
-                        AndroidUtilities.runOnUIThread(wn0Var, 250L);
-                        uVar11.m0.add(wn0Var);
+                        AndroidUtilities.runOnUIThread(yn0Var, 250L);
+                        uVar11.m0.add(yn0Var);
                     }
                     u uVar102 = new u(this, this.i0, i60Var);
                     uVar102.w = videoParticipant;
@@ -1423,9 +1423,9 @@ public abstract class m0 extends FrameLayout {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (user != null) {
-                                spannableStringBuilder.append(UserObject.getFirstName(user), new t51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(UserObject.getFirstName(user), new v51(AndroidUtilities.bold()), 0);
                             } else {
-                                spannableStringBuilder.append(chat.title, new t51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(chat.title, new v51(AndroidUtilities.bold()), 0);
                             }
                         }
                     }

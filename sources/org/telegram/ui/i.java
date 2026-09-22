@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
+public final /* synthetic */ class i implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -49,9 +49,9 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
         if (view instanceof org.telegram.ui.Cells.x8) {
             org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
             boolean z11 = aw0Var.L;
-            org.telegram.ui.Components.yy0 yy0Var = aw0Var.Q;
-            if (yy0Var != null) {
-                yy0Var.f();
+            org.telegram.ui.Components.az0 az0Var = aw0Var.Q;
+            if (az0Var != null) {
+                az0Var.f();
             }
             if (aw0Var.I) {
                 int i11 = -aw0Var.O;
@@ -214,7 +214,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
         hy0Var.presentFragment(ovVar);
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         TLRPC.InputStickerSet tL_inputStickerSetShortName;
         TLRPC.Chat chat;
@@ -254,10 +254,10 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
                     } else if (i15 == 7) {
                         if (!lVar.getUserConfig().isPremium() && !lVar.getMessagesController().autoarchiveAvailable && !lVar.d.archive_and_mute_new_noncontact_peers) {
                             org.telegram.ui.Components.hc hcVar = new org.telegram.ui.Components.hc(lVar.getParentActivity(), lVar.getResourceProvider());
-                            org.telegram.ui.Components.k90 k90Var = hcVar.b;
-                            k90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.UnlockPremium), org.telegram.ui.ActionBar.j6.Gi, 0, new mu0(lVar, r11)));
-                            k90Var.setSingleLine(false);
-                            k90Var.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+                            org.telegram.ui.Components.n90 n90Var = hcVar.b;
+                            n90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.UnlockPremium), org.telegram.ui.ActionBar.j6.Gi, 0, new mu0(lVar, r11)));
+                            n90Var.setSingleLine(false);
+                            n90Var.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
                             hcVar.a.setImageResource(R.drawable.msg_settings_premium);
                             org.telegram.ui.Components.pc.g(lVar, hcVar, 3500).j();
                             int i16 = -lVar.e;
@@ -289,9 +289,9 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
                     }
                     TLRPC.InputStickerSet inputStickerSet = tL_inputStickerSetShortName;
                     inputStickerSet.access_hash = stickerSetCovered.set.access_hash;
-                    org.telegram.ui.Components.gy0 gy0Var = new org.telegram.ui.Components.gy0(pVar.getParentActivity(), pVar, inputStickerSet, null, null, null);
-                    gy0Var.c0 = new n(pVar, view, stickerSetCovered);
-                    pVar.showDialog(gy0Var);
+                    org.telegram.ui.Components.iy0 iy0Var = new org.telegram.ui.Components.iy0(pVar.getParentActivity(), pVar, inputStickerSet, null, null, null);
+                    iy0Var.c0 = new n(pVar, view, stickerSetCovered);
+                    pVar.showDialog(iy0Var);
                     break;
                 }
                 break;
@@ -410,12 +410,12 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
                 ot otVar = (ot) this.b;
                 TLRPC.StickerSetCovered stickerSetCovered2 = ((rt) view).d;
                 st stVar = otVar.a;
-                zg.b0 reactionsWindow = stVar.P.getReactionsWindow();
+                zg.c0 reactionsWindow = stVar.P.getReactionsWindow();
                 if (reactionsWindow != null && !reactionsWindow.q) {
                     reactionsWindow.d();
                 }
                 if (stickerSetCovered2 instanceof TLRPC.TL_stickerSetNoCovered) {
-                    org.telegram.ui.Components.my0.c(null, stVar.c0, stVar.z.getContext(), new b5(otVar, 9));
+                    org.telegram.ui.Components.oy0.c(null, stVar.c0, stVar.z.getContext(), new b5(otVar, 9));
                     break;
                 } else {
                     qt qtVar = stVar.l;
@@ -546,11 +546,11 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.jl0 {
                                 AndroidUtilities.shakeViewSpring(view, f10);
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 f10Var.v = true;
-                                hj hjVar = f10Var.R;
-                                if (hjVar == null || hjVar.getVisibility() != 0) {
-                                    hj hjVar2 = new hj(6, 3, f10Var.getParentActivity(), f6Var, true);
-                                    f10Var.R = hjVar2;
-                                    hjVar2.a.setMaxWidth(AndroidUtilities.displaySize.x);
+                                ij ijVar = f10Var.R;
+                                if (ijVar == null || ijVar.getVisibility() != 0) {
+                                    ij ijVar2 = new ij(6, 3, f10Var.getParentActivity(), f6Var, true);
+                                    f10Var.R = ijVar2;
+                                    ijVar2.a.setMaxWidth(AndroidUtilities.displaySize.x);
                                     f10Var.R.setExtraTranslationY(AndroidUtilities.dp(-16.0f));
                                     f10Var.R.setText(LocaleController.getString(R.string.FilterFinishCreating));
                                     ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);

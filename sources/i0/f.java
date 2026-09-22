@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 import v7.i8;
 import v7.j8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class f extends i8 {
     public static Class a = null;
@@ -106,12 +106,12 @@ public class f extends i8 {
     }
 
     @Override // v7.i8
-    public Typeface b(Context context, o0.h[] hVarArr, int i10) {
+    public Typeface b(Context context, o0.i[] iVarArr, int i10) {
         File file;
         String readlink;
-        if (hVarArr.length >= 1) {
+        if (iVarArr.length >= 1) {
             try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(hVarArr, i10).a, "r", null);
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(iVarArr, i10).a, "r", null);
                 if (openFileDescriptor != null) {
                     try {
                         try {

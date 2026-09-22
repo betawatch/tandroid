@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class jo extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -50,7 +50,7 @@ public abstract class jo extends LinearLayout {
     public v9 n;
     public final org.telegram.ui.ActionBar.f6 r;
     public boolean s;
-    public kj0 v;
+    public nj0 v;
     public TextView w;
     public bi.o x;
     public boolean y;
@@ -79,14 +79,14 @@ public abstract class jo extends LinearLayout {
         this.h = v9Var;
         v9Var.getImageReceiver().setAspectFit(true);
         frameLayout.addView(this.h, w7.y5.c(112.0f, 112));
-        w7.b6.a(this.h);
+        w7.a6.a(this.h);
         v9 v9Var2 = new v9(context);
         this.n = v9Var2;
         v9Var2.getImageReceiver().setAspectFit(true);
         frameLayout.addView(this.n, w7.y5.c(112.0f, 112));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
-        w7.b6.a(this.n);
+        w7.a6.a(this.n);
         e();
         int i11 = org.telegram.ui.ActionBar.j6.ic;
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
@@ -185,9 +185,9 @@ public abstract class jo extends LinearLayout {
         this.E = z11;
         if (z10) {
             if (this.v == null) {
-                kj0 kj0Var = new kj0(getContext());
-                this.v = kj0Var;
-                kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                nj0 nj0Var = new nj0(getContext());
+                this.v = nj0Var;
+                nj0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.v.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z11) {
@@ -224,7 +224,7 @@ public abstract class jo extends LinearLayout {
                 bi.o oVar2 = this.x;
                 int dp = AndroidUtilities.dp(15.0f);
                 oVar2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
-                w7.b6.a(this.x);
+                w7.a6.a(this.x);
             }
             this.x.setText(str);
             this.x.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));

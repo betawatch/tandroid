@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c00 extends org.telegram.ui.ActionBar.n2 {
     public boolean E;
@@ -42,7 +42,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
     public int O;
     public org.telegram.ui.Components.z00 P;
     public tz Q;
-    public final cj R;
+    public final dj R;
     public ValueAnimator S;
     public float T;
     public fc1 a;
@@ -75,7 +75,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         this.M = -1;
         this.N = -1;
         this.O = -1;
-        this.R = new cj(this, 28);
+        this.R = new dj(this, 28);
         this.T = 1.0f;
         this.c = dialogFilter;
         this.d = tL_exportedChatlistInvite;
@@ -450,7 +450,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         ArrayList arrayList2 = this.f;
         if (arrayList2.size() > 1) {
             boolean z11 = arrayList.size() >= Math.min(a0(), arrayList2.size());
-            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.ds0(5, this, z11));
+            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.as0(6, this, z11));
         } else {
             this.P.a("", null);
         }
@@ -466,9 +466,9 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         }
         if (this.d == null) {
             String string = LocaleController.getString(R.string.FilterInviteHeaderNo);
-            vh.o oVar = tzVar.a;
-            oVar.setText(string);
-            oVar.h = 0;
+            vh.n nVar = tzVar.a;
+            nVar.setText(string);
+            nVar.h = 0;
             return;
         }
         Paint.FontMetricsInt fontMetricsInt = tzVar.getSubtitleTextView().getPaint().getFontMetricsInt();
@@ -477,9 +477,9 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         tz tzVar2 = this.Q;
         CharSequence replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralSpannable("FilterInviteHeader", this.e.size(), replaceAnimatedEmoji));
         boolean z10 = dialogFilter.title_noanimate;
-        vh.o oVar2 = tzVar2.a;
-        oVar2.setText(replaceTags);
-        oVar2.h = z10 ? 26 : 0;
+        vh.n nVar2 = tzVar2.a;
+        nVar2.setText(replaceTags);
+        nVar2.h = z10 ? 26 : 0;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

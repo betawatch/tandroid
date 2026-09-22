@@ -12,10 +12,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.j41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.f41;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class o9 implements ActionMode.Callback {
     public String a = null;
@@ -54,7 +54,7 @@ public final class o9 implements ActionMode.Callback {
                         String str = this.a;
                         g gVar2 = new g(this, 8);
                         org.telegram.ui.h4 h4Var = tVar.a;
-                        j41.K(h4Var.L, h4Var.M, str, language, s10, null, gVar2);
+                        l41.K(h4Var.L, h4Var.M, str, language, s10, null, gVar2);
                     }
                     eaVar.v();
                     return true;

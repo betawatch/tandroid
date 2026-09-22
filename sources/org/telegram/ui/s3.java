@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -122,12 +122,12 @@ public final /* synthetic */ class s3 implements Utilities.Callback {
                 privacySettingsActivity.A0(true);
                 break;
             case 17:
-                org.telegram.ui.Components.k90[] k90VarArr = (org.telegram.ui.Components.k90[]) this.b;
+                org.telegram.ui.Components.n90[] n90VarArr = (org.telegram.ui.Components.n90[]) this.b;
                 Boolean bool = (Boolean) obj;
-                ViewPropertyAnimator scaleY = k90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
+                ViewPropertyAnimator scaleY = n90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
                 org.telegram.messenger.rk.s(scaleY, qrVar, 600L);
-                k90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(qrVar).setDuration(600L).start();
+                n90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(qrVar).setDuration(600L).start();
                 break;
             case 18:
                 AndroidUtilities.runOnUIThread(new rx0(21, (z21) this.b, (TLRPC.TL_exportedContactToken) obj));

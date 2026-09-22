@@ -9,16 +9,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ig1 implements org.telegram.ui.Components.jl0 {
+public final class ig1 implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ lg1 a;
 
     public ig1(lg1 lg1Var) {
         this.a = lg1Var;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         lg1 lg1Var = this.a;
         ArrayList arrayList = lg1Var.d;

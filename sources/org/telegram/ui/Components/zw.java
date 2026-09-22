@@ -6,7 +6,7 @@ import android.util.Property;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class zw extends z4.g {
     public final /* synthetic */ kz w0;
@@ -55,7 +55,7 @@ public final class zw extends z4.g {
         ofFloat.setDuration(150L);
         ofFloat.setInterpolator(qr.h);
         ofFloat.start();
-        kzVar.G(1, 0);
+        kzVar.F(1, 0);
         if (oxVar != null) {
             oxVar.j(0, true);
         }

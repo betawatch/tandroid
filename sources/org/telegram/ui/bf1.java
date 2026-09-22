@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bf1 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -33,7 +33,7 @@ public final class bf1 extends org.telegram.ui.ActionBar.n2 {
     public String n;
     public boolean r;
     public org.telegram.ui.Components.pq s;
-    public org.telegram.ui.Components.am0 v;
+    public org.telegram.ui.Components.dm0 v;
     public TLRPC.TL_forumTopic w;
     public ng.a x;
     public zn y;
@@ -73,9 +73,9 @@ public final class bf1 extends org.telegram.ui.ActionBar.n2 {
             v9VarArr[1].setAnimatedEmojiDrawable(p5Var);
             v9VarArr[1].setImageDrawable(null);
         } else {
-            org.telegram.ui.Components.t80 t80Var = new org.telegram.ui.Components.t80(1, null);
-            t80Var.a(this.n);
-            this.v.b(t80Var, false);
+            org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(1, null);
+            w80Var.a(this.n);
+            this.v.b(w80Var, false);
             v9VarArr[1].setImageDrawable(this.s);
             v9VarArr[1].setAnimatedEmojiDrawable(null);
         }
@@ -203,20 +203,20 @@ public final class bf1 extends org.telegram.ui.ActionBar.n2 {
             frameLayout2.addView(this.f, w7.y5.d(-1, -1.0f, 0, 12.0f, 12.0f, 12.0f, 12.0f));
             org.telegram.ui.Components.pq d = ng.d.d(this.E, "");
             this.x = (ng.a) d.a;
-            this.v = new org.telegram.ui.Components.am0(context);
+            this.v = new org.telegram.ui.Components.dm0(context);
             org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(d, this.v, 0, 0);
             pqVar.w = true;
             this.f.setForumIconDrawable(pqVar);
             this.s = pqVar;
-            org.telegram.ui.Components.am0 am0Var = this.v;
+            org.telegram.ui.Components.dm0 dm0Var = this.v;
             org.telegram.ui.Components.v9 v9Var2 = v9VarArr[0];
-            ArrayList arrayList = am0Var.n;
+            ArrayList arrayList = dm0Var.n;
             if (!arrayList.contains(v9Var2)) {
                 arrayList.add(v9Var2);
             }
-            org.telegram.ui.Components.am0 am0Var2 = this.v;
+            org.telegram.ui.Components.dm0 dm0Var2 = this.v;
             org.telegram.ui.Components.v9 v9Var3 = v9VarArr[1];
-            ArrayList arrayList2 = am0Var2.n;
+            ArrayList arrayList2 = dm0Var2.n;
             if (!arrayList2.contains(v9Var3)) {
                 arrayList2.add(v9Var3);
             }

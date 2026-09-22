@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.x21;
+import org.telegram.ui.Components.z21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class c4 extends View {
     public ValueAnimator E;
@@ -106,7 +106,7 @@ public final class c4 extends View {
                 TLRPC.Chat chat = znVar.getMessagesController().getChat(Long.valueOf(-a2));
                 str = chat == null ? "" : chat.title;
             }
-            new l7(znVar.getParentActivity(), znVar.getResourceProvider(), E, 5, str, new x21(this, y3, messageObject, E, 9), 0L).show();
+            new l7(znVar.getParentActivity(), znVar.getResourceProvider(), E, 5, str, new z21(this, y3, messageObject, E, 9), 0L).show();
         }
     }
 
@@ -140,7 +140,7 @@ public final class c4 extends View {
             return;
         }
         MessageObject messageObject = getMessageObject();
-        zg.p0 reactionsLayoutInBubble = getReactionsLayoutInBubble();
+        zg.q0 reactionsLayoutInBubble = getReactionsLayoutInBubble();
         if (messageObject == null || reactionsLayoutInBubble == null) {
             return;
         }
@@ -151,19 +151,19 @@ public final class c4 extends View {
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((hj0) arrayList.remove(0)).C(true);
+                ((kj0) arrayList.remove(0)).C(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.K;
-        hj0 hj0Var = new hj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        hj0Var.R(this);
-        hj0Var.J(true);
-        hj0Var.K(0);
-        hj0Var.start();
-        arrayList.add(hj0Var);
+        kj0 kj0Var = new kj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        kj0Var.R(this);
+        kj0Var.J(true);
+        kj0Var.K(0);
+        kj0Var.start();
+        arrayList.add(kj0Var);
         invalidate();
-        zg.m0 l4 = reactionsLayoutInBubble.l("stars");
+        zg.n0 l4 = reactionsLayoutInBubble.l("stars");
         if (l4 != null) {
             l4.q();
         }
@@ -227,7 +227,7 @@ public final class c4 extends View {
             setMessageCell(null);
             return;
         }
-        zg.p0 reactionsLayoutInBubble = getReactionsLayoutInBubble();
+        zg.q0 reactionsLayoutInBubble = getReactionsLayoutInBubble();
         if (reactionsLayoutInBubble == null) {
             setMessageCell(null);
             return;
@@ -245,7 +245,7 @@ public final class c4 extends View {
         a0Var2.getLocationInWindow(iArr2);
         iArr2[1] = iArr2[1] + ((int) znVar.ya);
         canvas.save();
-        zg.m0 l4 = reactionsLayoutInBubble.l("stars");
+        zg.n0 l4 = reactionsLayoutInBubble.l("stars");
         RectF rectF2 = this.f;
         if (l4 != null) {
             f7 = 4.0f;
@@ -282,7 +282,7 @@ public final class c4 extends View {
             w0Var.setScrimReaction(null);
             w0Var.B(canvas, true, num);
             org.telegram.ui.Cells.v0 v0Var = w0Var.j2;
-            zg.p0 p0Var = w0Var.C0;
+            zg.q0 q0Var = w0Var.C0;
             float alpha = w0Var.getAlpha();
             org.telegram.ui.ActionBar.f6 f6Var = w0Var.Y0;
             if (f6Var != null) {
@@ -293,17 +293,17 @@ public final class c4 extends View {
                 org.telegram.ui.ActionBar.j6.q(w0Var.u0, w0Var.t0 + AndroidUtilities.dp(f7), w0Var.getMeasuredWidth(), w0Var.v0);
             }
             MessageObject messageObject2 = w0Var.H0;
-            if (messageObject2 == null || !messageObject2.shouldDrawReactions() || (p0Var.b && !(v0Var.b && p0Var.l))) {
+            if (messageObject2 == null || !messageObject2.shouldDrawReactions() || (q0Var.b && !(v0Var.b && q0Var.l))) {
                 rectF = rectF2;
             } else {
-                p0Var.a = 1.0f;
+                q0Var.a = 1.0f;
                 if (alpha < 1.0f) {
                     rectF = rectF2;
                     canvas.saveLayerAlpha(0.0f, 0.0f, w0Var.getWidth(), w0Var.getHeight(), (int) (alpha * f10), 31);
                 } else {
                     rectF = rectF2;
                 }
-                p0Var.e(canvas, v0Var.b ? v0Var.c : 1.0f);
+                q0Var.e(canvas, v0Var.b ? v0Var.c : 1.0f);
                 if (alpha < 1.0f) {
                     canvas.restore();
                 }
@@ -322,15 +322,15 @@ public final class c4 extends View {
                     if (i12 >= arrayList.size()) {
                         break;
                     }
-                    hj0 hj0Var = (hj0) arrayList.get(i12);
-                    if (hj0Var.a0 >= hj0Var.e[c11]) {
+                    kj0 kj0Var = (kj0) arrayList.get(i12);
+                    if (kj0Var.a0 >= kj0Var.e[c11]) {
                         arrayList.remove(i12);
                         i12--;
                     } else {
                         float f15 = dp / 2.0f;
-                        hj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
-                        hj0Var.setAlpha((int) (this.y * f10));
-                        hj0Var.draw(canvas);
+                        kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
+                        kj0Var.setAlpha((int) (this.y * f10));
+                        kj0Var.draw(canvas);
                     }
                     i12++;
                 }
@@ -371,7 +371,7 @@ public final class c4 extends View {
         invalidate();
     }
 
-    public zg.p0 getReactionsLayoutInBubble() {
+    public zg.q0 getReactionsLayoutInBubble() {
         org.telegram.ui.Cells.a0 a0Var = this.b;
         if (a0Var instanceof org.telegram.ui.Cells.u1) {
             return ((org.telegram.ui.Cells.u1) a0Var).N;
@@ -384,7 +384,7 @@ public final class c4 extends View {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        zg.p0 reactionsLayoutInBubble;
+        zg.q0 reactionsLayoutInBubble;
         if (this.b == null || this.I || (reactionsLayoutInBubble = getReactionsLayoutInBubble()) == null) {
             return false;
         }
@@ -393,7 +393,7 @@ public final class c4 extends View {
         if (action == 0) {
             if (this.h.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.w = true;
-                zg.m0 l4 = reactionsLayoutInBubble.l("stars");
+                zg.n0 l4 = reactionsLayoutInBubble.l("stars");
                 if (l4 != null) {
                     l4.Y.c(true);
                 }
@@ -401,7 +401,7 @@ public final class c4 extends View {
                 AndroidUtilities.runOnUIThread(j0Var, ViewConfiguration.getLongPressTimeout());
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            zg.m0 l10 = reactionsLayoutInBubble.l("stars");
+            zg.n0 l10 = reactionsLayoutInBubble.l("stars");
             if (motionEvent.getAction() == 1) {
                 d(motionEvent.getX(), motionEvent.getY(), true);
             }

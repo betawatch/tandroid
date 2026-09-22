@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class m2 extends FrameLayout {
     public final v9 a;
@@ -43,7 +43,7 @@ public final class m2 extends FrameLayout {
         o6Var.setTextColor(-1);
         addView(o6Var, w7.y5.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
         c(0.0f, false);
-        w7.b6.a(this);
+        w7.a6.a(this);
     }
 
     public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {

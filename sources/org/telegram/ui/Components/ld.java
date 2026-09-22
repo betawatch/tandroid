@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class ld extends ci.m {
     public boolean S0;
@@ -31,7 +31,7 @@ public abstract class ld extends ci.m {
     public boolean U0;
     public final ImageView V0;
     public final ci.l W0;
-    public v70 X0;
+    public y70 X0;
     public final i0 Y0;
     public final ImageView Z0;
     public ci.f4 a1;
@@ -54,8 +54,8 @@ public abstract class ld extends ci.m {
     public Utilities.Callback r1;
     public boolean s1;
 
-    public ld(Context context, FrameLayout frameLayout, aw0 aw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.f6 f6Var, ia iaVar, Runnable runnable) {
-        super(context, frameLayout, aw0Var, frameLayout2, f6Var, iaVar);
+    public ld(Context context, FrameLayout frameLayout, cw0 cw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.f6 f6Var, ia iaVar, Runnable runnable) {
+        super(context, frameLayout, cw0Var, frameLayout2, f6Var, iaVar);
         this.b1 = 0;
         this.c1 = new int[]{ConnectionsManager.DEFAULT_DATACENTER_ID, 3, 10, 30, 0};
         this.f1 = new RectF();
@@ -114,7 +114,7 @@ public abstract class ld extends ci.m {
         imageView3.setBackground(org.telegram.ui.ActionBar.j6.f0(1090519039, 1, AndroidUtilities.dp(16.0f)));
         addView(imageView3, w7.y5.d(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
         imageView3.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        w7.b6.a(imageView3);
+        w7.a6.a(imageView3);
         this.f.getEditText().addTextChangedListener(new ci.i2(this, 5));
         imageView3.setVisibility(8);
         imageView3.setAlpha(0.0f);

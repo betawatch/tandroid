@@ -5,7 +5,7 @@ import e2.d0;
 import n4.y;
 import u2.c1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l implements c1 {
     public final s a;
@@ -72,9 +72,9 @@ public final class l implements c1 {
             this.h = i11 + 1;
         }
         if ((i10 & 4) == 0) {
-            byte[] v = this.b.v(this.e.a[i11]);
-            hVar.b(v.length);
-            hVar.c.put(v);
+            byte[] y3 = this.b.y(this.e.a[i11]);
+            hVar.c(y3.length);
+            hVar.c.put(y3);
         }
         hVar.e = this.c[i11];
         hVar.setFlags(1);

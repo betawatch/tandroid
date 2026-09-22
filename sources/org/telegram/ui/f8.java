@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -29,7 +29,7 @@ public final class f8 extends FrameLayout {
     public int h;
     public SparseArray n;
     public SparseArray r;
-    public final n2.e s;
+    public final l.d s;
     public final SparseArray v;
     public final SparseArray w;
     public final /* synthetic */ i8 x;
@@ -55,9 +55,9 @@ public final class f8 extends FrameLayout {
         j5Var.setGravity(17);
         j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
         addView(j5Var, w7.y5.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
-        n2.e eVar = new n2.e(context, new d8(this, context));
-        this.s = eVar;
-        ((GestureDetector) eVar.b).setIsLongpressEnabled(i8Var.e0 == 0);
+        l.d dVar = new l.d(context, new d8(this, context));
+        this.s = dVar;
+        ((GestureDetector) dVar.b).setIsLongpressEnabled(i8Var.e0 == 0);
     }
 
     public static void a(f8 f8Var, int i10, int i11) {
@@ -215,7 +215,7 @@ public final class f8 extends FrameLayout {
         Canvas canvas2 = canvas;
         i8 i8Var2 = f8Var.x;
         Paint paint7 = i8Var2.w;
-        vh.h hVar = i8Var2.k0;
+        vh.g gVar = i8Var2.k0;
         Path path = i8Var2.j0;
         Paint paint8 = i8Var2.r;
         TextPaint textPaint = i8Var2.e;
@@ -396,9 +396,9 @@ public final class f8 extends FrameLayout {
                                 path.addCircle(f12, f13, dp8, Path.Direction.CW);
                                 canvas2.save();
                                 canvas2.clipPath(path);
-                                hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * g8Var.d)));
-                                hVar.setBounds((int) (f12 - dp8), (int) (f13 - dp8), (int) (f12 + dp8), (int) (f13 + dp8));
-                                hVar.draw(canvas2);
+                                gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * g8Var.d)));
+                                gVar.setBounds((int) (f12 - dp8), (int) (f13 - dp8), (int) (f12 + dp8), (int) (f13 + dp8));
+                                gVar.draw(canvas2);
                                 f8Var.invalidate();
                                 canvas2.restore();
                             }
@@ -429,9 +429,9 @@ public final class f8 extends FrameLayout {
                         path.addCircle(f12, f13, dp82, Path.Direction.CW);
                         canvas2.save();
                         canvas2.clipPath(path);
-                        hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * g8Var.d)));
-                        hVar.setBounds((int) (f12 - dp82), (int) (f13 - dp82), (int) (f12 + dp82), (int) (f13 + dp82));
-                        hVar.draw(canvas2);
+                        gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f * g8Var.d)));
+                        gVar.setBounds((int) (f12 - dp82), (int) (f13 - dp82), (int) (f12 + dp82), (int) (f13 + dp82));
+                        gVar.draw(canvas2);
                         f8Var.invalidate();
                         canvas2.restore();
                     }

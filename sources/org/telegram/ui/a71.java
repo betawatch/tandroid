@@ -8,7 +8,7 @@ import android.widget.PopupWindow;
 import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class a71 extends PopupWindow {
     public static final Field c;
@@ -93,7 +93,7 @@ public abstract class a71 extends PopupWindow {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         j71Var.V1 = ofFloat;
         ofFloat.addUpdateListener(new m51(j71Var, 3));
-        j71Var.V1.addListener(new org.telegram.ui.Components.zk0(15, j71Var, z61Var));
+        j71Var.V1.addListener(new org.telegram.ui.Components.cl0(15, j71Var, z61Var));
         j71Var.V1.setDuration(200L);
         j71Var.V1.setInterpolator(org.telegram.ui.Components.qr.h);
         j71Var.V1.start();

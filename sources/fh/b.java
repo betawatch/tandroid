@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import ch.f;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class b implements a {
     public final Paint a;
@@ -41,25 +41,20 @@ public final class b implements a {
             BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
             this.c = bitmapShader;
             paint.setShader(bitmapShader);
-            e();
+            c();
         }
     }
 
-    public final void c(int i10, int i11) {
+    public final void b(int i10, int i11) {
         if (this.h == i10 && this.n == i11) {
             return;
         }
         this.h = i10;
         this.n = i11;
-        e();
+        c();
     }
 
-    @Override // fh.a
-    public final ch.d d() {
-        return new f(this);
-    }
-
-    public final void e() {
+    public final void c() {
         Bitmap bitmap = this.d;
         Matrix matrix = this.b;
         if (bitmap == null) {
@@ -84,7 +79,12 @@ public final class b implements a {
     }
 
     @Override // fh.a
-    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
+    public final ch.d l() {
+        return new f(this);
+    }
+
+    @Override // fh.a
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
         Bitmap bitmap = this.d;
         if (bitmap == null || bitmap.isRecycled() || this.c == null) {
             return;
@@ -98,6 +98,6 @@ public final class b implements a {
     }
 
     @Override // fh.a
-    public final /* synthetic */ void b() {
+    public final /* synthetic */ void d() {
     }
 }

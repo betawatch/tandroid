@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class mb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ rb a;
@@ -153,7 +153,7 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write(str);
             bufferedWriter.close();
-            vbVar.showDialog(new org.telegram.ui.Components.xe0(vbVar, null, user, null, file, null, str2, str3, null));
+            vbVar.showDialog(new org.telegram.ui.Components.af0(vbVar, null, user, null, file, null, str2, str3, null));
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -218,17 +218,17 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             return;
         }
         MessageObject messageObject = u1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.z51) {
-            org.telegram.ui.Components.z51 z51Var = (org.telegram.ui.Components.z51) characterStyle;
-            AndroidUtilities.addToClipboard(z51Var.a.subSequence(z51Var.b, z51Var.c).toString());
+        if (characterStyle instanceof org.telegram.ui.Components.b61) {
+            org.telegram.ui.Components.b61 b61Var = (org.telegram.ui.Components.b61) characterStyle;
+            AndroidUtilities.addToClipboard(b61Var.a.subSequence(b61Var.b, b61Var.c).toString());
             if (AndroidUtilities.shouldShowClipboardToast()) {
                 Toast.makeText(vbVar.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.d61) {
-            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.d61) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.f61) {
+            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.f61) characterStyle).getURL());
             long longValue = parseLong.longValue();
             if (longValue > 0) {
                 i13 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
@@ -249,8 +249,8 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.a61) {
-            String url = ((org.telegram.ui.Components.a61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.c61) {
+            String url = ((org.telegram.ui.Components.c61) characterStyle).getURL();
             if (url.startsWith("@")) {
                 i10 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
                 MessagesController.getInstance(i10).openByUserName(url.substring(1), vbVar, 0);
@@ -279,8 +279,8 @@ public final class mb implements org.telegram.ui.Cells.l1 {
             vbVar.showDialog(f3Var);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.c61) {
-            String url3 = ((org.telegram.ui.Components.c61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.e61) {
+            String url3 = ((org.telegram.ui.Components.e61) characterStyle).getURL();
             if (nf.f.f(Uri.parse(url3), false, null)) {
                 nf.f.o(vbVar.getParentActivity(), url3, true);
                 return;
@@ -487,7 +487,7 @@ public final class mb implements org.telegram.ui.Cells.l1 {
         if (vbVar.getParentActivity() == null) {
             return;
         }
-        vbVar.showDialog(org.telegram.ui.Components.uq0.N0(rbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(vbVar.f) && !vbVar.f.megagroup, null));
+        vbVar.showDialog(org.telegram.ui.Components.wq0.N0(rbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(vbVar.f) && !vbVar.f.megagroup, null));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -533,7 +533,7 @@ public final class mb implements org.telegram.ui.Cells.l1 {
         vb vbVar = this.a.n;
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject.getInputStickerSet() != null) {
-            vbVar.showDialog(new org.telegram.ui.Components.gy0(vbVar.getParentActivity(), vbVar, messageObject.getInputStickerSet(), null, null, null));
+            vbVar.showDialog(new org.telegram.ui.Components.iy0(vbVar.getParentActivity(), vbVar, messageObject.getInputStickerSet(), null, null, null));
             return;
         }
         File file2 = null;
@@ -592,9 +592,9 @@ public final class mb implements org.telegram.ui.Cells.l1 {
                 if (b0Var != null) {
                     if (b0Var.N0() < vbVar.x.B() - 1) {
                         vbVar.g0 = vbVar.x.L0();
-                        org.telegram.ui.Components.fl0 fl0Var = (org.telegram.ui.Components.fl0) vbVar.v.L(vbVar.g0);
-                        if (fl0Var != null) {
-                            vbVar.h0 = fl0Var.a.getTop();
+                        org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) vbVar.v.L(vbVar.g0);
+                        if (il0Var != null) {
+                            vbVar.h0 = il0Var.a.getTop();
                         } else {
                             vbVar.g0 = -1;
                         }

@@ -17,16 +17,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.ne0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class v2 extends j {
     public String A0;
     public final u2 q0;
-    public pg.s1 r0;
+    public pg.t1 r0;
     public int s0;
     public int t0;
     public int u0;
@@ -36,7 +36,7 @@ public final class v2 extends j {
     public Runnable y0;
     public boolean z0;
 
-    public v2(Context context, PointF pointF, int i10, CharSequence charSequence, pg.s1 s1Var, int i11) {
+    public v2(Context context, PointF pointF, int i10, CharSequence charSequence, pg.t1 t1Var, int i11) {
         super(context, pointF);
         this.v0 = pg.k0.e;
         this.t0 = i10;
@@ -53,7 +53,7 @@ public final class v2 extends j {
         u2Var.setCursorSize(AndroidUtilities.dp(this.t0 * 0.4f));
         u2Var.setText(charSequence);
         s();
-        u2Var.setTextColor(s1Var.a);
+        u2Var.setTextColor(t1Var.a);
         u2Var.setTypeface(null, 1);
         u2Var.setHorizontallyScrolling(false);
         int i12 = Build.VERSION.SDK_INT;
@@ -71,7 +71,7 @@ public final class v2 extends j {
         } else if (i12 >= 23) {
             u2Var.setBreakStrategy(0);
         }
-        setSwatch(s1Var);
+        setSwatch(t1Var);
         setType(i11);
         k();
         u2Var.addTextChangedListener(new ne0(this));
@@ -107,10 +107,10 @@ public final class v2 extends j {
     }
 
     @Override // qg.j
-    public rk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new rk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -118,7 +118,7 @@ public final class v2 extends j {
         float w10 = rk.w(dp, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         u2 u2Var = this.q0;
-        return new rk0(w10, (positionY - (((dp2 - u2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + w10) - w10, (dp2 - u2Var.getExtendedPaddingBottom()) * scaleX);
+        return new uk0(w10, (positionY - (((dp2 - u2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + w10) - w10, (dp2 - u2Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // qg.j
@@ -157,7 +157,7 @@ public final class v2 extends j {
         return rectF.top;
     }
 
-    public pg.s1 getSwatch() {
+    public pg.t1 getSwatch() {
         return this.r0;
     }
 
@@ -257,8 +257,8 @@ public final class v2 extends j {
         this.q0.setMaxWidth(i10);
     }
 
-    public void setSwatch(pg.s1 s1Var) {
-        this.r0 = new pg.s1(s1Var.b, s1Var.c, s1Var.a);
+    public void setSwatch(pg.t1 t1Var) {
+        this.r0 = new pg.t1(t1Var.b, t1Var.c, t1Var.a);
         r();
     }
 

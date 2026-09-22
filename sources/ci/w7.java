@@ -22,9 +22,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class w7 extends View {
     public v7 E;
@@ -43,8 +43,8 @@ public final class w7 extends View {
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public u01 r;
-    public u01 s;
+    public w01 r;
+    public w01 s;
     public final Path v;
     public final Paint w;
     public final org.telegram.ui.Components.yc x;
@@ -70,7 +70,7 @@ public final class w7 extends View {
         if (v7Var == null) {
             return;
         }
-        this.r = new u01(v7Var.b(), 16.0f, AndroidUtilities.bold());
+        this.r = new w01(v7Var.b(), 16.0f, AndroidUtilities.bold());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -82,7 +82,7 @@ public final class w7 extends View {
             oqVar.setScale(1.25f, 1.25f);
             spannableStringBuilder.setSpan(oqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new u01(spannableStringBuilder, 14.0f, null);
+        this.s = new w01(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class w7 extends View {
         float f10;
         Object obj;
         float e = this.d.e(this.y);
-        u01 u01Var = this.r;
-        if (u01Var == null || this.s == null || e <= 0.0f) {
+        w01 w01Var = this.r;
+        if (w01Var == null || this.s == null || e <= 0.0f) {
             return;
         }
-        u01Var.p = getWidth() * 0.7f;
+        w01Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float dp = AndroidUtilities.dp(5.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
@@ -156,8 +156,8 @@ public final class w7 extends View {
             imageReceiver.draw(canvas);
         }
         float centerY = rectF.centerY() - ((this.s.j() + (this.r.j() + dp4)) / f10);
-        u01 u01Var2 = this.r;
-        u01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (u01Var2.j() / f10) + centerY, e, -1, canvas);
+        w01 w01Var2 = this.r;
+        w01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (w01Var2.j() / f10) + centerY, e, -1, canvas);
         this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.j6.v(-16777216, -1610612737), canvas);
         canvas.restore();
     }

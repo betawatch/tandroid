@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pr0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -116,14 +116,14 @@ public final /* synthetic */ class pr0 implements Utilities.Callback {
                 PhotoViewer photoViewer3 = this.b;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
                 if (!photoViewer3.q5.b.N && (i10 = photoViewer3.P4) >= 0 && i10 < photoViewer3.g7.size() && (photoViewer3.g7.get(photoViewer3.P4) instanceof MediaController.PhotoEntry)) {
-                    org.telegram.ui.Components.sf0 sf0Var = photoViewer3.q5;
-                    ci.b4 b4Var = sf0Var.h;
+                    org.telegram.ui.Components.vf0 vf0Var = photoViewer3.q5;
+                    ci.b4 b4Var = vf0Var.h;
                     if (b4Var != null) {
                         b4Var.dismiss();
-                        sf0Var.h = null;
+                        vf0Var.h = null;
                     }
                     photoViewer3.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.vn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.y1(), 28));
+                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.xn0(photoViewer3, photoEntry, (MediaController.PhotoEntry) photoViewer3.g7.get(photoViewer3.P4), PhotoViewer.y1(), 28));
                     break;
                 }
                 break;

@@ -48,12 +48,12 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bg;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.dh;
-import org.telegram.ui.Components.hx0;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.km;
-import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.nm;
 import org.telegram.ui.Components.pm;
+import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.xc;
@@ -72,7 +72,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.vq;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -411,7 +411,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 bg bgVar = (bg) this.d;
                 long j26 = this.b;
-                int i21 = ChatActivityEnterView.m5;
+                int i21 = ChatActivityEnterView.n5;
                 bgVar.run();
                 SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView.Q, j26, true);
                 return;
@@ -455,13 +455,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 return;
             case 21:
-                n80.Xc((n80) this.c, this.b, (TLRPC.Chat) this.d);
+                q80.Xc((q80) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 22:
-                ((jv0) this.c).v1.presentFragment(zn.Q9(((MessageObject) this.d).getId(), this.b));
+                ((lv0) this.c).v1.presentFragment(zn.Q9(((MessageObject) this.d).getId(), this.b));
                 return;
             case 23:
-                hx0.y1((hx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
+                jx0.y1((jx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
                 return;
             case 24:
                 uy uyVar2 = (uy) this.c;

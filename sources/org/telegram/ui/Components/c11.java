@@ -1,74 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class c11 {
-    public int a;
-    public int b;
-    public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+public final /* synthetic */ class c11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d11 b;
 
-    public c11() {
+    public /* synthetic */ c11(d11 d11Var, int i10) {
+        this.a = i10;
+        this.b = d11Var;
     }
 
-    public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-        } else {
-            int i10 = this.a;
-            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
-                int i11 = i10 & 1;
-                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            } else {
-                typeface = Typeface.MONOSPACE;
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                d11 d11Var = this.b;
+                d11Var.getClass();
+                d11Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d11Var.invalidate();
+                break;
+            case 1:
+                d11 d11Var2 = this.b;
+                d11Var2.getClass();
+                d11Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d11Var2.invalidate();
+                break;
+            case 2:
+                d11 d11Var3 = this.b;
+                d11Var3.getClass();
+                d11Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d11Var3.invalidate();
+                break;
+            case 3:
+                d11 d11Var4 = this.b;
+                d11Var4.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d11Var4.s = floatValue;
+                d11Var4.w = (int) ((d11Var4.h * floatValue) + 0);
+                d11Var4.invalidate();
+                break;
+            default:
+                d11 d11Var5 = this.b;
+                d11Var5.getClass();
+                d11Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d11Var5.x = d11Var5.r + ((int) Math.ceil((d11Var5.n - r1) * r5));
+                d11Var5.invalidate();
+                break;
         }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i12 = this.a;
-        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.R9, false);
-        }
-        int i13 = this.a;
-        if ((i13 & 8192) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-        } else if ((i13 & 4096) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
-        }
-    }
-
-    public final void b(c11 c11Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= c11Var.a;
-        if (this.d != null || (messageEntity = c11Var.d) == null) {
-            return;
-        }
-        this.d = messageEntity;
-    }
-
-    public c11(c11 c11Var) {
-        this.a = c11Var.a;
-        this.b = c11Var.b;
-        this.c = c11Var.c;
-        this.d = c11Var.d;
-        this.e = c11Var.e;
     }
 }

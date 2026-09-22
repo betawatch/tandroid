@@ -12,9 +12,9 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kl0 {
+public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.nl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ z6 b;
 
@@ -29,7 +29,7 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
     }
 
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         switch (this.a) {
             case 0:
                 z6 z6Var = this.b;
@@ -47,7 +47,7 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
         AndroidUtilities.updateVisibleRows(this.b.b);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         z6 z6Var = this.b;
         ArrayList arrayList = z6Var.e0;
@@ -113,20 +113,20 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
                 FrameLayout frameLayout = p80Var.h0;
                 org.telegram.ui.ActionBar.f1 f1Var = p80Var.V;
                 org.telegram.ui.ActionBar.f1 f1Var2 = p80Var.W;
-                org.telegram.ui.Components.k90 k90Var = p80Var.T;
+                org.telegram.ui.Components.n90 n90Var = p80Var.T;
                 org.telegram.ui.Components.l00 l00Var = p80Var.b0;
                 if (i17 == 3) {
                     f1Var2.setVisibility(0);
                     f1Var.setVisibility(8);
                     frameLayout.setVisibility(8);
                     l00Var.setVisibility(8);
-                    k90Var.setVisibility(8);
+                    n90Var.setVisibility(8);
                 } else {
                     f1Var2.setVisibility(8);
                     f1Var.setVisibility(0);
                     frameLayout.setVisibility(0);
                     l00Var.setVisibility(0);
-                    k90Var.setVisibility(0);
+                    n90Var.setVisibility(0);
                 }
                 ArrayList<CacheByChatsController.KeepMediaException> keepMediaExceptions = p80Var.d0.getKeepMediaExceptions(i17);
                 p80Var.f0 = keepMediaExceptions;
@@ -153,7 +153,7 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
                     j9Var2.a(false);
                 }
                 p80Var.U.setVisibility(8);
-                k90Var.setVisibility(8);
+                n90Var.setVisibility(8);
                 p80Var.f();
                 p80Var.setParentWindow(Q);
                 p80Var.setCallback(new b6(z6Var, i12));
@@ -161,7 +161,7 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -208,7 +208,7 @@ public final /* synthetic */ class b6 implements le.d, n80, org.telegram.ui.Acti
     private final /* synthetic */ void d(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

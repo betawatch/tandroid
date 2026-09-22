@@ -17,11 +17,11 @@ import org.telegram.messenger.camera.CameraSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.ta0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class y0 implements Runnable {
                 String str2 = (String) this.e;
                 MessagesStorage messagesStorage = (MessagesStorage) this.r;
                 String str3 = (String) this.f;
-                qa0 qa0Var = k1Var.V;
+                ta0 ta0Var = k1Var.V;
                 if (str.equals(k1Var.r0)) {
                     k1Var.u0 = 0;
                     boolean z11 = this.b;
                     if (z11 && tLObject == null) {
                         k1Var.T(false, user, str, str2);
-                    } else if (qa0Var != null) {
-                        qa0Var.b(false);
+                    } else if (ta0Var != null) {
+                        ta0Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -114,7 +114,7 @@ public final /* synthetic */ class y0 implements Runnable {
                         k1Var.K = null;
                         k1Var.P = null;
                         k1Var.o0 = false;
-                        qa0Var.a((k1Var.R.isEmpty() && k1Var.T == null && k1Var.U == null) ? false : true);
+                        ta0Var.a((k1Var.R.isEmpty() && k1Var.T == null && k1Var.U == null) ? false : true);
                         if (!z10) {
                             k1Var.l();
                             break;

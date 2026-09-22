@@ -2,7 +2,7 @@ package v7;
 
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l9 extends i9 {
     public final /* synthetic */ a c;
@@ -14,7 +14,7 @@ public final class l9 extends i9 {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i10) {
         a aVar = this.c;
-        w7.y7.a(i10, aVar.e);
+        w7.x7.a(i10, aVar.e);
         int i11 = i10 + i10;
         Object[] objArr = aVar.d;
         Object obj = objArr[i11];

@@ -33,7 +33,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class gh0 extends ai1 implements NotificationCenter.NotificationCenterDelegate, le.d {
     public FrameLayout E;
@@ -61,7 +61,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
         if (Build.VERSION.SDK_INT >= 31) {
             fh.d dVar = new fh.d(null);
             this.S = dVar;
-            dVar.k(new dh0(this));
+            dVar.j(new dh0(this));
         } else {
             this.S = null;
         }
@@ -71,11 +71,11 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
         org.telegram.ui.Components.pc.a(this.b, a9Var);
     }
 
-    public static /* synthetic */ void Y(gh0 gh0Var, int i10, org.telegram.ui.Components.v70 v70Var) {
+    public static /* synthetic */ void Y(gh0 gh0Var, int i10, org.telegram.ui.Components.y70 y70Var) {
         if (gh0Var.currentAccount == i10) {
             return;
         }
-        v70Var.u();
+        y70Var.u();
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null) {
             launchActivity.K0(i10);
@@ -104,7 +104,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
         if (gh0Var.getParentActivity() == null || gh0Var.getParentActivity() == null || (dialogFilters = gh0Var.getMessagesController().getDialogFilters()) == null || dialogFilters.size() <= 1) {
             return false;
         }
-        org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(gh0Var, view);
+        org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(gh0Var, view);
         int i10 = 0;
         while (i10 < dialogFilters.size()) {
             MessagesController.DialogFilter dialogFilter = dialogFilters.get(i10);
@@ -223,7 +223,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 0) {
             i0();
             h0();
@@ -319,7 +319,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 1:
                         gh0 gh0Var = this.b;
                         if (gh0Var.getParentActivity() != null && gh0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(gh0Var, view);
+                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(gh0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ch0(gh0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ch0(gh0Var, 6), false);
                             H.u = true;
@@ -336,7 +336,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 2:
                         gh0 gh0Var2 = this.b;
                         if (gh0Var2.getParentActivity() != null && gh0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H2 = org.telegram.ui.Components.v70.H(gh0Var2, view);
+                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(gh0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ch0(gh0Var2, 1), false);
                             if (gh0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ch0(gh0Var2, 2), false);
@@ -376,7 +376,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 1:
                         gh0 gh0Var = this.b;
                         if (gh0Var.getParentActivity() != null && gh0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(gh0Var, view);
+                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(gh0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ch0(gh0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ch0(gh0Var, 6), false);
                             H.u = true;
@@ -393,7 +393,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 2:
                         gh0 gh0Var2 = this.b;
                         if (gh0Var2.getParentActivity() != null && gh0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H2 = org.telegram.ui.Components.v70.H(gh0Var2, view);
+                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(gh0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ch0(gh0Var2, 1), false);
                             if (gh0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ch0(gh0Var2, 2), false);
@@ -433,7 +433,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 1:
                         gh0 gh0Var = this.b;
                         if (gh0Var.getParentActivity() != null && gh0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(gh0Var, view);
+                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(gh0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ch0(gh0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ch0(gh0Var, 6), false);
                             H.u = true;
@@ -450,7 +450,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 2:
                         gh0 gh0Var2 = this.b;
                         if (gh0Var2.getParentActivity() != null && gh0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H2 = org.telegram.ui.Components.v70.H(gh0Var2, view);
+                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(gh0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ch0(gh0Var2, 1), false);
                             if (gh0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ch0(gh0Var2, 2), false);
@@ -490,7 +490,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 1:
                         gh0 gh0Var = this.b;
                         if (gh0Var.getParentActivity() != null && gh0Var.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(gh0Var, view);
+                            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(gh0Var, view);
                             H.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.NewContact), new ch0(gh0Var, 5), false);
                             H.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoipChatRecentCalls), new ch0(gh0Var, 6), false);
                             H.u = true;
@@ -507,7 +507,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                     case 2:
                         gh0 gh0Var2 = this.b;
                         if (gh0Var2.getParentActivity() != null && gh0Var2.getParentActivity() != null) {
-                            org.telegram.ui.Components.v70 H2 = org.telegram.ui.Components.v70.H(gh0Var2, view);
+                            org.telegram.ui.Components.y70 H2 = org.telegram.ui.Components.y70.H(gh0Var2, view);
                             H2.c(R.drawable.menu_call_create, LocaleController.getString(R.string.GroupCallCreate2), new ch0(gh0Var2, 1), false);
                             if (gh0Var2.getUserConfig().showCallsTab) {
                                 H2.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new ch0(gh0Var2, 2), false);
@@ -600,8 +600,8 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
         if (Build.VERSION.SDK_INT < 31 || (dVar = this.S) == null || (view = this.fragmentView) == null) {
             return;
         }
-        dVar.j(view.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
-        dVar.l();
+        dVar.i(view.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
+        dVar.k();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -828,7 +828,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
             }
         }
         Collections.sort(arrayList, new df(23));
-        org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(this, view);
+        org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(this, view);
         if (UserConfig.getActivatedAccountsCount() < 4) {
             H.c(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new ch0(this, 0), false);
         }
@@ -849,8 +849,8 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                 TLRPC.User currentUser = UserConfig.getInstance(intValue).getCurrentUser();
                 org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
                 g9Var.r(currentUser);
-                org.telegram.ui.Components.sg0 sg0Var = new org.telegram.ui.Components.sg0(this, getParentActivity(), z10);
-                linearLayout.addView(sg0Var, w7.y5.t(34, 34, 16, 12, 0, 0, 0));
+                org.telegram.ui.Components.vg0 vg0Var = new org.telegram.ui.Components.vg0(this, getParentActivity(), z10);
+                linearLayout.addView(vg0Var, w7.y5.t(34, 34, 16, 12, 0, 0, 0));
                 org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(getParentActivity());
                 if (z10) {
                     v9Var.setScaleX(0.833f);
@@ -859,7 +859,7 @@ public final class gh0 extends ai1 implements NotificationCenter.NotificationCen
                 v9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
                 v9Var.getImageReceiver().setCurrentAccount(intValue);
                 v9Var.e(currentUser, g9Var);
-                sg0Var.addView(v9Var, w7.y5.t(32, 32, 17, 1, 1, 1, 1));
+                vg0Var.addView(v9Var, w7.y5.t(32, 32, 17, 1, 1, 1, 1));
                 TextView textView = new TextView(getParentActivity());
                 textView.setTextSize(1, 16.0f);
                 textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.j5));

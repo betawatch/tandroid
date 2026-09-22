@@ -21,11 +21,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.fj1;
 import org.telegram.ui.gj1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class eb extends FrameLayout {
     public final ai.z5 a;
@@ -93,17 +93,17 @@ public final class eb extends FrameLayout {
             TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
             if (wallPaperSettings.third_background_color != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
-                kc0 kc0Var = new kc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
+                nc0 nc0Var = new nc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
                 if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.j6.I.q()) {
-                    z5Var2.setBackground(kc0Var);
+                    z5Var2.setBackground(nc0Var);
                     if (Build.VERSION.SDK_INT >= 29) {
                         z5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                     }
                 } else {
-                    z5Var2.getImageReceiver().setGradientBitmap(kc0Var.k);
+                    z5Var2.getImageReceiver().setGradientBitmap(nc0Var.k);
                 }
                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
-                patternColor2 = kc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+                patternColor2 = nc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             } else {
                 z5Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.X0(wallPaperSettings.background_color));
                 patternColor2 = AndroidUtilities.getPatternColor(tL_wallPaper.settings.background_color);
@@ -170,7 +170,7 @@ public final class eb extends FrameLayout {
         if (file3 == null && fj1Var.g == null && !"d".equals(fj1Var.a)) {
             z5Var2.setImageBitmap(null);
             if (fj1Var.k) {
-                z5Var2.setBackground(new kc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
+                z5Var2.setBackground(new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
                 return;
             } else if (i11 != 0) {
                 z5Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
@@ -181,16 +181,16 @@ public final class eb extends FrameLayout {
             }
         }
         if (i10 != 0) {
-            kc0 kc0Var2 = new kc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e);
+            nc0 nc0Var2 = new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e);
             if (fj1Var.h >= 0.0f) {
-                z5Var2.setBackground(new kc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
+                z5Var2.setBackground(new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
                     z5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                 }
             } else {
-                z5Var2.getImageReceiver().setGradientBitmap(kc0Var2.k);
+                z5Var2.getImageReceiver().setGradientBitmap(nc0Var2.k);
             }
-            patternColor = kc0.g(i12, i11, i10, fj1Var.e);
+            patternColor = nc0.g(i12, i11, i10, fj1Var.e);
         } else {
             patternColor = AndroidUtilities.getPatternColor(i12);
         }

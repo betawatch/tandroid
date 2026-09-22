@@ -13,11 +13,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ij;
-import w7.b6;
+import org.telegram.ui.jj;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -26,21 +26,21 @@ public final class c extends LinearLayout {
     public final cf.c c;
     public float d;
 
-    public c(Context context, f6 f6Var, ij ijVar, ah.c cVar) {
+    public c(Context context, f6 f6Var, jj jjVar, ah.c cVar) {
         super(context);
         cf.c cVar2 = new cf.c(this);
         this.b = cVar2;
         cf.c cVar3 = new cf.c(this);
         this.c = cVar3;
         this.a = f6Var;
-        ih.a c10 = ih.a.c(cVar, context, ijVar, f6Var);
+        ih.a c10 = ih.a.c(cVar, context, jjVar, f6Var);
         cVar2.a = c10;
         c10.setOnClickListener(new e2(5));
-        b6.b((ih.a) cVar2.a, 0.065f, 2.0f);
-        ih.a c11 = ih.a.c(cVar, context, ijVar, f6Var);
+        a6.b((ih.a) cVar2.a, 0.065f, 2.0f);
+        ih.a c11 = ih.a.c(cVar, context, jjVar, f6Var);
         cVar3.a = c11;
         c11.setOnClickListener(new e2(5));
-        b6.b((ih.a) cVar3.a, 0.065f, 2.0f);
+        a6.b((ih.a) cVar3.a, 0.065f, 2.0f);
         a(cVar2, LocaleController.getString(R.string.Reply), R.drawable.input_reply, false);
         a(cVar3, LocaleController.getString(R.string.Forward), R.drawable.input_forward, true);
         setOrientation(0);

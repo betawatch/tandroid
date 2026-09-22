@@ -2,7 +2,7 @@ package pg;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateLis
                                 s0 s0Var2 = s0Var;
                                 s0Var2.getClass();
                                 s0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                n2.e eVar = s0Var2.a;
-                                if (eVar != null) {
-                                    eVar.p();
+                                l.d dVar = s0Var2.a;
+                                if (dVar != null) {
+                                    dVar.V();
                                     break;
                                 }
                                 break;
@@ -37,9 +37,9 @@ public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateLis
                                 s0 s0Var3 = s0Var;
                                 s0Var3.getClass();
                                 s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                n2.e eVar2 = s0Var3.a;
-                                if (eVar2 != null) {
-                                    eVar2.p();
+                                l.d dVar2 = s0Var3.a;
+                                if (dVar2 != null) {
+                                    dVar2.V();
                                     break;
                                 }
                                 break;
@@ -58,9 +58,9 @@ public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateLis
                                 s0 s0Var22 = s0Var2;
                                 s0Var22.getClass();
                                 s0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                n2.e eVar = s0Var22.a;
-                                if (eVar != null) {
-                                    eVar.p();
+                                l.d dVar = s0Var22.a;
+                                if (dVar != null) {
+                                    dVar.V();
                                     break;
                                 }
                                 break;
@@ -68,9 +68,9 @@ public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateLis
                                 s0 s0Var3 = s0Var2;
                                 s0Var3.getClass();
                                 s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                n2.e eVar2 = s0Var3.a;
-                                if (eVar2 != null) {
-                                    eVar2.p();
+                                l.d dVar2 = s0Var3.a;
+                                if (dVar2 != null) {
+                                    dVar2.V();
                                     break;
                                 }
                                 break;

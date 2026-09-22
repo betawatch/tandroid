@@ -1,14 +1,35 @@
 package w7;
 
-import org.telegram.messenger.BuildConfig;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class s8 {
-    public static String a(String str) {
-        if (BuildConfig.BETA_URL.equals(str) || "".equals(str)) {
-            return null;
+    public static HashMap a(uc.a aVar) {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap2.put("number", t8.e(aVar.a));
+        hashMap2.put("cvc", t8.e(aVar.b));
+        hashMap2.put("exp_month", aVar.c);
+        hashMap2.put("exp_year", aVar.d);
+        hashMap2.put("name", t8.e(aVar.e));
+        hashMap2.put("currency", t8.e(aVar.n));
+        hashMap2.put("address_line1", t8.e(aVar.f));
+        hashMap2.put("address_line2", t8.e(aVar.g));
+        hashMap2.put("address_city", t8.e(aVar.h));
+        hashMap2.put("address_zip", t8.e(aVar.j));
+        hashMap2.put("address_state", t8.e(aVar.i));
+        hashMap2.put("address_country", t8.e(aVar.k));
+        Iterator it = new HashSet(hashMap2.keySet()).iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (hashMap2.get(str) == null) {
+                hashMap2.remove(str);
+            }
         }
-        return str;
+        hashMap.put("card", hashMap2);
+        return hashMap;
     }
 }

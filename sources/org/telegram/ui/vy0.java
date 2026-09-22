@@ -36,7 +36,7 @@ import rg.q1;
 import tg.b0;
 import tg.i;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -126,9 +126,9 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                     if (sb2.length() != 0) {
                         StringBuilder u10 = a4.a.u(str);
                         u10.append(sb2.toString());
-                        org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(context, LocaleController.getString(R.string.ShareQrCode), u10.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
-                        ti0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
-                        o21Var.showDialog(ti0Var);
+                        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(context, LocaleController.getString(R.string.ShareQrCode), u10.toString(), LocaleController.getString(R.string.QRCodeLinkHelpProxy), true);
+                        wi0Var.h.setImageBitmap(SvgHelper.getBitmap(AndroidUtilities.readRes(R.raw.qr_dog), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false));
+                        o21Var.showDialog(wi0Var);
                         break;
                     }
                 } catch (Exception unused) {
@@ -156,10 +156,10 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                         int w06 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false);
                         org.telegram.ui.ActionBar.a3 a3Var2 = new org.telegram.ui.ActionBar.a3(context2, null);
                         a3Var2.a();
-                        org.telegram.ui.Components.cd0 cd0Var = new org.telegram.ui.Components.cd0(context2, null);
-                        cd0Var.setTextColor(w02);
-                        cd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-                        cd0Var.setItemCount(5);
+                        org.telegram.ui.Components.fd0 fd0Var = new org.telegram.ui.Components.fd0(context2, null);
+                        fd0Var.setTextColor(w02);
+                        fd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+                        fd0Var.setItemCount(5);
                         org.telegram.ui.Components.f4 f4Var = new org.telegram.ui.Components.f4(context2, null);
                         f4Var.setItemCount(5);
                         f4Var.setTextColor(w02);
@@ -168,7 +168,7 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                         g4Var.setItemCount(5);
                         g4Var.setTextColor(w02);
                         g4Var.setTextOffset(-AndroidUtilities.dp(34.0f));
-                        org.telegram.ui.Components.v3 v3Var = new org.telegram.ui.Components.v3(context2, cd0Var, f4Var, g4Var, 3);
+                        org.telegram.ui.Components.v3 v3Var = new org.telegram.ui.Components.v3(context2, fd0Var, f4Var, g4Var, 3);
                         v3Var.setOrientation(1);
                         FrameLayout frameLayout = new FrameLayout(context2);
                         v3Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -185,13 +185,13 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                         v3Var.addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                         Calendar calendar = Calendar.getInstance();
                         ai.p4 p4Var = new ai.p4(context2, 17);
-                        linearLayout.addView(cd0Var, w7.y5.l(0.5f, 0, 270));
-                        cd0Var.setMinValue(0);
-                        cd0Var.setMaxValue(365);
-                        cd0Var.setWrapSelectorWheel(false);
-                        cd0Var.setFormatter(new es(13));
-                        ai.r5 r5Var = new ai.r5(cd0Var, f4Var, g4Var, 17);
-                        cd0Var.setOnValueChangedListener(r5Var);
+                        linearLayout.addView(fd0Var, w7.y5.l(0.5f, 0, 270));
+                        fd0Var.setMinValue(0);
+                        fd0Var.setMaxValue(365);
+                        fd0Var.setWrapSelectorWheel(false);
+                        fd0Var.setFormatter(new es(13));
+                        ai.r5 r5Var = new ai.r5(fd0Var, f4Var, g4Var, 17);
+                        fd0Var.setOnValueChangedListener(r5Var);
                         f4Var.setMinValue(0);
                         f4Var.setMaxValue(23);
                         linearLayout.addView(f4Var, w7.y5.l(0.2f, 0, 270));
@@ -218,10 +218,10 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                             if (timeInMillis >= 0) {
                                 g4Var.setValue(calendar.get(12));
                                 f4Var.setValue(calendar.get(11));
-                                cd0Var.setValue(timeInMillis);
+                                fd0Var.setValue(timeInMillis);
                             }
                         }
-                        org.telegram.ui.Components.d5.g(null, null, 0L, 0L, 0, cd0Var, f4Var, g4Var);
+                        org.telegram.ui.Components.d5.g(null, null, 0L, 0L, 0, fd0Var, f4Var, g4Var);
                         p4Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                         p4Var.setGravity(17);
                         p4Var.setTextColor(i10);
@@ -232,7 +232,7 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                         p4Var.setText(LocaleController.getString(R.string.SetEmojiStatusUntilButton));
                         v3Var.addView(p4Var, w7.y5.t(-1, 48, 83, 16, 15, 16, 16));
                         org.telegram.ui.ActionBar.a3 a3Var3 = a3Var2;
-                        p4Var.setOnClickListener(new org.telegram.ui.Components.m0(cd0Var, f4Var, g4Var, calendar, rv0Var, a3Var2, 1));
+                        p4Var.setOnClickListener(new org.telegram.ui.Components.m0(fd0Var, f4Var, g4Var, calendar, rv0Var, a3Var2, 1));
                         a3Var3.b(v3Var);
                         org.telegram.ui.ActionBar.f3 f3Var = a3Var3.a;
                         f3Var.show();
@@ -391,11 +391,11 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                     dVar.setLoading(true);
                     Context applicationContext = view.getContext().getApplicationContext();
                     try {
-                        byte[] l4 = cVar.l();
+                        byte[] p5 = cVar.p();
                         com.google.android.gms.internal.clearcut.v0 v0Var = new com.google.android.gms.internal.clearcut.v0(applicationContext, com.google.android.gms.common.api.i.c);
                         String str2 = (String) cVar.d;
                         com.google.android.gms.common.api.internal.t0 t0Var = v0Var.h;
-                        b8.e eVar = new b8.e(t0Var, str2, "/tg-wear-auth/answer", l4);
+                        b8.e eVar = new b8.e(t0Var, str2, "/tg-wear-auth/answer", p5);
                         t0Var.b.d(0, eVar);
                         n6.l.n(eVar, y8.j0.a).addOnSuccessListener(new b7(cVar, dVar, iArr, 24)).addOnFailureListener(new jj1(dVar, 0));
                         break;
@@ -484,10 +484,10 @@ public final /* synthetic */ class vy0 implements View.OnClickListener {
                 while (i18 < size4) {
                     Object obj7 = arrayList5.get(i18);
                     i18++;
-                    Long l10 = (Long) obj7;
-                    l10.getClass();
-                    hashSet2.remove(l10);
-                    m1Var3.n0.remove(l10);
+                    Long l4 = (Long) obj7;
+                    l4.getClass();
+                    hashSet2.remove(l4);
+                    m1Var3.n0.remove(l4);
                 }
                 m1Var3.W();
                 m1Var3.Z.b(true, hashSet2, new tg.a1(m1Var3, i15), null);

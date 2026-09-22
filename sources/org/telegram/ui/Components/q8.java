@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -215,50 +215,50 @@ public final class q8 extends AnimatorListenerAdapter {
                 y00Var.invalidate();
                 break;
             case 24:
-                z50 z50Var = (z50) this.b;
-                if (animator == z50Var.R) {
-                    z50Var.c(true);
-                    z50Var.setVisibility(4);
+                b60 b60Var = (b60) this.b;
+                if (animator == b60Var.T) {
+                    b60Var.c(true);
+                    b60Var.setVisibility(4);
                     break;
                 }
                 break;
             case 25:
-                v70 v70Var = (v70) this.b;
-                t70 t70Var = v70Var.x;
-                if (t70Var != null) {
-                    t70Var.setProgress(1.0f);
-                    v70Var.x.invalidate();
+                y70 y70Var = (y70) this.b;
+                w70 w70Var = y70Var.x;
+                if (w70Var != null) {
+                    w70Var.setProgress(1.0f);
+                    y70Var.x.invalidate();
                 }
-                v70Var.m0 = null;
+                y70Var.m0 = null;
                 break;
             case 26:
                 l00 l00Var = (l00) this.b;
-                ((e80) l00Var.e).E = false;
+                ((h80) l00Var.e).E = false;
                 TextView[] textViewArr = (TextView[]) l00Var.d;
                 TextView textView = textViewArr[0];
                 textViewArr[0] = textViewArr[1];
                 textViewArr[1] = textView;
                 break;
             case 27:
-                s80 s80Var = (s80) this.b;
-                if (!s80Var.f) {
-                    s80Var.c.setVisibility(8);
+                v80 v80Var = (v80) this.b;
+                if (!v80Var.f) {
+                    v80Var.c.setVisibility(8);
                     break;
                 }
                 break;
             case 28:
-                z80 z80Var = (z80) this.b;
-                FrameLayout frameLayout = z80Var.b;
-                ci.s6 s6Var = (ci.s6) z80Var.c;
+                c90 c90Var = (c90) this.b;
+                FrameLayout frameLayout = c90Var.b;
+                ci.s6 s6Var = (ci.s6) c90Var.c;
                 if (s6Var.getParent() != null) {
                     frameLayout.removeView(s6Var);
                 }
-                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.ga) z80Var.d);
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.ga) c90Var.d);
                 break;
             default:
-                xb0 xb0Var = (xb0) this.b;
-                xb0Var.c0.h = null;
-                xb0Var.e(xb0Var.S, xb0Var.R);
+                ac0 ac0Var = (ac0) this.b;
+                ac0Var.c0.h = null;
+                ac0Var.e(ac0Var.S, ac0Var.R);
                 break;
         }
     }

@@ -1,175 +1,66 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.util.SparseArray;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class cl implements org.telegram.ui.Components.ok0 {
-    public final /* synthetic */ zn a;
+public final class cl extends org.telegram.ui.Components.sk0 {
+    public final int[] l1;
+    public ValueAnimator m1;
+    public boolean n1;
+    public final /* synthetic */ zn o1;
 
-    public cl(zn znVar) {
-        this.a = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cl(zn znVar, zn znVar2, Activity activity, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i10, activity, znVar2, f6Var);
+        this.o1 = znVar;
+        this.l1 = new int[2];
+        this.n1 = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
-    
-        if (r5 == null) goto L26;
-     */
-    @Override // org.telegram.ui.Components.ok0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        TLRPC.Document f7;
-        boolean z12;
-        HashSet hashSet;
-        int i10;
-        int i11;
-        MessageObject messageObject;
-        TLRPC.Message message;
-        zn znVar = this.a;
-        SparseArray[] sparseArrayArr = znVar.W5;
-        if (znVar.ab == null) {
-            return;
-        }
-        if (znVar.a() == znVar.getUserConfig().getClientUserId() && !znVar.getUserConfig().isPremium()) {
-            new rg.x0((org.telegram.ui.ActionBar.n2) znVar, 24, true).show();
-            znVar.z7(false);
-            return;
-        }
-        boolean contains = znVar.ab.getSelectedReactions().contains(o0Var);
-        HashSet hashSet2 = new HashSet();
-        int i12 = 0;
-        boolean z13 = false;
-        boolean z14 = false;
-        int i13 = 0;
-        while (i12 < sparseArrayArr.length) {
-            boolean z15 = z13;
-            boolean z16 = z14;
-            int i14 = i13;
-            int i15 = 0;
-            while (i15 < sparseArrayArr[i12].size()) {
-                MessageObject messageObject2 = (MessageObject) sparseArrayArr[i12].valueAt(i15);
-                if (messageObject2.hasValidGroupId()) {
-                    MessageObject.GroupedMessages X8 = znVar.X8(messageObject2);
-                    if (X8 != null && !hashSet2.contains(Long.valueOf(X8.groupId))) {
-                        hashSet2.add(Long.valueOf(X8.groupId));
-                        messageObject2 = X8.findPrimaryMessageObject();
-                    }
-                    z12 = contains;
-                    hashSet = hashSet2;
-                    i10 = i12;
-                    i11 = i15;
-                    i15 = i11 + 1;
-                    hashSet2 = hashSet;
-                    contains = z12;
-                    i12 = i10;
-                }
-                if (messageObject2.hasReaction(o0Var) == contains) {
-                    hashSet = hashSet2;
-                    messageObject = messageObject2;
-                    z12 = contains;
-                    i10 = i12;
-                    i11 = i15;
-                    znVar.ab(znVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
-                    if (!z12) {
-                        i14++;
-                    }
-                } else {
-                    z12 = contains;
-                    hashSet = hashSet2;
-                    i10 = i12;
-                    i11 = i15;
-                    messageObject = messageObject2;
-                }
-                if (messageObject.messageOwner != null) {
-                    boolean z17 = znVar.A0.N;
-                    if (z17) {
-                        MessageObject messageObject3 = (MessageObject) znVar.o6[0].get(messageObject.getId());
-                        if (messageObject3 != null && (message = messageObject3.messageOwner) != null) {
-                            message.reactions = messageObject.messageOwner.reactions;
-                        }
-                    } else if (!z17 && znVar.q3 != null) {
-                        z15 = true;
-                    }
-                }
-                if (znVar.A0.N && !messageObject.hasReaction(znVar.q3)) {
-                    MessageObject.GroupedMessages X82 = znVar.X8(messageObject);
-                    if (X82 != null) {
-                        for (int i16 = 0; i16 < X82.messages.size(); i16++) {
-                            znVar.getMediaDataController().removeMessageFromResults(X82.messages.get(i16).getId());
-                        }
-                    } else {
-                        znVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
-                    }
-                    gg.o1 o1Var = znVar.M3;
-                    if (o1Var != null) {
-                        o1Var.l();
-                    }
-                    z15 = true;
-                    z16 = true;
-                }
-                i15 = i11 + 1;
-                hashSet2 = hashSet;
-                contains = z12;
-                i12 = i10;
-            }
-            i12++;
-            z13 = z15;
-            z14 = z16;
-            i13 = i14;
-        }
-        if (z13) {
-            znVar.kc(z14);
-        }
-        znVar.z7(true);
-        if (i13 > 0) {
-            long j3 = o0Var.g;
-            if (j3 == 0) {
-                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f);
-                if (tL_availableReaction == null) {
-                    return;
-                } else {
-                    f7 = tL_availableReaction.activate_animation;
-                }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        org.telegram.ui.ActionBar.k kVar;
+        super.onLayout(z10, i10, i11, i12, i13);
+        kVar = ((org.telegram.ui.ActionBar.n2) this.o1).actionBar;
+        org.telegram.ui.ActionBar.v0 k10 = kVar.j(null).k(28);
+        if (k10 != null) {
+            int[] iArr = this.l1;
+            getLocationInWindow(iArr);
+            float x10 = getX();
+            float width = getWidth() + x10;
+            k10.getLocationInWindow(iArr);
+            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
+            int dp = AndroidUtilities.dp(20.0f);
+            boolean z11 = LocaleController.isRTL;
+            float f7 = width2 + (dp * (z11 ? -1 : 1));
+            if (z11) {
+                s(f7 - x10, !this.n1);
             } else {
-                f7 = org.telegram.ui.Components.p5.f(UserConfig.selectedAccount, j3);
+                s(f7 - width, !this.n1);
             }
-            if (f7 == null) {
-                return;
-            }
-            org.telegram.ui.Components.xc.a0(znVar).y(i13, f7, null).k(true);
+            this.n1 = false;
         }
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final void s(float f7, boolean z10) {
+        ValueAnimator valueAnimator = this.m1;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.m1 = null;
+        }
+        if (!z10) {
+            setBubbleOffset(f7);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
+        this.m1 = ofFloat;
+        ofFloat.addUpdateListener(new b3(this, 5));
+        this.m1.setInterpolator(org.telegram.ui.Components.qr.h);
+        this.m1.setDuration(420L);
+        this.m1.start();
     }
 }

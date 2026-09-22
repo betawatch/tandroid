@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
     */
     public final void onClick(View view) {
         int b10;
-        org.telegram.ui.Components.yy0 yy0Var;
+        org.telegram.ui.Components.az0 az0Var;
         final int i10 = 4;
         final int i11 = 3;
         final int i12 = 2;
@@ -174,7 +174,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                     }
                 }
                 hashSet.add(GoogleSignInOptions.x);
-                com.google.android.gms.internal.clearcut.v0 a2 = w7.f9.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
+                com.google.android.gms.internal.clearcut.v0 a2 = w7.e9.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
                 a2.g().addOnCompleteListener(new z10(18, nf0Var, a2));
                 break;
             case 9:
@@ -183,7 +183,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 if (xh0Var.n != null) {
                     View view2 = ai0Var.fragmentView;
                     if (view2 instanceof ViewGroup) {
-                        org.telegram.ui.Components.v70 F = org.telegram.ui.Components.v70.F((ViewGroup) view2, null, xh0Var);
+                        org.telegram.ui.Components.y70 F = org.telegram.ui.Components.y70.F((ViewGroup) view2, null, xh0Var);
                         if (xh0Var.n.revoked) {
                             F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: org.telegram.ui.uh0
                                 @Override // java.lang.Runnable
@@ -833,9 +833,9 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                                     textView.clearFocus();
                                     aw0Var.i0();
                                     aw0Var.r0();
-                                    yy0Var = aw0Var.Q;
-                                    if (yy0Var != null) {
-                                        yy0Var.f();
+                                    az0Var = aw0Var.Q;
+                                    if (az0Var != null) {
+                                        az0Var.f();
                                         aw0Var.Q.setDelegate(null);
                                     }
                                     aw0Var.b.m(aw0Var.p0);
@@ -851,8 +851,8 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                             textView.clearFocus();
                             aw0Var.i0();
                             aw0Var.r0();
-                            yy0Var = aw0Var.Q;
-                            if (yy0Var != null) {
+                            az0Var = aw0Var.Q;
+                            if (az0Var != null) {
                             }
                             aw0Var.b.m(aw0Var.p0);
                         }
@@ -933,7 +933,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                     e31Var.N.setInterpolator(org.telegram.ui.Components.kt.e);
                     e31Var.N.start();
                     frameLayout2.addView(e31Var.O, new ViewGroup.LayoutParams(-1, -1));
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ds0(10, e31Var, z11));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.as0(11, e31Var, z11));
                     break;
                 }
                 break;
@@ -942,7 +942,7 @@ public final /* synthetic */ class k60 implements View.OnClickListener {
                 ci.d dVar = b41Var.s;
                 if (dVar.W && !dVar.N) {
                     dVar.setLoading(true);
-                    c41.H(b41Var.v, ((TextView) b41Var.h.d).getText(), b41Var.d.option, b41Var.n.getText().toString());
+                    c41.G(b41Var.v, ((TextView) b41Var.h.d).getText(), b41Var.d.option, b41Var.n.getText().toString());
                     break;
                 }
                 break;

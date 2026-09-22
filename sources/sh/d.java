@@ -6,27 +6,27 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.qr;
 import yf.p;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class d extends c {
     public final n6 d;
-    public final lj0 e;
+    public final oj0 e;
     public final le.b f;
     public float h;
 
     public d(u1 u1Var, f6 f6Var) {
         super(f6Var);
-        lj0 lj0Var = new lj0(u1Var);
-        this.e = lj0Var;
-        lj0Var.d(null, true, false);
-        lj0Var.v = 650.0f;
-        lj0Var.e(0.69f, false);
-        lj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        oj0 oj0Var = new oj0(u1Var);
+        this.e = oj0Var;
+        oj0Var.d(null, true, false);
+        oj0Var.v = 650.0f;
+        oj0Var.e(0.69f, false);
+        oj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
         this.f = new le.b(u1Var, qr.h, 260L);
         n6 n6Var = new n6(true, false, false, false);
         this.d = n6Var;

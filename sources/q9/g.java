@@ -15,10 +15,10 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.web.g1;
+import w7.r6;
 import w7.s6;
-import w7.t6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -92,11 +92,11 @@ public final class g implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                s6.a(arrayList3);
+                r6.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                s6.a(arrayList6);
+                r6.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i15 = 0;
@@ -106,9 +106,9 @@ public final class g implements b {
                 a aVar2 = (a) obj4;
                 this.a.put(aVar2, new n(new k9.d(i10, this, aVar2)));
             }
-            arrayList5.addAll(j(arrayList3));
-            arrayList5.addAll(k());
-            h();
+            arrayList5.addAll(g(arrayList3));
+            arrayList5.addAll(h());
+            f();
         }
         int size4 = arrayList5.size();
         while (i11 < size4) {
@@ -118,27 +118,11 @@ public final class g implements b {
         }
         Boolean bool = (Boolean) this.f.get();
         if (bool != null) {
-            d(this.a, bool.booleanValue());
+            a(this.a, bool.booleanValue());
         }
     }
 
-    @Override // q9.b
-    public final Object a(Class cls) {
-        return i(s.a(cls));
-    }
-
-    @Override // q9.b
-    public final q b(s sVar) {
-        pa.b e = e(sVar);
-        return e == null ? new q(q.c, q.d) : e instanceof q ? (q) e : new q(null, e);
-    }
-
-    @Override // q9.b
-    public final pa.b c(Class cls) {
-        return e(s.a(cls));
-    }
-
-    public final void d(HashMap hashMap, boolean z10) {
+    public final void a(HashMap hashMap, boolean z10) {
         ArrayDeque arrayDeque;
         for (Map.Entry entry : hashMap.entrySet()) {
             a aVar = (a) entry.getKey();
@@ -171,24 +155,17 @@ public final class g implements b {
     }
 
     @Override // q9.b
-    public final synchronized pa.b e(s sVar) {
-        t6.a(sVar, "Null interface requested.");
-        return (pa.b) this.b.get(sVar);
+    public final Object b(Class cls) {
+        return m(s.a(cls));
     }
 
     @Override // q9.b
-    public final Set f(s sVar) {
-        pa.b bVar;
-        synchronized (this) {
-            bVar = (o) this.c.get(sVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
+    public final q c(s sVar) {
+        pa.b i10 = i(sVar);
+        return i10 == null ? new q(q.c, q.d) : i10 instanceof q ? (q) i10 : new q(null, i10);
     }
 
-    public final void g(boolean z10) {
+    public final void d(boolean z10) {
         HashMap hashMap;
         AtomicReference atomicReference = this.f;
         Boolean valueOf = Boolean.valueOf(z10);
@@ -200,10 +177,15 @@ public final class g implements b {
         synchronized (this) {
             hashMap = new HashMap(this.a);
         }
-        d(hashMap, z10);
+        a(hashMap, z10);
     }
 
-    public final void h() {
+    @Override // q9.b
+    public final pa.b e(Class cls) {
+        return i(s.a(cls));
+    }
+
+    public final void f() {
         HashMap hashMap = this.b;
         HashMap hashMap2 = this.c;
         for (a aVar : this.a.keySet()) {
@@ -232,16 +214,7 @@ public final class g implements b {
         }
     }
 
-    @Override // q9.b
-    public final Object i(s sVar) {
-        pa.b e = e(sVar);
-        if (e == null) {
-            return null;
-        }
-        return e.get();
-    }
-
-    public final ArrayList j(ArrayList arrayList) {
+    public final ArrayList g(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -264,7 +237,7 @@ public final class g implements b {
         return arrayList2;
     }
 
-    public final ArrayList k() {
+    public final ArrayList h() {
         HashMap hashMap = this.c;
         ArrayList arrayList = new ArrayList();
         HashMap hashMap2 = new HashMap();
@@ -298,5 +271,32 @@ public final class g implements b {
             }
         }
         return arrayList;
+    }
+
+    @Override // q9.b
+    public final synchronized pa.b i(s sVar) {
+        s6.a(sVar, "Null interface requested.");
+        return (pa.b) this.b.get(sVar);
+    }
+
+    @Override // q9.b
+    public final Set l(s sVar) {
+        pa.b bVar;
+        synchronized (this) {
+            bVar = (o) this.c.get(sVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
+    }
+
+    @Override // q9.b
+    public final Object m(s sVar) {
+        pa.b i10 = i(sVar);
+        if (i10 == null) {
+            return null;
+        }
+        return i10.get();
     }
 }

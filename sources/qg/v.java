@@ -9,12 +9,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.au0;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class v implements Runnable {
         switch (i10) {
             case 0:
                 au0 au0Var = (au0) obj;
-                pg.s1 s1Var = au0Var.K1;
-                au0Var.s0(s1Var, null);
-                pg.u0.e(i11).j(s1Var.c);
+                pg.t1 t1Var = au0Var.K1;
+                au0Var.s0(t1Var, null);
+                pg.u0.e(i11).j(t1Var.c);
                 break;
             case 1:
                 n2 n2Var = (n2) obj;
@@ -46,10 +46,10 @@ public final /* synthetic */ class v implements Runnable {
                 n2Var.h();
                 break;
             case 2:
-                k90 k90Var = ((tg.r0) obj).e;
+                n90 n90Var = ((tg.r0) obj).e;
                 try {
-                    if (k90Var.getLayout().getLineForOffset(i11) == 0) {
-                        k90Var.getEditableText().insert(i11, "\n");
+                    if (n90Var.getLayout().getLineForOffset(i11) == 0) {
+                        n90Var.getEditableText().insert(i11, "\n");
                         break;
                     }
                 } catch (Exception e) {

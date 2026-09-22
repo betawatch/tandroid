@@ -37,16 +37,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ik;
+import org.telegram.ui.Components.iy0;
 import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.o80;
-import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.tc;
-import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bn0;
 import org.telegram.ui.f31;
@@ -68,7 +68,7 @@ import org.telegram.ui.xo0;
 import org.telegram.ui.zm0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s4 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,11 +77,11 @@ public final /* synthetic */ class s4 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ s4(u4 u4Var, View view, zg.o0 o0Var, boolean z10, boolean z11) {
+    public /* synthetic */ s4(u4 u4Var, View view, zg.p0 p0Var, boolean z10, boolean z11) {
         this.a = 0;
         this.c = u4Var;
         this.d = view;
-        this.e = o0Var;
+        this.e = p0Var;
         this.b = z10;
     }
 
@@ -175,10 +175,10 @@ public final /* synthetic */ class s4 implements Runnable {
             case 0:
                 u4 u4Var = (u4) this.c;
                 View view = (View) this.d;
-                zg.o0 o0Var = (zg.o0) this.e;
+                zg.p0 p0Var = (zg.p0) this.e;
                 boolean z11 = this.b;
                 f6 f6Var2 = u4Var.a;
-                org.telegram.ui.Components.d5.a0(f6Var2.C2, 1, f6Var2.B1, new t4(u4Var, z11, o0Var, view));
+                org.telegram.ui.Components.d5.a0(f6Var2.C2, 1, f6Var2.B1, new t4(u4Var, z11, p0Var, view));
                 return;
             case 1:
                 ci.w1 w1Var = (ci.w1) this.c;
@@ -277,26 +277,26 @@ public final /* synthetic */ class s4 implements Runnable {
                 ii.j4.k(n2Var, z16, new ah.b(18, t3Var, trim));
                 return;
             case 6:
-                ki.o0 o0Var2 = (ki.o0) this.c;
+                ki.q0 q0Var = (ki.q0) this.c;
                 ki.q qVar = (ki.q) this.d;
                 boolean z17 = this.b;
-                ki.k0 k0Var = (ki.k0) this.e;
+                ki.m0 m0Var = (ki.m0) this.e;
                 long nanoTime = System.nanoTime();
                 try {
                     qVar.c();
-                    o0Var2.l.b("active output finalized: size=" + qVar.a.length() + ", elapsedMs=" + ki.o0.e(nanoTime));
-                    o0Var2.f();
+                    q0Var.l.b("active output finalized: size=" + qVar.a.length() + ", elapsedMs=" + ki.q0.e(nanoTime));
+                    q0Var.f();
                     if (z17) {
-                        o0Var2.b(k0Var, qVar.a, o0Var2.D, true);
+                        q0Var.b(m0Var, qVar.a, q0Var.D, true);
                     } else {
                         File file = qVar.a;
                         try {
-                            o0Var2.r(file, 0L, o0Var2.D, false, 2);
+                            q0Var.r(file, 0L, q0Var.D, false, 2);
                             w7.k.c(file);
                         } catch (Exception e10) {
                             e = e10;
-                            o0Var2 = o0Var2;
-                            o0Var2.h.post(new ki.z(o0Var2, e, i17));
+                            q0Var = q0Var;
+                            q0Var.h.post(new ki.z(q0Var, e, i17));
                             return;
                         }
                     }
@@ -547,10 +547,10 @@ public final /* synthetic */ class s4 implements Runnable {
                         ipVar.showDialog(alertDialog$Builder.a);
                     }
                 }
-                d90 d90Var = ipVar.G;
-                if (d90Var != null) {
+                g90 g90Var = ipVar.G;
+                if (g90Var != null) {
                     TLRPC.TL_chatInviteExported tL_chatInviteExported2 = ipVar.l0;
-                    d90Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
+                    g90Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
                     ipVar.G.c(ipVar.l0, ipVar.Z);
                     return;
                 }
@@ -559,17 +559,17 @@ public final /* synthetic */ class s4 implements Runnable {
                 qp qpVar = (qp) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 boolean z23 = this.b;
-                r80 r80Var = (r80) this.e;
+                u80 u80Var = (u80) this.e;
                 chat.join_to_send = z23;
-                qpVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z23, new ci.y0(qpVar, z23, chat, i15), new gh(i13, qpVar, r80Var));
+                qpVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z23, new ci.y0(qpVar, z23, chat, i15), new gh(i13, qpVar, u80Var));
                 return;
             case 16:
                 qp qpVar2 = (qp) this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
                 boolean z24 = this.b;
-                q80 q80Var = (q80) this.e;
+                t80 t80Var = (t80) this.e;
                 chat2.join_request = z24;
-                qpVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z24, new pp(qpVar2, i18), new gh(19, qpVar2, q80Var));
+                qpVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z24, new pp(qpVar2, i18), new gh(19, qpVar2, t80Var));
                 return;
             case 17:
                 boolean z25 = this.b;
@@ -644,23 +644,23 @@ public final /* synthetic */ class s4 implements Runnable {
                 AndroidUtilities.runOnUIThread(new tc(i24, nkVar, arrayList3));
                 return;
             case 19:
-                o80.t((o80) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
+                r80.t((r80) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
                 return;
             case 20:
-                vx0 vx0Var = (vx0) this.c;
+                xx0 xx0Var = (xx0) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 boolean z27 = this.b;
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
-                gy0 gy0Var = vx0Var.a;
+                iy0 iy0Var = xx0Var.a;
                 if (tLObject3 instanceof TLRPC.TL_messages_stickerSet) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
                     MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
                     if (z27) {
                         MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tLObject3, 0, null, false, false);
                     } else {
-                        gy0Var.S = tL_messages_stickerSet;
-                        gy0Var.t0();
-                        gy0Var.B0();
+                        iy0Var.S = tL_messages_stickerSet;
+                        iy0Var.t0();
+                        iy0Var.B0();
                     }
                 }
                 b2Var.dismiss();

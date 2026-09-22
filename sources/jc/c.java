@@ -1,13 +1,13 @@
 package jc;
 
 import b2.q0;
-import c5.b0;
+import c5.a0;
 import cc.k;
 import dc.h;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -126,10 +126,10 @@ public abstract class c {
 
     public static boolean c(int i10, hc.f fVar, hc.c cVar) {
         int i11 = fVar.d;
-        b0 b0Var = fVar.c[cVar.ordinal()];
-        int i12 = b0Var.b;
+        a0 a0Var = fVar.c[cVar.ordinal()];
+        int i12 = a0Var.b;
         int i13 = 0;
-        for (q0 q0Var : (q0[]) b0Var.c) {
+        for (q0 q0Var : (q0[]) a0Var.c) {
             i13 += q0Var.a;
         }
         return i11 - (i13 * i12) >= (i10 + 7) / 8;

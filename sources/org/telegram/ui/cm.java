@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cm implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ lm a;
@@ -72,16 +72,16 @@ public final class cm implements org.telegram.ui.Cells.t0 {
 
     @Override // org.telegram.ui.Cells.t0
     public final void Z(org.telegram.ui.Cells.w0 w0Var) {
-        wj wjVar;
+        xj xjVar;
         zn znVar = this.a.Q;
         MessageObject messageObject = w0Var.getMessageObject();
         if (messageObject == null) {
             return;
         }
         messageObject.forceUpdate = true;
-        tj tjVar = znVar.x0;
-        if (tjVar != null && (wjVar = znVar.z0) != null && wjVar.y < 0) {
-            int childCount = tjVar.getChildCount() - 1;
+        uj ujVar = znVar.x0;
+        if (ujVar != null && (xjVar = znVar.z0) != null && xjVar.y < 0) {
+            int childCount = ujVar.getChildCount() - 1;
             while (true) {
                 if (childCount < 0) {
                     break;
@@ -144,11 +144,11 @@ public final class cm implements org.telegram.ui.Cells.t0 {
     @Override // org.telegram.ui.Cells.t0
     public final void h1(org.telegram.ui.Cells.w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
         int i10;
-        wk wkVar = this.a.Q.xa;
-        FrameLayout frameLayout = wkVar.G;
-        HashMap hashMap = wkVar.f;
-        Random random = wkVar.h;
-        ArrayList arrayList = wkVar.F;
+        xk xkVar = this.a.Q.xa;
+        FrameLayout frameLayout = xkVar.G;
+        HashMap hashMap = xkVar.f;
+        Random random = xkVar.h;
+        ArrayList arrayList = xkVar.F;
         if (arrayList.size() <= 12 && w0Var.getPhotoImage().hasNotThumb()) {
             float imageHeight = w0Var.getPhotoImage().getImageHeight();
             float imageWidth = w0Var.getPhotoImage().getImageWidth();
@@ -195,7 +195,7 @@ public final class cm implements org.telegram.ui.Cells.t0 {
                 fzVar.r.setUniqKeyPrefix(intValue + "_" + fzVar.p + "_");
             }
             fzVar.q = document;
-            fzVar.r.setImage(ImageLocation.getForDocument(videoSize, document), a4.a.k(f7, f7, "_"), null, "tgs", wkVar.c, 1);
+            fzVar.r.setImage(ImageLocation.getForDocument(videoSize, document), a4.a.k(f7, f7, "_"), null, "tgs", xkVar.c, 1);
             fzVar.r.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
             fzVar.r.setAutoRepeat(0);
             if (fzVar.r.getLottieAnimation() != null) {
@@ -205,7 +205,7 @@ public final class cm implements org.telegram.ui.Cells.t0 {
                 fzVar.r.getLottieAnimation().start();
             }
             arrayList.add(fzVar);
-            if (wkVar.n) {
+            if (xkVar.n) {
                 fzVar.r.onAttachedToWindow();
                 fzVar.r.setParentView(frameLayout);
             }
@@ -235,7 +235,7 @@ public final class cm implements org.telegram.ui.Cells.t0 {
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 640);
         if (w0Var.getMessageObject().type == 24) {
             ai.jc orCreateStoryViewer = znVar.getOrCreateStoryViewer();
-            tj tjVar = znVar.x0;
+            uj ujVar = znVar.x0;
             orCreateStoryViewer.getClass();
             MessageObject messageObject2 = w0Var.getMessageObject();
             if (znVar.getParentActivity() != null && messageObject2.type == 24) {
@@ -243,7 +243,7 @@ public final class cm implements org.telegram.ui.Cells.t0 {
                 TL_stories.StoryItem storyItem = messageMedia.storyItem;
                 storyItem.dialogId = DialogObject.getPeerDialogId(messageMedia.peer);
                 storyItem.messageId = messageObject2.getId();
-                orCreateStoryViewer.F(znVar.getParentActivity(), messageObject2.messageOwner.media.storyItem, ai.u9.a(tjVar));
+                orCreateStoryViewer.F(znVar.getParentActivity(), messageObject2.messageOwner.media.storyItem, ai.u9.a(ujVar));
                 return;
             }
             return;

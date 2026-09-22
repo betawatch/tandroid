@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,9 +18,9 @@ public final /* synthetic */ class lh1 implements Runnable {
                 this.b.presentFragment(new PrivacyControlActivity(9, true));
                 break;
             case 1:
-                org.telegram.ui.Components.m61 m61Var = this.b.y;
-                if (m61Var != null) {
-                    m61Var.Y2.N(true);
+                org.telegram.ui.Components.o61 o61Var = this.b.y;
+                if (o61Var != null) {
+                    o61Var.Y2.N(true);
                     break;
                 }
                 break;

@@ -1,6 +1,5 @@
 package yc;
 
-import c5.m;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -21,10 +20,10 @@ import java.util.logging.Level;
 import javax.net.ssl.SSLException;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d {
-    public final m a;
+    public final d7.c a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -38,9 +37,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, m mVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, d7.c cVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = mVar;
+        this.a = cVar;
         this.c = new BufferedInputStream(inputStream, 8192);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -141,7 +140,7 @@ public final class d {
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        m mVar = this.a;
+        d7.c cVar = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -213,7 +212,7 @@ public final class d {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
                             i.d(e);
-                            mVar.a();
+                            cVar.a();
                         } catch (SSLException e7) {
                             throw e7;
                         } catch (IOException unused) {
@@ -225,18 +224,18 @@ public final class d {
                         i.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        mVar.a();
+                        cVar.a();
                     }
                 } catch (SSLException e11) {
                     i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    mVar.a();
+                    cVar.a();
                 } catch (IOException e12) {
                     i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    mVar.a();
+                    cVar.a();
                 }
             } catch (SocketException e13) {
                 throw e13;
@@ -245,7 +244,7 @@ public final class d {
             }
         } catch (Throwable th2) {
             i.d(null);
-            mVar.a();
+            cVar.a();
             throw th2;
         }
     }

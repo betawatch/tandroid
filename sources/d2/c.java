@@ -10,13 +10,13 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sv0;
 import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.vv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements d9.e, dh.d, rv0, sv0, GenericProvider {
+public final /* synthetic */ class c implements d9.e, dh.d, tv0, uv0, GenericProvider {
     public final /* synthetic */ int a;
 
     public /* synthetic */ c(int i10) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class c implements d9.e, dh.d, rv0, sv0, GenericPro
         return Integer.valueOf(((b) obj).r);
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 18:
@@ -103,7 +103,7 @@ public final /* synthetic */ class c implements d9.e, dh.d, rv0, sv0, GenericPro
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         switch (this.a) {
             case 17:
@@ -118,7 +118,7 @@ public final /* synthetic */ class c implements d9.e, dh.d, rv0, sv0, GenericPro
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        tv0 tv0Var = p4.b0;
+        vv0 vv0Var = p4.b0;
         return Boolean.FALSE;
     }
 }

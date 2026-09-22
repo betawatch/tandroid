@@ -43,7 +43,7 @@ import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.xx0;
+import org.telegram.ui.Components.zx0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ih1;
@@ -55,7 +55,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.xo0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -151,39 +151,39 @@ public final /* synthetic */ class u1 implements Runnable {
                 ii.j4.f((org.telegram.ui.ActionBar.n2) this.c, (Context) this.d, (org.telegram.ui.ActionBar.f6) this.e, (ii.t3) this.f, this.b);
                 return;
             case 4:
-                ki.o0 o0Var = (ki.o0) this.c;
+                ki.q0 q0Var = (ki.q0) this.c;
                 boolean z14 = this.b;
                 ki.q qVar = (ki.q) this.d;
-                ki.k0 k0Var = (ki.k0) this.e;
+                ki.m0 m0Var = (ki.m0) this.e;
                 File file2 = (File) this.f;
-                o0Var.getClass();
+                q0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
-                    o0Var.f();
-                    long j3 = o0Var.D;
+                    q0Var.f();
+                    long j3 = q0Var.D;
                     if (z14) {
                         synchronized (qVar) {
                             qVar.c();
                         }
-                        o0Var.f();
-                        o0Var.j(k0Var, 1);
+                        q0Var.f();
+                        q0Var.j(m0Var, 1);
                         File file3 = qVar.a;
-                        o0Var.c(true);
-                        a3.z a2 = w7.k.a(file2, o0Var.O, o0Var.F, o0Var.G, true);
+                        q0Var.c(true);
+                        a3.z a2 = w7.k.a(file2, q0Var.O, q0Var.F, q0Var.G, true);
                         j3 = a2.b;
-                        o0Var.l.b("resume trim remux completed: requested=" + o0Var.F + ".." + o0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + o0Var.O.a.length() + ", elapsedMs=" + ki.o0.e(nanoTime));
+                        q0Var.l.b("resume trim remux completed: requested=" + q0Var.F + ".." + q0Var.G + ", actualStartMs=" + a2.a + ", retainedDurationMs=" + j3 + ", outputSize=" + q0Var.O.a.length() + ", elapsedMs=" + ki.q0.e(nanoTime));
                         w7.k.c(file3);
                     }
                     w7.k.c(file2);
-                    o0Var.f();
-                    o0Var.P = null;
+                    q0Var.f();
+                    q0Var.P = null;
                     if (!z14) {
-                        o0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.o0.e(nanoTime));
+                        q0Var.l.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + ki.q0.e(nanoTime));
                     }
-                    o0Var.h.post(new ki.a0(o0Var, j3, 0));
+                    q0Var.h.post(new ki.a0(q0Var, j3, 0));
                     return;
                 } catch (Exception e7) {
-                    o0Var.h.post(new ki.z(o0Var, e7, 1));
+                    q0Var.h.post(new ki.z(q0Var, e7, 1));
                     return;
                 }
             case 5:
@@ -379,7 +379,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 PhotoViewer.t1().J2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new xx0(), znVar2);
+                PhotoViewer.t1().f2(arrayList6, 0, 11, false, new zx0(), znVar2);
                 PhotoViewer.t1().X0(document, z21 ? document : null, true, null);
                 st.q().T = z21 ? tL_messages_stickerSet : null;
                 return;
@@ -546,12 +546,12 @@ public final /* synthetic */ class u1 implements Runnable {
         this.f = obj4;
     }
 
-    public /* synthetic */ u1(ki.o0 o0Var, boolean z10, ki.q qVar, ki.k0 k0Var, File file) {
+    public /* synthetic */ u1(ki.q0 q0Var, boolean z10, ki.q qVar, ki.m0 m0Var, File file) {
         this.a = 4;
-        this.c = o0Var;
+        this.c = q0Var;
         this.b = z10;
         this.d = qVar;
-        this.e = k0Var;
+        this.e = m0Var;
         this.f = file;
     }
 

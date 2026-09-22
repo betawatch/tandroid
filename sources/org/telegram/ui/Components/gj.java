@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class gj extends ni implements NotificationCenter.NotificationCenterDelegate, le.d {
     public String E;
@@ -687,17 +687,8 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         return MediaController.getInstance().setPlaylist(org.telegram.messenger.l0.j(messageObject), messageObject, 0L);
     }
 
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
-        if (i10 == 0) {
-            ui uiVar = this.w;
-            uiVar.setAlpha(f7);
-            uiVar.setVisibility(f7 > 0.0f ? 0 : 4);
-        }
-    }
-
     @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
+    public final void D(ni niVar) {
         N();
         this.K.load();
         cj cjVar = this.v;
@@ -706,8 +697,17 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void G() {
+    public final void F() {
         this.v.y0(0);
+    }
+
+    @Override // le.d
+    public final void H(int i10, float f7, float f10, le.e eVar) {
+        if (i10 == 0) {
+            ui uiVar = this.w;
+            uiVar.setAlpha(f7);
+            uiVar.setVisibility(f7 > 0.0f ? 0 : 4);
+        }
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -755,16 +755,16 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void M(w51 w51Var, View view) {
-        if (w51Var != null && w51Var.d == this.S) {
+    public final void M(y51 y51Var, View view) {
+        if (y51Var != null && y51Var.d == this.S) {
             this.K.load();
             return;
         }
-        if (w51Var != null && w51Var.d == this.Q) {
+        if (y51Var != null && y51Var.d == this.Q) {
             N();
             return;
         }
-        if (w51Var != null && w51Var.d == this.R) {
+        if (y51Var != null && y51Var.d == this.R) {
             O();
             return;
         }
@@ -783,7 +783,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                 HashSet hashSet = this.J;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    w51Var.e = false;
+                    y51Var.e = false;
                     k7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -801,7 +801,7 @@ public final class gj extends ni implements NotificationCenter.NotificationCente
                             return;
                         }
                     }
-                    w51Var.e = true;
+                    y51Var.e = true;
                     hashSet.add(audioEntry);
                     k7Var.e(true, true);
                 }

@@ -43,12 +43,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.t71;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -164,9 +164,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 return;
             case 5:
                 hg.g1 g1Var = (hg.g1) this.b;
-                w51 w51Var = (w51) this.c;
+                y51 y51Var = (y51) this.c;
                 g1Var.getClass();
-                g1Var.X(w51Var.d);
+                g1Var.X(y51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -337,7 +337,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((t71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((v71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -370,9 +370,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                k61 k61Var = xVar.Z;
-                if (k61Var != null) {
-                    k61Var.N(true);
+                m61 m61Var = xVar.Z;
+                if (m61Var != null) {
+                    m61Var.N(true);
                     return;
                 }
                 return;
@@ -615,25 +615,25 @@ public final /* synthetic */ class x1 implements Runnable {
             case 25:
                 n4.y yVar = (n4.y) this.b;
                 String str5 = (String) this.c;
-                k2.j jVar = (k2.j) yVar.b;
+                k2.k kVar = (k2.k) yVar.b;
                 String str6 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) jVar).a.s;
+                j2.f fVar2 = ((i2.b0) kVar).a.s;
                 j2.a p5 = fVar2.p();
                 fVar2.q(p5, 1012, new j2.c(p5, str5, 27));
                 return;
             case 26:
-                ((k2.n) this.b).V((k2.k) this.c);
+                ((k2.o) this.b).S((k2.l) this.c);
                 return;
             case 27:
-                ((ki.h) this.b).B((ki.h0) this.c);
+                ((ki.h) this.b).G((ki.i0) this.c);
                 return;
             case 28:
                 ki.h hVar = (ki.h) this.b;
                 HandlerThread handlerThread = (HandlerThread) this.c;
                 hVar.h();
-                ki.j jVar2 = hVar.w;
-                if (jVar2 != null) {
-                    jVar2.o();
+                ki.j jVar = hVar.w;
+                if (jVar != null) {
+                    jVar.o();
                     hVar.w = null;
                 }
                 handlerThread.quitSafely();

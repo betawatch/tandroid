@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class wb1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
@@ -40,7 +40,7 @@ public final class wb1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             String str = "https://" + this.a.getMessagesController().linkPrefix + "/addtheme/" + k10.r.slug;
-            this.a.showDialog(new org.telegram.ui.Components.uq0(this.a.getParentActivity(), null, str, false, str, false, null));
+            this.a.showDialog(new org.telegram.ui.Components.wq0(this.a.getParentActivity(), null, str, false, str, false, null));
             return;
         }
         if (i10 == 3) {

@@ -5,8 +5,9 @@ import android.os.SystemClock;
 import e2.d0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
+import pg.c1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m implements n {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -63,7 +64,7 @@ public final class m implements n {
         }
         z2.a aVar = this.a;
         if (kVar != null) {
-            aVar.execute(new p8.b(kVar, 10));
+            aVar.execute(new c1(kVar, 9));
         }
         aVar.b.accept(aVar.a);
     }

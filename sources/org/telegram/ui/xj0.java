@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xj0 implements Choreographer.FrameCallback {
     public static final Matrix E = new Matrix();
@@ -58,7 +58,7 @@ public final class xj0 implements Choreographer.FrameCallback {
         if (lineTop > 0) {
             canvas.save();
             canvas.clipRect(0.0f, 0.0f, width, lineTop);
-            fuVar.b(canvas);
+            fuVar.a(canvas);
             canvas.restore();
         }
         float lineLeft = layout.getLineLeft(i10);
@@ -78,7 +78,7 @@ public final class xj0 implements Choreographer.FrameCallback {
         if (a2 >= f10) {
             canvas.save();
             canvas.clipRect(0.0f, lineTop, width, lineBottom);
-            fuVar.b(canvas);
+            fuVar.a(canvas);
             canvas.restore();
             return;
         }
@@ -89,7 +89,7 @@ public final class xj0 implements Choreographer.FrameCallback {
         int saveLayer = canvas.saveLayer(min, f12, max, f13, null);
         canvas.save();
         canvas.clipRect(min, f12, max, f13);
-        fuVar.b(canvas);
+        fuVar.a(canvas);
         canvas.restore();
         Matrix matrix = E;
         matrix.reset();

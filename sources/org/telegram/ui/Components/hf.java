@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class hf implements Runnable {
     public final /* synthetic */ int a;
@@ -32,20 +32,20 @@ public final class hf implements Runnable {
                 dg dgVar = chatActivityEnterView.U0;
                 if (dgVar != null && (currentPage = dgVar.getCurrentPage()) != this.b) {
                     this.b = currentPage;
-                    boolean z10 = chatActivityEnterView.w3;
+                    boolean z10 = chatActivityEnterView.x3;
                     boolean z11 = currentPage == 1 || currentPage == 2;
-                    chatActivityEnterView.w3 = z11;
-                    boolean z12 = chatActivityEnterView.x3;
-                    chatActivityEnterView.x3 = currentPage == 0;
-                    if (chatActivityEnterView.y3) {
-                        if (chatActivityEnterView.Q1 != 0) {
+                    chatActivityEnterView.x3 = z11;
+                    boolean z12 = chatActivityEnterView.y3;
+                    chatActivityEnterView.y3 = currentPage == 0;
+                    if (chatActivityEnterView.z3) {
+                        if (chatActivityEnterView.R1 != 0) {
                             chatActivityEnterView.l1(currentPage != 0 ? 1 : 2, true);
                             chatActivityEnterView.L();
                         } else if (!z11) {
                             chatActivityEnterView.m1(false, true, false, true);
                         }
                     }
-                    if (z10 != chatActivityEnterView.w3 || z12 != chatActivityEnterView.x3) {
+                    if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {
                         chatActivityEnterView.K(true);
                         break;
                     }
@@ -83,7 +83,7 @@ public final class hf implements Runnable {
                     m9Var.e = animatorSet;
                     animatorSet.setDuration(150L);
                     ((AnimatorSet) m9Var.e).playTogether(arrayList);
-                    ((AnimatorSet) m9Var.e).addListener(new dd0(this, 3));
+                    ((AnimatorSet) m9Var.e).addListener(new gd0(this, 3));
                     ((AnimatorSet) m9Var.e).start();
                     break;
                 }

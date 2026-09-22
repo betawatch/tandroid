@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -103,7 +103,7 @@ public final class r extends c {
     }
 
     public final HttpURLConnection e(m mVar) {
-        HttpURLConnection g10;
+        HttpURLConnection k10;
         URL url = new URL(mVar.a.toString());
         int i10 = mVar.b;
         byte[] bArr = mVar.c;
@@ -113,24 +113,24 @@ public final class r extends c {
         int i12 = 0;
         boolean z10 = (mVar.h & 1) == 1;
         if (!this.a) {
-            return g(url, i10, bArr, j3, j10, z10, true, mVar.d);
+            return k(url, i10, bArr, j3, j10, z10, true, mVar.d);
         }
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
                 throw new v(new NoRouteToHostException(k0.h(i13, "Too many redirects: ")), 2001, 1);
             }
-            g10 = g(url, i10, bArr, j3, j10, z10, false, mVar.d);
-            int responseCode = g10.getResponseCode();
-            String headerField = g10.getHeaderField("Location");
+            k10 = k(url, i10, bArr, j3, j10, z10, false, mVar.d);
+            int responseCode = k10.getResponseCode();
+            String headerField = k10.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
-                g10.disconnect();
+                k10.disconnect();
                 url = c(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
-                g10.disconnect();
+                k10.disconnect();
                 url = c(url, headerField);
                 bArr = null;
                 i10 = 1;
@@ -138,10 +138,29 @@ public final class r extends c {
             i12 = i13;
             i11 = 1;
         }
-        return g10;
+        return k10;
     }
 
-    public final HttpURLConnection g(URL url, int i10, byte[] bArr, long j3, long j10, boolean z10, boolean z11, Map map) {
+    @Override // g2.c, g2.h
+    public final Map getResponseHeaders() {
+        HttpURLConnection httpURLConnection = this.n;
+        return httpURLConnection == null ? f1.h : new q(httpURLConnection.getHeaderFields());
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            return Uri.parse(httpURLConnection.getURL().toString());
+        }
+        m mVar = this.h;
+        if (mVar != null) {
+            return mVar.a;
+        }
+        return null;
+    }
+
+    public final HttpURLConnection k(URL url, int i10, byte[] bArr, long j3, long j10, boolean z10, boolean z11, Map map) {
         String sb2;
         String str;
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -201,26 +220,7 @@ public final class r extends c {
         return httpURLConnection;
     }
 
-    @Override // g2.c, g2.h
-    public final Map getResponseHeaders() {
-        HttpURLConnection httpURLConnection = this.n;
-        return httpURLConnection == null ? f1.h : new q(httpURLConnection.getHeaderFields());
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        HttpURLConnection httpURLConnection = this.n;
-        if (httpURLConnection != null) {
-            return Uri.parse(httpURLConnection.getURL().toString());
-        }
-        m mVar = this.h;
-        if (mVar != null) {
-            return mVar.a;
-        }
-        return null;
-    }
-
-    public final void k(long j3) {
+    public final void l(long j3) {
         if (j3 == 0) {
             return;
         }
@@ -355,7 +355,7 @@ public final class r extends c {
                                         }
                                         this.s = true;
                                         transferStarted(mVar);
-                                        k(j11);
+                                        l(j11);
                                         return this.w;
                                     }
                                 }
@@ -382,7 +382,7 @@ public final class r extends c {
                 this.s = true;
                 transferStarted(mVar);
                 try {
-                    k(j11);
+                    l(j11);
                     return this.w;
                 } catch (IOException e7) {
                     b();

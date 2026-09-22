@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ds0;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.Components.z81;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final class h2 extends x81 {
+public final class h2 extends z81 {
     public final /* synthetic */ y3 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class h2 extends x81 {
         this.U = y3Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.z81
     public final void F(View view, float f7) {
         int i10;
         View view2;
@@ -74,17 +74,17 @@ public final class h2 extends x81 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.z81
     public final void G() {
         super.G();
         int i10 = this.b;
         y3 y3Var = this.U;
         if (i10 != y3Var.L1(false)) {
-            AndroidUtilities.runOnUIThread(new ds0(15, this, this.b > y3Var.L1(false)));
+            AndroidUtilities.runOnUIThread(new as0(16, this, this.b > y3Var.L1(false)));
         }
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.z81
     public final boolean i(MotionEvent motionEvent) {
         f4.d dVar = this.U.Y0;
         return dVar == null || dVar.c(0);

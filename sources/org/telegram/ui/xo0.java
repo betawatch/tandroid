@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xo0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -643,9 +643,9 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         xo0Var.x0 = aVar.a() + " *" + aVar.b();
         boolean z14 = num != null && num2 != null && UserConfig.getInstance(xo0Var.currentAccount).getClientPhone().startsWith("7") && "smartglocal".equals(xo0Var.C0.native_provider) && (num2.intValue() > 22 || (num2.intValue() == 22 && num.intValue() > 1));
         String str = aVar.a;
-        if (!w7.u8.d(str)) {
+        if (!w7.t8.d(str)) {
             String replaceAll = str.trim().replaceAll("\\s+|-", "");
-            if (!w7.u8.d(replaceAll) && replaceAll != null) {
+            if (!w7.t8.d(replaceAll) && replaceAll != null) {
                 int i10 = 0;
                 while (true) {
                     if (i10 >= replaceAll.length()) {
@@ -674,15 +674,15 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 if (!"American Express".equals(a2) ? !(!"Diners Club".equals(a2) ? replaceAll.length() != 16 : replaceAll.length() != 14) : replaceAll.length() == 15) {
                                     if (!z14) {
                                         Integer num4 = aVar.c;
-                                        if (num4 != null && num4.intValue() >= 1 && num4.intValue() <= 12 && (num3 = aVar.d) != null && w7.r8.a(num3.intValue()) >= ob.a.D2().get(1)) {
-                                            if (num4 == null || num4.intValue() < 1 || num4.intValue() > 12 || num3 == null || w7.r8.a(num3.intValue()) < ob.a.D2().get(1)) {
+                                        if (num4 != null && num4.intValue() >= 1 && num4.intValue() <= 12 && (num3 = aVar.d) != null && w7.q8.a(num3.intValue()) >= ob.a.D2().get(1)) {
+                                            if (num4 == null || num4.intValue() < 1 || num4.intValue() > 12 || num3 == null || w7.q8.a(num3.intValue()) < ob.a.D2().get(1)) {
                                                 z12 = false;
                                             } else {
                                                 int intValue = num3.intValue();
                                                 int intValue2 = num4.intValue();
-                                                if (w7.r8.a(intValue) >= ob.a.D2().get(1)) {
+                                                if (w7.q8.a(intValue) >= ob.a.D2().get(1)) {
                                                     Calendar D2 = ob.a.D2();
-                                                    if (w7.r8.a(intValue) != D2.get(1) || intValue2 >= D2.get(2) + 1) {
+                                                    if (w7.q8.a(intValue) != D2.get(1) || intValue2 >= D2.get(2) + 1) {
                                                         z13 = false;
                                                         z12 = !z13;
                                                     }
@@ -699,7 +699,7 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                         return;
                                     }
                                     String str2 = aVar.b;
-                                    if (!w7.u8.d(str2)) {
+                                    if (!w7.t8.d(str2)) {
                                         String trim = str2.trim();
                                         String a10 = aVar.a();
                                         boolean z17 = (a10 == null && trim.length() >= 3 && trim.length() <= 4) || ("American Express".equals(a10) && trim.length() == 4) || trim.length() == 3;
@@ -727,12 +727,12 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                                 try {
                                                     if ("stripe".equals(xo0Var.C0.native_provider)) {
                                                         String str3 = xo0Var.j0;
-                                                        k2.u uVar = new k2.u(new ob.a(22), 26);
+                                                        k2.e eVar = new k2.e(new ob.a(22), 25);
                                                         ob.a.E2(str3);
                                                         mo0 mo0Var = new mo0(xo0Var);
                                                         try {
                                                             ob.a.E2(str3);
-                                                            new sc.a(uVar, str3, aVar, mo0Var).execute(new Void[0]);
+                                                            new sc.a(eVar, str3, aVar, mo0Var).execute(new Void[0]);
                                                         } catch (tc.c e) {
                                                             mo0Var.a(e);
                                                         }
@@ -1974,9 +1974,9 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     this.n.setEnabled(false);
                     this.n.getContentView().setVisibility(4);
                     AndroidUtilities.checkAndroidTheme(context, true);
-                    org.telegram.ui.Components.i91 i91Var = new org.telegram.ui.Components.i91(this, context);
-                    this.w = i91Var;
-                    i91Var.getSettings().setJavaScriptEnabled(true);
+                    org.telegram.ui.Components.k91 k91Var = new org.telegram.ui.Components.k91(this, context);
+                    this.w = k91Var;
+                    k91Var.getSettings().setJavaScriptEnabled(true);
                     this.w.getSettings().setDomStorageEnabled(true);
                     this.w.getSettings().setSupportZoom(true);
                     this.w.getSettings().setBuiltInZoomControls(true);
@@ -2892,7 +2892,7 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int lastIndexOf = string2.lastIndexOf(42);
                                 if (indexOf != -1 && lastIndexOf != -1) {
                                     SpannableString spannableString = new SpannableString(string2.substring(indexOf + 1, lastIndexOf));
-                                    spannableString.setSpan(new org.telegram.ui.Components.a61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
+                                    spannableString.setSpan(new org.telegram.ui.Components.c61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
                                     int i50 = lastIndexOf + 1;
                                     spannableStringBuilder.replace(indexOf, i50, (CharSequence) spannableString);
                                     string2.substring(0, indexOf);
@@ -2906,7 +2906,7 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int lastIndexOf2 = string3.lastIndexOf(42);
                                 if (indexOf2 != -1 && lastIndexOf2 != -1) {
                                     SpannableString spannableString2 = new SpannableString(string3.substring(indexOf2 + 1, lastIndexOf2));
-                                    spannableString2.setSpan(new org.telegram.ui.Components.a61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
+                                    spannableString2.setSpan(new org.telegram.ui.Components.c61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
                                     int i51 = lastIndexOf2 + 1;
                                     spannableStringBuilder.replace(indexOf2, i51, (CharSequence) spannableString2);
                                     string3 = string3.substring(0, indexOf2) + ((Object) spannableString2) + string3.substring(i51);
@@ -2914,7 +2914,7 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int indexOf3 = string3.indexOf("%1$s");
                                 if (indexOf3 != -1) {
                                     spannableStringBuilder.replace(indexOf3, indexOf3 + 4, (CharSequence) this.p0);
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.t51(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.v51(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
                                 }
                             }
                             this.V.setText(spannableStringBuilder);
@@ -3974,7 +3974,7 @@ public final class xo0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             v0Var.getClass();
             com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
             e.a = 23705;
-            e.c = new ka.c(eVar, 26);
+            e.c = new o0.b(eVar, 21);
             v0Var.e(0, e.a()).addOnCompleteListener(getParentActivity(), new vn0(this, 0));
         }
     }

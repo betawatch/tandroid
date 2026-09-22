@@ -8,25 +8,25 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.bs0;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yr0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class z1 extends uq0 {
+public final class z1 extends wq0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
-    public final /* synthetic */ yr0 c1;
+    public final /* synthetic */ bs0 c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(yr0 yr0Var, Context context, String str, String str2, f6 f6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+    public z1(bs0 bs0Var, Context context, String str, String str2, f6 f6Var, org.telegram.ui.ActionBar.n2 n2Var) {
         super(context, null, str, false, str2, false, f6Var);
-        this.c1 = yr0Var;
+        this.c1 = bs0Var;
         this.b1 = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         xc a02;
         if (z10 && (a02 = xc.a0(this.b1)) != null) {

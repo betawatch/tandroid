@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zd implements Runnable {
     public final /* synthetic */ int a;
@@ -24,25 +24,25 @@ public final /* synthetic */ class zd implements Runnable {
         switch (i10) {
             case 0:
                 if (!z10) {
-                    chatActivityEnterView.s1.setVisibility(8);
+                    chatActivityEnterView.t1.setVisibility(8);
                     break;
                 } else {
-                    int i11 = ChatActivityEnterView.m5;
+                    int i11 = ChatActivityEnterView.n5;
                     chatActivityEnterView.getClass();
                     break;
                 }
             case 1:
                 if (!z10) {
-                    chatActivityEnterView.t1.setVisibility(8);
+                    chatActivityEnterView.u1.setVisibility(8);
                     break;
                 } else {
-                    int i12 = ChatActivityEnterView.m5;
+                    int i12 = ChatActivityEnterView.n5;
                     chatActivityEnterView.getClass();
                     break;
                 }
             default:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                sd sdVar = chatActivityEnterView2.E4;
+                sd sdVar = chatActivityEnterView2.F4;
                 chatActivityEnterView2.M0 = System.currentTimeMillis();
                 boolean T0 = chatActivityEnterView2.T0(0, false, 0, true, 0L);
                 if (!z10 && (mfVar = chatActivityEnterView2.L0) != null) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class zd implements Runnable {
                     chatActivityEnterView2.L0 = null;
                     break;
                 } else {
-                    chatActivityEnterView2.D4 = !T0;
+                    chatActivityEnterView2.E4 = !T0;
                     AndroidUtilities.cancelRunOnUIThread(sdVar);
                     AndroidUtilities.runOnUIThread(sdVar, 500L);
                     break;

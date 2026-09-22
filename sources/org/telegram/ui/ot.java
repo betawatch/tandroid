@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ot implements Runnable {
     public final /* synthetic */ st a;
@@ -163,7 +163,7 @@ public final class ot implements Runnable {
         View view5;
         View view6;
         ci.n6 n6Var28;
-        org.telegram.ui.Components.v70 i28;
+        org.telegram.ui.Components.y70 i28;
         TLRPC.Document unused;
         st stVar = this.a;
         ah.c cVar = stVar.t;
@@ -177,7 +177,7 @@ public final class ot implements Runnable {
             i28.Q(cVar, eh.b.k(stVar.c0), true);
             i28.t = false;
             i28.Y();
-            i28.p = new cj(this, 16);
+            i28.p = new dj(this, 16);
             ViewGroup viewGroup = i28.A;
             jt jtVar = new jt(this, viewGroup);
             stVar.k = jtVar;
@@ -445,7 +445,7 @@ public final class ot implements Runnable {
                             for (int i35 = 0; i35 < arrayList7.size(); i35++) {
                                 iArr[i35] = ((Integer) arrayList7.get(i35)).intValue();
                             }
-                            org.telegram.ui.Components.fc0 fc0Var = new org.telegram.ui.Components.fc0(this, arrayList6, isStickerInFavorites);
+                            org.telegram.ui.Components.ic0 ic0Var = new org.telegram.ui.Components.ic0(this, arrayList6, isStickerInFavorites);
                             boolean h = st.h(stVar, actionBarPopupWindow$ActionBarPopupWindowLayout2);
                             int i36 = 0;
                             while (i36 < arrayList5.size()) {
@@ -461,7 +461,7 @@ public final class ot implements Runnable {
                                     c12.setTextColor(st.d(stVar, org.telegram.ui.ActionBar.j6.q7));
                                 }
                                 c12.setTag(Integer.valueOf(i36));
-                                c12.setOnClickListener(fc0Var);
+                                c12.setOnClickListener(ic0Var);
                                 i36++;
                                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout3;
                             }

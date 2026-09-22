@@ -20,24 +20,24 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.bg0;
 import org.telegram.ui.Components.cg;
-import org.telegram.ui.Components.fh0;
 import org.telegram.ui.Components.ih0;
-import org.telegram.ui.Components.uf0;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yf0;
+import org.telegram.ui.Components.xf0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bb1;
 import org.telegram.ui.gc0;
 import org.telegram.ui.i60;
-import org.telegram.ui.li;
+import org.telegram.ui.mi;
 import org.telegram.ui.of;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -160,22 +160,22 @@ public final /* synthetic */ class j implements Runnable {
                 t0Var.a();
                 fi.s0 s0Var = t0Var.h;
                 if (s0Var != null) {
-                    s0Var.f();
+                    s0Var.l();
                     break;
                 }
                 break;
             case 10:
                 ii.r rVar = (ii.r) obj;
-                org.telegram.ui.Components.d5.M(rVar.b.f0.getParentActivity(), j3, new a6.m(rVar, 26), rVar.a);
+                org.telegram.ui.Components.d5.M(rVar.b.f0.getParentActivity(), j3, new pb.c(rVar, 27), rVar.a);
                 break;
             case 11:
                 ii.d2 d2Var = (ii.d2) obj;
-                org.telegram.ui.Components.d5.M(d2Var.getParentActivity(), j3, new xa.c(d2Var, 27), d2Var.getResourceProvider());
+                org.telegram.ui.Components.d5.M(d2Var.getParentActivity(), j3, new xa.c(d2Var, 26), d2Var.getResourceProvider());
                 break;
             case 12:
-                k2.j jVar = (k2.j) ((n4.y) obj).b;
+                k2.k kVar = (k2.k) ((n4.y) obj).b;
                 String str = e2.d0.a;
-                j2.f fVar = ((i2.b0) jVar).a.s;
+                j2.f fVar = ((i2.b0) kVar).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1010, new j2.c(p5, j3));
                 break;
@@ -216,12 +216,12 @@ public final /* synthetic */ class j implements Runnable {
                 cgVar.presentFragment(zn.R9(j3));
                 break;
             case 21:
-                yf0 yf0Var = (yf0) obj;
-                yf0Var.h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
-                AndroidUtilities.runOnUIThread(new uf0(yf0Var, 1), 100L);
+                bg0 bg0Var = (bg0) obj;
+                bg0Var.h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
+                AndroidUtilities.runOnUIThread(new xf0(bg0Var, 1), 100L);
                 break;
             case 22:
-                ih0 ih0Var = (ih0) obj;
+                lh0 lh0Var = (lh0) obj;
                 Activity activity2 = AndroidUtilities.getActivity();
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (PhotoViewer.t1().Q1() || (U2 != null && U2.hasShownSheet())) {
@@ -229,7 +229,7 @@ public final /* synthetic */ class j implements Runnable {
                 } else if (U2 != null) {
                     f6Var2 = U2.getResourceProvider();
                 }
-                new yh.l7(activity2, f6Var2, this.b, 15, "", new fh0(ih0Var, 0), 0L).show();
+                new yh.l7(activity2, f6Var2, this.b, 15, "", new ih0(lh0Var, 0), 0L).show();
                 break;
             case 23:
                 uy uyVar = (uy) obj;
@@ -247,7 +247,7 @@ public final /* synthetic */ class j implements Runnable {
                 gc0Var.presentFragment(zn.R9(j3));
                 break;
             case 26:
-                zn znVar = ((li) obj).e;
+                zn znVar = ((mi) obj).e;
                 znVar.A7(true);
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", j3);

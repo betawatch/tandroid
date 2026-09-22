@@ -28,16 +28,16 @@ import org.telegram.ui.Cells.q4;
 import org.telegram.ui.Cells.s4;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.w3;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.yl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class e extends rl0 {
+public abstract class e extends ul0 {
     public final boolean E;
     public int F;
     public final boolean G;
@@ -61,7 +61,7 @@ public abstract class e extends rl0 {
         this.G = i11 == 2;
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         if (this.F == 2 || this.I) {
             return null;
@@ -86,15 +86,15 @@ public abstract class e extends rl0 {
         return arrayList.get(S);
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(vl0 vl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(yl0 yl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -156,12 +156,12 @@ public abstract class e extends rl0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     public final int N(int i10, int i11) {
         return Objects.hash(Integer.valueOf(i10 * (-49612)), O(i10, i11));
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     public final Object O(int i10, int i11) {
         int i12;
         boolean z10 = this.K;
@@ -211,7 +211,7 @@ public abstract class e extends rl0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0089 A[RETURN] */
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -302,7 +302,7 @@ public abstract class e extends rl0 {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     public final View T(int i10, View view) {
         View view2;
         int i11 = this.r;
@@ -353,7 +353,7 @@ public abstract class e extends rl0 {
         return view2;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         if (!this.K) {
             int i12 = this.v;
@@ -398,7 +398,7 @@ public abstract class e extends rl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ul0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         ArrayList<TLRPC.TL_contact> arrayList;
         int i12 = c1Var.f;
@@ -600,6 +600,6 @@ public abstract class e extends rl0 {
             d3Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
             view = d3Var;
         }
-        return new fl0(view);
+        return new il0(view);
     }
 }

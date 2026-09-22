@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final j5 a;
-    public final vh.o b;
+    public final vh.n b;
     public final j5 c;
     public final f6 d;
     public boolean e;
@@ -55,17 +55,17 @@ public final class t extends FrameLayout {
         j5Var2.setTextColor(j6.w0(null, i10, false));
         j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(j5Var2, y5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
-        vh.o oVar = new vh.o(context);
-        this.b = oVar;
-        oVar.setTextSize(1, 13.0f);
-        oVar.setMaxLines(1);
-        oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(j6.v0(i10, f6Var));
-        oVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        oVar.f = false;
-        oVar.setUseAlphaForEmoji(false);
-        NotificationCenter.listenEmojiLoading(oVar);
-        addView(oVar, y5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        vh.n nVar = new vh.n(context);
+        this.b = nVar;
+        nVar.setTextSize(1, 13.0f);
+        nVar.setMaxLines(1);
+        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        nVar.setTextColor(j6.v0(i10, f6Var));
+        nVar.setGravity(LocaleController.isRTL ? 5 : 3);
+        nVar.f = false;
+        nVar.setUseAlphaForEmoji(false);
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, y5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View

@@ -14,21 +14,21 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.l7;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c extends ab {
     public static final /* synthetic */ int a0 = 0;
     public final List X;
     public final GiftAuctionController.Auction Y;
-    public k61 Z;
+    public m61 Z;
 
     public c(Context context, f6 f6Var, GiftAuctionController.Auction auction, List list) {
         super(context, null, false, false, 2, f6Var);
@@ -75,11 +75,11 @@ public final class c extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
-        this.Z = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
+        this.Z = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

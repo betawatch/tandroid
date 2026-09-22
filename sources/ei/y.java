@@ -10,9 +10,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.nf;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout {
     public ObjectAnimator a;
@@ -88,7 +88,7 @@ public abstract class y extends FrameLayout {
         return false;
     }
 
-    public vl0 getListView() {
+    public yl0 getListView() {
         return this.c;
     }
 

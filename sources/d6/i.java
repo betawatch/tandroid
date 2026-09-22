@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.internal.cast.q4;
 import com.google.android.gms.internal.cast.y6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -35,7 +35,7 @@ public final class i {
         }
         q4 q4Var = cVar.l;
         if (q4Var != null) {
-            cf.c.E(q4Var.a, new y6(new a5.a(3, 2)));
+            cf.c.D(q4Var.a, new y6(new a5.a(3, 2)));
         }
     }
 }

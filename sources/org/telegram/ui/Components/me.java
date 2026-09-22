@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class me extends FrameLayout {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -31,7 +31,7 @@ public final class me extends FrameLayout {
                 }
             });
         }
-        if (chatActivityEnterView.y4 && view == chatActivityEnterView.e1) {
+        if (chatActivityEnterView.z4 && view == chatActivityEnterView.e1) {
             return true;
         }
         return super.drawChild(canvas, view, j3);
@@ -60,7 +60,7 @@ public final class me extends FrameLayout {
         super.onMeasure(i10, i11);
         int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
         ChatActivityEnterView chatActivityEnterView = this.a;
-        le.e eVar = chatActivityEnterView.e5;
+        le.e eVar = chatActivityEnterView.f5;
         if (eVar.e > 0.0f) {
             eVar.a(max);
         } else {

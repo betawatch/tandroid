@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class et implements Runnable {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final /* synthetic */ class et implements Runnable {
             case 1:
                 st stVar = this.b;
                 stVar.A.setImageBitmap((Bitmap) null);
-                org.telegram.ui.Components.od0 od0Var = stVar.C;
-                if (od0Var != null) {
-                    od0Var.a();
+                org.telegram.ui.Components.rd0 rd0Var = stVar.C;
+                if (rd0Var != null) {
+                    rd0Var.a();
                     stVar.z.removeView(stVar.C);
                     stVar.C = null;
                     break;

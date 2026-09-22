@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class ma1 extends la1 {
     public final int v;
@@ -23,7 +23,7 @@ public abstract class ma1 extends la1 {
         int i10;
         bb1 bb1Var = this.w;
         i10 = ((org.telegram.ui.ActionBar.n2) bb1Var).classGuid;
-        na1Var.a(this.v, i10, bb1Var.a.stats_dc, new org.telegram.ui.Components.g61(1, bb1Var, this.r));
+        na1Var.a(this.v, i10, bb1Var.a.stats_dc, new org.telegram.ui.Components.i61(1, bb1Var, this.r));
     }
 
     @Override // org.telegram.ui.la1

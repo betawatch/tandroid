@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class m0 extends FrameLayout {
     public boolean E;
@@ -46,7 +46,7 @@ public abstract class m0 extends FrameLayout {
         this.d = new org.telegram.ui.Components.d6(l0Var, 0L, 320L, qrVar);
         g0 g0Var = new g0(this, context, 1);
         this.h = g0Var;
-        g0Var.setListener(new a6.m(this, 11));
+        g0Var.setListener(new pb.c(this, 12));
         addView(g0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;

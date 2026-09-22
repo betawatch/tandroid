@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h90 implements Runnable {
     public final /* synthetic */ int a;
@@ -651,7 +651,7 @@ public final /* synthetic */ class h90 implements Runnable {
                 } else {
                     i14 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
                     org.telegram.ui.Components.d5.f0(i14, tL_error10, pn0Var, verifyemail2, new Object[0]);
-                    eVar.c(null, null);
+                    eVar.b(null, null);
                     break;
                 }
             case 13:
@@ -710,8 +710,8 @@ public final /* synthetic */ class h90 implements Runnable {
                     if (arrayList != null && (i16 = photoViewer.c2) != 3 && i16 != 1 && ((bv0Var = photoViewer.d) == null || !bv0Var.O())) {
                         photoViewer.R1();
                     }
-                    org.telegram.ui.Components.t71 t71Var = photoViewer.F2;
-                    if (t71Var != null && t71Var.y() && photoViewer.r1 && !photoViewer.g7.isEmpty()) {
+                    org.telegram.ui.Components.v71 v71Var = photoViewer.F2;
+                    if (v71Var != null && v71Var.y() && photoViewer.r1 && !photoViewer.g7.isEmpty()) {
                         PhotoViewer.Z(photoViewer, photoViewer.F2.n());
                         PhotoViewer.Y(photoViewer, true);
                     }
@@ -897,17 +897,17 @@ public final /* synthetic */ class h90 implements Runnable {
                 j71Var.p((View) obj3, Long.valueOf(((org.telegram.ui.Components.y5) obj4).documentId), (TLRPC.Document) obj, ((s61) obj2).v, null);
                 break;
             case 24:
-                t71 t71Var2 = (t71) obj5;
+                t71 t71Var = (t71) obj5;
                 TLRPC.TL_error tL_error15 = (TLRPC.TL_error) obj2;
                 TLObject tLObject12 = (TLObject) obj4;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj3;
                 TLRPC.User user4 = (TLRPC.User) obj;
-                t71Var2.getClass();
+                t71Var.getClass();
                 if (tL_error15 == null) {
                     TL_account.Password password = (TL_account.Password) tLObject12;
                     twoStepVerificationActivity.I = password;
                     TwoStepVerificationActivity.m0(password);
-                    t71Var2.T(user4, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    t71Var.T(user4, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
                     break;
                 }
                 break;
@@ -975,7 +975,7 @@ public final /* synthetic */ class h90 implements Runnable {
                     AccountInstance accountInstance = AccountInstance.getInstance(i22);
                     of.b bVar2 = new of.b(7, (boolean) r13);
                     bVar2.X(z4Var.e0.h);
-                    billingController.launchBillingFlow(parentActivity2, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(bVar2.K()));
+                    billingController.launchBillingFlow(parentActivity2, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(bVar2.H()));
                     break;
                 } else if (tL_error19 != null) {
                     org.telegram.ui.Components.d5.f0(i22, tL_error19, n2Var3, tL_payments_canPurchaseStore, new Object[0]);

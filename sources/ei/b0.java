@@ -12,19 +12,19 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.xl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final class b0 extends ul0 {
+public final class b0 extends xl0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -98,6 +98,6 @@ public final class b0 extends ul0 {
         textView.setTag(Integer.valueOf(i12));
         a0Var.addView(textView, y5.o(-2, -2, 0.0f, 16));
         a0Var.setLayoutParams(new s4.p0(-1, -2));
-        return new fl0(a0Var);
+        return new il0(a0Var);
     }
 }

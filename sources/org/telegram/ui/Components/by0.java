@@ -1,23 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class by0 extends org.telegram.ui.Cells.g8 {
-    public final /* synthetic */ cy0 O;
+public final class by0 extends s4.x {
+    public int e;
+    public final /* synthetic */ iy0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public by0(cy0 cy0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, false);
-        this.O = cy0Var;
+    public by0(iy0 iy0Var) {
+        this.f = iy0Var;
+        this.d = 15;
+        this.e = -1;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        cy0 cy0Var = this.O;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(cy0Var.r.O, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(cy0Var.r.O, TLObject.FLAG_30));
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        int i10 = c1Var.f;
+        if (i10 == 3 || i10 != c1Var2.f) {
+            return false;
+        }
+        iy0 iy0Var = this.f;
+        if (iy0Var.S == null) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        iy0Var.S.documents.add(b11, iy0Var.S.documents.remove(b10));
+        iy0Var.d.p(b10, b11);
+        this.e = b11;
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        iy0 iy0Var = this.f;
+        if (i10 != 0 || iy0Var.f == null || this.e <= 0) {
+            if (i10 == 2) {
+                iy0Var.f = ((org.telegram.ui.Cells.g8) c1Var.a).getSticker();
+            }
+        } else {
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.e;
+            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(iy0Var.f, "").document;
+            this.e = -1;
+            iy0Var.f = null;
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
+    }
+
+    @Override // s4.v
+    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
     }
 }

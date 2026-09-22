@@ -26,7 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
@@ -279,7 +279,7 @@ public final class h implements c6.f {
                                 JSONArray jSONArray = jSONObject.getJSONArray("items");
                                 c6.o[] oVarArr = new c6.o[jSONArray.length()];
                                 for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                    oVarArr[i12] = new a4.m(jSONArray.getJSONObject(i12)).n0();
+                                    oVarArr[i12] = new android.support.v4.media.c(jSONArray.getJSONObject(i12)).j0();
                                 }
                                 Iterator it = ((h) mVar.h.b).i.iterator();
                                 while (it.hasNext()) {
@@ -437,7 +437,7 @@ public final class h implements c6.f {
                                             mVar.e = SystemClock.elapsedRealtime();
                                             xa.c cVar = mVar.h;
                                             if (cVar != null) {
-                                                cVar.u();
+                                                cVar.z();
                                             }
                                         }
                                         if ((i11 & 64) != 0) {

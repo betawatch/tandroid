@@ -54,22 +54,22 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.de0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.tv0;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.vv0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mu0;
 import org.telegram.ui.tb1;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class k3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.u3 {
     public static final HashSet W0 = new HashSet();
-    public static final tv0 X0;
+    public static final vv0 X0;
     public static int Y0;
     public boolean A0;
     public a1 B0;
@@ -88,7 +88,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public long J;
     public final HashMap J0;
     public int K;
-    public v70 K0;
+    public y70 K0;
     public long L;
     public k0 L0;
     public String M;
@@ -143,7 +143,7 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public final org.telegram.ui.ActionBar.o3 r;
     public boolean r0;
     public final cf.c s;
-    public final ae0 s0;
+    public final de0 s0;
     public final e2 t0;
     public int u0;
     public final a3 v;
@@ -157,9 +157,9 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
     public Boolean z0;
 
     static {
-        tv0 tv0Var = new tv0(new d2.c(17), new d2.c(18));
-        tv0Var.c = 100.0f;
-        X0 = tv0Var;
+        vv0 vv0Var = new vv0(new d2.c(17), new d2.c(18));
+        vv0Var.c = 100.0f;
+        X0 = vv0Var;
         Y0 = 0;
     }
 
@@ -249,9 +249,9 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
         a3Var.setScrollEndListener(new e2(this, 8));
         a3Var.setDelegate(new f2(this));
         a3Var.setIsKeyboardVisible(new f2(this));
-        ae0 ae0Var = new ae0(context);
-        this.s0 = ae0Var;
-        j3Var.addView(ae0Var, y5.c(-1.0f, -1));
+        de0 de0Var = new de0(context);
+        this.s0 = de0Var;
+        j3Var.addView(de0Var, y5.c(-1.0f, -1));
         setContentView(j3Var, new ViewGroup.LayoutParams(-1, -1));
         D();
         LaunchActivity launchActivity = LaunchActivity.G1;
@@ -369,10 +369,10 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
             h3Var.setTitleColor(v02);
             h3Var.B(j6.v0(i10, f6Var), false);
             h3Var.A(j6.v0(j6.u8, f6Var), false);
-            h3Var.E(j6.v0(j6.G8, f6Var), false);
-            h3Var.F(j6.v0(j6.E8, f6Var), false, false);
-            h3Var.F(j6.v0(j6.F8, f6Var), true, false);
-            h3Var.G(j6.v0(j6.I5, f6Var), false);
+            h3Var.D(j6.v0(j6.G8, f6Var), false);
+            h3Var.E(j6.v0(j6.E8, f6Var), false, false);
+            h3Var.E(j6.v0(j6.F8, f6Var), true, false);
+            h3Var.F(j6.v0(j6.I5, f6Var), false);
         }
         this.x.setFlickerViewColor(this.P.getColor());
     }
@@ -1005,17 +1005,17 @@ public final class k3 extends Dialog implements NotificationCenter.NotificationC
                 break;
             }
         }
-        v70 v70Var = this.K0;
-        if (v70Var != null) {
-            v70Var.u();
+        y70 y70Var = this.K0;
+        if (y70Var != null) {
+            y70Var.u();
         }
-        v70 G = v70.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
+        y70 G = y70.G(this.e, this.E, this.d0 ? this.m0 : this.Z, true);
         this.K0 = G;
         ArrayList arrayList3 = l0.c(getContext(), this.G, this.H).e;
         HashMap hashMap = this.J0;
         hashMap.clear();
         if (!arrayList3.isEmpty()) {
-            v70 J = G.J();
+            y70 J = G.J();
             J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new mu0(G, 25), false);
             J.k();
             int size2 = arrayList3.size();

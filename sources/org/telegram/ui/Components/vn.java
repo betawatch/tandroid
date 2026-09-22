@@ -11,11 +11,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class vn extends ni {
     public final mz n;
-    public final vl0 r;
+    public final yl0 r;
     public final int s;
     public final org.telegram.ui.x7 v;
     public int w;
@@ -41,34 +41,34 @@ public final class vn extends ni {
             mzVar.setText(ChatObject.getRestrictedErrorText(k12, 22));
         }
         mzVar.c();
-        vl0 vl0Var = new vl0(context, f6Var);
-        this.r = vl0Var;
-        vl0Var.setSectionsType(2);
-        vl0Var.setVerticalScrollBarEnabled(false);
-        vl0Var.setLayoutManager(new s4.c0());
-        vl0Var.setClipToPadding(false);
+        yl0 yl0Var = new yl0(context, f6Var);
+        this.r = yl0Var;
+        yl0Var.setSectionsType(2);
+        yl0Var.setVerticalScrollBarEnabled(false);
+        yl0Var.setLayoutManager(new s4.c0());
+        yl0Var.setClipToPadding(false);
         org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, 4);
         this.v = x7Var;
-        vl0Var.setAdapter(x7Var);
-        vl0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-        vl0Var.setOnScrollListener(new ai.r(this, 24));
-        addView(vl0Var, w7.y5.c(-1.0f, -1));
+        yl0Var.setAdapter(x7Var);
+        yl0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+        yl0Var.setOnScrollListener(new ai.r(this, 24));
+        addView(yl0Var, w7.y5.c(-1.0f, -1));
     }
 
     @Override // org.telegram.ui.Components.ni
     public int getCurrentItemTop() {
-        vl0 vl0Var = this.r;
-        if (vl0Var.getChildCount() <= 0) {
+        yl0 yl0Var = this.r;
+        if (yl0Var.getChildCount() <= 0) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         int i10 = 0;
-        View childAt = vl0Var.getChildAt(0);
-        fl0 fl0Var = (fl0) vl0Var.H(childAt);
+        View childAt = yl0Var.getChildAt(0);
+        il0 il0Var = (il0) yl0Var.H(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        if (top > 0 && fl0Var != null && fl0Var.b() == 0) {
+        if (top > 0 && il0Var != null && il0Var.b() == 0) {
             i10 = top;
         }
-        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (top < 0 || il0Var == null || il0Var.b() != 0) {
             top = i10;
         }
         int measuredHeight = (getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f);
@@ -102,7 +102,7 @@ public final class vn extends ni {
     public final void y(int i10, int i11) {
         int i12;
         int i13;
-        vl0 vl0Var;
+        yl0 yl0Var;
         int max = Math.max(0, i11 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
         if (this.w != max) {
             this.w = max;
@@ -114,9 +114,9 @@ public final class vn extends ni {
                 i12 = (int) (i11 / 3.5f);
                 int dp = i12 - AndroidUtilities.dp(52.0f);
                 i13 = dp >= 0 ? dp : 0;
-                vl0Var = this.r;
-                if (vl0Var.getPaddingTop() == i13) {
-                    vl0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                yl0Var = this.r;
+                if (yl0Var.getPaddingTop() == i13) {
+                    yl0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -126,8 +126,8 @@ public final class vn extends ni {
         int dp2 = i12 - AndroidUtilities.dp(52.0f);
         if (dp2 >= 0) {
         }
-        vl0Var = this.r;
-        if (vl0Var.getPaddingTop() == i13) {
+        yl0Var = this.r;
+        if (yl0Var.getPaddingTop() == i13) {
         }
     }
 }

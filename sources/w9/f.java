@@ -7,13 +7,13 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class f {
     public static final AtomicLong a = new AtomicLong(0);
     public static String b;
 
-    public f(u uVar) {
+    public f(v vVar) {
         long time = new Date().getTime();
         ByteBuffer allocate = ByteBuffer.allocate(4);
         allocate.putInt((int) (time / 1000));
@@ -32,7 +32,7 @@ public final class f {
         byte b17 = a10[1];
         byte[] a11 = a(Integer.valueOf(Process.myPid()).shortValue());
         byte[] bArr = {b10, b11, b12, b13, b14, b15, b16, b17, a11[0], a11[1]};
-        String i10 = h.i(uVar.b().a);
+        String i10 = h.i(vVar.b().a);
         String f7 = h.f(bArr);
         Locale locale = Locale.US;
         b = String.format(locale, "%s%s%s%s", f7.substring(0, 12), f7.substring(12, 16), f7.subSequence(16, 20), i10.substring(0, 12)).toUpperCase(locale);

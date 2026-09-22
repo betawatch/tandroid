@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i0 implements i9.r, q {
     public b2.n0 a;
@@ -164,7 +164,7 @@ public final class i0 implements i9.r, q {
     public void n(b2.n0 n0Var) {
         k0 k0Var = (k0) this.e;
         n4.y yVar = k0Var.k;
-        CharSequence queueTitle = ((n4.j) ((k2.u) yVar.b).b).a.getQueueTitle();
+        CharSequence queueTitle = ((n4.j) ((ki.e0) yVar.b).b).a.getQueueTitle();
         CharSequence charSequence = n0Var.a;
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;

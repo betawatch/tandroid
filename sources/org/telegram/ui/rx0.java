@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rx0 implements Runnable {
     public final /* synthetic */ int a;
@@ -378,7 +378,7 @@ public final /* synthetic */ class rx0 implements Runnable {
                 break;
             case 26:
                 org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.wn0) obj);
+                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.yn0) obj);
                 break;
             case 27:
                 ((SecretMediaViewer) obj2).M = false;
@@ -400,9 +400,9 @@ public final /* synthetic */ class rx0 implements Runnable {
         }
     }
 
-    public /* synthetic */ rx0(org.telegram.ui.Components.uq0 uq0Var, a0.i iVar, int i10, int i11) {
+    public /* synthetic */ rx0(org.telegram.ui.Components.wq0 wq0Var, a0.i iVar, int i10, int i11) {
         this.a = i11;
-        this.b = uq0Var;
+        this.b = wq0Var;
         this.c = iVar;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cf extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final class cf extends AnimatorListenerAdapter {
         switch (this.a) {
             case 1:
                 ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.r2)) {
-                    chatActivityEnterView.r2 = null;
+                if (animator.equals(chatActivityEnterView.s2)) {
+                    chatActivityEnterView.s2 = null;
                     break;
                 }
                 break;
@@ -38,27 +38,27 @@ public final class cf extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.c;
-                if (chatActivityEnterView.k5) {
-                    chatActivityEnterView.v1.setVisibility(this.b ? 0 : 8);
+                if (chatActivityEnterView.l5) {
+                    chatActivityEnterView.w1.setVisibility(this.b ? 0 : 8);
                     break;
                 }
                 break;
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = this.c;
-                if (animator.equals(chatActivityEnterView2.r2)) {
-                    chatActivityEnterView2.o1.setVisibility(8);
-                    if (this.b && (zeVar = chatActivityEnterView2.I1) != null) {
+                if (animator.equals(chatActivityEnterView2.s2)) {
+                    chatActivityEnterView2.p1.setVisibility(8);
+                    if (this.b && (zeVar = chatActivityEnterView2.J1) != null) {
                         zeVar.setVisibility(8);
                     }
-                    chatActivityEnterView2.r2 = null;
+                    chatActivityEnterView2.s2 = null;
                     break;
                 }
                 break;
             case 2:
                 ChatActivityEnterView chatActivityEnterView3 = this.c;
-                chatActivityEnterView3.L1 = null;
+                chatActivityEnterView3.M1 = null;
                 if (!this.b) {
-                    chatActivityEnterView3.I1.setVisibility(8);
+                    chatActivityEnterView3.J1.setVisibility(8);
                     break;
                 }
                 break;

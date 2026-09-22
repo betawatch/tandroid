@@ -46,13 +46,13 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.nb;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hz;
 import org.telegram.ui.m41;
 import org.telegram.ui.ol0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class n2 {
     protected k actionBar;
@@ -71,7 +71,7 @@ public abstract class n2 {
     protected Dialog parentDialog;
     protected d5 parentLayout;
     private m2 previewDelegate;
-    private vl0 recyclerListViewForSimpleGlass;
+    private yl0 recyclerListViewForSimpleGlass;
     private boolean removingFromStack;
     protected f6 resourceProvider;
     public ArrayList<j2> sheetsStack;
@@ -495,7 +495,7 @@ public abstract class n2 {
         return null;
     }
 
-    public vl0 getListViewForSimpleGlass() {
+    public yl0 getListViewForSimpleGlass() {
         return null;
     }
 
@@ -866,9 +866,9 @@ public abstract class n2 {
     public r0.l1 onInsetsInternal(View view, r0.l1 l1Var) {
         i0.b f7 = l1Var.a.f(3);
         this.mSystemInsets = f7;
-        vl0 vl0Var = this.recyclerListViewForSimpleGlass;
-        if (vl0Var != null) {
-            li.b.a(vl0Var, f7.b, f7.d, k.getCurrentActionBarHeight());
+        yl0 yl0Var = this.recyclerListViewForSimpleGlass;
+        if (yl0Var != null) {
+            li.b.a(yl0Var, f7.b, f7.d, k.getCurrentActionBarHeight());
         }
         int i10 = f7.a;
         int i11 = f7.b;
@@ -986,13 +986,13 @@ public abstract class n2 {
     public View performCreateView(Context context) {
         View createView = createView(context);
         onViewCreated(createView);
-        vl0 listViewForSimpleGlass = getListViewForSimpleGlass();
+        yl0 listViewForSimpleGlass = getListViewForSimpleGlass();
         this.recyclerListViewForSimpleGlass = listViewForSimpleGlass;
         if (listViewForSimpleGlass != null && (createView instanceof FrameLayout)) {
             getBaseSimpleGlass().b((FrameLayout) createView, this.recyclerListViewForSimpleGlass, this.actionBar, this.resourceProvider);
-            vl0 vl0Var = this.recyclerListViewForSimpleGlass;
+            yl0 yl0Var = this.recyclerListViewForSimpleGlass;
             i0.b bVar = this.mSystemInsets;
-            li.b.a(vl0Var, bVar.b, bVar.d, k.getCurrentActionBarHeight());
+            li.b.a(yl0Var, bVar.b, bVar.d, k.getCurrentActionBarHeight());
         }
         return createView;
     }

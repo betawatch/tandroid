@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class qm extends org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ rm x;
@@ -44,14 +44,14 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
         if (g4Var != null && g4Var.isShowing()) {
             return false;
         }
-        lk lkVar = znVar.Y;
-        return lkVar == null || lkVar.getTrendingStickersAlert() == null || !znVar.Y.getTrendingStickersAlert().isShowing();
+        mk mkVar = znVar.Y;
+        return mkVar == null || mkVar.getTrendingStickersAlert() == null || !znVar.Y.getTrendingStickersAlert().isShowing();
     }
 
     @Override // org.telegram.ui.ActionBar.p1
     public final void e(float f7, float f10, boolean z10) {
         org.telegram.ui.ActionBar.k kVar;
-        hj hjVar;
+        ij ijVar;
         rm rmVar = this.x;
         zn znVar = rmVar.J0;
         if (znVar.getParentLayout() == null || !((ActionBarLayout) znVar.getParentLayout()).n) {
@@ -61,9 +61,9 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
             if (g4Var == null || !g4Var.isShowing()) {
                 kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
                 kVar.setTranslationY(f7);
-                bl blVar = znVar.ab;
-                if (blVar != null) {
-                    blVar.setTranslationY(znVar.w9 + (znVar.o1 != null ? r2.getCurrentHeight() : 0));
+                cl clVar = znVar.ab;
+                if (clVar != null) {
+                    clVar.setTranslationY(znVar.w9 + (znVar.o1 != null ? r2.getCurrentHeight() : 0));
                 }
                 ci.f4 f4Var = znVar.w1;
                 if (f4Var != null) {
@@ -80,9 +80,9 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
                 znVar.P.setTranslationY(f7 / 2.0f);
                 int i10 = (int) f7;
                 znVar.X0.setBackgroundTranslation(i10);
-                org.telegram.ui.Components.e60 e60Var = znVar.b3;
-                if (e60Var != null) {
-                    e60Var.e(f7);
+                org.telegram.ui.Components.h60 h60Var = znVar.b3;
+                if (h60Var != null) {
+                    h60Var.e(f7);
                 }
                 ci.s6 s6Var = znVar.y2;
                 if (s6Var != null) {
@@ -113,11 +113,11 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
             if (i40Var != null && i40Var.getVisibility() == 0) {
                 znVar.s2.f(znVar.Y.getAudioVideoButtonContainer(), false);
             }
-            gk gkVar = znVar.X1;
-            if (gkVar == null || (hjVar = gkVar.A0) == null) {
+            hk hkVar = znVar.X1;
+            if (hkVar == null || (ijVar = hkVar.A0) == null) {
                 return;
             }
-            hjVar.setExtraTranslationY(AndroidUtilities.dp(72.0f) + f7);
+            ijVar.setExtraTranslationY(AndroidUtilities.dp(72.0f) + f7);
         }
     }
 
@@ -125,10 +125,10 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
     public final void f() {
         org.telegram.ui.Components.ie ieVar;
         zn znVar = this.x.J0;
-        lk lkVar = znVar.Y;
-        if (lkVar != null && (ieVar = lkVar.u0) != null) {
+        mk mkVar = znVar.Y;
+        if (mkVar != null && (ieVar = mkVar.u0) != null) {
             ieVar.run();
-            lkVar.u0 = null;
+            mkVar.u0 = null;
         }
         org.telegram.ui.Components.i40 i40Var = znVar.s2;
         if (i40Var == null || i40Var.getVisibility() != 0) {
@@ -142,16 +142,16 @@ public final class qm extends org.telegram.ui.ActionBar.p1 {
         org.telegram.ui.Components.sd sdVar;
         zn znVar = this.x.J0;
         znVar.D4 = true;
-        lk lkVar = znVar.Y;
-        if (lkVar != null) {
-            if (z10 && (sdVar = lkVar.V) != null) {
+        mk mkVar = znVar.Y;
+        if (mkVar != null) {
+            if (z10 && (sdVar = mkVar.V) != null) {
                 AndroidUtilities.cancelRunOnUIThread(sdVar);
-                lkVar.V.run();
+                mkVar.V.run();
             }
-            org.telegram.ui.Components.tc tcVar = lkVar.W;
+            org.telegram.ui.Components.tc tcVar = mkVar.W;
             if (tcVar != null) {
                 AndroidUtilities.cancelRunOnUIThread(tcVar);
-                lkVar.W.run();
+                mkVar.W.run();
             }
         }
         org.telegram.ui.Components.i40 i40Var = znVar.f2;

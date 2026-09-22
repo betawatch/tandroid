@@ -1,10 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class dx0 {
-    public String a;
-    public boolean b;
-    public long c;
-    public String d;
+public final class dx0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ex0 b;
+
+    public /* synthetic */ dx0(ex0 ex0Var, int i10) {
+        this.a = i10;
+        this.b = ex0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ex0 ex0Var = this.b;
+                ex0Var.y = 1.0f;
+                ex0Var.invalidate();
+                ex0Var.G = null;
+                break;
+            case 1:
+                ex0 ex0Var2 = this.b;
+                ex0Var2.m(((Float) ex0Var2.v.getAnimatedValue()).floatValue());
+                ex0Var2.v = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                this.b.F = null;
+                break;
+        }
+    }
 }

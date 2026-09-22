@@ -18,9 +18,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class x8 extends org.telegram.ui.Components.aw0 {
+public final class x8 extends org.telegram.ui.Components.cw0 {
     public final /* synthetic */ int w0;
     public final /* synthetic */ Object x0;
 
@@ -31,7 +31,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         this.x0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         switch (this.w0) {
             case 0:
@@ -39,7 +39,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                 if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && l9Var.Z != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    l9Var.Z.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    l9Var.Z.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha = paint.getAlpha();
                     paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
@@ -55,7 +55,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                 if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && contactsActivity.u0 != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    contactsActivity.u0.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    contactsActivity.u0.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha2 = paint.getAlpha();
                     paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
@@ -71,7 +71,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                 if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && i91Var.W != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    i91Var.W.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    i91Var.W.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha3 = paint.getAlpha();
                     paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
@@ -87,7 +87,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                 if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && bb1Var.D0 != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    bb1Var.D0.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    bb1Var.D0.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha4 = paint.getAlpha();
                     paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
@@ -104,7 +104,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -114,7 +114,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public boolean Q() {
         switch (this.w0) {
             case 2:
@@ -124,7 +124,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.w0) {
             case 0:
@@ -142,7 +142,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar.b(a2, -3);
                         }
-                        dVar2.c();
+                        dVar2.b();
                     }
                     if (dVar != null && !dVar.n) {
                         RecordingCanvas a10 = dVar.a(measuredWidth, measuredHeight);
@@ -150,7 +150,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar.b(a10, -2);
                         }
-                        dVar.c();
+                        dVar.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -170,7 +170,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar2.b(a11, -3);
                         }
-                        dVar4.c();
+                        dVar4.b();
                     }
                     if (dVar3 != null && !dVar3.n) {
                         RecordingCanvas a12 = dVar3.a(measuredWidth2, measuredHeight2);
@@ -178,7 +178,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar2.b(a12, -2);
                         }
-                        dVar3.c();
+                        dVar3.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -198,7 +198,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar3.b(a13, -3);
                         }
-                        dVar6.c();
+                        dVar6.b();
                     }
                     if (dVar5 != null && !dVar5.n) {
                         RecordingCanvas a14 = dVar5.a(measuredWidth3, measuredHeight3);
@@ -206,7 +206,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar3.b(a14, -2);
                         }
-                        dVar5.c();
+                        dVar5.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -230,7 +230,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar4.b(a15, -3);
                         }
-                        dVar8.c();
+                        dVar8.b();
                     }
                     if (dVar7 != null && !dVar7.n) {
                         RecordingCanvas a16 = dVar7.a(measuredWidth4, measuredHeight4);
@@ -238,7 +238,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                         if (SharedConfig.chatBlurEnabled()) {
                             iVar4.b(a16, -2);
                         }
-                        dVar7.c();
+                        dVar7.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -253,7 +253,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.w0) {
             case 1:
-                if (motionEvent.getY() < ((org.telegram.ui.Components.xb0) this.x0).T) {
+                if (motionEvent.getY() < ((org.telegram.ui.Components.ac0) this.x0).T) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -262,7 +262,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.Components.cw0, org.telegram.ui.ActionBar.z5
     public void e() {
         switch (this.w0) {
             case 7:
@@ -271,11 +271,11 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public Drawable getNewDrawable() {
         switch (this.w0) {
             case 1:
-                Drawable d = ((xn) ((org.telegram.ui.Components.xb0) this.x0).c0.F).d();
+                Drawable d = ((xn) ((org.telegram.ui.Components.ac0) this.x0).c0.F).d();
                 if (d == null) {
                     break;
                 }
@@ -284,11 +284,11 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
         return super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public org.telegram.ui.ActionBar.f6 getResourceProvider() {
         switch (this.w0) {
             case 2:
-                return ((org.telegram.ui.Components.m01) this.x0).c;
+                return ((org.telegram.ui.Components.o01) this.x0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -298,7 +298,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:28:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x007c  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -374,7 +374,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                                         measuredHeight2 -= emojiPadding;
                                     }
                                     i19 = measuredHeight2;
-                                } else if (childAt == popupNotificationActivity.b.M1) {
+                                } else if (childAt == popupNotificationActivity.b.N1) {
                                     i19 = ((popupNotificationActivity.E.getMeasuredHeight() + popupNotificationActivity.E.getTop()) - childAt.getMeasuredHeight()) - layoutParams.bottomMargin;
                                     i16 = ((popupNotificationActivity.E.getMeasuredWidth() + popupNotificationActivity.E.getLeft()) - childAt.getMeasuredWidth()) - layoutParams.rightMargin;
                                 }
@@ -443,7 +443,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.m01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.o01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;
@@ -517,7 +517,7 @@ public final class x8 extends org.telegram.ui.Components.aw0 {
                     if (childAt.getVisibility() != 8) {
                         if (popupNotificationActivity.b.u0(childAt)) {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
-                        } else if (childAt == popupNotificationActivity.b.M1) {
+                        } else if (childAt == popupNotificationActivity.b.N1) {
                             measureChildWithMargins(childAt, i10, 0, i11, 0);
                         } else {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f) + i14), TLObject.FLAG_30));

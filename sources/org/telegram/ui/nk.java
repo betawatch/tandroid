@@ -1,55 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class nk extends org.telegram.ui.Components.pd {
-    public final /* synthetic */ zn d;
+public final class nk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(zn znVar, Context context) {
-        super(context);
-        this.d = znVar;
+    public /* synthetic */ nk(zn znVar, int i10) {
+        this.a = i10;
+        this.b = znVar;
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        zn znVar = this.d;
-        lk lkVar = znVar.Y;
-        if (lkVar != null) {
-            lkVar.invalidate();
-        }
-        if (getVisibility() != 8) {
-            znVar.h9(true);
-            FrameLayout frameLayout = znVar.P;
-            if (frameLayout != null) {
-                frameLayout.setTranslationY(f7);
-            }
-            znVar.o9();
-            znVar.r9();
-            View view = znVar.fragmentView;
-            if (view != null) {
-                view.invalidate();
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.ch chVar;
         FrameLayout frameLayout;
-        super.setVisibility(i10);
-        if (i10 != 8 || (frameLayout = this.d.P) == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                zn znVar = this.b;
+                AnimatorSet animatorSet = znVar.V9;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    znVar.V9.start();
+                    break;
+                }
+                break;
+            default:
+                zn znVar2 = this.b;
+                if (znVar2.O2 == this && (chVar = znVar2.M0) != null && (frameLayout = znVar2.N2) != null) {
+                    chVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
         }
-        frameLayout.setTranslationY(0.0f);
     }
 }

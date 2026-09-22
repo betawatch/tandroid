@@ -2,15 +2,15 @@ package f5;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import w7.u6;
+import w7.t6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ka.c n;
-    public static final /* synthetic */ ka.c r;
-    public static final /* synthetic */ ka.c s;
-    public static final /* synthetic */ ka.c v;
+    public static final /* synthetic */ o0.b n;
+    public static final /* synthetic */ o0.b r;
+    public static final /* synthetic */ o0.b s;
+    public static final /* synthetic */ o0.b v;
     public long e;
     public long[] f;
     public int h;
@@ -30,7 +30,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = e5.b.i(byteBuffer);
-        int a2 = u6.a(e5.b.i(byteBuffer));
+        int a2 = t6.a(e5.b.i(byteBuffer));
         this.h = a2;
         if (this.e == 0) {
             this.f = new long[a2];

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
@@ -32,33 +32,33 @@ public final class c {
 
     public final ch.d c(View view, dh.a aVar, boolean z10) {
         ViewGroup viewGroup;
-        ch.d d = this.a.d();
-        if (this.i && Build.VERSION.SDK_INT >= 33 && (d instanceof ch.e)) {
-            ch.e eVar = (ch.e) d;
+        ch.d l4 = this.a.l();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (l4 instanceof ch.e)) {
+            ch.e eVar = (ch.e) l4;
             eVar.P = new j(eVar.K);
         }
-        d.o(aVar);
+        l4.o(aVar);
         int i10 = this.b;
         int i11 = this.c;
-        d.h = i10;
-        d.i = i11;
+        l4.h = i10;
+        l4.i = i11;
         pe.b bVar = this.e;
         if (bVar != null && view != null) {
             bVar.add(view);
         }
         li.i iVar = this.h;
         if (iVar != null && view != null) {
-            iVar.c.add(new li.h(view, d));
+            iVar.c.add(new li.h(view, l4));
         }
         hh.k kVar = this.f;
         if (kVar != null && (viewGroup = this.g) != null && view != null) {
-            kVar.d(view, viewGroup, new b(0, d, view), z10);
+            kVar.d(view, viewGroup, new b(0, l4, view), z10);
         }
         pe.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.add(d);
+            bVar2.add(l4);
         }
-        return d;
+        return l4;
     }
 
     public final void d() {

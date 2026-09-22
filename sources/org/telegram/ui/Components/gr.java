@@ -13,10 +13,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class gr extends ab {
-    public final c80 X;
+    public final f80 X;
     public final ArrayList Y;
     public final boolean Z;
     public final boolean a0;
@@ -27,7 +27,7 @@ public final class gr extends ab {
     public final org.telegram.ui.ActionBar.n2 f0;
     public final long g0;
 
-    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, c80 c80Var) {
+    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, f80 f80Var) {
         super(n2Var, false);
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         this.f0 = n2Var;
@@ -35,7 +35,7 @@ public final class gr extends ab {
         this.v = 0.26f;
         ArrayList arrayList2 = new ArrayList(arrayList);
         this.Y = arrayList2;
-        this.X = c80Var;
+        this.X = f80Var;
         boolean isChannelOrGiga = ChatObject.isChannelOrGiga(chat);
         this.b0 = isChannelOrGiga;
         this.d0 = (TLRPC.Peer) arrayList2.get(0);
@@ -111,9 +111,9 @@ public final class gr extends ab {
                 }
             }
         });
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
+        yl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
         this.d.setOnItemClickListener(new j(this, 4));
         fixNavigationBar();
         N();
@@ -140,7 +140,7 @@ public final class gr extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         return new er(this);
     }
 

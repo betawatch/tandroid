@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fm0;
@@ -28,7 +28,7 @@ import yh.w7;
 import yh.x3;
 import yh.x5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((ug) this.b).run();
                 break;
             case 9:
-                ((k90) this.b).performClick();
+                ((n90) this.b).performClick();
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
@@ -235,9 +235,9 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.b;
-                if (b0Var.k) {
-                    b0Var.d();
+                zg.c0 c0Var = (zg.c0) this.b;
+                if (c0Var.k) {
+                    c0Var.d();
                     break;
                 }
                 break;

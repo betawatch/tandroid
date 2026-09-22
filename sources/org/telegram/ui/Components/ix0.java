@@ -1,31 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.CacheFetcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ix0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jx0 b;
-
-    public /* synthetic */ ix0(jx0 jx0Var, int i10) {
-        this.a = i10;
-        this.b = jx0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s.setVisibility(8);
-                break;
-            case 1:
-                this.b.s.setVisibility(8);
-                break;
-            default:
-                this.b.s.setVisibility(8);
-                break;
-        }
+public final class ix0 extends CacheFetcher {
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void getRemote(int i10, Object obj, long j3, Utilities.Callback4 callback4) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j3;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchCustomEmoji, new gx0(callback4, 1));
     }
 }

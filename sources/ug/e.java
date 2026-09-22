@@ -23,9 +23,9 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.voip.o;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.vy0;
 import org.telegram.ui.web.b1;
 import s4.c1;
@@ -35,9 +35,9 @@ import vg.d0;
 import vg.r;
 import vg.t;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class e extends ul0 {
+public abstract class e extends xl0 {
     public final f6 c;
     public boolean d;
     public n2 e;
@@ -49,7 +49,7 @@ public abstract class e extends ul0 {
         this.c = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         return false;
     }

@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fs0 implements Runnable {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final /* synthetic */ class fs0 implements Runnable {
                 String str = (String) obj2;
                 String str2 = (String) obj;
                 if (AndroidUtilities.isContextSafe(profileActivity3.getParentActivity())) {
-                    org.telegram.ui.Components.j41.K(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str, str2, new m20(profileActivity3, i13), null);
+                    org.telegram.ui.Components.l41.K(profileActivity3.getParentActivity(), profileActivity3, strArr[0], str, str2, new m20(profileActivity3, i13), null);
                     break;
                 }
                 break;
@@ -506,7 +506,7 @@ public final /* synthetic */ class fs0 implements Runnable {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
                 xh.j1 j1Var = (xh.j1) obj2;
                 final View view = (View) obj;
-                org.telegram.ui.Components.yr0 yr0Var = o2Var.a;
+                org.telegram.ui.Components.bs0 bs0Var = o2Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     j1Var.h(savedStarGift, true, false);
@@ -518,7 +518,7 @@ public final /* synthetic */ class fs0 implements Runnable {
                 boolean z10 = savedStarGift.pinned_to_top;
                 final boolean z11 = !z10;
                 if (o2Var.e.m(savedStarGift, z11, false)) {
-                    new xh.r2(o2Var.getContext(), yr0Var.c, savedStarGift, o2Var.c, new Utilities.Callback0Return() { // from class: xh.h2
+                    new xh.r2(o2Var.getContext(), bs0Var.c, savedStarGift, o2Var.c, new Utilities.Callback0Return() { // from class: xh.h2
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             ((j1) view).c(z11, true);
@@ -530,9 +530,9 @@ public final /* synthetic */ class fs0 implements Runnable {
                     break;
                 } else {
                     if (z10) {
-                        org.telegram.messenger.l0.o(R.string.Gift2Unpinned, org.telegram.ui.Components.xc.a0(yr0Var.a), R.raw.ic_unpin, 36);
+                        org.telegram.messenger.l0.o(R.string.Gift2Unpinned, org.telegram.ui.Components.xc.a0(bs0Var.a), R.raw.ic_unpin, 36);
                     } else {
-                        org.telegram.ui.Components.xc.a0(yr0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
+                        org.telegram.ui.Components.xc.a0(bs0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                     }
                     ((xh.j1) view).c(z11, true);
                     o2Var.f.v0(0);

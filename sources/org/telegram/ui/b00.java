@@ -14,16 +14,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class b00 extends org.telegram.ui.Components.ul0 {
+public final class b00 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ c00 c;
 
     public b00(c00 c00Var) {
         this.c = c00Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 4;
     }
@@ -221,26 +221,26 @@ public final class b00 extends org.telegram.ui.Components.ul0 {
                 }
                 view2 = z00Var;
             }
-            return new org.telegram.ui.Components.fl0(view2);
+            return new org.telegram.ui.Components.il0(view2);
         }
         Activity parentActivity = c00Var.getParentActivity();
         int i11 = R.raw.folder_share;
         tz tzVar = new tz(parentActivity);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(parentActivity);
-        kj0Var.f(i11, 90, 90, null);
-        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        kj0Var.d();
-        kj0Var.setImportantForAccessibility(2);
-        tzVar.addView(kj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
-        vh.o oVar = new vh.o(parentActivity);
-        tzVar.a = oVar;
-        oVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
-        oVar.setTextSize(1, 14.0f);
-        oVar.setGravity(17);
-        oVar.setLines(2);
-        tzVar.addView(oVar, w7.y5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(parentActivity);
+        nj0Var.f(i11, 90, 90, null);
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var.d();
+        nj0Var.setImportantForAccessibility(2);
+        tzVar.addView(nj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+        vh.n nVar = new vh.n(parentActivity);
+        tzVar.a = nVar;
+        nVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
+        nVar.setTextSize(1, 14.0f);
+        nVar.setGravity(17);
+        nVar.setLines(2);
+        tzVar.addView(nVar, w7.y5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
         view = tzVar;
         view2 = view;
-        return new org.telegram.ui.Components.fl0(view2);
+        return new org.telegram.ui.Components.il0(view2);
     }
 }

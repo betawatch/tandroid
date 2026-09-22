@@ -1,8 +1,8 @@
 package r7;
 
-import w7.f7;
+import w7.c7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class u extends t {
     public static final u e = new u(0, new Object[0]);
@@ -16,7 +16,7 @@ public final class u extends t {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        f7.a(i10, this.d);
+        c7.a(i10, this.d);
         Object obj = this.c[i10];
         obj.getClass();
         return obj;

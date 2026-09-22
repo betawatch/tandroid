@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public final m a;
@@ -38,7 +38,7 @@ public final class h implements c3.o {
             r a2 = sVar.a();
             a2.q = r0.n("application/x-media3-cues");
             a2.j = sVar.r;
-            a2.O = mVar.I();
+            a2.O = mVar.K();
             sVar2 = new s(a2);
         } else {
             sVar2 = null;

@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t50 implements Runnable {
     public final /* synthetic */ u50 a;
@@ -88,7 +88,7 @@ public final class t50 implements Runnable {
                         @Override // java.lang.Runnable
                         public final void run() {
                             u50 u50Var = t50.this.a;
-                            NotificationCenter.getInstance(u50Var.H0.d).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordProgressChanged, Integer.valueOf(u50Var.H0.T), Double.valueOf(sqrt));
+                            NotificationCenter.getInstance(u50Var.H0.f).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordProgressChanged, Integer.valueOf(u50Var.H0.V), Double.valueOf(sqrt));
                         }
                     });
                     byteBuffer.position(0);

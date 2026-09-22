@@ -3,14 +3,14 @@ package yh;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.sb0;
 import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.vb0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class t7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final s61 a;
+    public final u61 a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final int c;
     public final int d;
@@ -26,27 +26,27 @@ public final class t7 extends FrameLayout implements NotificationCenter.Notifica
         this.f = j3;
         this.b = f6Var;
         this.h = new r7(j3, i11, i10, z10);
-        s61 s61Var = new s61(context, i11, i12, true, new s7(this, 0), new r5.d(this, 27), null, f6Var);
-        this.a = s61Var;
-        addView(s61Var, w7.y5.c(-1.0f, -1));
-        s61Var.setOnScrollListener(new sb0(this, 22));
+        u61 u61Var = new u61(context, i11, i12, true, new s7(this, 0), new r5.d(this, 27), null, f6Var);
+        this.a = u61Var;
+        addView(u61Var, w7.y5.c(-1.0f, -1));
+        u61Var.setOnScrollListener(new vb0(this, 22));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12 = NotificationCenter.starTransactionsLoaded;
-        s61 s61Var = this.a;
+        u61 u61Var = this.a;
         if (i10 != i12) {
             if (i10 == NotificationCenter.botStarsTransactionsLoaded && ((Long) objArr[0]).longValue() == this.f) {
-                s61Var.Y2.N(true);
+                u61Var.Y2.N(true);
                 return;
             }
             return;
         }
-        s61Var.Y2.N(true);
-        if (s61Var.canScrollVertically(1)) {
-            for (int i13 = 0; i13 < s61Var.getChildCount(); i13++) {
-                if (!(s61Var.getChildAt(i13) instanceof t00)) {
+        u61Var.Y2.N(true);
+        if (u61Var.canScrollVertically(1)) {
+            for (int i13 = 0; i13 < u61Var.getChildCount(); i13++) {
+                if (!(u61Var.getChildAt(i13) instanceof t00)) {
                 }
             }
             return;

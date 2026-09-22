@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sc implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -34,13 +34,13 @@ public final /* synthetic */ class sc implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.gh(29, (pc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j3)));
                 break;
             default:
-                ((jv0) obj2).getStoriesController().b(i11, j3, (ArrayList) obj);
+                ((lv0) obj2).getStoriesController().b(i11, j3, (ArrayList) obj);
                 break;
         }
     }
 
-    public /* synthetic */ sc(jv0 jv0Var, long j3, int i10) {
-        this.d = jv0Var;
+    public /* synthetic */ sc(lv0 lv0Var, long j3, int i10) {
+        this.d = lv0Var;
         this.b = j3;
         this.c = i10;
     }

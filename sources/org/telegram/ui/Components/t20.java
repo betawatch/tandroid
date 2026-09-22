@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.lb1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -19,11 +19,11 @@ public final class t20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public t20(lb1 lb1Var, ui uiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.lk lkVar, org.telegram.ui.zn znVar) {
+    public t20(lb1 lb1Var, ui uiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.mk mkVar, org.telegram.ui.zn znVar) {
         this.f = lb1Var;
         this.b = uiVar;
         this.c = u1Var;
-        this.d = lkVar;
+        this.d = mkVar;
         this.e = znVar;
     }
 

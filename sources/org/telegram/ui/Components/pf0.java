@@ -1,79 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class pf0 extends View {
-    public long E;
-    public float F;
-    public float G;
-    public float H;
-    public jc0 I;
-    public TextPaint a;
-    public TextPaint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
-    public float n;
-    public boolean r;
-    public d6 s;
-    public boolean v;
-    public rf0 w;
-    public ci.ka x;
-    public boolean y;
+public final class pf0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ia b;
+    public final /* synthetic */ uf0 c;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.s.e(this.r);
-        if (e <= 0.0f || this.c == null || this.f == null) {
+    public pf0(uf0 uf0Var, boolean z10, ia iaVar) {
+        this.c = uf0Var;
+        this.a = z10;
+        this.b = iaVar;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        uf0 uf0Var = this.c;
+        TextureView textureView = uf0Var.i0;
+        if (uf0Var.l0 != null || surfaceTexture == null) {
             return;
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
-        canvas.save();
-        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
-        this.c.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
-        this.f.draw(canvas);
-        canvas.restore();
-        canvas.restore();
+        vz vzVar = new vz(surfaceTexture, uf0Var.C0, uf0Var.H0, uf0Var.w0, this.a, this.b, i10, i11);
+        uf0Var.l0 = vzVar;
+        if (!this.a) {
+            vzVar.i(uf0Var.J0, uf0Var.K0);
+            vz vzVar2 = uf0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            oa oaVar = vzVar2.I;
+            if (oaVar != null) {
+                Matrix matrix = oaVar.v;
+                transform.invert(matrix);
+                float f7 = width;
+                float f10 = height;
+                matrix.preScale(f7, f10);
+                matrix.postScale(1.0f / f7, 1.0f / f10);
+                oaVar.c(matrix);
+                vzVar2.e(false, false, false);
+            }
+        }
+        uf0Var.l0.f(uf0Var);
+        vz vzVar3 = uf0Var.l0;
+        vzVar3.getClass();
+        vzVar3.postRunnable(new rz(vzVar3, i10, i11, 1));
+        uf0Var.l0.e(true, true, false);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        TextPaint textPaint = this.a;
-        textPaint.setColor(-1);
-        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
-        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
-        TextPaint textPaint2 = this.b;
-        textPaint2.setColor(-1);
-        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
-        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        uf0 uf0Var = this.c;
+        vz vzVar = uf0Var.l0;
+        if (vzVar == null) {
+            return true;
+        }
+        vzVar.postRunnable(new sz(vzVar, 0));
+        uf0Var.l0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        uf0 uf0Var = this.c;
+        vz vzVar = uf0Var.l0;
+        if (vzVar != null) {
+            vzVar.postRunnable(new rz(vzVar, i10, i11, 1));
+            uf0Var.l0.e(false, true, false);
+            uf0Var.l0.postRunnable(new jc0(this, 7));
         }
     }
 
-    public void setAllowTouch(boolean z10) {
-        this.v = z10;
-    }
-
-    public void setFilterView(rf0 rf0Var) {
-        this.w = rf0Var;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

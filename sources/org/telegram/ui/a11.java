@@ -12,9 +12,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class a11 extends View implements org.telegram.ui.Components.th0 {
+public final class a11 extends View implements org.telegram.ui.Components.wh0 {
     public boolean E;
     public float F;
     public float G;
@@ -143,24 +143,24 @@ public final class a11 extends View implements org.telegram.ui.Components.th0 {
         ofFloat2.addListener(new gp0(this, 15));
     }
 
-    @Override // org.telegram.ui.Components.th0
+    @Override // org.telegram.ui.Components.wh0
     public final void a() {
         Arrays.fill(this.x, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.th0
+    @Override // org.telegram.ui.Components.wh0
     public final void b(boolean z10) {
         this.x[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.th0
+    @Override // org.telegram.ui.Components.wh0
     public final void c() {
         this.P.i5(false);
     }
 
-    @Override // org.telegram.ui.Components.th0
+    @Override // org.telegram.ui.Components.wh0
     public final void d() {
         invalidate();
     }

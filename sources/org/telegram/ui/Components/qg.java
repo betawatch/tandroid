@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class qg extends j1.b {
     public final /* synthetic */ rg o;
@@ -21,19 +21,19 @@ public final class qg extends j1.b {
     public final int g(float f7, float f10) {
         rg rgVar = this.o;
         ChatActivityEnterView chatActivityEnterView = rgVar.V;
-        if (chatActivityEnterView.r4 && chatActivityEnterView.M1 != null && chatActivityEnterView.R3.contains(f7, f10)) {
+        if (chatActivityEnterView.s4 && chatActivityEnterView.N1 != null && chatActivityEnterView.S3.contains(f7, f10)) {
             return 2;
         }
-        return (!chatActivityEnterView.P || chatActivityEnterView.M1 == null || chatActivityEnterView.m4 <= 0.1f || !rgVar.J.contains(f7, f10)) ? -1 : 4;
+        return (!chatActivityEnterView.P || chatActivityEnterView.N1 == null || chatActivityEnterView.n4 <= 0.1f || !rgVar.J.contains(f7, f10)) ? -1 : 4;
     }
 
     @Override // j1.b
     public final void h(ArrayList arrayList) {
         ChatActivityEnterView chatActivityEnterView = this.o.V;
-        if (chatActivityEnterView.r4) {
+        if (chatActivityEnterView.s4) {
             arrayList.add(2);
         }
-        if (!chatActivityEnterView.P || chatActivityEnterView.M1 == null || chatActivityEnterView.m4 <= 0.1f) {
+        if (!chatActivityEnterView.P || chatActivityEnterView.N1 == null || chatActivityEnterView.n4 <= 0.1f) {
             return;
         }
         arrayList.add(4);
@@ -49,18 +49,18 @@ public final class qg extends j1.b {
         rg rgVar = this.o;
         ChatActivityEnterView chatActivityEnterView = rgVar.V;
         if (i10 == 2) {
-            Rect rect = chatActivityEnterView.T3;
-            RectF rectF = chatActivityEnterView.R3;
+            Rect rect = chatActivityEnterView.U3;
+            RectF rectF = chatActivityEnterView.S3;
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(chatActivityEnterView.T3);
-            dVar.o(LocaleController.getString(chatActivityEnterView.o4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
+            dVar.h(chatActivityEnterView.U3);
+            dVar.o(LocaleController.getString(chatActivityEnterView.p4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
             return;
         }
         if (i10 == 4) {
-            Rect rect2 = chatActivityEnterView.T3;
+            Rect rect2 = chatActivityEnterView.U3;
             RectF rectF2 = rgVar.J;
             rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            dVar.h(chatActivityEnterView.T3);
+            dVar.h(chatActivityEnterView.U3);
             dVar.o(LocaleController.getString(chatActivityEnterView.O ? R.string.AccActionOnceDeactivate : R.string.AccActionOnceActivate));
         }
     }

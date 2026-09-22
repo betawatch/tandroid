@@ -23,16 +23,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class x8 extends FrameLayout {
     public static final u8 J = new u8("animationProgress", 0);
     public int E;
     public final org.telegram.ui.ActionBar.f6 F;
-    public kj0 G;
+    public nj0 G;
     public boolean H;
     public boolean I;
     public boolean a;
@@ -101,9 +101,9 @@ public class x8 extends FrameLayout {
 
     public final void c(int i10, int i11) {
         if (this.G == null) {
-            kj0 kj0Var = new kj0(getContext());
-            this.G = kj0Var;
-            kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            nj0 nj0Var = new nj0(getContext());
+            this.G = nj0Var;
+            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.G, w7.y5.d(29, 29.0f, (LocaleController.isRTL ? 5 : 3) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
             this.E = AndroidUtilities.dp(65.0f);
             TextView textView = this.c;

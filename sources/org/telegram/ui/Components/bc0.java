@@ -1,183 +1,138 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class bc0 extends View {
-    public final ArrayList a;
-    public float b;
-    public final Paint c;
-    public final int d;
-    public final int e;
-    public Drawable f;
-    public float h;
-    public float n;
-    public final RectF r;
-    public Utilities.Callback s;
+public final class bc0 extends Drawable {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public bc0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        int[] iArr;
-        this.a = new ArrayList();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.h = AndroidUtilities.dp(14.0f);
-        this.n = AndroidUtilities.dp(0.0f);
-        this.r = new RectF();
-        if (org.telegram.ui.ActionBar.j6.I.q()) {
-            this.d = -1862270977;
-            this.e = -1325400065;
-            paint.setColor(285212671);
-            return;
-        }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Nd, f6Var);
-        if (f6Var instanceof org.telegram.ui.xn) {
-            org.telegram.ui.xn xnVar = (org.telegram.ui.xn) f6Var;
-            if ((xnVar.d() instanceof kc0) && (iArr = ((kc0) xnVar.d()).a) != null) {
-                v02 = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(iArr[0], iArr[1]), AndroidUtilities.getAverageColor(iArr[2], iArr[3]));
-            }
-        }
-        this.d = org.telegram.ui.ActionBar.j6.c(-1606201797, v02);
-        this.e = org.telegram.ui.ActionBar.j6.c(-448573893, v02);
-        paint.setColor(org.telegram.ui.ActionBar.j6.c(814980216, v02));
-    }
-
-    public final void a(int i10, String str) {
-        this.a.add(new ac0(i10, str));
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 1) {
-            return;
-        }
-        float f7 = this.b;
-        double d = f7;
-        int floor = (int) Math.floor(d);
-        boolean z10 = floor >= 0 && floor < arrayList.size();
-        int ceil = (int) Math.ceil(d);
-        boolean z11 = ceil >= 0 && ceil < arrayList.size();
-        RectF rectF = this.r;
-        if (z10 && z11) {
-            AndroidUtilities.lerp(((ac0) arrayList.get(floor)).c, ((ac0) arrayList.get(ceil)).c, f7 - floor, rectF);
-        } else if (z10) {
-            rectF.set(((ac0) arrayList.get(floor)).c);
-        } else if (z11) {
-            rectF.set(((ac0) arrayList.get(ceil)).c);
-        }
-        Drawable drawable = this.f;
-        if (drawable != null) {
-            drawable.draw(canvas);
-        }
-        if (z10 || z11) {
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.c);
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ac0 ac0Var = (ac0) arrayList.get(i10);
-            ac0Var.b.c(ac0Var.c.left + this.h, getMeasuredHeight() / 2.0f, 1.0f, i0.a.d(1.0f - Math.abs(f7 - i10), this.d, this.e), canvas);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        Utilities.Callback callback;
-        ArrayList arrayList = this.a;
-        if (arrayList.size() > 1) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            int i11 = 0;
-            while (true) {
-                if (i11 >= arrayList.size()) {
-                    i10 = -1;
-                    break;
-                }
-                if (((ac0) arrayList.get(i11)).d.contains(x10, y3)) {
-                    i10 = ((ac0) arrayList.get(i11)).a;
-                    break;
-                }
-                i11++;
-            }
-            if (motionEvent.getAction() == 0) {
-                if (i10 != -1) {
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 && i10 != -1 && (callback = this.s) != null) {
-                callback.run(Integer.valueOf(i10));
-            }
-        }
-        return false;
-    }
-
-    public int getColor() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ArrayList arrayList;
-        super.onMeasure(i10, i11);
-        this.h = AndroidUtilities.dp(14.0f);
-        float f7 = 0.0f;
-        this.n = AndroidUtilities.dp(0.0f);
-        int i12 = 0;
-        while (true) {
-            arrayList = this.a;
-            if (i12 >= arrayList.size()) {
+    public bc0(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = new Paint(1);
+                Paint paint = new Paint(1);
+                this.d = paint;
+                this.e = new Matrix();
+                paint.setStyle(Paint.Style.STROKE);
+                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
                 break;
-            }
-            if (i12 > 0) {
-                f7 += this.n;
-            }
-            f7 += ((ac0) arrayList.get(i12)).b.l() + this.h + this.h;
-            i12++;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        float dp = (measuredHeight - AndroidUtilities.dp(26.0f)) / 2.0f;
-        float dp2 = (AndroidUtilities.dp(26.0f) + measuredHeight) / 2.0f;
-        float f10 = measuredWidth;
-        float f11 = (f10 - f7) / 2.0f;
-        float f12 = f11;
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            float l4 = ((ac0) arrayList.get(i13)).b.l() + this.h + this.h;
-            ((ac0) arrayList.get(i13)).c.set(f12, dp, f12 + l4, dp2);
-            ((ac0) arrayList.get(i13)).d.set(((ac0) arrayList.get(i13)).c);
-            ((ac0) arrayList.get(i13)).d.inset((-this.n) / 2.0f, -dp);
-            f12 += l4 + this.n;
-        }
-        Drawable drawable = this.f;
-        if (drawable != null) {
-            Rect rect = AndroidUtilities.rectTmp2;
-            drawable.getPadding(rect);
-            int i14 = measuredHeight / 2;
-            this.f.setBounds((((int) f11) - AndroidUtilities.dp(3.0f)) - rect.left, (i14 - AndroidUtilities.dp(16.0f)) - rect.top, AndroidUtilities.dp(3.0f) + ((int) ((f10 + f7) / 2.0f)) + rect.right, AndroidUtilities.dp(16.0f) + i14 + rect.bottom);
         }
     }
 
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        this.f = drawable;
+    public void b(int i10, int i11) {
+        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    public void setOnTabClick(Utilities.Callback<Integer> callback) {
-        this.s = callback;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                kj0 kj0Var = (kj0) this.d;
+                kj0 kj0Var2 = (kj0) this.c;
+                Rect rect = AndroidUtilities.rectTmp2;
+                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
+                if (((kj0) this.e).A()) {
+                    kj0 kj0Var3 = (kj0) this.e;
+                    boolean z10 = this.b;
+                    if (kj0Var3 != (z10 ? kj0Var2 : kj0Var)) {
+                        if (z10) {
+                            kj0Var = kj0Var2;
+                        }
+                        this.e = kj0Var;
+                        kj0Var.M(kj0Var.e[0] - 1);
+                    }
+                }
+                ((kj0) this.e).setBounds(rect);
+                ((kj0) this.e).draw(canvas);
+                break;
+            default:
+                Paint paint = (Paint) this.d;
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(getBounds());
+                Matrix matrix = (Matrix) this.e;
+                matrix.reset();
+                matrix.postTranslate(rectF.left, rectF.top);
+                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
+                if (this.b) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    paint.setStrokeWidth(dp2);
+                    matrix.reset();
+                    matrix.postTranslate(rectF.left, rectF.top);
+                    float f7 = dp2 / 2.0f;
+                    rectF.inset(f7, f7);
+                    canvas.drawRoundRect(rectF, dp, dp, paint);
+                    break;
+                }
+                break;
+        }
     }
 
-    public void setSelectedTab(float f7) {
-        this.b = f7;
-        invalidate();
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((kj0) this.c).setAlpha(i10);
+                ((kj0) this.d).setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((kj0) this.c).setColorFilter(colorFilter);
+                ((kj0) this.d).setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

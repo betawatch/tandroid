@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class me implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        lk lkVar;
+        mk mkVar;
         org.telegram.ui.Cells.u1 u1Var;
         MessageObject messageObject;
         int i10 = this.a;
@@ -70,8 +70,8 @@ public final /* synthetic */ class me implements Runnable {
                 znVar.s8 = null;
                 break;
             case 4:
-                if (!org.telegram.ui.ActionBar.n2.hasSheets(znVar) && (lkVar = znVar.Y) != null) {
-                    lkVar.setFieldFocused(true);
+                if (!org.telegram.ui.ActionBar.n2.hasSheets(znVar) && (mkVar = znVar.Y) != null) {
+                    mkVar.setFieldFocused(true);
                     znVar.Y.H0();
                     break;
                 }
@@ -80,13 +80,13 @@ public final /* synthetic */ class me implements Runnable {
                 znVar.o9();
                 AndroidUtilities.forEachViews((RecyclerView) znVar.x0, (e2.h) new lf(znVar, 1));
                 znVar.u7();
-                ck ckVar = znVar.X2;
+                dk dkVar = znVar.X2;
+                if (dkVar != null) {
+                    dkVar.setTranslationX(znVar.R8() / 2.0f);
+                }
+                ck ckVar = znVar.Y2;
                 if (ckVar != null) {
                     ckVar.setTranslationX(znVar.R8() / 2.0f);
-                }
-                bk bkVar = znVar.Y2;
-                if (bkVar != null) {
-                    bkVar.setTranslationX(znVar.R8() / 2.0f);
                 }
                 FrameLayout frameLayout = znVar.Q0;
                 if (frameLayout != null) {
@@ -130,9 +130,9 @@ public final /* synthetic */ class me implements Runnable {
                 zn.K0(znVar);
                 break;
             case 13:
-                bl blVar = znVar.ab;
-                if (blVar != null) {
-                    blVar.requestLayout();
+                cl clVar = znVar.ab;
+                if (clVar != null) {
+                    clVar.requestLayout();
                     break;
                 }
                 break;
@@ -145,9 +145,9 @@ public final /* synthetic */ class me implements Runnable {
                 break;
             case 16:
                 znVar.resumeDelayedFragmentAnimation();
-                mk mkVar = znVar.W9;
-                AndroidUtilities.cancelRunOnUIThread(mkVar);
-                mkVar.run();
+                nk nkVar = znVar.W9;
+                AndroidUtilities.cancelRunOnUIThread(nkVar);
+                nkVar.run();
                 znVar.getNotificationCenter().runDelayedNotifications();
                 break;
             case 17:
@@ -186,7 +186,7 @@ public final /* synthetic */ class me implements Runnable {
                 zn znVar2 = this.b;
                 int i13 = znVar2.pb;
                 if (i13 != 0) {
-                    znVar2.F(i13, znVar2.qb, znVar2.sb, znVar2.ub, znVar2.rb, znVar2.tb);
+                    znVar2.E(i13, znVar2.qb, znVar2.sb, znVar2.ub, znVar2.rb, znVar2.tb);
                     znVar2.pb = 0;
                     break;
                 }
@@ -300,9 +300,9 @@ public final /* synthetic */ class me implements Runnable {
                 zn.y0(znVar);
                 break;
             case 27:
-                lk lkVar2 = znVar.Y;
-                if (lkVar2 != null && znVar.nb != 5) {
-                    lkVar2.H0();
+                mk mkVar2 = znVar.Y;
+                if (mkVar2 != null && znVar.nb != 5) {
+                    mkVar2.H0();
                     break;
                 }
                 break;

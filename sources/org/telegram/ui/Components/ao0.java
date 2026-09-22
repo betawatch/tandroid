@@ -1,98 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ao0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.uy b;
-    public final /* synthetic */ org.telegram.ui.ey c;
+public final class ao0 extends lx0 {
+    public final /* synthetic */ int K;
+    public final /* synthetic */ org.telegram.ui.ey L;
 
-    public /* synthetic */ ao0(org.telegram.ui.ey eyVar, org.telegram.ui.uy uyVar, int i10) {
-        this.a = i10;
-        this.c = eyVar;
-        this.b = uyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ao0(org.telegram.ui.ey eyVar, Context context, t00 t00Var, int i10) {
+        super(context, t00Var, 1, null);
+        this.K = i10;
+        this.L = eyVar;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.lx0, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K) {
             case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
                     break;
                 }
-                break;
             case 1:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
                     break;
                 }
-                break;
             case 2:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
                     break;
                 }
-                break;
             default:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.gy gyVar;
-        int i12;
-        vl0 vl0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ey eyVar = this.c;
-                eyVar.p0.V();
-                eyVar.T(i10, i11);
-                break;
-            case 1:
-                org.telegram.ui.ey eyVar2 = this.c;
-                eyVar2.w0.W();
-                eyVar2.T(i10, i11);
-                break;
-            case 2:
-                org.telegram.ui.ey eyVar3 = this.c;
-                eo0 eo0Var = eyVar3.c0;
-                s4.c0 c0Var = eyVar3.d0;
-                int L0 = c0Var.L0();
-                int N0 = c0Var.N0();
-                int abs = Math.abs(c0Var.N0() - L0) + 1;
-                int h = recyclerView.getAdapter().h();
-                if (abs > 0 && (((eo0Var.U.a() != 0 && !eo0Var.X) || !eo0Var.W) && (N0 == h - 1 || ((gyVar = eo0Var.U) != null && gyVar.a() != 0 && (i12 = eo0Var.Y) >= 0 && L0 <= i12 && N0 >= i12)))) {
-                    eo0Var.Q();
-                }
-                eyVar3.T(i10, i11);
-                break;
-            default:
-                org.telegram.ui.ey eyVar4 = this.c;
-                go0 go0Var = eyVar4.k0;
-                if (go0Var.Y && !go0Var.W && !TextUtils.isEmpty(go0Var.b0) && (vl0Var = go0Var.d) != null) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < vl0Var.getChildCount()) {
-                            if (!(vl0Var.getChildAt(i13) instanceof t00)) {
-                                i13++;
-                            } else if (go0Var.Y && !go0Var.W && !TextUtils.isEmpty(go0Var.b0)) {
-                                go0Var.V(true);
-                            }
-                        }
-                    }
-                }
-                eyVar4.T(i10, i11);
-                break;
         }
     }
 }

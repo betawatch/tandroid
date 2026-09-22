@@ -23,7 +23,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class b80 extends DispatchQueue {
     public static final /* synthetic */ int y = 0;
@@ -37,7 +37,7 @@ public final class b80 extends DispatchQueue {
     public final int[] n;
     public float r;
     public long s;
-    public final org.telegram.ui.Components.ig0 v;
+    public final org.telegram.ui.Components.lg0 v;
     public final w5 w;
     public final /* synthetic */ d80 x;
 
@@ -46,7 +46,7 @@ public final class b80 extends DispatchQueue {
         super("EGLThread");
         this.x = d80Var;
         this.n = new int[24];
-        this.v = new org.telegram.ui.Components.ig0(27);
+        this.v = new org.telegram.ui.Components.lg0(27);
         this.w = new w5(this, 7);
         this.a = surfaceTexture;
     }
@@ -182,7 +182,7 @@ public final class b80 extends DispatchQueue {
                             b(R.drawable.intro_private_door, 19, 0, false);
                             b(R.drawable.intro_private_screw, 20, 0, false);
                             b(R.drawable.intro_tg_plane, 21, 0, false);
-                            c(new org.telegram.ui.Components.ig0(28), 22, false);
+                            c(new org.telegram.ui.Components.lg0(28), 22, false);
                             c(this.v, 23, false);
                             Intro.setTelegramTextures(iArr2[22], iArr2[21], iArr2[23]);
                             Intro.setPowerfulTextures(iArr2[17], iArr2[18], iArr2[16], iArr2[15]);

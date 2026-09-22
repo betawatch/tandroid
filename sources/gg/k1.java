@@ -52,20 +52,20 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.e8;
 import org.telegram.ui.Cells.i5;
-import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.ta0;
 import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class k1 extends ul0 implements NotificationCenter.NotificationCenterDelegate {
+public final class k1 extends xl0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
     public HashMap B0;
     public String D0;
@@ -92,7 +92,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
     public long S;
     public TLRPC.TL_inlineBotSwitchPM T;
     public TLRPC.TL_inlineBotWebView U;
-    public final qa0 V;
+    public final ta0 V;
     public a0.i W;
     public int X;
     public int Y;
@@ -140,10 +140,10 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
     public boolean L0 = false;
     public int M0 = -1;
 
-    public k1(Context context, long j3, long j10, qa0 qa0Var, f6 f6Var, boolean z10) {
+    public k1(Context context, long j3, long j10, ta0 ta0Var, f6 f6Var, boolean z10) {
         this.H0 = f6Var;
         this.h = context;
-        this.V = qa0Var;
+        this.V = ta0Var;
         this.n = j3;
         this.s = z10;
         this.r = j10;
@@ -175,7 +175,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return (this.w0 == null || this.h0) && this.A0 == null;
     }
@@ -476,7 +476,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat;
         this.t0 = 0;
         this.I0.stop();
-        qa0 qa0Var = this.V;
+        ta0 ta0Var = this.V;
         if (user == null || !user.bot || user.bot_inline_placeholder == null) {
             this.w0 = null;
             this.T = null;
@@ -494,7 +494,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
                 this.h0 = canSendStickers;
                 if (!canSendStickers) {
                     l();
-                    qa0Var.a(true);
+                    ta0Var.a(true);
                     return;
                 }
             }
@@ -517,8 +517,8 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
             this.v0 = true;
             this.T = null;
         } else {
-            if (qa0Var != null) {
-                qa0Var.b(true);
+            if (ta0Var != null) {
+                ta0Var.b(true);
             }
             T(true, this.w0, this.r0, "");
         }
@@ -538,12 +538,12 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
         TLRPC.User user = this.w0;
         if (user == null || (str4 = user.username) == null || !str4.equals(str) || (str5 = this.r0) == null || !str5.equals(str2)) {
             TLRPC.User user2 = this.w0;
-            qa0 qa0Var = this.V;
+            ta0 ta0Var = this.V;
             if (user2 != null) {
                 if (!this.h0 && str != null && str2 != null) {
                     return;
                 } else {
-                    qa0Var.a(false);
+                    ta0Var.a(false);
                 }
             }
             b1 b1Var = this.y0;
@@ -567,19 +567,19 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
                 this.r0 = null;
                 this.I0.stop();
                 this.v0 = false;
-                if (qa0Var != null) {
-                    qa0Var.b(false);
+                if (ta0Var != null) {
+                    ta0Var.b(false);
                 }
                 if (str != null) {
                 }
             }
             if (str2 != null) {
-                if (qa0Var != null) {
+                if (ta0Var != null) {
                     if (this.w0 != null) {
-                        qa0Var.b(true);
+                        ta0Var.b(true);
                     } else if (str.equals("gif")) {
                         this.q0 = "gif";
-                        qa0Var.b(false);
+                        ta0Var.b(false);
                     }
                 }
                 MessagesController messagesController = MessagesController.getInstance(this.f);
@@ -595,8 +595,8 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
                 this.u0 = 0;
             }
             this.r0 = null;
-            if (qa0Var != null) {
-                qa0Var.b(false);
+            if (ta0Var != null) {
+                ta0Var.b(false);
             }
         }
     }
@@ -608,9 +608,9 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
             this.u0 = 0;
         }
         if (!this.h0 || !this.d) {
-            qa0 qa0Var = this.V;
-            if (qa0Var != null) {
-                qa0Var.b(false);
+            ta0 ta0Var = this.V;
+            if (ta0Var != null) {
+                ta0Var.b(false);
                 return;
             }
             return;
@@ -732,7 +732,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
     /* JADX WARN: Type inference failed for: r11v45 */
     /* JADX WARN: Type inference failed for: r11v68 */
     /* JADX WARN: Type inference failed for: r11v69 */
-    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.qa0] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.ta0] */
     /* JADX WARN: Type inference failed for: r26v0, types: [gg.k1, java.lang.Object, s4.h0] */
     /* JADX WARN: Type inference failed for: r3v25, types: [gg.i1] */
     /* JADX WARN: Type inference failed for: r6v18 */
@@ -1590,7 +1590,7 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
         String str;
         String str2;
         int i10 = this.M0;
-        qa0 qa0Var = this.V;
+        ta0 ta0Var = this.V;
         int i11 = 0;
         if (i10 != -1 && this.K0 != null) {
             int K = K();
@@ -1625,15 +1625,15 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
             }
             t(min, i10 - min);
             s(min, K - min);
-            if (z10 && qa0Var != null) {
-                qa0Var.c();
+            if (z10 && ta0Var != null) {
+                ta0Var.c();
             }
             this.K0 = objArr;
             return;
         }
-        if (qa0Var != null) {
+        if (ta0Var != null) {
             this.M0 = K();
-            qa0Var.c();
+            ta0Var.c();
         }
         super.l();
         int K2 = K();
@@ -1927,12 +1927,12 @@ public final class k1 extends ul0 implements NotificationCenter.NotificationCent
                 f2Var.setDelegate(new w0(this));
                 view2 = f2Var;
             }
-            return new fl0(view2);
+            return new il0(view2);
         }
         i5 i5Var = new i5(context, f6Var);
         i5Var.setIsDarkTheme(false);
         view = i5Var;
         view2 = view;
-        return new fl0(view2);
+        return new il0(view2);
     }
 }

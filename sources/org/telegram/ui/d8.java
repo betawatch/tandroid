@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class d8 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ Context a;
@@ -284,12 +284,12 @@ public final class d8 extends GestureDetector.SimpleOnGestureListener {
         org.telegram.ui.ActionBar.d5 d5Var5;
         g8 a2;
         MessageObject messageObject;
-        ka.c cVar;
+        o0.b bVar;
         f8 f8Var = this.b;
         i8 i8Var = f8Var.x;
         d5Var = ((org.telegram.ui.ActionBar.n2) i8Var).parentLayout;
         if (d5Var != null) {
-            if (((i8Var.e0 == 1 && f8Var.n != null) || i8Var.f0 != null) && (a2 = a(motionEvent.getX(), motionEvent.getY())) != null && (messageObject = a2.a) != null && (cVar = i8Var.M) != null) {
+            if (((i8Var.e0 == 1 && f8Var.n != null) || i8Var.f0 != null) && (a2 = a(motionEvent.getX(), motionEvent.getY())) != null && (messageObject = a2.a) != null && (bVar = i8Var.M) != null) {
                 if (i8Var.f0 != null) {
                     ai.jc orCreateStoryViewer = i8Var.getOrCreateStoryViewer();
                     Context context = f8Var.getContext();
@@ -306,16 +306,16 @@ public final class d8 extends GestureDetector.SimpleOnGestureListener {
                 } else {
                     int id3 = messageObject.getId();
                     int i10 = a2.c;
-                    org.telegram.ui.Components.jv0 jv0Var = (org.telegram.ui.Components.jv0) cVar.b;
+                    org.telegram.ui.Components.lv0 lv0Var = (org.telegram.ui.Components.lv0) bVar.b;
                     int i11 = -1;
-                    for (int i12 = 0; i12 < jv0Var.t1[0].a.size(); i12++) {
-                        if (((MessageObject) jv0Var.t1[0].a.get(i12)).getId() == id3) {
+                    for (int i12 = 0; i12 < lv0Var.t1[0].a.size(); i12++) {
+                        if (((MessageObject) lv0Var.t1[0].a.get(i12)).getId() == id3) {
                             i11 = i12;
                         }
                     }
-                    org.telegram.ui.Components.cu0 W = jv0Var.W(0);
+                    org.telegram.ui.Components.eu0 W = lv0Var.W(0);
                     if (i11 < 0 || W == null) {
-                        jv0Var.y0(0, id3, i10, true);
+                        lv0Var.y0(0, id3, i10, true);
                     } else {
                         W.x.h1(i11, 0);
                     }

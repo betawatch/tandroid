@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ ke a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.a2, U
         od odVar = keVar.v1;
         int i10 = keVar.y0;
         long j3 = keVar.z0;
-        int i11 = ((org.telegram.ui.Components.w51) obj).d;
+        int i11 = ((org.telegram.ui.Components.y51) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
                 keVar.w0.presentFragment(new ei.e4(j3));

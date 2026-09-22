@@ -21,19 +21,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
 import org.telegram.ui.fj0;
 import org.telegram.ui.fm0;
 import org.telegram.ui.i60;
-import org.telegram.ui.kl;
+import org.telegram.ui.ll;
 import org.telegram.ui.pn0;
 import org.telegram.ui.sm0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class l0 implements Runnable {
                 ((ConnectionsManager) this.d).lambda$cancelRequest$10((Runnable) this.e, this.b, this.c);
                 break;
             case 2:
-                kl klVar = (kl) this.d;
+                ll llVar = (ll) this.d;
                 boolean z10 = this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 int i11 = this.b;
-                zn znVar = klVar.b;
+                zn znVar = llVar.b;
                 if (!z10) {
                     if (znVar.h4) {
                         for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -109,23 +109,23 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 break;
             case 5:
-                iw0 iw0Var = (iw0) this.d;
+                kw0 kw0Var = (kw0) this.d;
                 boolean z13 = this.c;
                 int i15 = this.b;
                 u1 u1Var = (u1) this.e;
-                if (z13 && iw0Var.Q == null && iw0Var.R == null && iw0Var.P == null) {
-                    iw0Var.J = 2;
-                    iw0Var.X0 = true;
+                if (z13 && kw0Var.Q == null && kw0Var.R == null && kw0Var.P == null) {
+                    kw0Var.J = 2;
+                    kw0Var.X0 = true;
                 }
-                iw0Var.V0 = false;
-                if (iw0Var.Y0 || !iw0Var.W0) {
-                    iw0Var.U0 = iw0Var.i1[0];
+                kw0Var.V0 = false;
+                if (kw0Var.Y0 || !kw0Var.W0) {
+                    kw0Var.U0 = kw0Var.i1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(u1Var);
-                    iw0Var.I();
-                    iw0Var.x();
+                    kw0Var.I();
+                    kw0Var.x();
                     break;
                 } else {
-                    iw0Var.C(true);
+                    kw0Var.C(true);
                     break;
                 }
                 break;
@@ -255,25 +255,25 @@ public final /* synthetic */ class l0 implements Runnable {
         }
     }
 
-    public /* synthetic */ l0(kl klVar, boolean z10, ArrayList arrayList, int i10) {
+    public /* synthetic */ l0(ll llVar, boolean z10, ArrayList arrayList, int i10) {
         this.a = 2;
-        this.d = klVar;
+        this.d = llVar;
         this.c = z10;
         this.e = arrayList;
         this.b = i10;
     }
 
-    public /* synthetic */ l0(iw0 iw0Var, boolean z10, int i10, u1 u1Var) {
+    public /* synthetic */ l0(kw0 kw0Var, boolean z10, int i10, u1 u1Var) {
         this.a = 5;
-        this.d = iw0Var;
+        this.d = kw0Var;
         this.c = z10;
         this.b = i10;
         this.e = u1Var;
     }
 
-    public /* synthetic */ l0(k61 k61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ l0(m61 m61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = k61Var;
+        this.d = m61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

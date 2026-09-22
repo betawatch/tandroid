@@ -68,13 +68,13 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.nc;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.x21;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.z21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bj1;
@@ -84,7 +84,7 @@ import org.telegram.ui.n31;
 import org.telegram.ui.u21;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class u5 {
     public static volatile u5[][] S = (u5[][]) Array.newInstance((Class<?>) u5.class, 2, 4);
@@ -432,7 +432,7 @@ public final class u5 {
             return;
         }
         if (!this.e) {
-            r(new x21(this, callback, starGift, j3, 11));
+            r(new z21(this, callback, starGift, j3, 11));
             return;
         }
         TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
@@ -757,7 +757,7 @@ public final class u5 {
                 frameLayout3.addView(textView, w7.y5.q(-2, 16, 119));
                 frameLayout2.addView(frameLayout3, w7.y5.a(-2.0f, 18.66f, 81));
                 k7 k7Var = new k7(context2, i19, I);
-                w7.b6.a(k7Var);
+                w7.a6.a(k7Var);
                 k7Var.setOnClickListener(new g6(k7Var, i12));
                 viewGroup.addView(k7Var, w7.y5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
                 f7.addView(viewGroup, w7.y5.q(i11, 117, 7));
@@ -898,13 +898,13 @@ public final class u5 {
                     dVar.g(w7.Q0(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsConfirmPurchaseButton", (int) j11))), i12, r22);
                 }
                 f7.addView(dVar, w7.y5.c(48.0f, -1));
-                k90 k90Var = new k90(context2, I);
-                k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, I));
-                k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
-                k90Var.setTextSize(r22, 14.0f);
-                k90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(i10 <= 0 ? R.string.StarsConfirmSubscriptionTOS : R.string.StarsConfirmPurchaseTOS), new di.a(context2, 8)));
-                k90Var.setGravity(17);
-                f7.addView(k90Var, w7.y5.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
+                n90 n90Var = new n90(context2, I);
+                n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, I));
+                n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
+                n90Var.setTextSize(r22, 14.0f);
+                n90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(i10 <= 0 ? R.string.StarsConfirmSubscriptionTOS : R.string.StarsConfirmPurchaseTOS), new di.a(context2, 8)));
+                n90Var.setGravity(17);
+                f7.addView(n90Var, w7.y5.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
                 org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
                 f3Var2.customView = f7;
                 dVar.setOnClickListener(new xg.e(x4Var, f3Var2, dVar, 7));
@@ -977,7 +977,7 @@ public final class u5 {
         i11 = -1;
         i12 = 0;
         k7 k7Var2 = new k7(context2, i19, I);
-        w7.b6.a(k7Var2);
+        w7.a6.a(k7Var2);
         k7Var2.setOnClickListener(new g6(k7Var2, i12));
         viewGroup.addView(k7Var2, w7.y5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
         f7.addView(viewGroup, w7.y5.q(i11, 117, 7));
@@ -1006,13 +1006,13 @@ public final class u5 {
         if (i10 <= 0) {
         }
         f7.addView(dVar2, w7.y5.c(48.0f, -1));
-        k90 k90Var2 = new k90(context2, I);
-        k90Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, I));
-        k90Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
-        k90Var2.setTextSize(r22, 14.0f);
-        k90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(i10 <= 0 ? R.string.StarsConfirmSubscriptionTOS : R.string.StarsConfirmPurchaseTOS), new di.a(context2, 8)));
-        k90Var2.setGravity(17);
-        f7.addView(k90Var2, w7.y5.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
+        n90 n90Var2 = new n90(context2, I);
+        n90Var2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, I));
+        n90Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
+        n90Var2.setTextSize(r22, 14.0f);
+        n90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(i10 <= 0 ? R.string.StarsConfirmSubscriptionTOS : R.string.StarsConfirmPurchaseTOS), new di.a(context2, 8)));
+        n90Var2.setGravity(17);
+        f7.addView(n90Var2, w7.y5.k(0.0f, 12.0f, 0.0f, 2.0f, -1, -2));
         org.telegram.ui.ActionBar.f3 f3Var22 = f3Var;
         f3Var22.customView = f7;
         dVar2.setOnClickListener(new xg.e(x4Var, f3Var22, dVar2, 7));
@@ -1616,7 +1616,7 @@ public final class u5 {
             c5.a aVar = new c5.a();
             aVar.c = "inapp";
             aVar.b = tL_starsTopupOption.store_product;
-            c5.r a2 = aVar.a();
+            c5.q a2 = aVar.a();
             FileLog.d("StarsController.buy starts queryProductDetails");
             BillingController.getInstance().queryProductDetails(Arrays.asList(a2), new a1.d(callback2, tL_inputStorePaymentStarsTopup, tL_starsTopupOption, activity, 21));
             return;
@@ -1743,7 +1743,7 @@ public final class u5 {
         if (this.e) {
             h0(launchActivity, j3, str);
         } else {
-            r(new x21(this, launchActivity, j3, str, 13));
+            r(new z21(this, launchActivity, j3, str, 13));
         }
     }
 
@@ -2038,7 +2038,7 @@ public final class u5 {
                                             notificationCenter.lambda$postNotificationNameOnUIThread$1(i14, valueOf, bool);
                                             NotificationCenter.getInstance(u5Var4.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChatActivity, Long.valueOf(j16), bool);
                                             zn R9 = zn.R9(j16);
-                                            R9.whenFullyVisible(new x21(R9, starGift5, spannableStringBuilder, j15, 12));
+                                            R9.whenFullyVisible(new z21(R9, starGift5, spannableStringBuilder, j15, 12));
                                             R.presentFragment(R9);
                                         }
                                         MessagesController.getInstance(u5Var4.a).getMainSettings().edit().putBoolean("show_gift_for_" + j16, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j16, true).apply();
@@ -2138,7 +2138,7 @@ public final class u5 {
                 imageView2.setTranslationX(AndroidUtilities.dp(26.0f));
                 imageView2.setTranslationY(AndroidUtilities.dp(26.0f));
                 k7 k7Var = new k7(context2, i11, I);
-                w7.b6.a(k7Var);
+                w7.a6.a(k7Var);
                 k7Var.setOnClickListener(new g6(k7Var, 1));
                 frameLayout.addView(k7Var, w7.y5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
                 f7.addView(frameLayout, w7.y5.q(-1, 117, 7));
@@ -2172,13 +2172,13 @@ public final class u5 {
                 ci.d dVar = new ci.d(context2, I, true);
                 dVar.g(LocaleController.getString(R.string.StarsSubscribeButton), false, true);
                 f7.addView(dVar, w7.y5.n(-1, 48));
-                k90 k90Var = new k90(context2, I);
-                k90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsSubscribeInfo), new di.a(context2, 11)));
-                k90Var.setGravity(17);
-                k90Var.setTextSize(1, 13.0f);
-                k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B6, I));
-                k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
-                f7.addView(k90Var, w7.y5.t(-1, -2, 49, 14, 14, 14, 6));
+                n90 n90Var = new n90(context2, I);
+                n90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsSubscribeInfo), new di.a(context2, 11)));
+                n90Var.setGravity(17);
+                n90Var.setTextSize(1, 13.0f);
+                n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B6, I));
+                n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, I));
+                f7.addView(n90Var, w7.y5.t(-1, -2, 49, 14, 14, 14, 6));
                 j10.customView = f7;
                 dVar.setOnClickListener(new xg.e(g5Var, j10, dVar, 8));
                 j10.setOnDismissListener(new ai.g5(j0Var, 14));

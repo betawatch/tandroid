@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class b41 extends FrameLayout {
     public int a;
@@ -16,7 +16,7 @@ public final class b41 extends FrameLayout {
     public TLRPC.TL_reportResultChooseOption c;
     public TLRPC.TL_reportResultAddComment d;
     public final FrameLayout e;
-    public final org.telegram.ui.Components.s61 f;
+    public final org.telegram.ui.Components.u61 f;
     public final t5 h;
     public a41 n;
     public FrameLayout r;
@@ -61,20 +61,20 @@ public final class b41 extends FrameLayout {
         b5 b5Var = new b5(this, 19);
         ol0 ol0Var = new ol0(this, 16);
         f6Var4 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        org.telegram.ui.Components.s61 s61Var = new org.telegram.ui.Components.s61(context, i10, 0, true, b5Var, ol0Var, null, f6Var4);
-        this.f = s61Var;
-        s61Var.setClipToPadding(false);
-        s61Var.X2.k1(true);
-        s61Var.setOnScrollListener(new h3(this, 26));
-        frameLayout.addView(s61Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(context, i10, 0, true, b5Var, ol0Var, null, f6Var4);
+        this.f = u61Var;
+        u61Var.setClipToPadding(false);
+        u61Var.X2.k1(true);
+        u61Var.setOnScrollListener(new h3(this, 26));
+        frameLayout.addView(u61Var, w7.y5.c(-1.0f, -1));
     }
 
     public final void a(int i10) {
         this.a = i10;
         this.h.b(i10 != 0);
-        org.telegram.ui.Components.s61 s61Var = this.f;
-        if (s61Var != null) {
-            s61Var.Y2.N(true);
+        org.telegram.ui.Components.u61 u61Var = this.f;
+        if (u61Var != null) {
+            u61Var.Y2.N(true);
         }
     }
 

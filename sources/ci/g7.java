@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class g7 {
     public boolean a;
@@ -29,12 +29,12 @@ public final class g7 {
     public Object i;
     public Object j;
 
-    public g7(Context context, k2.v vVar, b2.e eVar, a6.m mVar) {
+    public g7(Context context, k2.v vVar, b2.e eVar, k2.e eVar2) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
         this.c = vVar;
         this.j = eVar;
-        this.i = mVar;
+        this.i = eVar2;
         String str = e2.d0.a;
         Looper myLooper = Looper.myLooper();
         Handler handler = new Handler(myLooper == null ? Looper.getMainLooper() : myLooper, null);
@@ -71,9 +71,9 @@ public final class g7 {
             return;
         }
         f0Var.y = bVar;
-        k2.n nVar = f0Var.t;
-        if (nVar != null) {
-            nVar.G();
+        k2.o oVar = f0Var.t;
+        if (oVar != null) {
+            oVar.E();
         }
     }
 
@@ -99,13 +99,13 @@ public final class g7 {
     }
 
     public void c(AudioDeviceInfo audioDeviceInfo) {
-        a6.m mVar = (a6.m) this.i;
-        if (Objects.equals(audioDeviceInfo, mVar == null ? null : (AudioDeviceInfo) mVar.b)) {
+        k2.e eVar = (k2.e) this.i;
+        if (Objects.equals(audioDeviceInfo, eVar == null ? null : (AudioDeviceInfo) eVar.b)) {
             return;
         }
-        a6.m mVar2 = audioDeviceInfo != null ? new a6.m(audioDeviceInfo, 29) : null;
-        this.i = mVar2;
-        a(k2.b.c((Context) this.b, (b2.e) this.j, mVar2));
+        k2.e eVar2 = audioDeviceInfo != null ? new k2.e(audioDeviceInfo, 0) : null;
+        this.i = eVar2;
+        a(k2.b.c((Context) this.b, (b2.e) this.j, eVar2));
     }
 
     public g7(a0 a0Var) {

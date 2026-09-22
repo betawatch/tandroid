@@ -40,7 +40,7 @@ import org.telegram.ui.Cells.f9;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.oo0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
@@ -54,7 +54,7 @@ import xh.h1;
 import yh.s5;
 import yh.u3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -84,10 +84,10 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
     public o n;
     public a8 r;
     public x8 s;
-    public r0 v;
+    public s0 v;
     public FrameLayout w;
     public ImageView x;
-    public mo0 y;
+    public oo0 y;
 
     public q(long j3, TLRPC.ChatFull chatFull) {
         super(null);
@@ -315,7 +315,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                 int i12 = 0;
                 while (i12 < size) {
                     int i13 = i12 + 1;
-                    q0.a((TLRPC.TL_availableReaction) arrayList.get(i12), linkedHashMap, this.F, spannableStringBuilder, this.b, this.n.getFontMetricsInt());
+                    r0.a((TLRPC.TL_availableReaction) arrayList.get(i12), linkedHashMap, this.F, spannableStringBuilder, this.b, this.n.getFontMetricsInt());
                     i11++;
                     if (i11 >= this.J) {
                         break;
@@ -365,9 +365,9 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new o81(this, 14));
         this.h = new yd(context);
-        mo0 mo0Var = new mo0(context, this.h, this.resourceProvider, true);
-        this.y = mo0Var;
-        mo0Var.setFillViewport(true);
+        oo0 oo0Var = new oo0(context, this.h, this.resourceProvider, true);
+        this.y = oo0Var;
+        oo0Var.setFillViewport(true);
         this.actionBar.setAdaptiveBackground(this.y);
         u3 u3Var = new u3(this, context);
         this.h.setOrientation(1);
@@ -410,7 +410,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                                 int i13 = tL_premium_boostsStatus.level;
                                 int i14 = qVar2.R;
                                 if (i13 < i14) {
-                                    q0.f(-qVar2.M, i14, tL_premium_boostsStatus);
+                                    r0.f(-qVar2.M, i14, tL_premium_boostsStatus);
                                     break;
                                 }
                             }
@@ -526,7 +526,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                                     int i132 = tL_premium_boostsStatus.level;
                                     int i142 = qVar2.R;
                                     if (i132 < i142) {
-                                        q0.f(-qVar2.M, i142, tL_premium_boostsStatus);
+                                        r0.f(-qVar2.M, i142, tL_premium_boostsStatus);
                                         break;
                                     }
                                 }
@@ -564,16 +564,16 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
         int i20 = j6.a7;
         imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i20, this.resourceProvider), PorterDuff.Mode.SRC_ATOP));
         this.w.addView(this.x, w7.y5.e(-1, -1, 119));
-        r0 r0Var = new r0(context, getResourceProvider(), true);
-        this.v = r0Var;
-        r0Var.e();
-        r0 r0Var2 = this.v;
-        r0Var2.getClass();
-        r0Var2.g(new SpannableStringBuilder(LocaleController.getString(R.string.ReactionUpdateReactionsBtn)), false, true);
-        r0Var2.h0 = new SpannableStringBuilder("l");
+        s0 s0Var = new s0(context, getResourceProvider(), true);
+        this.v = s0Var;
+        s0Var.e();
+        s0 s0Var2 = this.v;
+        s0Var2.getClass();
+        s0Var2.g(new SpannableStringBuilder(LocaleController.getString(R.string.ReactionUpdateReactionsBtn)), false, true);
+        s0Var2.h0 = new SpannableStringBuilder("l");
         oq oqVar = new oq(R.drawable.mini_switch_lock, 0);
         oqVar.setTopOffset(1);
-        r0Var2.h0.setSpan(oqVar, 0, 1, 33);
+        s0Var2.h0.setSpan(oqVar, 0, 1, 33);
         final int i21 = 2;
         this.v.setOnClickListener(new View.OnClickListener(this) { // from class: zg.k
             public final /* synthetic */ q b;
@@ -605,7 +605,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                                 int i132 = tL_premium_boostsStatus.level;
                                 int i142 = qVar2.R;
                                 if (i132 < i142) {
-                                    q0.f(-qVar2.M, i142, tL_premium_boostsStatus);
+                                    r0.f(-qVar2.M, i142, tL_premium_boostsStatus);
                                     break;
                                 }
                             }
@@ -653,7 +653,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                 i23++;
                 ArrayList arrayList5 = arrayList4;
                 linkedHashMap2 = linkedHashMap3;
-                q0.a((TLRPC.TL_availableReaction) obj, linkedHashMap2, arrayList5, spannableStringBuilder4, this.b, this.n.getFontMetricsInt());
+                r0.a((TLRPC.TL_availableReaction) obj, linkedHashMap2, arrayList5, spannableStringBuilder4, this.b, this.n.getFontMetricsInt());
                 spannableStringBuilder3 = spannableStringBuilder4;
                 i22++;
                 if (i22 >= i14) {
@@ -689,7 +689,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                         if (tL_availableReaction == null) {
                             continue;
                         } else {
-                            q0.a(tL_availableReaction, linkedHashMap4, arrayList6, spannableStringBuilder5, this.b, this.n.getFontMetricsInt());
+                            r0.a(tL_availableReaction, linkedHashMap4, arrayList6, spannableStringBuilder5, this.b, this.n.getFontMetricsInt());
                             linkedHashMap = linkedHashMap4;
                             arrayList = arrayList6;
                             spannableStringBuilder2 = spannableStringBuilder5;
@@ -703,7 +703,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                             TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = (TLRPC.TL_reactionCustomEmoji) reaction2;
                             p pVar = this.b;
                             i11 = i25;
-                            y5 e = q0.e(null, Long.valueOf(tL_reactionCustomEmoji.document_id), this.n.getFontMetricsInt());
+                            y5 e = r0.e(null, Long.valueOf(tL_reactionCustomEmoji.document_id), this.n.getFontMetricsInt());
                             linkedHashMap.put(Long.valueOf(tL_reactionCustomEmoji.document_id), e);
                             arrayList = arrayList;
                             arrayList.add(Long.valueOf(tL_reactionCustomEmoji.document_id));
@@ -762,7 +762,7 @@ public final class q extends n2 implements NotificationCenter.NotificationCenter
                         Object obj2 = arrayList3.get(i27);
                         i27++;
                         ArrayList arrayList9 = arrayList8;
-                        q0.a((TLRPC.TL_availableReaction) obj2, linkedHashMap, arrayList9, spannableStringBuilder6, this.b, this.n.getFontMetricsInt());
+                        r0.a((TLRPC.TL_availableReaction) obj2, linkedHashMap, arrayList9, spannableStringBuilder6, this.b, this.n.getFontMetricsInt());
                         spannableStringBuilder = spannableStringBuilder6;
                         i26++;
                         if (i26 >= i14) {

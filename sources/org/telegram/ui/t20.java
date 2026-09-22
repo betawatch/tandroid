@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class t20 implements View.OnClickListener {
                     break;
                 }
             case 5:
-                i60.E(i60Var);
+                i60.D(i60Var);
                 break;
             case 6:
                 int P0 = i60Var.P0();
@@ -169,20 +169,20 @@ public final /* synthetic */ class t20 implements View.OnClickListener {
                 break;
             case 10:
                 ArrayList arrayList = i60Var.Y1;
-                org.telegram.ui.Components.hj0 hj0Var = i60Var.G2;
+                org.telegram.ui.Components.kj0 kj0Var = i60Var.G2;
                 i60Var.a2.e();
                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                 if (sharedInstance2 != null && sharedInstance2.getVideoState(false) == 2) {
                     sharedInstance2.switchCamera();
                     if (i60Var.H2 == 18) {
                         i60Var.H2 = 39;
-                        hj0Var.P(39);
-                        hj0Var.start();
+                        kj0Var.P(39);
+                        kj0Var.start();
                     } else {
-                        hj0Var.N(0, false, false);
+                        kj0Var.N(0, false, false);
                         i60Var.H2 = 18;
-                        hj0Var.P(18);
-                        hj0Var.start();
+                        kj0Var.P(18);
+                        kj0Var.start();
                     }
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
                         org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) arrayList.get(i16);

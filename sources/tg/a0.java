@@ -48,11 +48,11 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.b4;
 import org.telegram.ui.Components.b5;
-import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.fd0;
 import org.telegram.ui.Components.jr;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.in0;
 import org.telegram.ui.x20;
@@ -60,7 +60,7 @@ import w7.y5;
 import yh.f7;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class a0 extends ab implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -143,22 +143,22 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
         jVar.C = false;
         jVar.m = false;
         this.d.setItemAnimator(jVar);
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new z());
         this.d.setOnItemClickListener(new o6(23, this, n2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         this.b0 = chat;
         ug.b bVar = this.g0;
         ArrayList arrayList = this.X;
-        vl0 vl0Var2 = this.d;
+        yl0 yl0Var2 = this.d;
         u uVar = new u(this);
         u uVar2 = new u(this);
         u uVar3 = new u(this);
         bVar.e = arrayList;
         bVar.v = chat;
-        bVar.f = vl0Var2;
+        bVar.f = yl0Var2;
         bVar.h = uVar;
         bVar.n = uVar2;
         bVar.s = uVar3;
@@ -575,10 +575,10 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
                 }
             } else {
                 vg.c cVar = (vg.c) view;
-                vl0 vl0Var = a0Var.d;
+                yl0 yl0Var = a0Var.d;
                 if (cVar.b()) {
-                    for (int i15 = 0; i15 < vl0Var.getChildCount(); i15++) {
-                        View childAt = vl0Var.getChildAt(i15);
+                    for (int i15 = 0; i15 < yl0Var.getChildCount(); i15++) {
+                        View childAt = yl0Var.getChildAt(i15);
                         if (childAt.getClass().isInstance(cVar)) {
                             ((vg.c) childAt).c(childAt == cVar, true);
                         }
@@ -637,11 +637,11 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
         b5 b5Var2 = new b5(f6Var);
         a3 a3Var = new a3(context, f6Var);
         a3Var.a();
-        cd0 cd0Var = new cd0(context, f6Var);
+        fd0 fd0Var = new fd0(context, f6Var);
         int i16 = b5Var2.a;
-        cd0Var.setTextColor(i16);
-        cd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-        cd0Var.setItemCount(5);
+        fd0Var.setTextColor(i16);
+        fd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+        fd0Var.setItemCount(5);
         g gVar = new g(context, f6Var);
         gVar.setWrapSelectorWheel(true);
         gVar.setAllItemsCount(24);
@@ -655,7 +655,7 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
         hVar.setItemCount(5);
         hVar.setTextColor(i16);
         hVar.setTextOffset(-AndroidUtilities.dp(34.0f));
-        b4 b4Var = new b4(context, b5Var2, cd0Var, gVar, hVar);
+        b4 b4Var = new b4(context, b5Var2, fd0Var, gVar, hVar);
         b4Var.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
         b4Var.addView(frameLayout, y5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -682,14 +682,14 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
         calendar2.add(14, (int) j10);
         int i19 = calendar2.get(11);
         int i20 = calendar.get(12);
-        linearLayout.addView(cd0Var, y5.l(0.5f, 0, 270));
-        cd0Var.setMinValue(0);
-        cd0Var.setMaxValue(i18 - 1);
-        cd0Var.setWrapSelectorWheel(false);
-        cd0Var.setTag("DAY");
-        cd0Var.setFormatter(new x20(currentTimeMillis, calendar, i17, 1));
-        u4 u4Var = new u4(b4Var, gVar, hVar, i19, i20, cd0Var);
-        cd0Var.setOnValueChangedListener(u4Var);
+        linearLayout.addView(fd0Var, y5.l(0.5f, 0, 270));
+        fd0Var.setMinValue(0);
+        fd0Var.setMaxValue(i18 - 1);
+        fd0Var.setWrapSelectorWheel(false);
+        fd0Var.setTag("DAY");
+        fd0Var.setFormatter(new x20(currentTimeMillis, calendar, i17, 1));
+        u4 u4Var = new u4(b4Var, gVar, hVar, i19, i20, fd0Var);
+        fd0Var.setOnValueChangedListener(u4Var);
         gVar.setMinValue(0);
         gVar.setMaxValue(23);
         linearLayout.addView(gVar, y5.l(0.2f, 0, 270));
@@ -712,9 +712,9 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
             calendar.setTimeInMillis(j3);
             hVar.setValue(calendar.get(12) / 5);
             gVar.setValue(calendar.get(11));
-            cd0Var.setValue(timeInMillis);
-            cd0Var.getValue();
-            u4Var.q(cd0Var, cd0Var.getValue());
+            fd0Var.setValue(timeInMillis);
+            fd0Var.getValue();
+            u4Var.q(fd0Var, fd0Var.getValue());
             gVar.getValue();
             u4Var.q(gVar, gVar.getValue());
         } else {
@@ -728,7 +728,7 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
         in0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{8.0f}, b5Var.h));
         in0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
         b4Var.addView(in0Var, y5.t(-1, 48, 83, 16, 15, 16, 16));
-        in0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, cd0Var, gVar, hVar, uVar, a3Var));
+        in0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, fd0Var, gVar, hVar, uVar, a3Var));
         a3Var.b(b4Var);
         f3 f3Var = a3Var.a;
         f3Var.show();
@@ -1279,8 +1279,8 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        vl0 vl0Var;
-        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (vl0Var = this.d) != null && vl0Var.G) {
+        yl0 yl0Var;
+        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (yl0Var = this.d) != null && yl0Var.G) {
             a0(true, true);
         }
     }
@@ -1295,7 +1295,7 @@ public final class a0 extends ab implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         ug.b bVar = new ug.b(this.resourcesProvider);
         this.g0 = bVar;
         return bVar;

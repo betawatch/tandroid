@@ -10,9 +10,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wb implements org.telegram.ui.Components.jl0 {
+public final /* synthetic */ class wb implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
     public final /* synthetic */ Context c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class wb implements org.telegram.ui.Components.jl0 
         this.f = bb1Var;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
@@ -87,13 +87,13 @@ public final /* synthetic */ class wb implements org.telegram.ui.Components.jl0 
                 }
                 break;
             default:
-                org.telegram.ui.Components.j70.M((org.telegram.ui.Components.j70) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e, (a0.i) this.f, this.c, i10);
+                org.telegram.ui.Components.m70.M((org.telegram.ui.Components.m70) this.d, this.b, (org.telegram.ui.ActionBar.n2) this.e, (a0.i) this.f, this.c, i10);
                 break;
         }
     }
 
-    public /* synthetic */ wb(org.telegram.ui.Components.j70 j70Var, long j3, org.telegram.ui.ActionBar.n2 n2Var, a0.i iVar, Context context) {
-        this.d = j70Var;
+    public /* synthetic */ wb(org.telegram.ui.Components.m70 m70Var, long j3, org.telegram.ui.ActionBar.n2 n2Var, a0.i iVar, Context context) {
+        this.d = m70Var;
         this.b = j3;
         this.e = n2Var;
         this.f = iVar;

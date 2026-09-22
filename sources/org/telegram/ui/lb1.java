@@ -37,7 +37,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class lb1 implements di0 {
     public final zn A;
@@ -46,7 +46,7 @@ public final class lb1 implements di0 {
     public final AnimationNotificationsLocker D;
     public final MessageObject.TextLayoutBlock E;
     public final NinePatchDrawable F;
-    public final lk G;
+    public final mk G;
     public final org.telegram.ui.Components.u5 H;
     public float I;
     public float J;
@@ -77,7 +77,7 @@ public final class lb1 implements di0 {
     public final StaticLayout p;
     public final StaticLayout q;
     public final org.telegram.ui.Cells.u1 r;
-    public final org.telegram.ui.Components.vl0 s;
+    public final org.telegram.ui.Components.yl0 s;
     public final org.telegram.ui.Components.ui t;
     public final Matrix u;
     public final Paint v;
@@ -103,7 +103,7 @@ public final class lb1 implements di0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public lb1(org.telegram.ui.Cells.u1 u1Var, zn znVar, org.telegram.ui.Components.vl0 vl0Var, org.telegram.ui.Components.ui uiVar, org.telegram.ui.ActionBar.f6 f6Var) {
+    public lb1(org.telegram.ui.Cells.u1 u1Var, zn znVar, org.telegram.ui.Components.yl0 yl0Var, org.telegram.ui.Components.ui uiVar, org.telegram.ui.ActionBar.f6 f6Var) {
         float f7;
         boolean z10;
         int[] iArr;
@@ -133,25 +133,25 @@ public final class lb1 implements di0 {
             return;
         }
         this.r = u1Var;
-        this.s = vl0Var;
+        this.s = yl0Var;
         this.t = uiVar;
         this.A = znVar;
-        lk lkVar = znVar.Y;
-        this.G = lkVar;
-        if (lkVar == null || lkVar.getEditField() == null || lkVar.getEditField().getLayout() == null) {
+        mk mkVar = znVar.Y;
+        this.G = mkVar;
+        if (mkVar == null || mkVar.getEditField() == null || mkVar.getEditField().getLayout() == null) {
             return;
         }
-        lkVar.getRecordCircle();
+        mkVar.getRecordCircle();
         paint.setFilterBitmap(true);
         this.k = u1Var.getMessageObject();
         if (!u1Var.getTransitionParams().v0) {
             u1Var.draw(new Canvas());
         }
         u1Var.setEnterTransitionInProgress(true);
-        Editable editText = lkVar.getEditText();
+        Editable editText = mkVar.getEditText();
         CharSequence charSequence = u1Var.getMessageObject().messageText;
         this.n = false;
-        lkVar.getEditField().getLayout().getHeight();
+        mkVar.getEditField().getLayout().getHeight();
         TextPaint textPaint = org.telegram.ui.ActionBar.j6.o2;
         AndroidUtilities.dp(20.0f);
         if (u1Var.getMessageObject().getEmojiOnlyCount() != 0) {
@@ -218,8 +218,8 @@ public final class lb1 implements di0 {
                     iArr = new int[1];
                     CharSequence trim = AndroidUtilities.trim(editText, iArr);
                     if (iArr[0] <= 0) {
-                        i10 = lkVar.getEditField().getLayout().getLineTop(lkVar.getEditField().getLayout().getLineForOffset(iArr[0]));
-                        lkVar.getEditField().getLayout().getLineBottom(lkVar.getEditField().getLayout().getLineForOffset(trim.length() + iArr[0]));
+                        i10 = mkVar.getEditField().getLayout().getLineTop(mkVar.getEditField().getLayout().getLineForOffset(iArr[0]));
+                        mkVar.getEditField().getLayout().getLineBottom(mkVar.getEditField().getLayout().getLineForOffset(trim.length() + iArr[0]));
                     } else {
                         i10 = 0;
                     }
@@ -228,20 +228,20 @@ public final class lb1 implements di0 {
                 } else {
                     i10 = 0;
                 }
-                float textSize = lkVar.getEditField().getTextSize() / textPaint.getTextSize();
+                float textSize = mkVar.getEditField().getTextSize() / textPaint.getTextSize();
                 this.C = textSize;
-                lineCount = lkVar.getEditField().getLayout().getLineCount();
-                int width = (int) (lkVar.getEditField().getLayout().getWidth() / textSize);
+                lineCount = mkVar.getEditField().getLayout().getLineCount();
+                int width = (int) (mkVar.getEditField().getLayout().getWidth() / textSize);
                 if (Build.VERSION.SDK_INT < 24) {
                     this.p = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, width).setBreakStrategy(1).setHyphenationFrequency(0).setAlignment(Layout.Alignment.ALIGN_NORMAL).build();
                 } else {
                     this.p = new StaticLayout(charSequence, textPaint, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 }
                 this.H = org.telegram.ui.Components.y5.update(2, (View) null, this.H, this.p);
-                hh.k.b(lkVar.getEditField(), znVar.X0, pointF);
+                hh.k.b(mkVar.getEditField(), znVar.X0, pointF);
                 float f13 = pointF.y;
                 this.y = pointF.x;
-                this.z = ((AndroidUtilities.dp(10.0f) + f13) - lkVar.getEditField().getScrollY()) + i10;
+                this.z = ((AndroidUtilities.dp(10.0f) + f13) - mkVar.getEditField().getScrollY()) + i10;
                 this.l = 0.0f;
                 f10 = Float.MAX_VALUE;
                 float f14 = Float.MAX_VALUE;
@@ -260,7 +260,7 @@ public final class lb1 implements di0 {
                 if (this.G.z0()) {
                     this.j = dp - AndroidUtilities.dp(12.0f);
                 }
-                this.x = f13 + lkVar.getEditField().getMeasuredHeight();
+                this.x = f13 + mkVar.getEditField().getMeasuredHeight();
                 MessageObject.TextLayoutBlock textLayoutBlock = u1Var.getMessageObject().textLayoutBlocks.get(0);
                 this.E = textLayoutBlock;
                 staticLayout = textLayoutBlock.textLayout;
@@ -346,7 +346,7 @@ public final class lb1 implements di0 {
                     this.i = j5Var2.getTextColor();
                     this.j -= AndroidUtilities.dp(46.0f);
                 }
-                this.S = vl0Var.getPaddingBottom() - (znVar.rc - AndroidUtilities.dp(44.0f));
+                this.S = yl0Var.getPaddingBottom() - (znVar.rc - AndroidUtilities.dp(44.0f));
                 this.u = new Matrix();
                 Paint paint2 = new Paint(1);
                 this.v = paint2;
@@ -355,22 +355,22 @@ public final class lb1 implements di0 {
                 this.B = linearGradient;
                 paint2.setShader(linearGradient);
                 this.w = u1Var.getMessageObject().stableId;
-                lkVar.getEditField().setAlpha(0.0f);
-                lkVar.setTextTransitionIsRunning(true);
+                mkVar.getEditField().setAlpha(0.0f);
+                mkVar.setTextTransitionIsRunning(true);
                 staticLayout2 = u1Var.C9;
                 if (staticLayout2 != null && staticLayout2.getText().length() > 1 && u1Var.C9.getPrimaryHorizontal(0) != 0.0f) {
                     this.K = u1Var.C9.getWidth() - u1Var.C9.getLineWidth(0);
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.d = ofFloat;
-                ofFloat.addUpdateListener(new ex0(this, lkVar, uiVar, 1));
+                ofFloat.addUpdateListener(new ex0(this, mkVar, uiVar, 1));
                 ofFloat.setInterpolator(new LinearInterpolator());
                 ofFloat.setDuration(250L);
                 ((ArrayList) uiVar.c).add(this);
                 uiVar.a();
                 ((ViewGroup) uiVar.d).invalidate();
                 this.D.lock();
-                ofFloat.addListener(new org.telegram.ui.Components.t20(this, uiVar, u1Var, lkVar, znVar));
+                ofFloat.addListener(new org.telegram.ui.Components.t20(this, uiVar, u1Var, mkVar, znVar));
                 if (SharedConfig.getDevicePerformanceClass() == 2 || (y22 = u1Var.y2(true)) == null) {
                 }
                 int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sd, this.N);
@@ -406,17 +406,17 @@ public final class lb1 implements di0 {
         }
         org.telegram.ui.Components.y5.cloneSpans(charSequence);
         charSequence = Emoji.replaceEmoji(editText, textPaint.getFontMetricsInt(), false);
-        float textSize2 = lkVar.getEditField().getTextSize() / textPaint.getTextSize();
+        float textSize2 = mkVar.getEditField().getTextSize() / textPaint.getTextSize();
         this.C = textSize2;
-        lineCount = lkVar.getEditField().getLayout().getLineCount();
-        int width2 = (int) (lkVar.getEditField().getLayout().getWidth() / textSize2);
+        lineCount = mkVar.getEditField().getLayout().getLineCount();
+        int width2 = (int) (mkVar.getEditField().getLayout().getWidth() / textSize2);
         if (Build.VERSION.SDK_INT < 24) {
         }
         this.H = org.telegram.ui.Components.y5.update(2, (View) null, this.H, this.p);
-        hh.k.b(lkVar.getEditField(), znVar.X0, pointF);
+        hh.k.b(mkVar.getEditField(), znVar.X0, pointF);
         float f132 = pointF.y;
         this.y = pointF.x;
-        this.z = ((AndroidUtilities.dp(10.0f) + f132) - lkVar.getEditField().getScrollY()) + i10;
+        this.z = ((AndroidUtilities.dp(10.0f) + f132) - mkVar.getEditField().getScrollY()) + i10;
         this.l = 0.0f;
         f10 = Float.MAX_VALUE;
         float f142 = Float.MAX_VALUE;
@@ -429,7 +429,7 @@ public final class lb1 implements di0 {
         this.j = dp2;
         if (this.G.z0()) {
         }
-        this.x = f132 + lkVar.getEditField().getMeasuredHeight();
+        this.x = f132 + mkVar.getEditField().getMeasuredHeight();
         MessageObject.TextLayoutBlock textLayoutBlock2 = u1Var.getMessageObject().textLayoutBlocks.get(0);
         this.E = textLayoutBlock2;
         staticLayout = textLayoutBlock2.textLayout;
@@ -456,7 +456,7 @@ public final class lb1 implements di0 {
         this.c = z11;
         if (z11) {
         }
-        this.S = vl0Var.getPaddingBottom() - (znVar.rc - AndroidUtilities.dp(44.0f));
+        this.S = yl0Var.getPaddingBottom() - (znVar.rc - AndroidUtilities.dp(44.0f));
         this.u = new Matrix();
         Paint paint22 = new Paint(1);
         this.v = paint22;
@@ -465,22 +465,22 @@ public final class lb1 implements di0 {
         this.B = linearGradient2;
         paint22.setShader(linearGradient2);
         this.w = u1Var.getMessageObject().stableId;
-        lkVar.getEditField().setAlpha(0.0f);
-        lkVar.setTextTransitionIsRunning(true);
+        mkVar.getEditField().setAlpha(0.0f);
+        mkVar.setTextTransitionIsRunning(true);
         staticLayout2 = u1Var.C9;
         if (staticLayout2 != null) {
             this.K = u1Var.C9.getWidth() - u1Var.C9.getLineWidth(0);
         }
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat2;
-        ofFloat2.addUpdateListener(new ex0(this, lkVar, uiVar, 1));
+        ofFloat2.addUpdateListener(new ex0(this, mkVar, uiVar, 1));
         ofFloat2.setInterpolator(new LinearInterpolator());
         ofFloat2.setDuration(250L);
         ((ArrayList) uiVar.c).add(this);
         uiVar.a();
         ((ViewGroup) uiVar.d).invalidate();
         this.D.lock();
-        ofFloat2.addListener(new org.telegram.ui.Components.t20(this, uiVar, u1Var, lkVar, znVar));
+        ofFloat2.addListener(new org.telegram.ui.Components.t20(this, uiVar, u1Var, mkVar, znVar));
         if (SharedConfig.getDevicePerformanceClass() == 2) {
         }
     }
@@ -594,10 +594,10 @@ public final class lb1 implements di0 {
         float f50;
         int i17;
         float f51;
-        org.telegram.ui.Components.vl0 vl0Var = this.s;
-        float y3 = vl0Var.getY();
+        org.telegram.ui.Components.yl0 yl0Var = this.s;
+        float y3 = yl0Var.getY();
         org.telegram.ui.Components.ui uiVar = this.t;
-        float y10 = (y3 - uiVar.getY()) + vl0Var.getMeasuredHeight();
+        float y10 = (y3 - uiVar.getY()) + yl0Var.getMeasuredHeight();
         float x10 = this.y - uiVar.getX();
         float y11 = this.z - uiVar.getY();
         org.telegram.ui.Cells.u1 u1Var2 = this.r;
@@ -610,8 +610,8 @@ public final class lb1 implements di0 {
         if (u1Var2.getMessageObject().stableId != this.w) {
             return;
         }
-        float x11 = (vl0Var.getX() + u1Var2.getX()) - uiVar.getX();
-        float top = ((vl0Var.getTop() + (u1Var2.getPaddingTop() + u1Var2.getTop())) - uiVar.getY()) - (this.S - vl0Var.getPaddingBottom());
+        float x11 = (yl0Var.getX() + u1Var2.getX()) - uiVar.getX();
+        float top = ((yl0Var.getTop() + (u1Var2.getPaddingTop() + u1Var2.getTop())) - uiVar.getY()) - (this.S - yl0Var.getPaddingBottom());
         float interpolation = ji.n.V.getInterpolation(this.a);
         float f52 = this.a;
         float f53 = f52 > 0.4f ? 1.0f : f52 / 0.4f;
@@ -620,7 +620,7 @@ public final class lb1 implements di0 {
         float f55 = this.J + top;
         float f56 = 1.0f - interpolation2;
         int measuredHeight = (int) ((y10 * interpolation2) + (uiVar.getMeasuredHeight() * f56));
-        boolean z13 = u1Var2.getBottom() - AndroidUtilities.dp(4.0f) > vl0Var.getMeasuredHeight() && (((float) u1Var2.getMeasuredHeight()) + top) - ((float) AndroidUtilities.dp(8.0f)) > ((float) measuredHeight) && uiVar.getMeasuredHeight() > 0;
+        boolean z13 = u1Var2.getBottom() - AndroidUtilities.dp(4.0f) > yl0Var.getMeasuredHeight() && (((float) u1Var2.getMeasuredHeight()) + top) - ((float) AndroidUtilities.dp(8.0f)) > ((float) measuredHeight) && uiVar.getMeasuredHeight() > 0;
         if (z13) {
             i10 = measuredHeight;
             f10 = interpolation2;
@@ -648,7 +648,7 @@ public final class lb1 implements di0 {
             canvas2 = canvas;
         }
         canvas2.save();
-        float y12 = vl0Var.getY();
+        float y12 = yl0Var.getY();
         zn znVar3 = this.A;
         canvas2.clipRect(f17, ((znVar3.s9 + y12) - uiVar.getY()) - AndroidUtilities.dp(3.0f), uiVar.getMeasuredWidth(), uiVar.getMeasuredHeight());
         canvas2.save();
@@ -668,7 +668,7 @@ public final class lb1 implements di0 {
         org.telegram.ui.ActionBar.f5 y22 = !messageObject3.isAnimatedEmojiStickers() ? u1Var2.y2(true) : null;
         if (y22 != null) {
             imageReceiver = imageReceiver2;
-            u1Var2.setBackgroundTopY(uiVar.getTop() - vl0Var.getTop());
+            u1Var2.setBackgroundTopY(uiVar.getTop() - yl0Var.getTop());
             Drawable j3 = y22.j();
             f18 = f57;
             f20 = f12;
@@ -728,7 +728,7 @@ public final class lb1 implements di0 {
                 canvas2.clipRect(AndroidUtilities.dp(4.0f) + backgroundDrawableLeft, AndroidUtilities.dp(4.0f) + f63, dp - AndroidUtilities.dp(4.0f), y14 - AndroidUtilities.dp(4.0f));
             }
         }
-        float x12 = (vl0Var.getX() + u1Var2.getLeft()) - uiVar.getX();
+        float x12 = (yl0Var.getX() + u1Var2.getLeft()) - uiVar.getX();
         float f64 = f14;
         float z14 = com.google.android.gms.internal.vision.e2.z(y11, f64, f62, f60);
         canvas2.translate(x12, z14);
@@ -753,7 +753,7 @@ public final class lb1 implements di0 {
             float f66 = f20;
             float f67 = u1Var2.H9 + f60;
             if (u1Var2.ba == null) {
-                u1Var2.ba = new org.telegram.ui.Components.cm0(u1Var2);
+                u1Var2.ba = new org.telegram.ui.Components.fm0(u1Var2);
             }
             f23 = y14;
             u1Var2.ba.a(u1Var2.getMessageObject(), u1Var2.getCurrentUser(), u1Var2.getCurrentChat(), this.N, 0);
@@ -763,18 +763,18 @@ public final class lb1 implements di0 {
                 v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Xc, f6Var);
                 b(org.telegram.ui.ActionBar.j6.Vc);
             } else {
-                org.telegram.ui.Components.cm0 cm0Var = u1Var2.ba;
-                if (cm0Var != null) {
-                    i14 = cm0Var.I.c;
+                org.telegram.ui.Components.fm0 fm0Var = u1Var2.ba;
+                if (fm0Var != null) {
+                    i14 = fm0Var.I.c;
                     if (!messageObject.shouldDrawWithoutBackground()) {
                         i11 = dp;
                         f24 = f63;
                         f25 = y11;
                         messageObject2 = messageObject;
                         f26 = f62;
-                        org.telegram.ui.Components.cm0 cm0Var2 = u1Var2.ba;
-                        if (cm0Var2 != null) {
-                            v03 = cm0Var2.I.c;
+                        org.telegram.ui.Components.fm0 fm0Var2 = u1Var2.ba;
+                        if (fm0Var2 != null) {
+                            v03 = fm0Var2.I.c;
                         } else {
                             if (messageObject2.hasValidReplyMessageObject()) {
                                 MessageObject messageObject4 = messageObject2.replyMessageObject;
@@ -987,7 +987,7 @@ public final class lb1 implements di0 {
                         }
                         canvas2.translate(AndroidUtilities.lerp(dp3 - u1Var2.N9, dp6, f21), lerp7);
                         canvas2.save();
-                        vh.h.d(canvas2, arrayList);
+                        vh.g.d(canvas2, arrayList);
                         lb1Var = this;
                         f32 = z14;
                         f30 = f11;
@@ -999,13 +999,13 @@ public final class lb1 implements di0 {
                         while (i18 < size) {
                             Object obj = arrayList.get(i18);
                             i18++;
-                            vh.h hVar = (vh.h) obj;
-                            boolean z15 = hVar.p;
-                            hVar.p = false;
+                            vh.g gVar = (vh.g) obj;
+                            boolean z15 = gVar.p;
+                            gVar.p = false;
                             if (z15) {
-                                hVar.h(u1Var2.D9.getPaint().getColor());
+                                gVar.h(u1Var2.D9.getPaint().getColor());
                             }
-                            hVar.draw(canvas2);
+                            gVar.draw(canvas2);
                         }
                         canvas2.restore();
                     } else {
@@ -1199,7 +1199,7 @@ public final class lb1 implements di0 {
         }
         if (z11) {
             canvas3.save();
-            canvas3.translate(com.google.android.gms.internal.vision.e2.z(x10, f39, f35, (vl0Var.getX() + u1Var.getLeft()) - uiVar.getX()), f36);
+            canvas3.translate(com.google.android.gms.internal.vision.e2.z(x10, f39, f35, (yl0Var.getX() + u1Var.getLeft()) - uiVar.getX()), f36);
             canvas3.scale(f44, f42, u1Var.getTextX(), u1Var.getTextY());
             canvas3.translate(0.0f, -0.0f);
             int color3 = org.telegram.ui.ActionBar.j6.o2.getColor();
@@ -1239,20 +1239,20 @@ public final class lb1 implements di0 {
         }
         float f87 = lb1Var.a;
         float f88 = f87 > 0.4f ? 1.0f : f87 / 0.4f;
-        lk lkVar = lb1Var.G;
+        mk mkVar = lb1Var.G;
         if (f88 == 1.0f) {
-            lkVar.setTextTransitionIsRunning(z12);
+            mkVar.setTextTransitionIsRunning(z12);
         }
-        if (lkVar.getSendButton().getVisibility() != 0 || f88 >= 1.0f) {
+        if (mkVar.getSendButton().getVisibility() != 0 || f88 >= 1.0f) {
             return;
         }
-        View sendButton = lkVar.getSendButton();
+        View sendButton = mkVar.getSendButton();
         rm rmVar = znVar2.X0;
         PointF pointF = lb1Var.O;
         hh.k.b(sendButton, rmVar, pointF);
         canvas3.save();
         canvas3.translate(pointF.x - uiVar.getX(), pointF.y - uiVar.getY());
-        View sendButton2 = lkVar.getSendButton();
+        View sendButton2 = mkVar.getSendButton();
         canvas3.saveLayerAlpha(0.0f, 0.0f, sendButton2.getWidth(), sendButton2.getHeight(), (int) ((1.0f - f88) * 255.0f));
         sendButton2.draw(canvas3);
         canvas3.restore();

@@ -22,7 +22,7 @@ public final class x1 extends o1 implements Cloneable {
     public boolean y;
 
     @Override // com.google.android.gms.internal.clearcut.o1
-    public final void a(a6.m mVar) {
+    public final void b(pb.c cVar) {
         String str = this.w;
         String str2 = this.r;
         String str3 = this.n;
@@ -30,8 +30,8 @@ public final class x1 extends o1 implements Cloneable {
         byte[] bArr = this.e;
         long j3 = this.a;
         if (j3 != 0) {
-            mVar.C(1, 0);
-            mVar.O(j3);
+            cVar.C(1, 0);
+            cVar.N(j3);
         }
         y1[] y1VarArr = this.d;
         if (y1VarArr != null && y1VarArr.length > 0) {
@@ -47,41 +47,41 @@ public final class x1 extends o1 implements Cloneable {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            mVar.u(4, bArr);
+            cVar.p(4, bArr);
         }
         if (!Arrays.equals(this.f, bArr2)) {
-            mVar.u(6, this.f);
+            cVar.p(6, this.f);
         }
         if (str4 != null && !str4.equals("")) {
-            mVar.o(8, str4);
+            cVar.n(8, str4);
         }
         int i11 = this.c;
         if (i11 != 0) {
-            mVar.C(11, 0);
+            cVar.C(11, 0);
             if (i11 >= 0) {
-                mVar.A(i11);
+                cVar.A(i11);
             } else {
-                mVar.O(i11);
+                cVar.N(i11);
             }
         }
         if (str3 != null && !str3.equals("")) {
-            mVar.o(13, str3);
+            cVar.n(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            mVar.o(14, str2);
+            cVar.n(14, str2);
         }
         long j10 = this.s;
         if (j10 != 180000) {
-            mVar.C(15, 0);
-            mVar.O((j10 >> 63) ^ (j10 << 1));
+            cVar.C(15, 0);
+            cVar.N((j10 >> 63) ^ (j10 << 1));
         }
         long j11 = this.b;
         if (j11 != 0) {
-            mVar.C(17, 0);
-            mVar.O(j11);
+            cVar.C(17, 0);
+            cVar.N(j11);
         }
         if (!Arrays.equals(this.v, bArr2)) {
-            mVar.u(18, this.v);
+            cVar.p(18, this.v);
         }
         int[] iArr = this.x;
         if (iArr != null && iArr.length > 0) {
@@ -92,23 +92,23 @@ public final class x1 extends o1 implements Cloneable {
                     break;
                 }
                 int i13 = iArr2[i12];
-                mVar.C(20, 0);
+                cVar.C(20, 0);
                 if (i13 >= 0) {
-                    mVar.A(i13);
+                    cVar.A(i13);
                 } else {
-                    mVar.O(i13);
+                    cVar.N(i13);
                 }
                 i12++;
             }
         }
         if (str != null && !str.equals("")) {
-            mVar.o(24, str);
+            cVar.n(24, str);
         }
         boolean z10 = this.y;
         if (z10) {
-            mVar.C(25, 0);
+            cVar.C(25, 0);
             byte b10 = z10 ? (byte) 1 : (byte) 0;
-            ByteBuffer byteBuffer = (ByteBuffer) mVar.b;
+            ByteBuffer byteBuffer = (ByteBuffer) cVar.b;
             if (!byteBuffer.hasRemaining()) {
                 throw new b5(byteBuffer.position(), byteBuffer.limit());
             }

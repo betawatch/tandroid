@@ -29,7 +29,7 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e0 extends b2.g implements r {
     public final com.google.firebase.messaging.m A;
@@ -214,9 +214,9 @@ public final class e0 extends b2.g implements r {
             j2.f fVar = this.s;
             b11.getClass();
             fVar.getClass();
-            n2.e eVar = b11.c;
-            eVar.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) eVar.b;
+            l.d dVar = b11.c;
+            dVar.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) dVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 y2.b bVar = (y2.b) it.next();
@@ -274,9 +274,9 @@ public final class e0 extends b2.g implements r {
                 e0Var.h0 = x1.d;
                 e0Var.X = e2.w.c;
                 zVar.a(38, e0Var.K).b();
-                b2.e eVar2 = e0Var.Y;
+                b2.e eVar = e0Var.Y;
                 e2.y b12 = e2.z.b();
-                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar2);
+                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar);
                 b12.b();
                 e0Var.p1(1, 3, e0Var.Y);
                 e0Var.p1(2, 4, Integer.valueOf(e0Var.W));

@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.om0;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.dv0;
@@ -23,7 +23,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.web.g1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.c5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
 
     @Override // org.telegram.ui.Components.c5
     public void J(int i10, int i11, boolean z10) {
-        zn.d0((zn) this.c, (ArrayList) this.d, this.b, (mm0) this.e, z10, i10);
+        zn.d0((zn) this.c, (ArrayList) this.d, this.b, (om0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.t40
@@ -74,31 +74,26 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
     }
 
     @Override // r9.g
-    public ScheduledFuture a(final n2.e eVar) {
+    public ScheduledFuture a(final l.d dVar) {
         switch (this.a) {
             case 5:
                 r9.f fVar = (r9.f) this.c;
                 Runnable runnable = (Runnable) this.d;
-                return fVar.b.schedule(new r9.d(fVar, runnable, eVar, 1), this.b, (TimeUnit) this.e);
+                return fVar.b.schedule(new r9.d(fVar, runnable, dVar, 1), this.b, (TimeUnit) this.e);
             default:
                 final r9.f fVar2 = (r9.f) this.c;
                 final Callable callable = (Callable) this.d;
                 return fVar2.b.schedule(new Callable() { // from class: r9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new g1(17, callable, eVar));
+                        return f.this.a.submit(new g1(17, callable, dVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
     }
 
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ boolean e() {
-        return true;
-    }
-
     @Override // ci.m8
-    public Bitmap f(BitmapFactory.Options options) {
+    public Bitmap c(BitmapFactory.Options options) {
         d7 d7Var = (d7) this.c;
         o8 o8Var = (o8) this.d;
         long j3 = this.b;
@@ -119,17 +114,12 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
     }
 
     @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ dv0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.t40
-    public /* synthetic */ String getInitialSearchString() {
-        return null;
+    public /* synthetic */ boolean e() {
+        return true;
     }
 
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         da.b bVar = (da.b) this.c;
         Iterable iterable = (Iterable) this.d;
         l5.i iVar = (l5.i) this.e;
@@ -158,6 +148,16 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
             }
         }
         hVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.t40
+    public /* synthetic */ dv0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.t40
+    public /* synthetic */ String getInitialSearchString() {
         return null;
     }
 

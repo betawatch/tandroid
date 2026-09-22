@@ -8,9 +8,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class rl implements ov0 {
+public final class rl implements qv0 {
     public File a;
     public boolean b;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
@@ -111,7 +111,7 @@ public final class rl implements ov0 {
                         }
                     }
                 }, chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.k0.a(pv0.b);
+                chatAttachAlertPhotoLayout.k0.a(rv0.b);
                 chatAttachAlertPhotoLayout.P.runHaptic();
                 return true;
             }
@@ -127,10 +127,10 @@ public final class rl implements ov0 {
         if (chatAttachAlertPhotoLayout.s0 || (dmVar = chatAttachAlertPhotoLayout.P) == null || dmVar.getCameraSession() == null) {
             return;
         }
-        if (shutterButton.getState() == pv0.b) {
+        if (shutterButton.getState() == rv0.b) {
             chatAttachAlertPhotoLayout.l0();
             CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(pv0.a);
+            shutterButton.a(rv0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
                 org.telegram.messenger.rk.p(R.string.GlobalAttachPhotoRestricted, new xc(chatAttachAlertPhotoLayout.P, this.c), null);

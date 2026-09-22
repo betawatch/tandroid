@@ -27,10 +27,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.wk0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class ab extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.Components.g9 E;
@@ -280,8 +280,8 @@ public class ab extends FrameLayout implements NotificationCenter.NotificationCe
         return this.b.getText();
     }
 
-    public final void h(int i10, w51 w51Var, boolean z10) {
-        long j3 = w51Var.x;
+    public final void h(int i10, y51 y51Var, boolean z10) {
+        long j3 = y51Var.x;
         if (j3 <= 0) {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
             if (chat != null) {
@@ -854,7 +854,7 @@ public class ab extends FrameLayout implements NotificationCenter.NotificationCe
             ImageView imageView2 = new ImageView(getContext());
             this.x = imageView2;
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
-            w7.b6.a(this.x);
+            w7.a6.a(this.x);
             this.x.setImageResource(R.drawable.ic_close_white);
             ImageView imageView3 = this.x;
             int i10 = org.telegram.ui.ActionBar.j6.A6;
@@ -980,7 +980,7 @@ public class ab extends FrameLayout implements NotificationCenter.NotificationCe
         if (z10) {
             TextView textView2 = new TextView(context);
             this.n = textView2;
-            w7.b6.b(textView2, 0.05f, 1.2f);
+            w7.a6.b(textView2, 0.05f, 1.2f);
             textView2.setTextSize(1, 14.0f);
             textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.uh, f6Var));
             textView2.setImportantForAccessibility(2);

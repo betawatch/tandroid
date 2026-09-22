@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class yj extends ni implements NotificationCenter.NotificationCenterDelegate, le.d {
     public final sj E;
@@ -106,34 +106,34 @@ public final class yj extends ni implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        fl0 fl0Var = (fl0) w0Var.H(childAt);
-        if (fl0Var == null) {
+        il0 il0Var = (il0) w0Var.H(childAt);
+        if (il0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (fl0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (il0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
     }
 
+    @Override // org.telegram.ui.Components.ni
+    public final void D(ni niVar) {
+        this.v.h1(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public final void F() {
+        this.s.y0(0);
+    }
+
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 0) {
             ui uiVar = this.H;
             uiVar.setAlpha(f7);
             uiVar.setVisibility(f7 > 0.0f ? 0 : 4);
         }
-    }
-
-    @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
-        this.v.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.ni
-    public final void G() {
-        this.s.y0(0);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -372,11 +372,11 @@ public final class yj extends ni implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        fl0 fl0Var = (fl0) w0Var.H(childAt);
+        il0 il0Var = (il0) w0Var.H(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || fl0Var == null || fl0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || il0Var == null || il0Var.b() != 0) ? 0 : top;
         le.b bVar = this.n;
-        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (top < 0 || il0Var == null || il0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {

@@ -27,11 +27,11 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -544,9 +544,9 @@ public class ApplicationLoader extends Application {
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.g6.b(nb0.h);
+                    w7.f6.b(nb0.h);
                     break;
-                } else if (w7.g6.a(values[i10])) {
+                } else if (w7.f6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(v70 v70Var) {
+    public void addItemOptions(y70 y70Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

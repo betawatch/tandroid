@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -47,7 +47,7 @@ public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public int P;
     public int Q;
     public final a0.g R;
-    public org.telegram.ui.Components.kj0 S;
+    public org.telegram.ui.Components.nj0 S;
     public LinearLayout T;
     public int U;
     public boolean V;
@@ -65,7 +65,7 @@ public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public final boolean d0;
     public org.telegram.ui.Components.mz e;
     public ya1 e0;
-    public org.telegram.ui.Components.vl0 f;
+    public org.telegram.ui.Components.yl0 f;
     public s4.c0 h;
     public final MessageObject n;
     public na1 r;
@@ -305,9 +305,9 @@ public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         LinearLayout linearLayout = new LinearLayout(context);
         this.T = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-        this.S = kj0Var;
-        kj0Var.setAutoRepeat(true);
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.S = nj0Var;
+        nj0Var.setAutoRepeat(true);
         this.S.f(R.raw.statistic_preload, 120, 120, null);
         this.S.d();
         TextView textView = new TextView(context);
@@ -329,18 +329,18 @@ public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         this.T.addView(textView2, w7.y5.q(-2, -2, 1));
         this.T.setAlpha(0.0f);
         frameLayout2.addView(this.T, w7.y5.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, getResourceProvider());
-        this.f = vl0Var;
-        vl0Var.q1();
-        org.telegram.ui.Components.vl0 vl0Var2 = this.f;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, getResourceProvider());
+        this.f = yl0Var;
+        yl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var2 = this.f;
         s4.c0 c0Var = new s4.c0(1, false);
         this.h = c0Var;
-        vl0Var2.setLayoutManager(c0Var);
+        yl0Var2.setLayoutManager(c0Var);
         ((s4.f1) this.f.getItemAnimator()).m = false;
-        org.telegram.ui.Components.vl0 vl0Var3 = this.f;
-        kj0 kj0Var2 = new kj0(this, context);
-        this.d = kj0Var2;
-        vl0Var3.setAdapter(kj0Var2);
+        org.telegram.ui.Components.yl0 yl0Var3 = this.f;
+        kj0 kj0Var = new kj0(this, context);
+        this.d = kj0Var;
+        yl0Var3.setAdapter(kj0Var);
         this.f.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.actionBar.setAdaptiveBackground(this.f);
         this.f.setOnItemClickListener(new i(this, 18));
@@ -516,7 +516,7 @@ public class mj0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         if (this.F && this.y) {
             AndroidUtilities.cancelRunOnUIThread(this.Z);
             if (this.a0.getVisibility() == 8) {
-                this.T.animate().alpha(0.0f).setListener(new org.telegram.ui.Components.r81(this, 27));
+                this.T.animate().alpha(0.0f).setListener(new org.telegram.ui.Components.t81(this, 27));
                 this.a0.setVisibility(0);
                 this.a0.setAlpha(0.0f);
                 this.a0.animate().alpha(1.0f).start();

@@ -2,7 +2,7 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m implements e1 {
     public final e1 a;
@@ -24,17 +24,17 @@ public final class m implements e1 {
     }
 
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
-        return this.a.p(r0Var);
+    public final boolean q(i2.r0 r0Var) {
+        return this.a.q(r0Var);
     }
 
     @Override // u2.e1
-    public final long s() {
-        return this.a.s();
+    public final long t() {
+        return this.a.t();
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
-        this.a.u(j3);
+    public final void v(long j3) {
+        this.a.v(j3);
     }
 }

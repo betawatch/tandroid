@@ -1,42 +1,42 @@
 package ki;
 
-import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.r01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ o0 b;
-    public final /* synthetic */ k0 c;
+    public final /* synthetic */ q0 b;
+    public final /* synthetic */ m0 c;
 
-    public /* synthetic */ c0(o0 o0Var, k0 k0Var, int i10) {
-        this.b = o0Var;
-        this.c = k0Var;
+    public /* synthetic */ c0(q0 q0Var, m0 m0Var, int i10) {
+        this.b = q0Var;
+        this.c = m0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                o0 o0Var = this.b;
-                k0 k0Var = this.c;
-                ((p01) o0Var.d).a(k0Var.a);
+                q0 q0Var = this.b;
+                m0 m0Var = this.c;
+                ((r01) q0Var.d).a(m0Var.a);
                 return;
             default:
-                o0 o0Var2 = this.b;
-                k0 k0Var2 = this.c;
-                l0 l0Var = o0Var2.d;
-                long j3 = k0Var2.a;
-                p01 p01Var = (p01) l0Var;
-                synchronized (p01Var) {
-                    p01Var.a(j3);
+                q0 q0Var2 = this.b;
+                m0 m0Var2 = this.c;
+                n0 n0Var = q0Var2.d;
+                long j3 = m0Var2.a;
+                r01 r01Var = (r01) n0Var;
+                synchronized (r01Var) {
+                    r01Var.a(j3);
                 }
                 return;
         }
     }
 
-    public /* synthetic */ c0(o0 o0Var, k0 k0Var, Exception exc) {
-        this.b = o0Var;
-        this.c = k0Var;
+    public /* synthetic */ c0(q0 q0Var, m0 m0Var, Exception exc) {
+        this.b = q0Var;
+        this.c = m0Var;
     }
 }

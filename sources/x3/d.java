@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import u2.y0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -147,20 +147,20 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long b10 = iVar2.d.b(pVar);
-            if (b10 >= 0) {
-                sVar.a = b10;
+            long c10 = iVar2.d.c(pVar);
+            if (c10 >= 0) {
+                sVar.a = c10;
                 return 1;
             }
-            if (b10 < -1) {
-                iVar2.a(-(b10 + 2));
+            if (c10 < -1) {
+                iVar2.a(-(c10 + 2));
             }
             if (!iVar2.l) {
-                b0 g10 = iVar2.d.g();
-                e2.d.h(g10);
-                iVar2.c.X1(g10);
+                b0 l4 = iVar2.d.l();
+                e2.d.h(l4);
+                iVar2.c.X1(l4);
                 h0 h0Var = iVar2.b;
-                g10.l();
+                l4.l();
                 h0Var.getClass();
                 iVar2.l = true;
             }
@@ -170,22 +170,22 @@ public final class d implements o {
             }
             iVar2.k = 0L;
             v vVar2 = eVar.b;
-            long b11 = iVar2.b(vVar2);
-            if (b11 >= 0) {
+            long b10 = iVar2.b(vVar2);
+            if (b10 >= 0) {
                 long j10 = iVar2.g;
-                if (j10 + b11 >= iVar2.e) {
+                if (j10 + b10 >= iVar2.e) {
                     iVar2.b.d(vVar2.c, vVar2);
                     iVar2.b.c((j10 * 1000000) / iVar2.i, 1, vVar2.c, 0, null);
                     iVar2.e = -1L;
                 }
             }
-            iVar2.g += b11;
+            iVar2.g += b10;
             return 0;
         }
         while (true) {
-            boolean b12 = eVar.b(pVar);
+            boolean b11 = eVar.b(pVar);
             v vVar3 = eVar.b;
-            if (!b12) {
+            if (!b11) {
                 iVar2.h = 3;
                 return -1;
             }

@@ -15,18 +15,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.mb0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.fs0;
 import org.telegram.ui.wx;
 import w7.y5;
 import yh.k5;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ o2 a;
@@ -37,21 +37,21 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        w51 w51Var = (w51) obj;
+        y51 y51Var = (y51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         o2 o2Var = this.a;
-        yr0 yr0Var = o2Var.a;
+        bs0 bs0Var = o2Var.a;
         int i10 = o2Var.b;
         if (o2Var.e == null) {
             return;
         }
-        Object obj6 = w51Var.G;
+        Object obj6 = y51Var.G;
         if (obj6 instanceof TL_stars.SavedStarGift) {
             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
             if (!o2Var.n) {
-                yh.y3 y3Var = new yh.y3(o2Var.getContext(), o2Var.b, yr0Var.c, o2Var.c, null);
+                yh.y3 y3Var = new yh.y3(o2Var.getContext(), o2Var.b, bs0Var.c, o2Var.c, null);
                 y3Var.d1 = new d2(o2Var, 2);
                 y3Var.O0 = new s5.e(12, o2Var, savedStarGift);
                 y3Var.j2(savedStarGift, o2Var.e);
@@ -69,7 +69,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (o2Var.e.m(savedStarGift, z11, true)) {
-                    xc.a0(yr0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
+                    xc.a0(bs0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
                 }
                 if (z10) {
                     return;
@@ -82,12 +82,12 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
     @Override // org.telegram.messenger.Utilities.Callback5Return
     public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         o2 o2Var;
-        yr0 yr0Var;
+        bs0 bs0Var;
         j1 j1Var;
         k5 k5Var;
         String str;
         final o2 o2Var2;
-        yr0 yr0Var2;
+        bs0 bs0Var2;
         j1 j1Var2;
         boolean z10;
         boolean z11;
@@ -96,7 +96,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
         boolean z12;
         f6 f6Var;
         Object obj6;
-        w51 w51Var = (w51) obj;
+        y51 y51Var = (y51) obj;
         View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
@@ -104,23 +104,23 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
         o2 o2Var3 = this.a;
         f6 f6Var2 = o2Var3.c;
         int i10 = o2Var3.b;
-        yr0 yr0Var3 = o2Var3.a;
+        bs0 bs0Var3 = o2Var3.a;
         boolean z13 = false;
         if (o2Var3.e != null) {
             if (view instanceof j1) {
-                Object obj7 = w51Var.G;
+                Object obj7 = y51Var.G;
                 if (obj7 instanceof TL_stars.SavedStarGift) {
                     j1 j1Var3 = (j1) view;
                     final TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj7;
-                    org.telegram.ui.ActionBar.n2 n2Var = yr0Var3.a;
-                    k5 k5Var2 = yr0Var3.e;
-                    v70 I = v70.I(n2Var, view);
-                    yr0Var3.I = I;
+                    org.telegram.ui.ActionBar.n2 n2Var = bs0Var3.a;
+                    k5 k5Var2 = bs0Var3.e;
+                    y70 I = y70.I(n2Var, view);
+                    bs0Var3.I = I;
                     if (k5Var2.h()) {
                         if (!o2Var3.d) {
                             k5Var2.d().size();
                         }
-                        v70 J = I.J();
+                        y70 J = I.J();
                         J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ii.h(I, 2), false);
                         J.k();
                         wx wxVar = new wx(o2Var3.getContext(), 2);
@@ -145,7 +145,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                             int i13 = i12 + 1;
                             TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) d.get(i12);
                             ArrayList arrayList = k5Var2.e(tL_starGiftCollection.collection_id).l;
-                            yr0 yr0Var4 = yr0Var3;
+                            bs0 bs0Var4 = bs0Var3;
                             int size2 = arrayList.size();
                             j1 j1Var4 = j1Var3;
                             int i14 = 0;
@@ -185,11 +185,11 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                                 f1Var2.g(tL_starGiftCollection.title, R.drawable.msg_folders, null);
                             }
                             k5 k5Var3 = k5Var2;
-                            f1Var2.setOnClickListener(new jb0(o2Var4, z12, tL_starGiftCollection, savedStarGift, I, 1));
+                            f1Var2.setOnClickListener(new mb0(o2Var4, z12, tL_starGiftCollection, savedStarGift, I, 1));
                             linearLayout3.addView(f1Var2, y5.n(-1, -2));
                             linearLayout2 = linearLayout3;
                             o2Var3 = o2Var4;
-                            yr0Var3 = yr0Var4;
+                            bs0Var3 = bs0Var4;
                             i12 = i13;
                             j1Var3 = j1Var4;
                             k5Var2 = k5Var3;
@@ -197,7 +197,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                             f6Var2 = f6Var;
                         }
                         o2Var = o2Var3;
-                        yr0Var = yr0Var3;
+                        bs0Var = bs0Var3;
                         j1Var = j1Var3;
                         k5Var = k5Var2;
                         str = null;
@@ -205,26 +205,26 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                         I.k();
                     } else {
                         o2Var = o2Var3;
-                        yr0Var = yr0Var3;
+                        bs0Var = bs0Var3;
                         j1Var = j1Var3;
                         k5Var = k5Var2;
                         str = null;
                     }
                     if (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique) {
-                        if (yr0Var.c() && !o2Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
+                        if (bs0Var.c() && !o2Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
                             boolean z14 = savedStarGift.pinned_to_top;
                             o2Var2 = o2Var;
-                            yr0Var2 = yr0Var;
+                            bs0Var2 = bs0Var;
                             j1Var2 = j1Var;
                             z10 = false;
                             I.c(z14 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z14 ? R.string.Gift2Unpin : R.string.Gift2Pin), new fs0(o2Var2, savedStarGift, j1Var2, view, 26), false);
                             I.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new d2(o2Var2, 0), savedStarGift.pinned_to_top);
                         } else {
                             o2Var2 = o2Var;
-                            yr0Var2 = yr0Var;
+                            bs0Var2 = bs0Var;
                             j1Var2 = j1Var;
                             z10 = false;
-                            if (yr0Var2.c() && o2Var2.d) {
+                            if (bs0Var2.c() && o2Var2.d) {
                                 I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new d2(o2Var2, 1), false);
                             }
                         }
@@ -293,14 +293,14 @@ public final /* synthetic */ class i2 implements Utilities.Callback5, Utilities.
                         }, str2 != null);
                     } else {
                         o2Var2 = o2Var;
-                        yr0Var2 = yr0Var;
+                        bs0Var2 = bs0Var;
                         j1Var2 = j1Var;
                         z10 = false;
-                        if (yr0Var2.c() && o2Var2.d) {
+                        if (bs0Var2.c() && o2Var2.d) {
                             I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new d2(o2Var2, 3), false);
                         }
                     }
-                    if (yh.y3.O1(i10, yr0Var2.c)) {
+                    if (yh.y3.O1(i10, bs0Var2.c)) {
                         boolean z15 = savedStarGift.unsaved;
                         I.c(z15 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z15 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new tg.r(o2Var2, savedStarGift, j1Var2, 6), z10);
                     }

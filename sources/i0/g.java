@@ -20,7 +20,7 @@ import java.util.List;
 import v7.i8;
 import v7.j8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g extends i8 {
     public static final Class a;
@@ -118,7 +118,7 @@ public final class g extends i8 {
     }
 
     @Override // v7.i8
-    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
+    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
         Object obj;
         try {
             obj = b.newInstance(null);
@@ -128,17 +128,17 @@ public final class g extends i8 {
         if (obj != null) {
             int i11 = 0;
             m mVar = new m(0);
-            int length = hVarArr.length;
+            int length = iVarArr.length;
             while (true) {
                 if (i11 < length) {
-                    o0.h hVar = hVarArr[i11];
-                    Uri uri = hVar.a;
+                    o0.i iVar = iVarArr[i11];
+                    Uri uri = iVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) mVar.get(uri);
                     if (byteBuffer == null) {
                         byteBuffer = j8.e(context, uri);
                         mVar.put(uri, byteBuffer);
                     }
-                    if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {
+                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
                         break;
                     }
                     i11++;

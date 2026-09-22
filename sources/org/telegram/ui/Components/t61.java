@@ -1,46 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class t61 extends s4.j {
+    public final /* synthetic */ u61 F;
 
-    public /* synthetic */ t61(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public t61(u61 u61Var) {
+        this.F = u61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                u61 u61Var = (u61) this.b;
-                u61Var.getClass();
-                u61Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u61Var.invalidate();
-                break;
-            case 1:
-                a71 a71Var = (a71) this.b;
-                a71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a71Var.b = floatValue;
-                a71Var.setTranslationY(floatValue);
-                break;
-            default:
-                w81 w81Var = (w81) this.b;
-                w81Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w81Var.setAnimationIdicatorProgress(floatValue2);
-                v81 v81Var = w81Var.y;
-                if (v81Var != null) {
-                    ((l.d) v81Var).M(floatValue2);
-                    break;
-                }
-                break;
+    @Override // s4.j
+    public final void M() {
+        u61 u61Var = this.F;
+        if (u61Var.c1()) {
+            u61Var.invalidate();
         }
+        u61Var.D1();
+    }
+
+    @Override // s4.j
+    public final void O() {
+        u61 u61Var = this.F;
+        if (u61Var.c1()) {
+            u61Var.invalidate();
+        }
+        u61Var.D1();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        u61 u61Var = this.F;
+        u61Var.invalidate();
+        u61Var.D1();
+    }
+
+    @Override // s4.j
+    public final void Q() {
+        u61 u61Var = this.F;
+        if (u61Var.c1()) {
+            u61Var.invalidate();
+        }
+        u61Var.D1();
     }
 }

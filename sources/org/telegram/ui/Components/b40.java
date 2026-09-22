@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class b40 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -27,7 +27,7 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final String c;
     public final ai.v8 d;
     public ai.x5 e;
-    public org.telegram.ui.hk f;
+    public org.telegram.ui.ik f;
     public FrameLayout h;
     public y30 n;
     public gg.n1 r;
@@ -92,8 +92,8 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.n.setScaleY(z10 ? 1.0f : 0.95f);
         this.h.setAlpha(z10 ? 1.0f : 0.0f);
         this.h.setVisibility(z10 ? 0 : 8);
-        org.telegram.ui.hk hkVar = this.f;
-        if (hkVar == null || (aoVar = hkVar.a) == null || (w0Var = aoVar.L3) == null) {
+        org.telegram.ui.ik ikVar = this.f;
+        if (ikVar == null || (aoVar = ikVar.a) == null || (w0Var = aoVar.L3) == null) {
             return;
         }
         w0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, this.E));
@@ -115,7 +115,7 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
             return;
         }
         this.r.setVisibility(0);
-        ViewPropertyAnimator duration = this.r.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(48.0f)).withEndAction(new bi.f(24, this, z10)).setDuration(320L);
+        ViewPropertyAnimator duration = this.r.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(48.0f)).withEndAction(new bi.f(25, this, z10)).setDuration(320L);
         qr qrVar = qr.h;
         duration.setInterpolator(qrVar).start();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z10 ? 1.0f : 0.0f);
@@ -155,11 +155,11 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         bundle.putInt("chatMode", 7);
         bundle.putInt("searchType", 3);
         bundle.putString("searchHashtag", str);
-        org.telegram.ui.hk hkVar = new org.telegram.ui.hk(context, getParentLayout(), bundle, 1);
-        hkVar.h = false;
-        this.f = hkVar;
-        this.e.addView(hkVar, w7.y5.e(-1, -1, 119));
-        y30 y30Var = new y30(this, context, new bv0(null), this, new x30(), this.resourceProvider);
+        org.telegram.ui.ik ikVar = new org.telegram.ui.ik(context, getParentLayout(), bundle, 1);
+        ikVar.h = false;
+        this.f = ikVar;
+        this.e.addView(ikVar, w7.y5.e(-1, -1, 119));
+        y30 y30Var = new y30(this, context, new dv0(null), this, new x30(), this.resourceProvider);
         this.n = y30Var;
         if (y30Var.getSearchOptionsItem() != null) {
             this.n.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, this.resourceProvider), PorterDuff.Mode.SRC_IN));
@@ -173,12 +173,12 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         y30 y30Var2 = this.n;
         ai.v8 v8Var = this.d;
         y30Var2.T1 = v8Var;
-        rt0 rt0Var = y30Var2.c0;
-        rt0Var.s = v8Var;
-        rt0Var.l();
-        gv0 gv0Var = y30Var2.d0;
-        gv0Var.s = v8Var;
-        gv0Var.l();
+        tt0 tt0Var = y30Var2.c0;
+        tt0Var.s = v8Var;
+        tt0Var.l();
+        iv0 iv0Var = y30Var2.d0;
+        iv0Var.s = v8Var;
+        iv0Var.l();
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));
@@ -211,9 +211,9 @@ public final class b40 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.hk hkVar;
+        org.telegram.ui.ik ikVar;
         if (i10 != NotificationCenter.storiesListUpdated) {
-            if (i10 != NotificationCenter.hashtagSearchUpdated || (hkVar = this.f) == null || hkVar.a == null || ((Integer) objArr[0]).intValue() != this.f.a.getClassGuid()) {
+            if (i10 != NotificationCenter.hashtagSearchUpdated || (ikVar = this.f) == null || ikVar.a == null || ((Integer) objArr[0]).intValue() != this.f.a.getClassGuid()) {
                 return;
             }
             int intValue = ((Integer) objArr[1]).intValue();

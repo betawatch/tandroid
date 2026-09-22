@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -384,7 +384,7 @@ public final /* synthetic */ class rf0 implements Runnable {
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = tk0Var.n;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(tk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 25));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(tk0Var, new ArrayList(), new ArrayList(), new ArrayList(), 25));
                     break;
                 } else {
                     String translitString2 = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -508,7 +508,7 @@ public final /* synthetic */ class rf0 implements Runnable {
                         arrayList6 = arrayList;
                         i23 = 1;
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(tk0Var, arrayList8, arrayList9, arrayList7, 25));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(tk0Var, arrayList8, arrayList9, arrayList7, 25));
                     break;
                 }
                 break;
@@ -542,7 +542,7 @@ public final /* synthetic */ class rf0 implements Runnable {
                 }
                 break;
             case 11:
-                ((dn0) this.b).c(((TLRPC.TL_error) this.d).text, (String) this.c);
+                ((dn0) this.b).b(((TLRPC.TL_error) this.d).text, (String) this.c);
                 break;
             case 12:
                 bn0 bn0Var = (bn0) this.b;
@@ -715,10 +715,10 @@ public final /* synthetic */ class rf0 implements Runnable {
                         }
                         PhotoViewer photoViewer8 = ju0Var.d;
                         if (!photoViewer8.J4) {
-                            org.telegram.ui.Components.g71 g71Var = photoViewer8.j1;
+                            org.telegram.ui.Components.i71 i71Var = photoViewer8.j1;
                             boolean z13 = photoViewer8.Z7 > 1;
                             PhotoViewer photoViewer9 = ju0Var.d;
-                            g71Var.a(Math.min(photoViewer9.e8, ju0Var.d.f8), z13, photoViewer9.r);
+                            i71Var.a(Math.min(photoViewer9.e8, ju0Var.d.f8), z13, photoViewer9.r);
                         }
                         if (BuildVars.LOGS_ENABLED) {
                             StringBuilder sb2 = new StringBuilder("compressionsCount = ");

@@ -15,7 +15,7 @@ import c3.q;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.components.ComponentRegistrar;
-import fb.n;
+import fb.o;
 import i9.s;
 import i9.t;
 import i9.w;
@@ -45,9 +45,9 @@ import qb.k;
 import v2.l;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuation, l, xf.a, y6.d {
+public class d implements m0, bg.a, q, q9.e, cg.a, o, q9.d, l1, r4.c, Continuation, l, xf.a, y6.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ d(int i10) {
@@ -260,7 +260,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
                 thread.start();
                 return aVar;
             case 20:
-                return new k((Context) cVar.a(Context.class));
+                return new k((Context) cVar.b(Context.class));
             default:
                 return new tb.a();
         }
@@ -564,20 +564,20 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     @Override // y6.d
     public a3.l d(Context context, String str, y6.c cVar) {
         a3.l lVar = new a3.l();
-        lVar.a = cVar.l(context, str);
+        lVar.a = cVar.m(context, str);
         int i10 = 1;
-        int c10 = cVar.c(context, str, true);
-        lVar.b = c10;
+        int d = cVar.d(context, str, true);
+        lVar.b = d;
         int i11 = lVar.a;
         if (i11 == 0) {
             i11 = 0;
-            if (c10 == 0) {
+            if (d == 0) {
                 i10 = 0;
                 lVar.c = i10;
                 return lVar;
             }
         }
-        if (c10 < i11) {
+        if (d < i11) {
             i10 = -1;
         }
         lVar.c = i10;
@@ -743,7 +743,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
         return false;
     }
 
-    @Override // fb.n
+    @Override // fb.o
     public Object p2() {
         switch (this.a) {
             case 8:
@@ -751,11 +751,6 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
             default:
                 return new ConcurrentHashMap();
         }
-    }
-
-    @Override // r4.c
-    public void q() {
-        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -814,6 +809,11 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void u0(u1 u1Var, TLRPC.User user, float f7, float f10) {
         int i10 = this.a;
+    }
+
+    @Override // r4.c
+    public void v() {
+        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -969,6 +969,9 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     private final /* synthetic */ void C1() {
     }
 
+    private final /* synthetic */ void D() {
+    }
+
     private final /* synthetic */ void E3() {
     }
 
@@ -982,9 +985,6 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     private final /* synthetic */ void H2() {
-    }
-
-    private final /* synthetic */ void J() {
     }
 
     private final /* synthetic */ void c0() {
@@ -1006,19 +1006,19 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     @Override // a3.m0
-    public /* synthetic */ void D() {
+    public /* synthetic */ void B() {
     }
 
     @Override // a3.m0
-    public /* synthetic */ void K() {
+    public /* synthetic */ void J() {
+    }
+
+    @Override // a3.m0
+    public /* synthetic */ void U() {
     }
 
     @Override // a3.m0
     public /* synthetic */ void onFirstFrameRendered() {
-    }
-
-    @Override // a3.m0
-    public /* synthetic */ void v() {
     }
 
     private final /* synthetic */ void A2(u1 u1Var) {
@@ -1045,6 +1045,9 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     private final /* synthetic */ void H0(u1 u1Var) {
     }
 
+    private final /* synthetic */ void K(u1 u1Var) {
+    }
+
     private final /* synthetic */ void K0(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
@@ -1061,9 +1064,6 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     private final /* synthetic */ void P2(String str) {
-    }
-
-    private final /* synthetic */ void U(u1 u1Var) {
     }
 
     private final /* synthetic */ void U2(u1 u1Var) {
@@ -1177,9 +1177,6 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     private final /* synthetic */ void y3(int i10) {
     }
 
-    private final /* synthetic */ void B(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
     private final /* synthetic */ void C(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
@@ -1235,6 +1232,9 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     private final /* synthetic */ void p1(u1 u1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    }
+
+    private final /* synthetic */ void q(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
     private final /* synthetic */ void y1(int i10, u1 u1Var) {

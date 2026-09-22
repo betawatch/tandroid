@@ -1,189 +1,103 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.SystemClock;
+import android.text.Layout;
+import android.text.SpannableString;
 import android.text.style.CharacterStyle;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class l90 {
-    public static final ArrayList s = new ArrayList();
-    public int a;
-    public int b;
-    public Paint c;
-    public Paint d;
-    public int e;
-    public int f;
-    public final CharacterStyle i;
-    public final float j;
-    public final float k;
-    public Rect m;
-    public float n;
-    public final long q;
-    public final ArrayList g = new ArrayList();
-    public int h = 0;
-    public final Path l = new Path();
-    public long o = -1;
-    public long p = -1;
-    public final boolean r = !LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
+public final class l90 extends org.telegram.ui.ActionBar.j5 {
+    public final org.telegram.ui.ActionBar.f6 M0;
+    public final k90 N0;
+    public o90 O0;
 
-    public l90(CharacterStyle characterStyle, org.telegram.ui.ActionBar.f6 f6Var, float f7, float f10, int i10) {
-        this.i = characterStyle;
-        d(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ld, f6Var));
-        this.j = f7;
-        this.k = f10;
-        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
+    public l90(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.N0 = new k90(this);
+        this.M0 = f6Var;
     }
 
-    public final boolean a(Canvas canvas) {
-        boolean z10;
-        float f7;
-        boolean z11;
-        boolean z12;
-        boolean z13 = this.r;
-        int dp = z13 ? 0 : AndroidUtilities.dp(4.0f);
-        boolean z14 = this.a != dp;
-        if (this.c == null) {
-            Paint paint = new Paint(1);
-            this.c = paint;
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.c.setColor(this.b);
-            this.e = Color.alpha(this.b);
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getLayoutX(), getLayoutY());
+        if (this.N0.f(canvas)) {
+            invalidate();
         }
-        if (this.d == null) {
-            Paint paint2 = new Paint(1);
-            this.d = paint2;
-            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.d.setColor(this.b);
-            this.f = Color.alpha(this.b);
-        }
-        if (z14) {
-            this.a = dp;
-            if (dp <= 0) {
-                this.c.setPathEffect(null);
-                this.d.setPathEffect(null);
-            } else {
-                this.c.setPathEffect(new CornerPathEffect(this.a));
-                this.d.setPathEffect(new CornerPathEffect(this.a));
-            }
-        }
-        Rect rect = this.m;
-        float f10 = this.k;
-        float f11 = this.j;
-        ArrayList arrayList = this.g;
-        if (rect != null || this.h <= 0) {
-            z10 = z13;
-            f7 = f11;
-            z11 = false;
-            z12 = true;
-        } else {
-            e90 e90Var = (e90) arrayList.get(0);
-            RectF rectF = AndroidUtilities.rectTmp;
-            e90Var.computeBounds(rectF, false);
-            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            for (int i10 = 1; i10 < this.h; i10++) {
-                e90 e90Var2 = (e90) arrayList.get(i10);
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                e90Var2.computeBounds(rectF2, false);
-                Rect rect2 = this.m;
-                rect2.left = Math.min(rect2.left, (int) rectF2.left);
-                Rect rect3 = this.m;
-                rect3.top = Math.min(rect3.top, (int) rectF2.top);
-                Rect rect4 = this.m;
-                rect4.right = Math.max(rect4.right, (int) rectF2.right);
-                Rect rect5 = this.m;
-                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
-            }
-            z10 = z13;
-            z11 = false;
-            f7 = f11;
-            z12 = true;
-            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f10, 2.0d) + Math.pow(this.m.left - f11, 2.0d), Math.pow(this.m.top - f10, 2.0d) + Math.pow(this.m.right - f11, 2.0d)), Math.max(Math.pow(this.m.bottom - f10, 2.0d) + Math.pow(this.m.left - f11, 2.0d), Math.pow(this.m.bottom - f10, 2.0d) + Math.pow(this.m.right - f11, 2.0d))));
-        }
-        if (z10) {
-            for (int i11 = 0; i11 < this.h; i11++) {
-                canvas.drawPath((Path) arrayList.get(i11), this.d);
-            }
-        } else {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            if (this.o < 0) {
-                this.o = elapsedRealtime;
-            }
-            float interpolation = qr.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
-            float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
-            this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
-            this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            for (int i12 = 0; i12 < this.h; i12++) {
-                ((e90) arrayList.get(i12)).a();
-                canvas.drawPath((Path) arrayList.get(i12), this.c);
-            }
-            this.d.setAlpha((int) (this.f * 0.8f * min));
-            this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * AndroidUtilities.dp(5.0f));
-            if (interpolation < 1.0f) {
-                float f12 = interpolation * this.n;
-                canvas.save();
-                Path path = this.l;
-                path.reset();
-                path.addCircle(f7, f10, f12, Path.Direction.CW);
-                canvas.clipPath(path);
-                for (int i13 = 0; i13 < this.h; i13++) {
-                    canvas.drawPath((Path) arrayList.get(i13), this.d);
-                }
-                canvas.restore();
-            } else {
-                for (int i14 = 0; i14 < this.h; i14++) {
-                    canvas.drawPath((Path) arrayList.get(i14), this.d);
+        canvas.restore();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClickableSpan clickableSpan;
+        CharacterStyle characterStyle;
+        k90 k90Var = this.N0;
+        if (k90Var != null) {
+            Layout layout = getLayout();
+            int x10 = (int) motionEvent.getX();
+            int y3 = (int) motionEvent.getY();
+            Layout layout2 = getLayout();
+            if (layout2 != null) {
+                int layoutX = (int) (x10 - getLayoutX());
+                int layoutY = (int) (y3 - getLayoutY());
+                int lineForVertical = layout2.getLineForVertical(layoutY);
+                float f7 = layoutX;
+                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f7);
+                float lineLeft = layout2.getLineLeft(lineForVertical);
+                if (lineLeft <= f7 && layout2.getLineWidth(lineForVertical) + lineLeft >= f7 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+                    if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                        clickableSpan = clickableSpanArr[0];
+                        if (clickableSpan == null && motionEvent.getAction() == 0) {
+                            o90 o90Var = new o90(clickableSpan, this.M0, motionEvent.getX(), motionEvent.getY(), 0);
+                            this.O0 = o90Var;
+                            k90Var.a(o90Var, null);
+                            SpannableString spannableString = new SpannableString(layout.getText());
+                            int spanStart = spannableString.getSpanStart(this.O0.i);
+                            int spanEnd = spannableString.getSpanEnd(this.O0.i);
+                            h90 b10 = this.O0.b();
+                            b10.d(layout, spanStart, 0.0f);
+                            layout.getSelectionPath(spanStart, spanEnd, b10);
+                            return true;
+                        }
+                        if (motionEvent.getAction() == 1) {
+                            k90Var.d(true);
+                            o90 o90Var2 = this.O0;
+                            if (o90Var2 != null && (characterStyle = o90Var2.i) == clickableSpan) {
+                                if (characterStyle instanceof ClickableSpan) {
+                                    ((ClickableSpan) characterStyle).onClick(this);
+                                }
+                                this.O0 = null;
+                                return true;
+                            }
+                            this.O0 = null;
+                        }
+                        if (motionEvent.getAction() == 3) {
+                            k90Var.d(true);
+                            this.O0 = null;
+                        }
+                    }
                 }
             }
-            if (interpolation < 1.0f || this.p >= 0) {
-                return z12;
+            clickableSpan = null;
+            if (clickableSpan == null) {
+            }
+            if (motionEvent.getAction() == 1) {
+            }
+            if (motionEvent.getAction() == 3) {
             }
         }
-        return z11;
-    }
-
-    public final e90 b() {
-        ArrayList arrayList = s;
-        e90 e90Var = !arrayList.isEmpty() ? (e90) arrayList.remove(0) : new e90(0);
-        e90Var.c = !this.r;
-        e90Var.reset();
-        ArrayList arrayList2 = this.g;
-        arrayList2.add(e90Var);
-        this.h = arrayList2.size();
-        return e90Var;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.g;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        s.addAll(arrayList);
-        arrayList.clear();
-        this.h = 0;
-    }
-
-    public final void d(int i10) {
-        this.b = i10;
-        Paint paint = this.c;
-        if (paint != null) {
-            paint.setColor(i10);
-            this.e = Color.alpha(i10);
-        }
-        Paint paint2 = this.d;
-        if (paint2 != null) {
-            paint2.setColor(i10);
-            this.f = Color.alpha(i10);
-        }
+        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

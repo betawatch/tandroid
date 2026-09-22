@@ -19,8 +19,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.h01;
@@ -28,9 +28,9 @@ import org.telegram.ui.i60;
 import org.telegram.ui.uy;
 import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, kl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.f, pa.a, vg1 {
+public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, nl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.f, pa.a, vg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -69,12 +69,12 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, C
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -115,13 +115,8 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, C
         ((yh.g) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
-    @Override // pa.a
-    public void f(pa.b bVar) {
-        ((t9.a) bVar.get()).d((String) this.c, this.b, (y9.b1) this.d);
-    }
-
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         da.b bVar = (da.b) this.c;
         l5.i iVar = (l5.i) this.d;
         s5.d dVar = (s5.d) bVar.c;
@@ -130,6 +125,11 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, C
         hVar.getClass();
         hVar.c(new ai.z1(q6, iVar));
         return null;
+    }
+
+    @Override // pa.a
+    public void h(pa.b bVar) {
+        ((t9.a) bVar.get()).d((String) this.c, this.b, (y9.b1) this.d);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -184,7 +184,7 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, C
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

@@ -23,14 +23,14 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -46,7 +46,7 @@ import org.telegram.ui.uw0;
 import org.telegram.ui.zn;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -380,9 +380,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         }
                     }
-                    vl0 vl0Var = rsVar.d;
-                    if (vl0Var != null) {
-                        vl0Var.v0(0);
+                    yl0 yl0Var = rsVar.d;
+                    if (yl0Var != null) {
+                        yl0Var.v0(0);
                     }
                     rsVar.N(true);
                     break;
@@ -471,7 +471,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 13:
-                j41.m((j41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                l41.m((l41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
             case 14:
                 i60.q((i60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
@@ -608,7 +608,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                     if (savedStarGift.pinned_to_top) {
                         int i26 = jp0.a;
-                        w51 J = w51.J(jp0.class);
+                        y51 J = y51.J(jp0.class);
                         J.G = savedStarGift;
                         J.K(r2Var.b == savedStarGift.gift.id);
                         J.u = 1;
@@ -759,13 +759,13 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 p2Var.b();
                 break;
             case 24:
-                yh.w7.z0((yh.w7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
+                yh.w7.z0((yh.w7) this.b, (y51) this.c, (Boolean) obj, (String) obj2);
                 break;
             case 25:
-                yh.l7.Q((yh.l7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
+                yh.l7.Q((yh.l7) this.b, (y51) this.c, (Boolean) obj, (String) obj2);
                 break;
             default:
-                yh.m7.Q((yh.m7) this.b, (w51) this.c, (Boolean) obj, (String) obj2);
+                yh.m7.Q((yh.m7) this.b, (y51) this.c, (Boolean) obj, (String) obj2);
                 break;
         }
     }

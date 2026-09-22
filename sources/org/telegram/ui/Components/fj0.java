@@ -1,182 +1,367 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.Layout;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueuePoolBackground;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class fj0 extends hj0 {
-    public volatile RLottieNative U0;
-    public boolean V0;
-    public boolean W0;
-    public volatile boolean X0;
-    public boolean Y0;
-    public final int Z0;
-    public int a1;
+public final class fj0 implements LeadingMarginSpan {
+    public final Path E;
+    public final Paint F;
+    public final float[] G;
+    public final Path H;
+    public int I;
+    public xi0 J;
+    public SpannableString K;
+    public final boolean a;
+    public boolean b = true;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public final ej0 s;
+    public ii.z5 v;
+    public final Drawable w;
+    public final Paint x;
+    public final float[] y;
 
-    public fj0(String str, int i10, int i11) {
-        super(i10, i11);
-        String readRes;
-        this.Z0 = -1;
-        this.J = 1;
-        if ("🎲".equals(str)) {
-            readRes = AndroidUtilities.readRes(R.raw.diceloop);
-            this.Z0 = 60;
-        } else {
-            readRes = "🎯".equals(str) ? AndroidUtilities.readRes(R.raw.dartloop) : null;
-        }
-        getPaint().setFlags(2);
-        if (TextUtils.isEmpty(readRes)) {
-            return;
-        }
-        this.m0 = RLottieNative.b(readRes, this.e, null, null);
+    public fj0(boolean z10, boolean z11, ej0 ej0Var) {
+        Paint paint = new Paint(1);
+        this.x = paint;
+        this.y = new float[8];
+        this.E = new Path();
+        Paint paint2 = new Paint(1);
+        this.F = paint2;
+        this.G = new float[8];
+        this.H = new Path();
+        this.I = -1;
+        this.a = z10;
+        this.s = ej0Var;
+        this.e = z11;
+        this.w = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.mini_quote).mutate();
+        paint2.setColor(this.I);
+        paint.setColor(i0.a.k(this.I, 30));
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public int B(Bitmap bitmap, boolean z10) {
-        RLottieNative rLottieNative;
-        int i10 = this.J;
-        if (i10 == 1) {
-            rLottieNative = this.m0;
-        } else if (i10 == 2) {
-            rLottieNative = this.U0;
-            if (this.X0) {
-                this.a0 = this.a1 - 1;
+    public static void a(SpannableStringBuilder spannableStringBuilder) {
+        boolean z10;
+        TreeSet treeSet = new TreeSet();
+        HashMap hashMap = new HashMap();
+        ej0[] ej0VarArr = (ej0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), ej0.class);
+        int i10 = 0;
+        while (true) {
+            if (i10 >= ej0VarArr.length) {
+                break;
             }
-        } else {
-            rLottieNative = this.m0;
+            ej0 ej0Var = ej0VarArr[i10];
+            int spanStart = spannableStringBuilder.getSpanStart(ej0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(ej0Var);
+            treeSet.add(Integer.valueOf(spanStart));
+            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((ej0Var.a.e ? 16 : 1) | (hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0)));
+            treeSet.add(Integer.valueOf(spanEnd));
+            hashMap.put(Integer.valueOf(spanEnd), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanEnd)) ? ((Integer) hashMap.get(Integer.valueOf(spanEnd))).intValue() : 0) | 2));
+            spannableStringBuilder.removeSpan(ej0Var);
+            spannableStringBuilder.removeSpan(ej0Var.a);
+            i10++;
         }
-        return rLottieNative.c(this.a0, bitmap, z10) < 0 ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public void C(boolean z10) {
-        this.k0 = false;
-        this.l0 = true;
-        n();
-        l();
-        if (this.Y0 || this.V0) {
-            this.W0 = true;
-            return;
-        }
-        if (this.P != null || this.x0) {
-            this.V = true;
-            return;
-        }
-        D(z10);
-        yf.e eVar = this.B0;
-        if (eVar != null) {
-            RandomAccessFile randomAccessFile = eVar.s;
-            if (randomAccessFile != null) {
-                try {
-                    randomAccessFile.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+        Iterator it = treeSet.iterator();
+        int i11 = 0;
+        int i12 = 0;
+        loop1: while (true) {
+            z10 = false;
+            while (it.hasNext()) {
+                Integer num = (Integer) it.next();
+                int intValue = num.intValue();
+                int intValue2 = ((Integer) hashMap.get(num)).intValue();
+                if (i11 != intValue) {
+                    int i13 = intValue - 1;
+                    int i14 = (i13 < 0 || i13 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(i13) != '\n') ? intValue : intValue - 1;
+                    if (i12 > 0) {
+                        c(spannableStringBuilder, i11, i14, z10);
+                    }
+                    i11 = intValue + 1;
+                    if (i11 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(intValue) != '\n') {
+                        i11 = intValue;
+                    }
                 }
-                eVar.s = null;
-            }
-            eVar.r = true;
-            this.B0 = null;
-        }
-        E();
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public final void D(boolean z10) {
-        RLottieNative rLottieNative = this.m0;
-        RLottieNative rLottieNative2 = this.U0;
-        this.m0 = null;
-        this.U0 = null;
-        if (rLottieNative == null && rLottieNative2 == null) {
-            return;
-        }
-        bv bvVar = new bv(28, rLottieNative, rLottieNative2);
-        if (z10) {
-            DispatchQueuePoolBackground.execute(bvVar);
-        } else {
-            Utilities.globalQueue.postRunnable(bvVar);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public void i() {
-        int i10 = this.J;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                int i11 = this.a0 + 1;
-                if (i11 < this.a1) {
-                    this.a0 = i11;
-                    return;
-                } else {
-                    this.N = true;
-                    this.M++;
-                    return;
+                if ((intValue2 & 2) != 0) {
+                    i12--;
+                }
+                if ((intValue2 & 1) != 0 || (intValue2 & 16) != 0) {
+                    i12++;
+                    if ((intValue2 & 16) != 0) {
+                        z10 = true;
+                    }
                 }
             }
+        }
+        if (i11 >= spannableStringBuilder.length() || i12 <= 0) {
             return;
         }
-        int i12 = this.a0 + 1;
-        int i13 = this.Z0;
-        if (i13 == -1) {
-            i13 = this.e[0];
-        }
-        if (i12 < i13) {
-            this.a0 = i12;
-            return;
-        }
-        this.a0 = 0;
-        this.N = false;
-        if (this.U0 != null) {
-            this.J = 2;
-        }
-        if (this.y) {
-            this.x = null;
-            this.y = false;
+        c(spannableStringBuilder, i11, spannableStringBuilder.length(), z10);
+    }
+
+    public static void b(Spannable spannable, int i10, int i11, boolean z10) {
+        fj0[] fj0VarArr = (fj0[]) spannable.getSpans(i10, i11, fj0.class);
+        if (fj0VarArr == null || fj0VarArr.length <= 0) {
+            int clamp = Utilities.clamp(i10, spannable.length(), 0);
+            int clamp2 = Utilities.clamp(i11, spannable.length(), 0);
+            ej0 ej0Var = new ej0();
+            fj0 fj0Var = new fj0(false, z10, ej0Var);
+            ej0Var.a = fj0Var;
+            fj0Var.c = clamp;
+            fj0Var.d = clamp2;
+            spannable.setSpan(ej0Var, clamp, clamp2, 33);
+            spannable.setSpan(fj0Var, clamp, clamp2, 33);
         }
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public int j() {
-        if (this.l0) {
-            return 3;
+    public static int c(Editable editable, int i10, int i11, boolean z10) {
+        if (editable == null) {
+            return -1;
         }
-        return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
+        int clamp = Utilities.clamp(i10, editable.length(), 0);
+        int clamp2 = Utilities.clamp(i11, editable.length(), 0);
+        if (clamp > 0 && editable.charAt(clamp - 1) != '\n') {
+            editable.insert(clamp, "\n");
+            clamp++;
+            clamp2++;
+        }
+        int i12 = clamp2 + 1;
+        if (clamp2 >= editable.length() || editable.charAt(clamp2) != '\n') {
+            editable.insert(clamp2, "\n");
+        }
+        ej0 ej0Var = new ej0();
+        fj0 fj0Var = new fj0(true, z10, ej0Var);
+        ej0Var.a = fj0Var;
+        fj0Var.c = clamp;
+        fj0Var.d = clamp2;
+        editable.setSpan(fj0Var, Utilities.clamp(clamp, editable.length(), 0), Utilities.clamp(clamp2, editable.length(), 0), 33);
+        editable.setSpan(ej0Var, Utilities.clamp(clamp, editable.length(), 0), Utilities.clamp(clamp2, editable.length(), 0), 33);
+        editable.insert(Utilities.clamp(clamp2, editable.length(), 0), "\ufeff");
+        editable.delete(Utilities.clamp(clamp2, editable.length(), 0), Utilities.clamp(i12, editable.length(), 0));
+        return i12;
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public void p() {
-        if (this.V) {
-            n();
-            if (this.P == null && this.m0 != null) {
-                D(true);
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x011e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ArrayList d(du duVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
+        CharSequence charSequence;
+        fj0[] fj0VarArr;
+        boolean z10;
+        int lineStart;
+        int i10;
+        boolean z11;
+        int i11;
+        du duVar2 = duVar;
+        if (layout != null) {
+            CharSequence text = layout.getText();
+            if (text != null && (text instanceof Spannable)) {
+                Spannable spannable = (Spannable) text;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                fj0[] fj0VarArr2 = (fj0[]) spannable.getSpans(0, spannable.length(), fj0.class);
+                ArrayList arrayList2 = arrayList;
+                int i12 = 0;
+                while (i12 < fj0VarArr2.length) {
+                    fj0 fj0Var = fj0VarArr2[i12];
+                    boolean z12 = fj0Var.n;
+                    bj0 bj0Var = new bj0(duVar2, layout, spannable, fj0Var);
+                    if (fj0Var.a) {
+                        int i13 = fj0Var.c;
+                        if (i13 == 0 || text.charAt(i13 - 1) == '\n') {
+                            if (fj0Var.d != text.length() && text.charAt(fj0Var.d) != '\n') {
+                                int i14 = fj0Var.d;
+                                while (i14 <= text.length() && i14 != text.length() && text.charAt(i14) != '\n') {
+                                    i14++;
+                                }
+                                spannable.removeSpan(fj0VarArr2[i12]);
+                                spannable.removeSpan(fj0VarArr2[i12].s);
+                                spannable.setSpan(fj0VarArr2[i12], fj0Var.c, i14, 33);
+                                spannable.setSpan(fj0VarArr2[i12].s, fj0Var.c, i14, 33);
+                                bj0Var = new bj0(duVar2, layout, spannable, fj0VarArr2[i12]);
+                            }
+                            boolean z13 = spannable instanceof SpannableStringBuilder;
+                            fj0 fj0Var2 = bj0Var.e;
+                            if (z13) {
+                                SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) spannable;
+                                int i15 = fj0Var2.d - 1;
+                                boolean z14 = i15 >= 0 && spannableStringBuilder.charAt(i15) == '\n';
+                                if (bj0Var.b()) {
+                                    int i16 = fj0Var2.d;
+                                    if (i16 - 2 >= 0) {
+                                        z10 = true;
+                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > bj0Var.d - (fj0Var2.J != null ? org.telegram.messenger.l0.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.l0.D(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
+                                            z11 = true;
+                                            if (z14 != z11) {
+                                                int i17 = fj0Var2.d;
+                                                if (z14) {
+                                                    i11 = i17 - 1;
+                                                    spannableStringBuilder.delete(i17 - 1, i17);
+                                                    charSequence = text;
+                                                    fj0VarArr = fj0VarArr2;
+                                                } else {
+                                                    i11 = i17 + 2;
+                                                    boolean z15 = Selection.getSelectionStart(spannableStringBuilder) == fj0Var2.d && Selection.getSelectionStart(spannableStringBuilder) == Selection.getSelectionEnd(spannableStringBuilder);
+                                                    int i18 = fj0Var2.d;
+                                                    if (fj0Var2.K == null) {
+                                                        SpannableString spannableString = new SpannableString("\n");
+                                                        fj0Var2.K = spannableString;
+                                                        charSequence = text;
+                                                        fj0VarArr = fj0VarArr2;
+                                                        spannableString.setSpan(new dj0(), 0, fj0Var2.K.length(), 33);
+                                                    } else {
+                                                        charSequence = text;
+                                                        fj0VarArr = fj0VarArr2;
+                                                    }
+                                                    spannableStringBuilder.insert(i18, (CharSequence) fj0Var2.K);
+                                                    if (z15) {
+                                                        int selectionStart = Selection.getSelectionStart(spannableStringBuilder);
+                                                        int i19 = fj0Var2.d;
+                                                        if (selectionStart != i19) {
+                                                            Selection.setSelection(spannableStringBuilder, i19, i19);
+                                                        }
+                                                    }
+                                                }
+                                                fj0Var2.d = Math.min(i11, spannable.length());
+                                                spannable.removeSpan(fj0VarArr[i12]);
+                                                spannable.removeSpan(fj0VarArr[i12].s);
+                                                spannable.setSpan(fj0VarArr[i12], fj0Var2.c, fj0Var2.d, 33);
+                                                spannable.setSpan(fj0VarArr[i12].s, fj0Var2.c, fj0Var2.d, 33);
+                                                if (zArr != null) {
+                                                    zArr[0] = z10;
+                                                }
+                                            } else {
+                                                charSequence = text;
+                                                fj0VarArr = fj0VarArr2;
+                                            }
+                                        }
+                                        z11 = false;
+                                        if (z14 != z11) {
+                                        }
+                                    }
+                                }
+                                z10 = true;
+                                z11 = false;
+                                if (z14 != z11) {
+                                }
+                            } else {
+                                charSequence = text;
+                                fj0VarArr = fj0VarArr2;
+                                z10 = true;
+                            }
+                            ii.z5 z5Var = fj0Var2.v;
+                            if (z5Var != null) {
+                                spannable.removeSpan(z5Var);
+                            }
+                            if (fj0Var2.e && (lineStart = layout.getLineStart(Math.min(layout.getLineForOffset(fj0Var2.c) + 3, layout.getLineCount()))) < (i10 = fj0Var2.d)) {
+                                if (fj0Var2.v == null) {
+                                    fj0Var2.v = new ii.z5(fj0Var2);
+                                }
+                                spannable.setSpan(fj0Var2.v, lineStart, i10, 33);
+                            }
+                        } else {
+                            spannable.removeSpan(fj0VarArr2[i12]);
+                            spannable.removeSpan(fj0VarArr2[i12].s);
+                            ii.z5 z5Var2 = fj0VarArr2[i12].v;
+                            if (z5Var2 != null) {
+                                spannable.removeSpan(z5Var2);
+                            }
+                            charSequence = text;
+                            fj0VarArr = fj0VarArr2;
+                            i12++;
+                            duVar2 = duVar;
+                            text = charSequence;
+                            fj0VarArr2 = fj0VarArr;
+                        }
+                    } else {
+                        charSequence = text;
+                        fj0VarArr = fj0VarArr2;
+                        z10 = true;
+                    }
+                    if (arrayList2 == null) {
+                        arrayList2 = new ArrayList();
+                    }
+                    if (fj0VarArr[i12].n != z12 && zArr != null) {
+                        zArr[0] = z10;
+                    }
+                    arrayList2.add(bj0Var);
+                    i12++;
+                    duVar2 = duVar;
+                    text = charSequence;
+                    fj0VarArr2 = fj0VarArr;
+                }
+                return arrayList2;
             }
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+        } else if (arrayList != null) {
+            arrayList.clear();
+            return arrayList;
         }
-        if (this.m0 == null && this.U0 == null && this.B0 == null) {
-            E();
-            return;
-        }
-        this.T = true;
-        if (!v()) {
-            stop();
-        }
-        if (this.k0) {
-            I();
-        }
+        return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public final boolean w() {
-        return this.Y0;
+    public static ArrayList e(Layout layout, ArrayList arrayList) {
+        if (layout != null) {
+            CharSequence text = layout.getText();
+            if (text != null && (text instanceof Spanned)) {
+                Spanned spanned = (Spanned) text;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                for (fj0 fj0Var : (fj0[]) spanned.getSpans(0, spanned.length(), fj0.class)) {
+                    boolean z10 = fj0Var.n;
+                    bj0 bj0Var = new bj0(null, layout, spanned, fj0Var);
+                    if (arrayList == null) {
+                        arrayList = new ArrayList();
+                    }
+                    arrayList.add(bj0Var);
+                }
+                return arrayList;
+            }
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+        } else if (arrayList != null) {
+            arrayList.clear();
+            return arrayList;
+        }
+        return arrayList;
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public final boolean z() {
-        return false;
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return AndroidUtilities.dp(this.b ? 8.0f : 10.0f);
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
     }
 }

@@ -1,9 +1,9 @@
 package ci;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.va0;
+import org.telegram.ui.Components.ya0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z4 implements o1.f {
     public final /* synthetic */ int a;
@@ -45,16 +45,16 @@ public final /* synthetic */ class z4 implements o1.f {
                 }
                 break;
             default:
-                va0 va0Var = (va0) this.b;
+                ya0 ya0Var = (ya0) this.b;
                 if (!z10) {
-                    va0Var.K = null;
+                    ya0Var.K = null;
                     boolean z11 = this.c;
-                    va0Var.setVisibility(z11 ? 8 : 0);
-                    if (va0Var.N && z11) {
-                        va0Var.N = false;
-                        va0Var.b.setLayoutManager(va0Var.getNeededLayoutManager());
-                        va0Var.I = true;
-                        va0Var.o(true);
+                    ya0Var.setVisibility(z11 ? 8 : 0);
+                    if (ya0Var.N && z11) {
+                        ya0Var.N = false;
+                        ya0Var.b.setLayoutManager(ya0Var.getNeededLayoutManager());
+                        ya0Var.I = true;
+                        ya0Var.o(true);
                         break;
                     }
                 }

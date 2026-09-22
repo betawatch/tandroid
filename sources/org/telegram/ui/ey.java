@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ey extends org.telegram.ui.Components.lo0 {
+public final class ey extends org.telegram.ui.Components.no0 {
     public final yf.y a1;
     public final yf.y b1;
     public final /* synthetic */ uy c1;
@@ -72,7 +72,7 @@ public final class ey extends org.telegram.ui.Components.lo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.z81
     public final void w(boolean z10) {
         if (Build.VERSION.SDK_INT >= 31) {
             uy uyVar = this.c1;
@@ -82,9 +82,9 @@ public final class ey extends org.telegram.ui.Components.lo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.z81
     public final void y(int i10) {
-        org.telegram.ui.Components.ko0 ko0Var = this.U;
-        this.c1.c5(ko0Var != null && ko0Var.h(i10) == 2);
+        org.telegram.ui.Components.mo0 mo0Var = this.U;
+        this.c1.c5(mo0Var != null && mo0Var.h(i10) == 2);
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xe extends ug {
     public final /* synthetic */ int l0;
@@ -32,7 +32,7 @@ public final class xe extends ug {
                 ChatActivityEnterView chatActivityEnterView = this.m0;
                 return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
             default:
-                return !this.m0.p3;
+                return !this.m0.q3;
         }
     }
 
@@ -51,7 +51,7 @@ public final class xe extends ug {
     public boolean j() {
         switch (this.l0) {
             case 0:
-                return this.m0.x4;
+                return this.m0.y4;
             default:
                 return super.j();
         }
@@ -62,7 +62,7 @@ public final class xe extends ug {
         switch (this.l0) {
             case 0:
                 super.setAlpha(f7);
-                int i10 = ChatActivityEnterView.m5;
+                int i10 = ChatActivityEnterView.n5;
                 this.m0.y1();
                 break;
             default:

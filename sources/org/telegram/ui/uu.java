@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class uu extends og.b {
     public final /* synthetic */ int d;
@@ -26,7 +26,7 @@ public final class uu extends og.b {
         this.e = obj;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         switch (this.d) {
             case 0:
@@ -122,10 +122,10 @@ public final class uu extends og.b {
                             } else {
                                 imageView.setVisibility(0);
                                 boolean q6 = org.telegram.ui.ActionBar.j6.I.q();
-                                org.telegram.ui.Components.yb0 yb0Var = new org.telegram.ui.Components.yb0(1);
-                                yb0Var.b(i12, i13);
-                                yb0Var.b = q6;
-                                imageView.setBackground(yb0Var);
+                                org.telegram.ui.Components.bc0 bc0Var = new org.telegram.ui.Components.bc0(1);
+                                bc0Var.b(i12, i13);
+                                bc0Var.b = q6;
+                                imageView.setBackground(bc0Var);
                                 imageView.setImageResource(i14);
                             }
                             puVar.b.setText(charSequence);
@@ -325,7 +325,7 @@ public final class uu extends og.b {
                     knVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i12, wuVar.p2));
                     view = knVar;
                 }
-                return new org.telegram.ui.Components.fl0(view);
+                return new org.telegram.ui.Components.il0(view);
             default:
                 pc0 pc0Var = (pc0) obj;
                 Context context3 = viewGroup.getContext();
@@ -340,7 +340,7 @@ public final class uu extends og.b {
                 } else if (i10 == 5) {
                     view2 = new org.telegram.ui.Cells.s8(23, context3, null, false, true);
                 }
-                return new org.telegram.ui.Components.fl0(view2);
+                return new org.telegram.ui.Components.il0(view2);
         }
     }
 }

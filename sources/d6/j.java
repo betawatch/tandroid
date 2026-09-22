@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import m4.q0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -184,7 +184,7 @@ public final class j extends b8.b {
                         com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
                         e7.c = new c6.b0(e0Var, readString2, readString3, objArr == true ? 1 : 0);
                         e7.a = 8407;
-                        e0Var.e(1, e7.a()).addOnCompleteListener(new a4.m(this, 12));
+                        e0Var.e(1, e7.a()).addOnCompleteListener(new android.support.v4.media.c(this, 11));
                     }
                     parcel2.writeNoException();
                     break;

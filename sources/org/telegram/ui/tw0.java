@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class tw0 extends org.telegram.ui.ActionBar.n2 {
     public final long a;
     public org.telegram.ui.Cells.a8 b;
-    public org.telegram.ui.Components.d90 c;
-    public org.telegram.ui.Components.s61 d;
+    public org.telegram.ui.Components.g90 c;
+    public org.telegram.ui.Components.u61 d;
     public org.telegram.ui.Components.pr e;
     public org.telegram.ui.ActionBar.v0 f;
     public final boolean h;
@@ -160,21 +160,21 @@ public final class tw0 extends org.telegram.ui.ActionBar.n2 {
         this.b = a8Var;
         int i11 = org.telegram.ui.ActionBar.j6.d6;
         a8Var.setBackgroundColor(getThemedColor(i11));
-        org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(context, this, null, true, true);
-        this.c = d90Var;
-        d90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
+        org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(context, this, null, true, true);
+        this.c = g90Var;
+        g90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
         this.c.setBackgroundColor(getThemedColor(i11));
         this.c.b(true);
         this.c.d(0, null, false);
-        org.telegram.ui.Components.s61 s61Var = new org.telegram.ui.Components.s61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new sw0(this, 2), null, this.resourceProvider);
-        this.d = s61Var;
-        s61Var.q1();
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(context, this.currentAccount, this.classGuid, false, new b5(this, 16), new sw0(this, 2), null, this.resourceProvider);
+        this.d = u61Var;
+        u61Var.q1();
         frameLayout2.addView(this.d, w7.y5.e(-1, -1, 51));
         return this.fragmentView;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.yl0 getListViewForSimpleGlass() {
         return this.d;
     }
 
@@ -207,13 +207,13 @@ public final class tw0 extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.k61 k61Var;
+        org.telegram.ui.Components.m61 m61Var;
         super.onFragmentCreate();
-        org.telegram.ui.Components.s61 s61Var = this.d;
-        if (s61Var == null || (k61Var = s61Var.Y2) == null) {
+        org.telegram.ui.Components.u61 u61Var = this.d;
+        if (u61Var == null || (m61Var = u61Var.Y2) == null) {
             return true;
         }
-        k61Var.N(false);
+        m61Var.N(false);
         return true;
     }
 }

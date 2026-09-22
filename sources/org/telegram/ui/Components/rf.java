@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class rf implements TextWatcher {
     public boolean a;
@@ -49,7 +49,7 @@ public final class rf implements TextWatcher {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
-        if (chatActivityEnterView.R2 == 0) {
+        if (chatActivityEnterView.S2 == 0) {
             if (this.b) {
                 chatActivityEnterView.S0();
                 this.b = false;
@@ -67,7 +67,7 @@ public final class rf implements TextWatcher {
         int i10 = chatActivityEnterView.c0;
         if (i10 > 0) {
             int i11 = i10 - codePointCount;
-            if (i11 <= (chatActivityEnterView.k5 ? 5 : 100)) {
+            if (i11 <= (chatActivityEnterView.l5 ? 5 : 100)) {
                 if (i11 < -9999) {
                     i11 = -9999;
                 }
@@ -85,35 +85,35 @@ public final class rf implements TextWatcher {
                 if (i11 >= 0) {
                     chatActivityEnterView.b0.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.y6));
                     z10 = true;
-                    if (chatActivityEnterView.p3 != z10) {
-                        chatActivityEnterView.p3 = z10;
+                    if (chatActivityEnterView.q3 != z10) {
+                        chatActivityEnterView.q3 = z10;
                         xeVar.invalidate();
                     }
                     nfVar = chatActivityEnterView.m0;
                     if (nfVar != null) {
                     }
-                    chatActivityEnterView.E();
-                    if (chatActivityEnterView.Z1) {
+                    chatActivityEnterView.D();
+                    if (chatActivityEnterView.a2) {
                         chatActivityEnterView.o0 = true;
                         if (this.e) {
                         }
                     }
                     chatActivityEnterView.o1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                    chatActivityEnterView.G(true);
+                    chatActivityEnterView.F(true);
                     chatActivityEnterView.u1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
                 chatActivityEnterView.b0.setTextColor(chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.p7));
                 z10 = false;
-                if (chatActivityEnterView.p3 != z10 && (xeVar = chatActivityEnterView.E1) != null) {
-                    chatActivityEnterView.p3 = z10;
+                if (chatActivityEnterView.q3 != z10 && (xeVar = chatActivityEnterView.F1) != null) {
+                    chatActivityEnterView.q3 = z10;
                     xeVar.invalidate();
                 }
                 nfVar = chatActivityEnterView.m0;
                 if (nfVar != null) {
                     nfVar.c();
                 }
-                chatActivityEnterView.E();
-                if (chatActivityEnterView.Z1 && !chatActivityEnterView.o0 && !MessagesController.getInstance(chatActivityEnterView.Q).premiumFeaturesBlocked() && !UserConfig.getInstance(chatActivityEnterView.Q).isPremium() && chatActivityEnterView.d0 > MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitDefault && chatActivityEnterView.d0 < MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitPremium) {
+                chatActivityEnterView.D();
+                if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !MessagesController.getInstance(chatActivityEnterView.Q).premiumFeaturesBlocked() && !UserConfig.getInstance(chatActivityEnterView.Q).isPremium() && chatActivityEnterView.d0 > MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitDefault && chatActivityEnterView.d0 < MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitPremium) {
                     chatActivityEnterView.o0 = true;
                     if (this.e) {
                         chatActivityEnterView.p1();
@@ -122,7 +122,7 @@ public final class rf implements TextWatcher {
                     }
                 }
                 chatActivityEnterView.o1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                chatActivityEnterView.G(true);
+                chatActivityEnterView.F(true);
                 chatActivityEnterView.u1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
             }
         }
@@ -131,22 +131,22 @@ public final class rf implements TextWatcher {
             numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new q8(this, 2));
         }
         z10 = true;
-        if (chatActivityEnterView.p3 != z10) {
+        if (chatActivityEnterView.q3 != z10) {
         }
         nfVar = chatActivityEnterView.m0;
         if (nfVar != null) {
         }
-        chatActivityEnterView.E();
-        if (chatActivityEnterView.Z1) {
+        chatActivityEnterView.D();
+        if (chatActivityEnterView.a2) {
         }
         chatActivityEnterView.o1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-        chatActivityEnterView.G(true);
+        chatActivityEnterView.F(true);
         chatActivityEnterView.u1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
     }
 
     @Override // android.text.TextWatcher
     public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (!this.d && this.f.E2) {
+        if (!this.d && this.f.F2) {
             this.c = charSequence.toString();
         }
     }
@@ -158,7 +158,7 @@ public final class rf implements TextWatcher {
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
         dg dgVar = chatActivityEnterView.U0;
-        boolean z10 = (dgVar == null ? MessagesController.getGlobalEmojiSettings().getInt("selected_page", 0) : dgVar.getCurrentPage()) != 0 && (chatActivityEnterView.I2 || chatActivityEnterView.J2);
+        boolean z10 = (dgVar == null ? MessagesController.getGlobalEmojiSettings().getInt("selected_page", 0) : dgVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
         if (((i11 == 0 && !TextUtils.isEmpty(charSequence)) || (i11 != 0 && TextUtils.isEmpty(charSequence))) && z10) {
             chatActivityEnterView.c1(false, true);
         }
@@ -174,28 +174,28 @@ public final class rf implements TextWatcher {
         } else {
             this.e = false;
         }
-        if (chatActivityEnterView.R2 == 1) {
+        if (chatActivityEnterView.S2 == 1) {
             return;
         }
-        if (chatActivityEnterView.A2 && !chatActivityEnterView.C0 && !chatActivityEnterView.D0 && !chatActivityEnterView.Q2 && !chatActivityEnterView.W1 && chatActivityEnterView.Y1 == null && i12 > i11 && charSequence.length() > 0 && charSequence.length() == i10 + i12 && charSequence.charAt(charSequence.length() - 1) == '\n') {
+        if (chatActivityEnterView.B2 && !chatActivityEnterView.C0 && !chatActivityEnterView.D0 && !chatActivityEnterView.R2 && !chatActivityEnterView.X1 && chatActivityEnterView.Z1 == null && i12 > i11 && charSequence.length() > 0 && charSequence.length() == i10 + i12 && charSequence.charAt(charSequence.length() - 1) == '\n') {
             this.b = true;
         }
-        chatActivityEnterView.W1 = false;
+        chatActivityEnterView.X1 = false;
         chatActivityEnterView.K(true);
         CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence.toString());
-        if (chatActivityEnterView.Y2 != null && !chatActivityEnterView.Q2) {
+        if (chatActivityEnterView.Z2 != null && !chatActivityEnterView.R2) {
             int i13 = i12 + 1;
             if (i11 > i13 || i12 - i11 > 2 || TextUtils.isEmpty(charSequence)) {
-                chatActivityEnterView.X2 = true;
+                chatActivityEnterView.Y2 = true;
             }
-            chatActivityEnterView.Y2.m1(charSequence, i11 > i13 || i12 - i11 > 2, false);
+            chatActivityEnterView.Z2.m1(charSequence, i11 > i13 || i12 - i11 > 2, false);
         }
-        if (chatActivityEnterView.R2 != 2 && i12 - i11 > 1) {
+        if (chatActivityEnterView.S2 != 2 && i12 - i11 > 1) {
             this.a = true;
         }
-        if (chatActivityEnterView.Y1 == null && !chatActivityEnterView.g2 && trimmedString.length() != 0 && chatActivityEnterView.B2 < System.currentTimeMillis() - 5000 && !chatActivityEnterView.Q2) {
-            chatActivityEnterView.B2 = System.currentTimeMillis();
-            ng ngVar = chatActivityEnterView.Y2;
+        if (chatActivityEnterView.Z1 == null && !chatActivityEnterView.h2 && trimmedString.length() != 0 && chatActivityEnterView.C2 < System.currentTimeMillis() - 5000 && !chatActivityEnterView.R2) {
+            chatActivityEnterView.C2 = System.currentTimeMillis();
+            ng ngVar = chatActivityEnterView.Z2;
             if (ngVar != null) {
                 ngVar.F1();
             }

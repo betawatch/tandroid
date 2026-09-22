@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.mc0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class o6 extends org.telegram.ui.Components.v9 {
     public final /* synthetic */ int G;
@@ -22,7 +22,7 @@ public final class o6 extends org.telegram.ui.Components.v9 {
     public final void onDraw(Canvas canvas) {
         p6 p6Var = this.H;
         n6 n6Var = p6Var.y;
-        ic0 ic0Var = p6.G;
+        mc0 mc0Var = p6.G;
         if (this.G != 1) {
             super.onDraw(canvas);
         } else {

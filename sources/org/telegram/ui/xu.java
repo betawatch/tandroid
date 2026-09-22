@@ -4,16 +4,16 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class xu extends org.telegram.ui.Components.o81 {
+public final class xu extends org.telegram.ui.Components.q81 {
     public final /* synthetic */ av a;
 
     public xu(av avVar) {
         this.a = avVar;
     }
 
-    @Override // org.telegram.ui.Components.o81
+    @Override // org.telegram.ui.Components.q81
     public final void b(View view, int i10, int i11) {
         wu wuVar = (wu) view;
         wuVar.Y2 = i10;
@@ -24,7 +24,7 @@ public final class xu extends org.telegram.ui.Components.o81 {
         wuVar.v0(0);
     }
 
-    @Override // org.telegram.ui.Components.o81
+    @Override // org.telegram.ui.Components.q81
     public final View d(int i10) {
         av avVar = this.a;
         wu wuVar = new wu(avVar, avVar.getParentActivity());
@@ -32,12 +32,12 @@ public final class xu extends org.telegram.ui.Components.o81 {
         return wuVar;
     }
 
-    @Override // org.telegram.ui.Components.o81
+    @Override // org.telegram.ui.Components.q81
     public final int e() {
         return 4;
     }
 
-    @Override // org.telegram.ui.Components.o81
+    @Override // org.telegram.ui.Components.q81
     public final CharSequence g(int i10) {
         return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.NetworkUsageRoamingTab) : LocaleController.getString(R.string.NetworkUsageWiFiTab) : LocaleController.getString(R.string.NetworkUsageMobileTab) : LocaleController.getString(R.string.NetworkUsageAllTab);
     }

@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class o4 extends a0 implements org.telegram.ui.ActionBar.z5, q9, m0 {
     public static final /* synthetic */ int M = 0;
@@ -63,7 +63,7 @@ public final class o4 extends a0 implements org.telegram.ui.ActionBar.z5, q9, m0
         this.F = view;
         view.setOnClickListener(new ai.v0(this, 29));
         addView(view, w7.y5.e(-1, -2, 51));
-        l0 l0Var = new l0(context, f6Var, new xa.c(this, 28));
+        l0 l0Var = new l0(context, f6Var, new xa.c(this, 27));
         this.L = l0Var;
         addView(l0Var.a, w7.y5.e(-2, -2, 51));
         e();

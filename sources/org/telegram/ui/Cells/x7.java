@@ -31,11 +31,11 @@ import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.s90;
 import org.telegram.ui.ed0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout {
     public boolean E;
@@ -194,7 +194,7 @@ public final class x7 extends FrameLayout {
                 SpannableString spannableString = new SpannableString("dkaraush has been here");
                 this.H = spannableString;
                 f7 = 24.0f;
-                spannableString.setSpan(new p90(j5Var, AndroidUtilities.dp(100.0f), 0, f6Var), 0, this.H.length(), 33);
+                spannableString.setSpan(new s90(j5Var, AndroidUtilities.dp(100.0f), 0, f6Var), 0, this.H.length(), 33);
             } else {
                 f7 = 24.0f;
             }

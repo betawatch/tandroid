@@ -12,13 +12,13 @@ import android.media.metrics.LogSessionId;
 import android.media.session.MediaSession;
 import android.os.Build;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static k2.e a(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
+    public static k2.f a(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
         int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(audioFormat, audioAttributes);
         if (playbackOffloadSupport == 0) {
-            return k2.e.d;
+            return k2.f.d;
         }
         ac.d dVar = new ac.d();
         boolean z11 = Build.VERSION.SDK_INT > 32 && playbackOffloadSupport == 2;

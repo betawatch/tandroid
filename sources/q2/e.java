@@ -1,7 +1,14 @@
 package q2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e {
-    public static final e a = new e();
+    public static final e c = new e(-9223372036854775807L, -9223372036854775807L);
+    public final long a;
+    public final long b;
+
+    public e(long j3, long j10) {
+        this.a = j3;
+        this.b = j10;
+    }
 }

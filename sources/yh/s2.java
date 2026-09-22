@@ -6,14 +6,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,8 +55,8 @@ public final /* synthetic */ class s2 implements Runnable {
                         }
                         int i12 = 1 - v3Var.r0;
                         v3Var.r0 = i12;
-                        hj0 lottieAnimation = v9VarArr[2 - i12].getImageReceiver().getLottieAnimation();
-                        hj0 lottieAnimation2 = v9VarArr[v3Var.r0 + 1].getImageReceiver().getLottieAnimation();
+                        kj0 lottieAnimation = v9VarArr[2 - i12].getImageReceiver().getLottieAnimation();
+                        kj0 lottieAnimation2 = v9VarArr[v3Var.r0 + 1].getImageReceiver().getLottieAnimation();
                         if (lottieAnimation2 != null && lottieAnimation != null) {
                             lottieAnimation2.T(lottieAnimation.t(), false);
                         }
@@ -93,7 +93,7 @@ public final /* synthetic */ class s2 implements Runnable {
                 di.f fVar = (di.f) obj;
                 fVar.getClass();
                 try {
-                    vl0 currentListView = ((w7) fVar.L0).R.getCurrentListView();
+                    yl0 currentListView = ((w7) fVar.L0).R.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -109,18 +109,18 @@ public final /* synthetic */ class s2 implements Runnable {
                 nf.f.s(((m7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 9:
-                zg.t tVar = (zg.t) ((n2.e) obj).b;
-                zg.s sVar = tVar.b;
+                zg.u uVar = (zg.u) ((zg.t) obj).a;
+                zg.s sVar = uVar.b;
                 if (sVar != null) {
                     sVar.d();
                 }
-                tVar.a.z7(true);
+                uVar.a.z7(true);
                 break;
             case 10:
                 ((ValueAnimator) obj).start();
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var = ((zg.x) obj).f2.r;
+                org.telegram.ui.ActionBar.n2 n2Var = ((zg.y) obj).f2.r;
                 if (!(n2Var instanceof zn)) {
                     org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                     if (R != null) {

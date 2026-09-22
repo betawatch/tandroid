@@ -15,9 +15,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class q30 extends ul0 {
+public final class q30 extends xl0 {
     public final Context c;
     public final gg.c2 d;
     public o30 e;
@@ -45,7 +45,7 @@ public final class q30 extends ul0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         return !((view instanceof org.telegram.ui.Cells.c5) && this.w.f0.contains(Long.valueOf(((org.telegram.ui.Cells.c5) view).getUserId()))) && c1Var.f == 0;
@@ -287,6 +287,6 @@ public final class q30 extends ul0 {
             c5Var.setDividerColor(org.telegram.ui.ActionBar.j6.tg);
             view = c5Var;
         }
-        return new fl0(view);
+        return new il0(view);
     }
 }

@@ -23,15 +23,15 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.j90;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.rf;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -41,14 +41,14 @@ public final class n extends FrameLayout {
     public final TextView d;
     public final TextView e;
     public final TextView f;
-    public final k90 h;
+    public final n90 h;
 
     public n(Activity activity, f6 f6Var) {
         super(activity);
         this.a = f6Var;
         LinearLayout e = org.telegram.messenger.l0.e(activity, 0);
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f));
-        b6.b(e, 0.025f, 1.4f);
+        a6.b(e, 0.025f, 1.4f);
         addView(e, y5.e(-1, -1, 119));
         int i10 = j6.Oh;
         setBackground(j6.Y(j6.l1(0.1f, j6.v0(i10, f6Var)), 0, 0));
@@ -70,7 +70,7 @@ public final class n extends FrameLayout {
         this.f = textView2;
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(j6.v0(i10, f6Var));
-        b6.b(textView2, 0.1f, 1.5f);
+        a6.b(textView2, 0.1f, 1.5f);
         textView2.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
         textView2.setBackground(j6.b0(AndroidUtilities.dp(9.0f), j6.l1(0.1f, j6.v0(i10, f6Var))));
         textView2.setText(LocaleController.getString(R.string.BotAdWhat));
@@ -83,13 +83,13 @@ public final class n extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         linearLayout.addView(textView3, y5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         NotificationCenter.listenEmojiLoading(textView3);
-        k90 k90Var = new k90(activity, null);
-        this.h = k90Var;
-        k90Var.setTextSize(1, 13.0f);
-        k90Var.setLinkTextColor(j6.v0(j6.gc, f6Var));
-        k90Var.setTextColor(j6.v0(i11, f6Var));
-        linearLayout.addView(k90Var, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        NotificationCenter.listenEmojiLoading(k90Var);
+        n90 n90Var = new n90(activity, null);
+        this.h = n90Var;
+        n90Var.setTextSize(1, 13.0f);
+        n90Var.setLinkTextColor(j6.v0(j6.gc, f6Var));
+        n90Var.setTextColor(j6.v0(i11, f6Var));
+        linearLayout.addView(n90Var, y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        NotificationCenter.listenEmojiLoading(n90Var);
         v9 v9Var = new v9(activity);
         this.b = v9Var;
         v9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
@@ -98,7 +98,7 @@ public final class n extends FrameLayout {
         ImageView imageView = new ImageView(activity);
         this.c = imageView;
         imageView.setBackground(j6.f0(5, j6.l1(0.2f, j6.v0(j6.W5, f6Var)), -1));
-        b6.a(imageView);
+        a6.a(imageView);
         imageView.setImageResource(R.drawable.msg_close);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.de, f6Var), PorterDuff.Mode.SRC_IN));
@@ -125,8 +125,8 @@ public final class n extends FrameLayout {
         TextView textView = this.d;
         CharSequence replaceEmoji = Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), false);
         CharSequence charSequence = messageObject.messageText;
-        k90 k90Var = this.h;
-        CharSequence replaceEmoji2 = Emoji.replaceEmoji(charSequence, k90Var.getPaint().getFontMetricsInt(), false);
+        n90 n90Var = this.h;
+        CharSequence replaceEmoji2 = Emoji.replaceEmoji(charSequence, n90Var.getPaint().getFontMetricsInt(), false);
         String str2 = messageObject.sponsoredUrl;
         TLRPC.MessageMedia messageMedia = messageObject.sponsoredMedia;
         ImageView imageView = this.c;
@@ -171,9 +171,9 @@ public final class n extends FrameLayout {
                     textView3.setVisibility(8);
                 }
                 textView.setText(spannableStringBuilder);
-                k90Var.setText(replaceEmoji2);
-                k90Var.setOnLinkPressListener(new j90() { // from class: ei.m
-                    @Override // org.telegram.ui.Components.j90
+                n90Var.setText(replaceEmoji2);
+                n90Var.setOnLinkPressListener(new m90() { // from class: ei.m
+                    @Override // org.telegram.ui.Components.m90
                     public final void a(ClickableSpan clickableSpan) {
                         n nVar = n.this;
                         nVar.getClass();
@@ -218,9 +218,9 @@ public final class n extends FrameLayout {
         if (measureText <= measureText2) {
         }
         textView.setText(spannableStringBuilder2);
-        k90Var.setText(replaceEmoji2);
-        k90Var.setOnLinkPressListener(new j90() { // from class: ei.m
-            @Override // org.telegram.ui.Components.j90
+        n90Var.setText(replaceEmoji2);
+        n90Var.setOnLinkPressListener(new m90() { // from class: ei.m
+            @Override // org.telegram.ui.Components.m90
             public final void a(ClickableSpan clickableSpan) {
                 n nVar = n.this;
                 nVar.getClass();

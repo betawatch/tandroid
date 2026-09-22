@@ -16,20 +16,20 @@ import org.telegram.messenger.rk;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.h70;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class p0 extends FrameLayout implements n90 {
+public class p0 extends FrameLayout implements q90 {
     public boolean E;
     public boolean F;
     public wq G;
@@ -54,7 +54,7 @@ public class p0 extends FrameLayout implements n90 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final kj0 y;
+    public final nj0 y;
 
     public p0(Context context, f6 f6Var, boolean z10) {
         this(AndroidUtilities.dp(8.0f), context, f6Var, z10);
@@ -87,7 +87,7 @@ public class p0 extends FrameLayout implements n90 {
         d(z11);
     }
 
-    @Override // org.telegram.ui.Components.n90
+    @Override // org.telegram.ui.Components.q90
     public final boolean c() {
         return this.N;
     }
@@ -204,7 +204,7 @@ public class p0 extends FrameLayout implements n90 {
         invalidate();
     }
 
-    public kj0 getIconView() {
+    public nj0 getIconView() {
         return this.y;
     }
 
@@ -234,16 +234,16 @@ public class p0 extends FrameLayout implements n90 {
     }
 
     public void setIcon(int i10) {
-        kj0 kj0Var = this.y;
-        kj0Var.f(i10, 24, 24, null);
+        nj0 nj0Var = this.y;
+        nj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
         hVar.p = new org.telegram.ui.web.r0(this, 27);
         invalidate();
-        kj0Var.setVisibility(0);
+        nj0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.n90
+    @Override // org.telegram.ui.Components.q90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             ValueAnimator valueAnimator = this.O;
@@ -287,21 +287,21 @@ public class p0 extends FrameLayout implements n90 {
         o0Var.setTextColor(-1);
         o0Var.setTextSize(AndroidUtilities.dp(14.0f));
         o0Var.setTypeface(AndroidUtilities.bold());
-        kj0 kj0Var = new kj0(context);
-        this.y = kj0Var;
-        kj0Var.setColorFilter(-1);
-        kj0Var.setVisibility(8);
+        nj0 nj0Var = new nj0(context);
+        this.y = nj0Var;
+        nj0Var.setColorFilter(-1);
+        nj0Var.setVisibility(8);
         ai.f0 f0Var = new ai.f0(this, context, 27);
         this.r = f0Var;
         f0Var.addView(f7, y5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         f0Var.setBackground(j6.i0(i10, i10, i10, i10, 0, k10, k10));
         f7.addView(o0Var, y5.q(-2, -2, 16));
-        f7.addView(kj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        f7.addView(nj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(f0Var);
         setOutlineProvider(yf.j0.b);
         setClipToOutline(true);
-        b6.b(this, 0.02f, 1.2f);
+        a6.b(this, 0.02f, 1.2f);
         if (z10) {
             o0 o0Var2 = new o0(this, context, 1);
             this.e = o0Var2;

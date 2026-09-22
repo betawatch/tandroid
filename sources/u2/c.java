@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c implements c1 {
     public final c1 a;
@@ -19,24 +19,24 @@ public final class c implements c1 {
 
     @Override // u2.c1
     public final boolean e() {
-        return !this.c.a() && this.a.e();
+        return !this.c.b() && this.a.e();
     }
 
     @Override // u2.c1
     public final int f(n4.y yVar, h2.h hVar, int i10) {
         d dVar = this.c;
-        if (dVar.a()) {
+        if (dVar.b()) {
             return -3;
         }
         if (this.b) {
             hVar.setFlags(4);
             return -4;
         }
-        long s10 = dVar.s();
+        long t10 = dVar.t();
         int f7 = this.a.f(yVar, hVar, i10);
         if (f7 != -5) {
             long j3 = dVar.f;
-            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
+            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && t10 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -66,7 +66,7 @@ public final class c implements c1 {
 
     @Override // u2.c1
     public final int j(long j3) {
-        if (this.c.a()) {
+        if (this.c.b()) {
             return -3;
         }
         return this.a.j(j3);

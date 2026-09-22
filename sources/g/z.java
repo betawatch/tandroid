@@ -6,7 +6,7 @@ import java.util.WeakHashMap;
 import r0.i0;
 import r0.n0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class z extends n0 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class z extends n0 {
                 b0Var.s = null;
                 n4.y yVar = b0Var.k;
                 if (yVar != null) {
-                    yVar.R(b0Var.j);
+                    yVar.S(b0Var.j);
                     b0Var.j = null;
                     b0Var.k = null;
                 }

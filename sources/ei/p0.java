@@ -17,10 +17,10 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class p0 extends LinearLayout implements ph.a, le.k {
     public final f6 a;
@@ -218,7 +218,7 @@ public abstract class p0 extends LinearLayout implements ph.a, le.k {
                 frameLayout.addView(n0Var, y5.c(-1.0f, -1));
                 linearLayout.addView(frameLayout, y5.m(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
                 n0Var.setOnClickListener(new ai.v0(this, 15));
-                b6.b(n0Var, 0.02f, 1.5f);
+                a6.b(n0Var, 0.02f, 1.5f);
                 arrayList.add(n0Var);
                 n0Var.a();
                 i12++;

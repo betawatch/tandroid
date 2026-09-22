@@ -2,12 +2,12 @@ package p2;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import c5.b0;
+import c5.a0;
 import e2.d0;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements t {
     public final /* synthetic */ c a;
@@ -22,7 +22,7 @@ public final class a implements t {
     }
 
     @Override // p2.t
-    public final boolean b(Uri uri, b0 b0Var, boolean z10) {
+    public final boolean b(Uri uri, a0 a0Var, boolean z10) {
         b bVar;
         c cVar = this.a;
         HashMap hashMap = cVar.d;
@@ -40,7 +40,7 @@ public final class a implements t {
             }
             y2.g gVar = new y2.g(1, 0, cVar.s.e.size(), i10);
             cVar.c.getClass();
-            k4.d K3 = qb.b.K3(gVar, b0Var);
+            k4.d K3 = qb.b.K3(gVar, a0Var);
             if (K3 != null && K3.a == 2 && (bVar = (b) hashMap.get(uri)) != null) {
                 b.a(bVar, K3.b);
             }

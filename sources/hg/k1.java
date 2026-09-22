@@ -17,14 +17,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.r90;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class k1 extends LinearLayout {
     public final f6 a;
-    public final o90 b;
+    public final r90 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
@@ -35,13 +35,13 @@ public final class k1 extends LinearLayout {
         this.c = imageReceiver;
         this.a = f6Var;
         setOrientation(1);
-        o90 o90Var = new o90();
-        this.b = o90Var;
+        r90 r90Var = new r90();
+        this.b = r90Var;
         int i10 = j6.G6;
         int v02 = j6.v0(i10, f6Var);
-        o90Var.f(j6.l1(0.05f, v02), j6.l1(0.15f, v02), j6.l1(0.1f, v02), j6.l1(0.3f, v02));
-        o90Var.j(4.0f);
-        o90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        r90Var.f(j6.l1(0.05f, v02), j6.l1(0.15f, v02), j6.l1(0.1f, v02), j6.l1(0.3f, v02));
+        r90Var.j(4.0f);
+        r90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;

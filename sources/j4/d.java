@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -40,29 +40,29 @@ public final class d implements c3.o {
         do {
             e2.v vVar = this.d;
             c3.l lVar = (c3.l) pVar;
-            lVar.i(vVar.a, 0, 2, false);
+            lVar.h(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & 65526) == 65520) {
                 i11++;
                 if (i11 >= 4 && i12 > 188) {
                     return true;
                 }
-                lVar.i(vVar.a, 0, 4, false);
+                lVar.h(vVar.a, 0, 4, false);
                 a4.h hVar = this.e;
                 hVar.q(14);
                 int i13 = hVar.i(13);
                 if (i13 <= 6) {
                     i10++;
                     lVar.f = 0;
-                    lVar.t(i10, false);
+                    lVar.s(i10, false);
                 } else {
-                    lVar.t(i13 - 6, false);
+                    lVar.s(i13 - 6, false);
                     i12 += i13;
                 }
             } else {
                 i10++;
                 lVar.f = 0;
-                lVar.t(i10, false);
+                lVar.s(i10, false);
             }
             i11 = 0;
             i12 = 0;
@@ -82,10 +82,10 @@ public final class d implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            pVar.l(w10);
+            pVar.j(w10);
         }
         pVar.p();
-        pVar.l(i10);
+        pVar.j(i10);
         if (this.h == -1) {
             this.h = i10;
         }
@@ -137,7 +137,7 @@ public final class d implements c3.o {
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.i(vVar.a, 0, 2, true)) {
+                        if (!pVar.h(vVar.a, 0, 2, true)) {
                             break;
                         }
                         vVar.J(0);
@@ -145,7 +145,7 @@ public final class d implements c3.o {
                             i12 = 0;
                             break;
                         }
-                        if (!pVar.i(vVar.a, 0, 4, true)) {
+                        if (!pVar.h(vVar.a, 0, 4, true)) {
                             break;
                         }
                         hVar.q(14);
@@ -156,7 +156,7 @@ public final class d implements c3.o {
                         }
                         j3 += i13;
                         i12++;
-                        if (i12 != 1000 && pVar.t(i13 - 6, true)) {
+                        if (i12 != 1000 && pVar.s(i13 - 6, true)) {
                         }
                     } catch (EOFException unused) {
                     }

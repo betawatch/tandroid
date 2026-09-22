@@ -31,12 +31,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.zm0;
+import org.telegram.ui.Components.w01;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class zc extends View {
     public final Paint A0;
@@ -80,7 +80,7 @@ public final class zc extends View {
     public float V;
     public final Paint V0;
     public boolean W;
-    public final zm0 W0;
+    public final bn0 W0;
     public boolean X0;
     public final ai.m3 Y0;
     public long Z0;
@@ -124,7 +124,7 @@ public final class zc extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final u01 q0;
+    public final w01 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -206,7 +206,7 @@ public final class zc extends View {
         this.U0 = new Matrix();
         Paint paint8 = new Paint(1);
         this.V0 = paint8;
-        this.W0 = new zm0(getContext(), null);
+        this.W0 = new bn0(getContext(), null);
         this.Z0 = -1L;
         this.a1 = -1L;
         this.b1 = new org.telegram.ui.Components.d6(0.0f, this, 0L, 340L, qrVar);
@@ -238,7 +238,7 @@ public final class zc extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new u01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
+        this.q0 = new w01(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -281,7 +281,7 @@ public final class zc extends View {
                                 zcVar2.V = floatValue;
                                 sc scVar = zcVar2.a;
                                 if (scVar != null) {
-                                    scVar.l(f7.floatValue());
+                                    scVar.k(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -291,7 +291,7 @@ public final class zc extends View {
                                 zcVar3.L = floatValue2;
                                 sc scVar2 = zcVar3.a;
                                 if (scVar2 != null) {
-                                    scVar2.i(f7.floatValue());
+                                    scVar2.f(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -300,7 +300,7 @@ public final class zc extends View {
                                 zcVar4.h.i = f7.floatValue();
                                 sc scVar3 = zcVar4.a;
                                 if (scVar3 != null) {
-                                    scVar3.C(f7.floatValue());
+                                    scVar3.B(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -312,7 +312,7 @@ public final class zc extends View {
                 int i14 = zcVar.y1;
                 int i15 = zcVar.x1;
                 float min2 = Math.min((i13 - i14) - i15, ((((AndroidUtilities.lerp(zcVar.T, 1.0f, zcVar.f0.c) * zcVar.R) + (zcVar.Q - zcVar.f)) / min) * zcVar.u1) + i14 + i15);
-                v70 F = v70.F(viewGroup, f6Var, zcVar);
+                y70 F = y70.F(viewGroup, f6Var, zcVar);
                 F.q(i8Var);
                 F.o();
                 F.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryAudioRemove), new pc(zcVar, 1), false);
@@ -345,7 +345,7 @@ public final class zc extends View {
                                 zcVar2.V = floatValue;
                                 sc scVar = zcVar2.a;
                                 if (scVar != null) {
-                                    scVar.l(f7.floatValue());
+                                    scVar.k(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -355,7 +355,7 @@ public final class zc extends View {
                                 zcVar3.L = floatValue2;
                                 sc scVar2 = zcVar3.a;
                                 if (scVar2 != null) {
-                                    scVar2.i(f7.floatValue());
+                                    scVar2.f(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -364,7 +364,7 @@ public final class zc extends View {
                                 zcVar4.h.i = f7.floatValue();
                                 sc scVar3 = zcVar4.a;
                                 if (scVar3 != null) {
-                                    scVar3.C(f7.floatValue());
+                                    scVar3.B(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -376,7 +376,7 @@ public final class zc extends View {
                 int i18 = zcVar.y1;
                 int i19 = zcVar.x1;
                 float min4 = Math.min((i17 - i18) - i19, ((((AndroidUtilities.lerp(zcVar.K, 1.0f, zcVar.d0.c) * zcVar.H) + (zcVar.I - zcVar.f)) / min3) * zcVar.u1) + i18 + i19);
-                v70 F2 = v70.F(viewGroup, f6Var, zcVar);
+                y70 F2 = y70.F(viewGroup, f6Var, zcVar);
                 F2.q(i8Var2);
                 F2.o();
                 F2.c(R.drawable.msg_delete, LocaleController.getString(R.string.StoryRoundRemove), new pc(zcVar, 2), false);
@@ -409,7 +409,7 @@ public final class zc extends View {
                                 zcVar2.V = floatValue;
                                 sc scVar = zcVar2.a;
                                 if (scVar != null) {
-                                    scVar.l(f7.floatValue());
+                                    scVar.k(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -419,7 +419,7 @@ public final class zc extends View {
                                 zcVar3.L = floatValue2;
                                 sc scVar2 = zcVar3.a;
                                 if (scVar2 != null) {
-                                    scVar2.i(f7.floatValue());
+                                    scVar2.f(f7.floatValue());
                                     break;
                                 }
                                 break;
@@ -428,14 +428,14 @@ public final class zc extends View {
                                 zcVar4.h.i = f7.floatValue();
                                 sc scVar3 = zcVar4.a;
                                 if (scVar3 != null) {
-                                    scVar3.C(f7.floatValue());
+                                    scVar3.B(f7.floatValue());
                                     break;
                                 }
                                 break;
                         }
                     }
                 };
-                v70 F3 = v70.F(viewGroup, f6Var, zcVar);
+                y70 F3 = y70.F(viewGroup, f6Var, zcVar);
                 F3.q(i8Var3);
                 F3.V(5);
                 F3.U = true;
@@ -453,7 +453,7 @@ public final class zc extends View {
                 i8Var4.c = 1.5f;
                 i8Var4.d(tcVar.i);
                 i8Var4.h = new m2(7, zcVar, tcVar);
-                v70 F4 = v70.F(viewGroup, f6Var, zcVar);
+                y70 F4 = y70.F(viewGroup, f6Var, zcVar);
                 F4.q(i8Var4);
                 F4.V(5);
                 F4.U = true;
@@ -678,26 +678,26 @@ public final class zc extends View {
 
     @Override // android.view.View
     public final void computeScroll() {
-        zm0 zm0Var = this.W0;
-        if (!zm0Var.b()) {
+        bn0 bn0Var = this.W0;
+        if (!bn0Var.b()) {
             if (this.r1) {
                 this.r1 = false;
                 sc scVar = this.a;
                 if (scVar != null) {
-                    scVar.w(false);
+                    scVar.u(false);
                     return;
                 }
                 return;
             }
             return;
         }
-        int i10 = zm0Var.j;
+        int i10 = bn0Var.j;
         long min = Math.min(getBaseDuration(), getMaxScrollDuration());
         if (this.q1) {
             this.f = (long) Math.max(0.0f, (((i10 - this.y1) - this.x1) / this.u1) * min);
         } else {
             if (!this.P) {
-                zm0Var.a();
+                bn0Var.a();
                 return;
             }
             int i11 = this.y1;
@@ -923,7 +923,7 @@ public final class zc extends View {
                     drawable.setBounds(centerX, rk.d(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, rk.A(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
-                    u01 u01Var = zcVar.q0;
+                    w01 w01Var = zcVar.q0;
                     float centerX2 = (rectF9.centerX() - h) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
                     float f63 = centerY;
                     paint = paint4;
@@ -931,7 +931,7 @@ public final class zc extends View {
                     arrayList = arrayList21;
                     maVar = maVar2;
                     f7 = 0.4f;
-                    u01Var.c(centerX2, f63, 0.75f, -1, canvas);
+                    w01Var.c(centerX2, f63, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -953,7 +953,7 @@ public final class zc extends View {
             drawable.setBounds(centerX3, rk.d(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, rk.A(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
-            u01 u01Var2 = zcVar.q0;
+            w01 w01Var2 = zcVar.q0;
             float centerX22 = (rectF9.centerX() - h10) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
             float f632 = centerY2;
             paint = paint4;
@@ -961,7 +961,7 @@ public final class zc extends View {
             arrayList = arrayList21;
             maVar = maVar2;
             f7 = 0.4f;
-            u01Var2.c(centerX22, f632, 0.75f, -1, canvas);
+            w01Var2.c(centerX22, f632, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -1841,8 +1841,8 @@ public final class zc extends View {
                 tcVar15.h = Utilities.clamp(tcVar15.h + max, f10, 0.0f);
                 sc scVar = zcVar.a;
                 if (scVar != null) {
-                    scVar.F(zcVar.h.g, false);
-                    zcVar.a.a0(zcVar.h.h);
+                    scVar.D(zcVar.h.g, false);
+                    zcVar.a.X(zcVar.h.h);
                 }
                 zcVar.invalidate();
             } else if (i42 == 8) {
@@ -1884,8 +1884,8 @@ public final class zc extends View {
                     zcVar.T = Utilities.clamp(zcVar.T + min9, 1.0f, 0.0f);
                     sc scVar2 = zcVar.a;
                     if (scVar2 != null) {
-                        scVar2.X(zcVar.S);
-                        zcVar.a.T(zcVar.T);
+                        scVar2.U(zcVar.S);
+                        zcVar.a.Q(zcVar.T);
                         zcVar.a.m(zcVar.e, false);
                     }
                     zcVar.invalidate();
@@ -2003,8 +2003,8 @@ public final class zc extends View {
             this.T = Utilities.clamp(this.T - (f12 / this.R), 1.0f, 0.0f);
             sc scVar2 = this.a;
             if (scVar2 != null) {
-                scVar2.X(this.S);
-                this.a.T(this.T);
+                scVar2.U(this.S);
+                this.a.Q(this.T);
             }
         } else if (this.P) {
             if (tcVar != null) {
@@ -2052,8 +2052,8 @@ public final class zc extends View {
                 this.Q = Utilities.clamp(this.Q + j19, j14, j13);
                 sc scVar3 = this.a;
                 if (scVar3 != null) {
-                    scVar3.X(this.S);
-                    this.a.T(this.T);
+                    scVar3.U(this.S);
+                    this.a.Q(this.T);
                 }
             } else if (j20 < j17) {
                 float clamp5 = Utilities.clamp(((f13 - j18) - j19) / this.R, 1.0f - min, 0.0f);
@@ -2073,8 +2073,8 @@ public final class zc extends View {
                 this.Q = Utilities.clamp(this.Q + j19, j12, j11);
                 sc scVar4 = this.a;
                 if (scVar4 != null) {
-                    scVar4.X(this.S);
-                    this.a.T(this.T);
+                    scVar4.U(this.S);
+                    this.a.Q(this.T);
                 }
             } else {
                 this.Q = j20;
@@ -2088,7 +2088,7 @@ public final class zc extends View {
         invalidate();
         sc scVar5 = this.a;
         if (scVar5 != null) {
-            scVar5.l0(this.Q + ((long) (this.S * this.R)));
+            scVar5.h0(this.Q + ((long) (this.S * this.R)));
         }
         boolean z10 = this.m1;
         if (z10 || (scVar = this.a) == null) {
@@ -2118,7 +2118,7 @@ public final class zc extends View {
             }
             return;
         }
-        scVar.w(true);
+        scVar.u(true);
         tc tcVar3 = this.h;
         if (tcVar3 != null) {
             long j29 = this.Q + ((long) (this.S * this.R));
@@ -2190,8 +2190,8 @@ public final class zc extends View {
                     tcVar.f = Utilities.clamp(tcVar.f + j16, j12, j11);
                     sc scVar2 = this.a;
                     if (scVar2 != null) {
-                        scVar2.R(tcVar.g, tcVar.a);
-                        this.a.Z(tcVar.h, tcVar.a);
+                        scVar2.O(tcVar.g, tcVar.a);
+                        this.a.W(tcVar.h, tcVar.a);
                     }
                 } else if (j17 < j14) {
                     float clamp4 = Utilities.clamp((((this.v.g * r2.e) - j15) - j16) / tcVar.e, 1.0f - min, 0.0f);
@@ -2214,8 +2214,8 @@ public final class zc extends View {
                     tcVar.f = Utilities.clamp(tcVar.f + j16, j10, j3);
                     sc scVar3 = this.a;
                     if (scVar3 != null) {
-                        scVar3.R(tcVar.g, tcVar.a);
-                        this.a.Z(tcVar.h, tcVar.a);
+                        scVar3.O(tcVar.g, tcVar.a);
+                        this.a.W(tcVar.h, tcVar.a);
                     }
                 } else {
                     tcVar.f = j17;
@@ -2230,7 +2230,7 @@ public final class zc extends View {
         invalidate();
         sc scVar4 = this.a;
         if (scVar4 != null) {
-            scVar4.h0(tcVar.a, tcVar.f);
+            scVar4.c0(tcVar.a, tcVar.f);
         }
         boolean z10 = this.m1;
         if (z10 || (scVar = this.a) == null) {
@@ -2255,7 +2255,7 @@ public final class zc extends View {
             }
             return;
         }
-        scVar.w(true);
+        scVar.u(true);
         tc tcVar7 = this.v;
         if (tcVar7 == tcVar || tcVar7 == null) {
             float f25 = tcVar.g;
@@ -2294,8 +2294,8 @@ public final class zc extends View {
             this.K = Utilities.clamp(this.K - (f10 / this.H), 1.0f, 0.0f);
             sc scVar2 = this.a;
             if (scVar2 != null) {
-                scVar2.u(this.J);
-                this.a.g0(this.K);
+                scVar2.t(this.J);
+                this.a.b0(this.K);
             }
         } else if (this.G) {
             float f11 = tcVar.h;
@@ -2332,8 +2332,8 @@ public final class zc extends View {
                 this.I = Utilities.clamp(this.I + j17, j12, j11);
                 sc scVar3 = this.a;
                 if (scVar3 != null) {
-                    scVar3.u(this.J);
-                    this.a.g0(this.K);
+                    scVar3.t(this.J);
+                    this.a.b0(this.K);
                 }
             } else if (j18 < j15) {
                 float clamp5 = Utilities.clamp((((this.h.g * r1.e) - j16) - j17) / this.H, 1.0f - min, 0.0f);
@@ -2356,8 +2356,8 @@ public final class zc extends View {
                 this.I = Utilities.clamp(this.I + j17, j10, j3);
                 sc scVar4 = this.a;
                 if (scVar4 != null) {
-                    scVar4.u(this.J);
-                    this.a.g0(this.K);
+                    scVar4.t(this.J);
+                    this.a.b0(this.K);
                 }
             } else {
                 this.I = j18;
@@ -2396,7 +2396,7 @@ public final class zc extends View {
             }
             return;
         }
-        scVar.w(true);
+        scVar.u(true);
         tc tcVar5 = this.h;
         if (tcVar5 != null) {
             long j26 = this.I + ((long) (this.J * this.H));
@@ -2687,7 +2687,7 @@ public final class zc extends View {
             if (motionEvent.getAction() != 0 || motionEvent.getY() >= timelineHeight) {
                 long currentTimeMillis = System.currentTimeMillis();
                 int action = motionEvent.getAction();
-                zm0 zm0Var = this.W0;
+                bn0 bn0Var = this.W0;
                 ai.m3 m3Var = this.Y0;
                 if (action == 0) {
                     ai.j jVar2 = this.d1;
@@ -2695,7 +2695,7 @@ public final class zc extends View {
                         AndroidUtilities.cancelRunOnUIThread(jVar2);
                         this.d1 = null;
                     }
-                    zm0Var.a();
+                    bn0Var.a();
                     this.i1 = -1;
                     this.h1 = c(motionEvent);
                     this.j1 = -1;
@@ -2816,11 +2816,11 @@ public final class zc extends View {
                                     }
                                     sc scVar5 = this.a;
                                     if (scVar5 != null) {
-                                        scVar5.l0(this.Q + ((long) (this.S * this.R)));
+                                        scVar5.h0(this.Q + ((long) (this.S * this.R)));
                                     }
                                     sc scVar6 = this.a;
                                     if (scVar6 != null) {
-                                        scVar6.X(this.S);
+                                        scVar6.U(this.S);
                                     }
                                 } else if (i15 == 7) {
                                     float min4 = Math.min(1.0f, Math.max(0L, (this.f - this.Q) + min3) / this.R);
@@ -2854,7 +2854,7 @@ public final class zc extends View {
                                     }
                                     sc scVar7 = this.a;
                                     if (scVar7 != null) {
-                                        scVar7.T(this.T);
+                                        scVar7.Q(this.T);
                                     }
                                 }
                                 if (this.h1 == 8) {
@@ -2864,20 +2864,20 @@ public final class zc extends View {
                                     this.T += min5;
                                     sc scVar8 = this.a;
                                     if (scVar8 != null) {
-                                        scVar8.X(f27);
-                                        this.a.l0(this.Q + ((long) (this.S * this.R)));
-                                        this.a.T(this.T);
+                                        scVar8.U(f27);
+                                        this.a.h0(this.Q + ((long) (this.S * this.R)));
+                                        this.a.Q(this.T);
                                     }
                                     sc scVar9 = this.a;
                                     if (scVar9 != null) {
-                                        scVar9.w(true);
+                                        scVar9.u(true);
                                     }
                                 }
                                 if (this.h == null && !this.E) {
                                     this.e = (long) (this.S * this.R);
                                     sc scVar10 = this.a;
                                     if (scVar10 != null) {
-                                        scVar10.w(true);
+                                        scVar10.u(true);
                                         this.a.m(this.e, false);
                                     }
                                 }
@@ -2920,7 +2920,7 @@ public final class zc extends View {
                                     }
                                     sc scVar12 = this.a;
                                     if (scVar12 != null) {
-                                        scVar12.u(this.J);
+                                        scVar12.t(this.J);
                                     }
                                 } else if (i15 == 11) {
                                     float min6 = Math.min(1.0f, Math.max(0L, (this.f - this.I) + min3) / this.H);
@@ -2951,7 +2951,7 @@ public final class zc extends View {
                                     }
                                     sc scVar13 = this.a;
                                     if (scVar13 != null) {
-                                        scVar13.g0(this.K);
+                                        scVar13.b0(this.K);
                                     }
                                 }
                                 if (this.h1 == 12) {
@@ -2961,20 +2961,20 @@ public final class zc extends View {
                                     this.K += min7;
                                     sc scVar14 = this.a;
                                     if (scVar14 != null) {
-                                        scVar14.u(f36);
+                                        scVar14.t(f36);
                                         this.a.J(this.I + ((long) (this.J * this.H)));
-                                        this.a.g0(this.K);
+                                        this.a.b0(this.K);
                                     }
                                     sc scVar15 = this.a;
                                     if (scVar15 != null) {
-                                        scVar15.w(true);
+                                        scVar15.u(true);
                                     }
                                 }
                                 if (this.h == null) {
                                     this.e = (long) (this.J * this.H);
                                     sc scVar16 = this.a;
                                     if (scVar16 != null) {
-                                        scVar16.w(true);
+                                        scVar16.u(true);
                                         z13 = false;
                                         this.a.m(this.e, false);
                                         invalidate();
@@ -3024,7 +3024,7 @@ public final class zc extends View {
                                                 z14 = true;
                                             } else {
                                                 z14 = true;
-                                                scVar2.w(true);
+                                                scVar2.u(true);
                                             }
                                             if (!this.m1) {
                                                 this.n1 = 1.0f;
@@ -3055,11 +3055,11 @@ public final class zc extends View {
                                                 }
                                                 scVar3 = this.a;
                                                 if (scVar3 != null) {
-                                                    scVar3.h0(tcVar11.a, tcVar11.f);
+                                                    scVar3.c0(tcVar11.a, tcVar11.f);
                                                 }
                                                 scVar4 = this.a;
                                                 if (scVar4 != null) {
-                                                    scVar4.R(tcVar11.g, tcVar11.a);
+                                                    scVar4.O(tcVar11.g, tcVar11.a);
                                                 }
                                             }
                                         } else {
@@ -3099,7 +3099,7 @@ public final class zc extends View {
                                             }
                                             sc scVar17 = this.a;
                                             if (scVar17 != null) {
-                                                scVar17.Z(tcVar11.h, tcVar11.a);
+                                                scVar17.W(tcVar11.h, tcVar11.a);
                                             }
                                         }
                                     }
@@ -3110,14 +3110,14 @@ public final class zc extends View {
                                         tcVar11.h += min9;
                                         sc scVar18 = this.a;
                                         if (scVar18 != null) {
-                                            scVar18.R(f39, tcVar11.a);
-                                            this.a.h0(tcVar11.a, tcVar11.f);
-                                            this.a.Z(tcVar11.h, tcVar11.a);
+                                            scVar18.O(f39, tcVar11.a);
+                                            this.a.c0(tcVar11.a, tcVar11.f);
+                                            this.a.W(tcVar11.h, tcVar11.a);
                                         }
                                         sc scVar19 = this.a;
                                         if (scVar19 != null) {
                                             z15 = true;
-                                            scVar19.w(true);
+                                            scVar19.u(true);
                                             invalidate();
                                             if (!this.m1) {
                                                 this.n1 = 1.0f;
@@ -3141,7 +3141,7 @@ public final class zc extends View {
                                 tcVar2.g = Utilities.clamp(tcVar2.g + f41, tcVar2.h - (1000.0f / f40), 0.0f);
                                 sc scVar20 = this.a;
                                 if (scVar20 != null) {
-                                    scVar20.F(this.h.g, false);
+                                    scVar20.D(this.h.g, false);
                                 }
                                 tc tcVar12 = this.h;
                                 float f42 = tcVar12.h - tcVar12.g;
@@ -3151,14 +3151,14 @@ public final class zc extends View {
                                     tcVar13.h = Math.min(1.0f, (f() / this.h.e) + tcVar13.g);
                                     sc scVar21 = this.a;
                                     if (scVar21 != null) {
-                                        scVar21.a0(this.h.h);
+                                        scVar21.X(this.h.h);
                                     }
                                 }
                             } else if (i11 == 3) {
                                 tcVar2.h = Utilities.clamp(tcVar2.h + f41, 1.0f, (1000.0f / f40) + tcVar2.g);
                                 sc scVar22 = this.a;
                                 if (scVar22 != null) {
-                                    scVar22.a0(this.h.h);
+                                    scVar22.X(this.h.h);
                                 }
                                 tc tcVar14 = this.h;
                                 float f44 = tcVar14.h - tcVar14.g;
@@ -3168,7 +3168,7 @@ public final class zc extends View {
                                     tcVar15.g = Math.max(0.0f, tcVar15.h - (f() / this.h.e));
                                     sc scVar23 = this.a;
                                     if (scVar23 != null) {
-                                        scVar23.F(this.h.g, false);
+                                        scVar23.D(this.h.g, false);
                                     }
                                 }
                             } else if (i11 == 4) {
@@ -3179,8 +3179,8 @@ public final class zc extends View {
                                 tcVar16.h += min10;
                                 sc scVar24 = this.a;
                                 if (scVar24 != null) {
-                                    scVar24.F(f46, false);
-                                    this.a.a0(this.h.h);
+                                    scVar24.D(f46, false);
+                                    this.a.X(this.h.h);
                                 }
                             }
                             float f47 = this.e;
@@ -3214,7 +3214,7 @@ public final class zc extends View {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     AndroidUtilities.cancelRunOnUIThread(m3Var);
-                    zm0Var.a();
+                    bn0Var.a();
                     if (motionEvent.getAction() == 1) {
                         if ((System.currentTimeMillis() - this.f1 > ViewConfiguration.getTapTimeout() || this.m1) && this.j0) {
                             int i21 = this.h1;
@@ -3334,7 +3334,7 @@ public final class zc extends View {
                                 z11 = false;
                             } else {
                                 z11 = false;
-                                scVar.w(false);
+                                scVar.u(false);
                             }
                             this.n1 = 1.0f;
                             this.m1 = z11;
@@ -3357,7 +3357,7 @@ public final class zc extends View {
                                         this.G = false;
                                         this.n = i31;
                                         if (this.a != null && i31 >= 0 && i31 < arrayList.size()) {
-                                            this.a.e(((tc) arrayList.get(this.k1)).a);
+                                            this.a.b(((tc) arrayList.get(this.k1)).a);
                                         }
                                         invalidate();
                                     }
@@ -3367,7 +3367,7 @@ public final class zc extends View {
                                     this.G = false;
                                     sc scVar26 = this.a;
                                     if (scVar26 != null) {
-                                        scVar26.O(false);
+                                        scVar26.L(false);
                                     }
                                     invalidate();
                                 } else if (i29 == 1 && !this.G) {
@@ -3375,7 +3375,7 @@ public final class zc extends View {
                                     this.G = true;
                                     sc scVar27 = this.a;
                                     if (scVar27 != null) {
-                                        scVar27.O(true);
+                                        scVar27.L(true);
                                     }
                                     invalidate();
                                 } else if (i29 != 2 && this.P) {
@@ -3383,7 +3383,7 @@ public final class zc extends View {
                                     this.G = false;
                                     sc scVar28 = this.a;
                                     if (scVar28 != null) {
-                                        scVar28.O(false);
+                                        scVar28.L(false);
                                     }
                                     invalidate();
                                 } else if (i29 == 1 || !this.G) {
@@ -3398,7 +3398,7 @@ public final class zc extends View {
                                     this.G = false;
                                     sc scVar29 = this.a;
                                     if (scVar29 != null) {
-                                        scVar29.O(false);
+                                        scVar29.L(false);
                                     }
                                     invalidate();
                                 }
@@ -3412,8 +3412,8 @@ public final class zc extends View {
                                 tcVar21.h = f67 + f68;
                                 sc scVar30 = this.a;
                                 if (scVar30 != null) {
-                                    scVar30.F(f68, true);
-                                    this.a.a0(this.h.h);
+                                    scVar30.D(f68, true);
+                                    this.a.X(this.h.h);
                                 }
                                 invalidate();
                             }

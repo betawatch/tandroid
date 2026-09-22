@@ -16,12 +16,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class q7 extends LinearLayout {
     public static HashMap E;
@@ -32,7 +32,7 @@ public final class q7 extends LinearLayout {
     public int e;
     public final TextView f;
     public final LinearLayout.LayoutParams h;
-    public final k90 n;
+    public final n90 n;
     public final TextView r;
     public final TextView s;
     public final SpannableString v;
@@ -71,13 +71,13 @@ public final class q7 extends LinearLayout {
         LinearLayout.LayoutParams k10 = w7.y5.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
         this.h = k10;
         linearLayout.addView(textView, k10);
-        k90 k90Var = new k90(context, null);
-        this.n = k90Var;
-        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        k90Var.setTextSize(1, 13.0f);
-        k90Var.setEllipsize(truncateAt);
-        k90Var.setSingleLine(true);
-        linearLayout.addView(k90Var, w7.y5.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
+        n90 n90Var = new n90(context, null);
+        this.n = n90Var;
+        n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        n90Var.setTextSize(1, 13.0f);
+        n90Var.setEllipsize(truncateAt);
+        n90Var.setSingleLine(true);
+        linearLayout.addView(n90Var, w7.y5.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
         TextView textView2 = new TextView(context);
         this.r = textView2;
         rk.n(org.telegram.ui.ActionBar.j6.z6, f6Var, textView2, 1, 14.0f);

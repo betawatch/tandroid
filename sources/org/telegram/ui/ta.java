@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? znVar.getMessagesController().getUserFull(user.id) : null;
-                org.telegram.ui.Components.v70 I = org.telegram.ui.Components.v70.I(znVar, u1Var);
-                org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(znVar.getParentActivity(), znVar.ea);
-                I.p = new re(mm0Var, 1);
+                org.telegram.ui.Components.y70 I = org.telegram.ui.Components.y70.I(znVar, u1Var);
+                org.telegram.ui.Components.om0 om0Var = new org.telegram.ui.Components.om0(znVar.getParentActivity(), znVar.ea);
+                I.p = new re(om0Var, 1);
                 y yVar = new y(znVar, user, str, 2);
-                org.telegram.ui.Components.v70 J = I.J();
+                org.telegram.ui.Components.y70 J = I.J();
                 J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new mu0(I, 25), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new q1(znVar, I, str), false);
@@ -146,11 +146,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                     I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new te(znVar, str, 6), false);
                     I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new te(znVar, str, 7), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new q1(znVar, mm0Var, user, 16));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new q1(znVar, om0Var, user, 16));
                 }
-                mm0Var.e(I);
-                if (characterStyle instanceof org.telegram.ui.Components.c61) {
-                    String url = ((org.telegram.ui.Components.c61) characterStyle).getURL();
+                om0Var.e(I);
+                if (characterStyle instanceof org.telegram.ui.Components.e61) {
+                    String url = ((org.telegram.ui.Components.e61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -163,11 +163,11 @@ public final /* synthetic */ class ta implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    mm0Var.f(u1Var, characterStyle, spannableString, false);
+                    om0Var.f(u1Var, characterStyle, spannableString, false);
                 } else {
-                    mm0Var.f(u1Var, characterStyle, null, false);
+                    om0Var.f(u1Var, characterStyle, null, false);
                 }
-                znVar.showDialog(mm0Var);
+                znVar.showDialog(om0Var);
                 break;
             case 2:
                 zn znVar2 = (zn) this.b;

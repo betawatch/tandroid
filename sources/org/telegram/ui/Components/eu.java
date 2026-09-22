@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class eu extends bu {
     public Drawable c;
@@ -58,8 +58,8 @@ public final class eu extends bu {
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         ju juVar = this.e;
-        am0 am0Var = juVar.c;
-        if (am0Var != null) {
+        dm0 dm0Var = juVar.c;
+        if (dm0Var != null) {
             boolean z10 = false;
             boolean z11 = i11 != i10;
             if (juVar.a() && z11) {
@@ -69,10 +69,10 @@ public final class eu extends bu {
             if (juVar.n != z10) {
                 juVar.n = z10;
                 if (z10) {
-                    this.c = am0Var.d;
-                    am0Var.a(R.drawable.msg_edit, true);
+                    this.c = dm0Var.d;
+                    dm0Var.a(R.drawable.msg_edit, true);
                 } else {
-                    am0Var.b(this.c, true);
+                    dm0Var.b(this.c, true);
                     this.c = null;
                 }
             }

@@ -15,7 +15,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.f31;
 import org.telegram.ui.sc1;
@@ -23,7 +23,7 @@ import org.telegram.ui.xd1;
 import org.telegram.ui.z21;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -137,9 +137,9 @@ public final class q0 extends FrameLayout {
                         f31Var.x.layout(getMeasuredWidth() - f31Var.x.getMeasuredWidth(), measuredHeight4, getMeasuredWidth(), f31Var.x.getMeasuredHeight() + measuredHeight4);
                     }
                 }
-                kj0 kj0Var = f31Var.F;
+                nj0 nj0Var = f31Var.F;
                 Rect rect = f31Var.c;
-                kj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
+                nj0Var.layout(rect.left + measuredWidth2, rect.top + measuredHeight, measuredWidth2 + rect.right, measuredHeight + rect.bottom);
                 int dp2 = AndroidUtilities.dp(11.0f) + f31Var.Q.a;
                 int dp3 = AndroidUtilities.dp(11.0f) + f31Var.Q.b;
                 ImageView imageView = f31Var.G;

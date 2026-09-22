@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ro extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -112,23 +112,23 @@ public final class ro extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 10:
-                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.sf0) this.b).r) != null) {
+                if (i10 == -1 && (runnable = ((org.telegram.ui.Components.vf0) this.b).r) != null) {
                     AndroidUtilities.runOnUIThread(runnable);
                     break;
                 }
                 break;
             case 11:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.zg0) this.b).dismiss();
+                    ((org.telegram.ui.Components.ch0) this.b).dismiss();
                     break;
                 }
                 break;
             case 12:
-                ((org.telegram.ui.Components.uq0) this.b).onBackPressed();
+                ((org.telegram.ui.Components.wq0) this.b).onBackPressed();
                 break;
             case 13:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.n61) this.b).finishFragment();
+                    ((org.telegram.ui.Components.p61) this.b).finishFragment();
                     break;
                 }
                 break;

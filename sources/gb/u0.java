@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class u0 extends db.u {
     public static db.i a(lb.a aVar, int i10) {
@@ -14,7 +14,7 @@ public class u0 extends db.u {
             return new db.m(aVar.v());
         }
         if (c10 == 6) {
-            return new db.m(new fb.h(aVar.v()));
+            return new db.m(new fb.i(aVar.v()));
         }
         if (c10 == 7) {
             return new db.m(Boolean.valueOf(aVar.n()));
@@ -55,9 +55,9 @@ public class u0 extends db.u {
                 throw new IllegalArgumentException("Couldn't write " + iVar.getClass());
             }
             bVar.c();
-            Iterator it = ((fb.k) iVar.i().a.entrySet()).iterator();
-            while (((fb.j) it).hasNext()) {
-                fb.l b10 = ((fb.j) it).b();
+            Iterator it = ((fb.l) iVar.i().a.entrySet()).iterator();
+            while (((fb.k) it).hasNext()) {
+                fb.m b10 = ((fb.k) it).b();
                 bVar.g((String) b10.getKey());
                 b((db.i) b10.getValue(), bVar);
             }

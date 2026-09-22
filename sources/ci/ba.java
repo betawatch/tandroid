@@ -32,9 +32,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class ba extends FrameLayout implements View.OnClickListener, NotificationCenter.NotificationCenterDelegate {
     public final m9 E;
@@ -61,7 +61,7 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
     public final ArrayList c;
     public final HashMap d;
     public final FrameLayout e;
-    public final vl0 f;
+    public final yl0 f;
     public final s4.c0 h;
     public final x9 n;
     public final z9 r;
@@ -112,27 +112,27 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         frameLayout.setClipToPadding(true);
         addView(frameLayout, w7.y5.e(-1, -1, 119));
         f6Var4 = ((org.telegram.ui.ActionBar.f3) iaVar).resourcesProvider;
-        vl0 vl0Var = new vl0(context, f6Var4);
-        this.f = vl0Var;
-        vl0Var.setClipToPadding(false);
-        vl0Var.setTranslateSelector(true);
+        yl0 yl0Var = new yl0(context, f6Var4);
+        this.f = yl0Var;
+        yl0Var.setClipToPadding(false);
+        yl0Var.setTranslateSelector(true);
         f6Var5 = ((org.telegram.ui.ActionBar.f3) iaVar).resourcesProvider;
         x9 x9Var = new x9(this, context, f6Var5, u9Var, new ai.s5(iaVar, 2));
         this.n = x9Var;
-        vl0Var.setAdapter(x9Var);
-        x9Var.h = vl0Var;
+        yl0Var.setAdapter(x9Var);
+        x9Var.h = yl0Var;
         s4.c0 c0Var = new s4.c0();
         this.h = c0Var;
-        vl0Var.setLayoutManager(c0Var);
-        vl0Var.setOnScrollListener(new v9(this, 0));
-        vl0Var.setOnItemClickListener(new ah.b(6, this, context));
-        frameLayout.addView(vl0Var, w7.y5.c(-1.0f, -1));
+        yl0Var.setLayoutManager(c0Var);
+        yl0Var.setOnScrollListener(new v9(this, 0));
+        yl0Var.setOnItemClickListener(new ah.b(6, this, context));
+        frameLayout.addView(yl0Var, w7.y5.c(-1.0f, -1));
         w9 w9Var = new w9(this);
         w9Var.n(350L);
         w9Var.o(qr.h);
         w9Var.C = false;
         w9Var.m = false;
-        vl0Var.setItemAnimator(w9Var);
+        yl0Var.setItemAnimator(w9Var);
         frameLayout.addView(u9Var, w7.y5.e(-1, -2, 55));
         frameLayout.addView(w3Var, w7.y5.e(-1, 32, 55));
         addView(m9Var, w7.y5.e(-1, -2, 55));
@@ -236,11 +236,11 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         e(false);
         f(false);
         int i12 = this.a;
-        vl0 vl0Var = this.f;
+        yl0 yl0Var = this.f;
         if (i12 != 0) {
-            vl0Var.v0(0);
+            yl0Var.v0(0);
         }
-        vl0Var.requestLayout();
+        yl0Var.requestLayout();
         this.R = -1;
     }
 
@@ -248,11 +248,11 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         int i10 = 0;
         float f7 = -org.telegram.messenger.l0.b(150.0f, Math.min(AndroidUtilities.dp(150.0f), this.x.J), 0);
         while (true) {
-            vl0 vl0Var = this.f;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.f;
+            if (i10 >= yl0Var.getChildCount()) {
                 return f7;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 34) {
                 return Math.max(f7, childAt.getY());
             }
@@ -506,12 +506,12 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         }
         int i14 = 0;
         while (true) {
-            vl0 vl0Var = this.f;
-            if (i14 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.f;
+            if (i14 >= yl0Var.getChildCount()) {
                 h(z10);
                 return;
             }
-            View childAt = vl0Var.getChildAt(i14);
+            View childAt = yl0Var.getChildAt(i14);
             if ((childAt instanceof ha) && (S = RecyclerView.S(childAt)) >= 0 && S < arrayList.size()) {
                 n9 n9Var2 = (n9) arrayList.get(S);
                 ha haVar = (ha) childAt;
@@ -853,9 +853,9 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
                             arrayList5.add(new n9(5, false));
                             dp += AndroidUtilities.dp(150.0f);
                         }
-                        vl0 vl0Var = this.f;
-                        if (vl0Var != null) {
-                            int measuredHeight = (vl0Var.getMeasuredHeight() - vl0Var.getPaddingTop()) - vl0Var.getPaddingBottom();
+                        yl0 yl0Var = this.f;
+                        if (yl0Var != null) {
+                            int measuredHeight = (yl0Var.getMeasuredHeight() - yl0Var.getPaddingTop()) - yl0Var.getPaddingBottom();
                             z12 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
                             dp3 = measuredHeight + (z12 ? this.T : 0);
                         } else {
@@ -1472,12 +1472,12 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         float f7 = -m9Var.getHeight();
         int i10 = 0;
         while (true) {
-            vl0 vl0Var = this.f;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.f;
+            if (i10 >= yl0Var.getChildCount()) {
                 z11 = true;
                 break;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 35) {
                 f7 = this.e.getPaddingTop() + childAt.getY();
                 break;
@@ -1595,13 +1595,13 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
         this.e.setPadding(0, AndroidUtilities.statusBarHeight + (this.a == 0 ? 0 : AndroidUtilities.dp(56.0f)), 0, 0);
         boolean z17 = this.V;
         z10 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
-        vl0 vl0Var = this.f;
+        yl0 yl0Var = this.f;
         z9 z9Var = this.r;
         if (z17 != z10) {
             float c10 = c();
             z11 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
             int i14 = 2;
-            if (z11 && c10 + Math.min(AndroidUtilities.dp(150.0f), this.x.J) > vl0Var.getPaddingTop()) {
+            if (z11 && c10 + Math.min(AndroidUtilities.dp(150.0f), this.x.J) > yl0Var.getPaddingTop()) {
                 ji.o oVar = new ji.o(getContext(), 2, 0.7f);
                 oVar.a = 1;
                 oVar.p = -AndroidUtilities.dp(56.0f);
@@ -1639,6 +1639,6 @@ public final class ba extends FrameLayout implements View.OnClickListener, Notif
             z14 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
             this.V = z14;
         }
-        vl0Var.setPadding(0, 0, 0, z9Var.getMeasuredHeight());
+        yl0Var.setPadding(0, 0, 0, z9Var.getMeasuredHeight());
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.ui.Cells.ca;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
     public final org.telegram.ui.ActionBar.f6 n;
@@ -39,7 +39,7 @@ public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
         i1Var.setTextColorKey(j6.Oh);
         i1Var.setAccentHint(true);
         i1Var.setHint(LocaleController.getString(R.string.ArticleHintAuthor));
-        i1Var.setListener(new a4.m(this, 23));
+        i1Var.setListener(new android.support.v4.media.c(this, 22));
         i1Var.setDelegate(new ei.d5(this, 20));
         addView(i1Var, w7.y5.e(-1, -2, 51));
         e();

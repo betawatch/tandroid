@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bi implements org.telegram.ui.web.h0 {
     public ValueAnimator a;
@@ -92,16 +92,16 @@ public final class bi implements org.telegram.ui.web.h0 {
             xo0Var = new org.telegram.ui.xo0((TLRPC.PaymentReceipt) tLObject);
         }
         if (xo0Var != null) {
-            q4Var.G();
+            q4Var.F();
             AndroidUtilities.hideKeyboard(q4Var);
             Activity parentActivity = n2Var.getParentActivity();
             int i11 = vi.O2;
-            id0 id0Var = new id0(parentActivity);
-            id0Var.show();
-            xo0Var.Z0 = new ai.r5(id0Var, q4Var, str, 24);
+            ld0 ld0Var = new ld0(parentActivity);
+            ld0Var.show();
+            xo0Var.Z0 = new ai.r5(ld0Var, q4Var, str, 24);
             f6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
             xo0Var.Y0 = f6Var;
-            id0Var.c(xo0Var);
+            ld0Var.c(xo0Var);
         }
     }
 
@@ -158,7 +158,7 @@ public final class bi implements org.telegram.ui.web.h0 {
         ni niVar = this.e.y0;
         ei.q4 q4Var = this.b;
         if (niVar == q4Var && !q4Var.J.c) {
-            q4Var.G();
+            q4Var.F();
         }
     }
 
@@ -238,10 +238,10 @@ public final class bi implements org.telegram.ui.web.h0 {
         org.telegram.ui.uy uyVar = new org.telegram.ui.uy(bundle);
         Context context = viVar.getContext();
         int i10 = vi.O2;
-        id0 id0Var = new id0(context);
-        uyVar.C2 = new a1.d(this, user, str, id0Var, 7);
-        id0Var.show();
-        id0Var.c(uyVar);
+        ld0 ld0Var = new ld0(context);
+        uyVar.C2 = new a1.d(this, user, str, ld0Var, 7);
+        ld0Var.show();
+        ld0Var.c(uyVar);
     }
 
     @Override // org.telegram.ui.web.h0

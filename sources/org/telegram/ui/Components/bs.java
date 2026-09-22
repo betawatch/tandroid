@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs implements MessagesStorage.LongCallback, kl0 {
+public final /* synthetic */ class bs implements MessagesStorage.LongCallback, nl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ fs b;
 
@@ -21,11 +21,11 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, k
         this.b = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         boolean z10;
         fs fsVar = this.b;
-        w51 G = fsVar.X.G(i10 - 1);
+        y51 G = fsVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -193,7 +193,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, k
                                 if (i15 >= fsVar.X.x.size()) {
                                     break;
                                 }
-                                w51 G2 = fsVar.X.G(i15);
+                                y51 G2 = fsVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.c1 L = fsVar.d.L(i15 + 1);
                                     if (L != null) {
@@ -232,7 +232,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, k
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -261,7 +261,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, k
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

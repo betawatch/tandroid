@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -59,57 +59,57 @@ public final /* synthetic */ class x2 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                ((ja0) this.b).V.Y0(((Integer) obj).intValue() + 8);
+                ((ma0) this.b).V.Y0(((Integer) obj).intValue() + 8);
                 break;
             case 7:
-                dc0 dc0Var = (dc0) this.b;
+                gc0 gc0Var = (gc0) this.b;
                 Integer num = (Integer) obj;
-                ArrayList arrayList = dc0Var.e.a;
-                db0 db0Var = dc0Var.f;
-                if (((ac0) arrayList.get(db0Var.getCurrentPosition())).a != num.intValue()) {
+                ArrayList arrayList = gc0Var.e.a;
+                gb0 gb0Var = gc0Var.f;
+                if (((dc0) arrayList.get(gb0Var.getCurrentPosition())).a != num.intValue()) {
                     int i10 = 0;
                     int i11 = 0;
                     while (true) {
                         if (i11 < arrayList.size()) {
-                            if (((ac0) arrayList.get(i11)).a == num.intValue()) {
+                            if (((dc0) arrayList.get(i11)).a == num.intValue()) {
                                 i10 = i11;
                             } else {
                                 i11++;
                             }
                         }
                     }
-                    if (db0Var.getCurrentPosition() != i10) {
-                        db0Var.E(i10);
+                    if (gb0Var.getCurrentPosition() != i10) {
+                        gb0Var.E(i10);
                         break;
                     }
                 }
                 break;
             case 8:
-                ae0 ae0Var = (ae0) this.b;
+                de0 de0Var = (de0) this.b;
                 Integer num2 = (Integer) obj;
-                FrameLayout frameLayout = ae0Var.h;
-                if (ae0Var.getContext() != null) {
-                    boolean z10 = ae0Var.getContext().getResources().getConfiguration().orientation == 2;
+                FrameLayout frameLayout = de0Var.h;
+                if (de0Var.getContext() != null) {
+                    boolean z10 = de0Var.getContext().getResources().getConfiguration().orientation == 2;
                     int intValue = num2.intValue() - AndroidUtilities.navigationBarHeight;
                     if (SharedConfig.passcodeType == 1) {
                         ViewPropertyAnimator animate = frameLayout.animate();
                         if (intValue <= AndroidUtilities.dp(20.0f)) {
                             height = 0.0f;
                         } else {
-                            height = (((ae0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
+                            height = (((de0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
                         }
                         ViewPropertyAnimator duration = animate.translationY(height).setDuration(320L);
                         qr qrVar = qr.h;
                         duration.setInterpolator(qrVar).start();
-                        ae0Var.I.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(qrVar);
+                        de0Var.I.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(qrVar);
                         break;
                     }
                 }
                 break;
             case 9:
-                xe0 xe0Var = (xe0) this.b;
-                xe0Var.K.a(xe0Var.N, true, 0, ((Long) obj).longValue());
-                xe0Var.dismiss();
+                af0 af0Var = (af0) this.b;
+                af0Var.K.a(af0Var.N, true, 0, ((Long) obj).longValue());
+                af0Var.dismiss();
                 break;
             case 10:
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
@@ -130,12 +130,12 @@ public final /* synthetic */ class x2 implements Utilities.Callback {
                 callback2.run(applyColorMatrix, applyColorMatrix2);
                 break;
             default:
-                sy0 sy0Var = (sy0) this.b;
+                uy0 uy0Var = (uy0) this.b;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
                 TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
-                int i12 = sy0Var.a;
+                int i12 = uy0Var.a;
                 TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
                 TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
                 if (userFull != null) {
@@ -143,7 +143,7 @@ public final /* synthetic */ class x2 implements Utilities.Callback {
                     userFull.birthday = tL_birthday;
                     MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.t5(sy0Var, userFull, tL_birthday2, 13), 1024);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.t5(uy0Var, userFull, tL_birthday2, 13), 1024);
                 MessagesController.getInstance(i12).invalidateContentSettings();
                 MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);

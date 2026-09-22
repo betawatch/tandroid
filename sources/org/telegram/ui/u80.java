@@ -14,9 +14,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class u80 extends org.telegram.ui.Components.ul0 {
+public final class u80 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final boolean d;
     public final /* synthetic */ LanguageSelectActivity e;
@@ -27,7 +27,7 @@ public final class u80 extends org.telegram.ui.Components.ul0 {
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 4 || i10 == 5 || i10 == 2;
@@ -286,7 +286,7 @@ public final class u80 extends org.telegram.ui.Components.ul0 {
                                 if (!z17) {
                                     sb3.append(", ");
                                 }
-                                String y3 = org.telegram.ui.Components.j41.y(org.telegram.ui.Components.j41.E(str, zArr, null));
+                                String y3 = org.telegram.ui.Components.l41.y(org.telegram.ui.Components.l41.D(str, zArr, null));
                                 if (y3 != null) {
                                     sb3.append(y3);
                                     z17 = false;
@@ -299,7 +299,7 @@ public final class u80 extends org.telegram.ui.Components.ul0 {
                                 break;
                             }
                         } else {
-                            charSequence = org.telegram.ui.Components.j41.y(org.telegram.ui.Components.j41.E((String) Y.iterator().next(), zArr, null));
+                            charSequence = org.telegram.ui.Components.l41.y(org.telegram.ui.Components.l41.D((String) Y.iterator().next(), zArr, null));
                         }
                     } else {
                         charSequence = "";
@@ -385,7 +385,7 @@ public final class u80 extends org.telegram.ui.Components.ul0 {
             h9Var.setClipChildren(false);
             view = h9Var;
         }
-        return new org.telegram.ui.Components.fl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 
     @Override // s4.h0

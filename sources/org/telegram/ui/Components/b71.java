@@ -1,36 +1,114 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.app.Activity;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.io.File;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class b71 extends b20 {
-    public final ci.h2 J;
-    public final /* synthetic */ c71 K;
+public final class b71 extends IUpdateLayout {
+    public FrameLayout a;
+    public RadialProgress2 b;
+    public org.telegram.ui.Cells.x1 c;
+    public final Activity d;
+    public final ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b71(c71 c71Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.K = c71Var;
-        ci.h2 h2Var = this.r;
-        this.J = h2Var;
-        h2Var.setImeOptions(268435459);
-        h2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
-        h2Var.addTextChangedListener(new ci.i2(this, 14));
-        h2Var.setOnEditorActionListener(new e1(this, 10));
+    public b71(Activity activity, ViewGroup viewGroup) {
+        super(activity, viewGroup);
+        this.d = activity;
+        this.e = viewGroup;
     }
 
-    @Override // org.telegram.ui.Components.b20
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void createUpdateUI(int i10) {
+        ViewGroup viewGroup = this.e;
+        if (viewGroup == null || this.a != null) {
+            return;
+        }
+        Activity activity = this.d;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setVisibility(4);
+        this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+        this.a.setBackground(org.telegram.ui.ActionBar.j6.f0(1090519039, 2, -1));
+        viewGroup.addView(this.a, w7.y5.e(-1, 44, 83));
+        this.a.setOnClickListener(new ci.o4(this, i10, 14));
+        org.telegram.ui.Cells.x1 x1Var = new org.telegram.ui.Cells.x1(this, activity);
+        this.c = x1Var;
+        x1Var.setTextSize(AndroidUtilities.dp(15.0f));
+        this.c.setTypeface(AndroidUtilities.bold());
+        this.c.setTextColor(-1);
+        this.c.setGravity(17);
+        this.a.addView(this.c, w7.y5.g());
+        this.c.c(LocaleController.getString(R.string.AppUpdateBeta), false, true);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
+        this.b = radialProgress2;
+        int i11 = org.telegram.ui.ActionBar.j6.Oh;
+        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        this.b.q(0, 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
+        this.b.setCircleRadius(AndroidUtilities.dp(11.0f));
+        this.b.setAsMini();
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.K.E(motionEvent, this.J);
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateAppUpdateViews(int i10, boolean z10) {
+        if (this.e == null) {
+            return;
+        }
+        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
+            FrameLayout frameLayout = this.a;
+            if (frameLayout == null || frameLayout.getTag() == null) {
+                return;
+            }
+            this.a.setTag(null);
+            if (z10) {
+                this.a.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(qr.g).setListener(new gd0(this, 28)).setDuration(180L).start();
+                return;
+            } else {
+                this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+                this.a.setVisibility(4);
+                return;
+            }
+        }
+        createUpdateUI(i10);
+        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
+        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
+            this.b.setIcon(15, true, z10);
+            this.c.c(LocaleController.getString(R.string.AppUpdateNow), z10, true);
+        } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            this.b.setIcon(3, true, z10);
+            this.b.o(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
+            this.c.c(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z10, true);
+        } else {
+            this.b.setIcon(2, true, z10);
+            this.c.c(LocaleController.getString(R.string.AppUpdateBeta), z10, true);
+        }
+        if (this.a.getTag() != null) {
+            return;
+        }
+        this.a.setVisibility(0);
+        this.a.setTag(1);
+        if (z10) {
+            this.a.animate().translationY(0.0f).setInterpolator(qr.g).setListener(null).setDuration(180L).start();
+        } else {
+            this.a.setTranslationY(0.0f);
+        }
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateFileProgress(Object[] objArr) {
+        if (this.a == null || this.c == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            return;
+        }
+        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
+        this.b.o(downloadingUpdateProgress, true);
+        this.c.setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
+        this.a.invalidate();
     }
 }

@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qg0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class qg0 implements Utilities.Callback3 {
                 Long l4 = (Long) obj;
                 TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj2;
                 String str2 = (String) obj3;
-                org.telegram.ui.Components.k90 k90Var = xg0Var.n;
+                org.telegram.ui.Components.n90 n90Var = xg0Var.n;
                 yg0 yg0Var = xg0Var.V;
                 xg0Var.U = null;
                 xg0Var.T = false;
@@ -91,8 +91,8 @@ public final /* synthetic */ class qg0 implements Utilities.Callback3 {
                         yg0Var.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
                         break;
                     }
-                } else if (k90Var != null && "CANCELLED".equals(str2)) {
-                    k90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new ng0(xg0Var, 3)), true));
+                } else if (n90Var != null && "CANCELLED".equals(str2)) {
+                    n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new ng0(xg0Var, 3)), true));
                     break;
                 }
                 break;

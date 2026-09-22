@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.Arrays;
 import n6.l;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g extends j {
     public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("ModuleInstall.API", new a8.d(14), new com.google.android.gms.common.api.d());
@@ -27,7 +27,7 @@ public final class g extends j {
         e.d = new k6.c[]{k7.b.c};
         e.a = 27301;
         e.b = false;
-        e.c = new n2.e(this, b10);
+        e.c = new l.d(this, b10);
         return e(0, e.a());
     }
 }

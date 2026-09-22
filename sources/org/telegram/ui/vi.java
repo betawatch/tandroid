@@ -1,47 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class vi implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
+public final /* synthetic */ class vi implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wi b;
     public final /* synthetic */ int c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.pk0 e;
+    public final /* synthetic */ org.telegram.ui.Components.sk0 e;
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
-    public final /* synthetic */ zg.o0 n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ zn s;
+    public final /* synthetic */ zg.p0 n;
 
-    public vi(zn znVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.pk0 pk0Var, float f7, float f10, zg.o0 o0Var, MessageObject messageObject) {
-        this.s = znVar;
-        this.a = z10;
-        this.b = z11;
+    public /* synthetic */ vi(wi wiVar, int i10, boolean z10, org.telegram.ui.Components.sk0 sk0Var, float f7, float f10, zg.p0 p0Var, int i11) {
+        this.a = i11;
+        this.b = wiVar;
         this.c = i10;
-        this.d = z12;
-        this.e = pk0Var;
+        this.d = z10;
+        this.e = sk0Var;
         this.f = f7;
         this.h = f10;
-        this.n = o0Var;
-        this.r = messageObject;
+        this.n = p0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (!this.a) {
-            zn znVar = this.s;
-            if (znVar.bc != null) {
-                znVar.bc = null;
-                if (this.b) {
-                    znVar.h8(new ui(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
-                } else {
-                    znVar.h8(new gh(10, this, this.r));
+        int i10;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new vi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
+                break;
+            default:
+                zn znVar = this.b.s;
+                org.telegram.ui.Cells.a0 q82 = znVar.q8(this.c, true);
+                if (this.d) {
+                    i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+                    zg.l0.d(znVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
+                    zg.l0.f();
+                    break;
                 }
-                znVar.A7(true);
-            }
+                break;
         }
     }
 }

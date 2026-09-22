@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                     if (messageObject2 != null && messageObject2.isSponsored() && photoViewer.o0.getAlpha() > 0.5f) {
                         final int i15 = photoViewer.T4.currentAccount;
                         final ai.d dVar = new ai.d();
-                        org.telegram.ui.Components.v70 G = org.telegram.ui.Components.v70.G(photoViewer.e0, dVar, photoViewer.o0, true);
+                        org.telegram.ui.Components.y70 G = org.telegram.ui.Components.y70.G(photoViewer.e0, dVar, photoViewer.o0, true);
                         G.a0(0.0f, -AndroidUtilities.dp(46.0f));
                         G.V(5);
                         MessageObject messageObject3 = photoViewer.T4;
@@ -202,7 +202,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                                 break;
                             }
                         }
-                        org.telegram.ui.Components.v70 J = G.J();
+                        org.telegram.ui.Components.y70 J = G.J();
                         org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(0, photoViewer.E, dVar, true, false);
                         f1Var.setItemHeight(44);
                         f1Var.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
@@ -386,18 +386,18 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                     if (messageObject5 != null && (message = messageObject5.messageOwner) != null && message.media != null && messageObject5.hasVideoQualities()) {
                         int i18 = messageObject5.currentAccount;
                         TLRPC.MessageMedia messageMedia = messageObject5.messageOwner.media;
-                        ArrayList s10 = org.telegram.ui.Components.t71.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        ArrayList s10 = org.telegram.ui.Components.v71.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
                         linearLayout.removeAllViews();
                         int i19 = 0;
                         while (i19 < s10.size()) {
-                            org.telegram.ui.Components.p71 p71Var = (org.telegram.ui.Components.p71) s10.get(i19);
-                            org.telegram.ui.Components.r71 a2 = p71Var.a();
+                            org.telegram.ui.Components.r71 r71Var = (org.telegram.ui.Components.r71) s10.get(i19);
+                            org.telegram.ui.Components.t71 a2 = r71Var.a();
                             StringBuilder sb2 = new StringBuilder();
                             int i20 = R.string.QualitySaveIn;
                             Object[] objArr = new Object[i14];
-                            objArr[0] = Integer.valueOf(p71Var.b());
+                            objArr[0] = Integer.valueOf(r71Var.b());
                             sb2.append(LocaleController.formatString(i20, objArr));
-                            sb2.append(p71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
+                            sb2.append(r71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
                             String sb3 = sb2.toString();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (a2.b()) {
@@ -417,7 +417,7 @@ public final /* synthetic */ class vr0 implements View.OnClickListener {
                             c10.setSubtext(spannableStringBuilder);
                             c10.c(-328966, -328966);
                             c10.b.setPadding(0, 0, 0, 0);
-                            c10.setOnClickListener(new z(wrVar, messageObject5, p71Var, 9));
+                            c10.setOnClickListener(new z(wrVar, messageObject5, r71Var, 9));
                             c10.setSelectorColor(268435455);
                             i19++;
                             f11 = 0.0f;

@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class sy extends s4.v {
     public s4.c1 d;
@@ -321,22 +321,22 @@ public final class sy extends s4.v {
         }
         if (uyVar.V0 == null) {
             qy qyVar2 = tyVar.a;
-            org.telegram.ui.Components.jd0 jd0Var = new org.telegram.ui.Components.jd0();
-            jd0Var.a = new Paint(1);
+            org.telegram.ui.Components.md0 md0Var = new org.telegram.ui.Components.md0();
+            md0Var.a = new Paint(1);
             Paint paint = new Paint(1);
-            jd0Var.b = paint;
-            jd0Var.e = 0L;
-            jd0Var.f = new RectF();
+            md0Var.b = paint;
+            md0Var.e = 0L;
+            md0Var.f = new RectF();
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            jd0Var.c = qyVar2;
-            uyVar.V0 = jd0Var;
+            md0Var.c = qyVar2;
+            uyVar.V0 = md0Var;
         }
-        org.telegram.ui.Components.jd0 jd0Var2 = uyVar.V0;
-        jd0Var2.d = zVar;
-        jd0Var2.h = 0.0f;
-        jd0Var2.g = 0.0f;
-        jd0Var2.e = System.currentTimeMillis();
-        jd0Var2.c.invalidate();
+        org.telegram.ui.Components.md0 md0Var2 = uyVar.V0;
+        md0Var2.d = zVar;
+        md0Var2.h = 0.0f;
+        md0Var2.g = 0.0f;
+        md0Var2.e = System.currentTimeMillis();
+        md0Var2.c.invalidate();
     }
 }

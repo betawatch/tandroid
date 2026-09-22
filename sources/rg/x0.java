@@ -25,10 +25,10 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.x7;
-import org.telegram.ui.Components.zk0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.c80;
 import org.telegram.ui.kx0;
@@ -38,7 +38,7 @@ import org.telegram.ui.t5;
 import w7.y5;
 import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class x0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -195,7 +195,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
                 n0Var.setOffset(r0.getMeasuredWidth());
                 this.w = true;
                 ofFloat.addUpdateListener(new l6(n0Var, 12));
-                ofFloat.addListener(new zk0(20, this, n0Var));
+                ofFloat.addListener(new cl0(20, this, n0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(qr.h);

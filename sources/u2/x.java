@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class x implements d0, c0 {
     public final f0 a;
@@ -17,7 +17,14 @@ public final class x implements d0, c0 {
         this.b = j3;
     }
 
-    public final void a(f0 f0Var) {
+    @Override // u2.c0
+    public final void a(d0 d0Var) {
+        c0 c0Var = this.f;
+        String str = e2.d0.a;
+        c0Var.a(this);
+    }
+
+    public final void b(f0 f0Var) {
         long j3 = this.h;
         if (j3 == -9223372036854775807L) {
             j3 = this.b;
@@ -29,13 +36,6 @@ public final class x implements d0, c0 {
         if (this.f != null) {
             c10.k(this, j3);
         }
-    }
-
-    @Override // u2.c0
-    public final void b(d0 d0Var) {
-        c0 c0Var = this.f;
-        String str = e2.d0.a;
-        c0Var.b(this);
     }
 
     @Override // u2.e1
@@ -91,61 +91,61 @@ public final class x implements d0, c0 {
         }
     }
 
-    @Override // u2.d0
-    public final long l() {
-        d0 d0Var = this.e;
-        String str = e2.d0.a;
-        return d0Var.l();
-    }
-
     @Override // u2.d1
-    public final void m(e1 e1Var) {
+    public final void l(e1 e1Var) {
         c0 c0Var = this.f;
         String str = e2.d0.a;
-        c0Var.m(this);
+        c0Var.l(this);
+    }
+
+    @Override // u2.d0
+    public final long m() {
+        d0 d0Var = this.e;
+        String str = e2.d0.a;
+        return d0Var.m();
     }
 
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean q(i2.r0 r0Var) {
         d0 d0Var = this.e;
-        return d0Var != null && d0Var.p(r0Var);
+        return d0Var != null && d0Var.q(r0Var);
     }
 
     @Override // u2.d0
-    public final long q(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long r(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
         long j10 = this.h;
         long j11 = (j10 == -9223372036854775807L || j3 != this.b) ? j3 : j10;
         this.h = -9223372036854775807L;
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        return d0Var.q(sVarArr, zArr, c1VarArr, zArr2, j11);
+        return d0Var.r(sVarArr, zArr, c1VarArr, zArr2, j11);
     }
 
     @Override // u2.d0
-    public final p1 r() {
-        d0 d0Var = this.e;
-        String str = e2.d0.a;
-        return d0Var.r();
-    }
-
-    @Override // u2.e1
-    public final long s() {
+    public final p1 s() {
         d0 d0Var = this.e;
         String str = e2.d0.a;
         return d0Var.s();
     }
 
-    @Override // u2.d0
-    public final long t(long j3, i2.p1 p1Var) {
+    @Override // u2.e1
+    public final long t() {
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        return d0Var.t(j3, p1Var);
+        return d0Var.t();
+    }
+
+    @Override // u2.d0
+    public final long u(long j3, i2.p1 p1Var) {
+        d0 d0Var = this.e;
+        String str = e2.d0.a;
+        return d0Var.u(j3, p1Var);
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
+    public final void v(long j3) {
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        d0Var.u(j3);
+        d0Var.v(j3);
     }
 }

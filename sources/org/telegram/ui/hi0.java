@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class hi0 extends FrameLayout {
     public final ArrayList a;
@@ -74,7 +74,7 @@ public final class hi0 extends FrameLayout {
         setEnabled(false);
     }
 
-    public final org.telegram.ui.Components.vl0 a() {
+    public final org.telegram.ui.Components.yl0 a() {
         fc1 fc1Var = this.s;
         if (fc1Var != null) {
             return fc1Var;

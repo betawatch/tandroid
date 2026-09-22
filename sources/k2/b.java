@@ -14,7 +14,7 @@ import e9.a1;
 import java.util.List;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b {
     public static final b c = new b(e9.i0.z(a.d));
@@ -36,7 +36,7 @@ public final class b {
         aVar.u(6, 8);
         aVar.u(8, 8);
         aVar.u(14, 8);
-        e = aVar.e();
+        e = aVar.d();
     }
 
     public b(a1 a1Var) {
@@ -69,16 +69,16 @@ public final class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b b(Context context, Intent intent, b2.e eVar, a6.m mVar) {
+    public static b b(Context context, Intent intent, b2.e eVar, e eVar2) {
         AudioManager e7 = c2.d.e(context);
-        if (mVar == null) {
-            mVar = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
+        if (eVar2 == null) {
+            eVar2 = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
         }
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 33 && (e2.d0.N(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
             return g0.a.c(e7, eVar);
         }
-        if (i10 >= 23 && e0.b.o(e7, mVar)) {
+        if (i10 >= 23 && e0.b.o(e7, eVar2)) {
             return c;
         }
         e9.l0 l0Var = new e9.l0(4);
@@ -113,8 +113,8 @@ public final class b {
         return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), z7.f(l0Var.i())));
     }
 
-    public static b c(Context context, b2.e eVar, a6.m mVar) {
-        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, mVar);
+    public static b c(Context context, b2.e eVar, e eVar2) {
+        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, eVar2);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00cb, code lost:

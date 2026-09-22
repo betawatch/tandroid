@@ -16,13 +16,13 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dc1;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class j0 extends rg.k1 {
     public final ArrayList Q0;
@@ -40,9 +40,9 @@ public final class j0 extends rg.k1 {
         aVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 12));
         aVar.setCloseStyle(true);
         this.containerView.addView(aVar, y5.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
+        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
         Context context = getContext();
         int i12 = i0.f;
         FrameLayout frameLayout = new FrameLayout(context);
@@ -119,9 +119,9 @@ public final class j0 extends rg.k1 {
         this.O0[0].setTextSize(1, 20.0f);
         this.P0.setPadding(AndroidUtilities.dp(30.0f), 0, AndroidUtilities.dp(30.0f), 0);
         this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        k90 k90Var = this.O0[0];
+        n90 n90Var = this.O0[0];
         ArrayList arrayList = this.Q0;
-        k90Var.setText(LocaleController.getPluralString("GiftPremiumGiftsSent", arrayList.size()));
+        n90Var.setText(LocaleController.getPluralString("GiftPremiumGiftsSent", arrayList.size()));
         ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
         ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).topMargin = AndroidUtilities.dp(4.0f);
         int size = arrayList.size();

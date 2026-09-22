@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class j31 extends j71 {
     public final /* synthetic */ l31 d2;
@@ -42,11 +42,11 @@ public final class j31 extends j71 {
     }
 
     @Override // org.telegram.ui.j71
-    public final void r(s61 s61Var, zg.o0 o0Var) {
+    public final void r(s61 s61Var, zg.p0 p0Var) {
         int i10;
         m31 m31Var = this.f2;
         i10 = ((org.telegram.ui.ActionBar.n2) m31Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction(o0Var.f);
+        MediaDataController.getInstance(i10).setDoubleTapReaction(p0Var.f);
         l31 l31Var = this.d2;
         if (l31Var != null) {
             l31Var.a(true);

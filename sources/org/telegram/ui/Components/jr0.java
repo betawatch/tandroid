@@ -1,66 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jr0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ jv0 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ int e;
+public final /* synthetic */ class jr0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    public /* synthetic */ jr0(jv0 jv0Var, org.telegram.ui.ActionBar.f6 f6Var, int i10, MessageObject messageObject) {
-        this.b = jv0Var;
-        this.c = f6Var;
-        this.e = i10;
-        this.d = messageObject;
+    public /* synthetic */ jr0(FrameLayout frameLayout, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.d = frameLayout;
+        this.b = z10;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(this.b.getContext(), 3, this.c)};
-                int i10 = this.e;
-                int sendVote = SendMessagesHelper.getInstance(i10).sendVote(this.d, null, new ls(b2VarArr, 1));
-                if (sendVote != 0) {
-                    AndroidUtilities.runOnUIThread(new nr0(b2VarArr, i10, sendVote, 0), 500L);
+                lv0 lv0Var = (lv0) this.d;
+                org.telegram.ui.ActionBar.n2 n2Var = lv0Var.v1;
+                if (!this.b) {
+                    n2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
+                    ci.oc.E(n2Var.getParentActivity(), n2Var.getCurrentAccount()).R(null);
+                    break;
+                } else {
+                    lv0Var.O0(n2Var, lv0Var.j1, this.c);
                     break;
                 }
-                break;
             default:
-                jv0 jv0Var = this.b;
-                Context context = jv0Var.getContext();
-                org.telegram.ui.ActionBar.f6 f6Var = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.P0 = false;
-                MessageObject messageObject = this.d;
-                if (messageObject.isQuiz()) {
-                    b2Var.R = LocaleController.getString(R.string.StopQuizAlertTitle);
-                    b2Var.T = LocaleController.getString(R.string.StopQuizAlertText);
+                bs0 bs0Var = (bs0) this.d;
+                if (bs0Var.e.h() && bs0Var.h.getCurrentPosition() != 0) {
+                    bs0Var.a();
+                    break;
                 } else {
-                    b2Var.R = LocaleController.getString(R.string.StopPollAlertTitle);
-                    b2Var.T = LocaleController.getString(R.string.StopPollAlertText);
+                    boolean z10 = this.b;
+                    int i10 = this.c;
+                    if (!z10) {
+                        tg.m1.e0(2, BirthdayController.getInstance(i10).getState());
+                        break;
+                    } else {
+                        xh.r1 r1Var = new xh.r1(bs0Var.getContext(), i10, bs0Var.c, null, null);
+                        r1Var.V(BirthdayController.getInstance(i10).isToday(bs0Var.c));
+                        r1Var.show();
+                        break;
+                    }
                 }
-                alertDialog$Builder.k(LocaleController.getString(R.string.Stop), new org.telegram.ui.ea(jv0Var, f6Var, messageObject, this.e, 4));
-                hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
-                break;
         }
-    }
-
-    public /* synthetic */ jr0(jv0 jv0Var, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject, int i10) {
-        this.b = jv0Var;
-        this.c = f6Var;
-        this.d = messageObject;
-        this.e = i10;
     }
 }

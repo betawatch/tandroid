@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cb0 implements MessagesController.MessagesLoadedCallback {
     public final /* synthetic */ r80 a;
@@ -63,9 +63,9 @@ public final class cb0 implements MessagesController.MessagesLoadedCallback {
                 if (znVar.a() == j3 && this.e == null) {
                     AndroidUtilities.shakeViewSpring(znVar.x0, 5.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    lk lkVar = znVar.Y;
-                    for (int i10 = 0; i10 < lkVar.getChildCount(); i10++) {
-                        AndroidUtilities.shakeViewSpring(lkVar.getChildAt(i10), 5.0f);
+                    mk mkVar = znVar.Y;
+                    for (int i10 = 0; i10 < mkVar.getChildCount(); i10++) {
+                        AndroidUtilities.shakeViewSpring(mkVar.getChildAt(i10), 5.0f);
                     }
                     org.telegram.ui.ActionBar.k actionBar = znVar.getActionBar();
                     for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
@@ -76,6 +76,6 @@ public final class cb0 implements MessagesController.MessagesLoadedCallback {
             n2Var = new zn(this.f);
             ((ActionBarLayout) launchActivity.O()).P(n2Var);
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.x21(this, this.b, this.d, n2Var, 4), 150L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.z21(this, this.b, this.d, n2Var, 4), 150L);
     }
 }

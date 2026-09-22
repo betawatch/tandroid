@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.hu;
-import org.telegram.ui.Components.id0;
+import org.telegram.ui.Components.ld0;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class y3 extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
@@ -239,7 +239,7 @@ public final class y3 extends org.telegram.ui.ActionBar.n2 {
         switch (this.a) {
             case 7:
                 if (z10 && z11) {
-                    ((id0) this.b).dismiss();
+                    ((ld0) this.b).dismiss();
                     break;
                 }
                 break;

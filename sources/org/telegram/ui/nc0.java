@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class nc0 extends FrameLayout {
     public final org.telegram.ui.Components.x9 a;
@@ -27,7 +27,7 @@ public final class nc0 extends FrameLayout {
     public final TextView d;
     public final org.telegram.ui.Cells.x1 e;
     public final TextView f;
-    public final org.telegram.ui.Components.so0 h;
+    public final org.telegram.ui.Components.uo0 h;
     public final lc0 n;
     public boolean r;
     public float s;
@@ -61,13 +61,13 @@ public final class nc0 extends FrameLayout {
         x1Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         linearLayout.addView(x1Var, w7.y5.t(-2, 17, 16, 6, 1, 0, 0));
         addView(linearLayout, w7.y5.d(-1, -2.0f, 55, 21.0f, 17.0f, 21.0f, 0.0f));
-        org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(context, null, true);
-        this.h = so0Var;
-        so0Var.setReportChanges(true);
-        so0Var.setDelegate(new g(this, 23));
-        so0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
-        so0Var.setImportantForAccessibility(2);
-        addView(so0Var, w7.y5.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
+        org.telegram.ui.Components.uo0 uo0Var = new org.telegram.ui.Components.uo0(context, null, true);
+        this.h = uo0Var;
+        uo0Var.setReportChanges(true);
+        uo0Var.setDelegate(new g(this, 23));
+        uo0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
+        uo0Var.setImportantForAccessibility(2);
+        addView(uo0Var, w7.y5.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setImportantForAccessibility(4);
         TextView textView2 = new TextView(context);

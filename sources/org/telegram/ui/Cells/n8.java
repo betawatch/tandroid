@@ -35,7 +35,7 @@ import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n8 extends FrameLayout {
     public final TextView E;
@@ -118,7 +118,7 @@ public final class n8 extends FrameLayout {
         textView.setGravity(17);
         textView.setOnClickListener(new h8(this, 0));
         frameLayout.addView(textView, w7.y5.h(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
-        w7.b6.a(textView);
+        w7.a6.a(textView);
         TextView textView2 = new TextView(context);
         this.E = textView2;
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView2);
@@ -129,7 +129,7 @@ public final class n8 extends FrameLayout {
         textView2.setGravity(17);
         textView2.setOnClickListener(new h8(this, 0));
         frameLayout.addView(textView2, w7.y5.i(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
-        w7.b6.a(textView2);
+        w7.a6.a(textView2);
         rg.p0 p0Var = new rg.p0(AndroidUtilities.dp(4.0f), context, null, false);
         this.F = p0Var;
         p0Var.setIcon(R.raw.unlock_icon);
@@ -146,7 +146,7 @@ public final class n8 extends FrameLayout {
         } catch (Exception unused) {
         }
         this.x.addView(this.F, w7.y5.h(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
-        w7.b6.a(this.F);
+        w7.a6.a(this.F);
         this.x.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         addView(this.x, w7.y5.d(-2, -1.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
         this.x.setOnClickListener(new h8(this, 1));

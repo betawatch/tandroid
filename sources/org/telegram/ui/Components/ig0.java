@@ -1,207 +1,253 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
-import java.util.regex.Pattern;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FlagSecureReason;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ig0 implements sv0, rv0, org.telegram.ui.ActionBar.a2, GenericProvider, ImageReceiver.ImageReceiverDelegate, LanguageDetector.ExceptionCallback, yc0, FlagSecureReason.FlagSecureCondition {
-    public final /* synthetic */ int a;
+public final class ig0 extends FrameLayout {
+    public float a;
+    public float b;
+    public boolean c;
+    public boolean d;
+    public final /* synthetic */ PipRoundVideoView e;
 
-    public /* synthetic */ ig0(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ig0(PipRoundVideoView pipRoundVideoView, Activity activity) {
+        super(activity);
+        this.e = pipRoundVideoView;
     }
 
-    @Override // org.telegram.ui.Components.sv0
-    public void b(Object obj, float f7) {
-        switch (this.a) {
-            case 0:
-                og0 og0Var = (og0) obj;
-                WindowManager.LayoutParams layoutParams = og0Var.c;
-                og0Var.K = f7;
-                layoutParams.x = (int) f7;
-                try {
-                    AndroidUtilities.updateViewLayout(og0Var.b, og0Var.d, layoutParams);
-                    break;
-                } catch (IllegalArgumentException unused) {
-                    og0Var.M.c();
-                    return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.h5 h5Var = org.telegram.ui.ActionBar.j6.k3;
+        if (h5Var != null) {
+            h5Var.setAlpha((int) (getAlpha() * 255.0f));
+            org.telegram.ui.ActionBar.j6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
+            org.telegram.ui.ActionBar.j6.k3.draw(canvas);
+            org.telegram.ui.ActionBar.j6.S1.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ra, false));
+            org.telegram.ui.ActionBar.j6.S1.setAlpha((int) (getAlpha() * 255.0f));
+            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.j6.S1);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.a = motionEvent.getRawX();
+            this.b = motionEvent.getRawY();
+            this.d = true;
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x02b8 A[ORIG_RETURN, RETURN] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float f7;
+        boolean z10;
+        ArrayList arrayList;
+        boolean z11;
+        char c10;
+        MessageObject playingMessageObject;
+        if (!this.d && !this.c) {
+            return false;
+        }
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        float f10 = 1.0f;
+        PipRoundVideoView pipRoundVideoView = this.e;
+        if (action == 2) {
+            float f11 = rawX - this.a;
+            float f12 = rawY - this.b;
+            if (this.d) {
+                if (Math.abs(f11) < AndroidUtilities.getPixelsInCM(0.3f, true) && Math.abs(f12) < AndroidUtilities.getPixelsInCM(0.3f, false)) {
+                    return true;
                 }
-            case 2:
-                og0 og0Var2 = (og0) obj;
-                WindowManager.LayoutParams layoutParams2 = og0Var2.c;
-                og0Var2.L = f7;
-                layoutParams2.y = (int) f7;
-                try {
-                    AndroidUtilities.updateViewLayout(og0Var2.b, og0Var2.d, layoutParams2);
-                    break;
-                } catch (IllegalArgumentException unused2) {
-                    og0Var2.N.c();
-                    return;
+                this.c = true;
+                this.d = false;
+                return true;
+            }
+            if (!this.c) {
+                return true;
+            }
+            WindowManager.LayoutParams layoutParams = pipRoundVideoView.v;
+            int i10 = (int) (layoutParams.x + f11);
+            layoutParams.x = i10;
+            layoutParams.y = (int) (layoutParams.y + f12);
+            int i11 = pipRoundVideoView.h / 2;
+            int i12 = -i11;
+            if (i10 < i12) {
+                layoutParams.x = i12;
+            } else {
+                int i13 = (AndroidUtilities.displaySize.x - layoutParams.width) + i11;
+                if (i10 > i13) {
+                    layoutParams.x = i13;
                 }
-            case 7:
-                jp0 jp0Var = (jp0) obj;
-                jp0Var.n = f7;
-                jp0Var.invalidate();
-                break;
-            case 18:
-                org.telegram.ui.Components.voip.j1 j1Var = (org.telegram.ui.Components.voip.j1) obj;
-                WindowManager.LayoutParams layoutParams3 = j1Var.c;
-                j1Var.Q = f7;
-                layoutParams3.x = (int) f7;
-                AndroidUtilities.updateViewLayout(j1Var.b, j1Var.d, layoutParams3);
-                break;
-            default:
-                org.telegram.ui.Components.voip.j1 j1Var2 = (org.telegram.ui.Components.voip.j1) obj;
-                WindowManager.LayoutParams layoutParams4 = j1Var2.c;
-                j1Var2.R = f7;
-                layoutParams4.y = (int) f7;
-                AndroidUtilities.updateViewLayout(j1Var2.b, j1Var2.d, layoutParams4);
-                break;
+            }
+            int i14 = layoutParams.x;
+            if (i14 < 0) {
+                f10 = a4.a.e(i14, i11, 0.5f, 1.0f);
+            } else {
+                if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
+                    f10 = org.telegram.messenger.rk.b((i14 - r11) + r10, i11, 0.5f, 1.0f);
+                }
+            }
+            if (pipRoundVideoView.a.getAlpha() != f10) {
+                pipRoundVideoView.a.setAlpha(f10);
+            }
+            WindowManager.LayoutParams layoutParams2 = pipRoundVideoView.v;
+            int i15 = layoutParams2.y;
+            if (i15 < 0) {
+                layoutParams2.y = 0;
+            } else {
+                int i16 = AndroidUtilities.displaySize.y - layoutParams2.height;
+                if (i15 > i16) {
+                    layoutParams2.y = i16;
+                }
+            }
+            pipRoundVideoView.w.updateViewLayout(pipRoundVideoView.a, layoutParams2);
+            this.a = rawX;
+            this.b = rawY;
+            return true;
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        if (imageReceiver.canInvertBitmap()) {
-            imageReceiver.setColorFilter(new ColorMatrixColorFilter(new float[]{-1.0f, 0.0f, 0.0f, 0.0f, 255.0f, 0.0f, -1.0f, 0.0f, 0.0f, 255.0f, 0.0f, 0.0f, -1.0f, 0.0f, 255.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
+        if (motionEvent.getAction() != 1) {
+            return true;
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.ui.Components.yc0
-    public String e(int i10) {
-        switch (this.a) {
+        if (this.d && !this.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
+            if (MediaController.getInstance().isMessagePaused()) {
+                MediaController.getInstance().playMessage(playingMessageObject);
+            } else {
+                MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
+            }
         }
-        return String.format("%02d", Integer.valueOf(i10));
-    }
-
-    @Override // org.telegram.ui.Components.rv0
-    public float get(Object obj) {
-        switch (this.a) {
-            case 1:
-                return ((og0) obj).L;
-            case 6:
-                return ((jp0) obj).n;
-            case 17:
-                return ((org.telegram.ui.Components.voip.j1) obj).Q;
-            default:
-                return ((org.telegram.ui.Components.voip.j1) obj).R;
+        this.c = false;
+        this.d = false;
+        int b10 = PipRoundVideoView.b(true, 0, 0.0f, pipRoundVideoView.h);
+        int b11 = PipRoundVideoView.b(true, 1, 0.0f, pipRoundVideoView.h);
+        int b12 = PipRoundVideoView.b(false, 0, 0.0f, pipRoundVideoView.n);
+        int b13 = PipRoundVideoView.b(false, 1, 0.0f, pipRoundVideoView.n);
+        SharedPreferences.Editor edit = pipRoundVideoView.x.edit();
+        int dp = AndroidUtilities.dp(20.0f);
+        int abs = Math.abs(b10 - pipRoundVideoView.v.x);
+        Property property = View.ALPHA;
+        if (abs > dp) {
+            int i17 = pipRoundVideoView.v.x;
+            f7 = 1.0f;
+            if (i17 >= 0 || i17 <= (-pipRoundVideoView.h) / 4) {
+                if (Math.abs(b11 - i17) > dp) {
+                    int i18 = pipRoundVideoView.v.x;
+                    int i19 = AndroidUtilities.displaySize.x;
+                    c10 = 0;
+                    int i20 = pipRoundVideoView.h;
+                    if (i18 <= i19 - i20 || i18 >= i19 - ((i20 / 4) * 3)) {
+                        if (pipRoundVideoView.a.getAlpha() != 1.0f) {
+                            arrayList = new ArrayList();
+                            if (pipRoundVideoView.v.x < 0) {
+                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", -pipRoundVideoView.h));
+                            } else {
+                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", AndroidUtilities.displaySize.x));
+                            }
+                            z10 = true;
+                            if (!z10) {
+                                if (Math.abs(b12 - pipRoundVideoView.v.y) <= dp || pipRoundVideoView.v.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
+                                    if (arrayList == null) {
+                                        arrayList = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 0);
+                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b12));
+                                } else if (Math.abs(b13 - pipRoundVideoView.v.y) <= dp) {
+                                    if (arrayList == null) {
+                                        arrayList = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 1);
+                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b13));
+                                } else {
+                                    edit.putFloat("py", (pipRoundVideoView.v.y - b12) / (b13 - b12));
+                                    edit.putInt("sidey", 2);
+                                }
+                                edit.commit();
+                            }
+                            if (arrayList != null) {
+                                return true;
+                            }
+                            if (pipRoundVideoView.y == null) {
+                                pipRoundVideoView.y = new DecelerateInterpolator();
+                            }
+                            AnimatorSet animatorSet = new AnimatorSet();
+                            animatorSet.setInterpolator(pipRoundVideoView.y);
+                            animatorSet.setDuration(150L);
+                            if (z10) {
+                                z11 = true;
+                                arrayList.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<ig0, Float>) property, 0.0f));
+                                animatorSet.addListener(new kg0(pipRoundVideoView, 1));
+                            } else {
+                                z11 = true;
+                            }
+                            animatorSet.playTogether(arrayList);
+                            animatorSet.start();
+                            return z11;
+                        }
+                        edit.putFloat("px", (pipRoundVideoView.v.x - b10) / (b11 - b10));
+                        edit.putInt("sidex", 2);
+                        arrayList = null;
+                        z10 = false;
+                        if (!z10) {
+                        }
+                        if (arrayList != null) {
+                        }
+                    }
+                } else {
+                    c10 = 0;
+                }
+                arrayList = new ArrayList();
+                edit.putInt("sidex", 1);
+                if (pipRoundVideoView.a.getAlpha() != 1.0f) {
+                    ig0 ig0Var = pipRoundVideoView.a;
+                    float[] fArr = new float[1];
+                    fArr[c10] = 1.0f;
+                    arrayList.add(ObjectAnimator.ofFloat(ig0Var, (Property<ig0, Float>) property, fArr));
+                }
+                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b11));
+                z10 = false;
+                if (!z10) {
+                }
+                if (arrayList != null) {
+                }
+            }
+        } else {
+            f7 = 1.0f;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 4:
-                b2Var.dismiss();
-                break;
-            case 5:
-                b2Var.dismiss();
-                break;
-            case 6:
-            case 7:
-            case 8:
-            case 14:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            default:
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutFSILockscreen", true).commit();
-                break;
-            case 9:
-                b2Var.dismiss();
-                break;
-            case 10:
-                b2Var.dismiss();
-                break;
-            case 11:
-                b2Var.dismiss();
-                break;
-            case 12:
-                int i11 = gy0.u0;
-                break;
-            case 13:
-                b2Var.dismiss();
-                break;
-            case 15:
-                b2Var.dismiss();
-                break;
-            case 21:
-                b2Var.dismiss();
-                break;
-            case 22:
-                break;
-            case 23:
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
-                break;
+        ArrayList arrayList2 = new ArrayList();
+        edit.putInt("sidex", 0);
+        if (pipRoundVideoView.a.getAlpha() != f7) {
+            arrayList2.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<ig0, Float>) property, f7));
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.h5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        switch (this.a) {
-            case 8:
-                int i10 = uq0.a1;
-                return 0;
-            case 27:
-                int dp = AndroidUtilities.dp(150.0f);
-                Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(200.0f), dp, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                canvas.drawColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                Paint paint = new Paint(1);
-                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                canvas.drawCircle(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f, dp / 2.0f, paint);
-                return createBitmap;
-            default:
-                Paint paint2 = new Paint(1);
-                paint2.setColor(-14509328);
-                int dp2 = AndroidUtilities.dp(150.0f);
-                Bitmap createBitmap2 = Bitmap.createBitmap(dp2, dp2, Bitmap.Config.ARGB_8888);
-                float f7 = dp2 / 2.0f;
-                new Canvas(createBitmap2).drawCircle(f7, f7, f7, paint2);
-                return createBitmap2;
+        arrayList2.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b10));
+        arrayList = arrayList2;
+        z10 = false;
+        if (!z10) {
         }
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        FileLog.e(exc);
-    }
-
-    @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
-    public boolean run() {
-        Pattern pattern = LaunchActivity.B1;
-        return SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture;
-    }
-
-    private final void a(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        if (arrayList != null) {
+        }
     }
 }

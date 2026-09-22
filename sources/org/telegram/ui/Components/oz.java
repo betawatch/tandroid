@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class oz extends s4.s {
     public final SparseArray Q;
@@ -13,26 +13,26 @@ public class oz extends s4.s {
     public int S;
     public int T;
     public final int U;
-    public final vl0 V;
+    public final yl0 V;
     public boolean W;
     public boolean X;
 
-    public oz(int i10, int i11, vl0 vl0Var) {
+    public oz(int i10, int i11, yl0 yl0Var) {
         super(i10);
         this.Q = new SparseArray();
         this.R = -1;
         this.W = true;
         this.X = true;
-        this.V = vl0Var;
+        this.V = yl0Var;
         this.U = i11;
     }
 
     public final void B1() {
-        vl0 vl0Var;
+        yl0 yl0Var;
         s4.h0 adapter;
         int i10;
-        vl0 vl0Var2;
-        if (this.S <= 0 || !D1() || (adapter = (vl0Var = this.V).getAdapter()) == null) {
+        yl0 yl0Var2;
+        if (this.S <= 0 || !D1() || (adapter = (yl0Var = this.V).getAdapter()) == null) {
             return;
         }
         int i11 = this.J;
@@ -45,7 +45,7 @@ public class oz extends s4.s {
         while (true) {
             i10 = this.U;
             if (i12 >= h) {
-                vl0Var2 = vl0Var;
+                yl0Var2 = yl0Var;
                 break;
             }
             int i15 = pVar.i(i12);
@@ -59,7 +59,7 @@ public class oz extends s4.s {
                 SparseArray sparseArray = this.Q;
                 s4.c1 c1Var = (s4.c1) sparseArray.get(j3, null);
                 if (c1Var == null) {
-                    c1Var = adapter.g(vl0Var, j3);
+                    c1Var = adapter.g(yl0Var, j3);
                     View view = c1Var.a;
                     sparseArray.put(j3, c1Var);
                     if (view.getLayoutParams() == null) {
@@ -71,21 +71,21 @@ public class oz extends s4.s {
                     adapter.v(c1Var, i12);
                 }
                 s4.p0 p0Var = (s4.p0) view2.getLayoutParams();
-                vl0Var2 = vl0Var;
+                yl0Var2 = yl0Var;
                 view2.measure(s4.o0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) p0Var).leftMargin + ((ViewGroup.MarginLayoutParams) p0Var).rightMargin, ((ViewGroup.MarginLayoutParams) p0Var).width), s4.o0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) p0Var).topMargin + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) p0Var).height));
                 i14 += view2.getMeasuredHeight();
-                if (i14 >= (this.S - i10) - vl0Var2.getPaddingBottom()) {
+                if (i14 >= (this.S - i10) - yl0Var2.getPaddingBottom()) {
                     break;
                 } else {
                     z10 = false;
                 }
             } else {
-                vl0Var2 = vl0Var;
+                yl0Var2 = yl0Var;
             }
             i12++;
-            vl0Var = vl0Var2;
+            yl0Var = yl0Var2;
         }
-        this.R = Math.max(0, ((this.S - i14) - i10) - vl0Var2.getPaddingBottom());
+        this.R = Math.max(0, ((this.S - i14) - i10) - yl0Var2.getPaddingBottom());
     }
 
     public final void C1() {

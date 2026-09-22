@@ -14,7 +14,7 @@ import rd.p;
 import v7.u7;
 import zd.c0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b extends kd.j implements p {
     public final /* synthetic */ int a = 1;
@@ -317,7 +317,7 @@ public final class b extends kd.j implements p {
                 try {
                     if (i11 == 0) {
                         u7.b(obj);
-                        URLConnection openConnection = aa.a.a((aa.a) this.d).openConnection();
+                        URLConnection openConnection = aa.a.e((aa.a) this.d).openConnection();
                         kotlin.jvm.internal.i.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");

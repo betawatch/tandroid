@@ -20,17 +20,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class w40 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
     public final TextView c;
-    public final u80 d;
+    public final x80 d;
     public final org.telegram.ui.zn e;
-    public final kj0 f;
+    public final nj0 f;
     public final v40 h;
     public boolean n;
-    public final hj0 r;
+    public final kj0 r;
     public final TextView[] s;
     public final String v;
 
@@ -53,28 +53,28 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         frameLayout.addView(textView, w7.y5.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
-        hj0 hj0Var = new hj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
-        this.r = hj0Var;
-        hj0Var.J(true);
-        kj0 kj0Var = new kj0(context);
-        this.f = kj0Var;
-        kj0Var.setAutoRepeat(true);
-        kj0Var.f(R.raw.import_loop, 120, 120, null);
-        kj0Var.d();
-        frameLayout.addView(kj0Var, w7.y5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        kj0Var.getAnimatedDrawable().S(MessagesStorage.LAST_DB_VERSION, xpVar);
+        kj0 kj0Var = new kj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
+        this.r = kj0Var;
+        kj0Var.J(true);
+        nj0 nj0Var = new nj0(context);
+        this.f = nj0Var;
+        nj0Var.setAutoRepeat(true);
+        nj0Var.f(R.raw.import_loop, 120, 120, null);
+        nj0Var.d();
+        frameLayout.addView(nj0Var, w7.y5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
+        nj0Var.getAnimatedDrawable().S(MessagesStorage.LAST_DB_VERSION, xpVar);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextSize(1, 24.0f);
         textView2.setTextColor(getThemedColor(i10));
         frameLayout.addView(textView2, w7.y5.d(-2, -2.0f, 49, 17.0f, 262.0f, 17.0f, 0.0f));
-        u80 u80Var = new u80(getContext());
-        this.d = u80Var;
+        x80 x80Var = new x80(getContext());
+        this.d = x80Var;
         int i11 = org.telegram.ui.ActionBar.j6.Oh;
-        u80Var.setProgressColor(getThemedColor(i11));
-        u80Var.setBackColor(getThemedColor(org.telegram.ui.ActionBar.j6.G5));
-        frameLayout.addView(u80Var, w7.y5.d(-1, 4.0f, 51, 50.0f, 307.0f, 50.0f, 0.0f));
+        x80Var.setProgressColor(getThemedColor(i11));
+        x80Var.setBackColor(getThemedColor(org.telegram.ui.ActionBar.j6.G5));
+        frameLayout.addView(x80Var, w7.y5.d(-1, 4.0f, 51, 50.0f, 307.0f, 50.0f, 0.0f));
         v40 v40Var = new v40(context);
         View view = new View(context);
         v40Var.a = view;
@@ -87,17 +87,17 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
         v40Var.d = linearLayout;
         linearLayout.setOrientation(0);
         v40Var.addView(linearLayout, w7.y5.e(-2, -2, 17));
-        kj0 kj0Var2 = new kj0(context);
-        v40Var.c = kj0Var2;
+        nj0 nj0Var2 = new nj0(context);
+        v40Var.c = nj0Var2;
         int dp2 = AndroidUtilities.dp(20.0f);
         int i12 = org.telegram.ui.ActionBar.j6.Sh;
-        kj0Var2.setBackground(org.telegram.ui.ActionBar.j6.K(dp2, org.telegram.ui.ActionBar.j6.v0(i12, f6Var)));
-        kj0Var2.setScaleType(ImageView.ScaleType.CENTER);
-        kj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.MULTIPLY));
-        kj0Var2.f(R.raw.import_check, 26, 26, null);
-        kj0Var2.setScaleX(0.8f);
-        kj0Var2.setScaleY(0.8f);
-        linearLayout.addView(kj0Var2, w7.y5.q(20, 20, 16));
+        nj0Var2.setBackground(org.telegram.ui.ActionBar.j6.K(dp2, org.telegram.ui.ActionBar.j6.v0(i12, f6Var)));
+        nj0Var2.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.MULTIPLY));
+        nj0Var2.f(R.raw.import_check, 26, 26, null);
+        nj0Var2.setScaleX(0.8f);
+        nj0Var2.setScaleY(0.8f);
+        linearLayout.addView(nj0Var2, w7.y5.q(20, 20, 16));
         TextView textView3 = new TextView(context);
         v40Var.b = textView3;
         textView3.setLines(1);
@@ -160,10 +160,10 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12 = NotificationCenter.historyImportProgressChanged;
-        u80 u80Var = this.d;
+        x80 x80Var = this.d;
         TextView[] textViewArr = this.b;
         TextView textView = this.c;
-        kj0 kj0Var = this.f;
+        nj0 nj0Var = this.f;
         if (i10 == i12) {
             if (objArr.length > 1) {
                 dismiss();
@@ -175,13 +175,13 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 m();
                 return;
             }
-            if (!this.n && ((180 - kj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
-                kj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - nj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
+                nj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingHistory.uploadProgress)));
             textViewArr[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingHistory.getUploadedCount()), AndroidUtilities.formatFileSize(importingHistory.getTotalCount())));
-            u80Var.a(importingHistory.uploadProgress / 100.0f, true);
+            x80Var.a(importingHistory.uploadProgress / 100.0f, true);
             return;
         }
         if (i10 == NotificationCenter.stickersImportProgressChanged) {
@@ -194,13 +194,13 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 m();
                 return;
             }
-            if (!this.n && ((180 - kj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
-                kj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - nj0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
+                nj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingStickers.uploadProgress)));
             textViewArr[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingStickers.getUploadedCount()), AndroidUtilities.formatFileSize(importingStickers.getTotalCount())));
-            u80Var.a(importingStickers.uploadProgress / 100.0f, true);
+            x80Var.a(importingStickers.uploadProgress / 100.0f, true);
         }
     }
 
@@ -232,7 +232,7 @@ public final class w40 extends org.telegram.ui.ActionBar.f3 implements Notificat
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 0.0f);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f));
         TextView[] textViewArr2 = this.b;
-        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.d, (Property<u80, Float>) property, 0.0f), ObjectAnimator.ofFloat(v40Var.d, (Property<LinearLayout, Float>) property2, AndroidUtilities.dp(8.0f), 0.0f));
+        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.d, (Property<x80, Float>) property, 0.0f), ObjectAnimator.ofFloat(v40Var.d, (Property<LinearLayout, Float>) property2, AndroidUtilities.dp(8.0f), 0.0f));
         v40Var.a.animate().scaleY(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
         v40Var.c.animate().scaleY(1.0f).scaleX(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
         v40Var.c.d();

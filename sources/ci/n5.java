@@ -13,12 +13,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ug;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.dj0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class n5 implements View.OnLongClickListener {
                     ocVar.p();
                     ocVar.E0.setSelected(true);
                     ocVar.s.e(0.85f, 240L, null);
-                    v70 F = v70.F(ocVar.r, ocVar.a, ocVar.E0);
+                    y70 F = y70.F(ocVar.r, ocVar.a, ocVar.E0);
                     i8 i8Var = new i8(activity, 1);
                     i8Var.d(ocVar.s.o);
                     i8Var.h = new la(ocVar, 21);
@@ -146,7 +146,7 @@ public final /* synthetic */ class n5 implements View.OnLongClickListener {
                                     dj0Var3.m0 = true;
                                     dj0Var3.Y = dp;
                                 }
-                                v70 F2 = v70.F(rVar, f6Var, sendButton);
+                                y70 F2 = y70.F(rVar, f6Var, sendButton);
                                 boolean z11 = znVar != null && UserObject.isUserSelf(znVar.i());
                                 if (znVar != null && znVar.D6()) {
                                     F2.c(R.drawable.msg_calendar2, LocaleController.getString(z11 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.j(rVar, n12, 10), false);

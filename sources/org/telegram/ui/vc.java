@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vc implements e2.h {
     public final /* synthetic */ int a;
@@ -20,12 +20,12 @@ public final /* synthetic */ class vc implements e2.h {
             case 0:
                 zc zcVar = this.b;
                 zcVar.getClass();
-                ((org.telegram.ui.Components.i21) view).setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i5, zcVar.b));
+                ((org.telegram.ui.Components.k21) view).setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i5, zcVar.b));
                 break;
             default:
-                if (view instanceof org.telegram.ui.Components.i21) {
-                    org.telegram.ui.Components.i21 i21Var = (org.telegram.ui.Components.i21) view;
-                    i21Var.setFallbackWallpaper(i21Var.G.a.b ? null : this.b.v);
+                if (view instanceof org.telegram.ui.Components.k21) {
+                    org.telegram.ui.Components.k21 k21Var = (org.telegram.ui.Components.k21) view;
+                    k21Var.setFallbackWallpaper(k21Var.G.a.b ? null : this.b.v);
                     break;
                 }
                 break;

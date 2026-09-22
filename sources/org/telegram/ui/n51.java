@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n51 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class n51 implements Runnable {
             case 0:
                 j71 j71Var = this.b;
                 j71Var.getClass();
-                HashSet hashSet = zg.e0.a;
+                HashSet hashSet = zg.f0.a;
                 ff.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
                 if (cacheOutQueue.b == null) {
                     cacheOutQueue.b = new CountDownLatch(1);
                 }
-                zg.e0.b = true;
-                zg.e0.e = false;
-                zg.e0.g = false;
+                zg.f0.b = true;
+                zg.f0.e = false;
+                zg.f0.g = false;
                 AndroidUtilities.runOnUIThread(new n51(j71Var, 2), 0L);
                 break;
             case 1:

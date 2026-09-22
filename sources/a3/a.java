@@ -8,7 +8,7 @@ import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x1;
 import u2.c1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class a extends i2.f {
     public final long I;
@@ -25,8 +25,8 @@ public abstract class a extends i2.f {
     public Surface T;
     public Surface U;
     public y V;
-    public n2.h W;
-    public n2.h X;
+    public n2.g W;
+    public n2.g X;
     public int Y;
     public boolean Z;
     public int a0;
@@ -203,7 +203,7 @@ public abstract class a extends i2.f {
                 return false;
             }
             n4.y yVar = this.c;
-            yVar.e();
+            yVar.f();
             int w10 = w(yVar, hVar2, 0);
             if (w10 == -5) {
                 H(yVar);
@@ -225,7 +225,7 @@ public abstract class a extends i2.f {
                     this.L.a(sVar, j3);
                     this.d0 = false;
                 }
-                hVar2.c();
+                hVar2.e();
                 hVar2.a = this.N;
                 h2.e eVar4 = this.P;
                 eVar4.getClass();
@@ -269,10 +269,10 @@ public abstract class a extends i2.f {
         if (this.P != null) {
             return;
         }
-        n2.h hVar = this.X;
-        hg.k0.A(this.W, hVar);
-        this.W = hVar;
-        if (hVar != null && hVar.h() == null && this.W.g() == null) {
+        n2.g gVar = this.X;
+        hg.k0.A(this.W, gVar);
+        this.W = gVar;
+        if (gVar != null && gVar.h() == null && this.W.g() == null) {
             return;
         }
         try {
@@ -310,9 +310,9 @@ public abstract class a extends i2.f {
         this.d0 = true;
         b2.s sVar = (b2.s) yVar.b;
         sVar.getClass();
-        n2.h hVar2 = (n2.h) yVar.a;
-        hg.k0.A(this.X, hVar2);
-        this.X = hVar2;
+        n2.g gVar = (n2.g) yVar.a;
+        hg.k0.A(this.X, gVar);
+        this.X = gVar;
         b2.s sVar2 = this.N;
         this.N = sVar;
         h2.e eVar = this.P;
@@ -328,7 +328,7 @@ public abstract class a extends i2.f {
             }
             return;
         }
-        if (hVar2 != this.W) {
+        if (gVar != this.W) {
             String name = eVar.getName();
             sVar2.getClass();
             hVar = new i2.h(name, sVar2, sVar, 0, 128);
@@ -379,7 +379,7 @@ public abstract class a extends i2.f {
         y yVar = this.V;
         if (yVar != null) {
             this.h.getClass();
-            yVar.a(j3, System.nanoTime(), sVar, null);
+            yVar.b(j3, System.nanoTime(), sVar, null);
         }
         this.l0 = e2.d0.Q(SystemClock.elapsedRealtime());
         if (videoDecoderOutputBuffer.mode != 1 || this.U == null) {
@@ -603,7 +603,7 @@ public abstract class a extends i2.f {
         }
         if (this.N == null) {
             n4.y yVar = this.c;
-            yVar.e();
+            yVar.f();
             this.M.clear();
             int w10 = w(yVar, this.M, 2);
             if (w10 != -5) {

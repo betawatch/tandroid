@@ -28,7 +28,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ti1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dt implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -135,9 +135,9 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                     }
                     MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", i15).apply();
                     if (i15 >= 0 && fragmentContextView.h != null && (fragmentContextView.getParent() instanceof ViewGroup)) {
-                        org.telegram.ui.hj hjVar = new org.telegram.ui.hj(6, 2, fragmentContextView.getContext(), null, z11);
-                        fragmentContextView.A0 = hjVar;
-                        hjVar.setExtraTranslationY(AndroidUtilities.dp(-12.0f));
+                        org.telegram.ui.ij ijVar = new org.telegram.ui.ij(6, 2, fragmentContextView.getContext(), null, z11);
+                        fragmentContextView.A0 = ijVar;
+                        ijVar.setExtraTranslationY(AndroidUtilities.dp(-12.0f));
                         fragmentContextView.A0.setText(LocaleController.getString(R.string.SpeedHint));
                         ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);
                         marginLayoutParams.rightMargin = AndroidUtilities.dp(3.0f);
@@ -179,30 +179,30 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 w30Var.dismiss();
                 break;
             case 7:
-                v70 v70Var = (v70) this.b;
+                y70 y70Var = (y70) this.b;
                 a3.h0 h0Var = (a3.h0) this.c;
-                v70Var.u();
+                y70Var.u();
                 h0Var.run();
                 break;
             case 8:
-                v70 v70Var2 = (v70) this.b;
+                y70 y70Var2 = (y70) this.b;
                 ((org.telegram.ui.uv) this.c).run();
-                if (v70Var2.J) {
-                    v70Var2.u();
+                if (y70Var2.J) {
+                    y70Var2.u();
                     break;
                 }
                 break;
             case 9:
-                e80.m((e80) this.b, (c80) this.c);
+                h80.m((h80) this.b, (f80) this.c);
                 break;
             case 10:
-                xe0.m((xe0) this.b, (org.telegram.ui.ActionBar.f6) this.c);
+                af0.m((af0) this.b, (org.telegram.ui.ActionBar.f6) this.c);
                 break;
             case 11:
-                oi0 oi0Var = (oi0) this.b;
+                ri0 ri0Var = (ri0) this.b;
                 org.telegram.ui.z10 z10Var = (org.telegram.ui.z10) this.c;
-                if (oi0Var.J.getTag() == null) {
-                    int max = (int) Math.max(1.0f, oi0Var.getValue());
+                if (ri0Var.J.getTag() == null) {
+                    int max = (int) Math.max(1.0f, ri0Var.getValue());
                     org.telegram.ui.kd0 kd0Var = (org.telegram.ui.kd0) z10Var.b;
                     TLRPC.User user = (TLRPC.User) z10Var.c;
                     if (kd0Var.getLocationController().getSharingLocationInfo(kd0Var.e0) == null) {
@@ -220,21 +220,21 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                         z10 = true;
                     }
                     if (z10) {
-                        oi0Var.a();
+                        ri0Var.a();
                         break;
                     }
                 }
                 break;
             case 12:
-                ti0 ti0Var = (ti0) this.b;
+                wi0 wi0Var = (wi0) this.b;
                 Context context = (Context) this.c;
-                Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(ti0Var.b, "qr_tmp.png", Bitmap.CompressFormat.PNG);
+                Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(wi0Var.b, "qr_tmp.png", Bitmap.CompressFormat.PNG);
                 if (bitmapShareUri != null) {
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("image/*");
                     intent.putExtra("android.intent.extra.STREAM", bitmapShareUri);
                     try {
-                        AndroidUtilities.findActivity(context).startActivityForResult(Intent.createChooser(intent, ti0Var.getTitleView().getText()), 500);
+                        AndroidUtilities.findActivity(context).startActivityForResult(Intent.createChooser(intent, wi0Var.getTitleView().getText()), 500);
                         break;
                     } catch (ActivityNotFoundException e) {
                         e.printStackTrace();
@@ -260,9 +260,9 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 l5Var.i(true);
                 break;
             case 15:
-                cy0 cy0Var = (cy0) this.b;
+                ey0 ey0Var = (ey0) this.b;
                 org.telegram.ui.Cells.g8 g8Var = (org.telegram.ui.Cells.g8) this.c;
-                org.telegram.ui.st.q().v(cy0Var.r.m0);
+                org.telegram.ui.st.q().v(ey0Var.r.m0);
                 org.telegram.ui.st.q().y(g8Var);
                 break;
             case 16:
@@ -282,17 +282,17 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 }
                 break;
             case 18:
-                u41 u41Var = (u41) this.b;
-                k61 k61Var = (k61) this.c;
-                u41Var.k0 = false;
-                u41Var.J();
-                k61Var.N(true);
-                u41Var.s();
+                w41 w41Var = (w41) this.b;
+                m61 m61Var = (m61) this.c;
+                w41Var.k0 = false;
+                w41Var.J();
+                m61Var.N(true);
+                w41Var.s();
                 break;
             case 19:
-                p41 p41Var = (p41) this.b;
+                r41 r41Var = (r41) this.b;
                 View.OnClickListener onClickListener = (View.OnClickListener) this.c;
-                ImageView imageView = p41Var.s;
+                ImageView imageView = r41Var.s;
                 imageView.animate().rotation(imageView.getRotation() + 180.0f).setDuration(380L).setInterpolator(qr.h).start();
                 if (onClickListener != null) {
                     onClickListener.onClick(view);
@@ -300,9 +300,9 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 }
                 break;
             case 20:
-                org.telegram.ui.yk ykVar = (org.telegram.ui.yk) this.b;
+                org.telegram.ui.zk zkVar = (org.telegram.ui.zk) this.b;
                 ((org.telegram.ui.ActionBar.n1) this.c).d(true);
-                a51.a(ykVar.getContext(), ykVar.d);
+                c51.a(zkVar.getContext(), zkVar.d);
                 break;
             case 21:
                 UndoView undoView = (UndoView) this.b;
@@ -316,16 +316,16 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 n2Var2.getConnectionsManager().sendRequest(tL_payments_getPaymentReceipt, new x1(undoView, 18), 2);
                 break;
             case 22:
-                y61 y61Var = (y61) this.b;
+                a71 a71Var = (a71) this.b;
                 File file = (File) this.c;
                 if (file == null) {
-                    y61Var.getClass();
+                    a71Var.getClass();
                     break;
                 } else {
-                    Activity findActivity = AndroidUtilities.findActivity(y61Var.getContext());
+                    Activity findActivity = AndroidUtilities.findActivity(a71Var.getContext());
                     if (findActivity != null) {
                         AndroidUtilities.openForView(file, "Telegram.apk", "application/vnd.android.package-archive", findActivity, null, false);
-                        y61Var.dismiss();
+                        a71Var.dismiss();
                         break;
                     }
                 }
@@ -352,17 +352,17 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 }
             case 24:
                 org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.b;
-                hj0 hj0Var = (hj0) this.c;
+                kj0 kj0Var = (kj0) this.c;
                 boolean z12 = x0Var.v;
                 x0Var.v = !z12;
                 if (z12) {
-                    hj0Var.M(69);
-                    hj0Var.P(99);
+                    kj0Var.M(69);
+                    kj0Var.P(99);
                 } else {
-                    hj0Var.M(36);
-                    hj0Var.P(69);
+                    kj0Var.M(36);
+                    kj0Var.P(69);
                 }
-                hj0Var.start();
+                kj0Var.start();
                 break;
             case 25:
                 boolean[] zArr2 = (boolean[]) this.b;
@@ -441,23 +441,23 @@ public final /* synthetic */ class dt implements View.OnClickListener {
                 org.telegram.ui.kv kvVar = (org.telegram.ui.kv) this.b;
                 zh.b bVar = (zh.b) this.c;
                 org.telegram.ui.jv jvVar = kvVar.X;
-                ny0[] ny0VarArr = kvVar.b0;
-                for (ny0 ny0Var : ny0VarArr) {
-                    if (ny0Var != null) {
-                        boolean z15 = ny0Var.c;
+                py0[] py0VarArr = kvVar.b0;
+                for (py0 py0Var : py0VarArr) {
+                    if (py0Var != null) {
+                        boolean z15 = py0Var.c;
                     }
                 }
                 org.telegram.ui.Cells.a2 a2Var2 = (org.telegram.ui.Cells.a2) view;
                 int intValue2 = ((Integer) a2Var2.getTag()).intValue();
-                ny0 ny0Var2 = ny0VarArr[intValue2];
-                boolean z16 = ny0Var2.c;
+                py0 py0Var2 = py0VarArr[intValue2];
+                boolean z16 = py0Var2.c;
                 boolean z17 = !z16;
                 if (z16 != z17) {
-                    ny0Var2.c = z17;
-                    ny0Var2.d = true;
+                    py0Var2.c = z17;
+                    py0Var2.d = true;
                 }
-                a2Var2.c(ny0Var2.c, true);
-                boolean z18 = ny0VarArr[intValue2].c;
+                a2Var2.c(py0Var2.c, true);
+                boolean z18 = py0VarArr[intValue2].c;
                 ArrayList arrayList3 = bVar.d;
                 HashSet hashSet = bVar.j;
                 if (intValue2 == 0) {

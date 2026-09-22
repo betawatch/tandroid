@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final /* synthetic */ class ag implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 zn znVar = this.b;
-                oi oiVar = new oi(znVar, znVar, znVar.getParentActivity(), znVar.ea, this.c);
-                oiVar.setCalcMandatoryInsets(znVar.x9());
-                oiVar.setDimBehind(false);
+                pi piVar = new pi(znVar, znVar, znVar.getParentActivity(), znVar.ea, this.c);
+                piVar.setCalcMandatoryInsets(znVar.x9());
+                piVar.setDimBehind(false);
                 znVar.A7(false);
-                znVar.showDialog(oiVar);
+                znVar.showDialog(piVar);
                 break;
             default:
                 zn znVar2 = this.b;

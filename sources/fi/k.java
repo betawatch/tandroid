@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.g10;
@@ -25,7 +25,7 @@ import org.telegram.ui.oo;
 import org.telegram.ui.p50;
 import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -191,7 +191,7 @@ public final /* synthetic */ class k implements Runnable {
                     z5Var.h(forLocal, "50_50", g9Var, obj);
                     uoVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetNewPhoto", R.string.ChatSetNewPhoto), true);
                     if (uoVar.R0 == null) {
-                        uoVar.R0 = new hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                        uoVar.R0 = new kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                     }
                     uoVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     uoVar.b0.e.setAnimation(uoVar.R0);

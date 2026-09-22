@@ -39,7 +39,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cq0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final ah.c E;
@@ -57,7 +57,7 @@ public final class cq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ci.d Q;
     public wp0 R;
     public boolean S;
-    public org.telegram.ui.Components.hj0 T;
+    public org.telegram.ui.Components.kj0 T;
     public boolean U;
     public boolean V;
     public boolean W;
@@ -274,12 +274,12 @@ public final class cq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     a03.getClass();
                     org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(a03.W(), a03.c);
                     boolean isTextColorEmoji = MessageObject.isTextColorEmoji(f7);
-                    org.telegram.ui.Components.kj0 kj0Var = xbVar.a;
+                    org.telegram.ui.Components.nj0 nj0Var = xbVar.a;
                     if (isTextColorEmoji) {
-                        kj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Hi, false), PorterDuff.Mode.SRC_IN));
+                        nj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Hi, false), PorterDuff.Mode.SRC_IN));
                     }
                     xbVar.e(f7, new String[0]);
-                    kj0Var.i();
+                    nj0Var.i();
                     xbVar.b.setText(string);
                     xbVar.b.setTextSize(1, 14.0f);
                     xbVar.b.setSingleLine(false);
@@ -436,7 +436,7 @@ public final class cq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         c10.q(AndroidUtilities.dp(28.0f));
         c10.p(AndroidUtilities.dp(5.0f));
         view.setBackground(c10);
-        w7.b6.b(this.O, 0.02f, 1.5f);
+        w7.a6.b(this.O, 0.02f, 1.5f);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.P = frameLayout2;
         frameLayout2.addView(this.O, w7.y5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
@@ -550,16 +550,16 @@ public final class cq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 }
             }
         });
-        w7.b6.a(this.J);
+        w7.a6.a(this.J);
         this.L.addView(this.J, w7.y5.e(54, 54, 19));
-        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.T = hj0Var;
-        hj0Var.h = true;
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.T = kj0Var;
+        kj0Var.h = true;
         if (this.S) {
-            hj0Var.M(35);
+            kj0Var.M(35);
             this.T.P(36);
         } else {
-            hj0Var.P(0);
+            kj0Var.P(0);
             this.T.M(0);
         }
         this.T.Z = true;
@@ -678,7 +678,7 @@ public final class cq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.c6.a(new e(this, 27), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
+        return w7.b6.a(new e(this, 27), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

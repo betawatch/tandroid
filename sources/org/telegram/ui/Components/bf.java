@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bf extends ImageView {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final class bf extends ImageView {
         switch (this.a) {
             case 0:
                 super.setAlpha(f7);
-                ze zeVar = this.b.I1;
+                ze zeVar = this.b.J1;
                 if (zeVar != null) {
                     zeVar.setTranslationX(zeVar.a);
                     break;
@@ -56,7 +56,7 @@ public final class bf extends ImageView {
                 break;
             case 1:
                 super.setAlpha(f7);
-                ze zeVar2 = this.b.I1;
+                ze zeVar2 = this.b.J1;
                 if (zeVar2 != null) {
                     zeVar2.setTranslationX(zeVar2.a);
                     break;

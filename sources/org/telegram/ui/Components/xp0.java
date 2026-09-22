@@ -1,32 +1,57 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
-/* loaded from: classes3.dex */
-public final class xp0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ uq0 d;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ xp0(uq0 uq0Var, int i10) {
-        this.c = i10;
-        this.d = uq0Var;
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* loaded from: classes3.dex */
+public final class xp0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wq0 b;
+
+    public /* synthetic */ xp0(wq0 wq0Var, int i10) {
+        this.a = i10;
+        this.b = wq0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        switch (this.c) {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.i iVar;
+        tb tbVar;
+        switch (this.a) {
             case 0:
-                if (i10 == 0) {
-                    return this.d.H.J;
+                if (i11 != 0) {
+                    wq0 wq0Var = this.b;
+                    wq0.s0(wq0Var);
+                    wq0Var.q0 = wq0Var.p0;
+                    break;
                 }
-                return 1;
+                break;
             case 1:
-                qq0 qq0Var = this.d.M;
-                return (i10 == qq0Var.w || i10 == qq0Var.x || i10 == qq0Var.y || i10 == qq0Var.F || qq0Var.j(i10) == 0) ? 4 : 1;
-            default:
-                if (i10 == 0) {
-                    return this.d.I.J;
+                wq0 wq0Var2 = this.b;
+                if (i11 != 0) {
+                    wq0.s0(wq0Var2);
+                    wq0Var2.q0 = wq0Var2.p0;
                 }
-                return 1;
+                pc pcVar = pc.w;
+                if (pcVar != null && (tbVar = pcVar.e) != null && (tbVar.getParent() instanceof View) && ((View) pc.w.e.getParent()).getParent() == wq0Var2.w) {
+                    pc.e();
+                }
+                if (Build.VERSION.SDK_INT >= 31 && (iVar = wq0Var2.O0) != null) {
+                    iVar.f(i10, i11);
+                    wq0.A0(wq0Var2);
+                    break;
+                }
+                break;
+            default:
+                if (i11 != 0) {
+                    wq0 wq0Var3 = this.b;
+                    wq0.s0(wq0Var3);
+                    wq0Var3.q0 = wq0Var3.p0;
+                    break;
+                }
+                break;
         }
     }
 }

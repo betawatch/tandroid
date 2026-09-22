@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class sl0 implements Runnable {
     public final void run() {
         int i10;
         int i11;
-        lk lkVar;
+        mk mkVar;
         int i12 = this.a;
         int i13 = 0;
         Object obj = this.b;
@@ -221,27 +221,27 @@ public final /* synthetic */ class sl0 implements Runnable {
                 break;
             case 16:
                 zn znVar = ((gt0) obj).d1.l4;
-                if (znVar != null && (lkVar = znVar.Y) != null) {
-                    lkVar.H0();
+                if (znVar != null && (mkVar = znVar.Y) != null) {
+                    mkVar.H0();
                     break;
                 }
                 break;
             case 17:
-                org.telegram.ui.Components.zk0 zk0Var = (org.telegram.ui.Components.zk0) ((gp0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) zk0Var.c;
+                org.telegram.ui.Components.cl0 cl0Var = (org.telegram.ui.Components.cl0) ((gp0) obj).b;
+                PhotoViewer photoViewer3 = (PhotoViewer) cl0Var.c;
                 photoViewer3.H2 = false;
-                org.telegram.ui.Components.t71 t71Var = photoViewer3.F2;
-                if (t71Var != null) {
-                    t71Var.C();
+                org.telegram.ui.Components.v71 v71Var = photoViewer3.F2;
+                if (v71Var != null) {
+                    v71Var.C();
                 }
-                ((PhotoViewer) zk0Var.c).I2 = null;
+                ((PhotoViewer) cl0Var.c).I2 = null;
                 break;
             case 18:
                 PhotoViewer photoViewer4 = ((ts0) obj).a;
                 photoViewer4.H2 = false;
-                org.telegram.ui.Components.t71 t71Var2 = photoViewer4.F2;
-                if (t71Var2 != null) {
-                    t71Var2.C();
+                org.telegram.ui.Components.v71 v71Var2 = photoViewer4.F2;
+                if (v71Var2 != null) {
+                    v71Var2.C();
                 }
                 photoViewer4.I2 = null;
                 break;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d extends l.w {
     public final /* synthetic */ int l = 0;
@@ -15,11 +15,11 @@ public final class d extends l.w {
         super(context, lVar, view, true, R.attr.actionOverflowMenuStyle, 0);
         this.m = hVar;
         this.f = 8388613;
-        k2.u uVar = hVar.M;
-        this.h = uVar;
+        ki.e0 e0Var = hVar.M;
+        this.h = e0Var;
         l.t tVar = this.i;
         if (tVar != null) {
-            tVar.e(uVar);
+            tVar.e(e0Var);
         }
     }
 
@@ -52,11 +52,11 @@ public final class d extends l.w {
             View view2 = hVar.r;
             this.e = view2 == null ? (View) hVar.n : view2;
         }
-        k2.u uVar = hVar.M;
-        this.h = uVar;
+        ki.e0 e0Var2 = hVar.M;
+        this.h = e0Var2;
         l.t tVar = this.i;
         if (tVar != null) {
-            tVar.e(uVar);
+            tVar.e(e0Var2);
         }
     }
 }

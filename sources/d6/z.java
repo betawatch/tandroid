@@ -2,7 +2,7 @@ package d6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class z extends b8.b {
     public final h b;
@@ -39,7 +39,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar2 = (f) x6.b.M0(L02);
                 if (cls.isInstance(fVar2) && hVar != null) {
-                    hVar.D((f) cls.cast(fVar2), readString);
+                    hVar.C((f) cls.cast(fVar2), readString);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -68,7 +68,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar5 = (f) x6.b.M0(L05);
                 if (cls.isInstance(fVar5) && hVar != null) {
-                    hVar.u((f) cls.cast(fVar5), readInt2);
+                    hVar.s((f) cls.cast(fVar5), readInt2);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -78,7 +78,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar6 = (f) x6.b.M0(L06);
                 if (cls.isInstance(fVar6) && hVar != null) {
-                    hVar.g((f) cls.cast(fVar6), readString2);
+                    hVar.f((f) cls.cast(fVar6), readString2);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -109,7 +109,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar9 = (f) x6.b.M0(L09);
                 if (cls.isInstance(fVar9) && hVar != null) {
-                    hVar.H((f) cls.cast(fVar9), readInt4);
+                    hVar.F((f) cls.cast(fVar9), readInt4);
                 }
                 parcel2.writeNoException();
                 return true;

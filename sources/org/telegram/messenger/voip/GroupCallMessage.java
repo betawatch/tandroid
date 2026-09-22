@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -18,7 +18,7 @@ public class GroupCallMessage {
     public final TLRPC.TL_textWithEntities message;
     public final long randomId;
     public final long reactionAnimatedEmojiId;
-    public final zg.o0 visibleReaction;
+    public final zg.p0 visibleReaction;
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
@@ -28,7 +28,7 @@ public class GroupCallMessage {
     public GroupCallMessage(int i10, long j3, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
         long j11;
         TLRPC.TL_availableReaction tL_availableReaction;
-        zg.o0 c10;
+        zg.p0 c10;
         this.currentAccount = i10;
         this.fromId = j3;
         this.randomId = j10;
@@ -39,12 +39,12 @@ public class GroupCallMessage {
             if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
                 j11 = ((TLRPC.TL_messageEntityCustomEmoji) messageEntity).document_id;
                 if (j11 == 0) {
-                    c10 = new zg.o0();
+                    c10 = new zg.p0();
                     c10.g = j11;
                     c10.h = j11;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? zg.o0.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? zg.p0.c(tL_availableReaction) : null;
                 }
                 this.reactionAnimatedEmojiId = j11;
                 this.visibleReaction = c10;

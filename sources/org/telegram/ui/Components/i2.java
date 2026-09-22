@@ -13,9 +13,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements yc0, org.telegram.ui.ActionBar.a2, c5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, gh.b, rv0, sv0, r0.n {
+public final /* synthetic */ class i2 implements bd0, org.telegram.ui.ActionBar.a2, c5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, gh.b, tv0, uv0, r0.n {
     public final /* synthetic */ int a;
 
     public /* synthetic */ i2(int i10) {
@@ -48,29 +48,29 @@ public final /* synthetic */ class i2 implements yc0, org.telegram.ui.ActionBar.
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
-        hd0 hd0Var = (hd0) obj;
+        kd0 kd0Var = (kd0) obj;
         switch (this.a) {
             case 22:
-                hd0Var.f = f7;
-                if (!hd0Var.y || hd0Var.F) {
-                    hd0Var.c.setStrokeWidth(AndroidUtilities.lerp(hd0Var.v, hd0Var.w, f7));
-                    hd0Var.f();
+                kd0Var.f = f7;
+                if (!kd0Var.y || kd0Var.F) {
+                    kd0Var.c.setStrokeWidth(AndroidUtilities.lerp(kd0Var.v, kd0Var.w, f7));
+                    kd0Var.f();
                 }
-                hd0Var.invalidate();
+                kd0Var.invalidate();
                 break;
             case 23:
             default:
-                hd0Var.s = f7;
-                hd0Var.f();
+                kd0Var.s = f7;
+                kd0Var.f();
                 break;
             case 24:
-                hd0Var.n = f7;
-                if (!hd0Var.y || hd0Var.F) {
-                    hd0Var.f();
+                kd0Var.n = f7;
+                if (!kd0Var.y || kd0Var.F) {
+                    kd0Var.f();
                 }
-                hd0Var.invalidate();
+                kd0Var.invalidate();
                 break;
         }
     }
@@ -82,15 +82,15 @@ public final /* synthetic */ class i2 implements yc0, org.telegram.ui.ActionBar.
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        hj0 lottieAnimation;
+        kj0 lottieAnimation;
         switch (this.a) {
             case 14:
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof hj0) {
-                    hj0 hj0Var = (hj0) drawable;
-                    hj0Var.P(0);
-                    hj0Var.stop();
-                    hj0Var.T(0.0f, false);
+                if (drawable instanceof kj0) {
+                    kj0 kj0Var = (kj0) drawable;
+                    kj0Var.P(0);
+                    kj0Var.stop();
+                    kj0Var.T(0.0f, false);
                     break;
                 }
                 break;
@@ -109,7 +109,7 @@ public final /* synthetic */ class i2 implements yc0, org.telegram.ui.ActionBar.
         org.telegram.messenger.h5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public String e(int i10) {
         switch (this.a) {
             case 0:
@@ -175,19 +175,19 @@ public final /* synthetic */ class i2 implements yc0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         switch (this.a) {
             case 21:
-                return ((hd0) obj).f;
+                return ((kd0) obj).f;
             case 22:
             case 24:
             default:
-                return ((og0) obj).K;
+                return ((rg0) obj).K;
             case 23:
-                return ((hd0) obj).n;
+                return ((kd0) obj).n;
             case 25:
-                return ((hd0) obj).s;
+                return ((kd0) obj).s;
         }
     }
 

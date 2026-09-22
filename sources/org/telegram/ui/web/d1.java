@@ -95,9 +95,9 @@ import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.ActionBar.o3;
 import org.telegram.ui.Cells.f9;
 import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.g21;
+import org.telegram.ui.Components.en0;
 import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.i21;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.xc;
@@ -109,10 +109,10 @@ import org.telegram.ui.ja0;
 import org.telegram.ui.r9;
 import org.telegram.ui.v9;
 import org.telegram.ui.w81;
-import w7.d6;
+import w7.c6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class d1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -150,7 +150,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public cn0 V;
+    public en0 V;
     public Activity W;
     public z0 a;
     public boolean a0;
@@ -310,7 +310,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                 aVar.accept(Boolean.TRUE);
                 return;
             }
-            d1Var.V = new cn0(d1Var, aVar, strArr, 19);
+            d1Var.V = new en0(d1Var, aVar, strArr, 19);
             Activity activity = d1Var.W;
             if (activity != null) {
                 activity.requestPermissions(strArr, 4000);
@@ -1434,7 +1434,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             if (Build.VERSION.SDK_INT < 23 || d1Var.W.checkSelfPermission("android.permission.CAMERA") == 0) {
                                 Activity activity = d1Var.W;
                                 if (activity != null) {
-                                    d1Var.g0 = v9.e0(activity, 3, new n2.e(d1Var, 11));
+                                    d1Var.g0 = v9.e0(activity, 3, new l.d(d1Var, 14));
                                     return;
                                 }
                                 break;
@@ -1490,7 +1490,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             z0 z0Var3 = z0Var2;
                             da daVar3 = daVar;
                             if (z20) {
-                                MessagesController.getInstance(d1Var3.M).unblockPeer(d1Var3.U.id, new g21(d1Var3, i22, z0Var3, daVar3, 13));
+                                MessagesController.getInstance(d1Var3.M).unblockPeer(d1Var3.U.id, new i21(d1Var3, i22, z0Var3, daVar3, 13));
                                 return;
                             }
                             SendMessagesHelper.getInstance(d1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(d1Var3.M).getCurrentUser(), d1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -2584,10 +2584,10 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     v9Var.e(user, g9Var);
                     f7.addView(v9Var, y5.t(80, 80, 49, 0, 21, 0, 13));
                     int i11 = j6.G6;
-                    TextView b10 = d6.b(context, 20.0f, i11, true, null);
+                    TextView b10 = c6.b(context, 20.0f, i11, true, null);
                     rk.l(R.string.BotRestoreStorageTitle, b10, 17);
                     f7.addView(b10, y5.t(-1, -2, 7, 32, 0, 32, 10));
-                    TextView b11 = d6.b(context, 14.0f, i11, false, null);
+                    TextView b11 = c6.b(context, 14.0f, i11, false, null);
                     b11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
                     b11.setGravity(17);
                     f7.addView(b11, y5.t(-1, -2, 7, 32, 0, 32, 19));
@@ -2737,7 +2737,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
                 }
                 b5.o c10 = a5.b.c(z0Var3);
-                z0Var3.S = new a4.m((ScriptHandlerBoundaryInterface) se.b.a(ScriptHandlerBoundaryInterface.class, c10.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), 4);
+                z0Var3.S = new android.support.v4.media.c((ScriptHandlerBoundaryInterface) se.b.a(ScriptHandlerBoundaryInterface.class, c10.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), 3);
             }
         }
     }
@@ -2945,7 +2945,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        cn0 cn0Var;
+        en0 en0Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             z0 z0Var = this.a;
@@ -2972,10 +2972,10 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (cn0Var = this.V) == null) {
+                if (intValue != 4000 || (en0Var = this.V) == null) {
                     return;
                 }
-                cn0Var.run();
+                en0Var.run();
                 this.V = null;
                 return;
             }

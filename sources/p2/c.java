@@ -16,7 +16,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c implements y2.h {
     public static final ja0 E = new ja0(20);
@@ -42,7 +42,7 @@ public final class c implements y2.h {
     }
 
     @Override // y2.h
-    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void S(y2.j jVar, long j3, long j10, boolean z10) {
         y2.p pVar = (y2.p) jVar;
         long j11 = pVar.a;
         Uri uri = pVar.d.c;
@@ -126,7 +126,7 @@ public final class c implements y2.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         y2.p pVar = (y2.p) jVar;
         long j12 = pVar.a;
@@ -154,7 +154,7 @@ public final class c implements y2.h {
     }
 
     @Override // y2.h
-    public final void n(y2.j jVar, long j3, long j10, int i10) {
+    public final void o(y2.j jVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.p pVar = (y2.p) jVar;
         if (i10 == 0) {
@@ -169,7 +169,7 @@ public final class c implements y2.h {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10) {
+    public final void p(y2.j jVar, long j3, long j10) {
         o oVar;
         y2.p pVar = (y2.p) jVar;
         p pVar2 = (p) pVar.f;

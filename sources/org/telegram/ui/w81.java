@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w81 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class w81 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.fl0 fl0Var;
+        org.telegram.ui.Components.il0 il0Var;
         int i10;
         int i11;
         org.telegram.ui.web.d1 d1Var;
@@ -87,9 +87,9 @@ public final /* synthetic */ class w81 implements Runnable {
                     org.telegram.ui.ActionBar.j6.w = String.format("(%.06f, %.06f)", Double.valueOf(org.telegram.ui.ActionBar.j6.x), Double.valueOf(org.telegram.ui.ActionBar.j6.y));
                 }
                 org.telegram.ui.ActionBar.j6.q1();
-                org.telegram.ui.Components.vl0 vl0Var = themeActivity2.b;
-                if (vl0Var != null && (fl0Var = (org.telegram.ui.Components.fl0) vl0Var.L(themeActivity2.Y)) != null) {
-                    View view2 = fl0Var.a;
+                org.telegram.ui.Components.yl0 yl0Var = themeActivity2.b;
+                if (yl0Var != null && (il0Var = (org.telegram.ui.Components.il0) yl0Var.L(themeActivity2.Y)) != null) {
+                    View view2 = il0Var.a;
                     if (view2 instanceof org.telegram.ui.Cells.fa) {
                         ((org.telegram.ui.Cells.fa) view2).c(LocaleController.getString("AutoNightUpdateLocation", R.string.AutoNightUpdateLocation), org.telegram.ui.ActionBar.j6.w, false, false);
                         break;
@@ -285,7 +285,7 @@ public final /* synthetic */ class w81 implements Runnable {
                     } else if (str5.equals("share_score")) {
                         messageObject.messageOwner.with_my_score = true;
                     }
-                    oj1Var.showDialog(org.telegram.ui.Components.uq0.N0(oj1Var.getParentActivity(), messageObject, null, false, oj1Var.h));
+                    oj1Var.showDialog(org.telegram.ui.Components.wq0.N0(oj1Var.getParentActivity(), messageObject, null, false, oj1Var.h));
                     break;
                 }
                 break;

@@ -18,10 +18,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e31 implements NotificationCenter.NotificationCenterDelegate {
-    public final org.telegram.ui.Components.hj0 E;
+    public final org.telegram.ui.Components.kj0 E;
     public final c31 F;
     public s4.c0 G;
     public final View H;
@@ -47,7 +47,7 @@ public final class e31 implements NotificationCenter.NotificationCenterDelegate 
     public final LinearLayout v;
     public final TextView w;
     public final ImageView x;
-    public final org.telegram.ui.Components.vl0 y;
+    public final org.telegram.ui.Components.yl0 y;
     public final Paint a = new Paint(1);
     public int L = -1;
 
@@ -80,16 +80,16 @@ public final class e31 implements NotificationCenter.NotificationCenterDelegate 
         int i12 = org.telegram.ui.ActionBar.j6.Oh;
         int themedColor2 = f31Var2.getThemedColor(i12);
         int dp = AndroidUtilities.dp(28.0f);
-        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun_outline, dp, dp, false, null);
-        this.E = hj0Var;
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun_outline, dp, dp, false, null);
+        this.E = kj0Var;
         this.M = !org.telegram.ui.ActionBar.j6.I.q();
         int i13 = 0;
         a(org.telegram.ui.ActionBar.j6.I.q(), false);
-        hj0Var.h = true;
-        hj0Var.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.SRC_IN));
+        kj0Var.h = true;
+        kj0Var.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.SRC_IN));
         c31 c31Var = new c31(this, parentActivity);
         this.F = c31Var;
-        c31Var.setAnimation(hj0Var);
+        c31Var.setAnimation(kj0Var);
         c31Var.setScaleType(ImageView.ScaleType.CENTER);
         c31Var.setOnClickListener(new k60(this, 27));
         c31Var.setAlpha(0.0f);
@@ -100,16 +100,16 @@ public final class e31 implements NotificationCenter.NotificationCenterDelegate 
         t00Var.setVisibility(0);
         n6Var.addView(t00Var, w7.y5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
         this.R = true;
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(parentActivity, null);
-        this.y = vl0Var;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(parentActivity, null);
+        this.y = yl0Var;
         i10 = ((org.telegram.ui.ActionBar.n2) f31Var).currentAccount;
         org.telegram.ui.Components.kp kpVar = new org.telegram.ui.Components.kp(i10, 2, f31Var.a);
         this.b = kpVar;
-        vl0Var.setAdapter(kpVar);
-        vl0Var.setClipChildren(false);
-        vl0Var.setClipToPadding(false);
-        vl0Var.setItemAnimator(null);
-        vl0Var.setNestedScrollingEnabled(false);
+        yl0Var.setAdapter(kpVar);
+        yl0Var.setClipChildren(false);
+        yl0Var.setClipToPadding(false);
+        yl0Var.setItemAnimator(null);
+        yl0Var.setNestedScrollingEnabled(false);
         if (this.R) {
             f31Var2.getParentActivity();
             sVar = new s4.c0(0, false);
@@ -118,10 +118,10 @@ public final class e31 implements NotificationCenter.NotificationCenterDelegate 
             sVar = new s4.s(3, false);
         }
         this.G = sVar;
-        vl0Var.setLayoutManager(sVar);
-        vl0Var.setOnItemClickListener(new a31(this, i13));
-        vl0Var.setOnScrollListener(new org.telegram.ui.Components.b51(this));
-        n6Var.addView(vl0Var);
+        yl0Var.setLayoutManager(sVar);
+        yl0Var.setOnItemClickListener(new a31(this, i13));
+        yl0Var.setOnScrollListener(new org.telegram.ui.Components.d51(this));
+        n6Var.addView(yl0Var);
         View view = new View(parentActivity);
         this.H = view;
         view.setAlpha(0.0f);
@@ -182,19 +182,19 @@ public final class e31 implements NotificationCenter.NotificationCenterDelegate 
             return;
         }
         this.M = z10;
-        org.telegram.ui.Components.hj0 hj0Var = this.E;
-        int i10 = z10 ? hj0Var.e[0] - 1 : 0;
+        org.telegram.ui.Components.kj0 kj0Var = this.E;
+        int i10 = z10 ? kj0Var.e[0] - 1 : 0;
         c31 c31Var = this.F;
         if (z11) {
-            hj0Var.P(i10);
+            kj0Var.P(i10);
             if (c31Var != null) {
                 c31Var.d();
                 return;
             }
             return;
         }
-        hj0Var.P(i10);
-        hj0Var.N(i10, false, true);
+        kj0Var.P(i10);
+        kj0Var.N(i10, false, true);
         if (c31Var != null) {
             c31Var.invalidate();
         }

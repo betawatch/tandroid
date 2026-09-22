@@ -8,9 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class fn extends org.telegram.ui.Components.uq0 {
+public final class fn extends org.telegram.ui.Components.wq0 {
     public final /* synthetic */ MessageObject b1;
     public final /* synthetic */ ln c1;
 
@@ -22,7 +22,7 @@ public final class fn extends org.telegram.ui.Components.uq0 {
         this.a0 = z12;
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         ln lnVar = this.c1;
         zn znVar = lnVar.a;
@@ -41,7 +41,7 @@ public final class fn extends org.telegram.ui.Components.uq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void S0(final View view) {
         zn znVar = this.c1.a;
         ci.hc b10 = view instanceof org.telegram.ui.Cells.h7 ? ci.jc.b((org.telegram.ui.Cells.h7) view) : null;
@@ -80,7 +80,7 @@ public final class fn extends org.telegram.ui.Components.uq0 {
         E.U(b10, ci.o8.y(arrayList));
     }
 
-    @Override // org.telegram.ui.Components.uq0, org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.Components.wq0, org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         int i10;
         zn znVar = this.c1.a;

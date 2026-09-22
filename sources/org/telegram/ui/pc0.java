@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class pc0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public s4.c0 c;
     public uu d;
     public org.telegram.ui.Components.pc e;
@@ -108,7 +108,7 @@ public final class pc0 extends org.telegram.ui.ActionBar.n2 {
                 arrayList2.add(jc0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
             }
             arrayList2.add(jc0.b(32768, LocaleController.getString("LiteOptionsScale")));
-            if (org.telegram.ui.Components.l11.c()) {
+            if (org.telegram.ui.Components.n11.c()) {
                 arrayList2.add(jc0.b(65536, LocaleController.getString("LiteOptionsThanos")));
             }
         }
@@ -182,17 +182,17 @@ public final class pc0 extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.q1();
-        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;
-        vl0Var2.setLayoutManager(c0Var);
-        org.telegram.ui.Components.vl0 vl0Var3 = this.b;
+        yl0Var2.setLayoutManager(c0Var);
+        org.telegram.ui.Components.yl0 yl0Var3 = this.b;
         uu uuVar = new uu(this, 1);
         this.d = uuVar;
-        vl0Var3.setAdapter(uuVar);
+        yl0Var3.setAdapter(uuVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
         jVar.o(org.telegram.ui.Components.qr.h);
@@ -208,7 +208,7 @@ public final class pc0 extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.yl0 getListViewForSimpleGlass() {
         return this.b;
     }
 

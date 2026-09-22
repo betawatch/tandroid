@@ -31,15 +31,15 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.s60;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public TextView a;
@@ -353,7 +353,7 @@ public final class i0 extends LinearLayout {
                                             int size6 = arrayList3.size() - 2;
                                             int themedColor = j0Var.getThemedColor(j6.h5);
                                             j9Var.b = new z0(j6.Lj, j6.Mj, -1, -1, null);
-                                            j9Var.c = new u01(hg.k0.h(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            j9Var.c = new w01(hg.k0.h(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
                                             j9Var.d = paint;
                                             paint.setColor(themedColor);
@@ -381,7 +381,7 @@ public final class i0 extends LinearLayout {
                                             f6Var3 = ((f3) j0Var).resourcesProvider;
                                             final int i56 = 0;
                                             p0 p0Var = new p0(context, f6Var3, false);
-                                            b6.b(p0Var, 0.02f, 1.2f);
+                                            a6.b(p0Var, 0.02f, 1.2f);
                                             p0Var.a(LocaleController.getString(R.string.InvitePremiumBlockedSubscribe), new View.OnClickListener(this) { // from class: rg.g0
                                                 public final /* synthetic */ i0 b;
 
@@ -632,7 +632,7 @@ public final class i0 extends LinearLayout {
                                             linearLayout.setLayoutTransition(layoutTransition);
                                             linearLayout.addView(bVar, y5.t(-2, -2, 48, -30, 2, 18, 0));
                                             addView(linearLayout, y5.t(-2, 38, 17, 0, -4, 0, 12));
-                                            b6.a(linearLayout);
+                                            a6.a(linearLayout);
                                             i36 = 1;
                                             linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: rg.g0
                                                 public final /* synthetic */ i0 b;

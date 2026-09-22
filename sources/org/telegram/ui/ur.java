@@ -13,9 +13,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ur extends org.telegram.ui.Components.n61 {
+public final class ur extends org.telegram.ui.Components.p61 {
     public final ph1 e;
     public final long f;
     public final nh1 h;
@@ -37,20 +37,20 @@ public final class ur extends org.telegram.ui.Components.n61 {
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x00aa  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00ac  */
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.p61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void U(ArrayList arrayList, org.telegram.ui.Components.k61 k61Var) {
+    public final void U(ArrayList arrayList, org.telegram.ui.Components.m61 m61Var) {
         CharSequence charSequence;
         boolean isEmpty = TextUtils.isEmpty(this.n);
         CharSequence charSequence2 = null;
         long j3 = this.f;
         if (isEmpty && j3 != 0) {
-            org.telegram.ui.Components.w51 c10 = org.telegram.ui.Components.w51.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
+            org.telegram.ui.Components.y51 c10 = org.telegram.ui.Components.y51.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
             c10.r = true;
             arrayList.add(c10);
-            arrayList.add(org.telegram.ui.Components.w51.B(null));
+            arrayList.add(org.telegram.ui.Components.y51.B(null));
         }
         if (TextUtils.isEmpty(this.n)) {
             com.google.android.gms.internal.vision.e2.n(R.string.EditProfileChannelSelect, arrayList);
@@ -77,44 +77,44 @@ public final class ur extends org.telegram.ui.Components.n61 {
                         if (!org.telegram.messenger.l0.v(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.l0.v(" ", translitSafe, translitSafe2)) {
                         }
                         long j10 = chat.id;
-                        org.telegram.ui.Components.w51 w51Var = new org.telegram.ui.Components.w51(11);
-                        w51Var.w = true;
-                        w51Var.x = -j10;
-                        w51Var.K(j3 != j10);
-                        arrayList.add(w51Var);
+                        org.telegram.ui.Components.y51 y51Var = new org.telegram.ui.Components.y51(11);
+                        y51Var.w = true;
+                        y51Var.x = -j10;
+                        y51Var.K(j3 != j10);
+                        arrayList.add(y51Var);
                     }
                 }
                 charSequence = charSequence2;
                 long j102 = chat.id;
-                org.telegram.ui.Components.w51 w51Var2 = new org.telegram.ui.Components.w51(11);
-                w51Var2.w = true;
-                w51Var2.x = -j102;
-                w51Var2.K(j3 != j102);
-                arrayList.add(w51Var2);
+                org.telegram.ui.Components.y51 y51Var2 = new org.telegram.ui.Components.y51(11);
+                y51Var2.w = true;
+                y51Var2.x = -j102;
+                y51Var2.K(j3 != j102);
+                arrayList.add(y51Var2);
             }
             charSequence2 = charSequence;
         }
         CharSequence charSequence3 = charSequence2;
         if (TextUtils.isEmpty(this.n) && i10 == 0) {
-            org.telegram.ui.Components.w51 c11 = org.telegram.ui.Components.w51.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
+            org.telegram.ui.Components.y51 c11 = org.telegram.ui.Components.y51.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
             c11.q = true;
             arrayList.add(c11);
         }
-        arrayList.add(org.telegram.ui.Components.w51.B(charSequence3));
+        arrayList.add(org.telegram.ui.Components.y51.B(charSequence3));
         org.telegram.ui.ActionBar.v0 v0Var = this.r;
         if (v0Var != null) {
             v0Var.setVisibility(i10 <= 5 ? 8 : 0);
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.p61
     public final CharSequence V() {
         return LocaleController.getString(R.string.EditProfileChannelTitle);
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final void W(org.telegram.ui.Components.w51 w51Var, View view) {
-        int i10 = w51Var.d;
+    @Override // org.telegram.ui.Components.p61
+    public final void W(org.telegram.ui.Components.y51 y51Var, View view) {
+        int i10 = y51Var.d;
         nh1 nh1Var = this.h;
         if (i10 == 1) {
             nh1Var.run(null);
@@ -122,9 +122,9 @@ public final class ur extends org.telegram.ui.Components.n61 {
             return;
         }
         if (i10 != 2) {
-            if (w51Var.a == 12) {
+            if (y51Var.a == 12) {
                 finishFragment();
-                nh1Var.run(getMessagesController().getChat(Long.valueOf(-w51Var.x)));
+                nh1Var.run(getMessagesController().getChat(Long.valueOf(-y51Var.x)));
                 return;
             }
             return;
@@ -139,12 +139,12 @@ public final class ur extends org.telegram.ui.Components.n61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final boolean X(org.telegram.ui.Components.w51 w51Var, View view) {
+    @Override // org.telegram.ui.Components.p61
+    public final boolean X(org.telegram.ui.Components.y51 y51Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.n61, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.p61, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.v0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.F();
@@ -159,7 +159,7 @@ public final class ur extends org.telegram.ui.Components.n61 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.yl0 getListViewForSimpleGlass() {
         return this.a;
     }
 

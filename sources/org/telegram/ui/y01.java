@@ -13,7 +13,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ih1;
 import org.telegram.ui.y01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class y01 extends org.telegram.ui.Cells.b7 {
     public final /* synthetic */ z01 h;
@@ -32,15 +32,15 @@ public final class y01 extends org.telegram.ui.Cells.b7 {
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, f6Var));
         addView(textView, w7.y5.t(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, 21, 15, 21, 0));
-        org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(context, f6Var);
-        this.b = k90Var;
-        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        k90Var.setTextSize(1, 14.0f);
-        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.J6, f6Var));
-        k90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.K6, f6Var));
-        k90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        k90Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(k90Var, w7.y5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 21, 14, 21, 0));
+        org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(context, f6Var);
+        this.b = n90Var;
+        n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.J6, f6Var));
+        n90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.K6, f6Var));
+        n90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+        n90Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(n90Var, w7.y5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 21, 14, 21, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         final int i11 = 0;
         linearLayout.setOrientation(0);
@@ -49,7 +49,7 @@ public final class y01 extends org.telegram.ui.Cells.b7 {
         while (i12 < 2) {
             TextView textView2 = new TextView(context);
             textView2.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.j6.Oh));
-            w7.b6.b(textView2, 0.02f, 1.5f);
+            w7.a6.b(textView2, 0.02f, 1.5f);
             textView2.setLines(1);
             textView2.setSingleLine(true);
             textView2.setGravity(1);

@@ -15,13 +15,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.c11;
-import org.telegram.ui.Components.c61;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f11;
 import org.webrtc.MediaStreamTrack;
 import v7.r8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1493,14 +1493,14 @@ public abstract class d4 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (d11 d11Var : (d11[]) spanned.getSpans(i22, nextSpanTransition, d11.class)) {
-                    c11 c11Var = d11Var.b;
-                    if (c11Var != null) {
-                        i24 |= c11Var.a;
+                for (f11 f11Var : (f11[]) spanned.getSpans(i22, nextSpanTransition, f11.class)) {
+                    e11 e11Var = f11Var.b;
+                    if (e11Var != null) {
+                        i24 |= e11Var.a;
                     }
                 }
-                c61[] c61VarArr = (c61[]) spanned.getSpans(i22, nextSpanTransition, c61.class);
-                String url = c61VarArr.length > 0 ? c61VarArr[c10].getURL() : null;
+                e61[] e61VarArr = (e61[]) spanned.getSpans(i22, nextSpanTransition, e61.class);
+                String url = e61VarArr.length > 0 ? e61VarArr[c10].getURL() : null;
                 org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.y5.class);
                 if (y5VarArr.length > 0) {
                     org.telegram.ui.Components.y5 y5Var = y5VarArr[c10];
@@ -1860,9 +1860,9 @@ public abstract class d4 {
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            c11 c11Var = new c11();
-            c11Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new d11(c11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            e11 e11Var = new e11();
+            e11Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new f11(e11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(f6.k(str2), length, length2, 33);

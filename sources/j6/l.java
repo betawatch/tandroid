@@ -16,8 +16,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
-import c5.g0;
-import c5.w;
+import c5.c0;
+import c5.f0;
+import c5.v;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.c1;
 import com.google.android.gms.internal.cast.q4;
@@ -46,7 +47,7 @@ import r0.i0;
 import v7.w7;
 import w7.d0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, le.k {
     public static l e;
@@ -67,7 +68,7 @@ public final class l implements OnSuccessListener, le.k {
         synchronized (l.class) {
             try {
                 if (e == null) {
-                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new w("MessengerIpcClient")));
+                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new v("MessengerIpcClient")));
                     l lVar2 = new l();
                     lVar2.d = new j(lVar2);
                     lVar2.a = 1;
@@ -270,12 +271,12 @@ public final class l implements OnSuccessListener, le.k {
     }
 
     public void k(Throwable th2) {
-        c5.d0 d0Var = (c5.d0) this.d;
+        c0 c0Var = (c0) this.d;
         if (th2 instanceof TimeoutException) {
-            d0Var.F(102, 28, g0.p);
+            c0Var.F(102, 28, f0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            d0Var.F(95, 28, g0.p);
+            c0Var.F(95, 28, f0.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();

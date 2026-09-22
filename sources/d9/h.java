@@ -1,123 +1,54 @@
 package d9;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import v7.u6;
+import java.io.Serializable;
+import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class h implements Iterator {
-    public String b;
-    public final CharSequence c;
-    public final a d;
-    public int f;
-    public final /* synthetic */ a6.i h;
-    public int a = 2;
-    public int e = 0;
+public final class h implements g, Serializable {
+    public final List a;
 
-    public h(a6.i iVar, a5.a aVar, CharSequence charSequence) {
-        this.h = iVar;
-        this.d = (a) aVar.c;
-        this.f = aVar.b;
-        this.c = charSequence;
+    public h(List list) {
+        this.a = list;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        String str;
-        a aVar;
-        int i10 = this.a;
-        if (i10 == 4) {
-            throw new IllegalStateException();
-        }
-        int c10 = m1.j.c(i10);
-        if (c10 == 0) {
-            return true;
-        }
-        if (c10 == 2) {
-            return false;
-        }
-        this.a = 4;
-        int i11 = this.e;
+    @Override // d9.g
+    public final boolean apply(Object obj) {
+        int i10 = 0;
         while (true) {
-            int i12 = this.e;
-            if (i12 == -1) {
-                this.a = 3;
-                str = null;
-                break;
+            List list = this.a;
+            if (i10 >= list.size()) {
+                return true;
             }
-            b bVar = (b) this.h.b;
-            CharSequence charSequence = this.c;
-            int length = charSequence.length();
-            u6.e(i12, length);
-            while (true) {
-                if (i12 >= length) {
-                    i12 = -1;
-                    break;
-                }
-                if (bVar.a(charSequence.charAt(i12))) {
-                    break;
-                }
-                i12++;
+            if (!((g) list.get(i10)).apply(obj)) {
+                return false;
             }
-            if (i12 == -1) {
-                i12 = charSequence.length();
-                this.e = -1;
-            } else {
-                this.e = i12 + 1;
-            }
-            int i13 = this.e;
-            if (i13 == i11) {
-                int i14 = i13 + 1;
-                this.e = i14;
-                if (i14 > charSequence.length()) {
-                    this.e = -1;
-                }
-            } else {
-                while (true) {
-                    aVar = this.d;
-                    if (i11 >= i12 || !aVar.a(charSequence.charAt(i11))) {
-                        break;
-                    }
-                    i11++;
-                }
-                while (i12 > i11 && aVar.a(charSequence.charAt(i12 - 1))) {
-                    i12--;
-                }
-                int i15 = this.f;
-                if (i15 == 1) {
-                    i12 = charSequence.length();
-                    this.e = -1;
-                    while (i12 > i11 && aVar.a(charSequence.charAt(i12 - 1))) {
-                        i12--;
-                    }
-                } else {
-                    this.f = i15 - 1;
-                }
-                str = charSequence.subSequence(i11, i12).toString();
-            }
+            i10++;
         }
-        this.b = str;
-        if (this.a == 3) {
-            return false;
-        }
-        this.a = 1;
-        return true;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public final boolean equals(Object obj) {
+        if (obj instanceof h) {
+            return this.a.equals(((h) obj).a);
         }
-        this.a = 2;
-        String str = this.b;
-        this.b = null;
-        return str;
+        return false;
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public final int hashCode() {
+        return this.a.hashCode() + 306654252;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("Predicates.and(");
+        boolean z10 = true;
+        for (Object obj : this.a) {
+            if (!z10) {
+                sb2.append(',');
+            }
+            sb2.append(obj);
+            z10 = false;
+        }
+        sb2.append(')');
+        return sb2.toString();
     }
 }

@@ -11,17 +11,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.ns;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class a extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final TextView c;
-    public final k90 d;
+    public final n90 d;
     public zf.b e;
     public final oq[] f;
 
@@ -37,13 +37,13 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         zf.b bVar3 = zf.b.a;
         TextView textView = this.c;
         org.telegram.ui.ActionBar.f6 f6Var = this.b;
-        k90 k90Var = this.d;
+        n90 n90Var = this.d;
         if (bVar2 == bVar3) {
             textView.setText(w7.X0(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
             int i11 = org.telegram.ui.ActionBar.j6.Gi;
-            k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-            k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-            k90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new rg.q1(this, 21)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+            n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+            n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+            n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new rg.q1(this, 21)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
             return;
         }
         if (bVar2 == zf.b.b) {
@@ -57,9 +57,9 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
             int i12 = org.telegram.ui.ActionBar.j6.Hi;
             int v02 = org.telegram.ui.ActionBar.j6.v0(i12, f6Var);
             int i13 = org.telegram.ui.ActionBar.j6.Fi;
-            k90Var.setTextColor(i0.a.d(0.33f, v02, org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
-            k90Var.setLinkTextColor(i0.a.d(0.33f, org.telegram.ui.ActionBar.j6.v0(i12, f6Var), org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
-            k90Var.setText(sb2);
+            n90Var.setTextColor(i0.a.d(0.33f, v02, org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
+            n90Var.setLinkTextColor(i0.a.d(0.33f, org.telegram.ui.ActionBar.j6.v0(i12, f6Var), org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
+            n90Var.setText(sb2);
         }
     }
 
@@ -107,12 +107,12 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Hi, f6Var));
         textView.setGravity(17);
         addView(textView, w7.y5.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
-        k90 k90Var = new k90(context, f6Var);
-        this.d = k90Var;
-        k90Var.setTextSize(1, 12.0f);
-        k90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new ns(context, f6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
-        k90Var.setGravity(17);
-        addView(k90Var, w7.y5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+        n90 n90Var = new n90(context, f6Var);
+        this.d = n90Var;
+        n90Var.setTextSize(1, 12.0f);
+        n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new ns(context, f6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+        n90Var.setGravity(17);
+        addView(n90Var, w7.y5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
         a();
     }
 }

@@ -19,8 +19,8 @@ import com.google.android.gms.internal.play_billing.x3;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import fb.m;
-import fb.n;
+import com.google.firebase.messaging.n;
+import fb.o;
 import hg.k0;
 import i5.e;
 import java.io.IOException;
@@ -44,15 +44,15 @@ import pb.b;
 import q9.d;
 import r2.k;
 import r2.l;
-import r2.o;
 import r2.x;
 import x3.g;
 import y6.c;
 import yf.j;
+import z3.m;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
+public final class a implements bg.a, e, cg.a, ea.a, o, dh.a, d, l1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
     public static volatile a b;
     public static a c;
     public final /* synthetic */ int a;
@@ -61,8 +61,8 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         this.a = i10;
     }
 
-    public static MediaCodec J(com.google.firebase.messaging.n nVar) {
-        String str = ((o) nVar.a).a;
+    public static MediaCodec J(n nVar) {
+        String str = ((r2.o) nVar.a).a;
         Trace.beginSection("createCodec:" + str);
         MediaCodec createByCodecName = MediaCodec.createByCodecName(str);
         Trace.endSection();
@@ -287,7 +287,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
             case 14:
                 return new pb.c(cVar.x(b.class));
             default:
-                return new b(cVar.c(ob.a.class));
+                return new b(cVar.e(ob.a.class));
         }
     }
 
@@ -522,9 +522,35 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return null;
     }
 
-    @Override // dh.a
-    public int a() {
-        return 872415231;
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004c  */
+    @Override // r2.k
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public l a(n nVar) {
+        MediaCodec mediaCodec = null;
+        try {
+            mediaCodec = J(nVar);
+            Trace.beginSection("configureCodec");
+            Surface surface = (Surface) nVar.d;
+            mediaCodec.configure((MediaFormat) nVar.b, surface, (MediaCrypto) nVar.e, (surface == null && ((r2.o) nVar.a).h && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
+            Trace.endSection();
+            Trace.beginSection("startCodec");
+            mediaCodec.start();
+            Trace.endSection();
+            return new x(mediaCodec, (r2.j) nVar.f);
+        } catch (IOException e) {
+            e = e;
+            if (mediaCodec != null) {
+                mediaCodec.release();
+            }
+            throw e;
+        } catch (RuntimeException e7) {
+            e = e7;
+            if (mediaCodec != null) {
+            }
+            throw e;
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -551,9 +577,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return ((x3) obj).a();
     }
 
-    @Override // x3.g
-    public long b(p pVar) {
-        return -1L;
+    @Override // dh.a
+    public int b() {
+        return 872415231;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -568,9 +594,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i11 = this.a;
     }
 
-    @Override // y6.c
-    public int c(Context context, String str, boolean z10) {
-        return y6.e.d(context, str, z10);
+    @Override // x3.g
+    public long c(p pVar) {
+        return -1L;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -580,9 +606,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return false;
     }
 
-    @Override // dh.a
-    public int d() {
-        return 352321535;
+    @Override // y6.c
+    public int d(Context context, String str, boolean z10) {
+        return y6.e.d(context, str, z10);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -623,9 +649,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return true;
     }
 
-    @Override // x3.g
-    public b0 g() {
-        return new t(-9223372036854775807L);
+    @Override // dh.a
+    public int g() {
+        return 352321535;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -678,9 +704,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // y6.c
-    public int l(Context context, String str) {
-        return y6.e.a(context, str);
+    @Override // x3.g
+    public b0 l() {
+        return new t(-9223372036854775807L);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -695,9 +721,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return false;
     }
 
-    @Override // dh.a
-    public int m() {
-        return 0;
+    @Override // y6.c
+    public int m(Context context, String str) {
+        return y6.e.a(context, str);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -749,13 +775,13 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return false;
     }
 
-    @Override // fb.n
+    @Override // fb.o
     public Object p2() {
         switch (this.a) {
             case 8:
                 return new ArrayList();
             default:
-                return new m(true);
+                return new fb.n(true);
         }
     }
 
@@ -814,35 +840,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004c  */
-    @Override // r2.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l v(com.google.firebase.messaging.n nVar) {
-        MediaCodec mediaCodec = null;
-        try {
-            mediaCodec = J(nVar);
-            Trace.beginSection("configureCodec");
-            Surface surface = (Surface) nVar.d;
-            mediaCodec.configure((MediaFormat) nVar.b, surface, (MediaCrypto) nVar.e, (surface == null && ((o) nVar.a).h && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
-            Trace.endSection();
-            Trace.beginSection("startCodec");
-            mediaCodec.start();
-            Trace.endSection();
-            return new x(mediaCodec, (r2.j) nVar.f);
-        } catch (IOException e) {
-            e = e;
-            if (mediaCodec != null) {
-                mediaCodec.release();
-            }
-            throw e;
-        } catch (RuntimeException e7) {
-            e = e7;
-            if (mediaCodec != null) {
-            }
-            throw e;
-        }
+    @Override // z3.k
+    public m v(s sVar) {
+        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -869,9 +869,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // z3.k
-    public z3.m x(s sVar) {
-        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
+    @Override // dh.a
+    public int x() {
+        return 0;
     }
 
     @Override // org.telegram.ui.Cells.l1

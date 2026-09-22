@@ -4,7 +4,7 @@ import b2.l0;
 import b2.s;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class h extends a {
     public s a;
@@ -25,7 +25,7 @@ public class h extends a {
         this.n = i11;
     }
 
-    public final ByteBuffer a(int i10) {
+    public final ByteBuffer b(int i10) {
         int i11 = this.h;
         if (i11 == 1) {
             return ByteBuffer.allocate(i10);
@@ -37,11 +37,11 @@ public class h extends a {
         throw new g("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
     }
 
-    public final void b(int i10) {
+    public final void c(int i10) {
         int i11 = i10 + this.n;
         ByteBuffer byteBuffer = this.c;
         if (byteBuffer == null) {
-            this.c = a(i11);
+            this.c = b(i11);
             return;
         }
         int capacity = byteBuffer.capacity();
@@ -51,24 +51,13 @@ public class h extends a {
             this.c = byteBuffer;
             return;
         }
-        ByteBuffer a2 = a(i12);
-        a2.order(byteBuffer.order());
+        ByteBuffer b10 = b(i12);
+        b10.order(byteBuffer.order());
         if (position > 0) {
             byteBuffer.flip();
-            a2.put(byteBuffer);
+            b10.put(byteBuffer);
         }
-        this.c = a2;
-    }
-
-    public final void c() {
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer != null) {
-            byteBuffer.flip();
-        }
-        ByteBuffer byteBuffer2 = this.f;
-        if (byteBuffer2 != null) {
-            byteBuffer2.flip();
-        }
+        this.c = b10;
     }
 
     @Override // h2.a
@@ -83,5 +72,16 @@ public class h extends a {
             byteBuffer2.clear();
         }
         this.d = false;
+    }
+
+    public final void e() {
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.f;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
     }
 }

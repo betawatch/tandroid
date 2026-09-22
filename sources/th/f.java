@@ -35,22 +35,22 @@ import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.b20;
 import org.telegram.ui.Components.f20;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.m30;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.vb0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.y10;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.t5;
 import org.telegram.ui.web.b1;
 import r0.a0;
 import s4.j;
 import tg.u0;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f extends ab implements le.d {
     public static final /* synthetic */ int r0 = 0;
@@ -60,7 +60,7 @@ public final class f extends ab implements le.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public k61 d0;
+    public m61 d0;
     public final ci.d e0;
     public final o f0;
     public final t5 g0;
@@ -91,11 +91,11 @@ public final class f extends ab implements le.d {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        yl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
-        this.d.j(new sb0(this, 15));
+        this.d.j(new vb0(this, 15));
         this.d.setOnItemClickListener(new c(context, f6Var, this));
         ci.d dVar = new ci.d(context, f6Var, true);
         this.e0 = dVar;
@@ -112,7 +112,7 @@ public final class f extends ab implements le.d {
         oVar.setGravity(17);
         oVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         oVar.setVisibility(8);
-        b6.a(oVar);
+        a6.a(oVar);
         this.e.n().addView(oVar, y5.t(-2, 48, 16, 12, 0, 12, 0));
         oVar.setOnClickListener(new a(this, 1));
         b20 b20Var = new b20(context, f6Var);
@@ -198,7 +198,7 @@ public final class f extends ab implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 != 3) {
             if (i10 == 4) {
                 y10.d(this.f0, f7);
@@ -216,23 +216,23 @@ public final class f extends ab implements le.d {
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        vl0 vl0Var = this.d;
-        vl0Var.setClipBounds(rect);
+        yl0 yl0Var = this.d;
+        yl0Var.setClipBounds(rect);
         if (z10) {
-            vl0Var.invalidate();
+            yl0Var.invalidate();
         }
     }
 
     public final void R() {
-        vl0 vl0Var;
+        yl0 yl0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            vl0Var = this.d;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (RecyclerView.S(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -242,7 +242,7 @@ public final class f extends ab implements le.d {
         t5 t5Var = this.g0;
         if (t5Var.getTranslationY() != max) {
             t5Var.setTranslationY(max);
-            vl0Var.invalidate();
+            yl0Var.invalidate();
         }
     }
 
@@ -274,11 +274,11 @@ public final class f extends ab implements le.d {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
-        this.d0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
+        this.d0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

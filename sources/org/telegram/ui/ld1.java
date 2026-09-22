@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ld1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ xd1 a;
@@ -154,12 +154,12 @@ public final class ld1 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             xd1Var.p1.o1(true);
-            org.telegram.ui.Components.hj0 hj0Var = xd1Var.N1;
-            hj0Var.h = true;
+            org.telegram.ui.Components.kj0 kj0Var = xd1Var.N1;
+            kj0Var.h = true;
             if (a2) {
-                hj0Var.P(0);
+                kj0Var.P(0);
             } else {
-                hj0Var.P(36);
+                kj0Var.P(36);
             }
             xd1Var.N1.start();
             if (xd1Var.M1) {

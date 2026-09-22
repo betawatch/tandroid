@@ -30,32 +30,32 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r00;
-import org.telegram.ui.Components.sb0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.vb0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y10;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.o81;
 import org.telegram.ui.vy0;
 import org.telegram.ui.x8;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import yh.k7;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
     public LinearLayout E;
@@ -147,16 +147,16 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
     public static void V(i4 i4Var, Context context) {
         v3 v3Var = i4Var.d;
         if (i4Var.K && !v3Var.h.isEmpty()) {
-            v70 v70Var = new v70(i4Var, i4Var.I, false, false);
-            v70Var.t = false;
-            v70Var.Y = true;
-            v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            v70Var.R = true;
-            v70Var.p = new ii.h(v70Var, 3);
+            y70 y70Var = new y70(i4Var, i4Var.I, false, false);
+            y70Var.t = false;
+            y70Var.Y = true;
+            y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+            y70Var.R = true;
+            y70Var.p = new ii.h(y70Var, 3);
             String[] strArr = {""};
             ArrayList arrayList = new ArrayList(v3Var.h);
             Collections.sort(arrayList, new u2(i4Var, 0));
-            h3 h3Var = new h3(i4Var, new v2(i4Var, strArr, arrayList, 0), new w2(i4Var, v70Var, 0), null);
+            h3 h3Var = new h3(i4Var, new v2(i4Var, strArr, arrayList, 0), new w2(i4Var, y70Var, 0), null);
             h3Var.Y2.r = false;
             FrameLayout frameLayout = new FrameLayout(context);
             ImageView imageView = new ImageView(context);
@@ -178,30 +178,30 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
             frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
             buVar.addTextChangedListener(new qn(strArr, h3Var, false, 8));
             if (arrayList.size() > 8) {
-                v70Var.r(frameLayout, y5.n(-1, 44));
-                v70Var.k();
+                y70Var.r(frameLayout, y5.n(-1, 44));
+                y70Var.k();
             }
             if (!v3Var.l.isEmpty()) {
-                v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 0), false);
+                y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 0), false);
             }
-            v70Var.q(h3Var);
-            v70Var.Z();
+            y70Var.q(h3Var);
+            y70Var.Z();
         }
     }
 
     public static void W(i4 i4Var, Context context) {
         v3 v3Var = i4Var.d;
         if (i4Var.K && !v3Var.f.isEmpty()) {
-            v70 v70Var = new v70(i4Var, i4Var.G, false, false);
-            v70Var.t = false;
-            v70Var.Y = true;
-            v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            v70Var.R = true;
-            v70Var.p = new ii.h(v70Var, 5);
+            y70 y70Var = new y70(i4Var, i4Var.G, false, false);
+            y70Var.t = false;
+            y70Var.Y = true;
+            y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+            y70Var.R = true;
+            y70Var.p = new ii.h(y70Var, 5);
             String[] strArr = {""};
             ArrayList arrayList = new ArrayList(v3Var.f);
             Collections.sort(arrayList, new u2(i4Var, 2));
-            f3 f3Var = new f3(i4Var, new v2(i4Var, strArr, arrayList, 2), new w2(i4Var, v70Var, 2), null);
+            f3 f3Var = new f3(i4Var, new v2(i4Var, strArr, arrayList, 2), new w2(i4Var, y70Var, 2), null);
             f3Var.Y2.r = false;
             FrameLayout frameLayout = new FrameLayout(context);
             ImageView imageView = new ImageView(context);
@@ -223,30 +223,30 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
             frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
             buVar.addTextChangedListener(new qn(strArr, f3Var, false, 9));
             if (arrayList.size() > 8) {
-                v70Var.r(frameLayout, y5.n(-1, 44));
-                v70Var.k();
+                y70Var.r(frameLayout, y5.n(-1, 44));
+                y70Var.k();
             }
             if (!v3Var.j.isEmpty()) {
-                v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 2), false);
+                y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 2), false);
             }
-            v70Var.q(f3Var);
-            v70Var.Z();
+            y70Var.q(f3Var);
+            y70Var.Z();
         }
     }
 
     public static void X(i4 i4Var, Context context) {
         v3 v3Var = i4Var.d;
         if (i4Var.K && !v3Var.g.isEmpty()) {
-            v70 v70Var = new v70(i4Var, i4Var.H, false, false);
-            v70Var.t = false;
-            v70Var.Y = true;
-            v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            v70Var.R = true;
-            v70Var.p = new ii.h(v70Var, 4);
+            y70 y70Var = new y70(i4Var, i4Var.H, false, false);
+            y70Var.t = false;
+            y70Var.Y = true;
+            y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+            y70Var.R = true;
+            y70Var.p = new ii.h(y70Var, 4);
             String[] strArr = {""};
             ArrayList arrayList = new ArrayList(v3Var.g);
             Collections.sort(arrayList, new u2(i4Var, 1));
-            g3 g3Var = new g3(i4Var, new v2(i4Var, strArr, arrayList, 1), new w2(i4Var, v70Var, 1), null);
+            g3 g3Var = new g3(i4Var, new v2(i4Var, strArr, arrayList, 1), new w2(i4Var, y70Var, 1), null);
             g3Var.Y2.r = false;
             FrameLayout frameLayout = new FrameLayout(context);
             ImageView imageView = new ImageView(context);
@@ -268,19 +268,19 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
             frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
             buVar.addTextChangedListener(new qn(strArr, g3Var, false, 10));
             if (arrayList.size() > 8) {
-                v70Var.r(frameLayout, y5.n(-1, 44));
-                v70Var.k();
+                y70Var.r(frameLayout, y5.n(-1, 44));
+                y70Var.k();
             }
             if (!v3Var.k.isEmpty()) {
-                v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 1), false);
+                y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x2(i4Var, 1), false);
             }
-            v70Var.q(g3Var);
-            v70Var.Z();
+            y70Var.q(g3Var);
+            y70Var.Z();
         }
     }
 
-    public static void Y(i4 i4Var, w51 w51Var) {
-        Object obj = w51Var.G;
+    public static void Y(i4 i4Var, y51 y51Var) {
+        Object obj = y51Var.G;
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             yh.y3 y3Var = new yh.y3(i4Var.getParentActivity(), i4Var.currentAccount, i4Var.b, i4Var.resourceProvider, null);
@@ -291,7 +291,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 0) {
             this.s.setTranslationY((-AndroidUtilities.dp(52.0f)) * f7);
             y10.d(this.r, f7);
@@ -328,14 +328,14 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
         this.fragmentView = x8Var;
         k7 k7Var = new k7(context, this.currentAccount, this.resourceProvider);
         k7Var.d = true;
-        b6.a(k7Var);
+        a6.a(k7Var);
         k7Var.setOnClickListener(new vy0(25, this, k7Var));
         this.actionBar.addView(k7Var, y5.d(-2, -2.0f, 85, 0.0f, 0.0f, 4.0f, 0.0f));
         e3 e3Var = new e3(this, new hi.a(this, 18), new z2(this), new z2(this));
         this.n = e3Var;
         e3Var.Y2.r = false;
         e3Var.setSpanCount(3);
-        this.n.j(new sb0(this, 17));
+        this.n.j(new vb0(this, 17));
         this.n.setPadding(0, AndroidUtilities.dp(45.0f), 0, AndroidUtilities.dp(101.0f));
         this.n.setClipToPadding(false);
         x8Var.addView(this.n, y5.d(-1, -1.0f, 119, 7.33f, 0.0f, 7.33f, -45.0f));
@@ -373,7 +373,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
         LinearLayout f7 = rk.f(context, 1);
         n3Var.addView(f7, y5.e(-1, -2, 23));
         v9 v9Var = new v9(context);
-        v9Var.setImageDrawable(new hj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        v9Var.setImageDrawable(new kj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         f7.addView(v9Var, y5.q(130, 130, 17));
         TextView textView = new TextView(context);
         rk.n(j6.G6, f6Var, textView, 1, 17.0f);
@@ -381,20 +381,20 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptyTitle));
         f7.addView(textView, y5.t(-2, -2, 17, 32, 12, 32, 9));
-        k90 k90Var = new k90(context, null);
-        k90Var.setTextColor(j6.v0(j6.A6, f6Var));
-        k90Var.setTextSize(1, 14.0f);
-        k90Var.setGravity(17);
-        k90Var.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptySubtitle));
-        k90Var.setMaxWidth(AndroidUtilities.dp(200.0f));
-        f7.addView(k90Var, y5.t(-2, -2, 17, 32, 0, 32, 12));
+        n90 n90Var = new n90(context, null);
+        n90Var.setTextColor(j6.v0(j6.A6, f6Var));
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setGravity(17);
+        n90Var.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptySubtitle));
+        n90Var.setMaxWidth(AndroidUtilities.dp(200.0f));
+        f7.addView(n90Var, y5.t(-2, -2, 17, 32, 0, 32, 12));
         TextView textView2 = new TextView(context);
         int i13 = j6.Oh;
         textView2.setTextColor(j6.v0(i13, f6Var));
         textView2.setBackground(j6.Y(j6.l1(0.1f, j6.v0(i13, f6Var)), 6, 6));
         textView2.setGravity(17);
         textView2.setPadding(org.telegram.ui.Cells.c1.c(13.0f, R.string.Gift2ResaleFiltersEmptyClear, textView2), 0, AndroidUtilities.dp(13.0f), 0);
-        b6.a(textView2);
+        a6.a(textView2);
         f7.addView(textView2, y5.t(-2, 27, 17, 32, 0, 32, 12));
         textView2.setOnClickListener(onClickListener);
         this.w = n3Var;
@@ -475,7 +475,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
                         final i4 i4Var = this.b;
                         v3 v3Var2 = i4Var.d;
                         if (i4Var.K) {
-                            v70 H = v70.H(i4Var, i4Var.F);
+                            y70 H = y70.H(i4Var, i4Var.F);
                             H.c(R.drawable.menu_sort_value, LocaleController.getString(u3.b.a), new x2(i4Var, 3), false);
                             H.c(R.drawable.menu_sort_date, LocaleController.getString(u3.c.a), new x2(i4Var, 4), false);
                             H.c(R.drawable.menu_sort_number, LocaleController.getString(u3.d.a), new x2(i4Var, 5), false);
@@ -546,7 +546,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
             }
         });
         this.s.addView(linearLayout2, y5.c(-1.0f, -2));
-        b6.b(this.s, 0.04f, 1.5f);
+        a6.b(this.s, 0.04f, 1.5f);
         x8Var.addView(this.s, y5.d(-2, 52.0f, 81, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density));
         u5 y3 = u5.y(this.currentAccount, true);
         if (y3.e && !y3.s().k()) {
@@ -605,7 +605,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
         });
         this.r.addView(this.v, y5.c(-1.0f, -2));
         this.r.setVisibility(8);
-        b6.b(this.r, 0.05f, 1.5f);
+        a6.b(this.r, 0.05f, 1.5f);
         m3 m3Var = new m3(context, this.resourceProvider);
         this.F = m3Var;
         m3Var.setSorting(this.d.p);
@@ -635,7 +635,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
                         final i4 i4Var = this.b;
                         v3 v3Var2 = i4Var.d;
                         if (i4Var.K) {
-                            v70 H = v70.H(i4Var, i4Var.F);
+                            y70 H = y70.H(i4Var, i4Var.F);
                             H.c(R.drawable.menu_sort_value, LocaleController.getString(u3.b.a), new x2(i4Var, 3), false);
                             H.c(R.drawable.menu_sort_date, LocaleController.getString(u3.c.a), new x2(i4Var, 4), false);
                             H.c(R.drawable.menu_sort_number, LocaleController.getString(u3.d.a), new x2(i4Var, 5), false);
@@ -815,7 +815,7 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
     }
 
     public final void e0(boolean z10) {
-        k61 k61Var;
+        m61 m61Var;
         v3 v3Var = this.d;
         int i10 = v3Var.e;
         HashSet hashSet = v3Var.l;
@@ -829,8 +829,8 @@ public class i4 extends org.telegram.ui.ActionBar.n2 implements le.d {
         }
         e3 e3Var = this.n;
         boolean z11 = false;
-        if (e3Var != null && (k61Var = e3Var.Y2) != null) {
-            k61Var.N(true);
+        if (e3Var != null && (m61Var = e3Var.Y2) != null) {
+            m61Var.N(true);
             if (z10) {
                 this.n.v0(0);
             }

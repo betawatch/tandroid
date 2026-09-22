@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ig implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -22,51 +22,51 @@ public final class ig implements Runnable {
     public final void run() {
         MessageObject threadMessage;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        af afVar = chatActivityEnterView.G3;
-        Activity activity = chatActivityEnterView.N2;
-        ng ngVar = chatActivityEnterView.Y2;
+        af afVar = chatActivityEnterView.H3;
+        Activity activity = chatActivityEnterView.O2;
+        ng ngVar = chatActivityEnterView.Z2;
         if (ngVar == null || activity == null) {
             return;
         }
         ngVar.D();
-        chatActivityEnterView.I3 = true;
-        chatActivityEnterView.H3 = false;
-        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
+        chatActivityEnterView.J3 = true;
+        chatActivityEnterView.I3 = false;
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
         if (slideTextView != null) {
             slideTextView.setAlpha(1.0f);
-            chatActivityEnterView.j1.setTranslationY(0.0f);
+            chatActivityEnterView.k1.setTranslationY(0.0f);
         }
+        chatActivityEnterView.c3 = null;
         chatActivityEnterView.b3 = null;
-        chatActivityEnterView.a3 = null;
         if (!chatActivityEnterView.c1) {
             if (Build.VERSION.SDK_INT >= 23 && activity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
                 activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
                 return;
             }
-            chatActivityEnterView.Y2.b1(1);
-            chatActivityEnterView.C2 = -1.0f;
-            ng ngVar2 = chatActivityEnterView.Y2;
+            chatActivityEnterView.Z2.b1(1);
+            chatActivityEnterView.D2 = -1.0f;
+            ng ngVar2 = chatActivityEnterView.Z2;
             TL_stories.StoryItem e12 = ngVar2 != null ? ngVar2.e1() : null;
             MediaController mediaController = MediaController.getInstance();
             int i10 = chatActivityEnterView.Q;
-            long j3 = chatActivityEnterView.P2;
-            MessageObject messageObject = chatActivityEnterView.S2;
+            long j3 = chatActivityEnterView.Q2;
+            MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            int i11 = chatActivityEnterView.F2;
-            org.telegram.ui.zn znVar = chatActivityEnterView.O2;
+            int i11 = chatActivityEnterView.G2;
+            org.telegram.ui.zn znVar = chatActivityEnterView.P2;
             mediaController.startRecording(i10, j3, messageObject, threadMessage, e12, i11, true, znVar != null ? znVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
-            chatActivityEnterView.E2 = true;
+            chatActivityEnterView.F2 = true;
             chatActivityEnterView.K1(0, true);
             wg wgVar = chatActivityEnterView.Y0;
             if (wgVar != null) {
                 wgVar.a(0L);
             }
-            tg tgVar = chatActivityEnterView.k1;
+            tg tgVar = chatActivityEnterView.l1;
             if (tgVar != null) {
                 tgVar.h = false;
             }
             chatActivityEnterView.Z0.getParent().requestDisallowInterceptTouchEvent(true);
-            ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
+            ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
             if (recordCircle != null) {
                 recordCircle.H = 1.0f;
                 recordCircle.I = true;
@@ -96,12 +96,12 @@ public final class ig implements Runnable {
         } else {
             CameraController.getInstance().initCamera(afVar);
         }
-        if (chatActivityEnterView.E2) {
+        if (chatActivityEnterView.F2) {
             return;
         }
-        chatActivityEnterView.E2 = true;
+        chatActivityEnterView.F2 = true;
         chatActivityEnterView.K1(0, true);
-        ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.M1;
+        ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.N1;
         if (recordCircle2 != null) {
             recordCircle2.H = 0.5f;
             recordCircle2.I = false;
@@ -111,6 +111,8 @@ public final class ig implements Runnable {
             wgVar2.a = false;
             wgVar2.d = 0L;
             wgVar2.e = 0L;
+            wgVar2.h = 0L;
+            wgVar2.n = 0L;
             wgVar2.b = false;
         }
     }

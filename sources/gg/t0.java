@@ -38,16 +38,16 @@ import org.telegram.ui.Cells.x4;
 import org.telegram.ui.Cells.x7;
 import org.telegram.ui.Cells.y4;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.ad0;
 import org.telegram.ui.ed0;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class t0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -95,7 +95,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
         this.b0 = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         if (i10 == 6) {
@@ -821,7 +821,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
                 frameLayout2.addView(j5Var, y5.c(-1.0f, -1));
                 frameLayout2.setOutlineProvider(yf.j0.b);
                 frameLayout2.setClipToOutline(true);
-                b6.b(frameLayout2, 0.02f, 1.2f);
+                a6.b(frameLayout2, 0.02f, 1.2f);
                 w4Var.setOnButtonClick(new ai.v0(this, 22));
                 view2 = w4Var;
                 break;
@@ -843,7 +843,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
                 view2 = this.h0;
                 break;
         }
-        return new fl0(view2);
+        return new il0(view2);
     }
 
     public void K() {

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ye extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -19,43 +19,43 @@ public final class ye extends AnimatorListenerAdapter {
         switch (this.a) {
             case 2:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                if (animator.equals(chatActivityEnterView.r2)) {
-                    chatActivityEnterView.r2 = null;
+                if (animator.equals(chatActivityEnterView.s2)) {
+                    chatActivityEnterView.s2 = null;
                     break;
                 }
                 break;
             case 3:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (animator.equals(chatActivityEnterView2.q2)) {
-                    chatActivityEnterView2.q2 = null;
+                if (animator.equals(chatActivityEnterView2.r2)) {
+                    chatActivityEnterView2.r2 = null;
                     break;
                 }
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView3 = this.b;
-                if (animator.equals(chatActivityEnterView3.r2)) {
-                    chatActivityEnterView3.r2 = null;
+                if (animator.equals(chatActivityEnterView3.s2)) {
+                    chatActivityEnterView3.s2 = null;
                     break;
                 }
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.q2)) {
-                    chatActivityEnterView4.q2 = null;
+                if (animator.equals(chatActivityEnterView4.r2)) {
+                    chatActivityEnterView4.r2 = null;
                     break;
                 }
                 break;
             case 6:
                 ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.r2)) {
-                    chatActivityEnterView5.r2 = null;
+                if (animator.equals(chatActivityEnterView5.s2)) {
+                    chatActivityEnterView5.s2 = null;
                     break;
                 }
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.q2)) {
-                    chatActivityEnterView6.q2 = null;
+                if (animator.equals(chatActivityEnterView6.r2)) {
+                    chatActivityEnterView6.r2 = null;
                     break;
                 }
                 break;
@@ -85,15 +85,15 @@ public final class ye extends AnimatorListenerAdapter {
                 break;
             case 2:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (animator.equals(chatActivityEnterView2.r2)) {
-                    chatActivityEnterView2.o1.setVisibility(8);
-                    chatActivityEnterView2.r2 = null;
+                if (animator.equals(chatActivityEnterView2.s2)) {
+                    chatActivityEnterView2.p1.setVisibility(8);
+                    chatActivityEnterView2.s2 = null;
                     break;
                 }
                 break;
             case 3:
                 ChatActivityEnterView chatActivityEnterView3 = this.b;
-                if (animator.equals(chatActivityEnterView3.q2)) {
+                if (animator.equals(chatActivityEnterView3.r2)) {
                     chatActivityEnterView3.getSendButtonInternal().setVisibility(8);
                     chatActivityEnterView3.P0.setVisibility(8);
                     chatActivityEnterView3.Z0.setVisibility(8);
@@ -101,44 +101,44 @@ public final class ye extends AnimatorListenerAdapter {
                     if (bfVar != null) {
                         bfVar.setVisibility(8);
                     }
-                    chatActivityEnterView3.q2 = null;
-                    chatActivityEnterView3.u2 = 0;
+                    chatActivityEnterView3.r2 = null;
+                    chatActivityEnterView3.v2 = 0;
                     break;
                 }
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.r2)) {
-                    chatActivityEnterView4.r2 = null;
+                if (animator.equals(chatActivityEnterView4.s2)) {
+                    chatActivityEnterView4.s2 = null;
                     break;
                 }
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.q2)) {
+                if (animator.equals(chatActivityEnterView5.r2)) {
                     chatActivityEnterView5.getSendButtonInternal().setVisibility(8);
                     chatActivityEnterView5.P0.setVisibility(8);
                     chatActivityEnterView5.setSlowModeButtonVisible(false);
                     chatActivityEnterView5.Z0.setVisibility(8);
                     chatActivityEnterView5.S0.setVisibility(0);
-                    chatActivityEnterView5.q2 = null;
-                    chatActivityEnterView5.u2 = 0;
+                    chatActivityEnterView5.r2 = null;
+                    chatActivityEnterView5.v2 = 0;
                     break;
                 }
                 break;
             case 6:
                 ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.r2)) {
-                    chatActivityEnterView6.r2 = null;
+                if (animator.equals(chatActivityEnterView6.s2)) {
+                    chatActivityEnterView6.s2 = null;
                     break;
                 }
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView7 = this.b;
-                if (animator.equals(chatActivityEnterView7.q2)) {
+                if (animator.equals(chatActivityEnterView7.r2)) {
                     chatActivityEnterView7.setSlowModeButtonVisible(false);
-                    chatActivityEnterView7.q2 = null;
-                    chatActivityEnterView7.u2 = 0;
+                    chatActivityEnterView7.r2 = null;
+                    chatActivityEnterView7.v2 = 0;
                     ue ueVar = chatActivityEnterView7.Z0;
                     if (ueVar != null) {
                         ueVar.setVisibility(0);
@@ -165,23 +165,23 @@ public final class ye extends AnimatorListenerAdapter {
             case 10:
                 ChatActivityEnterView chatActivityEnterView8 = this.b;
                 chatActivityEnterView8.V0 = null;
-                ng ngVar = chatActivityEnterView8.Y2;
+                ng ngVar = chatActivityEnterView8.Z2;
                 if (ngVar != null) {
                     ngVar.y(0.0f);
                 }
                 chatActivityEnterView8.requestLayout();
-                chatActivityEnterView8.K3.unlock();
+                chatActivityEnterView8.L3.unlock();
                 break;
             case 11:
                 ChatActivityEnterView chatActivityEnterView9 = this.b;
-                chatActivityEnterView9.A3 = null;
+                chatActivityEnterView9.B3 = null;
                 chatActivityEnterView9.U0.setLayerType(0, null);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView10 = this.b;
-                chatActivityEnterView10.A3 = null;
+                chatActivityEnterView10.B3 = null;
                 chatActivityEnterView10.U0.setLayerType(0, null);
-                chatActivityEnterView10.K3.unlock();
+                chatActivityEnterView10.L3.unlock();
                 break;
         }
     }

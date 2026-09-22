@@ -15,11 +15,11 @@ import w7.ga;
 import w7.ha;
 import w7.oa;
 import w7.pa;
-import w9.m;
-import w9.o;
-import w9.r;
+import w9.n;
+import w9.p;
+import w9.s;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g implements Callable {
     public final /* synthetic */ int a;
@@ -43,40 +43,40 @@ public final class g implements Callable {
                 return (h) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
             case 1:
                 m5.e eVar = (m5.e) obj;
-                m mVar = (m) eVar.c;
+                n nVar = (n) eVar.c;
                 Boolean bool = (Boolean) obj2;
                 if (bool.booleanValue()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                         Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
                     }
                     boolean booleanValue = bool.booleanValue();
-                    r rVar = mVar.b;
+                    s sVar = nVar.b;
                     if (!booleanValue) {
-                        rVar.getClass();
+                        sVar.getClass();
                         throw new IllegalStateException("An invalid data collection token was used.");
                     }
-                    rVar.h.trySetResult(null);
-                    Executor executor = (Executor) mVar.e.b;
+                    sVar.h.trySetResult(null);
+                    Executor executor = (Executor) nVar.e.b;
                     return ((Task) eVar.b).onSuccessTask(executor, new f3(20, this, executor));
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
                 }
-                Iterator it = ba.c.e(mVar.g.b.listFiles(m.r)).iterator();
+                Iterator it = ba.c.e(nVar.g.b.listFiles(n.r)).iterator();
                 while (it.hasNext()) {
                     ((File) it.next()).delete();
                 }
-                ba.c cVar = ((ba.b) mVar.m.b).b;
+                ba.c cVar = ((ba.b) nVar.m.b).b;
                 ba.b.a(ba.c.e(cVar.d.listFiles()));
                 ba.b.a(ba.c.e(cVar.e.listFiles()));
                 ba.b.a(ba.c.e(cVar.f.listFiles()));
-                mVar.q.trySetResult(null);
+                nVar.q.trySetResult(null);
                 return Tasks.forResult(null);
             case 2:
-                m.a((m) obj, (String) obj2, Boolean.FALSE);
+                n.a((n) obj, (String) obj2, Boolean.FALSE);
                 return null;
             case 3:
-                return o.a((o) obj, (da.b) obj2);
+                return p.a((p) obj, (da.b) obj2);
             default:
                 MobileVisionBase mobileVisionBase = (MobileVisionBase) obj2;
                 vb.a aVar = (vb.a) obj;

@@ -12,18 +12,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.Components.r80;
 import org.telegram.ui.f10;
 import org.telegram.ui.i60;
 import org.telegram.ui.l50;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.uh1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
+public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -153,10 +153,10 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
                 break;
             case 6:
                 zn znVar = (zn) this.c;
-                lk lkVar = znVar.Y;
-                if (lkVar != null) {
+                mk mkVar = znVar.Y;
+                if (mkVar != null) {
                     if (!this.b) {
-                        lkVar.A();
+                        mkVar.A();
                         break;
                     } else {
                         znVar.finishFragment();
@@ -187,31 +187,31 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
         }
     }
 
-    @Override // vh.l
-    public void l(vh.h hVar, float f7, float f10) {
-        vh.o oVar = (vh.o) this.c;
-        if (oVar.d || !this.b) {
+    @Override // vh.k
+    public void l(vh.g gVar, float f7, float f10) {
+        vh.n nVar = (vh.n) this.c;
+        if (nVar.d || !this.b) {
             return;
         }
-        hVar.q = new vh.n(oVar, 0);
-        float sqrt = (float) Math.sqrt(Math.pow(oVar.getHeight(), 2.0d) + Math.pow(oVar.getWidth(), 2.0d));
-        ArrayList arrayList = oVar.b;
+        gVar.q = new vh.m(nVar, 0);
+        float sqrt = (float) Math.sqrt(Math.pow(nVar.getHeight(), 2.0d) + Math.pow(nVar.getWidth(), 2.0d));
+        ArrayList arrayList = nVar.b;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((vh.h) obj).j(f7, f10, sqrt, false);
+            ((vh.g) obj).j(f7, f10, sqrt, false);
         }
     }
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        o80 o80Var = (o80) this.c;
+        r80 r80Var = (r80) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            o80Var.setOnDismissListener(new j80(0, o80Var, this.b));
+            r80Var.setOnDismissListener(new m80(0, r80Var, this.b));
         }
-        o80Var.dismiss();
+        r80Var.dismiss();
         return false;
     }
 }

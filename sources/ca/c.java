@@ -7,10 +7,10 @@ import i5.d;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import l5.r;
+import l5.s;
 import m5.e;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c {
     public final double a;
@@ -20,18 +20,18 @@ public final class c {
     public final int e;
     public final ArrayBlockingQueue f;
     public final ThreadPoolExecutor g;
-    public final r h;
+    public final s h;
     public final e i;
     public int j;
     public long k;
 
-    public c(r rVar, da.a aVar, e eVar) {
+    public c(s sVar, da.a aVar, e eVar) {
         double d = aVar.d;
         double d10 = aVar.e;
         this.a = d;
         this.b = d10;
         this.c = aVar.f * 1000;
-        this.h = rVar;
+        this.h = sVar;
         this.i = eVar;
         this.d = SystemClock.elapsedRealtime();
         int i10 = (int) d;

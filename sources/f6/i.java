@@ -1,6 +1,5 @@
 package f6;
 
-import a6.m;
 import ai.q4;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -36,7 +35,7 @@ import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -81,10 +80,11 @@ public final class i {
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         cf.c cVar = new cf.c(context);
         this.h = cVar;
-        cVar.e = new m(this, 17);
+        int i10 = 18;
+        cVar.e = new pb.c(this, i10);
         cf.c cVar2 = new cf.c(context);
         this.i = cVar2;
-        cVar2.e = new xa.c(this, 18);
+        cVar2.e = new xa.c(this, i10);
         this.k = new c0(Looper.getMainLooper(), 0);
         g6.b bVar3 = g.u;
         e6.a aVar3 = bVar.f;
@@ -101,8 +101,8 @@ public final class i {
                 } else if (b10 == null || (b10.length) == 0) {
                     Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
                 } else {
-                    for (int i10 : b10) {
-                        if (i10 < 0 || i10 >= size) {
+                    for (int i11 : b10) {
+                        if (i11 < 0 || i11 >= size) {
                             Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
                             break;
                         }
@@ -356,9 +356,9 @@ public final class i {
             createFromParcel.b = metadata;
             mediaMetadataCompat = createFromParcel;
         }
-        a4.m mVar = mediaMetadataCompat == null ? new a4.m(1) : new a4.m(mediaMetadataCompat);
-        mVar.t0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
+        android.support.v4.media.c cVar = mediaMetadataCompat == null ? new android.support.v4.media.c(0) : new android.support.v4.media.c(mediaMetadataCompat);
+        cVar.p0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        b0Var.e(new MediaMetadataCompat((Bundle) cVar.b));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -572,10 +572,11 @@ public final class i {
         b0 b0Var;
         c6.l lVar;
         MediaMetadata metadata;
+        int i11;
         MediaMetadataCompat createFromParcel;
         Bitmap bitmap;
         PendingIntent activity;
-        int i11;
+        int i12;
         b0 b0Var2 = this.p;
         if (b0Var2 == null) {
             return;
@@ -599,40 +600,40 @@ public final class i {
                     ArrayList a2 = j.a(qVar);
                     if (a2 != null) {
                         int size = a2.size();
-                        int i12 = 0;
-                        while (i12 < size) {
-                            Object obj = a2.get(i12);
-                            i12++;
+                        int i13 = 0;
+                        while (i13 < size) {
+                            Object obj = a2.get(i13);
+                            i13++;
                             ArrayList arrayList = a2;
                             e6.d dVar = (e6.d) obj;
-                            int i13 = size;
+                            int i14 = size;
                             String str = dVar.a;
                             if (TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
                                 j3 = c(str, i10, bundle) | j3;
                             } else {
                                 f(e0Var, str, dVar);
                             }
-                            size = i13;
+                            size = i14;
                             a2 = arrayList;
                         }
                     }
                 } else if (fVar != null) {
                     ArrayList arrayList2 = fVar.a;
                     int size2 = arrayList2.size();
-                    int i14 = 0;
-                    while (i14 < size2) {
-                        Object obj2 = arrayList2.get(i14);
-                        i14++;
+                    int i15 = 0;
+                    while (i15 < size2) {
+                        Object obj2 = arrayList2.get(i15);
+                        i15++;
                         ArrayList arrayList3 = arrayList2;
                         String str2 = (String) obj2;
                         if (TextUtils.equals(str2, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                            i11 = size2;
+                            i12 = size2;
                             j3 = c(str2, i10, bundle) | j3;
                         } else {
-                            i11 = size2;
+                            i12 = size2;
                             f(e0Var, str2, null);
                         }
-                        size2 = i11;
+                        size2 = i12;
                         arrayList2 = arrayList3;
                     }
                 }
@@ -679,26 +680,28 @@ public final class i {
         String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
         b0 b0Var3 = this.p;
         if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.a).a.getMetadata()) == null) {
+            i11 = 0;
             createFromParcel = null;
         } else {
             a0.f fVar2 = MediaMetadataCompat.d;
             Parcel obtain = Parcel.obtain();
+            i11 = 0;
             metadata.writeToParcel(obtain, 0);
             obtain.setDataPosition(0);
             createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
             obtain.recycle();
             createFromParcel.b = metadata;
         }
-        a4.m mVar = createFromParcel == null ? new a4.m(1) : new a4.m(createFromParcel);
-        mVar.u0(j10);
+        android.support.v4.media.c cVar = createFromParcel == null ? new android.support.v4.media.c(i11) : new android.support.v4.media.c(createFromParcel);
+        cVar.q0(j10);
         if (string != null) {
-            mVar.w0("android.media.metadata.TITLE", string);
-            mVar.w0("android.media.metadata.DISPLAY_TITLE", string);
+            cVar.r0("android.media.metadata.TITLE", string);
+            cVar.r0("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            mVar.w0("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            cVar.r0("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
+        b0Var.e(new MediaMetadataCompat((Bundle) cVar.b));
         Uri d = d(lVar);
         if (d != null) {
             this.h.A(d);

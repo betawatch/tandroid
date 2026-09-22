@@ -5,7 +5,7 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l extends m {
     public final j n;
@@ -17,7 +17,7 @@ public final class l extends m {
         long j3 = rVar.e;
         j jVar = j3 <= 0 ? null : new j(rVar.d, j3, null);
         this.n = jVar;
-        this.r = jVar == null ? new l.d(new j(0L, -1L, null)) : null;
+        this.r = jVar == null ? new l.d(new j(0L, -1L, null), 4) : null;
     }
 
     @Override // m2.m

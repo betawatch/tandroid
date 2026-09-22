@@ -38,11 +38,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Cells.d6;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.fg1;
@@ -65,9 +65,9 @@ import xh.r2;
 import yh.k2;
 import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.app.utils.b, q9.d, k2, Utilities.Callback5, kl0, vg1, j61 {
+public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.app.utils.b, q9.d, k2, Utilities.Callback5, nl0, vg1, j61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -90,7 +90,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         String valueOf;
         String str = (String) this.b;
         j2.e eVar = (j2.e) this.c;
-        Context context = (Context) cVar.a(Context.class);
+        Context context = (Context) cVar.b(Context.class);
         switch (eVar.a) {
             case 13:
                 ApplicationInfo applicationInfo = context.getApplicationInfo();
@@ -238,12 +238,12 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
         o2 o2Var = (o2) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        yr0 yr0Var = o2Var.a;
+        bs0 bs0Var = o2Var.a;
         o2Var.e.l.remove(savedStarGift);
         o2Var.f(true);
         int i10 = o2Var.b;
         if (j3 == UserConfig.getInstance(i10).getClientUserId()) {
-            xc a02 = xc.a0(yr0Var.a);
+            xc a02 = xc.a0(bs0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
             String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
             int i11 = R.string.BoughtResoldGiftText;
@@ -254,7 +254,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
             O.r = false;
             O.j();
         } else {
-            pc O2 = xc.a0(yr0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
+            pc O2 = xc.a0(bs0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j3)));
             O2.r = false;
             O2.j();
         }
@@ -264,12 +264,12 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         h4.Q((h4) this.b, (g4) this.c, i10);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -286,7 +286,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
     public o[] d(Uri uri, Map map) {
         p pVar = (p) this.b;
         s sVar = (s) this.c;
-        return new o[]{pVar.c.W(sVar) ? new z3.h(pVar.c.x(sVar), null) : new k3.a(sVar)};
+        return new o[]{pVar.c.W(sVar) ? new z3.h(pVar.c.v(sVar), null) : new k3.a(sVar)};
     }
 
     @Override // org.telegram.ui.vg1
@@ -361,7 +361,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         ci.d dVar = (ci.d) this.c;
         View view = (View) obj2;
         r2Var.getClass();
-        long j3 = ((TL_stars.SavedStarGift) ((w51) obj).G).gift.id;
+        long j3 = ((TL_stars.SavedStarGift) ((y51) obj).G).gift.id;
         if (r2Var.b == j3) {
             r2Var.b = 0L;
         } else {
@@ -412,7 +412,7 @@ public final /* synthetic */ class e implements f, a2, wo0, oy, r, androidx.car.
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

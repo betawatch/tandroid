@@ -7,9 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class s20 extends ul0 {
+public final class s20 extends xl0 {
     public ChatObject.Call c;
     public final int d;
     public ArrayList h;
@@ -25,7 +25,7 @@ public final class s20 extends ul0 {
         this.r = i60Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -48,7 +48,7 @@ public final class s20 extends ul0 {
         }
     }
 
-    public final void G(vl0 vl0Var, boolean z10) {
+    public final void G(yl0 yl0Var, boolean z10) {
         if (this.c == null) {
             return;
         }
@@ -81,7 +81,7 @@ public final class s20 extends ul0 {
             arrayList.addAll(call4.visibleVideoParticipants);
         }
         s4.o.c(new p20(this, arrayList4, arrayList3), true).b(this);
-        AndroidUtilities.updateVisibleRows(vl0Var);
+        AndroidUtilities.updateVisibleRows(yl0Var);
     }
 
     @Override // s4.h0
@@ -131,6 +131,6 @@ public final class s20 extends ul0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new fl0(new r20(this, viewGroup.getContext()));
+        return new il0(new r20(this, viewGroup.getContext()));
     }
 }

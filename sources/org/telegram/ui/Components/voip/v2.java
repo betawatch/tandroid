@@ -20,10 +20,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.r81;
+import org.telegram.ui.Components.t81;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class v2 extends FrameLayout {
     public String E;
@@ -118,7 +118,7 @@ public class v2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new u2(this, 0));
-            this.U.addListener(new r81(this, 10));
+            this.U.addListener(new t81(this, 10));
             this.U.setDuration(150L);
             this.U.start();
         }

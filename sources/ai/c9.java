@@ -42,31 +42,31 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.ar0;
+import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.b21;
+import org.telegram.ui.Components.br0;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.co0;
-import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.e40;
-import org.telegram.ui.Components.fu0;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.eo0;
+import org.telegram.ui.Components.eu0;
+import org.telegram.ui.Components.hu0;
 import org.telegram.ui.Components.ko;
+import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.om;
 import org.telegram.ui.Components.pm;
 import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.qm;
-import org.telegram.ui.Components.r11;
-import org.telegram.ui.Components.rn0;
+import org.telegram.ui.Components.t11;
+import org.telegram.ui.Components.tn0;
 import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.un0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.wm;
+import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.Components.yj;
-import org.telegram.ui.Components.yq0;
-import org.telegram.ui.Components.yy0;
-import org.telegram.ui.Components.z11;
-import org.telegram.ui.Components.zq0;
 import org.telegram.ui.gy;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.sn;
 import org.telegram.ui.ug;
 import org.telegram.ui.un;
@@ -74,7 +74,7 @@ import org.telegram.ui.xn;
 import org.telegram.ui.xv;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class c9 implements Runnable {
         org.telegram.ui.ActionBar.n2 n2Var;
         Runnable runnable;
         TLRPC.UserFull userFull;
-        lk lkVar;
+        mk mkVar;
         c10 c10Var;
         int i11;
         long peerId;
@@ -537,7 +537,7 @@ public final /* synthetic */ class c9 implements Runnable {
                     zArr[0] = true;
                     AndroidUtilities.runOnUIThread(new ug(znVar2, 20), 200L);
                     znVar2.presentFragment(znVar3);
-                    if (znVar2.x9() && !znVar3.hideKeyboardOnShow() && (lkVar = znVar3.Y) != null && lkVar.getEditField() != null) {
+                    if (znVar2.x9() && !znVar3.hideKeyboardOnShow() && (mkVar = znVar3.Y) != null && mkVar.getEditField() != null) {
                         znVar3.Y.getEditField().requestFocus();
                         break;
                     }
@@ -585,7 +585,7 @@ public final /* synthetic */ class c9 implements Runnable {
                 pmVar.i(qmVar.P, false);
                 break;
             case 17:
-                org.telegram.ui.Components.d5.G(((v70) obj3).e, (org.telegram.ui.ActionBar.f6) obj2, new i2.s(i17, (ko) obj, i15));
+                org.telegram.ui.Components.d5.G(((y70) obj3).e, (org.telegram.ui.ActionBar.f6) obj2, new i2.s(i17, (ko) obj, i15));
                 break;
             case 18:
                 org.telegram.ui.ActionBar.n2 n2Var3 = (org.telegram.ui.ActionBar.n2) obj3;
@@ -715,39 +715,39 @@ public final /* synthetic */ class c9 implements Runnable {
                     }
                     e40Var.N(true);
                     if (isEmpty) {
-                        ((co0) e40Var).c0.u0.h1(0, 0);
+                        ((eo0) e40Var).c0.u0.h1(0, 0);
                         break;
                     }
                 }
                 break;
             case 21:
-                un0.c(((un0) obj3).getContext(), i17, ((rn0) obj2).a.g(), (org.telegram.ui.ActionBar.f6) obj);
+                wn0.c(((wn0) obj3).getContext(), i17, ((tn0) obj2).a.g(), (org.telegram.ui.ActionBar.f6) obj);
                 break;
             case 22:
-                zq0 zq0Var = (zq0) obj3;
+                br0 br0Var = (br0) obj3;
                 TLObject tLObject6 = (TLObject) obj2;
                 String str7 = (String) obj;
-                HashMap hashMap = zq0Var.v;
-                if (i17 == zq0Var.y) {
-                    zq0Var.x = 0;
+                HashMap hashMap = br0Var.v;
+                if (i17 == br0Var.y) {
+                    br0Var.x = 0;
                     if (tLObject6 instanceof TL_account.webPagePreview) {
                         TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject6;
-                        MessagesController.getInstance(zq0Var.c).putUsers(webpagepreview.users, false);
-                        MessagesController.getInstance(zq0Var.c).putChats(webpagepreview.chats, false);
+                        MessagesController.getInstance(br0Var.c).putUsers(webpagepreview.users, false);
+                        MessagesController.getInstance(br0Var.c).putChats(webpagepreview.chats, false);
                         TLRPC.MessageMedia messageMedia = webpagepreview.media;
                         if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                             webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
                             if (webPage instanceof TLRPC.TL_webPage) {
                                 if (webPage instanceof TLRPC.TL_webPagePending) {
-                                    zq0Var.w = webPage;
+                                    br0Var.w = webPage;
                                     break;
                                 } else if (webPage instanceof TLRPC.TL_webPageEmpty) {
-                                    zq0Var.w = null;
-                                    if (zq0Var.b != 0) {
-                                        zq0Var.b = 0;
-                                        yq0 yq0Var = zq0Var.H;
-                                        if (yq0Var != null) {
-                                            ((xv) yq0Var).g(0);
+                                    br0Var.w = null;
+                                    if (br0Var.b != 0) {
+                                        br0Var.b = 0;
+                                        ar0 ar0Var = br0Var.H;
+                                        if (ar0Var != null) {
+                                            ((xv) ar0Var).g(0);
                                             break;
                                         }
                                     }
@@ -761,8 +761,8 @@ public final /* synthetic */ class c9 implements Runnable {
                                     }
                                 }
                                 hashMap.put(str7, webPage);
-                                zq0Var.w = webPage;
-                                zq0.a(zq0Var.a[0], webPage, str7);
+                                br0Var.w = webPage;
+                                br0.a(br0Var.a[0], webPage, str7);
                                 break;
                             }
                         }
@@ -773,112 +773,112 @@ public final /* synthetic */ class c9 implements Runnable {
                 }
                 break;
             case 23:
-                ((jv0) obj3).H0((MessageObject) obj2, (View) obj, i17, false);
+                ((lv0) obj3).H0((MessageObject) obj2, (View) obj, i17, false);
                 break;
             case 24:
-                jv0.g((jv0) obj3, i17, (TL_stories.StoryItem) obj2, (String) obj);
+                lv0.g((lv0) obj3, i17, (TL_stories.StoryItem) obj2, (String) obj);
                 break;
             case 25:
-                org.telegram.ui.Components.d5.f0(i17, (TLRPC.TL_error) obj2, ((jv0) obj3).v1, (TLRPC.TL_messages_editMessage) obj, new Object[0]);
+                org.telegram.ui.Components.d5.f0(i17, (TLRPC.TL_error) obj2, ((lv0) obj3).v1, (TLRPC.TL_messages_editMessage) obj, new Object[0]);
                 break;
             case 26:
-                fu0 fu0Var = (fu0) obj3;
+                hu0 hu0Var = (hu0) obj3;
                 ArrayList arrayList16 = (ArrayList) obj2;
                 String str8 = (String) obj;
-                jv0 jv0Var = fu0Var.v;
-                if (fu0Var.h != 0) {
-                    if (i17 == fu0Var.n) {
-                        int h10 = fu0Var.h();
-                        fu0Var.f = arrayList16;
-                        fu0Var.s--;
-                        int h11 = fu0Var.h();
-                        if (fu0Var.s == 0 || h11 != 0) {
-                            jv0Var.m1(false);
+                lv0 lv0Var = hu0Var.v;
+                if (hu0Var.h != 0) {
+                    if (i17 == hu0Var.n) {
+                        int h10 = hu0Var.h();
+                        hu0Var.f = arrayList16;
+                        hu0Var.s--;
+                        int h11 = hu0Var.h();
+                        if (hu0Var.s == 0 || h11 != 0) {
+                            lv0Var.m1(false);
                         }
                         int i44 = 0;
                         while (true) {
-                            cu0[] cu0VarArr = jv0Var.k0;
-                            if (i44 < cu0VarArr.length) {
-                                cu0 cu0Var = cu0VarArr[i44];
-                                if (cu0Var.F == fu0Var.r) {
-                                    if (fu0Var.s == 0 && h11 == 0) {
-                                        cu0Var.w.d.setText(LocaleController.formatString("NoResultFoundFor", R.string.NoResultFoundFor, str8));
-                                        cu0VarArr[i44].w.f.setVisibility(8);
-                                        cu0VarArr[i44].w.e(false, true);
+                            eu0[] eu0VarArr = lv0Var.k0;
+                            if (i44 < eu0VarArr.length) {
+                                eu0 eu0Var = eu0VarArr[i44];
+                                if (eu0Var.F == hu0Var.r) {
+                                    if (hu0Var.s == 0 && h11 == 0) {
+                                        eu0Var.w.d.setText(LocaleController.formatString("NoResultFoundFor", R.string.NoResultFoundFor, str8));
+                                        eu0VarArr[i44].w.f.setVisibility(8);
+                                        eu0VarArr[i44].w.e(false, true);
                                     } else if (h10 == 0) {
-                                        jv0Var.z(cu0Var.h, 0, null);
+                                        lv0Var.z(eu0Var.h, 0, null);
                                     }
                                 }
                                 i44++;
                             } else {
-                                fu0Var.l();
+                                hu0Var.l();
                             }
                         }
                     }
-                    fu0Var.h = 0;
+                    hu0Var.h = 0;
                     break;
                 }
                 break;
             case 27:
-                yy0 yy0Var = (yy0) obj3;
+                az0 az0Var = (az0) obj3;
                 String[] strArr2 = (String[]) obj2;
                 String str9 = (String) obj;
                 HashSet hashSet = new HashSet();
                 ArrayList arrayList17 = new ArrayList();
-                int i45 = yy0Var.a;
-                MediaDataController.getInstance(i45).getEmojiSuggestions(strArr2, str9, true, new org.telegram.ui.Components.d2(yy0Var, this.b, str9, hashSet, arrayList17, 1), SharedConfig.suggestAnimatedEmoji && UserConfig.getInstance(i45).isPremium());
+                int i45 = az0Var.a;
+                MediaDataController.getInstance(i45).getEmojiSuggestions(strArr2, str9, true, new org.telegram.ui.Components.d2(az0Var, this.b, str9, hashSet, arrayList17, 1), SharedConfig.suggestAnimatedEmoji && UserConfig.getInstance(i45).isPremium());
                 break;
             case 28:
-                yy0 yy0Var2 = (yy0) obj3;
+                az0 az0Var2 = (az0) obj3;
                 String str10 = (String) obj;
                 ArrayList arrayList18 = (ArrayList) obj2;
-                if (i17 == yy0Var2.I) {
-                    yy0Var2.H = str10;
-                    yy0Var2.G = 2;
+                if (i17 == az0Var2.I) {
+                    az0Var2.H = str10;
+                    az0Var2.G = 2;
                     arrayList18.remove(arrayList18.size() - 1);
                     if (arrayList18.isEmpty()) {
-                        yy0Var2.x = true;
-                        yy0Var2.f();
+                        az0Var2.x = true;
+                        az0Var2.f();
                         break;
                     } else {
-                        yy0Var2.x = false;
-                        yy0Var2.v = false;
-                        yy0Var2.c();
-                        f0 f0Var = yy0Var2.d;
+                        az0Var2.x = false;
+                        az0Var2.v = false;
+                        az0Var2.c();
+                        f0 f0Var = az0Var2.d;
                         if (f0Var != null) {
                             f0Var.setVisibility(0);
-                            yy0Var2.d.invalidate();
+                            az0Var2.d.invalidate();
                         }
-                        yy0Var2.w = arrayList18;
-                        vy0 vy0Var = yy0Var2.f;
-                        if (vy0Var != null) {
-                            vy0Var.l();
+                        az0Var2.w = arrayList18;
+                        xy0 xy0Var = az0Var2.f;
+                        if (xy0Var != null) {
+                            xy0Var.l();
                             break;
                         }
                     }
                 }
                 break;
             default:
-                z11 z11Var = (z11) obj3;
+                b21 b21Var = (b21) obj3;
                 ArrayList arrayList19 = (ArrayList) obj2;
                 ArrayList arrayList20 = (ArrayList) obj;
-                ThemeEditorView.EditorAlert editorAlert = z11Var.r;
-                r11 r11Var = editorAlert.c;
-                if (i17 == z11Var.d) {
-                    z11 z11Var2 = editorAlert.r;
-                    if (r11Var.getAdapter() != z11Var2) {
+                ThemeEditorView.EditorAlert editorAlert = b21Var.r;
+                t11 t11Var = editorAlert.c;
+                if (i17 == b21Var.d) {
+                    b21 b21Var2 = editorAlert.r;
+                    if (t11Var.getAdapter() != b21Var2) {
                         editorAlert.F = ThemeEditorView.EditorAlert.J(editorAlert);
-                        r11Var.setAdapter(z11Var2);
-                        z11Var2.l();
+                        t11Var.setAdapter(b21Var2);
+                        b21Var2.l();
                     }
-                    boolean z17 = !z11Var.e.isEmpty() && arrayList19.isEmpty();
-                    boolean z18 = z11Var.e.isEmpty() && arrayList19.isEmpty();
+                    boolean z17 = !b21Var.e.isEmpty() && arrayList19.isEmpty();
+                    boolean z18 = b21Var.e.isEmpty() && arrayList19.isEmpty();
                     if (z17) {
                         editorAlert.F = ThemeEditorView.EditorAlert.J(editorAlert);
                     }
-                    z11Var.e = arrayList19;
-                    z11Var.f = arrayList20;
-                    z11Var.l();
+                    b21Var.e = arrayList19;
+                    b21Var.f = arrayList20;
+                    b21Var.l();
                     if (!z18 && !z17 && (i13 = editorAlert.F) > 0) {
                         editorAlert.h.h1(0, -i13);
                         editorAlert.F = -1000;
@@ -922,9 +922,9 @@ public final /* synthetic */ class c9 implements Runnable {
         this.c = arrayList;
     }
 
-    public /* synthetic */ c9(yy0 yy0Var, int i10, String str, ArrayList arrayList) {
+    public /* synthetic */ c9(az0 az0Var, int i10, String str, ArrayList arrayList) {
         this.a = 28;
-        this.d = yy0Var;
+        this.d = az0Var;
         this.b = i10;
         this.e = str;
         this.c = arrayList;

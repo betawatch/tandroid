@@ -7,9 +7,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ep extends org.telegram.ui.Components.s80 {
+public final class ep extends org.telegram.ui.Components.v80 {
     public final /* synthetic */ Context w;
     public final /* synthetic */ ip x;
 
@@ -20,8 +20,8 @@ public final class ep extends org.telegram.ui.Components.s80 {
         this.w = context2;
     }
 
-    @Override // org.telegram.ui.Components.s80
-    public final boolean a(final boolean z10, org.telegram.ui.Components.q80 q80Var) {
+    @Override // org.telegram.ui.Components.v80
+    public final boolean a(final boolean z10, org.telegram.ui.Components.t80 t80Var) {
         TLRPC.ChatFull chatFull;
         int i10;
         org.telegram.ui.ActionBar.f6 f6Var;

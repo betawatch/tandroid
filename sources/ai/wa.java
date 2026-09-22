@@ -25,11 +25,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class wa extends View implements org.telegram.ui.Cells.aa {
     public int E;
@@ -91,9 +91,9 @@ public final class wa extends View implements org.telegram.ui.Cells.aa {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = uw0.a();
+            alignment = ww0.a();
         } else {
-            Layout.Alignment[] alignmentArr = uw0.a;
+            Layout.Alignment[] alignmentArr = ww0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -598,7 +598,7 @@ public final class wa extends View implements org.telegram.ui.Cells.aa {
     
         r3.d(true);
         r1.b = null;
-        r13 = new org.telegram.ui.Components.l90(r9[0], null, r20.getX(), r20.getY(), 0);
+        r13 = new org.telegram.ui.Components.o90(r9[0], null, r20.getX(), r20.getY(), 0);
         r1.a = r13;
         r13.d(org.telegram.ui.ActionBar.j6.l1(0.2f, -1));
         r3.a(r1.a, null);
@@ -706,7 +706,7 @@ public final class wa extends View implements org.telegram.ui.Cells.aa {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.z51.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.b61.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0197, code lost:
     
@@ -735,7 +735,7 @@ public final class wa extends View implements org.telegram.ui.Cells.aa {
         if (!this.J.s0 && (vaVarArr = this.r) != null) {
             va vaVar = vaVarArr[0];
             if (vaVar.e != null) {
-                h90 h90Var = vaVar.c;
+                k90 k90Var = vaVar.c;
                 wa waVar = vaVar.v;
                 StaticLayout staticLayout = waVar.v;
                 xa xaVar = waVar.J;

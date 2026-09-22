@@ -21,14 +21,14 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k extends h3 {
     public final k2.c0 E;
     public ArrayList F;
     public final ArrayMap G;
     public final MediaRouter2 r;
-    public final k2.u s;
+    public final k2.e s;
     public final ArrayMap v;
     public final MediaRouter2.RouteCallback w;
     public final j x;
@@ -38,7 +38,7 @@ public final class k extends h3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, k2.u uVar) {
+    public k(Context context, k2.e eVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new j(this);
@@ -46,7 +46,7 @@ public final class k extends h3 {
         this.F = new ArrayList();
         this.G = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = uVar;
+        this.s = eVar;
         this.E = new k2.c0(new Handler(Looper.getMainLooper()), 0);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new i(this, 1);

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -28,14 +28,14 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                 Integer num = (Integer) obj2;
                 Integer num2 = (Integer) obj3;
                 Boolean bool = (Boolean) obj4;
-                int i11 = ChatActivityEnterView.m5;
+                int i11 = ChatActivityEnterView.n5;
                 ChatActivityEnterView chatActivityEnterView = this.b;
                 chatActivityEnterView.Q0((TL_iv.RichMessage) obj);
                 if (!chatActivityEnterView.c() || num.intValue() != 0) {
                     chatActivityEnterView.T0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
                     break;
                 } else {
-                    d5.M(chatActivityEnterView.N2, j3, new qe(chatActivityEnterView, 0), f6Var);
+                    d5.M(chatActivityEnterView.O2, j3, new qe(chatActivityEnterView, 0), f6Var);
                     break;
                 }
             default:
@@ -44,12 +44,12 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                 Boolean bool2 = (Boolean) obj4;
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 chatActivityEnterView2.E0.setText((CharSequence) obj);
-                if (chatActivityEnterView2.Y1 == null) {
+                if (chatActivityEnterView2.Z1 == null) {
                     if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
                         chatActivityEnterView2.T0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
                         break;
                     } else {
-                        d5.M(chatActivityEnterView2.N2, j3, new re(chatActivityEnterView2), f6Var);
+                        d5.M(chatActivityEnterView2.O2, j3, new re(chatActivityEnterView2), f6Var);
                         break;
                     }
                 } else {

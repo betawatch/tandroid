@@ -7,9 +7,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class zg0 extends org.telegram.ui.Components.ul0 {
+public final class zg0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ ah0 d;
 
@@ -18,7 +18,7 @@ public final class zg0 extends org.telegram.ui.Components.ul0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         ah0 ah0Var = this.d;

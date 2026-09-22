@@ -31,13 +31,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.l90;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.yc;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
@@ -80,17 +80,17 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 1:
                 va vaVar = (va) this.b;
-                l90 l90Var = (l90) this.c;
-                l90 l90Var2 = vaVar.a;
-                if (l90Var != l90Var2 || l90Var2 == null) {
+                o90 o90Var = (o90) this.c;
+                o90 o90Var2 = vaVar.a;
+                if (o90Var != o90Var2 || o90Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = l90Var2.i;
+                CharacterStyle characterStyle = o90Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     wa waVar = vaVar.v;
-                    h90 h90Var = vaVar.c;
-                    Objects.requireNonNull(h90Var);
-                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(h90Var, 18));
+                    k90 k90Var = vaVar.c;
+                    Objects.requireNonNull(k90Var);
+                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(k90Var, 18));
                     vaVar.a = null;
                     return;
                 }
@@ -125,7 +125,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ((v0.i) this.b).onError(this.c);
                 return;
             case 6:
-                ((v0.i) this.b).onResult((v0.o) this.c);
+                ((v0.i) this.b).onResult((v0.p) this.c);
                 return;
             case 7:
                 bi.z zVar = (bi.z) this.b;
@@ -150,7 +150,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ((c1.e) this.b).e().onError((w0.h) this.c);
                 return;
             case 10:
-                ((c1.e) this.b).e().onResult((v0.o) this.c);
+                ((c1.e) this.b).e().onResult((v0.p) this.c);
                 return;
             case 11:
                 Context context = (Context) this.b;
@@ -162,7 +162,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ca.c cVar = (ca.c) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
                 try {
-                    l5.s.a().d.e(cVar.h.a.b(i5.d.c), 1);
+                    l5.t.a().d.e(cVar.h.a.b(i5.d.c), 1);
                 } catch (SQLException unused2) {
                 }
                 countDownLatch.countDown();

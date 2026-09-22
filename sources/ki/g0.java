@@ -1,15 +1,28 @@
 package ki;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.content.Context;
+import android.view.TextureView;
+import org.telegram.ui.Components.mv;
+import org.telegram.ui.Components.x50;
+import org.telegram.ui.Components.y50;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class g0 {
-    public final h0 a;
-    public final int b;
-    public final float c;
+    public final Context a;
+    public final TextureView b;
+    public i0 c;
+    public o0 d;
+    public j0 e;
+    public k0 f;
+    public int g;
+    public boolean h = true;
+    public x50 i;
+    public n0 j;
+    public mv k;
 
-    public g0(h0 h0Var, h0 h0Var2, int i10, float f7) {
-        this.a = h0Var;
-        this.b = i10;
-        this.c = f7;
+    public g0(Context context, y50 y50Var) {
+        this.a = context;
+        this.b = y50Var;
     }
 }

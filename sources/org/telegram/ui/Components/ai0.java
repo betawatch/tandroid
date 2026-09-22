@@ -1,269 +1,338 @@
 package org.telegram.ui.Components;
 
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
-import android.graphics.ColorMatrixColorFilter;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RecordingCanvas;
-import android.graphics.RectF;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotchInfoUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ai0 implements bi0 {
-    public final float f;
-    public final Paint i;
-    public final RectF j;
-    public final /* synthetic */ ci0 k;
-    public final Paint a = new Paint(1);
-    public final RenderNode b = new RenderNode("render");
-    public final RenderNode c = new RenderNode("effectNotch");
-    public final RenderNode d = new RenderNode("effect");
-    public final RenderNode e = new RenderNode("blur");
-    public final RectF g = new RectF();
-    public final RectF h = new RectF();
+public final class ai0 extends vp {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final Context e;
+    public final Paint f;
+    public v9 g;
+    public final /* synthetic */ bi0 h;
 
-    public ai0(ci0 ci0Var, float f7) {
-        this.k = ci0Var;
-        Paint paint = new Paint();
-        this.i = paint;
-        this.j = new RectF();
-        this.f = f7;
+    public ai0(bi0 bi0Var, Context context, org.telegram.ui.m01 m01Var) {
+        this.h = bi0Var;
+        this.e = context;
+        this.g = m01Var;
+        Paint paint = new Paint(1);
+        this.f = paint;
         paint.setColor(-16777216);
-        paint.setBlendMode(BlendMode.SRC_IN);
     }
 
-    @Override // org.telegram.ui.Components.bi0
-    public final void a(float f7) {
-        RenderNode renderNode = this.d;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        renderNode.setRenderEffect(RenderEffect.createBlurEffect(f7, f7, tileMode));
-        this.c.setRenderEffect(RenderEffect.createBlurEffect(f7, f7, tileMode));
-        this.a.setColorFilter(new ColorMatrixColorFilter(new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 51.0f, -6375.0f}));
-    }
-
-    @Override // org.telegram.ui.Components.bi0
-    public final void b(float f7) {
-        Shader.TileMode tileMode;
-        if (f7 == 0.0f) {
-            this.e.setRenderEffect(null);
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        xh0 xh0Var = (xh0) obj;
+        View view = xh0Var.b;
+        if (view != null) {
+            gVar.removeView(view);
+        }
+        if (xh0Var.a) {
             return;
         }
-        RenderNode renderNode = this.e;
-        float f10 = this.k.d;
-        float f11 = this.f;
-        float f12 = (f7 * f10) / f11;
-        float f13 = (f7 * f10) / f11;
-        tileMode = Shader.TileMode.DECAL;
-        renderNode.setRenderEffect(RenderEffect.createBlurEffect(f12, f13, tileMode));
-    }
-
-    @Override // org.telegram.ui.Components.bi0
-    public final void c(mv mvVar, Canvas canvas) {
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        Paint paint;
-        ci0 ci0Var = this.k;
-        Paint paint2 = ci0Var.a;
-        Path path = ci0Var.b;
-        if (canvas.isHardwareAccelerated()) {
-            float width = ci0Var.getWidth();
-            float height = ci0Var.getHeight();
-            RectF rectF = this.g;
-            rectF.set(0.0f, 0.0f, width, height);
-            int childCount = ci0Var.getChildCount();
-            RectF rectF2 = this.j;
-            if (childCount > 0) {
-                View childAt = ci0Var.getChildAt(0);
-                float scaleX = childAt.getScaleX() * childAt.getWidth();
-                float scaleY = childAt.getScaleY() * childAt.getHeight();
-                float x10 = childAt.getX();
-                float y3 = childAt.getY();
-                rectF2.set(x10, y3, scaleX + x10, scaleY + y3);
-                NotchInfoUtils.NotchInfo notchInfo = ci0Var.n;
-                if (notchInfo != null) {
-                    rectF2.union(notchInfo.bounds);
-                }
-                rectF2.inset(-AndroidUtilities.dp(20.0f), -AndroidUtilities.dp(20.0f));
-                rectF2.intersect(rectF);
-                rectF2.top = 0.0f;
-            } else {
-                rectF2.set(rectF);
+        vh0 vh0Var = xh0Var.c;
+        if (vh0Var.getImageReceiver().hasStaticThumb()) {
+            Drawable drawable = vh0Var.getImageReceiver().getDrawable();
+            if (drawable instanceof c6) {
+                ((c6) drawable).w(vh0Var);
             }
-            rectF2.bottom += AndroidUtilities.dp(32.0f);
-            int ceil = (int) Math.ceil(rectF2.width());
-            int ceil2 = (int) Math.ceil(rectF2.height());
-            float f14 = rectF2.left;
-            float f15 = rectF2.top;
-            this.b.setPosition(0, 0, ceil, ceil2);
-            this.e.setPosition(0, 0, ceil, ceil2);
-            this.d.setPosition(0, 0, ceil, ceil2);
-            this.c.setPosition(0, 0, ceil, ceil2);
-            float f16 = ceil;
-            float f17 = ceil2;
-            rectF2.set(0.0f, 0.0f, f16, f17);
-            RecordingCanvas beginRecording = this.b.beginRecording();
-            float f18 = -f14;
-            float f19 = -f15;
-            beginRecording.translate(f18, f19);
-            int ilerp = (int) ((1.0f - AndroidUtilities.ilerp(ci0Var.e, 0.5f, 1.0f)) * 255.0f);
-            int b10 = w7.q.b(ilerp, 0, 255);
-            ci0.a((ci0) mvVar.b, beginRecording);
-            this.b.endRecording();
-            float f20 = this.f;
-            float z10 = com.google.android.gms.internal.vision.e2.z(f20, 1.0f, 2.0f, com.google.android.gms.internal.vision.e2.x(ci0Var.f, 0.5f, f20, (f20 / 4.0f) + 1.0f));
-            RecordingCanvas beginRecording2 = this.e.beginRecording();
-            float f21 = 1.0f / z10;
-            beginRecording2.scale(f21, f21, 0.0f, 0.0f);
-            beginRecording2.drawRenderNode(this.b);
-            this.e.endRecording();
-            float f22 = f20 + 2.0f;
-            RecordingCanvas beginRecording3 = this.d.beginRecording();
-            float f23 = 1.0f / f22;
-            beginRecording3.scale(f23, f23, 0.0f, 0.0f);
-            Paint paint3 = this.i;
-            if (b10 < 255) {
-                beginRecording3.saveLayer(rectF2, null);
-                beginRecording3.drawRenderNode(this.b);
-                beginRecording3.drawRect(rectF2, paint3);
-                beginRecording3.restore();
-            }
-            float lerp = AndroidUtilities.lerp(0.0f, AndroidUtilities.dp(7.0f) * f22, 0.0f, 0.5f, ci0Var.e);
-            if (ci0Var.getChildCount() > 0) {
-                View childAt2 = ci0Var.getChildAt(0);
-                float scaleX2 = (((childAt2.getScaleX() * childAt2.getWidth()) / 2.0f) + childAt2.getX()) - f14;
-                float scaleY2 = ((((childAt2.getScaleY() * childAt2.getHeight()) / 2.0f) + childAt2.getY()) + AndroidUtilities.dp(32.0f)) - f15;
-                float scaleX3 = childAt2.getScaleX() * (childAt2.getWidth() / 2.0f);
-                path.rewind();
-                f7 = lerp;
-                f10 = f14;
-                path.moveTo(scaleX2 - scaleX3, scaleY2 - (((float) Math.cos(0.7853981633974483d)) * scaleX3));
-                path.lineTo(scaleX2, (scaleY2 - scaleX3) - (0.25f * f7));
-                path.lineTo(scaleX2 + scaleX3, scaleY2 - (((float) Math.cos(0.7853981633974483d)) * scaleX3));
-                path.close();
-                beginRecording3.drawPath(path, paint2);
-            } else {
-                f7 = lerp;
-                f10 = f14;
-            }
-            if (b10 > 0) {
-                if (b10 != 255) {
-                    beginRecording3.saveLayerAlpha(rectF2, b10);
-                }
-                beginRecording3.drawRenderNode(this.b);
-                if (b10 != 255) {
-                    beginRecording3.restore();
-                }
-            }
-            this.d.endRecording();
-            RecordingCanvas beginRecording4 = this.c.beginRecording();
-            beginRecording4.scale(f23, f23, 0.0f, 0.0f);
-            if (ci0Var.n != null) {
-                beginRecording4.translate(f18, f19);
-                beginRecording4.translate(0.0f, AndroidUtilities.dp(32.0f));
-                NotchInfoUtils.NotchInfo notchInfo2 = ci0Var.n;
-                if (notchInfo2.isLikelyCircle) {
-                    float min = Math.min(notchInfo2.bounds.width(), ci0Var.n.bounds.height()) / 2.0f;
-                    RectF rectF3 = ci0Var.n.bounds;
-                    float width2 = rectF3.bottom - (rectF3.width() / 2.0f);
-                    beginRecording4.drawCircle(ci0Var.n.bounds.centerX(), width2, min, paint2);
-                    path.rewind();
-                    float f24 = f7 / 2.0f;
-                    path.moveTo(ci0Var.n.bounds.centerX() - f24, width2);
-                    path.lineTo(ci0Var.n.bounds.centerX(), min + width2 + f7);
-                    path.lineTo(ci0Var.n.bounds.centerX() + f24, width2);
-                    path.close();
-                    beginRecording4.drawPath(path, paint2);
-                } else if (notchInfo2.isAccurate) {
-                    beginRecording4.drawPath(notchInfo2.path, paint2);
-                } else {
-                    float max = Math.max(notchInfo2.bounds.width(), ci0Var.n.bounds.height()) / 2.0f;
-                    RectF rectF4 = ci0Var.n.bounds;
-                    RectF rectF5 = this.h;
-                    rectF5.set(rectF4);
-                    beginRecording4.drawRoundRect(rectF5, max, max, paint2);
-                    path.rewind();
-                    float f25 = f7 / 2.0f;
-                    path.moveTo(rectF5.centerX() - f25, rectF5.bottom);
-                    path.lineTo(rectF5.centerX(), rectF5.bottom + f7);
-                    path.lineTo(rectF5.centerX() + f25, rectF5.bottom);
-                    path.close();
-                    beginRecording4.drawPath(path, paint2);
-                }
-                f11 = f17;
-                f12 = f16;
-                f13 = z10;
-                paint = paint3;
-            } else {
-                f11 = f17;
-                f12 = f16;
-                f13 = z10;
-                paint = paint3;
-                beginRecording4.drawRect(0.0f, 0.0f, f12, AndroidUtilities.dp(32.0f), paint2);
-                path.rewind();
-                path.moveTo((f12 - f7) / 2.0f, AndroidUtilities.dp(32.0f));
-                path.lineTo(f12 / 2.0f, AndroidUtilities.dp(32.0f) + f7);
-                path.lineTo((f12 + f7) / 2.0f, AndroidUtilities.dp(32.0f));
-                path.close();
-                beginRecording4.drawPath(path, paint2);
-            }
-            this.c.endRecording();
-            canvas.save();
-            canvas.translate(f10, f15 - AndroidUtilities.dp(32.0f));
-            NotchInfoUtils.NotchInfo notchInfo3 = ci0Var.n;
-            if (notchInfo3 != null) {
-                canvas.clipRect(0.0f, notchInfo3.bounds.top, f12, f11);
-            }
-            Paint paint4 = this.a;
-            canvas.saveLayer(rectF2, paint4);
-            canvas.scale(f22, f22);
-            canvas.drawRenderNode(this.c);
-            canvas.drawRenderNode(this.d);
-            canvas.restore();
-            int b11 = w7.q.b((ilerp * 3) / 4, 0, 255);
-            if (b11 < 255) {
-                canvas.saveLayer(rectF2, null);
-                if (ci0Var.f != 0.0f) {
-                    canvas.saveLayer(rectF2, paint4);
-                    canvas.scale(f13, f13);
-                    canvas.drawRenderNode(this.e);
-                    canvas.restore();
-                } else {
-                    canvas.drawRenderNode(this.b);
-                }
-                canvas.drawRect(rectF2, paint);
-                canvas.restore();
-            }
-            if (b11 > 0) {
-                if (b11 != 255) {
-                    canvas.saveLayerAlpha(rectF2, b11);
-                }
-                if (ci0Var.f != 0.0f) {
-                    canvas.saveLayer(rectF2, paint4);
-                    canvas.scale(f13, f13);
-                    canvas.drawRenderNode(this.e);
-                    canvas.restore();
-                } else {
-                    canvas.drawRenderNode(this.b);
-                }
-                if (b11 != 255) {
-                    canvas.restore();
-                }
-            }
-            canvas.restore();
         }
+        vh0Var.setRoundRadius(0);
+        gVar.removeView(vh0Var);
+        vh0Var.getImageReceiver().cancelLoadImage();
     }
 
-    @Override // org.telegram.ui.Components.bi0
-    public final /* synthetic */ void d(int i10, int i11) {
+    @Override // z4.a
+    public final int b() {
+        return this.c.size();
+    }
+
+    @Override // z4.a
+    public final int c(Object obj) {
+        int indexOf = this.c.indexOf((xh0) obj);
+        if (indexOf == -1) {
+            return -2;
+        }
+        return indexOf;
+    }
+
+    @Override // z4.a
+    public final CharSequence d(int i10) {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(k(i10) + 1);
+        sb2.append("/");
+        MessagesController.DialogPhotos dialogPhotos = this.h.S0;
+        sb2.append(dialogPhotos == null ? 0 : dialogPhotos.getCount());
+        return sb2.toString();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01a1  */
+    @Override // z4.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object e(z4.g gVar, int i10) {
+        int i11;
+        SparseArray sparseArray;
+        boolean z10;
+        boolean z11;
+        String str;
+        Bitmap bitmap;
+        xh0 xh0Var = (xh0) this.c.get(i10);
+        int k10 = k(i10);
+        bi0 bi0Var = this.h;
+        boolean z12 = bi0Var.i1;
+        SparseArray sparseArray2 = bi0Var.d1;
+        ArrayList arrayList = bi0Var.b1;
+        ArrayList arrayList2 = bi0Var.a1;
+        ArrayList arrayList3 = bi0Var.X0;
+        ArrayList arrayList4 = bi0Var.Y0;
+        ArrayList arrayList5 = bi0Var.Z0;
+        ArrayList arrayList6 = bi0Var.W0;
+        Context context = this.e;
+        if (z12 && k10 == 0) {
+            xh0Var.a = true;
+            if (xh0Var.b == null) {
+                xh0Var.b = new yh0(context);
+            }
+            if (xh0Var.b.getParent() == null) {
+                gVar.addView(xh0Var.b);
+            }
+            return xh0Var;
+        }
+        xh0Var.a = false;
+        yh0 yh0Var = xh0Var.b;
+        if (yh0Var != null && yh0Var.getParent() != null) {
+            gVar.removeView(xh0Var.b);
+        }
+        if (xh0Var.c == null) {
+            vh0 vh0Var = new vh0(bi0Var, context, i10, this.f);
+            xh0Var.c = vh0Var;
+            this.d.set(i10, vh0Var);
+        }
+        if (xh0Var.c.getParent() == null) {
+            gVar.addView(xh0Var.c);
+        }
+        xh0Var.c.getImageReceiver().setAllowDecodeSingleFrame(true);
+        int i12 = bi0Var.i1 ? k10 - 1 : k10;
+        if (i12 != 0) {
+            i11 = k10;
+            sparseArray = sparseArray2;
+            if (i12 >= 0 && i12 < arrayList6.size()) {
+                ImageLocation imageLocation = (ImageLocation) arrayList6.get(i12);
+                xh0Var.c.L = imageLocation != null;
+                z10 = arrayList5.get(i12) == null;
+                ImageLocation imageLocation2 = (ImageLocation) arrayList4.get(i12);
+                xh0Var.c.o((g71) arrayList5.get(i12), imageLocation, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation2 == null || !(imageLocation2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), "avatar_" + bi0Var.E0);
+                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                }
+                xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+                xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                vh0 vh0Var2 = xh0Var.c;
+                int i13 = bi0Var.m1;
+                int i14 = bi0Var.n1;
+                vh0Var2.r(i13, i13, i14, i14);
+                xh0Var.c.setTag(Integer.valueOf(i11));
+                return xh0Var;
+            }
+            z10 = false;
+            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+            }
+            xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+            xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+            vh0 vh0Var22 = xh0Var.c;
+            int i132 = bi0Var.m1;
+            int i142 = bi0Var.n1;
+            vh0Var22.r(i132, i132, i142, i142);
+            xh0Var.c.setTag(Integer.valueOf(i11));
+            return xh0Var;
+        }
+        v9 v9Var = this.g;
+        Drawable drawable = v9Var == null ? null : v9Var.getImageReceiver().getDrawable();
+        if (drawable instanceof c6) {
+            c6 c6Var = (c6) drawable;
+            if (c6Var.s()) {
+                xh0Var.c.setImageDrawable(drawable);
+                c6Var.f(xh0Var.c);
+                c6Var.R = true;
+                i11 = k10;
+                sparseArray = sparseArray2;
+                z10 = false;
+                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                    SparseArray sparseArray3 = sparseArray;
+                    xh0Var.c.H = (RadialProgress2) sparseArray3.get(i12);
+                    vh0 vh0Var3 = xh0Var.c;
+                    if (vh0Var3.H == null) {
+                        vh0Var3.H = new RadialProgress2(vh0Var3, null);
+                        RadialProgress2 radialProgress2 = xh0Var.c.H;
+                        radialProgress2.E = 0.0f;
+                        radialProgress2.setIcon(10, false, false);
+                        xh0Var.c.H.setColors(1107296256, 1107296256, -1, -1);
+                        sparseArray3.append(i12, xh0Var.c.H);
+                    }
+                    if (bi0Var.g1) {
+                        bi0Var.invalidate();
+                    } else {
+                        bi0Var.postInvalidateOnAnimation();
+                    }
+                }
+                xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+                xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                vh0 vh0Var222 = xh0Var.c;
+                int i1322 = bi0Var.m1;
+                int i1422 = bi0Var.n1;
+                vh0Var222.r(i1322, i1322, i1422, i1422);
+                xh0Var.c.setTag(Integer.valueOf(i11));
+                return xh0Var;
+            }
+        }
+        if (i12 >= 0 && i12 < arrayList6.size()) {
+            ImageLocation imageLocation3 = (ImageLocation) arrayList6.get(i12);
+            xh0Var.c.L = imageLocation3 != null;
+            boolean z13 = arrayList5.get(i12) == null;
+            if (!bi0Var.J0 || imageLocation3 == null) {
+                z11 = z13;
+            } else {
+                z11 = z13;
+                if (imageLocation3.imageType == 2) {
+                    str = "avatar";
+                    ImageLocation imageLocation4 = (ImageLocation) arrayList4.get(i12);
+                    v9 v9Var2 = this.g;
+                    i11 = k10;
+                    bitmap = (v9Var2 == null && bi0Var.e1) ? v9Var2.getImageReceiver().getBitmap() : null;
+                    StringBuilder sb2 = new StringBuilder("avatar_");
+                    sparseArray = sparseArray2;
+                    sb2.append(bi0Var.E0);
+                    String sb3 = sb2.toString();
+                    if (bitmap == null && arrayList5.get(i12) == null) {
+                        vh0 vh0Var4 = xh0Var.c;
+                        ImageLocation imageLocation5 = (ImageLocation) arrayList6.get(i12);
+                        ImageLocation imageLocation6 = (ImageLocation) arrayList3.get(i12);
+                        int intValue = ((Integer) arrayList2.get(i12)).intValue();
+                        vh0Var4.getClass();
+                        vh0Var4.a.setImage(imageLocation5, str, imageLocation6, null, null, null, new BitmapDrawable((Resources) null, bitmap), intValue, null, sb3, 1);
+                        vh0Var4.d();
+                    } else if (bi0Var.K0 == null) {
+                        xh0Var.c.o((g71) arrayList5.get(i12), (ImageLocation) arrayList6.get(i12), str, (ImageLocation) arrayList3.get(i12), bi0Var.K0, null, ((Integer) arrayList2.get(i12)).intValue(), sb3);
+                    } else {
+                        xh0Var.c.o((g71) arrayList5.get(i12), imageLocation3, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation4 == null || !(imageLocation4.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), sb3);
+                    }
+                    z10 = z11;
+                    if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+                    }
+                    xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+                    xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+                    vh0 vh0Var2222 = xh0Var.c;
+                    int i13222 = bi0Var.m1;
+                    int i14222 = bi0Var.n1;
+                    vh0Var2222.r(i13222, i13222, i14222, i14222);
+                    xh0Var.c.setTag(Integer.valueOf(i11));
+                    return xh0Var;
+                }
+            }
+            str = null;
+            ImageLocation imageLocation42 = (ImageLocation) arrayList4.get(i12);
+            v9 v9Var22 = this.g;
+            i11 = k10;
+            if (v9Var22 == null) {
+            }
+            StringBuilder sb22 = new StringBuilder("avatar_");
+            sparseArray = sparseArray2;
+            sb22.append(bi0Var.E0);
+            String sb32 = sb22.toString();
+            if (bitmap == null) {
+            }
+            if (bi0Var.K0 == null) {
+            }
+            z10 = z11;
+            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+            }
+            xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+            xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+            vh0 vh0Var22222 = xh0Var.c;
+            int i132222 = bi0Var.m1;
+            int i142222 = bi0Var.n1;
+            vh0Var22222.r(i132222, i132222, i142222, i142222);
+            xh0Var.c.setTag(Integer.valueOf(i11));
+            return xh0Var;
+        }
+        i11 = k10;
+        sparseArray = sparseArray2;
+        z10 = false;
+        if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z10 : true) {
+        }
+        xh0Var.c.getImageReceiver().setDelegate(new zh0(this));
+        xh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
+        vh0 vh0Var222222 = xh0Var.c;
+        int i1322222 = bi0Var.m1;
+        int i1422222 = bi0Var.n1;
+        vh0Var222222.r(i1322222, i1322222, i1422222, i1422222);
+        xh0Var.c.setTag(Integer.valueOf(i11));
+        return xh0Var;
+    }
+
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        xh0 xh0Var = (xh0) obj;
+        return xh0Var.a ? view == xh0Var.b : view == xh0Var.c;
+    }
+
+    @Override // z4.a
+    public final void g() {
+        ArrayList arrayList;
+        int i10 = 0;
+        while (true) {
+            arrayList = this.d;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            if (arrayList.get(i10) != null) {
+                ((v9) arrayList.get(i10)).getImageReceiver().cancelLoadImage();
+            }
+            i10++;
+        }
+        ArrayList arrayList2 = this.c;
+        arrayList2.clear();
+        arrayList.clear();
+        bi0 bi0Var = this.h;
+        int size = bi0Var.X0.size();
+        if (bi0Var.i1) {
+            size++;
+        }
+        MessagesController.DialogPhotos dialogPhotos = bi0Var.S0;
+        int j3 = (j() * 2) + Math.max(dialogPhotos == null ? 0 : dialogPhotos.getCount(), size);
+        for (int i11 = 0; i11 < j3; i11++) {
+            arrayList2.add(new xh0());
+            arrayList.add(null);
+        }
+        super.g();
+    }
+
+    @Override // org.telegram.ui.Components.vp
+    public final int j() {
+        bi0 bi0Var = this.h;
+        int size = bi0Var.X0.size();
+        if (bi0Var.i1) {
+            size++;
+        }
+        if (size >= 2) {
+            return bi0Var.getOffscreenPageLimit();
+        }
+        return 0;
     }
 }

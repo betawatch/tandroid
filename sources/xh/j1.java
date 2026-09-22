@@ -30,23 +30,23 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.h11;
-import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.j11;
 import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.np0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t70;
-import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.w01;
+import org.telegram.ui.Components.w70;
 import org.telegram.ui.s50;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import yh.q7;
 import yh.u5;
 import yh.w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class j1 extends FrameLayout {
     public static final int[] l0 = {-2781403, -3635939};
@@ -59,9 +59,9 @@ public class j1 extends FrameLayout {
     public final s50 K;
     public final TextView L;
     public final TextView M;
-    public h11 N;
-    public u01 O;
-    public u01 P;
+    public j11 N;
+    public w01 O;
+    public w01 P;
     public final Rect Q;
     public boolean R;
     public boolean S;
@@ -73,7 +73,7 @@ public class j1 extends FrameLayout {
     public boolean a0;
     public final f6 b;
     public boolean b0;
-    public final lp0 c;
+    public final np0 c;
     public TL_stars.SavedStarGift c0;
     public final FrameLayout d;
     public boolean d0;
@@ -101,8 +101,8 @@ public class j1 extends FrameLayout {
         this.U = new d6(this, 0L, 320L, qr.h);
         this.a = i10;
         this.b = f6Var;
-        b6.b(this, 0.04f, 1.5f);
-        this.c = new lp0(this);
+        a6.b(this, 0.04f, 1.5f);
+        this.c = new np0(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         f1 f1Var = new f1(frameLayout, f6Var, true);
@@ -219,7 +219,7 @@ public class j1 extends FrameLayout {
         return null;
     }
 
-    public final void a(t70 t70Var, Canvas canvas, float f7, float f10, float f11) {
+    public final void a(w70 w70Var, Canvas canvas, float f7, float f10, float f11) {
         float f12;
         float f13;
         Canvas canvas2 = canvas;
@@ -237,7 +237,7 @@ public class j1 extends FrameLayout {
         v9Var.getImageReceiver().setImageCoords((f7 - lerp) / 2.0f, (f14 - lerp) / 2.0f, lerp, lerp);
         v9Var.getImageReceiver().draw(canvas2);
         if (v9Var.getImageReceiver().isLottieRunning()) {
-            t70Var.invalidate();
+            w70Var.invalidate();
         }
         rg.b1 b1Var = this.F;
         if (b1Var.getVisibility() != 0 || b1Var.getAlpha() <= 0.0f) {
@@ -282,18 +282,18 @@ public class j1 extends FrameLayout {
         }
         if (uniqueStarGift != null) {
             if (this.O == null) {
-                this.O = new u01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.O = new w01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.P == null) {
-                this.P = new u01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.P = new w01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            u01 u01Var = this.O;
-            u01Var.p = f7 - AndroidUtilities.dp(8.0f);
+            w01 w01Var = this.O;
+            w01Var.p = f7 - AndroidUtilities.dp(8.0f);
             float f15 = f13 - f11;
-            u01Var.c((f7 - this.O.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.O.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
-            u01 u01Var2 = this.P;
-            u01Var2.p = f7 - AndroidUtilities.dp(8.0f);
-            u01Var2.c((f7 - this.P.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.P.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            w01Var.c((f7 - this.O.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.O.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            w01 w01Var2 = this.P;
+            w01Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            w01Var2.c((f7 - this.P.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.P.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
             canvas2 = canvas;
         }
         h1 h1Var = this.J;
@@ -434,10 +434,10 @@ public class j1 extends FrameLayout {
         boolean z16;
         long j12;
         boolean z17;
-        h11 h11Var = this.N;
+        j11 j11Var = this.N;
         ColorFilter colorFilter = null;
-        if (h11Var != null) {
-            h11Var.run();
+        if (j11Var != null) {
+            j11Var.run();
             this.N = null;
         }
         i(starGift, starGift.getDocument());
@@ -675,9 +675,9 @@ public class j1 extends FrameLayout {
         long j3;
         boolean z12;
         boolean z13;
-        h11 h11Var = this.N;
-        if (h11Var != null) {
-            h11Var.run();
+        j11 j11Var = this.N;
+        if (j11Var != null) {
+            j11Var.run();
             this.N = null;
         }
         i(savedStarGift, savedStarGift.gift.getDocument());

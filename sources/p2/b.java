@@ -3,7 +3,7 @@ package p2;
 import android.net.Uri;
 import android.os.SystemClock;
 import b2.s0;
-import c5.b0;
+import c5.a0;
 import com.google.android.gms.internal.cast.b5;
 import e2.d0;
 import e9.i0;
@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.web.g1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements y2.h {
     public final Uri a;
@@ -36,7 +36,7 @@ public final class b implements y2.h {
     public b(c cVar, Uri uri) {
         this.w = cVar;
         this.a = uri;
-        this.c = ((g2.g) cVar.a.a).createDataSource();
+        this.c = ((g2.g) cVar.a.b).createDataSource();
     }
 
     public static boolean a(b bVar, long j3) {
@@ -63,7 +63,7 @@ public final class b implements y2.h {
     }
 
     @Override // y2.h
-    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void S(y2.j jVar, long j3, long j10, boolean z10) {
         y2.p pVar = (y2.p) jVar;
         long j11 = pVar.a;
         Uri uri = pVar.d.c;
@@ -277,10 +277,10 @@ public final class b implements y2.h {
                     }
                     if (b5Var2 != null) {
                         this.s = b5Var2;
-                        b0 b0Var = new b0(b5Var2, 1, 11);
+                        a0 a0Var = new a0(b5Var2, 1, 11);
                         Iterator it2 = copyOnWriteArrayList.iterator();
                         while (it2.hasNext()) {
-                            ((t) it2.next()).b(uri, b0Var, z11);
+                            ((t) it2.next()).b(uri, a0Var, z11);
                         }
                     }
                 }
@@ -339,7 +339,7 @@ public final class b implements y2.h {
     }
 
     @Override // y2.h
-    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         y2.p pVar = (y2.p) jVar;
         long j11 = pVar.a;
         int i11 = pVar.c;
@@ -360,16 +360,16 @@ public final class b implements y2.h {
                 return dVar;
             }
         }
-        b0 b0Var = new b0(iOException, i10, 11);
+        a0 a0Var = new a0(iOException, i10, 11);
         Iterator it = cVar.e.iterator();
         boolean z12 = false;
         while (it.hasNext()) {
-            z12 |= !((t) it.next()).b(this.a, b0Var, false);
+            z12 |= !((t) it.next()).b(this.a, a0Var, false);
         }
         qb.b bVar = cVar.c;
         if (z12) {
             bVar.getClass();
-            long M3 = qb.b.M3(b0Var);
+            long M3 = qb.b.M3(a0Var);
             dVar = M3 != -9223372036854775807L ? new k4.d(0, M3, false) : y2.m.f;
         }
         boolean a2 = dVar.a();
@@ -381,7 +381,7 @@ public final class b implements y2.h {
     }
 
     @Override // y2.h
-    public final void n(y2.j jVar, long j3, long j10, int i10) {
+    public final void o(y2.j jVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.p pVar = (y2.p) jVar;
         if (i10 == 0) {
@@ -396,7 +396,7 @@ public final class b implements y2.h {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10) {
+    public final void p(y2.j jVar, long j3, long j10) {
         y2.p pVar = (y2.p) jVar;
         p pVar2 = (p) pVar.f;
         Uri uri = pVar.d.c;

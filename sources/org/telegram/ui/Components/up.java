@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class up implements z4.e {
     public int a;
-    public final /* synthetic */ yh0 b;
+    public final /* synthetic */ bi0 b;
 
-    public up(yh0 yh0Var) {
-        this.b = yh0Var;
+    public up(bi0 bi0Var) {
+        this.b = bi0Var;
     }
 
     @Override // z4.e
@@ -26,12 +26,12 @@ public final class up implements z4.e {
     }
 
     public final void d() {
-        yh0 yh0Var = this.b;
-        if (yh0Var.w0 != null) {
-            int currentItem = yh0Var.getCurrentItem();
-            int k10 = yh0Var.w0.k(currentItem) + yh0Var.w0.j();
+        bi0 bi0Var = this.b;
+        if (bi0Var.w0 != null) {
+            int currentItem = bi0Var.getCurrentItem();
+            int k10 = bi0Var.w0.k(currentItem) + bi0Var.w0.j();
             if (currentItem != k10) {
-                yh0Var.x(k10, false);
+                bi0Var.x(k10, false);
             }
         }
     }

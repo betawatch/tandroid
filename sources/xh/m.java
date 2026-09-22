@@ -33,33 +33,33 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.d6;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.l7;
 import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.y5;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.o91;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import yh.u5;
 import yh.w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m extends ab implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int A0 = 0;
     public final long X;
-    public final w51 Y;
+    public final y51 Y;
     public final yh.a Z;
     public final i a0;
     public final yf.n b0;
@@ -84,7 +84,7 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
     public final le.b u0;
     public final oq[] v0;
     public boolean w0;
-    public k61 x0;
+    public m61 x0;
     public boolean y0;
     public boolean z0;
 
@@ -116,7 +116,7 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.Y = w51.j(-1, linearLayout);
+        this.Y = y51.j(-1, linearLayout);
         h hVar = new h(this, context, f6Var);
         this.c0 = hVar;
         hVar.O = true;
@@ -193,18 +193,18 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
         linearLayout2.addView(n6Var3, w7.y5.l(1.0f, 0, -1));
         linearLayout.addView(linearLayout2, w7.y5.k(16.0f, 0.0f, 16.0f, 15.0f, -1, 56));
         if (subscribeToGiftAuction.auctionUserState.acquired_count > 0) {
-            k90 k90Var = new k90(context, f6Var);
-            k90Var.setGravity(17);
-            k90Var.setTextSize(1, 16.0f);
+            n90 n90Var = new n90(context, f6Var);
+            n90Var.setGravity(17);
+            n90Var.setTextSize(1, 16.0f);
             int i17 = j6.J6;
-            k90Var.setTextColor(j6.v0(i17, f6Var));
-            k90Var.setLinkTextColor(j6.v0(i17, f6Var));
-            k90Var.setOnClickListener(new xg.e(this, new boolean[1], f6Var, 2));
+            n90Var.setTextColor(j6.v0(i17, f6Var));
+            n90Var.setLinkTextColor(j6.v0(i17, f6Var));
+            n90Var.setOnClickListener(new xg.e(this, new boolean[1], f6Var, 2));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
-            spannableStringBuilder.setSpan(new y5(subscribeToGiftAuction.giftDocumentId, k90Var.getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
-            k90Var.setText(TextUtils.concat(AndroidUtilities.replaceArrows(LocaleController.formatPluralSpannable("Gift2AuctionsItemsBought2", subscribeToGiftAuction.auctionUserState.acquired_count, spannableStringBuilder), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f))));
-            b6.b(k90Var, 0.02f, 1.5f);
-            linearLayout.addView(k90Var, w7.y5.k(16.0f, 4.0f, 16.0f, 4.0f, -1, -2));
+            spannableStringBuilder.setSpan(new y5(subscribeToGiftAuction.giftDocumentId, n90Var.getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+            n90Var.setText(TextUtils.concat(AndroidUtilities.replaceArrows(LocaleController.formatPluralSpannable("Gift2AuctionsItemsBought2", subscribeToGiftAuction.auctionUserState.acquired_count, spannableStringBuilder), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f))));
+            a6.b(n90Var, 0.02f, 1.5f);
+            linearLayout.addView(n90Var, w7.y5.k(16.0f, 4.0f, 16.0f, 4.0f, -1, -2));
         }
         int i18 = j6.L6;
         org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, i18, 21, 0, 0, false, true, f6Var);
@@ -251,9 +251,9 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
         d.leftMargin = i21 + i22;
         d.rightMargin += i22;
         this.containerView.addView(iVar, d);
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i23 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i23, 0, i23, AndroidUtilities.dp(64.0f));
+        yl0Var.setPadding(i23, 0, i23, AndroidUtilities.dp(64.0f));
         this.d.setOnItemClickListener(new l7(4));
         long j10 = subscribeToGiftAuction.auctionUserState.bid_amount;
         if (j10 > 0) {
@@ -271,7 +271,7 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
         aVar.setEnabled(false);
         aVar.setClickable(false);
         this.container.addView(aVar, w7.y5.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
-        b6.a(aVar);
+        a6.a(aVar);
         aVar.setOnClickListener(new o91(context, 1, f6Var));
         FrameLayout frameLayout = new FrameLayout(context);
         this.k0 = frameLayout;
@@ -691,11 +691,11 @@ public final class m extends ab implements GiftAuctionController.OnAuctionUpdate
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 13), this.resourcesProvider);
-        this.x0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 13), this.resourcesProvider);
+        this.x0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

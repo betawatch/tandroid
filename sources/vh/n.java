@@ -1,28 +1,394 @@
 package vh;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class n implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Stack;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.y5;
+import tg.r;
 
-    public /* synthetic */ n(o oVar, int i10) {
-        this.a = i10;
-        this.b = oVar;
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* loaded from: classes3.dex */
+public class n extends TextView implements aa {
+    public static Field O;
+    public static Class P;
+    public static Method Q;
+    public o90 E;
+    public PorterDuffColorFilter F;
+    public final boolean G;
+    public boolean H;
+    public boolean I;
+    public boolean J;
+    public Layout K;
+    public int L;
+    public boolean M;
+    public Object N;
+    public final l a;
+    public final ArrayList b;
+    public final Stack c;
+    public boolean d;
+    public final Path e;
+    public boolean f;
+    public int h;
+    public u5 n;
+    public boolean r;
+    public final k90 s;
+    public final f6 v;
+    public CharacterStyle w;
+    public m90 x;
+    public m90 y;
+
+    public n(Context context) {
+        this(context, null, true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o oVar = this.b;
-                oVar.post(new n(oVar, 1));
-                break;
-            default:
-                o oVar2 = this.b;
-                oVar2.d = true;
-                oVar2.b();
-                break;
+    public ClickableSpan a(int i10, int i11) {
+        Layout layout = getLayout();
+        if (layout == null) {
+            return null;
         }
+        int paddingLeft = i10 - getPaddingLeft();
+        int paddingTop = i11 - getPaddingTop();
+        int lineForVertical = layout.getLineForVertical(paddingTop);
+        float f7 = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
+        float lineLeft = layout.getLineLeft(lineForVertical);
+        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                return clickableSpanArr[0];
+            }
+        }
+        return null;
+    }
+
+    public final void b() {
+        ArrayList arrayList = this.b;
+        if (arrayList == null) {
+            return;
+        }
+        Stack stack = this.c;
+        stack.addAll(arrayList);
+        arrayList.clear();
+        if (this.d) {
+            invalidate();
+            return;
+        }
+        if (getLayout() != null && (getText() instanceof Spanned)) {
+            int i10 = g.A;
+            int measuredWidth = getMeasuredWidth();
+            g.a(this, getLayout(), 0, measuredWidth > 0 ? measuredWidth : -2, (Spanned) getText(), stack, arrayList, null);
+        }
+        invalidate();
+    }
+
+    public final void c(boolean z10) {
+        int length = (getLayout() == null || getLayout().getText() == null) ? 0 : getLayout().getText().length();
+        if (!z10 && this.K == getLayout() && this.L == length) {
+            return;
+        }
+        this.n = y5.update(this.h, this, this.n, getLayout());
+        this.K = getLayout();
+        this.L = length;
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        k90 k90Var = this.s;
+        if (k90Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (a2 != null && motionEvent.getAction() == 0) {
+                o90 o90Var = new o90(a2, this.v, motionEvent.getX(), motionEvent.getY(), 0);
+                o90Var.d(j6.v0(j6.Ld, this.v));
+                this.E = o90Var;
+                k90Var.a(o90Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.E.i);
+                int spanEnd = spannableString.getSpanEnd(this.E.i);
+                h90 b10 = this.E.b();
+                b10.d(layout, spanStart, this.G ? 0.0f : getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b10);
+                AndroidUtilities.runOnUIThread(new r(this, o90Var, a2, 2), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                k90Var.d(true);
+                o90 o90Var2 = this.E;
+                if (o90Var2 != null && (characterStyle = o90Var2.i) == a2) {
+                    m90 m90Var = this.x;
+                    if (m90Var != null) {
+                        m90Var.a((ClickableSpan) characterStyle);
+                    } else if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
+                    }
+                    this.E = null;
+                    return true;
+                }
+                this.E = null;
+            }
+            if (motionEvent.getAction() == 3) {
+                k90Var.d(true);
+                this.E = null;
+            }
+        }
+        if (this.E == null && !(this.f && ((GestureDetector) this.a.a.b).onTouchEvent(motionEvent))) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.aa
+    public Layout getStaticTextLayout() {
+        return getLayout();
+    }
+
+    @Override // android.view.View, org.telegram.ui.Cells.z9
+    public final void invalidate() {
+        if (!this.M) {
+            this.M = true;
+            try {
+                if (P == null) {
+                    Field declaredField = TextView.class.getDeclaredField("mEditor");
+                    O = declaredField;
+                    declaredField.setAccessible(true);
+                    Class<?> cls = Class.forName("android.widget.Editor");
+                    P = cls;
+                    try {
+                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
+                        Q = declaredMethod;
+                        declaredMethod.setAccessible(true);
+                    } catch (Exception unused) {
+                    }
+                }
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+            }
+        }
+        super.invalidate();
+        if (isHardwareAccelerated()) {
+            try {
+                if (Q != null) {
+                    if (this.N == null) {
+                        this.N = O.get(this);
+                    }
+                    Object obj = this.N;
+                    if (obj != null) {
+                        Q.invoke(obj, null);
+                    }
+                }
+            } catch (Exception unused2) {
+            }
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        c(true);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        ArrayList arrayList;
+        Canvas canvas2;
+        int paddingLeft = getPaddingLeft();
+        int paddingTop = getPaddingTop();
+        canvas.save();
+        if (!this.H) {
+            canvas.translate(this.I ? 0.0f : paddingLeft, this.J ? 0.0f : paddingTop);
+        }
+        k90 k90Var = this.s;
+        if (k90Var != null && k90Var.f(canvas)) {
+            invalidate();
+        }
+        canvas.restore();
+        ArrayList arrayList2 = this.b;
+        boolean isEmpty = arrayList2.isEmpty();
+        Path path = this.e;
+        if (isEmpty) {
+            super.onDraw(canvas);
+        } else {
+            canvas.save();
+            path.rewind();
+            int size = arrayList2.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList2.get(i10);
+                i10++;
+                Rect bounds = ((g) obj).getBounds();
+                path.addRect(bounds.left + paddingLeft, bounds.top + paddingTop, bounds.right + paddingLeft, bounds.bottom + paddingTop, Path.Direction.CW);
+            }
+            canvas.clipPath(path, Region.Op.DIFFERENCE);
+            Emoji.emojiDrawingUseAlpha = this.r;
+            super.onDraw(canvas);
+            Emoji.emojiDrawingUseAlpha = true;
+            canvas.restore();
+            g gVar = (g) arrayList2.get(0);
+            if (gVar.m > 0.0f && gVar.n > 0.0f) {
+                canvas.save();
+                canvas.clipPath(path);
+                path.rewind();
+                ((g) arrayList2.get(0)).e(path);
+                canvas.clipPath(path);
+                super.onDraw(canvas);
+                canvas.restore();
+            }
+        }
+        c(false);
+        if (this.n != null) {
+            canvas.save();
+            canvas.translate(paddingLeft, paddingTop);
+            y5.drawAnimatedEmojis(canvas, getLayout(), this.n, 0.0f, arrayList2, 0.0f, getHeight(), 0.0f, 1.0f, this.F);
+            arrayList = arrayList2;
+            canvas.restore();
+        } else {
+            arrayList = arrayList2;
+        }
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        boolean z10 = ((g) arrayList.get(0)).n != -1.0f;
+        if (z10) {
+            canvas2 = canvas;
+            canvas2.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), null, 31);
+        } else {
+            canvas2 = canvas;
+            canvas2.save();
+        }
+        canvas2.translate(paddingLeft, AndroidUtilities.dp(2.0f) + paddingTop);
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList.get(i11);
+            i11++;
+            g gVar2 = (g) obj2;
+            gVar2.h(getPaint().getColor());
+            gVar2.draw(canvas2);
+        }
+        if (z10) {
+            path.rewind();
+            ((g) arrayList.get(0)).e(path);
+            canvas2.drawPath(path, j6.Il);
+        }
+        canvas2.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        b();
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        b();
+    }
+
+    @Override // android.widget.TextView
+    public void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        b();
+        c(true);
+    }
+
+    public void setDisablePaddingsOffset(boolean z10) {
+        this.H = z10;
+    }
+
+    public void setDisablePaddingsOffsetX(boolean z10) {
+        this.I = z10;
+    }
+
+    public void setDisablePaddingsOffsetY(boolean z10) {
+        this.J = z10;
+    }
+
+    public void setLoading(CharacterStyle characterStyle) {
+        if (this.w != characterStyle) {
+            k90 k90Var = this.s;
+            k90Var.e();
+            this.w = characterStyle;
+            r90 i10 = k90.i(getLayout(), characterStyle, getPaddingTop());
+            if (i10 != null) {
+                int v02 = j6.v0(j6.Ld, this.v);
+                i10.f(j6.l1(0.8f, v02), j6.l1(1.3f, v02), j6.l1(1.0f, v02), j6.l1(4.0f, v02));
+                i10.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                k90Var.b(i10, null);
+            }
+        }
+    }
+
+    public void setOnLinkLongPressListener(m90 m90Var) {
+        this.y = m90Var;
+    }
+
+    public void setOnLinkPressListener(m90 m90Var) {
+        this.x = m90Var;
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        this.d = false;
+        super.setText(charSequence, bufferType);
+    }
+
+    @Override // android.widget.TextView
+    public void setTextColor(int i10) {
+        super.setTextColor(i10);
+        this.F = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+    }
+
+    public void setUseAlphaForEmoji(boolean z10) {
+        this.r = z10;
+    }
+
+    public n(Context context, f6 f6Var, boolean z10) {
+        super(context);
+        ArrayList arrayList = new ArrayList();
+        this.b = arrayList;
+        this.c = new Stack();
+        this.e = new Path();
+        this.f = true;
+        this.h = 0;
+        this.r = true;
+        this.G = true;
+        this.K = null;
+        this.s = new k90(this);
+        this.v = f6Var;
+        this.a = new l(this, arrayList, new ai.k(11, this, z10));
+    }
+
+    public void setClearLinkOnLongPress(boolean z10) {
     }
 }

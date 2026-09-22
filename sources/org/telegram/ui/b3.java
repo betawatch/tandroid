@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -59,10 +59,10 @@ public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateLis
                 ((org.telegram.ui.Components.pr) this.b).b(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 5:
-                bl blVar = (bl) this.b;
-                blVar.getClass();
-                blVar.setBubbleOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                blVar.invalidate();
+                cl clVar = (cl) this.b;
+                clVar.getClass();
+                clVar.setBubbleOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                clVar.invalidate();
                 break;
             case 6:
                 ip ipVar = (ip) this.b;
@@ -184,7 +184,7 @@ public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateLis
                 photoViewer2.T1.invalidate();
                 break;
             case 21:
-                ((PhotoViewer) ((org.telegram.ui.Components.qm0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((PhotoViewer) ((org.telegram.ui.Components.sm0) this.b).b).T1.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 22:
                 PhotoViewer photoViewer3 = ((fu0) this.b).r;

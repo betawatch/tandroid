@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class aq implements dw0 {
+public final class aq implements fw0 {
     public final /* synthetic */ yp a;
     public final /* synthetic */ cq b;
 
@@ -11,15 +11,15 @@ public final class aq implements dw0 {
         this.a = ypVar;
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public final void g(int i10) {
         cq cqVar = this.b;
         cqVar.r = i10;
         cqVar.p(true);
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public final void n() {
+    @Override // org.telegram.ui.Components.fw0
+    public final void l() {
         int measuredHeight = this.b.c.getMeasuredHeight();
         yp ypVar = this.a;
         ypVar.y(0 - ypVar.getScrollX(), measuredHeight - ypVar.getScrollY(), false);

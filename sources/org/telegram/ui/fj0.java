@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class fj0 implements Runnable {
         org.telegram.ui.Components.pc M;
         wo0 wo0Var;
         wo0 wo0Var2;
-        lk lkVar;
+        mk mkVar;
         String str = "";
         int i12 = 12;
         int i13 = 0;
@@ -412,8 +412,8 @@ public final /* synthetic */ class fj0 implements Runnable {
                 if (gt0Var.getWindow() != null) {
                     gt0Var.setFocusable(true);
                     zn znVar = photoViewer2.l4;
-                    if (znVar != null && (lkVar = znVar.Y) != null) {
-                        lkVar.m0(false);
+                    if (znVar != null && (mkVar = znVar.Y) != null) {
+                        mkVar.m0(false);
                         break;
                     }
                 }
@@ -475,9 +475,9 @@ public final /* synthetic */ class fj0 implements Runnable {
                 break;
             case 22:
                 rt0 rt0Var = (rt0) this.b;
-                org.telegram.ui.Components.t71 t71Var = (org.telegram.ui.Components.t71) this.c;
+                org.telegram.ui.Components.v71 v71Var = (org.telegram.ui.Components.v71) this.c;
                 rt0Var.getClass();
-                if (t71Var.p() > 0 && t71Var.n() >= t71Var.p() - 590) {
+                if (v71Var.p() > 0 && v71Var.n() >= v71Var.p() - 590) {
                     rt0Var.a.e0.invalidate();
                     break;
                 }

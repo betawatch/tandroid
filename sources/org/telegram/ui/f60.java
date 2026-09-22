@@ -25,7 +25,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f60 extends FrameLayout {
     public int E;
@@ -35,10 +35,10 @@ public final class f60 extends FrameLayout {
     public final float[] I;
     public boolean J;
     public final /* synthetic */ i60 K;
-    public final org.telegram.ui.Components.kj0 a;
+    public final org.telegram.ui.Components.nj0 a;
     public final TextView b;
     public final TLRPC.GroupCallParticipant c;
-    public final org.telegram.ui.Components.hj0 d;
+    public final org.telegram.ui.Components.kj0 d;
     public boolean e;
     public float f;
     public float h;
@@ -66,16 +66,16 @@ public final class f60 extends FrameLayout {
         this.r = ChatObject.getParticipantVolume(groupCallParticipant) / 20000.0f;
         this.G = 1.0f;
         setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.speaker, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        this.d = hj0Var;
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-        this.a = kj0Var;
-        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        kj0Var.setAnimation(hj0Var);
-        kj0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(kj0Var, w7.y5.d(-2, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
-        hj0Var.P(this.r == 0.0d ? 17 : 34);
-        hj0Var.N(hj0Var.f - 1, false, true);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.speaker, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+        this.d = kj0Var;
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.a = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        nj0Var.setAnimation(kj0Var);
+        nj0Var.setTag(this.r == 0.0d ? 1 : null);
+        addView(nj0Var, w7.y5.d(-2, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        kj0Var.P(this.r == 0.0d ? 17 : 34);
+        kj0Var.N(kj0Var.f - 1, false, true);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setLines(1);
@@ -140,16 +140,16 @@ public final class f60 extends FrameLayout {
             }
         }
         Integer num = this.r == 0.0d ? 1 : null;
-        org.telegram.ui.Components.kj0 kj0Var = this.a;
-        if ((kj0Var.getTag() != null || num == null) && (kj0Var.getTag() == null || num != null)) {
+        org.telegram.ui.Components.nj0 nj0Var = this.a;
+        if ((nj0Var.getTag() != null || num == null) && (nj0Var.getTag() == null || num != null)) {
             return;
         }
         int i10 = this.r == 0.0d ? 17 : 34;
-        org.telegram.ui.Components.hj0 hj0Var = this.d;
-        hj0Var.P(i10);
-        hj0Var.M(this.r != 0.0d ? 17 : 0);
-        hj0Var.start();
-        kj0Var.setTag(num);
+        org.telegram.ui.Components.kj0 kj0Var = this.d;
+        kj0Var.P(i10);
+        kj0Var.M(this.r != 0.0d ? 17 : 0);
+        kj0Var.start();
+        nj0Var.setTag(num);
     }
 
     public final boolean b(MotionEvent motionEvent) {
@@ -285,9 +285,9 @@ public final class f60 extends FrameLayout {
         Canvas canvas2 = canvas;
         canvas2.drawPath(path, paint);
         int participantVolume = (int) (ChatObject.getParticipantVolume(f60Var.c) / 100.0d);
-        org.telegram.ui.Components.kj0 kj0Var = f60Var.a;
-        int dp4 = AndroidUtilities.dp(5.0f) + (kj0Var.getMeasuredWidth() / 2) + kj0Var.getLeft();
-        int measuredHeight2 = (kj0Var.getMeasuredHeight() / 2) + kj0Var.getTop();
+        org.telegram.ui.Components.nj0 nj0Var = f60Var.a;
+        int dp4 = AndroidUtilities.dp(5.0f) + (nj0Var.getMeasuredWidth() / 2) + nj0Var.getLeft();
+        int measuredHeight2 = (nj0Var.getMeasuredHeight() / 2) + nj0Var.getTop();
         int i14 = 0;
         while (true) {
             float[] fArr2 = f60Var.I;

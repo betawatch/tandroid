@@ -1,23 +1,30 @@
 package l;
 
+import android.content.ComponentName;
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.SurfaceTexture;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcel;
 import android.os.SystemClock;
-import android.util.Log;
 import android.util.SparseArray;
+import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.profileinstaller.ProfileInstallReceiver;
+import androidx.recyclerview.widget.RecyclerView;
+import b2.q0;
 import b2.s0;
 import com.google.android.gms.internal.cast.b5;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import gg.b2;
 import j$.util.Objects;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,174 +34,289 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import m.e2;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.f3;
 import org.telegram.ui.Cells.f9;
 import org.telegram.ui.Cells.k0;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ef0;
+import org.telegram.ui.Components.ff0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.jc0;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.o81;
-import org.telegram.ui.Components.ro0;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.v81;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.lq0;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.sg0;
+import org.telegram.ui.Components.sq0;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.to0;
+import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.cc1;
-import qg.n2;
-import qg.w1;
-import w7.z8;
+import org.telegram.ui.m9;
+import org.telegram.ui.ts0;
+import org.telegram.ui.u9;
+import org.telegram.ui.web.d1;
+import pg.b1;
+import pg.f1;
+import s4.c1;
+import s4.h1;
+import s4.o0;
+import s4.p0;
+import w7.y8;
+import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, com.google.android.gms.common.api.internal.s, w1, r4.c, com.google.android.gms.common.api.internal.o, n5.b, OnCompleteListener {
-    public Object a;
+public class d implements e2, y2.h, le.d, j, l2.h, to0, le.f, lg.o, s71, b2, u9, com.google.android.gms.common.api.internal.s, h1, w2.a, lq0 {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public /* synthetic */ d(Object obj) {
-        this.a = obj;
+    public /* synthetic */ d(int i10, boolean z10) {
+        this.a = i10;
     }
 
     @Override // le.f
     public void A() {
-        ((l9) this.a).a.invalidate();
+        ((l9) this.b).a.invalidate();
     }
 
     @Override // le.d
     public void C(float f7, int i10) {
-        ((le.j) this.a).i(f7);
+        ((le.j) this.b).i(f7);
     }
 
-    @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
-        ((le.j) this.a).i(f7);
+    @Override // gg.b2
+    public /* synthetic */ a0.i D() {
+        return null;
+    }
+
+    @Override // m.e2
+    public void E(l lVar, n nVar) {
+        f fVar = (f) this.b;
+        Handler handler = fVar.f;
+        handler.removeCallbacksAndMessages(null);
+        ArrayList arrayList = fVar.n;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= size) {
+                i10 = -1;
+                break;
+            } else if (lVar == ((e) arrayList.get(i10)).b) {
+                break;
+            } else {
+                i10++;
+            }
+        }
+        if (i10 == -1) {
+            return;
+        }
+        int i11 = i10 + 1;
+        handler.postAtTime(new com.google.android.gms.internal.cast.p(this, i11 < arrayList.size() ? (e) arrayList.get(i11) : null, nVar, lVar, false, 1), lVar, SystemClock.uptimeMillis() + 200);
     }
 
     @Override // l2.h
-    public long E(long j3, long j10) {
+    public boolean F() {
+        return true;
+    }
+
+    @Override // lg.o
+    public void G(boolean z10) {
+        ((ff0) this.b).c.setAspectLock(z10);
+    }
+
+    @Override // le.d
+    public void H(int i10, float f7, float f10, le.e eVar) {
+        ((le.j) this.b).i(f7);
+    }
+
+    @Override // s4.h1
+    public View I(int i10) {
+        return ((o0) this.b).q(i10);
+    }
+
+    @Override // org.telegram.ui.u9
+    public String I0() {
+        return ((d1) this.b).i0;
+    }
+
+    @Override // w2.a
+    public long J(long j3) {
+        ArrayList arrayList = (ArrayList) this.b;
+        if (arrayList.isEmpty() || j3 < ((z3.a) arrayList.get(0)).b) {
+            return -9223372036854775807L;
+        }
+        for (int i10 = 1; i10 < arrayList.size(); i10++) {
+            long j10 = ((z3.a) arrayList.get(i10)).b;
+            if (j3 == j10) {
+                return j10;
+            }
+            if (j3 < j10) {
+                z3.a aVar = (z3.a) arrayList.get(i10 - 1);
+                long j11 = aVar.d;
+                return (j11 == -9223372036854775807L || j11 > j3) ? aVar.b : j11;
+            }
+        }
+        z3.a aVar2 = (z3.a) e9.q.l(arrayList);
+        long j12 = aVar2.d;
+        return (j12 == -9223372036854775807L || j3 < j12) ? aVar2.b : j12;
+    }
+
+    @Override // org.telegram.ui.u9
+    public void K(String str) {
+        d1 d1Var = (d1) this.b;
+        try {
+            d1Var.P = System.currentTimeMillis();
+            d1Var.z("qr_text_received", new JSONObject().put("data", str));
+        } catch (JSONException e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // gg.b2
+    public boolean L(int i10) {
+        return i10 == ((sq0) this.b).r;
+    }
+
+    @Override // l2.h
+    public long M() {
+        return 0L;
+    }
+
+    @Override // s4.h1
+    public int N(View view) {
+        return o0.y(view) + ((ViewGroup.MarginLayoutParams) ((p0) view.getLayoutParams())).rightMargin;
+    }
+
+    @Override // l2.h
+    public long P(long j3) {
         return 1L;
     }
 
-    @Override // y2.h
-    public void F(y2.j jVar, long j3, long j10, boolean z10) {
-        ((l2.g) this.a).w((y2.p) jVar, j10);
+    @Override // l2.h
+    public long Q(long j3, long j10) {
+        return 1L;
     }
 
-    public void G(HashMap hashMap) {
-        if (((SparseArray) this.a) == null) {
-            this.a = new SparseArray(hashMap.size());
+    @Override // w2.a
+    public void R(long j3) {
+        ArrayList arrayList = (ArrayList) this.b;
+        int a02 = a0(j3);
+        if (a02 == 0) {
+            return;
+        }
+        long j10 = ((z3.a) arrayList.get(a02 - 1)).d;
+        if (j10 == -9223372036854775807L || j10 >= j3) {
+            a02--;
+        }
+        arrayList.subList(0, a02).clear();
+    }
+
+    @Override // y2.h
+    public void S(y2.j jVar, long j3, long j10, boolean z10) {
+        ((l2.g) this.b).w((y2.p) jVar, j10);
+    }
+
+    public void T(HashMap hashMap) {
+        if (((SparseArray) this.b) == null) {
+            this.b = new SparseArray(hashMap.size());
         }
         for (Map.Entry entry : hashMap.entrySet()) {
-            ((SparseArray) this.a).put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
+            ((SparseArray) this.b).put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
         }
     }
 
-    public boolean H(int i10) {
-        o81 o81Var = ((x81) this.a).L;
-        if (o81Var == null) {
-            return false;
-        }
-        return o81Var.c(i10);
-    }
-
-    public void I(Runnable runnable) {
-        Runnable runnable2 = (Runnable) ((HashMap) this.a).remove(runnable);
-        if (runnable2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable2);
-        }
-    }
-
-    public void J() {
-        HashMap hashMap = (HashMap) this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            AndroidUtilities.cancelRunOnUIThread((Runnable) ((Map.Entry) it.next()).getValue());
-        }
-        hashMap.clear();
-    }
-
-    @Override // ah.k
-    public void K(ah.a aVar) {
-        aVar.a(((uq0) this.a).getThemedColor(j6.d6));
-        aVar.b(SharedConfig.chatBlurEnabled());
-    }
-
-    public StringBuilder L() {
-        df.a aVar = (df.a) this.a;
-        if (!(aVar instanceof ye.m)) {
-            return null;
-        }
-        StringBuilder sb2 = ((ye.m) aVar).b.b;
-        if (sb2.length() == 0) {
-            return null;
-        }
-        return sb2;
-    }
-
-    public void M(float f7) {
-        x81 x81Var = (x81) this.a;
-        if (f7 == 1.0f) {
-            View[] viewArr = x81Var.e;
-            View[] viewArr2 = x81Var.e;
-            if (viewArr[1] != null) {
-                x81Var.G();
-                x81Var.h.put(x81Var.f[1], viewArr2[1]);
-                x81Var.removeView(viewArr2[1]);
-                x81Var.F(viewArr2[0], 0.0f);
-                viewArr2[1] = null;
+    public void V() {
+        pg.d1 d1Var = ((f1) this.b).d;
+        if (d1Var != null) {
+            b1 b1Var = d1Var.s;
+            if (b1Var != null) {
+                d1Var.cancelRunnable(b1Var);
+                d1Var.s = null;
             }
-            x81Var.A(x81Var.b);
-            return;
+            b1 b1Var2 = new b1(d1Var, 1);
+            d1Var.s = b1Var2;
+            d1Var.postRunnable(b1Var2, 1L);
         }
-        View[] viewArr3 = x81Var.e;
-        View[] viewArr4 = x81Var.e;
-        View view = viewArr3[1];
-        if (view == null) {
-            return;
-        }
-        if (x81Var.y) {
-            x81Var.F(view, (1.0f - f7) * viewArr3[0].getMeasuredWidth());
-            x81Var.F(viewArr4[0], (-r2.getMeasuredWidth()) * f7);
-        } else {
-            x81Var.F(view, (1.0f - f7) * (-viewArr3[0].getMeasuredWidth()));
-            x81Var.F(viewArr4[0], r2.getMeasuredWidth() * f7);
-        }
-        x81Var.x(false);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    public s0.d W(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
-        cc1 cc1Var = (cc1) ((k0) this.a);
+        cc1 cc1Var = (cc1) ((k0) this.b);
         int i10 = (int) (j6.q * 100.0f);
         int i11 = (int) (f7 * 100.0f);
         j6.q = f7;
         if (i10 != i11) {
             ThemeActivity themeActivity = cc1Var.e.e;
-            fl0 fl0Var = (fl0) themeActivity.b.L(themeActivity.f0);
-            if (fl0Var != null) {
-                ((f9) fl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (j6.q * 100.0f))));
+            il0 il0Var = (il0) themeActivity.b.L(themeActivity.f0);
+            if (il0Var != null) {
+                ((f9) il0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (j6.q * 100.0f))));
             }
             j6.E(true);
         }
     }
 
+    public s0.d Y(int i10) {
+        return null;
+    }
+
+    @Override // lg.o
+    public void Z(boolean z10) {
+        ff0 ff0Var = (ff0) this.b;
+        ff0Var.getClass();
+        ef0 ef0Var = ff0Var.a;
+        if (ef0Var != null) {
+            ((ts0) ef0Var).a(z10);
+        }
+    }
+
+    public int a0(long j3) {
+        ArrayList arrayList = (ArrayList) this.b;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (j3 < ((z3.a) arrayList.get(i10)).b) {
+                return i10;
+            }
+        }
+        return arrayList.size();
+    }
+
     @Override // com.google.android.gms.common.api.internal.s
     public void accept(Object obj, Object obj2) {
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        p6.a aVar = (p6.a) ((p6.c) obj).u();
-        n6.o oVar = (n6.o) this.a;
-        Parcel I0 = aVar.I0();
-        k7.a.c(I0, oVar);
-        try {
-            aVar.b.transact(1, I0, null, 1);
-            I0.recycle();
-            taskCompletionSource.setResult(null);
-        } catch (Throwable th2) {
-            I0.recycle();
-            throw th2;
+        switch (this.a) {
+            case 18:
+                g8.e eVar = (g8.e) this.b;
+                r7.z zVar = (r7.z) ((r7.k) obj).u();
+                r7.f fVar = new r7.f(1, (TaskCompletionSource) obj2);
+                Parcel O0 = zVar.O0();
+                r7.d.c(O0, eVar);
+                r7.d.d(O0, fVar);
+                O0.writeString(null);
+                zVar.S0(O0, 63);
+                break;
+            default:
+                s6.f fVar2 = new s6.f(0, (TaskCompletionSource) obj2);
+                s6.e eVar2 = (s6.e) ((s6.h) obj).u();
+                s6.a aVar = (s6.a) this.b;
+                Parcel I0 = eVar2.I0();
+                k7.a.d(I0, fVar2);
+                k7.a.c(I0, aVar);
+                eVar2.J0(I0, 1);
+                break;
         }
     }
 
@@ -203,12 +325,60 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         return 0L;
     }
 
-    @Override // ah.k
-    public void d(Canvas canvas) {
-        uq0 uq0Var = (uq0) this.a;
-        canvas.drawColor(uq0Var.getThemedColor(j6.d6));
-        if (SharedConfig.chatBlurEnabled()) {
-            uq0Var.O0.b(canvas, -3);
+    public void b0(aa.a aVar) {
+        h8.j jVar = (h8.j) this.b;
+        jVar.a = aVar;
+        Iterator it = jVar.c.iterator();
+        while (it.hasNext()) {
+            ((x6.e) it.next()).b();
+        }
+        jVar.c.clear();
+        jVar.b = null;
+    }
+
+    public boolean c0(int i10, int i11, Bundle bundle) {
+        return false;
+    }
+
+    @Override // w2.a
+    public void clear() {
+        ((ArrayList) this.b).clear();
+    }
+
+    @Override // w2.a
+    public long d(long j3) {
+        ArrayList arrayList = (ArrayList) this.b;
+        if (arrayList.isEmpty()) {
+            return Long.MIN_VALUE;
+        }
+        if (j3 < ((z3.a) arrayList.get(0)).b) {
+            return ((z3.a) arrayList.get(0)).b;
+        }
+        for (int i10 = 1; i10 < arrayList.size(); i10++) {
+            z3.a aVar = (z3.a) arrayList.get(i10);
+            long j10 = aVar.b;
+            long j11 = aVar.b;
+            if (j3 < j10) {
+                long j12 = ((z3.a) arrayList.get(i10 - 1)).d;
+                return (j12 == -9223372036854775807L || j12 <= j3 || j12 >= j11) ? j11 : j12;
+            }
+        }
+        long j13 = ((z3.a) e9.q.l(arrayList)).d;
+        if (j13 == -9223372036854775807L || j3 >= j13) {
+            return Long.MIN_VALUE;
+        }
+        return j13;
+    }
+
+    @Override // lg.o
+    public void d0() {
+        ef0 ef0Var = ((ff0) this.b).a;
+        if (ef0Var != null) {
+            PhotoViewer photoViewer = ((ts0) ef0Var).a;
+            if (photoViewer.c2 == 1) {
+                photoViewer.H2 = true;
+                photoViewer.p3();
+            }
         }
     }
 
@@ -217,17 +387,86 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         return 0L;
     }
 
-    @Override // l2.h
-    public long g(long j3, long j10) {
-        return -9223372036854775807L;
+    public void e0(c1 c1Var, q0 q0Var, q0 q0Var2) {
+        boolean z10;
+        c1 U;
+        int i10;
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        recyclerView.b.k(c1Var);
+        recyclerView.h(c1Var);
+        c1Var.q(false);
+        s4.f1 f1Var = (s4.f1) recyclerView.c0;
+        f1Var.getClass();
+        int i11 = q0Var.a;
+        int i12 = q0Var.b;
+        View view = c1Var.a;
+        int left = q0Var2 == null ? view.getLeft() : q0Var2.a;
+        int top = q0Var2 == null ? view.getTop() : q0Var2.b;
+        if (c1Var.j() || (i11 == left && i12 == top)) {
+            int i13 = c1Var.h;
+            int i14 = -1;
+            if (i13 != -1) {
+                for (int i15 = 0; i15 < recyclerView.getChildCount(); i15++) {
+                    View childAt = recyclerView.getChildAt(i15);
+                    if (childAt != null && (U = recyclerView.U(childAt)) != null && !U.j() && (i10 = U.h) >= 0 && i10 < i13 && i10 > i14) {
+                        i14 = i10;
+                    }
+                }
+            }
+            c1Var.i = (c1Var.h - i14) + (i14 * MediaDataController.MAX_STYLE_RUNS_COUNT);
+            f1Var.s(c1Var, q0Var);
+            z10 = true;
+        } else {
+            view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
+            z10 = f1Var.r(c1Var, q0Var, i11, i12, left, top);
+        }
+        if (z10) {
+            recyclerView.m0();
+        }
     }
 
-    @Override // fd.a
-    public Object get() {
-        return new s5.j((Context) ((fd.a) this.a).get(), "com.google.android.datatransport.events", Integer.valueOf(s5.j.d).intValue());
+    @Override // org.telegram.ui.u9
+    public /* synthetic */ boolean e1(String str, m9 m9Var) {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // gg.b2
+    public void f(int i10) {
+        sq0 sq0Var = (sq0) this.b;
+        wq0 wq0Var = sq0Var.K;
+        sq0Var.s = i10;
+        if (sq0Var.v != i10) {
+            sq0Var.d.clear();
+        }
+        int i11 = sq0Var.J;
+        if (sq0Var.h() != 0 || sq0Var.e.e() || sq0Var.I) {
+            wq0Var.x0.b(i11);
+        } else {
+            wq0Var.Q.e(false, true);
+        }
+        sq0Var.l();
+        int i12 = wq0.a1;
+        wq0Var.K0(true);
+    }
+
+    public void f0(c1 c1Var) {
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        o0 o0Var = recyclerView.x;
+        View view = c1Var.a;
+        of.e eVar = recyclerView.b;
+        lf.h hVar = o0Var.a;
+        o0.b bVar = (o0.b) hVar.b;
+        int indexOfChild = ((RecyclerView) bVar.b).indexOfChild(view);
+        if (indexOfChild >= 0) {
+            if (((e6.n) hVar.c).B(indexOfChild)) {
+                hVar.Y(view);
+            }
+            bVar.l(indexOfChild);
+        }
+        eVar.g(view);
+    }
+
+    @Override // org.telegram.ui.Components.to0
     public CharSequence getContentDescription() {
         return " ";
     }
@@ -242,27 +481,24 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         return false;
     }
 
+    @Override // s4.h1
+    public int k(View view) {
+        return o0.x(view) - ((ViewGroup.MarginLayoutParams) ((p0) view.getLayoutParams())).leftMargin;
+    }
+
     @Override // l2.h
-    public m2.j k(long j3) {
-        return (m2.j) this.a;
+    public long l(long j3, long j10) {
+        return -9223372036854775807L;
     }
 
-    @Override // com.google.android.gms.common.api.internal.o
-    public void l(Object obj) {
-        com.google.android.gms.common.api.internal.n nVar;
-        androidx.activity.n nVar2 = ((r7.i) this.a).b;
-        synchronized (nVar2) {
-            nVar2.b = false;
-            nVar = ((com.google.android.gms.common.api.internal.p) nVar2.c).c;
-        }
-        if (nVar != null) {
-            ((r7.c) nVar2.d).c(nVar, 2441);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int l0() {
         return 0;
+    }
+
+    @Override // l2.h
+    public m2.j m(long j3) {
+        return (m2.j) this.b;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
@@ -271,10 +507,10 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         y2.p pVar = (y2.p) jVar;
-        l2.g gVar = (l2.g) this.a;
+        l2.g gVar = (l2.g) this.b;
         long j12 = pVar.a;
         Uri uri = pVar.d.c;
         u2.t tVar = new u2.t(j10);
@@ -299,10 +535,10 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
     }
 
     @Override // y2.h
-    public void n(y2.j jVar, long j3, long j10, int i10) {
+    public void o(y2.j jVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.p pVar = (y2.p) jVar;
-        l2.g gVar = (l2.g) this.a;
+        l2.g gVar = (l2.g) this.b;
         if (i10 == 0) {
             long j11 = pVar.a;
             tVar = new u2.t(pVar.b);
@@ -314,12 +550,43 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         gVar.q.s(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
+    @Override // org.telegram.ui.u9
+    public void onDismiss() {
+        d1 d1Var = (d1) this.b;
+        d1Var.z("scan_qr_popup_closed", null);
+        d1Var.h0 = false;
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public void onStateChanged(boolean z10, int i10) {
+        tk0 tk0Var = (tk0) this.b;
+        if (z10 && tk0Var.n.n() >= 0) {
+            tk0Var.w = true;
+        }
+        sg0 sg0Var = tk0Var.f;
+        jc0 jc0Var = tk0Var.x;
+        sg0Var.a(z10, true);
+        AndroidUtilities.cancelRunOnUIThread(jc0Var);
+        if (z10) {
+            AndroidUtilities.runOnUIThread(jc0Var, 16L);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
     @Override // y2.h
-    public void o(y2.j jVar, long j3, long j10) {
+    public void p(y2.j jVar, long j3, long j10) {
         int i10;
         long j11;
         y2.p pVar = (y2.p) jVar;
-        l2.g gVar = (l2.g) this.a;
+        l2.g gVar = (l2.g) this.b;
         long j12 = pVar.a;
         Uri uri = pVar.d.c;
         u2.t tVar = new u2.t(j10);
@@ -371,7 +638,7 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
                 if (pVar.b.a.equals(gVar.F)) {
                     Uri uri2 = gVar.H.k;
                     if (uri2 == null) {
-                        uri2 = z8.a(pVar.d.c);
+                        uri2 = y8.a(pVar.d.c);
                     }
                     gVar.F = uri2;
                 }
@@ -413,47 +680,74 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         }
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        y8.e0 e0Var = (y8.e0) this.a;
-        if (task.isSuccessful()) {
-            x8.m.M0(e0Var, true, (byte[]) task.getResult());
-        } else {
-            Log.e("WearableLS", "Failed to resolve future, sending null response", task.getException());
-            x8.m.M0(e0Var, false, null);
-        }
-    }
-
     @Override // m.e2
-    public void p(l lVar, MenuItem menuItem) {
-        ((f) this.a).f.removeCallbacksAndMessages(lVar);
-    }
-
-    @Override // r4.c
-    public void q() {
-        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
+    public void q(l lVar, MenuItem menuItem) {
+        ((f) this.b).f.removeCallbacksAndMessages(lVar);
     }
 
     @Override // l.j
     public void r(l lVar) {
-        k2.u uVar = ((ActionMenuView) this.a).K;
-        if (uVar != null) {
-            uVar.r(lVar);
+        ki.e0 e0Var = ((ActionMenuView) this.b).K;
+        if (e0Var != null) {
+            e0Var.r(lVar);
         }
+    }
+
+    @Override // s4.h1
+    public int s() {
+        return ((o0) this.b).D();
     }
 
     @Override // l2.h
-    public long s(long j3, long j10) {
+    public long t(long j3, long j10) {
         return 0L;
     }
 
+    @Override // org.telegram.ui.Components.lq0
+    public void t0() {
+        pc k10 = ((y3) this.b).getBulletinFactory().k(false);
+        k10.t = true;
+        k10.j();
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 15:
+                return "ProviderMetadata{ componentName=" + ((ComponentName) this.b).flattenToShortString() + " }";
+            default:
+                return super.toString();
+        }
+    }
+
+    @Override // w2.a
+    public i0 u(long j3) {
+        int a02 = a0(j3);
+        if (a02 == 0) {
+            g0 g0Var = i0.b;
+            return a1.e;
+        }
+        z3.a aVar = (z3.a) ((ArrayList) this.b).get(a02 - 1);
+        long j10 = aVar.d;
+        if (j10 == -9223372036854775807L || j3 < j10) {
+            return aVar.a;
+        }
+        g0 g0Var2 = i0.b;
+        return a1.e;
+    }
+
+    @Override // s4.h1
+    public int v() {
+        o0 o0Var = (o0) this.b;
+        return o0Var.m - o0Var.E();
+    }
+
     @Override // l.j
-    public boolean t(l lVar, MenuItem menuItem) {
-        m.k kVar = ((ActionMenuView) this.a).P;
+    public boolean w(l lVar, MenuItem menuItem) {
+        m.k kVar = ((ActionMenuView) this.b).P;
         if (kVar == null) {
             return false;
         }
-        Iterator it = ((CopyOnWriteArrayList) ((Toolbar) ((ka.c) kVar).b).W.c).iterator();
+        Iterator it = ((CopyOnWriteArrayList) ((Toolbar) ((k2.e) kVar).b).W.c).iterator();
         while (it.hasNext()) {
             if (((androidx.fragment.app.c0) it.next()).a.p()) {
                 return true;
@@ -462,116 +756,100 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
         return false;
     }
 
-    @Override // m.e2
-    public void u(l lVar, n nVar) {
-        f fVar = (f) this.a;
-        Handler handler = fVar.f;
-        handler.removeCallbacksAndMessages(null);
-        ArrayList arrayList = fVar.n;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (true) {
-            if (i10 >= size) {
-                i10 = -1;
-                break;
-            } else if (lVar == ((e) arrayList.get(i10)).b) {
-                break;
-            } else {
-                i10++;
+    @Override // lg.o
+    public void x() {
+        ef0 ef0Var = ((ff0) this.b).a;
+        if (ef0Var != null) {
+            ((ts0) ef0Var).a.e0.invalidate();
+        }
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i y() {
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002f  */
+    @Override // w2.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean z(z3.a aVar, long j3) {
+        boolean z10;
+        int size;
+        ArrayList arrayList = (ArrayList) this.b;
+        long j10 = aVar.b;
+        e2.d.b(j10 != -9223372036854775807L);
+        if (j10 <= j3) {
+            long j11 = aVar.d;
+            if (j11 == -9223372036854775807L || j3 < j11) {
+                z10 = true;
+                for (size = arrayList.size() - 1; size >= 0; size--) {
+                    if (j10 >= ((z3.a) arrayList.get(size)).b) {
+                        arrayList.add(size + 1, aVar);
+                        return z10;
+                    }
+                    if (((z3.a) arrayList.get(size)).b <= j3) {
+                        z10 = false;
+                    }
+                }
+                arrayList.add(0, aVar);
+                return z10;
             }
         }
-        if (i10 == -1) {
-            return;
+        z10 = false;
+        while (size >= 0) {
         }
-        int i11 = i10 + 1;
-        handler.postAtTime(new com.google.android.gms.internal.cast.p(this, i11 < arrayList.size() ? (e) arrayList.get(i11) : null, nVar, lVar, false, 1), lVar, SystemClock.uptimeMillis() + 200);
+        arrayList.add(0, aVar);
+        return z10;
     }
 
-    @Override // l2.h
-    public boolean v() {
-        return true;
+    public /* synthetic */ d(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // l2.h
-    public long w() {
-        return 0L;
+    @Override // org.telegram.ui.Components.s71
+    public void onRenderedFirstFrame() {
     }
 
-    @Override // r4.c
-    public void x(int i10, Object obj) {
-        String str;
-        switch (i10) {
-            case 1:
-                str = "RESULT_INSTALL_SUCCESS";
-                break;
-            case 2:
-                str = "RESULT_ALREADY_INSTALLED";
-                break;
-            case 3:
-                str = "RESULT_UNSUPPORTED_ART_VERSION";
-                break;
-            case 4:
-                str = "RESULT_NOT_WRITABLE";
-                break;
-            case 5:
-                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
-                break;
-            case 6:
-                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
-                break;
-            case 7:
-                str = "RESULT_IO_EXCEPTION";
-                break;
-            case 8:
-                str = "RESULT_PARSE_EXCEPTION";
-                break;
-            case 9:
-            default:
-                str = "";
-                break;
-            case 10:
-                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
-                break;
-            case 11:
-                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
-                break;
-        }
-        if (i10 == 6 || i10 == 7 || i10 == 8) {
-            Log.e("ProfileInstaller", str, (Throwable) obj);
-        } else {
-            Log.d("ProfileInstaller", str);
-        }
-        ((ProfileInstallReceiver) this.a).setResultCode(i10);
+    public /* synthetic */ d(s6.g gVar, s6.a aVar) {
+        this.a = 23;
+        this.b = aVar;
     }
 
-    @Override // qg.w1
-    public void y(float f7) {
-        ((n2) this.a).setOutlineWidth(f7);
-    }
-
-    @Override // l2.h
-    public long z(long j3) {
-        return 1L;
+    public d(Context context, GestureDetector.OnGestureListener onGestureListener) {
+        this.a = 17;
+        this.b = new GestureDetector(context, onGestureListener, null);
     }
 
     public d(int i10) {
+        this.a = i10;
         switch (i10) {
-            case 27:
-                this.a = new f3[zf.b.values().length];
+            case 26:
+                this.b = new ArrayList();
                 break;
+            case 27:
             default:
-                this.a = new HashMap();
+                if (Build.VERSION.SDK_INT >= 26) {
+                    this.b = new s0.e(this);
+                    break;
+                } else {
+                    this.b = new mh0(this);
+                    break;
+                }
+            case 28:
+                this.b = new CopyOnWriteArrayList();
                 break;
         }
     }
 
-    @Override // qg.w1
-    public float get() {
-        return ((n2) this.a).F;
+    @Override // org.telegram.ui.Components.to0
+    public void B() {
     }
 
-    @Override // org.telegram.ui.Components.ro0
-    public void B() {
+    @Override // org.telegram.ui.Components.lq0
+    public /* synthetic */ void U() {
     }
 
     @Override // le.f
@@ -582,12 +860,40 @@ public final class d implements e2, y2.h, le.d, j, l2.h, ro0, le.f, ah.k, v81, c
     public /* synthetic */ void j() {
     }
 
+    @Override // gg.b2
+    public /* synthetic */ void O(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.u9
+    public /* synthetic */ void T0(MrzRecognizer.Result result) {
+    }
+
     @Override // le.f
-    public /* synthetic */ void f(boolean z10) {
+    public /* synthetic */ void g(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
     @Override // l2.h
     public long c(long j3, long j10) {
         return j10;
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public void onError(v71 v71Var, Exception exc) {
+    }
+
+    @Override // org.telegram.ui.Components.s71
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

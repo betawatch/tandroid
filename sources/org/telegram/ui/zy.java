@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class zy implements org.telegram.ui.Components.ml0 {
+public final class zy implements org.telegram.ui.Components.pl0 {
     public final Rect a = new Rect();
     public final /* synthetic */ dz b;
 
@@ -17,7 +17,7 @@ public final class zy implements org.telegram.ui.Components.ml0 {
         this.b = dzVar;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public final boolean c(float f7, float f10, int i10, View view) {
         dz dzVar = this.b;
         if (dzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.h4)) {
@@ -34,11 +34,11 @@ public final class zy implements org.telegram.ui.Components.ml0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public final void g() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public final void q(float f7) {
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class d80 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public Drawable E;
@@ -49,7 +49,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public bi.o n;
     public FrameLayout r;
     public ci.n6 s;
-    public org.telegram.ui.Components.hj0 v;
+    public org.telegram.ui.Components.kj0 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -146,22 +146,22 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setAddToContainer(false);
         ScrollView scrollView = new ScrollView(context);
         scrollView.setFillViewport(true);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(kj0Var, w7.y5.e(28, 28, 17));
+        frameLayout.addView(nj0Var, w7.y5.e(28, 28, 17));
         ci.n6 n6Var = new ci.n6(this, context, frameLayout, 17);
         this.s = n6Var;
         scrollView.addView(n6Var, w7.y5.x(-1, -2, 51));
-        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = hj0Var;
-        hj0Var.h = true;
-        hj0Var.Z = true;
-        hj0Var.o();
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = kj0Var;
+        kj0Var.h = true;
+        kj0Var.Z = true;
+        kj0Var.o();
         this.v.P(org.telegram.ui.ActionBar.j6.A0().q() ? this.v.e[0] - 1 : 0);
         this.v.N(org.telegram.ui.ActionBar.j6.A0().q() ? this.v.e[0] - 1 : 0, false, false);
-        kj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.j6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
-        kj0Var.setAnimation(this.v);
-        frameLayout.setOnClickListener(new tv(11, this, kj0Var));
+        nj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.j6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
+        nj0Var.setAnimation(this.v);
+        frameLayout.setOnClickListener(new tv(11, this, nj0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
         this.s.addView(frameLayout2, w7.y5.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
@@ -179,7 +179,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.h = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         bi.o oVar = new bi.o(this, context);
         this.n = oVar;
-        w7.b6.b(oVar, 0.02f, 1.2f);
+        w7.a6.b(oVar, 0.02f, 1.2f);
         this.n.setText(LocaleController.getString(R.string.StartMessaging));
         this.n.setGravity(17);
         this.n.setTypeface(AndroidUtilities.bold());
@@ -287,7 +287,7 @@ public final class d80 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.c6.a(new e(this, 18), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.q6, org.telegram.ui.ActionBar.j6.P9, org.telegram.ui.ActionBar.j6.Q9, org.telegram.ui.ActionBar.j6.Sh, org.telegram.ui.ActionBar.j6.G6);
+        return w7.b6.a(new e(this, 18), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.q6, org.telegram.ui.ActionBar.j6.P9, org.telegram.ui.ActionBar.j6.Q9, org.telegram.ui.ActionBar.j6.Sh, org.telegram.ui.ActionBar.j6.G6);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

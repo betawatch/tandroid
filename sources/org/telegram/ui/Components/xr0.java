@@ -1,155 +1,146 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.util.SparseArray;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class xr0 extends bi.z {
-    public final /* synthetic */ jv0 G;
+public final class xr0 extends s4.v {
+    public du0 d;
+    public final /* synthetic */ lv0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr0(jv0 jv0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        super(context, n2Var, j3);
-        this.G = jv0Var;
+    public xr0(lv0 lv0Var) {
+        this.e = lv0Var;
     }
 
-    @Override // bi.z
-    public final boolean c(MessageObject messageObject) {
-        jv0 jv0Var = this.G;
-        return jv0Var.Z0[(messageObject.getDialogId() > jv0Var.j1 ? 1 : (messageObject.getDialogId() == jv0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
     }
 
-    @Override // bi.z
-    public final boolean e(MessageObject messageObject) {
-        jv0 jv0Var = this.G;
-        ArrayList arrayList = jv0Var.N0;
-        NumberTextView numberTextView = jv0Var.A0;
-        SparseArray[] sparseArrayArr = jv0Var.Z0;
-        if (messageObject != null) {
-            char c10 = messageObject.getDialogId() == jv0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) < 0) {
-                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
-                    sparseArrayArr[c10].put(messageObject.getId(), messageObject);
-                    if (!messageObject.canDeleteMessage(false, null)) {
-                        jv0Var.a1++;
-                    }
-                    if (jv0Var.C1) {
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
-                    } else {
-                        AndroidUtilities.hideKeyboard(jv0Var.v1.getParentActivity().getCurrentFocus());
-                        int i10 = 8;
-                        jv0Var.l0.setVisibility(jv0Var.a1 == 0 ? 0 : 8);
-                        org.telegram.ui.ActionBar.v0 v0Var = jv0Var.u0;
-                        if (v0Var != null) {
-                            v0Var.setVisibility((jv0Var.getClosestTab() == 8 || jv0Var.getClosestTab() == 13) ? 8 : 0);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var2 = jv0Var.v0;
-                        if (v0Var2 != null) {
-                            v0Var2.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var3 = jv0Var.w0;
-                        if (v0Var3 != null) {
-                            v0Var3.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var4 = jv0Var.t0;
-                        if (v0Var4 != null) {
-                            if (jv0Var.getClosestTab() != 8 && jv0Var.getClosestTab() != 13) {
-                                i10 = 0;
-                            }
-                            v0Var4.setVisibility(i10);
-                        }
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
-                        AnimatorSet animatorSet = new AnimatorSet();
-                        ArrayList arrayList2 = new ArrayList();
-                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                            View view = (View) arrayList.get(i11);
-                            AndroidUtilities.clearDrawableAnimation(view);
-                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
-                        }
-                        animatorSet.playTogether(arrayList2);
-                        animatorSet.setDuration(250L);
-                        animatorSet.start();
-                        jv0Var.b1 = false;
-                        jv0Var.b1(true);
-                    }
-                    j();
-                    return true;
-                }
-            }
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        s4.h0 adapter = recyclerView.getAdapter();
+        iv0 iv0Var = adapter instanceof iv0 ? (iv0) adapter : null;
+        if (!k() || iv0Var == null || !iv0Var.M(c1Var.b())) {
+            return s4.v.l(0, 0);
         }
-        return false;
+        eu0 eu0Var = this.e.k0[0];
+        ks0 ks0Var = eu0Var != null ? eu0Var.h : null;
+        this.d = ks0Var;
+        if (ks0Var != null) {
+            ks0Var.setItemAnimator(eu0Var.d);
+        }
+        return s4.v.l(15, 0);
     }
 
-    @Override // bi.z
-    public final boolean g(MessageObject messageObject) {
-        jv0 jv0Var = this.G;
-        ArrayList arrayList = jv0Var.N0;
-        SparseArray[] sparseArrayArr = jv0Var.Z0;
-        if (messageObject != null) {
-            int i10 = 1;
-            char c10 = messageObject.getDialogId() == jv0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) >= 0) {
-                sparseArrayArr[c10].remove(messageObject.getId());
-                if (!messageObject.canDeleteMessage(false, null)) {
-                    jv0Var.a1--;
+    @Override // s4.v
+    public final boolean k() {
+        lv0 lv0Var = this.e;
+        if (lv0Var.C1) {
+            return true;
+        }
+        gs0 gs0Var = lv0Var.W;
+        return gs0Var != null && gs0Var.w;
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        ai.d9 d9Var;
+        ArrayList arrayList;
+        s4.h0 adapter = recyclerView.getAdapter();
+        iv0 iv0Var = adapter instanceof iv0 ? (iv0) adapter : null;
+        if (iv0Var == null || !iv0Var.M(c1Var.b()) || !iv0Var.M(c1Var2.b())) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        ArrayList arrayList2 = iv0Var.y;
+        if (!iv0Var.h && (d9Var = iv0Var.s) != null && b10 >= 0 && b10 < d9Var.i.size() && b11 >= 0 && b11 < iv0Var.s.i.size()) {
+            if ((iv0Var.s instanceof ai.t8) || iv0Var.n > 0) {
+                arrayList = new ArrayList();
+                for (int i10 = 0; i10 < iv0Var.s.i.size(); i10++) {
+                    arrayList.add(Integer.valueOf(((MessageObject) iv0Var.s.i.get(i10)).getId()));
                 }
-                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
-                    AndroidUtilities.hideKeyboard(jv0Var.v1.getParentActivity().getCurrentFocus());
-                    sparseArrayArr[0].clear();
-                    sparseArrayArr[1].clear();
-                    int i11 = 8;
-                    jv0Var.l0.setVisibility(jv0Var.a1 == 0 ? 0 : 8);
-                    org.telegram.ui.ActionBar.v0 v0Var = jv0Var.u0;
-                    if (v0Var != null) {
-                        v0Var.setVisibility((jv0Var.getClosestTab() == 8 || jv0Var.getClosestTab() == 13) ? 8 : 0);
+            } else {
+                arrayList = new ArrayList(iv0Var.s.g);
+            }
+            if (!iv0Var.E) {
+                arrayList2.clear();
+                arrayList2.addAll(arrayList);
+                iv0Var.E = true;
+            }
+            MessageObject messageObject = (MessageObject) iv0Var.s.i.get(b10);
+            arrayList.remove(Integer.valueOf(messageObject.getId()));
+            arrayList.add(Utilities.clamp(b11, arrayList.size(), 0), Integer.valueOf(messageObject.getId()));
+            iv0Var.s.C(arrayList, false);
+            iv0Var.p(b10, b11);
+        }
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        ai.d9 d9Var;
+        ArrayList arrayList;
+        du0 du0Var = this.d;
+        if (du0Var != null && c1Var != null) {
+            du0Var.e1(false);
+        }
+        if (i10 != 0) {
+            du0 du0Var2 = this.d;
+            if (du0Var2 != null) {
+                du0Var2.J0(false);
+            }
+            if (c1Var != null) {
+                c1Var.a.setPressed(true);
+                return;
+            }
+            return;
+        }
+        du0 du0Var3 = this.d;
+        if (du0Var3 != null && (du0Var3.getAdapter() instanceof iv0)) {
+            iv0 iv0Var = (iv0) this.d.getAdapter();
+            ArrayList arrayList2 = iv0Var.y;
+            if (!iv0Var.h && (d9Var = iv0Var.s) != null && iv0Var.E) {
+                if ((d9Var instanceof ai.t8) || iv0Var.n > 0) {
+                    arrayList = new ArrayList();
+                    for (int i11 = 0; i11 < iv0Var.s.i.size(); i11++) {
+                        arrayList.add(Integer.valueOf(((MessageObject) iv0Var.s.i.get(i11)).getId()));
                     }
-                    org.telegram.ui.ActionBar.v0 v0Var2 = jv0Var.v0;
-                    if (v0Var2 != null) {
-                        v0Var2.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var3 = jv0Var.w0;
-                    if (v0Var3 != null) {
-                        v0Var3.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var4 = jv0Var.t0;
-                    if (v0Var4 != null) {
-                        if (jv0Var.getClosestTab() != 8 && jv0Var.getClosestTab() != 13) {
-                            i11 = 0;
-                        }
-                        v0Var4.setVisibility(i11);
-                    }
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        View view = (View) arrayList.get(i12);
-                        AndroidUtilities.clearDrawableAnimation(view);
-                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
-                    }
-                    animatorSet.playTogether(arrayList2);
-                    animatorSet.setDuration(250L);
-                    animatorSet.start();
-                    jv0Var.b1 = false;
-                    AndroidUtilities.runOnUIThread(new wq0(this, i10), 20L);
                 } else {
-                    jv0Var.A0.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                    arrayList = d9Var.g;
                 }
-                j();
-                return true;
+                boolean z10 = arrayList2.size() != arrayList.size();
+                if (!z10) {
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= arrayList2.size()) {
+                            break;
+                        }
+                        if (arrayList2.get(i12) != arrayList.get(i12)) {
+                            z10 = true;
+                            break;
+                        }
+                        i12++;
+                    }
+                }
+                if (z10) {
+                    iv0Var.s.C(arrayList, true);
+                }
+                iv0Var.E = false;
             }
         }
-        return false;
+        du0 du0Var4 = this.d;
+        if (du0Var4 != null) {
+            du0Var4.setItemAnimator(null);
+        }
     }
 
-    @Override // bi.z
-    public final int getStartedTrackingX() {
-        return this.G.z1;
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

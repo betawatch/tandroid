@@ -14,6 +14,7 @@ import c3.q;
 import c3.s;
 import c3.t;
 import c3.y;
+import c5.a0;
 import e2.d;
 import e2.d0;
 import e9.a1;
@@ -26,7 +27,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -139,8 +140,8 @@ public final class a implements o {
             }
         }
         y yVar = (y) b0Var;
-        c5.b0 b0Var2 = yVar.b;
-        long f7 = b0Var2.b == 0 ? -9223372036854775807L : b0Var2.f(d0.b(yVar.a, j3));
+        a0 a0Var = yVar.b;
+        long f7 = a0Var.b == 0 ? -9223372036854775807L : a0Var.f(d0.b(yVar.a, j3));
         this.k = f7;
         if (Math.abs(this.q - f7) < 20000) {
             return;
@@ -203,17 +204,17 @@ public final class a implements o {
                     y yVar = (y) b0Var;
                     long j3 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    c5.b0 b0Var2 = yVar.b;
-                    int i14 = b0Var2.b;
-                    if (i14 == 0 || j3 - b0Var2.f(i14 - 1) >= 100000) {
-                        c5.b0 b0Var3 = yVar.a;
-                        c5.b0 b0Var4 = yVar.b;
-                        if (b0Var4.b == 0 && j3 > 0) {
-                            b0Var3.c(0L);
-                            b0Var4.c(0L);
+                    a0 a0Var = yVar.b;
+                    int i14 = a0Var.b;
+                    if (i14 == 0 || j3 - a0Var.f(i14 - 1) >= 100000) {
+                        a0 a0Var2 = yVar.a;
+                        a0 a0Var3 = yVar.b;
+                        if (a0Var3.b == 0 && j3 > 0) {
+                            a0Var2.c(0L);
+                            a0Var3.c(0L);
                         }
-                        b0Var3.c(position);
-                        b0Var4.c(j3);
+                        a0Var2.c(position);
+                        a0Var3.c(j3);
                     }
                     if (this.p && Math.abs(this.q - j3) < 20000) {
                         this.p = false;
@@ -241,16 +242,16 @@ public final class a implements o {
                     this.o = new k(length, (int) ((i10 * 8000000) / 20000), i10, false, this.h);
                     this.m.getClass();
                 }
-                b0 b0Var5 = this.o;
-                if (b0Var5 != null) {
-                    this.l.X1(b0Var5);
+                b0 b0Var2 = this.o;
+                if (b0Var2 != null) {
+                    this.l.X1(b0Var2);
                 }
             }
             if (i13 == -1) {
-                b0 b0Var6 = this.o;
-                if (b0Var6 instanceof y) {
-                    ((y) b0Var6).c = this.k + this.e;
-                    this.l.X1(b0Var6);
+                b0 b0Var3 = this.o;
+                if (b0Var3 instanceof y) {
+                    ((y) b0Var3).c = this.k + this.e;
+                    this.l.X1(b0Var3);
                     this.m.getClass();
                 }
             }

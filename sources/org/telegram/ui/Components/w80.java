@@ -1,79 +1,139 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w80 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d90 b;
+public final class w80 extends Drawable {
+    public static final Paint j = new Paint();
+    public static TextPaint k;
+    public static TextPaint l;
+    public static TextPaint m;
+    public StaticLayout b;
+    public float c;
+    public float d;
+    public float e;
+    public final int g;
+    public final TextPaint h;
+    public final RectF a = new RectF();
+    public final StringBuilder f = new StringBuilder(5);
+    public float i = 1.0f;
 
-    public /* synthetic */ w80(d90 d90Var, int i10) {
-        this.a = i10;
-        this.b = d90Var;
+    public w80(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.g = i10;
+        if (i10 == 0) {
+            if (k == null) {
+                k = new TextPaint(1);
+            }
+            k.setTextSize(AndroidUtilities.dp(28.0f));
+            j.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Jh, f6Var));
+            k.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Kh, f6Var));
+            this.h = k;
+            return;
+        }
+        if (i10 == 1) {
+            if (l == null) {
+                l = new TextPaint(1);
+            }
+            l.setColor(-1);
+            l.setTextSize(AndroidUtilities.dp(13.0f));
+            l.setTypeface(Typeface.create(Typeface.DEFAULT, 1));
+            this.h = l;
+            return;
+        }
+        if (m == null) {
+            m = new TextPaint(1);
+        }
+        m.setColor(-1);
+        m.setTextSize(org.telegram.ui.ActionBar.j6.d3.getTextSize() * 0.75f);
+        m.setTypeface(Typeface.create(Typeface.DEFAULT, 1));
+        this.h = m;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.r.h();
-                break;
-            case 1:
-                d90 d90Var = this.b;
-                org.telegram.ui.ActionBar.n1 n1Var = d90Var.s;
-                if (n1Var != null) {
-                    n1Var.d(true);
-                }
-                d90Var.r.c();
-                break;
-            case 2:
-                d90 d90Var2 = this.b;
-                String str = d90Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = d90Var2.getContext();
-                String string = LocaleController.getString(R.string.InviteByQRCode);
-                String str2 = d90Var2.b;
-                String str3 = d90Var2.J;
-                if (str3 == null) {
-                    str3 = LocaleController.getString(d90Var2.H ? z10 ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
-                }
-                a90 a90Var = new a90(d90Var2, context, string, str2, str3);
-                d90Var2.E = a90Var;
-                a90Var.m(R.raw.qr_code_logo);
-                d90Var2.E.show();
-                org.telegram.ui.ActionBar.n1 n1Var2 = d90Var2.s;
-                if (n1Var2 != null) {
-                    n1Var2.d(true);
-                    break;
-                }
-                break;
-            default:
-                d90 d90Var3 = this.b;
-                org.telegram.ui.ActionBar.n1 n1Var3 = d90Var3.s;
-                if (n1Var3 != null) {
-                    n1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.n2 n2Var = d90Var3.c;
-                if (n2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RevokeLink);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.RevokeAlert);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new v80(d90Var3, 1));
-                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                    TextView textView = (TextView) alertDialog$Builder.a.d(-1);
-                    if (textView != null) {
-                        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-                    }
-                    alertDialog$Builder.o();
-                    break;
-                }
-                break;
+    public final void a(String str) {
+        StringBuilder sb2 = this.f;
+        sb2.setLength(0);
+        if (str != null && str.length() > 0) {
+            sb2.append(str.substring(0, 1));
         }
+        if (sb2.length() <= 0) {
+            this.b = null;
+            return;
+        }
+        try {
+            StaticLayout staticLayout = new StaticLayout(sb2.toString().toUpperCase(), this.h, AndroidUtilities.dp(100.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.b = staticLayout;
+            if (staticLayout.getLineCount() > 0) {
+                this.e = this.b.getLineLeft(0);
+                this.c = this.b.getLineWidth(0);
+                this.d = this.b.getLineBottom(0);
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds == null) {
+            return;
+        }
+        if (this.g == 0) {
+            float f7 = bounds.left;
+            float f10 = bounds.top;
+            float f11 = bounds.right;
+            float f12 = bounds.bottom;
+            RectF rectF = this.a;
+            rectF.set(f7, f10, f11, f12);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), j);
+        }
+        canvas.save();
+        float f13 = this.i;
+        if (f13 != 1.0f) {
+            canvas.scale(f13, f13, bounds.centerX(), bounds.centerY());
+        }
+        if (this.b != null) {
+            float width = bounds.width();
+            canvas.translate(com.google.android.gms.internal.vision.e2.A(width, this.c, 2.0f, bounds.left) - this.e, com.google.android.gms.internal.vision.e2.A(width, this.d, 2.0f, bounds.top));
+            this.b.draw(canvas);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.h.setAlpha(i10);
+        j.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

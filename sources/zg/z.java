@@ -1,37 +1,38 @@
 package zg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.pk0;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class z extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+public final class z extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final RectF b = new RectF();
+    public final RectF c = new RectF();
+    public final /* synthetic */ c0 d;
 
-    public /* synthetic */ z(b0 b0Var, int i10) {
-        this.a = i10;
-        this.b = b0Var;
+    public z(c0 c0Var) {
+        this.d = c0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.f();
-                break;
-            default:
-                b0 b0Var = this.b;
-                b0.a(b0Var, false);
-                b0Var.j = 0.0f;
-                pk0 pk0Var = b0Var.n;
-                pk0Var.setCustomEmojiEnterProgress(Utilities.clamp(0.0f, 1.0f, 0.0f));
-                pk0Var.setSkipDraw(false);
-                b0Var.c.setVisibility(8);
-                b0Var.f();
-                break;
-        }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        c0 c0Var = this.d;
+        float lerp = AndroidUtilities.lerp(c0Var.e, AndroidUtilities.dp(8.0f), c0Var.j);
+        float measuredWidth = view.getMeasuredWidth();
+        float measuredHeight = view.getMeasuredHeight();
+        RectF rectF = this.b;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        RectF rectF2 = c0Var.f;
+        float f7 = c0Var.j;
+        RectF rectF3 = this.c;
+        AndroidUtilities.lerp(rectF2, rectF, f7, rectF3);
+        Rect rect = this.a;
+        rectF3.round(rect);
+        outline.setRoundRect(rect, lerp);
     }
 }

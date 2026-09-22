@@ -1,107 +1,46 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class of0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class of0 extends TextureView {
+    public final /* synthetic */ uf0 a;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 5;
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i11 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i12 = 1;
-        while (i12 < i10) {
-            int i13 = (i12 - 1) * 2;
-            float f14 = fArr[i13];
-            float f15 = fArr[i13 + 1];
-            int i14 = i12 * 2;
-            float f16 = fArr[i14];
-            float f17 = fArr[i14 + 1];
-            int i15 = i12 + 1;
-            int i16 = i15 * 2;
-            float f18 = fArr[i16];
-            float f19 = fArr[i16 + 1];
-            int i17 = (i12 + 2) * 2;
-            float f20 = fArr[i17];
-            float f21 = fArr[i17 + 1];
-            int i18 = 1;
-            while (i18 < i11) {
-                float f22 = i18 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.vision.e2.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.vision.e2.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (z10 > f14) {
-                    arrayList2.add(Float.valueOf(z10));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i18 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i18++;
-                i11 = 100;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public of0(uf0 uf0Var, Context context) {
+        super(context);
+        this.a = uf0Var;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        vz vzVar = this.a.l0;
+        if (vzVar != null) {
+            int width = getWidth();
+            int height = getHeight();
+            oa oaVar = vzVar.I;
+            if (oaVar == null) {
+                return;
             }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i12 = i15;
-            i10 = 5;
-            i11 = 100;
+            Matrix matrix2 = oaVar.v;
+            matrix.invert(matrix2);
+            float f7 = width;
+            float f10 = height;
+            matrix2.preScale(f7, f10);
+            matrix2.postScale(1.0f / f7, 1.0f / f10);
+            oaVar.c(matrix2);
+            vzVar.e(false, false, false);
         }
-        arrayList2.add(Float.valueOf(fArr[12]));
-        arrayList2.add(Float.valueOf(fArr[13]));
-        this.f = new float[arrayList.size()];
-        int i19 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i19 >= fArr2.length) {
-                break;
-            }
-            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
-            i19++;
-        }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i20 = 0; i20 < size; i20++) {
-            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
-        }
-        return fArr3;
-    }
-
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
-    }
-
-    public final void c(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readFloat(z10);
-        this.b = inputSerializedData.readFloat(z10);
-        this.c = inputSerializedData.readFloat(z10);
-        this.d = inputSerializedData.readFloat(z10);
-        this.e = inputSerializedData.readFloat(z10);
-    }
-
-    public final void d(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
     }
 }

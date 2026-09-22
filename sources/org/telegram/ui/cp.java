@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cp extends org.telegram.ui.Cells.f9 {
     public ValueAnimator v;
@@ -75,12 +75,12 @@ public final class cp extends org.telegram.ui.Cells.f9 {
                 charSequence.replace(indexOf, indexOf + 1, " ");
                 charSequence.setSpan(new ForegroundColorSpan(ipVar.getThemedColor(org.telegram.ui.ActionBar.j6.p7)), 0, indexOf, 33);
             }
-            org.telegram.ui.Components.t51[] t51VarArr = (org.telegram.ui.Components.t51[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.t51.class);
+            org.telegram.ui.Components.v51[] v51VarArr = (org.telegram.ui.Components.v51[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.v51.class);
             ci.h2 h2Var = ipVar.a;
             String obj = (h2Var == null || h2Var.getText() == null) ? "" : ipVar.a.getText().toString();
-            for (int i10 = 0; i10 < t51VarArr.length; i10++) {
-                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(t51VarArr[i10]), charSequence.getSpanEnd(t51VarArr[i10]), 33);
-                charSequence.removeSpan(t51VarArr[i10]);
+            for (int i10 = 0; i10 < v51VarArr.length; i10++) {
+                charSequence.setSpan(new org.telegram.ui.Cells.i(5, (Object) this, obj), charSequence.getSpanStart(v51VarArr[i10]), charSequence.getSpanEnd(v51VarArr[i10]), 33);
+                charSequence.removeSpan(v51VarArr[i10]);
             }
         }
         super.setText(charSequence);

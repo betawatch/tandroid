@@ -17,9 +17,9 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import v7.w7;
-import w7.r7;
+import w7.q7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.c0 {
     public static final Method P;
@@ -93,7 +93,7 @@ public abstract class d2 implements l.c0 {
         x xVar = new x(context, attributeSet, i10, 0);
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
-            r7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
+            q7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
         }
         xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : w7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
@@ -190,7 +190,7 @@ public abstract class d2 implements l.c0 {
             paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
         }
         boolean z11 = xVar.getInputMethodMode() == 2;
-        r7.b(xVar, this.n);
+        q7.b(xVar, this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
             WeakHashMap weakHashMap = r0.i0.a;
@@ -255,7 +255,7 @@ public abstract class d2 implements l.c0 {
         xVar.setOutsideTouchable(true);
         xVar.setTouchInterceptor(this.H);
         if (this.v) {
-            r7.a(xVar, this.s);
+            q7.a(xVar, this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
             Method method3 = R;
@@ -321,7 +321,7 @@ public abstract class d2 implements l.c0 {
         return new r1(context, z10);
     }
 
-    public final void q(int i10) {
+    public final void p(int i10) {
         Drawable background = this.O.getBackground();
         if (background == null) {
             this.e = i10;

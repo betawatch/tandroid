@@ -1,59 +1,52 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class gu0 extends FrameLayout {
-    public final org.telegram.ui.Cells.j6 a;
+public final class gu0 extends org.telegram.ui.Cells.k7 {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ xl0 m0;
 
-    public gu0(int i10, Context context, boolean z10, org.telegram.ui.ActionBar.f6 f6Var, wq0 wq0Var) {
-        super(context);
-        org.telegram.ui.Cells.j6 j6Var = new org.telegram.ui.Cells.j6(context, f6Var);
-        this.a = j6Var;
-        j6Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), 2, -1));
-        addView(j6Var, w7.y5.c(-2.0f, -1));
-        View view = new View(context);
-        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        int i11 = org.telegram.ui.ActionBar.j6.d6;
-        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.j6.l1(0.4f, org.telegram.ui.ActionBar.j6.v0(i11, f6Var)), org.telegram.ui.ActionBar.j6.v0(i11, f6Var)}));
-        addView(view, w7.y5.c(60.0f, -1));
-        ci.d dVar = new ci.d(context, f6Var, true);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(z10 ? R.string.MoreSimilarBotsButton : R.string.MoreSimilarButton));
-        spannableStringBuilder.append((CharSequence) " ");
-        SpannableString spannableString = new SpannableString("l");
-        spannableString.setSpan(new oq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) spannableString);
-        dVar.g(spannableStringBuilder, false, true);
-        addView(dVar, w7.y5.d(-1, 48.0f, 48, 14.0f, 38.0f, 14.0f, 0.0f));
-        dVar.setOnClickListener(new f80(wq0Var, 17));
-        k90 k90Var = new k90(context, f6Var);
-        k90Var.setTextSize(1, 13.0f);
-        k90Var.setTextAlignment(4);
-        k90Var.setGravity(17);
-        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, f6Var));
-        k90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
-        SpannableStringBuilder premiumText = AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.MoreSimilarBotsText : R.string.MoreSimilarText), new wq0(wq0Var, 4));
-        SpannableString spannableString2 = new SpannableString("" + MessagesController.getInstance(i10).recommendedChannelsLimitPremium);
-        spannableString2.setSpan(new t51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
-        k90Var.setText(AndroidUtilities.replaceCharSequence("%s", premiumText, spannableString2));
-        addView(k90Var, w7.y5.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gu0(xl0 xl0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, 0, f6Var);
+        this.l0 = i10;
+        this.m0 = xl0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Cells.k7
+    public final boolean d(MessageObject messageObject) {
+        switch (this.l0) {
+            case 0:
+                hu0 hu0Var = (hu0) this.m0;
+                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
+                    if (messageObject.isMusic()) {
+                        return MediaController.getInstance().setPlaylist(hu0Var.d, messageObject, hu0Var.v.c1);
+                    }
+                    return false;
+                }
+                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? hu0Var.d : null, false);
+                if (messageObject.isRoundVideo()) {
+                    MediaController.getInstance().setCurrentVideoVisible(false);
+                }
+                return playMessage;
+            default:
+                yu0 yu0Var = (yu0) this.m0;
+                int i10 = yu0Var.d;
+                lv0 lv0Var = yu0Var.f;
+                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
+                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
+                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? lv0Var.t1[i10].a : null, false);
+                    return playMessage2;
+                }
+                if (messageObject.isMusic()) {
+                    return MediaController.getInstance().setPlaylist(lv0Var.t1[i10].a, messageObject, lv0Var.c1);
+                }
+                return false;
+        }
     }
 }

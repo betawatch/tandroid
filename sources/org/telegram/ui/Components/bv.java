@@ -29,7 +29,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bv implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class bv implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i10;
-        z60 z60Var;
+        c70 c70Var;
         org.telegram.ui.ib ibVar;
         int i11;
         ci.y0 y0Var;
@@ -295,35 +295,35 @@ public final /* synthetic */ class bv implements Runnable {
             case 13:
                 u50 u50Var = (u50) obj2;
                 p50 p50Var = (p50) obj;
-                a60 a60Var = u50Var.H0;
+                c60 c60Var = u50Var.H0;
                 VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
-                a60Var.Q = videoEditedInfo;
+                c60Var.S = videoEditedInfo;
                 videoEditedInfo.startTime = -1L;
                 videoEditedInfo.endTime = -1L;
-                videoEditedInfo.estimatedSize = Math.max(1L, a60Var.O);
-                VideoEditedInfo videoEditedInfo2 = a60Var.Q;
+                videoEditedInfo.estimatedSize = Math.max(1L, c60Var.Q);
+                VideoEditedInfo videoEditedInfo2 = c60Var.S;
                 videoEditedInfo2.roundVideo = true;
-                videoEditedInfo2.file = a60Var.K;
-                videoEditedInfo2.encryptedFile = a60Var.L;
-                videoEditedInfo2.key = a60Var.M;
-                videoEditedInfo2.iv = a60Var.N;
+                videoEditedInfo2.file = c60Var.M;
+                videoEditedInfo2.encryptedFile = c60Var.N;
+                videoEditedInfo2.key = c60Var.O;
+                videoEditedInfo2.iv = c60Var.P;
                 videoEditedInfo2.framerate = 25;
                 videoEditedInfo2.originalWidth = 360;
                 videoEditedInfo2.resultWidth = 360;
                 videoEditedInfo2.originalHeight = 360;
                 videoEditedInfo2.resultHeight = 360;
                 videoEditedInfo2.originalPath = u50Var.a.getAbsolutePath();
-                VideoEditedInfo videoEditedInfo3 = a60Var.Q;
+                VideoEditedInfo videoEditedInfo3 = c60Var.S;
                 videoEditedInfo3.notReadyYet = true;
-                videoEditedInfo3.thumb = a60Var.c1;
-                videoEditedInfo3.estimatedDuration = a60Var.i0;
-                a60Var.c1 = null;
+                videoEditedInfo3.thumb = c60Var.e1;
+                videoEditedInfo3.estimatedDuration = c60Var.k0;
+                c60Var.e1 = null;
                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, u50Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
                 if (p50Var != null) {
                     photoEntry.ttl = p50Var.c;
                     photoEntry.effectId = p50Var.d;
                 }
-                a60Var.f.q(photoEntry, a60Var.Q, p50Var == null || p50Var.a, p50Var != null ? p50Var.b : 0, 0, false, p50Var != null ? p50Var.e : 0L);
+                c60Var.n.q(photoEntry, c60Var.S, p50Var == null || p50Var.a, p50Var != null ? p50Var.b : 0, 0, false, p50Var != null ? p50Var.e : 0L);
                 break;
             case 14:
                 Bitmap bitmap = (Bitmap) obj;
@@ -338,22 +338,22 @@ public final /* synthetic */ class bv implements Runnable {
                 }
                 break;
             case 15:
-                z60 z60Var2 = (z60) obj2;
+                c70 c70Var2 = (c70) obj2;
                 TLObject tLObject2 = (TLObject) obj;
-                z60Var2.getClass();
+                c70Var2.getClass();
                 if (tLObject2 instanceof Vector) {
                     Vector vector = (Vector) tLObject2;
                     if (!vector.objects.isEmpty()) {
-                        z60Var2.c.put(Long.valueOf(z60Var2.b.admin_id), (TLRPC.User) vector.objects.get(0));
-                        z60Var2.T.l();
+                        c70Var2.c.put(Long.valueOf(c70Var2.b.admin_id), (TLRPC.User) vector.objects.get(0));
+                        c70Var2.T.l();
                         break;
                     }
                 }
                 break;
             case 16:
-                t60 t60Var = (t60) obj2;
-                if (((TLRPC.TL_error) obj) == null && (ibVar = (z60Var = t60Var.a.c).j0) != null) {
-                    TLRPC.TL_chatInviteExported tL_chatInviteExported = z60Var.b;
+                w60 w60Var = (w60) obj2;
+                if (((TLRPC.TL_error) obj) == null && (ibVar = (c70Var = w60Var.a.c).j0) != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = c70Var.b;
                     org.telegram.ui.vb vbVar = ibVar.a;
                     ArrayList arrayList7 = vbVar.o0;
                     int size = arrayList7.size();
@@ -381,7 +381,7 @@ public final /* synthetic */ class bv implements Runnable {
                 break;
             case 17:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                ((j70) obj2).setFocusable(true);
+                ((m70) obj2).setFocusable(true);
                 editTextBoldCursor.requestFocus();
                 AndroidUtilities.runOnUIThread(new q1(i14, editTextBoldCursor));
                 break;
@@ -391,102 +391,102 @@ public final /* synthetic */ class bv implements Runnable {
                 ((org.telegram.ui.ip) obj).presentFragment(new ProfileActivity(bundle2, null));
                 break;
             case 19:
-                f90 f90Var = (f90) obj2;
-                if (f90Var.O0 == ((l90) obj)) {
-                    f90Var.performLongClick();
-                    f90Var.O0 = null;
-                    f90Var.M0.d(true);
+                i90 i90Var = (i90) obj2;
+                if (i90Var.O0 == ((o90) obj)) {
+                    i90Var.performLongClick();
+                    i90Var.O0 = null;
+                    i90Var.M0.d(true);
                     break;
                 }
                 break;
             case 20:
-                ((h90) obj2).l((o90) obj, false);
+                ((k90) obj2).l((r90) obj, false);
                 break;
             case 21:
-                ja0 ja0Var = (ja0) obj2;
-                if (!((boolean[]) obj)[0] && (y0Var = ja0Var.U) != null) {
+                ma0 ma0Var = (ma0) obj2;
+                if (!((boolean[]) obj)[0] && (y0Var = ma0Var.U) != null) {
                     y0Var.run();
                 }
-                ja0Var.U = null;
+                ma0Var.U = null;
                 break;
             case 22:
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) obj;
-                ((la0) obj2).setFocusable(true);
+                ((oa0) obj2).setFocusable(true);
                 editTextBoldCursor2.requestFocus();
                 AndroidUtilities.runOnUIThread(new q1(i13, editTextBoldCursor2));
                 break;
             case 23:
-                l.d dVar = (l.d) obj2;
+                ki.e0 e0Var = (ki.e0) obj2;
                 Runnable runnable = (Runnable) obj;
-                dVar.getClass();
+                e0Var.getClass();
                 runnable.run();
-                ((HashMap) dVar.a).remove(runnable);
+                ((HashMap) e0Var.b).remove(runnable);
                 break;
             case 24:
-                ih0 ih0Var = (ih0) obj2;
+                lh0 lh0Var = (lh0) obj2;
                 TLObject tLObject3 = (TLObject) obj;
-                ih0Var.M = false;
+                lh0Var.M = false;
                 if (tLObject3 instanceof TLRPC.SearchPostsFlood) {
                     TLRPC.SearchPostsFlood searchPostsFlood = (TLRPC.SearchPostsFlood) tLObject3;
-                    ih0Var.d = searchPostsFlood;
+                    lh0Var.d = searchPostsFlood;
                     if (!searchPostsFlood.query_is_free) {
-                        ih0Var.d();
-                        ih0Var.c.Y2.N(true);
+                        lh0Var.d();
+                        lh0Var.c.Y2.N(true);
                         break;
                     } else {
-                        ih0Var.a(false);
+                        lh0Var.a(false);
                         break;
                     }
                 }
                 break;
             case 25:
-                nh0 nh0Var = (nh0) obj2;
+                qh0 qh0Var = (qh0) obj2;
                 ArrayList arrayList8 = (ArrayList) obj;
-                ArrayList arrayList9 = nh0Var.a;
-                int i19 = nh0Var.x;
+                ArrayList arrayList9 = qh0Var.a;
+                int i19 = qh0Var.x;
                 int size3 = arrayList8.size();
-                nh0Var.x = size3;
-                if (i19 != size3 && nh0Var.S != null) {
-                    nh0Var.g();
+                qh0Var.x = size3;
+                if (i19 != size3 && qh0Var.S != null) {
+                    qh0Var.g();
                 }
                 int size4 = arrayList9.size();
                 int i20 = 0;
                 while (i20 < size4) {
-                    kh0 kh0Var = (kh0) arrayList9.get(i20);
-                    if (kh0Var.o && !kh0Var.p) {
-                        arrayList8.add(kh0Var);
-                    } else if (nh0.j(kh0Var.a, arrayList8) == null) {
-                        nh0 nh0Var2 = kh0Var.y;
-                        float f7 = nh0Var2.N;
-                        RectF rectF = kh0Var.c;
-                        RectF rectF2 = kh0Var.f;
-                        o90 o90Var = kh0Var.r;
-                        if (o90Var != null) {
-                            o90Var.a();
-                            kh0Var.t = z11;
-                            kh0Var.s = z11;
+                    nh0 nh0Var = (nh0) arrayList9.get(i20);
+                    if (nh0Var.o && !nh0Var.p) {
+                        arrayList8.add(nh0Var);
+                    } else if (qh0.j(nh0Var.a, arrayList8) == null) {
+                        qh0 qh0Var2 = nh0Var.y;
+                        float f7 = qh0Var2.N;
+                        RectF rectF = nh0Var.c;
+                        RectF rectF2 = nh0Var.f;
+                        r90 r90Var = nh0Var.r;
+                        if (r90Var != null) {
+                            r90Var.a();
+                            nh0Var.t = z11;
+                            nh0Var.s = z11;
                         }
-                        kh0Var.o = z12;
+                        nh0Var.o = z12;
                         boolean z13 = rectF.left - 1.0f <= f7;
-                        boolean z14 = rectF.right + 1.0f >= ((float) nh0Var2.getMeasuredWidth()) - f7;
+                        boolean z14 = rectF.right + 1.0f >= ((float) qh0Var2.getMeasuredWidth()) - f7;
                         if (z13 && z14) {
                             z14 = false;
                             z13 = false;
                         }
-                        kh0Var.g.set(rectF);
+                        nh0Var.g.set(rectF);
                         rectF2.set(rectF);
                         if (z13) {
                             rectF2.right = rectF2.left;
                         } else if (z14) {
                             rectF2.left = rectF2.right;
                         } else {
-                            int i21 = kh0Var.a;
+                            int i21 = nh0Var.a;
                             if (i21 == 3 || i21 == 2) {
                                 z10 = true;
-                                if (nh0Var2.H == 1) {
+                                if (qh0Var2.H == 1) {
                                     rectF2.left = rectF2.right;
-                                    kh0Var.e.d(0.0f, z10);
-                                    arrayList8.add(kh0Var);
+                                    nh0Var.e.d(0.0f, z10);
+                                    arrayList8.add(nh0Var);
                                 }
                             } else {
                                 z10 = true;
@@ -494,12 +494,12 @@ public final /* synthetic */ class bv implements Runnable {
                             float centerX = rectF2.centerX();
                             rectF2.right = centerX;
                             rectF2.left = centerX;
-                            kh0Var.e.d(0.0f, z10);
-                            arrayList8.add(kh0Var);
+                            nh0Var.e.d(0.0f, z10);
+                            arrayList8.add(nh0Var);
                         }
                         z10 = true;
-                        kh0Var.e.d(0.0f, z10);
-                        arrayList8.add(kh0Var);
+                        nh0Var.e.d(0.0f, z10);
+                        arrayList8.add(nh0Var);
                     }
                     i20++;
                     z11 = false;
@@ -507,14 +507,14 @@ public final /* synthetic */ class bv implements Runnable {
                 }
                 arrayList9.clear();
                 arrayList9.addAll(arrayList8);
-                nh0Var.invalidate();
+                qh0Var.invalidate();
                 break;
             case 26:
-                kh0 kh0Var2 = (kh0) obj;
-                mh0 mh0Var = ((nh0) obj2).F;
-                int i22 = kh0Var2.a;
-                RectF rectF3 = kh0Var2.d;
-                ProfileActivity.Y(((org.telegram.ui.ky0) mh0Var).b, i22, rectF3.left, rectF3.top);
+                nh0 nh0Var2 = (nh0) obj;
+                ph0 ph0Var = ((qh0) obj2).F;
+                int i22 = nh0Var2.a;
+                RectF rectF3 = nh0Var2.d;
+                ProfileActivity.Y(((org.telegram.ui.ky0) ph0Var).b, i22, rectF3.left, rectF3.top);
                 break;
             case 27:
                 Object obj3 = (ViewParent) obj;
@@ -536,32 +536,32 @@ public final /* synthetic */ class bv implements Runnable {
                 }
                 break;
             default:
-                pj0 pj0Var = (pj0) obj2;
+                sj0 sj0Var = (sj0) obj2;
                 ArrayList arrayList10 = (ArrayList) obj;
-                ArrayList arrayList11 = pj0Var.r;
-                pj0Var.n.addAll(arrayList10);
+                ArrayList arrayList11 = sj0Var.r;
+                sj0Var.n.addAll(arrayList10);
                 int size5 = arrayList10.size();
                 int i23 = 0;
                 while (i23 < size5) {
                     Object obj4 = arrayList10.get(i23);
                     i23++;
-                    oj0 oj0Var = (oj0) obj4;
+                    rj0 rj0Var = (rj0) obj4;
                     int i24 = 0;
                     while (true) {
                         if (i24 >= arrayList11.size()) {
-                            arrayList11.add(oj0Var);
-                        } else if (MessageObject.getObjectPeerId(((oj0) arrayList11.get(i24)).a) != MessageObject.getObjectPeerId(oj0Var.a)) {
+                            arrayList11.add(rj0Var);
+                        } else if (MessageObject.getObjectPeerId(((rj0) arrayList11.get(i24)).a) != MessageObject.getObjectPeerId(rj0Var.a)) {
                             i24++;
-                        } else if (oj0Var.c > 0) {
-                            ((oj0) arrayList11.get(i24)).c = oj0Var.c;
+                        } else if (rj0Var.c > 0) {
+                            ((rj0) arrayList11.get(i24)).c = rj0Var.c;
                         }
                     }
                 }
-                q0.a aVar = pj0Var.w;
+                q0.a aVar = sj0Var.w;
                 if (aVar != null) {
                     aVar.accept(arrayList10);
                 }
-                pj0Var.a();
+                sj0Var.a();
                 break;
         }
     }

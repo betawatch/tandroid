@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class nm {
     public TextPaint B;
@@ -33,7 +33,7 @@ public final class nm {
     public float m;
     public float n;
     public float o;
-    public vh.g s;
+    public vh.f s;
     public Bitmap v;
     public RectF f = null;
     public final RectF g = new RectF();
@@ -267,15 +267,15 @@ public final class nm {
                 this.d.setAlpha(lerp);
                 this.d.draw(canvas);
                 if (this.s == null) {
-                    this.s = vh.g.e(pmVar2);
+                    this.s = vh.f.e(pmVar2);
                 }
-                vh.g gVar = this.s;
+                vh.f fVar = this.s;
                 int width = pmVar2.getWidth();
                 int height = pmVar2.getHeight();
                 pmVar = pmVar2;
                 c10 = 3;
                 c11 = 2;
-                gVar.c(canvas, pmVar, width, height, 1.0f, false);
+                fVar.c(canvas, pmVar, width, height, 1.0f, false);
                 canvas.restore();
                 pmVar.invalidate();
                 pmVar.invalidate();
@@ -302,13 +302,13 @@ public final class nm {
             this.d.draw(canvas);
             if (this.s == null) {
             }
-            vh.g gVar2 = this.s;
+            vh.f fVar2 = this.s;
             int width2 = pmVar2.getWidth();
             int height2 = pmVar2.getHeight();
             pmVar = pmVar2;
             c10 = 3;
             c11 = 2;
-            gVar2.c(canvas, pmVar, width2, height2, 1.0f, false);
+            fVar2.c(canvas, pmVar, width2, height2, 1.0f, false);
             canvas.restore();
             pmVar.invalidate();
             pmVar.invalidate();

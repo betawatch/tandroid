@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gb implements o1.f {
     public final /* synthetic */ int a;
@@ -29,38 +29,38 @@ public final /* synthetic */ class gb implements o1.f {
                 }
                 break;
             case 2:
-                ip0 ip0Var = (ip0) this.b;
-                ip0Var.q = false;
-                ip0Var.dismiss();
+                kp0 kp0Var = (kp0) this.b;
+                kp0Var.q = false;
+                kp0Var.dismiss();
                 break;
             case 3:
-                jp0 jp0Var = (jp0) this.b;
-                jp0Var.s = false;
-                jp0Var.r = false;
+                lp0 lp0Var = (lp0) this.b;
+                lp0Var.s = false;
+                lp0Var.r = false;
                 if (!z10) {
                     hVar.c();
                 }
-                if (hVar == jp0Var.f) {
-                    jp0Var.f = null;
+                if (hVar == lp0Var.f) {
+                    lp0Var.f = null;
                     break;
                 }
                 break;
             case 4:
-                uq0 uq0Var = (uq0) this.b;
-                uq0Var.E.setVisibility(8);
-                uq0Var.z0.setVisibility(8);
-                rq0 rq0Var = uq0Var.L;
-                rq0Var.f = null;
-                rq0Var.l();
-                uq0Var.B0 = null;
-                uq0Var.M0 = false;
+                wq0 wq0Var = (wq0) this.b;
+                wq0Var.E.setVisibility(8);
+                wq0Var.z0.setVisibility(8);
+                tq0 tq0Var = wq0Var.L;
+                tq0Var.f = null;
+                tq0Var.l();
+                wq0Var.B0 = null;
+                wq0Var.M0 = false;
                 break;
             default:
-                uq0 uq0Var2 = ((bq0) this.b).d;
-                uq0Var2.F.setVisibility(8);
-                uq0Var2.G.setVisibility(8);
-                uq0Var2.y0.setVisibility(8);
-                uq0Var2.B0 = null;
+                wq0 wq0Var2 = ((dq0) this.b).d;
+                wq0Var2.F.setVisibility(8);
+                wq0Var2.G.setVisibility(8);
+                wq0Var2.y0.setVisibility(8);
+                wq0Var2.B0 = null;
                 break;
         }
     }

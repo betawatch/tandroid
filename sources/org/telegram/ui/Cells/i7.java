@@ -12,9 +12,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.w80;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class i7 extends FrameLayout {
     public final org.telegram.ui.Components.v9 a;
@@ -64,10 +64,10 @@ public final class i7 extends FrameLayout {
         org.telegram.ui.Components.v9 v9Var = this.a;
         v9Var.setAnimatedEmojiDrawable(null);
         ng.a aVar = new ng.a(ng.a.k[0]);
-        t80 t80Var = new t80(1, null);
-        t80Var.a("");
-        t80Var.i = 1.8f;
-        pq pqVar = new pq(aVar, t80Var, 0, 0);
+        w80 w80Var = new w80(1, null);
+        w80Var.a("");
+        w80Var.i = 1.8f;
+        pq pqVar = new pq(aVar, w80Var, 0, 0);
         pqVar.w = true;
         v9Var.setImageDrawable(pqVar);
     }

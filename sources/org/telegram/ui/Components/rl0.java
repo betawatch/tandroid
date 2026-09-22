@@ -1,176 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
 import android.view.View;
-import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class rl0 extends dl0 {
-    public SparseIntArray c;
-    public SparseIntArray d;
-    public SparseIntArray e;
-    public int f;
-    public int h;
-    public final ArrayList n = new ArrayList();
+public final class rl0 implements Runnable {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ sl0 e;
 
-    public rl0() {
-        L();
+    public rl0(sl0 sl0Var, View view, int i10, float f7, float f10) {
+        this.e = sl0Var;
+        this.a = view;
+        this.b = i10;
+        this.c = f7;
+        this.d = f10;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        int b10 = c1Var.b();
-        return V(S(b10), Q(b10), c1Var);
-    }
-
-    public final void L() {
-        SparseIntArray sparseIntArray = this.d;
-        if (sparseIntArray == null) {
-            this.d = new SparseIntArray();
-            this.c = new SparseIntArray();
-            this.e = new SparseIntArray();
-        } else {
-            sparseIntArray.clear();
-            this.c.clear();
-            this.e.clear();
+    @Override // java.lang.Runnable
+    public final void run() {
+        tl0 tl0Var = this.e.b;
+        yl0 yl0Var = (yl0) tl0Var.b;
+        if (this == yl0Var.S1) {
+            yl0Var.S1 = null;
         }
-        this.h = -1;
-        this.f = -1;
-    }
-
-    public abstract int M(int i10);
-
-    public int N(int i10, int i11) {
-        return Objects.hash(Integer.valueOf((-49612) * i10), O(i10, i11));
-    }
-
-    public abstract Object O(int i10, int i11);
-
-    public abstract int P(int i10, int i11);
-
-    public final int Q(int i10) {
-        int i11 = this.c.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i11 != Integer.MAX_VALUE) {
-            return i11;
-        }
-        int i12 = this.f;
-        if (i12 < 0) {
-            i12 = R();
-            this.f = i12;
-        }
-        int i13 = 0;
-        int i14 = 0;
-        while (i13 < i12) {
-            int U = U(i13) + i14;
-            if (i10 >= i14 && i10 < U) {
-                int i15 = i10 - i14;
-                this.c.put(i10, i15);
-                return i15;
+        View view = this.a;
+        if (view != null) {
+            yl0Var.i1(view, 0.0f, 0.0f, false);
+            if (((yl0) tl0Var.b).R1) {
+                return;
             }
-            i13++;
-            i14 = U;
-        }
-        return -1;
-    }
-
-    public abstract int R();
-
-    public final int S(int i10) {
-        int i11 = this.d.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i11 != Integer.MAX_VALUE) {
-            return i11;
-        }
-        int i12 = this.f;
-        if (i12 < 0) {
-            i12 = R();
-            this.f = i12;
-        }
-        int i13 = 0;
-        int i14 = 0;
-        while (i13 < i12) {
-            int U = U(i13) + i14;
-            if (i10 >= i14 && i10 < U) {
-                this.d.put(i10, i13);
-                return i13;
+            try {
+                view.playSoundEffect(0);
+            } catch (Exception unused) {
             }
-            i13++;
-            i14 = U;
-        }
-        return -1;
-    }
-
-    public abstract View T(int i10, View view);
-
-    public final int U(int i10) {
-        int i11 = this.e.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i11 != Integer.MAX_VALUE) {
-            return i11;
-        }
-        int M = M(i10);
-        this.e.put(i10, M);
-        return M;
-    }
-
-    public abstract boolean V(int i10, int i11, s4.c1 c1Var);
-
-    public abstract void W(int i10, int i11, s4.c1 c1Var);
-
-    public final void X(boolean z10) {
-        ArrayList arrayList = this.n;
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        L();
-        arrayList.clear();
-        int i10 = this.f;
-        if (i10 < 0) {
-            i10 = R();
-            this.f = i10;
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            int U = U(i11);
-            for (int i12 = 0; i12 < U; i12++) {
-                arrayList.add(Integer.valueOf(N(i11, i12)));
+            view.sendAccessibilityEvent(1);
+            int i10 = this.b;
+            if (i10 != -1) {
+                yl0 yl0Var2 = (yl0) tl0Var.b;
+                ml0 ml0Var = yl0Var2.V0;
+                if (ml0Var != null) {
+                    ml0Var.d(i10, view);
+                    return;
+                }
+                nl0 nl0Var = yl0Var2.W0;
+                if (nl0Var != null) {
+                    nl0Var.c(this.c - view.getX(), this.d - view.getY(), i10, view);
+                }
             }
         }
-        if (z10) {
-            s4.o.c(new gg.g(this, arrayList2, 3), true).b(this);
-        } else {
-            super.l();
-        }
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        int i10 = this.h;
-        if (i10 >= 0) {
-            return i10;
-        }
-        this.h = 0;
-        int i11 = this.f;
-        if (i11 < 0) {
-            i11 = R();
-            this.f = i11;
-        }
-        for (int i12 = 0; i12 < i11; i12++) {
-            this.h = U(i12) + this.h;
-        }
-        return this.h;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return P(S(i10), Q(i10));
-    }
-
-    @Override // s4.h0
-    public void l() {
-        X(false);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        W(S(i10), Q(i10), c1Var);
     }
 }

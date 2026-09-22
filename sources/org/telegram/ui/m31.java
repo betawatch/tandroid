@@ -14,11 +14,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class m31 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public i31 c;
     public int d;
     public int e;
@@ -74,9 +74,9 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
             List<TLRPC.TL_availableReaction> reactionsList = m31Var.getMediaDataController().getReactionsList();
             ArrayList arrayList = new ArrayList(20);
             for (int i12 = 0; i12 < reactionsList.size(); i12++) {
-                zg.o0 o0Var = new zg.o0();
-                o0Var.f = reactionsList.get(i12).reaction;
-                arrayList.add(o0Var);
+                zg.p0 p0Var = new zg.p0();
+                p0Var.f = reactionsList.get(i12).reaction;
+                arrayList.add(p0Var);
             }
             j31Var.setRecentReactions(arrayList);
             j31Var.setSaveState(3);
@@ -111,16 +111,16 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setActionBarMenuOnItemClick(new v70(this, 25));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.q1();
         this.actionBar.setAdaptiveBackground(this.b);
         ((s4.j) this.b.getItemAnimator()).m = false;
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
         i31 i31Var = new i31(this, context);
         this.c = i31Var;
-        vl0Var2.setAdapter(i31Var);
+        yl0Var2.setAdapter(i31Var);
         this.b.setOnItemClickListener(new a31(this, 1));
         linearLayout.addView(this.b, w7.y5.n(-1, -1));
         this.a = linearLayout;
@@ -146,7 +146,7 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.c6.a(new wy0(4, this), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
+        return w7.b6.a(new wy0(4, this), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

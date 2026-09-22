@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public m70 a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public org.telegram.ui.Components.mz c;
     public long d;
     public boolean e;
@@ -51,9 +51,9 @@ public final class n70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.c = mzVar;
         mzVar.b();
         frameLayout.addView(this.c, w7.y5.e(-1, -1, 51));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.setLayoutManager(new s4.c0(1, false));
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0(1, false));
         this.b.setEmptyView(this.c);
         this.b.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.b, w7.y5.e(-1, -1, 51));

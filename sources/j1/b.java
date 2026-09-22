@@ -9,13 +9,12 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import n2.e;
+import l.d;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import s0.d;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -41,7 +40,7 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final e a(View view) {
+    public final d a(View view) {
         if (this.j == null) {
             this.j = new a(this);
         }
@@ -49,7 +48,7 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, d dVar) {
+    public final void c(View view, s0.d dVar) {
         this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
     }
 
@@ -61,7 +60,7 @@ public abstract class b extends r0.b {
             return obtain;
         }
         AccessibilityEvent obtain2 = AccessibilityEvent.obtain(i11);
-        d j3 = j(i10);
+        s0.d j3 = j(i10);
         obtain2.getText().add(j3.g());
         AccessibilityNodeInfo accessibilityNodeInfo = j3.a;
         obtain2.setContentDescription(accessibilityNodeInfo.getContentDescription());
@@ -125,11 +124,11 @@ public abstract class b extends r0.b {
         parent.requestSendAccessibilityEvent(view, e);
     }
 
-    public final d j(int i10) {
+    public final s0.d j(int i10) {
         View view = this.i;
         if (i10 == -1) {
             AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(view);
-            d dVar = new d(obtain);
+            s0.d dVar = new s0.d(obtain);
             WeakHashMap weakHashMap = i0.a;
             view.onInitializeAccessibilityNodeInfo(obtain);
             ArrayList arrayList = new ArrayList();
@@ -144,7 +143,7 @@ public abstract class b extends r0.b {
             return dVar;
         }
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
-        d dVar2 = new d(obtain2);
+        s0.d dVar2 = new s0.d(obtain2);
         obtain2.setEnabled(true);
         obtain2.setFocusable(true);
         dVar2.i("android.view.View");
@@ -219,7 +218,7 @@ public abstract class b extends r0.b {
 
     public abstract boolean k(int i10, int i11);
 
-    public abstract void l(int i10, d dVar);
+    public abstract void l(int i10, s0.d dVar);
 
     public final void m(int i10, int i11) {
         View view;

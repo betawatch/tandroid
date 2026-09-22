@@ -17,15 +17,15 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
     public final Object b;
 
-    public q4(com.google.android.gms.common.api.internal.m1 m1Var, c5.b0 b0Var) {
+    public q4(com.google.android.gms.common.api.internal.m1 m1Var, c5.a0 a0Var) {
         this.a = 17;
-        this.b = b0Var;
+        this.b = a0Var;
     }
 
     private final void a() {
@@ -130,12 +130,12 @@ public final class q4 implements Runnable {
                 }
                 return;
             case 11:
-                c5.y yVar = (c5.y) this.b;
-                c5.c cVar = yVar.d;
+                c5.x xVar = (c5.x) this.b;
+                c5.c cVar = xVar.d;
                 cVar.k(0);
-                c5.h hVar2 = c5.g0.i;
+                c5.h hVar2 = c5.f0.i;
                 cVar.j(24, hVar2);
-                yVar.c(hVar2);
+                xVar.c(hVar2);
                 return;
             case 12:
                 qg.j jVar = ((ci.qb) this.b).J0;
@@ -167,7 +167,7 @@ public final class q4 implements Runnable {
                 ((com.google.android.gms.common.api.internal.p0) this.b).f();
                 return;
             case 15:
-                com.google.android.gms.common.api.c cVar2 = ((com.google.android.gms.common.api.internal.p0) ((a6.m) this.b).b).b;
+                com.google.android.gms.common.api.c cVar2 = ((com.google.android.gms.common.api.internal.p0) ((pb.c) this.b).b).b;
                 cVar2.d(cVar2.getClass().getName().concat(" disconnecting because it was signed out."));
                 return;
             case 16:
@@ -176,13 +176,13 @@ public final class q4 implements Runnable {
             case 17:
                 return;
             case 18:
-                com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
-                xVar.o.lock();
+                com.google.android.gms.common.api.internal.x xVar2 = (com.google.android.gms.common.api.internal.x) this.b;
+                xVar2.o.lock();
                 try {
-                    com.google.android.gms.common.api.internal.x.l(xVar);
+                    com.google.android.gms.common.api.internal.x.l(xVar2);
                     return;
                 } finally {
-                    xVar.o.unlock();
+                    xVar2.o.unlock();
                 }
             case 19:
                 ((f6.i) this.b).g(false);
@@ -212,15 +212,15 @@ public final class q4 implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
-                ki.o0 o0Var = (ki.o0) this.b;
-                if (o0Var.U == 5 && (e0Var = o0Var.Q) != null && o0Var.w) {
+                ki.q0 q0Var = (ki.q0) this.b;
+                if (q0Var.U == 5 && (e0Var = q0Var.Q) != null && q0Var.w) {
                     long J0 = e0Var.J0();
-                    long j3 = o0Var.F;
-                    if (J0 < j3 || J0 >= o0Var.G) {
-                        o0Var.Q.W0(5, j3);
+                    long j3 = q0Var.F;
+                    if (J0 < j3 || J0 >= q0Var.G) {
+                        q0Var.Q.W0(5, j3);
                     }
-                    o0Var.c.getClass();
-                    o0Var.h.postDelayed(this, 33L);
+                    q0Var.c.getClass();
+                    q0Var.h.postDelayed(this, 33L);
                     return;
                 }
                 return;

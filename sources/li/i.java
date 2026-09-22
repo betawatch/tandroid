@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class i {
     public f a;
@@ -31,17 +31,17 @@ public final class i {
     public final mi.a r = new mi.a();
     public final ArrayList s = new ArrayList();
 
-    public final void a(vl0 vl0Var) {
-        if (vl0Var == null) {
+    public final void a(yl0 yl0Var) {
+        if (yl0Var == null) {
             return;
         }
-        vl0Var.E2.b.add(new mt() { // from class: li.d
+        yl0Var.E2.b.add(new mt() { // from class: li.d
             @Override // org.telegram.ui.Components.mt
             public final void a(int i10, boolean z10) {
                 i.this.f++;
             }
         });
-        vl0Var.j(new r(this, 12));
+        yl0Var.j(new r(this, 12));
     }
 
     public final mi.a b() {

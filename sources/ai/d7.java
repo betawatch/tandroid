@@ -3,14 +3,14 @@ package ai;
 import android.content.Context;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.jx0;
+import org.telegram.ui.Components.lx0;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final class d7 extends jx0 {
+public final class d7 extends lx0 {
     public final /* synthetic */ int K = 0;
     public final /* synthetic */ Object L;
 
@@ -20,7 +20,7 @@ public final class d7 extends jx0 {
         this.L = okVar;
     }
 
-    @Override // org.telegram.ui.Components.jx0
+    @Override // org.telegram.ui.Components.lx0
     public void e(boolean z10, boolean z11) {
         switch (this.K) {
             case 2:

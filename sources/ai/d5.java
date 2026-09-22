@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dy;
 import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.ky0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -132,13 +132,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 break;
             case 6:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
-                ky0 ky0Var = (ky0) obj2;
+                my0 my0Var = (my0) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    ky0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ky0Var, -6.0f);
+                    my0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(my0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ky0Var);
+                    AndroidUtilities.showKeyboard(my0Var);
                     break;
                 } else {
                     b2Var.dismiss();

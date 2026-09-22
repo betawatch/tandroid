@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class h70 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -250,28 +250,28 @@ public final class h70 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.c;
-                org.telegram.ui.Components.pk0 pk0Var = b0Var.n;
-                b0Var.k();
-                b0Var.l();
+                zg.c0 c0Var = (zg.c0) this.c;
+                org.telegram.ui.Components.sk0 sk0Var = c0Var.n;
+                c0Var.k();
+                c0Var.l();
                 boolean z10 = this.b;
-                zg.b0.a(b0Var, z10);
-                b0Var.m.invalidateOutline();
-                b0Var.j = z10 ? 1.0f : 0.0f;
+                zg.c0.a(c0Var, z10);
+                c0Var.m.invalidateOutline();
+                c0Var.j = z10 ? 1.0f : 0.0f;
                 if (z10) {
-                    b0Var.k = true;
-                    b0Var.a.invalidate();
+                    c0Var.k = true;
+                    c0Var.a.invalidate();
                 }
-                pk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
+                sk0Var.setCustomEmojiEnterProgress(Utilities.clamp(c0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    pk0Var.setImportantForAccessibility(0);
-                    pk0Var.setSkipDraw(false);
-                    b0Var.f();
+                    sk0Var.setImportantForAccessibility(0);
+                    sk0Var.setSkipDraw(false);
+                    c0Var.f();
                     Runtime.getRuntime().gc();
-                    int i11 = b0Var.y;
-                    pk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
+                    int i11 = c0Var.y;
+                    sk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
                 }
-                b0Var.C = false;
+                c0Var.C = false;
                 break;
         }
     }

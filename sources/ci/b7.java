@@ -18,13 +18,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.rf0;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.uf0;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b7 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -57,29 +57,29 @@ public final /* synthetic */ class b7 implements Utilities.Callback {
                 o8Var.B0 = i15;
                 d7Var.T.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i12, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                 d7Var.invalidate();
-                i71 i71Var = d7Var.n;
-                if (i71Var != null) {
+                l71 l71Var = d7Var.n;
+                if (l71Var != null) {
                     int i16 = d7Var.U;
                     int i17 = d7Var.V;
-                    vz vzVar = i71Var.b;
+                    vz vzVar = l71Var.b;
                     if (vzVar == null) {
-                        i71Var.n = i16;
-                        i71Var.r = i17;
+                        l71Var.n = i16;
+                        l71Var.r = i17;
                     } else {
                         vzVar.i(i16, i17);
                     }
                 }
-                rf0 rf0Var = d7Var.s;
-                if (rf0Var != null) {
+                uf0 uf0Var = d7Var.s;
+                if (uf0Var != null) {
                     int i18 = d7Var.U;
                     int i19 = d7Var.V;
-                    vz vzVar2 = rf0Var.l0;
+                    vz vzVar2 = uf0Var.l0;
                     if (vzVar2 != null) {
                         vzVar2.i(i18, i19);
                         break;
                     } else {
-                        rf0Var.J0 = i18;
-                        rf0Var.K0 = i19;
+                        uf0Var.J0 = i18;
+                        uf0Var.K0 = i19;
                         break;
                     }
                 }
@@ -100,13 +100,13 @@ public final /* synthetic */ class b7 implements Utilities.Callback {
                     } else {
                         LinearLayout linearLayout = new LinearLayout(xaVar.getContext());
                         linearLayout.setOrientation(1);
-                        kj0 kj0Var = new kj0(xaVar.getContext());
-                        kj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                        kj0Var.f(R.raw.ic_ban, 50, 50, null);
-                        kj0Var.d();
-                        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
-                        kj0Var.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I6, false)));
-                        linearLayout.addView(kj0Var, w7.y5.t(80, 80, 17, 0, 14, 0, 0));
+                        nj0 nj0Var = new nj0(xaVar.getContext());
+                        nj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                        nj0Var.f(R.raw.ic_ban, 50, 50, null);
+                        nj0Var.d();
+                        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                        nj0Var.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I6, false)));
+                        linearLayout.addView(nj0Var, w7.y5.t(80, 80, 17, 0, 14, 0, 0));
                         TextView textView = new TextView(xaVar.getContext());
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setTextSize(1, 20.0f);
@@ -146,7 +146,7 @@ public final /* synthetic */ class b7 implements Utilities.Callback {
                         linearLayout.addView(frameLayout, w7.y5.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
                         d dVar = new d(xaVar.getContext(), null, true);
                         dVar.setRoundRadius(24);
-                        w7.b6.b(dVar, 0.02f, 1.5f);
+                        w7.a6.b(dVar, 0.02f, 1.5f);
                         dVar.g(LocaleController.getString(R.string.GotIt), false, true);
                         linearLayout.addView(dVar, w7.y5.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
                         org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, xaVar.getContext(), (org.telegram.ui.ActionBar.f6) null, false);

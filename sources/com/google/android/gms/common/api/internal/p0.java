@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.p3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -417,7 +417,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         b(new k6.a(4));
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.j()) {
-            cVar.f(new a6.m(this, 13));
+            cVar.f(new pb.c(this, 14));
         }
     }
 

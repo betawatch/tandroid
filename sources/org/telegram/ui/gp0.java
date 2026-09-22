@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class gp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class gp0 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 2:
-                ((PhotoViewer) ((org.telegram.ui.Components.zk0) this.b).c).A2 = null;
+                ((PhotoViewer) ((org.telegram.ui.Components.cl0) this.b).c).A2 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -73,7 +73,7 @@ public final class gp0 extends AnimatorListenerAdapter {
                 hr0Var.h.setEnabled(true);
                 break;
             case 2:
-                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.zk0) obj).c;
+                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.cl0) obj).c;
                 if (photoViewer.A2 != null) {
                     sl0 sl0Var = new sl0(this, 17);
                     photoViewer.I2 = sl0Var;
@@ -186,7 +186,7 @@ public final class gp0 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 14:
-                ((ProfileActivity) ((org.telegram.ui.Components.zk0) obj).c).D5 = null;
+                ((ProfileActivity) ((org.telegram.ui.Components.cl0) obj).c).D5 = null;
                 break;
             case 15:
                 a11 a11Var = (a11) obj;
@@ -229,7 +229,7 @@ public final class gp0 extends AnimatorListenerAdapter {
                 j71Var.h0.invalidate();
                 break;
             case 21:
-                zg.e0.a();
+                zg.f0.a();
                 j71 j71Var2 = (j71) obj;
                 g61 g61Var = j71Var2.h0;
                 g61 g61Var2 = j71Var2.h0;

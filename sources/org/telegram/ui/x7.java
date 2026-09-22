@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class x7 extends s4.h0 {
     public final /* synthetic */ int c;
@@ -226,7 +226,7 @@ public final class x7 extends s4.h0 {
                     marginLayoutParams.rightMargin = AndroidUtilities.dp(4.0f);
                     textView.setText(spannableString);
                 }
-                sVar.b(w7.g6.a(nb0Var), false);
+                sVar.b(w7.f6.a(nb0Var), false);
                 int dp = AndroidUtilities.dp(18.0f);
                 qVar.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 0, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), -16777216));
                 qVar.setForeground(nb0Var.c);
@@ -297,7 +297,7 @@ public final class x7 extends s4.h0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return new org.telegram.ui.Components.fl0(new f8((i8) this.d, viewGroup.getContext()));
+                return new org.telegram.ui.Components.il0(new f8((i8) this.d, viewGroup.getContext()));
             case 1:
                 Context context = viewGroup.getContext();
                 org.telegram.ui.Cells.s sVar = new org.telegram.ui.Cells.s(context);
@@ -320,26 +320,26 @@ public final class x7 extends s4.h0 {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(0.5f)));
                 paint2.setColor(-1);
-                return new org.telegram.ui.Components.fl0(sVar);
+                return new org.telegram.ui.Components.il0(sVar);
             case 2:
                 org.telegram.ui.Components.a9 a9Var = (org.telegram.ui.Components.a9) this.d;
-                return new org.telegram.ui.Components.fl0(new org.telegram.ui.Components.b9(a9Var.c3, a9Var.getContext()));
+                return new org.telegram.ui.Components.il0(new org.telegram.ui.Components.b9(a9Var.c3, a9Var.getContext()));
             case 3:
-                return new org.telegram.ui.Components.fl0(((org.telegram.ui.Components.qm) this.d).v);
+                return new org.telegram.ui.Components.il0(((org.telegram.ui.Components.qm) this.d).v);
             case 4:
-                return new org.telegram.ui.Components.fl0(new ci.eb(this, ((org.telegram.ui.Components.vn) this.d).getContext(), 15));
+                return new org.telegram.ui.Components.il0(new ci.eb(this, ((org.telegram.ui.Components.vn) this.d).getContext(), 15));
             default:
-                org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(viewGroup.getContext(), null);
-                k90Var.setGravity(17);
-                k90Var.setTypeface(AndroidUtilities.bold());
-                k90Var.setTextSize(1, 14.0f);
-                k90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                k90Var.setEllipsize(TextUtils.TruncateAt.END);
-                k90Var.setSingleLine();
-                k90Var.setMaxLines(1);
-                k90Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(28.0f)));
-                w7.b6.b(k90Var, 0.075f, 1.4f);
-                return new org.telegram.ui.Components.fl0(k90Var);
+                org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(viewGroup.getContext(), null);
+                n90Var.setGravity(17);
+                n90Var.setTypeface(AndroidUtilities.bold());
+                n90Var.setTextSize(1, 14.0f);
+                n90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                n90Var.setEllipsize(TextUtils.TruncateAt.END);
+                n90Var.setSingleLine();
+                n90Var.setMaxLines(1);
+                n90Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(28.0f)));
+                w7.a6.b(n90Var, 0.075f, 1.4f);
+                return new org.telegram.ui.Components.il0(n90Var);
         }
     }
 

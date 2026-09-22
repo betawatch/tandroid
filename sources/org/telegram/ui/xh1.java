@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xh1 extends ViewGroup {
     public AnimatorSet a;
@@ -78,7 +78,7 @@ public final class xh1 extends ViewGroup {
         this.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.zk0(16, this, m30Var));
+        animatorSet2.addListener(new org.telegram.ui.Components.cl0(16, this, m30Var));
         this.a.setDuration(150L);
         this.e = m30Var;
         ArrayList arrayList = this.c;

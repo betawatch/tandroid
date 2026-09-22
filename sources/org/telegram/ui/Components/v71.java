@@ -1,632 +1,1757 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.content.SharedPreferences;
+import android.media.MediaCodecInfo;
+import android.media.MediaCodecList;
+import android.media.MediaFormat;
+import android.net.Uri;
 import android.os.Build;
-import android.os.SystemClock;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
-import android.util.Pair;
-import android.view.View;
+import android.util.Base64;
+import android.util.LongSparseArray;
+import android.view.Surface;
+import android.view.SurfaceView;
+import android.view.TextureView;
+import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
+import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
+import b2.k0;
+import b2.p;
+import g2.g;
+import j$.util.Objects;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import l.d;
+import lf.h;
+import m2.e;
+import n2.m;
+import o2.c;
+import o2.l;
+import ob.a;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.f3;
+import org.telegram.ui.ja0;
+import p2.s;
+import qb.b;
+import t7.u;
+import u2.e0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class v71 {
-    public static Paint Q;
-    public static Paint R;
-    public static int S;
-    public static float[] T;
-    public static Path U;
-    public int A;
-    public final d6 D;
-    public float E;
-    public ArrayList F;
-    public CharSequence G;
-    public long H;
-    public StaticLayout[] K;
-    public TextPaint L;
-    public int N;
-    public long O;
-    public float a;
-    public int h;
-    public int i;
-    public u71 j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public float p;
-    public boolean q;
-    public float s;
-    public float t;
-    public long u;
-    public final View v;
-    public float y;
-    public int z;
-    public int b = 0;
-    public float c = 0.0f;
-    public int d = 0;
-    public int e = 0;
-    public boolean f = false;
-    public boolean g = false;
-    public final RectF o = new RectF();
-    public float r = 1.0f;
-    public final int w = AndroidUtilities.dp(4.0f);
-    public final int x = AndroidUtilities.dp(2.0f);
-    public int B = 0;
-    public float C = 1.0f;
-    public float I = 0.0f;
-    public int J = -1;
-    public float M = 1.0f;
-    public float P = -1.0f;
+public class v71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationCenterDelegate {
+    public static int j0;
+    public static final HashSet k0 = new HashSet();
+    public static HashMap l0;
+    public boolean E;
+    public Uri F;
+    public boolean G;
+    public boolean H;
+    public boolean I;
+    public s71 J;
+    public o71 K;
+    public int L;
+    public boolean M;
+    public ArrayList N;
+    public r71 O;
+    public ArrayList P;
+    public Uri Q;
+    public Uri R;
+    public String S;
+    public String T;
+    public boolean U;
+    public boolean V;
+    public final boolean W;
+    public DashMediaSource$Factory X;
+    public HlsMediaSource$Factory Y;
+    public u2.w0 Z;
+    public final int a;
+    public final Handler a0;
+    public DispatchQueue b;
+    public final boolean b0;
+    public boolean c;
+    public boolean c0;
+    public i2.e0 d;
+    public int d0;
+    public i2.e0 e;
+    public boolean e0;
+    public final x2.q f;
+    public long f0;
+    public long g0;
+    public final ExtendedDefaultDataSourceFactory h;
+    public org.telegram.ui.jr0 h0;
+    public final ArrayList i0;
+    public TextureView n;
+    public SurfaceView r;
+    public Surface s;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public boolean y;
 
-    public v71(View view) {
-        if (Q == null) {
-            Q = new Paint(1);
-            Paint paint = new Paint(1);
-            R = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            R.setColor(-16777216);
-            R.setStrokeWidth(1.0f);
-        }
-        this.v = view;
-        S = AndroidUtilities.dp(24.0f);
-        this.t = AndroidUtilities.dp(6.0f);
-        this.D = new d6(0.0f, view, 0L, 300L, qr.h);
+    public v71() {
+        this(true, false);
     }
 
-    public static void g(float f7, int i10) {
-        if (f7 < 1.0f) {
-            i10 = i0.a.k(i10, (int) (Color.alpha(i10) * f7));
-        }
-        Q.setColor(i10);
-    }
-
-    public final void a(Canvas canvas, View view) {
-        float f7;
-        View view2;
-        char c10;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        int i10;
-        char c11;
-        float lerp = AndroidUtilities.lerp(S / 2.0f, 0.0f, this.y) + this.z;
-        RectF rectF = this.o;
-        rectF.left = lerp;
-        int i11 = this.i;
-        int i12 = this.w;
-        rectF.top = AndroidUtilities.lerp((i11 - i12) / 2.0f, (i11 - AndroidUtilities.dp(3.0f)) - this.x, this.y);
-        int i13 = this.i;
-        rectF.bottom = AndroidUtilities.lerp((i13 + i12) / 2.0f, i13 - AndroidUtilities.dp(3.0f), this.y);
-        float f14 = this.b;
-        float min = Math.min(this.c, f14);
-        this.c = min;
-        float lerp2 = AndroidUtilities.lerp(min, f14, 0.5f);
-        this.c = lerp2;
-        float abs = Math.abs(f14 - lerp2);
-        View view3 = this.v;
-        if (abs > 0.005f) {
-            view3.invalidate();
-        }
-        float f15 = this.c;
-        float f16 = this.C;
-        if (f16 != 1.0f) {
-            float f17 = f16 + 0.07272727f;
-            this.C = f17;
-            if (f17 >= 1.0f) {
-                this.C = 1.0f;
-            } else {
-                view.invalidate();
-                float interpolation = qr.f.getInterpolation(this.C);
-                f15 = (f15 * interpolation) + ((1.0f - interpolation) * this.B);
-            }
-        }
-        float d = this.D.d(0.0f, false);
-        if (this.f) {
-            d = 0.0f;
-        }
-        rectF.right = AndroidUtilities.lerp(this.h - (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
-        g(1.0f - this.y, this.k);
-        b(canvas, rectF, Q);
-        float f18 = this.r;
-        if (f18 != 1.0f) {
-            float f19 = f18 + 0.16f;
-            this.r = f19;
-            if (f19 > 1.0f) {
-                this.r = 1.0f;
-            } else {
-                view3.invalidate();
-            }
-        }
-        if (this.q) {
-            float f20 = this.p;
-            if (f20 > 0.0f) {
-                f7 = 2.0f;
-                rectF.right = AndroidUtilities.lerp((f20 * (this.h - r14)) + (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
-                g((1.0f - this.r) * (1.0f - this.y), this.l);
-                b(canvas, rectF, Q);
-            } else {
-                f7 = 2.0f;
-            }
-            float f21 = this.s;
-            if (f21 > 0.0f) {
-                rectF.right = AndroidUtilities.lerp((f21 * (this.h - r13)) + (S / f7), view3.getWidth() - (this.z * f7), this.y) + this.z;
-                g(1.0f - this.y, this.l);
-                b(canvas, rectF, Q);
-            }
-        } else {
-            f7 = 2.0f;
-            float f22 = this.p;
-            float f23 = this.r;
-            float f24 = (this.s * f23) + ((1.0f - f23) * f22);
-            if (f24 > 0.0f) {
-                rectF.right = AndroidUtilities.lerp((f24 * (this.h - r13)) + (S / 2.0f), view3.getWidth() - (this.z * 2.0f), this.y) + this.z;
-                g(1.0f - this.y, this.l);
-                b(canvas, rectF, Q);
-            }
-        }
-        float dp = AndroidUtilities.dp(this.f ? 8.0f : 6.0f);
-        if (this.t != dp) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            view2 = view3;
-            long j3 = elapsedRealtime - this.u;
-            this.u = elapsedRealtime;
-            if (j3 > 18) {
-                j3 = 16;
-            }
-            float f25 = this.t;
-            if (f25 < dp) {
-                c10 = 0;
-                float e = a4.a.e(j3, 60.0f, AndroidUtilities.dp(1.0f), f25);
-                this.t = e;
-                if (e > dp) {
-                    this.t = dp;
-                }
-            } else {
-                c10 = 0;
-                float b10 = org.telegram.messenger.rk.b(j3, 60.0f, AndroidUtilities.dp(1.0f), f25);
-                this.t = b10;
-                if (b10 < dp) {
-                    this.t = dp;
-                }
-            }
-            view2.invalidate();
-        } else {
-            view2 = view3;
-            c10 = 0;
-        }
-        float lerp3 = AndroidUtilities.lerp(this.t, 0.0f, this.y);
-        if (d > 0.0f) {
-            float f26 = rectF.left;
-            f10 = 0.2f;
-            f11 = 8.0f;
-            float lerp4 = AndroidUtilities.lerp((S / f7) + (this.h - r14), view2.getWidth() - (this.z * f7), this.y) + this.z;
-            rectF.right = lerp4;
-            rectF.left = AndroidUtilities.lerp(f26, lerp4, 1.0f - d);
-            if (this.y > 0.0f && rectF.width() > 0.0f) {
-                R.setAlpha((int) (this.y * 255.0f * 0.2f));
-                b(canvas, rectF, R);
-            }
-            g(1.0f, i0.a.d(this.y, this.n, this.A));
-            b(canvas, rectF, Q);
-            rectF.left = f26;
-            g(1.0f - this.y, i0.a.d(this.y, this.m, c() == 0.0f ? 0 : this.A));
-            canvas.drawCircle(AndroidUtilities.lerp((S / f7) + this.E, (this.E / (this.h - S)) * (view2.getWidth() - (this.z * f7)), this.y) + this.z, rectF.centerY(), lerp3 * d, Q);
-        } else {
-            f10 = 0.2f;
-            f11 = 8.0f;
-        }
-        float f27 = this.z;
-        float f28 = S / f7;
-        if (this.f) {
-            f15 = this.d;
-        }
-        rectF.right = AndroidUtilities.lerp(f28 + f15, c() * (view2.getWidth() - (this.z * f7)), this.y) + f27;
-        if (this.y > 0.0f && rectF.width() > 0.0f) {
-            R.setAlpha((int) (this.y * 255.0f * f10));
-            b(canvas, rectF, R);
-        }
-        g(1.0f, i0.a.d(this.y, this.n, this.A));
-        b(canvas, rectF, Q);
-        g(1.0f - this.y, i0.a.d(this.y, this.m, c() == 0.0f ? 0 : this.A));
-        canvas.drawCircle(rectF.right, rectF.centerY(), (1.0f - d) * lerp3, Q);
-        ArrayList arrayList = this.F;
-        if (arrayList == null || arrayList.isEmpty()) {
+    public static void I(MessageObject messageObject, boolean z10) {
+        if (messageObject == null) {
             return;
         }
-        float f29 = ((this.f || this.g) ? this.d : this.c) / (this.h - S);
-        int size = this.F.size() - 1;
-        while (true) {
-            if (size < 0) {
-                size = -1;
-                break;
-            } else if (((Float) ((Pair) this.F.get(size)).first).floatValue() - 0.001f <= f29) {
-                break;
-            } else {
-                size--;
-            }
-        }
-        if (this.K == null) {
-            this.K = new StaticLayout[2];
-        }
-        float lerp5 = AndroidUtilities.lerp(S / f7, 0.0f, this.y) + this.z;
-        float lerp6 = AndroidUtilities.lerp(this.h - (S / f7), view2.getWidth() - (this.z * f7), this.y) + this.z;
-        float f30 = (this.h - (S / f7)) + this.z;
-        float abs2 = Math.abs(lerp5 - f30) - AndroidUtilities.dp(16.0f);
-        float f31 = this.P;
-        if (f31 <= 0.0f || Math.abs(f31 - abs2) <= 0.01f) {
-            f12 = 3.0f;
-            f13 = 16.0f;
-        } else {
-            StaticLayout[] staticLayoutArr = this.K;
-            StaticLayout staticLayout = staticLayoutArr[c10];
-            if (staticLayout != null) {
-                f13 = 16.0f;
-                CharSequence text = staticLayout.getText();
-                f12 = 3.0f;
-                staticLayoutArr[c10] = d((int) abs2, text);
-            } else {
-                f12 = 3.0f;
-                f13 = 16.0f;
-            }
-            StaticLayout[] staticLayoutArr2 = this.K;
-            StaticLayout staticLayout2 = staticLayoutArr2[1];
-            if (staticLayout2 != null) {
-                staticLayoutArr2[1] = d((int) abs2, staticLayout2.getText());
-            }
-        }
-        this.P = abs2;
-        if (size != this.J) {
-            StaticLayout[] staticLayoutArr3 = this.K;
-            staticLayoutArr3[1] = staticLayoutArr3[c10];
-            if (this.f) {
-                AndroidUtilities.vibrateCursor(view2);
-            }
-            if (size < 0 || size >= this.F.size()) {
-                this.K[c10] = null;
-            } else {
-                CharSequence charSequence = (CharSequence) ((Pair) this.F.get(size)).second;
-                if (charSequence == null) {
-                    this.K[c10] = null;
-                } else {
-                    this.K[c10] = d((int) abs2, charSequence);
-                }
-            }
-            this.M = 0.0f;
-            if (size == -1) {
-                this.N = -1;
-            } else {
-                int i14 = this.J;
-                if (i14 == -1) {
-                    this.N = 1;
-                } else if (size < i14) {
-                    this.N = -1;
-                } else if (size > i14) {
-                    this.N = 1;
-                }
-            }
-            this.J = size;
-        }
-        if (this.M < 1.0f) {
-            i10 = i12;
-            c11 = 1;
-            this.M = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.O)) / (this.F.size() > 8 ? 160.0f : 220.0f)) + this.M, 1.0f);
-            view2.invalidate();
-            this.O = SystemClock.elapsedRealtime();
-        } else {
-            i10 = i12;
-            c11 = 1;
-        }
-        if (this.I < 1.0f) {
-            this.I = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.O)) / 200.0f) + this.I, 1.0f);
-            view2.invalidate();
-            SystemClock.elapsedRealtime();
-        }
-        float interpolation2 = qr.f.getInterpolation(this.M);
-        canvas.save();
-        int i15 = this.i;
-        canvas.translate(((lerp6 - f30) * this.y) + lerp5, AndroidUtilities.lerp((i15 + i10) / f7, i15 - AndroidUtilities.dp(f12), this.y) + AndroidUtilities.dp(12.0f));
-        if (this.K[c11] != null) {
-            canvas.save();
-            if (this.N != 0) {
-                canvas.translate((AndroidUtilities.dp(f13) * (-this.N) * interpolation2) + AndroidUtilities.dp(f11), 0.0f);
-            }
-            canvas.translate(0.0f, (-this.K[c11].getHeight()) / f7);
-            this.L.setAlpha((int) ((1.0f - interpolation2) * (1.0f - this.y) * 255.0f * this.I));
-            this.K[c11].draw(canvas);
-            canvas.restore();
-        }
-        if (this.K[c10] != null) {
-            canvas.save();
-            if (this.N != 0) {
-                canvas.translate(com.google.android.gms.internal.vision.e2.z(1.0f, interpolation2, AndroidUtilities.dp(f13) * this.N, AndroidUtilities.dp(f11)), 0.0f);
-            }
-            canvas.translate(0.0f, (-this.K[c10].getHeight()) / f7);
-            this.L.setAlpha((int) (org.telegram.messenger.l0.z(1.0f, this.y, 255.0f, interpolation2) * this.I));
-            this.K[c10].draw(canvas);
-            canvas.restore();
-        }
-        canvas.restore();
+        ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putBoolean(messageObject.getDialogId() + "_" + messageObject.getId() + "loop", z10).apply();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x01a1, code lost:
-    
-        if (r12.left >= r27.left) goto L78;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x020a A[EDGE_INSN: B:70:0x020a->B:71:0x020a BREAK  A[LOOP:2: B:28:0x00d9->B:75:0x0200], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0200 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(Canvas canvas, RectF rectF, Paint paint) {
-        int i10;
-        char c10;
-        float floatValue;
-        char c11;
-        v71 v71Var = this;
-        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(2, 1, v71Var.y));
-        ArrayList arrayList = v71Var.F;
-        if (arrayList == null || arrayList.isEmpty()) {
-            canvas.drawRoundRect(rectF, dp, dp, paint);
+    public static void J(r71 r71Var, MessageObject messageObject) {
+        if (messageObject == null) {
             return;
         }
-        float f7 = rectF.bottom;
-        float lerp = AndroidUtilities.lerp(S / 2.0f, 0.0f, v71Var.y) + v71Var.z;
-        float lerp2 = AndroidUtilities.lerp(v71Var.h - (S / 2.0f), v71Var.v.getWidth() - (v71Var.z * 2.0f), v71Var.y) + v71Var.z;
-        AndroidUtilities.rectTmp.set(rectF);
-        float dp2 = AndroidUtilities.dp(v71Var.I * 1.0f) / 2.0f;
-        if (U == null) {
-            U = new Path();
+        long dialogId = messageObject.getDialogId();
+        int id2 = messageObject.getId();
+        SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit();
+        if (r71Var == null) {
+            edit.remove(dialogId + "_" + id2 + "q2");
+        } else {
+            String str = dialogId + "_" + id2 + "q2";
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(r71Var.b);
+            sb2.append("x");
+            sb2.append(r71Var.c);
+            sb2.append(r71Var.a ? "s" : "");
+            edit.putString(str, sb2.toString());
         }
-        U.reset();
-        float dp3 = AndroidUtilities.dp(4.0f) / (lerp2 - lerp);
-        int i11 = 0;
-        while (true) {
-            i10 = -1;
-            if (i11 >= v71Var.F.size()) {
-                i11 = -1;
-                break;
-            } else if (((Float) ((Pair) v71Var.F.get(i11)).first).floatValue() >= dp3) {
-                break;
-            } else {
-                i11++;
-            }
-        }
-        if (i11 < 0) {
-            i11 = 0;
-        }
-        int size = v71Var.F.size() - 1;
-        while (true) {
-            if (size < 0) {
-                break;
-            }
-            if (1.0f - ((Float) ((Pair) v71Var.F.get(size)).first).floatValue() >= dp3) {
-                i10 = size + 1;
-                break;
-            }
-            size--;
-        }
-        if (i10 < 0) {
-            i10 = v71Var.F.size();
-        }
-        int i12 = i10;
-        int i13 = i11;
-        while (i13 <= i12) {
-            if (i13 == i11) {
-                floatValue = 0.0f;
-                c10 = 1;
-            } else {
-                c10 = 1;
-                floatValue = ((Float) ((Pair) v71Var.F.get(i13 - 1)).first).floatValue();
-            }
-            float floatValue2 = i13 == i12 ? 1.0f : ((Float) ((Pair) v71Var.F.get(i13)).first).floatValue();
-            while (i13 != i12 && i13 != 0 && i13 < v71Var.F.size() - 1 && ((Float) ((Pair) v71Var.F.get(i13)).first).floatValue() - floatValue <= dp3) {
-                i13++;
-                floatValue2 = ((Float) ((Pair) v71Var.F.get(i13)).first).floatValue();
-            }
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(lerp, lerp2, floatValue) + (i13 > 0 ? dp2 : 0.0f);
-            float lerp3 = AndroidUtilities.lerp(lerp, lerp2, floatValue2) - (i13 < i12 ? dp2 : 0.0f);
-            rectF2.right = lerp3;
-            float f10 = rectF.right;
-            boolean z10 = lerp3 > f10;
-            if (z10) {
-                rectF2.right = f10;
-            }
-            float f11 = rectF2.right;
-            float f12 = rectF.left;
-            if (f11 >= f12) {
-                if (rectF2.left < f12) {
-                    rectF2.left = f12;
-                }
-                if (T == null) {
-                    T = new float[8];
-                }
-                if (i13 != i11) {
-                    if (z10) {
-                        c11 = 4;
-                    } else {
-                        c11 = 4;
-                    }
-                    if (i13 >= i12) {
-                        float[] fArr = T;
-                        float f13 = 0.7f * dp * v71Var.I;
-                        fArr[7] = f13;
-                        fArr[6] = f13;
-                        fArr[c10] = f13;
-                        fArr[0] = f13;
-                        fArr[5] = dp;
-                        fArr[c11] = dp;
-                        fArr[3] = dp;
-                        fArr[2] = dp;
-                    } else {
-                        float[] fArr2 = T;
-                        float f14 = 0.7f * dp * v71Var.I;
-                        fArr2[5] = f14;
-                        fArr2[c11] = f14;
-                        fArr2[3] = f14;
-                        fArr2[2] = f14;
-                        fArr2[7] = f14;
-                        fArr2[6] = f14;
-                        fArr2[c10] = f14;
-                        fArr2[0] = f14;
-                    }
-                    U.addRoundRect(rectF2, T, Path.Direction.CW);
-                    if (!z10) {
+        edit.apply();
+    }
+
+    public static boolean Y(String str) {
+        String concat;
+        if (str == null) {
+            concat = null;
+        } else {
+            switch (str) {
+                case "av1":
+                case "av01":
+                    concat = "video/av01";
+                    break;
+                case "avc":
+                case "h264":
+                    concat = MediaController.VIDEO_MIME_TYPE;
+                    break;
+                case "vp8":
+                    concat = "video/x-vnd.on2.vp8";
+                    break;
+                case "vp9":
+                    concat = "video/x-vnd.on2.vp9";
+                    break;
+                case "h265":
+                case "hevc":
+                    concat = "video/hevc";
+                    break;
+                default:
+                    try {
+                        concat = "video/".concat(str);
                         break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return false;
                     }
-                } else {
-                    c11 = 4;
-                }
-                float[] fArr3 = T;
-                fArr3[7] = dp;
-                fArr3[6] = dp;
-                fArr3[c10] = dp;
-                fArr3[0] = dp;
-                float f15 = 0.7f * dp * v71Var.I;
-                fArr3[5] = f15;
-                fArr3[c11] = f15;
-                fArr3[3] = f15;
-                fArr3[2] = f15;
-                U.addRoundRect(rectF2, T, Path.Direction.CW);
-                if (!z10) {
-                }
             }
-            i13++;
-            v71Var = this;
         }
-        canvas.drawPath(U, paint);
-    }
-
-    public final float c() {
-        return this.b / (this.h - S);
-    }
-
-    public final StaticLayout d(int i10, CharSequence charSequence) {
-        if (this.L == null) {
-            TextPaint textPaint = new TextPaint(1);
-            this.L = textPaint;
-            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-            this.L.setColor(-1);
-        }
-        CharSequence charSequence2 = charSequence == null ? "" : charSequence;
-        if (Build.VERSION.SDK_INT >= 23) {
-            return StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), this.L, i10).setMaxLines(1).setAlignment(Layout.Alignment.ALIGN_CENTER).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(Math.min(AndroidUtilities.dp(400.0f), i10)).build();
-        }
-        CharSequence charSequence3 = charSequence2;
-        return new StaticLayout(charSequence3, 0, charSequence3.length(), this.L, i10, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.dp(400.0f), i10));
-    }
-
-    public final boolean e(float f7, float f10, int i10) {
-        u71 u71Var;
-        if (i10 == 0) {
-            if (this.y <= 0.0f) {
-                int i11 = this.i;
-                int i12 = S;
-                int i13 = (i11 - i12) / 2;
-                if (f7 >= (-i13)) {
-                    int i14 = this.h;
-                    if (f7 <= i14 + i13 && f10 >= 0.0f && f10 <= i11) {
-                        int i15 = this.b;
-                        if (i15 - i13 > f7 || f7 > i15 + i12 + i13) {
-                            int i16 = ((int) f7) - (i12 / 2);
-                            this.b = i16;
-                            if (i16 < 0) {
-                                this.b = 0;
-                            } else if (i16 > i14 - i12) {
-                                this.b = i12 - i14;
+        if (concat != null) {
+            if (l0 == null) {
+                l0 = new HashMap();
+            }
+            Boolean bool = (Boolean) l0.get(concat);
+            if (bool != null) {
+                return bool.booleanValue();
+            }
+            if (!MessagesController.getGlobalMainSettings().getBoolean("unsupport_".concat(concat), false)) {
+                int codecCount = MediaCodecList.getCodecCount();
+                for (int i10 = 0; i10 < codecCount; i10++) {
+                    MediaCodecInfo codecInfoAt = MediaCodecList.getCodecInfoAt(i10);
+                    if (!codecInfoAt.isEncoder() && r2.w.h(codecInfoAt, concat)) {
+                        for (String str2 : codecInfoAt.getSupportedTypes()) {
+                            if (str2.equalsIgnoreCase(concat)) {
+                                l0.put(concat, Boolean.TRUE);
+                                return true;
                             }
-                            this.c = this.b;
                         }
-                        this.g = true;
-                        this.f = true;
-                        int i17 = this.b;
-                        this.d = i17;
-                        this.e = (int) (f7 - i17);
-                        return true;
                     }
                 }
+                l0.put(concat, Boolean.FALSE);
+                return false;
             }
-        } else if (i10 == 1 || i10 == 3) {
-            if (this.f) {
-                int i18 = this.d;
-                this.b = i18;
-                float f11 = i18;
-                this.c = f11;
-                if (i10 == 1 && (u71Var = this.j) != null) {
-                    u71Var.b(f11 / (this.h - S));
-                }
-                this.f = false;
-                AndroidUtilities.runOnUIThread(new l71(this, 2), 50L);
-                return true;
-            }
-        } else if (i10 == 2 && this.f) {
-            int i19 = (int) (f7 - this.e);
-            this.d = i19;
-            if (i19 < 0) {
-                this.d = 0;
-            } else {
-                int i20 = this.h - S;
-                if (i19 > i20) {
-                    this.d = i20;
-                }
-            }
-            u71 u71Var2 = this.j;
-            if (u71Var2 != null) {
-                u71Var2.d(this.d / (this.h - S));
-            }
-            return true;
         }
         return false;
     }
 
-    public final void f(float f7) {
-        float f10 = this.s;
-        if (f7 != f10) {
-            this.p = f10;
-            this.q = f7 < f10;
-            this.s = f7;
-            this.r = 0.0f;
+    public static t71 k(ArrayList arrayList) {
+        if (arrayList == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((r71) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                t71 t71Var = (t71) obj2;
+                if (t71Var.b()) {
+                    return t71Var;
+                }
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList s(int i10, TLRPC.Document document, ArrayList arrayList, int i11, boolean z10) {
+        r71 r71Var;
+        String str;
+        ArrayList arrayList2 = new ArrayList();
+        if (document != null) {
+            arrayList2.add(document);
+        }
+        if (!MessagesController.getInstance(i10).videoIgnoreAltDocuments && arrayList != null) {
+            arrayList2.addAll(arrayList);
+        }
+        LongSparseArray longSparseArray = new LongSparseArray();
+        int i12 = 0;
+        while (i12 < arrayList2.size()) {
+            TLRPC.Document document2 = (TLRPC.Document) arrayList2.get(i12);
+            if ("application/x-mpegurl".equalsIgnoreCase(document2.mime_type) && (str = document2.file_name_fixed) != null && str.startsWith("mtproto")) {
+                try {
+                    longSparseArray.put(Long.parseLong(document2.file_name_fixed.substring(7)), document2);
+                    arrayList2.remove(i12);
+                    i12--;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+            i12++;
+        }
+        ArrayList arrayList3 = new ArrayList();
+        for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+            try {
+                TLRPC.Document document3 = (TLRPC.Document) arrayList2.get(i13);
+                if (!"application/x-mpegurl".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboard".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboardmap".equalsIgnoreCase(document3.mime_type)) {
+                    t71 d = t71.d(i10, document3, (TLRPC.Document) longSparseArray.get(document3.id), i11, z10);
+                    if (d.i > 0 && d.j > 0) {
+                        if (document3 == document) {
+                            d.b = true;
+                        }
+                        arrayList3.add(d);
+                    }
+                }
+            } catch (Exception e7) {
+                FileLog.e(e7);
+            }
+        }
+        ArrayList arrayList4 = new ArrayList();
+        for (int i14 = 0; i14 < arrayList3.size(); i14++) {
+            t71 t71Var = (t71) arrayList3.get(i14);
+            String str2 = t71Var.m;
+            if (str2 == null || ((!"av1".equals(str2) && !"av01".equals(t71Var.m) && !"hevc".equals(t71Var.m) && !"h265".equals(t71Var.m) && !"vp9".equals(t71Var.m)) || Y(t71Var.m))) {
+                arrayList4.add(t71Var);
+            }
+        }
+        ArrayList arrayList5 = new ArrayList();
+        if (arrayList4.isEmpty()) {
+            arrayList5.addAll(arrayList3);
+        } else {
+            arrayList5.addAll(arrayList4);
+        }
+        ArrayList arrayList6 = new ArrayList();
+        int size = arrayList5.size();
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = arrayList5.get(i15);
+            i15++;
+            t71 t71Var2 = (t71) obj;
+            if (t71Var2.b) {
+                arrayList6.add(new r71(t71Var2));
+            } else {
+                int size2 = arrayList6.size();
+                int i16 = 0;
+                while (true) {
+                    if (i16 >= size2) {
+                        r71Var = null;
+                        break;
+                    }
+                    Object obj2 = arrayList6.get(i16);
+                    i16++;
+                    r71Var = (r71) obj2;
+                    if (!r71Var.a && r71Var.b == t71Var2.i && r71Var.c == t71Var2.j) {
+                        break;
+                    }
+                }
+                if (r71Var == null || SharedConfig.debugVideoQualities) {
+                    arrayList6.add(new r71(t71Var2));
+                } else {
+                    r71Var.d.add(t71Var2);
+                }
+            }
+        }
+        return arrayList6;
+    }
+
+    public static t71 v(ArrayList arrayList) {
+        int i10;
+        int i11;
+        int size = arrayList.size();
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            i12++;
+            ArrayList arrayList2 = ((r71) obj).d;
+            int size2 = arrayList2.size();
+            int i13 = 0;
+            while (i13 < size2) {
+                Object obj2 = arrayList2.get(i13);
+                i13++;
+                t71 t71Var = (t71) obj2;
+                if (t71Var.b && t71Var.b()) {
+                    return t71Var;
+                }
+            }
+        }
+        int size3 = arrayList.size();
+        t71 t71Var2 = null;
+        int i14 = 0;
+        while (i14 < size3) {
+            Object obj3 = arrayList.get(i14);
+            i14++;
+            ArrayList arrayList3 = ((r71) obj3).d;
+            int size4 = arrayList3.size();
+            int i15 = 0;
+            while (i15 < size4) {
+                Object obj4 = arrayList3.get(i15);
+                i15++;
+                t71 t71Var3 = (t71) obj4;
+                if (!t71Var3.b && Y(t71Var3.m) && (t71Var2 == null || (i10 = t71Var3.i * t71Var3.j) > (i11 = t71Var2.i * t71Var2.j) || (i10 == i11 && t71Var3.l < t71Var2.l))) {
+                    t71Var2 = t71Var3;
+                }
+            }
+        }
+        if (t71Var2 == null) {
+            int size5 = arrayList.size();
+            int i16 = 0;
+            while (i16 < size5) {
+                Object obj5 = arrayList.get(i16);
+                i16++;
+                ArrayList arrayList4 = ((r71) obj5).d;
+                int size6 = arrayList4.size();
+                int i17 = 0;
+                while (i17 < size6) {
+                    Object obj6 = arrayList4.get(i17);
+                    i17++;
+                    t71 t71Var4 = (t71) obj6;
+                    if (t71Var2 == null || t71Var2.i * t71Var2.j > t71Var4.i * t71Var4.j || t71Var4.l < t71Var2.l) {
+                        t71Var2 = t71Var4;
+                    }
+                }
+            }
+        }
+        return t71Var2;
+    }
+
+    public static t71 w(ArrayList arrayList) {
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((r71) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                t71 t71Var = (t71) obj2;
+                if (t71Var.b()) {
+                    return t71Var;
+                }
+            }
+        }
+        int size3 = arrayList.size();
+        t71 t71Var2 = null;
+        int i12 = 0;
+        while (i12 < size3) {
+            Object obj3 = arrayList.get(i12);
+            i12++;
+            ArrayList arrayList3 = ((r71) obj3).d;
+            int size4 = arrayList3.size();
+            int i13 = 0;
+            while (i13 < size4) {
+                Object obj4 = arrayList3.get(i13);
+                i13++;
+                t71 t71Var3 = (t71) obj4;
+                if (!t71Var3.b && (t71Var2 == null || t71Var2.i * t71Var2.j > t71Var3.i * t71Var3.j || t71Var3.l < t71Var2.l)) {
+                    if (t71Var3.i <= 900 && t71Var3.j <= 900) {
+                        t71Var2 = t71Var3;
+                    }
+                }
+            }
+        }
+        if (t71Var2 == null) {
+            int size5 = arrayList.size();
+            int i14 = 0;
+            while (i14 < size5) {
+                Object obj5 = arrayList.get(i14);
+                i14++;
+                ArrayList arrayList4 = ((r71) obj5).d;
+                int size6 = arrayList4.size();
+                int i15 = 0;
+                while (i15 < size6) {
+                    Object obj6 = arrayList4.get(i15);
+                    i15++;
+                    t71 t71Var4 = (t71) obj6;
+                    if (t71Var2 == null || t71Var2.i * t71Var2.j > t71Var4.i * t71Var4.j || t71Var4.l < t71Var2.l) {
+                        t71Var2 = t71Var4;
+                    }
+                }
+            }
+        }
+        return t71Var2;
+    }
+
+    /* JADX WARN: Type inference failed for: r0v4, types: [androidx.media3.exoplayer.hls.HlsMediaSource$Factory] */
+    /* JADX WARN: Type inference failed for: r0v9, types: [androidx.media3.exoplayer.dash.DashMediaSource$Factory] */
+    public final u2.a A(Uri uri, String str, long j3) {
+        b2.d0 d0Var;
+        b2.f0 f0Var;
+        n2.m x10;
+        n2.m mVar;
+        final ExtendedDefaultDataSourceFactory extendedDefaultDataSourceFactory = this.h;
+        b2.y yVar = new b2.y();
+        b2.b0 b0Var = new b2.b0();
+        List list = Collections.EMPTY_LIST;
+        e9.a1 a1Var = e9.a1.e;
+        b2.d0 d0Var2 = new b2.d0();
+        b2.g0 g0Var = b2.g0.d;
+        e2.d.g(b0Var.b == null || b0Var.a != null);
+        if (uri != null) {
+            b2.c0 c0Var = b0Var.a != null ? new b2.c0(b0Var) : null;
+            d0Var = d0Var2;
+            f0Var = new b2.f0(uri, null, c0Var, null, list, null, a1Var, -9223372036854775807L);
+        } else {
+            d0Var = d0Var2;
+            f0Var = null;
+        }
+        b2.k0 k0Var = new b2.k0("", new b2.a0(yVar), f0Var, new b2.e0(d0Var), b2.n0.K, g0Var);
+        if (j3 == 0) {
+            str.getClass();
+            if (str.equals("hls")) {
+                if (this.Y == null) {
+                    this.Y = new u2.e0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.hls.HlsMediaSource$Factory
+                        public final d a;
+                        public c b;
+                        public b c;
+                        public final h h = new h(5);
+                        public final u e = new u();
+                        public final ja0 f = p2.c.E;
+                        public final b i = new b(26);
+                        public final a g = new a(23);
+                        public final int k = 1;
+                        public final long l = -9223372036854775807L;
+                        public final boolean j = true;
+                        public boolean d = true;
+
+                        {
+                            this.a = new d(extendedDefaultDataSourceFactory, 7);
+                        }
+
+                        @Override // u2.e0
+                        public final e0 b(boolean z10) {
+                            this.d = z10;
+                            return this;
+                        }
+
+                        @Override // u2.e0
+                        public final e0 d(b bVar) {
+                            this.c = bVar;
+                            return this;
+                        }
+
+                        @Override // u2.e0
+                        /* renamed from: e, reason: merged with bridge method [inline-methods] */
+                        public final l a(k0 k0Var2) {
+                            k0Var2.b.getClass();
+                            if (this.b == null) {
+                                c cVar = new c();
+                                cVar.a = new b(28);
+                                this.b = cVar;
+                            }
+                            b bVar = this.c;
+                            if (bVar != null) {
+                                this.b.a = bVar;
+                            }
+                            c cVar2 = this.b;
+                            cVar2.b = this.d;
+                            cVar2.getClass();
+                            List list2 = k0Var2.b.e;
+                            boolean isEmpty = list2.isEmpty();
+                            s sVar = this.e;
+                            if (!isEmpty) {
+                                sVar = new f3(sVar, list2, false, 7);
+                            }
+                            m A = this.h.A(k0Var2);
+                            this.f.getClass();
+                            d dVar = this.a;
+                            b bVar2 = this.i;
+                            return new l(k0Var2, dVar, cVar2, this.g, A, bVar2, new p2.c(dVar, bVar2, sVar), this.l, this.j, this.k);
+                        }
+
+                        @Override // u2.e0
+                        public final e0 c() {
+                            return this;
+                        }
+                    };
+                }
+                return a(k0Var);
+            }
+            if (str.equals("dash")) {
+                if (this.X == null) {
+                    this.X = new u2.e0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.dash.DashMediaSource$Factory
+                        public final a5.a a;
+                        public final g b;
+                        public final h c;
+                        public final a d;
+                        public final b e;
+                        public final long f;
+                        public final long g;
+
+                        {
+                            a5.a aVar = new a5.a(extendedDefaultDataSourceFactory);
+                            this.a = aVar;
+                            this.b = extendedDefaultDataSourceFactory;
+                            this.c = new h(5);
+                            this.e = new b(26);
+                            this.f = 30000L;
+                            this.g = 5000000L;
+                            this.d = new a(23);
+                            ((p) aVar.d).b = true;
+                        }
+
+                        @Override // u2.e0
+                        public final u2.a a(k0 k0Var2) {
+                            k0Var2.b.getClass();
+                            e eVar = new e();
+                            List list2 = k0Var2.b.e;
+                            return new l2.g(k0Var2, this.b, !list2.isEmpty() ? new f3(eVar, list2, false, 14) : eVar, this.a, this.d, this.c.A(k0Var2), this.e, this.f, this.g);
+                        }
+
+                        @Override // u2.e0
+                        public final e0 b(boolean z10) {
+                            ((p) this.a.d).b = z10;
+                            return this;
+                        }
+
+                        @Override // u2.e0
+                        public final e0 c() {
+                            ((p) this.a.d).getClass();
+                            return this;
+                        }
+
+                        @Override // u2.e0
+                        public final e0 d(b bVar) {
+                            p pVar = (p) this.a.d;
+                            pVar.getClass();
+                            pVar.c = bVar;
+                            return this;
+                        }
+                    };
+                }
+                return a(k0Var);
+            }
+            if (this.Z == null) {
+                this.Z = new u2.w0(extendedDefaultDataSourceFactory, new c3.m());
+            }
+            return this.Z.a(k0Var);
+        }
+        ai.z1 z1Var = new ai.z1(this, j3, 7);
+        r5.d dVar = new r5.d(new c3.m(), 10);
+        Object obj = new Object();
+        qb.b bVar = new qb.b(26);
+        f0Var.getClass();
+        k0Var.b.getClass();
+        b2.c0 c0Var2 = k0Var.b.c;
+        if (c0Var2 == null) {
+            mVar = n2.m.z;
+        } else {
+            synchronized (obj) {
+                try {
+                    x10 = !c0Var2.equals(null) ? lf.h.x(c0Var2) : null;
+                    x10.getClass();
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            mVar = x10;
+        }
+        return new u2.x0(k0Var, z1Var, dVar, mVar, bVar, 1048576, null);
+    }
+
+    public void B() {
+        this.I = false;
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.X(false);
+        }
+        i2.e0 e0Var2 = this.e;
+        if (e0Var2 != null) {
+            e0Var2.X(false);
+        }
+        if (this.K != null) {
+            this.a0.removeCallbacksAndMessages(null);
+            this.K.onVisualizerUpdate(false, true, null);
         }
     }
 
-    public final void h(float f7, boolean z10) {
-        if (Math.abs(this.a - 1.0f) < 0.04f && Math.abs(f7) < 0.04f) {
-            this.D.d(1.0f, true);
-            this.E = this.b;
+    public void C() {
+        this.I = true;
+        if (!this.x || (this.H && this.G)) {
+            i2.e0 e0Var = this.d;
+            if (e0Var != null) {
+                e0Var.X(true);
+            }
+            i2.e0 e0Var2 = this.e;
+            if (e0Var2 != null) {
+                e0Var2.X(true);
+                return;
+            }
+            return;
         }
-        this.a = f7;
-        int ceil = (int) Math.ceil((this.h - S) * f7);
-        if (z10) {
-            if (Math.abs(ceil - this.b) > AndroidUtilities.dp(10.0f)) {
-                float interpolation = qr.f.getInterpolation(this.C);
-                this.B = (int) com.google.android.gms.internal.vision.e2.z(1.0f, interpolation, this.B, this.b * interpolation);
-                this.C = 0.0f;
-            } else if (this.C == 1.0f) {
-                this.C = 0.0f;
-                this.B = this.b;
+        i2.e0 e0Var3 = this.d;
+        if (e0Var3 != null) {
+            e0Var3.X(false);
+        }
+        i2.e0 e0Var4 = this.e;
+        if (e0Var4 != null) {
+            e0Var4.X(false);
+        }
+    }
+
+    public final void D(Uri uri, String str) {
+        E(uri, str, 0L);
+    }
+
+    public final void E(Uri uri, String str, long j3) {
+        this.N = null;
+        this.O = null;
+        this.Q = uri;
+        this.S = str;
+        this.R = null;
+        this.T = null;
+        boolean z10 = false;
+        this.U = false;
+        this.c0 = false;
+        this.e0 = false;
+        this.G = false;
+        this.x = false;
+        this.F = uri;
+        String scheme = uri != null ? uri.getScheme() : null;
+        if (scheme != null && !scheme.startsWith("file")) {
+            z10 = true;
+        }
+        this.v = z10;
+        i();
+        this.d.q1(A(uri, str, j3), true);
+        this.d.b();
+    }
+
+    public final void F(ArrayList arrayList, r71 r71Var) {
+        ArrayList arrayList2;
+        this.N = arrayList;
+        this.O = r71Var;
+        this.Q = null;
+        this.S = "hls";
+        this.R = null;
+        this.T = null;
+        this.U = false;
+        this.c0 = false;
+        this.G = false;
+        this.x = false;
+        this.F = null;
+        this.v = true;
+        i();
+        this.e0 = false;
+        this.d0 = (r71Var == null || (arrayList2 = this.N) == null) ? -1 : arrayList2.indexOf(r71Var);
+        R(true, r71Var);
+        if (this.c0) {
+            this.d0 = -1;
+        }
+    }
+
+    public final void G(Uri uri, String str, Uri uri2, String str2) {
+        Uri uri3;
+        String str3;
+        u2.w wVar = null;
+        this.N = null;
+        this.O = null;
+        this.Q = uri;
+        this.R = uri2;
+        this.S = str;
+        this.T = str2;
+        this.U = true;
+        this.e0 = false;
+        this.x = true;
+        this.H = false;
+        this.G = false;
+        i();
+        u2.w wVar2 = null;
+        for (int i10 = 0; i10 < 2; i10++) {
+            if (i10 == 0) {
+                uri3 = uri;
+                str3 = str;
+            } else {
+                uri3 = uri2;
+                str3 = str2;
+            }
+            u2.w wVar3 = new u2.w(A(uri3, str3, 0L));
+            if (i10 == 0) {
+                wVar = wVar3;
+            } else {
+                wVar2 = wVar3;
             }
         }
-        this.b = ceil;
-        if (ceil < 0) {
-            this.b = 0;
+        this.d.q1(wVar, true);
+        this.d.b();
+        this.e.q1(wVar2, true);
+        this.e.b();
+        k0.add(Integer.valueOf(this.a));
+    }
+
+    public final void H() {
+        k0.remove(Integer.valueOf(this.a));
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.U0();
+            this.d = null;
+        }
+        i2.e0 e0Var2 = this.e;
+        if (e0Var2 != null) {
+            e0Var2.U0();
+            this.e = null;
+        }
+        if (this.W) {
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.playerDidStartPlaying);
+        }
+    }
+
+    public void K(long j3) {
+        L(j3, false);
+    }
+
+    public final void L(long j3, boolean z10) {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.s1(z10 ? i2.p1.d : i2.p1.c);
+            this.d.W0(5, j3);
+        }
+    }
+
+    public final void M(long j3, boolean z10, Runnable runnable) {
+        if (this.d != null) {
+            if (runnable != null) {
+                this.i0.add(runnable);
+            }
+            this.d.s1(z10 ? i2.p1.d : i2.p1.c);
+            this.d.W0(5, j3);
+        }
+    }
+
+    public final void N(boolean z10) {
+        if (this.V != z10) {
+            this.V = z10;
+            i2.e0 e0Var = this.d;
+            if (e0Var != null) {
+                e0Var.j(z10 ? 2 : 0);
+            }
+        }
+    }
+
+    public final void O(boolean z10) {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.U(z10 ? 0.0f : 1.0f);
+        }
+        i2.e0 e0Var2 = this.e;
+        if (e0Var2 != null) {
+            e0Var2.U(z10 ? 0.0f : 1.0f);
+        }
+    }
+
+    public void P(boolean z10) {
+        this.I = z10;
+        if (z10 && this.x && (!this.H || !this.G)) {
+            i2.e0 e0Var = this.d;
+            if (e0Var != null) {
+                e0Var.X(false);
+            }
+            i2.e0 e0Var2 = this.e;
+            if (e0Var2 != null) {
+                e0Var2.X(false);
+                return;
+            }
+            return;
+        }
+        this.w = z10;
+        i2.e0 e0Var3 = this.d;
+        if (e0Var3 != null) {
+            e0Var3.X(z10);
+        }
+        i2.e0 e0Var4 = this.e;
+        if (e0Var4 != null) {
+            e0Var4.X(z10);
+        }
+    }
+
+    public void Q(float f7) {
+        try {
+            i2.e0 e0Var = this.d;
+            if (e0Var != null) {
+                e0Var.f(new b2.v0(f7, f7 > 1.0f ? 0.98f : 1.0f));
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:91:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01b8 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void R(boolean z10, r71 r71Var) {
+        boolean z11;
+        boolean z12;
+        int i10;
+        int i11;
+        b2.m1 m1Var;
+        int i12;
+        r71 r71Var2;
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return;
+        }
+        boolean i02 = e0Var.i0();
+        long J0 = this.d.J0();
+        if (!z10) {
+            this.g0 = J0;
+            this.f0 = this.d.getDuration();
+        }
+        this.O = r71Var;
+        x2.q qVar = this.f;
+        boolean z13 = true;
+        int i13 = 0;
+        if (r71Var == null) {
+            Uri z14 = z(this.N);
+            int i14 = 0;
+            while (true) {
+                if (i14 >= t()) {
+                    r71Var2 = null;
+                    break;
+                }
+                r71 u10 = u(i14);
+                if (u10.a) {
+                    r71Var2 = u10;
+                    break;
+                }
+                i14++;
+            }
+            if (r71Var2 != null) {
+                ArrayList arrayList = r71Var2.d;
+                if (arrayList.size() == 1 && ((t71) arrayList.get(0)).b()) {
+                    this.e0 = false;
+                    this.c0 = true;
+                    this.O = r71Var2;
+                    this.d.q1(A(r71Var2.a().d, "other", 0L), false);
+                    z11 = i02;
+                }
+            }
+            if (z14 != null) {
+                this.c0 = false;
+                x2.j e = qVar.e();
+                e.getClass();
+                x2.i iVar = new x2.i(e);
+                iVar.c();
+                qVar.b(new x2.j(iVar));
+                if (this.e0) {
+                    z13 = false;
+                } else {
+                    this.e0 = true;
+                    this.d.q1(A(z14, "hls", 0L), false);
+                }
+            } else {
+                r71 r10 = r(Boolean.TRUE);
+                if (r10 == null) {
+                    r10 = r(Boolean.FALSE);
+                }
+                if (r10 == null || r10.d.isEmpty()) {
+                    return;
+                }
+                this.e0 = false;
+                this.O = r10;
+                this.c0 = r10.a;
+                this.d.q1(A(r10.a().d, "other", 0L), false);
+            }
+            z11 = i02;
         } else {
-            int i10 = this.h - S;
-            if (ceil > i10) {
-                this.b = i10;
+            ArrayList arrayList2 = r71Var.d;
+            this.c0 = false;
+            if (arrayList2.isEmpty()) {
+                return;
+            }
+            Uri z15 = arrayList2.size() > 1 ? z(this.N) : null;
+            if (z15 == null || arrayList2.size() == 1 || qVar.c == null) {
+                z11 = i02;
+                this.e0 = false;
+                this.d.q1(A(r71Var.a().d, "other", 0L), false);
+            } else {
+                if (this.e0) {
+                    z13 = false;
+                } else {
+                    this.e0 = true;
+                    this.d.q1(A(z15, "hls", 0L), false);
+                }
+                x2.j e7 = qVar.e();
+                e7.getClass();
+                x2.i iVar2 = new x2.i(e7);
+                iVar2.c();
+                int size = arrayList2.size();
+                int i15 = 0;
+                while (i15 < size) {
+                    int i16 = i15 + 1;
+                    t71 t71Var = (t71) arrayList2.get(i15);
+                    try {
+                        int indexOf = this.P.indexOf(t71Var);
+                        x2.u uVar = qVar.c;
+                        int i17 = 0;
+                        while (i17 < uVar.a) {
+                            u2.p1 p1Var = uVar.c[i17];
+                            z12 = i02;
+                            while (i13 < p1Var.a) {
+                                try {
+                                    b2.l1 a2 = p1Var.a(i13);
+                                    i10 = size;
+                                    i11 = i16;
+                                    int i18 = 0;
+                                    while (i18 < a2.a) {
+                                        try {
+                                            b2.s sVar = a2.d[i18];
+                                            u2.p1 p1Var2 = p1Var;
+                                            try {
+                                                i12 = Integer.parseInt(sVar.a);
+                                            } catch (Exception unused) {
+                                                i12 = -1;
+                                            }
+                                            if (i12 >= 0 && indexOf == i12) {
+                                                m1Var = new b2.m1(a2, i18);
+                                                break;
+                                            }
+                                            int i19 = indexOf;
+                                            if (sVar.y == t71Var.i && sVar.z == t71Var.j) {
+                                                m1Var = new b2.m1(a2, i18);
+                                                break;
+                                            } else {
+                                                i18++;
+                                                p1Var = p1Var2;
+                                                indexOf = i19;
+                                            }
+                                        } catch (Exception e10) {
+                                            e = e10;
+                                            FileLog.e(e);
+                                            m1Var = null;
+                                            if (m1Var != null) {
+                                            }
+                                            size = i10;
+                                            i02 = z12;
+                                            i15 = i11;
+                                            i13 = 0;
+                                        }
+                                    }
+                                    i13++;
+                                    size = i10;
+                                    i16 = i11;
+                                } catch (Exception e11) {
+                                    e = e11;
+                                    i10 = size;
+                                    i11 = i16;
+                                    FileLog.e(e);
+                                    m1Var = null;
+                                    if (m1Var != null) {
+                                    }
+                                    size = i10;
+                                    i02 = z12;
+                                    i15 = i11;
+                                    i13 = 0;
+                                }
+                            }
+                            i17++;
+                            i02 = z12;
+                            i13 = 0;
+                        }
+                        z12 = i02;
+                        i10 = size;
+                        i11 = i16;
+                    } catch (Exception e12) {
+                        e = e12;
+                        z12 = i02;
+                    }
+                    m1Var = null;
+                    if (m1Var != null) {
+                        iVar2.D.put(m1Var.a, m1Var);
+                    }
+                    size = i10;
+                    i02 = z12;
+                    i15 = i11;
+                    i13 = 0;
+                }
+                z11 = i02;
+                qVar.b(new x2.j(iVar2));
             }
         }
-        if (Math.abs(this.c - this.b) > AndroidUtilities.dp(8.0f)) {
-            this.c = this.b;
+        if (z13) {
+            this.d.b();
+            if (!z10) {
+                this.d.W0(5, J0);
+                if (z11) {
+                    this.d.i();
+                }
+            }
+            org.telegram.ui.jr0 jr0Var = this.h0;
+            if (jr0Var != null) {
+                AndroidUtilities.runOnUIThread(jr0Var);
+            }
+            k0.add(Integer.valueOf(this.a));
         }
+    }
+
+    public final void S(int i10) {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.K0(new b2.e(0, 0, i10 == 0 ? 2 : 1, 1, 0, false), false);
+        }
+        i2.e0 e0Var2 = this.e;
+        if (e0Var2 != null) {
+            e0Var2.K0(new b2.e(0, 0, i10 == 0 ? 2 : 1, 1, 0, false), true);
+        }
+    }
+
+    public final void T(Surface surface) {
+        if (this.s == surface) {
+            return;
+        }
+        this.s = surface;
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return;
+        }
+        e0Var.n(surface);
+    }
+
+    public final void U(SurfaceView surfaceView) {
+        if (this.r == surfaceView) {
+            return;
+        }
+        this.r = surfaceView;
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return;
+        }
+        e0Var.u1(surfaceView);
+    }
+
+    public final void V(TextureView textureView) {
+        if (this.n == textureView) {
+            return;
+        }
+        this.n = textureView;
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return;
+        }
+        e0Var.v1(textureView);
+    }
+
+    public final void W(float f7) {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            e0Var.U(f7);
+        }
+        i2.e0 e0Var2 = this.e;
+        if (e0Var2 != null) {
+            e0Var2.U(f7);
+        }
+    }
+
+    public final void X(DispatchQueue dispatchQueue) {
+        this.b = dispatchQueue;
+        if (dispatchQueue == null) {
+            this.d.m0 = null;
+        } else {
+            this.d.m0 = new org.telegram.messenger.c1(dispatchQueue);
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.playerDidStartPlaying || ((v71) objArr[0]) == this || !y() || this.y) {
+            return;
+        }
+        B();
+    }
+
+    @Override // j2.b
+    public final void g(j2.a aVar, int i10) {
+        if (i10 == 1) {
+            s71 s71Var = this.J;
+            if (s71Var != null) {
+                s71Var.onSeekFinished(aVar);
+            }
+            ArrayList arrayList = this.i0;
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                ((Runnable) obj).run();
+            }
+            arrayList.clear();
+        }
+    }
+
+    public final void i() {
+        y2.d dVar = new y2.d();
+        boolean z10 = this.c;
+        int i10 = MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int i11 = z10 ? MediaDataController.MAX_STYLE_RUNS_COUNT : 100;
+        if (!z10) {
+            i10 = 2000;
+        }
+        i2.k.a(i11, 0, "bufferForPlaybackMs", "0");
+        i2.k.a(i10, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        i2.k.a(50000, i11, "minBufferMs", "bufferForPlaybackMs");
+        i2.k.a(50000, i10, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        i2.k.a(50000, 50000, "maxBufferMs", "minBufferMs");
+        i2.k.a(0, 0, "backBufferDurationMs", "0");
+        i2.k kVar = new i2.k(dVar, i11, i10);
+        if (this.d == null) {
+            i2.l p71Var = this.K != null ? new p71(ApplicationLoader.applicationContext, this) : new i2.l(ApplicationLoader.applicationContext);
+            p71Var.c = 1;
+            i2.p pVar = new i2.p(ApplicationLoader.applicationContext);
+            e2.d.g(!pVar.v);
+            pVar.c = new i2.o(p71Var, 2);
+            x2.q qVar = this.f;
+            e2.d.g(!pVar.v);
+            qVar.getClass();
+            pVar.e = new i2.o(qVar, 1);
+            e2.d.g(!pVar.v);
+            pVar.f = new i2.o(kVar, 0);
+            i2.e0 a2 = pVar.a();
+            this.d = a2;
+            j2.f fVar = a2.s;
+            fVar.getClass();
+            fVar.f.a(this);
+            this.d.m.a(this);
+            this.d.n0.add(this);
+            TextureView textureView = this.n;
+            if (textureView != null) {
+                this.d.v1(textureView);
+            } else {
+                Surface surface = this.s;
+                if (surface != null) {
+                    this.d.n(surface);
+                } else {
+                    SurfaceView surfaceView = this.r;
+                    if (surfaceView != null) {
+                        this.d.u1(surfaceView);
+                    }
+                }
+            }
+            this.d.X(this.w);
+            this.d.j(this.V ? 2 : 0);
+        }
+        if (this.x && this.e == null) {
+            i2.p pVar2 = new i2.p(ApplicationLoader.applicationContext);
+            x2.q qVar2 = this.f;
+            e2.d.g(!pVar2.v);
+            qVar2.getClass();
+            pVar2.e = new i2.o(qVar2, 1);
+            e2.d.g(!pVar2.v);
+            pVar2.f = new i2.o(kVar, 0);
+            i2.e0 a10 = pVar2.a();
+            this.e = a10;
+            a10.m.a(new ki.f0(this, 1));
+            this.e.X(this.w);
+        }
+    }
+
+    public final long j() {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            return this.v ? e0Var.c0() : e0Var.getDuration();
+        }
+        return 0L;
+    }
+
+    public final of.g l(String str, String str2, String str3) {
+        if (this.N == null) {
+            if (this.Q == null) {
+                return null;
+            }
+            String g10 = v7.j0.g("/mtproto_", str);
+            String queryParameter = this.Q.getQueryParameter("mime");
+            of.e eVar = new of.e(this.Q, TextUtils.isEmpty(queryParameter) ? "video/mp4" : queryParameter, g10);
+            eVar.e = str2;
+            eVar.f = str3;
+            return new of.g(new of.f(eVar));
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.N;
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            ArrayList arrayList3 = ((r71) obj).d;
+            int size2 = arrayList3.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList3.get(i11);
+                i11++;
+                t71 t71Var = (t71) obj2;
+                StringBuilder sb2 = new StringBuilder("/mtproto_");
+                ArrayList arrayList4 = arrayList2;
+                sb2.append(t71Var.c);
+                String sb3 = sb2.toString();
+                TLRPC.Document document = t71Var.g;
+                String str4 = document != null ? document.mime_type : null;
+                if (TextUtils.isEmpty(str4)) {
+                    str4 = "video/mp4";
+                }
+                of.e eVar2 = new of.e(t71Var.d, str4, sb3);
+                eVar2.e = str2;
+                eVar2.f = str3;
+                int i12 = t71Var.i;
+                int i13 = t71Var.j;
+                eVar2.a = i12;
+                eVar2.b = i13;
+                arrayList.add(new of.f(eVar2));
+                arrayList2 = arrayList4;
+            }
+        }
+        return new of.g(arrayList);
+    }
+
+    public final TLRPC.Document m() {
+        ArrayList arrayList;
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return null;
+        }
+        e0Var.B1();
+        b2.s sVar = e0Var.Q;
+        if (sVar == null || sVar.n == 0 || (arrayList = this.N) == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((r71) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                t71 t71Var = (t71) obj2;
+                if (t71Var.c == sVar.n) {
+                    return t71Var.g;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final long n() {
+        long j3 = this.g0;
+        if (j3 != -9223372036854775807L) {
+            return j3;
+        }
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            return e0Var.J0();
+        }
+        return 0L;
+    }
+
+    public final int o() {
+        if (this.d0 == -1) {
+            try {
+                if (this.c0) {
+                    for (int i10 = 0; i10 < t(); i10++) {
+                        if (u(i10).a) {
+                            return i10;
+                        }
+                    }
+                }
+                i2.e0 e0Var = this.d;
+                if (e0Var != null) {
+                    e0Var.B1();
+                    b2.s sVar = e0Var.Q;
+                    if (sVar != null) {
+                        for (int i11 = 0; i11 < t(); i11++) {
+                            r71 u10 = u(i11);
+                            if (!u10.a && sVar.y == u10.b && sVar.z == u10.c && sVar.j == ((int) Math.floor(((t71) u10.d.get(0)).l * 8.0d))) {
+                                return i11;
+                            }
+                        }
+                    }
+                }
+                return -1;
+            } catch (Exception e) {
+                FileLog.e(e);
+                return -1;
+            }
+        }
+        return this.d0;
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onCues(d2.d dVar) {
+    }
+
+    @Override // b2.z0
+    public final void onPlayerError(b2.u0 u0Var) {
+        AndroidUtilities.runOnUIThread(new yn0(22, this, u0Var));
+    }
+
+    @Override // b2.z0
+    public final void onPlayerStateChanged(boolean z10, int i10) {
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            boolean u10 = e0Var.u();
+            int d = this.d.d();
+            if (this.M != u10 || this.L != d) {
+                this.J.onStateChanged(u10, d);
+                this.M = u10;
+                this.L = d;
+            }
+        }
+        if (z10 && i10 == 3 && !x() && this.W) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.playerDidStartPlaying, this);
+        }
+        if (!this.G && i10 == 3) {
+            this.G = true;
+            if (this.H && this.I) {
+                C();
+            }
+        }
+        if (i10 != 3) {
+            this.a0.removeCallbacksAndMessages(null);
+            o71 o71Var = this.K;
+            if (o71Var != null) {
+                o71Var.onVisualizerUpdate(false, true, null);
+            }
+        }
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPositionDiscontinuity(int i10) {
+    }
+
+    @Override // j2.b
+    public final void onRenderedFirstFrame(j2.a aVar) {
+        this.g0 = -9223372036854775807L;
+        this.f0 = -9223372036854775807L;
+        s71 s71Var = this.J;
+        if (s71Var != null) {
+            s71Var.onRenderedFirstFrame(aVar);
+        }
+    }
+
+    @Override // j2.b
+    public final void onSeekStarted(j2.a aVar) {
+        s71 s71Var = this.J;
+        if (s71Var != null) {
+            s71Var.onSeekStarted(aVar);
+        }
+    }
+
+    @Override // b2.z0
+    public final void onTrackSelectionParametersChanged(b2.q1 q1Var) {
+        org.telegram.ui.jr0 jr0Var = this.h0;
+        if (jr0Var != null) {
+            AndroidUtilities.runOnUIThread(jr0Var);
+        }
+    }
+
+    @Override // b2.z0
+    public final void onTracksChanged(b2.s1 s1Var) {
+        org.telegram.ui.jr0 jr0Var = this.h0;
+        if (jr0Var != null) {
+            AndroidUtilities.runOnUIThread(jr0Var);
+        }
+    }
+
+    @Override // b2.z0
+    public final void onVideoSizeChanged(b2.x1 x1Var) {
+        if (Objects.equals(x1Var, b2.x1.d)) {
+            return;
+        }
+        this.J.onVideoSizeChanged(x1Var.a, x1Var.b, 0, x1Var.c);
+    }
+
+    public final long p() {
+        long j3 = this.f0;
+        if (j3 != -9223372036854775807L) {
+            return j3;
+        }
+        i2.e0 e0Var = this.d;
+        if (e0Var != null) {
+            return e0Var.getDuration();
+        }
+        return 0L;
+    }
+
+    public final ci.n8 q(ci.n8 n8Var) {
+        if (n8Var == null) {
+            n8Var = new ci.n8();
+        }
+        try {
+            i2.e0 e0Var = this.d;
+            e0Var.B1();
+            MediaFormat mediaFormat = ((r2.r) e0Var.g[0]).d0;
+            ByteBuffer byteBuffer = mediaFormat.getByteBuffer("hdr-static-info");
+            byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
+            if (byteBuffer.get() == 0) {
+                byteBuffer.getShort(17);
+                byteBuffer.getShort(19);
+            }
+            if (Build.VERSION.SDK_INT >= 24) {
+                if (mediaFormat.containsKey("color-transfer")) {
+                    n8Var.b = mediaFormat.getInteger("color-transfer");
+                }
+                if (mediaFormat.containsKey("color-standard")) {
+                    n8Var.a = mediaFormat.getInteger("color-standard");
+                }
+                if (mediaFormat.containsKey("color-range")) {
+                    mediaFormat.getInteger("color-range");
+                }
+            }
+        } catch (Exception unused) {
+        }
+        return n8Var;
+    }
+
+    public final r71 r(Boolean bool) {
+        r71 r71Var = null;
+        for (int i10 = 0; i10 < t(); i10++) {
+            r71 u10 = u(i10);
+            if (u10.a == bool.booleanValue() && (r71Var == null || r71Var.b * r71Var.c < u10.b * u10.c)) {
+                r71Var = u10;
+            }
+        }
+        return r71Var;
+    }
+
+    public final int t() {
+        ArrayList arrayList = this.N;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    public final r71 u(int i10) {
+        ArrayList arrayList = this.N;
+        return arrayList == null ? r(Boolean.FALSE) : (i10 < 0 || i10 >= arrayList.size()) ? r(Boolean.FALSE) : (r71) this.N.get(i10);
+    }
+
+    public final boolean x() {
+        i2.e0 e0Var = this.d;
+        if (e0Var == null) {
+            return false;
+        }
+        e0Var.B1();
+        return e0Var.Z == 0.0f;
+    }
+
+    public final boolean y() {
+        if (this.x && this.I) {
+            return true;
+        }
+        i2.e0 e0Var = this.d;
+        return e0Var != null && e0Var.u();
+    }
+
+    public final Uri z(ArrayList arrayList) {
+        String str;
+        StringBuilder sb2 = new StringBuilder("#EXTM3U\n#EXT-X-VERSION:6\n#EXT-X-INDEPENDENT-SEGMENTS\n\n");
+        this.P = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        boolean z10 = false;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList3 = ((r71) obj).d;
+            int size2 = arrayList3.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList3.get(i11);
+                i11++;
+                t71 t71Var = (t71) obj2;
+                long j3 = t71Var.c;
+                Uri uri = t71Var.d;
+                ExtendedDefaultDataSourceFactory extendedDefaultDataSourceFactory = this.h;
+                extendedDefaultDataSourceFactory.putDocumentUri(j3, uri);
+                extendedDefaultDataSourceFactory.putDocumentUri(t71Var.e, t71Var.f);
+                if (t71Var.f != null) {
+                    this.P.add(t71Var);
+                    StringBuilder sb3 = new StringBuilder("#EXT-X-STREAM-INF:BANDWIDTH=");
+                    sb3.append((int) Math.floor(t71Var.l * 8.0d));
+                    sb3.append(",RESOLUTION=");
+                    sb3.append(t71Var.i);
+                    sb3.append("x");
+                    sb3.append(t71Var.j);
+                    String str2 = t71Var.m;
+                    if (str2 != null) {
+                        switch (str2) {
+                            case "av1":
+                            case "av01":
+                                str = "video/av01";
+                                break;
+                            case "avc":
+                            case "h264":
+                                str = MediaController.VIDEO_MIME_TYPE;
+                                break;
+                            case "vp8":
+                                str = "video/x-vnd.on2.vp8";
+                                break;
+                            case "vp9":
+                                str = "video/x-vnd.on2.vp9";
+                                break;
+                            case "h265":
+                            case "hevc":
+                                str = "video/hevc";
+                                break;
+                            default:
+                                str = "video/".concat(str2);
+                                break;
+                        }
+                    } else {
+                        str = null;
+                    }
+                    if (str != null) {
+                        sb3.append(",MIME=\"");
+                        sb3.append(str);
+                        sb3.append("\"");
+                    }
+                    if (t71Var.b() && t71Var.c()) {
+                        sb3.append(",CACHED=\"true\"");
+                    }
+                    sb3.append(",DOCID=\"");
+                    sb3.append(t71Var.c);
+                    sb3.append("\",ACCOUNT=\"");
+                    sb3.append(t71Var.a);
+                    sb3.append("\"\n");
+                    if (t71Var.c()) {
+                        sb3.append(t71Var.f);
+                        sb3.append("\n\n");
+                    } else {
+                        sb3.append("mtproto:");
+                        sb3.append(t71Var.e);
+                        sb3.append("\n\n");
+                    }
+                    arrayList2.add(sb3.toString());
+                    z10 = true;
+                }
+            }
+        }
+        if (!z10) {
+            return null;
+        }
+        Collections.reverse(arrayList2);
+        sb2.append(TextUtils.join("", arrayList2));
+        return Uri.parse("data:application/x-mpegurl;base64," + Base64.encodeToString(sb2.toString().getBytes(), 2));
+    }
+
+    public v71(boolean z10, boolean z11) {
+        int i10 = j0;
+        j0 = i10 + 1;
+        this.a = i10;
+        this.a0 = new Handler(Looper.getMainLooper());
+        this.c0 = false;
+        this.d0 = -1;
+        this.f0 = -9223372036854775807L;
+        this.g0 = -9223372036854775807L;
+        this.i0 = new ArrayList();
+        this.b0 = z11;
+        this.h = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+        x2.q qVar = new x2.q(ApplicationLoader.applicationContext, new qb.b(25));
+        this.f = qVar;
+        if (z11) {
+            x2.j e = qVar.e();
+            e.getClass();
+            x2.i iVar = new x2.i(e);
+            iVar.E.add(1);
+            qVar.b(new x2.j(iVar));
+        }
+        this.L = 1;
+        this.W = z10;
+        if (z10) {
+            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.playerDidStartPlaying);
+        }
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onCues(List list) {
+    }
+
+    @Override // b2.z0
+    public final void onPositionDiscontinuity(b2.a1 a1Var, b2.a1 a1Var2, int i10) {
+    }
+
+    @Override // b2.z0
+    public void onRenderedFirstFrame() {
+        this.J.onRenderedFirstFrame();
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void a(i2.g gVar) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void b(u2.b0 b0Var) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void c(b2.x1 x1Var) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void h(b2.u0 u0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onAudioAttributesChanged(b2.e eVar) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onAudioSessionIdChanged(int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onAvailableCommandsChanged(b2.x0 x0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onIsPlayingChanged(boolean z10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onLoadingChanged(boolean z10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onMediaMetadataChanged(b2.n0 n0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onMetadata(b2.p0 p0Var) {
+    }
+
+    @Override // b2.z0
+    public final void onPlaybackParametersChanged(b2.v0 v0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPlaybackStateChanged(int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPlayerErrorChanged(b2.u0 u0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPlaylistMetadataChanged(b2.n0 n0Var) {
+    }
+
+    @Override // b2.z0
+    public final void onRepeatModeChanged(int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onVolumeChanged(float f7) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void d(b2.b1 b1Var, of.b bVar) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void e(j2.a aVar, u2.b0 b0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onEvents(b2.b1 b1Var, b2.y0 y0Var) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onMediaItemTransition(b2.k0 k0Var, int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
+    }
+
+    @Override // b2.z0
+    public final /* synthetic */ void onTimelineChanged(b2.k1 k1Var, int i10) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void f(j2.a aVar, int i10, long j3) {
     }
 }

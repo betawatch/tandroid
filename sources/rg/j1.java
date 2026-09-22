@@ -16,10 +16,10 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.c7;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.wb;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.bx0;
 import org.telegram.ui.dc1;
 import org.telegram.ui.gg0;
@@ -27,16 +27,16 @@ import org.telegram.ui.kx0;
 import org.telegram.ui.uw0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class j1 extends ul0 {
+public final class j1 extends xl0 {
     public final /* synthetic */ k1 c;
 
     public j1(k1 k1Var) {
         this.c = k1Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -127,12 +127,12 @@ public final class j1 extends ul0 {
                 frameLayout.setClipChildren(false);
                 Integer num = k1Var.u0;
                 new PorterDuffColorFilter(num == null ? k1Var.getThemedColor(j6.v6) : num.intValue(), PorterDuff.Mode.SRC_IN);
-                k1Var.O0 = new k90[2];
+                k1Var.O0 = new n90[2];
                 int i12 = 0;
                 while (i12 < 2) {
-                    k90[] k90VarArr = k1Var.O0;
+                    n90[] n90VarArr = k1Var.O0;
                     f6Var2 = ((f3) k1Var).resourcesProvider;
-                    k90VarArr[i12] = new wb(context, 4, f6Var2);
+                    n90VarArr[i12] = new wb(context, 4, f6Var2);
                     k1Var.O0[i12].setVisibility(i12 == 0 ? 0 : 8);
                     k1Var.O0[i12].setTextSize(1, 16.0f);
                     k1Var.O0[i12].setTypeface(AndroidUtilities.bold());
@@ -150,9 +150,9 @@ public final class j1 extends ul0 {
             if (k1Var.P0 == null) {
                 Context context2 = k1Var.getContext();
                 f6Var = ((f3) k1Var).resourcesProvider;
-                k90 k90Var = new k90(context2, f6Var);
-                k1Var.P0 = k90Var;
-                k90Var.setTextSize(1, 14.0f);
+                n90 n90Var = new n90(context2, f6Var);
+                k1Var.P0 = n90Var;
+                n90Var.setTextSize(1, 14.0f);
                 k1Var.P0.setGravity(1);
                 k1Var.P0.setTextColor(k1Var.getThemedColor(j6.G6));
                 k1Var.P0.setLinkTextColor(k1Var.getThemedColor(j6.J6));
@@ -231,6 +231,6 @@ public final class j1 extends ul0 {
         }
         view.setLayoutParams(new s4.p0(-1, -2));
         k1Var.V(i10, view);
-        return new fl0(view);
+        return new il0(view);
     }
 }

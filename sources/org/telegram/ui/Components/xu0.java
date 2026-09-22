@@ -1,178 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class xu0 extends rl0 {
-    public final Context r;
-    public final /* synthetic */ jv0 s;
+public abstract class xu0 extends ScrollSlidingTextTabStrip {
+    public Paint p0;
+    public int q0;
+    public final Rect r0;
+    public final /* synthetic */ lv0 s0;
 
-    public xu0(jv0 jv0Var, Context context) {
-        this.s = jv0Var;
-        this.r = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xu0(lv0 lv0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.s0 = lv0Var;
+        this.q0 = 0;
+        this.r0 = new Rect();
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final String F(int i10) {
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.q0 != 0) {
+            if (this.p0 == null) {
+                this.p0 = new Paint();
+            }
+            this.p0.setColor(this.q0);
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            Rect rect = this.r0;
+            rect.set(0, 0, measuredWidth, measuredHeight);
+            canvas.save();
+            canvas.translate(getScrollX(), 0.0f);
+            canvas.clipPath(this.f0);
+            if (SharedConfig.chatBlurEnabled()) {
+                this.s0.P(canvas, getY(), rect, this.p0);
+            } else {
+                canvas.drawPaint(this.p0);
+            }
+            canvas.translate(-getScrollX(), 0.0f);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(vl0 vl0Var, float f7, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final int M(int i10) {
-        yu0[] yu0VarArr = this.s.t1;
-        if ((yu0VarArr[3].c.size() == 0 && !yu0VarArr[3].g) || i10 >= yu0VarArr[3].c.size()) {
-            return 1;
-        }
-        yu0 yu0Var = yu0VarArr[3];
-        return ((ArrayList) yu0Var.d.get(yu0Var.c.get(i10))).size() + (i10 == 0 ? 0 : 1);
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final Object O(int i10, int i11) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final int P(int i10, int i11) {
-        yu0[] yu0VarArr = this.s.t1;
-        if (yu0VarArr[3].c.size() == 0 && !yu0VarArr[3].g) {
-            return 5;
-        }
-        if (i10 < yu0VarArr[3].c.size()) {
-            return (i10 == 0 || i11 != 0) ? 4 : 3;
-        }
-        return 6;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0034, code lost:
-    
-        if (r0[1] != false) goto L13;
-     */
-    @Override // org.telegram.ui.Components.rl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int R() {
-        yu0[] yu0VarArr = this.s.t1;
-        int i10 = 1;
-        if (yu0VarArr[3].c.size() == 0 && !yu0VarArr[3].g) {
-            return 1;
-        }
-        int size = yu0VarArr[3].c.size();
-        if (!yu0VarArr[3].c.isEmpty()) {
-            boolean[] zArr = yu0VarArr[3].i;
-            if (zArr[0]) {
-            }
-            return size + i10;
-        }
-        i10 = 0;
-        return size + i10;
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final View T(int i10, View view) {
-        jv0 jv0Var = this.s;
-        if (view == null) {
-            view = new org.telegram.ui.Cells.w3(this.r, 28, jv0Var.F1);
-        }
-        if (i10 == 0) {
-            view.setAlpha(0.0f);
-            return view;
-        }
-        if (i10 < jv0Var.t1[3].c.size()) {
-            view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.w3) view).setText(LocaleController.formatSectionDate(((MessageObject) ((ArrayList) jv0Var.t1[3].d.get((String) jv0Var.t1[3].c.get(i10))).get(0)).messageOwner.date));
-        }
-        return view;
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean V(int i10, int i11, s4.c1 c1Var) {
-        yu0[] yu0VarArr = this.s.t1;
-        if (yu0VarArr[3].c.size() != 0 || yu0VarArr[3].g) {
-            return i10 == 0 || i11 != 0;
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public final void W(int i10, int i11, s4.c1 c1Var) {
-        jv0 jv0Var = this.s;
-        yu0[] yu0VarArr = jv0Var.t1;
-        int i12 = c1Var.f;
-        View view = c1Var.a;
-        if (i12 == 6 || i12 == 5) {
-            return;
-        }
-        ArrayList arrayList = (ArrayList) yu0VarArr[3].d.get((String) yu0VarArr[3].c.get(i10));
-        int i13 = c1Var.f;
-        if (i13 == 3) {
-            MessageObject messageObject = (MessageObject) arrayList.get(0);
-            if (view instanceof org.telegram.ui.Cells.w3) {
-                ((org.telegram.ui.Cells.w3) view).setText(LocaleController.formatSectionDate(messageObject.messageOwner.date));
-                return;
-            }
-            return;
-        }
-        if (i13 != 4) {
-            return;
-        }
-        if (i10 != 0) {
-            i11--;
-        }
-        if (!(view instanceof org.telegram.ui.Cells.o7) || i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-        MessageObject messageObject2 = (MessageObject) arrayList.get(i11);
-        o7Var.y = i11 != arrayList.size() - 1 || (i10 == yu0VarArr[3].c.size() - 1 && yu0VarArr[3].g);
-        o7Var.e();
-        o7Var.b0 = messageObject2;
-        o7Var.requestLayout();
-        if (jv0Var.C1) {
-            o7Var.f(jv0Var.Z0[(messageObject2.getDialogId() > jv0Var.j1 ? 1 : (messageObject2.getDialogId() == jv0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject2.getId()) >= 0, !jv0Var.b1);
-        } else {
-            o7Var.f(false, !jv0Var.b1);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.w3 w3Var;
-        jv0 jv0Var = this.s;
-        org.telegram.ui.ActionBar.f6 f6Var = jv0Var.F1;
-        Context context = this.r;
-        if (i10 == 3) {
-            w3Var = new org.telegram.ui.Cells.w3(context, 28, f6Var);
-        } else if (i10 == 4) {
-            org.telegram.ui.Cells.o7 o7Var = new org.telegram.ui.Cells.o7(context, 0, f6Var);
-            o7Var.setDelegate(jv0Var.S1);
-            w3Var = o7Var;
-        } else {
-            if (i10 == 5) {
-                wt0 M = jv0.M(3, jv0Var.j1, context, f6Var);
-                M.setLayoutParams(new s4.p0(-1, -1));
-                return new fl0(M);
-            }
-            t00 t00Var = new t00(context, f6Var);
-            t00Var.setIsSingleCell(true);
-            t00Var.w = false;
-            t00Var.setViewType(5);
-            w3Var = t00Var;
-        }
-        return com.google.android.gms.internal.vision.e2.k(w3Var, w3Var, -1, -2);
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.q0 = i10;
+        invalidate();
     }
 }

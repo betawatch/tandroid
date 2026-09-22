@@ -19,10 +19,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.en0;
 import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -158,7 +158,7 @@ public final /* synthetic */ class m8 implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new cn0((Object) x0Var, (Serializable) hashMap, arrayList, i16));
+                    AndroidUtilities.runOnUIThread(new en0((Object) x0Var, (Serializable) hashMap, arrayList, i16));
                     break;
                 }
                 break;

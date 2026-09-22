@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class q20 extends org.telegram.ui.Components.uc0 {
+public class q20 extends org.telegram.ui.Components.xc0 {
     public boolean C0;
     public boolean D0;
     public boolean E0;
@@ -46,7 +46,7 @@ public class q20 extends org.telegram.ui.Components.uc0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -117,7 +117,7 @@ public class q20 extends org.telegram.ui.Components.uc0 {
         frameLayout.setScaleY(z10);
         frameLayout.setAlpha(f14);
         ((FrameLayout) o20Var.e).setAlpha(f14);
-        ((org.telegram.ui.Components.k90) o20Var.c).setAlpha(f14);
+        ((org.telegram.ui.Components.n90) o20Var.c).setAlpha(f14);
         r20Var.e.setAlpha(1.0f - r20Var.v);
         r20Var.e.setTranslationY((frameLayout.getY() + o20Var.getY()) - AndroidUtilities.dp(30.0f));
         float dp4 = AndroidUtilities.dp(72.0f) - textView.getLeft();
@@ -187,12 +187,12 @@ public class q20 extends org.telegram.ui.Components.uc0 {
         float x10 = o20Var.getX();
         FrameLayout frameLayout = (FrameLayout) o20Var.e;
         FrameLayout frameLayout2 = (FrameLayout) o20Var.d;
-        org.telegram.ui.Components.k90 k90Var = (org.telegram.ui.Components.k90) o20Var.c;
-        float x11 = k90Var.getX() + x10;
-        float y3 = k90Var.getY() + o20Var.getY();
+        org.telegram.ui.Components.n90 n90Var = (org.telegram.ui.Components.n90) o20Var.c;
+        float x11 = n90Var.getX() + x10;
+        float y3 = n90Var.getY() + o20Var.getY();
         RectF rectF2 = AndroidUtilities.rectTmp;
-        rectF2.set(x11, y3, k90Var.getMeasuredWidth() + x11, k90Var.getMeasuredHeight() + y3);
-        if ((!rectF2.contains(motionEvent.getX(), motionEvent.getY()) && !this.D0) || r20Var.c.K1 || (layout = k90Var.getLayout()) == null) {
+        rectF2.set(x11, y3, n90Var.getMeasuredWidth() + x11, n90Var.getMeasuredHeight() + y3);
+        if ((!rectF2.contains(motionEvent.getX(), motionEvent.getY()) && !this.D0) || r20Var.c.K1 || (layout = n90Var.getLayout()) == null) {
             f7 = 1.0f;
         } else {
             CharSequence text = layout.getText();
@@ -207,7 +207,7 @@ public class q20 extends org.telegram.ui.Components.uc0 {
                     } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                         this.D0 = false;
                     }
-                    k90Var.dispatchTouchEvent(motionEvent);
+                    n90Var.dispatchTouchEvent(motionEvent);
                     return true;
                 }
             }
@@ -259,7 +259,7 @@ public class q20 extends org.telegram.ui.Components.uc0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.uc0, org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.xc0, org.telegram.ui.Components.cw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -268,7 +268,7 @@ public class q20 extends org.telegram.ui.Components.uc0 {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0048  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.uc0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.xc0, android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

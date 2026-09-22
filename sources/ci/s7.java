@@ -6,9 +6,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements e2.h {
     public final /* synthetic */ int a;
@@ -60,11 +60,11 @@ public final /* synthetic */ class s7 implements e2.h {
                 break;
             case 2:
                 rg.j0 j0Var = (rg.j0) this.b;
-                n90 n90Var = (n90) this.c;
+                q90 q90Var = (q90) this.c;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) this.d;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 j0Var.getClass();
-                n90Var.setLoading(false);
+                q90Var.setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     j0Var.b0.boosts++;
                     if (j0Var.h0 == 32 && (t12 = j0Var.t1()) != null) {

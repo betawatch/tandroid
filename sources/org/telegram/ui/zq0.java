@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class zq0 implements org.telegram.ui.Cells.t5 {
     public final /* synthetic */ ar0 a;
@@ -16,8 +16,21 @@ public final class zq0 implements org.telegram.ui.Cells.t5 {
         this.a = ar0Var;
     }
 
+    public final void a() {
+        zn znVar;
+        TLRPC.Chat chat;
+        cr0 cr0Var = this.a.d;
+        if (!cr0Var.I || (znVar = cr0Var.U) == null || (chat = znVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || cr0Var.W == 2) {
+            return;
+        }
+        org.telegram.ui.Components.d5.u0(cr0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
+        if (cr0Var.W == 1) {
+            cr0Var.W = 2;
+        }
+    }
+
     @Override // org.telegram.ui.Cells.t5
-    public final void a(org.telegram.ui.Cells.u5 u5Var) {
+    public final void b(org.telegram.ui.Cells.u5 u5Var) {
         boolean z10;
         int intValue = ((Integer) u5Var.getTag()).intValue();
         cr0 cr0Var = this.a.d;
@@ -28,7 +41,7 @@ public final class zq0 implements org.telegram.ui.Cells.t5 {
             boolean containsKey = cr0Var.b.containsKey(Integer.valueOf(photoEntry.imageId));
             z10 = !containsKey;
             if (!containsKey && cr0Var.H > 0 && cr0Var.b.size() >= cr0Var.H) {
-                b();
+                a();
                 return;
             }
             if (cr0Var.e && !containsKey) {
@@ -42,7 +55,7 @@ public final class zq0 implements org.telegram.ui.Cells.t5 {
             boolean containsKey2 = cr0Var.b.containsKey(searchImage.id);
             z10 = !containsKey2;
             if (!containsKey2 && cr0Var.H > 0 && cr0Var.b.size() >= cr0Var.H) {
-                b();
+                a();
                 return;
             }
             if (cr0Var.e && !containsKey2) {
@@ -53,18 +66,5 @@ public final class zq0 implements org.telegram.ui.Cells.t5 {
         }
         cr0Var.i0(z10 ? 1 : 2);
         cr0Var.s0.a();
-    }
-
-    public final void b() {
-        zn znVar;
-        TLRPC.Chat chat;
-        cr0 cr0Var = this.a.d;
-        if (!cr0Var.I || (znVar = cr0Var.U) == null || (chat = znVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || cr0Var.W == 2) {
-            return;
-        }
-        org.telegram.ui.Components.d5.u0(cr0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
-        if (cr0Var.W == 1) {
-            cr0Var.W = 2;
-        }
     }
 }

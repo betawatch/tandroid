@@ -2,16 +2,16 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l7 implements jl0 {
+public final /* synthetic */ class l7 implements ml0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l7(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
@@ -24,7 +24,7 @@ public final /* synthetic */ class l7 implements jl0 {
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 if (view instanceof org.telegram.ui.Cells.u5) {
                     org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
-                    u5Var.w.a(u5Var);
+                    u5Var.w.b(u5Var);
                     break;
                 }
                 break;

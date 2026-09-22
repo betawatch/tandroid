@@ -20,16 +20,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.sg0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.ey;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -43,9 +43,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10;
-        k61 k61Var;
+        m61 m61Var;
         boolean z10;
-        k61 k61Var2;
+        m61 m61Var2;
         int i11 = 3;
         int i12 = 5;
         int i13 = 0;
@@ -160,7 +160,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (o8Var != null && ocVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(o8Var.y);
                     boolean z11 = !isEmpty;
-                    ((pg0) ocVar.j1.c).a(!ocVar.X0.k(), false);
+                    ((sg0) ocVar.j1.c).a(!ocVar.X0.k(), false);
                     ocVar.j1.setVisibility(0);
                     ocVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bi.f(i12, qbVar, z11)).start();
                 }
@@ -182,9 +182,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 break;
             case 11:
                 ci.n8 n8Var = (ci.n8) obj;
-                i71 i71Var = ((ci.d7) this.b).n;
-                if (i71Var != null) {
-                    i71Var.setHDRInfo(n8Var);
+                l71 l71Var = ((ci.d7) this.b).n;
+                if (l71Var != null) {
+                    l71Var.setHDRInfo(n8Var);
                     break;
                 }
                 break;
@@ -210,9 +210,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList3 = uVar.b;
                 arrayList3.clear();
                 arrayList3.addAll((ArrayList) obj);
-                s61 s61Var = uVar.a;
-                if (s61Var != null && (k61Var = s61Var.Y2) != null) {
-                    k61Var.N(true);
+                u61 u61Var = uVar.a;
+                if (u61Var != null && (m61Var = u61Var.Y2) != null) {
+                    m61Var.N(true);
                     break;
                 }
                 break;
@@ -222,9 +222,9 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 ArrayList arrayList5 = fVar.h;
                 boolean z12 = arrayList5 == null || arrayList5.isEmpty();
                 fVar.h = arrayList4;
-                s61 s61Var2 = fVar.e;
-                if (s61Var2 != null) {
-                    s61Var2.Y2.N(z12);
+                u61 u61Var2 = fVar.e;
+                if (u61Var2 != null) {
+                    u61Var2.Y2.N(z12);
                     break;
                 }
                 break;
@@ -233,15 +233,15 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 break;
             case 18:
                 TLRPC.User user = (TLRPC.User) obj;
-                eo0 eo0Var = (eo0) ((gg.i0) this.b);
-                ey eyVar = eo0Var.K0;
+                go0 go0Var = (go0) ((gg.i0) this.b);
+                ey eyVar = go0Var.K0;
                 if (user != null) {
                     uy uyVar = eyVar.K0;
                     if (uyVar != null) {
                         uyVar.K3();
                     }
                     MessagesController.getInstance(eyVar.I0).openApp(user, 0);
-                    eo0Var.R(user.id, user);
+                    go0Var.R(user.id, user);
                     break;
                 }
                 break;
@@ -274,12 +274,12 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                s61 s61Var3 = u0Var.c;
-                if (s61Var3 == null || (k61Var2 = s61Var3.Y2) == null) {
+                u61 u61Var3 = u0Var.c;
+                if (u61Var3 == null || (m61Var2 = u61Var3.Y2) == null) {
                     z10 = true;
                 } else {
                     z10 = true;
-                    k61Var2.N(true);
+                    m61Var2.N(true);
                 }
                 u0Var.Y(z10);
                 u0Var.T = z10;

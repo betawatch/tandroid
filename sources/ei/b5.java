@@ -23,13 +23,13 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.w6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class b5 extends Drawable implements w6, NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
@@ -38,7 +38,7 @@ public final class b5 extends Drawable implements w6, NotificationCenter.Notific
     public final ImageReceiver d;
     public int e;
     public final p5[] f;
-    public final u01 h;
+    public final w01 h;
     public final RectF n;
     public final boolean r;
     public final d6 s;
@@ -68,14 +68,14 @@ public final class b5 extends Drawable implements w6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, g9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         d();
-        this.h = new u01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new w01(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.w6
-    public final void a(kj0 kj0Var) {
-        this.x = kj0Var;
-        this.d.setParentView(kj0Var);
-        this.c.setParentView(kj0Var);
+    public final void a(nj0 nj0Var) {
+        this.x = nj0Var;
+        this.d.setParentView(nj0Var);
+        this.c.setParentView(nj0Var);
     }
 
     @Override // org.telegram.ui.Components.w6
@@ -243,7 +243,7 @@ public final class b5 extends Drawable implements w6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, g9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         imageReceiver2.setImage(ImageLocation.getForDocument(document), "120_120", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 120), document), "120_120", DocumentObject.getSvgThumb(document.thumbs, j6.a7, 0.35f), 0L, null, null, 0);
-        this.h = new u01(UserObject.getUserName(user), 14.0f, null);
+        this.h = new w01(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

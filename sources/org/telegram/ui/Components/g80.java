@@ -1,22 +1,92 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class g80 extends FrameLayout {
-    public TextView a;
+public final class g80 extends xl0 {
+    public final Context c;
+    public final /* synthetic */ h80 d;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public g80(h80 h80Var, Context context) {
+        this.d = h80Var;
+        this.c = context;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.h.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11;
+        TLObject chat;
+        String str;
+        int i12;
+        View view = c1Var.a;
+        h80 h80Var = this.d;
+        long peerId = MessageObject.getPeerId((TLRPC.Peer) h80Var.h.get(i10));
+        if (peerId > 0) {
+            i12 = ((org.telegram.ui.ActionBar.f3) h80Var).currentAccount;
+            chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
+            str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
+        } else {
+            i11 = ((org.telegram.ui.ActionBar.f3) h80Var).currentAccount;
+            chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
+            str = null;
+        }
+        if (h80Var.s == 0) {
+            ((org.telegram.ui.Cells.h7) view).c(peerId, peerId == MessageObject.getPeerId(h80Var.v), null);
+        } else {
+            ((org.telegram.ui.Cells.h4) view).e(chat, null, str, i10 != h() - 1);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View h4Var;
+        h80 h80Var = this.d;
+        if (h80Var.s == 0) {
+            h4Var = new org.telegram.ui.Cells.h7(this.c, 2, null);
+            h4Var.setLayoutParams(new s4.p0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(100.0f)));
+        } else {
+            h4Var = new org.telegram.ui.Cells.h4(2, 0, this.c, null, false, h80Var.s == 2);
+        }
+        return new il0(h4Var);
+    }
+
+    @Override // s4.h0
+    public final void y(s4.c1 c1Var) {
+        c1Var.b();
+        long peerId = MessageObject.getPeerId(this.d.v);
+        View view = c1Var.a;
+        if (!(view instanceof org.telegram.ui.Cells.h4)) {
+            org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;
+            h7Var.b(peerId == h7Var.getCurrentDialog(), false);
+        } else {
+            org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+            Object object = h4Var.getObject();
+            h4Var.c(peerId == (object != null ? object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : ((TLRPC.User) object).id : 0L), false);
+        }
     }
 }

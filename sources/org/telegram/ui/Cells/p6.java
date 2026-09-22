@@ -28,17 +28,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bt;
-import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.mc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class p6 extends FrameLayout {
-    public static final ic0 G;
-    public static final ic0 H;
-    public static final ic0 I;
-    public static final ic0 J;
+    public static final mc0 G;
+    public static final mc0 H;
+    public static final mc0 I;
+    public static final mc0 J;
     public float E;
     public ValueAnimator F;
     public boolean a;
@@ -50,7 +50,7 @@ public class p6 extends FrameLayout {
     public final org.telegram.ui.Components.v9 h;
     public int n;
     public final org.telegram.ui.Components.g9 r;
-    public final vw0 s;
+    public final xw0 s;
     public final org.telegram.ui.ActionBar.f6 v;
     public final int w;
     public long x;
@@ -59,16 +59,16 @@ public class p6 extends FrameLayout {
     static {
         int i10 = R.drawable.msg_mini_checks;
         int i11 = org.telegram.ui.ActionBar.j6.y6;
-        G = new ic0(i10, i11);
-        ic0 ic0Var = new ic0(R.drawable.msg_reactions, i11);
-        ic0Var.g = 16;
-        ic0Var.h = 16;
-        ic0Var.i = 5.66f;
-        H = ic0Var;
+        G = new mc0(i10, i11);
+        mc0 mc0Var = new mc0(R.drawable.msg_reactions, i11);
+        mc0Var.g = 16;
+        mc0Var.h = 16;
+        mc0Var.i = 5.66f;
+        H = mc0Var;
         int i12 = R.drawable.mini_repost_story;
         int i13 = org.telegram.ui.ActionBar.j6.hk;
-        I = new ic0(i12, i13);
-        J = new ic0(R.drawable.mini_forward_story, i13);
+        I = new mc0(i12, i13);
+        J = new mc0(R.drawable.mini_forward_story, i13);
     }
 
     public p6(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
@@ -102,10 +102,10 @@ public class p6 extends FrameLayout {
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
         addView(a6Var, w7.y5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
-        vw0 vw0Var = new vw0(this);
-        this.s = vw0Var;
+        xw0 xw0Var = new xw0(this);
+        this.s = xw0Var;
         a6Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        a6Var.i(vw0Var.a);
+        a6Var.i(xw0Var.a);
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.e = j5Var;
         j5Var.setTextSize(13);
@@ -260,7 +260,7 @@ public class p6 extends FrameLayout {
             formatString = LocaleController.formatString("AccDescrLike", R.string.AccDescrLike, new Object[0]);
             z14 = true;
         } else if (reaction != null) {
-            zg.o0 d = zg.o0.d(reaction);
+            zg.p0 d = zg.p0.d(reaction);
             if (d.f != null) {
                 if (v9Var22 != null) {
                     v9Var22.setAnimatedEmojiDrawable(null);
@@ -332,9 +332,9 @@ public class p6 extends FrameLayout {
                 ?? r622 = this.e;
                 if (j10 != 0) {
                     r622.setVisibility(0);
-                    ic0 ic0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
+                    mc0 mc0Var = storyItem != null ? z11 ? J : I : z12 ? G : H;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append(ic0Var.a(getContext(), f6Var));
+                    spannableStringBuilder.append(mc0Var.a(getContext(), f6Var));
                     spannableStringBuilder.append((CharSequence) LocaleController.formatSeenDate(j10));
                     if (z11 || storyItem == null) {
                         f10 = 9.0f;

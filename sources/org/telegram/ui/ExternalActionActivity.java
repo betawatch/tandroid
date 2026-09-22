@@ -23,16 +23,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.a5 {
     public static final ArrayList x = new ArrayList();
     public static final ArrayList y = new ArrayList();
     public boolean a;
-    public org.telegram.ui.Components.ae0 b;
+    public org.telegram.ui.Components.de0 b;
     public ActionBarLayout c;
     public ActionBarLayout d;
-    public org.telegram.ui.Components.aw0 e;
+    public org.telegram.ui.Components.cw0 e;
     public org.telegram.ui.ActionBar.z3 f;
     public Intent h;
     public boolean n;
@@ -353,9 +353,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         this.c.setDrawerLayoutContainer(this.f);
         this.c.setFragmentStack(x);
         this.c.setDelegate(this);
-        org.telegram.ui.Components.ae0 ae0Var = new org.telegram.ui.Components.ae0(this);
-        this.b = ae0Var;
-        this.f.addView(ae0Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.de0 de0Var = new org.telegram.ui.Components.de0(this);
+        this.b = de0Var;
+        this.f.addView(de0Var, w7.y5.c(-1.0f, -1));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.c.X();
         ActionBarLayout actionBarLayout2 = this.d;
@@ -416,9 +416,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             }
         }
         SharedConfig.saveConfig();
-        org.telegram.ui.Components.ae0 ae0Var = this.b;
-        if (ae0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(ae0Var.R);
+        org.telegram.ui.Components.de0 de0Var = this.b;
+        if (de0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(de0Var.R);
         }
     }
 

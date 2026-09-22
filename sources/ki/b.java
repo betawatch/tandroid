@@ -1,11 +1,8 @@
 package ki;
 
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -30,11 +27,11 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 1:
-                this.b.j();
+                this.b.k();
                 return;
             case 2:
                 h hVar2 = this.b;
-                if (!hVar2.M || hVar2.y == null || (jVar = hVar2.w) == null) {
+                if (!hVar2.R || hVar2.y == null || (jVar = hVar2.w) == null) {
                     return;
                 }
                 synchronized (jVar) {
@@ -57,53 +54,35 @@ public final /* synthetic */ class b implements Runnable {
                         oVar.B = -1L;
                         oVar.V = true;
                     }
-                    hVar2.j.b("first camera frame received; codecs started: segmentElapsedMs=" + h.l(hVar2.X));
-                    o0 o0Var = (o0) hVar2.k.b;
-                    o0Var.h.post(new y(o0Var, 3));
+                    hVar2.j.b("first camera frame received; codecs started: segmentElapsedMs=" + h.n(hVar2.d0));
+                    q0 q0Var = (q0) hVar2.k.b;
+                    q0Var.h.post(new y(q0Var, 3));
                     return;
                 } catch (RuntimeException e) {
-                    hVar2.s(e);
+                    hVar2.u(e);
                     return;
                 }
             case 3:
-                h hVar3 = this.b;
-                CameraCaptureSession cameraCaptureSession = hVar3.y;
-                CaptureRequest.Builder builder = hVar3.z;
-                if (!hVar3.M || cameraCaptureSession == null || builder == null) {
-                    return;
-                }
-                try {
-                    hVar3.b(builder);
-                    hVar3.a(builder);
-                    hVar3.A();
-                    return;
-                } catch (CameraAccessException | IllegalArgumentException e7) {
-                    if (hVar3.F == j0.c) {
-                        hVar3.m("60 fps updated request rejected", e7);
-                        return;
-                    } else {
-                        hVar3.s(e7);
-                        return;
-                    }
-                }
+                this.b.a();
+                return;
             case 4:
-                this.b.q();
+                this.b.s();
                 return;
             case 5:
-                h hVar4 = this.b;
-                hVar4.M = false;
-                hVar4.h();
-                j jVar2 = hVar4.w;
+                h hVar3 = this.b;
+                hVar3.R = false;
+                hVar3.h();
+                j jVar2 = hVar3.w;
                 if (jVar2 != null) {
                     jVar2.o();
-                    hVar4.w = null;
+                    hVar3.w = null;
                 }
-                hVar4.R = false;
-                o0 o0Var2 = (o0) hVar4.k.b;
-                o0Var2.h.post(new y(o0Var2, 2));
+                hVar3.X = false;
+                q0 q0Var2 = (q0) hVar3.k.b;
+                q0Var2.h.post(new y(q0Var2, 2));
                 return;
             default:
-                this.b.C();
+                this.b.H();
                 return;
         }
     }

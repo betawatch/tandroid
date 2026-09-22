@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wi0 extends org.telegram.ui.Components.vl0 {
+public final class wi0 extends org.telegram.ui.Components.yl0 {
     public final ArrayList X2;
     public final org.telegram.ui.Components.d6 Y2;
     public final org.telegram.ui.Components.d6 Z2;
@@ -37,7 +37,7 @@ public final class wi0 extends org.telegram.ui.Components.vl0 {
     /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r9v35 */
     /* JADX WARN: Type inference failed for: r9v44 */
-    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -361,7 +361,7 @@ public final class wi0 extends org.telegram.ui.Components.vl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         org.telegram.ui.Cells.u1 u1Var;
         dj0 dj0Var = this.b3;
@@ -408,7 +408,7 @@ public final class wi0 extends org.telegram.ui.Components.vl0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         for (int i14 = 0; i14 < getChildCount(); i14++) {
             View childAt = getChildAt(i14);
@@ -422,7 +422,7 @@ public final class wi0 extends org.telegram.ui.Components.vl0 {
         super.onLayout(z10, i10, i11, i12, i13);
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         dj0 dj0Var = this.b3;
         int dp = AndroidUtilities.dp(dj0Var.N.isEmpty() ? -6.0f : 48.0f);

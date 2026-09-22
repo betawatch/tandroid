@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements e2.h {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class f3 implements e2.h {
                 if (view2 instanceof ci.t4) {
                     p4Var.getClass();
                     int S = RecyclerView.S(view2);
-                    w51 G = p4Var.Y2.G(S);
+                    y51 G = p4Var.Y2.G(S);
                     if (G != null) {
                         ci.t4 t4Var = (ci.t4) view2;
                         t4Var.setPosition(u4Var.b(S));

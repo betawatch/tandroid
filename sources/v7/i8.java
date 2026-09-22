@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class i8 {
     public i8() {
@@ -18,7 +18,7 @@ public abstract class i8 {
 
     public abstract Typeface a(Context context, h0.e eVar, Resources resources, int i10);
 
-    public abstract Typeface b(Context context, o0.h[] hVarArr, int i10);
+    public abstract Typeface b(Context context, o0.i[] iVarArr, int i10);
 
     public Typeface c(Context context, List list, int i10) {
         throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
@@ -58,19 +58,19 @@ public abstract class i8 {
         }
     }
 
-    public o0.h f(o0.h[] hVarArr, int i10) {
+    public o0.i f(o0.i[] iVarArr, int i10) {
         new ob.a(10);
         int i11 = (i10 & 1) == 0 ? 400 : 700;
         boolean z10 = (i10 & 2) != 0;
-        o0.h hVar = null;
+        o0.i iVar = null;
         int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (o0.h hVar2 : hVarArr) {
-            int abs = (Math.abs(hVar2.c - i11) * 2) + (hVar2.d == z10 ? 0 : 1);
-            if (hVar == null || i12 > abs) {
-                hVar = hVar2;
+        for (o0.i iVar2 : iVarArr) {
+            int abs = (Math.abs(iVar2.c - i11) * 2) + (iVar2.d == z10 ? 0 : 1);
+            if (iVar == null || i12 > abs) {
+                iVar = iVar2;
                 i12 = abs;
             }
         }
-        return hVar;
+        return iVar;
     }
 }

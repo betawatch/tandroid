@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class sg extends j1.b {
     public final int[] o;
@@ -25,33 +25,33 @@ public final class sg extends j1.b {
     public final int g(float f7, float f10) {
         Rect rect;
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-        if (!chatActivityEnterView.r4 || chatActivityEnterView.M1 == null) {
+        if (!chatActivityEnterView.s4 || chatActivityEnterView.N1 == null) {
             return -1;
         }
-        if (chatActivityEnterView.S3.contains((int) f7, (int) f10)) {
+        if (chatActivityEnterView.T3.contains((int) f7, (int) f10)) {
             return 1;
         }
-        if (chatActivityEnterView.R3.contains(f7, f10)) {
+        if (chatActivityEnterView.S3.contains(f7, f10)) {
             return 2;
         }
-        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
-        if (slideTextView == null || (rect = slideTextView.J) == null) {
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
+        if (slideTextView == null || (rect = slideTextView.K) == null) {
             return -1;
         }
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(rect);
-        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.j1;
+        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.k1;
         int[] iArr = this.o;
         slideTextView2.getLocationOnScreen(iArr);
         rectF.offset(iArr[0], iArr[1]);
-        chatActivityEnterView.M1.getLocationOnScreen(iArr);
+        chatActivityEnterView.N1.getLocationOnScreen(iArr);
         rectF.offset(-iArr[0], -iArr[1]);
         return rectF.contains(f7, f10) ? 3 : -1;
     }
 
     @Override // j1.b
     public final void h(ArrayList arrayList) {
-        if (ChatActivityEnterView.this.r4) {
+        if (ChatActivityEnterView.this.s4) {
             arrayList.add(1);
             arrayList.add(3);
         }
@@ -67,30 +67,30 @@ public final class sg extends j1.b {
         Rect rect;
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
         if (i10 == 1) {
-            dVar.h(chatActivityEnterView.S3);
+            dVar.h(chatActivityEnterView.T3);
             dVar.o(LocaleController.getString("Send", R.string.Send));
             return;
         }
         if (i10 == 2) {
-            Rect rect2 = chatActivityEnterView.T3;
-            RectF rectF = chatActivityEnterView.R3;
+            Rect rect2 = chatActivityEnterView.U3;
+            RectF rectF = chatActivityEnterView.S3;
             rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(chatActivityEnterView.T3);
+            dVar.h(chatActivityEnterView.U3);
             dVar.o(LocaleController.getString(R.string.Stop));
             return;
         }
-        if (i10 != 3 || chatActivityEnterView.M1 == null) {
+        if (i10 != 3 || chatActivityEnterView.N1 == null) {
             return;
         }
-        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
-        if (slideTextView != null && (rect = slideTextView.J) != null) {
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
+        if (slideTextView != null && (rect = slideTextView.K) != null) {
             Rect rect3 = AndroidUtilities.rectTmp2;
             rect3.set(rect);
-            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.j1;
+            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.k1;
             int[] iArr = this.o;
             slideTextView2.getLocationOnScreen(iArr);
             rect3.offset(iArr[0], iArr[1]);
-            chatActivityEnterView.M1.getLocationOnScreen(iArr);
+            chatActivityEnterView.N1.getLocationOnScreen(iArr);
             rect3.offset(-iArr[0], -iArr[1]);
             dVar.h(rect3);
         }

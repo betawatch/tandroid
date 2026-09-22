@@ -1,158 +1,57 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.TextureView;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class pj implements org.telegram.ui.ActionBar.s0, org.telegram.ui.ActionBar.f6, lv0, mm {
-    public final /* synthetic */ zn a;
+public final class pj extends org.telegram.ui.Components.eo {
+    public final /* synthetic */ zn v0;
 
-    public /* synthetic */ pj(zn znVar) {
-        this.a = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pj(zn znVar, Context context, zn znVar2, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, znVar2, z10, f6Var);
+        this.v0 = znVar;
     }
 
-    @Override // org.telegram.ui.lv0
-    public void D0(MessageObject messageObject) {
-        zn znVar = this.a;
-        znVar.x0.J0(true);
-        znVar.x0.C0();
-        if (MediaController.getInstance().isPlayingMessage(messageObject)) {
-            znVar.X0.removeView(znVar.t8);
-            znVar.t8 = null;
-            znVar.w8 = null;
-            znVar.v8 = null;
+    @Override // org.telegram.ui.Components.eo
+    public final boolean a() {
+        boolean z10;
+        zn znVar = this.v0;
+        if (znVar.Oa || znVar.isInPreviewMode()) {
+            return false;
         }
-        for (int i10 = 0; i10 < znVar.x0.getChildCount(); i10++) {
-            if (znVar.x0.getChildAt(i10) instanceof org.telegram.ui.Cells.u1) {
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) znVar.x0.getChildAt(i10);
-                if (u1Var.getMessageObject() != null && u1Var.getMessageObject().getId() == messageObject.getId()) {
-                    u1Var.getPhotoImage().setVisible(false, true);
-                }
-            }
+        z10 = ((org.telegram.ui.ActionBar.n2) znVar).inBubbleMode;
+        if (z10 || znVar.j0 == null || znVar.s3) {
+            return false;
         }
+        return !znVar.F9() || znVar.h4;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int F0(int i10) {
-        return this.a.getThemedColor(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public Paint G(String str) {
-        return org.telegram.ui.ActionBar.j6.S0(str);
-    }
-
-    @Override // org.telegram.ui.lv0
-    public void H(MessageObject messageObject) {
-        if (messageObject == null) {
-            return;
+    @Override // org.telegram.ui.Components.eo
+    public final boolean d() {
+        zn znVar = this.v0;
+        TLRPC.User user = znVar.f;
+        if (user != null && user.linked_community_id != 0) {
+            znVar.showDialog(new fi.k0(znVar, znVar.f.linked_community_id, null, null));
+            return true;
         }
-        if (MediaController.getInstance().isPlayingMessage(messageObject)) {
-            for (int i10 = 0; i10 < this.a.x0.getChildCount(); i10++) {
-                if (this.a.x0.getChildAt(i10) instanceof org.telegram.ui.Cells.u1) {
-                    org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.a.x0.getChildAt(i10);
-                    if (u1Var.getMessageObject() != null && u1Var.getMessageObject().getId() == messageObject.getId()) {
-                        org.telegram.ui.Components.c6 animation = u1Var.getPhotoImage().getAnimation();
-                        if (animation.b0) {
-                            animation.stop();
-                        }
-                        Bitmap m10 = animation.m();
-                        if (m10 != null) {
-                            try {
-                                uk ukVar = this.a.wa;
-                                int width = m10.getWidth();
-                                int height = m10.getHeight();
-                                ov0 ov0Var = ukVar.d;
-                                Bitmap bitmap = ov0Var == null ? null : ov0Var.b.getBitmap(width, height);
-                                new Canvas(m10).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
-                                bitmap.recycle();
-                            } catch (Throwable th2) {
-                                FileLog.e(th2);
-                            }
-                        }
-                    }
-                }
-            }
-            this.a.N7(true);
-            MediaController mediaController = MediaController.getInstance();
-            zn znVar = this.a;
-            mediaController.setTextureView(znVar.w8, znVar.v8, znVar.t8, true);
+        TLRPC.Chat chat = znVar.e;
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
         }
-        this.a.x0.invalidate();
+        znVar.showDialog(new fi.k0(znVar, znVar.e.linked_community_id, null, null));
+        return true;
     }
 
-    @Override // org.telegram.ui.mm
-    public void R0(int i10) {
-        this.a.F(i10, 0, 0, 0, true, true);
+    @Override // org.telegram.ui.Components.eo
+    public final void f() {
+        zn znVar = this.v0;
+        znVar.la(znVar.E9() ? "" : null);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public boolean a() {
-        return org.telegram.ui.ActionBar.j6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public void e() {
-        org.telegram.ui.Components.mm0.d(new af(this.a, 2));
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public int f0(int i10) {
-        return F0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public int g1(int i10) {
-        return F0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ Drawable getDrawable(String str) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lv0
-    public TextureView h0() {
-        return this.a.w8;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public void m(float f7, float f10, int i10, int i11) {
-        org.telegram.ui.ActionBar.j6.q(f7, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ boolean n0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.mm
-    public void s0(String str) {
-        this.a.da(str, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public ColorFilter x() {
-        return org.telegram.ui.ActionBar.j6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public void c() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ void L0(int i10, int i11) {
-    }
-
-    @Override // org.telegram.ui.mm
-    public /* synthetic */ void W(boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.eo
+    public final boolean o() {
+        return this.v0.R3 == 3;
     }
 }

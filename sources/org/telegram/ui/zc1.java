@@ -5,28 +5,28 @@ import android.widget.Scroller;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class zc1 implements org.telegram.ui.Components.ro0, org.telegram.ui.Components.i20 {
+public final class zc1 implements org.telegram.ui.Components.to0, org.telegram.ui.Components.i20 {
     public final /* synthetic */ xd1 a;
 
     public /* synthetic */ zc1(xd1 xd1Var) {
         this.a = xd1Var;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         xd1 xd1Var = this.a;
         xd1Var.l1 = f7;
         xd1Var.k1();
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int l0() {
         return 0;
     }
@@ -72,7 +72,7 @@ public final class zc1 implements org.telegram.ui.Components.ro0, org.telegram.u
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 

@@ -1,95 +1,125 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class h91 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p91 b;
+public final class h91 extends FrameLayout {
+    public static final /* synthetic */ int f = 0;
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final fm0 b;
+    public final RectF c;
+    public final RectF d;
+    public final Path e;
 
-    public /* synthetic */ h91(p91 p91Var, int i10) {
-        this.a = i10;
-        this.b = p91Var;
+    public h91(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        fm0 fm0Var = new fm0(this);
+        this.b = fm0Var;
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = new Path();
+        setWillNotDraw(false);
+        this.a = f6Var;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.il, f6Var);
+        fm0Var.B = v02;
+        fm0Var.A = v02;
+        fm0Var.z = v02;
+        fm0Var.x = org.telegram.ui.ActionBar.j6.l1(0.1f, v02);
+        fm0Var.j = false;
+        fm0Var.i = false;
+        fm0Var.k();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p91 p91Var = this.b;
-                l91 l91Var = p91Var.f0;
-                t71 t71Var = p91Var.a;
-                if (t71Var != null && t71Var.y()) {
-                    l91Var.c((int) (t71Var.n() / 1000));
-                    l91Var.w = (int) (t71Var.j() / 1000);
-                    l91Var.invalidate();
-                    AndroidUtilities.runOnUIThread(p91Var.i0, 1000L);
-                    break;
-                }
-                break;
-            default:
-                p91 p91Var2 = this.b;
-                l91 l91Var2 = p91Var2.f0;
-                ImageView imageView = p91Var2.e;
-                TextureView textureView = p91Var2.d;
-                p91Var2.W = false;
-                Bitmap bitmap = p91Var2.h;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    p91Var2.h = null;
-                }
-                p91Var2.S = true;
-                if (imageView != null) {
-                    try {
-                        Bitmap createBitmap = Bitmaps.createBitmap(textureView.getWidth(), textureView.getHeight(), Bitmap.Config.ARGB_8888);
-                        p91Var2.h = createBitmap;
-                        textureView.getBitmap(createBitmap);
-                    } catch (Throwable th2) {
-                        Bitmap bitmap2 = p91Var2.h;
-                        if (bitmap2 != null) {
-                            bitmap2.recycle();
-                            p91Var2.h = null;
-                        }
-                        FileLog.e(th2);
-                    }
-                    if (p91Var2.h != null) {
-                        imageView.setVisibility(0);
-                        imageView.setImageBitmap(p91Var2.h);
-                    } else {
-                        imageView.setImageDrawable(null);
-                    }
-                }
-                p91Var2.U = true;
-                p91Var2.n();
-                p91Var2.o();
-                p91Var2.k();
-                p91Var2.m();
-                ViewGroup viewGroup = (ViewGroup) l91Var2.getParent();
-                if (viewGroup != null) {
-                    viewGroup.removeView(l91Var2);
-                }
-                m91 m91Var = p91Var2.v;
-                l91 l91Var3 = p91Var2.f0;
-                boolean z10 = p91Var2.U;
-                int i10 = p91Var2.g0;
-                int i11 = p91Var2.h0;
-                p91Var2.c.getVideoRotation();
-                TextureView f7 = m91Var.f(l91Var3, z10, i10, i11, p91Var2.I);
-                p91Var2.n = f7;
-                f7.setVisibility(4);
-                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
-                if (viewGroup2 != null) {
-                    viewGroup2.removeView(textureView);
-                }
-                l91Var2.d(false, false);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.c;
+        rectF.set(0.0f, 0.0f, width, height);
+        fm0 fm0Var = this.b;
+        float[] fArr = fm0Var.e;
+        float dp = AndroidUtilities.dp(10.0f);
+        fArr[7] = dp;
+        fArr[6] = dp;
+        fArr[1] = dp;
+        fArr[0] = dp;
+        float[] fArr2 = fm0Var.e;
+        float dp2 = AndroidUtilities.dp(10.0f);
+        fArr2[5] = dp2;
+        fArr2[4] = dp2;
+        fArr2[3] = dp2;
+        fArr2[2] = dp2;
+        Path path = this.e;
+        path.rewind();
+        path.addRoundRect(rectF, fArr2, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        this.b.d(canvas, rectF, 1.0f, false, false);
+        float dp3 = AndroidUtilities.dp(3.0f);
+        float height2 = getHeight();
+        RectF rectF2 = this.d;
+        rectF2.set(0.0f, 0.0f, dp3, height2);
+        fm0Var.e(canvas, rectF2, 1.0f);
+        canvas.restore();
+    }
+
+    public void setWebPage(TLRPC.WebPage webPage) {
+        removeAllViews();
+        boolean z10 = webPage.photo != null;
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(1);
+        String str = webPage.site_name;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        if (str != null) {
+            TextView textView = new TextView(getContext());
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setText(webPage.site_name);
+            textView.setTextSize(1, 14.0f);
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.il, f6Var));
+            textView.setSingleLine(true);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            linearLayout.addView(textView, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         }
+        if (webPage.title != null) {
+            TextView textView2 = new TextView(getContext());
+            textView2.setTypeface(AndroidUtilities.bold());
+            textView2.setText(webPage.title);
+            textView2.setTextSize(1, 14.0f);
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
+            textView2.setSingleLine(true);
+            textView2.setEllipsize(TextUtils.TruncateAt.END);
+            linearLayout.addView(textView2, w7.y5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        }
+        if (webPage.description != null) {
+            TextView textView3 = new TextView(getContext());
+            textView3.setText(webPage.description);
+            textView3.setTextSize(1, 13.0f);
+            textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
+            textView3.setMaxLines(4);
+            textView3.setEllipsize(TextUtils.TruncateAt.END);
+            linearLayout.addView(textView3, w7.y5.n(-1, -2));
+        }
+        addView(linearLayout, w7.y5.d(-1, -2.0f, 51, 0.0f, 0.0f, z10 ? 56.0f : 0.0f, 0.0f));
+        if (z10) {
+            v9 v9Var = new v9(getContext());
+            v9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
+            v9Var.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.j6.l1(0.08f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var))));
+            addView(v9Var, w7.y5.d(48, 48.0f, 53, 0.0f, 5.0f, 0.0f, 1.0f));
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, 40);
+            v9Var.k(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(36.0f), false, closestPhotoSizeWithSize, true), webPage.photo), "48_48", ImageLocation.getForObject(closestPhotoSizeWithSize, webPage.photo), "48_48_b", 0L, null, webPage, 1);
+        }
+        setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(6.0f));
     }
 }

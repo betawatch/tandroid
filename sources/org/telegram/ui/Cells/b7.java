@@ -11,15 +11,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.a61;
-import org.telegram.ui.Components.c11;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.n90;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class b7 extends LinearLayout {
     public TextView a;
-    public k90 b;
+    public n90 b;
     public TextView c;
     public TextView d;
     public int e;
@@ -33,14 +33,14 @@ public abstract class b7 extends LinearLayout {
     public void setType(int i10) {
         int i11 = this.f;
         TextView textView = this.c;
-        k90 k90Var = this.b;
+        n90 n90Var = this.b;
         TextView textView2 = this.a;
         TextView textView3 = this.d;
         this.e = i10;
         if (i10 != 0) {
             if (i10 == 1) {
                 textView2.setText(LocaleController.getString(R.string.YourPasswordHeader));
-                k90Var.setText(LocaleController.getString(R.string.YourPasswordRemember));
+                n90Var.setText(LocaleController.getString(R.string.YourPasswordRemember));
                 textView.setText(LocaleController.getString(R.string.YourPasswordRememberYes));
                 textView3.setVisibility(0);
                 textView3.setText(LocaleController.getString(R.string.YourPasswordRememberNo));
@@ -48,7 +48,7 @@ public abstract class b7 extends LinearLayout {
             }
             if (i10 == 2) {
                 textView2.setText(LocaleController.getString(R.string.GraceSuggestionTitle));
-                k90Var.setText(LocaleController.getString(R.string.GraceSuggestionMessage));
+                n90Var.setText(LocaleController.getString(R.string.GraceSuggestionMessage));
                 textView.setText(LocaleController.getString(R.string.GraceSuggestionButton));
                 textView3.setVisibility(8);
                 return;
@@ -64,12 +64,12 @@ public abstract class b7 extends LinearLayout {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
             try {
-                spannableStringBuilder.setSpan(new a61(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (c11) null), indexOf, lastIndexOf - 2, 33);
+                spannableStringBuilder.setSpan(new c61(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (e11) null), indexOf, lastIndexOf - 2, 33);
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
-        k90Var.setText(spannableStringBuilder);
+        n90Var.setText(spannableStringBuilder);
         textView.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
         textView3.setVisibility(0);
         textView3.setText(LocaleController.getString(R.string.CheckPhoneNumberNo));

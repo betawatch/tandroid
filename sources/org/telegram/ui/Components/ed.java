@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ed extends Drawable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class ed extends Drawable {
                 Paint paint = (Paint) this.b;
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 if (chatActivityEnterView.U0 != null) {
-                    paint.setAlpha(Math.round(chatActivityEnterView.B3 * 102.0f));
+                    paint.setAlpha(Math.round(chatActivityEnterView.C3 * 102.0f));
                     float width = chatActivityEnterView.getWidth();
                     float y3 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.j6.i3.getIntrinsicHeight();
                     pf pfVar = chatActivityEnterView.E0;

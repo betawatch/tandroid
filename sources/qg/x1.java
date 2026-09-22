@@ -12,20 +12,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class x1 extends View {
-    public pg.e1 E;
+    public pg.f1 E;
     public float F;
     public float G;
-    public pg.s1 H;
+    public pg.t1 H;
     public Runnable I;
     public boolean J;
     public w1 K;
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final n2.e d;
+    public final l.d d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -49,9 +49,9 @@ public final class x1 extends View {
         this.w = new d6(this);
         this.x = new d6(this);
         this.y = new d6(this);
-        this.H = new pg.s1(1.0f, 0.016773745f, -1);
+        this.H = new pg.t1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new n2.e(context, new v1(this));
+        this.d = new l.d(context, new v1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -142,9 +142,9 @@ public final class x1 extends View {
                         float f13 = dp2 * 1.5f;
                         a(qrVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
-                            pg.e1 e1Var = this.E;
-                            float f14 = e1Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                            pg.f1 f1Var = this.E;
+                            float f14 = f1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -193,9 +193,9 @@ public final class x1 extends View {
                 float f132 = dp22 * 1.5f;
                 a(qrVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
-                    pg.e1 e1Var2 = this.E;
-                    float f142 = e1Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                    pg.f1 f1Var2 = this.E;
+                    float f142 = f1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -274,8 +274,8 @@ public final class x1 extends View {
         invalidate();
     }
 
-    public void setColorSwatch(pg.s1 s1Var) {
-        this.H = s1Var;
+    public void setColorSwatch(pg.t1 t1Var) {
+        this.H = t1Var;
         invalidate();
     }
 
@@ -288,8 +288,8 @@ public final class x1 extends View {
         this.I = runnable;
     }
 
-    public void setRenderView(pg.e1 e1Var) {
-        this.E = e1Var;
+    public void setRenderView(pg.f1 f1Var) {
+        this.E = f1Var;
     }
 
     public void setShowPreview(boolean z10) {

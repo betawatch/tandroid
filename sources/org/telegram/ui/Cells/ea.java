@@ -28,16 +28,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class ea {
     public final ActionMode.Callback A;
     public final Rect B;
     public da C;
     public w7.i0 D;
-    public vl0 E;
+    public yl0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -380,8 +380,8 @@ public abstract class ea {
     }
 
     public final void T(ViewGroup viewGroup) {
-        if (viewGroup instanceof vl0) {
-            this.E = (vl0) viewGroup;
+        if (viewGroup instanceof yl0) {
+            this.E = (yl0) viewGroup;
         }
         this.F = viewGroup;
     }

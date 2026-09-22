@@ -12,17 +12,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout {
     public ArrayList E;
-    public final /* synthetic */ zg0 F;
+    public final /* synthetic */ ch0 F;
     public final v9 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final TextView c;
     public final TextView d;
     public final g9 e;
-    public final vw0 f;
+    public final xw0 f;
     public TLRPC.User h;
     public TLRPC.Chat n;
     public CharSequence r;
@@ -33,9 +33,9 @@ public class PollVotesAlert$UserCell extends LinearLayout {
     public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PollVotesAlert$UserCell(zg0 zg0Var, Context context) {
+    public PollVotesAlert$UserCell(ch0 ch0Var, Context context) {
         super(context);
-        this.F = zg0Var;
+        this.F = ch0Var;
         this.s = UserConfig.selectedAccount;
         this.y = 1.0f;
         setOrientation(0);
@@ -65,7 +65,7 @@ public class PollVotesAlert$UserCell extends LinearLayout {
         textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         textView2.setTextSize(1, 13.0f);
         addView(textView2, w7.y5.p(-2, -2, 0.0f, 21, 2, 0, 4, 0));
-        this.f = new vw0(20, j5Var);
+        this.f = new xw0(20, j5Var);
     }
 
     public float getPlaceholderAlpha() {
@@ -96,10 +96,10 @@ public class PollVotesAlert$UserCell extends LinearLayout {
         int dp3;
         int dp4;
         if (this.x || this.y != 0.0f) {
-            zg0 zg0Var = this.F;
-            zg0Var.G.setAlpha((int) (this.y * 255.0f));
+            ch0 ch0Var = this.F;
+            ch0Var.G.setAlpha((int) (this.y * 255.0f));
             v9 v9Var = this.a;
-            canvas.drawCircle((v9Var.getMeasuredWidth() / 2) + v9Var.getLeft(), (v9Var.getMeasuredHeight() / 2) + v9Var.getTop(), v9Var.getMeasuredWidth() / 2, zg0Var.G);
+            canvas.drawCircle((v9Var.getMeasuredWidth() / 2) + v9Var.getLeft(), (v9Var.getMeasuredHeight() / 2) + v9Var.getTop(), v9Var.getMeasuredWidth() / 2, ch0Var.G);
             if (this.w % 2 == 0) {
                 dp = AndroidUtilities.dp(65.0f);
                 dp2 = AndroidUtilities.dp(48.0f);
@@ -110,8 +110,8 @@ public class PollVotesAlert$UserCell extends LinearLayout {
             if (LocaleController.isRTL) {
                 dp = (getMeasuredWidth() - dp) - dp2;
             }
-            zg0Var.M.set(dp, r5 - AndroidUtilities.dp(4.0f), dp + dp2, AndroidUtilities.dp(4.0f) + r5);
-            canvas.drawRoundRect(zg0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), zg0Var.G);
+            ch0Var.M.set(dp, r5 - AndroidUtilities.dp(4.0f), dp + dp2, AndroidUtilities.dp(4.0f) + r5);
+            canvas.drawRoundRect(ch0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), ch0Var.G);
             if (this.w % 2 == 0) {
                 dp3 = AndroidUtilities.dp(119.0f);
                 dp4 = AndroidUtilities.dp(60.0f);
@@ -122,8 +122,8 @@ public class PollVotesAlert$UserCell extends LinearLayout {
             if (LocaleController.isRTL) {
                 dp3 = (getMeasuredWidth() - dp3) - dp4;
             }
-            zg0Var.M.set(dp3, r5 - AndroidUtilities.dp(4.0f), dp3 + dp4, AndroidUtilities.dp(4.0f) + r5);
-            canvas.drawRoundRect(zg0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), zg0Var.G);
+            ch0Var.M.set(dp3, r5 - AndroidUtilities.dp(4.0f), dp3 + dp4, AndroidUtilities.dp(4.0f) + r5);
+            canvas.drawRoundRect(ch0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), ch0Var.G);
         }
         if (this.v) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);

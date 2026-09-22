@@ -8,25 +8,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class i9 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
     public final TextView a;
     public final TextView b;
     public final View c;
-    public final org.telegram.ui.Components.kj0 d;
+    public final org.telegram.ui.Components.nj0 d;
 
     public i9(l9 l9Var, Context context, org.telegram.ui.Components.t00 t00Var) {
         super(context);
         addView(t00Var, w7.y5.c(-1.0f, -1));
         this.c = t00Var;
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-        this.d = kj0Var;
-        kj0Var.f(R.raw.utyan_call, 110, 110, null);
-        kj0Var.setAutoRepeat(false);
-        addView(kj0Var, w7.y5.d(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
-        kj0Var.setOnClickListener(new a(this, 10));
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        this.d = nj0Var;
+        nj0Var.f(R.raw.utyan_call, 110, 110, null);
+        nj0Var.setAutoRepeat(false);
+        addView(nj0Var, w7.y5.d(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
+        nj0Var.setOnClickListener(new a(this, 10));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
@@ -48,7 +48,7 @@ public final class i9 extends FrameLayout {
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         addView(textView2, w7.y5.d(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
         t00Var.setAlpha(0.0f);
-        kj0Var.setAlpha(0.0f);
+        nj0Var.setAlpha(0.0f);
         textView.setAlpha(0.0f);
         textView2.setAlpha(0.0f);
         setOnTouchListener(new bi.d(4));
@@ -62,12 +62,12 @@ public final class i9 extends FrameLayout {
     }
 
     public final void b() {
-        org.telegram.ui.Components.kj0 kj0Var = this.d;
-        kj0Var.animate().alpha(1.0f).setDuration(150L).start();
+        org.telegram.ui.Components.nj0 nj0Var = this.d;
+        nj0Var.animate().alpha(1.0f).setDuration(150L).start();
         this.a.animate().alpha(1.0f).setDuration(150L).start();
         this.b.animate().alpha(1.0f).setDuration(150L).start();
         this.c.animate().alpha(0.0f).setDuration(150L).start();
-        kj0Var.d();
+        nj0Var.d();
     }
 
     @Override // android.view.View

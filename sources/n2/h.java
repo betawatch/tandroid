@@ -1,23 +1,36 @@
 package n2;
 
-import java.util.UUID;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public interface h {
-    void a(k kVar);
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j b;
+    public final /* synthetic */ Object c;
 
-    void b(k kVar);
+    public /* synthetic */ h(j jVar, k kVar, int i10) {
+        this.a = i10;
+        this.b = jVar;
+        this.c = kVar;
+    }
 
-    UUID c();
-
-    boolean d();
-
-    int e();
-
-    boolean f(String str);
-
-    g g();
-
-    h2.b h();
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.k] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [java.lang.Object, n2.k] */
+    /* JADX WARN: Type inference failed for: r2v2, types: [java.lang.Object, n2.k] */
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                this.c.g(jVar.a, jVar.b);
+                break;
+            case 1:
+                j jVar2 = this.b;
+                this.c.i(jVar2.a, jVar2.b);
+                break;
+            default:
+                j jVar3 = this.b;
+                this.c.k(jVar3.a, jVar3.b);
+                break;
+        }
+    }
 }

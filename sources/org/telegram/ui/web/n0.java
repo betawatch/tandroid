@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class n0 extends WebViewClient {
     public boolean a = true;
@@ -430,8 +430,9 @@ public final class n0 extends WebViewClient {
             }
             if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
                 if (MessagesController.getInstance(z0Var.Q.M).webAppAllowedProtocols != null && MessagesController.getInstance(z0Var.Q.M).webAppAllowedProtocols.contains(parse.getScheme())) {
+                    d1 d1Var = z0Var.Q;
                     if (z0Var.f != null) {
-                        h0 h0Var4 = z0Var.Q.c;
+                        h0 h0Var4 = d1Var.c;
                         if (h0Var4 != null) {
                             h0Var4.j();
                         } else {
@@ -441,12 +442,12 @@ public final class n0 extends WebViewClient {
                                 z0Var.U = null;
                             }
                         }
-                        d1 d1Var = z0Var.f.Q;
-                        if (d1Var != null && (h0Var = d1Var.c) != null) {
+                        d1 d1Var2 = z0Var.f.Q;
+                        if (d1Var2 != null && (h0Var = d1Var2.c) != null) {
                             h0Var.b();
                         }
                     }
-                    z0Var.Q.H(parse, null, !r5.o0, false, false);
+                    d1Var.H(parse, null, !d1Var.o0, false, false);
                 }
                 z0Var.c("shouldOverrideUrlLoading(" + str + ") = true");
                 return true;

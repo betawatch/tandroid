@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bl0 extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.fk, NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -50,7 +50,7 @@ public final class bl0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
     public final ArrayList b;
     public final ArrayList c;
     public NumberTextView d;
-    public org.telegram.ui.Components.vl0 e;
+    public org.telegram.ui.Components.yl0 e;
     public yk0 f;
     public final org.telegram.ui.ActionBar.f6 h;
     public int n;
@@ -293,9 +293,9 @@ public final class bl0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, this.h));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.e = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.e = yl0Var;
+        yl0Var.q1();
         this.actionBar.setAdaptiveBackground(this.e);
         frameLayout.addView(this.e, w7.y5.c(-1.0f, -1));
         yk0 yk0Var = new yk0(this);

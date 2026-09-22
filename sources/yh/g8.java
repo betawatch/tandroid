@@ -8,10 +8,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gg0;
 import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class g8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ zg.m0 a;
+    public final /* synthetic */ zg.n0 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ ai.h1[] c;
     public final /* synthetic */ boolean[] d;
@@ -19,9 +19,9 @@ public final class g8 extends AnimatorListenerAdapter {
     public final /* synthetic */ Runnable f;
     public final /* synthetic */ o8 h;
 
-    public g8(o8 o8Var, zg.m0 m0Var, View view, ai.h1[] h1VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
+    public g8(o8 o8Var, zg.n0 n0Var, View view, ai.h1[] h1VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
         this.h = o8Var;
-        this.a = m0Var;
+        this.a = n0Var;
         this.b = view;
         this.c = h1VarArr;
         this.d = zArr;
@@ -36,9 +36,9 @@ public final class g8 extends AnimatorListenerAdapter {
         gg0 gg0Var = o8Var.J;
         gg0Var.setVisibility(4);
         gg0Var.setPaused(true);
-        zg.m0 m0Var = this.a;
-        if (m0Var != null) {
-            m0Var.l = true;
+        zg.n0 n0Var = this.a;
+        if (n0Var != null) {
+            n0Var.l = true;
         }
         View view = this.b;
         if (view != null) {

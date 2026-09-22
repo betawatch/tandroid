@@ -15,12 +15,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.ka0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.na0;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.xr0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.zr0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.au0;
 import org.telegram.ui.bx;
@@ -30,9 +30,9 @@ import org.telegram.ui.ty;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements jl0 {
+public final /* synthetic */ class g implements ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,7 +41,7 @@ public final /* synthetic */ class g implements jl0 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         TLRPC.Document document;
         TLRPC.BotInlineResult botInlineResult;
@@ -49,18 +49,18 @@ public final /* synthetic */ class g implements jl0 {
         org.telegram.ui.Components.p5 p5Var;
         org.telegram.ui.ActionBar.k kVar;
         Object O;
-        w51 G;
+        y51 G;
         switch (this.a) {
             case 0:
                 ((lx) this.b).i((a0) view, false);
                 break;
             case 1:
                 bi.u uVar = (bi.u) this.b;
-                xr0 xr0Var = uVar.W;
-                org.telegram.ui.ActionBar.n2 n2Var = xr0Var.a;
+                zr0 zr0Var = uVar.W;
+                org.telegram.ui.ActionBar.n2 n2Var = zr0Var.a;
                 if (view instanceof org.telegram.ui.Cells.u7) {
                     MessageObject messageObject = ((org.telegram.ui.Cells.u7) view).getMessageObject();
-                    if (!xr0Var.G.C1) {
+                    if (!zr0Var.G.C1) {
                         jc orCreateStoryViewer = n2Var.getOrCreateStoryViewer();
                         Context context = uVar.getContext();
                         int id2 = messageObject.getId();
@@ -69,11 +69,11 @@ public final /* synthetic */ class g implements jl0 {
                         a2.s += ((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).s1) ? AndroidUtilities.dp(68.0f) : 0;
                         orCreateStoryViewer.C(context, id2, t8Var, a2);
                         break;
-                    } else if (!xr0Var.c(messageObject)) {
-                        xr0Var.e(messageObject);
+                    } else if (!zr0Var.c(messageObject)) {
+                        zr0Var.e(messageObject);
                         break;
                     } else {
-                        xr0Var.g(messageObject);
+                        zr0Var.g(messageObject);
                         break;
                     }
                 }
@@ -158,9 +158,9 @@ public final /* synthetic */ class g implements jl0 {
                 di.i.x0((di.i) this.b, i10);
                 break;
             case 7:
-                k61 k61Var = ((di.h) this.b).b0;
-                if (k61Var != null) {
-                    k61Var.G(i10 - 1);
+                m61 m61Var = ((di.h) this.b).b0;
+                if (m61Var != null) {
+                    m61Var.G(i10 - 1);
                     break;
                 }
                 break;
@@ -261,7 +261,7 @@ public final /* synthetic */ class g implements jl0 {
                 break;
             case 11:
                 hg.l0 l0Var = (hg.l0) this.b;
-                w51 G2 = l0Var.d0.G(i10 - 1);
+                y51 G2 = l0Var.d0.G(i10 - 1);
                 if (G2 != null) {
                     hg.a0 a0Var = l0Var.Z;
                     if (!a0Var.h(G2)) {
@@ -342,7 +342,7 @@ public final /* synthetic */ class g implements jl0 {
                 }
                 break;
             case 18:
-                ((ka0) this.b).h(view);
+                ((na0) this.b).h(view);
                 break;
             case 19:
                 ((wh.n) this.b).h(view);
@@ -351,8 +351,8 @@ public final /* synthetic */ class g implements jl0 {
                 xh.m4 m4Var = (xh.m4) this.b;
                 ci.d dVar = m4Var.c0;
                 HashSet hashSet = m4Var.Z;
-                k61 k61Var2 = m4Var.e0;
-                if (k61Var2 != null && (G = k61Var2.G(i10 - 1)) != null) {
+                m61 m61Var2 = m4Var.e0;
+                if (m61Var2 != null && (G = m61Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;

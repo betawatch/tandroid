@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Cells.u6;
 import org.telegram.ui.fm0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -36,7 +36,7 @@ public final class s0 {
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.g(this, 8);
-        this.h = new u6(this, 29);
+        this.h = new u6(this, 28);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -51,7 +51,7 @@ public final class s0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).q();
+            ((r4.c) this.c).v();
             return null;
         }
     }

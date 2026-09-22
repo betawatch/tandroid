@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ad1 implements org.telegram.ui.Components.lq {
     public final /* synthetic */ xd1 a;
@@ -53,7 +53,7 @@ public final class ad1 implements org.telegram.ui.Components.lq {
         sb2.append("/addtheme/");
         sb2.append(h6Var.r.slug);
         String sb3 = sb2.toString();
-        xd1Var.showDialog(new org.telegram.ui.Components.uq0(xd1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+        xd1Var.showDialog(new org.telegram.ui.Components.wq0(xd1Var.getParentActivity(), null, sb3, false, sb3, false, null));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x00a8  */

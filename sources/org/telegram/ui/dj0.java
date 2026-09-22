@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class dj0 extends Dialog implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -74,7 +74,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean g0;
     public BitmapShader h;
     public boolean h0;
-    public final vh.g i0;
+    public final vh.f i0;
     public final fh.b j0;
     public final ah.c k0;
     public RectF l0;
@@ -97,7 +97,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean x;
     public org.telegram.ui.Cells.u1 x0;
     public boolean y;
-    public org.telegram.ui.Components.u01 y0;
+    public org.telegram.ui.Components.w01 y0;
     public Paint z0;
 
     public dj0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -120,7 +120,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.d = launchActivity != null ? new mb0(launchActivity, true) : null;
         oi0 oi0Var = new oi0(this, context, i11);
         this.F = oi0Var;
-        this.i0 = vh.g.d(1, oi0Var, oi0Var);
+        this.i0 = vh.f.d(1, oi0Var, oi0Var);
         oi0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.li0
             public final /* synthetic */ dj0 b;
 
@@ -215,7 +215,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
     }
 
     public final void d(org.telegram.ui.ActionBar.n2 n2Var) {
-        zg.x xVar;
+        zg.y yVar;
         if (this.e0 != null || n2Var == null) {
             return;
         }
@@ -253,15 +253,15 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
         if (ri0Var2 != null && !ri0Var2.f1) {
             ri0Var2.f1 = true;
             ri0Var2.g1 = true;
-            zg.b0 b0Var = ri0Var2.x0;
-            if (b0Var != null && (xVar = b0Var.m) != null && !xVar.K1) {
-                xVar.K1 = true;
-                xVar.L1 = true;
-                g61 g61Var = xVar.h0;
+            zg.c0 c0Var = ri0Var2.x0;
+            if (c0Var != null && (yVar = c0Var.m) != null && !yVar.K1) {
+                yVar.K1 = true;
+                yVar.L1 = true;
+                g61 g61Var = yVar.h0;
                 if (g61Var != null) {
                     g61Var.invalidate();
                 }
-                w51 w51Var = xVar.i0;
+                w51 w51Var = yVar.i0;
                 if (w51Var != null) {
                     w51Var.invalidate();
                 }
@@ -398,10 +398,10 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
             return;
         }
         this.q0 = true;
-        vh.g.f(false);
-        vh.g gVar = this.i0;
-        if (gVar != null) {
-            gVar.b(this.F);
+        vh.f.f(false);
+        vh.f fVar = this.i0;
+        if (fVar != null) {
+            fVar.b(this.F);
         }
         super.dismiss();
         c();
@@ -489,7 +489,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
         if (this.e0 == null || (effect = MessagesController.getInstance(this.c).getEffect(j3)) == null) {
             return;
         }
-        this.e0.setSelectedReactionAnimated(zg.o0.e(effect));
+        this.e0.setSelectedReactionAnimated(zg.p0.e(effect));
     }
 
     @Override // android.app.Dialog
@@ -532,12 +532,12 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
         AndroidUtilities.setLightNavigationBar(oi0Var, !org.telegram.ui.ActionBar.j6.I.q());
     }
 
-    public final void p(org.telegram.ui.Components.v70 v70Var) {
+    public final void p(org.telegram.ui.Components.y70 y70Var) {
         int i10 = org.telegram.ui.ActionBar.j6.E8;
         org.telegram.ui.ActionBar.f6 f6Var = this.b;
-        v70Var.T(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-        v70Var.Q(this.k0, eh.b.k(f6Var), false);
-        ViewGroup viewGroup = v70Var.A;
+        y70Var.T(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+        y70Var.Q(this.k0, eh.b.k(f6Var), false);
+        ViewGroup viewGroup = y70Var.A;
         this.Z = viewGroup;
         this.G.addView(viewGroup, w7.y5.c(-2.0f, -2));
     }
@@ -691,7 +691,7 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
     public final void s(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.y0 = j3 > 0 ? new org.telegram.ui.Components.u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
+        this.y0 = j3 > 0 ? new org.telegram.ui.Components.w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
         if (this.z0 == null) {
             Paint paint = new Paint(1);
             this.z0 = paint;
@@ -716,14 +716,14 @@ public class dj0 extends Dialog implements NotificationCenter.NotificationCenter
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
-            vh.g.f(true);
+            vh.f.f(true);
             super.show();
             final float alpha = this.W.getAlpha();
             org.telegram.ui.Components.ug ugVar = this.W;
             if (ugVar != null) {
                 ugVar.setAlpha(0.0f);
             }
-            org.telegram.ui.Components.mm0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ki0
+            org.telegram.ui.Components.om0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ki0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     dj0 dj0Var = dj0.this;

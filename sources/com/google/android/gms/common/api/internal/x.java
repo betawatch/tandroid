@@ -21,7 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -45,7 +45,7 @@ public final class x implements x0 {
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new xa.c(this, 12));
+        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new xa.c(this, 13));
         this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, p3Var, fVar3, dVar, arrayList, new a6.i(this, 14));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
@@ -60,7 +60,7 @@ public final class x implements x0 {
     }
 
     public static /* bridge */ /* synthetic */ void k(x xVar, int i10) {
-        xVar.b.j(i10);
+        xVar.b.k(i10);
         xVar.m = null;
         xVar.l = null;
     }
@@ -160,7 +160,7 @@ public final class x implements x0 {
             m0 m0Var2 = this.d;
             m0Var2.getClass();
             eVar.l();
-            return m0Var2.m.L(eVar);
+            return m0Var2.m.O(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
@@ -170,7 +170,7 @@ public final class x implements x0 {
         m0 m0Var3 = this.e;
         m0Var3.getClass();
         eVar.l();
-        return m0Var3.m.L(eVar);
+        return m0Var3.m.O(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0

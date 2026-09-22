@@ -1,18 +1,26 @@
 package d7;
 
-import android.os.Bundle;
 import hg.k0;
+import java.io.File;
 import java.util.ArrayList;
-import p4.r;
+import java.util.logging.Level;
+import yc.i;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c {
-    public ArrayList a;
+    public final ArrayList a;
 
     public c(int i10) {
         switch (i10) {
             case 1:
+                this.a = new ArrayList();
+                break;
+            case 2:
+                File file = new File(System.getProperty("java.io.tmpdir"));
+                if (!file.exists()) {
+                    file.mkdirs();
+                }
                 this.a = new ArrayList();
                 break;
             default:
@@ -23,13 +31,23 @@ public final class c {
         }
     }
 
-    public r a() {
-        if (this.a == null) {
-            return r.c;
+    public void a() {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj != null) {
+                throw new ClassCastException();
+            }
+            try {
+                throw null;
+            } catch (Exception e) {
+                i.d.log(Level.WARNING, "could not delete file ", (Throwable) e);
+            }
         }
-        Bundle bundle = new Bundle();
-        bundle.putStringArrayList("controlCategories", this.a);
-        return new r(bundle, this.a);
+        arrayList.clear();
     }
 
     public void b(StringBuilder sb2) {

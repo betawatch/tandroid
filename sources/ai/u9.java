@@ -14,15 +14,15 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class u9 implements fc {
-    public final vl0 a;
+    public final yl0 a;
     public final q01 b;
     public final int[] c;
     public final boolean d;
@@ -33,23 +33,23 @@ public final class u9 implements fc {
     public boolean r;
     public int s;
 
-    public u9(vl0 vl0Var, boolean z10) {
+    public u9(yl0 yl0Var, boolean z10) {
         this.c = new int[2];
-        this.a = vl0Var;
+        this.a = yl0Var;
         this.d = z10;
         this.b = null;
     }
 
-    public static u9 a(vl0 vl0Var) {
-        return new u9(vl0Var, false);
+    public static u9 a(yl0 yl0Var) {
+        return new u9(yl0Var, false);
     }
 
     @Override // ai.fc
     public final void Z(long j3, int i10, e5 e5Var) {
         ArrayList arrayList;
-        vl0 vl0Var = this.a;
-        if (vl0Var != null && (vl0Var.getParent() instanceof b0)) {
-            b0 b0Var = (b0) vl0Var.getParent();
+        yl0 yl0Var = this.a;
+        if (yl0Var != null && (yl0Var.getParent() instanceof b0)) {
+            b0 b0Var = (b0) yl0Var.getParent();
             if (b0Var.k(j3)) {
                 b0Var.b0.add(e5Var);
                 return;
@@ -59,7 +59,7 @@ public final class u9 implements fc {
             }
         }
         int i11 = 0;
-        if (vl0Var == null || !(vl0Var.getParent() instanceof j7)) {
+        if (yl0Var == null || !(yl0Var.getParent() instanceof j7)) {
             if (this.d) {
                 l9 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
                 ArrayList arrayList2 = storiesController.h;
@@ -70,7 +70,7 @@ public final class u9 implements fc {
             e5Var.run();
             return;
         }
-        j7 j7Var = (j7) vl0Var.getParent();
+        j7 j7Var = (j7) yl0Var.getParent();
         pz pzVar = j7Var.x;
         e7 e7Var = j7Var.w;
         if (e7Var != null && (arrayList = e7Var.c) != null && pzVar != null) {
@@ -98,7 +98,7 @@ public final class u9 implements fc {
                 int N0 = pzVar.N0();
                 if (i11 < L0 || i11 > N0) {
                     pzVar.h1(i11, AndroidUtilities.dp(60.0f));
-                    vl0Var.post(e5Var);
+                    yl0Var.post(e5Var);
                     return;
                 }
             }
@@ -142,9 +142,9 @@ public final class u9 implements fc {
         gcVar.b = null;
         gcVar.c = null;
         gcVar.e = null;
-        vl0 vl0Var = this.a;
-        b0 b0Var = (vl0Var == null || !(vl0Var.getParent() instanceof b0)) ? null : (b0) vl0Var.getParent();
-        ViewGroup viewGroup = (b0Var == null || b0Var.g()) ? vl0Var : b0Var.r;
+        yl0 yl0Var = this.a;
+        b0 b0Var = (yl0Var == null || !(yl0Var.getParent() instanceof b0)) ? null : (b0) yl0Var.getParent();
+        ViewGroup viewGroup = (b0Var == null || b0Var.g()) ? yl0Var : b0Var.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -219,11 +219,11 @@ public final class u9 implements fc {
                         c(gcVar);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.u7) && vl0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.u7) && yl0Var != null) {
                     org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) childAt;
                     MessageObject messageObject = u7Var.getMessageObject();
                     if ((u7Var.getStyle() == 1 && i11 == 0) || (messageObject != null && messageObject.isStory() && messageObject.getId() == i11 && messageObject.storyItem.dialogId == j3)) {
-                        cl0 fastScroll = vl0Var.getFastScroll();
+                        fl0 fastScroll = yl0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);

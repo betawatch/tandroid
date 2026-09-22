@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class s61 extends View {
     public Drawable E;
@@ -57,7 +57,7 @@ public final class s61 extends View {
     public boolean s;
     public TL_stars.TL_starGiftUnique v;
     public Integer w;
-    public zg.o0 x;
+    public zg.p0 x;
     public boolean y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -181,7 +181,7 @@ public final class s61 extends View {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (zg.e0.b || getParent() == null) {
+        if (zg.f0.b || getParent() == null) {
             return;
         }
         ((View) getParent()).invalidate();
@@ -236,8 +236,8 @@ public final class s61 extends View {
         if (this.a) {
             findAnimatedEmojiEmoticon = LocaleController.getString(R.string.RemoveStatus);
         } else {
-            zg.o0 o0Var = this.x;
-            if (o0Var == null || (findAnimatedEmojiEmoticon = o0Var.f) == null) {
+            zg.p0 p0Var = this.x;
+            if (p0Var == null || (findAnimatedEmojiEmoticon = p0Var.f) == null) {
                 TLRPC.Document document = this.d;
                 if (document == null && (y5Var = this.e) != null && (document = y5Var.document) == null) {
                     document = org.telegram.ui.Components.p5.f(this.V.V, y5Var.getDocumentId());
@@ -313,7 +313,7 @@ public final class s61 extends View {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (zg.e0.b) {
+        if (zg.f0.b) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

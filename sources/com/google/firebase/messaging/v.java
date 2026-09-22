@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class v implements Runnable {
 
     public v(FirebaseMessaging firebaseMessaging, long j3) {
         this.a = 0;
-        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("firebase-iid-executor"));
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.v("firebase-iid-executor"));
         this.d = firebaseMessaging;
         this.b = j3;
         PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
@@ -115,33 +115,33 @@ public final class v implements Runnable {
                     throw th2;
                 }
             default:
-                w9.m mVar = (w9.m) this.e;
-                w9.q qVar = mVar.n;
-                if (qVar == null || !qVar.e.get()) {
+                w9.n nVar = (w9.n) this.e;
+                w9.r rVar = nVar.n;
+                if (rVar == null || !rVar.e.get()) {
                     long j3 = this.b / 1000;
-                    String e7 = mVar.e();
+                    String e7 = nVar.e();
                     if (e7 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
-                    n nVar = mVar.m;
+                    n nVar2 = nVar.m;
                     Throwable th3 = (Throwable) this.c;
                     Thread thread = (Thread) this.d;
-                    nVar.getClass();
+                    nVar2.getClass();
                     String concat = "Persisting non-fatal event for session ".concat(e7);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    nVar.v(th3, thread, e7, "error", j3, false);
+                    nVar2.v(th3, thread, e7, "error", j3, false);
                     return;
                 }
                 return;
         }
     }
 
-    public v(w9.m mVar, long j3, Throwable th2, Thread thread) {
+    public v(w9.n nVar, long j3, Throwable th2, Thread thread) {
         this.a = 1;
-        this.e = mVar;
+        this.e = nVar;
         this.b = j3;
         this.c = th2;
         this.d = thread;

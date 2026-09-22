@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class tb extends FrameLayout {
     public static final o1.i IN_OUT_OFFSET_Y = new pb(0);
@@ -53,7 +53,7 @@ public abstract class tb extends FrameLayout {
         b();
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         setWillNotDraw(false);
-        w7.b6.b(this, 0.02f, 1.5f);
+        w7.a6.b(this, 0.02f, 1.5f);
     }
 
     public static boolean a() {

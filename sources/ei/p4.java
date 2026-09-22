@@ -15,12 +15,12 @@ import ci.va;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.vv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class p4 extends FrameLayout {
-    public static final tv0 b0 = new tv0(new d2.c(21), new d2.c(22));
+    public static final vv0 b0 = new vv0(new d2.c(21), new d2.c(22));
     public Runnable E;
     public o4 F;
     public o1.k G;
@@ -42,7 +42,7 @@ public abstract class p4 extends FrameLayout {
     public float W;
     public Object a;
     public float a0;
-    public final n2.e b;
+    public final l.d b;
     public boolean c;
     public boolean d;
     public float e;
@@ -68,7 +68,7 @@ public abstract class p4 extends FrameLayout {
         this.S = false;
         this.T = AndroidUtilities.dp(60.0f);
         this.U = true;
-        this.b = new n2.e(context, new n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        this.b = new l.d(context, new n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
         Point point = AndroidUtilities.displaySize;
         this.H = AndroidUtilities.dp(point.x > point.y ? 8.0f : 64.0f);
     }
@@ -171,7 +171,7 @@ public abstract class p4 extends FrameLayout {
                             float distance = AndroidUtilities.distance(motionEvent.getX(), motionEvent.getY(), this.W, this.a0);
                             long eventTime = motionEvent.getEventTime() - this.V;
                             if (this.F != null && (eventTime > 250 || distance > AndroidUtilities.dp(200.0f))) {
-                                this.F.i(!z10);
+                                this.F.f(!z10);
                             } else if (z11) {
                                 e((-this.f) + this.e);
                             }

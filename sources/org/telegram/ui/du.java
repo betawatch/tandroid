@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class du extends org.telegram.ui.Components.ab {
     public final FrameLayout X;
@@ -30,7 +30,7 @@ public final class du extends org.telegram.ui.Components.ab {
     public final ArrayList a0;
     public final HashSet b0;
     public boolean c0;
-    public org.telegram.ui.Components.k61 d0;
+    public org.telegram.ui.Components.m61 d0;
 
     public du(Activity activity, HashSet hashSet) {
         super(activity, null, false, false, new ai.d());
@@ -50,7 +50,7 @@ public final class du extends org.telegram.ui.Components.ab {
         imageView.setImageResource(R.drawable.ic_close_white);
         imageView.setColorFilter(new PorterDuffColorFilter(-8090220, PorterDuff.Mode.SRC_IN));
         frameLayout.addView(imageView, w7.y5.d(24, 24.0f, 53, 0.0f, 14.0f, 14.0f, 0.0f));
-        w7.b6.a(imageView);
+        w7.a6.a(imageView);
         final int i10 = 0;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.cu
             public final /* synthetic */ du b;
@@ -81,18 +81,18 @@ public final class du extends org.telegram.ui.Components.ab {
         frameLayout2.addView(imageView2, w7.y5.e(56, 56, 17));
         e.addView(frameLayout2, w7.y5.t(80, 80, 1, 2, 21, 2, 13));
         int i11 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.Components.k90 a2 = w7.d6.a(activity, 20.0f, i11, true, this.resourcesProvider);
+        org.telegram.ui.Components.n90 a2 = w7.c6.a(activity, 20.0f, i11, true, this.resourcesProvider);
         a2.setText(LocaleController.getString(R.string.GroupCallCreateTitle));
         a2.setGravity(17);
         e.addView(a2, w7.y5.t(-1, -2, 1, 2, 0, 2, 4));
-        org.telegram.ui.Components.k90 a10 = w7.d6.a(activity, 14.0f, i11, false, this.resourcesProvider);
+        org.telegram.ui.Components.n90 a10 = w7.c6.a(activity, 14.0f, i11, false, this.resourcesProvider);
         a10.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallCreateText)));
         a10.setGravity(17);
         a10.setMaxWidth(ci.f4.a(a10.getText(), a10.getPaint()));
         e.addView(a10, w7.y5.t(-1, -2, 1, 2, 0, 2, 23));
-        org.telegram.ui.Components.k61 k61Var = this.d0;
-        if (k61Var != null) {
-            k61Var.N(false);
+        org.telegram.ui.Components.m61 m61Var = this.d0;
+        if (m61Var != null) {
+            m61Var.N(false);
         }
         s4.j jVar = new s4.j();
         jVar.m = false;
@@ -168,9 +168,9 @@ public final class du extends org.telegram.ui.Components.ab {
             }
         });
         this.containerView.addView(frameLayout3, w7.y5.e(-1, -2, 87));
-        org.telegram.ui.Components.vl0 vl0Var = this.d;
+        org.telegram.ui.Components.yl0 yl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(76.0f));
     }
 
     public static void Q(du duVar, TLObject tLObject, ci.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
@@ -224,8 +224,8 @@ public final class du extends org.telegram.ui.Components.ab {
     }
 
     public static void R(du duVar, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.w51.k(duVar.X));
-        arrayList.add(org.telegram.ui.Components.w51.B(null));
+        arrayList.add(org.telegram.ui.Components.y51.k(duVar.X));
+        arrayList.add(org.telegram.ui.Components.y51.B(null));
         ArrayList arrayList2 = duVar.a0;
         if (arrayList2 == null || arrayList2.isEmpty()) {
             return;
@@ -239,7 +239,7 @@ public final class du extends org.telegram.ui.Components.ab {
                 return;
             }
             int i11 = xg.k.a;
-            org.telegram.ui.Components.w51 J = org.telegram.ui.Components.w51.J(xg.k.class);
+            org.telegram.ui.Components.y51 J = org.telegram.ui.Components.y51.J(xg.k.class);
             J.G = user;
             J.K(duVar.b0.contains(l4));
             arrayList.add(J);
@@ -261,10 +261,10 @@ public final class du extends org.telegram.ui.Components.ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
-        org.telegram.ui.Components.k61 k61Var = new org.telegram.ui.Components.k61(vl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 10), this.resourcesProvider);
-        this.d0 = k61Var;
-        return k61Var;
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+        org.telegram.ui.Components.m61 m61Var = new org.telegram.ui.Components.m61(yl0Var, getContext(), this.currentAccount, 0, true, new b5(this, 10), this.resourcesProvider);
+        this.d0 = m61Var;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

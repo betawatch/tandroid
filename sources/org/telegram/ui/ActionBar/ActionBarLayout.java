@@ -71,7 +71,7 @@ import org.telegram.ui.xn;
 import org.telegram.ui.yg0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements d5, mg.b {
     public static Drawable p1;
@@ -1407,7 +1407,7 @@ public class ActionBarLayout extends FrameLayout implements d5, mg.b {
                 int width2 = getWidth();
                 getY();
                 getHeight();
-                cVar.p(canvas, z10, z11, width2, 1.0f);
+                cVar.s(canvas, z10, z11, width2, 1.0f);
                 canvas2 = canvas;
                 this.U0 = false;
             }

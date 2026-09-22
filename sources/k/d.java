@@ -7,7 +7,7 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 import n4.y;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d extends a implements l.j {
     public Context c;
@@ -23,7 +23,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.R(this);
+        this.e.S(this);
     }
 
     @Override // k.a
@@ -57,7 +57,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.S(this, this.n);
+        this.e.T(this, this.n);
     }
 
     @Override // k.a
@@ -107,7 +107,7 @@ public final class d extends a implements l.j {
     }
 
     @Override // l.j
-    public final boolean t(l.l lVar, MenuItem menuItem) {
+    public final boolean w(l.l lVar, MenuItem menuItem) {
         return ((oi.f) this.e.a).G(this, menuItem);
     }
 }

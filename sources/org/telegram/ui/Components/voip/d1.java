@@ -30,9 +30,9 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.r81;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.dc1;
 import org.telegram.ui.mi1;
 import org.telegram.ui.ro;
@@ -40,7 +40,7 @@ import org.telegram.ui.ti1;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class d1 extends FrameLayout implements VoIPService.StateListener {
     public float E;
@@ -56,8 +56,8 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
     public final boolean O;
     public final com.google.firebase.messaging.n P;
     public final com.google.firebase.messaging.n Q;
-    public final kc0 R;
-    public final kc0 S;
+    public final nc0 R;
+    public final nc0 S;
     public final GestureDetector T;
     public ValueAnimator U;
     public boolean a;
@@ -89,8 +89,8 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         this.N = new Matrix();
         this.P = new com.google.firebase.messaging.n(80, 80);
         this.Q = new com.google.firebase.messaging.n(80, 80);
-        this.R = new kc0(-10497967, -16730994, -5649306, -10833593, false, 0, true);
-        this.S = new kc0(-16735258, -14061833, -15151390, -12602625, false, 0, true);
+        this.R = new nc0(-10497967, -16730994, -5649306, -10833593, false, 0, true);
+        this.S = new nc0(-16735258, -14061833, -15151390, -12602625, false, 0, true);
         this.I = f7;
         this.J = f10;
         this.e = new x2[3];
@@ -163,7 +163,7 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         }
         ai.f0 f0Var2 = this.b;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setBackground(new kc0(true, -14602694, -13935795, -14395293, -14203560));
+        frameLayout.setBackground(new nc0(true, -14602694, -13935795, -14395293, -14203560));
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.screencast_big);
@@ -184,7 +184,7 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         f0Var2.addView(imageView2);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new bb(mi1Var, f7, f10, 3));
-        ofFloat.addListener(new r81(mi1Var, 6));
+        ofFloat.addListener(new t81(mi1Var, 6));
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat2.addUpdateListener(new r0(mi1Var, i10));
         qr qrVar = qr.f;

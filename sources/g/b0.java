@@ -22,7 +22,7 @@ import r0.i0;
 import r0.l0;
 import v7.k7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b0 extends k7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
@@ -59,7 +59,7 @@ public final class b0 extends k7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a6.i(this, 20);
+        this.w = new a6.i(this, 19);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -332,7 +332,7 @@ public final class b0 extends k7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a6.i(this, 20);
+        this.w = new a6.i(this, 19);
         b(uVar.getWindow().getDecorView());
     }
 }

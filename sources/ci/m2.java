@@ -49,14 +49,14 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.mr;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 str4 = h4Var.u0[0].getWebView().getUrl();
             }
             String v = org.telegram.ui.web.d1.v(str4);
-            h4Var.a0(new uq0(h4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(h4Var.h0.getBackgroundColor()) < 0.721f ? new ai.d() : null));
+            h4Var.a0(new wq0(h4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(h4Var.h0.getBackgroundColor()) < 0.721f ? new ai.d() : null));
             return;
         }
         if (num.intValue() == 6) {
@@ -318,7 +318,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
         ii.t a2;
         int i13;
         zn znVar;
-        lk lkVar;
+        mk mkVar;
         int i14 = this.a;
         String str = null;
         int i15 = 0;
@@ -450,7 +450,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 }
             case 4:
                 ba baVar = (ba) obj3;
-                ((v70) obj2).u();
+                ((y70) obj2).u();
                 baVar.g(true);
                 ia iaVar = baVar.W;
                 la laVar = iaVar.X;
@@ -552,7 +552,7 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 tcVar.i = f7.floatValue();
                 sc scVar = ((zc) obj3).a;
                 if (scVar != null) {
-                    scVar.A(f7.floatValue(), tcVar.a);
+                    scVar.y(f7.floatValue(), tcVar.a);
                     break;
                 }
                 break;
@@ -734,8 +734,8 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) obj2;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 if (n2Var != null) {
-                    if ((n2Var instanceof zn) && (lkVar = (znVar = (zn) n2Var).Y) != null) {
-                        lkVar.P();
+                    if ((n2Var instanceof zn) && (mkVar = (znVar = (zn) n2Var).Y) != null) {
+                        mkVar.P();
                         znVar.Y.n0(true, false, true);
                     }
                     if (n2Var.getContext() != null && n2Var.getParentActivity() != null) {
@@ -938,9 +938,9 @@ public final /* synthetic */ class m2 implements Utilities.Callback {
                 tL_messages_sendQuickReplyMessages2.peer = znVar2.getMessagesController().getInputPeer(znVar2.T5);
                 tL_messages_sendQuickReplyMessages2.shortcut_id = ((hg.a2) obj2).a;
                 znVar2.getConnectionsManager().sendRequest(tL_messages_sendQuickReplyMessages2, null);
-                lk lkVar2 = znVar2.Y;
-                if (lkVar2 != null) {
-                    lkVar2.setFieldText(null);
+                mk mkVar2 = znVar2.Y;
+                if (mkVar2 != null) {
+                    mkVar2.setFieldText(null);
                     break;
                 }
                 break;

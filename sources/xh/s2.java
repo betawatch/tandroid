@@ -33,26 +33,26 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.db;
 import org.telegram.ui.Cells.va;
-import org.telegram.ui.Components.hr0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.jr0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.t70;
 import org.telegram.ui.Components.tb;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w81;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.y81;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import yh.k5;
 import yh.l5;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class s2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap T = new HashMap();
@@ -60,7 +60,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     public final np F;
     public final FrameLayout G;
     public int H;
-    public v70 I;
+    public y70 I;
     public SpannableStringBuilder J;
     public int K;
     public boolean L;
@@ -78,7 +78,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     public final k5 e;
     public final f6 f;
     public final x1 h;
-    public final w81 n;
+    public final y81 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -97,9 +97,9 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         String str;
         this.H = -1;
-        yr0 yr0Var = (yr0) this;
-        this.N = new u1(yr0Var, 2);
-        this.O = new le.b(0, new w1(yr0Var), qr.h, 380L, true);
+        bs0 bs0Var = (bs0) this;
+        this.N = new u1(bs0Var, 2);
+        this.O = new le.b(0, new w1(bs0Var), qr.h, 380L, true);
         this.Q = AndroidUtilities.displaySize.y;
         this.a = n2Var;
         this.b = i10;
@@ -132,12 +132,12 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         }
         G.a();
         this.f = f6Var;
-        x1 x1Var = new x1(yr0Var, context, n2Var);
+        x1 x1Var = new x1(bs0Var, context, n2Var);
         this.h = x1Var;
         x1Var.setAllowDisallowInterceptTouch(true);
-        x1Var.setAdapter(new y1(yr0Var, i10, f6Var));
+        x1Var.setAdapter(new y1(bs0Var, i10, f6Var));
         addView(x1Var, y5.e(-1, -1, 119));
-        w81 n10 = x1Var.n(10, true);
+        y81 n10 = x1Var.n(10, true);
         this.n = n10;
         int i13 = j6.Gh;
         int i14 = j6.G6;
@@ -153,8 +153,8 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         n10.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n10.setClipToPadding(false);
         n10.r = 12;
-        n10.setPreTabClick(new w1(yr0Var));
-        n10.setOnTabLongClick(new org.telegram.ui.Components.d2(yr0Var, i10, n2Var, context, f6Var, 5));
+        n10.setPreTabClick(new w1(bs0Var));
+        n10.setOnTabLongClick(new org.telegram.ui.Components.d2(bs0Var, i10, n2Var, context, f6Var, 5));
         addView(n10, y5.e(-1, 42, 48));
         fh.c cVar = new fh.c();
         int i18 = j6.d6;
@@ -165,7 +165,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         c10.p(AndroidUtilities.dp(8.0f));
         c10.q(AndroidUtilities.dp(22.0f));
         x5Var.setBackground(c10);
-        b6.b(x5Var, 0.02f, 1.2f);
+        a6.b(x5Var, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         FrameLayout.LayoutParams e = y5.e(-1, 60, 87);
@@ -193,8 +193,8 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
         linearLayout.addView(textView, y5.t(-2, -2, 16, 9, 0, 0, 0));
         x5Var.addView(linearLayout, y5.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
-        b6.b(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new va(yr0Var, n2Var, i10, 19));
+        a6.b(linearLayout, 0.025f, 1.5f);
+        linearLayout.setOnClickListener(new va(bs0Var, n2Var, i10, 19));
         Boolean bool = G.h;
         if (bool != null) {
             npVar.a(bool.booleanValue(), false);
@@ -221,7 +221,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
                 x5Var.addView(dVar, y5.e(-2, -1, 17));
-                x5Var.setOnClickListener(new hr0(yr0Var, z10, i10, i12));
+                x5Var.setOnClickListener(new jr0(bs0Var, z10, i10, i12));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
@@ -249,7 +249,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         dVar2.g(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
         x5Var.addView(dVar2, y5.e(-2, -1, 17));
-        x5Var.setOnClickListener(new hr0(yr0Var, z10, i10, i12));
+        x5Var.setOnClickListener(new jr0(bs0Var, z10, i10, i12));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
@@ -381,7 +381,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         return currentPage != null ? currentPage.e : this.d;
     }
 
-    public vl0 getCurrentListView() {
+    public yl0 getCurrentListView() {
         o2 currentPage = getCurrentPage();
         if (currentPage != null) {
             return currentPage.f;
@@ -458,15 +458,15 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        w81 w81Var = this.n;
-        if (w81Var != null) {
-            return w81Var.getAlpha();
+        y81 y81Var = this.n;
+        if (y81Var != null) {
+            return y81Var.getAlpha();
         }
         return 0.0f;
     }
 
     public final void h(String str, Utilities.Callback callback) {
-        q70 q70Var;
+        t70 t70Var;
         Context context = getContext();
         Activity findActivity = AndroidUtilities.findActivity(context);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
@@ -504,9 +504,9 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         alertDialog$Builder.k(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new s5.e(11, a2Var, callback));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new x2.h(4));
         b2VarArr[0] = alertDialog$Builder.a;
-        v70 v70Var = this.I;
-        if (v70Var != null && (q70Var = v70Var.m) != null) {
-            q70Var.setSoftInputMode(48);
+        y70 y70Var = this.I;
+        if (y70Var != null && (t70Var = y70Var.m) != null) {
+            t70Var.setSoftInputMode(48);
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.a.getClassGuid());
         b2VarArr[0].setOnDismissListener(new ei.t0(this, a2Var, findActivity, 6));
@@ -580,7 +580,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         int dp = AndroidUtilities.dp(19.0f);
         int i10 = j6.Oh;
         f6 f6Var = this.f;
-        dVar.setBackground(j6.b0(dp, ((yr0) this).U.V0(j6.v0(i10, f6Var))));
+        dVar.setBackground(j6.b0(dp, ((bs0) this).U.V0(j6.v0(i10, f6Var))));
         View[] viewPages = this.h.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
@@ -619,16 +619,16 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void o() {
         float f7;
-        w81 w81Var = this.n;
-        if (w81Var == null) {
+        y81 y81Var = this.n;
+        if (y81Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.K, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        w81Var.setTranslationY(min);
-        w81Var.setScaleX(lerp);
-        w81Var.setScaleY(lerp);
+        y81Var.setTranslationY(min);
+        y81Var.setScaleX(lerp);
+        y81Var.setScaleY(lerp);
         x1 x1Var = this.h;
         if (x1Var.getViewPages() != null) {
             f7 = 0.0f;
@@ -640,7 +640,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f7 = 0.0f;
         }
-        w81Var.setAlpha(w7.q.a(f7, 0.0f, 1.0f) * clamp01);
+        y81Var.setAlpha(w7.q.a(f7, 0.0f, 1.0f) * clamp01);
     }
 
     @Override // android.view.ViewGroup, android.view.View

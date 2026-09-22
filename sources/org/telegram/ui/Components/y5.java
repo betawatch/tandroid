@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class y5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class y5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            d11[] d11VarArr = (d11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), d11.class);
-            for (int i12 = 0; d11VarArr != null && i12 < d11VarArr.length; i12++) {
-                d11 d11Var = d11VarArr[i12];
-                if (d11Var != null && d11Var.c()) {
+            f11[] f11VarArr = (f11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), f11.class);
+            for (int i12 = 0; f11VarArr != null && i12 < f11VarArr.length; i12++) {
+                f11 f11Var = f11VarArr[i12];
+                if (f11Var != null && f11Var.c()) {
                     return true;
                 }
             }
@@ -124,7 +124,7 @@ public class y5 extends ReplacementSpan {
         return cloneSpans(charSequence, -1, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, u5 u5Var, float f7, List<vh.h> list, float f10, float f11, float f12, float f13) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, u5 u5Var, float f7, List<vh.g> list, float f10, float f11, float f12, float f13) {
         drawAnimatedEmojis(canvas, layout, u5Var, f7, list, f10, f11, f12, f13, null);
     }
 
@@ -414,7 +414,7 @@ public class y5 extends ReplacementSpan {
         return cloneSpans(charSequence, i10, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, u5 u5Var, float f7, List<vh.h> list, float f10, float f11, float f12, float f13, ColorFilter colorFilter) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, u5 u5Var, float f7, List<vh.g> list, float f10, float f11, float f12, float f13, ColorFilter colorFilter) {
         boolean z10;
         if (canvas == null || layout == null || u5Var == null) {
             return;

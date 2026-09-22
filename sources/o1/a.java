@@ -5,11 +5,11 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import k2.u;
-import org.telegram.ui.Components.j11;
+import ki.e0;
 import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.n11;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class a implements Choreographer.FrameCallback {
         boolean z10;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((u) ((lf.h) this.b).b).b;
+                b bVar = (b) ((e0) ((lf.h) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -115,13 +115,13 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 break;
             default:
-                j11 j11Var = ((l11) this.b).a;
-                if (j11Var != null) {
-                    Handler handler = j11Var.getHandler();
-                    if (handler != null && j11Var.b.get()) {
+                l11 l11Var = ((n11) this.b).a;
+                if (l11Var != null) {
+                    Handler handler = l11Var.getHandler();
+                    if (handler != null && l11Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((l11) this.b).a.S) {
+                    if (((n11) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

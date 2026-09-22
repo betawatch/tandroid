@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ur extends ViewGroup {
     public static final /* synthetic */ int s = 0;
@@ -73,7 +73,7 @@ public final class ur extends ViewGroup {
             }
             i11++;
         }
-        sr srVar = new sr(this, context, new n2.e(context, new ei.n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 1)));
+        sr srVar = new sr(this, context, new l.d(context, new ei.n4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 1)));
         this.a = srVar;
         srVar.setImageResource(R.drawable.msg_clear_input);
         srVar.setColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
@@ -89,7 +89,7 @@ public final class ur extends ViewGroup {
             }
             View view = viewArr[i10];
             if (view != null) {
-                w7.b6.b(view, 0.02f, 1.2f);
+                w7.a6.b(view, 0.02f, 1.2f);
                 view.setBackground(a(i10));
             }
             i10++;

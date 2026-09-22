@@ -24,7 +24,7 @@ import hg.k0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -46,7 +46,7 @@ public final class b implements o {
     public final boolean a(p pVar) {
         c3.b.s(pVar, false);
         v vVar = new v(4);
-        ((l) pVar).i(vVar.a, 0, 4, false);
+        ((l) pVar).h(vVar.a, 0, 4, false);
         return vVar.z() == 1716281667;
     }
 
@@ -90,9 +90,9 @@ public final class b implements o {
         if (i11 == 0) {
             boolean z11 = !this.c;
             pVar.p();
-            long j11 = pVar.j();
+            long i12 = pVar.i();
             p0 s10 = c3.b.s(pVar, z11);
-            pVar.q((int) (pVar.j() - j11));
+            pVar.q((int) (pVar.i() - i12));
             this.h = s10;
             this.g = 1;
             return 0;
@@ -104,8 +104,8 @@ public final class b implements o {
             this.g = 2;
             return 0;
         }
-        int i12 = 4;
-        int i13 = 3;
+        int i13 = 4;
+        int i14 = 3;
         if (i11 == 2) {
             v vVar = new v(4);
             pVar.readFully(vVar.a, 0, 4);
@@ -115,44 +115,44 @@ public final class b implements o {
             this.g = 3;
             return 0;
         }
-        int i14 = 6;
+        int i15 = 6;
         if (i11 == 3) {
             u uVar2 = this.i;
             boolean z12 = false;
             while (!z12) {
                 pVar.p();
-                byte[] bArr2 = new byte[i12];
-                h hVar = new h(bArr2, i12);
-                pVar.a(0, i12, bArr2);
+                byte[] bArr2 = new byte[i13];
+                h hVar = new h(bArr2, i13);
+                pVar.a(0, i13, bArr2);
                 boolean h = hVar.h();
-                int i15 = hVar.i(r10);
-                int i16 = hVar.i(24) + i12;
-                if (i15 == 0) {
+                int i16 = hVar.i(r10);
+                int i17 = hVar.i(24) + i13;
+                if (i16 == 0) {
                     byte[] bArr3 = new byte[38];
                     pVar.readFully(bArr3, 0, 38);
-                    uVar2 = new u(bArr3, i12);
+                    uVar2 = new u(bArr3, i13);
                 } else {
                     if (uVar2 == null) {
                         throw new IllegalArgumentException();
                     }
                     p0 p0Var = uVar2.l;
-                    if (i15 == i13) {
-                        v vVar2 = new v(i16);
-                        pVar.readFully(vVar2.a, 0, i16);
+                    if (i16 == i14) {
+                        v vVar2 = new v(i17);
+                        pVar.readFully(vVar2.a, 0, i17);
                         uVar2 = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, c3.b.u(vVar2), uVar2.l);
                     } else {
-                        if (i15 == i12) {
-                            v vVar3 = new v(i16);
-                            pVar.readFully(vVar3.a, 0, i16);
-                            vVar3.K(i12);
+                        if (i16 == i13) {
+                            v vVar3 = new v(i17);
+                            pVar.readFully(vVar3.a, 0, i17);
+                            vVar3.K(i13);
                             p0 r10 = c3.b.r(Arrays.asList(c3.b.v(vVar3, false, false).a));
                             if (p0Var != null) {
                                 r10 = p0Var.b(r10);
                             }
                             uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, r10);
-                        } else if (i15 == i14) {
-                            v vVar4 = new v(i16);
-                            pVar.readFully(vVar4.a, 0, i16);
+                        } else if (i16 == i15) {
+                            v vVar4 = new v(i17);
+                            pVar.readFully(vVar4.a, 0, i17);
                             vVar4.K(4);
                             p0 p0Var2 = new p0(i0.z(o3.a.d(vVar4)));
                             if (p0Var != null) {
@@ -160,7 +160,7 @@ public final class b implements o {
                             }
                             uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, p0Var2);
                         } else {
-                            pVar.q(i16);
+                            pVar.q(i17);
                         }
                         uVar2 = uVar;
                     }
@@ -168,10 +168,10 @@ public final class b implements o {
                 String str = d0.a;
                 this.i = uVar2;
                 z12 = h;
-                i12 = 4;
-                i13 = 3;
+                i13 = 4;
+                i14 = 3;
                 r10 = 7;
-                i14 = 6;
+                i15 = 6;
             }
             this.i.getClass();
             this.j = Math.max(this.i.c, 6);
@@ -186,7 +186,7 @@ public final class b implements o {
             this.g = 4;
             return 0;
         }
-        long j12 = 0;
+        long j11 = 0;
         if (i11 == 4) {
             pVar.p();
             v vVar5 = new v(2);
@@ -212,22 +212,22 @@ public final class b implements o {
                 i10 = 0;
                 tVar = new t(uVar3.b());
             } else {
-                int i17 = this.k;
-                int i18 = uVar3.c;
+                int i18 = this.k;
+                int i19 = uVar3.c;
                 d5 d5Var = new d5(uVar3, 2);
-                a5.a aVar = new a5.a(uVar3, i17);
+                a5.a aVar = new a5.a(uVar3, i18);
                 long b10 = uVar3.b();
-                long j13 = uVar3.j;
-                int i19 = uVar3.d;
-                if (i19 > 0) {
+                long j12 = uVar3.j;
+                int i20 = uVar3.d;
+                if (i20 > 0) {
                     i10 = 0;
-                    j3 = ((i19 + i18) / 2) + 1;
+                    j3 = ((i20 + i19) / 2) + 1;
                 } else {
                     i10 = 0;
-                    int i20 = uVar3.a;
-                    j3 = 64 + (((((i20 != uVar3.b || i20 <= 0) ? 4096L : i20) * uVar3.g) * uVar3.h) / 8);
+                    int i21 = uVar3.a;
+                    j3 = 64 + (((((i21 != uVar3.b || i21 <= 0) ? 4096L : i21) * uVar3.g) * uVar3.h) / 8);
                 }
-                a aVar2 = new a(d5Var, aVar, b10, j13, position, length, j3, Math.max(6, i18));
+                a aVar2 = new a(d5Var, aVar, b10, j12, position, length, j3, Math.max(6, i19));
                 this.l = aVar2;
                 tVar = aVar2.a;
             }
@@ -247,83 +247,83 @@ public final class b implements o {
         if (this.n == -1) {
             u uVar4 = this.i;
             pVar.p();
-            pVar.l(1);
+            pVar.j(1);
             byte[] bArr4 = new byte[1];
             pVar.a(0, 1, bArr4);
             boolean z13 = (bArr4[0] & 1) == 1;
-            pVar.l(2);
+            pVar.j(2);
             r10 = z13 ? 7 : 6;
             v vVar6 = new v(r10);
             byte[] bArr5 = vVar6.a;
-            int i21 = 0;
-            while (i21 < r10) {
-                int f7 = pVar.f(i21, r10 - i21, bArr5);
+            int i22 = 0;
+            while (i22 < r10) {
+                int f7 = pVar.f(i22, r10 - i22, bArr5);
                 if (f7 == -1) {
                     break;
                 }
-                i21 += f7;
+                i22 += f7;
             }
-            vVar6.I(i21);
+            vVar6.I(i22);
             pVar.p();
             try {
                 long E = vVar6.E();
                 if (!z13) {
                     E *= uVar4.b;
                 }
-                j12 = E;
+                j11 = E;
             } catch (NumberFormatException unused) {
                 r3 = false;
             }
             if (!r3) {
                 throw s0.a(null, null);
             }
-            this.n = j12;
+            this.n = j11;
         } else {
             v vVar7 = this.b;
-            int i22 = vVar7.c;
-            if (i22 < 32768) {
-                int read = pVar.read(vVar7.a, i22, 32768 - i22);
+            int i23 = vVar7.c;
+            if (i23 < 32768) {
+                int read = pVar.read(vVar7.a, i23, 32768 - i23);
                 r3 = read == -1;
                 if (!r3) {
-                    vVar7.I(i22 + read);
+                    vVar7.I(i23 + read);
                 } else if (vVar7.a() == 0) {
-                    long j14 = this.n * 1000000;
+                    long j13 = this.n * 1000000;
                     u uVar5 = this.i;
                     String str3 = d0.a;
-                    this.f.c(j14 / uVar5.e, 1, this.m, 0, null);
+                    this.f.c(j13 / uVar5.e, 1, this.m, 0, null);
                     return -1;
                 }
             } else {
                 r3 = false;
             }
-            int i23 = vVar7.b;
-            int i24 = this.m;
-            int i25 = this.j;
-            if (i24 < i25) {
-                vVar7.K(Math.min(i25 - i24, vVar7.a()));
+            int i24 = vVar7.b;
+            int i25 = this.m;
+            int i26 = this.j;
+            if (i25 < i26) {
+                vVar7.K(Math.min(i26 - i25, vVar7.a()));
             }
             this.i.getClass();
-            int i26 = vVar7.b;
+            int i27 = vVar7.b;
             while (true) {
-                int i27 = vVar7.c - 16;
+                int i28 = vVar7.c - 16;
                 s sVar2 = this.d;
-                if (i26 <= i27) {
-                    vVar7.J(i26);
+                if (i27 <= i28) {
+                    vVar7.J(i27);
                     if (c3.b.b(vVar7, this.i, this.k, sVar2)) {
-                        vVar7.J(i26);
+                        vVar7.J(i27);
                         j10 = sVar2.a;
                         break;
                     }
-                    i26++;
+                    i27++;
                 } else {
                     if (r3) {
                         while (true) {
-                            int i28 = vVar7.c;
-                            if (i26 > i28 - this.j) {
-                                vVar7.J(i28);
+                            int i29 = vVar7.c;
+                            if (i27 > i29 - this.j) {
+                                vVar7.J(i29);
                                 break;
                             }
-                            vVar7.J(i26);
+                            vVar7.J(i27);
                             try {
                                 z10 = c3.b.b(vVar7, this.i, this.k, sVar2);
                             } catch (IndexOutOfBoundsException unused2) {
@@ -333,28 +333,28 @@ public final class b implements o {
                                 z10 = false;
                             }
                             if (z10) {
-                                vVar7.J(i26);
+                                vVar7.J(i27);
                                 j10 = sVar2.a;
                                 break;
                             }
-                            i26++;
+                            i27++;
                         }
                     } else {
-                        vVar7.J(i26);
+                        vVar7.J(i27);
                     }
                     j10 = -1;
                 }
             }
-            int i29 = vVar7.b - i23;
-            vVar7.J(i23);
-            this.f.d(i29, vVar7);
-            int i30 = this.m + i29;
-            this.m = i30;
+            int i30 = vVar7.b - i24;
+            vVar7.J(i24);
+            this.f.d(i30, vVar7);
+            int i31 = this.m + i30;
+            this.m = i31;
             if (j10 != -1) {
-                long j15 = this.n * 1000000;
+                long j14 = this.n * 1000000;
                 u uVar6 = this.i;
                 String str4 = d0.a;
-                this.f.c(j15 / uVar6.e, 1, i30, 0, null);
+                this.f.c(j14 / uVar6.e, 1, i31, 0, null);
                 this.m = 0;
                 this.n = j10;
             }

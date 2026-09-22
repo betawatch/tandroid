@@ -8,20 +8,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ex extends ChatActivityEnterView {
-    public final /* synthetic */ uy n5;
+    public final /* synthetic */ uy o5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ex(uy uyVar, Activity activity, ny nyVar) {
         super(activity, nyVar, null, false, null);
-        this.n5 = uyVar;
+        this.o5 = uyVar;
     }
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void A0(float f7) {
-        uy uyVar = this.n5;
+        uy uyVar = this.o5;
         uyVar.y1.setInputBubbleHeight(f7);
         uyVar.s3();
         uyVar.m3();
@@ -32,7 +32,7 @@ public final class ex extends ChatActivityEnterView {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int i10;
         if (motionEvent.getAction() == 0) {
-            uy uyVar = this.n5;
+            uy uyVar = this.o5;
             Activity parentActivity = uyVar.getParentActivity();
             i10 = ((org.telegram.ui.ActionBar.n2) uyVar).classGuid;
             AndroidUtilities.requestAdjustResize(parentActivity, i10);
@@ -42,7 +42,7 @@ public final class ex extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final int getMessagesCount() {
-        uy uyVar = this.n5;
+        uy uyVar = this.o5;
         int i10 = uyVar.S0;
         ex exVar = uyVar.B1;
         return Math.max(1, i10 + (!TextUtils.isEmpty(exVar == null ? "" : exVar.getFieldText()) ? 1 : 0));
@@ -50,7 +50,7 @@ public final class ex extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final long getStarsPrice() {
-        uy uyVar = this.n5;
+        uy uyVar = this.o5;
         ArrayList arrayList = uyVar.I2;
         if (arrayList == null) {
             return 0L;

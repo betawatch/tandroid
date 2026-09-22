@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -19,7 +19,7 @@ public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z
     public final org.telegram.ui.ActionBar.j5 c;
     public final org.telegram.ui.ActionBar.j5 d;
     public final org.telegram.ui.ActionBar.j5 e;
-    public final org.telegram.ui.jl f;
+    public final org.telegram.ui.kl f;
     public boolean h;
     public boolean n;
 
@@ -46,10 +46,10 @@ public final class qo extends FrameLayout implements org.telegram.ui.ActionBar.z
         j5Var3.l(LocaleController.getString(R.string.TapForForwardingOptions), false);
         j5Var3.setAlpha(0.0f);
         addView(j5Var3, w7.y5.d(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
-        org.telegram.ui.jl jlVar = new org.telegram.ui.jl(this, context, new vh.h());
-        this.f = jlVar;
-        jlVar.setRoundRadius(AndroidUtilities.dp(6.0f));
-        addView(jlVar, w7.y5.d(34, 34.0f, 51, 52.0f, 6.0f, 0.0f, 0.0f));
+        org.telegram.ui.kl klVar = new org.telegram.ui.kl(this, context, new vh.g());
+        this.f = klVar;
+        klVar.setRoundRadius(AndroidUtilities.dp(6.0f));
+        addView(klVar, w7.y5.d(34, 34.0f, 51, 52.0f, 6.0f, 0.0f, 0.0f));
         e();
     }
 

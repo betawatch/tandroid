@@ -1,101 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class rm0 extends AnimatorListenerAdapter {
+public final class rm0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final /* synthetic */ wm0 b;
 
-    public /* synthetic */ rm0(KeyEvent.Callback callback, boolean z10, float f7, int i10) {
+    public /* synthetic */ rm0(wm0 wm0Var, int i10) {
         this.a = i10;
-        this.d = callback;
-        this.b = z10;
-        this.c = f7;
+        this.b = wm0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r5 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004c, code lost:
+    
+        r2.scrollBy(r0 * r5, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int tabSize;
+        int max;
         switch (this.a) {
             case 0:
-                um0 um0Var = (um0) this.d;
-                dc1 dc1Var = um0Var.e;
-                um0Var.h0 = null;
-                boolean z10 = this.b;
-                um0Var.i0 = z10 ? 1.0f : 0.0f;
-                for (int i10 = 0; i10 < dc1Var.getChildCount(); i10++) {
-                    dc1Var.getChildAt(i10).invalidate();
-                }
-                dc1Var.invalidate();
-                um0Var.p();
-                if (!z10) {
-                    float childCount = um0Var.k0 * dc1Var.getChildCount();
-                    float scrollX = um0Var.getScrollX();
-                    float f7 = this.c;
-                    float childCount2 = (scrollX + f7) / (um0Var.j0 * dc1Var.getChildCount());
-                    float measuredWidth = (childCount - um0Var.getMeasuredWidth()) / childCount;
-                    if (childCount2 > measuredWidth) {
-                        childCount2 = measuredWidth;
-                        f7 = 0.0f;
+                wm0 wm0Var = this.b;
+                dc1 dc1Var = wm0Var.e;
+                wm0Var.b0 = false;
+                wm0Var.V = wm0Var.getScrollX() + wm0Var.W;
+                tabSize = wm0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                wm0Var.U = ceil;
+                wm0Var.T = ceil;
+                if (wm0Var.e(ceil) && ceil >= 0 && ceil < dc1Var.getChildCount()) {
+                    try {
+                        wm0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
                     }
-                    float f10 = childCount * childCount2;
-                    if (f10 - f7 < 0.0f) {
-                        f10 = f7;
-                    }
-                    um0Var.l0 = (um0Var.getScrollX() + f7) - f10;
-                    int i11 = (int) (f10 - f7);
-                    um0Var.m0 = i11;
-                    if (i11 < 0) {
-                        um0Var.m0 = 0;
-                    }
-                    for (int i12 = 0; i12 < dc1Var.getChildCount(); i12++) {
-                        View childAt = dc1Var.getChildAt(i12);
-                        if (childAt instanceof ox0) {
-                            ((ox0) childAt).setExpanded(false);
-                        }
-                        childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
-                    }
-                    um0Var.g0 = false;
-                    um0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
-                    dc1Var.requestLayout();
+                    wm0Var.d0 = 0.0f;
+                    wm0Var.v = 0.0f;
+                    View childAt = dc1Var.getChildAt(ceil);
+                    wm0Var.s = childAt;
+                    wm0Var.c0 = childAt.getX() - wm0Var.getScrollX();
+                    wm0Var.s.invalidate();
+                    dc1Var.invalidate();
+                    wm0Var.j();
+                    wm0Var.invalidate();
                     break;
                 }
                 break;
             default:
-                super.onAnimationEnd(animator);
-                if (!this.b) {
-                    super/*android.app.Dialog*/.dismiss();
+                long currentTimeMillis = System.currentTimeMillis();
+                wm0 wm0Var2 = this.b;
+                long j3 = currentTimeMillis - wm0Var2.r0;
+                int i10 = -1;
+                if (j3 >= 3000) {
+                    if (j3 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                super.onAnimationStart(animator);
-                wh.l lVar = ((wh.m) this.d).y;
-                lVar.setVisibility(0);
-                if (this.b) {
-                    float f7 = this.c;
-                    lVar.setScaleX(f7);
-                    lVar.setScaleY(f7);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
         }
     }
 }

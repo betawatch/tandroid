@@ -32,7 +32,7 @@ import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sg0;
+import org.telegram.ui.Components.vg0;
 import org.telegram.ui.Components.voip.r0;
 import org.telegram.ui.h70;
 import org.telegram.ui.t5;
@@ -44,7 +44,7 @@ import rg.z0;
 import w7.q;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
@@ -78,8 +78,8 @@ public class LimitPreviewView extends LinearLayout {
     public final s e;
     public t e0;
     public boolean f;
-    public final sg0 f0;
-    public final sg0 g0;
+    public final vg0 f0;
+    public final vg0 g0;
     public float h;
     public boolean h0;
     public ValueAnimator i0;
@@ -1032,8 +1032,8 @@ public class LimitPreviewView extends LinearLayout {
             sVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(14.0f));
             addView(sVar, y5.o(-2, -2, 0.0f, 3));
         }
-        sg0 sg0Var = new sg0(this, context, true);
-        this.f0 = sg0Var;
+        vg0 vg0Var = new vg0(this, context, true);
+        this.f0 = vg0Var;
         o6 o6Var = new o6(context, false, false, false);
         this.N = o6Var;
         o6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -1049,14 +1049,14 @@ public class LimitPreviewView extends LinearLayout {
         textView.setGravity(16);
         textView.setTextColor(j6.v0(i13, f6Var));
         if (LocaleController.isRTL) {
-            sg0Var.addView(o6Var, y5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            sg0Var.addView(textView, y5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var.addView(o6Var, y5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var.addView(textView, y5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            sg0Var.addView(o6Var, y5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            sg0Var.addView(textView, y5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var.addView(o6Var, y5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var.addView(textView, y5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
-        sg0 sg0Var2 = new sg0(this, context, false);
-        this.g0 = sg0Var2;
+        vg0 vg0Var2 = new vg0(this, context, false);
+        this.g0 = vg0Var2;
         TextView textView2 = new TextView(context);
         this.O = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
@@ -1071,16 +1071,16 @@ public class LimitPreviewView extends LinearLayout {
         o6Var2.setGravity(21);
         o6Var2.setTextColor(-1);
         if (LocaleController.isRTL) {
-            sg0Var2.addView(textView2, y5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            sg0Var2.addView(o6Var2, y5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var2.addView(textView2, y5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var2.addView(o6Var2, y5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            sg0Var2.addView(textView2, y5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            sg0Var2.addView(o6Var2, y5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var2.addView(textView2, y5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            vg0Var2.addView(o6Var2, y5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         t5 t5Var = new t5(this, context, f6Var);
         this.I = t5Var;
-        t5Var.addView(sg0Var, y5.c(30.0f, -1));
-        t5Var.addView(sg0Var2, y5.c(30.0f, -1));
+        t5Var.addView(vg0Var, y5.c(30.0f, -1));
+        t5Var.addView(vg0Var2, y5.c(30.0f, -1));
         addView(t5Var, y5.p(-1, 30, 0.0f, 0, 14, i10 == 0 ? 0 : 12, 14, 0));
     }
 }

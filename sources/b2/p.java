@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -154,10 +154,20 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(22));
+            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(22));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void i0(Object obj) {
+        this.b = true;
+        pb.c cVar = (pb.c) this.c;
+        cVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     @Override // s4.e0
@@ -169,16 +179,6 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     @Override // s4.e0
     public void k1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void m0(Object obj) {
-        this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
     }
 
     public String toString() {
@@ -203,7 +203,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
                 sb2.append(" }");
                 return sb2.toString();
             case 8:
-                return ((a6.m) this.c).toString();
+                return ((pb.c) this.c).toString();
             default:
                 return super.toString();
         }
@@ -236,10 +236,10 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         this.b = z10;
     }
 
-    public p(a6.d dVar, a6.m mVar) {
+    public p(a6.d dVar, pb.c cVar) {
         this.a = 8;
         this.b = false;
-        this.c = mVar;
+        this.c = cVar;
     }
 
     public p(StringBuilder sb2) {

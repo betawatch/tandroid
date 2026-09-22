@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ef1 implements wh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.ml0 {
+public final /* synthetic */ class ef1 implements wh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.pl0 {
     public final /* synthetic */ fg1 a;
 
     public /* synthetic */ ef1(fg1 fg1Var) {
@@ -31,7 +31,7 @@ public final /* synthetic */ class ef1 implements wh.c, MessagesController.Error
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         return fg1.W(this.a, view, f7);
     }
@@ -47,11 +47,11 @@ public final /* synthetic */ class ef1 implements wh.c, MessagesController.Error
         return fg1.U(this.a, tL_error);
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void q(float f7) {
     }
 }

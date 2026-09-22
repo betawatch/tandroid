@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xl0 extends FrameLayout {
     public final int a;
@@ -43,14 +43,14 @@ public final class xl0 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         v9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
         frameLayout.addView(v9Var, w7.y5.e(36, 36, 17));
-        TextView b10 = w7.d6.b(context, 15.0f, i11, true, null);
+        TextView b10 = w7.c6.b(context, 15.0f, i11, true, null);
         this.e = b10;
         b10.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         b10.setEllipsize(truncateAt);
         addView(b10, w7.y5.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
         int i12 = org.telegram.ui.ActionBar.j6.y6;
-        TextView b11 = w7.d6.b(context, 13.0f, i12, false, null);
+        TextView b11 = w7.c6.b(context, 13.0f, i12, false, null);
         this.f = b11;
         b11.setSingleLine();
         b11.setEllipsize(truncateAt);

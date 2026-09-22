@@ -1,11 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public interface ho0 {
-    void e(float f7);
+public final class ho0 extends s4.j {
+    public final /* synthetic */ org.telegram.ui.ey F;
 
-    void f(org.telegram.ui.Cells.s2 s2Var);
+    public ho0(org.telegram.ui.ey eyVar) {
+        this.F = eyVar;
+    }
 
-    void finish();
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
+    }
 }

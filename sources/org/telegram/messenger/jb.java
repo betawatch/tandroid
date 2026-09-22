@@ -18,7 +18,7 @@ import org.telegram.ui.pn0;
 import org.telegram.ui.r80;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb implements Runnable {
     public final /* synthetic */ int a;
@@ -194,7 +194,7 @@ public final /* synthetic */ class jb implements Runnable {
                 TLObject tLObject3 = (TLObject) obj7;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
                 c5.k kVar = (c5.k) obj5;
-                c5.o oVar = (c5.o) obj4;
+                c5.n nVar = (c5.n) obj4;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
                 String str5 = (String) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
@@ -217,7 +217,7 @@ public final /* synthetic */ class jb implements Runnable {
                     dVar2.g(LocaleController.formatString(R.string.SMSFeePurchaseTitle, kVar.a), false, true);
                     dVar2.f(i11 == 7 ? LocaleController.getString(R.string.SMSFeePurchaseText) : LocaleController.formatPluralStringComma("SMSFeePurchaseTextDays", i11), false);
                     dVar2.setLoading(false);
-                    dVar2.setOnClickListener(new ai.s0(hg0Var, oVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 14));
+                    dVar2.setOnClickListener(new ai.s0(hg0Var, nVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 14));
                     break;
                 }
                 break;
@@ -255,14 +255,14 @@ public final /* synthetic */ class jb implements Runnable {
         this.s = obj7;
     }
 
-    public /* synthetic */ jb(hg0 hg0Var, TLObject tLObject, TLRPC.TL_error tL_error, c5.k kVar, int i10, c5.o oVar, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ jb(hg0 hg0Var, TLObject tLObject, TLRPC.TL_error tL_error, c5.k kVar, int i10, c5.n nVar, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, String str, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.a = 4;
         this.c = hg0Var;
         this.d = tLObject;
         this.e = tL_error;
         this.f = kVar;
         this.b = i10;
-        this.h = oVar;
+        this.h = nVar;
         this.n = tL_inputStorePaymentAuthCode;
         this.r = str;
         this.s = tL_payments_canPurchaseStore;

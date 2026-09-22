@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -36,7 +36,7 @@ public final class g {
     public final boolean f;
     public final c g;
 
-    public g(fb.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
+    public g(fb.g gVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
         of.b bVar = new of.b(hashMap, arrayList4, false, 17);
         this.c = bVar;
         this.f = true;
@@ -44,7 +44,7 @@ public final class g {
         ArrayList arrayList5 = new ArrayList();
         arrayList5.add(h1.A);
         arrayList5.add(tVar == t.a ? gb.r.c : new gb.p(tVar, 1));
-        arrayList5.add(fVar);
+        arrayList5.add(gVar);
         arrayList5.addAll(arrayList3);
         arrayList5.add(h1.p);
         arrayList5.add(h1.g);
@@ -67,7 +67,7 @@ public final class g {
         arrayList5.add(h1.r);
         arrayList5.add(new x0(BigDecimal.class, h1.m, i10));
         arrayList5.add(new x0(BigInteger.class, h1.n, i10));
-        arrayList5.add(new x0(fb.h.class, h1.o, i10));
+        arrayList5.add(new x0(fb.i.class, h1.o, i10));
         arrayList5.add(h1.s);
         arrayList5.add(h1.t);
         arrayList5.add(h1.v);
@@ -90,7 +90,7 @@ public final class g {
         this.d = jVar;
         arrayList5.add(jVar);
         arrayList5.add(h1.B);
-        arrayList5.add(new x(bVar, fVar, jVar, arrayList4));
+        arrayList5.add(new x(bVar, gVar, jVar, arrayList4));
         this.e = DesugarCollections.unmodifiableList(arrayList5);
     }
 

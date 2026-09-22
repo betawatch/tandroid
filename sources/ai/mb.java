@@ -42,7 +42,7 @@ import org.telegram.ui.fz;
 import org.telegram.ui.gz;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -147,7 +147,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     if (storyItem != null) {
                         pbVar.c(storyItem.views, false);
                     }
-                    w7.b6.a(pbVar);
+                    w7.a6.a(pbVar);
                     view = pbVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
@@ -335,8 +335,8 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 boolean z13 = f6Var.C1;
                 d6 d6Var = f6Var.O1;
                 if (!z13 && d6Var.a != null) {
-                    zg.o0 d = zg.o0.d(mediaArea.reaction);
-                    if (!d.equals(zg.o0.d(d6Var.a.sent_reaction))) {
+                    zg.p0 d = zg.p0.d(mediaArea.reaction);
+                    if (!d.equals(zg.p0.d(d6Var.a.sent_reaction))) {
                         f6Var.L0(d);
                     }
                 }
@@ -349,7 +349,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 if (arrayList2.size() > 12) {
                     return;
                 }
-                zg.o0 d10 = zg.o0.d(mediaArea.reaction);
+                zg.p0 d10 = zg.p0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
                     str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.p5.f(gzVar.b, d10.g));

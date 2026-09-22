@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final int a;
@@ -43,7 +43,7 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.z
         textView.setGravity(17);
         textView.setSingleLine();
         linearLayout.addView(textView, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
-        w7.b6.b(this, 0.05f, 1.5f);
+        w7.a6.b(this, 0.05f, 1.5f);
         a(0.0f, true);
     }
 

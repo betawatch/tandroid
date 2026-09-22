@@ -1,20 +1,25 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wk extends gz {
-    public final /* synthetic */ zn N;
+public final class wk implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ zn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wk(zn znVar, zn znVar2, FrameLayout frameLayout, tj tjVar, int i10, long j3, long j10) {
-        super(znVar2, frameLayout, tjVar, i10, j3, j10);
-        this.N = znVar;
+    public wk(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // org.telegram.ui.gz
-    public final void i() {
-        this.N.uc();
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            zn znVar = this.a;
+            if (znVar.H6 && longValue == znVar.T5) {
+                return true;
+            }
+        }
+        return false;
     }
 }

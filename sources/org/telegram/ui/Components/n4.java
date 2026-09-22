@@ -5,20 +5,20 @@ import android.graphics.Point;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n4 extends LinearLayout {
     public boolean a;
-    public final /* synthetic */ cd0 b;
-    public final /* synthetic */ cd0 c;
-    public final /* synthetic */ cd0 d;
+    public final /* synthetic */ fd0 b;
+    public final /* synthetic */ fd0 c;
+    public final /* synthetic */ fd0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n4(Context context, cd0 cd0Var, cd0 cd0Var2, cd0 cd0Var3) {
+    public n4(Context context, fd0 fd0Var, fd0 fd0Var2, fd0 fd0Var3) {
         super(context);
-        this.b = cd0Var;
-        this.c = cd0Var2;
-        this.d = cd0Var3;
+        this.b = fd0Var;
+        this.c = fd0Var2;
+        this.d = fd0Var3;
         this.a = false;
     }
 
@@ -27,15 +27,15 @@ public final class n4 extends LinearLayout {
         this.a = true;
         Point point = AndroidUtilities.displaySize;
         int i12 = point.x > point.y ? 3 : 5;
-        cd0 cd0Var = this.b;
-        cd0Var.setItemCount(i12);
-        cd0 cd0Var2 = this.c;
-        cd0Var2.setItemCount(i12);
-        cd0 cd0Var3 = this.d;
-        cd0Var3.setItemCount(i12);
-        cd0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        cd0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        cd0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        fd0 fd0Var = this.b;
+        fd0Var.setItemCount(i12);
+        fd0 fd0Var2 = this.c;
+        fd0Var2.setItemCount(i12);
+        fd0 fd0Var3 = this.d;
+        fd0Var3.setItemCount(i12);
+        fd0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        fd0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        fd0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
         this.a = false;
         super.onMeasure(i10, i11);
     }

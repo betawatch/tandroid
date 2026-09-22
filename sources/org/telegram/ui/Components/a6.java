@@ -10,7 +10,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,13 +48,13 @@ public final /* synthetic */ class a6 implements Runnable {
                     return;
                 }
                 c6Var2.g0 = System.currentTimeMillis();
-                if (hj0.T0 == null) {
-                    hj0.T0 = new DispatchQueue("cache generator queue");
+                if (kj0.T0 == null) {
+                    kj0.T0 = new DispatchQueue("cache generator queue");
                 }
                 c6Var2.C0 = true;
                 c6Var2.e = null;
                 yf.e.A++;
-                DispatchQueue dispatchQueue = hj0.T0;
+                DispatchQueue dispatchQueue = kj0.T0;
                 a6 a6Var = new a6(c6Var2, 7);
                 c6Var2.D0 = a6Var;
                 dispatchQueue.postRunnable(a6Var);

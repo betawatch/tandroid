@@ -11,20 +11,20 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.za;
 import org.telegram.ui.vy0;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import yh.l5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m4 extends ab implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
@@ -33,8 +33,8 @@ public final class m4 extends ab implements NotificationCenter.NotificationCente
     public final nz a0;
     public final FrameLayout b0;
     public final ci.d c0;
-    public v70 d0;
-    public k61 e0;
+    public y70 d0;
+    public m61 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -84,7 +84,7 @@ public final class m4 extends ab implements NotificationCenter.NotificationCente
         c10.q(AndroidUtilities.dp(28.0f));
         c10.p(AndroidUtilities.dp(5.0f));
         frameLayout2.setBackground(c10);
-        b6.b(frameLayout2, 0.02f, 1.5f);
+        a6.b(frameLayout2, 0.02f, 1.5f);
         frameLayout.addView(frameLayout2, y5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
         ah.e eVar = new ah.e(cVar4.c(frameLayout, null, false));
         eVar.b(AndroidUtilities.dp(40.0f), true);
@@ -122,10 +122,10 @@ public final class m4 extends ab implements NotificationCenter.NotificationCente
     }
 
     public final boolean T() {
-        vl0 vl0Var = this.d;
-        if (vl0Var != null && vl0Var.G) {
-            for (int i10 = 0; i10 < vl0Var.getChildCount(); i10++) {
-                if (vl0Var.getChildAt(i10) instanceof t00) {
+        yl0 yl0Var = this.d;
+        if (yl0Var != null && yl0Var.G) {
+            for (int i10 = 0; i10 < yl0Var.getChildCount(); i10++) {
+                if (yl0Var.getChildAt(i10) instanceof t00) {
                     return true;
                 }
             }
@@ -135,11 +135,11 @@ public final class m4 extends ab implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        k61 k61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (k61Var = this.e0) == null) {
+        m61 m61Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (m61Var = this.e0) == null) {
             return;
         }
-        k61Var.N(true);
+        m61Var.N(true);
         if (T()) {
             this.Y.a();
         }
@@ -159,11 +159,11 @@ public final class m4 extends ab implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
-        this.e0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
+        this.e0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

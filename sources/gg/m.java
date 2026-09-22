@@ -56,28 +56,28 @@ import org.telegram.ui.Cells.w2;
 import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Cells.x2;
 import org.telegram.ui.Cells.y2;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.si0;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.u6;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.py;
 import org.telegram.ui.qy;
 import org.telegram.ui.ty;
 import org.telegram.ui.uy;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class m extends ul0 implements o2 {
+public class m extends xl0 implements o2 {
     public static final boolean c0 = BuildVars.DEBUG_PRIVATE_VERSION;
     public boolean E;
     public final int F;
@@ -85,8 +85,8 @@ public class m extends ul0 implements o2 {
     public boolean H;
     public long I;
     public boolean J;
-    public vl0 K;
-    public si0 L;
+    public yl0 K;
+    public vi0 L;
     public Drawable O;
     public final j P;
     public boolean Q;
@@ -138,7 +138,7 @@ public class m extends ul0 implements o2 {
         this.T = requestPeerType;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 1 || i10 == 5 || i10 == 3 || i10 == 8 || i10 == 7 || i10 == 10 || i10 == 11 || i10 == 13 || i10 == 15 || i10 == 16 || i10 == 18 || i10 == 19 || i10 == 20) ? false : true;
@@ -222,30 +222,30 @@ public class m extends ul0 implements o2 {
         this.n = z10;
     }
 
-    public final void N(si0 si0Var) {
-        this.L = si0Var;
+    public final void N(vi0 vi0Var) {
+        this.L = vi0Var;
     }
 
-    public final void O(vl0 vl0Var, boolean z10) {
+    public final void O(yl0 yl0Var, boolean z10) {
         this.J = z10;
-        for (int i10 = 0; i10 < vl0Var.getChildCount(); i10++) {
-            if (vl0Var.getChildAt(i10) instanceof s2) {
-                ((s2) vl0Var.getChildAt(i10)).f = z10;
+        for (int i10 = 0; i10 < yl0Var.getChildCount(); i10++) {
+            if (yl0Var.getChildAt(i10) instanceof s2) {
+                ((s2) yl0Var.getChildAt(i10)).f = z10;
             }
         }
-        for (int i11 = 0; i11 < vl0Var.getCachedChildCount(); i11++) {
-            if (vl0Var.Q(i11) instanceof s2) {
-                ((s2) vl0Var.Q(i11)).f = z10;
+        for (int i11 = 0; i11 < yl0Var.getCachedChildCount(); i11++) {
+            if (yl0Var.Q(i11) instanceof s2) {
+                ((s2) yl0Var.Q(i11)).f = z10;
             }
         }
-        for (int i12 = 0; i12 < vl0Var.getHiddenChildCount(); i12++) {
-            if (vl0Var.W(i12) instanceof s2) {
-                ((s2) vl0Var.W(i12)).f = z10;
+        for (int i12 = 0; i12 < yl0Var.getHiddenChildCount(); i12++) {
+            if (yl0Var.W(i12) instanceof s2) {
+                ((s2) yl0Var.W(i12)).f = z10;
             }
         }
-        for (int i13 = 0; i13 < vl0Var.getAttachedScrapChildCount(); i13++) {
-            if (vl0Var.P(i13) instanceof s2) {
-                ((s2) vl0Var.P(i13)).f = z10;
+        for (int i13 = 0; i13 < yl0Var.getAttachedScrapChildCount(); i13++) {
+            if (yl0Var.P(i13) instanceof s2) {
+                ((s2) yl0Var.P(i13)).f = z10;
             }
         }
     }
@@ -663,7 +663,7 @@ public class m extends ul0 implements o2 {
         if (MessagesController.getInstance(i10).getStoriesController().I(s2Var.getDialogId())) {
             uy uyVar = this.R;
             uyVar.getOrCreateStoryViewer().getClass();
-            uyVar.getOrCreateStoryViewer().D(uyVar.getParentActivity(), s2Var.getDialogId(), u9.a((vl0) s2Var.getParent()));
+            uyVar.getOrCreateStoryViewer().D(uyVar.getParentActivity(), s2Var.getDialogId(), u9.a((yl0) s2Var.getParent()));
         }
     }
 
@@ -833,9 +833,9 @@ public class m extends ul0 implements o2 {
             int i17 = this.b0;
             int E = E();
             this.b0 = E;
-            e11 e11Var = y2Var.n;
+            g11 g11Var = y2Var.n;
             TextView textView = y2Var.h;
-            kj0 kj0Var = y2Var.f;
+            nj0 nj0Var = y2Var.f;
             if (y2Var.r != E) {
                 y2Var.r = E;
                 if (E == 0 || E == 1) {
@@ -843,12 +843,12 @@ public class m extends ul0 implements o2 {
                     string = LocaleController.getString(R.string.NoChatsHelp);
                     textView.setText(LocaleController.getString(R.string.NoChats));
                 } else if (E != 2) {
-                    kj0Var.setAutoRepeat(true);
+                    nj0Var.setAutoRepeat(true);
                     i11 = R.raw.filter_new;
                     string = LocaleController.getString(R.string.FilterAddingChatsInfo);
                     textView.setText(LocaleController.getString(R.string.FilterAddingChats));
                 } else {
-                    kj0Var.setAutoRepeat(false);
+                    nj0Var.setAutoRepeat(false);
                     i11 = R.raw.filter_no_chats;
                     if (this.w) {
                         textView.setText(LocaleController.getString(R.string.FilterNoChatsToForward));
@@ -859,7 +859,7 @@ public class m extends ul0 implements o2 {
                     }
                 }
                 if (i11 != 0) {
-                    kj0Var.setVisibility(0);
+                    nj0Var.setVisibility(0);
                     if (y2Var.r == 1) {
                         if (y2Var.d) {
                             y2Var.a = 1.0f;
@@ -867,24 +867,24 @@ public class m extends ul0 implements o2 {
                             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                                 string2 = string2.replace('\n', ' ');
                             }
-                            e11Var.a(string2, true, false);
+                            g11Var.a(string2, true, false);
                             y2Var.requestLayout();
                         } else {
                             y2Var.a(true);
                         }
                     }
                     if (y2Var.s != i11) {
-                        kj0Var.f(i11, 100, 100, null);
-                        kj0Var.d();
+                        nj0Var.f(i11, 100, 100, null);
+                        nj0Var.d();
                         y2Var.s = i11;
                     }
                 } else {
-                    kj0Var.setVisibility(8);
+                    nj0Var.setVisibility(8);
                 }
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                     string = string.replace('\n', ' ');
                 }
-                e11Var.a(string, false, false);
+                g11Var.a(string, false, false);
             }
             int i18 = this.h;
             if (i18 != 7 && i18 != 8) {
@@ -1051,7 +1051,7 @@ public class m extends ul0 implements o2 {
                 this.O = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false), PorterDuff.Mode.MULTIPLY));
             }
-            k90 textView2 = f9Var.getTextView();
+            n90 textView2 = f9Var.getTextView();
             textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
             textView2.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (uyVar == null || !uyVar.N3) ? this.O : null, (Drawable) null);
             textView2.getLayoutParams().width = -2;
@@ -1246,7 +1246,7 @@ public class m extends ul0 implements o2 {
                 break;
         }
         r22.setLayoutParams(new s4.p0(-1, (i10 == 5 || i10 == 19) ? -1 : -2));
-        return new fl0(r22);
+        return new il0(r22);
     }
 
     @Override // s4.h0

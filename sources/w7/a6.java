@@ -1,25 +1,38 @@
 package w7;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
+import android.R;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.StateListAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class a6 {
-    public static boolean a() {
-        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        return globalMainSettings.contains("round_video_composition") ? globalMainSettings.getBoolean("round_video_composition", true) : globalMainSettings.getBoolean("round_video_outside_effect", true) && globalMainSettings.getBoolean("round_video_watermark", true);
+    public static void a(View view) {
+        b(view, 0.1f, 1.5f);
     }
 
-    public static void b(String str, Enum r22) {
-        MessagesController.getGlobalMainSettings().edit().putString(str, r22.name()).apply();
-    }
-
-    public static Enum c(String str, Enum r32, Class cls) {
-        try {
-            return Enum.valueOf(cls, MessagesController.getGlobalMainSettings().getString(str, r32.name()));
-        } catch (IllegalArgumentException | NullPointerException unused) {
-            return r32;
+    public static void b(View view, float f7, float f10) {
+        if (view == null) {
+            return;
         }
+        AnimatorSet animatorSet = new AnimatorSet();
+        Property property = View.SCALE_X;
+        float f11 = 1.0f - f7;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, f11);
+        Property property2 = View.SCALE_Y;
+        animatorSet.playTogether(ofFloat, ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, f11));
+        animatorSet.setDuration(80L);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, 1.0f));
+        animatorSet2.setInterpolator(new OvershootInterpolator(f10));
+        animatorSet2.setDuration(350L);
+        StateListAnimator stateListAnimator = new StateListAnimator();
+        stateListAnimator.addState(new int[]{R.attr.state_pressed}, animatorSet);
+        stateListAnimator.addState(new int[0], animatorSet2);
+        view.setStateListAnimator(stateListAnimator);
     }
 }

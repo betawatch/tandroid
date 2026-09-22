@@ -1,11 +1,13 @@
 package w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.text.InputFilter;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class p6 {
-    public static void a(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
-        }
-    }
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
+
+    public abstract void b(boolean z10);
+
+    public abstract void c(boolean z10);
 }

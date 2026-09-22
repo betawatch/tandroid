@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.mh1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 Utilities.Callback callback = (Utilities.Callback) this.e;
                 Utilities.Callback callback2 = (Utilities.Callback) this.f;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.h;
-                tL_inputStorePaymentPremiumGiftCode.currency = ((c5.o) list.get(0)).a().c;
+                tL_inputStorePaymentPremiumGiftCode.currency = ((c5.n) list.get(0)).a().c;
                 tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
@@ -101,7 +101,7 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 tg.v vVar = (tg.v) this.e;
                 tg.v vVar2 = (tg.v) this.f;
                 org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.h;
-                tL_inputStorePaymentPremiumGiveaway.currency = ((c5.o) list.get(0)).a().c;
+                tL_inputStorePaymentPremiumGiveaway.currency = ((c5.n) list.get(0)).a().c;
                 tL_inputStorePaymentPremiumGiveaway.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption2.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentPremiumGiveaway;

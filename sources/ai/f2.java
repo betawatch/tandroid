@@ -34,10 +34,10 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.tv;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -50,7 +50,7 @@ import org.telegram.ui.u70;
 import org.telegram.ui.vy0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -181,9 +181,9 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                         AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.G1, null, true);
                     }
                 }
-                v70 v70Var = k3Var2.K0;
-                if (v70Var != null) {
-                    v70Var.u();
+                y70 y70Var = k3Var2.K0;
+                if (y70Var != null) {
+                    y70Var.u();
                     k3Var2.K0 = null;
                     break;
                 }
@@ -334,10 +334,10 @@ public final /* synthetic */ class f2 implements View.OnClickListener {
                             l3Var.b.y0(0);
                             break;
                         } else {
-                            jw0 jw0Var = new jw0(activity);
-                            jw0Var.a = 1;
-                            jw0Var.s = -AndroidUtilities.dp(32.0f);
-                            l3Var.d.w0(jw0Var);
+                            lw0 lw0Var = new lw0(activity);
+                            lw0Var.a = 1;
+                            lw0Var.s = -AndroidUtilities.dp(32.0f);
+                            l3Var.d.w0(lw0Var);
                             break;
                         }
                     } else if (l3Var.getWebView() != null && !h4Var.h0.W) {

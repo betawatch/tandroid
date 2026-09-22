@@ -1,307 +1,305 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
+import android.os.AsyncTask;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.messenger.FileLog;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class l91 extends FrameLayout {
-    public static final /* synthetic */ int I = 0;
-    public int E;
-    public int F;
-    public final l71 G;
-    public final /* synthetic */ p91 H;
-    public final ImageReceiver a;
-    public boolean b;
-    public final TextPaint c;
-    public StaticLayout d;
-    public StaticLayout e;
-    public final Paint f;
-    public final Paint h;
-    public final Paint n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public boolean x;
-    public AnimatorSet y;
+public final class l91 extends AsyncTask {
+    public final /* synthetic */ int a;
+    public String b;
+    public final String[] c;
+    public final /* synthetic */ r91 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l91(p91 p91Var, Context context) {
-        super(context);
-        this.H = p91Var;
-        this.x = true;
-        this.G = new l71(this, 4);
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-15095832);
-        Paint paint2 = new Paint();
-        this.h = paint2;
-        paint2.setColor(-6975081);
-        Paint paint3 = new Paint(1);
-        this.n = paint3;
-        paint3.setColor(-1);
-        this.a = new ImageReceiver(this);
-    }
-
-    public final void a() {
-        l71 l71Var = this.G;
-        AndroidUtilities.cancelRunOnUIThread(l71Var);
-        if (this.x && this.H.a.y()) {
-            AndroidUtilities.runOnUIThread(l71Var, 3000L);
+    public l91(r91 r91Var, String str, int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.d = r91Var;
+                this.c = new String[4];
+                this.b = str;
+                break;
+            case 2:
+                this.d = r91Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 3:
+                this.d = r91Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 4:
+                this.d = r91Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            default:
+                this.d = r91Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
         }
     }
 
-    public final void b(int i10) {
-        if (this.s == i10 || i10 < 0 || this.H.H) {
-            return;
-        }
-        this.s = i10;
-        StaticLayout staticLayout = new StaticLayout(AndroidUtilities.formatShortDuration(this.s), this.c, AndroidUtilities.dp(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        if (staticLayout.getLineCount() > 0) {
-            this.r = (int) Math.ceil(this.d.getLineWidth(0));
-        }
-        invalidate();
-    }
-
-    public final void c(int i10) {
-        if (this.b || i10 < 0 || this.H.H) {
-            return;
-        }
-        this.v = i10;
-        this.e = new StaticLayout(AndroidUtilities.formatShortDuration(this.v), this.c, AndroidUtilities.dp(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        invalidate();
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        if (this.x == z10) {
-            return;
-        }
-        this.x = z10;
-        AnimatorSet animatorSet = this.y;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        boolean z12 = this.x;
-        Property property = View.ALPHA;
-        if (z12) {
-            if (z11) {
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.y = animatorSet2;
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<l91, Float>) property, 1.0f));
-                this.y.setDuration(150L);
-                this.y.addListener(new k91(this, 0));
-                this.y.start();
-            } else {
-                setAlpha(1.0f);
-            }
-        } else if (z11) {
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            this.y = animatorSet3;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(this, (Property<l91, Float>) property, 0.0f));
-            this.y.setDuration(150L);
-            this.y.addListener(new k91(this, 1));
-            this.y.start();
-        } else {
-            setAlpha(0.0f);
-        }
-        a();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int dp;
-        int dp2;
-        Canvas canvas2;
-        int i10;
-        p91 p91Var = this.H;
-        if (p91Var.P) {
-            if (p91Var.M && p91Var.N != 0.0f) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j3 = currentTimeMillis - p91Var.L;
-                p91Var.L = currentTimeMillis;
-                float f7 = p91Var.N - (j3 / 150.0f);
-                p91Var.N = f7;
-                if (f7 < 0.0f) {
-                    p91Var.N = 0.0f;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                String[] strArr = this.c;
+                Locale locale = Locale.US;
+                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
+                this.d.getClass();
+                String c10 = r91.c(this, str, null, true);
+                if (isCancelled()) {
+                    return null;
                 }
-                invalidate();
-            }
-            float f10 = p91Var.N;
-            ImageReceiver imageReceiver = this.a;
-            imageReceiver.setAlpha(f10);
-            imageReceiver.draw(canvas);
-        }
-        if (p91Var.a.d == null || p91Var.H) {
-            return;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        if (!p91Var.U) {
-            if (this.d != null) {
-                canvas.save();
-                canvas.translate((measuredWidth - AndroidUtilities.dp(58.0f)) - this.r, measuredHeight - AndroidUtilities.dp((p91Var.T ? 6 : 10) + 29));
-                this.d.draw(canvas);
-                canvas.restore();
-            }
-            if (this.e != null) {
-                canvas.save();
-                canvas.translate(AndroidUtilities.dp(18.0f), measuredHeight - AndroidUtilities.dp((p91Var.T ? 6 : 10) + 29));
-                this.e.draw(canvas);
-                canvas.restore();
-            }
-        }
-        if (this.s != 0) {
-            int i11 = 0;
-            if (p91Var.U) {
-                dp = measuredHeight - AndroidUtilities.dp(3.0f);
-                dp2 = AndroidUtilities.dp(7.0f);
-            } else if (p91Var.T) {
-                dp = measuredHeight - AndroidUtilities.dp(29.0f);
-                i11 = AndroidUtilities.dp(36.0f) + this.r;
-                measuredWidth = (measuredWidth - AndroidUtilities.dp(76.0f)) - this.r;
-                dp2 = AndroidUtilities.dp(28.0f);
-            } else {
-                dp = measuredHeight - AndroidUtilities.dp(13.0f);
-                dp2 = AndroidUtilities.dp(12.0f);
-            }
-            int i12 = measuredHeight - dp2;
-            boolean z10 = p91Var.T;
-            Paint paint = this.h;
-            if (z10) {
-                canvas.drawRect(i11, dp, measuredWidth, AndroidUtilities.dp(3.0f) + dp, paint);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-            }
-            int i13 = this.b ? this.F : ((int) ((this.v / this.s) * (measuredWidth - i11))) + i11;
-            int i14 = this.w;
-            if (i14 != 0 && (i10 = this.s) != 0) {
-                float f11 = i11;
-                float f12 = dp;
-                float e = a4.a.e(i14, i10, measuredWidth - i11, f11);
-                float dp3 = AndroidUtilities.dp(3.0f) + dp;
-                if (p91Var.T) {
-                    paint = this.n;
+                try {
+                    Matcher matcher = r91.r0.matcher(c10);
+                    if (matcher.find()) {
+                        JSONArray jSONArray = new JSONArray(matcher.group(1));
+                        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                            JSONArray jSONArray2 = jSONArray.getJSONArray(i10);
+                            if (jSONArray2.length() != 0) {
+                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
+                                if (jSONObject.has("file")) {
+                                    strArr[0] = jSONObject.getString("file");
+                                    strArr[1] = "other";
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                canvas2.drawRect(f11, f12, e, dp3, paint);
-            }
-            float f13 = i13;
-            float dp4 = AndroidUtilities.dp(3.0f) + dp;
-            Paint paint2 = this.f;
-            canvas2.drawRect(i11, dp, f13, dp4, paint2);
-            if (p91Var.U) {
-                return;
-            }
-            canvas2.drawCircle(f13, i12, AndroidUtilities.dp(this.b ? 7.0f : 5.0f), paint2);
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr[0];
+            case 1:
+                String[] strArr2 = this.c;
+                Locale locale2 = Locale.US;
+                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
+                this.d.getClass();
+                String c11 = r91.c(this, str2, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject2 = new JSONObject(c11).getJSONObject("file_versions").getJSONObject("mobile");
+                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
+                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
+                    if (string != null && string2 != null) {
+                        strArr2[0] = string;
+                        strArr2[1] = "other";
+                        strArr2[2] = string2;
+                        strArr2[3] = "other";
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr2[0];
+            case 2:
+                String[] strArr3 = this.c;
+                String str3 = this.b;
+                this.d.getClass();
+                String c12 = r91.c(this, str3, null, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    Matcher matcher2 = r91.s0.matcher(c12);
+                    if (matcher2.find()) {
+                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
+                        strArr3[1] = "other";
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr3[0];
+            case 3:
+                String[] strArr4 = this.c;
+                HashMap hashMap = new HashMap();
+                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
+                int indexOf = this.b.indexOf(38);
+                if (indexOf > 0) {
+                    this.b = this.b.substring(0, indexOf);
+                }
+                Locale locale3 = Locale.US;
+                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
+                this.d.getClass();
+                String c13 = r91.c(this, str4, hashMap, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    new JSONObject(c13).getJSONObject("stream");
+                    JSONObject jSONObject3 = new JSONObject(r91.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
+                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
+                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
+                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
+                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
+                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
+                    strArr4[1] = "hls";
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr4[0];
+            default:
+                String[] strArr5 = this.c;
+                Locale locale4 = Locale.US;
+                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
+                this.d.getClass();
+                String c14 = r91.c(this, str6, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject4 = new JSONObject(c14).getJSONObject("request").getJSONObject("files");
+                    if (jSONObject4.has("hls")) {
+                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
+                        try {
+                            strArr5[0] = jSONObject5.getString("url");
+                        } catch (Exception unused) {
+                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
+                        }
+                        strArr5[1] = "hls";
+                    } else if (jSONObject4.has("progressive")) {
+                        strArr5[1] = "other";
+                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
+                    }
+                } catch (Exception e12) {
+                    FileLog.e(e12);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr5[0];
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        if (this.x) {
-            onTouchEvent(motionEvent);
-            return this.b;
-        }
-        d(true, true);
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int measuredWidth;
-        int measuredHeight;
-        int i10;
-        int i11;
-        p91 p91Var = this.H;
-        t71 t71Var = p91Var.a;
-        if (p91Var.T) {
-            i10 = AndroidUtilities.dp(36.0f) + this.r;
-            measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(76.0f)) - this.r;
-            measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(28.0f);
-        } else {
-            measuredWidth = getMeasuredWidth();
-            measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(12.0f);
-            i10 = 0;
-        }
-        int i12 = this.s;
-        if (i12 != 0) {
-            i11 = (int) ((this.v / i12) * (measuredWidth - i10));
-        } else {
-            i11 = 0;
-        }
-        int i13 = i11 + i10;
-        int action = motionEvent.getAction();
-        l71 l71Var = this.G;
-        if (action == 0) {
-            if (!this.x || p91Var.U || p91Var.H) {
-                d(true, true);
-            } else if (this.s != 0) {
-                int x10 = (int) motionEvent.getX();
-                int y3 = (int) motionEvent.getY();
-                if (x10 >= i13 - AndroidUtilities.dp(10.0f) && x10 <= AndroidUtilities.dp(10.0f) + i13 && y3 >= measuredHeight - AndroidUtilities.dp(10.0f) && y3 <= AndroidUtilities.dp(10.0f) + measuredHeight) {
-                    this.b = true;
-                    this.E = x10;
-                    this.F = i13;
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                r91 r91Var = this.d;
+                if (str == null) {
+                    if (!isCancelled()) {
+                        r91Var.h();
+                        break;
+                    }
+                } else {
+                    r91Var.w = true;
+                    r91Var.x = str;
+                    r91Var.y = this.c[1];
+                    if (r91Var.s) {
+                        r91Var.i();
+                    }
+                    r91Var.j(false, true);
+                    r91Var.f0.d(true, true);
+                    break;
                 }
-            }
-            AndroidUtilities.cancelRunOnUIThread(l71Var);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (p91Var.w && t71Var.y()) {
-                AndroidUtilities.runOnUIThread(l71Var, 3000L);
-            }
-            if (this.b) {
-                this.b = false;
-                if (p91Var.w) {
-                    int i14 = (int) (((this.F - i10) / (measuredWidth - i10)) * this.s);
-                    this.v = i14;
-                    t71Var.L(i14 * 1000, false);
+                break;
+            case 1:
+                String str2 = (String) obj;
+                r91 r91Var2 = this.d;
+                if (str2 == null) {
+                    if (!isCancelled()) {
+                        r91Var2.h();
+                        break;
+                    }
+                } else {
+                    r91Var2.w = true;
+                    r91Var2.x = str2;
+                    String[] strArr = this.c;
+                    r91Var2.y = strArr[1];
+                    r91Var2.E = strArr[2];
+                    r91Var2.F = strArr[3];
+                    if (r91Var2.s) {
+                        r91Var2.i();
+                    }
+                    r91Var2.j(false, true);
+                    r91Var2.f0.d(true, true);
+                    break;
                 }
-            }
-        } else if (motionEvent.getAction() == 2 && this.b) {
-            int x11 = (int) motionEvent.getX();
-            int i15 = this.F - (this.E - x11);
-            this.F = i15;
-            this.E = x11;
-            if (i15 < i10) {
-                this.F = i10;
-            } else if (i15 > measuredWidth) {
-                this.F = measuredWidth;
-            }
-            c((int) (((this.F - i10) / (measuredWidth - i10)) * this.s * MediaDataController.MAX_STYLE_RUNS_COUNT));
-            invalidate();
+                break;
+            case 2:
+                String str3 = (String) obj;
+                r91 r91Var3 = this.d;
+                if (str3 == null) {
+                    if (!isCancelled()) {
+                        r91Var3.h();
+                        break;
+                    }
+                } else {
+                    r91Var3.w = true;
+                    r91Var3.x = str3;
+                    r91Var3.y = this.c[1];
+                    if (r91Var3.s) {
+                        r91Var3.i();
+                    }
+                    r91Var3.j(false, true);
+                    r91Var3.f0.d(true, true);
+                    break;
+                }
+                break;
+            case 3:
+                String str4 = (String) obj;
+                r91 r91Var4 = this.d;
+                if (str4 == null) {
+                    if (!isCancelled()) {
+                        r91Var4.h();
+                        break;
+                    }
+                } else {
+                    r91Var4.w = true;
+                    r91Var4.x = str4;
+                    r91Var4.y = this.c[1];
+                    if (r91Var4.s) {
+                        r91Var4.i();
+                    }
+                    r91Var4.j(false, true);
+                    r91Var4.f0.d(true, true);
+                    break;
+                }
+                break;
+            default:
+                String str5 = (String) obj;
+                r91 r91Var5 = this.d;
+                if (str5 == null) {
+                    if (!isCancelled()) {
+                        r91Var5.h();
+                        break;
+                    }
+                } else {
+                    r91Var5.w = true;
+                    r91Var5.x = str5;
+                    r91Var5.y = this.c[1];
+                    if (r91Var5.s) {
+                        r91Var5.i();
+                    }
+                    r91Var5.j(false, true);
+                    r91Var5.f0.d(true, true);
+                    break;
+                }
+                break;
         }
-        super.onTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void requestDisallowInterceptTouchEvent(boolean z10) {
-        super.requestDisallowInterceptTouchEvent(z10);
-        a();
     }
 }

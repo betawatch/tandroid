@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j implements Iterable {
     public final f a;
@@ -22,7 +22,7 @@ public final class j implements Iterable {
         if (interpolator == null || j3 <= 0) {
             this.c = null;
         } else {
-            this.c = new e(0, new l.d(this), interpolator, j3);
+            this.c = new e(0, new l.d(this, 2), interpolator, j3);
         }
     }
 
@@ -211,7 +211,7 @@ public final class j implements Iterable {
         iVar.f.c(z10);
         iVar.g.c(z10);
         iVar.c.c(z10);
-        iVar.a.f(z10);
+        iVar.a.g(z10);
     }
 
     public final void r(List list, boolean z10) {

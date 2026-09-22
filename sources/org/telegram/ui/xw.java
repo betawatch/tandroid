@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xw extends s4.c0 {
     public boolean I;
@@ -74,7 +74,7 @@ public final class xw extends s4.c0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M.T, 0.0f);
             this.K = ofFloat;
             ofFloat.addUpdateListener(new ai.x(21, this, tyVar));
-            this.K.addListener(new org.telegram.ui.Components.r81(this, 17));
+            this.K.addListener(new org.telegram.ui.Components.t81(this, 17));
             this.K.setDuration(200L);
             this.K.setInterpolator(org.telegram.ui.Components.qr.f);
             this.K.start();

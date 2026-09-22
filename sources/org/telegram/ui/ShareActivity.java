@@ -18,11 +18,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.uq0 a;
+    public org.telegram.ui.Components.wq0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
@@ -64,7 +64,7 @@ public class ShareActivity extends Activity {
         MessageObject messageObject = new MessageObject(UserConfig.selectedAccount, TLdeserialize, false, true);
         messageObject.messageOwner.with_my_score = true;
         try {
-            org.telegram.ui.Components.uq0 N0 = org.telegram.ui.Components.uq0.N0(this, messageObject, null, false, string2);
+            org.telegram.ui.Components.wq0 N0 = org.telegram.ui.Components.wq0.N0(this, messageObject, null, false, string2);
             this.a = N0;
             N0.setCanceledOnTouchOutside(true);
             this.a.setOnDismissListener(new r5(this, 16));
@@ -79,8 +79,8 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.uq0 uq0Var = this.a;
-            if (uq0Var == null || !uq0Var.isShowing()) {
+            org.telegram.ui.Components.wq0 wq0Var = this.a;
+            if (wq0Var == null || !wq0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();

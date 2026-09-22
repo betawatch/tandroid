@@ -10,7 +10,7 @@ import v7.u7;
 import zd.b0;
 import zd.f1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final v a = new v("NONE", 0);
@@ -45,7 +45,7 @@ public abstract class o {
                         c gVar = new g(cVar, pVar2);
                         eVar.a = pVar2;
                         eVar.c = 1;
-                        if (bVar.s(gVar, eVar) == aVar) {
+                        if (bVar.u(gVar, eVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -127,7 +127,7 @@ public abstract class o {
                         kVar.a = pVar2;
                         kVar.b = jVar2;
                         kVar.d = 1;
-                        if (bVar.s(jVar2, kVar) == obj3) {
+                        if (bVar.u(jVar2, kVar) == obj3) {
                             return obj3;
                         }
                         pVar = pVar2;

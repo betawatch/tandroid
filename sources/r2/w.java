@@ -5,7 +5,7 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import b2.r0;
-import c5.b0;
+import c5.a0;
 import e9.a1;
 import e9.f0;
 import e9.i0;
@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.s6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -101,7 +101,7 @@ public abstract class w {
                 if (list != null) {
                     return list;
                 }
-                ArrayList e = e(sVar, new b0(z10, z11, str.equals("video/mv-hevc")));
+                ArrayList e = e(sVar, new a0(z10, z11, str.equals("video/mv-hevc")));
                 if (z10 && e.isEmpty() && Build.VERSION.SDK_INT <= 23) {
                     e = e(sVar, new qb.b(20));
                     if (!e.isEmpty()) {
@@ -128,7 +128,7 @@ public abstract class w {
         String str;
         int i10;
         MediaCodecInfo.CodecCapabilities capabilitiesForType;
-        boolean v;
+        boolean x10;
         boolean Z;
         boolean z11;
         boolean i11;
@@ -152,7 +152,7 @@ public abstract class w {
                         if (c10 != null) {
                             try {
                                 capabilitiesForType = b10.getCapabilitiesForType(c10);
-                                v = uVar.v("tunneled-playback", c10, capabilitiesForType);
+                                x10 = uVar.x("tunneled-playback", c10, capabilitiesForType);
                                 Z = uVar.Z("tunneled-playback", capabilitiesForType);
                                 z11 = sVar2.c;
                             } catch (Exception e) {
@@ -161,11 +161,11 @@ public abstract class w {
                                 str = name;
                             }
                             if (z11 || !Z) {
-                                if (!z11 || v) {
-                                    boolean v9 = uVar.v("secure-playback", c10, capabilitiesForType);
+                                if (!z11 || x10) {
+                                    boolean x11 = uVar.x("secure-playback", c10, capabilitiesForType);
                                     boolean Z2 = uVar.Z("secure-playback", capabilitiesForType);
                                     if (z13 || !Z2) {
-                                        if (!z13 || v9) {
+                                        if (!z13 || x11) {
                                             boolean h = h(b10, str2);
                                             z10 = n02;
                                             try {
@@ -185,10 +185,10 @@ public abstract class w {
                                                 e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                 throw e;
                                             }
-                                            if (!(z10 && z13 == v9) && (z10 || z13)) {
+                                            if (!(z10 && z13 == x11) && (z10 || z13)) {
                                                 boolean z14 = z12;
                                                 i10 = i14;
-                                                if (!z10 && v9) {
+                                                if (!z10 && x11) {
                                                     str = name;
                                                     try {
                                                         arrayList.add(o.i(name + ".secure", str2, c10, capabilitiesForType, h, i11, z14, true));

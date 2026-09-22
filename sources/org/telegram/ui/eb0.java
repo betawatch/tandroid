@@ -4,18 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class eb0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.kj0 a;
-    public final /* synthetic */ org.telegram.ui.Components.hj0 b;
+    public final /* synthetic */ org.telegram.ui.Components.nj0 a;
+    public final /* synthetic */ org.telegram.ui.Components.kj0 b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ LaunchActivity d;
 
-    public eb0(LaunchActivity launchActivity, org.telegram.ui.Components.kj0 kj0Var, org.telegram.ui.Components.hj0 hj0Var, boolean z10) {
+    public eb0(LaunchActivity launchActivity, org.telegram.ui.Components.nj0 nj0Var, org.telegram.ui.Components.kj0 kj0Var, boolean z10) {
         this.d = launchActivity;
-        this.a = kj0Var;
-        this.b = hj0Var;
+        this.a = nj0Var;
+        this.b = kj0Var;
         this.c = z10;
     }
 
@@ -28,13 +28,13 @@ public final class eb0 extends AnimatorListenerAdapter {
         launchActivity.o0.setImageDrawable(null);
         launchActivity.o0.setVisibility(8);
         launchActivity.p0.setVisibility(8);
-        org.telegram.ui.Components.kj0 kj0Var = this.a;
-        if (kj0Var != null) {
-            kj0Var.setImageDrawable(this.b);
+        org.telegram.ui.Components.nj0 nj0Var = this.a;
+        if (nj0Var != null) {
+            nj0Var.setImageDrawable(this.b);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeAccentListUpdated, new Object[0]);
-        if (!this.c && kj0Var != null) {
-            kj0Var.setVisibility(0);
+        if (!this.c && nj0Var != null) {
+            nj0Var.setVisibility(0);
         }
         uy.w4 = false;
     }

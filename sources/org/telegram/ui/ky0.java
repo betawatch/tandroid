@@ -16,9 +16,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.mh0, org.telegram.ui.Components.ll0, FlagSecureReason.FlagSecureCondition, le.d, z60, org.telegram.ui.Components.sw0 {
+public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.ph0, org.telegram.ui.Components.ol0, FlagSecureReason.FlagSecureCondition, le.d, z60, org.telegram.ui.Components.uw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -28,7 +28,7 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
     }
 
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         this.b.U4();
     }
 
@@ -49,15 +49,15 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
         l01 l01Var = profileActivity.O;
         if (l01Var != null) {
             l01Var.setPagesPaddingBottom(profileActivity.l6 + profileActivity.j6);
-            org.telegram.ui.Components.yr0 yr0Var = profileActivity.O.V;
-            if (yr0Var != null) {
-                yr0Var.setButtonOffset(profileActivity.l6 + profileActivity.k6);
+            org.telegram.ui.Components.bs0 bs0Var = profileActivity.O.V;
+            if (bs0Var != null) {
+                bs0Var.setButtonOffset(profileActivity.l6 + profileActivity.k6);
             }
         }
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         ProfileActivity profileActivity = this.b;
         j11 j11Var = profileActivity.e;

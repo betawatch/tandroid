@@ -15,17 +15,17 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.g21;
+import org.telegram.ui.Components.i21;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import v7.a7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static final qr B = new qr(0.0d, 0.5d, 0.0d, 1.0d);
     public m A;
-    public final e1 a;
+    public final f1 a;
     public boolean b;
     public boolean c;
     public long d;
@@ -42,7 +42,7 @@ public final class e0 {
     public double p;
     public double q;
     public ValueAnimator r;
-    public final m1 s;
+    public final n1 s;
     public Matrix t;
     public long v;
     public float w;
@@ -52,26 +52,26 @@ public final class e0 {
     public final float[] u = new float[2];
     public final z y = new z(this, 1);
 
-    /* JADX WARN: Type inference failed for: r2v6, types: [pg.i1] */
-    public e0(e1 e1Var) {
-        this.a = e1Var;
-        Context context = e1Var.getContext();
+    /* JADX WARN: Type inference failed for: r2v6, types: [pg.j1] */
+    public e0(f1 f1Var) {
+        this.a = f1Var;
+        Context context = f1Var.getContext();
         org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1(this, 3);
-        final m1 m1Var = new m1();
-        m1Var.b = new ArrayList();
-        m1Var.c = new ArrayList();
-        m1Var.i = null;
-        m1Var.j = new AtomicBoolean(false);
-        m1Var.k = new AtomicBoolean(false);
+        final n1 n1Var = new n1();
+        n1Var.b = new ArrayList();
+        n1Var.c = new ArrayList();
+        n1Var.i = null;
+        n1Var.j = new AtomicBoolean(false);
+        n1Var.k = new AtomicBoolean(false);
         final int i10 = 0;
-        m1Var.l = new Runnable() { // from class: pg.i1
+        n1Var.l = new Runnable() { // from class: pg.j1
             /* JADX WARN: Removed duplicated region for block: B:136:0x0465  */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                h1 h1Var;
+                i1 i1Var;
                 int e;
                 double d;
                 long j3;
@@ -82,52 +82,52 @@ public final class e0 {
                 int i12;
                 switch (i10) {
                     case 0:
-                        m1 m1Var2 = m1Var;
-                        if (m1Var2.j.get()) {
+                        n1 n1Var2 = n1Var;
+                        if (n1Var2.j.get()) {
                             return;
                         }
-                        m1Var2.k.set(false);
-                        m1Var2.j.set(true);
+                        n1Var2.k.set(false);
+                        n1Var2.j.set(true);
                         long currentTimeMillis = System.currentTimeMillis();
-                        synchronized (m1Var2) {
+                        synchronized (n1Var2) {
                             try {
-                                if (m1Var2.b.size() < 8) {
-                                    m1Var2.j.set(false);
+                                if (n1Var2.b.size() < 8) {
+                                    n1Var2.j.set(false);
                                 } else {
-                                    ArrayList f7 = m1.f(m1Var2.b);
+                                    ArrayList f7 = n1.f(n1Var2.b);
                                     ArrayList arrayList = new ArrayList();
-                                    arrayList.add((j1) f7.get(0));
+                                    arrayList.add((k1) f7.get(0));
                                     int i13 = 1;
                                     double d11 = 0.0d;
                                     while (i13 < f7.size()) {
-                                        j1 j1Var = (j1) f7.get(i13 - 1);
-                                        j1 j1Var2 = (j1) f7.get(i13);
-                                        j1Var.getClass();
-                                        d11 += j1Var.a(j1Var2.a, j1Var2.b);
+                                        k1 k1Var = (k1) f7.get(i13 - 1);
+                                        k1 k1Var2 = (k1) f7.get(i13);
+                                        k1Var.getClass();
+                                        d11 += k1Var.a(k1Var2.a, k1Var2.b);
                                         i13++;
-                                        m1Var2 = m1Var2;
+                                        n1Var2 = n1Var2;
                                     }
-                                    m1 m1Var3 = m1Var2;
+                                    n1 n1Var3 = n1Var2;
                                     double d12 = d11 / 47;
                                     int i14 = 1;
                                     double d13 = 0.0d;
                                     while (i14 < f7.size()) {
                                         int i15 = i14 - 1;
-                                        j1 j1Var3 = (j1) f7.get(i15);
-                                        j1 j1Var4 = (j1) f7.get(i14);
-                                        j1Var3.getClass();
+                                        k1 k1Var3 = (k1) f7.get(i15);
+                                        k1 k1Var4 = (k1) f7.get(i14);
+                                        k1Var3.getClass();
                                         double d14 = d13;
                                         int i16 = i14;
-                                        double a2 = j1Var3.a(j1Var4.a, j1Var4.b);
+                                        double a2 = k1Var3.a(k1Var4.a, k1Var4.b);
                                         double d15 = d14 + a2;
                                         if (d15 >= d12) {
                                             double d16 = (d12 - d14) / a2;
                                             i11 = i16;
                                             d10 = d12;
                                             j3 = currentTimeMillis;
-                                            j1 j1Var5 = new j1(((((j1) f7.get(i11)).a - ((j1) f7.get(i15)).a) * d16) + ((j1) f7.get(i15)).a, ((((j1) f7.get(i11)).b - ((j1) f7.get(i15)).b) * d16) + ((j1) f7.get(i15)).b);
-                                            arrayList.add(j1Var5);
-                                            f7.add(i11, j1Var5);
+                                            k1 k1Var5 = new k1(((((k1) f7.get(i11)).a - ((k1) f7.get(i15)).a) * d16) + ((k1) f7.get(i15)).a, ((((k1) f7.get(i11)).b - ((k1) f7.get(i15)).b) * d16) + ((k1) f7.get(i15)).b);
+                                            arrayList.add(k1Var5);
+                                            f7.add(i11, k1Var5);
                                             d13 = 0.0d;
                                         } else {
                                             j3 = currentTimeMillis;
@@ -141,68 +141,68 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((j1) hg.k0.g(1, f7));
+                                        arrayList.add((k1) hg.k0.g(1, f7));
                                     }
-                                    ArrayList f10 = m1.f(arrayList);
-                                    j1 b10 = m1.b(f10);
-                                    double atan2 = Math.atan2(b10.b - ((j1) f10.get(0)).b, b10.a - ((j1) f10.get(0)).a);
-                                    j1 b11 = m1.b(f10);
+                                    ArrayList f10 = n1.f(arrayList);
+                                    k1 b10 = n1.b(f10);
+                                    double atan2 = Math.atan2(b10.b - ((k1) f10.get(0)).b, b10.a - ((k1) f10.get(0)).a);
+                                    k1 b11 = n1.b(f10);
                                     double cos = Math.cos(atan2);
                                     double sin = Math.sin(atan2);
                                     int i17 = 0;
                                     while (i17 < f10.size()) {
-                                        j1 j1Var6 = (j1) f10.get(i17);
-                                        double d17 = j1Var6.a;
+                                        k1 k1Var6 = (k1) f10.get(i17);
+                                        double d17 = k1Var6.a;
                                         double d18 = b11.a;
                                         double d19 = d17 - d18;
                                         double d20 = sin;
-                                        double d21 = j1Var6.b;
+                                        double d21 = k1Var6.b;
                                         double d22 = b11.b;
                                         double d23 = d21 - d22;
-                                        j1Var6.b = (d23 * cos) + (d19 * d20) + d22;
-                                        j1Var6.a = ((d19 * cos) - (d23 * d20)) + d18;
+                                        k1Var6.b = (d23 * cos) + (d19 * d20) + d22;
+                                        k1Var6.a = ((d19 * cos) - (d23 * d20)) + d18;
                                         i17++;
                                         sin = d20;
                                     }
-                                    j1 b12 = m1.b(f10);
+                                    k1 b12 = n1.b(f10);
                                     double d24 = -b12.a;
                                     double d25 = -b12.b;
                                     for (int i18 = 0; i18 < f10.size(); i18++) {
-                                        j1 j1Var7 = (j1) f10.get(i18);
-                                        j1Var7.a += d24;
-                                        j1Var7.b += d25;
+                                        k1 k1Var7 = (k1) f10.get(i18);
+                                        k1Var7.a += d24;
+                                        k1Var7.b += d25;
                                     }
-                                    k1 a10 = m1.a(f10);
+                                    l1 a10 = n1.a(f10);
                                     double d26 = a10.c - a10.a;
                                     double d27 = a10.d - a10.b;
                                     for (int i19 = 0; i19 < f10.size(); i19++) {
-                                        j1 j1Var8 = (j1) f10.get(i19);
-                                        j1Var8.a = (250.0d / d26) * j1Var8.a;
-                                        j1Var8.b = (250.0d / d27) * j1Var8.b;
+                                        k1 k1Var8 = (k1) f10.get(i19);
+                                        k1Var8.a = (250.0d / d26) * k1Var8.a;
+                                        k1Var8.b = (250.0d / d27) * k1Var8.b;
                                     }
-                                    j1 b13 = m1.b(f10);
+                                    k1 b13 = n1.b(f10);
                                     double d28 = Double.MAX_VALUE;
                                     int i20 = -1;
                                     int i21 = -1;
-                                    for (int i22 = 0; i22 < m1Var3.c.size(); i22++) {
-                                        ArrayList arrayList2 = ((l1) m1Var3.c.get(i22)).b;
+                                    for (int i22 = 0; i22 < n1Var3.c.size(); i22++) {
+                                        ArrayList arrayList2 = ((m1) n1Var3.c.get(i22)).b;
                                         double sqrt = (Math.sqrt(5.0d) - 1.0d) * 0.5d;
                                         double d29 = -1.5707963267948966d;
                                         double d30 = 1.0d - sqrt;
                                         double d31 = 1.5707963267948966d;
                                         double d32 = d28;
                                         double d33 = (d30 * 1.5707963267948966d) + (sqrt * (-1.5707963267948966d));
-                                        double d34 = m1.d(f10, b13, arrayList2, d33);
+                                        double d34 = n1.d(f10, b13, arrayList2, d33);
                                         double d35 = d33;
                                         double d36 = (sqrt * 1.5707963267948966d) + (d30 * (-1.5707963267948966d));
-                                        double d37 = m1.d(f10, b13, arrayList2, d36);
+                                        double d37 = n1.d(f10, b13, arrayList2, d36);
                                         double d38 = d36;
                                         double d39 = d34;
                                         double d40 = d37;
                                         while (Math.abs(d31 - d29) > 0.06981317007977318d) {
                                             if (d39 < d40) {
                                                 double d41 = (d30 * d38) + (sqrt * d29);
-                                                double d42 = m1.d(f10, b13, arrayList2, d41);
+                                                double d42 = n1.d(f10, b13, arrayList2, d41);
                                                 d = d41;
                                                 d40 = d39;
                                                 d39 = d42;
@@ -210,7 +210,7 @@ public final class e0 {
                                                 d38 = d35;
                                             } else {
                                                 double d43 = (d30 * d35) + (sqrt * d31);
-                                                double d44 = m1.d(f10, b13, arrayList2, d43);
+                                                double d44 = n1.d(f10, b13, arrayList2, d43);
                                                 d = d38;
                                                 d38 = d43;
                                                 d39 = d40;
@@ -221,109 +221,109 @@ public final class e0 {
                                         }
                                         double min = Math.min(d39, d40);
                                         if (min < d32) {
-                                            i20 = ((l1) m1Var3.c.get(i22)).a;
+                                            i20 = ((m1) n1Var3.c.get(i22)).a;
                                             d28 = min;
                                             i21 = i22;
                                         } else {
                                             d28 = d32;
                                         }
                                     }
-                                    int i23 = 1.0d - (d28 / m1.n) < 0.8d ? -1 : i20;
+                                    int i23 = 1.0d - (d28 / n1.n) < 0.8d ? -1 : i20;
                                     if (i23 >= 0 && i23 < l.b.size() && arrayList.size() >= 1) {
-                                        h1 h1Var2 = new h1(l.p(i23));
+                                        i1 i1Var2 = new i1(l.p(i23));
                                         if (i23 == 4) {
-                                            int e7 = m1.e(0, arrayList);
+                                            int e7 = n1.e(0, arrayList);
                                             if (e7 > 0) {
                                                 if (e7 > 10) {
                                                     e7 -= 2;
                                                 }
-                                                j1 j1Var9 = (j1) arrayList.get(e7);
-                                                j1 j1Var10 = (j1) arrayList.get(e7 / 2);
-                                                j1 j1Var11 = (j1) arrayList.get(0);
-                                                h1Var2.b = (float) j1Var9.a;
-                                                h1Var2.c = (float) j1Var9.b;
-                                                h1Var2.i = (float) j1Var10.a;
-                                                h1Var2.j = (float) j1Var10.b;
-                                                h1Var2.d = (float) j1Var11.a;
-                                                h1Var2.e = (float) j1Var11.b;
-                                                h1Var2.k = 16.0f;
+                                                k1 k1Var9 = (k1) arrayList.get(e7);
+                                                k1 k1Var10 = (k1) arrayList.get(e7 / 2);
+                                                k1 k1Var11 = (k1) arrayList.get(0);
+                                                i1Var2.b = (float) k1Var9.a;
+                                                i1Var2.c = (float) k1Var9.b;
+                                                i1Var2.i = (float) k1Var10.a;
+                                                i1Var2.j = (float) k1Var10.b;
+                                                i1Var2.d = (float) k1Var11.a;
+                                                i1Var2.e = (float) k1Var11.b;
+                                                i1Var2.k = 16.0f;
                                             }
                                         } else {
-                                            j1 b14 = m1.b(arrayList);
-                                            h1Var2.b = (float) b14.a;
-                                            h1Var2.c = (float) b14.b;
-                                            k1 a11 = m1.a(arrayList);
-                                            h1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
-                                            h1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
-                                            if (i23 == 2 && (e = m1.e(1, arrayList)) > 0) {
-                                                j1 j1Var12 = (j1) arrayList.get(e);
-                                                h1Var2.h = (float) Math.atan2(j1Var12.b - h1Var2.c, j1Var12.a - h1Var2.b);
+                                            k1 b14 = n1.b(arrayList);
+                                            i1Var2.b = (float) b14.a;
+                                            i1Var2.c = (float) b14.b;
+                                            l1 a11 = n1.a(arrayList);
+                                            i1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
+                                            i1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
+                                            if (i23 == 2 && (e = n1.e(1, arrayList)) > 0) {
+                                                k1 k1Var12 = (k1) arrayList.get(e);
+                                                i1Var2.h = (float) Math.atan2(k1Var12.b - i1Var2.c, k1Var12.a - i1Var2.b);
                                             }
                                         }
-                                        h1Var = h1Var2;
+                                        i1Var = i1Var2;
                                         if (BuildVars.LOGS_ENABLED) {
                                             StringBuilder sb2 = new StringBuilder("took ");
                                             sb2.append(System.currentTimeMillis() - j10);
                                             sb2.append("ms to ");
-                                            sb2.append(h1Var != null ? "" : "not ");
+                                            sb2.append(i1Var != null ? "" : "not ");
                                             sb2.append("detect a shape");
-                                            sb2.append(h1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
+                                            sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new g21(m1Var3, h1Var, i21, f10, 14));
-                                        m1Var3.j.set(false);
+                                        AndroidUtilities.runOnUIThread(new i21(n1Var3, i1Var, i21, f10, 14));
+                                        n1Var3.j.set(false);
                                     }
-                                    h1Var = null;
+                                    i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new g21(m1Var3, h1Var, i21, f10, 14));
-                                    m1Var3.j.set(false);
+                                    AndroidUtilities.runOnUIThread(new i21(n1Var3, i1Var, i21, f10, 14));
+                                    n1Var3.j.set(false);
                                 }
                             } finally {
                             }
                         }
                         return;
                     default:
-                        m1 m1Var4 = m1Var;
+                        n1 n1Var4 = n1Var;
                         try {
                             InputStream open = ApplicationLoader.applicationContext.getAssets().open("shapes.dat");
                             while (true) {
                                 c10 = 0;
                                 if (open.available() > 5) {
-                                    l1 l1Var = new l1();
-                                    l1Var.a = open.read();
+                                    m1 m1Var = new m1();
+                                    m1Var.a = open.read();
                                     int read = open.read();
                                     int read2 = open.read() - 64;
                                     int read3 = open.read() - 64;
                                     if (open.available() >= read * 2) {
                                         for (int i24 = 0; i24 < read; i24++) {
-                                            l1Var.b.add(new j1((open.read() - read2) - 127, (open.read() - read3) - 127));
+                                            m1Var.b.add(new k1((open.read() - read2) - 127, (open.read() - read3) - 127));
                                         }
-                                        l1Var.c = m1Var4.g.getInt("score" + m1Var4.c.size(), 0);
-                                        m1Var4.c.add(l1Var);
+                                        m1Var.c = n1Var4.g.getInt("score" + n1Var4.c.size(), 0);
+                                        n1Var4.c.add(m1Var);
                                     }
                                 }
                             }
-                            if (m1Var4.h && (string = m1Var4.g.getString("moretemplates", null)) != null) {
+                            if (n1Var4.h && (string = n1Var4.g.getString("moretemplates", null)) != null) {
                                 String[] split = string.split("\\|");
-                                int size = m1Var4.c.size();
+                                int size = n1Var4.c.size();
                                 int i25 = 0;
                                 while (i25 < split.length) {
-                                    l1 l1Var2 = new l1();
+                                    m1 m1Var2 = new m1();
                                     String[] split2 = split[i25].split(",");
                                     int i26 = 1;
                                     if (split2.length <= 1) {
                                         i12 = i25;
                                     } else {
-                                        l1Var2.a = Integer.parseInt(split2[c10]);
+                                        m1Var2.a = Integer.parseInt(split2[c10]);
                                         while (i26 < split2.length) {
-                                            l1Var2.b.add(new j1(Double.parseDouble(split2[i26]), Double.parseDouble(split2[i26 + 1])));
+                                            m1Var2.b.add(new k1(Double.parseDouble(split2[i26]), Double.parseDouble(split2[i26 + 1])));
                                             i26 += 2;
                                             i25 = i25;
                                         }
                                         i12 = i25;
-                                        l1Var2.c = m1Var4.g.getInt("score" + (size + i12), 0);
-                                        m1Var4.c.add(l1Var2);
+                                        m1Var2.c = n1Var4.g.getInt("score" + (size + i12), 0);
+                                        n1Var4.c.add(m1Var2);
                                     }
                                     i25 = i12 + 1;
                                     c10 = 0;
@@ -338,21 +338,21 @@ public final class e0 {
                 }
             }
         };
-        m1Var.f = context;
-        m1Var.e = b1Var;
+        n1Var.f = context;
+        n1Var.e = b1Var;
         SharedPreferences sharedPreferences = context.getSharedPreferences("shapedetector_conf", 0);
-        m1Var.g = sharedPreferences;
-        m1Var.h = sharedPreferences.getBoolean("learning", false);
-        m1Var.a = sharedPreferences.getInt("scoreall", 0);
+        n1Var.g = sharedPreferences;
+        n1Var.h = sharedPreferences.getBoolean("learning", false);
+        n1Var.a = sharedPreferences.getInt("scoreall", 0);
         final int i11 = 1;
-        m1.m.postRunnable(new Runnable() { // from class: pg.i1
+        n1.m.postRunnable(new Runnable() { // from class: pg.j1
             /* JADX WARN: Removed duplicated region for block: B:136:0x0465  */
             @Override // java.lang.Runnable
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                h1 h1Var;
+                i1 i1Var;
                 int e;
                 double d;
                 long j3;
@@ -363,52 +363,52 @@ public final class e0 {
                 int i12;
                 switch (i11) {
                     case 0:
-                        m1 m1Var2 = m1Var;
-                        if (m1Var2.j.get()) {
+                        n1 n1Var2 = n1Var;
+                        if (n1Var2.j.get()) {
                             return;
                         }
-                        m1Var2.k.set(false);
-                        m1Var2.j.set(true);
+                        n1Var2.k.set(false);
+                        n1Var2.j.set(true);
                         long currentTimeMillis = System.currentTimeMillis();
-                        synchronized (m1Var2) {
+                        synchronized (n1Var2) {
                             try {
-                                if (m1Var2.b.size() < 8) {
-                                    m1Var2.j.set(false);
+                                if (n1Var2.b.size() < 8) {
+                                    n1Var2.j.set(false);
                                 } else {
-                                    ArrayList f7 = m1.f(m1Var2.b);
+                                    ArrayList f7 = n1.f(n1Var2.b);
                                     ArrayList arrayList = new ArrayList();
-                                    arrayList.add((j1) f7.get(0));
+                                    arrayList.add((k1) f7.get(0));
                                     int i13 = 1;
                                     double d11 = 0.0d;
                                     while (i13 < f7.size()) {
-                                        j1 j1Var = (j1) f7.get(i13 - 1);
-                                        j1 j1Var2 = (j1) f7.get(i13);
-                                        j1Var.getClass();
-                                        d11 += j1Var.a(j1Var2.a, j1Var2.b);
+                                        k1 k1Var = (k1) f7.get(i13 - 1);
+                                        k1 k1Var2 = (k1) f7.get(i13);
+                                        k1Var.getClass();
+                                        d11 += k1Var.a(k1Var2.a, k1Var2.b);
                                         i13++;
-                                        m1Var2 = m1Var2;
+                                        n1Var2 = n1Var2;
                                     }
-                                    m1 m1Var3 = m1Var2;
+                                    n1 n1Var3 = n1Var2;
                                     double d12 = d11 / 47;
                                     int i14 = 1;
                                     double d13 = 0.0d;
                                     while (i14 < f7.size()) {
                                         int i15 = i14 - 1;
-                                        j1 j1Var3 = (j1) f7.get(i15);
-                                        j1 j1Var4 = (j1) f7.get(i14);
-                                        j1Var3.getClass();
+                                        k1 k1Var3 = (k1) f7.get(i15);
+                                        k1 k1Var4 = (k1) f7.get(i14);
+                                        k1Var3.getClass();
                                         double d14 = d13;
                                         int i16 = i14;
-                                        double a2 = j1Var3.a(j1Var4.a, j1Var4.b);
+                                        double a2 = k1Var3.a(k1Var4.a, k1Var4.b);
                                         double d15 = d14 + a2;
                                         if (d15 >= d12) {
                                             double d16 = (d12 - d14) / a2;
                                             i112 = i16;
                                             d10 = d12;
                                             j3 = currentTimeMillis;
-                                            j1 j1Var5 = new j1(((((j1) f7.get(i112)).a - ((j1) f7.get(i15)).a) * d16) + ((j1) f7.get(i15)).a, ((((j1) f7.get(i112)).b - ((j1) f7.get(i15)).b) * d16) + ((j1) f7.get(i15)).b);
-                                            arrayList.add(j1Var5);
-                                            f7.add(i112, j1Var5);
+                                            k1 k1Var5 = new k1(((((k1) f7.get(i112)).a - ((k1) f7.get(i15)).a) * d16) + ((k1) f7.get(i15)).a, ((((k1) f7.get(i112)).b - ((k1) f7.get(i15)).b) * d16) + ((k1) f7.get(i15)).b);
+                                            arrayList.add(k1Var5);
+                                            f7.add(i112, k1Var5);
                                             d13 = 0.0d;
                                         } else {
                                             j3 = currentTimeMillis;
@@ -422,68 +422,68 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((j1) hg.k0.g(1, f7));
+                                        arrayList.add((k1) hg.k0.g(1, f7));
                                     }
-                                    ArrayList f10 = m1.f(arrayList);
-                                    j1 b10 = m1.b(f10);
-                                    double atan2 = Math.atan2(b10.b - ((j1) f10.get(0)).b, b10.a - ((j1) f10.get(0)).a);
-                                    j1 b11 = m1.b(f10);
+                                    ArrayList f10 = n1.f(arrayList);
+                                    k1 b10 = n1.b(f10);
+                                    double atan2 = Math.atan2(b10.b - ((k1) f10.get(0)).b, b10.a - ((k1) f10.get(0)).a);
+                                    k1 b11 = n1.b(f10);
                                     double cos = Math.cos(atan2);
                                     double sin = Math.sin(atan2);
                                     int i17 = 0;
                                     while (i17 < f10.size()) {
-                                        j1 j1Var6 = (j1) f10.get(i17);
-                                        double d17 = j1Var6.a;
+                                        k1 k1Var6 = (k1) f10.get(i17);
+                                        double d17 = k1Var6.a;
                                         double d18 = b11.a;
                                         double d19 = d17 - d18;
                                         double d20 = sin;
-                                        double d21 = j1Var6.b;
+                                        double d21 = k1Var6.b;
                                         double d22 = b11.b;
                                         double d23 = d21 - d22;
-                                        j1Var6.b = (d23 * cos) + (d19 * d20) + d22;
-                                        j1Var6.a = ((d19 * cos) - (d23 * d20)) + d18;
+                                        k1Var6.b = (d23 * cos) + (d19 * d20) + d22;
+                                        k1Var6.a = ((d19 * cos) - (d23 * d20)) + d18;
                                         i17++;
                                         sin = d20;
                                     }
-                                    j1 b12 = m1.b(f10);
+                                    k1 b12 = n1.b(f10);
                                     double d24 = -b12.a;
                                     double d25 = -b12.b;
                                     for (int i18 = 0; i18 < f10.size(); i18++) {
-                                        j1 j1Var7 = (j1) f10.get(i18);
-                                        j1Var7.a += d24;
-                                        j1Var7.b += d25;
+                                        k1 k1Var7 = (k1) f10.get(i18);
+                                        k1Var7.a += d24;
+                                        k1Var7.b += d25;
                                     }
-                                    k1 a10 = m1.a(f10);
+                                    l1 a10 = n1.a(f10);
                                     double d26 = a10.c - a10.a;
                                     double d27 = a10.d - a10.b;
                                     for (int i19 = 0; i19 < f10.size(); i19++) {
-                                        j1 j1Var8 = (j1) f10.get(i19);
-                                        j1Var8.a = (250.0d / d26) * j1Var8.a;
-                                        j1Var8.b = (250.0d / d27) * j1Var8.b;
+                                        k1 k1Var8 = (k1) f10.get(i19);
+                                        k1Var8.a = (250.0d / d26) * k1Var8.a;
+                                        k1Var8.b = (250.0d / d27) * k1Var8.b;
                                     }
-                                    j1 b13 = m1.b(f10);
+                                    k1 b13 = n1.b(f10);
                                     double d28 = Double.MAX_VALUE;
                                     int i20 = -1;
                                     int i21 = -1;
-                                    for (int i22 = 0; i22 < m1Var3.c.size(); i22++) {
-                                        ArrayList arrayList2 = ((l1) m1Var3.c.get(i22)).b;
+                                    for (int i22 = 0; i22 < n1Var3.c.size(); i22++) {
+                                        ArrayList arrayList2 = ((m1) n1Var3.c.get(i22)).b;
                                         double sqrt = (Math.sqrt(5.0d) - 1.0d) * 0.5d;
                                         double d29 = -1.5707963267948966d;
                                         double d30 = 1.0d - sqrt;
                                         double d31 = 1.5707963267948966d;
                                         double d32 = d28;
                                         double d33 = (d30 * 1.5707963267948966d) + (sqrt * (-1.5707963267948966d));
-                                        double d34 = m1.d(f10, b13, arrayList2, d33);
+                                        double d34 = n1.d(f10, b13, arrayList2, d33);
                                         double d35 = d33;
                                         double d36 = (sqrt * 1.5707963267948966d) + (d30 * (-1.5707963267948966d));
-                                        double d37 = m1.d(f10, b13, arrayList2, d36);
+                                        double d37 = n1.d(f10, b13, arrayList2, d36);
                                         double d38 = d36;
                                         double d39 = d34;
                                         double d40 = d37;
                                         while (Math.abs(d31 - d29) > 0.06981317007977318d) {
                                             if (d39 < d40) {
                                                 double d41 = (d30 * d38) + (sqrt * d29);
-                                                double d42 = m1.d(f10, b13, arrayList2, d41);
+                                                double d42 = n1.d(f10, b13, arrayList2, d41);
                                                 d = d41;
                                                 d40 = d39;
                                                 d39 = d42;
@@ -491,7 +491,7 @@ public final class e0 {
                                                 d38 = d35;
                                             } else {
                                                 double d43 = (d30 * d35) + (sqrt * d31);
-                                                double d44 = m1.d(f10, b13, arrayList2, d43);
+                                                double d44 = n1.d(f10, b13, arrayList2, d43);
                                                 d = d38;
                                                 d38 = d43;
                                                 d39 = d40;
@@ -502,109 +502,109 @@ public final class e0 {
                                         }
                                         double min = Math.min(d39, d40);
                                         if (min < d32) {
-                                            i20 = ((l1) m1Var3.c.get(i22)).a;
+                                            i20 = ((m1) n1Var3.c.get(i22)).a;
                                             d28 = min;
                                             i21 = i22;
                                         } else {
                                             d28 = d32;
                                         }
                                     }
-                                    int i23 = 1.0d - (d28 / m1.n) < 0.8d ? -1 : i20;
+                                    int i23 = 1.0d - (d28 / n1.n) < 0.8d ? -1 : i20;
                                     if (i23 >= 0 && i23 < l.b.size() && arrayList.size() >= 1) {
-                                        h1 h1Var2 = new h1(l.p(i23));
+                                        i1 i1Var2 = new i1(l.p(i23));
                                         if (i23 == 4) {
-                                            int e7 = m1.e(0, arrayList);
+                                            int e7 = n1.e(0, arrayList);
                                             if (e7 > 0) {
                                                 if (e7 > 10) {
                                                     e7 -= 2;
                                                 }
-                                                j1 j1Var9 = (j1) arrayList.get(e7);
-                                                j1 j1Var10 = (j1) arrayList.get(e7 / 2);
-                                                j1 j1Var11 = (j1) arrayList.get(0);
-                                                h1Var2.b = (float) j1Var9.a;
-                                                h1Var2.c = (float) j1Var9.b;
-                                                h1Var2.i = (float) j1Var10.a;
-                                                h1Var2.j = (float) j1Var10.b;
-                                                h1Var2.d = (float) j1Var11.a;
-                                                h1Var2.e = (float) j1Var11.b;
-                                                h1Var2.k = 16.0f;
+                                                k1 k1Var9 = (k1) arrayList.get(e7);
+                                                k1 k1Var10 = (k1) arrayList.get(e7 / 2);
+                                                k1 k1Var11 = (k1) arrayList.get(0);
+                                                i1Var2.b = (float) k1Var9.a;
+                                                i1Var2.c = (float) k1Var9.b;
+                                                i1Var2.i = (float) k1Var10.a;
+                                                i1Var2.j = (float) k1Var10.b;
+                                                i1Var2.d = (float) k1Var11.a;
+                                                i1Var2.e = (float) k1Var11.b;
+                                                i1Var2.k = 16.0f;
                                             }
                                         } else {
-                                            j1 b14 = m1.b(arrayList);
-                                            h1Var2.b = (float) b14.a;
-                                            h1Var2.c = (float) b14.b;
-                                            k1 a11 = m1.a(arrayList);
-                                            h1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
-                                            h1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
-                                            if (i23 == 2 && (e = m1.e(1, arrayList)) > 0) {
-                                                j1 j1Var12 = (j1) arrayList.get(e);
-                                                h1Var2.h = (float) Math.atan2(j1Var12.b - h1Var2.c, j1Var12.a - h1Var2.b);
+                                            k1 b14 = n1.b(arrayList);
+                                            i1Var2.b = (float) b14.a;
+                                            i1Var2.c = (float) b14.b;
+                                            l1 a11 = n1.a(arrayList);
+                                            i1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
+                                            i1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
+                                            if (i23 == 2 && (e = n1.e(1, arrayList)) > 0) {
+                                                k1 k1Var12 = (k1) arrayList.get(e);
+                                                i1Var2.h = (float) Math.atan2(k1Var12.b - i1Var2.c, k1Var12.a - i1Var2.b);
                                             }
                                         }
-                                        h1Var = h1Var2;
+                                        i1Var = i1Var2;
                                         if (BuildVars.LOGS_ENABLED) {
                                             StringBuilder sb2 = new StringBuilder("took ");
                                             sb2.append(System.currentTimeMillis() - j10);
                                             sb2.append("ms to ");
-                                            sb2.append(h1Var != null ? "" : "not ");
+                                            sb2.append(i1Var != null ? "" : "not ");
                                             sb2.append("detect a shape");
-                                            sb2.append(h1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
+                                            sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new g21(m1Var3, h1Var, i21, f10, 14));
-                                        m1Var3.j.set(false);
+                                        AndroidUtilities.runOnUIThread(new i21(n1Var3, i1Var, i21, f10, 14));
+                                        n1Var3.j.set(false);
                                     }
-                                    h1Var = null;
+                                    i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new g21(m1Var3, h1Var, i21, f10, 14));
-                                    m1Var3.j.set(false);
+                                    AndroidUtilities.runOnUIThread(new i21(n1Var3, i1Var, i21, f10, 14));
+                                    n1Var3.j.set(false);
                                 }
                             } finally {
                             }
                         }
                         return;
                     default:
-                        m1 m1Var4 = m1Var;
+                        n1 n1Var4 = n1Var;
                         try {
                             InputStream open = ApplicationLoader.applicationContext.getAssets().open("shapes.dat");
                             while (true) {
                                 c10 = 0;
                                 if (open.available() > 5) {
-                                    l1 l1Var = new l1();
-                                    l1Var.a = open.read();
+                                    m1 m1Var = new m1();
+                                    m1Var.a = open.read();
                                     int read = open.read();
                                     int read2 = open.read() - 64;
                                     int read3 = open.read() - 64;
                                     if (open.available() >= read * 2) {
                                         for (int i24 = 0; i24 < read; i24++) {
-                                            l1Var.b.add(new j1((open.read() - read2) - 127, (open.read() - read3) - 127));
+                                            m1Var.b.add(new k1((open.read() - read2) - 127, (open.read() - read3) - 127));
                                         }
-                                        l1Var.c = m1Var4.g.getInt("score" + m1Var4.c.size(), 0);
-                                        m1Var4.c.add(l1Var);
+                                        m1Var.c = n1Var4.g.getInt("score" + n1Var4.c.size(), 0);
+                                        n1Var4.c.add(m1Var);
                                     }
                                 }
                             }
-                            if (m1Var4.h && (string = m1Var4.g.getString("moretemplates", null)) != null) {
+                            if (n1Var4.h && (string = n1Var4.g.getString("moretemplates", null)) != null) {
                                 String[] split = string.split("\\|");
-                                int size = m1Var4.c.size();
+                                int size = n1Var4.c.size();
                                 int i25 = 0;
                                 while (i25 < split.length) {
-                                    l1 l1Var2 = new l1();
+                                    m1 m1Var2 = new m1();
                                     String[] split2 = split[i25].split(",");
                                     int i26 = 1;
                                     if (split2.length <= 1) {
                                         i12 = i25;
                                     } else {
-                                        l1Var2.a = Integer.parseInt(split2[c10]);
+                                        m1Var2.a = Integer.parseInt(split2[c10]);
                                         while (i26 < split2.length) {
-                                            l1Var2.b.add(new j1(Double.parseDouble(split2[i26]), Double.parseDouble(split2[i26 + 1])));
+                                            m1Var2.b.add(new k1(Double.parseDouble(split2[i26]), Double.parseDouble(split2[i26 + 1])));
                                             i26 += 2;
                                             i25 = i25;
                                         }
                                         i12 = i25;
-                                        l1Var2.c = m1Var4.g.getInt("score" + (size + i12), 0);
-                                        m1Var4.c.add(l1Var2);
+                                        m1Var2.c = n1Var4.g.getInt("score" + (size + i12), 0);
+                                        n1Var4.c.add(m1Var2);
                                     }
                                     i25 = i12 + 1;
                                     c10 = 0;
@@ -619,43 +619,43 @@ public final class e0 {
                 }
             }
         });
-        this.s = m1Var;
+        this.s = n1Var;
     }
 
     public final void a(d dVar, boolean z10, y0 y0Var) {
-        d1 d1Var;
+        e1 e1Var;
         if (this.l) {
-            e1 e1Var = this.a;
-            if (e1Var.getPainting().G || this.g == null) {
+            f1 f1Var = this.a;
+            if (f1Var.getPainting().G || this.g == null) {
                 return;
             }
-            m currentBrush = dVar == null ? e1Var.getCurrentBrush() : dVar;
+            m currentBrush = dVar == null ? f1Var.getCurrentBrush() : dVar;
             if ((currentBrush instanceof c) || (currentBrush instanceof e)) {
                 currentBrush = new f();
             }
             final m mVar = currentBrush;
             this.l = false;
             if (mVar instanceof d) {
-                e1Var.getPainting().E = false;
+                f1Var.getPainting().E = false;
             }
-            s0 painting = e1Var.getPainting();
+            s0 painting = f1Var.getPainting();
             painting.f.f(new p0(painting, 1));
             this.n = 0;
             this.o = 0;
             this.j = false;
             this.b = false;
-            if (z10 && (d1Var = e1Var.a) != null) {
-                d1Var.f();
+            if (z10 && (e1Var = f1Var.a) != null) {
+                e1Var.f();
             }
-            uv0 uv0Var = e1Var.getPainting().g;
+            wv0 wv0Var = f1Var.getPainting().g;
             w0 w0Var = this.g;
             float a2 = a7.a((float) w0Var.a, (float) w0Var.b, 0.0f, 0.0f);
             w0 w0Var2 = this.g;
-            float max = Math.max(a2, a7.a((float) w0Var2.a, (float) w0Var2.b, uv0Var.a, 0.0f));
+            float max = Math.max(a2, a7.a((float) w0Var2.a, (float) w0Var2.b, wv0Var.a, 0.0f));
             w0 w0Var3 = this.g;
-            float a10 = a7.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, uv0Var.b);
+            float a10 = a7.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, wv0Var.b);
             w0 w0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, a7.a((float) w0Var4.a, (float) w0Var4.b, uv0Var.a, uv0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, a7.a((float) w0Var4.a, (float) w0Var4.b, wv0Var.a, wv0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -673,17 +673,17 @@ public final class e0 {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: pg.a0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator3) {
-                    e1 e1Var2 = e0.this.a;
+                    f1 f1Var2 = e0.this.a;
                     float floatValue = ((Float) valueAnimator3.getAnimatedValue()).floatValue();
                     t0 t0Var = new t0(new w0[]{w0Var6});
                     m mVar2 = mVar;
                     mVar2.getClass();
-                    int currentColor = mVar2 instanceof d ? -1 : e1Var2.getCurrentColor();
+                    int currentColor = mVar2 instanceof d ? -1 : f1Var2.getCurrentColor();
                     float f7 = floatValue * max2;
                     t0Var.c = currentColor;
                     t0Var.d = f7;
                     t0Var.e = mVar2;
-                    s0 painting2 = e1Var2.getPainting();
+                    s0 painting2 = f1Var2.getPainting();
                     if (painting2.L != null) {
                         return;
                     }
@@ -702,10 +702,10 @@ public final class e0 {
     }
 
     public final void b(t0 t0Var) {
-        e1 e1Var = this.a;
-        int currentColor = e1Var.getCurrentColor();
-        float currentWeight = e1Var.getCurrentWeight();
-        m currentBrush = e1Var.getCurrentBrush();
+        f1 f1Var = this.a;
+        int currentColor = f1Var.getCurrentColor();
+        float currentWeight = f1Var.getCurrentWeight();
+        m currentBrush = f1Var.getCurrentBrush();
         t0Var.c = currentColor;
         t0Var.d = currentWeight;
         t0Var.e = currentBrush;
@@ -713,7 +713,7 @@ public final class e0 {
             this.i = 0.0d;
         }
         t0Var.a = this.i;
-        s0 painting = e1Var.getPainting();
+        s0 painting = f1Var.getPainting();
         boolean z10 = this.f;
         b0 b0Var = new b0(this, t0Var, 0);
         boolean z11 = false;

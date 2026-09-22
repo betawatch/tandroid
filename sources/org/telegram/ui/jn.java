@@ -6,7 +6,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jn implements qt {
     public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
@@ -75,10 +75,10 @@ public final class jn implements qt {
         TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
         tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
         tL_inputStickerSetID.id = inputStickerSet.id;
-        org.telegram.ui.Components.gy0 gy0Var = new org.telegram.ui.Components.gy0(znVar.getParentActivity(), znVar, tL_inputStickerSetID, null, znVar.Y, znVar.ea);
-        gy0Var.setCalcMandatoryInsets(znVar.x9());
-        gy0Var.i0 = z10;
-        znVar.showDialog(gy0Var);
+        org.telegram.ui.Components.iy0 iy0Var = new org.telegram.ui.Components.iy0(znVar.getParentActivity(), znVar, tL_inputStickerSetID, null, znVar.Y, znVar.ea);
+        iy0Var.setCalcMandatoryInsets(znVar.x9());
+        iy0Var.i0 = z10;
+        znVar.showDialog(iy0Var);
     }
 
     @Override // org.telegram.ui.qt
@@ -137,7 +137,7 @@ public final class jn implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ org.telegram.ui.Components.v70 i(ci.n6 n6Var) {
+    public final /* synthetic */ org.telegram.ui.Components.y70 i(ci.n6 n6Var) {
         return null;
     }
 

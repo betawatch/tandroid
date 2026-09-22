@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -79,7 +79,7 @@ public final class d0 implements c3.o {
     public final boolean a(c3.p pVar) {
         byte[] bArr = this.d.a;
         c3.l lVar = (c3.l) pVar;
-        lVar.i(bArr, 0, 940, false);
+        lVar.h(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -87,7 +87,7 @@ public final class d0 implements c3.o {
                     break;
                 }
             }
-            lVar.h(i10, false);
+            lVar.g(i10, false);
             return true;
         }
         return false;

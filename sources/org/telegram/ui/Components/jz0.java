@@ -1,14 +1,52 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jz0 {
-    public final pz0 a;
-    public final rz0 b;
-    public boolean c = true;
+    public final /* synthetic */ int a;
 
-    public jz0(pz0 pz0Var, rz0 rz0Var) {
-        this.a = pz0Var;
-        this.b = rz0Var;
+    public /* synthetic */ jz0(int i10) {
+        this.a = i10;
+    }
+
+    public final int a(qz0 qz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
+        }
+    }
+
+    public final int b(qz0 qz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

@@ -11,15 +11,15 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.d6;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.yk0;
+import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.bb1;
 import org.telegram.ui.po;
 import qg.v2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class r0 implements Runnable {
                 return;
             case 2:
                 h1 h1Var = (h1) this.b;
-                Utilities.searchQueue.postRunnable(new cn0(h1Var, new ArrayList(h1Var.h.f), h1Var.h.r, 22));
+                Utilities.searchQueue.postRunnable(new en0(h1Var, new ArrayList(h1Var.h.f), h1Var.h.r, 22));
                 return;
             case 3:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
@@ -78,12 +78,12 @@ public final /* synthetic */ class r0 implements Runnable {
                 ((p4.g) this.b).n = -1;
                 return;
             case 9:
-                ((yk0) this.b).b();
+                ((bl0) this.b).b();
                 return;
             case 10:
-                n2.e eVar = ((pg.r0) this.b).b.a;
-                if (eVar != null) {
-                    eVar.p();
+                l.d dVar = ((pg.r0) this.b).b.a;
+                if (dVar != null) {
+                    dVar.V();
                     return;
                 }
                 return;
@@ -97,24 +97,24 @@ public final /* synthetic */ class r0 implements Runnable {
                 s0Var.l(s0Var.b, false, false);
                 a5.a d = s0Var.d(s0Var.b, currentColor, new RectF(s0Var.h));
                 s0Var.b();
-                pg.h1 h1Var2 = s0Var.d;
+                pg.i1 i1Var = s0Var.d;
                 RectF rectF = new RectF();
                 s0Var.h = rectF;
-                h1Var2.a(rectF);
-                s0Var.p(s0Var.e(h1Var2, currentColor, new RectF(s0Var.h)), false);
+                i1Var.a(rectF);
+                s0Var.p(s0Var.e(i1Var, currentColor, new RectF(s0Var.h)), false);
                 s0Var.p(d, false);
-                s0Var.e(h1Var2, currentColor, null);
+                s0Var.e(i1Var, currentColor, null);
                 s0Var.d = null;
                 s0Var.J = 0.0f;
                 s0Var.L = null;
                 return;
             case 12:
-                ((pg.c1) ((p8.b) this.b).b).y.a.a();
+                ((pg.d1) ((pg.c1) this.b).b).y.a.a();
                 return;
             case 13:
-                pg.u1 u1Var = ((pg.v1) this.b).a;
-                if (u1Var != null) {
-                    u1Var.e();
+                pg.v1 v1Var = ((pg.w1) this.b).a;
+                if (v1Var != null) {
+                    v1Var.e();
                     return;
                 }
                 return;
@@ -150,8 +150,8 @@ public final /* synthetic */ class r0 implements Runnable {
                 return;
             case 20:
                 qh.c cVar2 = (qh.c) ((d6) this.b).d;
-                org.telegram.ui.Cells.u1 u1Var2 = cVar2.n;
-                if (u1Var2 == null || u1Var2.getDelegate() == null) {
+                org.telegram.ui.Cells.u1 u1Var = cVar2.n;
+                if (u1Var == null || u1Var.getDelegate() == null) {
                     return;
                 }
                 cVar2.n.getDelegate().E1(cVar2.n, false);
@@ -196,9 +196,9 @@ public final /* synthetic */ class r0 implements Runnable {
                 j0Var.n.presentFragment(bb1.d0(j0Var.s1(), true));
                 return;
             case 27:
-                kj0 kj0Var = ((rg.p0) this.b).y;
-                kj0Var.getAnimatedDrawable().N(0, true, false);
-                kj0Var.d();
+                nj0 nj0Var = ((rg.p0) this.b).y;
+                nj0Var.getAnimatedDrawable().N(0, true, false);
+                nj0Var.d();
                 return;
             case 28:
                 ((rg.v0) this.b).b.y();

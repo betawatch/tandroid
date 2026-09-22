@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final class t4 extends AnimatorListenerAdapter {
             case 5:
                 org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
                 Button button = wVar.n;
-                org.telegram.ui.Components.hi0 hi0Var = wVar.f;
-                if (button != hi0Var) {
-                    hi0Var.setVisibility(4);
+                org.telegram.ui.Components.ki0 ki0Var = wVar.f;
+                if (button != ki0Var) {
+                    ki0Var.setVisibility(4);
                     break;
                 } else {
                     wVar.e.setVisibility(4);
@@ -157,43 +157,43 @@ public final class t4 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 18:
-                lk lkVar = (lk) this.b;
-                lkVar.setAnimatedTop(0);
-                View view = lkVar.F1;
+                mk mkVar = (mk) this.b;
+                mkVar.setAnimatedTop(0);
+                View view = mkVar.G1;
                 if (view != null && view.getVisibility() == 0) {
-                    lkVar.F1.setTranslationY(((1.0f - lkVar.getTopViewEnterProgress()) * lkVar.F1.getLayoutParams().height) + lkVar.S1);
+                    mkVar.G1.setTranslationY(((1.0f - mkVar.getTopViewEnterProgress()) * mkVar.G1.getLayoutParams().height) + mkVar.T1);
                 }
-                lkVar.q5.p9 = null;
+                mkVar.r5.p9 = null;
                 break;
             case 19:
-                org.telegram.ui.Components.i40 i40Var = ((wi) this.b).b.e2;
+                org.telegram.ui.Components.i40 i40Var = ((xi) this.b).b.e2;
                 if (i40Var != null) {
                     i40Var.setVisibility(8);
                     break;
                 }
                 break;
             case 20:
-                xl xlVar = (xl) this.b;
-                if (xlVar.a) {
-                    xlVar.d.setTranslationY(0.0f);
+                yl ylVar = (yl) this.b;
+                if (ylVar.a) {
+                    ylVar.d.setTranslationY(0.0f);
                 }
-                if (xlVar.b) {
-                    xlVar.e.setTranslationY(0.0f);
+                if (ylVar.b) {
+                    ylVar.e.setTranslationY(0.0f);
                 }
-                if (xlVar.f) {
-                    xlVar.h.setTranslationY(0.0f);
+                if (ylVar.f) {
+                    ylVar.h.setTranslationY(0.0f);
                 }
-                org.telegram.ui.Components.v9 v9Var = xlVar.c;
+                org.telegram.ui.Components.v9 v9Var = ylVar.c;
                 if (v9Var != null) {
                     v9Var.setTranslationY(0.0f);
                 }
-                xlVar.n.H2[1] = null;
+                ylVar.n.H2[1] = null;
                 break;
             case 21:
                 ai.z zVar = (ai.z) this.b;
-                org.telegram.ui.Components.e60 e60Var = ((lm) ((fm) zVar.c).c).Q.b3;
-                if (e60Var != null) {
-                    e60Var.setIsMessageTransition(false);
+                org.telegram.ui.Components.h60 h60Var = ((lm) ((fm) zVar.c).c).Q.b3;
+                if (h60Var != null) {
+                    h60Var.setIsMessageTransition(false);
                     ((lm) ((fm) zVar.c).c).Q.b3.c(true);
                     ((lm) ((fm) zVar.c).c).Q.b3.setVisibility(4);
                     break;
@@ -222,9 +222,9 @@ public final class t4 extends AnimatorListenerAdapter {
                     view3.invalidate();
                 }
                 xpVar.T.invalidate();
-                cj cjVar = xpVar.Y;
-                if (cjVar != null) {
-                    cjVar.run();
+                dj djVar = xpVar.Y;
+                if (djVar != null) {
+                    djVar.run();
                     xpVar.Y = null;
                     break;
                 }

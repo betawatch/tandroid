@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5, GenericProvider, org.telegram.ui.ActionBar.a2, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.kl0, org.telegram.ui.Components.ll0, zv0, MessagesStorage.BooleanCallback, v11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
+public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5, GenericProvider, org.telegram.ui.ActionBar.a2, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.nl0, org.telegram.ui.Components.ol0, zv0, MessagesStorage.BooleanCallback, v11, OnSuccessListener, pa.a, OnFailureListener, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -81,17 +81,17 @@ public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5,
         znVar.getSendMessagesHelper().editMessage(me1Var.G, null, null, null, null, null, null, false, false, null);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         ThemeActivity.W((ThemeActivity) this.b, (Context) this.c, view, i10, f7);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         final hc1 hc1Var = (hc1) this.b;
         final jc1 jc1Var = (jc1) this.c;
@@ -125,7 +125,7 @@ public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5,
                                 return;
                             }
                             String str = "https://" + themeActivity2.getMessagesController().linkPrefix + "/addtheme/" + h6Var2.r.slug;
-                            themeActivity2.showDialog(new org.telegram.ui.Components.uq0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
+                            themeActivity2.showDialog(new org.telegram.ui.Components.wq0(themeActivity2.getParentActivity(), null, str, false, str, false, null));
                             return;
                         }
                         if (i11 == 2) {
@@ -161,16 +161,8 @@ public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5,
         return false;
     }
 
-    @Override // pa.a
-    public void f(pa.b bVar) {
-        pa.a aVar = (pa.a) this.b;
-        pa.a aVar2 = (pa.a) this.c;
-        aVar.f(bVar);
-        aVar2.f(bVar);
-    }
-
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         switch (this.a) {
             case 27:
                 da.b bVar = (da.b) this.b;
@@ -190,6 +182,14 @@ public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5,
                 break;
         }
         return null;
+    }
+
+    @Override // pa.a
+    public void h(pa.b bVar) {
+        pa.a aVar = (pa.a) this.b;
+        pa.a aVar2 = (pa.a) this.c;
+        aVar.h(bVar);
+        aVar2.h(bVar);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -435,7 +435,7 @@ public final /* synthetic */ class rv0 implements org.telegram.ui.Components.c5,
     public /* synthetic */ void c0() {
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

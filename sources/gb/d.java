@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements db.v {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final class d implements db.v {
                 Type type3 = actualTypeArguments[0];
                 db.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new kb.a(type3));
                 db.u b11 = gVar.b(new kb.a(actualTypeArguments[1]));
-                fb.n Q = bVar.Q(aVar);
+                fb.o Q = bVar.Q(aVar);
                 Type[] typeArr = actualTypeArguments;
                 return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, Q);
         }

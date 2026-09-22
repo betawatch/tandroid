@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.ActionBar.a2, ll0, dh.d, org.telegram.ui.ActionBar.r0, tn, AndroidUtilities.IntColorCallback, c5, dj {
+public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.ActionBar.a2, ol0, dh.d, org.telegram.ui.ActionBar.r0, tn, AndroidUtilities.IntColorCallback, c5, dj {
     public final /* synthetic */ int a;
     public final /* synthetic */ vi b;
 
@@ -86,7 +86,7 @@ public final /* synthetic */ class dh implements bl, le.k, org.telegram.ui.Actio
         this.b.u1();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof oi)) {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class o extends db.u {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class o extends db.u {
                     aVar.t();
                     return null;
                 }
-                Map map = (Map) ((fb.n) this.d).p2();
+                Map map = (Map) ((fb.o) this.d).p2();
                 if (x10 == 1) {
                     aVar.a();
                     while (aVar.k()) {
@@ -143,11 +143,11 @@ public final class o extends db.u {
         }
     }
 
-    public o(d dVar, db.g gVar, Type type, db.u uVar, Type type2, db.u uVar2, fb.n nVar) {
+    public o(d dVar, db.g gVar, Type type, db.u uVar, Type type2, db.u uVar2, fb.o oVar) {
         this.a = 0;
         this.b = new o(gVar, uVar, type);
         this.c = new o(gVar, uVar2, type2);
-        this.d = nVar;
+        this.d = oVar;
     }
 
     public o(Class cls) {

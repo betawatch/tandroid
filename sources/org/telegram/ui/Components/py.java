@@ -16,9 +16,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class py extends ul0 {
+public final class py extends xl0 {
     public bv E;
     public boolean F;
     public int G;
@@ -48,7 +48,7 @@ public final class py extends ul0 {
         this.e = z10 ? null : new ry(kzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -132,7 +132,7 @@ public final class py extends ul0 {
         }
         if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
             kzVar.i0.h1(0, 0);
-            kzVar.F(2);
+            kzVar.E(2);
         }
     }
 
@@ -206,7 +206,7 @@ public final class py extends ul0 {
             }
             l();
             kzVar.i0.h1(0, 0);
-            kzVar.F(2);
+            kzVar.E(2);
         }
         if (z12 && hashMap.containsKey(j3)) {
             E(str, str2, z10, z11, true, j3, (TLObject) hashMap.get(j3));
@@ -351,7 +351,7 @@ public final class py extends ul0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) kzVar.i1.get(i15);
-                        uv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
+                        wv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -420,6 +420,6 @@ public final class py extends ul0 {
             f2Var.setCanPreviewGif(true);
             view = f2Var;
         }
-        return new fl0(view);
+        return new il0(view);
     }
 }

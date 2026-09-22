@@ -4,16 +4,16 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o51 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xk0 {
+public final /* synthetic */ class o51 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.al0 {
     public final /* synthetic */ j71 a;
 
     public /* synthetic */ o51(j71 j71Var) {
         this.a = j71Var;
     }
 
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.al0
     public void a() {
         this.a.m();
     }

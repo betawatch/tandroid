@@ -1,28 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class te0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xe0 b;
+public final class te0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ af0 u1;
 
-    public /* synthetic */ te0(xe0 xe0Var, int i10) {
-        this.a = i10;
-        this.b = xe0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public te0(af0 af0Var, Activity activity) {
+        super(activity, null);
+        this.u1 = af0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.x = null;
-                break;
-            default:
-                this.b.y = null;
-                break;
-        }
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        ViewGroup viewGroup;
+        super.setAlpha(f7);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.u1).containerView;
+        viewGroup.invalidate();
     }
 }

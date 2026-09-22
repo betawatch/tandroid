@@ -1,373 +1,239 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.os.SystemClock;
 import android.text.Layout;
-import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
+import android.util.Pair;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.widget.TextView;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class k90 extends TextView {
-    public static Field I;
-    public static Class J;
-    public static Method K;
-    public boolean E;
-    public boolean F;
-    public PorterDuffColorFilter G;
-    public int H;
-    public final boolean a;
-    public final h90 b;
-    public final org.telegram.ui.ActionBar.f6 c;
-    public u5 d;
-    public l90 e;
-    public j90 f;
-    public j90 h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public CharacterStyle v;
-    public int w;
-    public boolean x;
-    public Object y;
+public final class k90 {
+    public View a;
+    public org.telegram.ui.Cells.b1 b;
+    public final ArrayList c = new ArrayList();
+    public int d = 0;
+    public final ArrayList e = new ArrayList();
+    public int f = 0;
 
-    public k90(Context context) {
-        this(context, null);
+    public k90() {
     }
 
-    public int a() {
-        return 0;
-    }
-
-    public final ClickableSpan b(int i10, int i11) {
-        Layout layout = getLayout();
-        if (layout == null) {
+    public static r90 i(Layout layout, CharacterStyle characterStyle, float f7) {
+        if (layout == null || characterStyle == null || !(layout.getText() instanceof Spanned)) {
             return null;
         }
-        int paddingLeft = i10 - getPaddingLeft();
-        int textPaddingTop = i11 - getTextPaddingTop();
-        int lineForVertical = layout.getLineForVertical(textPaddingTop);
-        float f7 = paddingLeft;
-        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
-        float lineLeft = layout.getLineLeft(lineForVertical);
-        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && textPaddingTop >= 0 && textPaddingTop <= layout.getHeight()) {
-            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                return clickableSpanArr[0];
-            }
-        }
-        return null;
+        Spanned spanned = (Spanned) layout.getText();
+        h90 h90Var = new h90(0);
+        int spanStart = spanned.getSpanStart(characterStyle);
+        int spanEnd = spanned.getSpanEnd(characterStyle);
+        h90Var.d(layout, spanStart, f7);
+        layout.getSelectionPath(spanStart, spanEnd, h90Var);
+        r90 r90Var = new r90();
+        r90Var.x = h90Var;
+        r90Var.C = true;
+        r90Var.j(4.0f);
+        r90Var.k();
+        return r90Var;
     }
 
-    public int c() {
-        return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ld, this.c);
+    public final void a(o90 o90Var, Object obj) {
+        this.c.add(new Pair(o90Var, obj));
+        this.d++;
+        h(obj, true);
     }
 
-    public int getTextPaddingTop() {
-        int paddingTop = getPaddingTop();
-        return (getGravity() != 17 || getLayout() == null) ? paddingTop : Math.max(0, (((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2) + paddingTop;
+    public final void b(r90 r90Var, Object obj) {
+        this.e.add(new Pair(r90Var, obj));
+        this.f++;
+        h(obj, true);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (!this.x) {
-            this.x = true;
-            try {
-                if (J == null) {
-                    Field declaredField = TextView.class.getDeclaredField("mEditor");
-                    I = declaredField;
-                    declaredField.setAccessible(true);
-                    Class<?> cls = Class.forName("android.widget.Editor");
-                    J = cls;
-                    try {
-                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
-                        K = declaredMethod;
-                        declaredMethod.setAccessible(true);
-                    } catch (Exception unused) {
-                    }
-                }
-            } catch (Throwable th2) {
-                FileLog.e(th2);
-            }
-        }
-        super.invalidate();
-        if (isHardwareAccelerated()) {
-            try {
-                if (K != null) {
-                    if (this.y == null) {
-                        this.y = I.get(this);
-                    }
-                    Object obj = this.y;
-                    if (obj != null) {
-                        K.invoke(obj, null);
-                    }
-                }
-            } catch (Exception unused2) {
-            }
-        }
+    public final void c() {
+        d(true);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.d = y5.update(a(), this, this.d, getLayout());
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        y5.release(this, this.d);
-    }
-
-    /* JADX WARN: Can't wrap try/catch for region: R(21:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|(4:21|22|(1:74)(1:25)|26)|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
-    /* JADX WARN: Can't wrap try/catch for region: R(24:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|21|22|(1:74)(1:25)|26|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00d0, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x00ad, code lost:
-    
-        r2 = r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00db, code lost:
-    
-        if (r14.E == false) goto L63;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dd, code lost:
-    
-        org.telegram.messenger.FileLog.e((java.lang.Throwable) r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e0, code lost:
-    
-        r14.E = true;
-        r1 = r2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00d2, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d3, code lost:
-    
-        r4 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00ab, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ac, code lost:
-    
-        r4 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x00d6, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x00d7, code lost:
-    
-        r4 = r15;
-        r2 = true;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009c A[Catch: Exception -> 0x00ab, TryCatch #1 {Exception -> 0x00ab, blocks: (B:33:0x0084, B:36:0x0092, B:38:0x009c, B:40:0x00a0, B:43:0x00af, B:44:0x00c0), top: B:32:0x0084 }] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00e5  */
-    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00dd  */
-    @Override // android.widget.TextView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10;
-        Layout layout;
-        float height;
-        if (!this.a) {
-            canvas.save();
-            if (!this.n) {
-                canvas.translate(this.r ? 0.0f : getPaddingLeft(), this.s ? 0.0f : getTextPaddingTop());
+    public final void d(boolean z10) {
+        if (z10) {
+            for (int i10 = 0; i10 < this.d; i10++) {
+                j(i10);
             }
-            h90 h90Var = this.b;
-            if (h90Var != null && h90Var.f(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
-        }
-        super.onDraw(canvas);
-        boolean z11 = false;
-        try {
-            layout = getLayout();
-            height = ((getGravity() & 16) == 0 || layout == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - layout.getHeight()) / 2.0f) + getPaddingTop();
-        } catch (Exception e) {
-            e = e;
-            canvas2 = canvas;
-        }
-        if (height == 0.0f && getPaddingLeft() == 0) {
-            z10 = false;
-            this.d = y5.update(a(), this, this.d, getLayout());
-            if (this.F) {
-                if (this.G == null) {
-                    if (this.H != getPaint().linkColor) {
-                    }
-                }
-                int i10 = getPaint().linkColor;
-                this.H = i10;
-                this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-            }
-            canvas2 = canvas;
-            y5.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
-            if (z10) {
+        } else {
+            if (this.d <= 0) {
                 return;
             }
-            canvas2.restore();
+            int i11 = 0;
+            while (true) {
+                int i12 = this.d;
+                ArrayList arrayList = this.c;
+                if (i11 >= i12) {
+                    arrayList.clear();
+                    this.d = 0;
+                    h(null, true);
+                    return;
+                } else {
+                    ((o90) ((Pair) arrayList.get(i11)).first).c();
+                    h(((Pair) arrayList.get(i11)).second, false);
+                    i11++;
+                }
+            }
+        }
+    }
+
+    public final void e() {
+        for (int i10 = 0; i10 < this.f; i10++) {
+            m(i10, true);
+        }
+    }
+
+    public final boolean f(Canvas canvas) {
+        int i10 = 0;
+        boolean z10 = false;
+        while (i10 < this.f) {
+            ((r90) ((Pair) this.e.get(i10)).first).draw(canvas);
+            i10++;
+            z10 = true;
+        }
+        for (int i11 = 0; i11 < this.d; i11++) {
+            z10 = ((o90) ((Pair) this.c.get(i11)).first).a(canvas) || z10;
+        }
+        return z10;
+    }
+
+    public final boolean g(Canvas canvas, Object obj) {
+        boolean z10 = false;
+        for (int i10 = 0; i10 < this.f; i10++) {
+            ArrayList arrayList = this.e;
+            if (((Pair) arrayList.get(i10)).second == obj) {
+                ((r90) ((Pair) arrayList.get(i10)).first).draw(canvas);
+                z10 = true;
+            }
+        }
+        for (int i11 = 0; i11 < this.d; i11++) {
+            ArrayList arrayList2 = this.c;
+            if (((Pair) arrayList2.get(i11)).second == obj) {
+                z10 = ((o90) ((Pair) arrayList2.get(i11)).first).a(canvas) || z10;
+            }
+        }
+        h(obj, false);
+        return z10;
+    }
+
+    public final void h(Object obj, boolean z10) {
+        View view;
+        View view2;
+        if (obj instanceof View) {
+            ((View) obj).invalidate();
+        } else if (obj instanceof org.telegram.ui.a3) {
+            org.telegram.ui.a3 a3Var = (org.telegram.ui.a3) obj;
+            if (!a3Var.c && (view2 = a3Var.b) != null) {
+                view2.invalidate();
+            }
+        } else if (z10 && (view = this.a) != null) {
+            view.invalidate();
+        }
+        org.telegram.ui.Cells.b1 b1Var = this.b;
+        if (b1Var != null) {
+            b1Var.run();
+        }
+    }
+
+    public final void j(int i10) {
+        if (i10 < 0 || i10 >= this.d) {
             return;
         }
-        canvas.save();
-        canvas.translate(getPaddingLeft(), height);
-        z10 = true;
-        this.d = y5.update(a(), this, this.d, getLayout());
-        if (this.F) {
-        }
-        canvas2 = canvas;
-        y5.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
-        if (z10) {
+        Pair pair = (Pair) this.c.get(i10);
+        o90 o90Var = (o90) pair.first;
+        if (o90Var.p < 0) {
+            o90Var.p = Math.max(o90Var.o + o90Var.q, SystemClock.elapsedRealtime());
+            h(pair.second, true);
+            AndroidUtilities.runOnUIThread(new j90(this, o90Var, 1), Math.max(0L, (o90Var.p - SystemClock.elapsedRealtime()) + 175));
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        int i12 = this.w;
-        if (i12 > 0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
+    public final void k(o90 o90Var, boolean z10) {
+        ArrayList arrayList;
+        Pair pair;
+        if (o90Var == null) {
+            return;
         }
-        super.onMeasure(i10, i11);
-        this.d = y5.update(a(), this, this.d, getLayout());
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        CharacterStyle characterStyle;
-        h90 h90Var = this.b;
-        if (h90Var != null) {
-            Layout layout = getLayout();
-            ClickableSpan b10 = b((int) motionEvent.getX(), (int) motionEvent.getY());
-            if (b10 != null && motionEvent.getAction() == 0) {
-                l90 l90Var = new l90(b10, this.c, motionEvent.getX(), motionEvent.getY(), 0);
-                l90Var.d(c());
-                this.e = l90Var;
-                h90Var.a(l90Var, null);
-                SpannableString spannableString = new SpannableString(layout.getText());
-                int spanStart = spannableString.getSpanStart(this.e.i);
-                int spanEnd = spannableString.getSpanEnd(this.e.i);
-                e90 b11 = this.e.b();
-                b11.d(layout, spanStart, getPaddingTop());
-                layout.getSelectionPath(spanStart, spanEnd, b11);
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, l90Var, b10, 25), ViewConfiguration.getLongPressTimeout());
-                return true;
-            }
-            if (motionEvent.getAction() == 1) {
-                h90Var.d(true);
-                l90 l90Var2 = this.e;
-                if (l90Var2 != null && (characterStyle = l90Var2.i) == b10) {
-                    j90 j90Var = this.f;
-                    if (j90Var != null) {
-                        j90Var.a((ClickableSpan) characterStyle);
-                    } else if (characterStyle != null) {
-                        ((ClickableSpan) characterStyle).onClick(this);
-                    }
-                    this.e = null;
-                    return true;
+        int i10 = 0;
+        while (true) {
+            int i11 = this.d;
+            arrayList = this.c;
+            if (i10 >= i11) {
+                pair = null;
+                break;
+            } else {
+                if (((Pair) arrayList.get(i10)).first == o90Var) {
+                    pair = (Pair) arrayList.get(i10);
+                    break;
                 }
-                this.e = null;
-            }
-            if (motionEvent.getAction() == 3) {
-                h90Var.d(true);
-                this.e = null;
+                i10++;
             }
         }
-        return this.e != null || super.onTouchEvent(motionEvent);
+        if (pair == null) {
+            return;
+        }
+        if (!z10) {
+            arrayList.remove(pair);
+            o90Var.c();
+            this.d = arrayList.size();
+            h(pair.second, true);
+            return;
+        }
+        if (o90Var.p < 0) {
+            o90Var.p = Math.max(o90Var.o + o90Var.q, SystemClock.elapsedRealtime());
+            h(pair.second, true);
+            AndroidUtilities.runOnUIThread(new j90(this, o90Var, 0), Math.max(0L, (o90Var.p - SystemClock.elapsedRealtime()) + 175));
+        }
     }
 
-    public void setDisablePaddingsOffset(boolean z10) {
-        this.n = z10;
-    }
-
-    public void setDisablePaddingsOffsetX(boolean z10) {
-        this.r = z10;
-    }
-
-    public void setDisablePaddingsOffsetY(boolean z10) {
-        this.s = z10;
-    }
-
-    public void setEmojiColor(int i10) {
-        this.F = false;
-        this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        invalidate();
-    }
-
-    public void setLoading(CharacterStyle characterStyle) {
-        if (this.v != characterStyle) {
-            h90 h90Var = this.b;
-            h90Var.e();
-            this.v = characterStyle;
-            o90 i10 = h90.i(getLayout(), characterStyle, getPaddingTop());
-            if (i10 != null) {
-                int d = d(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ld, this.c));
-                i10.f(org.telegram.ui.ActionBar.j6.l1(0.8f, d), org.telegram.ui.ActionBar.j6.l1(1.3f, d), org.telegram.ui.ActionBar.j6.l1(1.0f, d), org.telegram.ui.ActionBar.j6.l1(4.0f, d));
-                i10.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                h90Var.b(i10, null);
+    public final void l(r90 r90Var, boolean z10) {
+        if (r90Var == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < this.f; i10++) {
+            if (((Pair) this.e.get(i10)).first == r90Var) {
+                m(i10, z10);
+                return;
             }
         }
     }
 
-    @Override // android.widget.TextView
-    public void setMaxWidth(int i10) {
-        this.w = i10;
+    public final void m(int i10, boolean z10) {
+        if (i10 < 0 || i10 >= this.f) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        Pair pair = (Pair) arrayList.get(i10);
+        if (pair == null) {
+            return;
+        }
+        r90 r90Var = (r90) pair.first;
+        if (!z10) {
+            arrayList.remove(pair);
+            r90Var.b = -1L;
+            r90Var.c = -1L;
+            this.f = arrayList.size();
+            h(pair.second, true);
+            return;
+        }
+        if (r90Var.b()) {
+            l(r90Var, false);
+            return;
+        }
+        if (!r90Var.c()) {
+            r90Var.a();
+        }
+        AndroidUtilities.runOnUIThread(new bv(20, this, r90Var), r90Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - r90Var.c) : 0L);
     }
 
-    public void setOnLinkLongPressListener(j90 j90Var) {
-        this.h = j90Var;
-    }
-
-    public void setOnLinkPressListener(j90 j90Var) {
-        this.f = j90Var;
-    }
-
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        this.d = y5.update(a(), this, this.d, getLayout());
-    }
-
-    public k90(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.E = false;
-        this.F = true;
-        this.a = false;
-        this.b = new h90(this);
-        this.c = f6Var;
-    }
-
-    public k90(Context context, h90 h90Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.E = false;
-        this.F = true;
-        this.a = true;
-        this.b = h90Var;
-        this.c = f6Var;
-    }
-
-    public int d(int i10) {
-        return i10;
+    public k90(View view) {
+        this.a = view;
     }
 }

@@ -13,23 +13,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.az0;
 import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.de0;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.iq;
 import org.telegram.ui.Components.jc0;
-import org.telegram.ui.Components.jn0;
-import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.wy;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.xy;
 import org.telegram.ui.Components.yy0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class i2 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -158,56 +158,56 @@ public final class i2 implements TextWatcher {
                 b20Var.a.a(b20Var.n || b20Var.r.length() > 0, true);
                 break;
             case 10:
-                ae0 ae0Var = (ae0) this.b;
-                if (ae0Var.r.length() == 4 && SharedConfig.passcodeType == 0) {
-                    ae0Var.k(false);
+                de0 de0Var = (de0) this.b;
+                if (de0Var.r.length() == 4 && SharedConfig.passcodeType == 0) {
+                    de0Var.k(false);
                     break;
                 }
                 break;
             case 11:
-                jn0 jn0Var = (jn0) this.b;
-                ImageView imageView2 = jn0Var.c;
-                h2 h2Var2 = jn0Var.e;
+                ln0 ln0Var = (ln0) this.b;
+                ImageView imageView2 = ln0Var.c;
+                h2 h2Var2 = ln0Var.e;
                 boolean z11 = h2Var2.length() > 0;
                 if (z11 != (imageView2.getAlpha() != 0.0f)) {
                     imageView2.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L).scaleX(z11 ? 1.0f : 0.1f).scaleY(z11 ? 1.0f : 0.1f).start();
                 }
-                jn0Var.a(h2Var2.getText().toString());
+                ln0Var.a(h2Var2.getText().toString());
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new jc0(this, 28));
+                AndroidUtilities.runOnUIThread(new jc0(this, 29));
                 break;
             case 13:
-                yy0 yy0Var = (yy0) this.b;
-                wy0 wy0Var = yy0Var.c;
-                if (wy0Var != null && wy0Var.getVisibility() == 0) {
-                    yy0Var.e();
+                az0 az0Var = (az0) this.b;
+                yy0 yy0Var = az0Var.c;
+                if (yy0Var != null && yy0Var.getVisibility() == 0) {
+                    az0Var.e();
                     break;
                 }
                 break;
             case 14:
-                b71 b71Var = (b71) this.b;
-                String obj3 = b71Var.J.getText().toString();
-                c71 c71Var = b71Var.K;
-                int h = c71Var.d.getAdapter() == null ? 0 : c71Var.d.getAdapter().h();
-                c71Var.G(obj3);
-                if (TextUtils.isEmpty(obj3) && (w0Var = c71Var.d) != null) {
+                d71 d71Var = (d71) this.b;
+                String obj3 = d71Var.J.getText().toString();
+                e71 e71Var = d71Var.K;
+                int h = e71Var.d.getAdapter() == null ? 0 : e71Var.d.getAdapter().h();
+                e71Var.F(obj3);
+                if (TextUtils.isEmpty(obj3) && (w0Var = e71Var.d) != null) {
                     s4.h0 adapter = w0Var.getAdapter();
-                    ul0 ul0Var = c71Var.f;
-                    if (adapter != ul0Var) {
-                        ai.w0 w0Var2 = c71Var.d;
+                    xl0 xl0Var = e71Var.f;
+                    if (adapter != xl0Var) {
+                        ai.w0 w0Var2 = e71Var.d;
                         w0Var2.Y1 = false;
                         w0Var2.Z1 = 0;
-                        w0Var2.setAdapter(ul0Var);
-                        ai.w0 w0Var3 = c71Var.d;
+                        w0Var2.setAdapter(xl0Var);
+                        ai.w0 w0Var3 = e71Var.d;
                         w0Var3.Y1 = true;
                         w0Var3.Z1 = 0;
                         if (h == 0) {
-                            c71Var.J(0);
+                            e71Var.J(0);
                         }
                     }
                 }
-                c71Var.v.setVisibility(0);
+                e71Var.v.setVisibility(0);
                 break;
             case 15:
                 org.telegram.ui.k0 k0Var = (org.telegram.ui.k0) this.b;
@@ -314,22 +314,22 @@ public final class i2 implements TextWatcher {
         boolean z10;
         switch (this.a) {
             case 10:
-                ae0 ae0Var = (ae0) this.b;
-                LinkedList linkedList = ae0Var.N;
-                LinkedList linkedList2 = ae0Var.M;
-                Drawable drawable = ae0Var.a;
-                if (drawable instanceof kc0) {
-                    kc0 kc0Var = (kc0) drawable;
-                    kc0Var.D = null;
-                    kc0Var.z();
-                    float f7 = kc0Var.h;
+                de0 de0Var = (de0) this.b;
+                LinkedList linkedList = de0Var.N;
+                LinkedList linkedList2 = de0Var.M;
+                Drawable drawable = de0Var.a;
+                if (drawable instanceof nc0) {
+                    nc0 nc0Var = (nc0) drawable;
+                    nc0Var.D = null;
+                    nc0Var.z();
+                    float f7 = nc0Var.h;
                     int i13 = 0;
                     boolean z11 = true;
                     if (i11 == 0 && i12 == 1) {
-                        kc0Var.x(true);
+                        nc0Var.x(true);
                         z10 = true;
                     } else if (i11 == 1 && i12 == 0) {
-                        kc0Var.y();
+                        nc0Var.y();
                         z10 = false;
                     } else {
                         z10 = false;
@@ -337,10 +337,10 @@ public final class i2 implements TextWatcher {
                     }
                     if (z11) {
                         if (f7 >= 1.0f) {
-                            ae0Var.b(kc0Var);
+                            de0Var.b(nc0Var);
                             break;
                         } else {
-                            linkedList2.offer(new y0(this, z10, kc0Var, 22));
+                            linkedList2.offer(new y0(this, z10, nc0Var, 22));
                             linkedList.offer(Boolean.valueOf(z10));
                             ArrayList arrayList = new ArrayList();
                             ArrayList arrayList2 = new ArrayList();

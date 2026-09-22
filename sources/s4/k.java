@@ -3,7 +3,7 @@ package s4;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -208,7 +208,7 @@ public final class k {
     }
 
     public final void b(h0 h0Var) {
-        a(new k2.u(h0Var, 24));
+        a(new k2.e(h0Var, 22));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

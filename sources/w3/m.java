@@ -1,13 +1,13 @@
 package w3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m {
-    public final long a;
-    public final int b;
-
-    public m(long j3, int i10) {
-        this.a = j3;
-        this.b = i10;
-    }
+    public static final a5.a d = new a5.a(new a6.i(new d9.b(':'), 16));
+    public static final a5.a e = new a5.a(new a6.i(new d9.b('*'), 16));
+    public final ArrayList a = new ArrayList();
+    public int b = 0;
+    public int c;
 }

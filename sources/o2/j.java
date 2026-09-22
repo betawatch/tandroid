@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaController;
 import v7.n7;
 import v7.s6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -98,7 +98,7 @@ public final class j extends v2.k {
     }
 
     @Override // y2.j
-    public final void H() {
+    public final void D() {
         this.W = true;
     }
 
@@ -108,7 +108,7 @@ public final class j extends v2.k {
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o c10 = bVar.a.c();
-            if ((c10 instanceof d0) || (c10 instanceof w3.i)) {
+            if ((c10 instanceof d0) || (c10 instanceof w3.h)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -150,7 +150,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.h(this.U, false);
+                h.g(this.U, false);
             }
             do {
                 try {
@@ -219,7 +219,7 @@ public final class j extends v2.k {
                 lVar.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.i(vVar.a, 0, 10, false);
+                    lVar.h(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -236,7 +236,7 @@ public final class j extends v2.k {
                         vVar.G(i12);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.i(vVar.a, 10, w10, false);
+                    lVar.h(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {
@@ -342,7 +342,7 @@ public final class j extends v2.k {
                                     i17 |= 32;
                                     kVar2 = kVar3;
                                 }
-                                aVar = new w3.i(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
+                                aVar = new w3.h(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
                             } else if (intValue == 11) {
                                 i10 = i15;
                                 arrayList = arrayList2;
@@ -412,7 +412,7 @@ public final class j extends v2.k {
                 } else {
                     c3.o oVar2 = bVar2.a;
                     c3.o c11 = oVar2.c();
-                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.i)));
+                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.h)));
                     e2.d.f("Can't recreate wrapped extractors. Outer type: " + oVar2.getClass(), oVar2.c() == oVar2);
                     if (oVar2 instanceof t) {
                         dVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);

@@ -1,11 +1,11 @@
 package t7;
 
 import android.content.Context;
-import c5.x;
+import c5.w;
 import j$.util.Objects;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class q {
     public static final l b = l.b(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
@@ -23,9 +23,9 @@ public final class q {
         }
         this.a = "common";
         qb.f a2 = qb.f.a();
-        x xVar = new x(this, 2);
+        w wVar = new w(this, 2);
         a2.getClass();
-        qb.f.b(xVar);
+        qb.f.b(wVar);
         qb.f a10 = qb.f.a();
         Objects.requireNonNull(kVar);
         p pVar = new p(kVar, 0);

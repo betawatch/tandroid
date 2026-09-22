@@ -22,18 +22,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a61;
 import org.telegram.ui.Components.b40;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.c61;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.ja0;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h5 extends xa {
     public final /* synthetic */ jc x0;
@@ -75,36 +75,36 @@ public final class h5 extends xa {
 
     @Override // ai.xa
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof d61;
+        boolean z10 = characterStyle instanceof f61;
         jc jcVar = this.x0;
         f6 f6Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(f6Var.C2).getUser(Utilities.parseLong(((d61) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(f6Var.C2).getUser(Utilities.parseLong(((f61) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(f6Var.C2).openChatOrProfileWith(user, null, jcVar.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof a61)) {
+        if (!(characterStyle instanceof c61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof c61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof e61);
                 return;
             }
-            if (!(characterStyle instanceof z51)) {
+            if (!(characterStyle instanceof b61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                z51 z51Var = (z51) characterStyle;
-                AndroidUtilities.addToClipboard(z51Var.a.subSequence(z51Var.b, z51Var.c).toString());
+                b61 b61Var = (b61) characterStyle;
+                AndroidUtilities.addToClipboard(b61Var.a.subSequence(b61Var.b, b61Var.c).toString());
                 rk.o(R.string.TextCopied, new xc(f6Var.c1, this.y0));
                 return;
             }
         }
-        String url = ((a61) characterStyle).getURL();
+        String url = ((c61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 jcVar.H(new b40(url, null));
@@ -113,7 +113,7 @@ public final class h5 extends xa {
             Bundle bundle = new Bundle();
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("hashtag", url);
-            jcVar.H(new ja0(bundle, null));
+            jcVar.H(new ma0(bundle, null));
             return;
         }
         String b10 = nf.f.b(url);
@@ -190,7 +190,7 @@ public final class h5 extends xa {
         jc jcVar = this.x0;
         final org.telegram.ui.ActionBar.f6 f6Var2 = this.y0;
         if (document != null) {
-            v70 F = v70.F(jcVar.v, f6Var2, f6Var.K0);
+            y70 F = y70.F(jcVar.v, f6Var2, f6Var.K0);
             F.i = 3;
             F.a0(-AndroidUtilities.dp(8.0f), 0.0f);
             final int i10 = 0;
@@ -293,11 +293,11 @@ public final class h5 extends xa {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        c11 c11Var;
+        e11 e11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             jc jcVar = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.d5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof c61) || (c11Var = ((c61) characterStyle).a) == null || (c11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.d5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof e61) || (e11Var = ((e61) characterStyle).a) == null || (e11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

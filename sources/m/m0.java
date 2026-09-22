@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -103,11 +103,11 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            q(Math.max(a2, (width - paddingLeft) - paddingRight));
+            p(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            q((width - paddingLeft) - paddingRight);
+            p((width - paddingLeft) - paddingRight);
         } else {
-            q(i11);
+            p(i11);
         }
         this.f = s3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }

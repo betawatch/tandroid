@@ -19,13 +19,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.rk;
-import org.telegram.ui.Components.b90;
-import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.m31;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.e70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class v7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -77,16 +77,16 @@ public final class v7 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 7:
-                k31 k31Var = (k31) this.d;
-                float g10 = k31Var.f.g();
+                m31 m31Var = (m31) this.d;
+                float g10 = m31Var.f.g();
                 int i12 = (g10 > 0.0f ? 1 : (g10 == 0.0f ? 0 : -1));
                 boolean z10 = i12 > 0;
-                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, g10) * k31Var.K;
+                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, g10) * m31Var.K;
                 float dp = AndroidUtilities.dp(10.0f);
                 float dp2 = AndroidUtilities.dp(8.33f);
                 float width2 = (getWidth() / 2.0f) + AndroidUtilities.dp(12.0f);
                 float dp3 = AndroidUtilities.dp(12.0f);
-                float max = Math.max(dp2 + dp2, k31Var.f.d() + AndroidUtilities.dp(10.0f));
+                float max = Math.max(dp2 + dp2, m31Var.f.d() + AndroidUtilities.dp(10.0f));
                 if (z10) {
                     i10 = i12;
                     f10 = dp3;
@@ -114,10 +114,10 @@ public final class v7 extends FrameLayout {
                     float f13 = max / 2.0f;
                     rectF4.set(f7 - f13, f10 - dp2, f7 + f13, f10 + dp2);
                     org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.c;
-                    h6Var.setColor(org.telegram.ui.ActionBar.j6.l1(g10, h6Var.b.a(org.telegram.ui.ActionBar.j6.v0(k31Var.E, h6Var.a), false)));
+                    h6Var.setColor(org.telegram.ui.ActionBar.j6.l1(g10, h6Var.b.a(org.telegram.ui.ActionBar.j6.v0(m31Var.E, h6Var.a), false)));
                     canvas.drawRoundRect(rectF4, dp2, dp2, h6Var);
-                    k31Var.f.m(rectF4);
-                    org.telegram.ui.Components.n6 n6Var = k31Var.f;
+                    m31Var.f.m(rectF4);
+                    org.telegram.ui.Components.n6 n6Var = m31Var.f;
                     n6Var.w = (int) (g10 * 255.0f);
                     n6Var.draw(canvas);
                     canvas.restore();
@@ -256,7 +256,7 @@ public final class v7 extends FrameLayout {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 7:
-                return ((k31) this.d).f == drawable || super.verifyDrawable(drawable);
+                return ((m31) this.d).f == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -374,22 +374,22 @@ public final class v7 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v7(d90 d90Var, Context context) {
+    public v7(g90 g90Var, Context context) {
         super(context);
         this.a = 6;
-        this.d = d90Var;
-        b90 b90Var = new b90(this, context);
-        this.c = b90Var;
+        this.d = g90Var;
+        e90 e90Var = new e90(this, context);
+        this.c = e90Var;
         LinearLayout f7 = rk.f(context, 0);
         addView(f7, w7.y5.e(-2, -1, 1));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        f7.addView(b90Var, w7.y5.n(-2, -1));
+        f7.addView(e90Var, w7.y5.n(-2, -1));
         f7.addView(textView, w7.y5.q(-2, -2, 16));
         setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        b90Var.a(false);
+        e90Var.a(false);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -402,15 +402,15 @@ public final class v7 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v7(k31 k31Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public v7(m31 m31Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = 7;
-        this.d = k31Var;
+        this.d = m31Var;
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new org.telegram.ui.Components.h6(this, f6Var);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        k31Var.f.setCallback(this);
+        m31Var.f.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

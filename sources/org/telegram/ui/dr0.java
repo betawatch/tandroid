@@ -4,16 +4,16 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class dr0 implements org.telegram.ui.Components.xm0 {
+public final class dr0 implements org.telegram.ui.Components.zm0 {
     public final /* synthetic */ hr0 a;
 
     public dr0(hr0 hr0Var) {
         this.a = hr0Var;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.zm0
     public final void d(int i10, boolean z10) {
         hr0 hr0Var = this.a;
         if (hr0Var.n[0].e == i10) {
@@ -32,12 +32,12 @@ public final class dr0 implements org.telegram.ui.Components.xm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.zm0
     public final /* synthetic */ boolean m1(int i10, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.zm0
     public final void y0(float f7) {
         hr0 hr0Var = this.a;
         if (f7 != 1.0f || hr0Var.n[1].getVisibility() == 0) {
@@ -58,7 +58,7 @@ public final class dr0 implements org.telegram.ui.Components.xm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xm0
+    @Override // org.telegram.ui.Components.zm0
     public final /* synthetic */ void C() {
     }
 }

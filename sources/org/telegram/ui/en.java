@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class en extends nf.e {
     public final /* synthetic */ int d;
@@ -20,37 +20,37 @@ public final class en extends nf.e {
         switch (this.d) {
             case 0:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 2), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 2), 250L);
                     break;
                 }
                 break;
             case 1:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 3), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 3), 250L);
                     break;
                 }
                 break;
             case 2:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 4), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 4), 250L);
                     break;
                 }
                 break;
             case 3:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 5), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 5), 250L);
                     break;
                 }
                 break;
             case 4:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 6), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 6), 250L);
                     break;
                 }
                 break;
             case 5:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new zj(((ln) this.f).a, 7), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((ln) this.f).a, 7), 250L);
                     break;
                 }
                 break;

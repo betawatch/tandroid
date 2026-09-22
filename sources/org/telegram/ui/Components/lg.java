@@ -10,7 +10,7 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class lg extends org.telegram.ui.tu0 {
     public boolean a;
@@ -46,8 +46,8 @@ public final class lg extends org.telegram.ui.tu0 {
         String str;
         org.telegram.ui.zn znVar;
         ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.pn pnVar = chatActivityEnterView.U2;
-        if (pnVar != null && (znVar = chatActivityEnterView.O2) != null && pnVar.f) {
+        org.telegram.ui.pn pnVar = chatActivityEnterView.V2;
+        if (pnVar != null && (znVar = chatActivityEnterView.P2) != null && pnVar.f) {
             znVar.Rb();
             return;
         }
@@ -81,21 +81,21 @@ public final class lg extends org.telegram.ui.tu0 {
         boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(sendingMediaInfo.caption);
         AccountInstance accountInstance = chatActivityEnterView.R;
         MessageSuggestionParams messageSuggestionParams = null;
-        long j3 = chatActivityEnterView.P2;
-        MessageObject messageObject = chatActivityEnterView.S2;
+        long j3 = chatActivityEnterView.Q2;
+        MessageObject messageObject = chatActivityEnterView.T2;
         threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.pn pnVar2 = chatActivityEnterView.U2;
-        MessageObject messageObject2 = chatActivityEnterView.Y1;
-        org.telegram.ui.zn znVar2 = chatActivityEnterView.O2;
+        org.telegram.ui.pn pnVar2 = chatActivityEnterView.V2;
+        MessageObject messageObject2 = chatActivityEnterView.Z1;
+        org.telegram.ui.zn znVar2 = chatActivityEnterView.P2;
         int i13 = znVar2 == null ? 0 : znVar2.R3;
         SendMessageChatArguments C8 = znVar2 != null ? znVar2.C8() : null;
         long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.zn znVar3 = chatActivityEnterView.O2;
+        org.telegram.ui.zn znVar3 = chatActivityEnterView.P2;
         if (znVar3 != null) {
             messageSuggestionParams = znVar3.g5;
         }
         SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j3, messageObject, threadMessage, null, pnVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, C8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
-        ng ngVar = chatActivityEnterView.Y2;
+        ng ngVar = chatActivityEnterView.Z2;
         if (ngVar != null) {
             ngVar.H(null, true, i11, i12, 0L);
         }

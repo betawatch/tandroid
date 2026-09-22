@@ -47,33 +47,33 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.h2;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.vt;
 import org.telegram.ui.Components.wa;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.za0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.o20;
 import org.telegram.ui.v20;
 import org.telegram.ui.vy0;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 import xh.r1;
 import yh.h7;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class m1 extends ab implements NotificationCenter.NotificationCenterDelegate {
     public static f1 G0;
@@ -106,9 +106,9 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
     public final ArrayList r0;
     public boolean s0;
     public float t0;
-    public za0 u0;
+    public cb0 u0;
     public final BirthdayController.BirthdayState v0;
-    public final p8.b w0;
+    public final pg.c1 w0;
     public int x0;
     public pq y0;
     public String z0;
@@ -129,7 +129,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
         this.q0 = AndroidUtilities.dp(120.0f);
         this.r0 = new ArrayList();
         this.s0 = false;
-        this.w0 = new p8.b(this, 6);
+        this.w0 = new pg.c1(this, 5);
         this.x0 = -1;
         this.C0 = new HashSet();
         this.currentAccount = i10;
@@ -148,7 +148,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
         g1Var.setText(y());
         g1Var.setCloseImageVisible(false);
         g1Var.e.c(0.0f, false);
-        this.u0 = new za0(this, 2);
+        this.u0 = new cb0(this, 2);
         h1 h1Var = new h1(this, getContext(), f6Var);
         this.Z = h1Var;
         h1Var.setBackgroundColor(getThemedColor(i12));
@@ -165,7 +165,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
         ViewGroup viewGroup3 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
         viewGroup3.addView(i1Var, y5.f(1.0f, 55, i15, 0, i15, 0));
-        o20 o20Var = new o20(getContext(), f6Var, (vl0) null);
+        o20 o20Var = new o20(getContext(), f6Var, (yl0) null);
         this.d0 = o20Var;
         o20Var.setClickable(true);
         o20Var.setOrientation(1);
@@ -189,7 +189,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
             textView.setTextSize(1, 14.0f);
             textView.setText(LocaleController.getString(R.string.ConferenceCallWithVideo));
             linearLayout.addView(textView, y5.t(-2, -2, 16, 9, 0, 0, 0));
-            b6.b(linearLayout, 0.025f, 1.5f);
+            a6.b(linearLayout, 0.025f, 1.5f);
             final int i16 = 0;
             linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: tg.e1
                 public final /* synthetic */ m1 b;
@@ -250,15 +250,15 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
         int i19 = this.backgroundPaddingLeft;
         viewGroup5.addView(frameLayout, y5.f(300.0f, 87, i19, 0, i19, AndroidUtilities.dp(68.0f)));
         ug.g gVar2 = this.p0;
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         gVar2.n = arrayList;
-        gVar2.f = vl0Var;
+        gVar2.f = yl0Var;
         int i20 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i20, 0, i20, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
+        yl0Var.setPadding(i20, 0, i20, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
         this.d.j(new k1(this));
         this.d.setOnItemClickListener(new vt(this, i11, f6Var, i10));
         if (i11 == 4) {
-            this.d.setOnItemLongClickListener((ml0) new i2.s(this, i11, 18));
+            this.d.setOnItemLongClickListener((pl0) new i2.s(this, i11, 18));
         }
         s4.j jVar = new s4.j();
         jVar.n(350L);
@@ -462,7 +462,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
     }
 
     public static void S(final m1 m1Var, final TLRPC.User user, View view) {
-        v70 F = v70.F(m1Var.container, m1Var.resourcesProvider, (View) view.getParent());
+        y70 F = y70.F(m1Var.container, m1Var.resourcesProvider, (View) view.getParent());
         final int i10 = 0;
         F.c(R.drawable.profile_discuss, LocaleController.getString(R.string.SendMessage), new Runnable(m1Var) { // from class: tg.d1
             public final /* synthetic */ m1 b;
@@ -1244,7 +1244,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
             r2 = -1
             r3 = 0
         L8:
-            org.telegram.ui.Components.vl0 r4 = r9.d
+            org.telegram.ui.Components.yl0 r4 = r9.d
             int r5 = r4.getChildCount()
             if (r1 >= r5) goto L57
             android.view.View r4 = r4.getChildAt(r1)
@@ -1324,7 +1324,7 @@ public class m1 extends ab implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         ug.g gVar = new ug.g(getContext(), this.resourcesProvider, false);
         this.p0 = gVar;
         gVar.s = true;

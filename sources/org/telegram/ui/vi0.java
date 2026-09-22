@@ -9,9 +9,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class vi0 extends org.telegram.ui.Components.aw0 {
+public final class vi0 extends org.telegram.ui.Components.cw0 {
     public final l20 A0;
     public final Paint B0;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 C0;
@@ -39,7 +39,7 @@ public final class vi0 extends org.telegram.ui.Components.aw0 {
     
         if ((r5[1] - r3[1]) > r4) goto L81;
      */
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

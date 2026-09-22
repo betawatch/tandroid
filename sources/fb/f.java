@@ -1,59 +1,50 @@
 package fb;
 
 import db.u;
-import db.v;
-import java.lang.reflect.Modifier;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import v7.n8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class f implements v, Cloneable {
-    public static final f c = new f();
-    public List a;
-    public final List b;
+public final class f extends u {
+    public volatile u a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ db.g d;
+    public final /* synthetic */ kb.a e;
+    public final /* synthetic */ g f;
 
-    public f() {
-        List list = Collections.EMPTY_LIST;
-        this.a = list;
-        this.b = list;
+    public f(g gVar, boolean z10, boolean z11, db.g gVar2, kb.a aVar) {
+        this.f = gVar;
+        this.b = z10;
+        this.c = z11;
+        this.d = gVar2;
+        this.e = aVar;
     }
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final f clone() {
-        try {
-            return (f) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
+    @Override // db.u
+    public final Object read(lb.a aVar) {
+        if (this.b) {
+            aVar.C();
+            return null;
         }
+        u uVar = this.a;
+        if (uVar == null) {
+            uVar = this.d.c(this.f, this.e);
+            this.a = uVar;
+        }
+        return uVar.read(aVar);
     }
 
-    public final boolean b(Class cls, boolean z10) {
-        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
-            n8 n8Var = ib.c.a;
-            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
-                return true;
-            }
+    @Override // db.u
+    public final void write(lb.b bVar, Object obj) {
+        if (this.c) {
+            bVar.i();
+            return;
         }
-        Iterator it = (z10 ? this.a : this.b).iterator();
-        while (it.hasNext()) {
-            if (((db.a) it.next()).shouldSkipClass(cls)) {
-                return true;
-            }
+        u uVar = this.a;
+        if (uVar == null) {
+            uVar = this.d.c(this.f, this.e);
+            this.a = uVar;
         }
-        return false;
-    }
-
-    @Override // db.v
-    public final u create(db.g gVar, kb.a aVar) {
-        Class cls = aVar.a;
-        boolean b10 = b(cls, true);
-        boolean b11 = b(cls, false);
-        if (b10 || b11) {
-            return new e(this, b11, b10, gVar, aVar);
-        }
-        return null;
+        uVar.write(bVar, obj);
     }
 }

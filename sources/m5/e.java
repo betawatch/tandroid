@@ -1,6 +1,5 @@
 package m5;
 
-import a4.m;
 import a9.r;
 import ai.q4;
 import android.content.ComponentName;
@@ -43,6 +42,7 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
+import o0.g;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
@@ -58,11 +58,11 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.m01;
+import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.ma;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.to0;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dn0;
@@ -86,12 +86,11 @@ import r7.z;
 import s4.g1;
 import s4.h1;
 import u2.b1;
-import u4.g;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessContinuation {
+public class e implements n5.b, to0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -137,13 +136,36 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         iVar.a();
     }
 
-    @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
-        i iVar = (i) this.c;
-        iVar.c.a(f7);
-        iVar.d.a(f7);
-        iVar.b.a(f7);
-        ((Runnable) this.b).run();
+    public View D(int i10, int i11, int i12, int i13) {
+        g1 g1Var = (g1) this.c;
+        h1 h1Var = (h1) this.b;
+        int s10 = h1Var.s();
+        int v = h1Var.v();
+        int i14 = i11 > i10 ? 1 : -1;
+        View view = null;
+        while (i10 != i11) {
+            View I = h1Var.I(i10);
+            int k10 = h1Var.k(I);
+            int N = h1Var.N(I);
+            g1Var.b = s10;
+            g1Var.c = v;
+            g1Var.d = k10;
+            g1Var.e = N;
+            if (i12 != 0) {
+                g1Var.a = i12;
+                if (g1Var.a()) {
+                    return I;
+                }
+            }
+            if (i13 != 0) {
+                g1Var.a = i13;
+                if (g1Var.a()) {
+                    view = I;
+                }
+            }
+            i10 += i14;
+        }
+        return view;
     }
 
     @Override // org.telegram.ui.ActionBar.f6
@@ -179,36 +201,13 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         return false;
     }
 
-    public View H(int i10, int i11, int i12, int i13) {
-        g1 g1Var = (g1) this.c;
-        h1 h1Var = (h1) this.b;
-        int g10 = h1Var.g();
-        int x10 = h1Var.x();
-        int i14 = i11 > i10 ? 1 : -1;
-        View view = null;
-        while (i10 != i11) {
-            View C = h1Var.C(i10);
-            int c10 = h1Var.c(C);
-            int D = h1Var.D(C);
-            g1Var.b = g10;
-            g1Var.c = x10;
-            g1Var.d = c10;
-            g1Var.e = D;
-            if (i12 != 0) {
-                g1Var.a = i12;
-                if (g1Var.a()) {
-                    return C;
-                }
-            }
-            if (i13 != 0) {
-                g1Var.a = i13;
-                if (g1Var.a()) {
-                    view = C;
-                }
-            }
-            i10 += i14;
-        }
-        return view;
+    @Override // le.d
+    public void H(int i10, float f7, float f10, le.e eVar) {
+        i iVar = (i) this.c;
+        iVar.c.a(f7);
+        iVar.d.a(f7);
+        iVar.b.a(f7);
+        ((Runnable) this.b).run();
     }
 
     @Override // org.telegram.ui.j7
@@ -219,41 +218,41 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
             ((zh.b) this.b).i(aVar);
             kvVar.e0.e();
             zh.b bVar = kvVar.g0;
-            ny0[] ny0VarArr = kvVar.b0;
+            py0[] py0VarArr = kvVar.b0;
             a2[] a2VarArr = kvVar.c0;
             a2 a2Var = a2VarArr[0];
             if (a2Var != null) {
-                ny0 ny0Var = ny0VarArr[0];
+                py0 py0Var = py0VarArr[0];
                 boolean z11 = bVar.m;
-                ny0Var.c = z11;
+                py0Var.c = z11;
                 a2Var.c(z11, true);
             }
             a2 a2Var2 = a2VarArr[1];
             if (a2Var2 != null) {
-                ny0 ny0Var2 = ny0VarArr[1];
+                py0 py0Var2 = py0VarArr[1];
                 boolean z12 = bVar.n;
-                ny0Var2.c = z12;
+                py0Var2.c = z12;
                 a2Var2.c(z12, true);
             }
             a2 a2Var3 = a2VarArr[2];
             if (a2Var3 != null) {
-                ny0 ny0Var3 = ny0VarArr[2];
+                py0 py0Var3 = py0VarArr[2];
                 boolean z13 = bVar.o;
-                ny0Var3.c = z13;
+                py0Var3.c = z13;
                 a2Var3.c(z13, true);
             }
             a2 a2Var4 = a2VarArr[3];
             if (a2Var4 != null) {
-                ny0 ny0Var4 = ny0VarArr[3];
+                py0 py0Var4 = py0VarArr[3];
                 boolean z14 = bVar.p;
-                ny0Var4.c = z14;
+                py0Var4.c = z14;
                 a2Var4.c(z14, true);
             }
             a2 a2Var5 = a2VarArr[4];
             if (a2Var5 != null) {
-                ny0 ny0Var5 = ny0VarArr[4];
+                py0 py0Var5 = py0VarArr[4];
                 boolean z15 = bVar.q;
-                ny0Var5.c = z15;
+                py0Var5.c = z15;
                 a2Var5.c(z15, true);
             }
             kvVar.a0.a(jvVar.d(), true);
@@ -269,26 +268,26 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     public boolean J(View view) {
         g1 g1Var = (g1) this.c;
         h1 h1Var = (h1) this.b;
-        int g10 = h1Var.g();
-        int x10 = h1Var.x();
-        int c10 = h1Var.c(view);
-        int D = h1Var.D(view);
-        g1Var.b = g10;
-        g1Var.c = x10;
-        g1Var.d = c10;
-        g1Var.e = D;
+        int s10 = h1Var.s();
+        int v = h1Var.v();
+        int k10 = h1Var.k(view);
+        int N = h1Var.N(view);
+        g1Var.b = s10;
+        g1Var.c = v;
+        g1Var.d = k10;
+        g1Var.e = N;
         g1Var.a = 24579;
         return g1Var.a();
     }
 
-    public void K(o0.f fVar) {
+    public void K(g gVar) {
         n nVar = (n) this.c;
         a6.i iVar = (a6.i) this.b;
-        int i10 = fVar.b;
+        int i10 = gVar.b;
         if (i10 != 0) {
             nVar.execute(new q4(iVar, i10));
         } else {
-            nVar.execute(new i9.s(19, iVar, fVar.a));
+            nVar.execute(new i9.s(19, iVar, gVar.a));
         }
     }
 
@@ -309,7 +308,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean N0(long j3) {
-        return ((m01) this.c).v;
+        return ((o01) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -372,13 +371,13 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void X(float f7, boolean z10) {
         i5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        aw0 aw0Var = ((i5) this.c).b;
-        aw0Var.N();
-        aw0Var.M();
+        cw0 cw0Var = ((i5) this.c).b;
+        cw0Var.N();
+        cw0Var.M();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -443,7 +442,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean a2(long j3) {
-        return ((m01) this.c).s;
+        return ((o01) this.c).s;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x008c A[Catch: all -> 0x0060, TryCatch #0 {all -> 0x0060, blocks: (B:18:0x004d, B:22:0x005a, B:23:0x006e, B:25:0x008c, B:28:0x0099, B:29:0x0177, B:34:0x00b9, B:37:0x00f9, B:40:0x0118, B:43:0x0125, B:48:0x010f, B:50:0x0063), top: B:17:0x004d }] */
@@ -549,13 +548,8 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean b0(u1 u1Var, TLRPC.User user) {
-        return false;
-    }
-
     @Override // org.telegram.ui.dn0
-    public void c(String str, String str2) {
+    public void b(String str, String str2) {
         pn0 pn0Var = ((xm0) this.c).a;
         if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
             pn0Var.O1(true, str2, (sl0) this.b, this, pn0Var.B1);
@@ -565,18 +559,17 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean c2(u1 u1Var, TLRPC.TodoItem todoItem) {
+    public /* synthetic */ boolean b0(u1 u1Var, TLRPC.User user) {
         return false;
     }
 
-    @Override // fh.a
-    public ch.d d() {
-        if (Build.VERSION.SDK_INT < 29) {
-            return new ch.f(this);
-        }
-        ch.e eVar = new ch.e(this);
-        ((PhotoViewer) this.c).Z.add(eVar);
-        return eVar;
+    public void c(Object obj, String str) {
+        ((ArrayList) this.b).add(a4.a.C(str, "=", String.valueOf(obj)));
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean c2(u1 u1Var, TLRPC.TodoItem todoItem) {
+        return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -615,10 +608,6 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         }
     }
 
-    public void g(Object obj, String str) {
-        ((ArrayList) this.b).add(a4.a.C(str, "=", String.valueOf(obj)));
-    }
-
     @Override // org.telegram.ui.ActionBar.f6
     public int g1(int i10) {
         switch (this.a) {
@@ -634,7 +623,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     public Object get() {
         switch (this.a) {
             case 0:
-                return new d((Context) ((r) this.b).a, (lf.h) ((m) this.c).get());
+                return new d((Context) ((r) this.b).a, (lf.h) ((android.support.v4.media.c) this.c).get());
             default:
                 int i10 = 23;
                 rb.a aVar = new rb.a(i10);
@@ -645,7 +634,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -676,7 +665,17 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         return c1.a(messageObject);
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // fh.a
+    public ch.d l() {
+        if (Build.VERSION.SDK_INT < 29) {
+            return new ch.f(this);
+        }
+        ch.e eVar = new ch.e(this);
+        ((PhotoViewer) this.c).Z.add(eVar);
+        return eVar;
+    }
+
+    @Override // org.telegram.ui.Components.to0
     public /* synthetic */ int l0() {
         return 0;
     }
@@ -726,15 +725,15 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v5, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r1v6, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r1v9, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r1v5, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r1v8, types: [java.util.List] */
     public ArrayList q() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        n2.e eVar = (n2.e) this.c;
+        fb.e eVar = (fb.e) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) eVar.b;
+        Class cls = eVar.a;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -775,14 +774,14 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         switch (this.a) {
             case 27:
                 da.a aVar = (da.a) obj;
-                w9.m mVar = ((w9.k) this.c).e;
+                w9.n nVar = ((w9.l) this.c).e;
                 if (aVar != null) {
-                    return Tasks.whenAll((Task<?>[]) new Task[]{w9.m.b(mVar), mVar.m.y((Executor) this.b, null)});
+                    return Tasks.whenAll((Task<?>[]) new Task[]{w9.n.b(nVar), nVar.m.y((Executor) this.b, null)});
                 }
                 Log.w("FirebaseCrashlytics", "Received null app settings, cannot send reports at crash time.", null);
                 return Tasks.forResult(null);
             default:
-                return ((w9.m) this.c).e.l(new g(i10, this, (Boolean) obj));
+                return ((w9.n) this.c).e.l(new u4.g(i10, this, (Boolean) obj));
         }
     }
 
@@ -809,23 +808,13 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         }
     }
 
-    public byte[] v(n3.a aVar) {
-        DataOutputStream dataOutputStream = (DataOutputStream) this.c;
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) this.b;
-        byteArrayOutputStream.reset();
-        try {
-            dataOutputStream.writeBytes(aVar.a);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeBytes(aVar.b);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeLong(aVar.c);
-            dataOutputStream.writeLong(aVar.d);
-            dataOutputStream.write(aVar.e);
-            dataOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    @Override // fh.a
+    public void v(Canvas canvas, float f7, float f10, float f11, float f12) {
+        canvas.save();
+        canvas.clipRect(f7, f10, f11, f12);
+        ((PhotoViewer) this.c).T0(canvas, (ma) this.b, -14277082, 855638016, false, true, true);
+        canvas.drawColor(637534208);
+        canvas.restore();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -839,7 +828,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((m01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((o01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -861,13 +850,23 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         return true;
     }
 
-    @Override // fh.a
-    public void y(Canvas canvas, float f7, float f10, float f11, float f12) {
-        canvas.save();
-        canvas.clipRect(f7, f10, f11, f12);
-        ((PhotoViewer) this.c).T0(canvas, (ma) this.b, -14277082, 855638016, false, true, true);
-        canvas.drawColor(637534208);
-        canvas.restore();
+    public byte[] y(n3.a aVar) {
+        DataOutputStream dataOutputStream = (DataOutputStream) this.c;
+        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) this.b;
+        byteArrayOutputStream.reset();
+        try {
+            dataOutputStream.writeBytes(aVar.a);
+            dataOutputStream.writeByte(0);
+            dataOutputStream.writeBytes(aVar.b);
+            dataOutputStream.writeByte(0);
+            dataOutputStream.writeLong(aVar.c);
+            dataOutputStream.writeLong(aVar.d);
+            dataOutputStream.write(aVar.e);
+            dataOutputStream.flush();
+            return byteArrayOutputStream.toByteArray();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -904,7 +903,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         this.a = 13;
         this.b = new SparseIntArray();
         this.c = f6Var;
-        l();
+        g();
     }
 
     public e(int i10, byte b10) {
@@ -966,7 +965,7 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     public /* synthetic */ void A0() {
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public void B() {
     }
 
@@ -974,12 +973,15 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
     public /* synthetic */ void R1() {
     }
 
-    @Override // fh.a
-    public /* synthetic */ void b() {
-    }
-
     @Override // org.telegram.ui.j7
     public void clear() {
+    }
+
+    @Override // fh.a
+    public /* synthetic */ void d() {
+    }
+
+    public void g() {
     }
 
     @Override // org.telegram.ui.j7
@@ -988,9 +990,6 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void k() {
-    }
-
-    public void l() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1180,9 +1179,9 @@ public class e implements n5.b, ro0, l1, j7, dn0, fh.a, f6, le.d, s, SuccessCont
         this.c = new BitmapShader(createBitmap, tileMode, tileMode);
     }
 
-    public e(w9.k kVar, Executor executor, String str) {
+    public e(w9.l lVar, Executor executor, String str) {
         this.a = 27;
-        this.c = kVar;
+        this.c = lVar;
         this.b = executor;
     }
 

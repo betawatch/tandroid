@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fm0 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
                             if (xo0Var.K0 == null && xo0Var.M0 == null) {
-                                lf.h a2 = w7.a8.a(string);
+                                lf.h a2 = w7.z7.a(string);
                                 xo0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
                                 uc.a aVar = (uc.a) a2.d;
                                 xo0Var.x0 = aVar.a() + " *" + aVar.b();
@@ -184,7 +184,7 @@ public final /* synthetic */ class fm0 implements Runnable {
             case 7:
                 org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) obj2).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(i12).disableAds(false);
-                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.wn0) obj);
+                AndroidUtilities.runOnUIThread((org.telegram.ui.Components.yn0) obj);
                 break;
             case 8:
                 ((org.telegram.messenger.video.a) obj2).run();
@@ -275,7 +275,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                 break;
             case 11:
                 pg.s0 s0Var = (pg.s0) obj2;
-                s0Var.e((pg.h1) obj, i12, s0Var.h);
+                s0Var.e((pg.i1) obj, i12, s0Var.h);
                 s0Var.h = null;
                 break;
             case 12:
@@ -295,9 +295,9 @@ public final /* synthetic */ class fm0 implements Runnable {
                 ((r4.c) ((p4.s0) obj2).c).x(i12, obj);
                 break;
             case 14:
-                org.telegram.ui.Components.yr0 yr0Var = (org.telegram.ui.Components.yr0) obj2;
+                org.telegram.ui.Components.bs0 bs0Var = (org.telegram.ui.Components.bs0) obj2;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                yh.k5 k5Var = yr0Var.e;
+                yh.k5 k5Var = bs0Var.e;
                 if (i12 != -1) {
                     int i19 = tL_starGiftCollection.collection_id;
                     int i20 = k5Var.a;
@@ -310,13 +310,13 @@ public final /* synthetic */ class fm0 implements Runnable {
                         deletestargiftcollection.collection_id = tL_starGiftCollection2.collection_id;
                         ConnectionsManager.getInstance(i20).sendRequest(deletestargiftcollection, null);
                     }
-                    yr0Var.f(true);
-                    org.telegram.ui.Components.w81 w81Var = yr0Var.n;
+                    bs0Var.f(true);
+                    org.telegram.ui.Components.y81 y81Var = bs0Var.n;
                     if (i12 < k5Var.d().size()) {
                         i12++;
                     }
-                    w81Var.d(-1, i12);
-                    yr0Var.n();
+                    y81Var.d(-1, i12);
+                    bs0Var.n();
                     break;
                 }
                 break;
@@ -346,14 +346,14 @@ public final /* synthetic */ class fm0 implements Runnable {
                     break;
                 } else {
                     FrameLayout frameLayout2 = new FrameLayout(y2Var.getContext());
-                    org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(y2Var.getContext());
-                    kj0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout2.addView(kj0Var, w7.y5.e(32, 32, 17));
-                    kj0Var.setScaleX(0.5f);
-                    kj0Var.setScaleY(0.5f);
-                    kj0Var.setAlpha(0.0f);
-                    kj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    y2Var.l0 = kj0Var;
+                    org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(y2Var.getContext());
+                    nj0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout2.addView(nj0Var, w7.y5.e(32, 32, 17));
+                    nj0Var.setScaleX(0.5f);
+                    nj0Var.setScaleY(0.5f);
+                    nj0Var.setAlpha(0.0f);
+                    nj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    y2Var.l0 = nj0Var;
                     frameLayout2.setBackground(new yh.l3(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.j6.l1(0.075f, -1)));
                     q2Var.a[i12].setVisibility(8);
                     frameLayout2.setRotation(180.0f);

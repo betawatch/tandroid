@@ -1,30 +1,66 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gb0 implements e2.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class gb0 extends z81 {
+    public final /* synthetic */ gc0 U;
 
-    public /* synthetic */ gb0(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gb0(gc0 gc0Var, Context context, cc0 cc0Var) {
+        super(context, cc0Var);
+        this.U = gc0Var;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                xb0 xb0Var = (xb0) this.b;
-                xb0Var.n.y(xb0Var.f.U((View) obj));
+    @Override // org.telegram.ui.Components.z81, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int i10 = 0;
+        while (true) {
+            View[] viewArr = this.U.f.e;
+            if (i10 >= viewArr.length) {
+                z10 = false;
                 break;
-            default:
-                s61 s61Var = (s61) this.b;
-                s61Var.Y2.Q(s61Var.U((View) obj), s61Var.c3);
-                break;
+            }
+            View view = viewArr[i10];
+            if (view != null) {
+                ac0 ac0Var = (ac0) view;
+                if (ac0Var.a == 0) {
+                    z10 = ac0Var.e.i;
+                    break;
+                }
+            }
+            i10++;
+        }
+        if (z10) {
+            return false;
+        }
+        return B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.z81
+    public final void u() {
+        View view = this.e[0];
+        if (view instanceof ac0) {
+            ((ac0) view).e.W();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.z81
+    public final void w(boolean z10) {
+        gc0 gc0Var = this.U;
+        gc0Var.e.setSelectedTab(gc0Var.f.getPositionAnimated());
+        View[] viewArr = this.e;
+        View view = viewArr[0];
+        if (view instanceof ac0) {
+            ((ac0) view).e.H();
+        }
+        View view2 = viewArr[1];
+        if (view2 instanceof ac0) {
+            ((ac0) view2).e.H();
         }
     }
 }

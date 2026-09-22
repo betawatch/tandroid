@@ -5,27 +5,28 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import ki.e0;
 import m1.j;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.so0;
-import org.telegram.ui.Components.t81;
-import org.telegram.ui.Components.u81;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.uo0;
 import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.LaunchActivity;
 import s4.c1;
 import s4.p0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class g extends ul0 {
+public final class g extends xl0 {
     public final /* synthetic */ int c = 0;
     public final Context d;
     public final /* synthetic */ FrameLayout e;
@@ -35,7 +36,7 @@ public final class g extends ul0 {
         this.d = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(c1 c1Var) {
         switch (this.c) {
             case 0:
@@ -52,7 +53,7 @@ public final class g extends ul0 {
             case 0:
                 return ((i) this.e).E.size();
             default:
-                return ((w81) this.e).h.size();
+                return ((y81) this.e).h.size();
         }
     }
 
@@ -60,7 +61,7 @@ public final class g extends ul0 {
     public long i(int i10) {
         switch (this.c) {
             case 1:
-                return ((t81) ((w81) this.e).h.get(i10)).a;
+                return ((v81) ((y81) this.e).h.get(i10)).a;
             default:
                 return super.i(i10);
         }
@@ -78,7 +79,7 @@ public final class g extends ul0 {
 
     @Override // s4.h0
     public final void v(c1 c1Var, int i10) {
-        v81 v81Var;
+        x81 x81Var;
         switch (this.c) {
             case 0:
                 View view = c1Var.a;
@@ -109,14 +110,14 @@ public final class g extends ul0 {
                 }
                 break;
             default:
-                u81 u81Var = (u81) c1Var.a;
-                w81 w81Var = (w81) this.e;
-                t81 t81Var = (t81) w81Var.h.get(i10);
-                u81Var.a = t81Var;
-                u81Var.setContentDescription(t81Var.b);
-                u81Var.setAlpha(1.0f);
-                u81Var.requestLayout();
-                u81Var.setReordering(w81Var.m0 && (v81Var = w81Var.y) != null && ((l.d) v81Var).H(i10));
+                w81 w81Var = (w81) c1Var.a;
+                y81 y81Var = (y81) this.e;
+                v81 v81Var = (v81) y81Var.h.get(i10);
+                w81Var.a = v81Var;
+                w81Var.setContentDescription(v81Var.b);
+                w81Var.setAlpha(1.0f);
+                w81Var.requestLayout();
+                w81Var.setReordering(y81Var.m0 && (x81Var = y81Var.y) != null && ((e0) x81Var).d(i10));
                 break;
         }
     }
@@ -138,23 +139,23 @@ public final class g extends ul0 {
                     TextPaint textPaint = new TextPaint(1);
                     hVar.h = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-                    so0 so0Var = new so0(context);
-                    hVar.a = so0Var;
-                    so0Var.setReportChanges(true);
-                    so0Var.setDelegate(new ka.c(hVar, 3));
-                    so0Var.setImportantForAccessibility(2);
-                    hVar.addView(so0Var, y5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    uo0 uo0Var = new uo0(context);
+                    hVar.a = uo0Var;
+                    uo0Var.setReportChanges(true);
+                    uo0Var.setDelegate(new k2.e(hVar, 4));
+                    uo0Var.setImportantForAccessibility(2);
+                    hVar.addView(uo0Var, y5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = hVar;
                 }
                 frameLayout.setLayoutParams(new p0(-1, -2));
-                return new fl0(frameLayout);
+                return new il0(frameLayout);
             default:
-                return new fl0(new u81((w81) this.e, this.d));
+                return new il0(new w81((y81) this.e, this.d));
         }
     }
 
-    public g(w81 w81Var, Context context) {
-        this.e = w81Var;
+    public g(y81 y81Var, Context context) {
+        this.e = y81Var;
         this.d = context;
     }
 }

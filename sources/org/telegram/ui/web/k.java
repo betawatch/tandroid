@@ -32,10 +32,10 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.mb1;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -88,14 +88,14 @@ public final class k extends FrameLayout {
         org.telegram.ui.Cells.z Z = j6.Z(this.G, this.I, 15, 15);
         this.c = Z;
         frameLayout2.setBackground(Z);
-        b6.b(frameLayout2, 0.04f, 1.25f);
+        a6.b(frameLayout2, 0.04f, 1.25f);
         frameLayout.addView(frameLayout2, y5.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
         frameLayout2.addView(imageView, y5.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        b6.a(imageView2);
+        a6.a(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
         org.telegram.ui.Cells.z Z2 = j6.Z(0, 0, 6, 6);

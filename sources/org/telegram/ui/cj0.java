@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class cj0 extends org.telegram.ui.Cells.u1 {
     public int Ge;
@@ -43,7 +43,7 @@ public final class cj0 extends org.telegram.ui.Cells.u1 {
     }
 
     @Override // org.telegram.ui.Cells.u1
-    public final vh.g w3() {
-        return vh.g.d(1, this, this.Je.F);
+    public final vh.f w3() {
+        return vh.f.d(1, this, this.Je.F);
     }
 }

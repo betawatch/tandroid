@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.f, x2.n, org.telegram.ui.oy {
     public final /* synthetic */ int a;
@@ -50,14 +50,14 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
         u50 u50Var = (u50) this.b;
         p50 p50Var = (p50) this.c;
         VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.d;
-        a60 a60Var = u50Var.H0;
+        c60 c60Var = u50Var.H0;
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, u50Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
         if (p50Var != null) {
             photoEntry.ttl = p50Var.c;
             photoEntry.effectId = p50Var.d;
         }
-        a60Var.f.q(photoEntry, videoEditedInfo, z10 || p50Var == null || p50Var.a, i10 != 0 ? i10 : p50Var != null ? p50Var.b : 0, i11 != 0 ? i11 : 0, false, p50Var != null ? p50Var.e : 0L);
-        a60Var.q(false, false);
+        c60Var.n.q(photoEntry, videoEditedInfo, z10 || p50Var == null || p50Var.a, i10 != 0 ? i10 : p50Var != null ? p50Var.b : 0, i11 != 0 ? i11 : 0, false, p50Var != null ? p50Var.e : 0L);
+        c60Var.q(false, false);
     }
 
     @Override // org.telegram.ui.oy
@@ -89,7 +89,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
         switch (i10) {
             case 7:
                 l5.h hVar2 = (l5.h) obj3;
-                l5.l lVar = hVar2.c;
+                l5.m mVar = hVar2.c;
                 String str = hVar2.a;
                 l5.i iVar = (l5.i) obj2;
                 SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
@@ -114,14 +114,14 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
                     insert = sQLiteDatabase.insert("transport_contexts", null, contentValues);
                 }
                 int i17 = aVar.e;
-                byte[] bArr2 = lVar.b;
+                byte[] bArr2 = mVar.b;
                 boolean z10 = bArr2.length <= i17;
                 ContentValues contentValues2 = new ContentValues();
                 contentValues2.put("context_id", Long.valueOf(insert));
                 contentValues2.put("transport_name", str);
                 contentValues2.put("timestamp_ms", Long.valueOf(hVar2.d));
                 contentValues2.put("uptime_ms", Long.valueOf(hVar2.e));
-                contentValues2.put("payload_encoding", lVar.a.a);
+                contentValues2.put("payload_encoding", mVar.a.a);
                 contentValues2.put("code", hVar2.b);
                 contentValues2.put("num_attempts", (Integer) 0);
                 contentValues2.put("inline", Boolean.valueOf(z10));
@@ -164,7 +164,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
                     nVar.e = Long.valueOf(cursor2.getLong(3));
                     if (z11) {
                         String string2 = cursor2.getString(4);
-                        nVar.c = new l5.l(string2 == null ? s5.h.f : new i5.c(string2), cursor2.getBlob(5));
+                        nVar.c = new l5.m(string2 == null ? s5.h.f : new i5.c(string2), cursor2.getBlob(5));
                     } else {
                         String string3 = cursor2.getString(4);
                         i5.c cVar3 = string3 == null ? s5.h.f : new i5.c(string3);
@@ -197,7 +197,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
                                 }
                             }
                             query.close();
-                            nVar.c = new l5.l(cVar3, bArr3);
+                            nVar.c = new l5.m(cVar3, bArr3);
                         } catch (Throwable th3) {
                             th = th3;
                             cursor = query;
@@ -244,7 +244,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
                         } else if (i22 == 6) {
                             cVar4 = o5.c.n;
                         } else {
-                            w7.h6.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
+                            w7.g6.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
                         }
                     }
                     cVar = cVar4;
@@ -303,7 +303,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        i21 i21Var = (i21) this.b;
+        k21 k21Var = (k21) this.b;
         lp lpVar = (lp) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -311,12 +311,12 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
             return;
         }
         Drawable drawable = lpVar.b;
-        if (drawable instanceof kc0) {
-            kc0 kc0Var = (kc0) drawable;
+        if (drawable instanceof nc0) {
+            nc0 nc0Var = (nc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            kc0Var.t(i21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            kc0Var.u(i21Var.L);
-            i21Var.invalidate();
+            nc0Var.t(k21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            nc0Var.u(k21Var.L);
+            k21Var.invalidate();
         }
     }
 
@@ -326,7 +326,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
     }
 
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         q5.a aVar = (q5.a) this.b;
         l5.i iVar = (l5.i) this.c;
         l5.h hVar = (l5.h) this.d;
@@ -335,7 +335,7 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
         i5.d dVar = iVar.c;
         String str = hVar.a;
         String str2 = iVar.a;
-        String c10 = w7.h6.c("SQLiteEventStore");
+        String c10 = w7.g6.c("SQLiteEventStore");
         if (Log.isLoggable(c10, 3)) {
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
@@ -348,12 +348,12 @@ public final /* synthetic */ class r50 implements c5, org.telegram.ui.ActionBar.
     public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                jv0 jv0Var = (jv0) this.b;
+                lv0 lv0Var = (lv0) this.b;
                 ai.t8 t8Var = (ai.t8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 t8Var.F(arrayList);
-                xc.a0(jv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                jv0Var.L(false);
+                xc.a0(lv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                lv0Var.L(false);
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) this.b;

@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -146,7 +146,7 @@ public final class u4 extends FrameLayout {
                     ColorFilter colorFilter = G.getColorFilter();
                     G.setColorFilter((ColorMatrixColorFilter) this.f);
                     md1 md1Var = xd1Var.x0;
-                    if (md1Var != null && (md1Var.getBackground() instanceof org.telegram.ui.Components.kc0) && xd1Var.l1 < 0.0f) {
+                    if (md1Var != null && (md1Var.getBackground() instanceof org.telegram.ui.Components.nc0) && xd1Var.l1 < 0.0f) {
                         f7 = 0.33f;
                     }
                     int alpha = G.getAlpha();

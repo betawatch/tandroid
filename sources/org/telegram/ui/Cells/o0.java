@@ -28,20 +28,20 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.zm0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean A;
     public boolean B;
     public float C;
     public VelocityTracker D;
-    public final zm0 E;
+    public final bn0 E;
     public n0 F;
     public oa G;
     public final u1 a;
@@ -55,9 +55,9 @@ public final class o0 {
     public int j;
     public float o;
     public float p;
-    public o90 s;
+    public r90 s;
     public final org.telegram.ui.Components.d6 u;
-    public u01 v;
+    public w01 v;
     public final yc y;
     public final TextPaint f = new TextPaint(1);
     public final Paint k = new Paint(1);
@@ -73,7 +73,7 @@ public final class o0 {
 
     public o0(u1 u1Var) {
         this.a = u1Var;
-        this.E = new zm0(u1Var.getContext(), null);
+        this.E = new bn0(u1Var.getContext(), null);
         this.y = new yc(u1Var);
         this.u = new org.telegram.ui.Components.d6(u1Var, 350L, qr.h);
     }
@@ -240,9 +240,9 @@ public final class o0 {
     }
 
     public final void b() {
-        zm0 zm0Var = this.E;
-        if (zm0Var.b()) {
-            float f7 = zm0Var.j;
+        bn0 bn0Var = this.E;
+        if (bn0Var.b()) {
+            float f7 = bn0Var.j;
             this.o = f7;
             this.o = Utilities.clamp(f7, this.p - (this.w.width() - AndroidUtilities.dp(14.0f)), 0.0f);
             this.a.a3();
@@ -347,10 +347,10 @@ public final class o0 {
             paint.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33f), i0.a.k(-16777216, (int) (27.0f * clamp)));
             canvas.drawPath(path, paint);
             canvas.clipPath(path);
-            u01 u01Var = this.v;
-            if (u01Var != null) {
+            w01 w01Var = this.v;
+            if (w01Var != null) {
                 arrayList = arrayList2;
-                u01Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, u1Var.Id), canvas);
+                w01Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, u1Var.Id), canvas);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -371,7 +371,7 @@ public final class o0 {
                     float f25 = (1.0f - e) * clamp;
                     org.telegram.ui.Components.g9[] g9VarArr = n0Var.b;
                     float f26 = e;
-                    u01 u01Var2 = n0Var.k;
+                    w01 w01Var2 = n0Var.k;
                     float f27 = dp2;
                     Paint paint2 = n0Var.j;
                     canvas2.save();
@@ -411,9 +411,9 @@ public final class o0 {
                     int i13 = max;
                     RectF rectF6 = rectF3;
                     ArrayList arrayList4 = arrayList;
-                    if (u01Var2 != null) {
-                        u01Var2.p = i10 - AndroidUtilities.dp(32.0f);
-                        float l4 = u01Var2.l() + AndroidUtilities.dp(n0Var.h != null ? 17.0f : 8.0f);
+                    if (w01Var2 != null) {
+                        w01Var2.p = i10 - AndroidUtilities.dp(32.0f);
+                        float l4 = w01Var2.l() + AndroidUtilities.dp(n0Var.h != null ? 17.0f : 8.0f);
                         float dp5 = AndroidUtilities.dp(1.0f) + AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(10.0f);
                         AndroidUtilities.rectTmp.set((f30 - l4) / f13, dp5 - AndroidUtilities.dp(14.33f), (f30 + l4) / f13, dp5);
                         boolean z10 = n0Var.m;
@@ -511,16 +511,16 @@ public final class o0 {
                     f13 = 2.0f;
                 }
                 if (this.s == null) {
-                    o90 o90Var = new o90();
-                    this.s = o90Var;
-                    o90Var.x = path2;
-                    o90Var.C = false;
+                    r90 r90Var = new r90();
+                    this.s = r90Var;
+                    r90Var.x = path2;
+                    r90Var.C = false;
                 }
                 int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, u1Var.Id);
                 this.s.f(org.telegram.ui.ActionBar.j6.l1(0.05f, v02), org.telegram.ui.ActionBar.j6.l1(0.15f, v02), org.telegram.ui.ActionBar.j6.l1(0.1f, v02), org.telegram.ui.ActionBar.j6.l1(0.3f, v02));
-                o90 o90Var2 = this.s;
-                o90Var2.t = 1.5f;
-                o90Var2.setAlpha((int) (f33 * 255.0f));
+                r90 r90Var2 = this.s;
+                r90Var2.t = 1.5f;
+                r90Var2.setAlpha((int) (f33 * 255.0f));
                 canvas2.save();
                 rectF = rectF8;
                 canvas2.translate(0.0f, rectF.bottom - AndroidUtilities.dp(99.0f));
@@ -631,9 +631,9 @@ public final class o0 {
             }
         }
         if (this.v == null) {
-            u01 u01Var = new u01(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
-            u01Var.o = true;
-            this.v = u01Var;
+            w01 w01Var = new w01(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
+            w01Var.o = true;
+            this.v = w01Var;
         }
         if (d()) {
             u1Var.s0 = AndroidUtilities.dp(144.0f) + u1Var.s0;

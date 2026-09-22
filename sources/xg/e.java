@@ -10,8 +10,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.y70;
 import xh.g2;
 import xh.m;
 import xh.o2;
@@ -22,7 +22,7 @@ import yh.g5;
 import yh.m7;
 import yh.x4;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,11 +64,11 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 break;
             case 5:
                 o2 o2Var = (o2) obj3;
-                ((v70) obj2).u();
-                yr0 yr0Var = o2Var.a;
+                ((y70) obj2).u();
+                bs0 bs0Var = o2Var.a;
                 g2 g2Var = new g2(o2Var, (TL_stars.SavedStarGift) obj, i12);
                 HashMap hashMap = s2.T;
-                yr0Var.h(null, g2Var);
+                bs0Var.h(null, g2Var);
                 break;
             case 6:
                 Context context = (Context) obj2;

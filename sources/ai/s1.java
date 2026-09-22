@@ -35,7 +35,7 @@ import org.telegram.ui.ph;
 import org.telegram.ui.wa0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = obj2;
     }
 
-    /* JADX WARN: Type inference failed for: r1v41, types: [java.lang.Object, n2.l] */
+    /* JADX WARN: Type inference failed for: r1v41, types: [java.lang.Object, n2.k] */
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
@@ -212,8 +212,8 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 16:
-                n2.k kVar = (n2.k) this.c;
-                this.d.a(kVar.a, kVar.b, this.b);
+                n2.j jVar = (n2.j) this.c;
+                this.d.a(jVar.a, jVar.b, this.b);
                 break;
             case 17:
                 ((View) this.d).postOnAnimation(new n8((nh.a) this.c, this.b, 13));
@@ -305,7 +305,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 cmVar.getClass();
                 MessageObject messageObject = w0Var.getMessageObject();
                 lm lmVar = cmVar.a;
-                lmVar.Q.F(i30, messageObject.getId(), messageObject.getDialogId() == lmVar.Q.L6 ? 1 : 0, 0, true, true);
+                lmVar.Q.E(i30, messageObject.getId(), messageObject.getDialogId() == lmVar.Q.L6 ? 1 : 0, 0, true, true);
                 break;
         }
     }

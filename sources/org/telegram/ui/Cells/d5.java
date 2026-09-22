@@ -6,20 +6,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.r81;
-import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.to0;
 import org.telegram.ui.iu;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class d5 implements ro0 {
+public final class d5 implements to0 {
     public final /* synthetic */ iu a;
 
     public d5(iu iuVar) {
         this.a = iuVar;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final void X(float f7, boolean z10) {
         float e;
         int i10;
@@ -57,14 +57,14 @@ public final class d5 implements ro0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new r81(iuVar, 15));
+                animatorSetArr[0].addListener(new t81(iuVar, 15));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
         iu iuVar = this.a;
@@ -74,12 +74,12 @@ public final class d5 implements ro0 {
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final /* synthetic */ int l0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.to0
     public final void B() {
     }
 }

@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class zv extends ViewGroup {
     public Boolean E;
@@ -33,7 +33,7 @@ public class zv extends ViewGroup {
     public boolean b;
     public final boolean c;
     public final v9 d;
-    public final hj0 e;
+    public final kj0 e;
     public final rg.b1 f;
     public final boolean h;
     public final boolean n;
@@ -53,12 +53,12 @@ public class zv extends ViewGroup {
         this.n = false;
         setBackground(org.telegram.ui.ActionBar.j6.M(dwVar.k(), 0, 0));
         if (Build.VERSION.SDK_INT >= 23) {
-            hj0 hj0Var = new hj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
-            this.e = hj0Var;
-            hj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-            hj0Var.R(this);
-            hj0Var.J(true);
-            hj0Var.start();
+            kj0 kj0Var = new kj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
+            this.e = kj0Var;
+            kj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+            kj0Var.R(this);
+            kj0Var.J(true);
+            kj0Var.start();
         } else {
             v9 v9Var = new v9(context);
             this.d = v9Var;
@@ -81,9 +81,9 @@ public class zv extends ViewGroup {
             v9Var.setColorFilter(porterDuffColorFilter);
             v9Var.invalidate();
         }
-        hj0 hj0Var = this.e;
-        if (hj0Var != null) {
-            hj0Var.setColorFilter(porterDuffColorFilter);
+        kj0 kj0Var = this.e;
+        if (kj0Var != null) {
+            kj0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -187,11 +187,11 @@ public class zv extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        hj0 hj0Var = this.e;
-        if (hj0Var == null || !this.y) {
+        kj0 kj0Var = this.e;
+        if (kj0Var == null || !this.y) {
             return;
         }
-        hj0Var.draw(canvas);
+        kj0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup
@@ -253,7 +253,7 @@ public class zv extends ViewGroup {
             this.I = ofFloat;
             ofFloat.addUpdateListener(new j6(this, 19));
             this.I.addListener(new ba(7, this, z10));
-            this.I.setDuration(zg.e0.d() ? 0L : 350L);
+            this.I.setDuration(zg.f0.d() ? 0L : 350L);
             this.I.setInterpolator(qr.h);
             this.I.start();
         }
@@ -269,7 +269,7 @@ public class zv extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (zg.e0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.invalidate();
@@ -442,7 +442,7 @@ public class zv extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (zg.e0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

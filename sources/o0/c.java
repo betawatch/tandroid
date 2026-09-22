@@ -1,142 +1,27 @@
 package o0;
 
-import a0.k;
-import android.content.ContentUris;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ProviderInfo;
-import android.content.pm.Signature;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Trace;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import j$.util.Objects;
 import java.util.List;
-import w7.b8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final k a = new k(2);
-    public static final a4.e b = new a4.e(21);
+public final class c {
+    public String a;
+    public String b;
+    public List c;
 
-    public static j4.f a(Context context, List list) {
-        b8.a("FontProvider.getFontFamilyResult");
-        try {
-            ArrayList arrayList = new ArrayList();
-            for (int i10 = 0; i10 < list.size(); i10++) {
-                d dVar = (d) list.get(i10);
-                ProviderInfo b10 = b(context.getPackageManager(), dVar, context.getResources());
-                if (b10 == null) {
-                    return new j4.f();
-                }
-                arrayList.add(c(context, dVar, b10.authority));
-            }
-            return new j4.f(arrayList);
-        } finally {
-            Trace.endSection();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return Objects.equals(this.a, cVar.a) && Objects.equals(this.b, cVar.b) && Objects.equals(this.c, cVar.c);
     }
 
-    public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
-        a4.e eVar = b;
-        k kVar = a;
-        b8.a("FontProvider.getProvider");
-        try {
-            List list = dVar.d;
-            String str = dVar.a;
-            String str2 = dVar.b;
-            if (list == null) {
-                list = h0.b.h(resources, 0);
-            }
-            b bVar = new b();
-            bVar.a = str;
-            bVar.b = str2;
-            bVar.c = list;
-            ProviderInfo providerInfo = (ProviderInfo) kVar.a(bVar);
-            if (providerInfo != null) {
-                return providerInfo;
-            }
-            ProviderInfo resolveContentProvider = packageManager.resolveContentProvider(str, 0);
-            if (resolveContentProvider == null) {
-                throw new PackageManager.NameNotFoundException("No package found for authority: " + str);
-            }
-            if (!resolveContentProvider.packageName.equals(str2)) {
-                throw new PackageManager.NameNotFoundException("Found content provider " + str + ", but package was not " + str2);
-            }
-            Signature[] signatureArr = packageManager.getPackageInfo(resolveContentProvider.packageName, 64).signatures;
-            ArrayList arrayList = new ArrayList();
-            for (Signature signature : signatureArr) {
-                arrayList.add(signature.toByteArray());
-            }
-            Collections.sort(arrayList, eVar);
-            for (int i10 = 0; i10 < list.size(); i10++) {
-                ArrayList arrayList2 = new ArrayList((Collection) list.get(i10));
-                Collections.sort(arrayList2, eVar);
-                if (arrayList.size() == arrayList2.size()) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (!Arrays.equals((byte[]) arrayList.get(i11), (byte[]) arrayList2.get(i11))) {
-                            break;
-                        }
-                    }
-                    kVar.b(bVar, resolveContentProvider);
-                    return resolveContentProvider;
-                }
-            }
-            Trace.endSection();
-            return null;
-        } finally {
-            Trace.endSection();
-        }
-    }
-
-    public static h[] c(Context context, d dVar, String str) {
-        b8.a("FontProvider.query");
-        try {
-            ArrayList arrayList = new ArrayList();
-            Uri build = new Uri.Builder().scheme("content").authority(str).build();
-            Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a eVar = Build.VERSION.SDK_INT < 24 ? new n2.e(context, build) : new ka.c(context, build);
-            Cursor cursor = null;
-            try {
-                String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                b8.a("ContentQueryWrapper.query");
-                try {
-                    cursor = eVar.q(build, strArr, new String[]{dVar.c});
-                    Trace.endSection();
-                    if (cursor != null && cursor.getCount() > 0) {
-                        int columnIndex = cursor.getColumnIndex("result_code");
-                        ArrayList arrayList2 = new ArrayList();
-                        int columnIndex2 = cursor.getColumnIndex("_id");
-                        int columnIndex3 = cursor.getColumnIndex("file_id");
-                        int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
-                        int columnIndex5 = cursor.getColumnIndex("font_weight");
-                        int columnIndex6 = cursor.getColumnIndex("font_italic");
-                        while (cursor.moveToNext()) {
-                            int i10 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                            arrayList2.add(new h(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
-                        }
-                        arrayList = arrayList2;
-                    }
-                    if (cursor != null) {
-                        cursor.close();
-                    }
-                    eVar.close();
-                    return (h[]) arrayList.toArray(new h[0]);
-                } finally {
-                }
-            } catch (Throwable th2) {
-                if (cursor != null) {
-                    cursor.close();
-                }
-                eVar.close();
-                throw th2;
-            }
-        } finally {
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c);
     }
 }

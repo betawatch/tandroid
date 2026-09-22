@@ -16,7 +16,7 @@ import org.telegram.ui.Components.y5;
 import org.telegram.ui.j71;
 import yh.s5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class p extends j71 {
     public boolean d2;
@@ -61,7 +61,7 @@ public final class p extends j71 {
         try {
             int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
             SpannableString spannableString = new SpannableString("b");
-            y5 e = q0.e(document, l4, qVar.n.getFontMetricsInt());
+            y5 e = r0.e(document, l4, qVar.n.getFontMetricsInt());
             e.cacheType = p5.g();
             e.setAdded();
             arrayList.add(w7.q.b(editTextSelectionEnd, 0, arrayList.size()), l4);

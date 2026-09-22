@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class v9 extends org.telegram.ui.ActionBar.n2 {
     public final PointF[] E;
@@ -61,7 +61,7 @@ public class v9 extends org.telegram.ui.ActionBar.n2 {
     public String Q;
     public final int R;
     public boolean S;
-    public a4.m T;
+    public android.support.v4.media.c T;
     public r8.n U;
     public final int V;
     public ValueAnimator W;
@@ -384,7 +384,7 @@ public class v9 extends org.telegram.ui.ActionBar.n2 {
             this.actionBar.setTitle(LocaleController.getString(R.string.AuthAnotherClientScan));
         }
         Paint paint2 = new Paint(1);
-        paint2.setPathEffect(org.telegram.ui.Components.e90.c());
+        paint2.setPathEffect(org.telegram.ui.Components.h90.c());
         paint2.setColor(i0.a.k(-1, 40));
         t9 t9Var = new t9(context, paint2);
         this.a = t9Var;
@@ -425,8 +425,8 @@ public class v9 extends org.telegram.ui.ActionBar.n2 {
                     this.a.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) " ");
                     spannableStringBuilder.replace(indexOf, i14, (CharSequence) " ");
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.a61(strArr[i12], 0), i14, indexOf2, 33);
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.t51(AndroidUtilities.bold()), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.c61(strArr[i12], 0), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.v51(AndroidUtilities.bold()), i14, indexOf2, 33);
                     i12++;
                 }
                 this.a.setLinkTextColor(-1);
@@ -640,9 +640,9 @@ public class v9 extends org.telegram.ui.ActionBar.n2 {
                     i14 = size.getHeight();
                     dVar = fVar;
                 }
-                aa.a p02 = this.T.p0(new of.b(new dc.f(dVar), 10));
-                cc.j[] jVarArr = (cc.j[]) p02.c;
-                String str3 = (String) p02.b;
+                aa.a l02 = this.T.l0(new of.b(new dc.f(dVar), 10));
+                cc.j[] jVarArr = (cc.j[]) l02.c;
+                String str3 = (String) l02.b;
                 if (jVarArr == null || jVarArr.length == 0) {
                     hVar2 = null;
                     r52 = 0;

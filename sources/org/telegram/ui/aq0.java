@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class aq0 extends FrameLayout {
     public final RectF E;
@@ -25,7 +25,7 @@ public class aq0 extends FrameLayout {
     public final boolean c;
     public final ImageReceiver d;
     public final org.telegram.ui.Components.g9 e;
-    public final il f;
+    public final jl f;
     public final org.telegram.ui.ActionBar.j5 h;
     public boolean n;
     public final org.telegram.ui.Components.n5 r;
@@ -52,17 +52,17 @@ public class aq0 extends FrameLayout {
         long j10 = 0;
         boolean z10 = j3 < 0;
         this.c = z10;
-        il ilVar = new il(this, context, 2);
-        this.f = ilVar;
-        this.r = new org.telegram.ui.Components.n5(AndroidUtilities.dp(17.0f), ilVar);
-        this.s = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), ilVar);
-        ilVar.setLeftDrawableOutside(true);
-        ilVar.setRightDrawableOutside(true);
-        ilVar.setTextColor(-1);
-        ilVar.setTextSize(20);
-        ilVar.setTypeface(AndroidUtilities.bold());
-        ilVar.setWidthWrapContent(true);
-        addView(ilVar, w7.y5.d(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.33f));
+        jl jlVar = new jl(this, context, 2);
+        this.f = jlVar;
+        this.r = new org.telegram.ui.Components.n5(AndroidUtilities.dp(17.0f), jlVar);
+        this.s = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), jlVar);
+        jlVar.setLeftDrawableOutside(true);
+        jlVar.setRightDrawableOutside(true);
+        jlVar.setTextColor(-1);
+        jlVar.setTextSize(20);
+        jlVar.setTypeface(AndroidUtilities.bold());
+        jlVar.setWidthWrapContent(true);
+        addView(jlVar, w7.y5.d(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.33f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.h = j5Var;
         j5Var.setTextSize(14);
@@ -161,7 +161,7 @@ public class aq0 extends FrameLayout {
         this.y = peerColor;
         org.telegram.ui.ActionBar.f6 f6Var = this.a;
         boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
-        il ilVar = this.f;
+        jl jlVar = this.f;
         org.telegram.ui.Components.n5 n5Var = this.r;
         org.telegram.ui.Components.n5 n5Var2 = this.s;
         org.telegram.ui.ActionBar.j5 j5Var = this.h;
@@ -182,7 +182,7 @@ public class aq0 extends FrameLayout {
             } else {
                 j5Var.setTextColor(d);
             }
-            ilVar.setTextColor(-1);
+            jlVar.setTextColor(-1);
         } else {
             int i12 = org.telegram.ui.ActionBar.j6.s8;
             if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v0(i12, f6Var)) > 0.8f) {
@@ -196,7 +196,7 @@ public class aq0 extends FrameLayout {
             n5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
             n5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(i13, f6Var)));
             j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B8, f6Var));
-            ilVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, f6Var));
+            jlVar.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, f6Var));
         }
         this.w.c(peerColor, z10);
         invalidate();

@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ve extends ah {
     public final Rect x;
@@ -31,7 +31,7 @@ public final class ve extends ah {
         Rect rect = this.x;
         rect.set(0, 0, measuredWidth, measuredHeight);
         rect.inset(AndroidUtilities.dp(7.5f), AndroidUtilities.dp(7.5f));
-        Drawable drawable = getCurrentState() == yg.b ? chatActivityEnterView.N3 : chatActivityEnterView.M3;
+        Drawable drawable = getCurrentState() == yg.b ? chatActivityEnterView.O3 : chatActivityEnterView.N3;
         drawable.setBounds(rect);
         drawable.draw(canvas);
     }

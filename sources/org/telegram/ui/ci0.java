@@ -6,17 +6,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class ci0 extends FrameLayout {
     public TLRPC.User a;
-    public org.telegram.ui.Components.k90 b;
+    public org.telegram.ui.Components.n90 b;
     public org.telegram.ui.Components.t00 c;
     public boolean d;
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        org.telegram.ui.Components.k90 k90Var = this.b;
+        org.telegram.ui.Components.n90 n90Var = this.b;
         org.telegram.ui.Components.t00 t00Var = this.c;
         View view = (View) getParent();
         if (view != null && view.getWidth() > 0) {
@@ -25,7 +25,7 @@ public abstract class ci0 extends FrameLayout {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30);
         this.d = true;
         boolean z10 = t00Var.getVisibility() == 0;
-        k90Var.setVisibility(8);
+        n90Var.setVisibility(8);
         if (z10) {
             t00Var.setVisibility(8);
         }
@@ -34,8 +34,8 @@ public abstract class ci0 extends FrameLayout {
             t00Var.getLayoutParams().width = getMeasuredWidth();
             t00Var.setVisibility(0);
         }
-        k90Var.setVisibility(0);
-        k90Var.getLayoutParams().width = getMeasuredWidth() - AndroidUtilities.dp(24.0f);
+        n90Var.setVisibility(0);
+        n90Var.getLayoutParams().width = getMeasuredWidth() - AndroidUtilities.dp(24.0f);
         this.d = false;
         super.onMeasure(i10, makeMeasureSpec);
     }

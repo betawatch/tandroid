@@ -27,7 +27,7 @@ import q3.m;
 import v7.q7;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -80,7 +80,7 @@ public final class d implements o {
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
     
-        if (r9.j() > (r2 - 4)) goto L12;
+        if (r9.i() > (r2 - 4)) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -93,7 +93,7 @@ public final class d implements o {
             }
         }
         try {
-            return !pVar.i(this.c.a, 0, 4, true);
+            return !pVar.h(this.c.a, 0, 4, true);
         } catch (EOFException unused) {
             return true;
         }
@@ -148,19 +148,19 @@ public final class d implements o {
                         pVar.a(10, w10, bArr);
                         p0Var = new q3.i(null).c(i14, bArr);
                     } else {
-                        pVar.l(w10);
+                        pVar.j(w10);
                     }
                     i13 += i14;
                 } catch (EOFException unused) {
                 }
             }
             pVar.p();
-            pVar.l(i13);
+            pVar.j(i13);
             this.l = p0Var;
             if (p0Var != null) {
                 this.e.b(p0Var);
             }
-            i11 = (int) pVar.j();
+            i11 = (int) pVar.i();
             if (!z10) {
                 pVar.q(i11);
             }
@@ -186,7 +186,7 @@ public final class d implements o {
                         this.d.a(j3);
                         i10 = j3;
                     }
-                    pVar.l(h - 4);
+                    pVar.j(h - 4);
                 } else {
                     int i17 = i16 + 1;
                     if (i16 == i12) {
@@ -198,7 +198,7 @@ public final class d implements o {
                     }
                     if (z10) {
                         pVar.p();
-                        pVar.l(i11 + i17);
+                        pVar.j(i11 + i17);
                     } else {
                         pVar.q(1);
                     }

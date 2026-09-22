@@ -10,15 +10,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bt0 extends org.telegram.ui.Components.ld {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bt0(PhotoViewer photoViewer, Context context, cv0 cv0Var, org.telegram.ui.Components.aw0 aw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ia iaVar, jr0 jr0Var) {
-        super(context, cv0Var, aw0Var, frameLayout, f6Var, iaVar, jr0Var);
+    public bt0(PhotoViewer photoViewer, Context context, cv0 cv0Var, org.telegram.ui.Components.cw0 cw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ia iaVar, jr0 jr0Var) {
+        super(context, cv0Var, cw0Var, frameLayout, f6Var, iaVar, jr0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }
@@ -108,8 +108,8 @@ public final class bt0 extends org.telegram.ui.Components.ld {
         org.telegram.ui.ActionBar.k0 k0Var = photoViewer.e1;
         float f10 = 1.0f - f7;
         k0Var.setAlpha((k0Var.getTag() != null ? 1 : 0) * f10);
-        org.telegram.ui.Components.m90 m90Var = photoViewer.f1;
-        m90Var.setAlpha((m90Var.getTag() != null ? 1 : 0) * f10);
+        org.telegram.ui.Components.p90 p90Var = photoViewer.f1;
+        p90Var.setAlpha((p90Var.getTag() != null ? 1 : 0) * f10);
         FrameLayout frameLayout = photoViewer.R7;
         frameLayout.setAlpha(f10 * (frameLayout.getTag() != null ? 1 : 0));
     }

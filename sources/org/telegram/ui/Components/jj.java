@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jj extends ni {
     public ai.w0 n;
@@ -20,7 +20,7 @@ public final class jj extends ni {
     public q0.a x;
 
     @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
+    public final void D(ni niVar) {
         vi viVar = this.b;
         try {
             viVar.X0.getTitleTextView().setBuildFullLayout(true);
@@ -31,7 +31,7 @@ public final class jj extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void G() {
+    public final void F() {
         this.n.y0(0);
     }
 
@@ -43,10 +43,10 @@ public final class jj extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        fl0 fl0Var = (fl0) w0Var.H(childAt);
+        il0 il0Var = (il0) w0Var.H(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || fl0Var == null || fl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || il0Var == null || il0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);

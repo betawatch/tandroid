@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -46,10 +46,10 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                s61 s61Var = (s61) this.b;
+                u61 u61Var = (u61) this.b;
                 View view2 = (View) obj;
-                s61Var.getClass();
-                return view2.getParent() != s61Var ? Boolean.FALSE : Boolean.valueOf(!k61.K(s61Var.U(view2).f));
+                u61Var.getClass();
+                return view2.getParent() != u61Var ? Boolean.FALSE : Boolean.valueOf(!m61.K(u61Var.U(view2).f));
         }
     }
 }

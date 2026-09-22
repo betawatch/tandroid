@@ -1,23 +1,73 @@
 package ka;
 
-import j$.util.DesugarTimeZone;
-import java.text.SimpleDateFormat;
+import ia.g;
 import java.util.Date;
-import java.util.Locale;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class d implements ia.f {
-    public static final SimpleDateFormat a;
+public final class d implements ja.a {
+    public static final b f;
+    public static final b h;
+    public final HashMap a;
+    public final HashMap b;
+    public final a c;
+    public boolean d;
+    public static final a e = new a(0);
+    public static final c n = new c();
 
+    /* JADX WARN: Type inference failed for: r0v1, types: [ka.b] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [ka.b] */
     static {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
-        a = simpleDateFormat;
-        simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
+        final int i10 = 0;
+        f = new ia.f() { // from class: ka.b
+            @Override // ia.a
+            public final void a(Object obj, Object obj2) {
+                switch (i10) {
+                    case 0:
+                        ((g) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((g) obj2).d(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
+        final int i11 = 1;
+        h = new ia.f() { // from class: ka.b
+            @Override // ia.a
+            public final void a(Object obj, Object obj2) {
+                switch (i11) {
+                    case 0:
+                        ((g) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((g) obj2).d(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
     }
 
-    @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ((ia.g) obj2).b(a.format((Date) obj));
+    public d() {
+        HashMap hashMap = new HashMap();
+        this.a = hashMap;
+        HashMap hashMap2 = new HashMap();
+        this.b = hashMap2;
+        this.c = e;
+        this.d = false;
+        hashMap2.put(String.class, f);
+        hashMap.remove(String.class);
+        hashMap2.put(Boolean.class, h);
+        hashMap.remove(Boolean.class);
+        hashMap2.put(Date.class, n);
+        hashMap.remove(Date.class);
+    }
+
+    @Override // ja.a
+    public final ja.a m(Class cls, ia.d dVar) {
+        this.a.put(cls, dVar);
+        this.b.remove(cls);
+        return this;
     }
 }

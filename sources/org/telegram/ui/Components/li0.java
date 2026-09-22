@@ -1,50 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class li0 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ oi0 b;
+public final class li0 {
+    public Paint a;
+    public Paint b;
+    public float c;
+    public int d;
+    public int e;
+    public float f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public li0(oi0 oi0Var, Activity activity) {
-        super(activity);
-        this.b = oi0Var;
-        this.a = false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        oi0 oi0Var = this.b;
-        cd0 cd0Var = oi0Var.H;
-        cd0 cd0Var2 = oi0Var.G;
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        cd0Var2.setItemCount(i12);
-        cd0Var.setItemCount(i12);
-        cd0Var2.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
-        cd0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
-        this.a = false;
-        int size = View.MeasureSpec.getSize(i10);
-        oi0Var.N = size;
-        if (size != 0) {
-            oi0Var.c(false);
+    public final void a(float f7) {
+        this.c = f7;
+        if (f7 < 0.0f) {
+            this.c = 0.0f;
+        } else if (f7 > 1.0f) {
+            this.c = 1.0f;
         }
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
     }
 }

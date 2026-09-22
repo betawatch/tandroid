@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class rm0 implements RequestDelegate {
     public final /* synthetic */ dn0 a;
@@ -79,7 +79,7 @@ public final class rm0 implements RequestDelegate {
                 if (tL_error2 != null) {
                     dn0 dn0Var2 = dn0Var;
                     if (dn0Var2 != null) {
-                        dn0Var2.c(tL_error2.text, str4);
+                        dn0Var2.b(tL_error2.text, str4);
                     }
                     i11 = ((org.telegram.ui.ActionBar.n2) pn0Var2).currentAccount;
                     org.telegram.ui.Components.d5.f0(i11, tL_error2, pn0Var2, savesecurevalue, str4);

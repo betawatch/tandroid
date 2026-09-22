@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e20 extends og.b {
     public final Context d;
@@ -33,7 +33,7 @@ public final class e20 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 5 || i10 == 1) ? false : true;
@@ -326,15 +326,15 @@ public final class e20 extends og.b {
                     textView2.setEllipsize(truncateAt);
                     textView2.setGravity(LocaleController.isRTL ? 5 : 3);
                     f20Var.addView(textView2, w7.y5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 35.0f, 22.0f, 0.0f));
-                    org.telegram.ui.Components.hi0 hi0Var = new org.telegram.ui.Components.hi0(context);
-                    f20Var.c = hi0Var;
-                    hi0Var.setText(LocaleController.getString(R.string.Add));
-                    hi0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
-                    hi0Var.setProgressColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Nh, false));
+                    org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(context);
+                    f20Var.c = ki0Var;
+                    ki0Var.setText(LocaleController.getString(R.string.Add));
+                    ki0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+                    ki0Var.setProgressColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Nh, false));
                     int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false);
                     org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false);
-                    hi0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{14.0f}, w02));
-                    f20Var.addView(hi0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
+                    ki0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{14.0f}, w02));
+                    f20Var.addView(ki0Var, w7.y5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
                     f20Var.setAddOnClickListener(new tv(i11, this, f20Var));
                     frameLayout = f20Var;
                 } else {
@@ -351,14 +351,14 @@ public final class e20 extends og.b {
             int i13 = R.raw.filters;
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.CreateNewFilterInfo, new Object[0]));
             b20 b20Var = new b20(context);
-            org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-            b20Var.a = kj0Var;
-            kj0Var.f(i13, 90, 90, null);
-            kj0Var.setScaleType(ImageView.ScaleType.CENTER);
-            kj0Var.d();
-            kj0Var.setImportantForAccessibility(2);
-            b20Var.addView(kj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
-            kj0Var.setOnClickListener(new a(b20Var, 27));
+            org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+            b20Var.a = nj0Var;
+            nj0Var.f(i13, 90, 90, null);
+            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+            nj0Var.d();
+            nj0Var.setImportantForAccessibility(2);
+            b20Var.addView(nj0Var, w7.y5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
+            nj0Var.setOnClickListener(new a(b20Var, 27));
             TextView textView3 = new TextView(context);
             textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
             textView3.setTextSize(1, 14.0f);
@@ -367,6 +367,6 @@ public final class e20 extends og.b {
             b20Var.addView(textView3, w7.y5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
             frameLayout = b20Var;
         }
-        return new org.telegram.ui.Components.fl0(frameLayout);
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 }

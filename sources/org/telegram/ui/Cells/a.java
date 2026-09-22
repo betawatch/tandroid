@@ -5,14 +5,14 @@ import android.view.View;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.jq0;
 import org.telegram.ui.lq0;
 import org.telegram.ui.ol0;
 import org.telegram.ui.v10;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((w) obj).toggle();
                 break;
             case 3:
-                kj0 kj0Var = ((y2) obj).f;
-                if (!kj0Var.b()) {
-                    kj0Var.setProgress(0.0f);
-                    kj0Var.d();
+                nj0 nj0Var = ((y2) obj).f;
+                if (!nj0Var.b()) {
+                    nj0Var.setProgress(0.0f);
+                    nj0Var.d();
                     break;
                 }
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 break;
             case 7:
                 c5 c5Var = (c5) obj;
-                c5Var.L.e(c5Var, true);
+                c5Var.L.c(c5Var, true);
                 break;
             case 8:
                 v5 v5Var = (v5) obj;

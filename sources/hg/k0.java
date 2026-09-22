@@ -18,18 +18,18 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class k0 {
-    public static void A(n2.h hVar, n2.h hVar2) {
-        if (hVar == hVar2) {
+    public static void A(n2.g gVar, n2.g gVar2) {
+        if (gVar == gVar2) {
             return;
         }
-        if (hVar2 != null) {
-            hVar2.b(null);
+        if (gVar2 != null) {
+            gVar2.b(null);
         }
-        if (hVar != null) {
-            hVar.a(null);
+        if (gVar != null) {
+            gVar.a(null);
         }
     }
 

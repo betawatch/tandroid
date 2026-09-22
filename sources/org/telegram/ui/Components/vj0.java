@@ -2,61 +2,66 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class vj0 extends LinearLayout {
-    public boolean a;
+public final class vj0 extends s4.h0 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ck0 h;
 
-    public vj0(Context context) {
-        super(context);
+    public vj0(ck0 ck0Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        this.h = ck0Var;
+        this.c = i10;
+        this.d = context;
+        this.e = f6Var;
+        this.f = z10;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        rj0 rj0Var = null;
-        if (this.a) {
-            i12 = 0;
+    @Override // s4.h0
+    public final int h() {
+        ck0 ck0Var = this.h;
+        return ck0Var.n.size() + ((ck0Var.H.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 < this.h.n.size() ? 0 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            ((org.telegram.ui.Cells.p6) c1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout p6Var;
+        if (i10 != 0) {
+            ck0 ck0Var = this.h;
+            eb0 eb0Var = ck0Var.J;
+            if (eb0Var == null) {
+                ck0Var.i();
+            } else if (eb0Var.getParent() != null) {
+                ((ViewGroup) ck0Var.J.getParent()).removeView(ck0Var.J);
+            }
+            Context context = this.d;
+            p6Var = new FrameLayout(context);
+            View view = new View(context);
+            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, this.e)));
+            p6Var.addView(view, w7.y5.c(8.0f, -1));
+            p6Var.addView(ck0Var.J, w7.y5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
         } else {
-            i12 = 0;
-            for (int i13 = 0; i13 < getChildCount(); i13++) {
-                if (getChildAt(i13) instanceof zj0) {
-                    rj0Var = ((zj0) getChildAt(i13)).e;
-                    if (rj0Var.getAdapter().h() == rj0Var.getChildCount()) {
-                        int childCount = rj0Var.getChildCount();
-                        for (int i14 = 0; i14 < childCount; i14++) {
-                            rj0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), 0), i11);
-                            if (rj0Var.getChildAt(i14).getMeasuredWidth() > i12) {
-                                i12 = rj0Var.getChildAt(i14).getMeasuredWidth();
-                            }
-                        }
-                        i12 += AndroidUtilities.dp(16.0f);
-                    }
-                }
-            }
+            p6Var = new org.telegram.ui.Cells.p6(0, this.c, this.d, this.e, true, this.f);
         }
-        int size = View.MeasureSpec.getSize(i10);
-        if (size < AndroidUtilities.dp(240.0f)) {
-            size = AndroidUtilities.dp(240.0f);
-        }
-        if (size > AndroidUtilities.dp(280.0f)) {
-            size = AndroidUtilities.dp(280.0f);
-        }
-        if (size < 0) {
-            size = 0;
-        }
-        if (i12 == 0 || i12 >= size) {
-            i12 = size;
-        }
-        if (rj0Var != null) {
-            for (int i15 = 0; i15 < rj0Var.getChildCount(); i15++) {
-                rj0Var.getChildAt(i15).measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
-            }
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
+        return new il0(p6Var);
     }
 }

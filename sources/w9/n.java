@@ -1,60 +1,901 @@
 package w9;
 
+import android.app.ActivityManager;
+import android.app.ApplicationExitInfo;
+import android.content.Context;
+import android.os.Build;
+import android.os.Environment;
+import android.os.StatFs;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.util.JsonReader;
 import android.util.Log;
+import c5.a0;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import hg.k0;
+import j$.util.DesugarCollections;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.concurrent.Callable;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.NavigableSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicMarkableReference;
+import m.p3;
 import org.telegram.ui.Cells.f3;
+import v7.e8;
+import v7.j0;
+import y9.a1;
+import y9.b0;
+import y9.b1;
+import y9.c0;
+import y9.c1;
+import y9.d1;
+import y9.d2;
+import y9.e1;
+import y9.e2;
+import y9.g0;
+import y9.h0;
+import y9.i0;
+import y9.l0;
+import y9.m0;
+import y9.n0;
+import y9.q0;
+import y9.t0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class n implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+public final class n {
+    public static final ba.a r = new ba.a(3);
+    public final Context a;
+    public final s b;
+    public final f3 c;
+    public final p3 d;
+    public final com.google.firebase.messaging.t e;
+    public final v f;
+    public final ba.c g;
+    public final a h;
+    public final x9.e i;
+    public final t9.a j;
+    public final u9.a k;
+    public final j l;
+    public final com.google.firebase.messaging.n m;
+    public r n;
+    public final TaskCompletionSource o = new TaskCompletionSource();
+    public final TaskCompletionSource p = new TaskCompletionSource();
+    public final TaskCompletionSource q = new TaskCompletionSource();
 
-    public /* synthetic */ n(o oVar, int i10) {
-        this.a = i10;
-        this.b = oVar;
+    public n(Context context, com.google.firebase.messaging.t tVar, v vVar, s sVar, ba.c cVar, f3 f3Var, a aVar, p3 p3Var, x9.e eVar, com.google.firebase.messaging.n nVar, t9.a aVar2, u9.a aVar3, j jVar) {
+        new AtomicBoolean(false);
+        this.a = context;
+        this.e = tVar;
+        this.f = vVar;
+        this.b = sVar;
+        this.g = cVar;
+        this.c = f3Var;
+        this.h = aVar;
+        this.d = p3Var;
+        this.i = eVar;
+        this.j = aVar2;
+        this.k = aVar3;
+        this.l = jVar;
+        this.m = nVar;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        switch (this.a) {
-            case 0:
-                try {
-                    f3 f3Var = this.b.d;
-                    ba.c cVar = (ba.c) f3Var.c;
-                    String str = (String) f3Var.b;
-                    cVar.getClass();
-                    boolean delete = new File(cVar.b, str).delete();
-                    if (!delete) {
-                        Log.w("FirebaseCrashlytics", "Initialization marker file was not properly removed.", null);
-                    }
-                    return Boolean.valueOf(delete);
-                } catch (Exception e) {
-                    Log.e("FirebaseCrashlytics", "Problem encountered deleting Crashlytics initialization marker.", e);
-                    return Boolean.FALSE;
-                }
-            default:
-                m mVar = this.b.f;
-                f3 f3Var2 = mVar.c;
-                ba.c cVar2 = (ba.c) f3Var2.c;
-                String str2 = (String) f3Var2.b;
-                cVar2.getClass();
-                boolean z10 = true;
-                if (new File(cVar2.b, str2).exists()) {
-                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                        Log.v("FirebaseCrashlytics", "Found previous crash marker.", null);
-                    }
-                    ba.c cVar3 = (ba.c) f3Var2.c;
-                    cVar3.getClass();
-                    new File(cVar3.b, str2).delete();
-                } else {
-                    String e7 = mVar.e();
-                    if (e7 == null || !mVar.j.c(e7)) {
-                        z10 = false;
-                    }
-                }
-                return Boolean.valueOf(z10);
+    public static void a(n nVar, String str, Boolean bool) {
+        int i10;
+        long j3;
+        Integer num;
+        nVar.getClass();
+        long currentTimeMillis = System.currentTimeMillis() / 1000;
+        String g10 = j0.g("Opening a new session with ID ", str);
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", g10, null);
         }
+        Locale locale = Locale.US;
+        v vVar = nVar.f;
+        a aVar = nVar.h;
+        c1 c1Var = new c1(vVar.c, aVar.f, aVar.g, vVar.b().a, j0.c(aVar.d != null ? 4 : 1), aVar.h);
+        String str2 = Build.VERSION.RELEASE;
+        String str3 = Build.VERSION.CODENAME;
+        e1 e1Var = new e1(h.h());
+        Context context = nVar.a;
+        StatFs statFs = new StatFs(Environment.getDataDirectory().getPath());
+        long blockCount = statFs.getBlockCount() * statFs.getBlockSize();
+        g gVar = g.a;
+        String str4 = Build.CPU_ABI;
+        if (TextUtils.isEmpty(str4)) {
+            i10 = 3;
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", "Architecture#getValue()::Build.CPU_ABI returned null or empty", null);
+            }
+        } else {
+            i10 = 3;
+            g gVar2 = (g) g.b.get(str4.toLowerCase(locale));
+            if (gVar2 != null) {
+                gVar = gVar2;
+            }
+        }
+        int ordinal = gVar.ordinal();
+        String str5 = Build.MODEL;
+        int availableProcessors = Runtime.getRuntime().availableProcessors();
+        long b10 = h.b(context);
+        boolean g11 = h.g();
+        int d = h.d();
+        String str6 = Build.MANUFACTURER;
+        String str7 = Build.PRODUCT;
+        nVar.j.d(str, currentTimeMillis, new b1(c1Var, e1Var, new d1(ordinal, availableProcessors, d, b10, blockCount, g11)));
+        if (!bool.booleanValue() || str == null) {
+            j3 = currentTimeMillis;
+        } else {
+            p3 p3Var = nVar.d;
+            synchronized (((String) p3Var.c)) {
+                try {
+                    p3Var.c = str;
+                    Map a2 = ((x9.d) ((AtomicMarkableReference) ((com.google.firebase.messaging.m) p3Var.d).b).getReference()).a();
+                    List g12 = ((a0) p3Var.f).g();
+                    if (((String) ((AtomicMarkableReference) p3Var.h).getReference()) != null) {
+                        j3 = currentTimeMillis;
+                        ((x9.f) p3Var.a).i(str, (String) ((AtomicMarkableReference) p3Var.h).getReference());
+                    } else {
+                        j3 = currentTimeMillis;
+                    }
+                    if (!a2.isEmpty()) {
+                        ((x9.f) p3Var.a).g(str, a2, false);
+                    }
+                    if (!g12.isEmpty()) {
+                        ((x9.f) p3Var.a).h(str, g12);
+                    }
+                } finally {
+                }
+            }
+        }
+        x9.e eVar = nVar.i;
+        ((x9.c) eVar.b).b();
+        eVar.b = x9.e.c;
+        if (str != null) {
+            eVar.b = new x9.k(((ba.c) eVar.a).b(str, "userlog"));
+        }
+        nVar.l.b(str);
+        com.google.firebase.messaging.n nVar2 = nVar.m;
+        q qVar = (q) nVar2.a;
+        Charset charset = e2.a;
+        e8 e8Var = new e8();
+        e8Var.a = "18.6.0";
+        a aVar2 = qVar.c;
+        String str8 = aVar2.a;
+        if (str8 == null) {
+            throw new NullPointerException("Null gmpAppId");
+        }
+        e8Var.b = str8;
+        v vVar2 = qVar.b;
+        String str9 = vVar2.b().a;
+        if (str9 == null) {
+            throw new NullPointerException("Null installationUuid");
+        }
+        e8Var.c = str9;
+        e8Var.d = vVar2.b().b;
+        String str10 = aVar2.f;
+        if (str10 == null) {
+            throw new NullPointerException("Null buildVersion");
+        }
+        e8Var.k = str10;
+        String str11 = aVar2.g;
+        if (str11 == null) {
+            throw new NullPointerException("Null displayVersion");
+        }
+        e8Var.f = str11;
+        e8Var.i = 4;
+        g0 g0Var = new g0();
+        g0Var.f = Boolean.FALSE;
+        g0Var.d = Long.valueOf(j3);
+        if (str == null) {
+            throw new NullPointerException("Null identifier");
+        }
+        g0Var.b = str;
+        String str12 = q.g;
+        if (str12 == null) {
+            throw new NullPointerException("Null generator");
+        }
+        g0Var.a = str12;
+        String str13 = vVar2.c;
+        if (str13 == null) {
+            throw new NullPointerException("Null identifier");
+        }
+        String str14 = vVar2.b().a;
+        f3 f3Var = aVar2.h;
+        if (((m5.e) f3Var.c) == null) {
+            f3Var.c = new m5.e(f3Var);
+        }
+        m5.e eVar2 = (m5.e) f3Var.c;
+        String str15 = (String) eVar2.b;
+        if (eVar2 == null) {
+            f3Var.c = new m5.e(f3Var);
+        }
+        g0Var.g = new i0(str13, str10, str11, str14, str15, (String) ((m5.e) f3Var.c).c);
+        oi.f fVar = new oi.f();
+        Integer valueOf = Integer.valueOf(i10);
+        fVar.a = valueOf;
+        if (str2 == null) {
+            throw new NullPointerException("Null version");
+        }
+        fVar.b = str2;
+        if (str3 == null) {
+            throw new NullPointerException("Null buildVersion");
+        }
+        fVar.c = str3;
+        fVar.d = Boolean.valueOf(h.h());
+        g0Var.i = fVar.g();
+        StatFs statFs2 = new StatFs(Environment.getDataDirectory().getPath());
+        int i11 = 7;
+        if (!TextUtils.isEmpty(str4) && (num = (Integer) q.f.get(str4.toLowerCase(locale))) != null) {
+            i11 = num.intValue();
+        }
+        int availableProcessors2 = Runtime.getRuntime().availableProcessors();
+        long b11 = h.b(qVar.a);
+        long blockCount2 = statFs2.getBlockCount() * statFs2.getBlockSize();
+        boolean g13 = h.g();
+        int d10 = h.d();
+        da.b bVar = new da.b();
+        bVar.a = Integer.valueOf(i11);
+        if (str5 == null) {
+            throw new NullPointerException("Null model");
+        }
+        bVar.b = str5;
+        bVar.c = Integer.valueOf(availableProcessors2);
+        bVar.d = Long.valueOf(b11);
+        bVar.e = Long.valueOf(blockCount2);
+        bVar.f = Boolean.valueOf(g13);
+        bVar.g = Integer.valueOf(d10);
+        if (str6 == null) {
+            throw new NullPointerException("Null manufacturer");
+        }
+        bVar.h = str6;
+        if (str7 == null) {
+            throw new NullPointerException("Null modelClass");
+        }
+        bVar.i = str7;
+        g0Var.j = bVar.b();
+        g0Var.l = valueOf;
+        e8Var.g = g0Var.a();
+        y9.a0 a10 = e8Var.a();
+        ba.c cVar = ((ba.b) nVar2.b).b;
+        d2 d2Var = a10.j;
+        if (d2Var == null) {
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Could not get session for report", null);
+                return;
+            }
+            return;
+        }
+        String str16 = ((h0) d2Var).b;
+        try {
+            ba.b.g.getClass();
+            ba.b.f(cVar.b(str16, "report"), z9.a.a.v(a10));
+            File b12 = cVar.b(str16, "start-time");
+            long j10 = ((h0) d2Var).d;
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(b12), ba.b.e);
+            try {
+                outputStreamWriter.write("");
+                b12.setLastModified(j10 * 1000);
+                outputStreamWriter.close();
+            } finally {
+            }
+        } catch (IOException e) {
+            String g14 = j0.g("Could not persist report for session ", str16);
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", g14, e);
+            }
+        }
+    }
+
+    public static Task b(n nVar) {
+        Task call;
+        nVar.getClass();
+        ArrayList arrayList = new ArrayList();
+        for (File file : ba.c.e(nVar.g.b.listFiles(r))) {
+            try {
+                long parseLong = Long.parseLong(file.getName().substring(3));
+                try {
+                    Class.forName("com.google.firebase.crash.FirebaseCrash");
+                    Log.w("FirebaseCrashlytics", "Skipping logging Crashlytics event to Firebase, FirebaseCrash exists", null);
+                    call = Tasks.forResult(null);
+                } catch (ClassNotFoundException unused) {
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Logging app exception event to Firebase Analytics", null);
+                    }
+                    call = Tasks.call(new ScheduledThreadPoolExecutor(1), new m(nVar, parseLong));
+                }
+                arrayList.add(call);
+            } catch (NumberFormatException unused2) {
+                Log.w("FirebaseCrashlytics", "Could not parse app exception timestamp from file " + file.getName(), null);
+            }
+            file.delete();
+        }
+        return Tasks.whenAll(arrayList);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0022 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static String f() {
+        InputStream resourceAsStream;
+        ClassLoader classLoader = n.class.getClassLoader();
+        if (classLoader == null) {
+            Log.w("FirebaseCrashlytics", "Couldn't get Class Loader", null);
+        } else {
+            resourceAsStream = classLoader.getResourceAsStream("META-INF/version-control-info.textproto");
+            if (resourceAsStream == null) {
+                Log.i("FirebaseCrashlytics", "No version control information found", null);
+            }
+            if (resourceAsStream != null) {
+                return null;
+            }
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Read version control info", null);
+            }
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            byte[] bArr = new byte[1024];
+            while (true) {
+                int read = resourceAsStream.read(bArr);
+                if (read == -1) {
+                    return Base64.encodeToString(byteArrayOutputStream.toByteArray(), 0);
+                }
+                byteArrayOutputStream.write(bArr, 0, read);
+            }
+        }
+        resourceAsStream = null;
+        if (resourceAsStream != null) {
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0130 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r29v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r5v5 */
+    /* JADX WARN: Type inference failed for: r5v6, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r5v7 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(boolean z10, da.b bVar) {
+        String str;
+        String str2;
+        boolean z11;
+        ?? r52;
+        List list;
+        ApplicationExitInfo applicationExitInfo;
+        String str3;
+        String processName;
+        int i10;
+        long j3;
+        List list2;
+        InputStream traceInputStream;
+        FileInputStream fileInputStream;
+        ArrayList arrayList = new ArrayList(((ba.b) this.m.b).c());
+        FileInputStream fileInputStream2 = null;
+        if (arrayList.size() <= z10) {
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", "No open sessions to be closed.", null);
+                return;
+            }
+            return;
+        }
+        String str4 = (String) arrayList.get(z10 == true ? 1 : 0);
+        if (bVar.d().b.b) {
+            int i11 = Build.VERSION.SDK_INT;
+            if (i11 >= 30) {
+                List<ApplicationExitInfo> historicalProcessExitReasons = ((ActivityManager) this.a.getSystemService("activity")).getHistoricalProcessExitReasons(null, 0, 0);
+                if (historicalProcessExitReasons.size() != 0) {
+                    ba.c cVar = this.g;
+                    x9.e eVar = new x9.e(cVar);
+                    eVar.b = x9.e.c;
+                    if (str4 != null) {
+                        eVar.b = new x9.k(cVar.b(str4, "userlog"));
+                    }
+                    ba.c cVar2 = this.g;
+                    com.google.firebase.messaging.t tVar = this.e;
+                    x9.f fVar = new x9.f(cVar2);
+                    p3 p3Var = new p3(str4, cVar2, tVar);
+                    ((x9.d) ((AtomicMarkableReference) ((com.google.firebase.messaging.m) p3Var.d).b).getReference()).d(fVar.c(str4, false));
+                    ((x9.d) ((AtomicMarkableReference) ((com.google.firebase.messaging.m) p3Var.e).b).getReference()).d(fVar.c(str4, true));
+                    ((AtomicMarkableReference) p3Var.h).set(fVar.d(str4), false);
+                    a0 a0Var = (a0) p3Var.f;
+                    File b10 = cVar2.b(str4, "rollouts-state");
+                    if (!b10.exists() || b10.length() == 0) {
+                        x9.f.f(b10);
+                        list = Collections.EMPTY_LIST;
+                    } else {
+                        try {
+                            fileInputStream = new FileInputStream(b10);
+                            try {
+                                try {
+                                    list = x9.f.b(h.j(fileInputStream));
+                                    String str5 = "Loaded rollouts state:\n" + list + "\nfor session " + str4;
+                                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                                        Log.d("FirebaseCrashlytics", str5, null);
+                                    }
+                                    h.c(fileInputStream, "Failed to close rollouts state file.");
+                                } catch (Exception e) {
+                                    e = e;
+                                    Log.w("FirebaseCrashlytics", "Error deserializing rollouts state.", e);
+                                    x9.f.f(b10);
+                                    h.c(fileInputStream, "Failed to close rollouts state file.");
+                                    list = Collections.EMPTY_LIST;
+                                    synchronized (a0Var) {
+                                    }
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                fileInputStream2 = fileInputStream;
+                                h.c(fileInputStream2, "Failed to close rollouts state file.");
+                                throw th;
+                            }
+                        } catch (Exception e7) {
+                            e = e7;
+                            fileInputStream = null;
+                        } catch (Throwable th3) {
+                            th = th3;
+                            h.c(fileInputStream2, "Failed to close rollouts state file.");
+                            throw th;
+                        }
+                    }
+                    synchronized (a0Var) {
+                        ((ArrayList) a0Var.c).clear();
+                        if (list.size() > a0Var.b) {
+                            Log.w("FirebaseCrashlytics", "Ignored 0 entries when adding rollout assignments. Maximum allowable: " + a0Var.b, null);
+                            ((ArrayList) a0Var.c).addAll(list.subList(0, a0Var.b));
+                        } else {
+                            ((ArrayList) a0Var.c).addAll(list);
+                        }
+                    }
+                    com.google.firebase.messaging.n nVar = this.m;
+                    ba.b bVar2 = (ba.b) nVar.b;
+                    long lastModified = bVar2.b.b(str4, "start-time").lastModified();
+                    Iterator<ApplicationExitInfo> it = historicalProcessExitReasons.iterator();
+                    while (it.hasNext()) {
+                        applicationExitInfo = it.next();
+                        if (applicationExitInfo.getTimestamp() < lastModified) {
+                            break;
+                        }
+                        if (applicationExitInfo.getReason() == 6) {
+                            break;
+                        }
+                    }
+                    applicationExitInfo = null;
+                    if (applicationExitInfo == null) {
+                        String g10 = j0.g("No relevant ApplicationExitInfo occurred during session: ", str4);
+                        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                            Log.v("FirebaseCrashlytics", g10, null);
+                        }
+                    } else {
+                        q qVar = (q) nVar.a;
+                        try {
+                            traceInputStream = applicationExitInfo.getTraceInputStream();
+                        } catch (IOException e10) {
+                            Log.w("FirebaseCrashlytics", "Could not get input trace in application exit info: " + applicationExitInfo.toString() + " Error: " + e10, null);
+                        }
+                        if (traceInputStream != null) {
+                            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                            byte[] bArr = new byte[8192];
+                            while (true) {
+                                int read = traceInputStream.read(bArr);
+                                if (read == -1) {
+                                    break;
+                                } else {
+                                    byteArrayOutputStream.write(bArr, 0, read);
+                                }
+                            }
+                            str3 = byteArrayOutputStream.toString(StandardCharsets.UTF_8.name());
+                            da.b bVar3 = new da.b();
+                            bVar3.d = Integer.valueOf(applicationExitInfo.getImportance());
+                            processName = applicationExitInfo.getProcessName();
+                            if (processName != null) {
+                                throw new NullPointerException("Null processName");
+                            }
+                            bVar3.b = processName;
+                            bVar3.c = Integer.valueOf(applicationExitInfo.getReason());
+                            bVar3.g = Long.valueOf(applicationExitInfo.getTimestamp());
+                            bVar3.a = Integer.valueOf(applicationExitInfo.getPid());
+                            bVar3.e = Long.valueOf(applicationExitInfo.getPss());
+                            bVar3.f = Long.valueOf(applicationExitInfo.getRss());
+                            bVar3.h = str3;
+                            b0 a2 = bVar3.a();
+                            int i12 = qVar.a.getResources().getConfiguration().orientation;
+                            com.google.firebase.messaging.n nVar2 = new com.google.firebase.messaging.n();
+                            nVar2.b = "anr";
+                            long j10 = a2.g;
+                            nVar2.a = Long.valueOf(j10);
+                            a aVar = qVar.c;
+                            if (!qVar.e.d().b.c || aVar.c.size() <= 0) {
+                                i10 = i12;
+                                j3 = j10;
+                                list2 = null;
+                            } else {
+                                ArrayList arrayList2 = new ArrayList();
+                                ArrayList arrayList3 = aVar.c;
+                                int size = arrayList3.size();
+                                i10 = i12;
+                                int i13 = 0;
+                                while (i13 < size) {
+                                    Object obj = arrayList3.get(i13);
+                                    int i14 = i13 + 1;
+                                    int i15 = size;
+                                    e eVar2 = (e) obj;
+                                    String str6 = eVar2.a;
+                                    if (str6 == null) {
+                                        throw new NullPointerException("Null libraryName");
+                                    }
+                                    ArrayList arrayList4 = arrayList3;
+                                    String str7 = eVar2.b;
+                                    if (str7 == null) {
+                                        throw new NullPointerException("Null arch");
+                                    }
+                                    String str8 = eVar2.c;
+                                    if (str8 == null) {
+                                        throw new NullPointerException("Null buildId");
+                                    }
+                                    arrayList2.add(new c0(str7, str6, str8));
+                                    i13 = i14;
+                                    size = i15;
+                                    arrayList3 = arrayList4;
+                                    j10 = j10;
+                                }
+                                j3 = j10;
+                                list2 = DesugarCollections.unmodifiableList(arrayList2);
+                            }
+                            da.b bVar4 = new da.b();
+                            bVar4.d = Integer.valueOf(a2.d);
+                            String str9 = a2.b;
+                            if (str9 == null) {
+                                throw new NullPointerException("Null processName");
+                            }
+                            bVar4.b = str9;
+                            bVar4.c = Integer.valueOf(a2.c);
+                            bVar4.g = Long.valueOf(j3);
+                            bVar4.a = Integer.valueOf(a2.a);
+                            bVar4.e = Long.valueOf(a2.e);
+                            bVar4.f = Long.valueOf(a2.f);
+                            bVar4.h = a2.h;
+                            bVar4.i = list2;
+                            b0 a10 = bVar4.a();
+                            Boolean valueOf = Boolean.valueOf(a10.d != 100);
+                            String processName2 = a10.b;
+                            int i16 = a10.a;
+                            int i17 = a10.d;
+                            kotlin.jvm.internal.i.e(processName2, "processName");
+                            if ((8 & 4) != 0) {
+                                i17 = 0;
+                            }
+                            oi.f fVar2 = new oi.f();
+                            fVar2.a = processName2;
+                            fVar2.b = Integer.valueOf(i16);
+                            fVar2.c = Integer.valueOf(i17);
+                            fVar2.d = Boolean.FALSE;
+                            t0 f7 = fVar2.f();
+                            q0 q0Var = new q0(0L, "0", "0");
+                            List a11 = qVar.a();
+                            if (a11 == null) {
+                                throw new NullPointerException("Null binaries");
+                            }
+                            nVar2.c = new m0(new n0(null, null, a10, q0Var, a11), null, null, valueOf, f7, null, i10);
+                            nVar2.d = qVar.b(i10);
+                            l0 i18 = nVar2.i();
+                            String g11 = j0.g("Persisting anr for session ", str4);
+                            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                                Log.d("FirebaseCrashlytics", g11, null);
+                            }
+                            bVar2.d(com.google.firebase.messaging.n.d(com.google.firebase.messaging.n.b(i18, eVar, p3Var), p3Var), str4, true);
+                        }
+                        str3 = null;
+                        da.b bVar32 = new da.b();
+                        bVar32.d = Integer.valueOf(applicationExitInfo.getImportance());
+                        processName = applicationExitInfo.getProcessName();
+                        if (processName != null) {
+                        }
+                    }
+                } else {
+                    String g12 = j0.g("No ApplicationExitInfo available. Session: ", str4);
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", g12, null);
+                    }
+                }
+            } else {
+                String h = k0.h(i11, "ANR feature enabled, but device is API ");
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", h, null);
+                }
+            }
+        } else if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", "ANR feature disabled.", null);
+        }
+        if (this.j.c(str4)) {
+            String g13 = j0.g("Finalizing native report for session ", str4);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                r52 = 0;
+                Log.v("FirebaseCrashlytics", g13, null);
+            } else {
+                r52 = 0;
+            }
+            this.j.a(str4).getClass();
+            Log.w("FirebaseCrashlytics", "No minidump data found for session " + str4, r52);
+            Log.i("FirebaseCrashlytics", "No Tombstones data found for session " + str4, r52);
+            Log.w("FirebaseCrashlytics", "No native core present", r52);
+            str = r52;
+        } else {
+            str = null;
+        }
+        if (z10 != 0) {
+            str2 = (String) arrayList.get(0);
+        } else {
+            this.l.b(str);
+            str2 = null;
+        }
+        com.google.firebase.messaging.n nVar3 = this.m;
+        long currentTimeMillis = System.currentTimeMillis() / 1000;
+        ba.b bVar5 = (ba.b) nVar3.b;
+        ba.c cVar3 = bVar5.b;
+        cVar3.getClass();
+        File file = cVar3.a;
+        ba.c.a(new File(file, ".com.google.firebase.crashlytics"));
+        ba.c.a(new File(file, ".com.google.firebase.crashlytics-ndk"));
+        if (Build.VERSION.SDK_INT >= 28) {
+            ba.c.a(new File(file, ".com.google.firebase.crashlytics.files.v1"));
+        }
+        NavigableSet<String> c10 = bVar5.c();
+        if (str2 != null) {
+            c10.remove(str2);
+        }
+        if (c10.size() > 8) {
+            while (c10.size() > 8) {
+                String str10 = (String) c10.last();
+                String g14 = j0.g("Removing session over cap: ", str10);
+                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", g14, null);
+                }
+                ba.c.d(new File(cVar3.c, str10));
+                c10.remove(str10);
+            }
+        }
+        for (String str11 : c10) {
+            String g15 = j0.g("Finalizing report for session ", str11);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", g15, null);
+            }
+            z9.a aVar2 = ba.b.g;
+            ba.a aVar3 = ba.b.i;
+            File file2 = new File(cVar3.c, str11);
+            file2.mkdirs();
+            List<File> e11 = ba.c.e(file2.listFiles(aVar3));
+            if (e11.isEmpty()) {
+                String p5 = a4.a.p("Session ", str11, " has no events.");
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", p5, null);
+                }
+            } else {
+                Collections.sort(e11);
+                ArrayList arrayList5 = new ArrayList();
+                boolean z12 = false;
+                for (File file3 : e11) {
+                    try {
+                        String e12 = ba.b.e(file3);
+                        aVar2.getClass();
+                        try {
+                            JsonReader jsonReader = new JsonReader(new StringReader(e12));
+                            try {
+                                l0 e13 = z9.a.e(jsonReader);
+                                jsonReader.close();
+                                arrayList5.add(e13);
+                            } finally {
+                            }
+                        } catch (IllegalStateException e14) {
+                            throw new IOException(e14);
+                        }
+                    } catch (IOException e15) {
+                        Log.w("FirebaseCrashlytics", "Could not add event to report for " + file3, e15);
+                    }
+                    if (!z12) {
+                        String name = file3.getName();
+                        if (!name.startsWith("event") || !name.endsWith("_")) {
+                            z11 = false;
+                            z12 = z11;
+                        }
+                    }
+                    z11 = true;
+                    z12 = z11;
+                }
+                if (arrayList5.isEmpty()) {
+                    Log.w("FirebaseCrashlytics", "Could not parse event files for session " + str11, null);
+                } else {
+                    String d = new x9.f(cVar3).d(str11);
+                    String a12 = bVar5.d.a(str11);
+                    File b11 = cVar3.b(str11, "report");
+                    try {
+                        String e16 = ba.b.e(b11);
+                        aVar2.getClass();
+                        y9.a0 i19 = z9.a.i(e16);
+                        e8 a13 = i19.a();
+                        d2 d2Var = i19.j;
+                        if (d2Var != null) {
+                            g0 a14 = d2Var.a();
+                            a14.e = Long.valueOf(currentTimeMillis);
+                            a14.f = Boolean.valueOf(z12);
+                            if (d != null) {
+                                a14.h = new a1(d);
+                            }
+                            a13.g = a14.a();
+                        }
+                        y9.a0 a15 = a13.a();
+                        e8 a16 = a15.a();
+                        a16.e = a12;
+                        d2 d2Var2 = a15.j;
+                        if (d2Var2 != null) {
+                            g0 a17 = d2Var2.a();
+                            a17.c = a12;
+                            a16.g = a17.a();
+                        }
+                        y9.a0 a18 = a16.a();
+                        d2 d2Var3 = a18.j;
+                        if (d2Var3 == null) {
+                            throw new IllegalStateException("Reports without sessions cannot have events added to them.");
+                        }
+                        e8 a19 = a18.a();
+                        g0 a20 = d2Var3.a();
+                        a20.k = arrayList5;
+                        a19.g = a20.a();
+                        y9.a0 a21 = a19.a();
+                        d2 d2Var4 = a21.j;
+                        if (d2Var4 != null) {
+                            String str12 = "appQualitySessionId: " + a12;
+                            try {
+                                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                                    try {
+                                        Log.d("FirebaseCrashlytics", str12, null);
+                                    } catch (IOException e17) {
+                                        e = e17;
+                                    }
+                                }
+                                ba.b.f(z12 ? new File(cVar3.e, ((h0) d2Var4).b) : new File(cVar3.d, ((h0) d2Var4).b), z9.a.a.v(a21));
+                            } catch (IOException e18) {
+                                e = e18;
+                                Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b11, e);
+                                ba.c.d(new File(cVar3.c, str11));
+                            }
+                        }
+                        e = e17;
+                    } catch (IOException e19) {
+                        e = e19;
+                    }
+                    Log.w("FirebaseCrashlytics", "Could not synthesize final report file for " + b11, e);
+                }
+                ba.c.d(new File(cVar3.c, str11));
+            }
+            ba.c.d(new File(cVar3.c, str11));
+        }
+        com.google.android.gms.internal.cast.a aVar4 = bVar5.c.d().a;
+        ArrayList b12 = bVar5.b();
+        int size2 = b12.size();
+        if (size2 <= 4) {
+            return;
+        }
+        Iterator it2 = b12.subList(4, size2).iterator();
+        while (it2.hasNext()) {
+            ((File) it2.next()).delete();
+        }
+    }
+
+    public final boolean d(da.b bVar) {
+        if (!Boolean.TRUE.equals(((ThreadLocal) this.e.e).get())) {
+            throw new IllegalStateException("Not running on background worker thread as intended.");
+        }
+        r rVar = this.n;
+        if (rVar != null && rVar.e.get()) {
+            Log.w("FirebaseCrashlytics", "Skipping session finalization because a crash has already occurred.", null);
+            return false;
+        }
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", "Finalizing previously open sessions.", null);
+        }
+        try {
+            c(true, bVar);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", "Closed all previously open sessions.", null);
+            }
+            return true;
+        } catch (Exception e) {
+            Log.e("FirebaseCrashlytics", "Unable to finalize previously open sessions.", e);
+            return false;
+        }
+    }
+
+    public final String e() {
+        NavigableSet c10 = ((ba.b) this.m.b).c();
+        if (c10.isEmpty()) {
+            return null;
+        }
+        return (String) c10.first();
+    }
+
+    public final void g() {
+        try {
+            String f7 = f();
+            if (f7 != null) {
+                try {
+                    ((com.google.firebase.messaging.m) this.d.e).u("com.crashlytics.version-control-info", f7);
+                } catch (IllegalArgumentException e) {
+                    Context context = this.a;
+                    if (context != null) {
+                        if ((context.getApplicationInfo().flags & 2) != 0) {
+                            throw e;
+                        }
+                    }
+                    Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
+                }
+                Log.i("FirebaseCrashlytics", "Saved version control info", null);
+            }
+        } catch (IOException e7) {
+            Log.w("FirebaseCrashlytics", "Unable to save version control info", e7);
+        }
+    }
+
+    public final Task h(Task task) {
+        Task task2;
+        Task task3;
+        TaskCompletionSource taskCompletionSource = this.o;
+        ba.c cVar = ((ba.b) this.m.b).b;
+        if (ba.c.e(cVar.d.listFiles()).isEmpty() && ba.c.e(cVar.e.listFiles()).isEmpty() && ba.c.e(cVar.f.listFiles()).isEmpty()) {
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", "No crash reports are available to be sent.", null);
+            }
+            taskCompletionSource.trySetResult(Boolean.FALSE);
+            return Tasks.forResult(null);
+        }
+        t9.b bVar = t9.b.a;
+        bVar.c("Crash reports are available to be sent.");
+        s sVar = this.b;
+        if (sVar.a()) {
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Automatic data collection is enabled. Allowing upload.", null);
+            }
+            taskCompletionSource.trySetResult(Boolean.FALSE);
+            task3 = Tasks.forResult(Boolean.TRUE);
+        } else {
+            bVar.b("Automatic data collection is disabled.");
+            bVar.c("Notifying that unsent reports are available.");
+            taskCompletionSource.trySetResult(Boolean.TRUE);
+            synchronized (sVar.c) {
+                task2 = sVar.d.getTask();
+            }
+            Task onSuccessTask = task2.onSuccessTask(new t7.u());
+            bVar.b("Waiting for send/deleteUnsentReports to be called.");
+            Task task4 = this.p.getTask();
+            ExecutorService executorService = x.a;
+            TaskCompletionSource taskCompletionSource2 = new TaskCompletionSource();
+            w wVar = new w(1, taskCompletionSource2);
+            onSuccessTask.continueWith(wVar);
+            task4.continueWith(wVar);
+            task3 = taskCompletionSource2.getTask();
+        }
+        return task3.onSuccessTask(new m5.e(this, task, false, 28));
     }
 }

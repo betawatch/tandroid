@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class j0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -77,9 +77,9 @@ public final class j0 extends FrameLayout {
                     e70Var.e0();
                     int measuredWidth2 = getMeasuredWidth();
                     int measuredHeight = getMeasuredHeight();
-                    if (dVar != null && !dVar.n && dVar.g(measuredWidth2, measuredHeight)) {
+                    if (dVar != null && !dVar.n && dVar.f(measuredWidth2, measuredHeight)) {
                         iVar.b(dVar.a(measuredWidth2, measuredHeight), -3);
-                        dVar.c();
+                        dVar.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -93,9 +93,9 @@ public final class j0 extends FrameLayout {
                     l80Var.Y();
                     int measuredWidth3 = getMeasuredWidth();
                     int measuredHeight2 = getMeasuredHeight();
-                    if (dVar2 != null && !dVar2.n && dVar2.g(measuredWidth3, measuredHeight2)) {
+                    if (dVar2 != null && !dVar2.n && dVar2.f(measuredWidth3, measuredHeight2)) {
                         iVar2.b(dVar2.a(measuredWidth3, measuredHeight2), -3);
-                        dVar2.c();
+                        dVar2.b();
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -524,13 +524,13 @@ public final class j0 extends FrameLayout {
             case 11:
                 super.onLayout(z10, i10, i11, i12, i13);
                 yg0 yg0Var = (yg0) this.b;
-                for (org.telegram.ui.Components.fw0 fw0Var : yg0Var.b) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) fw0Var.getLayoutParams();
+                for (org.telegram.ui.Components.hw0 hw0Var : yg0Var.b) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) hw0Var.getLayoutParams();
                     int dp2 = AndroidUtilities.dp(16.0f) + getHeight();
-                    if (!fw0Var.a() && yg0Var.c.getVisibility() == 0) {
+                    if (!hw0Var.a() && yg0Var.c.getVisibility() == 0) {
                         dp2 += AndroidUtilities.dp(230.0f);
                     }
-                    fw0Var.layout(marginLayoutParams.leftMargin, marginLayoutParams.topMargin, getWidth() - marginLayoutParams.rightMargin, dp2);
+                    hw0Var.layout(marginLayoutParams.leftMargin, marginLayoutParams.topMargin, getWidth() - marginLayoutParams.rightMargin, dp2);
                 }
                 break;
             case 12:
@@ -668,13 +668,13 @@ public final class j0 extends FrameLayout {
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 yg0 yg0Var = (yg0) this.b;
-                for (org.telegram.ui.Components.fw0 fw0Var : yg0Var.b) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) fw0Var.getLayoutParams();
+                for (org.telegram.ui.Components.hw0 hw0Var : yg0Var.b) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) hw0Var.getLayoutParams();
                     int dp = AndroidUtilities.dp(16.0f) + (measuredHeight - marginLayoutParams7.topMargin);
-                    if (!fw0Var.a() && yg0Var.c.getVisibility() == 0) {
+                    if (!hw0Var.a() && yg0Var.c.getVisibility() == 0) {
                         dp += AndroidUtilities.dp(230.0f);
                     }
-                    fw0Var.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams7.rightMargin) - marginLayoutParams7.leftMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
+                    hw0Var.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - marginLayoutParams7.rightMargin) - marginLayoutParams7.leftMargin, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
                 }
                 break;
             case 14:

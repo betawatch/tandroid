@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class hp0 extends View {
     public final int a;
@@ -29,10 +29,10 @@ public final class hp0 extends View {
     public final boolean c;
     public final org.telegram.ui.ActionBar.f6 d;
     public final Drawable e;
-    public final org.telegram.ui.Components.u01 f;
+    public final org.telegram.ui.Components.w01 f;
     public final lp0 h;
     public final Paint n;
-    public org.telegram.ui.Components.u01 r;
+    public org.telegram.ui.Components.w01 r;
     public int s;
     public boolean v;
     public xp0 w;
@@ -91,7 +91,7 @@ public final class hp0 extends View {
             }
         }
         setContentDescription(string);
-        this.f = new org.telegram.ui.Components.u01(string, 16.0f, null);
+        this.f = new org.telegram.ui.Components.w01(string, 16.0f, null);
         a();
     }
 
@@ -123,12 +123,12 @@ public final class hp0 extends View {
         int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(171.0f);
         lp0 lp0Var = this.h;
         int dp2 = lp0Var != null ? AndroidUtilities.dp(8.0f) + lp0Var.getIntrinsicWidth() : 0;
-        org.telegram.ui.Components.u01 u01Var = this.f;
-        u01Var.p = measuredWidth - dp2;
-        float measuredWidth2 = LocaleController.isRTL ? (getMeasuredWidth() - u01Var.l()) - AndroidUtilities.dp(58.0f) : AndroidUtilities.dp(58.0f);
-        u01Var.e(canvas, measuredWidth2, getMeasuredHeight() / 2.0f);
+        org.telegram.ui.Components.w01 w01Var = this.f;
+        w01Var.p = measuredWidth - dp2;
+        float measuredWidth2 = LocaleController.isRTL ? (getMeasuredWidth() - w01Var.l()) - AndroidUtilities.dp(58.0f) : AndroidUtilities.dp(58.0f);
+        w01Var.e(canvas, measuredWidth2, getMeasuredHeight() / 2.0f);
         if (lp0Var != null) {
-            int l4 = (int) (u01Var.l() + measuredWidth2 + AndroidUtilities.dp(6.0f));
+            int l4 = (int) (w01Var.l() + measuredWidth2 + AndroidUtilities.dp(6.0f));
             lp0Var.setBounds(l4, 0, l4, getHeight());
             lp0Var.draw(canvas);
         }
@@ -152,14 +152,14 @@ public final class hp0 extends View {
             this.w.f(AndroidUtilities.dpf2(3.0f), org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
             this.w.draw(canvas);
         } else if (this.r != null && !z10) {
-            float measuredWidth3 = (int) ((getMeasuredWidth() - AndroidUtilities.dp(116.0f)) - Math.min(u01Var.l() + (lp0Var == null ? 0 : AndroidUtilities.dp(12.0f) + lp0Var.getIntrinsicWidth()), getMeasuredWidth() - AndroidUtilities.dp(164.0f)));
+            float measuredWidth3 = (int) ((getMeasuredWidth() - AndroidUtilities.dp(116.0f)) - Math.min(w01Var.l() + (lp0Var == null ? 0 : AndroidUtilities.dp(12.0f) + lp0Var.getIntrinsicWidth()), getMeasuredWidth() - AndroidUtilities.dp(164.0f)));
             int min = (int) Math.min(this.r.l(), measuredWidth3);
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(LocaleController.isRTL ? AndroidUtilities.dp(15.0f) : org.telegram.messenger.l0.B(33.0f, getMeasuredWidth(), min), (getMeasuredHeight() - AndroidUtilities.dp(22.0f)) / 2.0f, LocaleController.isRTL ? AndroidUtilities.dp(33.0f) + min : getMeasuredWidth() - AndroidUtilities.dp(15.0f), (AndroidUtilities.dp(22.0f) + getMeasuredHeight()) / 2.0f);
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.n);
-            org.telegram.ui.Components.u01 u01Var2 = this.r;
-            u01Var2.p = measuredWidth3;
-            u01Var2.e(canvas, LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : org.telegram.messenger.l0.B(24.0f, getMeasuredWidth(), min), getMeasuredHeight() / 2.0f);
+            org.telegram.ui.Components.w01 w01Var2 = this.r;
+            w01Var2.p = measuredWidth3;
+            w01Var2.e(canvas, LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : org.telegram.messenger.l0.B(24.0f, getMeasuredWidth(), min), getMeasuredHeight() / 2.0f);
         }
         if (this.v) {
             Paint G = f6Var != null ? f6Var.G("paintDivider") : null;
@@ -188,7 +188,7 @@ public final class hp0 extends View {
         if (indexOf > 0) {
             trim = trim.substring(0, indexOf);
         }
-        this.r = new org.telegram.ui.Components.u01(Emoji.replaceEmoji(trim, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
+        this.r = new org.telegram.ui.Components.w01(Emoji.replaceEmoji(trim, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
         xp0 xp0Var2 = this.w;
         if (xp0Var2 != null) {
             xp0Var2.e(null);

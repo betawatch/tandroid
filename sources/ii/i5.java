@@ -4,7 +4,7 @@ import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class i5 implements h1 {
     public final /* synthetic */ r5 a;
@@ -16,7 +16,77 @@ public final class i5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(final i1 i1Var, final int i10, final int i11) {
+    public final void I(CharSequence charSequence) {
+        c3 c3Var = this.b.E;
+        if (c3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        c3Var.a.u4(charSequence.toString());
+    }
+
+    @Override // ii.h1
+    public final void R(Editable editable) {
+        TL_iv.pageTableCell pagetablecell = this.a.b;
+        if (pagetablecell != null) {
+            h6.d(pagetablecell, editable);
+        }
+        o5 o5Var = this.b;
+        o5Var.v.requestLayout();
+        c3 c3Var = o5Var.E;
+        if (c3Var == null || o5Var.a == null) {
+            return;
+        }
+        c3Var.a();
+    }
+
+    @Override // ii.h1
+    public final boolean V(boolean z10) {
+        return this.b.s(this.a, z10);
+    }
+
+    @Override // ii.h1
+    public final void c(i1 i1Var) {
+        c3 c3Var = this.b.E;
+        if (c3Var != null) {
+            w3 w3Var = c3Var.a;
+            w3.N1(w3Var, i1Var);
+            w3Var.h3.x(i1Var, true);
+        }
+    }
+
+    @Override // ii.h1
+    public final boolean d() {
+        o5 o5Var = this.b;
+        c3 c3Var = o5Var.E;
+        if (c3Var == null || o5Var.a == null) {
+            return false;
+        }
+        return c3Var.a.T4();
+    }
+
+    @Override // ii.h1
+    public final void i(int i10, int i11) {
+        h2 h2Var;
+        o5 o5Var = this.b;
+        c3 c3Var = o5Var.E;
+        if (c3Var == null || o5Var.a == null || (h2Var = c3Var.a.J3) == null) {
+            return;
+        }
+        h2Var.f(i10, i11);
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ boolean o(i1 i1Var) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ boolean s(i1 i1Var) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final void z(final i1 i1Var, final int i10, final int i11) {
         c3 c3Var;
         final r9 textSelectionHelper;
         final int k10;
@@ -44,80 +114,10 @@ public final class i5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void K(CharSequence charSequence) {
-        c3 c3Var = this.b.E;
-        if (c3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        c3Var.a.u4(charSequence.toString());
+    public final /* synthetic */ void l(i1 i1Var) {
     }
 
     @Override // ii.h1
-    public final void U(Editable editable) {
-        TL_iv.pageTableCell pagetablecell = this.a.b;
-        if (pagetablecell != null) {
-            h6.d(pagetablecell, editable);
-        }
-        o5 o5Var = this.b;
-        o5Var.v.requestLayout();
-        c3 c3Var = o5Var.E;
-        if (c3Var == null || o5Var.a == null) {
-            return;
-        }
-        c3Var.a();
-    }
-
-    @Override // ii.h1
-    public final boolean Y(boolean z10) {
-        return this.b.s(this.a, z10);
-    }
-
-    @Override // ii.h1
-    public final void c(i1 i1Var) {
-        c3 c3Var = this.b.E;
-        if (c3Var != null) {
-            w3 w3Var = c3Var.a;
-            w3.N1(w3Var, i1Var);
-            w3Var.h3.x(i1Var, true);
-        }
-    }
-
-    @Override // ii.h1
-    public final boolean f() {
-        o5 o5Var = this.b;
-        c3 c3Var = o5Var.E;
-        if (c3Var == null || o5Var.a == null) {
-            return false;
-        }
-        return c3Var.a.T4();
-    }
-
-    @Override // ii.h1
-    public final void j(int i10, int i11) {
-        h2 h2Var;
-        o5 o5Var = this.b;
-        c3 c3Var = o5Var.E;
-        if (c3Var == null || o5Var.a == null || (h2Var = c3Var.a.J3) == null) {
-            return;
-        }
-        h2Var.f(i10, i11);
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ boolean p(i1 i1Var) {
-        return false;
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ boolean t(i1 i1Var) {
-        return false;
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ void n(i1 i1Var) {
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ void y() {
+    public final /* synthetic */ void v() {
     }
 }

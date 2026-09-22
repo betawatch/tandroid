@@ -1,6 +1,5 @@
 package da;
 
-import a4.m;
 import a6.i;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -22,10 +21,12 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import k2.v;
 import k5.k;
+import k5.l;
 import k5.t;
 import k5.u;
 import k5.w;
-import l5.l;
+import l5.m;
+import l5.o;
 import m.p3;
 import m1.j;
 import m5.f;
@@ -33,11 +34,11 @@ import org.json.JSONObject;
 import org.telegram.ui.rv0;
 import s5.h;
 import v7.j0;
-import w7.h6;
+import w7.g6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -121,21 +122,21 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject z02 = ((m) this.e).z0();
-                if (z02 != null) {
-                    a R = ((i) this.c).R(z02);
-                    f("Loaded cached settings: ", z02);
+                JSONObject t02 = ((android.support.v4.media.c) this.e).t0();
+                if (t02 != null) {
+                    a Q = ((i) this.c).Q(t02);
+                    f("Loaded cached settings: ", t02);
                     ((na.d) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.b(3, i10) || R.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || Q.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return R;
+                            return Q;
                         } catch (Exception e) {
                             e = e;
-                            aVar = R;
+                            aVar = Q;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -192,7 +193,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object i() {
+                public final Object g() {
                     Boolean bool;
                     switch (i13) {
                         case 0:
@@ -239,7 +240,7 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object i() {
+                public final Object g() {
                     Boolean bool;
                     switch (i14) {
                         case 0:
@@ -278,7 +279,7 @@ public final class b {
                 return;
             }
             if (a2 == null) {
-                h6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                g6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new m5.a(3, -1L);
                 bArr = bArr2;
                 j3 = j10;
@@ -300,14 +301,14 @@ public final class b {
                     nVar.a = "GDT_CLIENT_METRICS";
                     i5.c cVar3 = new i5.c("proto");
                     aVar3.getClass();
-                    aa.a aVar4 = l5.n.a;
+                    aa.a aVar4 = o.a;
                     aVar4.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        aVar4.j(aVar3, byteArrayOutputStream);
+                        aVar4.l(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    nVar.c = new l(cVar3, byteArrayOutputStream.toByteArray());
+                    nVar.c = new m(cVar3, byteArrayOutputStream.toByteArray());
                     arrayList.add(((j5.b) a2).a(nVar.g()));
                 }
                 j5.b bVar2 = (j5.b) a2;
@@ -346,10 +347,10 @@ public final class b {
                     ArrayList arrayList4 = new ArrayList();
                     for (l5.h hVar4 : (List) entry.getValue()) {
                         Iterator it3 = it2;
-                        l lVar = hVar4.c;
+                        m mVar = hVar4.c;
                         byte[] bArr3 = bArr2;
-                        i5.c cVar4 = lVar.a;
-                        byte[] bArr4 = lVar.b;
+                        i5.c cVar4 = mVar.a;
+                        byte[] bArr4 = mVar.b;
                         long j11 = j10;
                         if (cVar4.equals(new i5.c("proto"))) {
                             p3Var = new p3();
@@ -360,7 +361,7 @@ public final class b {
                             p3Var2.e = str4;
                             p3Var = p3Var2;
                         } else {
-                            String c11 = h6.c("CctTransportBackend");
+                            String c11 = g6.c("CctTransportBackend");
                             if (Log.isLoggable(c11, 5)) {
                                 Log.w(c11, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
@@ -392,7 +393,7 @@ public final class b {
                         bArr2 = bArr3;
                         j10 = j11;
                     }
-                    arrayList3.add(new k5.l(q6, q10, jVar, num, str2, arrayList4));
+                    arrayList3.add(new l(q6, q10, jVar, num, str2, arrayList4));
                     it2 = it2;
                 }
                 bArr = bArr2;
@@ -425,7 +426,7 @@ public final class b {
                         c10 = d5Var.c(aVar5);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
-                            h6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            g6.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i17);
                         } else {
                             aVar5 = null;
@@ -447,7 +448,7 @@ public final class b {
                                 aVar = new m5.a(4, -1L);
                             } catch (IOException e) {
                                 e = e;
-                                h6.b("CctTransportBackend", "Could not make request to the backend", e);
+                                g6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
                                 i12 = aVar2.a;

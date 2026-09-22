@@ -11,16 +11,16 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class cx0 extends org.telegram.ui.Components.ul0 {
+public final class cx0 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ PremiumPreviewFragment c;
 
     public cx0(PremiumPreviewFragment premiumPreviewFragment) {
         this.c = premiumPreviewFragment;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 1 || i10 == 8;
@@ -131,12 +131,12 @@ public final class cx0 extends org.telegram.ui.Components.ul0 {
         }
         SpannableString spannableString = new SpannableString(premiumPromo.status_text);
         MediaDataController.addTextStyleRuns(premiumPromo.status_entities, premiumPromo.status_text, spannableString);
-        org.telegram.ui.Components.d11[] d11VarArr = (org.telegram.ui.Components.d11[]) spannableString.getSpans(0, spannableString.length(), org.telegram.ui.Components.d11.class);
-        int length = d11VarArr.length;
+        org.telegram.ui.Components.f11[] f11VarArr = (org.telegram.ui.Components.f11[]) spannableString.getSpans(0, spannableString.length(), org.telegram.ui.Components.f11.class);
+        int length = f11VarArr.length;
         int i15 = 0;
         while (i15 < length) {
-            org.telegram.ui.Components.c11 c11Var = d11VarArr[i15].b;
-            TLRPC.MessageEntity messageEntity = c11Var.d;
+            org.telegram.ui.Components.e11 e11Var = f11VarArr[i15].b;
+            TLRPC.MessageEntity messageEntity = e11Var.d;
             if (messageEntity != null) {
                 String str4 = premiumPromo.status_text;
                 int i16 = messageEntity.offset;
@@ -144,54 +144,54 @@ public final class cx0 extends org.telegram.ui.Components.ul0 {
             } else {
                 str = null;
             }
-            TLRPC.MessageEntity messageEntity2 = c11Var.d;
+            TLRPC.MessageEntity messageEntity2 = e11Var.d;
             if (messageEntity2 instanceof TLRPC.TL_messageEntityBotCommand) {
-                spannableString.setSpan(new org.telegram.ui.Components.x51(str, 0, c11Var), c11Var.b, c11Var.c, 33);
+                spannableString.setSpan(new org.telegram.ui.Components.z51(str, 0, e11Var), e11Var.b, e11Var.c, 33);
             } else {
                 if ((messageEntity2 instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity2 instanceof TLRPC.TL_messageEntityMention) || (messageEntity2 instanceof TLRPC.TL_messageEntityCashtag)) {
                     str2 = str3;
                     i11 = 33;
-                    spannableString.setSpan(new org.telegram.ui.Components.a61(str, c11Var), c11Var.b, c11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.c61(str, e11Var), e11Var.b, e11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityEmail) {
-                    spannableString.setSpan(new org.telegram.ui.Components.c61(v7.j0.g("mailto:", str), c11Var), c11Var.b, c11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.e61(v7.j0.g("mailto:", str), e11Var), e11Var.b, e11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityUrl) {
                     if (str.toLowerCase().contains("://")) {
-                        spannableString.setSpan(new org.telegram.ui.Components.y51(str, c11Var), c11Var.b, c11Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.a61(str, e11Var), e11Var.b, e11Var.c, 33);
                     } else {
-                        spannableString.setSpan(new org.telegram.ui.Components.y51("http://".concat(str), c11Var), c11Var.b, c11Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.a61("http://".concat(str), e11Var), e11Var.b, e11Var.c, 33);
                     }
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityBankCard) {
-                    spannableString.setSpan(new org.telegram.ui.Components.a61(v7.j0.g("card:", str), c11Var), c11Var.b, c11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.c61(v7.j0.g("card:", str), e11Var), e11Var.b, e11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityPhone) {
                     String d = gf.b.d(str, z11);
                     if (str.startsWith("+")) {
                         d = v7.j0.g("+", d);
                     }
-                    spannableString.setSpan(new org.telegram.ui.Components.y51(v7.j0.g("tel:", d), c11Var), c11Var.b, c11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.a61(v7.j0.g("tel:", d), e11Var), e11Var.b, e11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityTextUrl) {
-                    org.telegram.ui.Components.c61 c61Var = new org.telegram.ui.Components.c61(c11Var.d.url, c11Var);
-                    c61Var.b = true;
-                    spannableString.setSpan(c61Var, c11Var.b, c11Var.c, 33);
+                    org.telegram.ui.Components.e61 e61Var = new org.telegram.ui.Components.e61(e11Var.d.url, e11Var);
+                    e61Var.b = true;
+                    spannableString.setSpan(e61Var, e11Var.b, e11Var.c, 33);
                     if (!z10) {
-                        spannableString.setSpan(new org.telegram.ui.Components.t51(AndroidUtilities.bold()), c11Var.b, c11Var.c, 33);
+                        spannableString.setSpan(new org.telegram.ui.Components.v51(AndroidUtilities.bold()), e11Var.b, e11Var.c, 33);
                     }
                 } else {
                     if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
                         StringBuilder sb2 = new StringBuilder(str3);
                         str2 = str3;
-                        sb2.append(((TLRPC.TL_messageEntityMentionName) c11Var.d).user_id);
-                        spannableString.setSpan(new org.telegram.ui.Components.d61(sb2.toString(), 0, c11Var), c11Var.b, c11Var.c, 33);
+                        sb2.append(((TLRPC.TL_messageEntityMentionName) e11Var.d).user_id);
+                        spannableString.setSpan(new org.telegram.ui.Components.f61(sb2.toString(), 0, e11Var), e11Var.b, e11Var.c, 33);
                     } else {
                         str2 = str3;
                         if (messageEntity2 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                            spannableString.setSpan(new org.telegram.ui.Components.d61(str2 + ((TLRPC.TL_inputMessageEntityMentionName) c11Var.d).user_id.user_id, 0, c11Var), c11Var.b, c11Var.c, 33);
-                        } else if ((c11Var.a & 4) != 0) {
+                            spannableString.setSpan(new org.telegram.ui.Components.f61(str2 + ((TLRPC.TL_inputMessageEntityMentionName) e11Var.d).user_id.user_id, 0, e11Var), e11Var.b, e11Var.c, 33);
+                        } else if ((e11Var.a & 4) != 0) {
                             str2 = str2;
                             i11 = 33;
-                            spannableString.setSpan(new org.telegram.ui.Components.z51(spannableString, c11Var.b, c11Var.c, (byte) 0, c11Var), c11Var.b, c11Var.c, 33);
+                            spannableString.setSpan(new org.telegram.ui.Components.b61(spannableString, e11Var.b, e11Var.c, (byte) 0, e11Var), e11Var.b, e11Var.c, 33);
                         } else {
                             str2 = str2;
-                            spannableString.setSpan(new org.telegram.ui.Components.d11(c11Var, 0), c11Var.b, c11Var.c, 33);
+                            spannableString.setSpan(new org.telegram.ui.Components.f11(e11Var, 0), e11Var.b, e11Var.c, 33);
                             i15++;
                             str3 = str2;
                             z11 = false;
@@ -199,8 +199,8 @@ public final class cx0 extends org.telegram.ui.Components.ul0 {
                     }
                     i11 = 33;
                 }
-                if ((c11Var.a & 256) != 0) {
-                    spannableString.setSpan(new org.telegram.ui.Components.d11(c11Var, 0), c11Var.b, c11Var.c, i11);
+                if ((e11Var.a & 256) != 0) {
+                    spannableString.setSpan(new org.telegram.ui.Components.f11(e11Var, 0), e11Var.b, e11Var.c, i11);
                     i15++;
                     str3 = str2;
                     z11 = false;
@@ -211,7 +211,7 @@ public final class cx0 extends org.telegram.ui.Components.ul0 {
             }
             str2 = str3;
             i11 = 33;
-            if ((c11Var.a & 256) != 0) {
+            if ((e11Var.a & 256) != 0) {
             }
             i15++;
             str3 = str2;

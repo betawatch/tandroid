@@ -30,16 +30,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.pj0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,9 +82,9 @@ public final /* synthetic */ class g1 implements Runnable {
                 arrayList2.clear();
                 arrayList2.addAll(arrayList);
                 i1Var.n = false;
-                m61 m61Var = i1Var.a;
-                if (m61Var != null) {
-                    m61Var.Y2.N(true);
+                o61 o61Var = i1Var.a;
+                if (o61Var != null) {
+                    o61Var.Y2.N(true);
                     return;
                 }
                 return;
@@ -150,13 +150,13 @@ public final /* synthetic */ class g1 implements Runnable {
                 z0Var.run();
                 return;
             case 8:
-                pg.e1 e1Var = (pg.e1) this.b;
+                pg.f1 f1Var2 = (pg.f1) this.b;
                 Runnable runnable = (Runnable) this.c;
-                pg.c1 c1Var = e1Var.d;
-                if (c1Var == null || !c1Var.f) {
+                pg.d1 d1Var = f1Var2.d;
+                if (d1Var == null || !d1Var.f) {
                     return;
                 }
-                pg.c1.b(c1Var);
+                pg.d1.b(d1Var);
                 runnable.run();
                 return;
             case 9:
@@ -170,7 +170,7 @@ public final /* synthetic */ class g1 implements Runnable {
                     qVar.a = null;
                     qVar.b = bVar2;
                 }
-                aVar.f(bVar2);
+                aVar.h(bVar2);
                 return;
             case 10:
                 a();
@@ -219,7 +219,7 @@ public final /* synthetic */ class g1 implements Runnable {
                 return;
             case 17:
                 Callable callable = (Callable) this.b;
-                r9.h hVar = (r9.h) ((n2.e) this.c).b;
+                r9.h hVar = (r9.h) ((l.d) this.c).b;
                 try {
                     hVar.k(callable.call());
                     return;
@@ -231,7 +231,7 @@ public final /* synthetic */ class g1 implements Runnable {
                 rg.j0 j0Var = (rg.j0) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 ArrayList arrayList4 = j0Var.i0;
-                vl0 vl0Var = j0Var.d;
+                yl0 yl0Var = j0Var.d;
                 if (tLObject2 != null) {
                     arrayList4.clear();
                     arrayList4.addAll(((TLRPC.TL_messages_chats) tLObject2).chats);
@@ -239,17 +239,17 @@ public final /* synthetic */ class g1 implements Runnable {
                     j0Var.J0.b(j0Var.n0 + 4);
                     int i13 = 0;
                     while (true) {
-                        if (i13 >= vl0Var.getChildCount()) {
+                        if (i13 >= yl0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (vl0Var.getChildAt(i13) instanceof rg.i0) {
-                            i10 = vl0Var.getChildAt(i13).getTop();
+                        } else if (yl0Var.getChildAt(i13) instanceof rg.i0) {
+                            i10 = yl0Var.getChildAt(i13).getTop();
                         } else {
                             i13++;
                         }
                     }
                     j0Var.M1();
                     if (j0Var.l0 >= 0 && i10 != 0) {
-                        ((s4.c0) vl0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
+                        ((s4.c0) yl0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList4.size(), j0Var.M0.b);
@@ -260,7 +260,7 @@ public final /* synthetic */ class g1 implements Runnable {
                 h0Var.requestLayout();
                 return;
             case 19:
-                ((rg.j0) this.b).m1((n90) this.c, true);
+                ((rg.j0) this.b).m1((q90) this.c, true);
                 return;
             case 20:
                 rg.z1 z1Var = (rg.z1) this.b;

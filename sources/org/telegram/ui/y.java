@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -156,25 +156,25 @@ public final /* synthetic */ class y implements Utilities.Callback {
                     if (emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo) {
                         long j3 = ((TLRPC.TL_emojiGameDiceInfo) emojiGameInfo).prev_stake;
                         org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(znVar2.getContext(), znVar2.getResourceProvider());
-                        org.telegram.ui.Components.kj0 kj0Var = xbVar.a;
-                        kj0Var.setScaleX(1.25f);
-                        kj0Var.setScaleY(1.25f);
+                        org.telegram.ui.Components.nj0 nj0Var = xbVar.a;
+                        nj0Var.setScaleX(1.25f);
+                        nj0Var.setScaleY(1.25f);
                         if (diceValue == 1) {
-                            kj0Var.setImageResource(R.drawable.dice1);
+                            nj0Var.setImageResource(R.drawable.dice1);
                         } else if (diceValue == 2) {
-                            kj0Var.setImageResource(R.drawable.dice2);
+                            nj0Var.setImageResource(R.drawable.dice2);
                         } else if (diceValue == 3) {
-                            kj0Var.setImageResource(R.drawable.dice3);
+                            nj0Var.setImageResource(R.drawable.dice3);
                         } else if (diceValue == 4) {
-                            kj0Var.setImageResource(R.drawable.dice4);
+                            nj0Var.setImageResource(R.drawable.dice4);
                         } else if (diceValue == 5) {
-                            kj0Var.setImageResource(R.drawable.dice5);
+                            nj0Var.setImageResource(R.drawable.dice5);
                         } else if (diceValue == 6) {
-                            kj0Var.setImageResource(R.drawable.dice6);
+                            nj0Var.setImageResource(R.drawable.dice6);
                         } else {
-                            kj0Var.setScaleX(0.8f);
-                            kj0Var.setScaleY(0.8f);
-                            kj0Var.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
+                            nj0Var.setScaleX(0.8f);
+                            nj0Var.setScaleY(0.8f);
+                            nj0Var.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
                         spannableStringBuilder2.append((CharSequence) yh.w7.M0(j3));

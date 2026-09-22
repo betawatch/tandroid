@@ -17,10 +17,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ov extends FrameLayout {
-    public final k90 a;
+    public final n90 a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
@@ -220,24 +220,24 @@ public final class ov extends FrameLayout {
             f7 = Math.max(max, (AndroidUtilities.dp(f11) + textView2.getMeasuredWidth()) / AndroidUtilities.density);
         }
         f6Var = ((org.telegram.ui.ActionBar.f3) tvVar).resourcesProvider;
-        k90 k90Var = new k90(context, f6Var);
-        this.a = k90Var;
-        k90Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        k90Var.setTypeface(AndroidUtilities.bold());
+        n90 n90Var = new n90(context, f6Var);
+        this.a = n90Var;
+        n90Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+        n90Var.setTypeface(AndroidUtilities.bold());
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        k90Var.setEllipsize(truncateAt);
-        k90Var.setSingleLine(true);
-        k90Var.setLines(1);
+        n90Var.setEllipsize(truncateAt);
+        n90Var.setSingleLine(true);
+        n90Var.setLines(1);
         int i16 = org.telegram.ui.ActionBar.j6.J6;
         f6Var2 = ((org.telegram.ui.ActionBar.f3) tvVar).resourcesProvider;
-        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i16, f6Var2));
-        k90Var.setTextColor(tvVar.getThemedColor(org.telegram.ui.ActionBar.j6.j5));
+        n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i16, f6Var2));
+        n90Var.setTextColor(tvVar.getThemedColor(org.telegram.ui.ActionBar.j6.j5));
         if (z10) {
-            k90Var.setTextSize(1, 20.0f);
-            addView(k90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f7, 0.0f));
+            n90Var.setTextSize(1, 20.0f);
+            addView(n90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f7, 0.0f));
         } else {
-            k90Var.setTextSize(1, 17.0f);
-            addView(k90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f7, 0.0f));
+            n90Var.setTextSize(1, 17.0f);
+            addView(n90Var, w7.y5.i(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f7, 0.0f));
         }
         if (!z10) {
             TextView textView3 = new TextView(context);

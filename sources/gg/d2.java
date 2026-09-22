@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.on0;
+import org.telegram.ui.Components.fd0;
 import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.qn0;
 import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
@@ -42,7 +42,7 @@ import org.telegram.ui.l50;
 import org.telegram.ui.nh;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, e2.m, m4.j0, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
     }
 
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         da.b bVar = (da.b) this.c;
         ((lf.h) bVar.d).V((l5.i) this.d, this.b + 1, false);
         return null;
@@ -228,15 +228,15 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 }
                 break;
             case 8:
-                on0 on0Var = (on0) this.c;
+                qn0 qn0Var = (qn0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = on0Var.getText().toString();
+                String obj2 = qn0Var.getText().toString();
                 if (obj2.length() <= 12) {
-                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(reaction), obj2);
+                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.p0.d(reaction), obj2);
                     b2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(on0Var);
+                    AndroidUtilities.shakeView(qn0Var);
                     break;
                 }
             case 10:
@@ -269,7 +269,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 ((kd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 13:
-                PasscodeActivity.U((PasscodeActivity) this.c, (cd0) this.d, this.b);
+                PasscodeActivity.U((PasscodeActivity) this.c, (fd0) this.d, this.b);
                 break;
             case 15:
                 SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);

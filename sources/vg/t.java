@@ -10,15 +10,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.c11;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import v7.j0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final vh.o a;
+    public final vh.n a;
     public final FrameLayout b;
     public String c;
     public String d;
@@ -28,15 +28,15 @@ public final class t extends FrameLayout {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        vh.o oVar = new vh.o(context);
-        this.a = oVar;
-        oVar.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(13.0f));
-        oVar.setTextSize(1, 16.0f);
-        oVar.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        oVar.setSingleLine(true);
-        oVar.setTextColor(j6.v0(j6.G6, f6Var));
-        oVar.f = false;
-        frameLayout.addView(oVar, y5.e(-2, -2, 17));
+        vh.n nVar = new vh.n(context);
+        this.a = nVar;
+        nVar.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(13.0f));
+        nVar.setTextSize(1, 16.0f);
+        nVar.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+        nVar.setSingleLine(true);
+        nVar.setTextColor(j6.v0(j6.G6, f6Var));
+        nVar.f = false;
+        frameLayout.addView(nVar, y5.e(-2, -2, 17));
         int dp = AndroidUtilities.dp(8.0f);
         int v02 = j6.v0(j6.e7, f6Var);
         int i10 = j6.i6;
@@ -100,16 +100,16 @@ public final class t extends FrameLayout {
         int dp2 = AndroidUtilities.dp(14.0f);
         int dp3 = AndroidUtilities.dp(14.0f);
         int dp4 = AndroidUtilities.dp(18.0f);
-        vh.o oVar = this.a;
-        oVar.setPadding(dp, dp2, dp3, dp4);
-        c11 c11Var = new c11();
-        c11Var.a |= 256;
+        vh.n nVar = this.a;
+        nVar.setPadding(dp, dp2, dp3, dp4);
+        e11 e11Var = new e11();
+        e11Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new d11(c11Var, 0), 0, spannableStringBuilder.length(), 33);
-        oVar.setText(spannableStringBuilder);
+        spannableStringBuilder.setSpan(new f11(e11Var, 0), 0, spannableStringBuilder.length(), 33);
+        nVar.setText(spannableStringBuilder);
         this.b.setOnClickListener(new bi.p(4, runnable));
     }
 

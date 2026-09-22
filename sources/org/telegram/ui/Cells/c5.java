@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c5 extends FrameLayout {
     public boolean E;
@@ -119,17 +119,17 @@ public final class c5 extends FrameLayout {
         ImageView imageView = this.f;
         int i10 = this.J;
         if (imageView != null) {
-            boolean e = this.L.e(this, false);
-            imageView.setVisibility(e ? 0 : 4);
+            boolean c10 = this.L.c(this, false);
+            imageView.setVisibility(c10 ? 0 : 4);
             boolean z11 = LocaleController.isRTL;
-            j5Var2.setLayoutParams(w7.y5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? e ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : e ? 46 : 28, 0.0f));
+            j5Var2.setLayoutParams(w7.y5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? c10 ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : c10 ? 46 : 28, 0.0f));
             boolean z12 = LocaleController.isRTL;
             int i11 = (z12 ? 5 : 3) | 48;
-            float f11 = z12 ? e ? 46 : 28 : i10 + 68;
+            float f11 = z12 ? c10 ? 46 : 28 : i10 + 68;
             if (z12) {
                 f10 = i10 + 68;
             } else {
-                f10 = e ? 46 : 28;
+                f10 = c10 ? 46 : 28;
             }
             j5Var.setLayoutParams(w7.y5.d(-1, 20.0f, i11, f11, 34.5f, f10, 0.0f));
         } else {

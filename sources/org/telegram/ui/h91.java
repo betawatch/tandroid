@@ -3,12 +3,12 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class h91 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.ActionBar.f6 a;
-    public final org.telegram.ui.Components.k90 b;
-    public final org.telegram.ui.Components.k90 c;
+    public final org.telegram.ui.Components.n90 b;
+    public final org.telegram.ui.Components.n90 c;
     public final ci.d d;
     public final ci.d e;
 
@@ -17,11 +17,11 @@ public final class h91 extends LinearLayout implements org.telegram.ui.ActionBar
         this.a = f6Var;
         setOrientation(1);
         int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.Components.k90 a2 = w7.d6.a(context, 15.0f, i10, true, f6Var);
+        org.telegram.ui.Components.n90 a2 = w7.c6.a(context, 15.0f, i10, true, f6Var);
         this.b = a2;
         a2.setGravity(17);
         addView(a2, w7.y5.t(-1, -2, 55, 32, 20, 32, 0));
-        org.telegram.ui.Components.k90 a10 = w7.d6.a(context, 13.0f, i10, false, f6Var);
+        org.telegram.ui.Components.n90 a10 = w7.c6.a(context, 13.0f, i10, false, f6Var);
         this.c = a10;
         a10.setGravity(17);
         addView(a10, w7.y5.r(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));

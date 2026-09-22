@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class r30 extends c71 {
+public final class r30 extends e71 {
     public final q30 T;
     public int U;
     public final TLRPC.Chat V;
@@ -71,7 +71,7 @@ public final class r30 extends c71 {
             T();
         }
         U();
-        H(0.0f);
+        G(0.0f);
     }
 
     public static /* synthetic */ int M(r30 r30Var, int i10, TLObject tLObject, TLObject tLObject2) {
@@ -119,7 +119,7 @@ public final class r30 extends c71 {
         a0.i iVar;
         ArrayList arrayList;
         a0.i iVar2;
-        jx0 jx0Var = r30Var.s;
+        lx0 lx0Var = r30Var.s;
         a0.i iVar3 = r30Var.a0;
         a0.i iVar4 = r30Var.b0;
         ArrayList arrayList2 = r30Var.X;
@@ -185,8 +185,8 @@ public final class r30 extends c71 {
             if (r30Var.q0 == 1) {
                 h = 1;
             } else {
-                ul0 ul0Var = r30Var.f;
-                h = ul0Var != null ? ul0Var.h() - 1 : 0;
+                xl0 xl0Var = r30Var.f;
+                h = xl0Var != null ? xl0Var.h() - 1 : 0;
             }
             r30Var.J(h);
             if (arrayList2.isEmpty()) {
@@ -195,17 +195,17 @@ public final class r30 extends c71 {
             }
         }
         r30Var.U();
-        ul0 ul0Var2 = r30Var.f;
-        if (ul0Var2 != null) {
-            ul0Var2.l();
-            if (jx0Var != null && r30Var.f.h() == 0 && r30Var.d0) {
-                jx0Var.e(false, true);
+        xl0 xl0Var2 = r30Var.f;
+        if (xl0Var2 != null) {
+            xl0Var2.l();
+            if (lx0Var != null && r30Var.f.h() == 0 && r30Var.d0) {
+                lx0Var.e(false, true);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final void E(MotionEvent motionEvent, ci.h2 h2Var) {
+    @Override // org.telegram.ui.Components.e71
+    public final void D(MotionEvent motionEvent, ci.h2 h2Var) {
         org.telegram.ui.i60 i60Var = this.g0.a;
         if (i60Var.w0) {
             return;
@@ -217,8 +217,8 @@ public final class r30 extends c71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final void G(String str) {
+    @Override // org.telegram.ui.Components.e71
+    public final void F(String str) {
         q30 q30Var = this.T;
         gg.c2 c2Var = q30Var.d;
         r30 r30Var = q30Var.w;
@@ -248,13 +248,13 @@ public final class r30 extends c71 {
         q30Var.e = o30Var2;
         AndroidUtilities.runOnUIThread(o30Var2, 300L);
         s4.h0 adapter = w0Var.getAdapter();
-        ul0 ul0Var = r30Var.e;
-        if (adapter != ul0Var) {
-            w0Var.setAdapter(ul0Var);
+        xl0 xl0Var = r30Var.e;
+        if (adapter != xl0Var) {
+            w0Var.setAdapter(xl0Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.c71
+    @Override // org.telegram.ui.Components.e71
     public final void K() {
         this.I = org.telegram.ui.ActionBar.j6.Pg;
         this.J = org.telegram.ui.ActionBar.j6.eg;
@@ -299,13 +299,13 @@ public final class r30 extends c71 {
         TLRPC.ChatFull chatFull = this.W;
         if (isChannel) {
             this.c0 = true;
-            jx0 jx0Var = this.s;
-            if (jx0Var != null) {
-                jx0Var.e(true, false);
+            lx0 lx0Var = this.s;
+            if (lx0Var != null) {
+                lx0Var.e(true, false);
             }
-            ul0 ul0Var = this.f;
-            if (ul0Var != null) {
-                ul0Var.l();
+            xl0 xl0Var = this.f;
+            if (xl0Var != null) {
+                xl0Var.l();
             }
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
             tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
@@ -352,9 +352,9 @@ public final class r30 extends c71 {
             }
         }
         U();
-        ul0 ul0Var2 = this.f;
-        if (ul0Var2 != null) {
-            ul0Var2.l();
+        xl0 xl0Var2 = this.f;
+        if (xl0Var2 != null) {
+            xl0Var2.l();
         }
     }
 

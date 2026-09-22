@@ -41,19 +41,19 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.eo;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.o00;
+import org.telegram.ui.Components.oo0;
 import org.telegram.ui.Components.p00;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zn;
 import org.telegram.ui.e01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements le.d, z5 {
     public CharSequence A0;
@@ -73,7 +73,7 @@ public class k extends FrameLayout implements le.d, z5 {
     public boolean J;
     public final f6 J0;
     public boolean K;
-    public aw0 K0;
+    public cw0 K0;
     public boolean L;
     public boolean L0;
     public boolean M;
@@ -88,7 +88,7 @@ public class k extends FrameLayout implements le.d, z5 {
     public boolean Q0;
     public boolean R;
     public boolean R0;
-    public lw0 S;
+    public nw0 S;
     public eo S0;
     public p00 T;
     public boolean T0;
@@ -268,12 +268,7 @@ public class k extends FrameLayout implements le.d, z5 {
         imageView3.setColorFilter(new PorterDuffColorFilter(this.r0, PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
-        invalidate();
-    }
-
-    public final void E(int i10, boolean z10) {
+    public final void D(int i10, boolean z10) {
         z zVar;
         d dVar;
         int i11 = 0;
@@ -301,7 +296,7 @@ public class k extends FrameLayout implements le.d, z5 {
         }
     }
 
-    public final void F(int i10, boolean z10, boolean z11) {
+    public final void E(int i10, boolean z10, boolean z11) {
         z zVar;
         d dVar;
         int i11 = 0;
@@ -329,7 +324,7 @@ public class k extends FrameLayout implements le.d, z5 {
         }
     }
 
-    public final void G(int i10, boolean z10) {
+    public final void F(int i10, boolean z10) {
         z zVar;
         d dVar;
         if (z10 && (dVar = this.F) != null) {
@@ -342,7 +337,7 @@ public class k extends FrameLayout implements le.d, z5 {
         }
     }
 
-    public final void H(int i10, boolean z10) {
+    public final void G(int i10, boolean z10) {
         z zVar = this.E;
         if (zVar != null) {
             int childCount = zVar.getChildCount();
@@ -362,6 +357,11 @@ public class k extends FrameLayout implements le.d, z5 {
                 }
             }
         }
+    }
+
+    @Override // le.d
+    public final void H(int i10, float f7, float f10, le.e eVar) {
+        invalidate();
     }
 
     public final void I(CharSequence charSequence, org.telegram.ui.Components.n5 n5Var) {
@@ -849,11 +849,11 @@ public class k extends FrameLayout implements le.d, z5 {
                     if (this.n1) {
                         this.K0.J(canvas, getY(), this.N0, paint, true);
                     } else {
-                        aw0 aw0Var = this.K0;
+                        cw0 cw0Var = this.K0;
                         float y3 = getY();
                         float f10 = f7 - this.s1;
-                        aw0Var.getClass();
-                        aw0Var.K(canvas, y3, this.N0, paint, true, AndroidUtilities.lerp(255, Color.alpha(j6.v0((aw0.F() && SharedConfig.getDevicePerformanceClass() == 2) ? j6.xf : j6.yf, aw0Var.getResourceProvider())), f10));
+                        cw0Var.getClass();
+                        cw0Var.K(canvas, y3, this.N0, paint, true, AndroidUtilities.lerp(255, Color.alpha(j6.v0((cw0.F() && SharedConfig.getDevicePerformanceClass() == 2) ? j6.xf : j6.yf, cw0Var.getResourceProvider())), f10));
                     }
                 }
                 this.k1 = true;
@@ -966,14 +966,14 @@ public class k extends FrameLayout implements le.d, z5 {
                 }
                 if (j6.G1) {
                     if (this.S == null) {
-                        this.S = new lw0(0);
+                        this.S = new nw0(0);
                     }
                 } else if (!this.V && this.S != null) {
                     this.S = null;
                 }
-                lw0 lw0Var = this.S;
-                if (lw0Var != null) {
-                    lw0Var.b(canvas, this);
+                nw0 nw0Var = this.S;
+                if (nw0Var != null) {
+                    nw0Var.b(canvas, this);
                 } else {
                     p00 p00Var = this.T;
                     if (p00Var != null) {
@@ -1389,11 +1389,11 @@ public class k extends FrameLayout implements le.d, z5 {
         Drawable y02;
         if (this.R && !this.i0 && !LocaleController.isRTL && motionEvent.getAction() == 0 && (y02 = j6.y0()) != null && y02.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.V = true;
-            lw0 lw0Var = this.S;
+            nw0 nw0Var = this.S;
             j5[] j5VarArr = this.n;
-            if (lw0Var == null) {
+            if (nw0Var == null) {
                 this.T = null;
-                this.S = new lw0(0);
+                this.S = new nw0(0);
                 j5VarArr[0].invalidate();
                 invalidate();
             } else {
@@ -1992,10 +1992,10 @@ public class k extends FrameLayout implements le.d, z5 {
         }
     }
 
-    public void setDrawBlurBackground(aw0 aw0Var) {
+    public void setDrawBlurBackground(cw0 cw0Var) {
         this.L0 = true;
-        this.K0 = aw0Var;
-        aw0Var.T.add(this);
+        this.K0 = cw0Var;
+        cw0Var.T.add(this);
         setBackground(null);
     }
 
@@ -2362,24 +2362,24 @@ public class k extends FrameLayout implements le.d, z5 {
         b();
     }
 
-    public final void z(vl0 vl0Var, boolean z10) {
-        y(vl0Var, z10, j6.a7, j6.s8);
+    public final void z(yl0 yl0Var, boolean z10) {
+        y(yl0Var, z10, j6.a7, j6.s8);
     }
 
-    public void setAdaptiveBackground(mo0 mo0Var) {
+    public void setAdaptiveBackground(oo0 oo0Var) {
         int i10 = j6.a7;
         int i11 = j6.s8;
         this.p1 = i10;
         this.q1 = i11;
         b();
-        ki.l lVar = new ki.l(26, this, mo0Var);
-        mo0Var.f.add(lVar);
+        ki.l lVar = new ki.l(26, this, oo0Var);
+        oo0Var.f.add(lVar);
         if (this.n1) {
             lVar.run();
             return;
         }
         this.n1 = true;
-        boolean canScrollVertically = mo0Var.canScrollVertically(-1);
+        boolean canScrollVertically = oo0Var.canScrollVertically(-1);
         this.r1 = !canScrollVertically;
         this.s1 = !canScrollVertically ? 1.0f : 0.0f;
         b();

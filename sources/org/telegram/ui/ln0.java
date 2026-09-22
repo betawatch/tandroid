@@ -25,9 +25,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ln0 extends org.telegram.ui.Components.fw0 implements NotificationCenter.NotificationCenterDelegate {
+public final class ln0 extends org.telegram.ui.Components.hw0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int R = 0;
     public int E;
     public double F;
@@ -186,12 +186,12 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final boolean c(boolean z10) {
         int i10;
         pn0 pn0Var = this.Q;
@@ -223,7 +223,7 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void d() {
         this.J = false;
     }
@@ -250,7 +250,7 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void f() {
         int i10 = this.L;
         if (i10 == 2) {
@@ -265,7 +265,7 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         r();
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void h(String str) {
         int i10;
         if (this.J) {
@@ -298,7 +298,7 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         ConnectionsManager.getInstance(i10).sendRequest(verifyphone, new dc0(8, this, verifyphone), 2);
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void j() {
         LinearLayout linearLayout = this.c;
         if (linearLayout == null || linearLayout.getVisibility() != 0) {
@@ -315,7 +315,7 @@ public final class ln0 extends org.telegram.ui.Components.fw0 implements Notific
         }
     }
 
-    @Override // org.telegram.ui.Components.fw0
+    @Override // org.telegram.ui.Components.hw0
     public final void m(Bundle bundle, boolean z10) {
         int i10;
         int i11;

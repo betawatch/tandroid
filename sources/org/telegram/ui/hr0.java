@@ -22,10 +22,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class hr0 extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.ur0 y = new org.telegram.ui.Components.ur0(4);
+    public static final org.telegram.ui.Components.wr0 y = new org.telegram.ui.Components.wr0(4);
     public final cr0 a;
     public final cr0 b;
     public org.telegram.ui.ActionBar.v0 c;

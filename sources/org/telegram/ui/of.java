@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class of implements Utilities.Callback {
                     break;
                 }
             case 1:
-                zn.B0((zn) obj3, (i41[]) obj2, (org.telegram.ui.Components.v70) obj);
+                zn.B0((zn) obj3, (i41[]) obj2, (org.telegram.ui.Components.y70) obj);
                 break;
             case 2:
                 zn znVar2 = (zn) obj3;
@@ -104,7 +104,7 @@ public final /* synthetic */ class of implements Utilities.Callback {
             case 4:
                 hg.a2 a2Var = (hg.a2) obj2;
                 String str = (String) obj;
-                zn znVar4 = ((mj) obj3).b;
+                zn znVar4 = ((nj) obj3).b;
                 if (a2Var != null) {
                     i10 = ((org.telegram.ui.ActionBar.n2) znVar4).currentAccount;
                     hg.b2.f(i10).k(a2Var.a, str);
@@ -176,13 +176,13 @@ public final /* synthetic */ class of implements Utilities.Callback {
             case 10:
                 Long l11 = (Long) obj;
                 ChatActivityEnterView chatActivityEnterView = ((org.telegram.ui.Components.of) obj3).a;
-                long j3 = chatActivityEnterView.P2;
-                MessageObject messageObject3 = chatActivityEnterView.S2;
+                long j3 = chatActivityEnterView.Q2;
+                MessageObject messageObject3 = chatActivityEnterView.T2;
                 threadMessage = chatActivityEnterView.getThreadMessage();
                 SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of((String) obj2, j3, messageObject3, threadMessage, null, false, null, null, null, true, 0, 0, null, false);
-                zn znVar8 = chatActivityEnterView.O2;
+                zn znVar8 = chatActivityEnterView.P2;
                 of3.sendMessageChatArguments = znVar8 != null ? znVar8.C8() : null;
-                of3.effect_id = chatActivityEnterView.R4;
+                of3.effect_id = chatActivityEnterView.S4;
                 of3.payStars = l11.longValue();
                 of3.monoForumPeer = chatActivityEnterView.getSendMonoForumPeerId();
                 of3.suggestionParams = chatActivityEnterView.getSendMessageSuggestionParams();
@@ -190,7 +190,7 @@ public final /* synthetic */ class of implements Utilities.Callback {
                 chatActivityEnterView.setFieldText("");
                 chatActivityEnterView.m0.c();
                 org.telegram.ui.Components.xe xeVar = chatActivityEnterView.J0;
-                chatActivityEnterView.R4 = 0L;
+                chatActivityEnterView.S4 = 0L;
                 xeVar.setEffect(0L);
                 break;
             case 11:
@@ -314,14 +314,14 @@ public final /* synthetic */ class of implements Utilities.Callback {
                 break;
             case 21:
                 MessagesController messagesController = (MessagesController) obj3;
-                org.telegram.ui.Components.rr0 rr0Var = (org.telegram.ui.Components.rr0) obj2;
+                org.telegram.ui.Components.tr0 tr0Var = (org.telegram.ui.Components.tr0) obj2;
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (((Boolean) obj).booleanValue()) {
                     messagesController.setContentSettings(true);
                     if (U != null) {
                         org.telegram.ui.Components.xc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new org.telegram.ui.Components.td(i13, U)), true)).k(true);
                     }
-                    rr0Var.run(Boolean.TRUE);
+                    tr0Var.run(Boolean.TRUE);
                     break;
                 } else if (U != null) {
                     org.telegram.ui.Components.xc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
@@ -329,7 +329,7 @@ public final /* synthetic */ class of implements Utilities.Callback {
                 }
                 break;
             case 22:
-                org.telegram.ui.Components.jv0.j((org.telegram.ui.Components.jv0) obj3, (TL_stories.StoryItem) obj2, (ai.e9) obj);
+                org.telegram.ui.Components.lv0.j((org.telegram.ui.Components.lv0) obj3, (TL_stories.StoryItem) obj2, (ai.e9) obj);
                 break;
             case 23:
                 st stVar = (st) obj3;
@@ -359,7 +359,7 @@ public final /* synthetic */ class of implements Utilities.Callback {
                 uy uyVar = (uy) obj3;
                 Activity activity = (Activity) obj2;
                 if (!((Boolean) obj).booleanValue()) {
-                    uyVar.showDialog(new ik0(activity, !org.telegram.ui.Components.le0.c(), new hw(activity, 0)));
+                    uyVar.showDialog(new ik0(activity, !org.telegram.ui.Components.oe0.c(), new hw(activity, 0)));
                     break;
                 }
                 break;

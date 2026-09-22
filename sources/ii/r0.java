@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class r0 implements h1 {
     public final /* synthetic */ u0 a;
@@ -15,21 +15,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
-        d3 d3Var;
-        r9 textSelectionHelper;
-        u0 u0Var = this.a;
-        if (u0Var.n || i10 == i11 || (d3Var = u0Var.h) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
-            return;
-        }
-        if (textSelectionHelper.y() && textSelectionHelper.W == u0Var) {
-            return;
-        }
-        u0Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 2));
-    }
-
-    @Override // ii.h1
-    public final void K(CharSequence charSequence) {
+    public final void I(CharSequence charSequence) {
         d3 d3Var = this.a.h;
         if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
@@ -38,7 +24,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void U(Editable editable) {
+    public final void R(Editable editable) {
         u0 u0Var = this.a;
         a aVar = u0Var.f;
         if (aVar != null) {
@@ -64,7 +50,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean Y(boolean z10) {
+    public final /* synthetic */ boolean V(boolean z10) {
         return false;
     }
 
@@ -79,7 +65,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean f() {
+    public final boolean d() {
         u0 u0Var = this.a;
         d3 d3Var = u0Var.h;
         if (d3Var == null || u0Var.f == null) {
@@ -89,7 +75,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void n(i1 i1Var) {
+    public final void l(i1 i1Var) {
         a aVar;
         w3 w3Var;
         ArrayList arrayList;
@@ -112,12 +98,12 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean p(i1 i1Var) {
+    public final /* synthetic */ boolean o(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final boolean t(i1 i1Var) {
+    public final boolean s(i1 i1Var) {
         u0 u0Var = this.a;
         if (u0Var.h == null || u0Var.f == null || i1Var.length() != 0) {
             return false;
@@ -127,7 +113,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void y() {
+    public final void v() {
         a aVar;
         u0 u0Var = this.a;
         d3 d3Var = u0Var.h;
@@ -138,6 +124,20 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ void j(int i10, int i11) {
+    public final void z(i1 i1Var, int i10, int i11) {
+        d3 d3Var;
+        r9 textSelectionHelper;
+        u0 u0Var = this.a;
+        if (u0Var.n || i10 == i11 || (d3Var = u0Var.h) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        if (textSelectionHelper.y() && textSelectionHelper.W == u0Var) {
+            return;
+        }
+        u0Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 2));
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ void i(int i10, int i11) {
     }
 }

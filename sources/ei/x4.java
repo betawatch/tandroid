@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -202,10 +202,10 @@ public final /* synthetic */ class x4 implements Runnable {
                 }
                 break;
             case 3:
-                a4.m mVar = (a4.m) this.d;
+                android.support.v4.media.c cVar = (android.support.v4.media.c) this.d;
                 ii.i1 i1Var2 = (ii.i1) this.e;
                 r9 r9Var2 = (r9) this.f;
-                g5 g5Var = (g5) mVar.b;
+                g5 g5Var = (g5) cVar.b;
                 int length3 = i1Var2.length();
                 int i24 = this.b;
                 if (length3 >= i24 && i1Var2.getSelectionStart() != i1Var2.getSelectionEnd()) {
@@ -223,10 +223,10 @@ public final /* synthetic */ class x4 implements Runnable {
                 }
                 break;
             case 4:
-                a6.m mVar2 = (a6.m) this.d;
+                pb.c cVar2 = (pb.c) this.d;
                 ii.i1 i1Var3 = (ii.i1) this.e;
                 r9 r9Var3 = (r9) this.f;
-                o5 o5Var = (o5) mVar2.b;
+                o5 o5Var = (o5) cVar2.b;
                 int length4 = i1Var3.length();
                 int i25 = this.b;
                 if (length4 >= i25 && i1Var3.getSelectionStart() != i1Var3.getSelectionEnd() && r9Var3.k0(o5Var, 0, this.c, i25)) {

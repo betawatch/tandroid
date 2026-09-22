@@ -27,26 +27,26 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.l6, org.telegram.ui.Components.ll0, MessagesStorage.BooleanCallback, c5.p, org.telegram.ui.Components.voip.i3, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.Components.t40 {
+public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.l6, org.telegram.ui.Components.ol0, MessagesStorage.BooleanCallback, c5.o, org.telegram.ui.Components.voip.i3, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.Components.t40 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ ea(int i10, cj cjVar, org.telegram.ui.ActionBar.d5 d5Var, org.telegram.ui.Components.u40 u40Var) {
+    public /* synthetic */ ea(int i10, dj djVar, org.telegram.ui.ActionBar.d5 d5Var, org.telegram.ui.Components.u40 u40Var) {
         this.a = 10;
         this.b = i10;
-        this.c = cjVar;
+        this.c = djVar;
         this.d = d5Var;
         this.e = u40Var;
     }
 
     @Override // org.telegram.ui.Components.t40
     public void Q(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, boolean z10, final TLRPC.VideoSize videoSize) {
-        final cj cjVar = (cj) this.c;
+        final dj djVar = (dj) this.c;
         final org.telegram.ui.ActionBar.d5 d5Var = (org.telegram.ui.ActionBar.d5) this.d;
         final org.telegram.ui.Components.u40 u40Var = (org.telegram.ui.Components.u40) this.e;
         final int i10 = this.b;
@@ -72,13 +72,13 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
                     tL_photos_uploadProfilePhoto.flags |= 16;
                 }
                 int i12 = i10;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_photos_uploadProfilePhoto, new ya(i12, photoSize2, photoSize, cjVar, d5Var, 12));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_photos_uploadProfilePhoto, new ya(i12, photoSize2, photoSize, djVar, d5Var, 12));
                 u40Var.j();
             }
         });
     }
 
-    @Override // c5.p
+    @Override // c5.o
     public void a(c5.h hVar, List list) {
         AndroidUtilities.runOnUIThread(new ai.cb(hVar, (org.telegram.ui.ActionBar.n2) this.c, list, this.b, (c5.f) this.d, (lx0) this.e, 11));
     }
@@ -101,12 +101,12 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
         n6Var.i = Math.max(n6Var.i, h.getHeight());
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
-        org.telegram.ui.Components.un0 un0Var = (org.telegram.ui.Components.un0) this.c;
+        org.telegram.ui.Components.wn0 wn0Var = (org.telegram.ui.Components.wn0) this.c;
         org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.d;
         org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e;
-        ArrayList arrayList = un0Var.r;
+        ArrayList arrayList = wn0Var.r;
         if (i10 >= 0 && i10 < arrayList.size()) {
             int i11 = this.b;
             if (UserConfig.getInstance(i11).isPremium()) {
@@ -114,14 +114,14 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
                     new rg.x0(n2Var, 24, true).show();
                     return true;
                 }
-                org.telegram.ui.Components.sn0 sn0Var = ((org.telegram.ui.Components.tn0) view).a;
-                if (sn0Var != null) {
-                    sn0Var.q();
+                org.telegram.ui.Components.un0 un0Var = ((org.telegram.ui.Components.vn0) view).a;
+                if (un0Var != null) {
+                    un0Var.q();
                 }
-                org.telegram.ui.Components.rn0 rn0Var = (org.telegram.ui.Components.rn0) arrayList.get(i10);
-                org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(n2Var, view);
+                org.telegram.ui.Components.tn0 tn0Var = (org.telegram.ui.Components.tn0) arrayList.get(i10);
+                org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(n2Var, view);
                 H.i = 3;
-                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(rn0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new ai.c9(un0Var, i11, rn0Var, f6Var, 21), false);
+                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(tn0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new ai.c9(wn0Var, i11, tn0Var, f6Var, 21), false);
                 H.Z();
                 return true;
             }
@@ -219,9 +219,9 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
                 }
                 break;
             case 4:
-                org.telegram.ui.Components.jv0 jv0Var = (org.telegram.ui.Components.jv0) obj3;
+                org.telegram.ui.Components.lv0 lv0Var = (org.telegram.ui.Components.lv0) obj3;
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(jv0Var.getContext(), 3, (org.telegram.ui.ActionBar.f6) obj2)};
+                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(lv0Var.getContext(), 3, (org.telegram.ui.ActionBar.f6) obj2)};
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
                 TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
@@ -234,10 +234,10 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
                 tL_poll.closed = true;
                 tL_messages_editMessage.media = tL_inputMediaPoll;
                 int i16 = this.b;
-                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(jv0Var.j1);
+                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(lv0Var.j1);
                 tL_messages_editMessage.id = messageObject.getId();
                 tL_messages_editMessage.flags |= 16384;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.nr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ai.za(jv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.pr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ai.za(lv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
                 break;
         }
     }
@@ -249,8 +249,8 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
         Utilities.Callback callback = (Utilities.Callback) this.e;
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            c5.o oVar = (c5.o) it.next();
-            c5.k a2 = oVar.a();
+            c5.n nVar = (c5.n) it.next();
+            c5.k a2 = nVar.a();
             int size = arrayList.size();
             int i10 = 0;
             while (true) {
@@ -259,7 +259,7 @@ public final /* synthetic */ class ea implements org.telegram.ui.ActionBar.a2, o
                     i10++;
                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) obj;
                     String str = tL_premiumGiftCodeOption.store_product;
-                    if (str != null && str.equals(oVar.c)) {
+                    if (str != null && str.equals(nVar.c)) {
                         tL_premiumGiftCodeOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         tL_premiumGiftCodeOption.currency = a2.c;
                         break;

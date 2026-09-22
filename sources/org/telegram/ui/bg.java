@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg implements org.telegram.ui.Components.yj0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class bg implements org.telegram.ui.Components.bk0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ zn b;
     public final /* synthetic */ MessageObject c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class bg implements org.telegram.ui.Components.yj0,
         this.c = messageObject;
     }
 
-    @Override // org.telegram.ui.Components.yj0
+    @Override // org.telegram.ui.Components.bk0
     public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:

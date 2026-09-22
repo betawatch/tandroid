@@ -1,12 +1,15 @@
 package w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import java.util.Date;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class u6 {
-    public static int a(long j3) {
-        if (j3 > 2147483647L || j3 < -2147483648L) {
-            throw new RuntimeException(org.telegram.ui.Cells.c1.j(j3, "A cast to int has gone wrong. Please contact the mp4parser discussion group (", ")"));
-        }
-        return (int) j3;
+    public static long a(Date date) {
+        return (date.getTime() / 1000) + 2082844800;
+    }
+
+    public static Date b(long j3) {
+        return new Date((j3 - 2082844800) * 1000);
     }
 }

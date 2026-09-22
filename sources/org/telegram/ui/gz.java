@@ -32,14 +32,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class gz implements NotificationCenter.NotificationCenterDelegate {
     public static final HashSet L = new HashSet();
     public static final HashSet M;
     public i9.s E;
     public final FrameLayout G;
-    public final org.telegram.ui.Components.vl0 H;
+    public final org.telegram.ui.Components.yl0 H;
     public final long I;
     public final long J;
     public HashMap K;
@@ -48,7 +48,7 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_messages_stickerSet c;
     public boolean n;
     public String v;
-    public cj y;
+    public dj y;
     public boolean d = false;
     public final HashMap e = new HashMap();
     public final HashMap f = new HashMap();
@@ -218,7 +218,7 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
         int abs;
         TLRPC.VideoSize premiumStickerAnimation;
         boolean z13;
-        cj cjVar;
+        dj djVar;
         int i12 = i11;
         boolean z14 = messageObject != null && messageObject.isPremiumSticker();
         boolean z15 = (messageObject == null || messageObject.getEffect() == null) ? false : true;
@@ -395,8 +395,8 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                         frameLayout.invalidate();
                         if (z10 && !z13 && UserConfig.getInstance(this.b).clientUserId != this.I) {
                             int i19 = this.r;
-                            if (i19 != 0 && i19 != i10 && (cjVar = this.y) != null) {
-                                AndroidUtilities.cancelRunOnUIThread(cjVar);
+                            if (i19 != 0 && i19 != i10 && (djVar = this.y) != null) {
+                                AndroidUtilities.cancelRunOnUIThread(djVar);
                                 this.y.run();
                             }
                             this.r = i10;
@@ -414,14 +414,14 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                                 arrayList5.add(Long.valueOf(System.currentTimeMillis() - this.s));
                                 arrayList4.add(Integer.valueOf(i18));
                             }
-                            cj cjVar2 = this.y;
-                            if (cjVar2 != null) {
-                                AndroidUtilities.cancelRunOnUIThread(cjVar2);
+                            dj djVar2 = this.y;
+                            if (djVar2 != null) {
+                                AndroidUtilities.cancelRunOnUIThread(djVar2);
                                 this.y = null;
                             }
-                            cj cjVar3 = new cj(this, 27);
-                            this.y = cjVar3;
-                            AndroidUtilities.runOnUIThread(cjVar3, 500L);
+                            dj djVar3 = new dj(this, 27);
+                            this.y = djVar3;
+                            AndroidUtilities.runOnUIThread(djVar3, 500L);
                         }
                         if (!z11) {
                             return true;
@@ -482,7 +482,7 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                     JSONArray jSONArray = new JSONObject(tL_sendMessageEmojiInteraction.interaction.data).getJSONArray("a");
                     for (int i14 = 0; i14 < jSONArray.length(); i14++) {
                         JSONObject jSONObject = jSONArray.getJSONObject(i14);
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bd0(this, i13, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ed0(this, i13, jSONObject.optInt("i", 1) - 1), (long) (jSONObject.optDouble("t", 0.0d) * 1000.0d));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -728,15 +728,15 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
                 org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
                 if ((pcVar == null || !pcVar.l) && SharedConfig.emojiInteractionsHintCount > 0 && UserConfig.getInstance(this.b).getClientUserId() != znVar.f.id) {
                     SharedConfig.updateEmojiInteractionsHintCount(SharedConfig.emojiInteractionsHintCount - 1);
-                    org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(znVar.getParentActivity(), null, 1, -1, u1Var.getMessageObject().isAnimatedAnimatedEmoji() ? u1Var.getMessageObject().getDocument() : MediaDataController.getInstance(this.b).getEmojiAnimatedSticker(u1Var.getMessageObject().getStickerEmoji()), znVar.getResourceProvider());
-                    lx0Var.c.setVisibility(8);
+                    org.telegram.ui.Components.nx0 nx0Var = new org.telegram.ui.Components.nx0(znVar.getParentActivity(), null, 1, -1, u1Var.getMessageObject().isAnimatedAnimatedEmoji() ? u1Var.getMessageObject().getDocument() : MediaDataController.getInstance(this.b).getEmojiAnimatedSticker(u1Var.getMessageObject().getStickerEmoji()), znVar.getResourceProvider());
+                    nx0Var.c.setVisibility(8);
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("EmojiInteractionTapHint", R.string.EmojiInteractionTapHint, znVar.f.first_name));
-                    TextView textView = lx0Var.b;
+                    TextView textView = nx0Var.b;
                     textView.setText(Emoji.replaceEmoji(replaceTags, textView.getPaint().getFontMetricsInt(), false));
                     textView.setTypeface(null);
                     textView.setMaxLines(3);
                     textView.setSingleLine(false);
-                    i9.s sVar = new i9.s(this, org.telegram.ui.Components.pc.g(znVar, lx0Var, 2750), z11, 23);
+                    i9.s sVar = new i9.s(this, org.telegram.ui.Components.pc.g(znVar, nx0Var, 2750), z11, 23);
                     this.E = sVar;
                     AndroidUtilities.runOnUIThread(sVar, 1500L);
                 }
@@ -806,22 +806,22 @@ public class gz implements NotificationCenter.NotificationCenterDelegate {
         if (znVar == null || MessagesController.getInstance(this.b).premiumFeaturesBlocked() || znVar.getParentActivity() == null) {
             return;
         }
-        org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(this.G.getContext(), null, 1, -1, messageObject.getDocument(), znVar.getResourceProvider());
-        lx0Var.b.setText(tL_messages_stickerSet.set.title);
-        lx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
+        org.telegram.ui.Components.nx0 nx0Var = new org.telegram.ui.Components.nx0(this.G.getContext(), null, 1, -1, messageObject.getDocument(), znVar.getResourceProvider());
+        nx0Var.b.setText(tL_messages_stickerSet.set.title);
+        nx0Var.c.setText(LocaleController.getString(R.string.PremiumStickerTooltip));
         org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(znVar.getParentActivity(), znVar.getResourceProvider(), true);
-        lx0Var.setButton(ncVar);
+        nx0Var.setButton(ncVar);
         ncVar.a = new yt(12, this, messageObject);
         ncVar.e(LocaleController.getString(R.string.ViewAction));
-        org.telegram.ui.Components.pc g10 = org.telegram.ui.Components.pc.g(znVar, lx0Var, 2750);
+        org.telegram.ui.Components.pc g10 = org.telegram.ui.Components.pc.g(znVar, nx0Var, 2750);
         g10.b = messageObject.getId();
         g10.j();
     }
 
-    public gz(zn znVar, FrameLayout frameLayout, org.telegram.ui.Components.vl0 vl0Var, int i10, long j3, long j10) {
+    public gz(zn znVar, FrameLayout frameLayout, org.telegram.ui.Components.yl0 yl0Var, int i10, long j3, long j10) {
         this.a = znVar;
         this.G = frameLayout;
-        this.H = vl0Var;
+        this.H = yl0Var;
         this.b = i10;
         this.I = j3;
         this.J = j10;

@@ -11,11 +11,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class vp0 extends FrameLayout {
     public final TextView a;
-    public org.telegram.ui.Components.u01 b;
+    public org.telegram.ui.Components.w01 b;
     public final org.telegram.ui.Components.n5 c;
     public final /* synthetic */ wp0 d;
 
@@ -92,7 +92,7 @@ public final class vp0 extends FrameLayout {
         } else {
             n5Var.g(null, z10);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.u01(LocaleController.getString(wp0Var.p0.a ? R.string.ChannelReplyIconOff : R.string.UserReplyIconOff), 16.0f, null);
+                this.b = new org.telegram.ui.Components.w01(LocaleController.getString(wp0Var.p0.a ? R.string.ChannelReplyIconOff : R.string.UserReplyIconOff), 16.0f, null);
             }
         }
     }
@@ -110,9 +110,9 @@ public final class vp0 extends FrameLayout {
         Integer valueOf = Integer.valueOf(a());
         org.telegram.ui.Components.n5 n5Var = this.c;
         n5Var.k(valueOf);
-        org.telegram.ui.Components.u01 u01Var = this.b;
-        if (u01Var != null) {
-            u01Var.c((getMeasuredWidth() - this.b.l()) - AndroidUtilities.dp(19.0f), getMeasuredHeight() / 2.0f, 1.0f, this.d.p0.getThemedColor(org.telegram.ui.ActionBar.j6.q6), canvas);
+        org.telegram.ui.Components.w01 w01Var = this.b;
+        if (w01Var != null) {
+            w01Var.c((getMeasuredWidth() - this.b.l()) - AndroidUtilities.dp(19.0f), getMeasuredHeight() / 2.0f, 1.0f, this.d.p0.getThemedColor(org.telegram.ui.ActionBar.j6.q6), canvas);
         } else {
             n5Var.draw(canvas);
         }

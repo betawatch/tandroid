@@ -14,11 +14,11 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.gy0;
-import org.telegram.ui.Components.sy0;
+import org.telegram.ui.Components.iy0;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.h90;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -73,10 +73,10 @@ public final /* synthetic */ class t5 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5(tL_error, (ci.d) this.b, (org.telegram.ui.ActionBar.f3) this.c, (Runnable) this.d, 28));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new m3((gy0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 23));
+                AndroidUtilities.runOnUIThread(new m3((iy0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 23));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new m3((sy0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 24));
+                AndroidUtilities.runOnUIThread(new m3((uy0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 24));
                 break;
             case 14:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.d1) this.b, tL_error, (String) this.c, (TLRPC.TL_inputInvoiceSlug) this.d, tLObject));

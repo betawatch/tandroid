@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class a00 extends vz {
     public final /* synthetic */ b00 E;
@@ -40,9 +40,9 @@ public final class a00 extends vz {
         int i11 = org.telegram.ui.ActionBar.j6.G6;
         j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        org.telegram.ui.Components.c11 c11Var = new org.telegram.ui.Components.c11();
-        c11Var.a |= 256;
-        spannableString.setSpan(new org.telegram.ui.Components.d11(c11Var, 0), 0, spannableString.length(), 33);
+        org.telegram.ui.Components.e11 e11Var = new org.telegram.ui.Components.e11();
+        e11Var.a |= 256;
+        spannableString.setSpan(new org.telegram.ui.Components.f11(e11Var, 0), 0, spannableString.length(), 33);
         j5Var.l(spannableString, false);
         j5Var.setAlpha(1.0f);
         frameLayout.addView(j5Var, w7.y5.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));

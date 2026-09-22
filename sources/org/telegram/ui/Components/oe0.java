@@ -1,162 +1,186 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class oe0 extends FrameLayout {
-    public final RectF a;
-    public boolean b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ xe0 d;
+public abstract class oe0 {
+    public static int a = 1500;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe0(xe0 xe0Var, Activity activity, Activity activity2) {
-        super(activity);
-        this.d = xe0Var;
-        this.c = activity2;
-        this.a = new RectF();
+    public static /* synthetic */ void a(String[] strArr, Activity activity, Utilities.Callback callback) {
+        int length = strArr.length;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= length) {
+                break;
+            }
+            if (activity.checkSelfPermission(strArr[i10]) == 0) {
+                z10 = true;
+                break;
+            }
+            i10++;
+        }
+        callback.run(Boolean.valueOf(z10));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        int i12;
-        float f7;
-        Drawable drawable;
-        Drawable drawable2;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        xe0 xe0Var = this.d;
-        Paint paint = xe0Var.v;
-        int i20 = xe0Var.w;
-        i10 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-        int i21 = i20 - i10;
-        int dp = AndroidUtilities.dp(30.0f) + getMeasuredHeight();
-        i11 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-        int i22 = i11 + dp;
-        float dp2 = AndroidUtilities.dp(12.0f);
-        i12 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-        if (i12 + i21 < dp2) {
-            i19 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-            f7 = 1.0f - Math.min(1.0f, ((dp2 - i21) - i19) / dp2);
-        } else {
-            f7 = 1.0f;
-        }
-        int i23 = AndroidUtilities.statusBarHeight;
-        int i24 = i21 + i23;
-        int i25 = i22 - i23;
-        drawable = ((org.telegram.ui.ActionBar.f3) xe0Var).shadowDrawable;
-        drawable.setBounds(0, i24, getMeasuredWidth(), i25);
-        drawable2 = ((org.telegram.ui.ActionBar.f3) xe0Var).shadowDrawable;
-        drawable2.draw(canvas);
-        if (f7 != 1.0f) {
-            paint.setColor(xe0Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5));
-            i15 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-            i16 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-            float f10 = i16 + i24;
-            int measuredWidth = getMeasuredWidth();
-            i17 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-            float f11 = measuredWidth - i17;
-            i18 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingTop;
-            float dp3 = AndroidUtilities.dp(24.0f) + i18 + i24;
-            RectF rectF = this.a;
-            rectF.set(i15, f10, f11, dp3);
-            float f12 = dp2 * f7;
-            canvas.drawRoundRect(rectF, f12, f12, paint);
-        }
-        int themedColor = xe0Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5);
-        paint.setColor(Color.argb((int) (xe0Var.e.getAlpha() * 255.0f), (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
-        i13 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-        float f13 = i13;
-        int measuredWidth2 = getMeasuredWidth();
-        i14 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-        canvas.drawRect(f13, 0.0f, measuredWidth2 - i14, AndroidUtilities.statusBarHeight, paint);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            xe0 xe0Var = this.d;
-            if (xe0Var.w != 0 && motionEvent.getY() < xe0Var.w && xe0Var.e.getAlpha() == 0.0f) {
-                xe0Var.dismiss();
-                return true;
+    public static /* synthetic */ void b(String[] strArr, Activity activity, Utilities.Callback callback) {
+        int length = strArr.length;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= length) {
+                z10 = true;
+                break;
+            } else if (activity.checkSelfPermission(strArr[i10]) != 0) {
+                break;
+            } else {
+                i10++;
             }
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        callback.run(Boolean.valueOf(z10));
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        xe0 xe0Var = this.d;
-        xe0Var.s = true;
-        super.onLayout(z10, i10, i11, i12, i13);
-        xe0Var.s = false;
-        xe0Var.H(false);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int i13;
-        int size = View.MeasureSpec.getSize(i11);
-        this.b = true;
-        xe0 xe0Var = this.d;
-        pe0 pe0Var = xe0Var.c;
-        i12 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-        int i14 = AndroidUtilities.statusBarHeight;
-        i13 = ((org.telegram.ui.ActionBar.f3) xe0Var).backgroundPaddingLeft;
-        setPadding(i12, i14, i13, 0);
-        this.b = false;
-        int paddingTop = size - getPaddingTop();
-        View.MeasureSpec.getSize(i10);
-        ((FrameLayout.LayoutParams) xe0Var.f.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        this.b = true;
-        int dp = AndroidUtilities.dp(80.0f);
-        ue0 ue0Var = xe0Var.b;
-        int i15 = ue0Var.a.E;
-        for (int i16 = 0; i16 < i15; i16++) {
-            ViewGroup a2 = ue0Var.a(this.c, i16);
-            a2.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-            dp += a2.getMeasuredHeight();
+    public static boolean c() {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
         }
-        int i17 = dp < paddingTop ? paddingTop - dp : paddingTop / 5;
-        if (pe0Var.getPaddingTop() != i17) {
-            pe0Var.getPaddingTop();
-            pe0Var.setPadding(0, i17, 0, 0);
+        if (activity != null && Build.VERSION.SDK_INT >= 23) {
+            return activity.shouldShowRequestPermissionRationale("android.permission.POST_NOTIFICATIONS");
         }
-        this.b = false;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        return false;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.d.isDismissed() && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b) {
+    public static void d(int i10, int i11, String[] strArr, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
             return;
         }
-        super.requestLayout();
+        if (Build.VERSION.SDK_INT < 23) {
+            callback.run(Boolean.TRUE);
+            return;
+        }
+        for (String str : strArr) {
+            if (activity.checkSelfPermission(str) != 0) {
+                for (String str2 : strArr) {
+                    if (activity.shouldShowRequestPermissionRationale(str2)) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
+                        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+                        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new j1(activity, 2));
+                        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+                        alertDialog$Builder.a.show();
+                        callback.run(Boolean.FALSE);
+                        return;
+                    }
+                }
+                g(strArr, new me0(strArr, activity, callback, 1));
+                return;
+            }
+        }
+        callback.run(Boolean.TRUE);
+    }
+
+    public static void e(int i10, int i11, String[] strArr, String[] strArr2, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT < 23) {
+            callback.run(Boolean.TRUE);
+            return;
+        }
+        for (String str : strArr) {
+            if (activity.checkSelfPermission(str) == 0) {
+                callback.run(Boolean.TRUE);
+                return;
+            }
+        }
+        for (String str2 : strArr) {
+            if (!activity.shouldShowRequestPermissionRationale(str2)) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
+                alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+                alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
+                alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new j1(activity, 1));
+                alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+                alertDialog$Builder.a.show();
+                callback.run(Boolean.FALSE);
+                return;
+            }
+        }
+        g(strArr2, new me0(strArr2, activity, callback, 0));
+    }
+
+    public static boolean f(String str) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return false;
+        }
+        return Build.VERSION.SDK_INT < 23 || activity.checkSelfPermission(str) == 0;
+    }
+
+    public static void g(String[] strArr, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= 23) {
+            int i10 = a;
+            a = i10 + 1;
+            NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
+            notificationCenterDelegateArr[0] = new ne0(i10, callback, notificationCenterDelegateArr);
+            NotificationCenter.getGlobalInstance().addObserver(notificationCenterDelegateArr[0], NotificationCenter.activityPermissionsGranted);
+            activity.requestPermissions(strArr, i10);
+            return;
+        }
+        if (callback != null) {
+            int[] iArr = new int[strArr.length];
+            for (int i11 = 0; i11 < strArr.length; i11++) {
+                iArr[i11] = f(strArr[i11]) ? 0 : -1;
+            }
+            callback.run(iArr);
+        }
+    }
+
+    public static void h() {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+        intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+        try {
+            activity.startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

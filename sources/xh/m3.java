@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.oq;
-import w7.b6;
+import w7.a6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m3 extends TextView {
     public final oq a;
@@ -26,7 +26,7 @@ public final class m3 extends TextView {
         setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
         setGravity(17);
         setTypeface(AndroidUtilities.bold());
-        b6.a(this);
+        a6.a(this);
         oq oqVar = new oq(R.drawable.arrows_select, 0);
         this.a = oqVar;
         oqVar.spaceScaleX = 0.8f;

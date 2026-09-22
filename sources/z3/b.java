@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements d {
     public static final p c = new p(new x2.h(10), x0.b);
@@ -108,7 +108,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int d(long j3) {
+    public final int a(long j3) {
         int a2 = d0.a(this.b, j3, false);
         if (a2 < this.a.size()) {
             return a2;
@@ -117,13 +117,13 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final long g(int i10) {
+    public final long d(int i10) {
         e2.d.b(i10 < this.a.size());
         return this.b[i10];
     }
 
     @Override // z3.d
-    public final List s(long j3) {
+    public final List f(long j3) {
         int e = d0.e(this.b, j3, false);
         if (e != -1) {
             return (i0) this.a.get(e);
@@ -133,7 +133,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int v() {
+    public final int g() {
         return this.a.size();
     }
 }

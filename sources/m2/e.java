@@ -31,7 +31,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 import v7.s6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.o {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -486,7 +486,7 @@ public final class e extends DefaultHandler implements y2.o {
                         }
                         r72 = b2.i.b;
                         str3 = null;
-                        r82 = w3.o.a(r72, uuidArr, null);
+                        r82 = w3.n.a(r72, uuidArr, null);
                         break;
                     } else {
                         e2.a.n("MpdParser", "Ignoring <ContentProtection> with schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" (ClearKey) due to missing required default_KID attribute.");
@@ -515,7 +515,7 @@ public final class e extends DefaultHandler implements y2.o {
                         }
                         if (name.equals("pssh") && xmlPullParser.next() == 4) {
                             byte[] decode = Base64.decode(xmlPullParser.getText(), 0);
-                            j6.l j3 = w3.o.j(decode);
+                            j6.l j3 = w3.n.j(decode);
                             UUID uuid = j3 == null ? null : (UUID) j3.b;
                             if (uuid == null) {
                                 e2.a.n("MpdParser", "Skipping malformed cenc:pssh data");
@@ -531,7 +531,7 @@ public final class e extends DefaultHandler implements y2.o {
                     if (r82 == 0) {
                         ?? r10 = b2.i.e;
                         if (r10.equals(r72) && e2.d.m(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
-                            r82 = w3.o.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
+                            r82 = w3.n.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
                         }
                     }
                     b(xmlPullParser);

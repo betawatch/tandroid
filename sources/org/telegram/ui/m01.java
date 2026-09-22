@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.ui.Components.xv0 {
+public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.ui.Components.zv0 {
     public static final s0 g0 = new s0("crossfadeProgress", 3);
     public boolean G;
     public float H;
@@ -34,7 +34,7 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
     public ImageReceiver.BitmapHolder W;
     public boolean a0;
     public float b0;
-    public org.telegram.ui.Components.yh0 c0;
+    public org.telegram.ui.Components.bi0 c0;
     public boolean d0;
     public float e0;
     public Runnable f0;
@@ -58,7 +58,7 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
         paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.zv0
     public final void g(Runnable runnable) {
         this.f0 = runnable;
     }
@@ -78,9 +78,9 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        org.telegram.ui.Components.yh0 yh0Var = this.c0;
-        if (yh0Var != null) {
-            yh0Var.invalidate();
+        org.telegram.ui.Components.bi0 bi0Var = this.c0;
+        if (bi0Var != null) {
+            bi0Var.invalidate();
         }
         Runnable runnable = this.f0;
         if (runnable != null) {
@@ -107,7 +107,7 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
 
     @Override // org.telegram.ui.Components.v9, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.ph0 ph0Var;
+        org.telegram.ui.Components.sh0 sh0Var;
         boolean z10;
         float f7;
         float f10;
@@ -116,14 +116,14 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
         float f12;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Components.yh0 yh0Var = this.c0;
-        boolean z11 = yh0Var != null && yh0Var.getVisibility() == 0 && this.M && this.H > 0.0f;
+        org.telegram.ui.Components.bi0 bi0Var = this.c0;
+        boolean z11 = bi0Var != null && bi0Var.getVisibility() == 0 && this.M && this.H > 0.0f;
         if (z11) {
-            org.telegram.ui.Components.ph0 blurDrawer = this.c0.getBlurDrawer();
-            ph0Var = blurDrawer;
+            org.telegram.ui.Components.sh0 blurDrawer = this.c0.getBlurDrawer();
+            sh0Var = blurDrawer;
             z11 = blurDrawer != null;
         } else {
-            ph0Var = null;
+            sh0Var = null;
         }
         float z12 = org.telegram.messenger.l0.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
         org.telegram.ui.Components.p5 p5Var = this.e;
@@ -220,7 +220,7 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
             float f23 = measuredHeight;
             canvas.translate(z12, z12 + f23);
             float f24 = z12 * f7;
-            ph0Var.f(canvas, this, f15 - f24, f23 - f24, true, (this.G || ph0Var.a || this.c0.getRealPosition() == 0) ? 1.0f - this.H : 1.0f, f11);
+            sh0Var.f(canvas, this, f15 - f24, f23 - f24, true, (this.G || sh0Var.a || this.c0.getRealPosition() == 0) ? 1.0f - this.H : 1.0f, f11);
         }
         canvas.restore();
     }
@@ -229,8 +229,8 @@ public class m01 extends org.telegram.ui.Components.v9 implements org.telegram.u
         this.T = imageReceiver;
     }
 
-    public void setAvatarsViewPager(org.telegram.ui.Components.yh0 yh0Var) {
-        this.c0 = yh0Var;
+    public void setAvatarsViewPager(org.telegram.ui.Components.bi0 bi0Var) {
+        this.c0 = bi0Var;
     }
 
     public void setCrossfadeProgress(float f7) {

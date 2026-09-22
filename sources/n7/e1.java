@@ -6,13 +6,13 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e1 implements Closeable {
     public final ByteArrayInputStream a;
     public d1 b;
     public final byte[] c = new byte[8];
-    public final k2.u d = new k2.u(8);
+    public final ki.e0 d = new ki.e0(6);
 
     public e1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -66,7 +66,7 @@ public final class e1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.e();
+        this.d.j();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -79,9 +79,9 @@ public final class e1 implements Closeable {
     public final d1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            k2.u uVar = this.d;
+            ki.e0 e0Var = this.d;
             if (read == -1) {
-                uVar.e();
+                e0Var.j();
                 return null;
             }
             d1 d1Var = new d1(read);
@@ -92,42 +92,42 @@ public final class e1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            uVar.f(-1L);
+                            e0Var.k(-1L);
                         } else {
                             if (b10 != 96) {
                                 throw new IllegalStateException(hg.k0.h((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            uVar.f(-2L);
+                            e0Var.k(-2L);
                         }
-                        long h = uVar.h();
-                        ArrayDeque arrayDeque = (ArrayDeque) uVar.b;
-                        if (h == 1) {
+                        long l4 = e0Var.l();
+                        ArrayDeque arrayDeque = (ArrayDeque) e0Var.b;
+                        if (l4 == 1) {
                             arrayDeque.pop();
-                        } else if (h > 1) {
+                        } else if (l4 > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(h - 1));
-                        } else if (h == -4) {
+                            arrayDeque.push(Long.valueOf(l4 - 1));
+                        } else if (l4 == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (h == -5) {
+                        } else if (l4 == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (d1Var.b == 31) {
-                    long h10 = uVar.h();
-                    if (h10 >= 0) {
-                        throw new IOException(a4.a.o(h10, "expected indefinite length scope but found "));
+                    long l10 = e0Var.l();
+                    if (l10 >= 0) {
+                        throw new IOException(a4.a.o(l10, "expected indefinite length scope but found "));
                     }
-                    if (h10 == -5) {
+                    if (l10 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) uVar.b).pop();
+                    ((ArrayDeque) e0Var.b).pop();
                 }
             }
-            long h11 = uVar.h();
-            if (h11 == -1) {
-                j3 = h11;
+            long l11 = e0Var.l();
+            if (l11 == -1) {
+                j3 = l11;
             }
             throw new IOException(a4.a.o(j3, "expected non-string scope but found "));
         }

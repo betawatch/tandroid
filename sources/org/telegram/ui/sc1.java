@@ -7,9 +7,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class sc1 extends org.telegram.ui.Components.vl0 {
+public final class sc1 extends org.telegram.ui.Components.yl0 {
     public boolean X2;
     public float Y2;
     public final /* synthetic */ xd1 Z2;
@@ -20,7 +20,7 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         this.Z2 = xd1Var;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean G0(View view) {
         sc1 sc1Var = this.Z2.u0;
         View G = sc1Var.G(view);
@@ -28,7 +28,7 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         return U == null || U.f != 2;
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         s4.c1 U;
         boolean drawChild = super.drawChild(canvas, view, j3);
@@ -90,7 +90,7 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     public final void i1(View view, float f7, float f10, boolean z10) {
         if (z10 && (view instanceof org.telegram.ui.Cells.u1) && !((org.telegram.ui.Cells.u1) view).i3(f7)) {
             return;
@@ -98,13 +98,13 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         super.i1(view, f7, f10, z10);
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.Z2.V0();
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         xd1 xd1Var = this.Z2;
@@ -140,7 +140,7 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         return this.X2 || super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vl0, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
         xd1 xd1Var = this.Z2;
@@ -148,21 +148,21 @@ public final class sc1 extends org.telegram.ui.Components.vl0 {
         if (xd1Var.J0 != null) {
             int i11 = 0;
             while (true) {
-                org.telegram.ui.Components.y81[] y81VarArr = xd1Var.J0;
-                if (i11 >= y81VarArr.length) {
+                org.telegram.ui.Components.a91[] a91VarArr = xd1Var.J0;
+                if (i11 >= a91VarArr.length) {
                     break;
                 }
-                y81VarArr[i11].invalidate();
+                a91VarArr[i11].invalidate();
                 i11++;
             }
         }
         if (xd1Var.K0 != null) {
             while (true) {
-                org.telegram.ui.Components.y81[] y81VarArr2 = xd1Var.K0;
-                if (i10 >= y81VarArr2.length) {
+                org.telegram.ui.Components.a91[] a91VarArr2 = xd1Var.K0;
+                if (i10 >= a91VarArr2.length) {
                     break;
                 }
-                y81VarArr2[i10].invalidate();
+                a91VarArr2[i10].invalidate();
                 i10++;
             }
         }

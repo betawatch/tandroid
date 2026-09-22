@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class y0 implements x3.g {
     public long a;
@@ -21,7 +21,7 @@ public final class y0 implements x3.g {
     }
 
     @Override // x3.g
-    public long b(c3.p pVar) {
+    public long c(c3.p pVar) {
         long j3 = this.b;
         if (j3 < 0) {
             return -1L;
@@ -32,7 +32,7 @@ public final class y0 implements x3.g {
     }
 
     @Override // x3.g
-    public c3.b0 g() {
+    public c3.b0 l() {
         e2.d.g(this.a != -1);
         return new c3.t((c3.u) this.c, this.a, 0);
     }

@@ -26,12 +26,12 @@ import org.telegram.messenger.mk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.il0;
 import org.telegram.ui.j71;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z7 implements Runnable {
     public final /* synthetic */ int a;
@@ -219,7 +219,7 @@ public final /* synthetic */ class z7 implements Runnable {
                                                 try {
                                                     TLRPC.TL_availableEffect tL_availableEffect = availableEffects.effects.get(i19);
                                                     if (str2.contains(tL_availableEffect.emoticon)) {
-                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList5 : arrayList4).add(zg.o0.e(tL_availableEffect));
+                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList5 : arrayList4).add(zg.p0.e(tL_availableEffect));
                                                     }
                                                 } catch (Exception unused) {
                                                 }
@@ -249,7 +249,7 @@ public final /* synthetic */ class z7 implements Runnable {
                                                 try {
                                                     TLRPC.TL_availableEffect tL_availableEffect = availableEffects.effects.get(i192);
                                                     if (str2.contains(tL_availableEffect.emoticon)) {
-                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList5 : arrayList4).add(zg.o0.e(tL_availableEffect));
+                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList5 : arrayList4).add(zg.p0.e(tL_availableEffect));
                                                     }
                                                 } catch (Exception unused) {
                                                 }
@@ -296,9 +296,9 @@ public final /* synthetic */ class z7 implements Runnable {
             default:
                 Bitmap[] bitmapArr = (Bitmap[]) obj2;
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
-                pg.s0 s0Var = ((pg.c1) obj3).y.c;
-                uv0 uv0Var = s0Var.g;
-                org.telegram.ui.Cells.f3 h = s0Var.h(new RectF(0.0f, 0.0f, uv0Var.a, uv0Var.b), false, z11, z10);
+                pg.s0 s0Var = ((pg.d1) obj3).y.c;
+                wv0 wv0Var = s0Var.g;
+                org.telegram.ui.Cells.f3 h = s0Var.h(new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.b;
                 }
@@ -325,9 +325,9 @@ public final /* synthetic */ class z7 implements Runnable {
         this.c = z11;
     }
 
-    public /* synthetic */ z7(pg.c1 c1Var, boolean z10, boolean z11, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
+    public /* synthetic */ z7(pg.d1 d1Var, boolean z10, boolean z11, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
         this.a = 5;
-        this.d = c1Var;
+        this.d = d1Var;
         this.b = z10;
         this.c = z11;
         this.e = bitmapArr;

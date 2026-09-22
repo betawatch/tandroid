@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class sm extends org.telegram.ui.Cells.s9 {
     public zn B0;
@@ -32,8 +32,8 @@ public final class sm extends org.telegram.ui.Cells.s9 {
             if (b10.i == null) {
                 return;
             }
-            lk lkVar = this.B0.Y;
-            if (lkVar != null && lkVar.getVisibility() == 0) {
+            mk mkVar = this.B0.Y;
+            if (mkVar != null && mkVar.getVisibility() == 0) {
                 kVar = ((org.telegram.ui.ActionBar.n2) this.B0).actionBar;
                 if (kVar != null) {
                     kVar2 = ((org.telegram.ui.ActionBar.n2) this.B0).actionBar;
@@ -42,9 +42,9 @@ public final class sm extends org.telegram.ui.Cells.s9 {
                     }
                 }
                 this.B0.Cb(messageObject, b10);
-                lk lkVar2 = this.B0.Y;
-                if (lkVar2 != null) {
-                    lkVar2.H0();
+                mk mkVar2 = this.B0.Y;
+                if (mkVar2 != null) {
+                    mkVar2.H0();
                     return;
                 }
                 return;

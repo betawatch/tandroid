@@ -7,12 +7,12 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.d30;
 import org.telegram.ui.Components.f30;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.ou;
-import org.telegram.ui.Components.p91;
+import org.telegram.ui.Components.r91;
 import org.telegram.ui.Components.z20;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ga implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -26,7 +26,6 @@ public final class ga implements ViewTreeObserver.OnPreDrawListener {
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
         int i10 = this.a;
-        int i11 = 3;
         Object obj = this.b;
         switch (i10) {
             case 0:
@@ -52,8 +51,8 @@ public final class ga implements ViewTreeObserver.OnPreDrawListener {
                 v7Var.getLocationOnScreen(z20Var.G);
                 float f7 = z20Var.r.x + z20Var.Q;
                 f30 f30Var = z20Var.U;
-                float measuredWidth = ((f30Var.getMeasuredWidth() / 2.0f) + f7) - r8[0];
-                float measuredWidth2 = ((f30Var.getMeasuredWidth() / 2.0f) + (z20Var.r.y + z20Var.R)) - r8[1];
+                float measuredWidth = ((f30Var.getMeasuredWidth() / 2.0f) + f7) - r7[0];
+                float measuredWidth2 = ((f30Var.getMeasuredWidth() / 2.0f) + (z20Var.r.y + z20Var.R)) - r7[1];
                 boolean z10 = measuredWidth2 - ((float) AndroidUtilities.dp(61.0f)) > 0.0f && ((float) AndroidUtilities.dp(61.0f)) + measuredWidth2 < ((float) v7Var.getMeasuredHeight());
                 if (AndroidUtilities.dp(61.0f) + measuredWidth + d30Var.getMeasuredWidth() < v7Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f) && z10) {
                     d30Var.setTranslationX(AndroidUtilities.dp(61.0f) + measuredWidth);
@@ -89,20 +88,21 @@ public final class ga implements ViewTreeObserver.OnPreDrawListener {
                 ((ci.s6) obj).invalidate();
                 break;
             default:
-                p91 p91Var = (p91) ((ki.c) obj).b;
-                p91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = p91Var.e;
+                r91 r91Var = (r91) ((ki.c) obj).b;
+                r91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = r91Var.e;
+                int i11 = 4;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    p91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = p91Var.h;
+                    r91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = r91Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        p91Var.h = null;
+                        r91Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new l71(this, i11));
-                p91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new j71(this, i11));
+                r91Var.r = 0;
                 break;
         }
         return true;

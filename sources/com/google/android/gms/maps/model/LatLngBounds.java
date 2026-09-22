@@ -10,7 +10,7 @@ import n6.l;
 import o6.a;
 import w7.f0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new j(12);
@@ -44,8 +44,8 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
 
     public final String toString() {
         e eVar = new e(this);
-        eVar.g(this.a, "southwest");
-        eVar.g(this.b, "northeast");
+        eVar.c(this.a, "southwest");
+        eVar.c(this.b, "northeast");
         return eVar.toString();
     }
 

@@ -1,109 +1,124 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class n21 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.f6 a;
-    public final v9 b;
-    public final k90 c;
-    public final k90 d;
-    public int e;
-    public int f;
+public final class n21 {
+    public long a;
+    public boolean b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final int e;
+    public boolean f;
+    public float g;
+    public float h;
 
-    public n21(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.e = 90;
-        this.a = f6Var;
-        setOrientation(1);
-        v9 v9Var = new v9(context);
-        this.b = v9Var;
-        v9Var.getImageReceiver().setAutoRepeatCount(1);
-        v9Var.getImageReceiver().setAutoRepeat(1);
-        v9Var.setOnClickListener(new f80(this, 22));
-        addView(v9Var, w7.y5.t(90, 90, 17, 0, 9, 0, 9));
-        k90 k90Var = new k90(context, null);
-        this.c = k90Var;
-        k90Var.setTextSize(1, 20.0f);
-        k90Var.setGravity(17);
-        k90Var.setTypeface(AndroidUtilities.bold());
-        k90Var.setTextAlignment(4);
-        addView(k90Var, w7.y5.t(-1, -2, 17, 48, 0, 48, 10));
-        k90 k90Var2 = new k90(context, null);
-        this.d = k90Var2;
-        k90Var2.setTextSize(1, 14.0f);
-        k90Var2.setGravity(17);
-        k90Var2.setTextAlignment(4);
-        addView(k90Var2, w7.y5.t(-1, -2, 17, 48, 0, 48, 17));
-        e();
+    public n21() {
+        this(40);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.f6 f6Var = this.a;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
-        k90 k90Var = this.c;
-        k90Var.setTextColor(v02);
-        int i11 = org.telegram.ui.ActionBar.j6.gc;
-        k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        if (k90Var.getVisibility() != 0) {
-            i10 = org.telegram.ui.ActionBar.j6.B6;
+    public final void a(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
+        m21 m21Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            m21 m21Var2 = (m21) arrayList.get(i11);
+            paint.setAlpha((int) (m21Var2.f * 255.0f * f10));
+            canvas.drawPoint(m21Var2.a, m21Var2.b, paint);
         }
-        int v03 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
-        k90 k90Var2 = this.d;
-        k90Var2.setTextColor(v03);
-        k90Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        int i12 = this.e;
-        this.b.setLayoutParams(w7.y5.t(i12, i12, 17, 0, k90Var.getVisibility() == 0 ? 0 : 9, 0, 9));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setEmoji(int i10) {
-        if (this.f != i10) {
-            this.f = i10;
-            hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f));
-            v9 v9Var = this.b;
-            v9Var.setImageDrawable(hj0Var);
-            v9Var.getImageReceiver().setAutoRepeat(2);
+        double d = (f7 - 90.0f) * 0.017453292519943295d;
+        double sin = Math.sin(d);
+        double d10 = -Math.cos(d);
+        double width = rectF.width() / 2.0f;
+        float centerX = (float) (((-d10) * width) + rectF.centerX());
+        float centerY = (float) ((width * sin) + rectF.centerY());
+        ArrayList arrayList2 = this.d;
+        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
+        int i12 = 0;
+        while (i12 < clamp) {
+            if (arrayList2.isEmpty()) {
+                m21Var = new m21();
+            } else {
+                m21Var = (m21) arrayList2.get(i10);
+                arrayList2.remove(i10);
+            }
+            if (this.b && this.f) {
+                float f11 = (i12 + 1) / clamp;
+                m21Var.a = AndroidUtilities.lerp(this.g, centerX, f11);
+                m21Var.b = AndroidUtilities.lerp(this.h, centerY, f11);
+            } else {
+                m21Var.a = centerX;
+                m21Var.b = centerY;
+            }
+            double d11 = sin;
+            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
+            if (nextInt < 0.0d) {
+                nextInt += 6.283185307179586d;
+            }
+            m21Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
+            m21 m21Var3 = m21Var;
+            m21Var3.d = (float) hg.k0.e(nextInt, d10, Math.sin(nextInt) * d11);
+            m21Var3.f = 1.0f;
+            m21Var3.h = 0.0f;
+            if (this.b) {
+                m21Var3.g = Utilities.random.nextInt(200) + 600;
+                m21Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
+            } else {
+                m21Var3.g = Utilities.random.nextInt(100) + 400;
+                m21Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
+            }
+            arrayList.add(m21Var3);
+            i12++;
+            sin = d11;
+            i10 = 0;
         }
-    }
-
-    public void setEmojiSize(int i10) {
-        if (this.e != i10) {
-            this.e = i10;
-            e();
+        this.f = true;
+        this.g = centerX;
+        this.h = centerY;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(20L, elapsedRealtime - this.a);
+        int size2 = arrayList.size();
+        int i13 = 0;
+        while (i13 < size2) {
+            m21 m21Var4 = (m21) arrayList.get(i13);
+            float f12 = m21Var4.h;
+            float f13 = m21Var4.g;
+            if (f12 >= f13) {
+                if (arrayList2.size() < this.e) {
+                    arrayList2.add(m21Var4);
+                }
+                arrayList.remove(i13);
+                i13--;
+                size2--;
+            } else {
+                m21Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f12 / f13);
+                float f14 = m21Var4.a;
+                float f15 = m21Var4.c;
+                float f16 = m21Var4.e;
+                float f17 = min;
+                m21Var4.a = a4.a.A(f15 * f16, f17, 200.0f, f14);
+                m21Var4.b = (((m21Var4.d * f16) * f17) / 200.0f) + m21Var4.b;
+                m21Var4.h += f17;
+            }
+            i13++;
         }
+        this.a = elapsedRealtime;
     }
 
-    public void setEmojiStatic(int i10) {
-        if (this.f != i10) {
-            v9 v9Var = this.b;
-            v9Var.b();
-            this.f = i10;
-            v9Var.setImageResource(i10);
+    public n21(int i10) {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = i10;
+        for (int i11 = 0; i11 < i10; i11++) {
+            this.d.add(new m21());
         }
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setVisibility(8);
-        k90 k90Var = this.d;
-        k90Var.setText(charSequence);
-        k90Var.setMaxWidth(ci.f4.a(charSequence, k90Var.getPaint()));
-        k90Var.requestLayout();
-        e();
     }
 }

@@ -11,13 +11,13 @@ import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.sv;
 import org.telegram.ui.Components.tv;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.wx;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.hi0;
 import org.telegram.ui.uj0;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class r1 extends s4.n0 {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class r1 extends s4.n0 {
                 kz kzVar = (kz) this.b;
                 wx wxVar = kzVar.P;
                 if (!(view instanceof org.telegram.ui.Cells.p8)) {
-                    if (!(view instanceof vl0) && !(view instanceof cy)) {
+                    if (!(view instanceof yl0) && !(view instanceof cy)) {
                         if (view instanceof org.telegram.ui.Components.v9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;

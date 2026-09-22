@@ -9,14 +9,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ma implements ll0, yf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, op, Utilities.Callback2Return {
+public final /* synthetic */ class ma implements ol0, yf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, op, Utilities.Callback2Return {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -47,7 +47,7 @@ public final /* synthetic */ class ma implements ll0, yf.m, ImageReceiver.ImageR
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         qa qaVar = (qa) this.b;
         qaVar.getClass();
@@ -57,7 +57,7 @@ public final /* synthetic */ class ma implements ll0, yf.m, ImageReceiver.ImageR
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        hj0 lottieAnimation;
+        kj0 lottieAnimation;
         t0 t0Var;
         int v;
         MessageObject messageObject;

@@ -19,17 +19,18 @@ import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.i3;
 import org.telegram.ui.Cells.k3;
+import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.voip.x2;
-import org.telegram.ui.Components.z50;
+import org.telegram.ui.Components.x50;
 import org.telegram.ui.fg1;
-import org.telegram.ui.jl;
+import org.telegram.ui.kl;
 import org.telegram.ui.zn;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +87,7 @@ public final /* synthetic */ class g0 implements Runnable {
             case 8:
                 k2.f0 f0Var = (k2.f0) this.b;
                 if (f0Var.k0 >= 300000) {
-                    f0Var.t.o();
+                    f0Var.t.n();
                     f0Var.k0 = 0L;
                     return;
                 }
@@ -95,12 +96,12 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((kh.b) this.b).invalidate();
                 return;
             case 10:
-                z50 z50Var = (z50) ((l.d) this.b).a;
-                jl jlVar = z50Var.x;
-                if (z50Var.g0) {
-                    z50Var.g0 = false;
-                    jlVar.animate().cancel();
-                    jlVar.animate().alpha(0.0f).setDuration(100L).setInterpolator(new DecelerateInterpolator()).start();
+                b60 b60Var = ((x50) ((ki.l0) this.b)).a;
+                kl klVar = b60Var.E;
+                if (b60Var.i0) {
+                    b60Var.i0 = false;
+                    klVar.animate().cancel();
+                    klVar.animate().alpha(0.0f).setDuration(100L).setInterpolator(new DecelerateInterpolator()).start();
                     return;
                 }
                 return;
@@ -121,9 +122,9 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (dVar.c) {
                     return;
                 }
-                n2.h hVar = dVar.b;
-                if (hVar != null) {
-                    hVar.a(dVar.a);
+                n2.g gVar = dVar.b;
+                if (gVar != null) {
+                    gVar.a(dVar.a);
                 }
                 dVar.d.x.remove(dVar);
                 dVar.c = true;
@@ -144,7 +145,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 return;
             case 16:
-                ((ka.c) this.b).Z();
+                ((k2.e) this.b).H();
                 return;
             case 17:
                 oi.d dVar2 = (oi.d) this.b;

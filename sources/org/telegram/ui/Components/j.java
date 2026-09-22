@@ -36,9 +36,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j implements jl0 {
+public final /* synthetic */ class j implements ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -59,7 +59,7 @@ public final /* synthetic */ class j implements jl0 {
     /* JADX WARN: Type inference failed for: r11v6 */
     /* JADX WARN: Type inference failed for: r1v10, types: [org.telegram.ui.ActionBar.f3, org.telegram.ui.Components.r8] */
     /* JADX WARN: Type inference failed for: r4v15, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -72,9 +72,9 @@ public final /* synthetic */ class j implements jl0 {
         int i12;
         boolean z11;
         String str;
-        wj0 wj0Var;
+        zj0 zj0Var;
         int i13;
-        wy0 wy0Var;
+        yy0 yy0Var;
         int intValue;
         int intValue2;
         ai.f0 f0Var;
@@ -200,7 +200,7 @@ public final /* synthetic */ class j implements jl0 {
                 break;
             case 4:
                 gr grVar = (gr) obj;
-                vl0 vl0Var = grVar.d;
+                yl0 yl0Var = grVar.d;
                 if (i10 > 3) {
                     grVar.d0 = (TLRPC.Peer) grVar.Y.get(i10 - 4);
                     if (view instanceof org.telegram.ui.Cells.h4) {
@@ -210,8 +210,8 @@ public final /* synthetic */ class j implements jl0 {
                         z10 = true;
                     }
                     int i21 = 0;
-                    while (i21 < vl0Var.getChildCount()) {
-                        View childAt = vl0Var.getChildAt(i21);
+                    while (i21 < yl0Var.getChildCount()) {
+                        View childAt = yl0Var.getChildAt(i21);
                         if (childAt != view && (childAt instanceof org.telegram.ui.Cells.h4)) {
                             ((org.telegram.ui.Cells.h4) childAt).c(false, z10);
                         }
@@ -259,7 +259,7 @@ public final /* synthetic */ class j implements jl0 {
                 break;
             case 6:
                 kz kzVar2 = ((bz) obj).v;
-                kzVar2.t1.o(new s51(kzVar2.getContext(), new fx(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, (TLRPC.StickerSetCovered) view.getTag(), kzVar2.Z1));
+                kzVar2.t1.o(new u51(kzVar2.getContext(), new fx(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, (TLRPC.StickerSetCovered) view.getTag(), kzVar2.Z1));
                 break;
             case 7:
                 n00 n00Var = (n00) obj;
@@ -377,32 +377,32 @@ public final /* synthetic */ class j implements jl0 {
                 }
                 break;
             case 10:
-                zj0 zj0Var = (zj0) obj;
-                ArrayList arrayList8 = zj0Var.n;
-                int j3 = zj0Var.f.j(i10);
+                ck0 ck0Var = (ck0) obj;
+                ArrayList arrayList8 = ck0Var.n;
+                int j3 = ck0Var.f.j(i10);
                 if (j3 == 0) {
-                    yj0 yj0Var = zj0Var.E;
-                    if (yj0Var != null) {
-                        yj0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList8.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList8.get(i10));
+                    bk0 bk0Var = ck0Var.E;
+                    if (bk0Var != null) {
+                        bk0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList8.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList8.get(i10));
                         break;
                     }
-                } else if (j3 == 1 && (wj0Var = zj0Var.G) != null) {
-                    wj0Var.e(zj0Var.I);
+                } else if (j3 == 1 && (zj0Var = ck0Var.G) != null) {
+                    zj0Var.e(ck0Var.I);
                     break;
                 }
                 break;
             case 11:
-                pk0 pk0Var = (pk0) obj;
-                ok0 ok0Var = pk0Var.g0;
-                if (ok0Var != null && (view instanceof nk0)) {
-                    ok0Var.h(pk0Var, ((nk0) view).e, false, false);
+                sk0 sk0Var = (sk0) obj;
+                rk0 rk0Var = sk0Var.g0;
+                if (rk0Var != null && (view instanceof qk0)) {
+                    rk0Var.h(sk0Var, ((qk0) view).e, false, false);
                     break;
                 }
                 break;
             case 12:
                 org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
-                uq0 uq0Var = ((qq0) obj).K;
-                i13 = ((org.telegram.ui.ActionBar.f3) uq0Var).currentAccount;
+                wq0 wq0Var = ((sq0) obj).K;
+                i13 = ((org.telegram.ui.ActionBar.f3) wq0Var).currentAccount;
                 TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(i13).hints.get(i10);
                 TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
                 TLRPC.Peer peer = tL_topPeer.peer;
@@ -418,12 +418,12 @@ public final /* synthetic */ class j implements jl0 {
                     r4 = -j11;
                 }
                 if (o4Var.E) {
-                    uq0Var.X0(r4, o4Var);
+                    wq0Var.X0(r4, o4Var);
                     break;
                 } else {
                     tL_dialog.id = r4;
-                    uq0Var.U0(null, tL_dialog);
-                    boolean z13 = uq0Var.U.h(r4) >= 0;
+                    wq0Var.U0(null, tL_dialog);
+                    boolean z13 = wq0Var.U.h(r4) >= 0;
                     if (o4Var.w) {
                         o4Var.v.a(z13, true);
                         break;
@@ -431,66 +431,66 @@ public final /* synthetic */ class j implements jl0 {
                 }
                 break;
             case 13:
-                nv0 nv0Var = (nv0) obj;
+                pv0 pv0Var = (pv0) obj;
                 int i26 = i10 - 1;
                 if (i26 >= 0 && i26 < LocationController.getLocationsCount()) {
-                    nv0Var.n.b(nv0.p(i26));
-                    nv0Var.dismiss();
+                    pv0Var.n.b(pv0.p(i26));
+                    pv0Var.dismiss();
                     break;
                 }
                 break;
             case 14:
-                pw0.P((pw0) obj, i10);
+                rw0.P((rw0) obj, i10);
                 break;
             case 15:
-                hx0 hx0Var = (hx0) obj;
+                jx0 jx0Var = (jx0) obj;
                 if (i10 < 1) {
-                    hx0Var.getClass();
+                    jx0Var.getClass();
                     break;
                 } else {
-                    dx0[] dx0VarArr = hx0Var.Y2;
-                    if (dx0VarArr != null) {
-                        dx0 dx0Var = dx0VarArr[i10 - 1];
+                    fx0[] fx0VarArr = jx0Var.Y2;
+                    if (fx0VarArr != null) {
+                        fx0 fx0Var = fx0VarArr[i10 - 1];
                         int dp = AndroidUtilities.dp(64.0f);
-                        if (hx0Var.getMeasuredWidth() - view.getRight() < dp) {
-                            hx0Var.w0(dp - (hx0Var.getMeasuredWidth() - view.getRight()), 0, qr.h);
+                        if (jx0Var.getMeasuredWidth() - view.getRight() < dp) {
+                            jx0Var.w0(dp - (jx0Var.getMeasuredWidth() - view.getRight()), 0, qr.h);
                         } else if (view.getLeft() < dp) {
-                            hx0Var.w0(-(dp - view.getLeft()), 0, qr.h);
+                            jx0Var.w0(-(dp - view.getLeft()), 0, qr.h);
                         }
-                        Utilities.Callback callback = hx0Var.n3;
+                        Utilities.Callback callback = jx0Var.n3;
                         if (callback != null) {
-                            callback.run(dx0Var);
+                            callback.run(fx0Var);
                             break;
                         }
                     }
                 }
                 break;
             case 16:
-                gy0.m((gy0) obj, view, i10);
+                iy0.m((iy0) obj, view, i10);
                 break;
             case 17:
-                yy0 yy0Var = (yy0) obj;
-                String str2 = ((xy0) view).a;
-                if (yy0Var.s && (wy0Var = yy0Var.c) != null && (wy0Var.getFieldText() instanceof Spanned)) {
-                    if (yy0Var.T != null) {
-                        intValue = ((Spanned) yy0Var.c.getFieldText()).getSpanStart(yy0Var.T);
-                        intValue2 = ((Spanned) yy0Var.c.getFieldText()).getSpanEnd(yy0Var.T);
+                az0 az0Var = (az0) obj;
+                String str2 = ((zy0) view).a;
+                if (az0Var.s && (yy0Var = az0Var.c) != null && (yy0Var.getFieldText() instanceof Spanned)) {
+                    if (az0Var.T != null) {
+                        intValue = ((Spanned) az0Var.c.getFieldText()).getSpanStart(az0Var.T);
+                        intValue2 = ((Spanned) az0Var.c.getFieldText()).getSpanEnd(az0Var.T);
                     } else {
-                        Integer num = yy0Var.V;
-                        if (num != null && yy0Var.W != null) {
+                        Integer num = az0Var.V;
+                        if (num != null && az0Var.W != null) {
                             intValue = num.intValue();
-                            intValue2 = yy0Var.W.intValue();
-                            yy0Var.W = null;
-                            yy0Var.V = null;
+                            intValue2 = az0Var.W.intValue();
+                            az0Var.W = null;
+                            az0Var.V = null;
                         }
                     }
-                    Editable editText = yy0Var.c.getEditText();
+                    Editable editText = az0Var.c.getEditText();
                     if (editText != null && intValue >= 0 && intValue2 >= 0 && intValue <= editText.length() && intValue2 <= editText.length()) {
-                        if (yy0Var.T != null) {
-                            if (yy0Var.c.getFieldText() instanceof Spannable) {
-                                ((Spannable) yy0Var.c.getFieldText()).removeSpan(yy0Var.T);
+                        if (az0Var.T != null) {
+                            if (az0Var.c.getFieldText() instanceof Spannable) {
+                                ((Spannable) az0Var.c.getFieldText()).removeSpan(az0Var.T);
                             }
-                            yy0Var.T = null;
+                            az0Var.T = null;
                         }
                         String obj2 = editText.toString();
                         String substring = obj2.substring(intValue, intValue2);
@@ -499,7 +499,7 @@ public final /* synthetic */ class j implements jl0 {
                         while (i27 >= 0) {
                             int i28 = i27 + length;
                             if (obj2.substring(i27, i28).equals(substring)) {
-                                Paint.FontMetricsInt fontMetricsInt2 = yy0Var.c.getEditField() != null ? yy0Var.c.getEditField().getPaint().getFontMetricsInt() : fontMetricsInt;
+                                Paint.FontMetricsInt fontMetricsInt2 = az0Var.c.getEditField() != null ? az0Var.c.getEditField().getPaint().getFontMetricsInt() : fontMetricsInt;
                                 if (fontMetricsInt2 == null) {
                                     Paint paint = new Paint();
                                     paint.setTextSize(AndroidUtilities.dp(18.0f));
@@ -510,7 +510,7 @@ public final /* synthetic */ class j implements jl0 {
                                 } else {
                                     try {
                                         long parseLong = Long.parseLong(str2.substring(9));
-                                        TLRPC.Document f7 = p5.f(yy0Var.a, parseLong);
+                                        TLRPC.Document f7 = p5.f(az0Var.a, parseLong);
                                         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(f7));
                                         spannableString.setSpan(f7 == null ? new y5(parseLong, fontMetricsInt2) : new y5(f7, fontMetricsInt2), 0, spannableString.length(), 33);
                                         replaceEmoji = spannableString;
@@ -531,23 +531,23 @@ public final /* synthetic */ class j implements jl0 {
                                     fontMetricsInt = null;
                                 }
                             }
-                            yy0Var.performHapticFeedback(3, 1);
+                            az0Var.performHapticFeedback(3, 1);
                             Emoji.addRecentEmoji(str2);
-                            yy0Var.s = false;
-                            yy0Var.v = true;
-                            yy0Var.G = 0;
-                            f0Var = yy0Var.d;
+                            az0Var.s = false;
+                            az0Var.v = true;
+                            az0Var.G = 0;
+                            f0Var = az0Var.d;
                             if (f0Var == null) {
                                 f0Var.invalidate();
                                 break;
                             }
                         }
-                        yy0Var.performHapticFeedback(3, 1);
+                        az0Var.performHapticFeedback(3, 1);
                         Emoji.addRecentEmoji(str2);
-                        yy0Var.s = false;
-                        yy0Var.v = true;
-                        yy0Var.G = 0;
-                        f0Var = yy0Var.d;
+                        az0Var.s = false;
+                        az0Var.v = true;
+                        az0Var.G = 0;
+                        f0Var = az0Var.d;
                         if (f0Var == null) {
                         }
                     }
@@ -558,18 +558,18 @@ public final /* synthetic */ class j implements jl0 {
                 ThemeEditorView themeEditorView = ThemeEditorView.this;
                 if (i10 != 0) {
                     s4.h0 adapter = editorAlert.c.getAdapter();
-                    y11 y11Var = editorAlert.n;
-                    if (adapter == y11Var) {
+                    a21 a21Var = editorAlert.n;
+                    if (adapter == a21Var) {
                         int i29 = i10 - 1;
-                        ArrayList arrayList9 = y11Var.d;
+                        ArrayList arrayList9 = a21Var.d;
                         themeEditorView.c = (i29 < 0 || i29 >= arrayList9.size()) ? null : (ArrayList) arrayList9.get(i29);
                     } else {
-                        z11 z11Var = editorAlert.r;
+                        b21 b21Var = editorAlert.r;
                         int i30 = i10 - 1;
                         if (i30 < 0) {
-                            z11Var.getClass();
-                        } else if (i30 < z11Var.e.size()) {
-                            arrayList = (ArrayList) z11Var.e.get(i30);
+                            b21Var.getClass();
+                        } else if (i30 < b21Var.e.size()) {
+                            arrayList = (ArrayList) b21Var.e.get(i30);
                             themeEditorView.c = arrayList;
                         }
                         arrayList = null;
@@ -580,29 +580,29 @@ public final /* synthetic */ class j implements jl0 {
                         org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) themeEditorView.c.get(i31);
                         int i32 = l6Var.f;
                         if (i32 == org.telegram.ui.ActionBar.j6.Nd) {
-                            final e91 e91Var = themeEditorView.k;
-                            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) e91Var.b, (org.telegram.ui.ActionBar.f6) null, false);
+                            final g91 g91Var = themeEditorView.k;
+                            org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) g91Var.b, (org.telegram.ui.ActionBar.f6) null, false);
                             f3Var.fixNavigationBar();
                             f3Var.title = LocaleController.getString(R.string.ChoosePhoto);
                             f3Var.bigTitle = true;
                             CharSequence[] charSequenceArr = {LocaleController.getString(R.string.ChooseTakePhoto), LocaleController.getString(R.string.SelectFromGallery), LocaleController.getString(R.string.SelectColor), LocaleController.getString(R.string.Default)};
-                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.b91
+                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.d91
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public final void onClick(DialogInterface dialogInterface, int i33) {
-                                    e91 e91Var2 = e91.this;
-                                    d91 d91Var = e91Var2.d;
-                                    Activity activity = e91Var2.b;
+                                    g91 g91Var2 = g91.this;
+                                    f91 f91Var = g91Var2.d;
+                                    Activity activity = g91Var2.b;
                                     try {
                                         if (i33 != 0) {
                                             if (i33 == 1) {
-                                                e91Var2.b();
+                                                g91Var2.b();
                                                 return;
                                             } else if (i33 == 2) {
-                                                d91Var.a();
+                                                f91Var.a();
                                                 return;
                                             } else {
                                                 if (i33 == 3) {
-                                                    d91Var.b(null, null, false);
+                                                    f91Var.b(null, null, false);
                                                     return;
                                                 }
                                                 return;
@@ -619,7 +619,7 @@ public final /* synthetic */ class j implements jl0 {
                                                 } else {
                                                     intent.putExtra("output", Uri.fromFile(generatePicturePath));
                                                 }
-                                                e91Var2.a = generatePicturePath.getAbsolutePath();
+                                                g91Var2.a = generatePicturePath.getAbsolutePath();
                                             }
                                             activity.startActivityForResult(intent, 10);
                                         } catch (Exception e) {
@@ -648,17 +648,17 @@ public final /* synthetic */ class j implements jl0 {
                 }
                 break;
             default:
-                s51 s51Var = (s51) obj;
-                s4.h0 adapter2 = s51Var.n.getAdapter();
-                gg.g2 g2Var = s51Var.v;
+                u51 u51Var = (u51) obj;
+                s4.h0 adapter2 = u51Var.n.getAdapter();
+                gg.g2 g2Var = u51Var.v;
                 if (adapter2 == g2Var) {
                     stickerSetCovered = (TLRPC.StickerSetCovered) g2Var.K.get(i10);
                 } else {
-                    r51 r51Var = s51Var.s;
-                    stickerSetCovered = i10 < r51Var.w ? (TLRPC.StickerSetCovered) r51Var.f.get(i10) : null;
+                    t51 t51Var = u51Var.s;
+                    stickerSetCovered = i10 < t51Var.w ? (TLRPC.StickerSetCovered) t51Var.f.get(i10) : null;
                 }
                 if (stickerSetCovered != null) {
-                    s51Var.b(stickerSetCovered.set, null);
+                    u51Var.b(stickerSetCovered.set, null);
                     break;
                 }
                 break;

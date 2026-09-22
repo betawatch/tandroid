@@ -8,7 +8,7 @@ import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class z0 {
     public static z0 b;
@@ -79,7 +79,7 @@ public final class z0 {
         PackageInfo packageInfo;
         Context context = this.a;
         try {
-            packageInfo = w6.b.a(context).e(64, "com.google.android.wearable.app.cn");
+            packageInfo = w6.b.a(context).b(64, "com.google.android.wearable.app.cn");
         } catch (PackageManager.NameNotFoundException unused) {
             packageInfo = null;
         }

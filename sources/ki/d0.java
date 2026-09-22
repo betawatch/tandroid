@@ -17,7 +17,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -44,32 +44,32 @@ public final /* synthetic */ class d0 implements Runnable {
         File file;
         switch (this.a) {
             case 0:
-                o0 o0Var = (o0) this.e;
+                q0 q0Var = (q0) this.e;
                 q qVar = (q) this.f;
                 boolean z10 = this.b;
                 File file2 = (File) this.h;
                 boolean z11 = this.c;
                 int i10 = this.d;
-                k0 k0Var = (k0) this.n;
-                o0Var.getClass();
+                m0 m0Var = (m0) this.n;
+                q0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
                     qVar.c();
-                    o0Var.l.b("preview output finalized: size=" + qVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + o0.e(nanoTime));
-                    o0Var.f();
+                    q0Var.l.b("preview output finalized: size=" + qVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + q0.e(nanoTime));
+                    q0Var.f();
                     if (z10) {
-                        o0Var.r(file2, o0Var.F, o0Var.G, z11, i10);
+                        q0Var.r(file2, q0Var.F, q0Var.G, z11, i10);
                         file = file2;
                         w7.k.c(qVar.a);
                     } else {
                         file = file2;
-                        o0Var.b(k0Var, qVar.a, o0Var.D, true);
+                        q0Var.b(m0Var, qVar.a, q0Var.D, true);
                     }
                     w7.k.c(file);
-                    o0Var.P = null;
+                    q0Var.P = null;
                     break;
                 } catch (Exception e) {
-                    o0Var.h.post(new z(o0Var, e, 0));
+                    q0Var.h.post(new z(q0Var, e, 0));
                     return;
                 }
             case 1:
@@ -98,14 +98,14 @@ public final /* synthetic */ class d0 implements Runnable {
         }
     }
 
-    public /* synthetic */ d0(o0 o0Var, q qVar, boolean z10, File file, boolean z11, int i10, k0 k0Var) {
-        this.e = o0Var;
+    public /* synthetic */ d0(q0 q0Var, q qVar, boolean z10, File file, boolean z11, int i10, m0 m0Var) {
+        this.e = q0Var;
         this.f = qVar;
         this.b = z10;
         this.h = file;
         this.c = z11;
         this.d = i10;
-        this.n = k0Var;
+        this.n = m0Var;
     }
 
     public /* synthetic */ d0(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {

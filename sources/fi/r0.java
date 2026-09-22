@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback2 {
                     t0Var2.a();
                     s0 s0Var2 = t0Var2.h;
                     if (s0Var2 != null) {
-                        s0Var2.f();
+                        s0Var2.l();
                         break;
                     }
                 }

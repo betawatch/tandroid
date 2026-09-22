@@ -10,7 +10,7 @@ import android.text.style.CharacterStyle;
 import androidx.fragment.app.n0;
 import androidx.lifecycle.p0;
 import androidx.lifecycle.s0;
-import c5.b0;
+import c5.a0;
 import com.google.firebase.messaging.t;
 import ei.m4;
 import g2.x;
@@ -59,17 +59,17 @@ import org.telegram.ui.pv0;
 import r2.u;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, l1, u, u5.a, z3.k {
+public class b implements s0, bg.a, cg.a, da.c, fb.o, ti, n5.b, n2.q, q9.d, sb, l1, u, u5.a, z3.k {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
         this.a = i10;
     }
 
-    public static k4.d K3(y2.g gVar, b0 b0Var) {
-        IOException iOException = (IOException) b0Var.c;
+    public static k4.d K3(y2.g gVar, a0 a0Var) {
+        IOException iOException = (IOException) a0Var.c;
         if (!(iOException instanceof x)) {
             return null;
         }
@@ -86,8 +86,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return null;
     }
 
-    public static long M3(b0 b0Var) {
-        Throwable th2 = (IOException) b0Var.c;
+    public static long M3(a0 a0Var) {
+        Throwable th2 = (IOException) a0Var.c;
         if ((th2 instanceof b2.s0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.u) || (th2 instanceof y2.l)) {
             return -9223372036854775807L;
         }
@@ -98,7 +98,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
             }
             th2 = th2.getCause();
         }
-        return Math.min((b0Var.b - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+        return Math.min((a0Var.b - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
     }
 
     public static String Y3(ad.c cVar) {
@@ -126,7 +126,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i10 = this.a;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public h2.b B(byte[] bArr) {
         throw new IllegalStateException();
     }
@@ -143,7 +143,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return false;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public byte[] C() {
         throw new MediaDrmException("Attempting to open a session using a dummy ExoMediaDrm.");
     }
@@ -263,7 +263,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return false;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public void J(byte[] bArr, byte[] bArr2) {
         throw new IllegalStateException();
     }
@@ -475,7 +475,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i10 = this.a;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public byte[] X(byte[] bArr, byte[] bArr2) {
         throw new IllegalStateException();
     }
@@ -557,7 +557,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i11 = this.a;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public Map c(byte[] bArr) {
         throw new IllegalStateException();
     }
@@ -642,7 +642,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
     public Object get() {
         switch (this.a) {
             case 12:
-                return new l5.p(Executors.newSingleThreadExecutor());
+                return new l5.q(Executors.newSingleThreadExecutor());
             default:
                 rb.a aVar = new rb.a(23);
                 HashMap hashMap = new HashMap();
@@ -678,7 +678,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return null;
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public void h0(byte[] bArr) {
         throw new IllegalStateException();
     }
@@ -716,12 +716,12 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i10 = this.a;
     }
 
-    @Override // n2.r
-    public n2.p k0(byte[] bArr, List list, int i10, HashMap hashMap) {
+    @Override // n2.q
+    public n2.o k0(byte[] bArr, List list, int i10, HashMap hashMap) {
         throw new IllegalStateException();
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public int l0() {
         return 1;
     }
@@ -738,8 +738,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return false;
     }
 
-    @Override // n2.r
-    public n2.q m() {
+    @Override // n2.q
+    public n2.p m() {
         throw new IllegalStateException();
     }
 
@@ -792,7 +792,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return false;
     }
 
-    @Override // fb.n
+    @Override // fb.o
     public Object p2() {
         switch (this.a) {
             case 8:
@@ -807,7 +807,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         return SystemClock.elapsedRealtime();
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public boolean q0(String str, byte[] bArr) {
         throw new IllegalStateException();
     }
@@ -869,9 +869,33 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i10 = this.a;
     }
 
-    @Override // r2.u
-    public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
+    @Override // z3.k
+    public z3.m v(b2.s sVar) {
+        String str = sVar.r;
+        List list = sVar.u;
+        if (str != null) {
+            switch (str) {
+                case "application/dvbsubs":
+                    return new b4.i(list);
+                case "application/pgs":
+                    return new t(2);
+                case "application/x-mp4-vtt":
+                    return new pb.c(26);
+                case "text/vtt":
+                    return new of.b(21);
+                case "application/x-quicktime-tx3g":
+                    return new g4.a(list);
+                case "text/x-ssa":
+                    return new d4.a(list);
+                case "application/vobsub":
+                    return new t(list);
+                case "application/x-subrip":
+                    return new e4.a();
+                case "application/ttml+xml":
+                    return new f4.e();
+            }
+        }
+        throw new IllegalArgumentException(j0.g("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -898,33 +922,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
         int i10 = this.a;
     }
 
-    @Override // z3.k
-    public z3.m x(b2.s sVar) {
-        String str = sVar.r;
-        List list = sVar.u;
-        if (str != null) {
-            switch (str) {
-                case "application/dvbsubs":
-                    return new b4.i(list);
-                case "application/pgs":
-                    return new t(2);
-                case "application/x-mp4-vtt":
-                    return new a6.m(25);
-                case "text/vtt":
-                    return new of.b(21);
-                case "application/x-quicktime-tx3g":
-                    return new g4.a(list);
-                case "text/x-ssa":
-                    return new d4.a(list);
-                case "application/vobsub":
-                    return new t(list);
-                case "application/x-subrip":
-                    return new e4.a();
-                case "application/ttml+xml":
-                    return new f4.e();
-            }
-        }
-        throw new IllegalArgumentException(j0.g("Unsupported MIME type: ", str));
+    @Override // r2.u
+    public boolean x(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1032,7 +1032,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
     public /* synthetic */ void L0() {
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public void release() {
     }
 
@@ -1196,7 +1196,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
     private final /* synthetic */ void z3(u1 u1Var) {
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public void K(byte[] bArr) {
     }
 
@@ -1204,7 +1204,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
     public /* synthetic */ void V0(Object obj) {
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public void d(l.d dVar) {
     }
 
@@ -1278,7 +1278,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ti, n5.b, n2.r, q9.d, sb, 
     private final /* synthetic */ void z1(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
-    @Override // n2.r
+    @Override // n2.q
     public /* synthetic */ void l(byte[] bArr, j2.k kVar) {
     }
 

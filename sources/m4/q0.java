@@ -10,16 +10,16 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.gs;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, dw0, Utilities.Callback2Return, hh.i, il0, rv0, sv0 {
+public final /* synthetic */ class q0 implements e1, d1, n2.l, d9.e, g2.g, a2, fw0, Utilities.Callback2Return, hh.i, ll0, tv0, uv0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ q0(int i10) {
@@ -49,7 +49,7 @@ public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, d
         return e9.i0.v(e9.q.w(qVar.Y.b, new s0.b(18)));
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         gs gsVar = (gs) obj;
         gsVar.b = f7;
@@ -63,7 +63,7 @@ public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, d
         return new g2.b(ApplicationLoader.applicationContext);
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.fw0
     public void g(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -78,7 +78,7 @@ public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, d
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         return ((gs) obj).b;
     }
@@ -119,7 +119,7 @@ public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, d
     }
 
     @Override // hh.i
-    public void i(RectF rectF, View view) {
+    public void j(RectF rectF, View view) {
         view.invalidate();
     }
 
@@ -168,11 +168,11 @@ public final /* synthetic */ class q0 implements e1, d1, n2.m, d9.e, g2.g, a2, d
         this.a = 5;
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public /* synthetic */ void n() {
+    @Override // org.telegram.ui.Components.fw0
+    public /* synthetic */ void l() {
     }
 
-    @Override // n2.m
+    @Override // n2.l
     public void release() {
     }
 }

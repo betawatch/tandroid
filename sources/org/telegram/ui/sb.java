@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class sb extends org.telegram.ui.Components.aw0 {
+public abstract class sb extends org.telegram.ui.Components.cw0 {
     public final /* synthetic */ vb w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -75,7 +75,7 @@ public abstract class sb extends org.telegram.ui.Components.aw0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }

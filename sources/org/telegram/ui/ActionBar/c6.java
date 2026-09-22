@@ -24,13 +24,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.wi0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.bb1;
 import org.telegram.ui.bd;
@@ -53,7 +53,7 @@ import org.telegram.ui.z6;
 import org.telegram.ui.zc;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c6 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,8 +86,8 @@ public final /* synthetic */ class c6 implements Runnable {
         xc a02;
         int i11;
         int i12;
-        k61 k61Var;
-        l11 l11Var;
+        m61 m61Var;
+        n11 n11Var;
         int i13 = this.a;
         int i14 = -1;
         ArrayList arrayList = null;
@@ -234,9 +234,9 @@ public final /* synthetic */ class c6 implements Runnable {
                 z6.W((z6) obj2, (b2) obj);
                 break;
             case 10:
-                ti0 ti0Var = new ti0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
-                ti0Var.m(R.raw.qr_code_logo);
-                ti0Var.show();
+                wi0 wi0Var = new wi0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
+                wi0Var.m(R.raw.qr_code_logo);
+                wi0Var.show();
                 break;
             case 11:
                 ((y8) obj2).b.j0(((TLRPC.Message) hg.k0.g(1, ((h9) obj).c)).id, 100);
@@ -457,9 +457,9 @@ public final /* synthetic */ class c6 implements Runnable {
                 if (tL_premium_boostsStatus2 != null) {
                     keVar.B0 = tL_premium_boostsStatus2.level;
                 }
-                s61 s61Var = keVar.a1;
-                if (s61Var != null && (k61Var = s61Var.Y2) != null) {
-                    k61Var.N(true);
+                u61 u61Var = keVar.a1;
+                if (u61Var != null && (m61Var = u61Var.Y2) != null) {
+                    m61Var.N(true);
                     break;
                 }
                 break;
@@ -468,13 +468,13 @@ public final /* synthetic */ class c6 implements Runnable {
                 break;
             case 26:
                 zn znVar = (zn) obj2;
-                l11[] l11VarArr = (l11[]) obj;
-                if (!znVar.jb && (l11Var = l11VarArr[0]) != null) {
-                    l11VarArr[0] = null;
-                    if (znVar.v0 == l11Var) {
+                n11[] n11VarArr = (n11[]) obj;
+                if (!znVar.jb && (n11Var = n11VarArr[0]) != null) {
+                    n11VarArr[0] = null;
+                    if (znVar.v0 == n11Var) {
                         znVar.v0 = null;
                     }
-                    AndroidUtilities.removeFromParent(l11Var);
+                    AndroidUtilities.removeFromParent(n11Var);
                     break;
                 }
                 break;

@@ -4,13 +4,13 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h extends c0.h implements ScheduledFuture {
     public final ScheduledFuture n;
 
     public h(g gVar) {
-        this.n = gVar.a(new n2.e(this, 17));
+        this.n = gVar.a(new l.d(this, 19));
     }
 
     @Override // java.lang.Comparable

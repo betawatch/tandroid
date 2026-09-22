@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements yc0 {
+public final /* synthetic */ class g1 implements bd0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int[] b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class g1 implements yc0 {
         this.b = iArr;
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public final String e(int i10) {
         switch (this.a) {
             case 0:

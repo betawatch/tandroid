@@ -26,12 +26,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l4 {
     public int A;
@@ -46,14 +46,14 @@ public final class l4 {
     public int h;
     public boolean i;
     public final org.telegram.ui.Components.d6 j;
-    public o90 k;
-    public final vh.g l;
+    public r90 k;
+    public final vh.f l;
     public int m;
     public final yc n;
     public k4 o;
     public boolean p;
-    public u01 q;
-    public u01 r;
+    public w01 q;
+    public w01 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -66,7 +66,7 @@ public final class l4 {
 
     public l4(u1 u1Var) {
         this.a = u1Var;
-        this.l = vh.g.e(u1Var);
+        this.l = vh.f.e(u1Var);
         this.j = new org.telegram.ui.Components.d6(u1Var, 0L, 350L, qr.h);
         this.n = new yc(u1Var);
     }
@@ -136,7 +136,7 @@ public final class l4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!k4Var.x && k4Var.K != (max = Math.max(0, k4Var.J - round))) {
                     k4Var.K = max;
-                    k4Var.L = new u01(AndroidUtilities.formatLongDuration(max), 12.0f, null);
+                    k4Var.L = new w01(AndroidUtilities.formatLongDuration(max), 12.0f, null);
                 }
             }
             if (f19 > 0.0f) {
@@ -265,29 +265,29 @@ public final class l4 {
             this.q.c((((this.g / 2.0f) + this.d) - (dp4 / 2.0f)) + AndroidUtilities.dp(14.0f), this.e + (this.h / 2.0f), f7, -1, canvas2);
             canvas2.restore();
             if (u1Var.getDelegate() == null || !u1Var.getDelegate().d1(5, u1Var)) {
-                o90 o90Var = this.k;
-                if (o90Var != null && !o90Var.c() && !this.k.b()) {
+                r90 r90Var = this.k;
+                if (r90Var != null && !r90Var.c() && !this.k.b()) {
                     this.k.a();
                 }
             } else {
-                o90 o90Var2 = this.k;
-                if (o90Var2 == null) {
-                    o90 o90Var3 = new o90();
-                    this.k = o90Var3;
-                    o90Var3.setCallback(u1Var);
+                r90 r90Var2 = this.k;
+                if (r90Var2 == null) {
+                    r90 r90Var3 = new r90();
+                    this.k = r90Var3;
+                    r90Var3.setCallback(u1Var);
                     this.k.f(org.telegram.ui.ActionBar.j6.l1(0.1f, -1), org.telegram.ui.ActionBar.j6.l1(0.3f, -1), org.telegram.ui.ActionBar.j6.l1(0.35f, -1), org.telegram.ui.ActionBar.j6.l1(0.8f, -1));
-                    o90 o90Var4 = this.k;
-                    o90Var4.C = true;
-                    o90Var4.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                } else if (o90Var2.b() || this.k.c()) {
-                    o90 o90Var5 = this.k;
-                    o90Var5.b = -1L;
-                    o90Var5.c = -1L;
+                    r90 r90Var4 = this.k;
+                    r90Var4.C = true;
+                    r90Var4.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                } else if (r90Var2.b() || this.k.c()) {
+                    r90 r90Var5 = this.k;
+                    r90Var5.b = -1L;
+                    r90Var5.c = -1L;
                 }
             }
-            o90 o90Var6 = this.k;
-            if (o90Var6 != null) {
-                o90Var6.d(rectF);
+            r90 r90Var6 = this.k;
+            if (r90Var6 != null) {
+                r90Var6.d(rectF);
                 this.k.j(f31);
                 this.k.setAlpha((int) (f7 * 255.0f));
                 this.k.draw(canvas2);
@@ -395,9 +395,9 @@ public final class l4 {
             return;
         }
         this.C = false;
-        vh.g gVar = this.l;
-        if (gVar != null) {
-            gVar.a(this.a);
+        vh.f fVar = this.l;
+        if (fVar != null) {
+            fVar.a(this.a);
         }
         int i10 = 0;
         while (true) {
@@ -1154,16 +1154,16 @@ public final class l4 {
             l4Var.g = (int) ((j4Var4.d / 1000.0f) * l4Var.f);
             l4Var.h = (int) (j4Var4.g * j4Var4.i);
             if (l4Var.i) {
-                u01 u01Var = new u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                l4Var.q = u01Var;
-                if (u01Var.c > l4Var.g - AndroidUtilities.dp(30.0f)) {
-                    l4Var.q = new u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                w01 w01Var = new w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                l4Var.q = w01Var;
+                if (w01Var.c > l4Var.g - AndroidUtilities.dp(30.0f)) {
+                    l4Var.q = new w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (l4Var.r == null || l4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j3 = tL_messageMediaPaidMedia3.stars_amount;
                 l4Var.s = j3;
-                l4Var.r = new u01(yh.w7.R0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                l4Var.r = new w01(yh.w7.R0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1304,10 +1304,10 @@ public final class l4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                u01 u01Var = new u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                this.q = u01Var;
-                if (u01Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                w01 w01Var = new w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                this.q = w01Var;
+                if (w01Var.c > this.g - AndroidUtilities.dp(30.0f)) {
+                    this.q = new w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

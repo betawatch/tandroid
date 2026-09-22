@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class a0 {
     public static final p1 B = new p1(1);
@@ -116,7 +116,7 @@ public class a0 {
                             final boolean B3 = fVar.B(rVar, 17);
                             a0Var.c(rVar, new z() { // from class: m4.v
                                 @Override // m4.z
-                                public final void c(q qVar, int i12) {
+                                public final void d(q qVar, int i12) {
                                     qVar.e(i12, o1.this, B2, B3, rVar.c);
                                 }
                             });
@@ -202,7 +202,7 @@ public class a0 {
             }
             q qVar = rVar.d;
             if (qVar != null) {
-                zVar.c(qVar, i10);
+                zVar.d(qVar, i10);
             }
         } catch (DeadObjectException unused) {
             f1Var.b.M(rVar);
@@ -217,7 +217,7 @@ public class a0 {
             c((r) s10.get(i10), zVar);
         }
         try {
-            zVar.c(this.h.i, 0);
+            zVar.d(this.h.i, 0);
         } catch (RemoteException e) {
             e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
         }

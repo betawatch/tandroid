@@ -10,8 +10,9 @@ import android.util.Log;
 import java.io.Closeable;
 import java.io.IOException;
 import k6.h;
+import v0.k;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -54,8 +55,8 @@ public abstract class b {
                 h d10 = h.d(context);
                 d10.getClass();
                 if (packageInfo != null) {
-                    if (!h.h(packageInfo, false)) {
-                        if (h.h(packageInfo, true)) {
+                    if (!h.f(packageInfo, false)) {
+                        if (h.f(packageInfo, true)) {
                             if (!k6.g.a(d10.a)) {
                                 Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
                             }
@@ -91,7 +92,7 @@ public abstract class b {
     }
 
     public static boolean g(Context context, String str, int i10) {
-        h a2 = w6.b.a(context);
+        k a2 = w6.b.a(context);
         a2.getClass();
         try {
             AppOpsManager appOpsManager = (AppOpsManager) a2.a.getSystemService("appops");

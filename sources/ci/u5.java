@@ -1,6 +1,6 @@
 package ci;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class u5 implements qg.w1 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class u5 implements qg.w1 {
     }
 
     @Override // qg.w1
-    public final void y(float f7) {
+    public final void m(float f7) {
         switch (this.a) {
             case 0:
                 qg.v2 v2Var = this.b;

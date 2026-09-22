@@ -1,67 +1,79 @@
 package fb;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
+import java.util.Comparator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class j implements Iterator {
-    public l a;
-    public l b = null;
-    public int c;
-    public final /* synthetic */ m d;
-    public final /* synthetic */ int e;
+public final class j implements Comparator {
+    public final /* synthetic */ int a;
 
-    public j(m mVar, int i10) {
-        this.e = i10;
-        this.d = mVar;
-        this.a = mVar.f.d;
-        this.c = mVar.e;
+    public /* synthetic */ j(int i10) {
+        this.a = i10;
     }
 
-    public final Object a() {
-        return b();
-    }
-
-    public final l b() {
-        l lVar = this.a;
-        m mVar = this.d;
-        if (lVar == mVar.f) {
-            throw new NoSuchElementException();
-        }
-        if (mVar.e != this.c) {
-            throw new ConcurrentModificationException();
-        }
-        this.a = lVar.d;
-        this.b = lVar;
-        return lVar;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a != this.d.f;
-    }
-
-    @Override // java.util.Iterator
-    public Object next() {
-        switch (this.e) {
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0052 A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0054 A[RETURN, SYNTHETIC] */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((Comparable) obj).compareTo((Comparable) obj2);
             case 1:
-                return b().f;
+                Runnable runnable = (Runnable) obj;
+                Runnable runnable2 = (Runnable) obj2;
+                return (runnable2 instanceof ff.b ? ((ff.b) runnable2).a : 1) - (runnable instanceof ff.b ? ((ff.b) runnable).a : 1);
+            case 2:
+                Map.Entry entry = (Map.Entry) obj;
+                Map.Entry entry2 = (Map.Entry) obj2;
+                Objects.requireNonNull(entry);
+                Objects.requireNonNull(entry2);
+                Comparable comparable = (Comparable) entry.getKey();
+                Comparable comparable2 = (Comparable) entry2.getKey();
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            case 3:
+                return ((q4.a) obj2).b() - ((q4.a) obj).b();
+            case 4:
+                s4.n nVar = (s4.n) obj;
+                s4.n nVar2 = (s4.n) obj2;
+                int i10 = nVar.a - nVar2.a;
+                return i10 == 0 ? nVar.b - nVar2.b : i10;
+            case 5:
+                s4.p pVar = (s4.p) obj;
+                s4.p pVar2 = (s4.p) obj2;
+                RecyclerView recyclerView = pVar.d;
+                if ((recyclerView == null) != (pVar2.d == null)) {
+                    return recyclerView == null ? 1 : -1;
+                }
+                boolean z10 = pVar.a;
+                if (z10 == pVar2.a) {
+                    int i11 = pVar2.b - pVar.b;
+                    if (i11 != 0) {
+                        return i11;
+                    }
+                    int i12 = pVar.c - pVar2.c;
+                    if (i12 != 0) {
+                        return i12;
+                    }
+                    return 0;
+                }
+                if (z10) {
+                }
+            case 6:
+                return ((z4.c) obj).b - ((z4.c) obj2).b;
             default:
-                return a();
+                z4.d dVar = (z4.d) ((View) obj).getLayoutParams();
+                z4.d dVar2 = (z4.d) ((View) obj2).getLayoutParams();
+                boolean z11 = dVar.a;
+                return z11 != dVar2.a ? z11 ? 1 : -1 : dVar.e - dVar2.e;
         }
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        l lVar = this.b;
-        if (lVar == null) {
-            throw new IllegalStateException();
-        }
-        m mVar = this.d;
-        mVar.c(lVar, true);
-        this.b = null;
-        this.c = mVar.e;
     }
 }

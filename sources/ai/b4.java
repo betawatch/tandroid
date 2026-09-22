@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a60;
+import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.i40;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.pn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class b4 implements ng {
     public final /* synthetic */ f6 a;
@@ -65,9 +65,9 @@ public final class b4 implements ng {
 
     @Override // org.telegram.ui.Components.ng
     public final void K(float f7, int i10) {
-        a60 a60Var = this.a.J2;
-        if (a60Var != null) {
-            a60Var.b(f7, i10);
+        c60 c60Var = this.a.J2;
+        if (c60Var != null) {
+            c60Var.b(f7, i10);
         }
     }
 
@@ -134,27 +134,27 @@ public final class b4 implements ng {
 
     @Override // org.telegram.ui.Components.ng
     public final boolean j1() {
-        a60 a60Var = this.a.J2;
-        return (a60Var == null || a60Var.h0) ? false : true;
+        c60 c60Var = this.a.J2;
+        return (c60Var == null || c60Var.j0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.ng
     public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
         f6 f6Var = this.a;
         if (f6Var.J2 == null && CameraView.isCameraAllowed()) {
-            f6Var.J2 = new a60(f6Var.getContext(), new r4(f6Var), f6Var.B0, false);
-            f6Var.addView(f6Var.J2, Math.min(f6Var.indexOfChild(f6Var.b2.getRecordCircle()), f6Var.indexOfChild(f6Var.b2.N1)), w7.y5.e(-1, -1, 51));
+            f6Var.J2 = new c60(f6Var.getContext(), new r4(f6Var), f6Var.B0, false);
+            f6Var.addView(f6Var.J2, Math.min(f6Var.indexOfChild(f6Var.b2.getRecordCircle()), f6Var.indexOfChild(f6Var.b2.O1)), w7.y5.e(-1, -1, 51));
         }
-        a60 a60Var = f6Var.J2;
-        if (a60Var != null) {
+        c60 c60Var = f6Var.J2;
+        if (c60Var != null) {
             if (i10 == 0) {
-                a60Var.h(false);
+                c60Var.h(false);
                 return;
             }
             if (i10 == 1 || i10 == 3 || i10 == 4) {
-                a60Var.f(i10, i11, i12, j3, j10, z10);
+                c60Var.f(i10, i11, i12, j3, j10, z10);
             } else if (i10 == 2 || i10 == 5) {
-                a60Var.a(i10 == 2);
+                c60Var.a(i10 == 2);
             }
         }
     }
@@ -226,9 +226,9 @@ public final class b4 implements ng {
 
     @Override // org.telegram.ui.Components.ng
     public final void o1() {
-        a60 a60Var = this.a.J2;
-        if (a60Var != null) {
-            a60Var.i();
+        c60 c60Var = this.a.J2;
+        if (c60Var != null) {
+            c60Var.i();
         }
     }
 

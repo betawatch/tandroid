@@ -21,22 +21,22 @@ import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.gg0;
 import rg.v1;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final gg0 a;
     public final o b;
     public final TextView c;
-    public final k90 d;
+    public final n90 d;
     public final f6 e;
-    public final h90 f;
+    public final k90 f;
     public final Paint[] h;
     public ValueAnimator n;
 
@@ -75,17 +75,17 @@ public final class r extends FrameLayout {
         textView.setTextColor(j6.v0(i11, f6Var));
         textView.setGravity(1);
         f7.addView(textView, y5.t(-2, -2, 1, 24, -8, 24, 0));
-        h90 h90Var = new h90(this);
-        this.f = h90Var;
-        k90 k90Var = new k90(context, h90Var, f6Var);
-        this.d = k90Var;
-        k90Var.setTextSize(1, 15.0f);
-        k90Var.setGravity(17);
-        k90Var.setTextColor(j6.v0(i11, f6Var));
-        k90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        k90Var.setLinkTextColor(j6.v0(j6.J6, f6Var));
-        k90Var.setImportantForAccessibility(2);
-        f7.addView(k90Var, y5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
+        k90 k90Var = new k90(this);
+        this.f = k90Var;
+        n90 n90Var = new n90(context, k90Var, f6Var);
+        this.d = n90Var;
+        n90Var.setTextSize(1, 15.0f);
+        n90Var.setGravity(17);
+        n90Var.setTextColor(j6.v0(i11, f6Var));
+        n90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        n90Var.setLinkTextColor(j6.v0(j6.J6, f6Var));
+        n90Var.setImportantForAccessibility(2);
+        f7.addView(n90Var, y5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
         addView(oVar, y5.e(-1, 234, 48));
         addView(f7);
@@ -114,12 +114,12 @@ public final class r extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        h90 h90Var = this.f;
-        if (h90Var != null) {
+        k90 k90Var = this.f;
+        if (k90Var != null) {
             canvas.save();
-            k90 k90Var = this.d;
-            canvas.translate(k90Var.getLeft(), k90Var.getTop());
-            if (h90Var.f(canvas)) {
+            n90 n90Var = this.d;
+            canvas.translate(n90Var.getLeft(), n90Var.getTop());
+            if (k90Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();
@@ -145,9 +145,9 @@ public final class r extends FrameLayout {
         setBackgroundColor(j6.v0(i10, f6Var));
         this.c.setText(LocaleController.formatString("BoostingBoostsViaGifts", R.string.BoostingBoostsViaGifts, new Object[0]));
         String formatString = LocaleController.formatString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoost2 : R.string.BoostingGetMoreBoostGroup, new Object[0]);
-        k90 k90Var = this.d;
-        k90Var.setText(formatString);
-        k90Var.setTextColor(j6.v0(j6.r5, f6Var));
+        n90 n90Var = this.d;
+        n90Var.setText(formatString);
+        n90Var.setTextColor(j6.v0(j6.r5, f6Var));
     }
 
     public void setPaused(boolean z10) {

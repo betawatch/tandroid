@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bg implements Runnable {
     public final /* synthetic */ MessageObject a;
@@ -30,8 +30,8 @@ public final class bg implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.zn znVar = chatActivityEnterView.O2;
-        if (chatActivityEnterView.l1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.t0()) {
+        org.telegram.ui.zn znVar = chatActivityEnterView.P2;
+        if (chatActivityEnterView.m1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.t0()) {
             chatActivityEnterView.m0(false);
             AndroidUtilities.hideKeyboard(chatActivityEnterView);
             AndroidUtilities.runOnUIThread(this, 150L);
@@ -63,8 +63,8 @@ public final class bg implements Runnable {
             MessagesController.getInstance(chatActivityEnterView.Q);
             MessagesController.showCantOpenAlert(znVar, restrictionReason);
         } else {
-            ei.k3 k3Var = new ei.k3(chatActivityEnterView.getContext(), chatActivityEnterView.V3);
-            k3Var.k0 = chatActivityEnterView.N2;
+            ei.k3 k3Var = new ei.k3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
+            k3Var.k0 = chatActivityEnterView.O2;
             k3Var.s(znVar, b10);
             k3Var.show();
         }

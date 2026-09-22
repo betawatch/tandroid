@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.kl0, org.telegram.ui.Components.z81, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.nl0, org.telegram.ui.Components.b91, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ xd1 b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDel
         this.b = xd1Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
@@ -33,7 +33,7 @@ public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDel
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -64,8 +64,8 @@ public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDel
         org.telegram.messenger.h5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.z81
-    public void f(int i10, int i11) {
+    @Override // org.telegram.ui.Components.b91
+    public void e(int i10, int i11) {
         xd1 xd1Var = this.b;
         if (xd1Var.E1) {
             xd1Var.x0.getBackground();
@@ -136,12 +136,12 @@ public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDel
                     org.telegram.ui.ActionBar.j6.n1(false, false);
                 }
                 Drawable background = xd1Var2.x0.getBackground();
-                if (background instanceof org.telegram.ui.Components.kc0) {
-                    org.telegram.ui.Components.kc0 kc0Var = (org.telegram.ui.Components.kc0) background;
-                    kc0Var.t(null, 100);
+                if (background instanceof org.telegram.ui.Components.nc0) {
+                    org.telegram.ui.Components.nc0 nc0Var = (org.telegram.ui.Components.nc0) background;
+                    nc0Var.t(null, 100);
                     if (org.telegram.ui.ActionBar.j6.I.q()) {
                         if (xd1Var2.l1 < 0.0f) {
-                            xd1Var2.x0.getImageReceiver().setGradientBitmap(kc0Var.k);
+                            xd1Var2.x0.getImageReceiver().setGradientBitmap(nc0Var.k);
                         }
                         org.telegram.ui.Cells.j0 j0Var = xd1Var2.T0;
                         if (j0Var != null) {
@@ -184,7 +184,7 @@ public final /* synthetic */ class mc1 implements ImageReceiver.ImageReceiverDel
         org.telegram.messenger.h5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

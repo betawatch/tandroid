@@ -13,7 +13,7 @@ import yh.p2;
 import yh.q2;
 import yh.s5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class d0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -90,22 +90,22 @@ public final class d0 extends AnimatorListenerAdapter {
                 bVar.invalidate();
                 break;
             case 8:
-                vh.h hVar = (vh.h) this.b;
-                Iterator it = hVar.h.iterator();
+                vh.g gVar = (vh.g) this.b;
+                Iterator it = gVar.h.iterator();
                 while (it.hasNext()) {
                     vh.c cVar = (vh.c) it.next();
-                    if (hVar.c.size() < hVar.d) {
-                        hVar.c.push(cVar);
+                    if (gVar.c.size() < gVar.d) {
+                        gVar.c.push(cVar);
                     }
                     it.remove();
                 }
-                Runnable runnable = hVar.q;
+                Runnable runnable = gVar.q;
                 if (runnable != null) {
                     runnable.run();
-                    hVar.q = null;
+                    gVar.q = null;
                 }
-                hVar.r = null;
-                hVar.invalidateSelf();
+                gVar.r = null;
+                gVar.invalidateSelf();
                 break;
             case 9:
                 ((xh.h0) this.b).b.w.setVisibility(8);
@@ -130,17 +130,17 @@ public final class d0 extends AnimatorListenerAdapter {
                 ((s5) this.b).run();
                 break;
             case 13:
-                zg.t tVar = (zg.t) this.b;
-                tVar.setVisibility(8);
-                zg.s sVar = tVar.b;
+                zg.u uVar = (zg.u) this.b;
+                uVar.setVisibility(8);
+                zg.s sVar = uVar.b;
                 if (sVar != null) {
-                    tVar.removeView(sVar);
-                    tVar.b = null;
+                    uVar.removeView(sVar);
+                    uVar.b = null;
                 }
-                tVar.e = null;
+                uVar.e = null;
                 break;
             default:
-                ((zg.h0) this.b).x.c();
+                ((zg.i0) this.b).x.c();
                 break;
         }
     }

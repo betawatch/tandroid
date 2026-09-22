@@ -1,71 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ow0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final class ow0 extends CharacterStyle {
+    public final Paint a;
+    public final Path b;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public ow0() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
-    }
-
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.nw0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
-                int i10;
-                ow0 ow0Var = ow0.this;
-                int i11 = ow0Var.a;
-                if (i11 <= 0 || (i10 = ow0Var.b) <= 0) {
-                    ow0Var.end();
-                    return;
+    public static void a(Canvas canvas, Layout layout) {
+        CharSequence text;
+        Layout layout2 = layout;
+        if (layout2 == null || (text = layout2.getText()) == null || !(text instanceof Spanned)) {
+            return;
+        }
+        Spanned spanned = (Spanned) text;
+        ow0[] ow0VarArr = (ow0[]) spanned.getSpans(0, spanned.length(), ow0.class);
+        if (ow0VarArr == null || ow0VarArr.length == 0) {
+            return;
+        }
+        int i10 = 0;
+        while (i10 < ow0VarArr.length) {
+            ow0 ow0Var = ow0VarArr[i10];
+            int spanStart = spanned.getSpanStart(ow0Var);
+            int spanEnd = spanned.getSpanEnd(ow0Var);
+            int lineForOffset = layout2.getLineForOffset(spanStart);
+            int lineForOffset2 = layout2.getLineForOffset(spanEnd);
+            int i11 = lineForOffset;
+            while (i11 <= lineForOffset2) {
+                float lineBottom = layout2.getLineBottom(i11) - AndroidUtilities.dp(1.0f);
+                float primaryHorizontal = layout2.getPrimaryHorizontal(i11 == lineForOffset ? spanStart : layout2.getLineStart(i11));
+                float primaryHorizontal2 = layout2.getPrimaryHorizontal(i11 == lineForOffset2 ? spanEnd : layout2.getLineEnd(i11) - 1);
+                ow0Var.getClass();
+                float dp = AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(10.0f);
+                float dp3 = AndroidUtilities.dp(2.0f);
+                Paint paint = ow0Var.a;
+                Spanned spanned2 = spanned;
+                ow0[] ow0VarArr2 = ow0VarArr;
+                int i12 = i10;
+                paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
+                paint.setStrokeWidth(dp);
+                Path path = ow0Var.b;
+                path.rewind();
+                path.moveTo(primaryHorizontal, lineBottom);
+                float f7 = primaryHorizontal;
+                while (f7 < primaryHorizontal2) {
+                    float f10 = f7;
+                    float f11 = dp2;
+                    path.quadTo((dp2 / 4.0f) + f7, lineBottom - dp3, (dp2 / 2.0f) + f10, lineBottom);
+                    float f12 = f10 + f11;
+                    path.quadTo(((f11 * 3.0f) / 4.0f) + f10, lineBottom + dp3, f12, lineBottom);
+                    f7 = f12;
+                    dp2 = f11;
                 }
-                int i12 = i11 - 1;
-                ow0Var.a = i12;
-                if (ow0Var.c != null) {
-                    float[] fArr = ow0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        ow0Var.end();
-                        return;
-                    }
-                    float interpolation = ow0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
-                    float[] fArr2 = ow0Var.e;
-                    float f7 = fArr2[0];
-                    ow0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
-                    ow0Var.c.onAnimationUpdate(ow0Var);
+                if (f7 > primaryHorizontal2) {
+                    canvas.save();
+                    float f13 = dp / 2.0f;
+                    canvas.clipRect(primaryHorizontal - f13, (lineBottom - dp3) - f13, primaryHorizontal2 + f13, lineBottom + dp3 + f13);
+                    canvas.drawPath(path, paint);
+                    canvas.restore();
+                } else {
+                    canvas.drawPath(path, paint);
                 }
+                i11++;
+                layout2 = layout;
+                spanned = spanned2;
+                ow0VarArr = ow0VarArr2;
+                i10 = i12;
             }
-        });
-        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+            i10++;
+            layout2 = layout;
+        }
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
     }
 }

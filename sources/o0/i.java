@@ -1,20 +1,22 @@
 package o0;
 
-import android.os.Process;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class i extends Thread {
-    public final int a;
+public final class i {
+    public final Uri a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final int e;
 
-    public i(Runnable runnable) {
-        super(runnable, "fonts-androidx");
-        this.a = 10;
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        Process.setThreadPriority(this.a);
-        super.run();
+    public i(Uri uri, int i10, int i11, boolean z10, int i12) {
+        uri.getClass();
+        this.a = uri;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
+        this.e = i12;
     }
 }

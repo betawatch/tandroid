@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
@@ -65,15 +65,15 @@ public class BuildVars {
     }
 
     private static boolean hasDirectCurrency() {
-        c5.o oVar;
-        if (BillingController.getInstance().isReady() && (oVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
-            ArrayList arrayList = oVar.h;
+        c5.n nVar;
+        if (BillingController.getInstance().isReady() && (nVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
+            ArrayList arrayList = nVar.h;
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ArrayList arrayList2 = ((c5.n) obj).b.a;
+                ArrayList arrayList2 = (ArrayList) ((c5.m) obj).b.b;
                 int size2 = arrayList2.size();
                 int i11 = 0;
                 while (i11 < size2) {

@@ -11,25 +11,25 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class fw0 implements View.OnClickListener {
     public final /* synthetic */ hi0 a;
     public final /* synthetic */ zn b;
-    public final /* synthetic */ org.telegram.ui.Components.vl0 c;
+    public final /* synthetic */ org.telegram.ui.Components.yl0 c;
     public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.v70 e;
-    public final /* synthetic */ org.telegram.ui.Components.v70 f;
+    public final /* synthetic */ org.telegram.ui.Components.y70 e;
+    public final /* synthetic */ org.telegram.ui.Components.y70 f;
     public final /* synthetic */ mw0 h;
 
-    public fw0(mw0 mw0Var, hi0 hi0Var, zn znVar, org.telegram.ui.Components.vl0 vl0Var, LinearLayout linearLayout, org.telegram.ui.Components.v70 v70Var, org.telegram.ui.Components.v70 v70Var2) {
+    public fw0(mw0 mw0Var, hi0 hi0Var, zn znVar, org.telegram.ui.Components.yl0 yl0Var, LinearLayout linearLayout, org.telegram.ui.Components.y70 y70Var, org.telegram.ui.Components.y70 y70Var2) {
         this.h = mw0Var;
         this.a = hi0Var;
         this.b = znVar;
-        this.c = vl0Var;
+        this.c = yl0Var;
         this.d = linearLayout;
-        this.e = v70Var;
-        this.f = v70Var2;
+        this.e = y70Var;
+        this.f = y70Var2;
     }
 
     @Override // android.view.View.OnClickListener
@@ -65,10 +65,10 @@ public final class fw0 implements View.OnClickListener {
             t10.j();
             SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        org.telegram.ui.Components.vl0 vl0Var = this.c;
-        vl0Var.requestLayout();
+        org.telegram.ui.Components.yl0 yl0Var = this.c;
+        yl0Var.requestLayout();
         this.d.requestLayout();
-        vl0Var.getAdapter().l();
+        yl0Var.getAdapter().l();
         this.e.K(this.f);
     }
 }

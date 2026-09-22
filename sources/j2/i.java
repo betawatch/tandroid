@@ -48,12 +48,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.Executor;
-import k2.m;
 import r2.p;
 import u2.b0;
 import u2.f0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i implements b {
     public u0 E;
@@ -306,10 +305,10 @@ public final class i implements b {
                             } else {
                                 if (cause instanceof OutOfMemoryError) {
                                     q0Var = new q0(14, 0);
-                                } else if (cause instanceof m) {
-                                    q0Var2 = new q0(17, ((m) cause).a);
-                                } else if (cause instanceof k2.o) {
-                                    q0Var2 = new q0(18, ((k2.o) cause).a);
+                                } else if (cause instanceof k2.n) {
+                                    q0Var2 = new q0(17, ((k2.n) cause).a);
+                                } else if (cause instanceof k2.p) {
+                                    q0Var2 = new q0(18, ((k2.p) cause).a);
                                 } else if (cause instanceof MediaCodec.CryptoException) {
                                     int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
                                     switch (d0.x(errorCode)) {
@@ -363,7 +362,7 @@ public final class i implements b {
                             }
                         } else if (i21 == 1002) {
                             q0Var = new q0(21, 0);
-                        } else if (cause instanceof n2.g) {
+                        } else if (cause instanceof n2.f) {
                             Throwable cause3 = cause.getCause();
                             cause3.getClass();
                             if (cause3 instanceof MediaDrm.MediaDrmStateException) {
@@ -387,7 +386,7 @@ public final class i implements b {
                                 }
                                 q0Var = new q0(i12, y3);
                             } else {
-                                q0Var = e.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.x ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
+                                q0Var = e.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.w ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
                             }
                         } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
                             Throwable cause4 = cause.getCause();

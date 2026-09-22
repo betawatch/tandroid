@@ -1,45 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class nb0 extends org.telegram.ui.ActionBar.f1 {
-    public final /* synthetic */ int L;
+public final class nb0 extends s4.t {
+    public final /* synthetic */ ac0 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nb0(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
-        super(i10, context, f6Var, z10, z11);
-        this.L = i11;
+    public nb0(ac0 ac0Var) {
+        super(true);
+        this.S = ac0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1
-    public final void i() {
-        switch (this.L) {
-            case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        byte b10;
+        ac0 ac0Var = this.S;
+        MessageObject messageObject = ac0Var.r.previewMessages.get(i10);
+        MessageObject.GroupedMessages a2 = ac0.a(ac0Var, messageObject);
+        if (a2 != null) {
+            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = a2.posArray.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
+                        }
+                    }
+                }
+            }
         }
+        return false;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-            default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
+    @Override // s4.t
+    public final boolean C1(View view) {
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            super.b0(eVar, z0Var);
+            return;
         }
-        return super.onTouchEvent(motionEvent);
+        try {
+            super.b0(eVar, z0Var);
+        } catch (Exception e) {
+            FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new xp(this, 29));
+        }
     }
 }

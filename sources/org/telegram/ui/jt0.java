@@ -8,7 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ float a;
@@ -42,13 +42,13 @@ public final class jt0 extends AnimatorListenerAdapter {
         photoViewer.C1.c.setRotated(false);
         float f7 = this.a;
         if (Math.abs(f7) > 0.0f) {
-            org.telegram.ui.Components.cf0 cf0Var = photoViewer.C1;
-            lg.f fVar = cf0Var.c;
+            org.telegram.ui.Components.ff0 ff0Var = photoViewer.C1;
+            lg.f fVar = ff0Var.c;
             if (fVar != null) {
                 fVar.b(0.0f);
                 fVar.setRotated(false);
             }
-            if (cf0Var.b.m(f7)) {
+            if (ff0Var.b.m(f7)) {
                 photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
             } else {
                 photoViewer.b1.setColorFilter((ColorFilter) null);

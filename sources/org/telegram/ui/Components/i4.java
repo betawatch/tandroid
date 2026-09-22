@@ -5,18 +5,18 @@ import android.graphics.Point;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class i4 extends LinearLayout {
     public final /* synthetic */ int a;
     public boolean b;
-    public final /* synthetic */ cd0 c;
+    public final /* synthetic */ fd0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i4(Context context, cd0 cd0Var, int i10) {
+    public /* synthetic */ i4(Context context, fd0 fd0Var, int i10) {
         super(context);
         this.a = i10;
-        this.c = cd0Var;
+        this.c = fd0Var;
         this.b = false;
     }
 

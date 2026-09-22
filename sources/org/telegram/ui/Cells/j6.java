@@ -36,17 +36,17 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.bf0;
 import org.telegram.ui.Components.fd;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.ye0;
 import org.telegram.ui.e10;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class j6 extends a0 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.z5 {
     public final np A0;
@@ -68,7 +68,7 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
     public TLRPC.FileLocation K;
     public final RectF K0;
     public boolean L;
-    public u01 L0;
+    public w01 L0;
     public boolean M;
     public boolean M0;
     public final int N;
@@ -92,7 +92,7 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
     public boolean f;
     public final int f0;
     public int g0;
-    public ye0 h;
+    public bf0 h;
     public int h0;
     public StaticLayout i0;
     public boolean[] j0;
@@ -113,7 +113,7 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
     public CharSequence v;
     public final RectF v0;
     public final org.telegram.ui.ActionBar.f6 w;
-    public u01 w0;
+    public w01 w0;
     public TLRPC.TL_sponsoredPeer x;
     public Paint x0;
     public TLRPC.User y;
@@ -411,12 +411,12 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
                 }
             } else {
                 if (this.h == null) {
-                    this.h = new ye0();
+                    this.h = new bf0();
                 }
-                ye0 ye0Var = this.h;
+                bf0 bf0Var = this.h;
                 RectF rectF7 = caVar.F;
                 RectF rectF8 = caVar.F;
-                ye0Var.a((int) rectF7.centerX(), (int) rectF8.centerY(), (int) (rectF8.width() / f7));
+                bf0Var.a((int) rectF7.centerX(), (int) rectF8.centerY(), (int) (rectF8.width() / f7));
                 canvas2.save();
                 canvas2.clipPath(this.h);
                 imageReceiver.setImageCoords(rectF8);
@@ -674,7 +674,7 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
                 oqVar.spaceScaleX = 0.7f;
                 oqVar.translate(-AndroidUtilities.dp(2.0f), 0.0f);
                 append.setSpan(oqVar, append.length() - 1, append.length(), 33);
-                this.w0 = new u01(append, 12.0f, null);
+                this.w0 = new w01(append, 12.0f, null);
             }
             if (this.x0 == null) {
                 this.x0 = new Paint(1);
@@ -993,7 +993,7 @@ public final class j6 extends a0 implements NotificationCenter.NotificationCente
             return;
         }
         if (this.L0 == null) {
-            this.L0 = new u01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
+            this.L0 = new w01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
         }
         int dp = z10 ? AndroidUtilities.dp(30.0f) + ((int) this.L0.c) : 0;
         boolean z11 = LocaleController.isRTL;

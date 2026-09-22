@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r extends db.u {
     public static final p c = new p(db.t.a, 1);
@@ -49,7 +49,7 @@ public final class r extends db.u {
             arrayList = null;
         } else {
             aVar.b();
-            arrayList = new fb.m(true);
+            arrayList = new fb.n(true);
         }
         if (arrayList == null) {
             return a(aVar, x10);
@@ -67,7 +67,7 @@ public final class r extends db.u {
                     arrayList2 = null;
                 } else {
                     aVar.b();
-                    arrayList2 = new fb.m(true);
+                    arrayList2 = new fb.n(true);
                 }
                 boolean z10 = arrayList2 != null;
                 if (arrayList2 == null) {

@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class px extends j71 {
     public final /* synthetic */ a71[] d2;
@@ -90,11 +90,11 @@ public final class px extends j71 {
         uyVar.getMessagesController().updateEmojiStatus(emojiStatus, tL_starGiftUnique);
         if (l4 != null) {
             org.telegram.ui.Cells.o oVar = uyVar.E3;
-            zg.o0 o0Var = new zg.o0();
+            zg.p0 p0Var = new zg.p0();
             long longValue = l4.longValue();
-            o0Var.g = longValue;
-            o0Var.h = longValue;
-            oVar.a(o0Var);
+            p0Var.g = longValue;
+            p0Var.h = longValue;
+            oVar.a(p0Var);
         }
         a71 a71Var2 = a71VarArr[0];
         if (a71Var2 != null) {

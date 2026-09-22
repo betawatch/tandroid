@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.f3;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -85,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.s(r2);
+        r4.w(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b x10;
+        ra.b z10;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                f3 a2 = f3.a(hVar.a);
+                f3 e = f3.e(hVar.a);
                 try {
-                    x10 = this.c.x();
-                    int i10 = x10.b;
-                    boolean z10 = true;
+                    z10 = this.c.z();
+                    int i10 = z10.b;
+                    boolean z11 = true;
                     if (i10 != 2 && i10 != 1) {
-                        z10 = false;
+                        z11 = false;
                     }
-                    if (a2 != null) {
-                        a2.z();
+                    if (e != null) {
+                        e.A();
                     }
                 } catch (Throwable th2) {
-                    if (a2 != null) {
-                        a2.z();
+                    if (e != null) {
+                        e.A();
                     }
                     throw th2;
                 }
@@ -118,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(x10);
+        k(z10);
         this.i.execute(new b(this, 1));
     }
 
@@ -238,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                f3 a2 = f3.a(hVar.a);
+                f3 e = f3.e(hVar.a);
                 try {
-                    this.c.s(bVar);
-                    if (a2 != null) {
-                        a2.z();
+                    this.c.w(bVar);
+                    if (e != null) {
+                        e.A();
                     }
                 } catch (Throwable th2) {
-                    if (a2 != null) {
-                        a2.z();
+                    if (e != null) {
+                        e.A();
                     }
                     throw th2;
                 }

@@ -1,26 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rp0 implements ah.n {
+public final /* synthetic */ class rp0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vl0 b;
+    public final /* synthetic */ wq0 b;
 
-    public /* synthetic */ rp0(vl0 vl0Var, int i10) {
+    public /* synthetic */ rp0(wq0 wq0Var, int i10) {
         this.a = i10;
-        this.b = vl0Var;
+        this.b = wq0Var;
     }
 
-    @Override // ah.n
-    public final boolean a(Canvas canvas, View view, long j3) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return ((wp0) this.b).drawChild(canvas, view, j3);
+                wq0 wq0Var = this.b;
+                wq0Var.A0 = true;
+                b20 b20Var = wq0Var.y0;
+                b20Var.r.setText("");
+                AndroidUtilities.showKeyboard(b20Var.r);
+                break;
             default:
-                return ((bu0) this.b).drawChild(canvas, view, j3);
+                sh shVar = new sh(9);
+                wq0 wq0Var2 = this.b;
+                if (!wq0Var2.isKeyboardVisible()) {
+                    shVar.run();
+                    break;
+                } else {
+                    b20 b20Var2 = wq0Var2.y0;
+                    if (b20Var2 != null) {
+                        AndroidUtilities.hideKeyboard(b20Var2.r);
+                    }
+                    AndroidUtilities.runOnUIThread(shVar, 300L);
+                    break;
+                }
         }
     }
 }

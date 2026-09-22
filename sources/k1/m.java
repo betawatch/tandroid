@@ -2,7 +2,7 @@ package k1;
 
 import v7.u7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final class m extends kd.j implements rd.p {
                 }
                 n nVar2 = new n(b0Var2, null, 0);
                 this.b = 1;
-                nVar.s(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar2), this);
+                nVar.u(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar2), this);
                 return aVar2;
         }
     }

@@ -26,16 +26,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class i61 extends org.telegram.ui.Components.ul0 {
+public final class i61 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ j71 c;
 
     public i61(j71 j71Var) {
         this.c = j71Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 2 || i10 == 1 || i10 == 3 || i10 == 8;
@@ -111,7 +111,7 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
         ?? r92;
         boolean z12;
         String formatString;
-        zg.o0 o0Var;
+        zg.p0 p0Var;
         int cacheType3;
         j71 j71Var = this.c;
         ArrayList arrayList = j71Var.G0;
@@ -197,33 +197,33 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
             int i16 = j71Var.b;
             if (i10 < i16 || i10 >= j71Var.c) {
                 int i17 = j71Var.E;
-                o0Var = (i10 < i17 || i10 >= j71Var.F) ? (zg.o0) j71Var.H0.get(i10 - j71Var.d) : (zg.o0) j71Var.J0.get(i10 - i17);
+                p0Var = (i10 < i17 || i10 >= j71Var.F) ? (zg.p0) j71Var.H0.get(i10 - j71Var.d) : (zg.p0) j71Var.J0.get(i10 - i17);
             } else {
-                o0Var = (zg.o0) j71Var.I0.get(i10 - i16);
+                p0Var = (zg.p0) j71Var.I0.get(i10 - i16);
             }
             if (i12 == 13) {
                 s61Var2.b = false;
                 s61Var2.y = true;
-                s61Var2.x = o0Var;
-                s61Var2.setDrawable(Emoji.getEmojiDrawable(o0Var.f));
-                s61Var2.d(j71Var.J.contains(o0Var), false);
+                s61Var2.x = p0Var;
+                s61Var2.setDrawable(Emoji.getEmojiDrawable(p0Var.f));
+                s61Var2.d(j71Var.J.contains(p0Var), false);
                 return;
             }
             s61Var2.a(g61Var);
             s61Var2.y = true;
-            s61Var2.x = o0Var;
-            s61Var2.d(j71Var.J.contains(o0Var), false);
+            s61Var2.x = p0Var;
+            s61Var2.d(j71Var.J.contains(p0Var), false);
             s61Var2.b = false;
-            if (o0Var.b || o0Var.f == null) {
+            if (p0Var.b || p0Var.f == null) {
                 s61Var2.s = false;
-                s61Var2.e = new org.telegram.ui.Components.y5(o0Var.g, (Paint.FontMetricsInt) null);
+                s61Var2.e = new org.telegram.ui.Components.y5(p0Var.g, (Paint.FontMetricsInt) null);
                 s61Var2.d = null;
                 s61Var2.h.clearImage();
                 imageReceiver.clearImage();
                 Drawable drawable = (Drawable) g61Var.d3.get(s61Var2.e.getDocumentId());
                 if (drawable == null) {
                     cacheType3 = j71Var.getCacheType();
-                    if (cacheType3 == 3 && o0Var.e) {
+                    if (cacheType3 == 3 && p0Var.e) {
                         cacheType3 = 27;
                     }
                     drawable = org.telegram.ui.Components.p5.n(i13, s61Var2.e.getDocumentId(), null, cacheType3);
@@ -232,17 +232,17 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
                 s61Var2.setDrawable(drawable);
             } else {
                 s61Var2.s = true;
-                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i13).getReactionsMap().get(o0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i13).getReactionsMap().get(p0Var.f);
                 if (tL_availableReaction != null) {
                     SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction.activate_animation, org.telegram.ui.ActionBar.j6.m6, 0.2f);
                     if (LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) {
-                        zg.o0 o0Var2 = o0Var;
-                        s61Var2.h.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", ImageLocation.getForDocument(tL_availableReaction.select_animation), "30_30_firstframe", null, null, svgThumb, 0L, "tgs", o0Var2, 0);
-                        o0Var = o0Var2;
+                        zg.p0 p0Var2 = p0Var;
+                        s61Var2.h.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", ImageLocation.getForDocument(tL_availableReaction.select_animation), "30_30_firstframe", null, null, svgThumb, 0L, "tgs", p0Var2, 0);
+                        p0Var = p0Var2;
                     } else {
-                        s61Var2.h.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_firstframe", null, null, svgThumb, 0L, "tgs", o0Var, 0);
+                        s61Var2.h.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_firstframe", null, null, svgThumb, 0L, "tgs", p0Var, 0);
                     }
-                    MediaDataController.getInstance(i13).preloadImage(imageReceiver, ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.k0.a());
+                    MediaDataController.getInstance(i13).preloadImage(imageReceiver, ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.l0.a());
                 } else {
                     s61Var2.h.clearImage();
                     imageReceiver.clearImage();
@@ -256,14 +256,14 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
                     s61Var2.J.setImageReceiver(null);
                 }
             }
-            if (!UserConfig.getInstance(i13).isPremium() && i12 == 14 && o0Var.b && o0Var.d) {
+            if (!UserConfig.getInstance(i13).isPremium() && i12 == 14 && p0Var.b && p0Var.d) {
                 s61Var2.b();
                 s61Var2.J.setVisibility(0);
                 s61Var2.setEmojicon(null);
                 return;
             }
-            if (o0Var.e) {
-                s61Var2.setEmojicon(o0Var.f);
+            if (p0Var.e) {
+                s61Var2.setEmojicon(p0Var.f);
             } else {
                 s61Var2.setEmojicon(null);
             }
@@ -310,17 +310,17 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
             boolean z15 = (xxVar.e || UserConfig.getInstance(i13).isPremium()) ? false : true;
             boolean z16 = xxVar.f;
             org.telegram.ui.Cells.va vaVar = new org.telegram.ui.Cells.va(this, xxVar, i19, 15);
-            rg.p0 p0Var = m61Var.c;
+            rg.p0 p0Var3 = m61Var.c;
             FrameLayout frameLayout = m61Var.a;
             m61Var.d = str;
             if (z15) {
                 frameLayout.setVisibility(8);
                 r92 = 0;
-                p0Var.setVisibility(0);
-                p0Var.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), vaVar, false);
+                p0Var3.setVisibility(0);
+                p0Var3.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), vaVar, false);
             } else {
                 r92 = 0;
-                p0Var.setVisibility(8);
+                p0Var3.setVisibility(8);
                 frameLayout.setVisibility(0);
                 frameLayout.setOnClickListener(vaVar);
             }
@@ -354,10 +354,10 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
                 float f7 = z15 ? 1.0f : 0.0f;
                 m61Var.f = f7;
                 frameLayout.setAlpha(1.0f - f7);
-                p0Var.setAlpha(m61Var.f);
-                p0Var.setScaleX(m61Var.f);
-                p0Var.setScaleY(m61Var.f);
-                p0Var.setVisibility(m61Var.h.booleanValue() ? 0 : 8);
+                p0Var3.setAlpha(m61Var.f);
+                p0Var3.setScaleX(m61Var.f);
+                p0Var3.setScaleY(m61Var.f);
+                p0Var3.setVisibility(m61Var.h.booleanValue() ? 0 : 8);
                 return;
             }
             return;
@@ -418,7 +418,7 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
                 String str2 = (String) arrayList.get(((i10 - (j71Var.a != -1 ? 1 : 0)) - (j71Var.v != -1 ? 1 : 0)) - (z13 ? 1 : 0));
                 s61Var3.b = false;
                 s61Var3.y = false;
-                s61Var3.x = zg.o0.b(str2);
+                s61Var3.x = zg.p0.b(str2);
                 s61Var3.setDrawable(Emoji.getEmojiDrawable(str2));
                 s61Var3.d(j71Var.J.contains(s61Var3.x), false);
                 return;
@@ -599,6 +599,6 @@ public final class i61 extends org.telegram.ui.Components.ul0 {
             view.setScaleX(0.0f);
             view.setScaleY(0.0f);
         }
-        return new org.telegram.ui.Components.fl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 }

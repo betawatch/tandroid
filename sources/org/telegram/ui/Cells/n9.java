@@ -10,11 +10,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LanguageDetector;
-import org.telegram.ui.Components.df0;
+import org.telegram.ui.Components.gf0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, df0 {
+public final /* synthetic */ class n9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, gf0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -23,13 +23,13 @@ public final /* synthetic */ class n9 implements LanguageDetector.StringCallback
         this.b = obj2;
     }
 
-    @Override // org.telegram.ui.Components.df0
+    @Override // org.telegram.ui.Components.gf0
     public void j(int i10, int i11) {
         w5 w5Var = (w5) this.a;
-        df0 df0Var = (df0) this.b;
+        gf0 gf0Var = (gf0) this.b;
         ai.q4 q4Var = w5Var.e;
         TextView textView = w5Var.b;
-        df0Var.j(i10, i11);
+        gf0Var.j(i10, i11);
         if (i11 > 0) {
             textView.setText("+" + i11);
         } else {

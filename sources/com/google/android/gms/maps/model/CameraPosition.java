@@ -10,7 +10,7 @@ import n6.l;
 import o6.a;
 import w7.f0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class CameraPosition extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CameraPosition> CREATOR = new j(10);
@@ -45,10 +45,10 @@ public final class CameraPosition extends a implements ReflectedParcelable {
 
     public final String toString() {
         e eVar = new e(this);
-        eVar.g(this.a, "target");
-        eVar.g(Float.valueOf(this.b), "zoom");
-        eVar.g(Float.valueOf(this.c), "tilt");
-        eVar.g(Float.valueOf(this.d), "bearing");
+        eVar.c(this.a, "target");
+        eVar.c(Float.valueOf(this.b), "zoom");
+        eVar.c(Float.valueOf(this.c), "tilt");
+        eVar.c(Float.valueOf(this.d), "bearing");
         return eVar.toString();
     }
 

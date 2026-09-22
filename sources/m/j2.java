@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j2 extends d2 implements e2 {
     public static final Method T;
@@ -23,6 +23,14 @@ public final class j2 extends d2 implements e2 {
         }
     }
 
+    @Override // m.e2
+    public final void E(l.l lVar, l.n nVar) {
+        l.d dVar = this.S;
+        if (dVar != null) {
+            dVar.E(lVar, nVar);
+        }
+    }
+
     @Override // m.d2
     public final r1 o(Context context, boolean z10) {
         i2 i2Var = new i2(context, z10);
@@ -31,18 +39,10 @@ public final class j2 extends d2 implements e2 {
     }
 
     @Override // m.e2
-    public final void p(l.l lVar, MenuItem menuItem) {
+    public final void q(l.l lVar, MenuItem menuItem) {
         l.d dVar = this.S;
         if (dVar != null) {
-            dVar.p(lVar, menuItem);
-        }
-    }
-
-    @Override // m.e2
-    public final void u(l.l lVar, l.n nVar) {
-        l.d dVar = this.S;
-        if (dVar != null) {
-            dVar.u(lVar, nVar);
+            dVar.q(lVar, menuItem);
         }
     }
 }

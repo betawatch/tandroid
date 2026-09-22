@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class p8 extends FrameLayout {
     public final TextView a;
@@ -71,7 +71,7 @@ public final class p8 extends FrameLayout {
         h.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, a2, a10, a10));
         h.setGravity(17);
         h.setSingleLine(true);
-        w7.b6.a(h);
+        w7.a6.a(h);
         linearLayout.addView(h, w7.y5.p(-2, -2, 0.0f, 16, 5, 1, 0, 0));
         h.setVisibility(8);
         TextView textView2 = new TextView(context);

@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ai0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -45,7 +45,7 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public Drawable Z;
     public zh0 a;
     public Drawable a0;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public boolean b0;
     public TLRPC.Chat c;
     public boolean c0;
@@ -57,11 +57,11 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final int f0;
     public boolean g0;
     public final boolean h;
-    public org.telegram.ui.Components.al0 h0;
+    public org.telegram.ui.Components.dl0 h0;
     public final ArrayList i0;
     public final ArrayList j0;
     public final HashMap k0;
-    public org.telegram.ui.Components.z60 l0;
+    public org.telegram.ui.Components.c70 l0;
     public final ArrayList m0;
     public final long n;
     public long n0;
@@ -164,9 +164,9 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (tL_messages_exportedChatInvites.invites.size() <= 0 || !ai0Var.g0) {
                 z11 = true;
             } else {
-                org.telegram.ui.Components.al0 al0Var = ai0Var.h0;
-                if (al0Var != null && !ai0Var.isPaused) {
-                    al0Var.b(i13 + 1);
+                org.telegram.ui.Components.dl0 dl0Var = ai0Var.h0;
+                if (dl0Var != null && !ai0Var.isPaused) {
+                    dl0Var.b(i13 + 1);
                 }
                 z11 = false;
             }
@@ -219,7 +219,7 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static /* synthetic */ void V(ai0 ai0Var, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.Components.al0 al0Var;
+        org.telegram.ui.Components.dl0 dl0Var;
         ArrayList arrayList = ai0Var.m0;
         ai0Var.W = false;
         if (tL_error == null) {
@@ -238,8 +238,8 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i12 = ai0Var.X;
         ai0Var.e0 = true;
         ai0Var.b0 = false;
-        if (arrayList.size() > 0 && (al0Var = ai0Var.h0) != null && !ai0Var.isPaused && ai0Var.g0) {
-            al0Var.b(i12 + 1);
+        if (arrayList.size() > 0 && (dl0Var = ai0Var.h0) != null && !ai0Var.isPaused && ai0Var.g0) {
+            dl0Var.b(i12 + 1);
         }
         if (ai0Var.b0) {
         }
@@ -298,18 +298,18 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         j0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         this.fragmentView.setTag(Integer.valueOf(i10));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.q1();
         this.actionBar.setAdaptiveBackground(this.b);
         gg.b0 b0Var = new gg.b0(1, false, 12);
         this.b.setLayoutManager(b0Var);
-        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
         zh0 zh0Var = new zh0(this, context);
         this.a = zh0Var;
-        vl0Var2.setAdapter(zh0Var);
+        yl0Var2.setAdapter(zh0Var);
         this.b.setOnScrollListener(new ii.m3(6, this, b0Var));
-        this.h0 = new org.telegram.ui.Components.al0(this.b, false);
+        this.h0 = new org.telegram.ui.Components.dl0(this.b, false);
         s4.j jVar = new s4.j();
         jVar.n(420L);
         jVar.o(org.telegram.ui.Components.qr.h);
@@ -421,7 +421,7 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         ArrayList arrayList = new ArrayList();
         e eVar = new e(this, 24);
         int i10 = org.telegram.ui.ActionBar.j6.d6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 16, new Class[]{org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.g2.class, org.telegram.ui.Components.d90.class, xh0.class}, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 16, new Class[]{org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.g2.class, org.telegram.ui.Components.g90.class, xh0.class}, null, null, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 262145, null, null, null, null, org.telegram.ui.ActionBar.j6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 262145, null, null, null, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
@@ -640,12 +640,12 @@ public final class ai0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.Components.z60 z60Var;
+        org.telegram.ui.Components.c70 c70Var;
         super.onTransitionAnimationEnd(z10, z11);
         if (z10) {
             this.g0 = true;
-            if (z11 && (z60Var = this.l0) != null && z60Var.l0) {
-                z60Var.show();
+            if (z11 && (c70Var = this.l0) != null && c70Var.l0) {
+                c70Var.show();
             }
         }
         this.t0.unlock();

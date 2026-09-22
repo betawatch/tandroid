@@ -4,14 +4,14 @@ import a6.d;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import c5.x;
+import c5.w;
 import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import u4.e;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -19,7 +19,7 @@ public final class a implements Runnable {
     public volatile int b = 1;
     public final AtomicBoolean c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
-    public final b a = new b(this, new x(this, 8));
+    public final b a = new b(this, new w(this, 8));
 
     public a(d dVar) {
         this.e = dVar;

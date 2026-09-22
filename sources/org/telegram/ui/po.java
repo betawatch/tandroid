@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class po implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class po implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.k61 k61Var;
+        org.telegram.ui.Components.m61 m61Var;
         switch (this.a) {
             case 0:
                 MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new b5((uo) this.d, 4));
@@ -28,9 +28,9 @@ public final /* synthetic */ class po implements Runnable {
                 org.telegram.ui.web.a2 a2Var = (org.telegram.ui.web.a2) this.d;
                 a2Var.h = this.b;
                 a2Var.n = this.c;
-                org.telegram.ui.Components.m61 m61Var = a2Var.a;
-                if (m61Var != null && (k61Var = m61Var.Y2) != null && m61Var.G) {
-                    k61Var.N(true);
+                org.telegram.ui.Components.o61 o61Var = a2Var.a;
+                if (o61Var != null && (m61Var = o61Var.Y2) != null && o61Var.G) {
+                    m61Var.N(true);
                     break;
                 }
                 break;

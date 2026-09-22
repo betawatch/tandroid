@@ -15,7 +15,7 @@ import n6.p;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Cells.f3;
 import v7.s1;
-import w7.l8;
+import w7.k8;
 import x7.d7;
 import x7.e7;
 import x7.ea;
@@ -33,7 +33,7 @@ import x7.p7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
@@ -46,9 +46,9 @@ public final class f extends qb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = gaVar;
-        ka.c cVar = new ka.c(29, false);
-        cVar.b = Float.valueOf(aVar.a);
-        this.e = new i8(cVar);
+        o0.b bVar2 = new o0.b(24, false);
+        bVar2.b = Float.valueOf(aVar.a);
+        this.e = new i8(bVar2);
         Context b10 = qb.g.c().b();
         d7 d7Var = new d7();
         d7Var.b = new AtomicLong(-1L);
@@ -66,7 +66,7 @@ public final class f extends qb.e {
         f3Var.b = this.e;
         m mVar = o.b;
         Object[] objArr = {o7.b};
-        l8.a(1, objArr);
+        k8.a(1, objArr);
         f3Var.c = new s(1, objArr);
         nVar.d = new h8(f3Var);
         qb.m.a.execute(new com.google.android.gms.internal.cast.p(gaVar, new a5.a(nVar, 0), p7.e, gaVar.b(), 7));

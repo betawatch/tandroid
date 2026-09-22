@@ -20,16 +20,16 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ac0;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.pb0;
-import org.telegram.ui.Components.xb0;
+import org.telegram.ui.Components.sb0;
 import org.telegram.ui.zn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -195,22 +195,22 @@ public final /* synthetic */ class n implements Runnable {
                 koVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                xb0 xb0Var = ((pb0) this.d).X2;
-                View d = xb0Var.d();
-                pb0 pb0Var = xb0Var.f;
+                ac0 ac0Var = ((sb0) this.d).X2;
+                View d = ac0Var.d();
+                sb0 sb0Var = ac0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = pb0Var.getPaddingTop();
-                    int height = pb0Var.getHeight() - pb0Var.getPaddingBottom();
+                    int paddingTop = sb0Var.getPaddingTop();
+                    int height = sb0Var.getHeight() - sb0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        pb0Var.scrollBy(0, i21);
+                        sb0Var.scrollBy(0, i21);
                         break;
                     }
                 }

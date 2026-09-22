@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class k0 {
     public final d0 A;
@@ -1362,7 +1362,7 @@ public abstract class k0 {
                     if (!bundle4.isEmpty()) {
                         bundle3.putBundle("savedInstanceState", bundle4);
                     }
-                    q0Var.a.A(sVar2, bundle4, false);
+                    q0Var.a.D(sVar2, bundle4, false);
                     Bundle bundle5 = new Bundle();
                     sVar2.g0.d(bundle5);
                     if (!bundle5.isEmpty()) {
@@ -1539,7 +1539,7 @@ public abstract class k0 {
             }
             this.O = n0Var2;
         } else if (uVar != null) {
-            this.O = (n0) new aa.a(uVar.e.f(), n0.j).l(n0.class);
+            this.O = (n0) new aa.a(uVar.e.f(), n0.j).n(n0.class);
         } else {
             this.O = new n0(false);
         }
@@ -1558,8 +1558,8 @@ public abstract class k0 {
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
             String g11 = v7.j0.g("FragmentManager:", sVar != 0 ? a4.a.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(v7.j0.s(g11, "StartActivityForResult"), new f0(2), new a4.m(this, 3));
-            this.D = hVar.d(v7.j0.s(g11, "StartIntentSenderForResult"), new f0(0), new a6.m(this, 6));
+            this.C = hVar.d(v7.j0.s(g11, "StartActivityForResult"), new f0(2), new android.support.v4.media.c(this, 2));
+            this.D = hVar.d(v7.j0.s(g11, "StartIntentSenderForResult"), new f0(0), new pb.c(this, 7));
             this.E = hVar.d(v7.j0.s(g11, "RequestPermissions"), new f0(1), new a6.i(this, 5));
         }
         u uVar4 = this.w;

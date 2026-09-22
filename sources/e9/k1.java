@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k1 extends j1 implements SortedSet {
     @Override // java.util.SortedSet
@@ -17,11 +17,11 @@ public final class k1 extends j1 implements SortedSet {
     public final Object first() {
         Iterator it = this.a.iterator();
         it.getClass();
-        d9.f fVar = this.b;
-        fVar.getClass();
+        d9.g gVar = this.b;
+        gVar.getClass();
         while (it.hasNext()) {
             Object next = it.next();
-            if (fVar.apply(next)) {
+            if (gVar.apply(next)) {
                 return next;
             }
         }

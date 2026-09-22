@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ba implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -182,7 +182,7 @@ public final /* synthetic */ class ba implements RequestDelegate {
                         if (i14 < updates.updates.size()) {
                             TLRPC.Update update = updates.updates.get(i14);
                             if (update instanceof TL_update.TL_updateGroupCall) {
-                                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(i60Var, chat, inputPeer, (TL_update.TL_updateGroupCall) update, 7));
+                                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(i60Var, chat, inputPeer, (TL_update.TL_updateGroupCall) update, 7));
                             } else {
                                 i14++;
                             }
@@ -195,7 +195,7 @@ public final /* synthetic */ class ba implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.m3((i60) obj3, (org.telegram.ui.ActionBar.b2) obj2, tLObject, (TL_phone.exportGroupCallInvite) obj, tL_error, 28));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(tLObject, (ArrayList) obj3, (ArrayList) obj2, (ai.m3) obj, 9));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(tLObject, (ArrayList) obj3, (ArrayList) obj2, (ai.m3) obj, 9));
                 break;
             case 14:
                 s70 s70Var = (s70) obj3;
@@ -233,7 +233,7 @@ public final /* synthetic */ class ba implements RequestDelegate {
                             arrayList3.add(tL_messages_stickerSet3);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(s70Var, arrayList, arrayList3, str, 12));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(s70Var, arrayList, arrayList3, str, 12));
                     break;
                 }
                 break;
@@ -295,7 +295,7 @@ public final /* synthetic */ class ba implements RequestDelegate {
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
                     Toast.makeText(jj0Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vn0(jj0Var, bVar, str4, ab1Var, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xn0(jj0Var, bVar, str4, ab1Var, 24));
                 break;
             case 26:
                 AndroidUtilities.runOnUIThread(new h90((fk0) obj3, (TLRPC.TL_contacts_importedContacts) tLObject, (TLRPC.TL_inputPhoneContact) obj2, tL_error, (TLRPC.TL_contacts_importContacts) obj));

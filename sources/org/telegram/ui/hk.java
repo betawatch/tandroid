@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class hk extends bo {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class hk extends FragmentContextView {
+    public final /* synthetic */ int P0;
+    public final /* synthetic */ zn Q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hk(Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle, int i10) {
-        super(context, d5Var, bundle);
-        this.f = i10;
-    }
-
-    @Override // org.telegram.ui.bo
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+    public hk(zn znVar, Context context, zn znVar2, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, znVar2, null, true, f6Var);
+        this.P0 = i10;
+        switch (i10) {
+            case 1:
+                this.Q0 = znVar;
+                super(context, znVar2, null, false, f6Var);
                 break;
             default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+                this.Q0 = znVar;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.P0) {
+            case 0:
+                zn znVar = this.Q0;
+                znVar.M0.i(znVar.a2, i10 == 0, true);
+                break;
+            default:
+                zn znVar2 = this.Q0;
+                znVar2.M0.i(znVar2.Y1, i10 == 0, true);
                 break;
         }
     }

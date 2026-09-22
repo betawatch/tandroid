@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ex implements org.telegram.ui.qt {
     public final /* synthetic */ kz a;
@@ -188,7 +188,7 @@ public final class ex implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ v70 i(ci.n6 n6Var) {
+    public final /* synthetic */ y70 i(ci.n6 n6Var) {
         return null;
     }
 
@@ -232,7 +232,7 @@ public final class ex implements org.telegram.ui.qt {
             }
         }
         kz kzVar = this.a;
-        gy0.o0(kzVar.Y1, MediaDataController.getInstance(kzVar.c1).getStickerSet(inputStickerSet, true), document);
+        iy0.o0(kzVar.Y1, MediaDataController.getInstance(kzVar.c1).getStickerSet(inputStickerSet, true), document);
     }
 
     @Override // org.telegram.ui.qt

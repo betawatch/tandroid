@@ -22,10 +22,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -117,14 +117,14 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.r;
                 if (tL_error == null) {
                     if (tLObject != null) {
-                        BillingController.getInstance().addResultListener(((c5.o) list.get(0)).c, new ci.l5(3, hVar, vVar2));
+                        BillingController.getInstance().addResultListener(((c5.n) list.get(0)).c, new ci.l5(3, hVar, vVar2));
                         BillingController.getInstance().setOnCanceled(new tg.q(vVar, 0));
                         BillingController billingController = BillingController.getInstance();
                         Activity parentActivity = n2Var.getParentActivity();
                         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar = new of.b(7, false);
-                        bVar.X((c5.o) list.get(0));
-                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.K()));
+                        bVar.X((c5.n) list.get(0));
+                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.H()));
                         break;
                     }
                 } else {
@@ -143,14 +143,14 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.r;
                 if (tL_error2 == null) {
                     if (tLObject2 != null) {
-                        BillingController.getInstance().addResultListener(((c5.o) list2.get(0)).c, new ci.l5(2, hVar2, callback2));
+                        BillingController.getInstance().addResultListener(((c5.n) list2.get(0)).c, new ci.l5(2, hVar2, callback2));
                         BillingController.getInstance().setOnCanceled(new ab(1, callback));
                         BillingController billingController2 = BillingController.getInstance();
                         Activity parentActivity2 = n2Var2.getParentActivity();
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar2 = new of.b(7, false);
-                        bVar2.X((c5.o) list2.get(0));
-                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.K()));
+                        bVar2.X((c5.n) list2.get(0));
+                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.H()));
                         break;
                     }
                 } else {
@@ -160,7 +160,7 @@ public final /* synthetic */ class k implements Runnable {
                 break;
             case 5:
                 TLObject tLObject3 = (TLObject) this.b;
-                c5.o oVar = (c5.o) this.c;
+                c5.n nVar = (c5.n) this.c;
                 c5.h hVar3 = (c5.h) this.d;
                 ai.m0 m0Var = (ai.m0) this.e;
                 Activity activity = (Activity) this.f;
@@ -176,40 +176,40 @@ public final /* synthetic */ class k implements Runnable {
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(oVar.c, new ci.l5(5, hVar3, m0Var));
+                    BillingController.getInstance().addResultListener(nVar.c, new ci.l5(5, hVar3, m0Var));
                     BillingController.getInstance().setOnCanceled(new yh.k4(m0Var, 2));
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar3 = new of.b(7, false);
-                    bVar3.X((c5.o) list3.get(0));
-                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.K()));
+                    bVar3.X((c5.n) list3.get(0));
+                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.H()));
                     break;
                 }
             default:
                 TLObject tLObject4 = (TLObject) this.b;
-                c5.o oVar2 = (c5.o) this.c;
+                c5.n nVar2 = (c5.n) this.c;
                 c5.h hVar4 = (c5.h) this.d;
-                l80 l80Var = (l80) this.e;
+                o80 o80Var = (o80) this.e;
                 Activity activity2 = (Activity) this.f;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) this.h;
                 List list4 = (List) this.n;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.r;
                 if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject4 instanceof TLRPC.TL_boolFalse)) {
-                        l80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
+                        o80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
                         break;
                     } else {
-                        l80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
+                        o80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(oVar2.c, new ci.l5(4, hVar4, l80Var));
-                    BillingController.getInstance().setOnCanceled(new yh.m4(l80Var, 0));
+                    BillingController.getInstance().addResultListener(nVar2.c, new ci.l5(4, hVar4, o80Var));
+                    BillingController.getInstance().setOnCanceled(new yh.m4(o80Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar4 = new of.b(7, false);
-                    bVar4.X((c5.o) list4.get(0));
-                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.K()));
+                    bVar4.X((c5.n) list4.get(0));
+                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.H()));
                     break;
                 }
         }

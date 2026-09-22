@@ -10,12 +10,12 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.uo0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public so0 a;
+    public uo0 a;
     public float b;
     public float c;
     public float d;
@@ -51,10 +51,10 @@ public final class h extends FrameLayout {
         super.onMeasure(i10, i11);
         int size = View.MeasureSpec.getSize(i10);
         if (this.n != size) {
-            so0 so0Var = this.a;
+            uo0 uo0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f7 = this.b;
-            so0Var.setProgress((floatValue - f7) / (this.c - f7));
+            uo0Var.setProgress((floatValue - f7) / (this.c - f7));
             this.n = size;
         }
     }

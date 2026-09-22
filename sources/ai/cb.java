@@ -32,10 +32,10 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.g60;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.j60;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.cj;
+import org.telegram.ui.dj;
 import org.telegram.ui.ja0;
 import org.telegram.ui.jl0;
 import org.telegram.ui.ll0;
@@ -48,7 +48,7 @@ import org.telegram.ui.t71;
 import org.telegram.ui.u60;
 import org.telegram.ui.u70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
@@ -175,10 +175,10 @@ public final /* synthetic */ class cb implements Runnable {
                 new t71(context2, chat2, user, new n8(this.b, booleanCallback, 27), (org.telegram.ui.ActionBar.f6) this.h).show();
                 break;
             case 7:
-                org.telegram.ui.Components.u9.a((org.telegram.ui.Components.u9) this.e, (Runnable[]) this.c, (Bitmap) this.f, (g60) this.d, this.b, (w7.j0[]) this.h);
+                org.telegram.ui.Components.u9.a((org.telegram.ui.Components.u9) this.e, (Runnable[]) this.c, (Bitmap) this.f, (j60) this.d, this.b, (w7.j0[]) this.h);
                 break;
             case 8:
-                zg0.m((zg0) this.e, (Integer[]) this.f, this.b, (TLObject) this.c, (ArrayList) this.d, (TLRPC.PollAnswerVoters) this.h);
+                ch0.m((ch0) this.e, (Integer[]) this.f, this.b, (TLObject) this.c, (ArrayList) this.d, (TLRPC.PollAnswerVoters) this.h);
                 break;
             case 9:
                 ss.Y((ss) this.e, (TLRPC.FileLocation) this.f, (TLRPC.InputFile) this.d, (TLObject) this.c, (TLRPC.FileLocation) this.h, this.b);
@@ -270,7 +270,7 @@ public final /* synthetic */ class cb implements Runnable {
                 TLObject tLObject4 = (TLObject) this.c;
                 TLRPC.PhotoSize photoSize2 = (TLRPC.PhotoSize) this.e;
                 TLRPC.PhotoSize photoSize3 = (TLRPC.PhotoSize) this.f;
-                cj cjVar = (cj) this.d;
+                dj djVar = (dj) this.d;
                 org.telegram.ui.ActionBar.d5 d5Var = (org.telegram.ui.ActionBar.d5) this.h;
                 if (tLObject4 instanceof TLRPC.TL_photos_photo) {
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject4;
@@ -301,7 +301,7 @@ public final /* synthetic */ class cb implements Runnable {
                         yf.d0.a(tL_photos_photo.photo, user2, false);
                         UserConfig.getInstance(i15).setCurrentUser(user2);
                         UserConfig.getInstance(i15).saveConfig(true);
-                        cjVar.run();
+                        djVar.run();
                         xc.a0(d5Var.getLastFragment()).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new qg.v(i15, d5Var)), null).j();
                         break;
                     }
@@ -392,9 +392,9 @@ public final /* synthetic */ class cb implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ cb(zg0 zg0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
+    public /* synthetic */ cb(ch0 ch0Var, Integer[] numArr, int i10, TLObject tLObject, ArrayList arrayList, TLRPC.PollAnswerVoters pollAnswerVoters) {
         this.a = 8;
-        this.e = zg0Var;
+        this.e = ch0Var;
         this.f = numArr;
         this.b = i10;
         this.c = tLObject;

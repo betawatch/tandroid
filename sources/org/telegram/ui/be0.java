@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class be0 implements Runnable {
     public final /* synthetic */ int a;
@@ -92,9 +92,9 @@ public final /* synthetic */ class be0 implements Runnable {
                 break;
             default:
                 ie0 ie0Var4 = this.b;
-                org.telegram.ui.Components.kj0 kj0Var = ie0Var4.w;
-                kj0Var.getAnimatedDrawable().N(0, false, false);
-                kj0Var.d();
+                org.telegram.ui.Components.nj0 nj0Var = ie0Var4.w;
+                nj0Var.getAnimatedDrawable().N(0, false, false);
+                nj0Var.d();
                 fe0 fe0Var3 = ie0Var4.a;
                 if (fe0Var3 != null && fe0Var3.f != null) {
                     fe0Var3.setText("");

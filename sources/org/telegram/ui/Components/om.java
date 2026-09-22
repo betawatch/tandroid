@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class om {
     public long i;
@@ -22,7 +22,7 @@ public final class om {
     public float q;
     public float r;
     public float s;
-    public u01 u;
+    public w01 u;
     public long v;
     public final org.telegram.ui.ActionBar.f5 x;
     public final m.c3 y;
@@ -118,9 +118,9 @@ public final class om {
                 if (nmVar4.k > 0.0f || nmVar4.h + j12 > elapsedRealtime) {
                     nm.b(nmVar4, null, null, z10);
                 } else {
-                    vh.g gVar = nmVar4.s;
-                    if (gVar != null) {
-                        gVar.b(nmVar4.O.z);
+                    vh.f fVar = nmVar4.s;
+                    if (fVar != null) {
+                        fVar.b(nmVar4.O.z);
                         nmVar4.s = null;
                     }
                     arrayList.remove(i13);

@@ -7,29 +7,29 @@ import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.ui.wa0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class j implements l0, n2.l {
+public final class j implements l0, n2.k {
     public final Object a;
     public a5.a b;
-    public n2.k c;
+    public n2.j c;
     public final /* synthetic */ l d;
 
     public j(l lVar, Object obj) {
         this.d = lVar;
         this.b = lVar.b(null);
-        this.c = new n2.k(lVar.d.c, 0, null);
+        this.c = new n2.j(lVar.d.c, 0, null);
         this.a = obj;
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void a(int i10, f0 f0Var, int i11) {
         if (l(i10, f0Var)) {
             this.c.c(i11);
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void b(int i10, f0 f0Var, Exception exc) {
         if (l(i10, f0Var)) {
             this.c.d(exc);
@@ -77,7 +77,7 @@ public final class j implements l0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void g(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.e();
@@ -94,7 +94,7 @@ public final class j implements l0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void i(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.b();
@@ -111,7 +111,7 @@ public final class j implements l0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void k(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.a();
@@ -135,11 +135,11 @@ public final class j implements l0, n2.l {
         if (aVar.b != w10 || !Objects.equals((f0) aVar.c, f0Var2)) {
             this.b = new a5.a((CopyOnWriteArrayList) lVar.c.d, w10, f0Var2, 20);
         }
-        n2.k kVar = this.c;
-        if (kVar.a == w10 && Objects.equals(kVar.b, f0Var2)) {
+        n2.j jVar = this.c;
+        if (jVar.a == w10 && Objects.equals(jVar.b, f0Var2)) {
             return true;
         }
-        this.c = new n2.k(lVar.d.c, w10, f0Var2);
+        this.c = new n2.j(lVar.d.c, w10, f0Var2);
         return true;
     }
 

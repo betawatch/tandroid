@@ -27,18 +27,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.webrtc.MediaStreamTrack;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class p1 extends ab {
     public final int X;
     public final String Y;
-    public k61 Z;
+    public m61 Z;
     public final m1 a0;
     public boolean b0;
     public boolean c0;
@@ -306,9 +306,9 @@ public final class p1 extends ab {
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
         viewGroup.addView(frameLayout, y5.f(-2.0f, 87, i13, 0, i13, 0));
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
         this.d.q1();
         int i15 = j6.a7;
         setBackgroundColor(getThemedColor(i15));
@@ -465,15 +465,15 @@ public final class p1 extends ab {
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        vl0 vl0Var = this.d;
-        vl0Var.v0(Math.max((vl0Var.getAdapter() == null ? 0 : vl0Var.getAdapter().h()) - 1, 0));
+        yl0 yl0Var = this.d;
+        yl0Var.v0(Math.max((yl0Var.getAdapter() == null ? 0 : yl0Var.getAdapter().h()) - 1, 0));
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(vl0Var, getContext(), this.X, 0, true, new bi.v(this, 15), this.resourcesProvider);
-        this.Z = k61Var;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(yl0Var, getContext(), this.X, 0, true, new bi.v(this, 15), this.resourcesProvider);
+        this.Z = m61Var;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

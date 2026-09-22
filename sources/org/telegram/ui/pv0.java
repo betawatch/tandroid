@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class pv0 {
     public float A;
@@ -54,8 +54,8 @@ public class pv0 {
     public ImageReceiver g;
     public ImageReceiver h;
     public boolean i;
-    public final vh.h j;
-    public vh.g k;
+    public final vh.g j;
+    public vh.f k;
     public final Path l;
     public final float[] m;
     public boolean n;
@@ -75,7 +75,7 @@ public class pv0 {
     public pv0(ViewGroup viewGroup, ViewGroup viewGroup2) {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new vh.h();
+        this.j = new vh.g();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];
@@ -178,7 +178,7 @@ public class pv0 {
                     boolean z11 = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
                     this.i = z11;
                     if (z11 && this.k == null) {
-                        vh.g e = vh.g.e(this.d);
+                        vh.f e = vh.f.e(this.d);
                         this.k = e;
                         if (e != null) {
                             e.k.put(this.d, Integer.valueOf(i10));
@@ -367,9 +367,9 @@ public class pv0 {
         if (ov0Var != null && ov0Var.getParent() != null) {
             this.a.removeView(this.d);
             this.d.d.getImageReceiver().clearImage();
-            vh.g gVar = this.k;
-            if (gVar != null) {
-                gVar.b(this.d);
+            vh.f fVar = this.k;
+            if (fVar != null) {
+                fVar.b(this.d);
                 this.k = null;
             }
             ImageReceiver imageReceiver = this.f;
@@ -491,7 +491,7 @@ public class pv0 {
     public pv0() {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new vh.h();
+        this.j = new vh.g();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];

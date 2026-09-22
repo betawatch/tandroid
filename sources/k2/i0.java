@@ -24,12 +24,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i0 extends r2.r implements s0 {
     public final Context X0;
     public final n4.y Y0;
-    public final p Z0;
+    public final q Z0;
     public final r2.j a1;
     public int b1;
     public boolean c1;
@@ -45,16 +45,16 @@ public final class i0 extends r2.r implements s0 {
     public long m1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(Context context, r2.k kVar, Handler handler, i2.b0 b0Var, p pVar) {
+    public i0(Context context, r2.k kVar, Handler handler, i2.b0 b0Var, q qVar) {
         super(1, kVar, 44100.0f);
         r2.j jVar = Build.VERSION.SDK_INT >= 35 ? new r2.j() : null;
         this.X0 = context.getApplicationContext();
-        this.Z0 = pVar;
+        this.Z0 = qVar;
         this.a1 = jVar;
         this.k1 = -1000;
-        this.Y0 = new n4.y(handler, (j) b0Var);
+        this.Y0 = new n4.y(handler, (k) b0Var);
         this.m1 = -9223372036854775807L;
-        ((f0) pVar).t = new a4.m(this, 24);
+        ((f0) qVar).t = new android.support.v4.media.c(this, 23);
     }
 
     public final int A0(r2.o oVar, b2.s sVar) {
@@ -276,7 +276,7 @@ public final class i0 extends r2.r implements s0 {
         n4.y yVar = this.Y0;
         Handler handler = (Handler) yVar.a;
         if (handler != null) {
-            handler.post(new f(yVar, exc, 0));
+            handler.post(new g(yVar, exc, 0));
         }
     }
 
@@ -377,7 +377,7 @@ public final class i0 extends r2.r implements s0 {
         }
         try {
             int i13 = Build.VERSION.SDK_INT;
-            p pVar = this.Z0;
+            q qVar = this.Z0;
             if (i13 >= 29) {
                 if (this.x0) {
                     m1 m1Var = this.d;
@@ -386,7 +386,7 @@ public final class i0 extends r2.r implements s0 {
                         m1 m1Var2 = this.d;
                         m1Var2.getClass();
                         int i14 = m1Var2.a;
-                        f0 f0Var = (f0) pVar;
+                        f0 f0Var = (f0) qVar;
                         f0Var.getClass();
                         if (i13 < 29) {
                             z10 = false;
@@ -395,7 +395,7 @@ public final class i0 extends r2.r implements s0 {
                         f0Var.k = i14;
                     }
                 }
-                f0 f0Var2 = (f0) pVar;
+                f0 f0Var2 = (f0) qVar;
                 f0Var2.getClass();
                 if (i13 < 29) {
                     z10 = false;
@@ -403,8 +403,8 @@ public final class i0 extends r2.r implements s0 {
                 e2.d.g(z10);
                 f0Var2.k = 0;
             }
-            ((f0) pVar).d(sVar, iArr);
-        } catch (l e) {
+            ((f0) qVar).d(sVar, iArr);
+        } catch (m e) {
             throw d(e, e.a, false, 5001);
         }
     }
@@ -412,11 +412,11 @@ public final class i0 extends r2.r implements s0 {
     @Override // i2.f, i2.i1
     public final void c(int i10, Object obj) {
         r2.j jVar;
-        p pVar = this.Z0;
+        q qVar = this.Z0;
         if (i10 == 2) {
             obj.getClass();
             float floatValue = ((Float) obj).floatValue();
-            f0 f0Var = (f0) pVar;
+            f0 f0Var = (f0) qVar;
             if (f0Var.Q != floatValue) {
                 f0Var.Q = floatValue;
                 if (f0Var.q()) {
@@ -430,18 +430,18 @@ public final class i0 extends r2.r implements s0 {
         if (i10 == 3) {
             b2.e eVar = (b2.e) obj;
             eVar.getClass();
-            ((f0) pVar).z(eVar);
+            ((f0) qVar).z(eVar);
             return;
         }
         if (i10 == 6) {
             b2.f fVar = (b2.f) obj;
             fVar.getClass();
-            ((f0) pVar).C(fVar);
+            ((f0) qVar).C(fVar);
             return;
         }
         if (i10 == 12) {
             if (Build.VERSION.SDK_INT >= 23) {
-                e0.b.x(pVar, obj);
+                e0.b.x(qVar, obj);
                 return;
             }
             return;
@@ -460,7 +460,7 @@ public final class i0 extends r2.r implements s0 {
         }
         if (i10 == 9) {
             obj.getClass();
-            f0 f0Var2 = (f0) pVar;
+            f0 f0Var2 = (f0) qVar;
             f0Var2.F = ((Boolean) obj).booleanValue();
             y yVar = new y(f0Var2.H() ? v0.d : f0Var2.E, -9223372036854775807L, -9223372036854775807L);
             if (f0Var2.q()) {
@@ -482,7 +482,7 @@ public final class i0 extends r2.r implements s0 {
         }
         obj.getClass();
         int intValue = ((Integer) obj).intValue();
-        ((f0) pVar).A(intValue);
+        ((f0) qVar).A(intValue);
         if (Build.VERSION.SDK_INT < 35 || (jVar = this.a1) == null) {
             return;
         }
@@ -520,17 +520,17 @@ public final class i0 extends r2.r implements s0 {
             lVar.c(i10);
             return true;
         }
-        p pVar = this.Z0;
+        q qVar = this.Z0;
         if (z10) {
             if (lVar != null) {
                 lVar.c(i10);
             }
             this.O0.f += i12;
-            ((f0) pVar).N = true;
+            ((f0) qVar).N = true;
             return true;
         }
         try {
-            if (!((f0) pVar).n(j11, i12, byteBuffer)) {
+            if (!((f0) qVar).n(j11, i12, byteBuffer)) {
                 this.m1 = j11;
                 return false;
             }
@@ -539,7 +539,7 @@ public final class i0 extends r2.r implements s0 {
             }
             this.O0.e += i12;
             return true;
-        } catch (m e) {
+        } catch (n e) {
             b2.s sVar2 = this.e1;
             if (this.x0) {
                 m1 m1Var = this.d;
@@ -551,7 +551,7 @@ public final class i0 extends r2.r implements s0 {
             }
             i14 = 5001;
             throw d(e, sVar2, e.b, i14);
-        } catch (o e7) {
+        } catch (p e7) {
             if (this.x0) {
                 m1 m1Var2 = this.d;
                 m1Var2.getClass();
@@ -578,7 +578,7 @@ public final class i0 extends r2.r implements s0 {
             if (j3 != -9223372036854775807L) {
                 this.m1 = j3;
             }
-        } catch (o e) {
+        } catch (p e) {
             throw d(e, e.c, e.b, this.x0 ? 5003 : 5002);
         }
     }
@@ -628,21 +628,21 @@ public final class i0 extends r2.r implements s0 {
         n4.y yVar = this.Y0;
         Handler handler = (Handler) yVar.a;
         if (handler != null) {
-            handler.post(new g(yVar, gVar, 1));
+            handler.post(new h(yVar, gVar, 1));
         }
         m1 m1Var = this.d;
         m1Var.getClass();
         boolean z12 = m1Var.b;
-        p pVar = this.Z0;
+        q qVar = this.Z0;
         if (z12) {
-            f0 f0Var = (f0) pVar;
+            f0 f0Var = (f0) qVar;
             e2.d.g(f0Var.Y);
             if (!f0Var.d0) {
                 f0Var.d0 = true;
                 f0Var.g();
             }
         } else {
-            f0 f0Var2 = (f0) pVar;
+            f0 f0Var2 = (f0) qVar;
             if (f0Var2.d0) {
                 f0Var2.d0 = false;
                 f0Var2.g();
@@ -650,7 +650,7 @@ public final class i0 extends r2.r implements s0 {
         }
         j2.k kVar = this.f;
         kVar.getClass();
-        f0 f0Var3 = (f0) pVar;
+        f0 f0Var3 = (f0) qVar;
         f0Var3.s = kVar;
         e2.x xVar = this.h;
         xVar.getClass();
@@ -695,7 +695,7 @@ public final class i0 extends r2.r implements s0 {
 
     @Override // i2.f
     public final void s() {
-        p pVar = this.Z0;
+        q qVar = this.Z0;
         this.j1 = false;
         this.m1 = -9223372036854775807L;
         try {
@@ -710,7 +710,7 @@ public final class i0 extends r2.r implements s0 {
         } finally {
             if (this.i1) {
                 this.i1 = false;
-                ((f0) pVar).y();
+                ((f0) qVar).y();
             }
         }
     }
@@ -773,17 +773,17 @@ public final class i0 extends r2.r implements s0 {
         boolean z12 = i11 != 0;
         boolean z13 = i11 == 0 || i11 == 2;
         int i12 = 8;
-        p pVar = this.Z0;
+        q qVar = this.Z0;
         if (z13) {
             if (z12) {
                 List d = r2.w.d("audio/raw", false, false);
             }
             i10 = z0(sVar);
-            if (((f0) pVar).G(sVar)) {
+            if (((f0) qVar).G(sVar)) {
                 return hg.k0.b(4, 8, 32, i10);
             }
-            if ("audio/raw".equals(str2) || ((f0) pVar).G(sVar)) {
-                f0Var = (f0) pVar;
+            if ("audio/raw".equals(str2) || ((f0) qVar).G(sVar)) {
+                f0Var = (f0) qVar;
                 if (f0Var.G(e2.d0.C(2, sVar.J, sVar.K))) {
                     if (str2 == null) {
                         f7 = a1.e;
@@ -829,14 +829,14 @@ public final class i0 extends r2.r implements s0 {
         i10 = 0;
         if ("audio/raw".equals(str2)) {
         }
-        f0Var = (f0) pVar;
+        f0Var = (f0) qVar;
         if (f0Var.G(e2.d0.C(2, sVar.J, sVar.K))) {
         }
         return b10;
     }
 
     public final int z0(b2.s sVar) {
-        e j3 = ((f0) this.Z0).j(sVar);
+        f j3 = ((f0) this.Z0).j(sVar);
         if (!j3.a) {
             return 0;
         }

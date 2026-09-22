@@ -13,11 +13,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.c01;
 import org.telegram.ui.Components.ta;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class x3 extends ta {
     public final ArrayList a0;
@@ -37,24 +37,24 @@ public final class x3 extends ta {
         this.X.addView(limitPreviewView, w7.y5.r(-1, -2, 17, f11, 20.0f, f11, 10.0f));
         P(j3);
         int i11 = org.telegram.ui.ActionBar.j6.G6;
-        TextView b10 = w7.d6.b(context, 20.0f, i11, true, null);
+        TextView b10 = w7.c6.b(context, 20.0f, i11, true, null);
         b10.setGravity(17);
         b10.setText(LocaleController.getString(R.string.Gift2UpgradeCostsTitle));
         setTitle(LocaleController.getString(R.string.Gift2UpgradeCostsTitle));
         this.X.addView(b10, w7.y5.t(-1, -2, 17, 32, 0, 32, 0));
-        TextView b11 = w7.d6.b(context, 14.0f, i11, false, null);
+        TextView b11 = w7.c6.b(context, 14.0f, i11, false, null);
         b11.setGravity(17);
         b11.setText(LocaleController.getString(R.string.Gift2UpgradeCostsText));
         this.X.addView(b11, w7.y5.t(-1, -2, 17, 32, 10, 32, 10));
         int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        a01 a01Var = new a01(context, f6Var);
+        c01 c01Var = new c01(context, f6Var);
         int i12 = 0;
         boolean z10 = false;
         while (i12 < arrayList.size()) {
             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i12)).date || ((i10 = i12 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i10)).date)) {
                 f7 = f11;
                 Date date = new Date(r13.date * 1000);
-                a01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), w7.X0(false, hg.k0.j((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                c01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), w7.X0(false, hg.k0.j((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                 z10 = true;
             } else {
                 f7 = f11;
@@ -71,12 +71,12 @@ public final class x3 extends ta {
                 i13++;
                 TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) obj;
                 Date date2 = new Date(starGiftUpgradePrice.date * 1000);
-                a01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), w7.X0(false, hg.k0.j((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                c01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), w7.X0(false, hg.k0.j((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
             }
         }
         float f13 = f12 + 14.0f;
-        this.X.addView(a01Var, w7.y5.r(-1, -2, 7, f13, 16.0f, f13, 15.0f));
-        TextView b12 = w7.d6.b(context, 12.0f, org.telegram.ui.ActionBar.j6.y6, false, null);
+        this.X.addView(c01Var, w7.y5.r(-1, -2, 7, f13, 16.0f, f13, 15.0f));
+        TextView b12 = w7.c6.b(context, 12.0f, org.telegram.ui.ActionBar.j6.y6, false, null);
         b12.setGravity(17);
         b12.setText(LocaleController.getString(R.string.Gift2UpgradeCostsFooter));
         this.X.addView(b12, w7.y5.t(-1, -2, 17, 32, 0, 32, 15));
@@ -92,8 +92,8 @@ public final class x3 extends ta {
         float f15 = f14 + 16.0f;
         this.Y.addView(dVar, w7.y5.d(-1, 48.0f, 119, f15, 16.0f, f15, 16.0f));
         this.containerView.addView(this.Y, w7.y5.e(-1, -2, 87));
-        vl0 vl0Var = this.d;
-        vl0Var.setPadding(vl0Var.getPaddingLeft(), vl0Var.getPaddingTop(), vl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + vl0Var.getPaddingBottom());
+        yl0 yl0Var = this.d;
+        yl0Var.setPadding(yl0Var.getPaddingLeft(), yl0Var.getPaddingTop(), yl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + yl0Var.getPaddingBottom());
         this.Z.g(y3.g2(LocaleController.getString(R.string.Understood)), false, true);
         this.Z.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 25));
     }

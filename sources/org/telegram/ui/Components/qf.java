@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class qf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -20,7 +20,7 @@ public final class qf implements View.OnKeyListener {
      */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x00d7, code lost:
     
-        if (r6.Y1 != null) goto L71;
+        if (r6.Z1 != null) goto L71;
      */
     /* JADX WARN: Code restructure failed: missing block: B:66:0x00d9, code lost:
     
@@ -40,17 +40,17 @@ public final class qf implements View.OnKeyListener {
             chatActivityEnterView.D0 = keyEvent.isShiftPressed();
             chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
-        if (i10 == 4 && !chatActivityEnterView.y2 && chatActivityEnterView.t0() && keyEvent.getAction() == 1) {
+        if (i10 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.t0() && keyEvent.getAction() == 1) {
             if (org.telegram.ui.st.g0 != null && org.telegram.ui.st.q().E) {
                 org.telegram.ui.st.q().o();
                 return true;
             }
-            if (chatActivityEnterView.e2 != 1 || chatActivityEnterView.l2 == null) {
+            if (chatActivityEnterView.f2 != 1 || chatActivityEnterView.m2 == null) {
                 if (keyEvent.getAction() == 1) {
-                    if (chatActivityEnterView.e2 == 1 && chatActivityEnterView.l2 != null) {
-                        MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("hidekeyboard_" + chatActivityEnterView.P2, chatActivityEnterView.l2.getId()).commit();
+                    if (chatActivityEnterView.f2 == 1 && chatActivityEnterView.m2 != null) {
+                        MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("hidekeyboard_" + chatActivityEnterView.Q2, chatActivityEnterView.m2.getId()).commit();
                     }
-                    if (chatActivityEnterView.Q1 != 0) {
+                    if (chatActivityEnterView.R1 != 0) {
                         chatActivityEnterView.l1(0, true);
                         dg dgVar = chatActivityEnterView.U0;
                         if (dgVar != null) {
@@ -59,12 +59,12 @@ public final class qf implements View.OnKeyListener {
                         chatActivityEnterView.E0.requestFocus();
                         return true;
                     }
-                    if (chatActivityEnterView.y3) {
+                    if (chatActivityEnterView.z3) {
                         chatActivityEnterView.m1(false, true, false, true);
                         return true;
                     }
-                    if (chatActivityEnterView.A3 == null) {
-                        if (chatActivityEnterView.l2 != null && chatActivityEnterView.e2 != 1 && TextUtils.isEmpty(chatActivityEnterView.E0.getTextToUse())) {
+                    if (chatActivityEnterView.B3 == null) {
+                        if (chatActivityEnterView.m2 != null && chatActivityEnterView.f2 != 1 && TextUtils.isEmpty(chatActivityEnterView.E0.getTextToUse())) {
                             chatActivityEnterView.s1(1, 1, true, true);
                             return true;
                         }
@@ -74,7 +74,7 @@ public final class qf implements View.OnKeyListener {
                 return true;
             }
         } else if (i10 == 66 && !keyEvent.isShiftPressed()) {
-            if (chatActivityEnterView.A2) {
+            if (chatActivityEnterView.B2) {
             }
         }
         return false;

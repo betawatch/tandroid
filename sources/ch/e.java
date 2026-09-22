@@ -12,7 +12,7 @@ import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final fh.a G;
@@ -58,7 +58,7 @@ public final class e extends d {
             return;
         }
         if (!this.J.hasDisplayList()) {
-            aVar.b();
+            aVar.d();
             w();
         } else if (this.O) {
             w();
@@ -120,7 +120,7 @@ public final class e extends d {
 
     @Override // ch.d
     public final void m() {
-        this.G.b();
+        this.G.d();
     }
 
     @Override // ch.d
@@ -138,7 +138,7 @@ public final class e extends d {
         if (i11 != 0 || i10 <= 0) {
             return;
         }
-        this.G.b();
+        this.G.d();
     }
 
     @Override // ch.d
@@ -176,7 +176,7 @@ public final class e extends d {
             float[] fArr = cVar.c;
             jVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
         }
-        this.G.y(beginRecording, f11, f12, f13, f14);
+        this.G.v(beginRecording, f11, f12, f13, f14);
         beginRecording.save();
         this.K.endRecording();
         RecordingCanvas beginRecording2 = this.J.beginRecording();

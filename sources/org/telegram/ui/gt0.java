@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class gt0 extends org.telegram.ui.Components.uq0 {
+public final class gt0 extends org.telegram.ui.Components.wq0 {
     public final /* synthetic */ FrameLayout b1;
     public final /* synthetic */ boolean c1;
     public final /* synthetic */ PhotoViewer d1;
@@ -23,14 +23,14 @@ public final class gt0 extends org.telegram.ui.Components.uq0 {
         this.c1 = z10;
     }
 
-    @Override // org.telegram.ui.Components.uq0
+    @Override // org.telegram.ui.Components.wq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g21(this, this.b1, iVar, i10, 9), 250L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i21(this, this.b1, iVar, i10, 9), 250L);
         }
     }
 
-    @Override // org.telegram.ui.Components.uq0, org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.Components.wq0, org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         super.dismissInternal();
         if (this.c1) {

@@ -1,28 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class k91 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l91 b;
+public final class k91 extends WebView {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ k91(l91 l91Var, int i10) {
-        this.a = i10;
-        this.b = l91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k91(org.telegram.ui.xo0 xo0Var, Context context) {
+        super(context);
+        this.b = xo0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
         switch (this.a) {
             case 0:
-                this.b.y = null;
+                AndroidUtilities.checkAndroidTheme((Context) this.b, true);
+                super.onAttachedToWindow();
                 break;
             default:
-                this.b.y = null;
+                super.onAttachedToWindow();
                 break;
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkAndroidTheme((Context) this.b, false);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                ((ViewGroup) ((org.telegram.ui.xo0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k91(Context context, Context context2) {
+        super(context);
+        this.b = context2;
     }
 }

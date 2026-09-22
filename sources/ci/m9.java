@@ -16,11 +16,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.de0;
 import org.telegram.ui.Components.hf;
-import org.telegram.ui.Components.wd0;
+import org.telegram.ui.Components.zd0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class m9 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -32,9 +32,9 @@ public final class m9 extends FrameLayout {
     public Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m9(ae0 ae0Var, Context context) {
+    public m9(de0 de0Var, Context context) {
         super(context);
-        this.h = ae0Var;
+        this.h = de0Var;
         this.b = new ArrayList(4);
         this.c = new ArrayList(4);
         this.d = new StringBuilder(4);
@@ -105,7 +105,7 @@ public final class m9 extends FrameLayout {
             m9Var.e = animatorSet2;
             animatorSet2.setDuration(150L);
             ((AnimatorSet) m9Var.e).playTogether(arrayList3);
-            ((AnimatorSet) m9Var.e).addListener(new wd0(m9Var, 2));
+            ((AnimatorSet) m9Var.e).addListener(new zd0(m9Var, 2));
             ((AnimatorSet) m9Var.e).start();
         } else {
             for (int i11 = 0; i11 < 4; i11++) {
@@ -113,7 +113,7 @@ public final class m9 extends FrameLayout {
                 ((TextView) arrayList.get(i11)).setAlpha(0.0f);
             }
         }
-        ae0.a((ae0) m9Var.h);
+        de0.a((de0) m9Var.h);
     }
 
     public void b(String str) {
@@ -193,9 +193,9 @@ public final class m9 extends FrameLayout {
         this.e = animatorSet2;
         animatorSet2.setDuration(150L);
         ((AnimatorSet) this.e).playTogether(arrayList3);
-        ((AnimatorSet) this.e).addListener(new wd0(this, 0));
+        ((AnimatorSet) this.e).addListener(new zd0(this, 0));
         ((AnimatorSet) this.e).start();
-        ae0.a((ae0) this.h);
+        de0.a((de0) this.h);
     }
 
     public int c(int i10) {

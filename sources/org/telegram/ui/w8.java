@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w8 implements ah.n {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class w8 implements ah.n {
     public final boolean a(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 0:
-                return ((org.telegram.ui.Components.s61) this.b).drawChild(canvas, view, j3);
+                return ((org.telegram.ui.Components.u61) this.b).drawChild(canvas, view, j3);
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 if (view == profileActivity.O) {

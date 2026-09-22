@@ -1,103 +1,166 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Color;
+import android.graphics.ComposeShader;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.graphics.RectF;
+import android.os.Build;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class sc0 extends Drawable {
-    public final Drawable a;
-    public final Paint b;
-    public final Paint c;
-    public final d6 d;
-    public boolean e;
+public final class sc0 {
+    public static final float[] k = new float[4];
+    public static final Matrix l = new Matrix();
+    public final qc0 d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final aa.a a = new aa.a(new i2(20));
+    public final a5.a b = new a5.a(13, (byte) 0);
+    public final i10 c = new i10();
+    public final Matrix i = new Matrix();
+    public final RectF j = new RectF();
 
-    public sc0(Context context) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        this.d = new d6(new jc0(this, 2), 200L, qr.g, 0);
-        this.a = context.getResources().getDrawable(R.drawable.filled_sound_on).mutate();
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.566f));
-        paint.setColor(-1);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Join join = Paint.Join.ROUND;
-        paint.setStrokeJoin(join);
-        paint2.setStyle(style);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(4.5f));
-        paint2.setColor(-65536);
-        paint2.setStrokeCap(cap);
-        paint2.setStrokeJoin(join);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
-        Drawable drawable = this.a;
-        drawable.setBounds(bounds);
-        drawable.draw(canvas);
-        float e = this.d.e(this.e);
-        if (e > 0.0f) {
-            float dpf2 = AndroidUtilities.dpf2(0.783f);
-            float centerX = (bounds.centerX() - AndroidUtilities.dp(9.0f)) + dpf2;
-            float centerY = (bounds.centerY() - AndroidUtilities.dp(9.0f)) + dpf2;
-            float dp = (AndroidUtilities.dp(9.0f) + bounds.centerX()) - dpf2;
-            float dp2 = (AndroidUtilities.dp(9.0f) + bounds.centerY()) - dpf2;
-            if (this.e) {
-                centerX = AndroidUtilities.lerp(dp, centerX, e);
-                centerY = AndroidUtilities.lerp(dp2, centerY, e);
-            } else {
-                dp = AndroidUtilities.lerp(centerX, dp, e);
-                dp2 = AndroidUtilities.lerp(centerY, dp2, e);
-            }
-            float f7 = dp2;
-            float f10 = centerX;
-            float f11 = centerY;
-            float f12 = dp;
-            canvas.drawLine(f10, f11, f12, f7, this.c);
-            int min = (int) (Math.min(1.0f, e * 10.0f) * 255.0f);
-            Paint paint = this.b;
-            paint.setAlpha(min);
-            canvas.drawLine(f10, f11, f12, f7, paint);
+    public sc0() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d = new qc0();
+        } else {
+            this.d = null;
         }
-        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
+    public static void a(Matrix matrix, float[] fArr) {
+        Matrix matrix2 = l;
+        matrix.invert(matrix2);
+        float[] fArr2 = k;
+        fArr2[0] = 0.0f;
+        fArr2[1] = 0.0f;
+        fArr2[2] = 1.0f;
+        fArr2[3] = 1.0f;
+        matrix2.mapPoints(fArr2);
+        fArr[0] = fArr2[2] - fArr2[0];
+        fArr[1] = fArr2[3] - fArr2[1];
+        fArr[2] = fArr2[0];
+        fArr[3] = fArr2[1];
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
+    public static boolean b(float f7) {
+        return Math.abs(f7 - 1.0f) <= 1.0E-4f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void c(RectF rectF) {
+        float f7 = this.e;
+        float f10 = this.f;
+        RectF rectF2 = this.j;
+        rectF2.set(0.0f, 0.0f, f7, f10);
+        Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
+        Matrix matrix = this.i;
+        matrix.setRectToRect(rectF2, rectF, scaleToFit);
+        i10 i10Var = this.c;
+        rc0 rc0Var = (rc0) i10Var.c;
+        rc0Var.b.set(matrix);
+        BitmapShader bitmapShader = rc0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
+        }
+        rc0 rc0Var2 = (rc0) i10Var.d;
+        rc0Var2.b.set(matrix);
+        BitmapShader bitmapShader2 = rc0Var2.d;
+        if (bitmapShader2 != null) {
+            bitmapShader2.setLocalMatrix(matrix);
+        }
+        qc0 qc0Var = this.d;
+        if (qc0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr = qc0Var.g;
+        a(matrix, fArr);
+        qc0Var.e.a(fArr);
+        qc0Var.f.a(fArr);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    public final void d(Matrix matrix) {
+        i10 i10Var = this.c;
+        float[] fArr = (float[]) i10Var.h;
+        a(matrix, fArr);
+        rc0 rc0Var = (rc0) i10Var.e;
+        rc0Var.b.set(matrix);
+        BitmapShader bitmapShader = rc0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
+        }
+        boolean z10 = false;
+        rc0Var.a(b(fArr[0]) && b(fArr[1]));
+        qc0 qc0Var = this.d;
+        if (qc0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr2 = qc0Var.g;
+        a(matrix, fArr2);
+        rc0 rc0Var2 = qc0Var.d;
+        if (b(fArr2[0]) && b(fArr2[1])) {
+            z10 = true;
+        }
+        rc0Var2.a(z10);
+        qc0Var.e.b(fArr2);
+        qc0Var.f.b(fArr2);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z10) {
+        Bitmap bitmap3;
+        Bitmap bitmap4 = (Bitmap) this.a.p(bitmap2);
+        if (i12 >= 0) {
+            int k10 = i0.a.k(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
+            a5.a aVar = this.b;
+            gh.a aVar2 = (gh.a) aVar.c;
+            if (aVar2.a(bitmap) || k10 != aVar.b || ((Bitmap) aVar.d) == null) {
+                Bitmap bitmap5 = (Bitmap) aVar.d;
+                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) aVar.d).getHeight() != bitmap.getHeight()) {
+                    aVar.d = Bitmap.createBitmap(bitmap);
+                }
+                Utilities.applySoftLight(bitmap, (Bitmap) aVar.d, k10);
+                aVar2.b(bitmap);
+                aVar.b = k10;
+            }
+            bitmap3 = (Bitmap) aVar.d;
+        } else {
+            bitmap3 = null;
+        }
+        Bitmap bitmap6 = bitmap3;
+        this.e = bitmap.getWidth();
+        this.f = bitmap.getHeight();
+        this.g = bitmap4.getWidth();
+        this.h = bitmap4.getHeight();
+        qc0 qc0Var = this.d;
+        if (qc0Var != null && z10 && Build.VERSION.SDK_INT >= 33) {
+            return qc0Var.a(bitmap, bitmap4, bitmap6, i11, i12);
+        }
+        i10 i10Var = this.c;
+        gt gtVar = (gt) i10Var.f;
+        gt gtVar2 = (gt) i10Var.g;
+        rc0 rc0Var = (rc0) i10Var.d;
+        Paint paint = (Paint) i10Var.b;
+        rc0 rc0Var2 = (rc0) i10Var.c;
+        boolean b10 = rc0Var2.b(bitmap);
+        rc0 rc0Var3 = (rc0) i10Var.e;
+        boolean b11 = b10 | rc0Var3.b(bitmap4);
+        if (i12 >= 0) {
+            if ((rc0Var.b(bitmap6) | b11) || i10Var.a != 1) {
+                i10Var.a = 1;
+                paint.setShader(new ComposeShader(rc0Var2.d, new ComposeShader(rc0Var.d, rc0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
+                return paint;
+            }
+        } else if ((gtVar2.a(i0.a.k(-1, ((-i12) * i11) / 100)) | b11 | gtVar.a(-16777216)) || i10Var.a != 2) {
+            i10Var.a = 2;
+            paint.setShader(new ComposeShader((yf.i) gtVar.b, new ComposeShader(new ComposeShader(rc0Var2.d, rc0Var3.d, PorterDuff.Mode.DST_IN), (yf.i) gtVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
+            return paint;
+        }
+        return paint;
     }
 }

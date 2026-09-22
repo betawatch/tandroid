@@ -4,11 +4,11 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.of;
 import org.telegram.ui.qt;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class s1 implements qt {
     @Override // org.telegram.ui.qt
@@ -102,7 +102,7 @@ public final class s1 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ v70 i(n6 n6Var) {
+    public final /* synthetic */ y70 i(n6 n6Var) {
         return null;
     }
 

@@ -6,7 +6,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.recyclerview.widget.RecyclerView;
-import c5.g0;
+import c5.f0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.lang.ref.ReferenceQueue;
 import java.lang.reflect.Method;
@@ -32,7 +32,7 @@ import s4.c1;
 import s4.m0;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class s implements Runnable {
     public final /* synthetic */ int a;
@@ -195,8 +195,8 @@ public final class s implements Runnable {
             case 3:
                 c5.c cVar = (c5.c) this.b;
                 c5.h hVar = (c5.h) this.c;
-                if (((c5.q) cVar.f.c) != null) {
-                    ((c5.q) cVar.f.c).onPurchasesUpdated(hVar, null);
+                if (((c5.p) cVar.f.c) != null) {
+                    ((c5.p) cVar.f.c).onPurchasesUpdated(hVar, null);
                     return;
                 } else {
                     com.google.android.gms.internal.play_billing.u.h("BillingClient", "No valid listener is set in BroadcastManager");
@@ -218,19 +218,19 @@ public final class s implements Runnable {
             case 5:
                 c5.c cVar2 = (c5.c) this.b;
                 org.telegram.messenger.c0 c0Var = (org.telegram.messenger.c0) this.c;
-                c5.h hVar2 = g0.i;
+                c5.h hVar2 = f0.i;
                 cVar2.y(24, 7, hVar2);
                 com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
                 com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-                c0Var.a(hVar2, new c5.s(vVar, vVar));
+                c0Var.a(hVar2, new c5.r(vVar, vVar));
                 return;
             case 6:
                 c5.c cVar3 = (c5.c) this.b;
-                c5.p pVar2 = (c5.p) this.c;
-                c5.h hVar3 = g0.i;
+                c5.o oVar2 = (c5.o) this.c;
+                c5.h hVar3 = f0.i;
                 cVar3.y(24, 9, hVar3);
-                com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-                pVar2.a(hVar3, com.google.android.gms.internal.play_billing.v.e);
+                com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
+                oVar2.a(hVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 7:
                 c6.e0 e0Var = ((c6.d0) this.b).b;
@@ -474,7 +474,7 @@ public final class s implements Runnable {
                 }
                 return;
             case 20:
-                ((c5.z) this.b).accept(this.c);
+                ((c5.y) this.b).accept(this.c);
                 return;
             case 21:
                 zn znVar = ((pm) this.c).c;

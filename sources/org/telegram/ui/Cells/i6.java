@@ -18,11 +18,11 @@ import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class i6 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -31,7 +31,7 @@ public abstract class i6 extends FrameLayout implements org.telegram.ui.ActionBa
     public final s2 d;
     public boolean e;
     public final org.telegram.ui.Components.d6 f;
-    public final o90 h;
+    public final r90 h;
     public boolean n;
 
     public i6(org.telegram.ui.ActionBar.n2 n2Var) {
@@ -67,11 +67,11 @@ public abstract class i6 extends FrameLayout implements org.telegram.ui.ActionBa
         addView(s2Var, w7.y5.e(-1, -2, 87));
         e();
         setWillNotDraw(false);
-        o90 o90Var = new o90();
-        this.h = o90Var;
+        r90 r90Var = new r90();
+        this.h = r90Var;
         int i10 = org.telegram.ui.ActionBar.j6.i6;
-        o90Var.e(org.telegram.ui.ActionBar.j6.l1(1.25f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)), org.telegram.ui.ActionBar.j6.l1(0.8f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)));
-        o90Var.j(8.0f);
+        r90Var.e(org.telegram.ui.ActionBar.j6.l1(1.25f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)), org.telegram.ui.ActionBar.j6.l1(0.8f, org.telegram.ui.ActionBar.j6.v0(i10, resourceProvider)));
+        r90Var.j(8.0f);
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {
@@ -144,19 +144,19 @@ public abstract class i6 extends FrameLayout implements org.telegram.ui.ActionBa
         super.dispatchDraw(canvas);
         float e = this.f.e(this.e);
         if (e > 0.0f) {
-            o90 o90Var = this.h;
-            o90Var.setAlpha((int) (e * 255.0f));
+            r90 r90Var = this.h;
+            r90Var.setAlpha((int) (e * 255.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             s2 s2Var = this.d;
             rectF.set(s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(38.0f), (getWidth() * 0.5f) + s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(46.33f));
-            o90Var.d(rectF);
-            o90Var.draw(canvas);
+            r90Var.d(rectF);
+            r90Var.draw(canvas);
             rectF.set(s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(56.0f), (getWidth() * 0.36f) + s2Var.getX() + AndroidUtilities.dp(s2Var.I + 6), s2Var.getY() + AndroidUtilities.dp(64.33f));
-            o90Var.d(rectF);
-            o90Var.draw(canvas);
+            r90Var.d(rectF);
+            r90Var.draw(canvas);
             rectF.set(((s2Var.getX() + s2Var.getWidth()) - AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(43.0f), s2Var.getY() + AndroidUtilities.dp(12.0f), (s2Var.getX() + s2Var.getWidth()) - AndroidUtilities.dp(16.0f), s2Var.getY() + AndroidUtilities.dp(20.33f));
-            o90Var.d(rectF);
-            o90Var.draw(canvas);
+            r90Var.d(rectF);
+            r90Var.draw(canvas);
             invalidate();
         }
     }

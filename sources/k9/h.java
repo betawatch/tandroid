@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import n6.l;
 import q9.n;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -49,7 +49,7 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList q6 = new m5.e(16, context, new n2.e(ComponentDiscoveryService.class, 14)).q();
+        ArrayList q6 = new m5.e(16, context, new fb.e(ComponentDiscoveryService.class)).q();
         Trace.endSection();
         Trace.beginSection("Runtime");
         r9.j jVar2 = r9.j.a;
@@ -70,7 +70,7 @@ public final class h {
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
-        this.h = gVar.c(na.c.class);
+        this.h = gVar.e(na.c.class);
         e eVar = new e(this);
         a();
         if (atomicBoolean.get()) {
@@ -154,7 +154,7 @@ public final class h {
 
     public final Object b(Class cls) {
         a();
-        return this.d.a(cls);
+        return this.d.b(cls);
     }
 
     public final String d() {
@@ -178,7 +178,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.g("[DEFAULT]".equals(str));
+            this.d.d("[DEFAULT]".equals(str));
             ((na.c) this.h.get()).c();
             return;
         }
@@ -223,8 +223,8 @@ public final class h {
 
     public final String toString() {
         m5.e eVar = new m5.e(this);
-        eVar.g(this.b, "name");
-        eVar.g(this.c, "options");
+        eVar.c(this.b, "name");
+        eVar.c(this.c, "options");
         return eVar.toString();
     }
 }

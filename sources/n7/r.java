@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r extends n implements NavigableMap, Map {
     public static final r f;
@@ -93,7 +93,7 @@ public final class r extends n implements NavigableMap, Map {
                 i11++;
             }
         } else {
-            Arrays.sort(entryArr, 0, length, new fb.i(2));
+            Arrays.sort(entryArr, 0, length, new fb.j(2));
             Map.Entry entry3 = entryArr[0];
             Objects.requireNonNull(entry3);
             Object key3 = entry3.getKey();

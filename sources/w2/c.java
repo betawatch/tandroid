@@ -9,14 +9,63 @@ import e9.p;
 import e9.x0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c implements a {
     public static final a0 b = new a0(new p(new s0.b(25), x0.b), new p(new s0.b(26), x0.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a
-    public final long b(long j3) {
+    public final long J(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            return -9223372036854775807L;
+        }
+        if (j3 < ((z3.a) arrayList.get(0)).b) {
+            return -9223372036854775807L;
+        }
+        long j10 = ((z3.a) arrayList.get(0)).b;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            long j11 = ((z3.a) arrayList.get(i10)).b;
+            long j12 = ((z3.a) arrayList.get(i10)).d;
+            if (j12 > j3) {
+                if (j11 > j3) {
+                    break;
+                }
+                j10 = Math.max(j10, j11);
+            } else {
+                j10 = Math.max(j10, j12);
+            }
+        }
+        return j10;
+    }
+
+    @Override // w2.a
+    public final void R(long j3) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            long j10 = ((z3.a) arrayList.get(i10)).b;
+            if (j3 > j10 && j3 > ((z3.a) arrayList.get(i10)).d) {
+                arrayList.remove(i10);
+                i10--;
+            } else if (j3 < j10) {
+                return;
+            }
+            i10++;
+        }
+    }
+
+    @Override // w2.a
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // w2.a
+    public final long d(long j3) {
         int i10 = 0;
         long j10 = -9223372036854775807L;
         while (true) {
@@ -42,12 +91,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // w2.a
-    public final i0 d(long j3) {
+    public final i0 u(long j3) {
         ArrayList arrayList = this.a;
         if (!arrayList.isEmpty()) {
             if (j3 >= ((z3.a) arrayList.get(0)).b) {
@@ -74,7 +118,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final boolean e(z3.a aVar, long j3) {
+    public final boolean z(z3.a aVar, long j3) {
         long j10 = aVar.b;
         e2.d.b(j10 != -9223372036854775807L);
         e2.d.b(aVar.c != -9223372036854775807L);
@@ -88,49 +132,5 @@ public final class c implements a {
         }
         arrayList.add(0, aVar);
         return z10;
-    }
-
-    @Override // w2.a
-    public final long i(long j3) {
-        ArrayList arrayList = this.a;
-        if (arrayList.isEmpty()) {
-            return -9223372036854775807L;
-        }
-        if (j3 < ((z3.a) arrayList.get(0)).b) {
-            return -9223372036854775807L;
-        }
-        long j10 = ((z3.a) arrayList.get(0)).b;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            long j11 = ((z3.a) arrayList.get(i10)).b;
-            long j12 = ((z3.a) arrayList.get(i10)).d;
-            if (j12 > j3) {
-                if (j11 > j3) {
-                    break;
-                }
-                j10 = Math.max(j10, j11);
-            } else {
-                j10 = Math.max(j10, j12);
-            }
-        }
-        return j10;
-    }
-
-    @Override // w2.a
-    public final void m(long j3) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            long j10 = ((z3.a) arrayList.get(i10)).b;
-            if (j3 > j10 && j3 > ((z3.a) arrayList.get(i10)).d) {
-                arrayList.remove(i10);
-                i10--;
-            } else if (j3 < j10) {
-                return;
-            }
-            i10++;
-        }
     }
 }

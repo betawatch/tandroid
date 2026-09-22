@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -31,9 +31,9 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final boolean N;
     public q70 O;
     public FrameLayout a;
-    public org.telegram.ui.Components.jx0 b;
+    public org.telegram.ui.Components.lx0 b;
     public org.telegram.ui.Components.t00 c;
-    public org.telegram.ui.Components.vl0 d;
+    public org.telegram.ui.Components.yl0 d;
     public r70 e;
     public s70 f;
     public s4.c0 h;
@@ -191,7 +191,7 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        this.d = new org.telegram.ui.Components.vl0(context, null);
+        this.d = new org.telegram.ui.Components.yl0(context, null);
         s4.j jVar = new s4.j();
         jVar.n(200L);
         jVar.m = true;
@@ -209,9 +209,9 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.c.setIsSingleCell(true);
         this.c.setItemsCount((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.dpf2(58.0f)));
         this.a.addView(this.c, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.jx0 jx0Var = new org.telegram.ui.Components.jx0(context, this.c, 1, null);
-        this.b = jx0Var;
-        org.telegram.ui.Cells.f3.h(jx0Var);
+        org.telegram.ui.Components.lx0 lx0Var = new org.telegram.ui.Components.lx0(context, this.c, 1, null);
+        this.b = lx0Var;
+        org.telegram.ui.Cells.f3.j(lx0Var);
         this.a.addView(this.b);
         frameLayout.addView(this.a);
         this.a.setVisibility(8);
@@ -232,11 +232,11 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         } else {
             tL_inputStickerSetShortName = null;
         }
-        org.telegram.ui.Components.gy0 gy0Var = new org.telegram.ui.Components.gy0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
-        gy0Var.d0 = new o70(this, z10, tL_messages_stickerSet);
-        gy0Var.B0();
+        org.telegram.ui.Components.iy0 iy0Var = new org.telegram.ui.Components.iy0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
+        iy0Var.d0 = new o70(this, z10, tL_messages_stickerSet);
+        iy0Var.B0();
         AndroidUtilities.hideKeyboard(getParentActivity().getCurrentFocus());
-        gy0Var.show();
+        iy0Var.show();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

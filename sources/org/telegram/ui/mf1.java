@@ -15,9 +15,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class mf1 extends org.telegram.ui.Components.aw0 {
+public final class mf1 extends org.telegram.ui.Components.cw0 {
     public boolean w0;
     public final Paint x0;
     public final /* synthetic */ fg1 y0;
@@ -30,14 +30,14 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
         this.x0 = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled()) {
             fg1 fg1Var = this.y0;
             if (fg1Var.g1 != null) {
                 canvas.save();
                 canvas.translate(0.0f, -f7);
-                fg1Var.g1.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                fg1Var.g1.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                 canvas.restore();
                 int alpha = paint.getAlpha();
                 paint.setAlpha(MessagesStorage.LAST_DB_VERSION);
@@ -50,7 +50,7 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void L(Canvas canvas, ArrayList arrayList) {
         int i10 = 0;
         while (true) {
@@ -62,8 +62,8 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
             if (childAt.getY() < AndroidUtilities.dp(100.0f) && childAt.getVisibility() == 0) {
                 int save = canvas.save();
                 canvas.translate(childAt.getX() + fg1Var.N.getX(), childAt.getY() + fg1Var.N.getY() + getY());
-                if (arrayList != null && (childAt instanceof org.telegram.ui.Components.xv0)) {
-                    arrayList.add((org.telegram.ui.Components.xv0) childAt);
+                if (arrayList != null && (childAt instanceof org.telegram.ui.Components.zv0)) {
+                    arrayList.add((org.telegram.ui.Components.zv0) childAt);
                 }
                 childAt.draw(canvas);
                 canvas.restoreToCount(save);
@@ -72,7 +72,7 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         fg1 fg1Var = this.y0;
@@ -85,13 +85,13 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
             int measuredWidth = uyVar != null ? uyVar.fragmentView.getMeasuredWidth() : getMeasuredWidth();
             uy uyVar2 = fg1Var.M0;
             int measuredHeight = uyVar2 != null ? uyVar2.fragmentView.getMeasuredHeight() : getMeasuredHeight();
-            if (dVar2 != null && !dVar2.n && dVar2.g(measuredWidth, measuredHeight)) {
+            if (dVar2 != null && !dVar2.n && dVar2.f(measuredWidth, measuredHeight)) {
                 iVar.b(dVar2.a(measuredWidth, measuredHeight), -3);
-                dVar2.c();
+                dVar2.b();
             }
-            if (dVar != null && !dVar.n && dVar.g(measuredWidth, measuredHeight)) {
+            if (dVar != null && !dVar.n && dVar.f(measuredWidth, measuredHeight)) {
                 iVar.b(dVar.a(measuredWidth, measuredHeight), -2);
-                dVar.c();
+                dVar.b();
             }
         }
         super.dispatchDraw(canvas);
@@ -123,8 +123,8 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
             float y3 = kVar2.getY();
             kVar3 = ((org.telegram.ui.ActionBar.n2) fg1Var).actionBar;
             float height = kVar3.getHeight();
-            org.telegram.ui.Components.w81 w81Var = fg1Var.a1;
-            int measuredHeight = (int) (y3 + ((int) ((((w81Var == null || w81Var.getVisibility() == 8) ? 0.0f : fg1Var.a1.getMeasuredHeight()) * fg1Var.W) + height)));
+            org.telegram.ui.Components.y81 y81Var = fg1Var.a1;
+            int measuredHeight = (int) (y3 + ((int) ((((y81Var == null || y81Var.getVisibility() == 8) ? 0.0f : fg1Var.a1.getMeasuredHeight()) * fg1Var.W) + height)));
             ((ActionBarLayout) fg1Var.getParentLayout()).p(canvas, (int) ((1.0f - fg1Var.W) * 255.0f), measuredHeight);
             float f7 = fg1Var.W;
             if (f7 > 0.0f) {
@@ -145,7 +145,7 @@ public final class mf1 extends org.telegram.ui.Components.aw0 {
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0095  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

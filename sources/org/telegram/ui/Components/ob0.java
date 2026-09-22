@@ -1,84 +1,25 @@
 package org.telegram.ui.Components;
 
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ob0 extends org.telegram.ui.Cells.s9 {
-    public final /* synthetic */ xb0 B0;
+public final class ob0 extends g.p {
+    public final /* synthetic */ ac0 c;
 
-    public ob0(xb0 xb0Var) {
-        this.B0 = xb0Var;
-        this.h0 = xb0Var.c0.F;
+    public ob0(ac0 ac0Var) {
+        this.c = ac0Var;
     }
 
-    @Override // org.telegram.ui.Cells.ea
-    public final boolean A(MessageObject messageObject) {
-        xb0 xb0Var = this.B0;
-        return xb0Var.a == 0 && !xb0Var.c0.d.isSecret && y();
-    }
-
-    @Override // org.telegram.ui.Cells.ea
-    public final void J(int i10, int i11, MessageObject messageObject) {
-        org.telegram.ui.pn pnVar;
-        MessageObject messageObject2;
-        xb0 xb0Var = this.B0;
-        ob0 ob0Var = xb0Var.e;
-        int i12 = ob0Var.v - ob0Var.u;
-        dc0 dc0Var = xb0Var.c0;
-        if (i12 > MessagesController.getInstance(dc0Var.w).quoteLengthMax) {
-            xb0Var.f();
-            return;
+    @Override // g.p
+    public final int i(int i10) {
+        MessageObject messageObject;
+        MessageObject.GroupedMessages a2;
+        if (i10 < 0) {
+            return MediaDataController.MAX_STYLE_RUNS_COUNT;
         }
-        MessagePreviewParams messagePreviewParams = dc0Var.d;
-        messagePreviewParams.quoteStart = ob0Var.u;
-        messagePreviewParams.quoteEnd = ob0Var.v;
-        MessageObject c10 = xb0Var.c(messageObject);
-        if (c10 != null && ((pnVar = dc0Var.d.quote) == null || (messageObject2 = pnVar.a) == null || messageObject2.getId() != c10.getId())) {
-            dc0Var.d.quote = org.telegram.ui.pn.b(i10, i11, c10);
-        }
-        dc0Var.b();
-        dc0Var.a(true);
-    }
-
-    @Override // org.telegram.ui.Cells.ea
-    public final boolean b() {
-        MessageObject c10;
-        TLRPC.Message message;
-        xb0 xb0Var = this.B0;
-        if (xb0Var.a == 0 && (c10 = xb0Var.c(null)) != null && (message = c10.messageOwner) != null && message.rich_message != null) {
-            return false;
-        }
-        MessagePreviewParams messagePreviewParams = xb0Var.c0.d;
-        return messagePreviewParams == null || !messagePreviewParams.noforwards;
-    }
-
-    @Override // org.telegram.ui.Cells.ea
-    public final boolean e() {
-        MessageObject c10;
-        TLRPC.Message message;
-        xb0 xb0Var = this.B0;
-        int i10 = xb0Var.a;
-        if (i10 != 0 || xb0Var.c0.d.isSecret) {
-            return false;
-        }
-        return i10 != 0 || (c10 = xb0Var.c(null)) == null || (message = c10.messageOwner) == null || message.rich_message == null;
-    }
-
-    @Override // org.telegram.ui.Cells.ea
-    public final org.telegram.ui.ActionBar.f6 r() {
-        return this.h0;
-    }
-
-    @Override // org.telegram.ui.Cells.s9, org.telegram.ui.Cells.ea
-    public final void x() {
-        super.x();
-        pb0 pb0Var = this.B0.f;
-        if (pb0Var != null) {
-            pb0Var.invalidate();
-        }
+        ac0 ac0Var = this.c;
+        return (i10 >= ac0Var.r.previewMessages.size() || (a2 = ac0.a(ac0Var, (messageObject = ac0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

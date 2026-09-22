@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class xy extends FrameLayout implements le.d {
     public xp E;
@@ -25,7 +25,7 @@ public abstract class xy extends FrameLayout implements le.d {
     public final /* synthetic */ kz G;
     public final le.b a;
     public final int b;
-    public final kn0 c;
+    public final mn0 c;
     public final iq d;
     public final View e;
     public final View f;
@@ -76,13 +76,13 @@ public abstract class xy extends FrameLayout implements le.d {
         this.s = n6Var;
         frameLayout.addView(n6Var, w7.y5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        kn0 kn0Var = new kn0();
-        this.c = kn0Var;
-        kn0Var.c(0, false, false);
-        kn0Var.a(z11 ? kzVar.v(0.4f) : kzVar.z(org.telegram.ui.ActionBar.j6.Je));
+        mn0 mn0Var = new mn0();
+        this.c = mn0Var;
+        mn0Var.c(0, false, false);
+        mn0Var.a(z11 ? kzVar.v(0.4f) : kzVar.z(org.telegram.ui.ActionBar.j6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(kn0Var);
+        imageView.setImageDrawable(mn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uy
             public final /* synthetic */ xy b;
 
@@ -242,14 +242,14 @@ public abstract class xy extends FrameLayout implements le.d {
                             xyVar.g(false);
                             break;
                         default:
-                            dx0 dx0Var = (dx0) obj;
+                            fx0 fx0Var = (fx0) obj;
                             xy xyVar2 = this.b;
                             kz kzVar2 = xyVar2.G;
                             wy wyVar2 = xyVar2.r;
-                            if (dx0Var != null) {
-                                if (wyVar2.getSelectedCategory() != dx0Var) {
-                                    xyVar2.c(dx0Var.a, false);
-                                    wyVar2.G1(dx0Var);
+                            if (fx0Var != null) {
+                                if (wyVar2.getSelectedCategory() != fx0Var) {
+                                    xyVar2.c(fx0Var.a, false);
+                                    wyVar2.G1(fx0Var);
                                     break;
                                 } else {
                                     xyVar2.c(null, false);
@@ -286,14 +286,14 @@ public abstract class xy extends FrameLayout implements le.d {
                             xyVar.g(false);
                             break;
                         default:
-                            dx0 dx0Var = (dx0) obj;
+                            fx0 fx0Var = (fx0) obj;
                             xy xyVar2 = this.b;
                             kz kzVar2 = xyVar2.G;
                             wy wyVar2 = xyVar2.r;
-                            if (dx0Var != null) {
-                                if (wyVar2.getSelectedCategory() != dx0Var) {
-                                    xyVar2.c(dx0Var.a, false);
-                                    wyVar2.G1(dx0Var);
+                            if (fx0Var != null) {
+                                if (wyVar2.getSelectedCategory() != fx0Var) {
+                                    xyVar2.c(fx0Var.a, false);
+                                    wyVar2.G1(fx0Var);
                                     break;
                                 } else {
                                     xyVar2.c(null, false);
@@ -319,7 +319,7 @@ public abstract class xy extends FrameLayout implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 0) {
             View view = this.e;
             view.setAlpha(f7);

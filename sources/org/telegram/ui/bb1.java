@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bb1 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -68,7 +68,7 @@ public final class bb1 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ah.o T;
     public s4.c0 U;
     public final LruCache V;
-    public org.telegram.ui.Components.kj0 W;
+    public org.telegram.ui.Components.nj0 W;
     public ga1 X;
     public z91 Y;
     public ab1 Z;
@@ -963,16 +963,16 @@ public final class bb1 extends org.telegram.ui.ActionBar.n2 implements Notificat
         bb1Var.T = new ah.o(ca1Var2, x8Var, new xs(ca1Var2, 1));
         dc dcVar = bb1Var.j0;
         if (dcVar != null) {
-            org.telegram.ui.Components.vl0 vl0Var = dcVar.F;
-            Objects.requireNonNull(vl0Var);
-            dcVar.G = new ah.o(vl0Var, x8Var, new xs(vl0Var, 0));
+            org.telegram.ui.Components.yl0 yl0Var = dcVar.F;
+            Objects.requireNonNull(yl0Var);
+            dcVar.G = new ah.o(yl0Var, x8Var, new xs(yl0Var, 0));
             bb1Var.j0.F.j(new aa1(bb1Var, 1));
         }
         ke keVar2 = bb1Var.k0;
         if (keVar2 != null) {
-            org.telegram.ui.Components.s61 s61Var = keVar2.a1;
-            Objects.requireNonNull(s61Var);
-            keVar2.b1 = new ah.o(s61Var, x8Var, new w8(s61Var, 0));
+            org.telegram.ui.Components.u61 u61Var = keVar2.a1;
+            Objects.requireNonNull(u61Var);
+            keVar2.b1 = new ah.o(u61Var, x8Var, new w8(u61Var, 0));
             bb1Var.k0.a1.j(new aa1(bb1Var, 2));
         }
         bb1Var.G0 = new y91(bb1Var, x8Var);
@@ -980,9 +980,9 @@ public final class bb1 extends org.telegram.ui.ActionBar.n2 implements Notificat
         LinearLayout linearLayout = new LinearLayout(context);
         bb1Var.b0 = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
-        bb1Var.W = kj0Var;
-        kj0Var.setAutoRepeat(true);
+        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
+        bb1Var.W = nj0Var;
+        nj0Var.setAutoRepeat(true);
         bb1Var.W.f(R.raw.statistic_preload, 120, 120, null);
         bb1Var.W.d();
         TextView textView = new TextView(context);
@@ -1187,7 +1187,7 @@ public final class bb1 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.S.animate().alpha(1.0f).setDuration(230L).start();
         for (na1 na1Var : na1VarArr) {
             if (na1Var != null && na1Var.d == null && na1Var.f != null) {
-                na1Var.a(this.currentAccount, this.classGuid, this.a.stats_dc, new org.telegram.ui.Components.g61(1, this, na1Var));
+                na1Var.a(this.currentAccount, this.classGuid, this.a.stats_dc, new org.telegram.ui.Components.i61(1, this, na1Var));
             }
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -130,10 +130,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((ai.s1) obj).run();
                 break;
             case 10:
-                org.telegram.ui.Components.kj0 kj0Var = ((i9) obj).d;
-                if (!kj0Var.b()) {
-                    kj0Var.setProgress(0.0f);
-                    kj0Var.d();
+                org.telegram.ui.Components.nj0 nj0Var = ((i9) obj).d;
+                if (!nj0Var.b()) {
+                    nj0Var.setProgress(0.0f);
+                    nj0Var.d();
                     break;
                 }
                 break;
@@ -170,7 +170,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((bd) obj).w0();
                 break;
             case 13:
-                zn znVar = ((mj) obj).b;
+                zn znVar = ((nj) obj).b;
                 znVar.h0.n();
                 ai.g4 g4Var = znVar.J1;
                 if (g4Var != null) {
@@ -264,10 +264,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((q00) obj).a.dismiss();
                 break;
             case 24:
-                org.telegram.ui.Components.kj0 kj0Var2 = ((v00) obj).a;
-                if (!kj0Var2.b()) {
-                    kj0Var2.setProgress(0.0f);
-                    kj0Var2.d();
+                org.telegram.ui.Components.nj0 nj0Var2 = ((v00) obj).a;
+                if (!nj0Var2.b()) {
+                    nj0Var2.setProgress(0.0f);
+                    nj0Var2.d();
                     break;
                 }
                 break;
@@ -276,21 +276,21 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 break;
             case 26:
                 a20 a20Var = (a20) obj;
-                org.telegram.ui.Components.o90 o90Var = a20Var.s;
-                if ((!a20Var.r || o90Var.b()) && a20Var.x != null) {
+                org.telegram.ui.Components.r90 r90Var = a20Var.s;
+                if ((!a20Var.r || r90Var.b()) && a20Var.x != null) {
                     a20Var.r = true;
-                    o90Var.b = -1L;
-                    o90Var.c = -1L;
+                    r90Var.b = -1L;
+                    r90Var.c = -1L;
                     a20Var.n.invalidate();
                     r00.S(a20Var.E, a20Var.x, new g10(a20Var, i11));
                     break;
                 }
                 break;
             case 27:
-                org.telegram.ui.Components.kj0 kj0Var3 = ((b20) obj).a;
-                if (!kj0Var3.b()) {
-                    kj0Var3.setProgress(0.0f);
-                    kj0Var3.d();
+                org.telegram.ui.Components.nj0 nj0Var3 = ((b20) obj).a;
+                if (!nj0Var3.b()) {
+                    nj0Var3.setProgress(0.0f);
+                    nj0Var3.d();
                     break;
                 }
                 break;
@@ -299,7 +299,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 a20 a20Var2 = (a20) view.getParent();
                 final MessagesController.DialogFilter currentFilter = a20Var2.getCurrentFilter();
                 FiltersSetupActivity filtersSetupActivity = e20Var.e;
-                org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(filtersSetupActivity, a20Var2);
+                org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(filtersSetupActivity, a20Var2);
                 H.c(R.drawable.msg_edit, LocaleController.getString(R.string.FilterEditItem), new Runnable() { // from class: org.telegram.ui.d20
                     @Override // java.lang.Runnable
                     public final void run() {

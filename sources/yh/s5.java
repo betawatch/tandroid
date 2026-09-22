@@ -1,17 +1,17 @@
 package yh;
 
 import android.text.SpannableStringBuilder;
+import android.view.ViewParent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s5 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class s5 implements Runnable {
                     xc.a0(qVar2).t(str, null).j();
                     break;
                 } else {
-                    zg.q0.f(-qVar2.M, qVar2.R, qVar2.Q);
+                    zg.r0.f(-qVar2.M, qVar2.R, qVar2.Q);
                     break;
                 }
             case 5:
@@ -96,34 +96,34 @@ public final /* synthetic */ class s5 implements Runnable {
                 }
                 break;
             case 6:
-                zg.b0 b0Var = (zg.b0) this.b;
-                pk0 pk0Var = (pk0) this.c;
-                b0Var.l = true;
-                b0Var.a.invalidate();
-                pk0Var.b1 = false;
-                pk0Var.invalidate();
-                b0Var.c(true);
+                zg.c0 c0Var = (zg.c0) this.b;
+                sk0 sk0Var = (sk0) this.c;
+                c0Var.l = true;
+                c0Var.a.invalidate();
+                sk0Var.b1 = false;
+                sk0Var.invalidate();
+                c0Var.c(true);
                 break;
             case 7:
-                zg.d0 d0Var = (zg.d0) this.b;
+                zg.e0 e0Var = (zg.e0) this.b;
                 zg.b bVar = (zg.b) this.c;
-                d0Var.getText().delete(d0Var.getText().getSpanStart(bVar), d0Var.getText().getSpanEnd(bVar));
-                d0Var.setCursorVisible(true);
-                d0Var.setLongClickable(true);
+                e0Var.getText().delete(e0Var.getText().getSpanStart(bVar), e0Var.getText().getSpanEnd(bVar));
+                e0Var.setCursorVisible(true);
+                e0Var.setLongClickable(true);
                 break;
             default:
-                zg.p0 p0Var = (zg.p0) this.b;
-                zg.m0 m0Var = (zg.m0) this.c;
-                p0Var.getClass();
-                TLRPC.ReactionCount reactionCount = m0Var.a;
-                xv0 xv0Var = p0Var.z;
-                if (com.google.android.gms.internal.vision.e2.u(xv0Var)) {
-                    ((org.telegram.ui.Cells.p4) xv0Var).f(reactionCount, true, 0.0f, 0.0f);
+                zg.q0 q0Var = (zg.q0) this.b;
+                zg.n0 n0Var = (zg.n0) this.c;
+                q0Var.getClass();
+                TLRPC.ReactionCount reactionCount = n0Var.a;
+                ViewParent viewParent = q0Var.z;
+                if (com.google.android.gms.internal.vision.e2.u(viewParent)) {
+                    ((org.telegram.ui.Cells.p4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
                 }
-                m0Var.Y.c(false);
-                p0Var.S = null;
-                p0Var.T = false;
-                p0Var.U = null;
+                n0Var.Y.c(false);
+                q0Var.S = null;
+                q0Var.T = false;
+                q0Var.U = null;
                 break;
         }
     }

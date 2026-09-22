@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.nc;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
@@ -40,7 +40,7 @@ import xh.z3;
 import xh.z4;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        k61 k61Var;
+        m61 m61Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         String str;
@@ -71,39 +71,39 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
             case 1:
                 i1 i1Var = (i1) obj2;
                 i1Var.f = (ArrayList) obj;
-                m61 m61Var = i1Var.a;
-                if (m61Var.G) {
-                    m61Var.Y2.N(true);
+                o61 o61Var = i1Var.a;
+                if (o61Var.G) {
+                    o61Var.Y2.N(true);
                     break;
                 }
                 break;
             case 2:
                 a2 a2Var = (a2) obj2;
                 a2Var.r = ((ArrayList) obj).size();
-                m61 m61Var2 = a2Var.a;
-                if (m61Var2 != null && (k61Var = m61Var2.Y2) != null && m61Var2.G) {
-                    k61Var.N(true);
+                o61 o61Var2 = a2Var.a;
+                if (o61Var2 != null && (m61Var = o61Var2.Y2) != null && o61Var2.G) {
+                    m61Var.N(true);
                     break;
                 }
                 break;
             case 3:
                 pg.e0 e0Var = (pg.e0) obj2;
-                pg.h1 h1Var = (pg.h1) obj;
-                pg.e1 e1Var = e0Var.a;
-                if (h1Var != null) {
-                    float currentWeight = e1Var.getCurrentWeight();
-                    h1Var.f = currentWeight;
+                pg.i1 i1Var2 = (pg.i1) obj;
+                pg.f1 f1Var = e0Var.a;
+                if (i1Var2 != null) {
+                    float currentWeight = f1Var.getCurrentWeight();
+                    i1Var2.f = currentWeight;
                     double d = e0Var.p;
                     if (d > 0.0d) {
-                        h1Var.f = (float) ((d / e0Var.q) * currentWeight);
+                        i1Var2.f = (float) ((d / e0Var.q) * currentWeight);
                     }
-                    if (h1Var.a.o() == 4) {
-                        h1Var.k *= h1Var.f;
+                    if (i1Var2.a.o() == 4) {
+                        i1Var2.k *= i1Var2.f;
                     }
                 }
-                pg.s0 painting = e1Var.getPainting();
+                pg.s0 painting = f1Var.getPainting();
                 if (painting.L == null) {
-                    painting.f.f(new pg.o0(painting, h1Var, i12));
+                    painting.f.f(new pg.o0(painting, i1Var2, i12));
                     break;
                 }
                 break;

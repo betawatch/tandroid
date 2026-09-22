@@ -21,9 +21,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wh1 extends org.telegram.ui.Components.dl0 {
+public final class wh1 extends org.telegram.ui.Components.gl0 {
     public final Context c;
     public final gg.c2 f;
     public Runnable h;
@@ -93,18 +93,18 @@ public final class wh1 extends org.telegram.ui.Components.dl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(org.telegram.ui.Components.vl0 vl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(org.telegram.ui.Components.yl0 yl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -450,6 +450,6 @@ public final class wh1 extends org.telegram.ui.Components.dl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return new org.telegram.ui.Components.fl0(i10 != 1 ? new org.telegram.ui.Cells.w3(context, null) : new org.telegram.ui.Cells.h4(context, 1, 0, true));
+        return new org.telegram.ui.Components.il0(i10 != 1 ? new org.telegram.ui.Cells.w3(context, null) : new org.telegram.ui.Cells.h4(context, 1, 0, true));
     }
 }

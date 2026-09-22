@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
-import c5.o;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.t;
@@ -36,18 +35,18 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wo0;
 import r0.l1;
-import rg.k;
 import rg.q1;
 import t0.h;
 import tg.c0;
 import tg.t0;
 import tg.z0;
+import w9.k;
 import x2.f;
 import x2.j;
 import x2.n;
@@ -63,9 +62,9 @@ import yh.w7;
 import za.a0;
 import za.b0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a, Continuation, n, m, r0.n, BillingController.ProductDetailsResponseListenerLegacy, c5, le.d, Utilities.Callback5, wo0, i5.e {
+public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, nl0, uh.a, Continuation, n, m, r0.n, BillingController.ProductDetailsResponseListenerLegacy, c5, le.d, Utilities.Callback5, wo0, i5.e {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -75,7 +74,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
     }
 
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         View view = ((a4) this.b).b;
         if (view instanceof w0) {
             ((w0) view).K();
@@ -131,14 +130,14 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
                 }
                 break;
             default:
-                l80 l80Var = (l80) this.b;
+                o80 o80Var = (o80) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
-                        l80Var.run(Boolean.FALSE, null);
+                        o80Var.run(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    l80Var.run(Boolean.TRUE, null);
+                    o80Var.run(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -147,11 +146,11 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
 
     @Override // i5.e
     public Object apply(Object obj) {
-        ((w3.b) this.b).getClass();
-        String U = b0.b.U((a0) obj);
-        i.d(U, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: ".concat(U));
-        byte[] bytes = U.getBytes(xd.a.a);
+        ((k) this.b).getClass();
+        String v = b0.b.v((a0) obj);
+        i.d(v, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
+        Log.d("EventGDTLogger", "Session Event: ".concat(v));
+        byte[] bytes = v.getBytes(xd.a.a);
         i.d(bytes, "this as java.lang.String).getBytes(charset)");
         return bytes;
     }
@@ -166,12 +165,12 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
         return u10.i();
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         z0.Q((z0) this.b, view);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -188,17 +187,8 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
         }
     }
 
-    @Override // pa.a
-    public void f(pa.b bVar) {
-        t9.a aVar = (t9.a) this.b;
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
-        }
-        aVar.b.set((t9.a) bVar.get());
-    }
-
     @Override // t0.e
-    public boolean g(t0.i iVar, int i10, Bundle bundle) {
+    public boolean f(t0.i iVar, int i10, Bundle bundle) {
         r0.d dVar;
         s sVar = (s) this.b;
         int i11 = Build.VERSION.SDK_INT;
@@ -229,7 +219,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
     }
 
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         SQLiteDatabase a2;
         switch (this.a) {
             case 0:
@@ -277,6 +267,15 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
         }
     }
 
+    @Override // pa.a
+    public void h(pa.b bVar) {
+        t9.a aVar = (t9.a) this.b;
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
+        }
+        aVar.b.set((t9.a) bVar.get());
+    }
+
     @Override // org.telegram.ui.ActionBar.a2
     public void k(b2 b2Var, int i10) {
         switch (this.a) {
@@ -318,15 +317,15 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
             if (!it.hasNext()) {
                 break;
             }
-            o oVar = (o) it.next();
+            c5.n nVar = (c5.n) it.next();
             int size = arrayList.size();
             while (true) {
                 if (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    k kVar = (k) obj;
-                    if (kVar.h() != null && kVar.h().equals(oVar.c)) {
-                        kVar.h = oVar;
+                    rg.k kVar = (rg.k) obj;
+                    if (kVar.h() != null && kVar.h().equals(nVar.c)) {
+                        kVar.h = nVar;
                         if (kVar.f() > j3) {
                             j3 = kVar.f();
                         }
@@ -338,7 +337,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
         while (i10 < size2) {
             Object obj2 = arrayList.get(i10);
             i10++;
-            ((k) obj2).g = j3;
+            ((rg.k) obj2).g = j3;
         }
         AndroidUtilities.runOnUIThread(new q1(r1Var, 15));
     }
@@ -362,13 +361,13 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
                 break;
             default:
                 t7 t7Var = (t7) this.b;
-                w51 w51Var = (w51) obj;
+                y51 y51Var = (y51) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 t7Var.getClass();
-                if (w51Var.G instanceof TL_stars.StarsTransaction) {
-                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) w51Var.G, t7Var.b);
+                if (y51Var.G instanceof TL_stars.StarsTransaction) {
+                    w7.h1(t7Var.getContext(), false, 0L, t7Var.c, (TL_stars.StarsTransaction) y51Var.G, t7Var.b);
                     break;
                 }
                 break;
@@ -385,7 +384,7 @@ public final /* synthetic */ class d implements t5.b, t0.e, pa.a, a2, kl0, uh.a,
     public /* synthetic */ void C(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

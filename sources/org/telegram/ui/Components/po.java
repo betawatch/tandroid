@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class po {
     public final org.telegram.ui.ActionBar.f1 a;
@@ -33,7 +33,7 @@ public final class po {
     public final TextView n;
     public int o;
 
-    public po(Context context, int i10, eh0 eh0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.f6 f6Var) {
+    public po(Context context, int i10, hh0 hh0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.f6 f6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         Integer num;
         this.g = i10;
@@ -42,12 +42,12 @@ public final class po {
         noVar.U = new Path();
         this.f = noVar;
         noVar.setFitItems(true);
-        if (eh0Var != null) {
+        if (hh0Var != null) {
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
             org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, f6Var);
             this.a = c10;
-            c10.setOnClickListener(new k8(eh0Var, 1));
+            c10.setOnClickListener(new k8(hh0Var, 1));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
             num = 1;
@@ -88,7 +88,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -130,7 +130,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -172,7 +172,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -214,7 +214,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -256,7 +256,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -309,7 +309,7 @@ public final class po {
                         AndroidUtilities.runOnUIThread(new og(ooVar, 27));
                         break;
                     default:
-                        ooVar.m();
+                        ooVar.k();
                         this.b.a();
                         break;
                 }
@@ -433,7 +433,7 @@ public final class po {
         if (i12 != 0) {
             this.l = i12;
             f1Var3.setVisibility(0);
-            f1Var3.getImageView().setImageDrawable(j21.a(i12));
+            f1Var3.getImageView().setImageDrawable(l21.a(i12));
             f1Var3.setText(b(i12));
         } else {
             f1Var3.setVisibility(8);
@@ -442,7 +442,7 @@ public final class po {
         if (i11 != 0) {
             this.k = i11;
             f1Var4.setVisibility(0);
-            f1Var4.getImageView().setImageDrawable(j21.a(i11));
+            f1Var4.getImageView().setImageDrawable(l21.a(i11));
             f1Var4.setText(b(i11));
         } else {
             f1Var4.setVisibility(8);

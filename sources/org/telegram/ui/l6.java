@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class l6 extends FrameLayout {
     public final j0 a;
@@ -24,7 +24,7 @@ public class l6 extends FrameLayout {
         int i10 = org.telegram.ui.ActionBar.j6.Oh;
         j0Var.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{24.0f}, i10));
         j0Var.setImportantForAccessibility(1);
-        w7.b6.b(j0Var, 0.02f, 1.2f);
+        w7.a6.b(j0Var, 0.02f, 1.2f);
         if (LocaleController.isRTL) {
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.ClearCache));

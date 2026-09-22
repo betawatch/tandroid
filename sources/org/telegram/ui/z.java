@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.zj0 zj0Var = (org.telegram.ui.Components.zj0) obj3;
+                org.telegram.ui.Components.ck0 ck0Var = (org.telegram.ui.Components.ck0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (zj0Var == null || zj0Var.w) {
+                if (ck0Var == null || ck0Var.w) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
@@ -110,7 +110,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 zn.m1((zn) obj3, (boolean[]) obj2, (Context) obj);
                 break;
             case 6:
-                zn.H0((zn) obj3, (ok) obj2, (boolean[]) obj);
+                zn.H0((zn) obj3, (pk) obj2, (boolean[]) obj);
                 break;
             case 7:
                 ln lnVar = (ln) obj3;
@@ -140,7 +140,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((wr) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.p71) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.r71) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -150,21 +150,21 @@ public final /* synthetic */ class z implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.r71 r71Var = (org.telegram.ui.Components.r71) obj4;
-                            if (r71Var.b()) {
-                                document = r71Var.g;
+                            org.telegram.ui.Components.t71 t71Var = (org.telegram.ui.Components.t71) obj4;
+                            if (t71Var.b()) {
+                                document = t71Var.g;
                             }
                         } else {
                             long j10 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.r71 r71Var2 = null;
+                            org.telegram.ui.Components.t71 t71Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.r71 r71Var3 = (org.telegram.ui.Components.r71) arrayList.get(i14);
-                                if (r71Var3.k < j10 && org.telegram.ui.Components.t71.Y(r71Var3.m)) {
-                                    j10 = r71Var3.k;
-                                    r71Var2 = r71Var3;
+                                org.telegram.ui.Components.t71 t71Var3 = (org.telegram.ui.Components.t71) arrayList.get(i14);
+                                if (t71Var3.k < j10 && org.telegram.ui.Components.v71.Y(t71Var3.m)) {
+                                    j10 = t71Var3.k;
+                                    t71Var2 = t71Var3;
                                 }
                             }
-                            document = r71Var2 != null ? r71Var2.g : ((org.telegram.ui.Components.r71) arrayList.get(0)).g;
+                            document = t71Var2 != null ? t71Var2.g : ((org.telegram.ui.Components.t71) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -192,7 +192,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 break;
             case 11:
                 gh0 gh0Var = (gh0) obj3;
-                ((org.telegram.ui.Components.v70) obj2).u();
+                ((org.telegram.ui.Components.y70) obj2).u();
                 int i15 = ((MessagesController.DialogFilter) obj).id;
                 if (gh0Var.c.getCurrentPosition() != 0 || (uyVar = gh0Var.J) == null) {
                     if (gh0Var.J == null) {

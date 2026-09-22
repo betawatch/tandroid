@@ -2,7 +2,7 @@ package q9;
 
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class q implements pa.b {
     public static final p c = new p(0);
@@ -21,7 +21,7 @@ public final class q implements pa.b {
         pa.b bVar3 = this.b;
         f fVar = d;
         if (bVar3 != fVar) {
-            aVar.f(bVar3);
+            aVar.h(bVar3);
             return;
         }
         synchronized (this) {
@@ -34,7 +34,7 @@ public final class q implements pa.b {
             }
         }
         if (bVar2 != null) {
-            aVar.f(bVar);
+            aVar.h(bVar);
         }
     }
 

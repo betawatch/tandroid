@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.cu0;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.eu0;
+import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -96,10 +96,10 @@ public final class k0 extends AnimatorListenerAdapter {
                 atVar.A();
                 break;
             case 3:
-                ((jv0) this.e).H1 = false;
+                ((lv0) this.e).H1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((cu0) this.b).removeView(view3);
+                    ((eu0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }

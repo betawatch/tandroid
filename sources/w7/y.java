@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class y {
     public static mg.i a;
@@ -33,9 +33,9 @@ public abstract class y {
             mg.f fVar = new mg.f(iVar2);
             iVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
             iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
-            n2.e eVar = new n2.e(launchActivity, fVar);
-            ((GestureDetector) eVar.b).setIsLongpressEnabled(false);
-            ci.n6 n6Var = new ci.n6(iVar2, launchActivity, eVar, 2);
+            l.d dVar = new l.d(launchActivity, fVar);
+            ((GestureDetector) dVar.b).setIsLongpressEnabled(false);
+            ci.n6 n6Var = new ci.n6(iVar2, launchActivity, dVar, 2);
             iVar2.a = n6Var;
             ImageView imageView = new ImageView(launchActivity);
             imageView.setImageResource(R.drawable.device_phone_android);
@@ -54,12 +54,12 @@ public abstract class y {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
             linearLayout.addView(textView, y5.n(-1, -2));
-            vl0 vl0Var = new vl0(launchActivity, null);
-            iVar2.y = vl0Var;
-            vl0Var.setLayoutManager(new s4.c0());
-            vl0Var.setAdapter(new mg.g(iVar2, launchActivity));
-            vl0Var.setOnItemClickListener(new ai.g(iVar2, 13));
-            linearLayout.addView(vl0Var, y5.l(1.0f, -1, 0));
+            yl0 yl0Var = new yl0(launchActivity, null);
+            iVar2.y = yl0Var;
+            yl0Var.setLayoutManager(new s4.c0());
+            yl0Var.setAdapter(new mg.g(iVar2, launchActivity));
+            yl0Var.setOnItemClickListener(new ai.g(iVar2, 13));
+            linearLayout.addView(yl0Var, y5.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, y5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);

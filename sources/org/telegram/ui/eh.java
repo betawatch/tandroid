@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class eh implements Utilities.Callback {
                 zn.r1((zn) obj2, this.b, this.c, (Long) obj);
                 break;
             case 1:
-                mj mjVar = (mj) obj2;
+                nj njVar = (nj) obj2;
                 Long l4 = (Long) obj;
-                zn znVar = mjVar.b;
+                zn znVar = njVar.b;
                 if (znVar.getParentActivity() != null) {
                     Activity parentActivity = znVar.getParentActivity();
                     String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
@@ -55,7 +55,7 @@ public final /* synthetic */ class eh implements Utilities.Callback {
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i12, DialogObject.getShortName(j3)));
                     String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
                     String string2 = LocaleController.getString(R.string.Confirm);
-                    mh mhVar = new mh(mjVar, j3, this.c, l4, 1);
+                    mh mhVar = new mh(njVar, j3, this.c, l4, 1);
                     f6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
                     org.telegram.ui.Components.d5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, mhVar, f6Var, true);
                     break;

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ou implements DialogInterface.OnShowListener {
     public final /* synthetic */ vu a;
@@ -13,9 +13,9 @@ public final class ou implements DialogInterface.OnShowListener {
 
     @Override // android.content.DialogInterface.OnShowListener
     public final void onShow(DialogInterface dialogInterface) {
-        p91 p91Var = this.a.c;
-        if (og0.p0.P && p91Var.f()) {
-            p91Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.ga(this, 1));
+        r91 r91Var = this.a.c;
+        if (rg0.p0.P && r91Var.f()) {
+            r91Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.ga(this, 1));
         }
     }
 }

@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class fh1 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final class fh1 implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.hj0 hj0Var;
+        org.telegram.ui.Components.kj0 kj0Var;
         switch (this.a) {
             case 0:
                 this.b.getClass();
@@ -45,15 +45,15 @@ public final class fh1 implements TextWatcher {
                             }
                         }
                     } else {
-                        org.telegram.ui.Components.hj0 animatedDrawable = ih1Var.a.getAnimatedDrawable();
+                        org.telegram.ui.Components.kj0 animatedDrawable = ih1Var.a.getAnimatedDrawable();
                         if (ih1Var.n.length() <= 0) {
                             if (animatedDrawable != ih1Var.f0[3] || ih1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.hj0[] hj0VarArr = ih1Var.f0;
-                                if (animatedDrawable != hj0VarArr[5]) {
-                                    hj0VarArr[2].P(-1);
-                                    org.telegram.ui.Components.hj0 hj0Var2 = ih1Var.f0[2];
-                                    if (animatedDrawable != hj0Var2) {
-                                        ih1Var.a.setAnimation(hj0Var2);
+                                org.telegram.ui.Components.kj0[] kj0VarArr = ih1Var.f0;
+                                if (animatedDrawable != kj0VarArr[5]) {
+                                    kj0VarArr[2].P(-1);
+                                    org.telegram.ui.Components.kj0 kj0Var2 = ih1Var.f0[2];
+                                    if (animatedDrawable != kj0Var2) {
+                                        ih1Var.a.setAnimation(kj0Var2);
                                         ih1Var.f0[2].N(49, false, false);
                                     }
                                     ih1Var.a.d();
@@ -65,16 +65,16 @@ public final class fh1 implements TextWatcher {
                             ih1Var.a.d();
                             break;
                         } else if (ih1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.hj0[] hj0VarArr2 = ih1Var.f0;
-                            if (animatedDrawable != hj0VarArr2[3]) {
-                                org.telegram.ui.Components.hj0 hj0Var3 = hj0VarArr2[2];
-                                if (animatedDrawable == hj0Var3) {
-                                    if (hj0Var3.a0 < 49) {
-                                        hj0Var3.P(49);
+                            org.telegram.ui.Components.kj0[] kj0VarArr2 = ih1Var.f0;
+                            if (animatedDrawable != kj0VarArr2[3]) {
+                                org.telegram.ui.Components.kj0 kj0Var3 = kj0VarArr2[2];
+                                if (animatedDrawable == kj0Var3) {
+                                    if (kj0Var3.a0 < 49) {
+                                        kj0Var3.P(49);
                                         break;
                                     }
                                 } else {
-                                    ih1Var.a.setAnimation(hj0Var3);
+                                    ih1Var.a.setAnimation(kj0Var3);
                                     ih1Var.f0[2].P(49);
                                     ih1Var.f0[2].T(0.0f, false);
                                     ih1Var.a.d();
@@ -82,9 +82,9 @@ public final class fh1 implements TextWatcher {
                                 }
                             }
                         } else {
-                            org.telegram.ui.Components.hj0[] hj0VarArr3 = ih1Var.f0;
-                            if (animatedDrawable != hj0VarArr3[3] && animatedDrawable != (hj0Var = hj0VarArr3[5])) {
-                                ih1Var.a.setAnimation(hj0Var);
+                            org.telegram.ui.Components.kj0[] kj0VarArr3 = ih1Var.f0;
+                            if (animatedDrawable != kj0VarArr3[3] && animatedDrawable != (kj0Var = kj0VarArr3[5])) {
+                                ih1Var.a.setAnimation(kj0Var);
                                 ih1Var.f0[5].T(0.0f, false);
                                 ih1Var.a.d();
                                 break;

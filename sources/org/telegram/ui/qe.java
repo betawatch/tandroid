@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements org.telegram.ui.Components.b60, org.telegram.ui.Components.d60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.io, MessagesStorage.BooleanCallback, org.telegram.ui.Components.wj0, ResultCallback, wh.c, jh.a, jh.b, z60, rs, org.telegram.ui.Components.ll0, jh.d, org.telegram.ui.Components.xk0 {
+public final /* synthetic */ class qe implements org.telegram.ui.Components.d60, org.telegram.ui.Components.g60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.io, MessagesStorage.BooleanCallback, org.telegram.ui.Components.zj0, ResultCallback, wh.c, jh.a, jh.b, z60, rs, org.telegram.ui.Components.ol0, jh.d, org.telegram.ui.Components.al0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ zn b;
 
@@ -24,7 +24,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
         this.b = znVar;
     }
 
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.al0
     public void a() {
         zn znVar = this.b;
         znVar.q9(1);
@@ -53,7 +53,7 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         zn znVar = this.b;
         boolean z10 = false;
@@ -67,15 +67,15 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
                 Object J = znVar.I1.getAdapter().J(i10 - 1);
                 if (J instanceof gg.h1) {
                     gg.h1 h1Var = (gg.h1) J;
-                    if (znVar.I1.getAdapter().J != null && org.telegram.ui.Components.x51.h) {
+                    if (znVar.I1.getAdapter().J != null && org.telegram.ui.Components.z51.h) {
                         znVar.Y.setFieldText("");
-                        lk lkVar = znVar.Y;
+                        mk mkVar = znVar.Y;
                         String str = h1Var.a;
                         TLRPC.Chat chat = znVar.e;
                         if (chat != null && chat.megagroup) {
                             z10 = true;
                         }
-                        lkVar.Z0(null, str, true, z10);
+                        mkVar.Z0(null, str, true, z10);
                         return true;
                     }
                 } else if (J instanceof String) {
@@ -88,15 +88,15 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
                         znVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.x51.h) {
+                    if (org.telegram.ui.Components.z51.h) {
                         znVar.Y.setFieldText("");
-                        lk lkVar2 = znVar.Y;
+                        mk mkVar2 = znVar.Y;
                         String str2 = (String) J;
                         TLRPC.Chat chat2 = znVar.e;
                         if (chat2 != null && chat2.megagroup) {
                             z10 = true;
                         }
-                        lkVar2.Z0(null, str2, true, z10);
+                        mkVar2.Z0(null, str2, true, z10);
                         return true;
                     }
                 }
@@ -105,28 +105,28 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.wj0
+    @Override // org.telegram.ui.Components.zj0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 11:
                 zn znVar = this.b;
                 if (znVar.getParentActivity() != null && znVar.getParentActivity() != null) {
-                    ii iiVar = new ii(znVar, znVar, znVar.getParentActivity(), znVar.ea, arrayList);
-                    iiVar.setCalcMandatoryInsets(znVar.x9());
-                    iiVar.setDimBehind(false);
+                    ji jiVar = new ji(znVar, znVar, znVar.getParentActivity(), znVar.ea, arrayList);
+                    jiVar.setCalcMandatoryInsets(znVar.x9());
+                    jiVar.setDimBehind(false);
                     znVar.A7(false);
-                    znVar.showDialog(iiVar);
+                    znVar.showDialog(jiVar);
                     break;
                 }
                 break;
             default:
                 zn znVar2 = this.b;
                 if (znVar2.getParentActivity() != null && znVar2.getParentActivity() != null) {
-                    fj fjVar = new fj(znVar2, znVar2, znVar2.getParentActivity(), znVar2.ea, arrayList);
-                    fjVar.setCalcMandatoryInsets(znVar2.x9());
-                    fjVar.setDimBehind(false);
+                    gj gjVar = new gj(znVar2, znVar2, znVar2.getParentActivity(), znVar2.ea, arrayList);
+                    gjVar.setCalcMandatoryInsets(znVar2.x9());
+                    gjVar.setDimBehind(false);
                     znVar2.A7(false);
-                    znVar2.showDialog(fjVar);
+                    znVar2.showDialog(gjVar);
                     break;
                 }
                 break;
@@ -188,9 +188,9 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
     public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
-                sk skVar = this.b.B0;
-                if (skVar != null) {
-                    skVar.callOnClick();
+                tk tkVar = this.b.B0;
+                if (tkVar != null) {
+                    tkVar.callOnClick();
                     break;
                 }
                 break;
@@ -230,15 +230,15 @@ public final /* synthetic */ class qe implements org.telegram.ui.Components.b60,
                 adapter.w.c();
                 adapter.I.clear();
                 adapter.l();
-                org.telegram.ui.Components.qa0 qa0Var = adapter.V;
-                if (qa0Var != null) {
-                    qa0Var.a(false);
+                org.telegram.ui.Components.ta0 ta0Var = adapter.V;
+                if (ta0Var != null) {
+                    ta0Var.a(false);
                     break;
                 }
                 break;
             case 15:
                 zn znVar3 = this.b;
-                znVar3.showDialog(new ul(znVar3, znVar3.getParentActivity(), znVar3));
+                znVar3.showDialog(new vl(znVar3, znVar3.getParentActivity(), znVar3));
                 break;
             case 16:
                 zn znVar4 = this.b;

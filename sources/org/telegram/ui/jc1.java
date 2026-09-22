@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class jc1 extends org.telegram.ui.Components.ul0 {
+public final class jc1 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public org.telegram.ui.ActionBar.i6 d;
     public ArrayList e;
@@ -20,7 +20,7 @@ public final class jc1 extends org.telegram.ui.Components.ul0 {
         l();
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -75,6 +75,6 @@ public final class jc1 extends org.telegram.ui.Components.ul0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        return i10 != 0 ? new org.telegram.ui.Components.fl0(new zb1(context)) : new org.telegram.ui.Components.fl0(new ThemeActivity.InnerAccentView(context));
+        return i10 != 0 ? new org.telegram.ui.Components.il0(new zb1(context)) : new org.telegram.ui.Components.il0(new ThemeActivity.InnerAccentView(context));
     }
 }

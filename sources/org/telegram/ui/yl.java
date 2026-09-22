@@ -2,96 +2,72 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class yl extends AnimatorListenerAdapter {
-    public final /* synthetic */ yn a;
+    public final /* synthetic */ boolean a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.j5 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ ai.p4 e;
+    public final /* synthetic */ org.telegram.ui.Components.v9 c;
+    public final /* synthetic */ yn d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.j5 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ zn h;
+    public final /* synthetic */ ai.p4 h;
+    public final /* synthetic */ zn n;
 
-    public yl(zn znVar, yn ynVar, boolean z10, org.telegram.ui.ActionBar.j5 j5Var, boolean z11, ai.p4 p4Var, boolean z12) {
-        this.h = znVar;
-        this.a = ynVar;
-        this.b = z10;
-        this.c = j5Var;
-        this.d = z11;
-        this.e = p4Var;
+    public yl(zn znVar, boolean z10, boolean z11, org.telegram.ui.Components.v9 v9Var, yn ynVar, org.telegram.ui.ActionBar.j5 j5Var, boolean z12, ai.p4 p4Var) {
+        this.n = znVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = v9Var;
+        this.d = ynVar;
+        this.e = j5Var;
         this.f = z12;
+        this.h = p4Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        zn znVar = this.n;
+        znVar.H2[1] = null;
+        znVar.B2[1].setTranslationY(0.0f);
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        zn znVar = this.h;
-        if (znVar.F2.getTag() != null) {
-            znVar.F2.setVisibility(4);
-            int G8 = znVar.G8();
-            znVar.F2.a(Math.min(G8 - 1, Math.max(1, G8 - znVar.M4[0])), false);
-        } else {
-            znVar.F2.setAlpha(1.0f);
+        AnimatorSet[] animatorSetArr = this.n.H2;
+        if (animator.equals(animatorSetArr[1])) {
+            org.telegram.ui.Components.v9 v9Var = this.c;
+            boolean z10 = this.b;
+            boolean z11 = this.a;
+            if (!z11 && !z10 && v9Var == null) {
+                animatorSetArr[1] = null;
+                return;
+            }
+            animatorSetArr[1] = new AnimatorSet();
+            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.qr.h);
+            animatorSetArr[1].setDuration(360L);
+            ArrayList arrayList = new ArrayList();
+            if (z11) {
+                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<yn, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (z10) {
+                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.j5, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (this.f) {
+                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.p4, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (v9Var != null) {
+                arrayList.add(ObjectAnimator.ofFloat(v9Var, (Property<org.telegram.ui.Components.v9, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            animatorSetArr[1].addListener(new t4(this, 20));
+            animatorSetArr[1].playTogether(arrayList);
+            animatorSetArr[1].start();
         }
-        znVar.F2.setTranslationY(0.0f);
-        znVar.D2[0].setTranslationX(0.0f);
-        znVar.D2[1].setTranslationX(0.0f);
-        znVar.F2.setTranslationX(znVar.G2 + 0.0f);
-        yn ynVar = this.a;
-        ynVar.setTranslationY(0.0f);
-        boolean z10 = this.b;
-        if (!z10) {
-            ynVar.setTranslationY(0.0f);
-        }
-        org.telegram.ui.ActionBar.j5 j5Var = this.c;
-        if (!z10) {
-            j5Var.setTranslationY(0.0f);
-        }
-        boolean z11 = this.d;
-        ai.p4 p4Var = this.e;
-        if (!z11) {
-            p4Var.setTranslationY(0.0f);
-        }
-        znVar.C2[0].setTranslationX(0.0f);
-        znVar.C2[1].setTranslationX(0.0f);
-        znVar.B2[1].setAlpha(1.0f);
-        znVar.B2[1].setScaleX(1.0f);
-        znVar.B2[1].setScaleY(1.0f);
-        znVar.B2[0].setAlpha(1.0f);
-        znVar.B2[0].setScaleX(1.0f);
-        znVar.B2[0].setScaleY(1.0f);
-        org.telegram.ui.ActionBar.j5[] j5VarArr = znVar.D2;
-        org.telegram.ui.ActionBar.j5 j5Var2 = j5VarArr[0];
-        j5VarArr[1] = j5Var2;
-        j5VarArr[0] = j5Var;
-        j5Var2.setVisibility(4);
-        ai.p4[] p4VarArr = znVar.E2;
-        ai.p4 p4Var2 = p4VarArr[0];
-        p4VarArr[1] = p4Var2;
-        p4VarArr[0] = p4Var;
-        p4Var2.setVisibility(4);
-        yn[] ynVarArr = znVar.C2;
-        yn ynVar2 = ynVarArr[0];
-        if (ynVar != ynVar2) {
-            ynVarArr[1] = ynVar2;
-            ynVarArr[0] = ynVar;
-            ynVar2.setVisibility(4);
-        }
-        if (this.f) {
-            znVar.B2[1].setImageBitmap(null);
-            znVar.B2[1].setVisibility(4);
-        }
-        org.telegram.ui.Components.v9[] v9VarArr = znVar.B2;
-        org.telegram.ui.Components.v9 v9Var = v9VarArr[1];
-        org.telegram.ui.Components.v9 v9Var2 = v9VarArr[0];
-        v9VarArr[1] = v9Var2;
-        v9VarArr[0] = v9Var;
-        v9Var2.setAlpha(1.0f);
-        znVar.B2[1].setScaleX(1.0f);
-        znVar.B2[1].setScaleY(1.0f);
-        znVar.B2[1].setVisibility(4);
-        znVar.H2[0] = null;
-        znVar.A2 = false;
     }
 }

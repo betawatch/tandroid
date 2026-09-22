@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.rk;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout {
     public final ImageView a;
@@ -37,7 +37,7 @@ public final class c extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         this.h = 1.0f;
-        w7.b6.a(this);
+        w7.a6.a(this);
         org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true, false);
         this.b = n6Var;
         n6Var.r(-9866632);

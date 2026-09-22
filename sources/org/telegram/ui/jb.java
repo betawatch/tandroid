@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jb extends sb {
     public final hh.l x0;
@@ -23,10 +23,10 @@ public final class jb extends sb {
         this.x0 = new hh.l();
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void U(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.kc0) {
-            ((org.telegram.ui.Components.kc0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.nc0) {
+            ((org.telegram.ui.Components.nc0) drawable).p();
         }
         hh.l lVar = this.x0;
         fh.a c10 = lVar.c(drawable);
@@ -53,7 +53,7 @@ public final class jb extends sb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -71,7 +71,7 @@ public final class jb extends sb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -187,7 +187,7 @@ public final class jb extends sb {
         vb vbVar = this.y0;
         fh.a aVar = vbVar.a.a;
         if (aVar instanceof fh.b) {
-            ((fh.b) aVar).c(size, size2);
+            ((fh.b) aVar).b(size, size2);
         }
         setMeasuredDimension(size, size2);
         int paddingTop = size2 - getPaddingTop();

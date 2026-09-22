@@ -1,70 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ra0 extends org.telegram.ui.tu0 {
-    public final /* synthetic */ va0 a;
+public final class ra0 extends nz {
+    public final wv0 X;
+    public final /* synthetic */ ya0 Y;
 
-    public ra0(va0 va0Var) {
-        this.a = va0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ra0(ya0 ya0Var) {
+        super(100, false);
+        this.Y = ya0Var;
+        this.X = new wv0();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            va0 va0Var = this.a;
-            if (i10 < va0Var.P.size()) {
-                int childCount = va0Var.getListView().getChildCount();
-                Object obj = va0Var.P.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = va0Var.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.f2) {
-                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
-                        if (f2Var.getResult() == obj) {
-                            imageReceiver = f2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.dv0 dv0Var = new org.telegram.ui.dv0();
-                                dv0Var.b = iArr[0];
-                                dv0Var.c = iArr[1];
-                                dv0Var.d = va0Var.getListView();
-                                dv0Var.a = imageReceiver;
-                                dv0Var.e = imageReceiver.getBitmapSafe();
-                                dv0Var.h = imageReceiver.getRoundRadius(true);
-                                return dv0Var;
-                            }
-                        }
+    @Override // s4.o0
+    public final int A() {
+        ya0 ya0Var = this.Y;
+        return (ya0Var.f.I() == null && ya0Var.f.U == null) ? B() : B() - 1;
+    }
+
+    @Override // org.telegram.ui.Components.nz
+    public final wv0 D1(int i10) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        wv0 wv0Var = this.X;
+        int i11 = 0;
+        wv0Var.c = false;
+        ya0 ya0Var = this.Y;
+        if (i10 == 0) {
+            wv0Var.a = this.m;
+            wv0Var.b = ya0Var.e.h;
+            wv0Var.c = true;
+            return wv0Var;
+        }
+        int i12 = i10 - 1;
+        if (ya0Var.f.I() == null && ya0Var.f.U == null) {
+            i10 = i12;
+        }
+        wv0Var.a = 0.0f;
+        wv0Var.b = 0.0f;
+        Object J = ya0Var.f.J(i10);
+        if (J instanceof TLRPC.BotInlineResult) {
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
+            TLRPC.Document document = botInlineResult.document;
+            if (document != null) {
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+                wv0Var.a = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.w : 100.0f;
+                wv0Var.b = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.h : 100.0f;
+                while (i11 < botInlineResult.document.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i11);
+                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                        wv0Var.a = documentAttribute.w;
+                        wv0Var.b = documentAttribute.h;
+                        break;
                     }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
+                    i11++;
+                }
+            } else if (botInlineResult.content != null) {
+                while (i11 < botInlineResult.content.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i11);
+                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        wv0Var.a = documentAttribute2.w;
+                        wv0Var.b = documentAttribute2.h;
+                        break;
                     }
+                    i11++;
+                }
+            } else if (botInlineResult.thumb != null) {
+                while (i11 < botInlineResult.thumb.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i11);
+                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        wv0Var.a = documentAttribute3.w;
+                        wv0Var.b = documentAttribute3.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else {
+                TLRPC.Photo photo = botInlineResult.photo;
+                if (photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize())) != null) {
+                    wv0Var.a = closestPhotoSizeWithSize.w;
+                    wv0Var.b = closestPhotoSizeWithSize.h;
                 }
             }
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            va0 va0Var = this.a;
-            if (i10 >= va0Var.P.size()) {
-                return;
-            }
-            va0Var.x.f((TLRPC.BotInlineResult) va0Var.P.get(i10), z10, i11);
-        }
+        return wv0Var;
     }
 }

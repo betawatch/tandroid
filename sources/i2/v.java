@@ -7,12 +7,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.bd0;
+import org.telegram.ui.Components.jl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements e2.m, d9.e, gl0, yc0, a2 {
+public final /* synthetic */ class v implements e2.m, d9.e, jl0, bd0, a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class v implements e2.m, d9.e, gl0, yc0, a2 {
         return Integer.valueOf(this.b);
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public String e(int i10) {
         int i11 = this.a;
         int i12 = this.b;
@@ -64,7 +64,7 @@ public final /* synthetic */ class v implements e2.m, d9.e, gl0, yc0, a2 {
         MessagesController.getInstance(this.b).performLogout(1);
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.jl0
     public int run() {
         return this.b;
     }

@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c0 implements ly {
     public final /* synthetic */ n0 a;
@@ -151,7 +151,7 @@ public final class c0 implements ly {
     }
 
     @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(s51 s51Var) {
+    public final /* synthetic */ void o(u51 u51Var) {
     }
 
     @Override // org.telegram.ui.Components.ly

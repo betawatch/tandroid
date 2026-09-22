@@ -4,16 +4,16 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c9 extends AnimatorListenerAdapter {
     public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ org.telegram.ui.Components.k90 b;
+    public final /* synthetic */ org.telegram.ui.Components.n90 b;
     public final /* synthetic */ String c;
 
-    public c9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.k90 k90Var, String str) {
+    public c9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.n90 n90Var, String str) {
         this.a = atomicBoolean;
-        this.b = k90Var;
+        this.b = n90Var;
         this.c = str;
     }
 

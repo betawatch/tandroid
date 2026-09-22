@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class r2 {
     public final s2 a;
@@ -126,11 +126,11 @@ public final class r2 {
                 if (i11 > 0) {
                     Typeface bold = AndroidUtilities.bold();
                     int i15 = org.telegram.ui.ActionBar.j6.X8;
-                    t51 t51Var = new t51();
-                    t51Var.a = bold;
-                    t51Var.c = i15;
-                    t51Var.b = org.telegram.ui.ActionBar.j6.w0(null, i15, false);
-                    spannableStringBuilder.setSpan(t51Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
+                    v51 v51Var = new v51();
+                    v51Var.a = bold;
+                    v51Var.c = i15;
+                    v51Var.b = org.telegram.ui.ActionBar.j6.w0(null, i15, false);
+                    spannableStringBuilder.setSpan(v51Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
                 }
                 r2Var.g = spannableStringBuilder;
             }

@@ -7,14 +7,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class kv extends org.telegram.ui.Components.ab {
     public final jv X;
     public final s6 Y;
     public final m5.e Z;
     public l6 a0;
-    public final org.telegram.ui.Components.ny0[] b0;
+    public final org.telegram.ui.Components.py0[] b0;
     public final org.telegram.ui.Cells.a2[] c0;
     public final LinearLayout d0;
     public final w6 e0;
@@ -27,7 +27,7 @@ public final class kv extends org.telegram.ui.Components.ab {
         int i10;
         long j3;
         long j10;
-        this.b0 = new org.telegram.ui.Components.ny0[8];
+        this.b0 = new org.telegram.ui.Components.py0[8];
         this.c0 = new org.telegram.ui.Cells.a2[8];
         this.Z = eVar;
         this.Y = s6Var;
@@ -85,20 +85,20 @@ public final class kv extends org.telegram.ui.Components.ab {
                 j10 = 0;
             }
             if (j10 > j3) {
-                org.telegram.ui.Components.ny0[] ny0VarArr = this.b0;
-                org.telegram.ui.Components.ny0 ny0Var = new org.telegram.ui.Components.ny0();
+                org.telegram.ui.Components.py0[] py0VarArr = this.b0;
+                org.telegram.ui.Components.py0 py0Var = new org.telegram.ui.Components.py0();
                 Paint paint = new Paint(1);
-                ny0Var.b = paint;
-                ny0Var.c = true;
-                ny0Var.d = false;
+                py0Var.b = paint;
+                py0Var.c = true;
+                py0Var.d = false;
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(AndroidUtilities.dp(5.0f));
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStrokeJoin(Paint.Join.ROUND);
-                ny0VarArr[i11] = ny0Var;
-                org.telegram.ui.Components.ny0 ny0Var2 = this.b0[i11];
-                ny0Var2.e = j10;
-                ny0Var2.a = i13;
+                py0VarArr[i11] = py0Var;
+                org.telegram.ui.Components.py0 py0Var2 = this.b0[i11];
+                py0Var2.e = j10;
+                py0Var2.a = i13;
                 org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(4, 21, parentActivity, null, false);
                 a2Var2.setTag(Integer.valueOf(i11));
                 a2Var2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
@@ -123,13 +123,13 @@ public final class kv extends org.telegram.ui.Components.ab {
             a2Var.setNeedDivider(false);
         }
         jv jvVar2 = this.X;
-        org.telegram.ui.Components.ny0[] ny0VarArr2 = this.b0;
-        jvVar2.b = ny0VarArr2;
+        org.telegram.ui.Components.py0[] py0VarArr2 = this.b0;
+        jvVar2.b = py0VarArr2;
         jvVar2.F = bVar;
         jvVar2.invalidate();
-        jvVar2.c = new float[ny0VarArr2.length];
-        jvVar2.d = new float[ny0VarArr2.length];
-        jvVar2.e = new float[ny0VarArr2.length];
+        jvVar2.c = new float[py0VarArr2.length];
+        jvVar2.d = new float[py0VarArr2.length];
+        jvVar2.e = new float[py0VarArr2.length];
         jvVar2.c(false);
         if (jvVar2.y > 1) {
             jvVar2.f = 0.0f;
@@ -154,11 +154,11 @@ public final class kv extends org.telegram.ui.Components.ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final void G(org.telegram.ui.Components.aw0 aw0Var) {
+    public final void F(org.telegram.ui.Components.cw0 cw0Var) {
         this.d.j(new h3(this, 9));
         if (this.s != null) {
             R();
-            aw0Var.addView(this.a0, w7.y5.e(-1, 72, 80));
+            cw0Var.addView(this.a0, w7.y5.e(-1, 72, 80));
         }
     }
 
@@ -173,7 +173,7 @@ public final class kv extends org.telegram.ui.Components.ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
         return new iv(this);
     }
 

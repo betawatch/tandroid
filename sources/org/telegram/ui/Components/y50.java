@@ -1,19 +1,55 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
-/* loaded from: classes3.dex */
-public final class y50 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final long e;
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.TextureView;
 
-    public y50(long j3, int i10, int i11, boolean z10, long j10) {
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = j3;
-        this.e = j10;
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* loaded from: classes3.dex */
+public final class y50 extends TextureView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y50(Object obj, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        ki.p0 p0Var;
+        switch (this.a) {
+            case 0:
+                b60 b60Var = (b60) this.b;
+                if (!b60Var.x0 && (p0Var = b60Var.O) != null && p0Var.a == 3) {
+                    b60Var.x0 = true;
+                    try {
+                        b60Var.v0 = SystemClock.elapsedRealtimeNanos();
+                        b60Var.v();
+                    } finally {
+                        b60Var.x0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                vh.f fVar = (vh.f) this.b;
+                setMeasuredDimension(fVar.g, fVar.h);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

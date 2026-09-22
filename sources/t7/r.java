@@ -15,7 +15,7 @@ import z7.sf;
 import z7.uf;
 import z7.wf;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r extends b2.g {
     public final /* synthetic */ int b;
@@ -36,8 +36,8 @@ public final class r extends b2.g {
                 ((o) obj).getClass();
                 qb.b bVar = new qb.b(22);
                 j5.a aVar = j5.a.e;
-                l5.s.b(b10);
-                l5.s.a().c(aVar);
+                l5.t.b(b10);
+                l5.t.a().c(aVar);
                 j5.a.d.contains(new i5.c("json"));
                 arrayList.add(bVar);
                 return new q(c10.b(), (qb.k) c10.a(qb.k.class));

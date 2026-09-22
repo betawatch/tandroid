@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b9 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class b9 implements Runnable {
             case 5:
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
-                a4.m mVar = FirebaseMessaging.l;
+                android.support.v4.media.c cVar = FirebaseMessaging.l;
                 firebaseMessaging.getClass();
                 try {
                     taskCompletionSource.setResult(firebaseMessaging.a());
@@ -135,21 +135,21 @@ public final /* synthetic */ class b9 implements Runnable {
                 return;
             case 10:
                 e1.d dVar2 = (e1.d) this.b;
-                v0.c cVar = (v0.c) this.c;
+                v0.c cVar2 = (v0.c) this.c;
                 v0.i iVar2 = dVar2.f;
                 if (iVar2 != null) {
-                    iVar2.onResult(cVar);
+                    iVar2.onResult(cVar2);
                     return;
                 } else {
                     kotlin.jvm.internal.i.h("callback");
                     throw null;
                 }
             case 11:
-                e2.c cVar2 = (e2.c) this.b;
-                Object apply = ((i2.v) this.c).apply(cVar2.f);
-                cVar2.f = apply;
-                e2.b bVar = new e2.b(cVar2, apply, i11);
-                e2.z zVar = (e2.z) cVar2.c;
+                e2.c cVar3 = (e2.c) this.b;
+                Object apply = ((i2.v) this.c).apply(cVar3.f);
+                cVar3.f = apply;
+                e2.b bVar = new e2.b(cVar3, apply, i11);
+                e2.z zVar = (e2.z) cVar3.c;
                 if (zVar.a.getLooper().getThread().isAlive()) {
                     zVar.c(bVar);
                     return;
@@ -333,15 +333,15 @@ public final /* synthetic */ class b9 implements Runnable {
                 ((fi.k0) this.b).s.presentFragment(zn.R9(((gi.f) this.c).b.id));
                 return;
             case 25:
-                gg.c cVar3 = (gg.c) this.b;
+                gg.c cVar4 = (gg.c) this.b;
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) ((TLObject) this.c);
-                int i13 = cVar3.G;
+                int i13 = cVar4.G;
                 MessagesController.getInstance(i13).putUsers(tL_contacts_resolvedPeer.users, false);
                 MessagesController.getInstance(i13).putChats(tL_contacts_resolvedPeer.chats, false);
                 MessagesStorage.getInstance(i13).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-                Location location = cVar3.v;
-                cVar3.v = null;
-                cVar3.H(cVar3.w, location, false);
+                Location location = cVar4.v;
+                cVar4.v = null;
+                cVar4.H(cVar4.w, location, false);
                 return;
             case 26:
                 gg.i0 i0Var = (gg.i0) this.b;

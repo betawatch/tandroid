@@ -18,7 +18,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.xj0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -299,7 +299,7 @@ public final class t1 {
         RichMessageLayout richMessageLayout;
         org.telegram.ui.Components.w5 w5Var;
         u1 u1Var = this.m3;
-        zg.p0 p0Var = u1Var.N;
+        zg.q0 q0Var = u1Var.N;
         ArrayList arrayList = u1Var.o7;
         boolean z13 = false;
         if (!this.v0) {
@@ -740,13 +740,13 @@ public final class t1 {
                         this.G2 = i13;
                     }
                     u1Var.t4();
-                    if (p0Var.a()) {
+                    if (q0Var.a()) {
                         z10 = true;
                     }
                     if (u1Var.y7.isRoundVideo()) {
                         float dp2 = u1Var.M8 - AndroidUtilities.dp(28 - (u1Var.J ? 2 : 0));
-                        if (!p0Var.s) {
-                            dp2 -= p0Var.p;
+                        if (!q0Var.s) {
+                            dp2 -= q0Var.p;
                         }
                         float f16 = this.q;
                         if (dp2 != f16) {
@@ -782,7 +782,7 @@ public final class t1 {
                 this.B2 = this.C2;
                 z10 = true;
                 u1Var.t4();
-                if (p0Var.a()) {
+                if (q0Var.a()) {
                 }
                 if (u1Var.y7.isRoundVideo()) {
                 }
@@ -838,7 +838,7 @@ public final class t1 {
         if (i13 != u1Var.Lc) {
         }
         u1Var.t4();
-        if (p0Var.a()) {
+        if (q0Var.a()) {
         }
         if (u1Var.y7.isRoundVideo()) {
         }
@@ -1137,18 +1137,18 @@ public final class t1 {
         staticLayoutArr[0] = null;
         staticLayoutArr[1] = null;
         this.p = false;
-        zg.p0 p0Var = u1Var.N;
-        ArrayList arrayList = p0Var.v;
-        ArrayList arrayList2 = p0Var.w;
+        zg.q0 q0Var = u1Var.N;
+        ArrayList arrayList = q0Var.v;
+        ArrayList arrayList2 = q0Var.w;
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((zg.m0) arrayList2.get(i10)).b();
+            ((zg.n0) arrayList2.get(i10)).b();
         }
         arrayList2.clear();
-        p0Var.j = false;
-        p0Var.k = false;
-        p0Var.l = false;
+        q0Var.j = false;
+        q0Var.k = false;
+        q0Var.l = false;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            ((zg.m0) arrayList.get(i11)).c = 0;
+            ((zg.n0) arrayList.get(i11)).c = 0;
         }
         this.k3 = null;
         org.telegram.ui.Components.y5.release(u1Var, this.l3);

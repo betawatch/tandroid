@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -116,11 +116,11 @@ public final /* synthetic */ class gh implements Runnable {
                 }
                 break;
             case 9:
-                ((zn) obj2).X0.removeView((org.telegram.ui.Components.pk0) obj);
+                ((zn) obj2).X0.removeView((org.telegram.ui.Components.sk0) obj);
                 break;
             case 10:
                 MessageObject messageObject2 = (MessageObject) obj;
-                zn znVar5 = ((vi) obj2).s;
+                zn znVar5 = ((wi) obj2).s;
                 MessageObject messageObject3 = (MessageObject) znVar5.o6[0].get(messageObject2.getId());
                 if (messageObject3 != null && messageObject3 != messageObject2) {
                     MessageObject messageObject4 = (MessageObject) znVar5.o6[0].get(messageObject2.getId());
@@ -128,7 +128,7 @@ public final /* synthetic */ class gh implements Runnable {
                     messageObject2 = messageObject4;
                 }
                 znVar5.qc(messageObject2, true);
-                zg.k0.f();
+                zg.l0.f();
                 break;
             case 11:
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) obj;
@@ -203,11 +203,11 @@ public final /* synthetic */ class gh implements Runnable {
                 break;
             case 19:
                 ((qp) obj2).x.d.P = false;
-                ((org.telegram.ui.Components.q80) obj).run();
+                ((org.telegram.ui.Components.t80) obj).run();
                 break;
             case 20:
                 ((qp) obj2).x.d.O = false;
-                ((org.telegram.ui.Components.r80) obj).run();
+                ((org.telegram.ui.Components.u80) obj).run();
                 break;
             case 21:
                 up upVar2 = ((qp) obj2).x.d;

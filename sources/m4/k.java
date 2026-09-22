@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final /* synthetic */ int a = 0;
@@ -198,12 +198,12 @@ public abstract class k {
     }
 
     public static int e(b2.e eVar) {
-        ka.c bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(4) : new ka.c(4);
+        k2.e bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b() : new k2.e();
         AudioAttributes.Builder builder = (AudioAttributes.Builder) bVar.b;
         builder.setContentType(eVar.a);
         builder.setFlags(eVar.b);
-        bVar.n0(eVar.c);
-        AudioAttributes audioAttributes = bVar.J().a;
+        bVar.U(eVar.c);
+        AudioAttributes audioAttributes = bVar.g().a;
         audioAttributes.getClass();
         int flags = audioAttributes.getFlags();
         int usage = audioAttributes.getUsage();

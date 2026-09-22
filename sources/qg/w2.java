@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 import ci.nd;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.rk;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.uk0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class w2 extends j {
     public final t0 q0;
@@ -51,16 +51,16 @@ public final class w2 extends j {
     }
 
     @Override // qg.j
-    public rk0 getSelectionBounds() {
+    public uk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new rk0();
+            return new uk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float w10 = rk.w(dp, 2.0f, getPositionX(), scaleX);
-        return new rk0(w10, rk.w(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + w10) - w10, dp2 * scaleX);
+        return new uk0(w10, rk.w(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + w10) - w10, dp2 * scaleX);
     }
 
     @Override // qg.j

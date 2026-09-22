@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class y extends ab {
     public final FrameLayout X;
@@ -36,7 +36,7 @@ public final class y extends ab {
     public TL_aicompose.TL_aiComposeTone j0;
     public e k0;
     public e l0;
-    public k61 m0;
+    public m61 m0;
 
     public y(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context, null, true, false, 2, f6Var);
@@ -47,7 +47,7 @@ public final class y extends ab {
         imageView.setColorFilter(getThemedColor(i10));
         imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.l1(0.1f, getThemedColor(i10)), 1, -1));
         this.e.addView(imageView, w7.y5.d(54, 54.0f, 85, 0.0f, 0.0f, 8.0f, 0.0f));
-        w7.b6.b(imageView, 0.1f, 1.5f);
+        w7.a6.b(imageView, 0.1f, 1.5f);
         final int i11 = 0;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.r
             public final /* synthetic */ y b;
@@ -76,7 +76,7 @@ public final class y extends ab {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.Y = frameLayout2;
         frameLayout2.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(100.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var)));
-        w7.b6.a(frameLayout2);
+        w7.a6.a(frameLayout2);
         frameLayout.addView(frameLayout2, w7.y5.e(100, 100, 17));
         v9 v9Var = new v9(context);
         this.Z = v9Var;
@@ -157,9 +157,9 @@ public final class y extends ab {
         int i14 = org.telegram.ui.ActionBar.j6.a7;
         this.behindKeyboardColorKey = i14;
         setBackgroundColor(getThemedColor(i14));
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i15 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(66.0f));
+        yl0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
         this.d.q1();
         this.d.setOnItemClickListener(new ai.o6(8, this, f6Var));
@@ -383,11 +383,11 @@ public final class y extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
-        this.m0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
+        this.m0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

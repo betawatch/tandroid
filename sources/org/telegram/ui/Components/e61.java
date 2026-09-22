@@ -1,34 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e61 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UndoView b;
+public final class e61 extends URLSpan {
+    public final e11 a;
+    public boolean b;
 
-    public /* synthetic */ e61(UndoView undoView, int i10) {
-        this.a = i10;
-        this.b = undoView;
+    public e61(String str, e11 e11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = e11Var;
     }
 
-    @Override // android.view.View.OnClickListener
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
-        int i10 = this.a;
-        UndoView undoView = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = UndoView.e0;
-                if (undoView.a()) {
-                    undoView.e(1, false);
-                    break;
-                }
-                break;
-            default:
-                int i12 = UndoView.e0;
-                undoView.e(1, false);
-                break;
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
+        }
+        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        e11 e11Var = this.a;
+        if (e11Var != null) {
+            e11Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
         }
     }
 }

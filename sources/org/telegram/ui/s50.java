@@ -11,7 +11,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class s50 extends View {
     public final /* synthetic */ int a;
@@ -170,14 +170,14 @@ public final class s50 extends View {
             case 7:
                 f31 f31Var = (f31) this.b;
                 canvas.drawColor(f31Var.K ? -15590870 : -6569073);
-                org.telegram.ui.Components.kc0 kc0Var = f31Var.n;
-                if (kc0Var != null) {
-                    kc0Var.setBounds(0, 0, getWidth(), getHeight());
+                org.telegram.ui.Components.nc0 nc0Var = f31Var.n;
+                if (nc0Var != null) {
+                    nc0Var.setBounds(0, 0, getWidth(), getHeight());
                 }
                 f31Var.h.setBounds(0, 0, getWidth(), getHeight());
-                org.telegram.ui.Components.kc0 kc0Var2 = f31Var.n;
-                if (kc0Var2 != null) {
-                    kc0Var2.draw(canvas);
+                org.telegram.ui.Components.nc0 nc0Var2 = f31Var.n;
+                if (nc0Var2 != null) {
+                    nc0Var2.draw(canvas);
                 }
                 f31Var.h.draw(canvas);
                 super.onDraw(canvas);

@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.g21;
+import org.telegram.ui.Components.i21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ab0;
 import org.telegram.ui.nq;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -147,7 +147,7 @@ public final /* synthetic */ class m8 implements Runnable {
                     ((ActionBarLayout) launchActivity.O()).Q(nqVar, false);
                     break;
                 } else {
-                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, uyVar, true, new g21(launchActivity, i11, chat, uyVar, 3), null);
+                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, uyVar, true, new i21(launchActivity, i11, chat, uyVar, 3), null);
                     break;
                 }
         }

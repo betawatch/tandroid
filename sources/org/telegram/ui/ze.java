@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ze implements Runnable {
     public final /* synthetic */ int a;
@@ -90,16 +90,16 @@ public final /* synthetic */ class ze implements Runnable {
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj4;
                 String str = (String) obj3;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) obj2;
-                org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) obj;
+                org.telegram.ui.Components.om0 om0Var = (org.telegram.ui.Components.om0) obj;
                 znVar.getClass();
-                ((org.telegram.ui.Components.v70) obj6).n0 = true;
+                ((org.telegram.ui.Components.y70) obj6).n0 = true;
                 if (!TextUtils.isEmpty(messageObject.caption)) {
                     str = u1Var.getMessageObject().caption.toString();
                 } else if (!TextUtils.isEmpty(messageObject.messageText)) {
                     str = u1Var.getMessageObject().messageText.toString();
                 }
                 AndroidUtilities.createCalendarEvent(znVar.getParentActivity(), tL_messageEntityFormattedDate.date * 1000, str.length() > 21 ? str.substring(0, 21) + "..." : str, str, (tL_messageEntityFormattedDate.long_time || tL_messageEntityFormattedDate.short_time) ? false : true);
-                mm0Var.dismiss();
+                om0Var.dismiss();
                 break;
             case 1:
                 zn znVar2 = (zn) obj7;
@@ -180,7 +180,7 @@ public final /* synthetic */ class ze implements Runnable {
                 String str4 = (String) obj3;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj4;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj2;
-                org.telegram.ui.Components.vn0 vn0Var = (org.telegram.ui.Components.vn0) obj;
+                org.telegram.ui.Components.xn0 xn0Var = (org.telegram.ui.Components.xn0) obj;
                 if (((c5.h) obj6).a == 0 && list != null && !list.isEmpty()) {
                     for (Purchase purchase : list) {
                         if (purchase.b().contains(str4)) {
@@ -190,12 +190,12 @@ public final /* synthetic */ class ze implements Runnable {
                             tL_dataJSON.data = purchase.a;
                             tL_inputStorePaymentAuthCode.restore = true;
                             tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentAuthCode;
-                            hg0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new ci.kd(hg0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore, vn0Var, 8), 74);
+                            hg0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new ci.kd(hg0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore, xn0Var, 8), 74);
                             break;
                         }
                     }
                 }
-                vn0Var.run();
+                xn0Var.run();
                 break;
             case 5:
                 xg0 xg0Var = (xg0) obj7;
@@ -279,7 +279,7 @@ public final /* synthetic */ class ze implements Runnable {
                 } else {
                     pn0Var.M1(LocaleController.getString(R.string.PassportEmail), tL_error5.text);
                     if (dn0Var != null) {
-                        dn0Var.c(tL_error5.text, str7);
+                        dn0Var.b(tL_error5.text, str7);
                         break;
                     }
                 }
@@ -438,26 +438,26 @@ public final /* synthetic */ class ze implements Runnable {
             case 12:
                 yh.u5 u5Var2 = (yh.u5) obj7;
                 List list2 = (List) obj6;
-                org.telegram.ui.Components.l80 l80Var = (org.telegram.ui.Components.l80) obj5;
+                org.telegram.ui.Components.o80 o80Var = (org.telegram.ui.Components.o80) obj5;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj4;
                 TL_stars.TL_starsGiftOption tL_starsGiftOption = (TL_stars.TL_starsGiftOption) obj3;
                 c5.h hVar2 = (c5.h) obj2;
                 Activity activity = (Activity) obj;
                 if (list2.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new yh.m4(l80Var, i18));
+                    AndroidUtilities.runOnUIThread(new yh.m4(o80Var, i18));
                     break;
                 } else {
-                    c5.o oVar = (c5.o) list2.get(0);
-                    c5.k a2 = oVar.a();
+                    c5.n nVar = (c5.n) list2.get(0);
+                    c5.k a2 = nVar.a();
                     if (a2 == null) {
-                        AndroidUtilities.runOnUIThread(new yh.m4(l80Var, i17));
+                        AndroidUtilities.runOnUIThread(new yh.m4(o80Var, i17));
                         break;
                     } else {
                         tL_inputStorePaymentStarsGift.currency = a2.c;
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(u5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new mh1(oVar, hVar2, l80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
+                        ConnectionsManager.getInstance(u5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new mh1(nVar, hVar2, o80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
                         break;
                     }
                 }
@@ -467,8 +467,8 @@ public final /* synthetic */ class ze implements Runnable {
                 int[] iArr2 = (int[]) obj5;
                 RectF rectF = (RectF) obj4;
                 View view = (View) obj3;
-                zg.p0 p0Var = (zg.p0) obj2;
-                zg.m0 m0Var = (zg.m0) obj;
+                zg.q0 q0Var = (zg.q0) obj2;
+                zg.n0 n0Var = (zg.n0) obj;
                 if (o8Var.d) {
                     ai.h1 h1Var = h1VarArr[0];
                     if (h1Var == null) {
@@ -490,7 +490,7 @@ public final /* synthetic */ class ze implements Runnable {
                     }
                 } else {
                     view.getLocationInWindow(iArr2);
-                    rectF.set(AndroidUtilities.dp(4.0f) + iArr2[0] + p0Var.c + m0Var.x, ((m0Var.B - AndroidUtilities.dp(22.0f)) / 2.0f) + iArr2[1] + p0Var.d + m0Var.y, AndroidUtilities.dp(26.0f) + iArr2[0] + p0Var.c + m0Var.x, ((AndroidUtilities.dp(22.0f) + m0Var.B) / 2.0f) + iArr2[1] + p0Var.d + m0Var.y);
+                    rectF.set(AndroidUtilities.dp(4.0f) + iArr2[0] + q0Var.c + n0Var.x, ((n0Var.B - AndroidUtilities.dp(22.0f)) / 2.0f) + iArr2[1] + q0Var.d + n0Var.y, AndroidUtilities.dp(26.0f) + iArr2[0] + q0Var.c + n0Var.x, ((AndroidUtilities.dp(22.0f) + n0Var.B) / 2.0f) + iArr2[1] + q0Var.d + n0Var.y);
                     break;
                 }
                 break;

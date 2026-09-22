@@ -1,6 +1,5 @@
 package bb;
 
-import a6.m;
 import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
@@ -8,12 +7,12 @@ import v7.u7;
 import w7.r;
 import za.b0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
     public static final m1.c d = r.a(za.r.b);
-    public final m a;
+    public final pb.c a;
     public final d b;
 
     public h(k9.h hVar, id.h hVar2, id.h hVar3, qa.d dVar) {
@@ -22,11 +21,11 @@ public final class h {
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
         b0 b0Var = b0.a;
         za.b a2 = b0.a(hVar);
-        m mVar = new m(context);
+        pb.c cVar = new pb.c(context);
         aa.a aVar = new aa.a(a2, hVar2);
         c.getClass();
         d dVar2 = new d(hVar3, dVar, a2, aVar, d.a(context, f.a[0]));
-        this.a = mVar;
+        this.a = cVar;
         this.b = dVar2;
     }
 

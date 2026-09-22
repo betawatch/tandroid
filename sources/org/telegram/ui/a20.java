@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class a20 extends FrameLayout {
     public final /* synthetic */ FiltersSetupActivity E;
@@ -31,7 +31,7 @@ public final class a20 extends FrameLayout {
     public final ImageView h;
     public final org.telegram.ui.Components.j30 n;
     public boolean r;
-    public final org.telegram.ui.Components.o90 s;
+    public final org.telegram.ui.Components.r90 s;
     public boolean v;
     public float w;
     public MessagesController.DialogFilter x;
@@ -90,19 +90,19 @@ public final class a20 extends FrameLayout {
         boolean z11 = LocaleController.isRTL;
         addView(textView, w7.y5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 80.0f : 64.0f, 35.0f, z11 ? 64.0f : 80.0f, 0.0f));
         textView.setVisibility(8);
-        org.telegram.ui.Components.o90 o90Var = new org.telegram.ui.Components.o90();
-        this.s = o90Var;
-        o90Var.C = true;
-        o90Var.t = 2.0f;
+        org.telegram.ui.Components.r90 r90Var = new org.telegram.ui.Components.r90();
+        this.s = r90Var;
+        r90Var.C = true;
+        r90Var.t = 2.0f;
         int i12 = org.telegram.ui.ActionBar.j6.i6;
         int w03 = org.telegram.ui.ActionBar.j6.w0(null, i12, false);
-        o90Var.f(org.telegram.ui.ActionBar.j6.l1(0.4f, w03), org.telegram.ui.ActionBar.j6.l1(1.0f, w03), org.telegram.ui.ActionBar.j6.l1(0.9f, w03), org.telegram.ui.ActionBar.j6.l1(1.7f, w03));
+        r90Var.f(org.telegram.ui.ActionBar.j6.l1(0.4f, w03), org.telegram.ui.ActionBar.j6.l1(1.0f, w03), org.telegram.ui.ActionBar.j6.l1(0.9f, w03), org.telegram.ui.ActionBar.j6.l1(1.7f, w03));
         int dp = AndroidUtilities.dp(1.0f);
-        o90Var.w.setStrokeWidth(dp);
-        o90Var.j(40.0f);
+        r90Var.w.setStrokeWidth(dp);
+        r90Var.j(40.0f);
         org.telegram.ui.Components.j30 j30Var = new org.telegram.ui.Components.j30(this, context, dp, 1);
         this.n = j30Var;
-        o90Var.setCallback(j30Var);
+        r90Var.setCallback(j30Var);
         j30Var.setFocusable(false);
         j30Var.setScaleType(scaleType);
         j30Var.setBackground(org.telegram.ui.ActionBar.j6.f0(w03, 1, -1));

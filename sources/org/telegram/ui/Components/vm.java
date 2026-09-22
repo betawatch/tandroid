@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vm implements jl0 {
+public final /* synthetic */ class vm implements ml0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class vm implements jl0 {
         this.e = context;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         boolean z10;
         boolean z11;
@@ -46,14 +46,14 @@ public final /* synthetic */ class vm implements jl0 {
                 org.telegram.ui.ActionBar.f6 f6Var = this.b;
                 if (i10 == i11) {
                     th.f fVar = new th.f(unVar.getContext(), f6Var);
-                    fVar.k0 = new l.d(unVar);
+                    fVar.k0 = new l.d(unVar, 10);
                     ArrayList arrayList = unVar.P0;
                     fVar.c0 = null;
                     fVar.o0 = new HashSet(arrayList);
                     fVar.show();
                     break;
                 } else if (i10 == unVar.I0) {
-                    v70 F = v70.F(viVar.container, f6Var, view);
+                    y70 F = y70.F(viVar.container, f6Var, view);
                     int i12 = 0;
                     while (true) {
                         int[] iArr = unVar.T0;
@@ -65,7 +65,7 @@ public final /* synthetic */ class vm implements jl0 {
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            j21 a2 = j21.a(i13);
+                            l21 a2 = l21.a(i13);
                             int i14 = org.telegram.ui.ActionBar.j6.F8;
                             a2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i14, unVar.a), PorterDuff.Mode.SRC_IN));
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.j6.E8, new wm(unVar, i13, view, 0));

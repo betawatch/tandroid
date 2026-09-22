@@ -29,7 +29,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r implements y2.o {
     public final o a;
@@ -149,7 +149,7 @@ public final class r implements y2.o {
         String j10 = j(str, pattern, hashMap);
         byte[] decode = Base64.decode(j10.substring(j10.indexOf(44)), 0);
         UUID uuid2 = b2.i.e;
-        return new b2.n(uuid2, null, "video/mp4", w3.o.a(uuid2, null, decode));
+        return new b2.n(uuid2, null, "video/mp4", w3.n.a(uuid2, null, decode));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:223:0x08ec, code lost:

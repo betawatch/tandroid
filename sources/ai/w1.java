@@ -19,12 +19,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.rv0;
-import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, rv0, sv0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
+public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, tv0, uv0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w1(int i10) {
@@ -261,17 +261,17 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
                 aVar.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    aVar.j(eVar, byteArrayOutputStream);
+                    aVar.l(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
             case 20:
                 ca.a.b.getClass();
-                return z9.a.a.U((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
+                return z9.a.a.v((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
         }
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         m2 m2Var = (m2) obj;
         switch (this.a) {
@@ -290,7 +290,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         m2 m2Var = (m2) obj;
         switch (this.a) {

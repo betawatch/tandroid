@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class pm extends ViewGroup {
     public om E;
@@ -171,9 +171,9 @@ public final class pm extends ViewGroup {
             ArrayList arrayList2 = ((om) arrayList.get(i10)).h;
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                 nm nmVar = (nm) arrayList2.get(i11);
-                vh.g gVar = nmVar.s;
-                if (gVar != null) {
-                    gVar.b(nmVar.O.z);
+                vh.f fVar = nmVar.s;
+                if (fVar != null) {
+                    fVar.b(nmVar.O.z);
                     nmVar.s = null;
                 }
             }
@@ -469,7 +469,7 @@ public final class pm extends ViewGroup {
             } else {
                 if (omVar.u == null || omVar.v != j3) {
                     omVar.v = j3;
-                    omVar.u = new u01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    omVar.u = new w01(yh.w7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + omVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -160,7 +160,7 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                     com.google.android.gms.internal.clearcut.v0 v0Var = xo0Var.e;
                     v0Var.getClass();
                     com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
-                    e.c = new k2.u(jVar, 29);
+                    e.c = new k2.e(jVar, 28);
                     e.d = new k6.c[]{v8.p.b};
                     e.b = true;
                     e.a = 23707;

@@ -16,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pg0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.sg0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ma implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class ma implements View.OnClickListener {
             case 3:
                 boolean k10 = ocVar.X0.k();
                 ocVar.X0.x(-9982, k10);
-                ((pg0) ocVar.j1.c).a(!k10, true);
+                ((sg0) ocVar.j1.c).a(!k10, true);
                 break;
             case 4:
                 if (ocVar.B0 != null && !ocVar.S1) {

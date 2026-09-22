@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wy extends hx0 {
+public final class wy extends jx0 {
     public final /* synthetic */ xy A3;
     public final /* synthetic */ int z3;
 
@@ -16,12 +16,12 @@ public final class wy extends hx0 {
         this.z3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.jx0
     public final boolean B1() {
         return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.jx0
     public final void F1(int i10) {
         xw xwVar;
         ox oxVar;

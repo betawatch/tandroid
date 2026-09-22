@@ -1,53 +1,48 @@
 package c5;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.logging.Level;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m {
-    public final ArrayList a;
+    public final String a;
+    public final xa.c b;
 
-    public m(JSONArray jSONArray) {
+    public m(JSONObject jSONObject) {
+        jSONObject.optString("basePlanId");
+        jSONObject.optString("offerId").getClass();
+        this.a = jSONObject.getString("offerIdToken");
+        this.b = new xa.c(jSONObject.getJSONArray("pricingPhases"));
+        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
+        if (optJSONObject != null) {
+            optJSONObject.getInt("commitmentPaymentsCount");
+            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
+        }
+        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
+        if (optJSONObject2 != null) {
+            optJSONObject2.getString("productId");
+            optJSONObject2.optString("title");
+            optJSONObject2.optString("name");
+            optJSONObject2.optString("description");
+            optJSONObject2.optString("basePlanId");
+            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
+            if (optJSONObject3 != null) {
+                optJSONObject3.optString("billingPeriod");
+                optJSONObject3.optString("priceCurrencyCode");
+                optJSONObject3.optString("formattedPrice");
+                optJSONObject3.optLong("priceAmountMicros");
+                optJSONObject3.optInt("recurrenceMode");
+                optJSONObject3.optInt("billingCycleCount");
+            }
+        }
         ArrayList arrayList = new ArrayList();
-        if (jSONArray != null) {
-            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
-                if (optJSONObject != null) {
-                    arrayList.add(new l(optJSONObject));
-                }
+        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
+        if (optJSONArray != null) {
+            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                arrayList.add(optJSONArray.getString(i10));
             }
         }
-        this.a = arrayList;
-    }
-
-    public void a() {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (obj != null) {
-                throw new ClassCastException();
-            }
-            try {
-                throw null;
-            } catch (Exception e) {
-                yc.i.d.log(Level.WARNING, "could not delete file ", (Throwable) e);
-            }
-        }
-        arrayList.clear();
-    }
-
-    public m() {
-        File file = new File(System.getProperty("java.io.tmpdir"));
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        this.a = new ArrayList();
     }
 }

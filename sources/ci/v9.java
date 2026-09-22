@@ -8,12 +8,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.rk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class v9 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final class v9 extends s4.s0 {
     @Override // s4.s0
     public void a(RecyclerView recyclerView, int i10) {
         boolean z10;
-        fl0 fl0Var;
+        il0 il0Var;
         int topScrollOffset;
         int topScrollOffset2;
         switch (this.a) {
             case 0:
                 ba baVar = (ba) this.c;
-                vl0 vl0Var = baVar.f;
+                yl0 yl0Var = baVar.f;
                 ia iaVar = baVar.W;
                 if (i10 == 1) {
                     z10 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
@@ -43,8 +43,8 @@ public final class v9 extends s4.s0 {
                     }
                 }
                 if (i10 == 0) {
-                    baVar.S = !vl0Var.canScrollVertically(-1);
-                    vl0Var.canScrollVertically(1);
+                    baVar.S = !yl0Var.canScrollVertically(-1);
+                    yl0Var.canScrollVertically(1);
                 }
                 baVar.M = i10 != 0;
                 break;
@@ -57,8 +57,8 @@ public final class v9 extends s4.s0 {
                     org.telegram.ui.ActionBar.v0 v0Var = viVar.a1;
                     int dp2 = dp + (v0Var != null ? AndroidUtilities.dp(v0Var.getAlpha() * 26.0f) : 0);
                     int backgroundPaddingTop = viVar.getBackgroundPaddingTop();
-                    if (((viVar.b2[0] - backgroundPaddingTop) - dp2) + backgroundPaddingTop < (viVar.O0.getAlpha() * viVar.O0.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (fl0Var = (fl0) tlVar.L(0)) != null) {
-                        View view = fl0Var.a;
+                    if (((viVar.b2[0] - backgroundPaddingTop) - dp2) + backgroundPaddingTop < (viVar.O0.getAlpha() * viVar.O0.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (il0Var = (il0) tlVar.L(0)) != null) {
+                        View view = il0Var.a;
                         int top = view.getTop();
                         topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
                         if (top > topScrollOffset) {
@@ -93,8 +93,8 @@ public final class v9 extends s4.s0 {
             case 0:
                 ba baVar = (ba) this.c;
                 ia iaVar = baVar.W;
-                vl0 vl0Var = baVar.f;
-                boolean canScrollVertically = vl0Var.canScrollVertically(1);
+                yl0 yl0Var = baVar.f;
+                boolean canScrollVertically = yl0Var.canScrollVertically(1);
                 if (canScrollVertically != this.b) {
                     baVar.r.invalidate();
                     this.b = canScrollVertically;
@@ -102,8 +102,8 @@ public final class v9 extends s4.s0 {
                 baVar.e.invalidate();
                 viewGroup = ((org.telegram.ui.ActionBar.f3) iaVar).containerView;
                 viewGroup.invalidate();
-                if (baVar.a == 6 && vl0Var.getChildCount() > 0) {
-                    int S = RecyclerView.S(vl0Var.getChildAt(0));
+                if (baVar.a == 6 && yl0Var.getChildCount() > 0) {
+                    int S = RecyclerView.S(yl0Var.getChildAt(0));
                     i12 = ((org.telegram.ui.ActionBar.f3) iaVar).currentAccount;
                     if (S >= MessagesController.getInstance(i12).getStoriesController().L.size()) {
                         i13 = ((org.telegram.ui.ActionBar.f3) iaVar).currentAccount;

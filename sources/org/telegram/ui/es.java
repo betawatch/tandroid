@@ -6,16 +6,16 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class es implements org.telegram.ui.Components.rv0, org.telegram.ui.Components.sv0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.yc0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ad0 {
+public final /* synthetic */ class es implements org.telegram.ui.Components.tv0, org.telegram.ui.Components.uv0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.bd0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.dd0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ es(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.uv0
     public void b(Object obj, float f7) {
         gs gsVar = (gs) obj;
         switch (this.a) {
@@ -44,7 +44,7 @@ public final /* synthetic */ class es implements org.telegram.ui.Components.rv0,
         }
     }
 
-    @Override // org.telegram.ui.Components.yc0
+    @Override // org.telegram.ui.Components.bd0
     public String e(int i10) {
         switch (this.a) {
             case 9:
@@ -104,7 +104,7 @@ public final /* synthetic */ class es implements org.telegram.ui.Components.rv0,
         return String.format("%02d", Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.rv0
+    @Override // org.telegram.ui.Components.tv0
     public float get(Object obj) {
         gs gsVar = (gs) obj;
         switch (this.a) {
@@ -133,8 +133,8 @@ public final /* synthetic */ class es implements org.telegram.ui.Components.rv0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
-    public void q(org.telegram.ui.Components.cd0 cd0Var, int i10) {
+    @Override // org.telegram.ui.Components.dd0
+    public void q(org.telegram.ui.Components.fd0 fd0Var, int i10) {
         Pattern pattern = org.telegram.ui.Components.d5.a;
     }
 

@@ -21,14 +21,14 @@ import android.view.animation.Interpolator;
 import b2.s;
 import c3.i;
 import c3.p;
-import c3.u;
-import c5.v;
+import c5.u;
 import ci.s7;
 import com.google.android.gms.common.api.internal.l;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.internal.cast.c0;
 import com.google.firebase.messaging.n;
 import e2.b0;
+import e2.v;
 import e9.f1;
 import e9.j0;
 import e9.k0;
@@ -65,7 +65,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.gi;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.wa0;
 import org.telegram.ui.web.m;
 import org.xmlpull.v1.XmlPullParserException;
@@ -95,7 +95,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -320,7 +320,7 @@ public class a implements i, r {
         }
         map.put(str, lVar);
         if (this.b > 0) {
-            new c0(Looper.getMainLooper(), 4).post(new v(this, lVar, str, false, 5));
+            new c0(Looper.getMainLooper(), 4).post(new u(this, lVar, str, false, 5));
         }
     }
 
@@ -468,56 +468,56 @@ public class a implements i, r {
             case 8:
                 long position = pVar.getPosition();
                 long l4 = l(pVar);
-                long j11 = pVar.j();
-                pVar.l(Math.max(6, ((u) this.c).c));
+                long i10 = pVar.i();
+                pVar.j(Math.max(6, ((c3.u) this.c).c));
                 long l10 = l(pVar);
-                return (l4 > j3 || l10 <= j3) ? l10 <= j3 ? new c3.h(-2, l10, pVar.j()) : new c3.h(-1, l4, position) : new c3.h(0, -9223372036854775807L, j11);
+                return (l4 > j3 || l10 <= j3) ? l10 <= j3 ? new c3.h(-2, l10, pVar.i()) : new c3.h(-1, l4, position) : new c3.h(0, -9223372036854775807L, i10);
             default:
                 long position2 = pVar.getPosition();
                 int min = (int) Math.min(112800, pVar.getLength() - position2);
-                e2.v vVar = (e2.v) this.d;
+                v vVar = (v) this.d;
                 vVar.G(min);
                 pVar.a(0, min, vVar.a);
-                int i10 = vVar.c;
+                int i11 = vVar.c;
+                long j11 = -1;
                 long j12 = -1;
-                long j13 = -1;
-                long j14 = -9223372036854775807L;
+                long j13 = -9223372036854775807L;
                 while (true) {
                     if (vVar.a() >= 188) {
                         byte[] bArr = vVar.a;
-                        int i11 = vVar.b;
+                        int i12 = vVar.b;
                         while (true) {
-                            if (i11 < i10) {
+                            if (i12 < i11) {
                                 j10 = -9223372036854775807L;
-                                if (bArr[i11] != 71) {
-                                    i11++;
+                                if (bArr[i12] != 71) {
+                                    i12++;
                                 }
                             } else {
                                 j10 = -9223372036854775807L;
                             }
                         }
-                        int i12 = i11 + 188;
-                        if (i12 <= i10) {
-                            long a2 = u8.a(vVar, i11, this.b);
+                        int i13 = i12 + 188;
+                        if (i13 <= i11) {
+                            long a2 = u8.a(vVar, i12, this.b);
                             if (a2 != j10) {
                                 long b10 = ((b0) this.c).b(a2);
                                 if (b10 > j3) {
-                                    return j14 == j10 ? new c3.h(-1, b10, position2) : new c3.h(0, -9223372036854775807L, position2 + j13);
+                                    return j13 == j10 ? new c3.h(-1, b10, position2) : new c3.h(0, -9223372036854775807L, position2 + j12);
                                 }
-                                j14 = b10;
-                                if (100000 + j14 > j3) {
-                                    return new c3.h(0, -9223372036854775807L, position2 + i11);
+                                j13 = b10;
+                                if (100000 + j13 > j3) {
+                                    return new c3.h(0, -9223372036854775807L, position2 + i12);
                                 }
-                                j13 = i11;
+                                j12 = i12;
                             }
-                            vVar.J(i12);
-                            j12 = i12;
+                            vVar.J(i13);
+                            j11 = i13;
                         }
                     } else {
                         j10 = -9223372036854775807L;
                     }
                 }
-                return j14 != j10 ? new c3.h(-2, j14, position2 + j12) : c3.h.d;
+                return j13 != j10 ? new c3.h(-2, j13, position2 + j11) : c3.h.d;
         }
     }
 
@@ -528,21 +528,7 @@ public class a implements i, r {
         throw new IllegalStateException("Missing required properties:".concat(""));
     }
 
-    @Override // c3.i
-    public void d() {
-        switch (this.a) {
-            case 8:
-                break;
-            default:
-                e2.v vVar = (e2.v) this.d;
-                byte[] bArr = e2.d0.b;
-                vVar.getClass();
-                vVar.H(bArr.length, bArr);
-                break;
-        }
-    }
-
-    public k0 e() {
+    public k0 d() {
         f1 f1Var;
         j0 j0Var = (j0) this.d;
         if (j0Var != null) {
@@ -575,6 +561,20 @@ public class a implements i, r {
             return f1Var;
         }
         throw j0Var2.a();
+    }
+
+    @Override // c3.i
+    public void e() {
+        switch (this.a) {
+            case 8:
+                break;
+            default:
+                v vVar = (v) this.d;
+                byte[] bArr = e2.d0.b;
+                vVar.getClass();
+                vVar.H(bArr.length, bArr);
+                break;
+        }
     }
 
     public void f(int i10) {
@@ -614,38 +614,38 @@ public class a implements i, r {
     public long l(p pVar) {
         int f7;
         c3.s sVar = (c3.s) this.d;
-        u uVar = (u) this.c;
-        while (pVar.j() < pVar.getLength() - 6) {
+        c3.u uVar = (c3.u) this.c;
+        while (pVar.i() < pVar.getLength() - 6) {
             int i10 = this.b;
-            long j3 = pVar.j();
+            long i11 = pVar.i();
             byte[] bArr = new byte[2];
-            int i11 = 0;
+            int i12 = 0;
             boolean b10 = false;
             pVar.a(0, 2, bArr);
             if ((((bArr[0] & 255) << 8) | (bArr[1] & 255)) != i10) {
                 pVar.p();
-                pVar.l((int) (j3 - pVar.getPosition()));
+                pVar.j((int) (i11 - pVar.getPosition()));
             } else {
-                e2.v vVar = new e2.v(16);
+                v vVar = new v(16);
                 System.arraycopy(bArr, 0, vVar.a, 0, 2);
                 byte[] bArr2 = vVar.a;
-                while (i11 < 14 && (f7 = pVar.f(2 + i11, 14 - i11, bArr2)) != -1) {
-                    i11 += f7;
+                while (i12 < 14 && (f7 = pVar.f(2 + i12, 14 - i12, bArr2)) != -1) {
+                    i12 += f7;
                 }
-                vVar.I(i11);
+                vVar.I(i12);
                 pVar.p();
-                pVar.l((int) (j3 - pVar.getPosition()));
+                pVar.j((int) (i11 - pVar.getPosition()));
                 b10 = c3.b.b(vVar, uVar, i10, sVar);
             }
             if (b10) {
                 break;
             }
-            pVar.l(1);
+            pVar.j(1);
         }
-        if (pVar.j() < pVar.getLength() - 6) {
+        if (pVar.i() < pVar.getLength() - 6) {
             return sVar.a;
         }
-        pVar.l((int) (pVar.getLength() - pVar.j()));
+        pVar.j((int) (pVar.getLength() - pVar.i()));
         return uVar.j;
     }
 
@@ -747,10 +747,10 @@ public class a implements i, r {
         charSequence.getClass();
         a6.i iVar = (a6.i) this.d;
         iVar.getClass();
-        d9.h hVar = new d9.h(iVar, this, charSequence);
+        d9.i iVar2 = new d9.i(iVar, this, charSequence);
         ArrayList arrayList = new ArrayList();
-        while (hVar.hasNext()) {
-            arrayList.add((String) hVar.next());
+        while (iVar2.hasNext()) {
+            arrayList.add((String) iVar2.next());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -889,9 +889,9 @@ public class a implements i, r {
         this.b = i10;
     }
 
-    public a(vl0 vl0Var) {
+    public a(yl0 yl0Var) {
         this.a = 15;
-        this.d = vl0Var;
+        this.d = yl0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {
@@ -944,7 +944,7 @@ public class a implements i, r {
         this.b = 0;
     }
 
-    public a(u uVar, int i10) {
+    public a(c3.u uVar, int i10) {
         this.a = 8;
         this.c = uVar;
         this.b = i10;
@@ -955,7 +955,7 @@ public class a implements i, r {
         this.a = 10;
         this.b = i10;
         this.c = b0Var;
-        this.d = new e2.v();
+        this.d = new v();
     }
 
     public a(byte[] bArr) {

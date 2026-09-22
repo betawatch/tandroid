@@ -34,12 +34,12 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.h5;
 import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.bs0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yh0;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.pj0;
@@ -52,7 +52,7 @@ import yh.t5;
 import yh.u5;
 import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -199,12 +199,12 @@ public final /* synthetic */ class j0 implements Runnable {
                     boolean z10 = point.x > point.y;
                     if (user.photo != null && !z10) {
                         if (nVar.s == null) {
-                            wh.m mVar = new wh.m(nVar, n2Var.getParentActivity(), (vl0) h5Var.getParent(), n2Var.getResourceProvider(), nVar.a);
+                            wh.m mVar = new wh.m(nVar, n2Var.getParentActivity(), (yl0) h5Var.getParent(), n2Var.getResourceProvider(), nVar.a);
                             nVar.s = mVar;
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = nVar.r;
                             v9 avatarImageView = h5Var.getAvatarImageView();
                             TextView textView = mVar.e;
-                            yh0 yh0Var = mVar.h;
+                            bi0 bi0Var = mVar.h;
                             mVar.r = tL_chatInviteImporter;
                             mVar.v = avatarImageView;
                             TLRPC.User user2 = MessagesController.getInstance(i19).getUser(Long.valueOf(tL_chatInviteImporter.user_id));
@@ -213,9 +213,9 @@ public final /* synthetic */ class j0 implements Runnable {
                             if (MessagesController.getInstance(i19).getUserFull(tL_chatInviteImporter.user_id) == null) {
                                 MessagesController.getInstance(i19).loadUserInfo(user2, false, 0);
                             }
-                            yh0Var.setParentAvatarImage(avatarImageView);
-                            yh0Var.M(tL_chatInviteImporter.user_id, true);
-                            yh0Var.H(null, forUserOrChat, forUserOrChat2, true);
+                            bi0Var.setParentAvatarImage(avatarImageView);
+                            bi0Var.M(tL_chatInviteImporter.user_id, true);
+                            bi0Var.H(null, forUserOrChat, forUserOrChat2, true);
                             mVar.d.setText(UserObject.getUserName((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
                             textView.setText(tL_chatInviteImporter.about);
                             textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
@@ -255,9 +255,9 @@ public final /* synthetic */ class j0 implements Runnable {
                 }
                 break;
             case 12:
-                yr0 yr0Var = (yr0) this.b;
+                bs0 bs0Var = (bs0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                yr0Var.h(tL_starGiftCollection.title, new pj0(15, yr0Var, tL_starGiftCollection));
+                bs0Var.h(tL_starGiftCollection.title, new pj0(15, bs0Var, tL_starGiftCollection));
                 break;
             case 13:
                 o2 o2Var = (o2) this.b;

@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class y00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -106,7 +106,7 @@ public abstract class y00 extends FrameLayout {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
         if (n2Var instanceof f10) {
             ai.w0 w0Var = ((f10) n2Var).a;
-            org.telegram.ui.Components.v70 H = org.telegram.ui.Components.v70.H(n2Var, this);
+            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(n2Var, this);
             H.W(w0Var.W0(this, false));
             H.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new x00(this, 0), false);
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new x00(this, 1), true);
@@ -121,9 +121,9 @@ public abstract class y00 extends FrameLayout {
         if (this.x == null) {
             return;
         }
-        org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-        ti0Var.m(R.raw.qr_code_logo);
-        ti0Var.show();
+        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+        wi0Var.m(R.raw.qr_code_logo);
+        wi0Var.show();
     }
 
     public final void e(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z10) {

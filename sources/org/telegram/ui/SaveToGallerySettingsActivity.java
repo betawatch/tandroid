@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int a;
@@ -28,7 +28,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     public int h;
     public int maxVideoSizeRow;
     public r41 n;
-    public org.telegram.ui.Components.vl0 r;
+    public org.telegram.ui.Components.yl0 r;
     public final ArrayList s;
     public LongSparseArray v;
 
@@ -152,9 +152,9 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         } else {
             this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryException));
         }
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.r = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.r = yl0Var;
+        yl0Var.q1();
         this.actionBar.setAdaptiveBackground(this.r);
         s4.j jVar = new s4.j();
         jVar.n(400L);
@@ -163,10 +163,10 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         jVar.m = false;
         this.r.setItemAnimator(jVar);
         this.r.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.vl0 vl0Var2 = this.r;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.r;
         r41 r41Var = new r41(this);
         this.n = r41Var;
-        vl0Var2.setAdapter(r41Var);
+        yl0Var2.setAdapter(r41Var);
         this.r.setOnItemClickListener(new p41(this));
         this.r.setOnItemLongClickListener(new p41(this));
         frameLayout.addView(this.r);

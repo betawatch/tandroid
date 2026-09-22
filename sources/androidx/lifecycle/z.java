@@ -4,7 +4,7 @@ import ai.q4;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -46,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.m0(this.e);
+            yVar.a.i0(this.e);
         }
     }
 
@@ -112,25 +112,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(a6.m mVar) {
+    public final void e(pb.c cVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, mVar);
+        x xVar = new x(this, cVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(mVar);
+        o.c i10 = fVar.i(cVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar = new o.c(mVar, xVar);
+            o.c cVar2 = new o.c(cVar, xVar);
             fVar.d++;
-            o.c cVar2 = fVar.b;
-            if (cVar2 == null) {
-                fVar.a = cVar;
-                fVar.b = cVar;
+            o.c cVar3 = fVar.b;
+            if (cVar3 == null) {
+                fVar.a = cVar2;
+                fVar.b = cVar2;
             } else {
-                cVar2.c = cVar;
-                cVar.d = cVar2;
-                fVar.b = cVar;
+                cVar3.c = cVar2;
+                cVar2.d = cVar3;
+                fVar.b = cVar2;
             }
             obj = null;
         }

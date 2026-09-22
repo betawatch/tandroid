@@ -1,100 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class sf0 extends FrameLayout {
-    public final ci.zc a;
-    public final ci.d b;
-    public final pt c;
-    public t71 d;
-    public long e;
-    public float f;
-    public ci.b4 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final class sf0 extends View {
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public jc0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public d6 s;
+    public boolean v;
+    public uf0 w;
+    public ci.ka x;
+    public boolean y;
 
-    public sf0(Context context, org.telegram.ui.ActionBar.f6 f6Var, ia iaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, f6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.B(-1, false);
-        kVar.A(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.ro(this, 10));
-        addView(kVar, w7.y5.e(-1, -2, 55));
-        ci.zc zcVar = new ci.zc(context, null, null, f6Var, iaVar);
-        this.a = zcVar;
-        zcVar.X0 = true;
-        addView(zcVar, w7.y5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        ci.d dVar = new ci.d(context, f6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        pt ptVar = new pt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = ptVar;
-        ptVar.setOnClickListener(new ai.d0(this, context, f6Var, 26));
-        addView(ptVar, w7.y5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        zcVar.setDelegate(new org.telegram.ui.Cells.f3(this));
-    }
-
-    public final void a(MediaController.PhotoEntry photoEntry, t71 t71Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        int i10;
-        ci.d dVar = this.b;
-        dVar.a = f6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
+            return;
         }
-        this.d = t71Var;
-        long j3 = photoEntry.coverSavedPosition;
-        if (j3 >= 0) {
-            this.e = j3;
-            t71Var.L(j3, false);
-        } else {
-            this.e = t71Var.n();
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
-        String path = t71Var.F.getPath();
-        long p5 = t71Var.p();
-        i2.e0 e0Var = t71Var.d;
-        e0Var.B1();
-        this.a.o(false, path, p5, e0Var.Z);
-        long p10 = t71Var.p();
-        float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, t71Var.p()));
-        ci.zc zcVar = this.a;
-        zcVar.setVideoLeft(max2);
-        zcVar.setVideoRight(max2 + max);
-        zcVar.Z0 = 0L;
-        zcVar.a1 = p10;
-        ci.tc tcVar = zcVar.h;
-        if (tcVar != null) {
-            ci.tc.a(tcVar, true);
-        }
-        zcVar.k();
     }
 
-    public long getTime() {
-        return this.e;
+    public void setAllowTouch(boolean z10) {
+        this.v = z10;
     }
 
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
+    public void setFilterView(uf0 uf0Var) {
+        this.w = uf0Var;
     }
 }

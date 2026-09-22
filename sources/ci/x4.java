@@ -1,11 +1,11 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.et0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ x4(et0 et0Var, int i10, vl0 vl0Var) {
+    public /* synthetic */ x4(gt0 gt0Var, int i10, yl0 yl0Var) {
         this.a = 1;
-        this.c = et0Var;
+        this.c = gt0Var;
         this.b = i10;
-        this.d = vl0Var;
+        this.d = yl0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -35,10 +35,10 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                et0 et0Var = (et0) this.c;
-                vl0 vl0Var = (vl0) this.d;
-                et0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                vl0Var.invalidate();
+                gt0 gt0Var = (gt0) this.c;
+                yl0 yl0Var = (yl0) this.d;
+                gt0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                yl0Var.invalidate();
                 break;
             default:
                 qg.n0 n0Var = (qg.n0) this.c;
@@ -54,9 +54,9 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
         }
     }
 
-    public /* synthetic */ x4(bw0 bw0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ x4(dw0 dw0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = bw0Var;
+        this.c = dw0Var;
         this.d = num;
         this.b = i10;
     }

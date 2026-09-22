@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.lv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
     }
 
     @Override // m4.c1
-    public void d(j1 j1Var, r rVar) {
+    public void f(j1 j1Var, r rVar) {
         f1 f1Var = (f1) this.d;
         j1Var.s(f1Var.K0(rVar, j1Var, this.b), this.c);
     }
@@ -137,7 +137,7 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        jv0.i((jv0) this.d, this.c, this.b, str);
+        lv0.i((lv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {
@@ -159,9 +159,9 @@ public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimest
         this.c = j3;
     }
 
-    public /* synthetic */ d(jv0 jv0Var, long j3, int i10) {
+    public /* synthetic */ d(lv0 lv0Var, long j3, int i10) {
         this.a = 6;
-        this.d = jv0Var;
+        this.d = lv0Var;
         this.c = j3;
         this.b = i10;
     }

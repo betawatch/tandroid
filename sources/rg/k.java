@@ -5,7 +5,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class k {
     public final TLRPC.TL_premiumGiftOption a;
@@ -15,7 +15,7 @@ public final class k {
     public int e;
     public long f;
     public long g;
-    public c5.o h;
+    public c5.n h;
 
     public k(TLRPC.TL_premiumGiftOption tL_premiumGiftOption) {
         this.a = tL_premiumGiftOption;
@@ -34,8 +34,8 @@ public final class k {
         } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.currency;
         }
-        c5.o oVar = this.h;
-        return oVar == null ? "" : oVar.a().c;
+        c5.n nVar = this.h;
+        return nVar == null ? "" : nVar.a().c;
     }
 
     public final int b() {
@@ -82,11 +82,11 @@ public final class k {
         } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.amount;
         }
-        c5.o oVar = this.h;
-        if (oVar == null) {
+        c5.n nVar = this.h;
+        if (nVar == null) {
             return 0L;
         }
-        return oVar.a().b;
+        return nVar.a().b;
     }
 
     public final long f() {

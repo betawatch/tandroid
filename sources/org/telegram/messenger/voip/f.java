@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.e80;
+import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.ps;
 import org.telegram.ui.Components.qs;
 import org.telegram.ui.Components.xc;
@@ -64,7 +64,7 @@ import yh.t5;
 import yh.u5;
 import yh.x7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -191,10 +191,10 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 if (tLObject3 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject3;
-                    e80.G = joinaspeers.peers;
-                    e80.I = j13;
-                    e80.H = SystemClock.elapsedRealtime();
-                    e80.J = accountInstance.getCurrentAccount();
+                    h80.G = joinaspeers.peers;
+                    h80.I = j13;
+                    h80.H = SystemClock.elapsedRealtime();
+                    h80.J = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);

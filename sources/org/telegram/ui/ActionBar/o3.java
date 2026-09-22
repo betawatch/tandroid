@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lk;
+import org.telegram.ui.mk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -194,14 +194,14 @@ public final class o3 extends FrameLayout {
 
     public final void e(n3 n3Var) {
         zn znVar;
-        lk lkVar;
+        mk mkVar;
         n2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
         boolean z10 = R instanceof zn;
-        if (z10 && (lkVar = (znVar = (zn) R).Y) != null) {
-            lkVar.P();
+        if (z10 && (mkVar = (znVar = (zn) R).Y) != null) {
+            mkVar.P();
             znVar.Y.n0(true, false, true);
         }
         if (n3Var.J == null) {
@@ -491,7 +491,7 @@ public final class o3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     l3Var.u = null;
                 } else {
-                    l3Var.u = new u01(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    l3Var.u = new w01(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

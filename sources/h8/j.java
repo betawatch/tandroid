@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import n6.q;
 import v7.k8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -23,8 +23,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public n2.e g;
-    public final n2.e d = new n2.e(this, 25);
+    public l.d g;
+    public final l.d d = new l.d(this, 27);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -92,13 +92,13 @@ public final class j {
                 if (X0 == null) {
                     return;
                 }
-                this.g.E(new aa.a(this.e, X0));
+                this.g.b0(new aa.a(this.e, X0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.o((f) obj);
+                    this.a.q((f) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

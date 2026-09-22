@@ -24,7 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xp implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -47,7 +47,7 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
     public boolean V;
     public boolean W;
     public final boolean X;
-    public cj Y;
+    public dj Y;
     public long Z;
     public int a;
     public View a0;
@@ -191,7 +191,7 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
         return null;
     }
 
-    public final void a(Canvas canvas, tj tjVar, float f7, float f10) {
+    public final void a(Canvas canvas, uj ujVar, float f7, float f10) {
         int i10;
         int i11;
         RectF rectF;
@@ -217,22 +217,22 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
         float f20;
         float z10;
         Canvas canvas2 = canvas;
-        if (this.a0 != tjVar) {
-            this.a0 = tjVar;
+        if (this.a0 != ujVar) {
+            this.a0 = ujVar;
             org.telegram.ui.Components.p5 p5Var = this.k0;
             if (p5Var != null) {
-                p5Var.a(tjVar);
+                p5Var.a(ujVar);
             }
         }
         org.telegram.ui.Components.vq vqVar2 = this.c0;
-        vqVar2.H = tjVar;
+        vqVar2.H = ujVar;
         RectF rectF3 = vqVar2.f;
         float dp = AndroidUtilities.dp(110.0f) * f7;
         if (dp < AndroidUtilities.dp(8.0f)) {
             return;
         }
         float f21 = f7 < 0.2f ? 5.0f * f7 * f10 : f10;
-        org.telegram.ui.ActionBar.j6.q(0.0f, tjVar.getMeasuredHeight() - dp, this.c, tjVar.getMeasuredHeight());
+        org.telegram.ui.ActionBar.j6.q(0.0f, ujVar.getMeasuredHeight() - dp, this.c, ujVar.getMeasuredHeight());
         int i16 = org.telegram.ui.ActionBar.j6.ic;
         org.telegram.ui.ActionBar.f6 f6Var = this.j0;
         int v02 = org.telegram.ui.ActionBar.j6.v0(i16, f6Var);
@@ -264,7 +264,7 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
             i12 = alpha2;
             if (currentTimeMillis - this.P > 100) {
                 try {
-                    tjVar.performHapticFeedback(3, 2);
+                    ujVar.performHapticFeedback(3, 2);
                 } catch (Exception unused) {
                 }
                 this.P = currentTimeMillis;
@@ -274,11 +274,11 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
         if (f7 == 1.0f && !this.M) {
             this.M = true;
             this.N = true;
-            g(tjVar, true);
+            g(ujVar, true);
             this.U = System.currentTimeMillis();
         } else if (f7 != 1.0f && this.M) {
             this.M = false;
-            g(tjVar, false);
+            g(ujVar, false);
         }
         float f22 = this.c / 2.0f;
         float f23 = this.L * (-AndroidUtilities.dp(4.0f));
@@ -477,8 +477,8 @@ public final class xp implements NotificationCenter.NotificationCenterDelegate {
             imageReceiver2.setRoundRadius((int) f51);
             float f52 = f14;
             imageReceiver2.setImageCoords(f16 - f51, b11, f52, f52);
-            if (this.X && imageReceiver2.getDrawable() != null && (imageReceiver2.getDrawable() instanceof org.telegram.ui.Components.pq) && (((org.telegram.ui.Components.pq) imageReceiver2.getDrawable()).b instanceof org.telegram.ui.Components.t80)) {
-                ((org.telegram.ui.Components.t80) ((org.telegram.ui.Components.pq) imageReceiver2.getDrawable()).b).i = f7;
+            if (this.X && imageReceiver2.getDrawable() != null && (imageReceiver2.getDrawable() instanceof org.telegram.ui.Components.pq) && (((org.telegram.ui.Components.pq) imageReceiver2.getDrawable()).b instanceof org.telegram.ui.Components.w80)) {
+                ((org.telegram.ui.Components.w80) ((org.telegram.ui.Components.pq) imageReceiver2.getDrawable()).b).i = f7;
             }
             if (this.K <= 0.0f || !this.b0) {
                 imageReceiver2.draw(canvas2);

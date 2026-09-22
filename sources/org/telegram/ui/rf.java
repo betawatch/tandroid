@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class rf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        lk lkVar;
+        mk mkVar;
         View sendButton;
         org.telegram.ui.ActionBar.f1 f1Var;
         int i10 = this.a;
@@ -63,9 +63,9 @@ public final /* synthetic */ class rf implements Runnable {
                     break;
                 }
             case 6:
-                lk lkVar2 = znVar.Y;
-                if (lkVar2 != null) {
-                    lkVar2.q0(true);
+                mk mkVar2 = znVar.Y;
+                if (mkVar2 != null) {
+                    mkVar2.q0(true);
                     break;
                 }
                 break;
@@ -158,8 +158,8 @@ public final /* synthetic */ class rf implements Runnable {
                 znVar.e9(true);
                 break;
             case 21:
-                pk pkVar = znVar.t8;
-                if (pkVar != null && pkVar.getParent() != null) {
+                qk qkVar = znVar.t8;
+                if (qkVar != null && qkVar.getParent() != null) {
                     znVar.x0.g1();
                     znVar.v8.setDrawingReady(false);
                     znVar.t8.setTag(null);
@@ -169,15 +169,15 @@ public final /* synthetic */ class rf implements Runnable {
                 break;
             case 22:
                 znVar.q7 = null;
-                org.telegram.ui.Components.e60 e60Var = znVar.b3;
-                if (e60Var != null) {
-                    org.telegram.ui.Components.c60 cameraContainer = e60Var.getCameraContainer();
+                org.telegram.ui.Components.h60 h60Var = znVar.b3;
+                if (h60Var != null) {
+                    org.telegram.ui.Components.e60 cameraContainer = h60Var.getCameraContainer();
                     AnimatorSet animatorSet = new AnimatorSet();
-                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.c60, Float>) View.SCALE_X, 0.5f);
-                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.c60, Float>) View.SCALE_Y, 0.5f);
+                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) View.SCALE_X, 0.5f);
+                    ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) View.SCALE_Y, 0.5f);
                     Property property = View.ALPHA;
-                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.c60, Float>) property, 0.0f), ObjectAnimator.ofFloat(znVar.b3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(znVar.b3.getPaint(), org.telegram.ui.Components.r6.b, 0), ObjectAnimator.ofFloat(znVar.b3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
-                    animatorSet.addListener(new wi(znVar, i11));
+                    animatorSet.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.e60, Float>) property, 0.0f), ObjectAnimator.ofFloat(znVar.b3.getButtonsLayout(), (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(znVar.b3.getPaint(), org.telegram.ui.Components.r6.b, 0), ObjectAnimator.ofFloat(znVar.b3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
+                    animatorSet.addListener(new xi(znVar, i11));
                     animatorSet.start();
                     break;
                 }
@@ -191,12 +191,12 @@ public final /* synthetic */ class rf implements Runnable {
                 znVar.j8();
                 break;
             case 25:
-                if (znVar.getParentActivity() != null && znVar.fragmentView != null && (lkVar = znVar.Y) != null && (sendButton = lkVar.getSendButton()) != null && znVar.Y.getEditField() != null && znVar.Y.getEditField().getText().length() >= 5) {
+                if (znVar.getParentActivity() != null && znVar.fragmentView != null && (mkVar = znVar.Y) != null && (sendButton = mkVar.getSendButton()) != null && znVar.Y.getEditField() != null && znVar.Y.getEditField().getText().length() >= 5) {
                     SharedConfig.increaseScheduledOrNoSoundHintShowed();
                     if (znVar.g2 == null) {
-                        hj hjVar = new hj(4, 0, znVar.getParentActivity(), znVar.ea, false);
-                        znVar.g2 = hjVar;
-                        hjVar.a();
+                        ij ijVar = new ij(4, 0, znVar.getParentActivity(), znVar.ea, false);
+                        znVar.g2 = ijVar;
+                        ijVar.a();
                         znVar.g2.setAlpha(0.0f);
                         znVar.g2.setVisibility(4);
                         znVar.g2.setText(LocaleController.getString(R.string.ScheduledOrNoSoundHint));

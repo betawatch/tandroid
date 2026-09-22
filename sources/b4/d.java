@@ -12,9 +12,9 @@ import e2.d0;
 import e2.v;
 import java.util.List;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class d implements w3.c {
+public final class d implements w3.b {
     public int a;
     public int b;
     public final Object c;
@@ -24,17 +24,17 @@ public final class d implements w3.c {
         this.c = context;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int a() {
         return this.a;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int b() {
         return this.b;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int c() {
         int i10 = this.a;
         return i10 == -1 ? ((v) this.c).B() : i10;
@@ -89,7 +89,7 @@ public final class d implements w3.c {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).e(0, "com.google.android.gms");
+                packageInfo = w6.b.a((Context) this.c).b(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e) {
                 Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;

@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class l61 extends org.telegram.ui.Components.vl0 {
+public abstract class l61 extends org.telegram.ui.Components.yl0 {
     public final SparseArray X2;
     public final ArrayList Y2;
     public final ArrayList Z2;
@@ -56,7 +56,7 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
     
         if (((org.telegram.ui.Components.p5) r1).c() != false) goto L10;
      */
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -75,7 +75,7 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -357,16 +357,16 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
             }
         }
         canvas2.restoreToCount(saveCount);
-        Runnable runnable = zg.e0.c;
+        Runnable runnable = zg.f0.c;
         if (runnable != null) {
             runnable.run();
-            zg.e0.c = null;
+            zg.f0.c = null;
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     public final void g1() {
-        if (zg.e0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.g1();
@@ -374,14 +374,14 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (zg.e0.b(this) || this.c3) {
+        if (zg.f0.b(this) || this.c3) {
             return;
         }
         this.c3 = true;
         super.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         j71 j71Var = this.e3;
@@ -390,7 +390,7 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         j71 j71Var = this.e3;
@@ -410,7 +410,7 @@ public abstract class l61 extends org.telegram.ui.Components.vl0 {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (zg.e0.b(this)) {
+        if (zg.f0.b(this)) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

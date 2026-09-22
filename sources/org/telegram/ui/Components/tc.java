@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tc implements Runnable {
     public final /* synthetic */ int a;
@@ -53,22 +53,22 @@ public final /* synthetic */ class tc implements Runnable {
             case 2:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 ci.f4 f4Var = (ci.f4) this.c;
-                int i10 = ChatActivityEnterView.m5;
+                int i10 = ChatActivityEnterView.n5;
                 chatActivityEnterView.removeView(f4Var);
                 break;
             case 3:
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) this.b;
                 CharSequence charSequence = (CharSequence) this.c;
-                int i11 = ChatActivityEnterView.m5;
+                int i11 = ChatActivityEnterView.n5;
                 chatActivityEnterView2.setFieldText(charSequence);
                 chatActivityEnterView2.W = null;
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) this.b;
                 sd sdVar = (sd) this.c;
-                int i12 = ChatActivityEnterView.m5;
+                int i12 = ChatActivityEnterView.n5;
                 sdVar.run();
-                SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView3.Q, chatActivityEnterView3.P2, true);
+                SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView3.Q, chatActivityEnterView3.Q2, true);
                 break;
             case 5:
                 rg rgVar = (rg) this.b;
@@ -223,11 +223,11 @@ public final /* synthetic */ class tc implements Runnable {
                     mrVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(mrVar2.c0);
                     mrVar2.d0 = spannableStringBuilder;
-                    c11 c11Var = new c11();
-                    c11Var.a |= 256;
-                    c11Var.b = 0;
-                    c11Var.c = spannableStringBuilder.length();
-                    mrVar2.d0.setSpan(new d11(c11Var, 0), 0, mrVar2.d0.length(), 0);
+                    e11 e11Var = new e11();
+                    e11Var.a |= 256;
+                    e11Var.b = 0;
+                    e11Var.c = spannableStringBuilder.length();
+                    mrVar2.d0.setSpan(new f11(e11Var, 0), 0, mrVar2.d0.length(), 0);
                     mrVar2.e0.N(false);
                     break;
                 }

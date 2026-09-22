@@ -49,7 +49,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.t40, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -83,7 +83,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
     public org.telegram.ui.Cells.s8 Q;
     public final qo Q0;
     public LinearLayout R;
-    public org.telegram.ui.Components.hj0 R0;
+    public org.telegram.ui.Components.kj0 R0;
     public LinearLayout S;
     public ValueAnimator S0;
     public org.telegram.ui.Cells.s8 T;
@@ -128,7 +128,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
     public TLRPC.FileLocation v0;
     public yd w;
     public long w0;
-    public org.telegram.ui.Components.mo0 x;
+    public org.telegram.ui.Components.oo0 x;
     public TLRPC.Chat x0;
     public LinearLayout y;
     public TLRPC.ChatFull y0;
@@ -363,9 +363,9 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         idVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.u0(org.telegram.ui.ActionBar.j6.a7));
         yd ydVar = new yd(context);
         this.w = ydVar;
-        org.telegram.ui.Components.mo0 mo0Var = new org.telegram.ui.Components.mo0(context, this.w, this.resourceProvider, false);
-        this.x = mo0Var;
-        mo0Var.setFillViewport(true);
+        org.telegram.ui.Components.oo0 oo0Var = new org.telegram.ui.Components.oo0(context, this.w, this.resourceProvider, false);
+        this.x = oo0Var;
+        oo0Var.setFillViewport(true);
         idVar.addView(this.x, w7.y5.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.x);
         this.x.addView(ydVar, new FrameLayout.LayoutParams(-1, -2));
@@ -9251,7 +9251,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     uoVar.m0.q(LocaleController.getString(R.string.BotBalanceTON), spannableStringBuilder, R.drawable.outline_gram_24, true);
                 } else {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
-                    spannableStringBuilder2.setSpan(new org.telegram.ui.Components.p90(AndroidUtilities.dp(30.0f), uoVar.m0.c), 0, spannableStringBuilder2.length(), 33);
+                    spannableStringBuilder2.setSpan(new org.telegram.ui.Components.s90(AndroidUtilities.dp(30.0f), uoVar.m0.c), 0, spannableStringBuilder2.length(), 33);
                     uoVar.m0.q(LocaleController.getString(R.string.BotBalanceTON), spannableStringBuilder2, R.drawable.outline_gram_24, false);
                 }
                 uoVar.m0.setVisibility(g11.b(j3) ? 0 : 8);
@@ -9303,7 +9303,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     s8Var37.q(string2, X0, R.drawable.menu_premium_main, z10);
                 } else {
                     SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder("x");
-                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.p90(AndroidUtilities.dp(30.0f), uoVar.n0.c), 0, spannableStringBuilder3.length(), 33);
+                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.s90(AndroidUtilities.dp(30.0f), uoVar.n0.c), 0, spannableStringBuilder3.length(), 33);
                     uoVar.n0.q(LocaleController.getString(R.string.BotBalanceStars), spannableStringBuilder3, R.drawable.menu_premium_main, false);
                 }
                 uoVar.n0.setVisibility(g11.a(j3) ? 0 : 8);
@@ -10593,7 +10593,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         this.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
                     }
                     if (this.R0 == null) {
-                        this.R0 = new org.telegram.ui.Components.hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                        this.R0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                     }
                     this.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     this.b0.e.setAnimation(this.R0);
@@ -10763,7 +10763,7 @@ public class uo extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 return;
             }
             hp0Var.v = z10;
-            hp0Var.r = new org.telegram.ui.Components.u01(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
+            hp0Var.r = new org.telegram.ui.Components.w01(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
             xp0 xp0Var2 = hp0Var.w;
             if (xp0Var2 != null) {
                 xp0Var2.e(null);

@@ -5,16 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class iv extends org.telegram.ui.Components.ul0 {
+public final class iv extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ kv c;
 
     public iv(kv kvVar) {
         this.c = kvVar;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -48,7 +48,7 @@ public final class iv extends org.telegram.ui.Components.ul0 {
             f9Var.setBackgroundDrawable(pqVar);
             view = f9Var;
         }
-        return new org.telegram.ui.Components.fl0(view);
+        return new org.telegram.ui.Components.il0(view);
     }
 
     @Override // s4.h0

@@ -13,9 +13,9 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
+public final /* synthetic */ class fw implements li.f, ol0, um0, le.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ kz b;
 
@@ -25,11 +25,11 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
     }
 
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         this.b.R();
     }
 
-    @Override // org.telegram.ui.Components.sm0
+    @Override // org.telegram.ui.Components.um0
     public void a(int i10) {
         int i11;
         wy wyVar;
@@ -68,7 +68,7 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
                             syVar.a(arrayList2.get((i10 - kzVar.t0) + 1), true);
                         }
                     }
-                    kzVar.F(2);
+                    kzVar.E(2);
                     break;
                 }
                 break;
@@ -95,8 +95,8 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
                                         }
                                         kzVar2.I0 = false;
                                         twVar.C0();
-                                        kzVar2.H(bzVar.E(arrayList3.get(i14)), 0);
-                                        kzVar2.F(0);
+                                        kzVar2.G(bzVar.E(arrayList3.get(i14)), 0);
+                                        kzVar2.E(0);
                                         kzVar2.p(0);
                                         int i15 = kzVar2.G1;
                                         if (i15 <= 0 && (i15 = kzVar2.F1) <= 0) {
@@ -109,30 +109,30 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
                                     }
                                 } else {
                                     twVar.C0();
-                                    kzVar2.H(bzVar.E("premium"), 0);
-                                    kzVar2.F(0);
+                                    kzVar2.G(bzVar.E("premium"), 0);
+                                    kzVar2.E(0);
                                     int i16 = kzVar2.I1;
                                     xwVar.k(i16, i16 > 0 ? i16 : kzVar2.E1);
                                     break;
                                 }
                             } else {
                                 twVar.C0();
-                                kzVar2.H(bzVar.E("fav"), 0);
-                                kzVar2.F(0);
+                                kzVar2.G(bzVar.E("fav"), 0);
+                                kzVar2.E(0);
                                 int i17 = kzVar2.G1;
                                 xwVar.k(i17, i17 > 0 ? i17 : kzVar2.E1);
                                 break;
                             }
                         } else {
                             twVar.C0();
-                            kzVar2.H(bzVar.E("recent"), 0);
-                            kzVar2.F(0);
+                            kzVar2.G(bzVar.E("recent"), 0);
+                            kzVar2.E(0);
                             int i18 = kzVar2.F1;
                             xwVar.k(i18, i18 > 0 ? i18 : kzVar2.E1);
                             break;
                         }
                     } else {
-                        kzVar2.t1.o(new s51(kzVar2.getContext(), new fx(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, null, kzVar2.Z1));
+                        kzVar2.t1.o(new u51(kzVar2.getContext(), new fx(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, null, kzVar2.Z1));
                         break;
                     }
                 }
@@ -140,7 +140,7 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         String str;
         int i11;
@@ -256,7 +256,7 @@ public final /* synthetic */ class fw implements li.f, ll0, sm0, le.d {
     }
 
     @Override // li.f
-    public void g(int i10) {
+    public void i(int i10) {
         kz kzVar = this.b;
         ah.i iVar = kzVar.j2;
         RectF rectF = kzVar.y2;

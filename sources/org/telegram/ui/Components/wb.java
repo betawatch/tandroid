@@ -7,9 +7,9 @@ import android.widget.TextView;
 import org.telegram.messenger.Emoji;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wb extends k90 {
+public final class wb extends n90 {
     public final /* synthetic */ int L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,7 +18,7 @@ public final class wb extends k90 {
         this.L = i10;
     }
 
-    @Override // org.telegram.ui.Components.k90
+    @Override // org.telegram.ui.Components.n90
     public int a() {
         switch (this.L) {
             case 4:
@@ -41,7 +41,7 @@ public final class wb extends k90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k90, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.n90, android.widget.TextView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.L) {
             case 5:
@@ -53,7 +53,7 @@ public final class wb extends k90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k90, android.widget.TextView
+    @Override // org.telegram.ui.Components.n90, android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         switch (this.L) {
             case 0:

@@ -18,18 +18,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URLDecoder;
 import java.util.ArrayList;
-import ki.i0;
 import ki.j0;
-import ki.m0;
+import ki.k0;
+import ki.o0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SharedSettings;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.rk;
 import org.telegram.messenger.voip.VoIPService;
@@ -43,11 +43,11 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.af0;
+import org.telegram.ui.Components.it0;
 import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xe0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.ce1;
 import org.telegram.ui.g81;
@@ -66,12 +66,11 @@ import org.telegram.ui.u3;
 import org.telegram.ui.uy;
 import org.telegram.ui.x10;
 import org.telegram.ui.zn;
-import pg.j1;
-import pg.l1;
+import pg.k1;
 import pg.m1;
-import w7.a6;
+import pg.n1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,10 +83,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:167:0x03fe  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x03e8  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x021b  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0234 A[Catch: Exception -> 0x0274, TRY_LEAVE, TryCatch #10 {Exception -> 0x0274, blocks: (B:68:0x022c, B:72:0x0234, B:76:0x027d, B:75:0x0276, B:82:0x026c, B:80:0x0248), top: B:67:0x022c, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0234 A[Catch: Exception -> 0x0274, TRY_LEAVE, TryCatch #11 {Exception -> 0x0274, blocks: (B:68:0x022c, B:72:0x0234, B:76:0x027d, B:75:0x0276, B:82:0x026c, B:80:0x0248), top: B:67:0x022c, inners: #5 }] */
     @Override // android.content.DialogInterface.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -189,14 +188,14 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 5:
-                xe0 xe0Var = (xe0) this.b;
+                af0 af0Var = (af0) this.b;
                 AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) this.c;
-                xe0Var.getClass();
+                af0Var.getClass();
                 if (i10 == 0) {
                     try {
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                            Toast.makeText(xe0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
+                            Toast.makeText(af0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                             return;
                         }
                         return;
@@ -207,13 +206,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                gt0 gt0Var = (gt0) this.b;
+                it0 it0Var = (it0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    gt0Var.a.R0(str6);
+                    it0Var.a.R0(str6);
                     return;
                 }
-                gt0Var.getClass();
+                it0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -293,20 +292,16 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 o41 o41Var = (o41) this.b;
                 switch (((ja0) this.c).a) {
                     case 11:
-                        a6.b("round_video_output_resolution", i10 == 0 ? m0.b : m0.c);
+                        SharedSettings.roundVideoOutputResolution.set(i10 == 0 ? o0.b : o0.c);
                         break;
                     case 12:
-                        a6.b("round_video_camera_resolution", i0.values()[i10]);
+                        SharedSettings.roundVideoCameraResolution.set(j0.values()[i10]);
                         break;
                     case 13:
-                        a6.b("round_video_frame_rate", i10 == 0 ? j0.b : j0.c);
+                        SharedSettings.roundVideoFrameRate.set(i10 == 0 ? k0.b : k0.c);
                         break;
                     default:
-                        int i14 = o41.c[i10];
-                        if (i14 <= 0) {
-                            throw new IllegalArgumentException("Invalid video bitrate");
-                        }
-                        MessagesController.getGlobalMainSettings().edit().putInt("round_video_video_bitrate", i14).apply();
+                        SharedSettings.roundVideoVideoBitrate.set(o41.c[i10]);
                         break;
                 }
                 o41Var.b.l();
@@ -330,7 +325,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + i6Var.F.slug;
-                    themeActivity.showDialog(new uq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    themeActivity.showDialog(new wq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {
@@ -369,10 +364,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 if (i6Var.b == null && i6Var.d == null) {
                     StringBuilder sb3 = new StringBuilder();
                     int[] iArr = j6.nl;
-                    for (int i15 = 0; i15 < iArr.length; i15++) {
-                        sb3.append(g5.i(i15));
+                    for (int i14 = 0; i14 < iArr.length; i14++) {
+                        sb3.append(g5.i(i14));
                         sb3.append("=");
-                        sb3.append(iArr[i15]);
+                        sb3.append(iArr[i14]);
                         sb3.append("\n");
                     }
                     p02 = new File(ApplicationLoader.getFilesDirFixed(), "default_theme.attheme");
@@ -451,55 +446,55 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     return;
                 }
             default:
-                m1 m1Var = (m1) this.b;
+                n1 n1Var = (n1) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
-                SharedPreferences sharedPreferences = m1Var.g;
-                ArrayList arrayList5 = m1Var.c;
+                SharedPreferences sharedPreferences = n1Var.g;
+                ArrayList arrayList5 = n1Var.c;
                 if (i10 != 0) {
-                    l1 l1Var = new l1();
-                    l1Var.a = i10 - 1;
-                    l1Var.b = arrayList4;
-                    arrayList5.add(l1Var);
+                    m1 m1Var = new m1();
+                    m1Var.a = i10 - 1;
+                    m1Var.b = arrayList4;
+                    arrayList5.add(m1Var);
                     String string = sharedPreferences.getString("moretemplates", null);
                     if (string == null) {
-                        sb2 = "" + l1Var.a;
+                        sb2 = "" + m1Var.a;
                     } else {
                         StringBuilder h = v7.j0.h(string, "|");
-                        h.append(l1Var.a);
+                        h.append(m1Var.a);
                         sb2 = h.toString();
                     }
-                    for (int i16 = 0; i16 < arrayList4.size(); i16++) {
+                    for (int i15 = 0; i15 < arrayList4.size(); i15++) {
                         StringBuilder h10 = v7.j0.h(sb2, ",");
-                        h10.append(Math.round(((j1) arrayList4.get(i16)).a));
+                        h10.append(Math.round(((k1) arrayList4.get(i15)).a));
                         h10.append(",");
-                        h10.append(Math.round(((j1) arrayList4.get(i16)).b));
+                        h10.append(Math.round(((k1) arrayList4.get(i15)).b));
                         sb2 = h10.toString();
                     }
                     sharedPreferences.edit().putString("moretemplates", sb2).apply();
                     return;
                 }
                 StringBuilder sb4 = new StringBuilder("[");
-                for (int i17 = 0; i17 < arrayList5.size(); i17++) {
-                    l1 l1Var2 = (l1) arrayList5.get(i17);
-                    if (i17 > 0) {
+                for (int i16 = 0; i16 < arrayList5.size(); i16++) {
+                    m1 m1Var2 = (m1) arrayList5.get(i16);
+                    if (i16 > 0) {
                         sb4.append(",\n");
                     }
                     sb4.append("\t{\n\t\t\"shape\": ");
-                    sb4.append(l1Var2.a);
+                    sb4.append(m1Var2.a);
                     sb4.append(",\n\t\t\"points\": [");
-                    for (int i18 = 0; i18 < l1Var2.b.size(); i18++) {
-                        if (i18 > 0) {
+                    for (int i17 = 0; i17 < m1Var2.b.size(); i17++) {
+                        if (i17 > 0) {
                             sb4.append(",");
                         }
-                        j1 j1Var = (j1) l1Var2.b.get(i18);
+                        k1 k1Var = (k1) m1Var2.b.get(i17);
                         sb4.append("[");
-                        sb4.append(Math.round(j1Var.a));
+                        sb4.append(Math.round(k1Var.a));
                         sb4.append(",");
-                        sb4.append(Math.round(j1Var.b));
+                        sb4.append(Math.round(k1Var.b));
                         sb4.append("]");
                     }
                     sb4.append("],\n\t\t\"freq\": ");
-                    sb4.append(Math.round(((l1Var2.c / m1Var.a) * 100.0f) * 100.0f) / 100.0f);
+                    sb4.append(Math.round(((m1Var2.c / n1Var.a) * 100.0f) * 100.0f) / 100.0f);
                     sb4.append("\n\t}");
                 }
                 sb4.append("\n]");

@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLObject;
 import v7.s7;
 import v7.t7;
 import v7.u7;
-import w7.k6;
+import w7.j6;
 import zd.e0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a0 implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
@@ -34,7 +34,7 @@ public final class a0 implements f {
         this.a = k0Var;
         this.b = dVar;
         id.c cVar = null;
-        this.c = new xa.c(new m(this, cVar, 1), 9);
+        this.c = new xa.c(new m(this, cVar, 1), 10);
         this.h = hd.g.m(list);
         this.n = new com.google.firebase.messaging.t(c0Var, new ie.g(this, 1), new m(this, cVar, 0));
     }
@@ -579,18 +579,18 @@ public final class a0 implements f {
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                k6.a(fileInputStream, th2);
+                                j6.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    k6.a(fileInputStream, null);
+                    j6.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            k6.a(fileInputStream, null);
+            j6.a(fileInputStream, null);
             return obj;
         } catch (FileNotFoundException e7) {
             e = e7;
@@ -879,13 +879,13 @@ public final class a0 implements f {
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                k6.a(fileOutputStream, th);
+                                j6.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    k6.a(fileOutputStream, null);
+                    j6.a(fileOutputStream, null);
                     if (!r32.renameTo(a0Var.c())) {
                         return iVar;
                     }
@@ -895,7 +895,7 @@ public final class a0 implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            k6.a(fileOutputStream, null);
+            j6.a(fileOutputStream, null);
             if (!r32.renameTo(a0Var.c())) {
             }
         } catch (IOException e) {

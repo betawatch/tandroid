@@ -13,16 +13,16 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import k2.u;
+import ki.e0;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
     public final g2.h b;
     public final g2.h c;
-    public final u d;
+    public final e0 d;
     public final Uri[] e;
     public final b2.s[] f;
     public final p2.c g;
@@ -35,24 +35,24 @@ public final class i {
     public Uri p;
     public boolean q;
     public x2.s r;
-    public final n2.e j = new n2.e(2);
+    public final o0.b j = new o0.b(1);
     public byte[] m = d0.b;
     public long s = -9223372036854775807L;
 
-    public i(c cVar, p2.c cVar2, Uri[] uriArr, b2.s[] sVarArr, l.d dVar, c0 c0Var, u uVar, List list, j2.k kVar) {
+    public i(c cVar, p2.c cVar2, Uri[] uriArr, b2.s[] sVarArr, l.d dVar, c0 c0Var, e0 e0Var, List list, j2.k kVar) {
         this.a = cVar;
         this.g = cVar2;
         this.e = uriArr;
         this.f = sVarArr;
-        this.d = uVar;
+        this.d = e0Var;
         this.i = list;
         this.k = kVar;
-        g2.h createDataSource = ((g2.g) dVar.a).createDataSource();
+        g2.h createDataSource = ((g2.g) dVar.b).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((g2.g) dVar.a).createDataSource();
+        this.c = ((g2.g) dVar.b).createDataSource();
         this.h = new l1("", sVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < uriArr.length; i10++) {
@@ -244,8 +244,8 @@ public final class i {
         if (uri == null) {
             return null;
         }
-        n2.e eVar = this.j;
-        byte[] bArr = (byte[]) ((d) eVar.b).remove(uri);
+        o0.b bVar = this.j;
+        byte[] bArr = (byte[]) ((d) bVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }
@@ -254,11 +254,11 @@ public final class i {
         int n10 = this.r.n();
         Object q6 = this.r.q();
         byte[] bArr2 = this.m;
-        e eVar2 = new e(this.c, mVar, 3, sVar, n10, q6, -9223372036854775807L, -9223372036854775807L);
+        e eVar = new e(this.c, mVar, 3, sVar, n10, q6, -9223372036854775807L, -9223372036854775807L);
         if (bArr2 == null) {
             bArr2 = d0.b;
         }
-        eVar2.s = bArr2;
-        return eVar2;
+        eVar.s = bArr2;
+        return eVar;
     }
 }

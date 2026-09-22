@@ -1,13 +1,17 @@
 package w7;
 
-import android.util.Log;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static void a(String str) {
-        if (Log.isLoggable("FirebaseAppIndex", 3) ? true : Log.isLoggable("FirebaseAppIndex", 3)) {
-            Log.d("FirebaseAppIndex", str);
+    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
+        byte[] bArr = new byte[8192];
+        int read = inputStream.read(bArr);
+        while (read >= 0) {
+            byteArrayOutputStream.write(bArr, 0, read);
+            read = inputStream.read(bArr);
         }
     }
 }

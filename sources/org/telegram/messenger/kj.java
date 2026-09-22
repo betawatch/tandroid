@@ -12,7 +12,7 @@ import org.telegram.ui.f41;
 import org.telegram.ui.vg1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kj implements vg1, org.telegram.ui.Components.c5, LanguageDetector.StringCallback {
     public final /* synthetic */ boolean a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class kj implements vg1, org.telegram.ui.Components
         TLRPC.Document document = (TLRPC.Document) this.c;
         String str = (String) this.d;
         MessageObject.SendAnimationData sendAnimationData = (MessageObject.SendAnimationData) this.f;
-        int i12 = ChatActivityEnterView.m5;
+        int i12 = ChatActivityEnterView.n5;
         chatActivityEnterView.d(document, str, this.e, sendAnimationData, this.a, z10, i10, i11);
     }
 

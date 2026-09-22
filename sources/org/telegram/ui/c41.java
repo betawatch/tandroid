@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c41 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int v = 0;
@@ -45,7 +45,7 @@ public final class c41 extends org.telegram.ui.ActionBar.f3 {
     /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.tgnet.ConnectionsManager] */
     /* JADX WARN: Type inference failed for: r3v4, types: [org.telegram.tgnet.tl.TL_ephemeral$TL_reportMessage] */
     /* JADX WARN: Type inference failed for: r3v6, types: [org.telegram.tgnet.tl.TL_stories$TL_stories_report] */
-    public static void H(c41 c41Var, CharSequence charSequence, byte[] bArr, String str) {
+    public static void G(c41 c41Var, CharSequence charSequence, byte[] bArr, String str) {
         TLRPC.TL_messages_report tL_messages_report;
         ?? r02;
         long j3 = c41Var.r;
@@ -256,27 +256,27 @@ public final class c41 extends org.telegram.ui.ActionBar.f3 {
         i1Var.E(i1Var.b + 1);
         b41 b41Var = (b41) i1Var.getViewPages()[1];
         if (b41Var != null) {
-            org.telegram.ui.Components.s61 s61Var = b41Var.f;
+            org.telegram.ui.Components.u61 u61Var = b41Var.f;
             if (tLObject instanceof TLRPC.TL_reportResultChooseOption) {
                 b41Var.b = null;
                 b41Var.c = (TLRPC.TL_reportResultChooseOption) tLObject;
                 b41Var.d = null;
-                s61Var.Y2.N(false);
+                u61Var.Y2.N(false);
             } else if (tLObject instanceof TLRPC.TL_reportResultAddComment) {
                 b41Var.b((TLRPC.TL_reportResultAddComment) tLObject);
             } else if (z10) {
                 b41Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject;
                 b41Var.c = null;
                 b41Var.d = null;
-                s61Var.Y2.N(false);
+                u61Var.Y2.N(false);
             }
             if (charSequence != null) {
                 t5 t5Var = b41Var.h;
                 ((TextView) t5Var.d).setText(charSequence);
                 ((TextView) t5Var.d).getText();
                 t5Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_31));
-                if (s61Var != null) {
-                    s61Var.Y2.N(true);
+                if (u61Var != null) {
+                    u61Var.Y2.N(true);
                 }
             }
         }

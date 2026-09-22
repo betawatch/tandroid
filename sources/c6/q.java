@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import v7.x7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -836,9 +836,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o n02 = new a4.m(mediaInfo).n0();
-                                n02.b(jSONObject6);
-                                arrayList7.add(n02);
+                                o j02 = new android.support.v4.media.c(mediaInfo).j0();
+                                j02.b(jSONObject6);
+                                arrayList7.add(j02);
                             }
                             z10 = true;
                         }

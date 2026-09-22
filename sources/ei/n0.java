@@ -13,10 +13,10 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class n0 extends FrameLayout {
-    public final vh.o a;
+    public final vh.n a;
     public final ImageView b;
     public final TL_keyboard.KeyboardButton c;
     public boolean d;
@@ -30,22 +30,22 @@ public final class n0 extends FrameLayout {
         super(context);
         this.n = p0Var;
         this.c = keyboardButton;
-        vh.o oVar = new vh.o(context);
-        this.a = oVar;
-        oVar.f = false;
-        oVar.setTextSize(1, 14.0f);
-        oVar.setTypeface(AndroidUtilities.bold());
-        NotificationCenter.listenEmojiLoading(oVar);
-        addView(oVar, y5.e(-2, -2, 17));
-        NotificationCenter.listenEmojiLoading(oVar);
+        vh.n nVar = new vh.n(context);
+        this.a = nVar;
+        nVar.f = false;
+        nVar.setTextSize(1, 14.0f);
+        nVar.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, y5.e(-2, -2, 17));
+        NotificationCenter.listenEmojiLoading(nVar);
         setTag(keyboardButton);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
         if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
             spannableStringBuilder.append((CharSequence) "* ");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(keyboardButton.style.icon, nVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
-        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, oVar.getPaint().getFontMetricsInt(), false));
+        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, nVar.getPaint().getFontMetricsInt(), false));
         ImageView imageView = new ImageView(getContext());
         this.b = imageView;
         imageView.setColorFilter(j6.v0(j6.Xe, p0Var.a));
@@ -56,7 +56,7 @@ public final class n0 extends FrameLayout {
             imageView.setVisibility(8);
         }
         addView(imageView, y5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
-        oVar.setText(spannableStringBuilder);
+        nVar.setText(spannableStringBuilder);
     }
 
     public final void a() {

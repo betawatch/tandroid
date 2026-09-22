@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka0 implements Runnable {
     public final /* synthetic */ int a;
@@ -166,25 +166,25 @@ public final /* synthetic */ class ka0 implements Runnable {
                     }
                     return;
                 }
-                org.telegram.ui.Components.nh0 nh0Var = profileActivity.a0;
-                if (nh0Var != null) {
-                    org.telegram.ui.Components.kh0 j3 = org.telegram.ui.Components.nh0.j(7, nh0Var.a);
+                org.telegram.ui.Components.qh0 qh0Var = profileActivity.a0;
+                if (qh0Var != null) {
+                    org.telegram.ui.Components.nh0 j3 = org.telegram.ui.Components.qh0.j(7, qh0Var.a);
                     if (j3 == null || !j3.s) {
                         r52 = 0;
                     } else {
                         r52 = 0;
                         j3.s = false;
-                        nh0Var.invalidate();
+                        qh0Var.invalidate();
                     }
                     if (zArr[r52]) {
-                        org.telegram.ui.Components.nh0 nh0Var2 = profileActivity.a0;
-                        nh0Var2.I = true;
-                        nh0Var2.o(7, r52);
+                        org.telegram.ui.Components.qh0 qh0Var2 = profileActivity.a0;
+                        qh0Var2.I = true;
+                        qh0Var2.o(7, r52);
                         profileActivity.a0.o(9, true);
-                        org.telegram.ui.Components.nh0 nh0Var3 = profileActivity.a0;
-                        if (nh0Var3.I) {
-                            nh0Var3.I = r52;
-                            nh0Var3.d();
+                        org.telegram.ui.Components.qh0 qh0Var3 = profileActivity.a0;
+                        if (qh0Var3.I) {
+                            qh0Var3.I = r52;
+                            qh0Var3.d();
                             return;
                         }
                         return;
@@ -305,7 +305,7 @@ public final /* synthetic */ class ka0 implements Runnable {
                     return;
                 }
             case 8:
-                v41.P((v41) obj2, z11, (org.telegram.ui.Components.wn0) obj);
+                v41.P((v41) obj2, z11, (org.telegram.ui.Components.yn0) obj);
                 return;
             case 9:
                 TwoStepVerificationActivity.X((TwoStepVerificationActivity) obj2, z11, (byte[]) obj);
@@ -427,7 +427,7 @@ public final /* synthetic */ class ka0 implements Runnable {
                 ((Utilities.Callback2) obj2).run(Boolean.valueOf(z11), (String) obj);
                 return;
             case 14:
-                ((org.telegram.ui.Components.l80) obj2).run(Boolean.valueOf(z11), (String) obj);
+                ((org.telegram.ui.Components.o80) obj2).run(Boolean.valueOf(z11), (String) obj);
                 return;
             default:
                 ((ai.m0) obj2).run(Boolean.valueOf(z11), (String) obj);

@@ -22,7 +22,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class wp0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -132,7 +132,7 @@ public final class wp0 extends FrameLayout {
         pp0 pp0Var = new pp0(this, context, i10);
         this.d = pp0Var;
         np0Var.setAdapter(pp0Var);
-        np0Var.setOnItemClickListener(new org.telegram.ui.Components.bn0(this, i10, 1));
+        np0Var.setOnItemClickListener(new org.telegram.ui.Components.dn0(this, i10, 1));
         np0Var.j(new qp0(this, i10));
         addView(np0Var, w7.y5.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
@@ -189,8 +189,8 @@ public final class wp0 extends FrameLayout {
         f6Var3 = ((org.telegram.ui.ActionBar.n2) cq0Var).resourceProvider;
         dh.e eVar3 = new dh.e(f6Var3);
         eVar3.e = new d2.c(9);
-        eVar3.f(0, 0);
         eVar3.e(0, 0);
+        eVar3.d(0, 0);
         eVar3.c(0, 0);
         c10.o(eVar3);
         c10.q(AndroidUtilities.dp(18.0f));

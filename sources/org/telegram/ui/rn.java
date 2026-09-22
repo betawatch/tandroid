@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class rn extends org.telegram.ui.ActionBar.g5 {
     public float f;
@@ -249,22 +249,22 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
         znVar.q3 = null;
         znVar.Ic();
         znVar.vc();
-        xk xkVar = znVar.o1;
-        if (xkVar != null) {
-            xkVar.d.N(new ir(2));
-            xkVar.h = 0L;
+        yk ykVar = znVar.o1;
+        if (ykVar != null) {
+            ykVar.d.N(new ir(2));
+            ykVar.h = 0L;
             znVar.o1.g(false);
         }
-        jk jkVar = znVar.p1;
-        if (jkVar != null) {
-            jkVar.b(false);
+        kk kkVar = znVar.p1;
+        if (kkVar != null) {
+            kkVar.b(false);
         }
         znVar.kb(false);
     }
 
     @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
-        jk jkVar;
+        kk kkVar;
         int i10;
         zn znVar = this.h;
         znVar.s3 = true;
@@ -280,10 +280,10 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
                 i10 = ((org.telegram.ui.ActionBar.n2) znVar).classGuid;
                 AndroidUtilities.requestAdjustResize(parentActivity, i10);
             }
-            AndroidUtilities.runOnUIThread(new cj(this, 9), 500L);
-            hj hjVar = znVar.g2;
-            if (hjVar != null) {
-                hjVar.b(true);
+            AndroidUtilities.runOnUIThread(new dj(this, 9), 500L);
+            ij ijVar = znVar.g2;
+            if (ijVar != null) {
+                ijVar.b(true);
             }
             org.telegram.ui.Components.i40 i40Var = znVar.i2;
             if (i40Var != null) {
@@ -295,14 +295,14 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
         ofFloat.setInterpolator(org.telegram.ui.Components.qr.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
-        xk xkVar = znVar.o1;
-        if (xkVar != null) {
-            xkVar.g(!znVar.Oa && xkVar.a() && znVar.u3 == null);
+        yk ykVar = znVar.o1;
+        if (ykVar != null) {
+            ykVar.g(!znVar.Oa && ykVar.a() && znVar.u3 == null);
         }
-        if (znVar.u3 == null || (jkVar = znVar.p1) == null) {
+        if (znVar.u3 == null || (kkVar = znVar.p1) == null) {
             return;
         }
-        int currentPosition = jkVar.a.getCurrentPosition();
+        int currentPosition = kkVar.a.getCurrentPosition();
         int i11 = znVar.r1;
         if (currentPosition != i11) {
             znVar.p1.a.d(i11, i11);
@@ -312,10 +312,10 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void o(gg.q0 q0Var) {
         zn znVar = this.h;
-        xk xkVar = znVar.o1;
-        if (xkVar != null) {
-            xkVar.d.N(new ir(2));
-            xkVar.h = 0L;
+        yk ykVar = znVar.o1;
+        if (ykVar != null) {
+            ykVar.d.N(new ir(2));
+            ykVar.h = 0L;
         }
         znVar.q3 = null;
         znVar.Ic();
@@ -337,13 +337,13 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
         znVar.t3 = obj;
         if (TextUtils.isEmpty(obj) || !(znVar.t3.startsWith("$") || znVar.t3.startsWith("#"))) {
             znVar.u3 = null;
-            jk jkVar = znVar.p1;
-            if (jkVar != null) {
-                jkVar.b(false);
+            kk kkVar = znVar.p1;
+            if (kkVar != null) {
+                kkVar.b(false);
                 znVar.Hc();
             }
-            jk jkVar2 = znVar.p1;
-            if (jkVar2 != null && jkVar2.a.getCurrentPosition() != 0) {
+            kk kkVar2 = znVar.p1;
+            if (kkVar2 != null && kkVar2.a.getCurrentPosition() != 0) {
                 znVar.p1.a.d(0, 0);
             }
         } else {
@@ -361,12 +361,12 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
                 ofFloat.setInterpolator(org.telegram.ui.Components.qr.h);
                 ofFloat.setDuration(320L);
                 ofFloat.start();
-                xk xkVar = znVar.o1;
-                if (xkVar != null) {
-                    if (!znVar.Oa && xkVar.a() && znVar.u3 == null) {
+                yk ykVar = znVar.o1;
+                if (ykVar != null) {
+                    if (!znVar.Oa && ykVar.a() && znVar.u3 == null) {
                         z10 = true;
                     }
-                    xkVar.g(z10);
+                    ykVar.g(z10);
                 }
             }
             znVar.u3 = znVar.t3;
@@ -390,9 +390,9 @@ public final class rn extends org.telegram.ui.ActionBar.g5 {
             znVar.Lb(true);
             z10 = true;
         }
-        jk jkVar3 = znVar.p1;
-        if (jkVar3 != null) {
-            jkVar3.b(z10);
+        kk kkVar3 = znVar.p1;
+        if (kkVar3 != null) {
+            kkVar3.b(z10);
         }
         MediaDataController mediaDataController = znVar.getMediaDataController();
         String str2 = znVar.t3;

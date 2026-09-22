@@ -15,9 +15,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class zh0 extends org.telegram.ui.Components.ul0 {
+public final class zh0 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final /* synthetic */ ai0 d;
 
@@ -34,7 +34,7 @@ public final class zh0 extends org.telegram.ui.Components.ul0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         ai0 ai0Var = this.d;
@@ -163,26 +163,26 @@ public final class zh0 extends org.telegram.ui.Components.ul0 {
             }
         }
         if (i12 == 2) {
-            org.telegram.ui.Components.d90 d90Var = (org.telegram.ui.Components.d90) view;
-            d90Var.setCanEdit(j3 == ai0Var.getAccountInstance().getUserConfig().clientUserId);
+            org.telegram.ui.Components.g90 g90Var = (org.telegram.ui.Components.g90) view;
+            g90Var.setCanEdit(j3 == ai0Var.getAccountInstance().getUserConfig().clientUserId);
             if (ai0Var.o0 && j3 == ai0Var.getAccountInstance().getUserConfig().clientUserId) {
                 if (ai0Var.d != null) {
-                    d90Var.setLink("https://t.me/" + ChatObject.getPublicUsername(ai0Var.c));
-                    d90Var.d(0, null, false);
-                    d90Var.b(true);
+                    g90Var.setLink("https://t.me/" + ChatObject.getPublicUsername(ai0Var.c));
+                    g90Var.d(0, null, false);
+                    g90Var.b(true);
                     return;
                 }
                 return;
             }
-            d90Var.b(!ai0Var.p0);
+            g90Var.b(!ai0Var.p0);
             TLRPC.TL_chatInviteExported tL_chatInviteExported2 = ai0Var.e;
             if (tL_chatInviteExported2 != null) {
-                d90Var.setLink(tL_chatInviteExported2.link);
-                d90Var.c(tL_chatInviteExported2, j10);
+                g90Var.setLink(tL_chatInviteExported2.link);
+                g90Var.c(tL_chatInviteExported2, j10);
                 return;
             } else {
-                d90Var.setLink(null);
-                d90Var.d(0, null, false);
+                g90Var.setLink(null);
+                g90Var.d(0, null, false);
                 return;
             }
         }
@@ -279,10 +279,10 @@ public final class zh0 extends org.telegram.ui.Components.ul0 {
                 view = new org.telegram.ui.Cells.n4(context, 23);
                 break;
             case 2:
-                org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(this.c, ai0Var, null, true, ai0Var.h);
-                d90Var.setPermanent(true);
-                d90Var.setDelegate(new yh0(this, d90Var));
-                view = d90Var;
+                org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(this.c, ai0Var, null, true, ai0Var.h);
+                g90Var.setPermanent(true);
+                g90Var.setDelegate(new yh0(this, g90Var));
+                view = g90Var;
                 break;
             case 3:
                 f6Var = ((org.telegram.ui.ActionBar.n2) ai0Var).resourceProvider;

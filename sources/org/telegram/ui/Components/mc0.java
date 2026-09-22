@@ -1,36 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RuntimeShader;
-import java.util.Arrays;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class mc0 {
-    public final RuntimeShader a;
-    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
-    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
+    public SpannableStringBuilder a;
+    public int b;
+    public Drawable c;
+    public float d;
+    public final int e;
+    public final int f;
+    public int g = -1;
+    public int h = -1;
+    public float i = 4.66f;
 
-    public mc0(int i10) {
-        lc0.b();
-        this.a = lc0.a(AndroidUtilities.readRes(i10));
+    public mc0(int i10, int i11) {
+        this.e = i10;
+        this.f = i11;
     }
 
-    public final void a(float[] fArr) {
-        float[] fArr2 = this.b;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
+    public final CharSequence a(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        SpannableStringBuilder spannableStringBuilder = this.a;
+        int i10 = this.f;
+        if (spannableStringBuilder != null && this.c != null && AndroidUtilities.density == this.d) {
+            if (this.b != org.telegram.ui.ActionBar.j6.v0(i10, f6Var)) {
+                Drawable drawable = this.c;
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+                this.b = v02;
+                drawable.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
+            }
+            return this.a;
         }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformGradient", fArr2);
-    }
-
-    public final void b(float[] fArr) {
-        float[] fArr2 = this.c;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
+        if (context == null) {
+            return null;
         }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformPattern", fArr2);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
+        this.d = AndroidUtilities.density;
+        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
+        this.c = mutate;
+        int v03 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        this.b = v03;
+        mutate.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.SRC_IN));
+        int i11 = this.g;
+        int intrinsicWidth = i11 <= 0 ? this.c.getIntrinsicWidth() : AndroidUtilities.dp(i11);
+        int i12 = this.h;
+        int intrinsicHeight = i12 <= 0 ? this.c.getIntrinsicHeight() : AndroidUtilities.dp(i12);
+        int dp = AndroidUtilities.dp(this.i);
+        this.c.setBounds(0, dp, intrinsicWidth, intrinsicHeight + dp);
+        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(2.0f)), 1, 2, 33);
+        this.a = spannableStringBuilder2;
+        return spannableStringBuilder2;
     }
 }

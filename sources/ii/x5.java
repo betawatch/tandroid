@@ -12,9 +12,9 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class x5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -24,18 +24,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
-        a6 a6Var;
-        r9 textSelectionHelper;
-        d6 d6Var = this.a;
-        if (d6Var.F || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
-            return;
-        }
-        d6Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 5));
-    }
-
-    @Override // ii.h1
-    public final void K(CharSequence charSequence) {
+    public final void I(CharSequence charSequence) {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             e3 e3Var = (e3) a6Var;
@@ -47,7 +36,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void U(Editable editable) {
+    public final void R(Editable editable) {
         a aVar;
         d6 d6Var = this.a;
         if (d6Var.x == null) {
@@ -95,7 +84,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean Y(boolean z10) {
+    public final boolean V(boolean z10) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -116,7 +105,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean f() {
+    public final boolean d() {
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || d6Var.x == null) {
@@ -126,7 +115,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void j(int i10, int i11) {
+    public final void i(int i10, int i11) {
         h2 h2Var;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -137,7 +126,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void n(i1 i1Var) {
+    public final void l(i1 i1Var) {
         int length;
         Spanned spanned;
         boolean z10;
@@ -176,7 +165,7 @@ public final class x5 implements h1 {
         a aVar = d6Var.x;
         w3 w3Var = ((e3) a6Var).a;
         ArrayList arrayList = w3Var.p4;
-        k61 k61Var = w3Var.Y2;
+        m61 m61Var = w3Var.Y2;
         ArrayList arrayList2 = w3Var.l3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -206,7 +195,7 @@ public final class x5 implements h1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 w3Var.t4();
-                k61Var.N(false);
+                m61Var.N(false);
                 h2 h2Var2 = w3Var.J3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -217,7 +206,7 @@ public final class x5 implements h1 {
             if (aVar.c > 0) {
                 w3Var.u2(indexOf);
                 w3Var.t4();
-                k61Var.N(false);
+                m61Var.N(false);
                 h2 h2Var3 = w3Var.J3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -256,7 +245,7 @@ public final class x5 implements h1 {
         arrayList2.add(i12, aVar2);
         w3Var.t4();
         if (z10) {
-            k61Var.N(false);
+            m61Var.N(false);
             h2 h2Var4 = w3Var.J3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -269,17 +258,17 @@ public final class x5 implements h1 {
             text.delete(length, text.length());
             editText.h = false;
         }
-        k61Var.S();
+        m61Var.S();
         w3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            k61Var.l();
+            m61Var.l();
         } else {
             s4.m0 itemAnimator = w3Var.getItemAnimator();
             w3Var.setItemAnimator(null);
-            k61Var.o(indexOf2);
+            m61Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                k61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                m61Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             w3Var.post(new y2(w3Var, itemAnimator, 0));
         }
@@ -291,7 +280,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean p(i1 i1Var) {
+    public final boolean o(i1 i1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;
@@ -327,7 +316,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean t(i1 i1Var) {
+    public final boolean s(i1 i1Var) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -338,7 +327,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void y() {
+    public final void v() {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -346,5 +335,16 @@ public final class x5 implements h1 {
             return;
         }
         w3.R1(((e3) a6Var).a, aVar, true);
+    }
+
+    @Override // ii.h1
+    public final void z(i1 i1Var, int i10, int i11) {
+        a6 a6Var;
+        r9 textSelectionHelper;
+        d6 d6Var = this.a;
+        if (d6Var.F || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        d6Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 5));
     }
 }

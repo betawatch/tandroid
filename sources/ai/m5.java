@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
@@ -24,7 +24,7 @@ import org.telegram.ui.xd1;
 import org.telegram.ui.xo0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -236,8 +236,8 @@ public final /* synthetic */ class m5 implements View.OnClickListener {
                         }
                         f6 t10 = lastStoryViewer.t();
                         if (t10 != null) {
-                            pk0 pk0Var = t10.f2;
-                            if (pk0Var != null && pk0Var.getReactionsWindow() != null) {
+                            sk0 sk0Var = t10.f2;
+                            if (sk0Var != null && sk0Var.getReactionsWindow() != null) {
                                 t10.f2.getReactionsWindow().d();
                             }
                             j4 j4Var = t10.Z2;

@@ -23,14 +23,14 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.nc;
 import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(s61 s61Var) {
-        if (this.m || this.n || s61Var.X2.N0() + 10 <= s61Var.Y2.x.size()) {
+    public final void b(u61 u61Var) {
+        if (this.m || this.n || u61Var.X2.N0() + 10 <= u61Var.Y2.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    w51 J = w51.J(gi.g.class);
+                    y51 J = y51.J(gi.g.class);
                     J.G = new gi.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(w51.n(29));
+        arrayList.add(y51.n(29));
     }
 
     public final void d() {
@@ -168,7 +168,7 @@ public final class t0 implements gi.e {
         a();
         s0 s0Var = this.h;
         if (s0Var != null) {
-            s0Var.f();
+            s0Var.l();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
@@ -194,17 +194,17 @@ public final class t0 implements gi.e {
         j9Var.setScaleX(1.333f);
         j9Var.setScaleY(1.333f);
         j9Var.a(false);
-        k90 k90Var = ocVar.b;
-        k90Var.setSingleLine(false);
-        k90Var.setMaxLines(2);
-        k90Var.setTextSize(1, 14.0f);
-        k90Var.setText(replaceTags);
-        if (k90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        n90 n90Var = ocVar.b;
+        n90Var.setSingleLine(false);
+        n90Var.setMaxLines(2);
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setText(replaceTags);
+        if (n90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) k90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) k90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) n90Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {

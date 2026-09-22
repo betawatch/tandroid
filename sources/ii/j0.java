@@ -5,7 +5,7 @@ import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.ca;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class j0 implements ca {
     public final /* synthetic */ Layout a;
@@ -45,8 +45,8 @@ public final class j0 implements ca {
         TL_iv.PageBlock pageBlock;
         TL_iv.PageCaption pageCaption;
         TL_iv.RichText richText;
-        a M = this.d.c.M();
-        return (M == null || (pageBlock = M.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : f6.r(richText, null, true);
+        a H = this.d.c.H();
+        return (H == null || (pageBlock = H.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : f6.r(richText, null, true);
     }
 
     @Override // org.telegram.ui.Cells.ca

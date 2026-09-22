@@ -1,10 +1,60 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class a21 extends fq {
-    @Override // org.telegram.ui.Components.fq
-    public final int a() {
-        return -6182737;
+public final class a21 extends xl0 {
+    public Context c;
+    public ArrayList d;
+
+    @Override // org.telegram.ui.Components.xl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty()) {
+            return 0;
+        }
+        return arrayList.size() + 1;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 == 0 ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.d.get(i10 - 1)).get(0);
+            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) c1Var.a;
+            a9Var.a.setText(org.telegram.ui.ActionBar.g5.i(l6Var.f));
+            a9Var.b = b10;
+            a9Var.setWillNotDraw(b10 == 0);
+            a9Var.invalidate();
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View a9Var;
+        Context context = this.c;
+        if (i10 != 0) {
+            a9Var = new View(context);
+            a9Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
+        } else {
+            a9Var = new org.telegram.ui.Cells.a9(context);
+            a9Var.setLayoutParams(new s4.p0(-1, -2));
+        }
+        return new il0(a9Var);
     }
 }

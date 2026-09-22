@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class f1 extends Binder implements j {
     public final WeakReference a;
@@ -99,7 +99,7 @@ public final class f1 extends Binder implements j {
             b0Var.F(l1Var, str);
             u10.b(new b2.r1(new b2.l1(str, r1Var.b.d), r1Var.c, r1Var.d, r1Var.e));
         }
-        this.d = b0Var.e();
+        this.d = b0Var.d();
         h1 a2 = h1Var.a(new s1(u10.i()));
         b2.q1 q1Var = a2.E;
         if (q1Var.D.isEmpty()) {

@@ -33,8 +33,8 @@ import org.telegram.ui.ActionBar.g5;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.h00;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u80;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.h4;
 import org.telegram.ui.h70;
 import org.telegram.ui.l20;
@@ -44,7 +44,7 @@ import org.telegram.ui.u3;
 import org.telegram.ui.yd;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public abstract class w1 extends FrameLayout {
     public boolean A0;
@@ -74,7 +74,7 @@ public abstract class w1 extends FrameLayout {
     public float c;
     public int c0;
     public final float[] d;
-    public final u80 d0;
+    public final x80 d0;
     public final boolean[] e;
     public boolean e0;
     public final Paint[] f;
@@ -193,7 +193,7 @@ public abstract class w1 extends FrameLayout {
                         if (k0Var2.getParent() instanceof ViewGroup) {
                             a8 a8Var = new a8(k0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            v70 F = v70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
+                            y70 F = y70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
                             F.s = 0;
                             F.S(k0Var2.m0, k0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -390,7 +390,7 @@ public abstract class w1 extends FrameLayout {
                         if (k0Var2.getParent() instanceof ViewGroup) {
                             a8 a8Var = new a8(k0Var2, 2);
                             Utilities.Callback callback2 = null;
-                            v70 F = v70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
+                            y70 F = y70.F((ViewGroup) k0Var2.getParent(), null, k0Var2.R);
                             F.s = 0;
                             F.S(k0Var2.m0, k0Var2.n0);
                             F.a0(0.0f, -AndroidUtilities.dp(52.0f));
@@ -477,11 +477,11 @@ public abstract class w1 extends FrameLayout {
             }
         });
         addView(imageView4, y5.e(54, 56, 85));
-        u80 u80Var = new u80(context);
-        this.d0 = u80Var;
-        u80Var.setPivotX(0.0f);
-        u80Var.setPivotY(AndroidUtilities.dp(2.0f));
-        addView(u80Var, y5.e(-1, 2, 87));
+        x80 x80Var = new x80(context);
+        this.d0 = x80Var;
+        x80Var.setPivotX(0.0f);
+        x80Var.setPivotY(AndroidUtilities.dp(2.0f));
+        addView(x80Var, y5.e(-1, 2, 87));
         setWillNotDraw(false);
         this.b[0] = new v1(k0Var);
         this.b[1] = new v1(k0Var);

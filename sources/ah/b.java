@@ -94,11 +94,11 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.v;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.Components.zt;
 import org.telegram.ui.b4;
 import org.telegram.ui.f4;
@@ -113,9 +113,9 @@ import org.telegram.ui.yc0;
 import u2.b0;
 import v7.m8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener, q9.d, kl0, OnCompleteListener, Continuation, ll0, Utilities.Callback3Return, fd0, p0, zt, i4, e2.n, e2.m, j0, e1, v {
+public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener, q9.d, nl0, OnCompleteListener, Continuation, ol0, Utilities.Callback3Return, fd0, p0, zt, i4, e2.n, e2.m, j0, e1, v {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -139,13 +139,13 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
     }
 
     @Override // ii.p0
-    public v70 a(i1 i1Var) {
+    public y70 a(i1 i1Var) {
         of.b bVar = (of.b) this.b;
         f6 f6Var = (f6) this.c;
         r rVar = (r) bVar.c;
-        v70 v70Var = new v70(rVar, f6Var, i1Var, false, false, true);
-        rVar.H = v70Var;
-        return v70Var;
+        y70 y70Var = new y70(rVar, f6Var, i1Var, false, false, true);
+        rVar.H = y70Var;
+        return y70Var;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x002e, code lost:
@@ -221,7 +221,7 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         f6 f6Var;
         int i11;
@@ -293,10 +293,10 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
                                             clientUserId = UserConfig.getInstance(i12).getClientUserId();
                                         }
                                         f6Var2 = ((f3) iaVar).resourcesProvider;
-                                        v70 F = v70.F(baVar, f6Var2, view);
+                                        y70 F = y70.F(baVar, f6Var2, view);
                                         F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new ai.j(baVar, clientUserId, 5), false);
                                         F.k();
-                                        v70.f(F, iaVar.i1().B(clientUserId, true), iaVar.v, false, null, new m2(4, baVar, F));
+                                        y70.f(F, iaVar.i1().B(clientUserId, true), iaVar.v, false, null, new m2(4, baVar, F));
                                         F.Z();
                                         break;
                                     }
@@ -604,14 +604,14 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
         return e4.B0((e4) this.b, (Context) this.c, view, i10);
     }
@@ -711,34 +711,14 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
         }
     }
 
-    @Override // hh.i
-    public void i(RectF rectF, View view) {
-        ch.d dVar = (ch.d) this.b;
-        View view2 = (View) this.c;
-        dVar.t(rectF.left, rectF.top);
-        view2.invalidate();
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 21:
-                ((j2.b) obj).e((j2.a) this.b, (b0) this.c);
-                break;
-            default:
-                ((j2.b) obj).onRenderedFirstFrame((j2.a) this.b);
-                break;
-        }
-    }
-
     @Override // org.telegram.ui.Components.zt
-    public void j() {
+    public void i() {
         switch (this.a) {
             case 17:
                 ii.l0 l0Var = (ii.l0) this.b;
                 ii.k0 k0Var = (ii.k0) this.c;
                 l0Var.i();
-                k0Var.k0();
+                k0Var.g0();
                 break;
             default:
                 o5 o5Var = (o5) this.b;
@@ -754,6 +734,26 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
                 }
                 break;
         }
+    }
+
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 21:
+                ((j2.b) obj).e((j2.a) this.b, (b0) this.c);
+                break;
+            default:
+                ((j2.b) obj).onRenderedFirstFrame((j2.a) this.b);
+                break;
+        }
+    }
+
+    @Override // hh.i
+    public void j(RectF rectF, View view) {
+        ch.d dVar = (ch.d) this.b;
+        View view2 = (View) this.c;
+        dVar.t(rectF.left, rectF.top);
+        view2.invalidate();
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -849,7 +849,7 @@ public final /* synthetic */ class b implements hh.i, k9, a2, OnFailureListener,
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
         int i10 = this.a;
     }

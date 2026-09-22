@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.hm;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q5 extends org.telegram.ui.Components.v9 {
     public final Paint G;
@@ -61,9 +61,9 @@ public final class q5 extends org.telegram.ui.Components.v9 {
                 this.b.draw(canvas);
                 if (u5Var.M == null) {
                     if (u5Var.L == null) {
-                        vh.h hVar = new vh.h();
-                        u5Var.L = hVar;
-                        hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+                        vh.g gVar = new vh.g();
+                        u5Var.L = gVar;
+                        gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
                     }
                     u5Var.L.setBounds(0, 0, getWidth(), getHeight());
                     u5Var.L.draw(canvas);

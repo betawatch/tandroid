@@ -20,7 +20,7 @@ import java.util.concurrent.locks.Lock;
 import m.p3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
     public n6.h E;
@@ -56,7 +56,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean H() {
+    public final boolean E() {
         ArrayList arrayList = this.K;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -69,7 +69,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e L(e eVar) {
+    public final e O(e eVar) {
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
@@ -129,7 +129,7 @@ public final class g0 implements k0 {
         try {
             m0Var.o.h();
             m0Var.m = new a0(m0Var);
-            m0Var.m.z();
+            m0Var.m.v();
             m0Var.b.signalAll();
             m0Var.a.unlock();
             n0.a.execute(new q4(this, 13));
@@ -286,7 +286,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void r(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
         if (i(1)) {
             f(aVar, eVar, z10);
             if (j()) {
@@ -301,7 +301,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void z() {
+    public final void v() {
         m0 m0Var = this.a;
         HashMap hashMap = m0Var.i;
         j0 j0Var = m0Var.o;

@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g5;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.o61;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h1 extends g5 {
     public final r0 f = new r0(this, 2);
@@ -38,9 +38,9 @@ public final class h1 extends g5 {
         i1Var.r = null;
         i1Var.n = false;
         AndroidUtilities.cancelRunOnUIThread(this.f);
-        m61 m61Var = i1Var.a;
-        if (m61Var != null) {
-            m61Var.Y2.N(true);
+        o61 o61Var = i1Var.a;
+        if (o61Var != null) {
+            o61Var.Y2.N(true);
             i1Var.a.X2.h1(0, 0);
         }
         i1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(i1Var.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
@@ -59,9 +59,9 @@ public final class h1 extends g5 {
             AndroidUtilities.runOnUIThread(r0Var, 500L);
             i1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
         }
-        m61 m61Var = i1Var.a;
-        if (m61Var != null) {
-            m61Var.Y2.N(true);
+        o61 o61Var = i1Var.a;
+        if (o61Var != null) {
+            o61Var.Y2.N(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
                 i1Var.a.X2.h1(0, 0);
             }

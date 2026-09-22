@@ -4,10 +4,10 @@ import com.google.android.gms.internal.cast.l0;
 import j$.util.Objects;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
-import w7.m7;
-import w7.o7;
+import w7.l7;
+import w7.n7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l extends l0 {
     public static final l n = new l(null, new Object[0], 0);
@@ -48,7 +48,7 @@ public final class l extends l0 {
             Objects.requireNonNull(objArr2[1]);
             return new l(null, objArr2, 1);
         }
-        m7.b(i12, objArr2.length >> 1);
+        l7.b(i12, objArr2.length >> 1);
         int max = Math.max(i12, 2);
         if (max < 751619276) {
             i11 = Integer.highestOneBit(max - 1);
@@ -81,7 +81,7 @@ public final class l extends l0 {
                     Objects.requireNonNull(obj2);
                     Object obj3 = objArr2[i18 ^ i13];
                     Objects.requireNonNull(obj3);
-                    int a2 = o7.a(obj2.hashCode());
+                    int a2 = n7.a(obj2.hashCode());
                     while (true) {
                         int i19 = a2 & i14;
                         int i20 = bArr[i19] & 255;
@@ -130,7 +130,7 @@ public final class l extends l0 {
                         Objects.requireNonNull(obj5);
                         Object obj6 = objArr2[i25 ^ 1];
                         Objects.requireNonNull(obj6);
-                        int a10 = o7.a(obj5.hashCode());
+                        int a10 = n7.a(obj5.hashCode());
                         while (true) {
                             int i26 = a10 & i14;
                             int i27 = iArr[i26];
@@ -184,7 +184,7 @@ public final class l extends l0 {
                     Objects.requireNonNull(obj10);
                     Object obj11 = objArr2[i32 ^ 1];
                     Objects.requireNonNull(obj11);
-                    int a11 = o7.a(obj10.hashCode());
+                    int a11 = n7.a(obj10.hashCode());
                     while (true) {
                         int i33 = a11 & i14;
                         char c13 = (char) sArr[i33];
@@ -247,7 +247,7 @@ public final class l extends l0 {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a2 = o7.a(obj.hashCode());
+                        int a2 = n7.a(obj.hashCode());
                         while (true) {
                             int i11 = a2 & length;
                             int i12 = bArr[i11] & 255;
@@ -263,7 +263,7 @@ public final class l extends l0 {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a10 = o7.a(obj.hashCode());
+                        int a10 = n7.a(obj.hashCode());
                         while (true) {
                             int i13 = a10 & length2;
                             char c10 = (char) sArr[i13];
@@ -279,7 +279,7 @@ public final class l extends l0 {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a11 = o7.a(obj.hashCode());
+                        int a11 = n7.a(obj.hashCode());
                         while (true) {
                             int i14 = a11 & length3;
                             int i15 = iArr[i14];

@@ -1,149 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class jk0 extends s4.s0 {
-    public boolean a;
-    public boolean b;
-    public ValueAnimator c;
-    public ValueAnimator d;
-    public final /* synthetic */ pk0 e;
+public final class jk0 extends og.a {
+    public final zg.p0 c;
 
-    public jk0(pk0 pk0Var) {
-        this.e = pk0Var;
+    public jk0(int i10, zg.p0 p0Var) {
+        super(i10, false);
+        this.c = p0Var;
     }
 
-    public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
-        ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
-        duration.addUpdateListener(new p70(aVar, 8));
-        duration.addListener(new org.telegram.ui.q0(1, runnable));
-        duration.start();
-        return duration;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        pk0 pk0Var = this.e;
-        gg.j0 j0Var = pk0Var.W;
-        boolean z10 = j0Var.L0() != 0;
-        if (z10 != this.a) {
-            ValueAnimator valueAnimator = this.c;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            final int i12 = 0;
-            final int i13 = 0;
-            this.c = c(pk0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.hk0
-                public final /* synthetic */ jk0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f7 = (Float) obj;
-                    switch (i12) {
-                        case 0:
-                            pk0 pk0Var2 = this.b.e;
-                            Paint paint = pk0Var2.h;
-                            float floatValue = f7.floatValue();
-                            pk0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            pk0Var2.invalidate();
-                            break;
-                        default:
-                            pk0 pk0Var3 = this.b.e;
-                            Paint paint2 = pk0Var3.n;
-                            float floatValue2 = f7.floatValue();
-                            pk0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            pk0Var3.invalidate();
-                            break;
-                    }
-                }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.ik0
-                public final /* synthetic */ jk0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i13) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
-                }
-            });
-            this.a = z10;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        boolean z11 = j0Var.N0() != pk0Var.a0.h() - 1;
-        if (z11 != this.b) {
-            ValueAnimator valueAnimator2 = this.d;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
+        if (obj != null && jk0.class == obj.getClass()) {
+            jk0 jk0Var = (jk0) obj;
+            int i10 = this.a;
+            int i11 = jk0Var.a;
+            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
+                zg.p0 p0Var = this.c;
+                return p0Var != null && p0Var.equals(jk0Var.c);
             }
-            final int i14 = 1;
-            final int i15 = 1;
-            this.d = c(pk0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.hk0
-                public final /* synthetic */ jk0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f7 = (Float) obj;
-                    switch (i14) {
-                        case 0:
-                            pk0 pk0Var2 = this.b.e;
-                            Paint paint = pk0Var2.h;
-                            float floatValue = f7.floatValue();
-                            pk0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            pk0Var2.invalidate();
-                            break;
-                        default:
-                            pk0 pk0Var3 = this.b.e;
-                            Paint paint2 = pk0Var3.n;
-                            float floatValue2 = f7.floatValue();
-                            pk0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            pk0Var3.invalidate();
-                            break;
-                    }
-                }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.ik0
-                public final /* synthetic */ jk0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i15) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
-                }
-            });
-            this.b = z11;
+            if (i10 == i11) {
+                return true;
+            }
         }
+        return false;
     }
 }

@@ -36,9 +36,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.l71;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -55,13 +55,13 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public i71 d;
+    public l71 d;
     public g e;
     public final RectF f;
     public final RectF h;
     public float n;
     public final boolean r;
-    public final ka.c s;
+    public final k2.e s;
     public final Matrix v;
     public Bitmap w;
     public boolean x;
@@ -77,18 +77,18 @@ public class p extends FrameLayout implements a {
         this.f = new RectF();
         this.h = new RectF();
         this.c = new Matrix();
-        ka.c cVar = new ka.c(1, false);
-        cVar.b = new float[8];
-        this.s = cVar;
+        k2.e eVar = new k2.e(2);
+        eVar.b = new float[8];
+        this.s = eVar;
         this.v = new Matrix();
         this.F = false;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.MATRIX);
         addView(imageView);
-        c cVar2 = new c(context);
-        this.G = cVar2;
-        cVar2.b = this;
+        c cVar = new c(context);
+        this.G = cVar;
+        cVar.b = this;
         CropAreaView cropAreaView = new CropAreaView(context);
         cropAreaView.d = new RectF();
         cropAreaView.e = new RectF();
@@ -324,8 +324,8 @@ public class p extends FrameLayout implements a {
         d(rectF);
         o oVar = this.M;
         if (oVar != null) {
-            oVar.d0(false);
-            this.M.L(true);
+            oVar.Z(false);
+            this.M.G(true);
         }
     }
 
@@ -463,9 +463,9 @@ public class p extends FrameLayout implements a {
         float f11 = (cropWidth - a2) / 2.0f;
         n nVar = this.L;
         float f12 = nVar.e;
-        ka.c cVar = this.s;
-        float[] fArr = (float[]) cVar.b;
-        float[] fArr2 = (float[]) cVar.b;
+        k2.e eVar = this.s;
+        float[] fArr = (float[]) eVar.b;
+        float[] fArr2 = (float[]) eVar.b;
         float f13 = rectF2.left;
         fArr[0] = f13;
         float f14 = rectF2.top;
@@ -552,9 +552,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        i71 i71Var = this.d;
-        if (i71Var != null) {
-            return i71Var.getVideoHeight();
+        l71 l71Var = this.d;
+        if (l71Var != null) {
+            return l71Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        i71 i71Var = this.d;
-        if (i71Var != null) {
-            return i71Var.getVideoWidth();
+        l71 l71Var = this.d;
+        if (l71Var != null) {
+            return l71Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -685,7 +685,7 @@ public class p extends FrameLayout implements a {
             if (!n.c(nVar2) && f11 == 0.0f && this.a.getLockAspectRatio() == 0.0f && !this.L.j) {
                 z10 = true;
             }
-            oVar.d0(z10);
+            oVar.Z(z10);
         }
         return this.L.j;
     }
@@ -719,8 +719,8 @@ public class p extends FrameLayout implements a {
         this.n = 0.0f;
         o oVar = this.M;
         if (oVar != null) {
-            oVar.d0(true);
-            this.M.L(false);
+            oVar.Z(true);
+            this.M.G(false);
         }
     }
 
@@ -748,7 +748,7 @@ public class p extends FrameLayout implements a {
             e(true, false, false, false);
             o oVar = this.M;
             if (oVar != null) {
-                oVar.d0(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
+                oVar.Z(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
             }
             if (((int) this.L.h) != 0) {
                 return true;
@@ -807,7 +807,7 @@ public class p extends FrameLayout implements a {
                     this.n = 0.0f;
                     o oVar = this.M;
                     if (oVar != null) {
-                        oVar.d0(false);
+                        oVar.Z(false);
                     }
                 }
                 try {
@@ -916,7 +916,7 @@ public class p extends FrameLayout implements a {
         matrix.postTranslate(cropAreaView.getCropCenterX(), cropAreaView.getCropCenterY());
         if (!this.x || this.J || z10) {
             q();
-            this.M.z();
+            this.M.x();
         }
         invalidate();
     }

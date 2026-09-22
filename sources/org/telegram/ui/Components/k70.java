@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k70 implements org.telegram.ui.ActionBar.l1 {
+public final class k70 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v70 b;
+    public final /* synthetic */ l70 b;
 
-    public /* synthetic */ k70(v70 v70Var, int i10) {
+    public /* synthetic */ k70(l70 l70Var, int i10) {
         this.a = i10;
-        this.b = v70Var;
+        this.b = l70Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.l1
-    public final void o(KeyEvent keyEvent) {
-        v70 v70Var;
-        q70 q70Var;
-        v70 v70Var2;
-        q70 q70Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (q70Var = (v70Var = this.b).m) != null && q70Var.isShowing()) {
-                    v70Var.u();
-                    break;
-                }
+                l70 l70Var = this.b;
+                l70Var.e.d0 = null;
+                l70Var.requestLayout();
                 break;
             default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (q70Var2 = (v70Var2 = this.b).m) != null && q70Var2.isShowing()) {
-                    v70Var2.u();
-                    break;
-                }
+                l70 l70Var2 = this.b;
+                l70Var2.e.d0 = null;
+                l70Var2.a = false;
                 break;
         }
     }

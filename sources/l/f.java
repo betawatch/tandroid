@@ -30,7 +30,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class f extends t implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -54,7 +54,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
     public final ArrayList n = new ArrayList();
     public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 1);
     public final u2 s = new u2(this, 2);
-    public final d v = new d(this);
+    public final d v = new d(this, 0);
     public int w = 0;
     public int x = 0;
     public boolean K = false;
@@ -239,7 +239,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         l(e0Var);
         x xVar = this.M;
         if (xVar != null) {
-            xVar.v(e0Var);
+            xVar.q(e0Var);
         }
         return true;
     }
@@ -399,7 +399,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         xVar.setFocusable(true);
         xVar.setInputMethodMode(2);
         j2Var.n(iVar2);
-        j2Var.q(m10);
+        j2Var.p(m10);
         j2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {

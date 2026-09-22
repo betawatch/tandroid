@@ -21,12 +21,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import k2.u;
+import t7.u;
 import u2.d0;
 import v7.q7;
 import y2.p;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class g extends u2.a {
     public y2.m A;
@@ -49,7 +49,7 @@ public final class g extends u2.a {
     public final g2.g i;
     public final a5.a j;
     public final ob.a k;
-    public final n2.n l;
+    public final n2.m l;
     public final qb.b m;
     public final t n;
     public final long o;
@@ -61,7 +61,7 @@ public final class g extends u2.a {
     public final SparseArray u;
     public final c v;
     public final c w;
-    public final u x;
+    public final ki.e0 x;
     public final y2.n y;
     public g2.h z;
 
@@ -71,7 +71,7 @@ public final class g extends u2.a {
 
     /* JADX WARN: Type inference failed for: r2v11, types: [l2.c] */
     /* JADX WARN: Type inference failed for: r2v12, types: [l2.c] */
-    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, ob.a aVar2, n2.n nVar, qb.b bVar, long j3, long j10) {
+    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, ob.a aVar2, n2.m mVar, qb.b bVar, long j3, long j10) {
         this.P = k0Var;
         this.E = k0Var.c;
         f0 f0Var = k0Var.b;
@@ -83,7 +83,7 @@ public final class g extends u2.a {
         this.i = gVar;
         this.r = oVar;
         this.j = aVar;
-        this.l = nVar;
+        this.l = mVar;
         this.m = bVar;
         this.o = j3;
         this.p = j10;
@@ -93,11 +93,11 @@ public final class g extends u2.a {
         this.q = b(null);
         this.t = new Object();
         this.u = new SparseArray();
-        this.x = new u(this, 2);
+        this.x = new ki.e0(this, 1);
         this.N = -9223372036854775807L;
         this.L = -9223372036854775807L;
-        this.s = new l.d(this);
-        this.y = new a4.m(this, 26);
+        this.s = new l.d(this, 1);
+        this.y = new android.support.v4.media.c(this, 25);
         final int i10 = 0;
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ g b;
@@ -186,14 +186,14 @@ public final class g extends u2.a {
     public final d0 c(u2.f0 f0Var, y2.d dVar, long j3) {
         int intValue = ((Integer) f0Var.a).intValue() - this.O;
         a5.a b10 = b(f0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
+        n2.j jVar = new n2.j(this.d.c, 0, f0Var);
         int i10 = this.O + intValue;
         m2.c cVar = this.H;
         c0 c0Var = this.B;
         long j10 = this.L;
-        j2.k kVar2 = this.g;
-        e2.d.h(kVar2);
-        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, kVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar2);
+        j2.k kVar = this.g;
+        e2.d.h(kVar);
+        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, jVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar);
         this.u.put(i10, bVar);
         return bVar;
     }
@@ -214,9 +214,9 @@ public final class g extends u2.a {
         Looper myLooper = Looper.myLooper();
         j2.k kVar = this.g;
         e2.d.h(kVar);
-        n2.n nVar = this.l;
-        nVar.C(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.l;
+        mVar.C(myLooper, kVar);
+        mVar.b();
         if (this.h) {
             y(false);
             return;
@@ -278,8 +278,8 @@ public final class g extends u2.a {
         boolean z10;
         y2.m mVar = this.A;
         d dVar = new d(this);
-        synchronized (z2.c.b) {
-            z10 = z2.c.c;
+        synchronized (z2.b.b) {
+            z10 = z2.b.c;
         }
         if (z10) {
             dVar.a();
@@ -288,7 +288,7 @@ public final class g extends u2.a {
         if (mVar == null) {
             mVar = new y2.m("SntpClient");
         }
-        mVar.f(new t7.u(), new z2.b(dVar), 1);
+        mVar.f(new u(), new o0.b(dVar, 26), 1);
     }
 
     public final void w(p pVar, long j3) {
@@ -396,7 +396,7 @@ public final class g extends u2.a {
                             e = e7;
                         }
                     }
-                    bVar.G.m(bVar);
+                    bVar.G.l(bVar);
                 }
                 bVar.M = cVar2.b(i12).d;
                 for (l lVar : bVar.I) {
@@ -440,7 +440,7 @@ public final class g extends u2.a {
             boolean z15 = (i15 == 1 || i15 == 2) ? false : true;
             if ((!u10 || !z15) && !list2.isEmpty()) {
                 h d13 = ((m2.m) list2.get(0)).d();
-                if (d13 != null && d13.E(d12, Q2) != 0) {
+                if (d13 != null && d13.Q(d12, Q2) != 0) {
                     j21 = Math.max(j21, d13.b(d13.e(d12, Q2)) + j22);
                 }
             }
@@ -471,12 +471,12 @@ public final class g extends u2.a {
                         j11 = j25 + d11;
                         break;
                     }
-                    long E = d.E(d11, Q2);
-                    if (E == j3) {
+                    long Q5 = d.Q(d11, Q2);
+                    if (Q5 == j3) {
                         j11 = j25;
                         break;
                     } else {
-                        long e10 = (d.e(d11, Q2) + E) - 1;
+                        long e10 = (d.e(d11, Q2) + Q5) - 1;
                         j24 = Math.min(j24, d.c(e10, d11) + d.b(e10) + j25);
                     }
                 }
@@ -494,7 +494,7 @@ public final class g extends u2.a {
         if (this.H.d) {
             for (int i18 = 0; i18 < list3.size(); i18++) {
                 h d14 = ((m2.m) ((m2.a) list3.get(i18)).c.get(0)).d();
-                if (d14 != null && !d14.v()) {
+                if (d14 != null && !d14.F()) {
                 }
             }
             z11 = true;
@@ -513,9 +513,9 @@ public final class g extends u2.a {
                 j14 = j3;
             } else {
                 e2.d.g(cVar.a != -9223372036854775807L);
-                long Q5 = (Q2 - e2.d0.Q(this.H.a)) - j10;
+                long Q6 = (Q2 - e2.d0.Q(this.H.a)) - j10;
                 e0 e0Var = i().c;
-                long e02 = e2.d0.e0(Q5);
+                long e02 = e2.d0.e0(Q6);
                 long j28 = e0Var.c;
                 if (j28 != -9223372036854775807L) {
                     j15 = Math.min(e02, j28);
@@ -529,7 +529,7 @@ public final class g extends u2.a {
                     }
                     j15 = e02;
                 }
-                long e03 = e2.d0.e0(Q5 - j27);
+                long e03 = e2.d0.e0(Q6 - j27);
                 if (e03 < j3 && j15 > j3) {
                     e03 = j3;
                 }
@@ -575,12 +575,12 @@ public final class g extends u2.a {
                 if (j36 > j35) {
                     j16 = 2;
                     j17 = j34;
-                    j18 = Q5;
-                    j19 = e2.d0.i(e2.d0.e0(Q5 - Math.min(j38, j27 / 2)), j34, j35);
+                    j18 = Q6;
+                    j19 = e2.d0.i(e2.d0.e0(Q6 - Math.min(j38, j27 / 2)), j34, j35);
                 } else {
                     j16 = 2;
                     j17 = j34;
-                    j18 = Q5;
+                    j18 = Q6;
                     j19 = j36;
                 }
                 z12 = z11;
@@ -639,9 +639,9 @@ public final class g extends u2.a {
                 if (Q >= min) {
                 }
             }
-            long Q6 = j10 - e2.d0.Q(b10.b);
+            long Q7 = j10 - e2.d0.Q(b10.b);
             m2.c cVar4 = this.H;
-            n(new e(cVar4.a, j13, this.L, this.O, Q6, j27, j14, cVar4, i(), !this.H.d ? this.E : null));
+            n(new e(cVar4.a, j13, this.L, this.O, Q7, j27, j14, cVar4, i(), !this.H.d ? this.E : null));
             if (this.h) {
                 Handler handler = this.D;
                 c cVar5 = this.w;
@@ -654,13 +654,13 @@ public final class g extends u2.a {
                     m2.h b12 = cVar6.b(size2);
                     long j40 = b12.b;
                     List list5 = b12.c;
-                    long Q7 = e2.d0.Q(j40);
+                    long Q8 = e2.d0.Q(j40);
                     long d15 = cVar6.d(size2);
-                    long Q8 = e2.d0.Q(A);
-                    long Q9 = e2.d0.Q(cVar6.a);
-                    long Q10 = e2.d0.Q(cVar6.e);
-                    if (Q10 == j12 || Q10 >= 5000000) {
-                        Q10 = 5000000;
+                    long Q9 = e2.d0.Q(A);
+                    long Q10 = e2.d0.Q(cVar6.a);
+                    long Q11 = e2.d0.Q(cVar6.e);
+                    if (Q11 == j12 || Q11 >= 5000000) {
+                        Q11 = 5000000;
                     }
                     int i19 = 0;
                     while (i19 < list5.size()) {
@@ -671,15 +671,15 @@ public final class g extends u2.a {
                             i10 = i19;
                             h d16 = ((m2.m) list6.get(0)).d();
                             if (d16 != null) {
-                                long g10 = (d16.g(d15, Q8) + (Q9 + Q7)) - Q8;
-                                if (g10 > j3 && (g10 < Q10 - 100000 || (g10 > Q10 && g10 < Q10 + 100000))) {
-                                    Q10 = g10;
+                                long l4 = (d16.l(d15, Q9) + (Q10 + Q8)) - Q9;
+                                if (l4 > j3 && (l4 < Q11 - 100000 || (l4 > Q11 && l4 < Q11 + 100000))) {
+                                    Q11 = l4;
                                 }
                             }
                         }
                         i19 = i10 + 1;
                     }
-                    handler2.postDelayed(cVar5, q7.b(Q10, 1000L, RoundingMode.CEILING));
+                    handler2.postDelayed(cVar5, q7.b(Q11, 1000L, RoundingMode.CEILING));
                 }
                 if (this.I) {
                     A();
@@ -711,9 +711,9 @@ public final class g extends u2.a {
         cVar = this.H;
         if (cVar.d) {
         }
-        long Q62 = j10 - e2.d0.Q(b10.b);
+        long Q72 = j10 - e2.d0.Q(b10.b);
         m2.c cVar42 = this.H;
-        n(new e(cVar42.a, j13, this.L, this.O, Q62, j272, j14, cVar42, i(), !this.H.d ? this.E : null));
+        n(new e(cVar42.a, j13, this.L, this.O, Q72, j272, j14, cVar42, i(), !this.H.d ? this.E : null));
         if (this.h) {
         }
     }

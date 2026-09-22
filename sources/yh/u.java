@@ -21,13 +21,13 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xo0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -144,11 +144,11 @@ public final /* synthetic */ class u implements Runnable {
             case 2:
                 u5 u5Var2 = (u5) obj5;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj;
-                l80 l80Var = (l80) obj4;
+                o80 o80Var = (o80) obj4;
                 TLObject tLObject2 = (TLObject) obj3;
                 TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars2 = (TLRPC.TL_inputInvoiceStars) obj2;
                 if (tL_error3 != null) {
-                    l80Var.run(Boolean.FALSE, tL_error3.text);
+                    o80Var.run(Boolean.FALSE, tL_error3.text);
                     return;
                 }
                 if (tLObject2 instanceof TLRPC.PaymentForm) {
@@ -160,10 +160,10 @@ public final /* synthetic */ class u implements Runnable {
                     xo0Var2 = new xo0((TLRPC.PaymentReceipt) tLObject2);
                 }
                 if (xo0Var2 == null) {
-                    l80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
+                    o80Var.run(Boolean.FALSE, "UNKNOWN_RESPONSE");
                     return;
                 }
-                xo0Var2.Z0 = new r5.d(l80Var, 26);
+                xo0Var2.Z0 = new r5.d(o80Var, 26);
                 org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                 if (R2 == null) {
                     return;
@@ -323,8 +323,8 @@ public final /* synthetic */ class u implements Runnable {
                     AndroidUtilities.runOnUIThread(new d4(i12, callback22));
                     return;
                 }
-                c5.o oVar = (c5.o) list.get(0);
-                c5.k a2 = oVar.a();
+                c5.n nVar = (c5.n) list.get(0);
+                c5.k a2 = nVar.a();
                 if (a2 == null) {
                     FileLog.d("StarsController.buy queryProductDetails done: no details");
                     AndroidUtilities.runOnUIThread(new d4(3, callback22));
@@ -332,14 +332,14 @@ public final /* synthetic */ class u implements Runnable {
                 }
                 tL_inputStorePaymentStarsTopup.currency = a2.c;
                 tL_inputStorePaymentStarsTopup.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
-                BillingController.getInstance().addResultListener(oVar.c, new ci.e5(callback22, 6));
+                BillingController.getInstance().addResultListener(nVar.c, new ci.e5(callback22, 6));
                 BillingController.getInstance().setOnCanceled(new d4(z10 ? 1 : 0, callback22));
                 FileLog.d("StarsController.buy launchBillingFlow");
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                 of.b bVar = new of.b(7, z10);
-                bVar.X((c5.o) list.get(0));
-                billingController.launchBillingFlow(activity, accountInstance, tL_inputStorePaymentStarsTopup, Collections.singletonList(bVar.K()));
+                bVar.X((c5.n) list.get(0));
+                billingController.launchBillingFlow(activity, accountInstance, tL_inputStorePaymentStarsTopup, Collections.singletonList(bVar.H()));
                 return;
         }
     }

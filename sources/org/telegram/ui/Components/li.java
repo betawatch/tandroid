@@ -18,9 +18,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class li extends aw0 {
+public final class li extends cw0 {
     public final ki A0;
     public final /* synthetic */ vi B0;
     public int w0;
@@ -36,7 +36,7 @@ public final class li extends aw0 {
         this.A0 = new ki(this, this);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -78,15 +78,15 @@ public final class li extends aw0 {
                 viewGroup3 = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
                 int measuredWidth = viewGroup3.getMeasuredWidth();
                 viewGroup4 = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
-                dVar2.j(measuredWidth, viewGroup4.getMeasuredHeight());
-                dVar2.l();
+                dVar2.i(measuredWidth, viewGroup4.getMeasuredHeight());
+                dVar2.k();
             }
             if (dVar != null) {
                 viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
                 int measuredWidth2 = viewGroup.getMeasuredWidth();
                 viewGroup2 = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
-                dVar.j(measuredWidth2, viewGroup2.getMeasuredHeight());
-                dVar.l();
+                dVar.i(measuredWidth2, viewGroup2.getMeasuredHeight());
+                dVar.k();
             }
         }
         canvas.save();
@@ -483,7 +483,7 @@ public final class li extends aw0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ki kiVar = this.A0;
@@ -494,7 +494,7 @@ public final class li extends aw0 {
         viVar.P0.setAdjustPanLayoutHelper(kiVar);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.A0.d();
@@ -542,7 +542,7 @@ public final class li extends aw0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0158  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0161  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -965,7 +965,7 @@ public final class li extends aw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

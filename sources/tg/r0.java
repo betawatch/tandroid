@@ -16,18 +16,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.qr;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class r0 extends LinearLayout {
     public final ArrayList a;
     public final o0 b;
     public final FrameLayout c;
     public final FrameLayout d;
-    public final k90 e;
+    public final n90 e;
 
     public r0(Context context) {
         super(context);
@@ -58,13 +58,13 @@ public final class r0 extends LinearLayout {
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(j6.w0(null, j6.G6, false));
         addView(textView, y5.t(-2, -2, 1, 0, 15, 0, 7));
-        k90 k90Var = new k90(getContext(), null);
-        this.e = k90Var;
-        k90Var.setTextSize(1, 14.0f);
-        k90Var.setGravity(1);
-        k90Var.setTextColor(j6.w0(null, j6.j5, false));
-        k90Var.setLineSpacing(k90Var.getLineSpacingExtra(), k90Var.getLineSpacingMultiplier() * 1.1f);
-        addView(k90Var, y5.t(-2, -2, 1, 28, 0, 28, 18));
+        n90 n90Var = new n90(getContext(), null);
+        this.e = n90Var;
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setGravity(1);
+        n90Var.setTextColor(j6.w0(null, j6.j5, false));
+        n90Var.setLineSpacing(n90Var.getLineSpacingExtra(), n90Var.getLineSpacingMultiplier() * 1.1f);
+        addView(n90Var, y5.t(-2, -2, 1, 28, 0, 28, 18));
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {

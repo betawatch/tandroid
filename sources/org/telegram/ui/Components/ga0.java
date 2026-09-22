@@ -1,227 +1,172 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.Property;
-import android.util.SparseArray;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.ih1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ga0 extends jv0 {
-    public AnimatorSet f2;
-    public final /* synthetic */ FrameLayout g2;
-    public final /* synthetic */ da0 h2;
-    public final /* synthetic */ ja0 i2;
+public final class ga0 extends cw0 {
+    public final /* synthetic */ int w0;
+    public final /* synthetic */ FrameLayout x0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ga0(ja0 ja0Var, Context context, long j3, bv0 bv0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, ja0 ja0Var2, fa0 fa0Var, org.telegram.ui.ActionBar.f6 f6Var, FrameLayout frameLayout, da0 da0Var) {
-        super(context, j3, bv0Var, 0, null, chatFull, userFull, i10, 0, ja0Var2, fa0Var, 0, f6Var, null);
-        this.i2 = ja0Var;
-        this.g2 = frameLayout;
-        this.h2 = da0Var;
+    public /* synthetic */ ga0(org.telegram.ui.ActionBar.n2 n2Var, Context context, FrameLayout frameLayout, int i10) {
+        super(context, null);
+        this.w0 = i10;
+        this.y0 = n2Var;
+        this.x0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean D() {
-        int i10 = this.i2.a;
-        return (i10 == 1 || i10 == 2) ? false : true;
+    @Override // org.telegram.ui.Components.cw0
+    public void L(Canvas canvas, ArrayList arrayList) {
+        switch (this.w0) {
+            case 0:
+                ((ma0) this.y0).V.Q(canvas, arrayList);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final void D0(SparseArray sparseArray) {
-        int size = sparseArray.size();
-        ja0 ja0Var = this.i2;
-        ja0Var.I = sparseArray;
-        int i10 = ja0Var.a;
-        if (i10 == 1 || i10 == 2) {
-            ja0Var.F.a();
-            ja0Var.F.c(LocaleController.formatPluralString("StoriesSelected", size, new Object[0]), !LocaleController.isRTL, true);
-            ci.d dVar = ja0Var.T;
-            if (dVar != null) {
-                dVar.setEnabled(size > 0);
-                ja0Var.T.b(size, true);
-                if (ja0Var.V.getClosestTab() == 8) {
-                    ja0Var.T.g(LocaleController.formatPluralString("ArchiveStories", size, new Object[0]), true, true);
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        eu0[] eu0VarArr;
+        eu0 eu0Var;
+        switch (this.w0) {
+            case 0:
+                ma0 ma0Var = (ma0) this.y0;
+                ja0 ja0Var = ma0Var.V;
+                if (ja0Var != null && (eu0Var = (eu0VarArr = ja0Var.k0)[0]) != null && eu0Var.h.getFastScroll() != null && eu0VarArr[0].h.getFastScroll().n) {
+                    return ma0Var.V.O(motionEvent);
                 }
-            }
+                ja0 ja0Var2 = ma0Var.V;
+                if (ja0Var2 == null || !ja0Var2.H(motionEvent)) {
+                    return super.dispatchTouchEvent(motionEvent);
+                }
+                return true;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 
-    @Override // org.telegram.ui.Components.jv0
-    public final void K0(boolean z10) {
-        int i10;
-        ja0 ja0Var = this.i2;
-        Activity parentActivity = ja0Var.getParentActivity();
-        i10 = ((org.telegram.ui.ActionBar.n2) ja0Var).classGuid;
-        AndroidUtilities.removeAdjustResize(parentActivity, i10);
-        AndroidUtilities.updateViewVisibilityAnimated(this.g2, !z10, 0.95f, true);
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void L0() {
-        super.L0();
-        this.i2.a0();
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void M0(float f7) {
-        ja0 ja0Var = this.i2;
-        if (ja0Var.a != 1) {
-            return;
+    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        int measuredHeight2;
+        switch (this.w0) {
+            case 1:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.y0;
+                int visibility = passcodeActivity.v.getVisibility();
+                FrameLayout frameLayout = this.x0;
+                if (visibility == 8 || R() < AndroidUtilities.dp(20.0f)) {
+                    if (passcodeActivity.v.getVisibility() != 8) {
+                        int measuredWidth = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(230.0f);
+                        frameLayout.layout(0, 0, measuredWidth, measuredHeight);
+                    } else {
+                        int measuredWidth2 = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight();
+                        frameLayout.layout(0, 0, measuredWidth2, measuredHeight);
+                    }
+                } else if (passcodeActivity.c0()) {
+                    int measuredWidth3 = getMeasuredWidth();
+                    measuredHeight = R() + (getMeasuredHeight() - AndroidUtilities.dp(230.0f));
+                    frameLayout.layout(0, 0, measuredWidth3, measuredHeight);
+                } else {
+                    int measuredWidth4 = getMeasuredWidth();
+                    measuredHeight = getMeasuredHeight();
+                    frameLayout.layout(0, 0, measuredWidth4, measuredHeight);
+                }
+                passcodeActivity.v.layout(0, measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight);
+                S();
+                break;
+            case 2:
+                org.telegram.ui.j0 j0Var = (org.telegram.ui.j0) this.x0;
+                ih1 ih1Var = (ih1) this.y0;
+                if (ih1Var.e0.getVisibility() == 8 || R() < AndroidUtilities.dp(20.0f)) {
+                    if (ih1Var.e0.getVisibility() != 8) {
+                        int measuredWidth5 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight() - AndroidUtilities.dp(230.0f);
+                        j0Var.layout(0, 0, measuredWidth5, measuredHeight2);
+                    } else {
+                        int measuredWidth6 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight();
+                        j0Var.layout(0, 0, measuredWidth6, measuredHeight2);
+                    }
+                } else if (ih1Var.v0()) {
+                    int measuredWidth7 = getMeasuredWidth();
+                    measuredHeight2 = R() + (getMeasuredHeight() - AndroidUtilities.dp(230.0f));
+                    j0Var.layout(0, 0, measuredWidth7, measuredHeight2);
+                } else {
+                    int measuredWidth8 = getMeasuredWidth();
+                    measuredHeight2 = getMeasuredHeight();
+                    j0Var.layout(0, 0, measuredWidth8, measuredHeight2);
+                }
+                ih1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight2);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
         }
-        float f10 = f7 - 8.0f;
-        ia0 ia0Var = ja0Var.R;
-        if (ia0Var != null) {
-            ia0Var.setProgress(f10);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.w0) {
+            case 0:
+                ma0 ma0Var = (ma0) this.y0;
+                o6[] o6VarArr = ma0Var.x;
+                org.telegram.ui.ActionBar.j5[] j5VarArr = ma0Var.w;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ma0Var.V.getLayoutParams();
+                int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                kVar = ((org.telegram.ui.ActionBar.n2) ma0Var).actionBar;
+                layoutParams.topMargin = currentActionBarHeight + (kVar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.x0.getLayoutParams();
+                kVar2 = ((org.telegram.ui.ActionBar.n2) ma0Var).actionBar;
+                layoutParams2.topMargin = kVar2.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0;
+                layoutParams2.height = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                for (int i12 = 0; i12 < 2; i12++) {
+                    if (j5VarArr[i12] != null) {
+                        ((FrameLayout.LayoutParams) j5VarArr[i12].getLayoutParams()).topMargin = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5.0f : 4.0f) + org.telegram.messenger.rk.z(22.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2, 2);
+                    }
+                    if (o6VarArr[i12] != null) {
+                        ((FrameLayout.LayoutParams) o6VarArr[i12].getLayoutParams()).topMargin = ((((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) - AndroidUtilities.dp(19.0f)) / 2) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2)) - AndroidUtilities.dp(7.0f);
+                    }
+                }
+                ((FrameLayout.LayoutParams) ma0Var.y.getLayoutParams()).topMargin = org.telegram.messenger.rk.z(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                super.onMeasure(i10, i11);
+                break;
+            case 1:
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size, size2);
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.y0;
+                if (passcodeActivity.v.getVisibility() != 8 && R() < AndroidUtilities.dp(20.0f)) {
+                    size2 -= AndroidUtilities.dp(230.0f);
+                }
+                this.x0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                passcodeActivity.v.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
+                break;
+            default:
+                int size3 = View.MeasureSpec.getSize(i10);
+                int size4 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size3, size4);
+                ih1 ih1Var = (ih1) this.y0;
+                if (ih1Var.e0.getVisibility() != 8 && R() < AndroidUtilities.dp(20.0f)) {
+                    size4 -= AndroidUtilities.dp(230.0f);
+                }
+                ((org.telegram.ui.j0) this.x0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
+                ih1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
+                break;
         }
-        float f11 = 1.0f - f10;
-        ja0Var.v[0].setAlpha(f11);
-        ja0Var.v[0].setTranslationX(AndroidUtilities.dp(-12.0f) * f10);
-        ja0Var.v[1].setAlpha(f10);
-        ja0Var.v[1].setTranslationX(AndroidUtilities.dp(12.0f) * f11);
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean N() {
-        int i10 = this.i2.a;
-        return i10 == 1 || i10 == 2 || i10 == 3;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void N0(boolean z10) {
-        ia0 ia0Var = this.i2.R;
-        if (ia0Var != null) {
-            ia0Var.setScrolling(z10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
-        this.h2.J(canvas, getY() + f7, rect, paint, true);
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void b1(boolean z10) {
-        ja0 ja0Var = this.i2;
-        if (ja0Var.a == 0) {
-            super.b1(z10);
-            return;
-        }
-        if (this.C1 == z10) {
-            return;
-        }
-        this.C1 = z10;
-        AnimatorSet animatorSet = this.f2;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        int i10 = ja0Var.a;
-        if (i10 == 1 || i10 == 2) {
-            if (z10) {
-                g1(null);
-            }
-            this.L1 = z10;
-        }
-        if (z10) {
-            ja0Var.F.setVisibility(0);
-            FrameLayout frameLayout = ja0Var.S;
-            if (frameLayout != null) {
-                frameLayout.setVisibility(0);
-            }
-        } else {
-            ja0Var.s.setVisibility(0);
-        }
-        float f7 = 0.0f;
-        ja0Var.E.c(z10 ? 1.0f : 0.0f, true);
-        this.f2 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        o6 o6Var = ja0Var.F;
-        float[] fArr = {z10 ? 1.0f : 0.0f};
-        Property property = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<o6, Float>) property, fArr));
-        arrayList.add(ObjectAnimator.ofFloat(ja0Var.s, (Property<FrameLayout, Float>) property, z10 ? 0.0f : 1.0f));
-        FrameLayout frameLayout2 = ja0Var.S;
-        if (frameLayout2 != null) {
-            arrayList.add(ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property, z10 ? 1.0f : 0.0f));
-            arrayList.add(ObjectAnimator.ofFloat(ja0Var.S, (Property<FrameLayout, Float>) View.TRANSLATION_Y, z10 ? 0.0f : r6.getMeasuredHeight()));
-        }
-        org.telegram.ui.ActionBar.v0 v0Var = ja0Var.H;
-        if (v0Var != null) {
-            v0Var.setVisibility(0);
-            arrayList.add(ObjectAnimator.ofFloat(ja0Var.H, (Property<org.telegram.ui.ActionBar.v0, Float>) property, z10 ? 1.0f : 0.0f));
-        }
-        boolean z11 = c0(getClosestTab()) == 0;
-        org.telegram.ui.ActionBar.v0 v0Var2 = ja0Var.G;
-        if (v0Var2 != null) {
-            v0Var2.setVisibility(0);
-            org.telegram.ui.ActionBar.v0 v0Var3 = ja0Var.G;
-            if (!z10 && !z11) {
-                f7 = 1.0f;
-            }
-            arrayList.add(ObjectAnimator.ofFloat(v0Var3, (Property<org.telegram.ui.ActionBar.v0, Float>) property, f7));
-        }
-        ia0 ia0Var = ja0Var.R;
-        if (ia0Var != null) {
-            arrayList.add(ObjectAnimator.ofFloat(ia0Var, (Property<ia0, Float>) property, z10 ? 0.4f : 1.0f));
-        }
-        this.f2.playTogether(arrayList);
-        this.f2.setDuration(300L);
-        this.f2.setInterpolator(qr.h);
-        this.f2.addListener(new org.telegram.ui.ActionBar.g(this, z10, z11, 4));
-        this.f2.start();
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final int getInitialTab() {
-        return this.i2.W;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final String getStoriesHashtag() {
-        return this.i2.h;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final String getStoriesHashtagUsername() {
-        return this.i2.n;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean l0() {
-        ja0 ja0Var = this.i2;
-        return ja0Var.a == 0 && ja0Var.e == ja0Var.getUserConfig().getClientUserId() && ja0Var.f == 0;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean m0() {
-        int i10 = this.i2.a;
-        return i10 == 1 || i10 == 2;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final void o0() {
-        this.h2.M();
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean q0() {
-        return this.i2.a == 2;
-    }
-
-    @Override // org.telegram.ui.Components.jv0
-    public final boolean v0() {
-        int i10 = this.i2.a;
-        return i10 == 1 || i10 == 2;
     }
 }

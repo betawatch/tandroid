@@ -8,9 +8,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class q60 extends org.telegram.ui.Components.vl0 {
+public final class q60 extends org.telegram.ui.Components.yl0 {
     public final /* synthetic */ int X2;
     public final /* synthetic */ Object Y2;
 
@@ -21,7 +21,7 @@ public final class q60 extends org.telegram.ui.Components.vl0 {
         this.Y2 = obj;
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     public boolean I0(View view, float f7, float f10) {
         switch (this.X2) {
             case 3:
@@ -32,7 +32,7 @@ public final class q60 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0
+    @Override // org.telegram.ui.Components.yl0
     public Integer X0(int i10) {
         int i11;
         switch (this.X2) {
@@ -45,7 +45,7 @@ public final class q60 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.X2) {
@@ -116,7 +116,7 @@ public final class q60 extends org.telegram.ui.Components.vl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.X2) {
             case 3:

@@ -24,17 +24,17 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.kd;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l0 extends ab {
     public static final int g0 = -1;
@@ -45,7 +45,7 @@ public final class l0 extends ab {
     public final LinearLayout a0;
     public final ci.d b0;
     public final ci.d c0;
-    public k61 d0;
+    public m61 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -96,9 +96,9 @@ public final class l0 extends ab {
         int i10 = j6.a7;
         setBackgroundColor(getThemedColor(i10));
         fixNavigationBar(getThemedColor(i10));
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
+        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
         this.d.q1();
         this.d.setOnItemClickListener(new ai.g(this, 11));
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -130,9 +130,9 @@ public final class l0 extends ab {
         jVar.o(qr.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
-        k61 k61Var = this.d0;
-        if (k61Var != null) {
-            k61Var.N(false);
+        m61 m61Var = this.d0;
+        if (m61Var != null) {
+            m61Var.N(false);
         }
     }
 
@@ -301,11 +301,11 @@ public final class l0 extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(vl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
-        this.d0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
+        this.d0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

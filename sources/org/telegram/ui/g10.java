@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g10 implements Runnable {
     public final /* synthetic */ int a;
@@ -201,7 +201,7 @@ public final /* synthetic */ class g10 implements Runnable {
                 break;
             case 17:
                 try {
-                    org.telegram.ui.Components.vl0 currentListView = ((id0) obj).y0.K0.getCurrentListView();
+                    org.telegram.ui.Components.yl0 currentListView = ((id0) obj).y0.K0.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -222,19 +222,19 @@ public final /* synthetic */ class g10 implements Runnable {
                 break;
             case 19:
                 re0 re0Var = (re0) obj;
-                org.telegram.ui.Components.kj0 kj0Var = re0Var.e;
+                org.telegram.ui.Components.nj0 nj0Var = re0Var.e;
                 EditTextBoldCursor editTextBoldCursor2 = re0Var.a;
                 if (editTextBoldCursor2 != null) {
                     editTextBoldCursor2.requestFocus();
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
                     yg0.T0(re0Var.y, editTextBoldCursor2);
-                    kj0Var.getAnimatedDrawable().N(0, false, false);
-                    kj0Var.d();
+                    nj0Var.getAnimatedDrawable().N(0, false, false);
+                    nj0Var.d();
                     break;
                 }
                 break;
             case 20:
-                ((org.telegram.ui.Components.kj0) obj).d();
+                ((org.telegram.ui.Components.nj0) obj).d();
                 break;
             case 21:
                 ((ze0) ((ci.h2) obj).c).getClass();
@@ -347,7 +347,7 @@ public final /* synthetic */ class g10 implements Runnable {
                     }
                 }
             case 25:
-                ((org.telegram.ui.Components.vn0) obj).run();
+                ((org.telegram.ui.Components.xn0) obj).run();
                 break;
             case 26:
                 ((ih0) obj).setSkipDrawSelector(false);

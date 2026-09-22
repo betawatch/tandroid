@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class p00 extends og.b {
     public final /* synthetic */ r00 d;
@@ -16,7 +16,7 @@ public final class p00 extends og.b {
         this.d = r00Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 8 || i10 == 7;
@@ -125,6 +125,6 @@ public final class p00 extends og.b {
         } else {
             f9Var = new q00(r00Var, r00Var.getContext());
         }
-        return new org.telegram.ui.Components.fl0(f9Var);
+        return new org.telegram.ui.Components.il0(f9Var);
     }
 }

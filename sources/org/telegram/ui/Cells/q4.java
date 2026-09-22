@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout {
     public final org.telegram.ui.Components.v9 a;
@@ -57,17 +57,17 @@ public final class q4 extends FrameLayout {
             return;
         }
         this.e = null;
-        hi0 hi0Var = new hi0(context);
-        hi0Var.setText(LocaleController.getString(R.string.Invite));
-        hi0Var.setTextSize(1, 14.0f);
-        hi0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
-        hi0Var.setProgressColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Nh, false));
+        ki0 ki0Var = new ki0(context);
+        ki0Var.setText(LocaleController.getString(R.string.Invite));
+        ki0Var.setTextSize(1, 14.0f);
+        ki0Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        ki0Var.setProgressColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Nh, false));
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hl, false);
         org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false);
-        hi0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{16.0f}, w02));
-        hi0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        linearLayout.addView(hi0Var, w7.y5.p(-2, 28, 0.0f, 16, 18, 0, 18, 0));
-        hi0Var.setOnClickListener(new a(this, 6));
+        ki0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{16.0f}, w02));
+        ki0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+        linearLayout.addView(ki0Var, w7.y5.p(-2, 28, 0.0f, 16, 18, 0, 18, 0));
+        ki0Var.setOnClickListener(new a(this, 6));
     }
 
     public final void a() {

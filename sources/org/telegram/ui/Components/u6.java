@@ -19,14 +19,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final k90 b;
+    public final n90 b;
     public final Runnable c;
 
-    public u6(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable, org.telegram.ui.cj cjVar) {
+    public u6(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable, org.telegram.ui.dj djVar) {
         super(context);
         this.a = i10;
         this.c = runnable;
@@ -38,7 +38,7 @@ public final class u6 extends FrameLayout implements NotificationCenter.Notifica
         imageView.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.K7, f6Var)));
         imageView.setImageResource(R.drawable.large_archive);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout.addView(imageView, w7.y5.t(80, 80, 49, 0, cjVar != null ? 14 : 0, 0, 14));
+        linearLayout.addView(imageView, w7.y5.t(80, 80, 49, 0, djVar != null ? 14 : 0, 0, 14));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
@@ -46,20 +46,20 @@ public final class u6 extends FrameLayout implements NotificationCenter.Notifica
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.ArchiveHintHeader1));
         linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 32, 0, 32, 9));
-        k90 k90Var = new k90(context, null);
-        this.b = k90Var;
-        k90Var.setTextSize(1, 14.0f);
-        k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-        k90Var.setGravity(1);
+        n90 n90Var = new n90(context, null);
+        this.b = n90Var;
+        n90Var.setTextSize(1, 14.0f);
+        n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
+        n90Var.setGravity(1);
         b();
-        linearLayout.addView(k90Var, w7.y5.t(-1, -2, 1, 32, 0, 32, 25));
+        linearLayout.addView(n90Var, w7.y5.t(-1, -2, 1, 32, 0, 32, 25));
         linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), f6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), f6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), f6Var), w7.y5.t(-1, -2, 7, 32, 0, 32, 16));
-        if (cjVar != null) {
+        if (djVar != null) {
             ci.d g10 = org.telegram.messenger.rk.g(24, context, f6Var, true);
             g10.g(LocaleController.getString("GotIt"), false, true);
-            g10.setOnClickListener(new t6(0, cjVar));
+            g10.setOnClickListener(new t6(0, djVar));
             linearLayout.addView(g10, w7.y5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
         }
     }

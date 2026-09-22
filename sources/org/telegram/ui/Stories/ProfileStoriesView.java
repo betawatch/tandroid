@@ -46,16 +46,16 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.o20;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.m01;
 import org.telegram.ui.rz0;
 import v7.a7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -109,7 +109,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public i6 v;
     public final ArrayList w;
     public boolean x;
-    public lj0 y;
+    public oj0 y;
 
     /* JADX WARN: Type inference failed for: r0v12, types: [ai.g6] */
     public ProfileStoriesView(Context context, int i10, long j3, boolean z10, View view, m01 m01Var, f6 f6Var) {
@@ -487,12 +487,12 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             rectF7.inset(-AndroidUtilities.dpf2(3.775f), -AndroidUtilities.dpf2(3.775f));
             paint = eaVar5.a(rectF7);
             if (profileStoriesView5.y == null) {
-                lj0 lj0Var = new lj0(profileStoriesView5);
-                profileStoriesView5.y = lj0Var;
+                oj0 oj0Var = new oj0(profileStoriesView5);
+                profileStoriesView5.y = oj0Var;
                 f11 = d;
                 arrayList2 = arrayList;
                 eaVar = eaVar5;
-                lj0Var.d(null, true, false);
+                oj0Var.d(null, true, false);
                 profileStoriesView5.y.u = ChatObject.isForum(UserConfig.selectedAccount, j10);
             } else {
                 f11 = d;
@@ -520,11 +520,11 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             int alpha = paint.getAlpha();
             paint.setAlpha((int) (alpha * clamp2 * f12));
             paint.setStrokeWidth(AndroidUtilities.dpf2(2.33f));
-            lj0 lj0Var2 = profileStoriesView5.y;
-            lj0Var2.t = paint;
+            oj0 oj0Var2 = profileStoriesView5.y;
+            oj0Var2.t = paint;
             f10 = clamp;
             j3 = j10;
-            lj0Var2.f((int) rectF7.left, (int) rectF7.top, (int) rectF7.right, (int) rectF7.bottom);
+            oj0Var2.f((int) rectF7.left, (int) rectF7.top, (int) rectF7.right, (int) rectF7.bottom);
             profileStoriesView5.y.e(Utilities.clamp(f24, 1.0f, 0.0f), true);
             if (m01Var.Q) {
                 profileStoriesView5.y.a(canvas2);

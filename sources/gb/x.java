@@ -12,17 +12,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import v7.n8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class x implements db.v {
     public final of.b a;
-    public final fb.f b;
+    public final fb.g b;
     public final j c;
     public final ArrayList d;
 
-    public x(of.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
+    public x(of.b bVar, fb.g gVar, j jVar, ArrayList arrayList) {
         this.a = bVar;
-        this.b = fVar;
+        this.b = gVar;
         this.c = jVar;
         this.d = arrayList;
     }
@@ -189,10 +189,10 @@ public final class x implements db.v {
 
     public final boolean c(Field field, boolean z10) {
         boolean z11;
-        fb.f fVar = this.b;
-        fVar.getClass();
-        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !fVar.b(field.getType(), z10)) {
-            List list = z10 ? fVar.a : fVar.b;
+        fb.g gVar = this.b;
+        gVar.getClass();
+        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !gVar.b(field.getType(), z10)) {
+            List list = z10 ? gVar.a : gVar.b;
             if (!list.isEmpty()) {
                 db.b bVar = new db.b(field);
                 Iterator it = list.iterator();

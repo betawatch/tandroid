@@ -34,7 +34,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class v4 {
     public final Rect A = new Rect();
@@ -113,8 +113,8 @@ public final class v4 {
             dh.e eVar = new dh.e(f6Var);
             f7 = 1.0f;
             eVar.e = new d2.c(i12);
-            eVar.f(687865855, 687865855);
-            eVar.e(352321535, 352321535);
+            eVar.e(687865855, 687865855);
+            eVar.d(352321535, 352321535);
             float dpf2 = AndroidUtilities.dpf2(0.6666667f);
             float dpf22 = AndroidUtilities.dpf2(0.6666667f);
             eVar.f = dpf2;

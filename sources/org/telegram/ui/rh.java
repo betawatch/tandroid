@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rh implements e2.h {
     public final /* synthetic */ int a;
@@ -57,12 +57,12 @@ public final /* synthetic */ class rh implements e2.h {
             default:
                 hc0 hc0Var = (hc0) obj4;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj3;
-                org.telegram.ui.Components.vn0 vn0Var = (org.telegram.ui.Components.vn0) obj2;
+                org.telegram.ui.Components.xn0 xn0Var = (org.telegram.ui.Components.xn0) obj2;
                 Long l10 = (Long) obj;
                 TLRPC.User user = l10 == null ? null : MessagesController.getInstance(hc0Var.b).getUser(l10);
                 userArr[0] = user;
                 if (user != null) {
-                    vn0Var.run();
+                    xn0Var.run();
                     break;
                 } else {
                     hc0Var.a();

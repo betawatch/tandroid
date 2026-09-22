@@ -25,7 +25,7 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import fb.i;
+import fb.j;
 import hg.k0;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,18 +34,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.m2;
+import pg.c1;
 import r0.a0;
 import r0.i0;
 import s4.d1;
 import x7.d7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
-    public static final i t0 = new i(6);
+    public static final j t0 = new j(6);
     public static final m2 u0 = new m2(5);
-    public static final i v0 = new i(7);
+    public static final j v0 = new j(7);
     public int E;
     public float F;
     public float G;
@@ -89,7 +90,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final p8.b q0;
+    public final c1 q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -110,7 +111,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new p8.b(this, 13);
+        this.q0 = new c1(this, 12);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -497,12 +498,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            p8.b bVar = this.q0;
+            c1 c1Var = this.q0;
             if (!z10) {
-                bVar.run();
+                c1Var.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(bVar);
+                postOnAnimation(c1Var);
             }
         }
     }

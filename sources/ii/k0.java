@@ -3,26 +3,26 @@ package ii;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.r9;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public interface k0 {
-    r9 B();
+    r9 A();
 
-    void E(CharSequence charSequence);
+    void C(CharSequence charSequence);
 
-    q9 I();
+    q9 F();
 
-    a M();
+    a H();
 
-    boolean N();
+    boolean K();
 
-    void Q(int i10, int i11);
+    void N(int i10, int i11);
 
-    void W();
+    void T();
 
     void c(i1 i1Var);
 
-    void h();
+    void g0();
 
-    void k0();
+    void h();
 }

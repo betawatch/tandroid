@@ -3,9 +3,9 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.dm;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.iy0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class w4 implements org.telegram.ui.Components.nb {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final class w4 implements org.telegram.ui.Components.nb {
                 dp = ((dm) this.b).c.b.getBottomInset();
                 break;
             case 8:
-                FrameLayout frameLayout = ((gy0) this.b).w;
+                FrameLayout frameLayout = ((iy0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
@@ -129,7 +129,7 @@ public final class w4 implements org.telegram.ui.Components.nb {
             case 10:
                 return 0;
             default:
-                return (int) ((zg.b0) ((yh.u3) this.b).c).u;
+                return (int) ((zg.c0) ((yh.u3) this.b).c).u;
         }
         return dp + editTextHeight;
     }

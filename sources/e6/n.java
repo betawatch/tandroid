@@ -23,7 +23,7 @@ import org.telegram.ui.w11;
 import v7.a9;
 import x7.d7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.h, oo {
     public final /* synthetic */ int a;
@@ -36,33 +36,10 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         this.c = obj;
     }
 
-    public void A() {
-        if (((n) this.c) == null) {
-            this.c = new n(6);
-        }
-    }
-
-    public void B(yc.a aVar) {
-        this.b++;
-        Thread thread = new Thread(aVar);
-        thread.setDaemon(true);
-        thread.setName("NanoHttpd Request Processor (#" + this.b + ")");
-        ((List) this.c).add(aVar);
-        thread.start();
-    }
-
-    public boolean C(int i10) {
-        if (i10 < 64) {
-            return (this.b & (1 << i10)) != 0;
-        }
-        A();
-        return ((n) this.c).C(i10 - 64);
-    }
-
-    public void D(int i10, boolean z10) {
+    public void A(int i10, boolean z10) {
         if (i10 >= 64) {
-            A();
-            ((n) this.c).D(i10 - 64, z10);
+            x();
+            ((n) this.c).A(i10 - 64, z10);
             return;
         }
         long j3 = this.b;
@@ -70,25 +47,20 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         long j10 = (1 << i10) - 1;
         this.b = ((j3 & (~j10)) << 1) | (j3 & j10);
         if (z10) {
-            H(i10);
+            D(i10);
         } else {
-            x(i10);
+            v(i10);
         }
         if (z11 || ((n) this.c) != null) {
-            A();
-            ((n) this.c).D(0, z11);
+            x();
+            ((n) this.c).A(0, z11);
         }
     }
 
-    @Override // l2.h
-    public long E(long j3, long j10) {
-        return ((c3.j) this.c).a;
-    }
-
-    public boolean F(int i10) {
+    public boolean B(int i10) {
         if (i10 >= 64) {
-            A();
-            return ((n) this.c).F(i10 - 64);
+            x();
+            return ((n) this.c).B(i10 - 64);
         }
         long j3 = 1 << i10;
         long j10 = this.b;
@@ -99,29 +71,49 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         this.b = (j11 & j12) | Long.rotateRight((~j12) & j11, 1);
         n nVar = (n) this.c;
         if (nVar != null) {
-            if (nVar.C(0)) {
-                H(63);
+            if (nVar.z(0)) {
+                D(63);
             }
-            ((n) this.c).F(0);
+            ((n) this.c).B(0);
         }
         return z10;
     }
 
-    public void G() {
+    public void C() {
         this.b = 0L;
         n nVar = (n) this.c;
         if (nVar != null) {
-            nVar.G();
+            nVar.C();
         }
     }
 
-    public void H(int i10) {
+    public void D(int i10) {
         if (i10 < 64) {
             this.b |= 1 << i10;
         } else {
-            A();
-            ((n) this.c).H(i10 - 64);
+            x();
+            ((n) this.c).D(i10 - 64);
         }
+    }
+
+    @Override // l2.h
+    public boolean F() {
+        return true;
+    }
+
+    @Override // l2.h
+    public long M() {
+        return 0L;
+    }
+
+    @Override // l2.h
+    public long P(long j3) {
+        return ((c3.j) this.c).a;
+    }
+
+    @Override // l2.h
+    public long Q(long j3, long j10) {
+        return ((c3.j) this.c).a;
     }
 
     @Override // c3.q
@@ -169,9 +161,9 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.q) this.c).f1();
     }
 
-    @Override // l2.h
-    public long g(long j3, long j10) {
-        return -9223372036854775807L;
+    @Override // c3.p
+    public boolean g(int i10, boolean z10) {
+        return ((c3.p) this.c).g(i10, true);
     }
 
     @Override // c3.p
@@ -185,32 +177,22 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
     }
 
     @Override // c3.p
-    public boolean h(int i10, boolean z10) {
-        return ((c3.p) this.c).h(i10, true);
+    public boolean h(byte[] bArr, int i10, int i11, boolean z10) {
+        return ((c3.p) this.c).h(bArr, i10, i11, z10);
     }
 
     @Override // c3.p
-    public boolean i(byte[] bArr, int i10, int i11, boolean z10) {
-        return ((c3.p) this.c).i(bArr, i10, i11, z10);
+    public long i() {
+        return ((c3.p) this.c).i() - this.b;
     }
 
     @Override // c3.p
-    public long j() {
-        return ((c3.p) this.c).j() - this.b;
-    }
-
-    @Override // l2.h
-    public m2.j k(long j3) {
-        return new m2.j(((c3.j) this.c).c[(int) j3], r1.b[r8], null);
-    }
-
-    @Override // c3.p
-    public void l(int i10) {
-        ((c3.p) this.c).l(i10);
+    public void j(int i10) {
+        ((c3.p) this.c).j(i10);
     }
 
     @Override // org.telegram.ui.Components.oo
-    public void m() {
+    public void k() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
         lg1 lg1Var = new lg1(bundle);
@@ -219,6 +201,16 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         lg1Var.e = profileActivity.h5;
         profileActivity.presentFragment(lg1Var);
+    }
+
+    @Override // l2.h
+    public long l(long j3, long j10) {
+        return -9223372036854775807L;
+    }
+
+    @Override // l2.h
+    public m2.j m(long j3) {
+        return new m2.j(((c3.j) this.c).c[(int) j3], r1.b[r8], null);
     }
 
     @Override // org.telegram.ui.Components.oo
@@ -304,10 +296,9 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         ((c3.p) this.c).readFully(bArr, i10, i11);
     }
 
-    @Override // l2.h
-    public long s(long j3, long j10) {
-        c3.j jVar = (c3.j) this.c;
-        return d0.e(jVar.e, j3 + this.b, true);
+    @Override // c3.p
+    public boolean s(int i10, boolean z10) {
+        return ((c3.p) this.c).s(i10, true);
     }
 
     @Override // c3.p
@@ -315,9 +306,10 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         return ((c3.p) this.c).skip(i10);
     }
 
-    @Override // c3.p
-    public boolean t(int i10, boolean z10) {
-        return ((c3.p) this.c).t(i10, true);
+    @Override // l2.h
+    public long t(long j3, long j10) {
+        c3.j jVar = (c3.j) this.c;
+        return d0.e(jVar.e, j3 + this.b, true);
     }
 
     public String toString() {
@@ -353,28 +345,18 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         profileActivity.g5(true);
     }
 
-    @Override // l2.h
-    public boolean v() {
-        return true;
-    }
-
-    @Override // l2.h
-    public long w() {
-        return 0L;
-    }
-
-    public void x(int i10) {
+    public void v(int i10) {
         if (i10 < 64) {
             this.b &= ~(1 << i10);
             return;
         }
         n nVar = (n) this.c;
         if (nVar != null) {
-            nVar.x(i10 - 64);
+            nVar.v(i10 - 64);
         }
     }
 
-    public int y(int i10) {
+    public int w(int i10) {
         n nVar = (n) this.c;
         if (nVar == null) {
             return i10 >= 64 ? Long.bitCount(this.b) : Long.bitCount(this.b & ((1 << i10) - 1));
@@ -382,12 +364,30 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         if (i10 < 64) {
             return Long.bitCount(this.b & ((1 << i10) - 1));
         }
-        return Long.bitCount(this.b) + nVar.y(i10 - 64);
+        return Long.bitCount(this.b) + nVar.w(i10 - 64);
     }
 
-    @Override // l2.h
-    public long z(long j3) {
-        return ((c3.j) this.c).a;
+    public void x() {
+        if (((n) this.c) == null) {
+            this.c = new n(6);
+        }
+    }
+
+    public void y(yc.a aVar) {
+        this.b++;
+        Thread thread = new Thread(aVar);
+        thread.setDaemon(true);
+        thread.setName("NanoHttpd Request Processor (#" + this.b + ")");
+        ((List) this.c).add(aVar);
+        thread.start();
+    }
+
+    public boolean z(int i10) {
+        if (i10 < 64) {
+            return (this.b & (1 << i10)) != 0;
+        }
+        x();
+        return ((n) this.c).z(i10 - 64);
     }
 
     public /* synthetic */ n(Object obj, long j3, int i10) {

@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vq implements Runnable {
     public final /* synthetic */ int a;
@@ -245,9 +245,9 @@ public final /* synthetic */ class vq implements Runnable {
                     w0Var.Y1 = srVar.B1;
                     w0Var.Z1 = 0;
                     orVar2.l();
-                    org.telegram.ui.Components.jx0 jx0Var = srVar.b;
-                    if (jx0Var != null && srVar.a.d.d1 == 0 && srVar.R) {
-                        jx0Var.e(false, true);
+                    org.telegram.ui.Components.lx0 lx0Var = srVar.b;
+                    if (lx0Var != null && srVar.a.d.d1 == 0 && srVar.R) {
+                        lx0Var.e(false, true);
                     }
                 }
                 srVar.resumeDelayedFragmentAnimation();

@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l50 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Activity a;
@@ -192,7 +192,7 @@ public final class l50 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 8) {
-            org.telegram.ui.Components.e80.u(i60Var.getContext(), -i60Var.i1(), i60Var.d, null, 2, i60Var.A0, new f50(this));
+            org.telegram.ui.Components.h80.u(i60Var.getContext(), -i60Var.i1(), i60Var.d, null, 2, i60Var.A0, new f50(this));
             return;
         }
         if (i10 == 11) {

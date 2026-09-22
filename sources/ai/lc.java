@@ -6,22 +6,22 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class lc extends kc {
     public final ob a;
     public final TL_stories.TL_mediaAreaSuggestedReaction b;
-    public final zg.f0 c;
+    public final zg.g0 c;
     public final /* synthetic */ oc d;
 
     public lc(oc ocVar, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction) {
         this.d = ocVar;
         ob obVar = new ob(null);
         this.a = obVar;
-        zg.f0 f0Var = new zg.f0(null);
-        this.c = f0Var;
+        zg.g0 g0Var = new zg.g0(null);
+        this.c = g0Var;
         this.b = tL_mediaAreaSuggestedReaction;
         if (tL_mediaAreaSuggestedReaction.flipped) {
             obVar.b(true, false);
@@ -29,17 +29,17 @@ public final class lc extends kc {
         if (tL_mediaAreaSuggestedReaction.dark) {
             obVar.a();
         }
-        f0Var.i = true;
-        f0Var.e(zg.o0.d(tL_mediaAreaSuggestedReaction.reaction));
+        g0Var.i = true;
+        g0Var.e(zg.p0.d(tL_mediaAreaSuggestedReaction.reaction));
     }
 
     @Override // ai.kc
     public final void a(Canvas canvas, float f7) {
-        zg.f0 f0Var = this.c;
-        org.telegram.ui.Components.p5 p5Var = f0Var.b;
-        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : f0Var.a;
+        zg.g0 g0Var = this.c;
+        org.telegram.ui.Components.p5 p5Var = g0Var.b;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : g0Var.a;
         if (imageReceiver != null && imageReceiver.hasImageSet() && imageReceiver.hasImageLoaded()) {
-            hj0 lottieAnimation = imageReceiver.getLottieAnimation();
+            kj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation == null || !lottieAnimation.y()) {
                 oc ocVar = this.d;
                 double d = ocVar.b;
@@ -65,10 +65,10 @@ public final class lc extends kc {
                 rect.set((int) (obVar.getBounds().centerX() - height), (int) (obVar.getBounds().centerY() - height), (int) (obVar.getBounds().centerX() + height), (int) (obVar.getBounds().centerY() + height));
                 obVar.c(1.0f);
                 obVar.draw(canvas);
-                f0Var.c(rect);
-                f0Var.h = f7;
-                f0Var.d(obVar.a == 1 ? -1 : -16777216);
-                f0Var.a(canvas);
+                g0Var.c(rect);
+                g0Var.h = f7;
+                g0Var.d(obVar.a == 1 ? -1 : -16777216);
+                g0Var.a(canvas);
                 canvas.restore();
             }
         }
@@ -81,16 +81,16 @@ public final class lc extends kc {
 
     @Override // ai.kc
     public final void c(View view) {
-        zg.f0 f0Var = this.c;
-        if (f0Var.f == view) {
+        zg.g0 g0Var = this.c;
+        if (g0Var.f == view) {
             return;
         }
-        if (!f0Var.g) {
-            f0Var.f = view;
+        if (!g0Var.g) {
+            g0Var.f = view;
             return;
         }
-        f0Var.b(false);
-        f0Var.f = view;
-        f0Var.b(true);
+        g0Var.b(false);
+        g0Var.f = view;
+        g0Var.b(true);
     }
 }

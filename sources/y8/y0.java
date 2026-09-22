@@ -16,20 +16,20 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
-    public final pb.c V;
-    public final pb.c W;
-    public final pb.c X;
-    public final pb.c Y;
-    public final pb.c Z;
-    public final pb.c a0;
-    public final pb.c b0;
-    public final pb.c c0;
-    public final pb.c d0;
-    public final pb.c e0;
+    public final o0.b V;
+    public final o0.b W;
+    public final o0.b X;
+    public final o0.b Y;
+    public final o0.b Z;
+    public final o0.b a0;
+    public final o0.b b0;
+    public final o0.b c0;
+    public final o0.b d0;
+    public final o0.b e0;
     public final z0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -37,16 +37,16 @@ public final class y0 extends n6.g {
         super(context, looper, 14, p3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
-        this.V = new pb.c();
-        this.W = new pb.c();
-        this.X = new pb.c();
-        this.Y = new pb.c();
-        this.Z = new pb.c();
-        this.a0 = new pb.c();
-        this.b0 = new pb.c();
-        this.c0 = new pb.c();
-        this.d0 = new pb.c();
-        this.e0 = new pb.c();
+        this.V = new o0.b(25);
+        this.W = new o0.b(25);
+        this.X = new o0.b(25);
+        this.Y = new o0.b(25);
+        this.Z = new o0.b(25);
+        this.a0 = new o0.b(25);
+        this.b0 = new o0.b(25);
+        this.c0 = new o0.b(25);
+        this.d0 = new o0.b(25);
+        this.e0 = new o0.b(25);
         n6.l.h(unconfigurableExecutorService);
         this.U = unconfigurableExecutorService;
         this.f0 = a2;
@@ -66,16 +66,16 @@ public final class y0 extends n6.g {
             Log.v("WearableClient", "onPostInitHandler: statusCode " + i10);
         }
         if (i10 == 0) {
-            this.V.a(iBinder);
-            this.W.a(iBinder);
-            this.X.a(iBinder);
-            this.Z.a(iBinder);
-            this.a0.a(iBinder);
-            this.b0.a(iBinder);
-            this.c0.a(iBinder);
-            this.d0.a(iBinder);
-            this.e0.a(iBinder);
-            this.Y.a(iBinder);
+            this.V.q(iBinder);
+            this.W.q(iBinder);
+            this.X.q(iBinder);
+            this.Z.q(iBinder);
+            this.a0.q(iBinder);
+            this.b0.q(iBinder);
+            this.c0.q(iBinder);
+            this.d0.q(iBinder);
+            this.e0.q(iBinder);
+            this.Y.q(iBinder);
             i10 = 0;
         }
         super.B(i10, iBinder, bundle, i11);

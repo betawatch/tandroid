@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class lt0 extends org.telegram.ui.Components.u00 {
     public final /* synthetic */ ts0 e;
@@ -16,7 +16,7 @@ public final class lt0 extends org.telegram.ui.Components.u00 {
         this.e = ts0Var;
     }
 
-    @Override // org.telegram.ui.Components.po0
+    @Override // org.telegram.ui.Components.ro0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         PhotoViewer photoViewer = this.f;

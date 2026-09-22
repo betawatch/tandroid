@@ -11,14 +11,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.eb0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final class s6 implements ll0 {
+public final class s6 implements ol0 {
     public final /* synthetic */ jc a;
     public final /* synthetic */ j7 b;
 
@@ -27,7 +27,7 @@ public final class s6 implements ll0 {
         this.a = jcVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     public final boolean d(int i10, View view) {
         final TL_stories.StoryView storyView;
         final MessagesController messagesController;
@@ -54,7 +54,7 @@ public final class s6 implements ll0 {
                 if (isUserSelf) {
                     return false;
                 }
-                v70 F = v70.F(jcVar.v, dVar, view);
+                y70 F = y70.F(jcVar.v, dVar, view);
                 F.i = 3;
                 F.j = true;
                 F.W(new ColorDrawable(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, dVar)));
@@ -201,9 +201,9 @@ public final class s6 implements ll0 {
                     F.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    bb0 bb0Var = new bb0(j7Var.v, j7Var.getContext(), dVar, arrayList, 3);
-                    bb0Var.setOnClickListener(new d0(this, arrayList, F, i13));
-                    F.q(bb0Var);
+                    eb0 eb0Var = new eb0(j7Var.v, j7Var.getContext(), dVar, arrayList, 3);
+                    eb0Var.setOnClickListener(new d0(this, arrayList, F, i13));
+                    F.q(eb0Var);
                     z10 = true;
                 }
                 if (F.x() <= 0 && !z10) {

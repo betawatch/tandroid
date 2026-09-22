@@ -20,9 +20,9 @@ import q9.n;
 import q9.p;
 import q9.s;
 import r9.a;
-import w7.t6;
+import w7.s6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final n a = new n(new f(2));
@@ -51,7 +51,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(sVar);
         for (s sVar2 : sVarArr) {
-            t6.a(sVar2, "Null interface");
+            s6.a(sVar2, "Null interface");
         }
         Collections.addAll(hashSet, sVarArr);
         q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new p(8), hashSet3);
@@ -62,7 +62,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(sVar3);
         for (s sVar4 : sVarArr2) {
-            t6.a(sVar4, "Null interface");
+            s6.a(sVar4, "Null interface");
         }
         Collections.addAll(hashSet4, sVarArr2);
         q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new p(9), hashSet6);
@@ -73,7 +73,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(sVar5);
         for (s sVar6 : sVarArr3) {
-            t6.a(sVar6, "Null interface");
+            s6.a(sVar6, "Null interface");
         }
         Collections.addAll(hashSet7, sVarArr3);
         q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new p(10), hashSet9);

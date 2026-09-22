@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x6 implements org.telegram.ui.ActionBar.k6 {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final /* synthetic */ class x6 implements org.telegram.ui.ActionBar.k6 {
                 org.telegram.ui.ActionBar.v0 v0Var2 = i8Var.N;
                 v0Var2.setIconColor(i8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Wi));
                 org.telegram.ui.ActionBar.j6.B1(v0Var2.getBackground(), i8Var.getThemedColor(i10), true);
-                u80 u80Var = i8Var.S;
-                u80Var.setBackgroundColor(i8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ti));
-                u80Var.setProgressColor(i8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Vi));
+                x80 x80Var = i8Var.S;
+                x80Var.setBackgroundColor(i8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ti));
+                x80Var.setProgressColor(i8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Vi));
                 i8Var.I0();
                 int i11 = org.telegram.ui.ActionBar.j6.G8;
                 v0Var.B(i8Var.getThemedColor(i11));
@@ -95,16 +95,16 @@ public final /* synthetic */ class x6 implements org.telegram.ui.ActionBar.k6 {
                 v0Var3.B(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, mqVar.d0));
                 break;
             case 4:
-                ((ja0) this.b).Z();
+                ((ma0) this.b).Z();
                 break;
             case 5:
-                ((ie0) this.b).q();
+                ((le0) this.b).q();
                 break;
             case 6:
-                ((zg0) this.b).S();
+                ((ch0) this.b).S();
                 break;
             case 7:
-                NumberTextView numberTextView = ((lo0) this.b).y0;
+                NumberTextView numberTextView = ((no0) this.b).y0;
                 if (numberTextView != null) {
                     numberTextView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y8, false));
                     break;
@@ -114,10 +114,10 @@ public final /* synthetic */ class x6 implements org.telegram.ui.ActionBar.k6 {
                 ((Runnable) this.b).run();
                 break;
             case 9:
-                ((gy0) this.b).z0(false);
+                ((iy0) this.b).z0(false);
                 break;
             default:
-                ((s51) this.b).d();
+                ((u51) this.b).d();
                 break;
         }
     }

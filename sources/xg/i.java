@@ -32,13 +32,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.zk0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class i extends ScrollView {
     public final Paint E;
@@ -139,7 +139,7 @@ public abstract class i extends ScrollView {
             eaVar.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             eaVar.b = animatorSet;
-            animatorSet.addListener(new zk0(22, eaVar, m30Var));
+            animatorSet.addListener(new cl0(22, eaVar, m30Var));
             ArrayList arrayList = eaVar.h;
             arrayList.clear();
             arrayList.add(m30Var);

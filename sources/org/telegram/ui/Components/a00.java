@@ -10,16 +10,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a00 implements kl0, ll0 {
+public final /* synthetic */ class a00 implements nl0, ol0 {
     public final /* synthetic */ k00 a;
 
     public /* synthetic */ a00(k00 k00Var) {
         this.a = k00Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         k00 k00Var = this.a;
         e00 e00Var = k00Var.J;
@@ -48,7 +48,7 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -70,7 +70,7 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
     /* JADX WARN: Removed duplicated region for block: B:90:0x01cb  */
     /* JADX WARN: Removed duplicated region for block: B:93:0x01e4  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x01fd  */
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,8 +94,8 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
             if (uyVar.R0 == 0) {
                 kVar = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
                 if (!kVar.s() && uyVar.T == 0.0f) {
-                    v70 v70Var = uyVar.L0;
-                    if (v70Var != null && v70Var.D()) {
+                    y70 y70Var = uyVar.L0;
+                    if (y70Var != null && y70Var.D()) {
                         uyVar.L0.u();
                         uyVar.L0 = null;
                         return false;
@@ -166,14 +166,14 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
                                             z16 = true;
                                         }
                                     }
-                                    v70 H = v70.H(uyVar, i00Var);
+                                    y70 H = y70.H(uyVar, i00Var);
                                     cw cwVar = new cw(3, (byte) 0);
                                     Paint paint = new Paint(1);
                                     cwVar.c = paint;
                                     cwVar.b = new RectF();
                                     paint.setColor(twVar.b.getThemedColor(org.telegram.ui.ActionBar.j6.G8));
                                     H.W(cwVar);
-                                    H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.cj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
+                                    H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.dj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
                                     boolean z17 = z10;
                                     H.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(twVar, z17, dialogFilter, 25), false);
                                     H.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new ci.y0(twVar, arrayList, z12, 26), dialogFilter == null && !arrayList.isEmpty());
@@ -198,14 +198,14 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
                             boolean z162 = false;
                             while (i11 < arrayList.size()) {
                             }
-                            v70 H2 = v70.H(uyVar, i00Var);
+                            y70 H2 = y70.H(uyVar, i00Var);
                             cw cwVar2 = new cw(3, (byte) 0);
                             Paint paint2 = new Paint(1);
                             cwVar2.c = paint2;
                             cwVar2.b = new RectF();
                             paint2.setColor(twVar.b.getThemedColor(org.telegram.ui.ActionBar.j6.G8));
                             H2.W(cwVar2);
-                            H2.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.cj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
+                            H2.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.dj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
                             boolean z172 = z10;
                             H2.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(twVar, z172, dialogFilter, 25), false);
                             if (dialogFilter == null) {
@@ -235,14 +235,14 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
                     boolean z1622 = false;
                     while (i11 < arrayList.size()) {
                     }
-                    v70 H22 = v70.H(uyVar, i00Var);
+                    y70 H22 = y70.H(uyVar, i00Var);
                     cw cwVar22 = new cw(3, (byte) 0);
                     Paint paint22 = new Paint(1);
                     cwVar22.c = paint22;
                     cwVar22.b = new RectF();
                     paint22.setColor(twVar.b.getThemedColor(org.telegram.ui.ActionBar.j6.G8));
                     H22.W(cwVar22);
-                    H22.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.cj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
+                    H22.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.dj(twVar, 23), uyVar.getMessagesController().getDialogFilters().size() > 1);
                     boolean z1722 = z10;
                     H22.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new ci.y0(twVar, z1722, dialogFilter, 25), false);
                     if (dialogFilter == null) {
@@ -264,7 +264,7 @@ public final /* synthetic */ class a00 implements kl0, ll0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

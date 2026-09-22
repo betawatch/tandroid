@@ -27,9 +27,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
-import w7.r7;
+import w7.q7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class n implements Window.Callback {
     public final Window.Callback a;
@@ -110,11 +110,11 @@ public final class n implements Window.Callback {
                 }
             }
             r rVar = sVar.V;
-            if (rVar == null || !sVar.v(rVar, keyEvent.getKeyCode(), keyEvent)) {
+            if (rVar == null || !sVar.u(rVar, keyEvent.getKeyCode(), keyEvent)) {
                 if (sVar.V == null) {
                     r o9 = sVar.o(0);
-                    sVar.w(o9, keyEvent);
-                    boolean v = sVar.v(o9, keyEvent.getKeyCode(), keyEvent);
+                    sVar.v(o9, keyEvent);
+                    boolean u10 = sVar.u(o9, keyEvent.getKeyCode(), keyEvent);
                     o9.k = false;
                 }
                 z10 = false;
@@ -219,7 +219,7 @@ public final class n implements Window.Callback {
                     sVar.y = new ActionBarContextView(context);
                     PopupWindow popupWindow = new PopupWindow(context, (AttributeSet) null, R.attr.actionModePopupWindowStyle);
                     sVar.E = popupWindow;
-                    r7.b(popupWindow, 2);
+                    q7.b(popupWindow, 2);
                     sVar.E.setContentView(sVar.y);
                     sVar.E.setWidth(-1);
                     context.getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true);

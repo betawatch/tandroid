@@ -4,23 +4,24 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import b5.g;
-import c5.x;
+import c5.w;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.messaging.m;
 import com.google.firebase.messaging.t;
 import com.google.firebase.messaging.v;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import m.p3;
-import w9.m;
-import w9.o;
-import w9.r;
+import w9.n;
+import w9.p;
+import w9.s;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c {
-    public final o a;
+    public final p a;
 
-    public c(o oVar) {
-        this.a = oVar;
+    public c(p pVar) {
+        this.a = pVar;
     }
 
     public final void a(Throwable th2) {
@@ -28,36 +29,36 @@ public final class c {
             Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
             return;
         }
-        m mVar = this.a.f;
+        n nVar = this.a.f;
         Thread currentThread = Thread.currentThread();
-        mVar.getClass();
+        nVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
-        t tVar = mVar.e;
-        v vVar = new v(mVar, currentTimeMillis, th2, currentThread);
+        t tVar = nVar.e;
+        v vVar = new v(nVar, currentTimeMillis, th2, currentThread);
         tVar.getClass();
-        tVar.k(new x(vVar, 7));
+        tVar.k(new w(vVar, 7));
     }
 
     public final void b() {
-        o oVar = this.a;
+        p pVar = this.a;
         Boolean bool = Boolean.TRUE;
-        r rVar = oVar.b;
-        synchronized (rVar) {
-            rVar.f = false;
-            rVar.g = bool;
-            SharedPreferences.Editor edit = rVar.a.edit();
+        s sVar = pVar.b;
+        synchronized (sVar) {
+            sVar.f = false;
+            sVar.g = bool;
+            SharedPreferences.Editor edit = sVar.a.edit();
             edit.putBoolean("firebase_crashlytics_collection_enabled", true);
             edit.apply();
-            synchronized (rVar.c) {
+            synchronized (sVar.c) {
                 try {
-                    if (rVar.a()) {
-                        if (!rVar.e) {
-                            rVar.d.trySetResult(null);
-                            rVar.e = true;
+                    if (sVar.a()) {
+                        if (!sVar.e) {
+                            sVar.d.trySetResult(null);
+                            sVar.e = true;
                         }
-                    } else if (rVar.e) {
-                        rVar.d = new TaskCompletionSource();
-                        rVar.e = false;
+                    } else if (sVar.e) {
+                        sVar.d = new TaskCompletionSource();
+                        sVar.e = false;
                     }
                 } finally {
                 }
@@ -66,12 +67,12 @@ public final class c {
     }
 
     public final void c(String str, String str2) {
-        m mVar = this.a.f;
-        mVar.getClass();
+        n nVar = this.a.f;
+        nVar.getClass();
         try {
-            ((com.google.firebase.messaging.m) mVar.d.d).u(str, str2);
+            ((m) nVar.d.d).u(str, str2);
         } catch (IllegalArgumentException e) {
-            Context context = mVar.a;
+            Context context = nVar.a;
             if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
                 throw e;
             }

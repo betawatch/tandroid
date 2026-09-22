@@ -22,7 +22,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final class c extends Handler {
                     if (bVar2.o == 2 || bVar2.k()) {
                         bVar2.x = null;
                         if (obj2 instanceof Exception) {
-                            yVar.T((Exception) obj2, false);
+                            yVar.U((Exception) obj2, false);
                             return;
                         }
                         try {
@@ -217,7 +217,7 @@ public final class c extends Handler {
                             }
                             return;
                         } catch (Exception e10) {
-                            yVar.T(e10, true);
+                            yVar.U(e10, true);
                             return;
                         }
                     }
@@ -229,7 +229,7 @@ public final class c extends Handler {
                 if (bArr == null) {
                     return;
                 }
-                ArrayList arrayList = ((n2.f) this.b).w;
+                ArrayList arrayList = ((n2.e) this.b).w;
                 int size = arrayList.size();
                 int i14 = 0;
                 while (i14 < size) {
@@ -355,10 +355,10 @@ public final class c extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                l.d dVar = (l.d) h3Var.f;
-                if (dVar != null) {
+                ki.e0 e0Var = (ki.e0) h3Var.f;
+                if (e0Var != null) {
                     b2.p pVar2 = (b2.p) h3Var.n;
-                    p4.e eVar = (p4.e) dVar.a;
+                    p4.e eVar = (p4.e) e0Var.b;
                     p4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, pVar2);

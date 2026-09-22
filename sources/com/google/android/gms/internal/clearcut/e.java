@@ -6,7 +6,7 @@ import android.util.Log;
 import java.util.HashMap;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h, fb.n {
+public final /* synthetic */ class e implements h, fb.o {
     public final String a;
 
     public /* synthetic */ e(String str) {
@@ -37,7 +37,7 @@ public final /* synthetic */ class e implements h, fb.n {
         return new e(u10.toString());
     }
 
-    @Override // fb.n
+    @Override // fb.o
     public Object p2() {
         throw new db.j(this.a);
     }

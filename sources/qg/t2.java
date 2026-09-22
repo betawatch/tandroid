@@ -22,13 +22,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.yd;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class t2 extends Dialog {
     public ValueAnimator E;
@@ -46,8 +46,8 @@ public final class t2 extends Dialog {
     public BitmapShader r;
     public Paint s;
     public Matrix v;
-    public final cc0 w;
-    public final cc0 x;
+    public final fc0 w;
+    public final fc0 x;
     public float y;
 
     public t2(Context context, final int i10) {
@@ -89,11 +89,11 @@ public final class t2 extends Dialog {
         r2 r2Var = new r2(this, context, AndroidUtilities.density);
         this.f = r2Var;
         v7Var2.addView(r2Var, y5.e(-2, -2, 17));
-        v70 F = v70.F(f0Var, dVar, f0Var);
-        cc0 cc0Var = new cc0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
-        this.w = cc0Var;
+        y70 F = y70.F(f0Var, dVar, f0Var);
+        fc0 fc0Var = new fc0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
+        this.w = fc0Var;
         final int i11 = 0;
-        cc0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
+        fc0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
             {
@@ -122,11 +122,11 @@ public final class t2 extends Dialog {
                 }
             }
         });
-        F.q(cc0Var);
-        cc0 cc0Var2 = new cc0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
-        this.x = cc0Var2;
+        F.q(fc0Var);
+        fc0 fc0Var2 = new fc0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
+        this.x = fc0Var2;
         final int i12 = 1;
-        cc0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
+        fc0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
             {
@@ -155,7 +155,7 @@ public final class t2 extends Dialog {
                 }
             }
         });
-        F.q(cc0Var2);
+        F.q(fc0Var2);
         F.k();
         F.c(R.drawable.msg_select, LocaleController.getString(R.string.ApplyChanges), new p2(this, 2), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.DoNotLinkPreview), new p2(this, 3), true);

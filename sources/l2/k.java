@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import x2.s;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.n a;
@@ -31,7 +31,7 @@ public final class k {
         m2.m mVar;
         i[] iVarArr;
         b2.s sVar2;
-        c3.o iVar;
+        c3.o hVar2;
         v2.d dVar;
         ?? obj = new Object();
         obj.a = nVar;
@@ -65,20 +65,20 @@ public final class k {
                     mVar = mVar2;
                     sVar2 = sVar3;
                     iVarArr = iVarArr2;
-                    iVar = new u3.d((qb.b) pVar.c, pVar.b ? 1 : 3);
+                    hVar2 = new u3.d((qb.b) pVar.c, pVar.b ? 1 : 3);
                 } else if (Objects.equals(str, "image/jpeg")) {
-                    iVar = new k3.a(1);
+                    hVar2 = new k3.a(1);
                 } else if (Objects.equals(str, "image/png")) {
-                    iVar = new g3.a(1);
+                    hVar2 = new g3.a(1);
                 } else {
                     int i15 = z10 ? 4 : 0;
                     mVar = mVar2;
                     int i16 = pVar.b ? i15 : i15 | 32;
                     iVarArr = iVarArr2;
                     sVar2 = sVar3;
-                    iVar = new w3.i((qb.b) pVar.c, i16, null, arrayList, nVar3);
+                    hVar2 = new w3.h((qb.b) pVar.c, i16, null, arrayList, nVar3);
                 }
-                dVar = new v2.d(iVar, i11, sVar2);
+                dVar = new v2.d(hVar2, i11, sVar2);
                 v2.d dVar2 = dVar;
                 int i17 = i14;
                 long j11 = d;
@@ -89,7 +89,7 @@ public final class k {
                 d = j11;
                 i13 = 0;
             } else if (pVar.b) {
-                iVar = new z3.h(((qb.b) pVar.c).x(sVar3), sVar3);
+                hVar2 = new z3.h(((qb.b) pVar.c).v(sVar3), sVar3);
             } else {
                 dVar = null;
                 mVar = mVar2;
@@ -107,7 +107,7 @@ public final class k {
             mVar = mVar2;
             sVar2 = sVar3;
             iVarArr = iVarArr2;
-            dVar = new v2.d(iVar, i11, sVar2);
+            dVar = new v2.d(hVar2, i11, sVar2);
             v2.d dVar222 = dVar;
             int i1722 = i14;
             long j1122 = d;

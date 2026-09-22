@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class fo extends LinearLayout {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -53,11 +53,11 @@ public final class fo extends LinearLayout {
             arrayList.add(textView2);
             addView(textView2, w7.y5.q(-2, -2, 49));
         } else {
-            kj0 kj0Var = new kj0(activity);
-            kj0Var.setAutoRepeat(true);
-            kj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
-            kj0Var.d();
-            addView(kj0Var, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
+            nj0 nj0Var = new nj0(activity);
+            nj0Var.setAutoRepeat(true);
+            nj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
+            nj0Var.d();
+            addView(nj0Var, w7.y5.t(-2, -2, 49, 0, 2, 0, 0));
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {

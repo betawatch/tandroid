@@ -35,7 +35,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import ki.j0;
+import ki.k0;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
@@ -51,7 +51,7 @@ import org.telegram.ui.x4;
 import org.telegram.ui.y0;
 import r0.i0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -306,8 +306,8 @@ public final class m implements c3.q {
         throw new cc.k(a4.a.p("Internal error: failed to encode \"", str, "\""));
     }
 
-    public byte[] i(UUID uuid, n2.p pVar) {
-        String str = pVar.b;
+    public byte[] i(UUID uuid, n2.o oVar) {
+        String str = oVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -315,7 +315,7 @@ public final class m implements c3.q {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             e2.d.i(uri, "The uri must be set.");
-            throw new n2.w(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
+            throw new n2.v(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = b2.i.e;
@@ -326,11 +326,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.b0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
+        return w7.b0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
-    public byte[] j(n2.q qVar) {
-        return w7.b0.a(((g2.o) this.b).createDataSource(), qVar.b + "&signedRequest=" + e2.d0.p(qVar.a), null, Collections.EMPTY_MAP);
+    public byte[] j(n2.p pVar) {
+        return w7.b0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -599,8 +599,8 @@ public final class m implements c3.q {
         this.b = new AtomicMarkableReference(new x9.d(z10 ? 8192 : 1024), false);
     }
 
-    public m(j0 j0Var, Range range, j6.l lVar, boolean z10) {
-        this.b = j0Var;
+    public m(k0 k0Var, Range range, j6.l lVar, boolean z10) {
+        this.b = k0Var;
         this.c = range;
         this.d = lVar;
         this.a = z10;

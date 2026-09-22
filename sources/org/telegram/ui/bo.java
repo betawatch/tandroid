@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class bo extends FrameLayout {
     public final ao a;
@@ -40,9 +40,9 @@ public abstract class bo extends FrameLayout {
                     viewGroup.removeView(this.c);
                 }
             }
-            tj tjVar = aoVar.x0;
-            if (tjVar != null && (i10 = this.d) != 0) {
-                tjVar.setPadding(0, i10, 0, 0);
+            uj ujVar = aoVar.x0;
+            if (ujVar != null && (i10 = this.d) != 0) {
+                ujVar.setPadding(0, i10, 0, 0);
             }
             aoVar.pa();
             addView(this.c, w7.y5.c(-1.0f, -1));

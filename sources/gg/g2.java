@@ -29,14 +29,14 @@ import org.telegram.ui.Cells.g8;
 import org.telegram.ui.Cells.m3;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.t3;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.xl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class g2 extends ul0 {
+public final class g2 extends xl0 {
     public ImageView L;
     public TextView M;
     public int N;
@@ -46,7 +46,7 @@ public final class g2 extends ul0 {
     public String R;
     public final f6 T;
     public final Context d;
-    public final g51 e;
+    public final i51 e;
     public final TLRPC.StickerSetCovered[] f;
     public final LongSparseArray h;
     public final LongSparseArray n;
@@ -66,16 +66,16 @@ public final class g2 extends ul0 {
     public final SparseArray K = new SparseArray();
     public final e2 S = new e2(this);
 
-    public g2(Context context, g51 g51Var, TLRPC.StickerSetCovered[] stickerSetCoveredArr, LongSparseArray longSparseArray, LongSparseArray longSparseArray2, f6 f6Var) {
+    public g2(Context context, i51 i51Var, TLRPC.StickerSetCovered[] stickerSetCoveredArr, LongSparseArray longSparseArray, LongSparseArray longSparseArray2, f6 f6Var) {
         this.d = context;
-        this.e = g51Var;
+        this.e = i51Var;
         this.f = stickerSetCoveredArr;
         this.h = longSparseArray;
         this.n = longSparseArray2;
         this.T = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -287,7 +287,7 @@ public final class g2 extends ul0 {
     /* JADX WARN: Type inference failed for: r6v21, types: [org.telegram.tgnet.TLRPC$TL_messages_stickerSet, org.telegram.tgnet.TLRPC$messages_StickerSet] */
     @Override // s4.h0
     public final void l() {
-        g51 g51Var;
+        i51 i51Var;
         int i10;
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -317,9 +317,9 @@ public final class g2 extends ul0 {
         int i14 = 0;
         while (i13 < size + size2 + i12) {
             SparseArray sparseArray6 = this.v;
-            g51 g51Var2 = this.e;
+            i51 i51Var2 = this.e;
             if (i13 < size2) {
-                g51Var = g51Var2;
+                i51Var = i51Var2;
                 ?? r62 = (TLRPC.TL_messages_stickerSet) arrayList6.get(i13);
                 i10 = size;
                 arrayList3 = r62.documents;
@@ -329,7 +329,7 @@ public final class g2 extends ul0 {
                 i11 = i12;
                 stickerSetCovered = r62;
             } else {
-                g51Var = g51Var2;
+                i51Var = i51Var2;
                 i10 = size;
                 int i15 = i13 - size2;
                 if (i15 < i12) {
@@ -355,7 +355,7 @@ public final class g2 extends ul0 {
                             String str3 = str;
                             int i21 = this.y + i17;
                             int i22 = size4;
-                            int a2 = (i17 / g51Var.a()) + i14;
+                            int a2 = (i17 / i51Var.a()) + i14;
                             int i23 = i20;
                             TLRPC.Document document = (TLRPC.Document) arrayList8.get(i20);
                             sparseArray3.put(i21, document);
@@ -378,11 +378,11 @@ public final class g2 extends ul0 {
                     }
                     sparseArray = sparseArray5;
                     arrayList2 = arrayList7;
-                    int ceil = (int) Math.ceil(i17 / g51Var.a());
+                    int ceil = (int) Math.ceil(i17 / i51Var.a());
                     for (int i25 = 0; i25 < ceil; i25++) {
                         sparseArray2.put(i14 + i25, Integer.valueOf(i17));
                     }
-                    this.y = (g51Var.a() * ceil) + this.y;
+                    this.y = (i51Var.a() * ceil) + this.y;
                     i14 += ceil;
                     arrayList4 = arrayList5;
                     i13++;
@@ -403,7 +403,7 @@ public final class g2 extends ul0 {
                 }
             }
             if (!arrayList3.isEmpty()) {
-                int ceil2 = (int) Math.ceil(arrayList3.size() / g51Var.a());
+                int ceil2 = (int) Math.ceil(arrayList3.size() / i51Var.a());
                 sparseArray3.put(this.y, stickerSetCovered);
                 if (i13 >= size2 && (stickerSetCovered instanceof TLRPC.StickerSetCovered)) {
                     sparseArray4.put(this.y, stickerSetCovered);
@@ -415,7 +415,7 @@ public final class g2 extends ul0 {
                     int i27 = i26 + 1;
                     int i28 = ceil2;
                     int i29 = this.y + i27;
-                    int a10 = i26 / g51Var.a();
+                    int a10 = i26 / i51Var.a();
                     ArrayList arrayList10 = arrayList5;
                     sparseArray3.put(i29, arrayList3.get(i26));
                     sparseArray6.put(i29, stickerSetCovered);
@@ -433,7 +433,7 @@ public final class g2 extends ul0 {
                 for (int i32 = 0; i32 < i31; i32++) {
                     sparseArray2.put(i14 + i32, stickerSetCovered);
                 }
-                this.y = (g51Var.a() * i30) + 1 + this.y;
+                this.y = (i51Var.a() * i30) + 1 + this.y;
                 i14 += i31;
                 i13++;
                 size = i10;
@@ -552,6 +552,6 @@ public final class g2 extends ul0 {
             linearLayout.setLayoutParams(y5.c(-1.0f, -1));
             frameLayout = linearLayout;
         }
-        return new fl0(frameLayout);
+        return new il0(frameLayout);
     }
 }

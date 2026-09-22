@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class u1 extends View implements org.telegram.ui.Cells.q9, d3 {
     public final u70 a;
@@ -147,7 +147,7 @@ public final class u1 extends View implements org.telegram.ui.Cells.q9, d3 {
             int dp2 = (size - AndroidUtilities.dp(36)) - this.d;
             TL_iv.pageBlockFooter pageblockfooter2 = this.f;
             f4 f4Var = this.b;
-            a3 p5 = h4.p(u70Var2, this, null, richText, dp2, 0, pageblockfooter2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.uw0.a(), 0, this.b);
+            a3 p5 = h4.p(u70Var2, this, null, richText, dp2, 0, pageblockfooter2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
                 int height = p5.d.getHeight();

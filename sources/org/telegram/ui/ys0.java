@@ -6,9 +6,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ys0 extends org.telegram.ui.Components.f81 {
+public final class ys0 extends org.telegram.ui.Components.h81 {
     public final org.telegram.ui.Components.ma g0;
     public final /* synthetic */ PhotoViewer h0;
 
@@ -20,7 +20,7 @@ public final class ys0 extends org.telegram.ui.Components.f81 {
         this.g0 = new org.telegram.ui.Components.ma(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.f81
+    @Override // org.telegram.ui.Components.h81
     public final void b(Canvas canvas, RectF rectF) {
         canvas.save();
         canvas.clipRect(rectF);

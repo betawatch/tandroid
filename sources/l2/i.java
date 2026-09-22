@@ -1,6 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class i {
     public final v2.d a;
@@ -20,43 +20,43 @@ public final class i {
     }
 
     public final i a(long j3, m2.m mVar) {
-        long s10;
-        long s11;
+        long t10;
+        long t11;
         h d = this.b.d();
         h d10 = mVar.d();
         if (d == null) {
             return new i(j3, mVar, this.c, this.a, this.f, d);
         }
-        if (!d.v()) {
+        if (!d.F()) {
             return new i(j3, mVar, this.c, this.a, this.f, d10);
         }
-        long z10 = d.z(j3);
-        if (z10 == 0) {
+        long P = d.P(j3);
+        if (P == 0) {
             return new i(j3, mVar, this.c, this.a, this.f, d10);
         }
         e2.d.h(d10);
-        long w10 = d.w();
-        long b10 = d.b(w10);
-        long j10 = z10 + w10;
+        long M = d.M();
+        long b10 = d.b(M);
+        long j10 = P + M;
         long j11 = j10 - 1;
         long c10 = d.c(j11, j3) + d.b(j11);
-        long w11 = d10.w();
-        long b11 = d10.b(w11);
+        long M2 = d10.M();
+        long b11 = d10.b(M2);
         long j12 = this.f;
         if (c10 == b11) {
-            s10 = j10 - w11;
+            t10 = j10 - M2;
         } else {
             if (c10 < b11) {
                 throw new u2.b();
             }
             if (b11 < b10) {
-                s11 = j12 - (d10.s(b10, j3) - w10);
-                return new i(j3, mVar, this.c, this.a, s11, d10);
+                t11 = j12 - (d10.t(b10, j3) - M);
+                return new i(j3, mVar, this.c, this.a, t11, d10);
             }
-            s10 = d.s(b11, j3) - w11;
+            t10 = d.t(b11, j3) - M2;
         }
-        s11 = s10 + j12;
-        return new i(j3, mVar, this.c, this.a, s11, d10);
+        t11 = t10 + j12;
+        return new i(j3, mVar, this.c, this.a, t11, d10);
     }
 
     public final long b(long j3) {
@@ -69,13 +69,13 @@ public final class i {
         long b10 = b(j3);
         h hVar = this.d;
         e2.d.h(hVar);
-        return (hVar.E(this.e, j3) + b10) - 1;
+        return (hVar.Q(this.e, j3) + b10) - 1;
     }
 
     public final long d() {
         h hVar = this.d;
         e2.d.h(hVar);
-        return hVar.z(this.e);
+        return hVar.P(this.e);
     }
 
     public final long e(long j3) {
@@ -94,6 +94,6 @@ public final class i {
     public final boolean g(long j3, long j10) {
         h hVar = this.d;
         e2.d.h(hVar);
-        return hVar.v() || j10 == -9223372036854775807L || e(j3) <= j10;
+        return hVar.F() || j10 == -9223372036854775807L || e(j3) <= j10;
     }
 }

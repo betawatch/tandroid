@@ -1,6 +1,5 @@
 package g0;
 
-import a6.m;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.graphics.Bitmap;
@@ -25,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class a {
     public static Paint a(Bitmap bitmap) {
@@ -70,13 +69,13 @@ public abstract class a {
         return new k2.b(u10.i());
     }
 
-    public static m d(AudioManager audioManager, b2.e eVar) {
+    public static k2.e d(AudioManager audioManager, b2.e eVar) {
         audioManager.getClass();
         List<AudioDeviceInfo> audioDevicesForAttributes = audioManager.getAudioDevicesForAttributes((AudioAttributes) eVar.b().a);
         if (audioDevicesForAttributes.isEmpty()) {
             return null;
         }
-        return new m(j2.e.d(audioDevicesForAttributes.get(0)), 29);
+        return new k2.e(j2.e.c(audioDevicesForAttributes.get(0)), 0);
     }
 
     public static Object e(Bundle bundle) {

@@ -12,14 +12,14 @@ import android.graphics.Rect;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.dv;
 import org.telegram.ui.ev;
 import org.telegram.ui.gv;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final /* synthetic */ class y7 implements Runnable {
         int i10;
         int i11;
         int i12;
-        hj0 hj0Var;
+        kj0 kj0Var;
         int i13 = this.a;
         boolean z10 = this.b;
         int i14 = this.d;
@@ -65,7 +65,7 @@ public final /* synthetic */ class y7 implements Runnable {
             case 2:
                 ArrayList arrayList = (ArrayList) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
-                zn znVar = ((org.telegram.ui.kl) obj3).b;
+                zn znVar = ((org.telegram.ui.ll) obj3).b;
                 if (z10) {
                     i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
                     MessagesController.getNotificationsSettings(i10).edit().remove("pin_" + znVar.T5).commit();
@@ -141,10 +141,10 @@ public final /* synthetic */ class y7 implements Runnable {
                 org.telegram.ui.Cells.s8 s8Var = gvVar.e;
                 gvVar.d();
                 int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q6, false);
-                hj0 hj0Var2 = gvVar.d;
-                hj0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                kj0 kj0Var2 = gvVar.d;
+                kj0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new o51(evVar, i15, w02));
+                ofFloat.addUpdateListener(new q51(evVar, i15, w02));
                 ofFloat.addListener(new org.telegram.ui.t0(evVar, w02, i17));
                 ofFloat.setDuration(350L);
                 ofFloat.start();
@@ -163,18 +163,18 @@ public final /* synthetic */ class y7 implements Runnable {
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                     gvVar.h = ofFloat2;
                     float f14 = z10 ? 50.0f : 200.0f;
-                    hj0Var = hj0Var2;
+                    kj0Var = kj0Var2;
                     ofFloat2.addUpdateListener(new dv(evVar, f14, i22, w03, activity));
                     gvVar.h.addListener(new org.telegram.ui.t0(activity, w03, i16));
                     gvVar.h.setDuration(350L);
                     gvVar.h.start();
                 } else {
-                    hj0Var = hj0Var2;
+                    kj0Var = kj0Var2;
                 }
                 if (org.telegram.ui.ActionBar.j6.f1()) {
-                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), hj0Var, true);
+                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), kj0Var, true);
                 } else {
-                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), hj0Var, true);
+                    s8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), kj0Var, true);
                 }
                 org.telegram.ui.ActionBar.j6.F1(n2Var);
                 break;
@@ -190,8 +190,8 @@ public final /* synthetic */ class y7 implements Runnable {
         this.d = i11;
     }
 
-    public /* synthetic */ y7(org.telegram.ui.kl klVar, boolean z10, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
-        this.e = klVar;
+    public /* synthetic */ y7(org.telegram.ui.ll llVar, boolean z10, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
+        this.e = llVar;
         this.b = z10;
         this.f = arrayList;
         this.h = arrayList2;

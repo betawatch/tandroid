@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af0 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class af0 implements Runnable {
         switch (this.a) {
             case 0:
                 cf0 cf0Var = this.b;
-                org.telegram.ui.Components.kj0 kj0Var = cf0Var.e;
-                kj0Var.getAnimatedDrawable().N(0, false, false);
-                kj0Var.d();
+                org.telegram.ui.Components.nj0 nj0Var = cf0Var.e;
+                nj0Var.getAnimatedDrawable().N(0, false, false);
+                nj0Var.d();
                 fe0 fe0Var = cf0Var.a;
                 if (fe0Var != null) {
                     fe0Var.f[0].requestFocus();

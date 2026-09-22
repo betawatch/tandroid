@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class mw0 extends Dialog {
     public float E;
@@ -36,7 +36,7 @@ public final class mw0 extends Dialog {
     public float N;
     public boolean O;
     public byte[] P;
-    public org.telegram.ui.Components.pk0 Q;
+    public org.telegram.ui.Components.sk0 Q;
     public ViewGroup R;
     public float S;
     public ViewGroup T;
@@ -60,7 +60,7 @@ public final class mw0 extends Dialog {
     public ValueAnimator f0;
     public ValueAnimator g0;
     public final TextView h;
-    public final org.telegram.ui.Components.bc0 n;
+    public final org.telegram.ui.Components.ec0 n;
     public i0.b r;
     public Bitmap s;
     public BitmapShader v;
@@ -99,22 +99,22 @@ public final class mw0 extends Dialog {
         hw0 hw0Var3 = new hw0(this, activity, 2);
         this.e = hw0Var3;
         hw0Var2.addView(hw0Var3, w7.y5.e(-1, -1, 119));
-        org.telegram.ui.Components.bc0 bc0Var = new org.telegram.ui.Components.bc0(activity, f6Var);
-        this.n = bc0Var;
-        bc0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
-        bc0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
-        hw0Var2.addView(bc0Var, w7.y5.e(-1, 66, 80));
-        bc0Var.setOnTabClick(new s3(i1Var, 14));
-        ch.d c10 = cVar.c(bc0Var, null, false);
+        org.telegram.ui.Components.ec0 ec0Var = new org.telegram.ui.Components.ec0(activity, f6Var);
+        this.n = ec0Var;
+        ec0Var.a(0, LocaleController.getString(R.string.PollMenuTabOption));
+        ec0Var.a(1, LocaleController.getString(R.string.PollMenuTabPoll));
+        hw0Var2.addView(ec0Var, w7.y5.e(-1, 66, 80));
+        ec0Var.setOnTabClick(new s3(i1Var, 14));
+        ch.d c10 = cVar.c(ec0Var, null, false);
         c10.o(eh.b.k(f6Var));
         c10.j.e = true;
         c10.p(AndroidUtilities.dp(8.0f));
         c10.q(AndroidUtilities.dp(16.0f));
-        bc0Var.setBackground(c10);
+        ec0Var.setBackground(c10);
         TextView textView = new TextView(activity);
         this.h = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(bc0Var.getColor());
+        textView.setTextColor(ec0Var.getColor());
         org.telegram.messenger.rk.l(R.string.PollMenuHint, textView, 17);
         hw0Var2.addView(textView, w7.y5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         jw0 jw0Var = new jw0(this, i10);
@@ -213,8 +213,8 @@ public final class mw0 extends Dialog {
 
     public final void c(boolean z10) {
         org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.Components.pk0 pk0Var;
-        if (z10 && (pk0Var = this.Q) != null && pk0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
+        org.telegram.ui.Components.sk0 sk0Var;
+        if (z10 && (sk0Var = this.Q) != null && sk0Var.getReactionsWindow() != null && !this.Q.getReactionsWindow().q) {
             this.Q.e();
             return;
         }
@@ -389,9 +389,9 @@ public final class mw0 extends Dialog {
         TextView textView = this.h;
         textView.setTranslationX(lerp);
         textView.setAlpha(this.y);
-        org.telegram.ui.Components.bc0 bc0Var = this.n;
-        bc0Var.setSelectedTab(positionAnimated);
-        bc0Var.setAlpha(this.y);
+        org.telegram.ui.Components.ec0 ec0Var = this.n;
+        ec0Var.setSelectedTab(positionAnimated);
+        ec0Var.setAlpha(this.y);
     }
 
     @Override // android.app.Dialog
@@ -420,7 +420,7 @@ public final class mw0 extends Dialog {
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
             super.show();
-            org.telegram.ui.Components.mm0.d(new b5(this, 15));
+            org.telegram.ui.Components.om0.d(new b5(this, 15));
             this.O = true;
             b(true, null);
         }

@@ -1,65 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class on0 extends EditTextBoldCursor {
-    public final g5 b;
-    public int c;
-    public final n6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+public final /* synthetic */ class on0 implements ml0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public on0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.e = f6Var;
-        this.b = new g5(this);
-        n6 n6Var = new n6(false, true, true, false);
-        this.d = n6Var;
-        n6Var.k(0.2f, 160L, qr.h);
-        n6Var.t(AndroidUtilities.dp(15.33f));
-        n6Var.setCallback(this);
-        n6Var.b = 5;
+    public /* synthetic */ on0(Object obj, int i10, org.telegram.ui.ActionBar.n2 n2Var, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = n2Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.b.a(org.telegram.ui.ActionBar.j6.v0(this.c < 0 ? org.telegram.ui.ActionBar.j6.p7 : org.telegram.ui.ActionBar.j6.P5, this.e), false);
-        n6 n6Var = this.d;
-        n6Var.r(a2);
-        n6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        n6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        n6 n6Var = this.d;
-        if (n6Var != null) {
-            this.c = 12 - charSequence.length();
-            n6Var.b();
-            String str = "";
-            if (this.c <= 4) {
-                str = "" + this.c;
-            }
-            n6Var.q(str, true, true);
+    @Override // org.telegram.ui.Components.ml0
+    public final void d(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                wn0 wn0Var = (wn0) this.d;
+                ArrayList arrayList = wn0Var.r;
+                ai.w0 w0Var = wn0Var.d;
+                if (i10 >= 0 && i10 < arrayList.size()) {
+                    if (!UserConfig.getInstance(this.b).isPremium()) {
+                        new rg.x0(this.c, 24, true).show();
+                        break;
+                    } else {
+                        long j3 = ((tn0) arrayList.get(i10)).a.h;
+                        if (wn0Var.f(wn0Var.h == j3 ? null : ((tn0) arrayList.get(i10)).a)) {
+                            int i11 = 0;
+                            while (i11 < w0Var.getChildCount()) {
+                                if (w0Var.getChildAt(i11) == view) {
+                                    if (i11 <= 1) {
+                                        w0Var.w0(-AndroidUtilities.dp(i11 == 0 ? 90.0f : 50.0f), 0, null);
+                                    } else if (i11 >= w0Var.getChildCount() - 2) {
+                                        w0Var.w0(AndroidUtilities.dp(i11 == w0Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
+                                    }
+                                }
+                                i11++;
+                            }
+                            w0Var.N(new org.telegram.ui.ir(3));
+                            if (wn0Var.h != j3) {
+                                wn0Var.h = j3;
+                                ((vn0) view).a(true, true);
+                                break;
+                            } else {
+                                wn0Var.h = 0L;
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                rg.k1 k1Var = (rg.k1) this.d;
+                if (view instanceof org.telegram.ui.uw0) {
+                    org.telegram.ui.uw0 uw0Var = (org.telegram.ui.uw0) view;
+                    PremiumPreviewFragment.q0(this.b, uw0Var.f.a);
+                    k1Var.showDialog(new rg.x0(this.c, uw0Var.f.a, false));
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

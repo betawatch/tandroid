@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b6 implements yf.g {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class b6 implements yf.g {
                 editTextBoldCursor.invalidate();
                 break;
             default:
-                hj0.g((hj0) this.b);
+                kj0.g((kj0) this.b);
                 break;
         }
     }

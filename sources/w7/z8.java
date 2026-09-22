@@ -1,25 +1,12 @@
 package w7;
 
-import android.net.Uri;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class z8 {
-    public static Uri a(Uri uri) {
-        if (uri.getQueryParameter("CMCD") == null) {
-            return uri;
+    public static /* synthetic */ boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
         }
-        Uri.Builder buildUpon = uri.buildUpon();
-        buildUpon.clearQuery();
-        for (String str : uri.getQueryParameterNames()) {
-            if (!str.equals("CMCD")) {
-                Iterator<String> it = uri.getQueryParameters(str).iterator();
-                while (it.hasNext()) {
-                    buildUpon.appendQueryParameter(str, it.next());
-                }
-            }
-        }
-        return buildUpon.build();
+        return true;
     }
 }

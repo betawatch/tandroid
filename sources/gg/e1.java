@@ -38,12 +38,11 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o80;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yr0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.db0;
@@ -54,6 +53,7 @@ import org.telegram.ui.h4;
 import org.telegram.ui.h90;
 import org.telegram.ui.hg0;
 import org.telegram.ui.jh;
+import org.telegram.ui.k90;
 import org.telegram.ui.l60;
 import org.telegram.ui.l9;
 import org.telegram.ui.mf;
@@ -69,7 +69,7 @@ import org.telegram.ui.zn;
 import xh.p4;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -226,7 +226,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 togglegroupcallsettings.call = inputGroupCall;
                 togglegroupcallsettings.reset_invite_hash = true;
                 int i17 = this.b;
-                ConnectionsManager.getInstance(i17).sendRequest(togglegroupcallsettings, new v8(i17, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (k90) obj3, (f3) obj2, (f6) obj));
+                ConnectionsManager.getInstance(i17).sendRequest(togglegroupcallsettings, new v8(i17, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (n90) obj3, (f3) obj2, (f6) obj));
                 break;
             case 5:
                 TLObject tLObject3 = (TLObject) obj2;
@@ -270,7 +270,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (!MediaDataController.getInstance(i13).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i13).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new wn0(11, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new yn0(11, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
@@ -349,7 +349,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
                             n2 n2Var = (n2) hg.k0.g(1, arrayList4);
-                            n2Var.showDialog(new o80(launchActivity, chatInvite, str2, n2Var, n2Var instanceof zn ? ((zn) n2Var).ea : null));
+                            n2Var.showDialog(new org.telegram.ui.Components.r80(launchActivity, chatInvite, str2, n2Var, n2Var instanceof zn ? ((zn) n2Var).ea : null));
                         } else {
                             long j3 = tL_starsSubscriptionPricing.amount;
                             MessagesController.getInstance(i13).putChat(chatInvite.chat, false);
@@ -386,7 +386,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
                         p4 p4Var = launchActivity2.Y0;
                         launchActivity2.Y0 = null;
-                        u5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new x80(r80Var3, 1), new org.telegram.ui.k90(p4Var, i15));
+                        u5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new x80(r80Var3, 1), new k90(p4Var, i15));
                         break;
                     } else {
                         if (tLObject7 instanceof TLRPC.PaymentForm) {
@@ -441,8 +441,8 @@ public final /* synthetic */ class e1 implements Runnable {
                     new xc(yg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, BillingController.getResponseCodeString(hVar.a)));
                     break;
                 } else if (list != null && !list.isEmpty()) {
-                    c5.o oVar = (c5.o) list.get(0);
-                    c5.k a2 = oVar.a();
+                    c5.n nVar = (c5.n) list.get(0);
+                    c5.k a2 = nVar.a();
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
                     tL_inputStorePaymentAuthCode.currency = a2.c;
                     tL_inputStorePaymentAuthCode.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_inputStorePaymentAuthCode.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
@@ -462,7 +462,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentAuthCode;
                     i11 = ((n2) yg0Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new v8(hg0Var, a2, i18, oVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 3), 10);
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new v8(hg0Var, a2, i18, nVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 3), 10);
                     break;
                 } else {
                     hg0Var.e = "PRODUCT_NOT_FOUND";
@@ -478,7 +478,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 String[] strArr = (String[]) obj2;
                 String str9 = (String) obj;
                 if (profileActivity.getParentActivity() != null) {
-                    v70 H = v70.H(profileActivity, view);
+                    y70 H = y70.H(profileActivity, view);
                     H.W(profileActivity.a.W0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new fm0(profileActivity, str8, i13, 5), false);
@@ -515,7 +515,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 a4.a.z(sb2, MessagesController.getInstance(i13).linkPrefix, "/", (String) obj5, "/c/");
                 sb2.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb3 = sb2.toString();
-                new xh.z1((yr0) obj6, (Context) obj3, sb3, sb3, (f6) obj2, (n2) obj).show();
+                new xh.z1((bs0) obj6, (Context) obj3, sb3, sb3, (f6) obj2, (n2) obj).show();
                 break;
         }
     }

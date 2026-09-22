@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class iy implements org.telegram.ui.Components.t40 {
     public final /* synthetic */ uy a;
@@ -63,7 +63,7 @@ public final class iy implements org.telegram.ui.Components.t40 {
         f6Var2 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
         org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(parentActivity2, f6Var2, true);
         ncVar.e(LocaleController.getString(R.string.ViewAction));
-        ncVar.a = new cj(this, 25);
+        ncVar.a = new dj(this, 25);
         gcVar.setButton(ncVar);
         gcVar.getButton().setVisibility(8);
         o6Var.c(LocaleController.getString(z11 ? R.string.YourProfileVideoUploading : R.string.YourProfilePhotoUploading), true, true);

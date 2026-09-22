@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class uw extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ uy a;
@@ -47,7 +47,7 @@ public final class uw extends org.telegram.ui.ActionBar.j {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", hashMap.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.RemoveDocumentsAlertMessage));
                 alertDialog$Builder.a.T = spannableStringBuilder;
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.ig0(5));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.lg0(5));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.a3(14, eyVar, arrayList4));
                 TextView textView = (TextView) alertDialog$Builder.o().d(-1);
                 if (textView != null) {
@@ -136,7 +136,7 @@ public final class uw extends org.telegram.ui.ActionBar.j {
             SharedConfig.saveConfig();
             int[] iArr = new int[2];
             uyVar.f0.getLocationInWindow(iArr);
-            ((LaunchActivity) uyVar.getParentActivity()).G0(false, true, (uyVar.f0.getMeasuredWidth() / 2) + iArr[0], (uyVar.f0.getMeasuredHeight() / 2) + iArr[1], new cj(this, 24));
+            ((LaunchActivity) uyVar.getParentActivity()).G0(false, true, (uyVar.f0.getMeasuredWidth() / 2) + iArr[0], (uyVar.f0.getMeasuredHeight() / 2) + iArr[1], new dj(this, 24));
             uyVar.getNotificationsController().showNotifications();
             uyVar.y3();
             return;

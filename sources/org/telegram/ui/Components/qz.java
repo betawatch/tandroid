@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class qz extends View {
     public final Paint a;
@@ -18,7 +18,7 @@ public final class qz extends View {
     public final Path c;
     public int d;
     public int e;
-    public u01[] f;
+    public w01[] f;
     public RectF[] h;
     public float n;
     public org.telegram.ui.zo0 r;
@@ -35,15 +35,15 @@ public final class qz extends View {
     }
 
     public final void a(float f7, int i10, int i11, Canvas canvas) {
-        u01[] u01VarArr = this.f;
-        int length = u01VarArr.length;
+        w01[] w01VarArr = this.f;
+        int length = w01VarArr.length;
         int i12 = 0;
         float f10 = f7;
         while (i12 < length) {
-            u01 u01Var = u01VarArr[i12];
+            w01 w01Var = w01VarArr[i12];
             int i13 = i11;
-            u01Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
-            f10 += u01Var.l() + AndroidUtilities.dp(24.0f);
+            w01Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
+            f10 += w01Var.l() + AndroidUtilities.dp(24.0f);
             i12++;
             i11 = i13;
         }
@@ -59,11 +59,11 @@ public final class qz extends View {
         int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.l0.D(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
         int i10 = 0;
         while (true) {
-            u01[] u01VarArr = this.f;
-            if (i10 >= u01VarArr.length) {
+            w01[] w01VarArr = this.f;
+            if (i10 >= w01VarArr.length) {
                 break;
             }
-            dp = (int) (u01VarArr[i10].l() + dp);
+            dp = (int) (w01VarArr[i10].l() + dp);
             i10++;
         }
         float dp2 = (height - AndroidUtilities.dp(36.0f)) / 2.0f;
@@ -159,10 +159,10 @@ public final class qz extends View {
     }
 
     public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new u01[charSequenceArr.length];
+        this.f = new w01[charSequenceArr.length];
         this.h = new RectF[charSequenceArr.length];
         for (int i10 = 0; i10 < charSequenceArr.length; i10++) {
-            this.f[i10] = new u01(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
+            this.f[i10] = new w01(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
             this.h[i10] = new RectF();
         }
         invalidate();

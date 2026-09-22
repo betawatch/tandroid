@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class gy {
     public final /* synthetic */ uy a;
@@ -27,11 +27,11 @@ public final class gy {
     public final void b() {
         uy uyVar = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uyVar.getParentActivity());
-        org.telegram.ui.Components.eo0 eo0Var = uyVar.C0.c0;
-        if (eo0Var.N && eo0Var.P()) {
+        org.telegram.ui.Components.go0 go0Var = uyVar.C0.c0;
+        if (go0Var.N && go0Var.P()) {
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearSearchAlertPartialTitle);
-            org.telegram.ui.Components.eo0 eo0Var2 = uyVar.C0.c0;
-            ArrayList arrayList = eo0Var2.N ? eo0Var2.v0 : eo0Var2.u0;
+            org.telegram.ui.Components.go0 go0Var2 = uyVar.C0.c0;
+            ArrayList arrayList = go0Var2.N ? go0Var2.v0 : go0Var2.u0;
             alertDialog$Builder.a.T = LocaleController.formatPluralString("ClearSearchAlertPartial", arrayList != null ? arrayList.size() : 0, new Object[0]);
             final int i10 = 0;
             alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.fy
@@ -50,10 +50,10 @@ public final class gy {
                         default:
                             uy uyVar2 = this.b.a;
                             if (!uyVar2.C0.c0.P()) {
-                                org.telegram.ui.Components.eo0 eo0Var3 = uyVar2.C0.c0;
-                                eo0Var3.j0.c();
-                                eo0Var3.J.clear();
-                                eo0Var3.l();
+                                org.telegram.ui.Components.go0 go0Var3 = uyVar2.C0.c0;
+                                go0Var3.j0.c();
+                                go0Var3.J.clear();
+                                go0Var3.l();
                                 break;
                             } else {
                                 uyVar2.C0.c0.E();
@@ -82,10 +82,10 @@ public final class gy {
                         default:
                             uy uyVar2 = this.b.a;
                             if (!uyVar2.C0.c0.P()) {
-                                org.telegram.ui.Components.eo0 eo0Var3 = uyVar2.C0.c0;
-                                eo0Var3.j0.c();
-                                eo0Var3.J.clear();
-                                eo0Var3.l();
+                                org.telegram.ui.Components.go0 go0Var3 = uyVar2.C0.c0;
+                                go0Var3.j0.c();
+                                go0Var3.J.clear();
+                                go0Var3.l();
                                 break;
                             } else {
                                 uyVar2.C0.c0.E();
@@ -107,9 +107,9 @@ public final class gy {
     public final void c() {
         ey eyVar = this.a.C0;
         if (eyVar != null) {
-            org.telegram.ui.Components.al0 al0Var = eyVar.e0;
+            org.telegram.ui.Components.dl0 dl0Var = eyVar.e0;
             int i10 = eyVar.T0;
-            al0Var.b(i10 > 0 ? i10 + 1 : 0);
+            dl0Var.b(i10 > 0 ? i10 + 1 : 0);
             eyVar.T0 = eyVar.c0.h();
         }
     }

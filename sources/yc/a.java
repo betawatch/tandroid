@@ -1,6 +1,5 @@
 package yc;
 
-import c5.m;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -9,7 +8,7 @@ import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
@@ -39,7 +38,7 @@ public final class a implements Runnable {
             th = th2;
         }
         try {
-            d dVar = new d(iVar, new m(), this.a, outputStream, socket.getInetAddress());
+            d dVar = new d(iVar, new d7.c(2), this.a, outputStream, socket.getInetAddress());
             while (!socket.isClosed()) {
                 dVar.c();
             }

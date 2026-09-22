@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 l.d dVar = fVar.k0;
                 if (dVar != null) {
                     ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    un unVar = (un) dVar.a;
+                    un unVar = (un) dVar.b;
                     ArrayList arrayList2 = unVar.P0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
@@ -40,7 +40,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 l.d dVar2 = fVar.k0;
                 if (dVar2 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    un unVar2 = (un) dVar2.a;
+                    un unVar2 = (un) dVar2.b;
                     ArrayList arrayList4 = unVar2.P0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);

@@ -2,9 +2,9 @@ package qg;
 
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.n11;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,10 +35,10 @@ public final /* synthetic */ class e2 implements Runnable {
                 break;
             default:
                 n2 n2Var2 = this.b;
-                l11 l11Var = n2Var2.S;
-                if (l11Var != null) {
+                n11 n11Var = n2Var2.S;
+                if (n11Var != null) {
                     n2Var2.S = null;
-                    n2Var2.removeView(l11Var);
+                    n2Var2.removeView(n11Var);
                     break;
                 }
                 break;

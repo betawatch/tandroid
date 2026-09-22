@@ -45,15 +45,15 @@ import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.vb0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.bj1;
 import org.telegram.ui.o20;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class z0 extends ab {
     public final ci.d X;
@@ -80,7 +80,7 @@ public final class z0 extends ab {
     public j s0;
     public int t0;
     public l u0;
-    public final p8.b v0;
+    public final pg.c1 v0;
 
     public z0(n2 n2Var, long j3) {
         super(n2Var, false);
@@ -97,7 +97,7 @@ public final class z0 extends ab {
         this.k0 = new ArrayList();
         this.l0 = new LinkedHashMap();
         this.p0 = AndroidUtilities.dp(134.0f);
-        this.v0 = new p8.b(this, 5);
+        this.v0 = new pg.c1(this, 4);
         this.backgroundPaddingLeft = 0;
         this.q0 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         ((ViewGroup) this.e.getParent()).removeView(this.e);
@@ -123,7 +123,7 @@ public final class z0 extends ab {
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
         viewGroup3.addView(y0Var, y5.f(-2.0f, 55, i12, 0, i12, 0));
-        o20 o20Var = new o20(getContext(), this.resourcesProvider, (vl0) null);
+        o20 o20Var = new o20(getContext(), this.resourcesProvider, (yl0) null);
         o20Var.setClickable(true);
         o20Var.setOrientation(1);
         o20Var.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -136,12 +136,12 @@ public final class z0 extends ab {
         int i13 = this.backgroundPaddingLeft;
         viewGroup4.addView(o20Var, y5.f(-2.0f, 87, i13, 0, i13, 0));
         ug.g gVar = this.o0;
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         gVar.n = arrayList;
-        gVar.f = vl0Var;
+        gVar.f = yl0Var;
         int i14 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
-        this.d.j(new sb0(this, 14));
+        yl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
+        this.d.j(new vb0(this, 14));
         this.d.setOnItemClickListener(new r5.d(this, 9));
         s4.j jVar = new s4.j();
         jVar.n(350L);
@@ -490,15 +490,15 @@ public final class z0 extends ab {
     }
 
     public final void X(boolean z10) {
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         if (!z10) {
-            vl0Var.v0(0);
+            yl0Var.v0(0);
             return;
         }
         ji.o oVar = new ji.o(getContext(), 2, 0.6f);
         oVar.a = 1;
         oVar.p = AndroidUtilities.dp(38.0f);
-        vl0Var.getLayoutManager().w0(oVar);
+        yl0Var.getLayoutManager().w0(oVar);
     }
 
     public final void Y() {
@@ -627,12 +627,12 @@ public final class z0 extends ab {
         a0(z10, z11);
         int i10 = 0;
         while (true) {
-            vl0 vl0Var = this.d;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 Z(z10);
                 return;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (childAt instanceof xg.l) {
                 int S = RecyclerView.S(childAt) - 1;
                 if (S >= 0) {
@@ -699,7 +699,7 @@ public final class z0 extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         ug.g gVar = new ug.g(getContext(), this.resourcesProvider, true);
         this.o0 = gVar;
         return gVar;

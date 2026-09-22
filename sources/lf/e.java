@@ -5,19 +5,19 @@ import hg.k0;
 import java.io.EOFException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e {
     public static final n1 e = new n1(1);
     public final mf.a a;
     public final i b;
     public final f c;
-    public final a4.m d;
+    public final android.support.v4.media.c d;
 
     public e(InputStream inputStream, long j3, int i10, i iVar, f fVar) {
         mf.a aVar = new mf.a(inputStream, j3, i10);
         this.a = aVar;
-        this.d = new a4.m(aVar, 27);
+        this.d = new android.support.v4.media.c(aVar, 26);
         this.b = iVar;
         this.c = fVar;
     }
@@ -47,20 +47,20 @@ public final class e {
     }
 
     public final b b() {
-        byte x02 = this.d.x0();
-        if (x02 == 0) {
+        byte s02 = this.d.s0();
+        if (s02 == 0) {
             return b.c;
         }
-        if (x02 == 1) {
+        if (s02 == 1) {
             return b.d;
         }
-        if (x02 == 2) {
+        if (s02 == 2) {
             return b.e;
         }
-        if (x02 == 3) {
+        if (s02 == 3) {
             return b.f;
         }
-        throw new c(k0.h(x02, "Invalid encoding: "));
+        throw new c(k0.h(s02, "Invalid encoding: "));
     }
 
     public final String c(int i10, b bVar) {
@@ -79,12 +79,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         while (true) {
-            a4.m mVar = this.d;
+            android.support.v4.media.c cVar = this.d;
             if (i11 >= i10) {
-                mVar.getClass();
+                cVar.getClass();
                 return a(bArr2, i10, bVar, true);
             }
-            int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr2, i11, i10 - i11);
+            int read = ((com.google.firebase.messaging.d) cVar.b).read(bArr2, i11, i10 - i11);
             if (read <= 0) {
                 throw new EOFException();
             }
@@ -106,9 +106,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         for (int i12 = 0; i12 < min; i12++) {
-            byte x02 = this.d.x0();
-            bArr2[i12] = x02;
-            if (x02 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
+            byte s02 = this.d.s0();
+            bArr2[i12] = s02;
+            if (s02 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
                 i11 = 0;
             } else {
                 i11++;

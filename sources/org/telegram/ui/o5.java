@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class o5 extends og.b {
     public final /* synthetic */ v5 d;
@@ -28,7 +28,7 @@ public final class o5 extends og.b {
         this.d = v5Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return ((u5) this.d.a0.get(c1Var.b())).b;
     }
@@ -113,7 +113,7 @@ public final class o5 extends og.b {
             }
         }
         if (i13 == 3) {
-            ((org.telegram.ui.Components.d90) view).setLink(((u5) arrayList.get(i10)).c);
+            ((org.telegram.ui.Components.g90) view).setLink(((u5) arrayList.get(i10)).c);
             return;
         }
         if (i13 == 11) {
@@ -167,13 +167,13 @@ public final class o5 extends og.b {
                 view = c7Var;
                 return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
             case 3:
-                org.telegram.ui.Components.d90 d90Var = new org.telegram.ui.Components.d90(v5Var.getParentActivity(), v5Var, null, false, false);
-                d90Var.d.setVisibility(8);
-                d90Var.a.setGravity(17);
-                d90Var.h.setVisibility(8);
-                d90Var.v.setVisibility(8);
-                d90Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
-                view = d90Var;
+                org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(v5Var.getParentActivity(), v5Var, null, false, false);
+                g90Var.d.setVisibility(8);
+                g90Var.a.setGravity(17);
+                g90Var.h.setVisibility(8);
+                g90Var.v.setVisibility(8);
+                g90Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
+                view = g90Var;
                 return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
             case 4:
             default:

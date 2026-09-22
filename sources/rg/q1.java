@@ -14,10 +14,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.pw0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.pj0;
 import org.telegram.ui.u21;
 import xh.s2;
@@ -28,7 +28,7 @@ import yh.p2;
 import yh.q2;
 import yh.y2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -125,9 +125,9 @@ public final /* synthetic */ class q1 implements Runnable {
                 ((xh.c0) obj).onBackPressed();
                 break;
             case 15:
-                k61 k61Var = ((xh.r1) obj).Y;
-                if (k61Var != null) {
-                    k61Var.N(false);
+                m61 m61Var = ((xh.r1) obj).Y;
+                if (m61Var != null) {
+                    m61Var.N(false);
                     break;
                 }
                 break;
@@ -178,7 +178,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 yh.f fVar = (yh.f) obj;
                 fVar.getClass();
                 try {
-                    vl0 currentListView = fVar.x0.F.getCurrentListView();
+                    yl0 currentListView = fVar.x0.F.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -188,7 +188,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 }
                 break;
             case 23:
-                new pw0(((yh.s) obj).getContext()).show();
+                new rw0(((yh.s) obj).getContext()).show();
                 break;
             case 24:
                 AndroidUtilities.showKeyboard(((yh.a0) obj).d0);

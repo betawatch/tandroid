@@ -7,37 +7,37 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class lc0 extends org.telegram.ui.Components.f60 {
+public final class lc0 extends org.telegram.ui.Components.i60 {
     public final /* synthetic */ nc0 d;
 
     public lc0(nc0 nc0Var) {
         this.d = nc0Var;
     }
 
-    @Override // org.telegram.ui.Components.po0
+    @Override // org.telegram.ui.Components.ro0
     public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         super.e(view, accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
     }
 
-    @Override // org.telegram.ui.Components.f60
+    @Override // org.telegram.ui.Components.i60
     public final int h() {
         return 5;
     }
 
-    @Override // org.telegram.ui.Components.f60
+    @Override // org.telegram.ui.Components.i60
     public final int i() {
         return 100;
     }
 
-    @Override // org.telegram.ui.Components.f60
+    @Override // org.telegram.ui.Components.i60
     public final int j() {
         return LiteMode.getPowerSaverLevel();
     }
 
-    @Override // org.telegram.ui.Components.f60
+    @Override // org.telegram.ui.Components.i60
     public final void k(int i10) {
         nc0 nc0Var = this.d;
         float f7 = i10 / 100.0f;

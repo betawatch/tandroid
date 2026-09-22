@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class c0 extends o0 {
     public int A;
@@ -255,14 +255,14 @@ public class c0 extends o0 {
             i12 = 4161;
             i13 = 4097;
         }
-        return this.o == 0 ? this.c.H(i10, i11, i12, i13) : this.d.H(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.D(i10, i11, i12, i13) : this.d.D(i10, i11, i12, i13);
     }
 
     public final View P0(int i10, int i11, boolean z10, boolean z11) {
         G0();
         int i12 = z10 ? 24579 : 320;
         int i13 = z11 ? 320 : 0;
-        return this.o == 0 ? this.c.H(i10, i11, i12, i13) : this.d.H(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.D(i10, i11, i12, i13) : this.d.D(i10, i11, i12, i13);
     }
 
     public View Q0(of.e eVar, z0 z0Var, int i10, int i11, int i12) {
@@ -644,7 +644,7 @@ public class c0 extends o0 {
                     c0Var.q(r10);
                     c0Var.a.y(r10);
                     eVar2.i(q6);
-                    c0Var.b.f.B(V);
+                    c0Var.b.f.C(V);
                 } else {
                     c0Var.j0(r10);
                     eVar2.h(V);

@@ -38,25 +38,25 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.r50;
 import org.telegram.ui.Components.voip.m1;
-import org.telegram.ui.Components.wn0;
+import org.telegram.ui.Components.yn0;
 import org.telegram.ui.au0;
 import org.telegram.ui.jr0;
 import org.webrtc.GlGenericDrawer;
 import p4.r0;
 import p4.s0;
-import pg.u1;
+import pg.v1;
 import qg.m2;
 import qg.n2;
 import qg.o2;
 import qg.y1;
-import w7.n6;
+import w7.m6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, m1, a2, pg.i0, u1, m8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, r2.v, t5.b {
+public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, m1, a2, pg.i0, v1, m8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, r2.v, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -70,8 +70,18 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         int i11 = this.a;
     }
 
+    @Override // q9.d
+    public Object G(cf.c cVar) {
+        switch (this.a) {
+            case 7:
+                return new na.c((Context) cVar.b(Context.class), ((k9.h) cVar.b(k9.h.class)).d(), cVar.x(na.d.class), cVar.e(xa.b.class), (Executor) cVar.m((q9.s) this.b));
+            default:
+                return this.b;
+        }
+    }
+
     @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
+    public void H(int i10, float f7, float f10, le.e eVar) {
         switch (this.a) {
             case 1:
                 ((Switch) this.b).invalidate();
@@ -79,16 +89,6 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
             default:
                 qh.c.a((qh.c) this.b);
                 break;
-        }
-    }
-
-    @Override // q9.d
-    public Object G(cf.c cVar) {
-        switch (this.a) {
-            case 7:
-                return new na.c((Context) cVar.a(Context.class), ((k9.h) cVar.a(k9.h.class)).d(), cVar.x(na.d.class), cVar.c(xa.b.class), (Executor) cVar.i((q9.s) this.b));
-            default:
-                return this.b;
         }
     }
 
@@ -107,14 +107,14 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         return ((str.equals(sVar.r) || str.equals(r2.w.b(sVar))) && oVar.c(sVar, false) && oVar.d(sVar)) ? 1 : 0;
     }
 
-    @Override // m4.z
-    public void c(m4.q qVar, int i10) {
-        qVar.c(i10, (x0) this.b);
+    @Override // ci.m8
+    public Bitmap c(BitmapFactory.Options options) {
+        return BitmapFactory.decodeFile((String) this.b, options);
     }
 
-    @Override // m4.c1
-    public void d(j1 j1Var, m4.r rVar) {
-        ((e2.h) this.b).accept(j1Var);
+    @Override // m4.z
+    public void d(m4.q qVar, int i10) {
+        qVar.c(i10, (x0) this.b);
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
@@ -133,7 +133,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        hj0 lottieAnimation;
+        kj0 lottieAnimation;
         o2 o2Var = (o2) this.b;
         if (!z10 || z11 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
@@ -146,7 +146,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         h5.a(this, i10, str, drawable);
     }
 
-    @Override // pg.u1
+    @Override // pg.v1
     public void e() {
         au0 au0Var = (au0) this.b;
         TextView textView = au0Var.y1;
@@ -160,49 +160,13 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         textView.setClickable(a2);
     }
 
-    @Override // ci.m8
-    public Bitmap f(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile((String) this.b, options);
-    }
-
-    @Override // li.f
-    public void g(int i10) {
-        li.b bVar = (li.b) this.b;
-        ah.i iVar = bVar.d;
-        if (Build.VERSION.SDK_INT < 31 || iVar == null) {
-            return;
-        }
-        if (w7.d0.a(i10, 4)) {
-            mi.a b10 = bVar.a.b();
-            ViewGroup viewGroup = bVar.f;
-            if (viewGroup != null) {
-                b10.b(viewGroup.getY(), bVar.e.getWidth(), bVar.f.getY() + bVar.f.getHeight());
-            }
-            iVar.h(b10);
-        }
-        iVar.e(bVar.g, bVar.e.getWidth(), bVar.e.getHeight());
-    }
-
-    @Override // m4.e1
-    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
-        int i11 = this.a;
-        Object obj = this.b;
-        switch (i11) {
-            case 4:
-                return a0Var.l(rVar, (e9.i0) obj);
-            default:
-                c1 c1Var = (c1) obj;
-                i9.u uVar = i9.u.b;
-                if (!a0Var.j()) {
-                    c1Var.d(a0Var.t, rVar);
-                    f1.O0(a0Var, rVar, i10, new p1(0));
-                }
-                return i9.u.b;
-        }
+    @Override // m4.c1
+    public void f(j1 j1Var, m4.r rVar) {
+        ((e2.h) this.b).accept(j1Var);
     }
 
     @Override // t5.b
-    public Object i() {
+    public Object g() {
         s5.h hVar = (s5.h) ((s5.c) this.b);
         hVar.getClass();
         int i10 = o5.a.e;
@@ -221,6 +185,42 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
         } finally {
             a2.endTransaction();
         }
+    }
+
+    @Override // m4.e1
+    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 4:
+                return a0Var.l(rVar, (e9.i0) obj);
+            default:
+                c1 c1Var = (c1) obj;
+                i9.u uVar = i9.u.b;
+                if (!a0Var.j()) {
+                    c1Var.f(a0Var.t, rVar);
+                    f1.O0(a0Var, rVar, i10, new p1(0));
+                }
+                return i9.u.b;
+        }
+    }
+
+    @Override // li.f
+    public void i(int i10) {
+        li.b bVar = (li.b) this.b;
+        ah.i iVar = bVar.d;
+        if (Build.VERSION.SDK_INT < 31 || iVar == null) {
+            return;
+        }
+        if (w7.d0.a(i10, 4)) {
+            mi.a b10 = bVar.a.b();
+            ViewGroup viewGroup = bVar.f;
+            if (viewGroup != null) {
+                b10.b(viewGroup.getY(), bVar.e.getWidth(), bVar.f.getY() + bVar.f.getHeight());
+            }
+            iVar.h(b10);
+        }
+        iVar.e(bVar.g, bVar.e.getWidth(), bVar.e.getHeight());
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -279,11 +279,11 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
                 } else {
                     int i12 = ((xb.a) list.get(0)).c;
                     String str = null;
-                    if (n6.a == null) {
-                        n6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+                    if (m6.a == null) {
+                        m6.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
                     }
                     if (i12 >= 0) {
-                        String[] strArr = n6.a;
+                        String[] strArr = m6.a;
                         if (i12 < strArr.length) {
                             str = strArr[i12];
                         }
@@ -308,7 +308,7 @@ public final /* synthetic */ class v implements le.d, li.f, m4.z, e1, c1, q9.d, 
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new wn0(27, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new yn0(27, uVar, bitmap));
     }
 
     public /* synthetic */ v(s0 s0Var, r0 r0Var) {

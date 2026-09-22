@@ -33,14 +33,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.j41;
 import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.vn0;
-import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xn0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.yq0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.f41;
 import org.telegram.ui.fc1;
@@ -53,10 +53,10 @@ import org.telegram.ui.qt;
 import org.telegram.ui.st;
 import org.telegram.ui.uy;
 import org.telegram.ui.xd1;
-import org.telegram.ui.yk;
+import org.telegram.ui.zk;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -241,8 +241,8 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 org.telegram.ui.e7 e7Var = (org.telegram.ui.e7) this.b;
                 org.telegram.ui.n7 n7Var = (org.telegram.ui.n7) this.c;
                 org.telegram.ui.g7 g7Var = (org.telegram.ui.g7) this.d;
-                vl0 vl0Var = (vl0) this.e;
-                org.telegram.ui.t7.a(e7Var.e, n7Var, (org.telegram.ui.p7) g7Var, vl0Var);
+                yl0 yl0Var = (yl0) this.e;
+                org.telegram.ui.t7.a(e7Var.e, n7Var, (org.telegram.ui.p7) g7Var, yl0Var);
                 org.telegram.ui.ActionBar.n1 n1Var = e7Var.a;
                 if (n1Var != null) {
                     n1Var.d(true);
@@ -282,7 +282,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 String str4 = (String) this.d;
                 CharSequence charSequence2 = (CharSequence) this.e;
                 Runnable[] runnableArr2 = (Runnable[]) this.f;
-                j41.K(znVar2.getParentActivity(), znVar2, str3, str4, charSequence2, null, null);
+                l41.K(znVar2.getParentActivity(), znVar2, str3, str4, charSequence2, null, null);
                 Runnable runnable = runnableArr2[0];
                 if (runnable != null) {
                     runnable.run();
@@ -411,7 +411,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 n1Var3.dismiss();
                 if (((Integer) arrayList2.get(intValue)).intValue() == 1) {
-                    my0.a(tL_messages_stickerSet, n2Var4, f6Var6);
+                    oy0.a(tL_messages_stickerSet, n2Var4, f6Var6);
                     break;
                 } else {
                     ((zn) n2Var4).Y9();
@@ -419,7 +419,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     break;
                 }
             case 12:
-                yk ykVar = (yk) this.b;
+                zk zkVar = (zk) this.b;
                 String str5 = (String) this.c;
                 TranslateController translateController = (TranslateController) this.d;
                 String str6 = (String) this.e;
@@ -437,14 +437,14 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     TranslateController.invalidateSuggestedLanguageCodes();
                 }
                 translateController.checkRestrictedLanguagesUpdate();
-                translateController.setHideTranslateDialog(ykVar.b, true);
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(ykVar.r[0] ? LocaleController.formatString(R.string.AddedToDoNotTranslate, str6) : LocaleController.formatString(R.string.AddedToDoNotTranslateOther, str6));
-                String[] strArr2 = j41.R;
+                translateController.setHideTranslateDialog(zkVar.b, true);
+                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(zkVar.r[0] ? LocaleController.formatString(R.string.AddedToDoNotTranslate, str6) : LocaleController.formatString(R.string.AddedToDoNotTranslateOther, str6));
+                String[] strArr2 = l41.R;
                 if (replaceTags != null && replaceTags.length() > 0) {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                xc.a0(ykVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new wq0(ykVar, 24)).j();
+                xc.a0(zkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new yq0(zkVar, 25)).j();
                 n1Var4.d(true);
                 break;
             case 13:
@@ -491,7 +491,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 break;
             case 14:
                 hg0 hg0Var = (hg0) this.b;
-                c5.o oVar = (c5.o) this.c;
+                c5.n nVar = (c5.n) this.c;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) this.d;
                 String str7 = (String) this.e;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) this.f;
@@ -500,7 +500,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     dVar2.setLoading(true);
                     org.telegram.ui.s3 s3Var = new org.telegram.ui.s3(hg0Var, 8);
                     FileLog.d("LoginBilling, querying done purchases...");
-                    BillingController.getInstance().queryPurchases("inapp", new h6(hg0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new vn0(hg0Var, oVar, s3Var, tL_inputStorePaymentAuthCode, 22)));
+                    BillingController.getInstance().queryPurchases("inapp", new h6(hg0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new xn0(hg0Var, nVar, s3Var, tL_inputStorePaymentAuthCode, 22)));
                     break;
                 }
                 break;
@@ -510,7 +510,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 ArrayList arrayList4 = (ArrayList) this.c;
                 int[] iArr = (int[]) this.d;
                 il0 il0Var = (il0) this.e;
-                v70 F = v70.F(f3Var3.container, f3Var3.getResourcesProvider(), frameLayout);
+                y70 F = y70.F(f3Var3.container, f3Var3.getResourcesProvider(), frameLayout);
                 int size3 = arrayList4.size();
                 int i14 = 0;
                 while (i14 < size3) {

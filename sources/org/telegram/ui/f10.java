@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f10 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -48,7 +48,7 @@ public final class f10 extends org.telegram.ui.ActionBar.n2 {
     public final ArrayList O;
     public final ArrayList P;
     public float Q;
-    public hj R;
+    public ij R;
     public boolean S;
     public i2.f0 T;
     public ai.w0 a;
@@ -519,7 +519,7 @@ public final class f10 extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.vl0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.yl0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -836,9 +836,9 @@ public final class f10 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public final void q0() {
-        hj hjVar = this.R;
-        if (hjVar != null) {
-            hjVar.b(true);
+        ij ijVar = this.R;
+        if (ijVar != null) {
+            ijVar.b(true);
             this.R = null;
         }
         s0(new g00(this, 0), true);

@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
+import ki.q0;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
@@ -18,16 +19,16 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.n01;
 import org.telegram.ui.Components.p01;
 import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.r01;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fg1;
 import org.telegram.ui.uy;
 import org.telegram.ui.zn;
 import yh.y3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,27 +67,27 @@ public final /* synthetic */ class g0 implements Runnable {
                 String str3 = (String) this.e;
                 long j11 = this.b;
                 long j12 = this.c;
-                k2.j jVar = (k2.j) yVar.b;
+                k2.k kVar = (k2.k) yVar.b;
                 String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) jVar).a.s;
+                j2.f fVar2 = ((i2.b0) kVar).a.s;
                 j2.a p10 = fVar2.p();
                 fVar2.q(p10, 1008, new ga.a(p10, str3, j12, j11));
                 return;
             case 3:
-                ki.o0 o0Var = (ki.o0) this.d;
-                ki.k0 k0Var = (ki.k0) this.e;
+                q0 q0Var = (q0) this.d;
+                ki.m0 m0Var = (ki.m0) this.e;
                 long j13 = this.b;
                 long j14 = this.c;
-                ki.l0 l0Var2 = o0Var.d;
-                long j15 = k0Var.a;
-                File file = k0Var.b;
-                p01 p01Var = (p01) l0Var2;
-                synchronized (p01Var) {
-                    n01 n01Var = (n01) p01Var.c.get(Long.valueOf(j15));
-                    if (!p01Var.d && n01Var != null && !n01Var.e) {
-                        p01Var.c(n01Var);
-                        n01Var.b = Math.max(n01Var.b, j13 + j14);
-                        FileLoader.getInstance(p01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), p01Var.b, n01Var.b, 0L);
+                ki.n0 n0Var = q0Var.d;
+                long j15 = m0Var.a;
+                File file = m0Var.b;
+                r01 r01Var = (r01) n0Var;
+                synchronized (r01Var) {
+                    p01 p01Var = (p01) r01Var.c.get(Long.valueOf(j15));
+                    if (!r01Var.d && p01Var != null && !p01Var.e) {
+                        r01Var.c(p01Var);
+                        p01Var.b = Math.max(p01Var.b, j13 + j14);
+                        FileLoader.getInstance(r01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), r01Var.b, p01Var.b, 0L);
                         return;
                     }
                     return;

@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class pp0 extends org.telegram.ui.Components.ul0 {
+public final class pp0 extends org.telegram.ui.Components.xl0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ int d;
     public final /* synthetic */ wp0 e;
@@ -26,7 +26,7 @@ public final class pp0 extends org.telegram.ui.Components.ul0 {
         this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 8 || i10 == 12;
@@ -311,7 +311,7 @@ public final class pp0 extends org.telegram.ui.Components.ul0 {
                 view2 = view;
                 break;
         }
-        return new org.telegram.ui.Components.fl0(view2);
+        return new org.telegram.ui.Components.il0(view2);
     }
 
     @Override // s4.h0

@@ -19,11 +19,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rk;
 import org.telegram.ui.Components.kd;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.yc;
 import v7.a7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -563,8 +563,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public rk0 getSelectionBounds() {
-        return new rk0(0.0f, 0.0f, 0.0f, 0.0f);
+    public uk0 getSelectionBounds() {
+        return new uk0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {

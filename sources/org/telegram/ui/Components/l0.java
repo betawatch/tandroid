@@ -1,22 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements ad0 {
+public final /* synthetic */ class l0 implements dd0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cd0 b;
-    public final /* synthetic */ cd0 c;
-    public final /* synthetic */ cd0 d;
+    public final /* synthetic */ fd0 b;
+    public final /* synthetic */ fd0 c;
+    public final /* synthetic */ fd0 d;
 
-    public /* synthetic */ l0(cd0 cd0Var, cd0 cd0Var2, cd0 cd0Var3, int i10) {
+    public /* synthetic */ l0(fd0 fd0Var, fd0 fd0Var2, fd0 fd0Var3, int i10) {
         this.a = i10;
-        this.b = cd0Var;
-        this.c = cd0Var2;
-        this.d = cd0Var3;
+        this.b = fd0Var;
+        this.c = fd0Var2;
+        this.d = fd0Var3;
     }
 
-    @Override // org.telegram.ui.Components.ad0
-    public final void q(cd0 cd0Var, int i10) {
+    @Override // org.telegram.ui.Components.dd0
+    public final void q(fd0 fd0Var, int i10) {
         switch (this.a) {
             case 0:
                 d5.b(this.b, this.c, this.d);

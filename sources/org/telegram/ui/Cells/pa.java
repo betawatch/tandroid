@@ -12,12 +12,12 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class pa extends ul0 {
+public final class pa extends xl0 {
     public final Context c;
     public final /* synthetic */ qa d;
 
@@ -26,7 +26,7 @@ public final class pa extends ul0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -105,6 +105,6 @@ public final class pa extends ul0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new fl0(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
+        return new il0(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
     }
 }

@@ -2,9 +2,9 @@ package t7;
 
 import j$.util.Objects;
 import java.util.AbstractMap;
-import w7.m7;
+import w7.l7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h extends d {
     public final /* synthetic */ i c;
@@ -16,7 +16,7 @@ public final class h extends d {
     @Override // java.util.List
     public final /* bridge */ /* synthetic */ Object get(int i10) {
         i iVar = this.c;
-        m7.a(i10, iVar.e);
+        l7.a(i10, iVar.e);
         Object[] objArr = iVar.d;
         int i11 = i10 + i10;
         Object obj = objArr[i11];

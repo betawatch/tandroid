@@ -5,15 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.c60;
+import org.telegram.ui.Components.eb0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vo0;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.dj0;
 import org.telegram.ui.j51;
 import org.telegram.ui.l51;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -95,17 +95,17 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 6:
-                a60 a60Var = (a60) this.c;
-                a60Var.x0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (a60Var.getMeasuredHeight() / 2.0f);
-                a60Var.v();
+                c60 c60Var = (c60) this.c;
+                c60Var.z0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (c60Var.getMeasuredHeight() / 2.0f);
+                c60Var.v();
                 break;
             case 7:
-                bb0 bb0Var = (bb0) this.c;
-                bb0Var.getClass();
-                bb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bb0Var.invalidate();
+                eb0 eb0Var = (eb0) this.c;
+                eb0Var.getClass();
+                eb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                eb0Var.invalidate();
                 if (this.b) {
-                    bb0Var.requestLayout();
+                    eb0Var.requestLayout();
                     break;
                 }
                 break;
@@ -150,7 +150,7 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                     textView.setAlpha(l51Var.s);
                 }
                 if (!l51Var.S && (j51Var = l51Var.N) != null && j51Var.getSeekBarWaveform() != null) {
-                    vo0 seekBarWaveform = l51Var.N.getSeekBarWaveform();
+                    xo0 seekBarWaveform = l51Var.N.getSeekBarWaveform();
                     seekBarWaveform.L = (this.b ? qr.g : qr.i).getInterpolation(Utilities.clamp(l51Var.s * 1.25f, 1.0f, 0.0f));
                     org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
@@ -169,16 +169,16 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 m0Var.b.invalidate();
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.c;
-                b0Var.x = null;
-                b0Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b0Var.k();
-                b0Var.l();
-                b0Var.n.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
-                b0Var.a.invalidate();
-                b0Var.m.invalidateOutline();
-                if (b0Var.w) {
-                    b0Var.j(b0Var.j, this.b);
+                zg.c0 c0Var = (zg.c0) this.c;
+                c0Var.x = null;
+                c0Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c0Var.k();
+                c0Var.l();
+                c0Var.n.setCustomEmojiEnterProgress(Utilities.clamp(c0Var.j, 1.0f, 0.0f));
+                c0Var.a.invalidate();
+                c0Var.m.invalidateOutline();
+                if (c0Var.w) {
+                    c0Var.j(c0Var.j, this.b);
                     break;
                 }
                 break;

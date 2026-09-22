@@ -25,7 +25,7 @@ import m.v1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class g extends u implements DialogInterface {
     public final f f;
@@ -248,7 +248,7 @@ public class g extends u implements DialogInterface {
                         AlertController$RecycleListView alertController$RecycleListView2 = fVar.e;
                         if (alertController$RecycleListView2 != null) {
                             alertController$RecycleListView2.setOnScrollListener(new a(findViewById11, view));
-                            fVar.e.post(new c5.v(fVar, findViewById11, view, false, 6));
+                            fVar.e.post(new c5.u(fVar, findViewById11, view, false, 6));
                         } else {
                             View view4 = findViewById11;
                             if (view4 != null) {

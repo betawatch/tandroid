@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements e2.h {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class i implements e2.h {
                 ((View) obj).invalidate();
                 break;
             case 19:
-                ((n2.k) obj).a();
+                ((n2.j) obj).a();
                 break;
             case 20:
                 bd.Y0((View) obj);

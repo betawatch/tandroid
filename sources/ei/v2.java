@@ -3,17 +3,17 @@ package ei;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.cy;
-import org.telegram.ui.Components.et0;
+import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.gt0;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.vh0;
 import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class v2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -84,21 +84,21 @@ public final class v2 extends AnimatorListenerAdapter {
                 cyVar.f.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 8:
-                sh0 sh0Var = (sh0) this.c;
-                sh0Var.H = null;
-                sh0Var.P.d1.delete(this.b);
+                vh0 vh0Var = (vh0) this.c;
+                vh0Var.H = null;
+                vh0Var.P.d1.delete(this.b);
                 break;
             case 9:
                 zq zqVar = (zq) this.c;
-                ((al0) zqVar.d).b.remove(this.b);
-                al0 al0Var = (al0) zqVar.d;
-                al0Var.d = true;
-                al0Var.a.invalidate();
+                ((dl0) zqVar.d).b.remove(this.b);
+                dl0 dl0Var = (dl0) zqVar.d;
+                dl0Var.d = true;
+                dl0Var.a.invalidate();
                 break;
             case 10:
-                et0 et0Var = (et0) this.c;
-                et0Var.e.O1.remove(this.b);
-                et0Var.a.invalidate();
+                gt0 gt0Var = (gt0) this.c;
+                gt0Var.e.O1.remove(this.b);
+                gt0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.d1 d1Var = (org.telegram.ui.Components.voip.d1) this.c;

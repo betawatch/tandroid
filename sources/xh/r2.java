@@ -10,12 +10,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import w7.d6;
+import w7.c6;
 import w7.y5;
 import yh.l5;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class r2 extends org.telegram.ui.ActionBar.f3 {
     public long b;
@@ -26,10 +26,10 @@ public final class r2 extends org.telegram.ui.ActionBar.f3 {
         fixNavigationBar();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView b10 = d6.b(context, 20.0f, j6.G6, true, f6Var);
+        TextView b10 = c6.b(context, 20.0f, j6.G6, true, f6Var);
         b10.setText(LocaleController.getString(R.string.Gift2UnpinAlertTitle));
         linearLayout.addView(b10, y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView b11 = d6.b(context, 14.0f, j6.y6, false, f6Var);
+        TextView b11 = c6.b(context, 14.0f, j6.y6, false, f6Var);
         b11.setText(LocaleController.getString(R.string.Gift2UnpinAlertSubtitle));
         linearLayout.addView(b11, y5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
         ci.d dVar = new ci.d(context, f6Var, true);

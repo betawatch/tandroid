@@ -4,9 +4,9 @@ import android.content.Context;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class qp extends org.telegram.ui.Components.s80 {
+public final class qp extends org.telegram.ui.Components.v80 {
     public final /* synthetic */ TLRPC.Chat w;
     public final /* synthetic */ rp x;
 
@@ -17,25 +17,25 @@ public final class qp extends org.telegram.ui.Components.s80 {
         this.w = chat2;
     }
 
-    @Override // org.telegram.ui.Components.s80
-    public final boolean a(boolean z10, org.telegram.ui.Components.q80 q80Var) {
+    @Override // org.telegram.ui.Components.v80
+    public final boolean a(boolean z10, org.telegram.ui.Components.t80 t80Var) {
         up upVar = this.x.d;
         if (upVar.P) {
             return false;
         }
         upVar.P = true;
-        e(new gh(21, this, q80Var), new ai.s4(this, this.w, z10, q80Var, 16));
+        e(new gh(21, this, t80Var), new ai.s4(this, this.w, z10, t80Var, 16));
         return true;
     }
 
-    @Override // org.telegram.ui.Components.s80
-    public final boolean b(boolean z10, org.telegram.ui.Components.r80 r80Var) {
+    @Override // org.telegram.ui.Components.v80
+    public final boolean b(boolean z10, org.telegram.ui.Components.u80 u80Var) {
         up upVar = this.x.d;
         if (upVar.O) {
             return false;
         }
         upVar.O = true;
-        e(new gh(21, this, r80Var), new ai.s4(this, this.w, z10, r80Var, 15));
+        e(new gh(21, this, u80Var), new ai.s4(this, this.w, z10, u80Var, 15));
         return true;
     }
 

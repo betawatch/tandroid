@@ -51,19 +51,19 @@ import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a01;
-import org.telegram.ui.Components.ad0;
 import org.telegram.ui.Components.bi;
+import org.telegram.ui.Components.c01;
 import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.cd0;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.dd0;
+import org.telegram.ui.Components.fd0;
 import org.telegram.ui.Components.i8;
-import org.telegram.ui.Components.id0;
+import org.telegram.ui.Components.jd0;
+import org.telegram.ui.Components.ld0;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xz0;
+import org.telegram.ui.Components.zz0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -89,11 +89,11 @@ import x2.n;
 import x2.p;
 import yh.u;
 import yh.u5;
-import zg.o0;
+import zg.p0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, ad0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, n, BillingController.ProductDetailsResponseListenerLegacy {
+public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, dd0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, n, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -249,15 +249,15 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                     String[] split = str.split(" ", 2);
                     String str2 = split[0];
                     String str3 = split.length > 1 ? split[1] : null;
-                    gd0 gd0Var = fk0Var.d;
-                    if (gd0Var != null) {
-                        gd0Var.getEditText().setText(str2);
+                    jd0 jd0Var = fk0Var.d;
+                    if (jd0Var != null) {
+                        jd0Var.getEditText().setText(str2);
                     } else {
                         fk0Var.K = str2;
                     }
-                    gd0 gd0Var2 = fk0Var.e;
-                    if (gd0Var2 != null) {
-                        gd0Var2.getEditText().setText(str3);
+                    jd0 jd0Var2 = fk0Var.e;
+                    if (jd0Var2 != null) {
+                        jd0Var2.getEditText().setText(str3);
                     } else {
                         fk0Var.L = str3;
                     }
@@ -325,17 +325,17 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
         }
     }
 
-    @Override // org.telegram.ui.Components.ad0
-    public void q(cd0 cd0Var, int i10) {
+    @Override // org.telegram.ui.Components.dd0
+    public void q(fd0 fd0Var, int i10) {
         i60 i60Var = (i60) this.e;
-        cd0 cd0Var2 = (cd0) this.b;
+        fd0 fd0Var2 = (fd0) this.b;
         n40 n40Var = (n40) this.c;
         o40 o40Var = (o40) this.d;
         try {
             i60Var.container.performHapticFeedback(3, 2);
         } catch (Exception unused) {
         }
-        d5.g(i60Var.T, i60Var.S, 0L, 604800L, 2, cd0Var2, n40Var, o40Var);
+        d5.g(i60Var.T, i60Var.S, 0L, 604800L, 2, fd0Var2, n40Var, o40Var);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
@@ -350,7 +350,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                 f3 f3Var = (f3) this.e;
                 TLRPC.User user = (TLRPC.User) this.b;
                 String str = (String) this.c;
-                id0 id0Var = (id0) this.d;
+                ld0 ld0Var = (ld0) this.d;
                 k3 k3Var = f3Var.d;
                 long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                 Bundle i12 = a4.a.i("scrollToTopOnResume", true);
@@ -366,7 +366,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                 if (activity instanceof LaunchActivity) {
                     n2 lastFragment = ((LaunchActivity) activity).O().getLastFragment();
                     if (MessagesController.getInstance(k3Var.G).checkCanOpenChat(i12, lastFragment)) {
-                        id0Var.dismiss();
+                        ld0Var.dismiss();
                         k3Var.c0 = true;
                         AndroidUtilities.cancelRunOnUIThread(k3Var.t0);
                         k3Var.x.i();
@@ -390,7 +390,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                 bi biVar = (bi) this.e;
                 TLRPC.User user2 = (TLRPC.User) this.b;
                 String str2 = (String) this.c;
-                id0 id0Var2 = (id0) this.d;
+                ld0 ld0Var2 = (ld0) this.d;
                 vi viVar = biVar.e;
                 long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                 Bundle i13 = a4.a.i("scrollToTopOnResume", true);
@@ -404,7 +404,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                 i13.putString("start_text", "@" + UserObject.getPublicUsername(user2) + " " + str2);
                 n2 n2Var = viVar.f0;
                 if (MessagesController.getInstance(viVar.J1).checkCanOpenChat(i13, n2Var)) {
-                    id0Var2.dismiss();
+                    ld0Var2.dismiss();
                     viVar.dismiss(true);
                     b5 b5Var2 = new b5(new zn(i13));
                     b5Var2.b = true;
@@ -429,7 +429,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
         Context context = (Context) this.e;
         int[] iArr = (int[]) this.b;
         f6 f6Var = (f6) this.c;
-        a01 a01Var = (a01) this.d;
+        c01 c01Var = (c01) this.d;
         Integer num = (Integer) obj;
         Float f7 = (Float) obj2;
         LinearLayout f10 = rk.f(context, 1);
@@ -461,7 +461,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         f10.addView(textView, y5.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
-        return new xz0(a01Var, f10, false);
+        return new zz0(c01Var, f10, false);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
@@ -482,7 +482,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, c5, a
                                 for (int i11 = 0; i11 < availableEffects.effects.size(); i11++) {
                                     TLRPC.TL_availableEffect tL_availableEffect = availableEffects.effects.get(i11);
                                     if (!hashSet.contains(Long.valueOf(tL_availableEffect.id)) && (tL_availableEffect.emoticon.contains(fixEmoji) || fixEmoji.contains(tL_availableEffect.emoticon))) {
-                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList3).add(o0.e(tL_availableEffect));
+                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList3).add(p0.e(tL_availableEffect));
                                         hashSet.add(Long.valueOf(tL_availableEffect.id));
                                     }
                                 }

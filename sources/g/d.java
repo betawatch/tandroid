@@ -27,8 +27,8 @@ import org.telegram.messenger.l0;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.ui.Cells.u6;
 import org.telegram.ui.Components.a50;
-import org.telegram.ui.Components.a60;
 import org.telegram.ui.Components.b50;
+import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.j50;
 import org.telegram.ui.Components.p50;
 import org.telegram.ui.Components.q50;
@@ -42,7 +42,7 @@ import p4.p0;
 import p4.r0;
 import p4.s0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d extends Handler {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final class d extends Handler {
                         if (i18 == 2) {
                             long j16 = (message.arg1 << 32) | (message.arg2 & 4294967295L);
                             Integer num = (Integer) message.obj;
-                            if (!u50Var.D0 && u50Var.H0.U) {
+                            if (!u50Var.D0 && u50Var.H0.W) {
                                 try {
                                     u50Var.e(false);
                                 } catch (Exception e7) {
@@ -169,10 +169,10 @@ public final class d extends Handler {
                                         }
                                         u50Var.e0 = j16 - u50Var.d0;
                                         u50Var.d0 = j16;
-                                        a60 a60Var = u50Var.H0;
-                                        floatBuffer = a60Var.C0;
-                                        floatBuffer2 = a60Var.B0;
-                                        FloatBuffer floatBuffer3 = a60Var.D0;
+                                        c60 c60Var = u50Var.H0;
+                                        floatBuffer = c60Var.E0;
+                                        floatBuffer2 = c60Var.D0;
+                                        FloatBuffer floatBuffer3 = c60Var.F0;
                                         if (floatBuffer != null || floatBuffer2 == null) {
                                             FileLog.d("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
                                             break;
@@ -193,10 +193,10 @@ public final class d extends Handler {
                                             GLES20.glEnableVertexAttribArray(u50Var.p0);
                                             GLES20.glVertexAttribPointer(u50Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer);
                                             GLES20.glEnableVertexAttribArray(u50Var.q0);
-                                            GLES20.glUniformMatrix4fv(u50Var.n0, 1, false, u50Var.H0.y0, 0);
+                                            GLES20.glUniformMatrix4fv(u50Var.n0, 1, false, u50Var.H0.A0, 0);
                                             GLES20.glUniform2f(u50Var.r0, u50Var.d, u50Var.e);
-                                            a60 a60Var2 = u50Var.H0;
-                                            if (a60Var2.a0[0] == 0 || floatBuffer3 == null || a60Var2.s0) {
+                                            c60 c60Var2 = u50Var.H0;
+                                            if (c60Var2.c0[0] == 0 || floatBuffer3 == null || c60Var2.u0) {
                                                 i10 = 36197;
                                                 f7 = 1.0f;
                                                 i11 = 33984;
@@ -205,42 +205,42 @@ public final class d extends Handler {
                                                     GLES20.glEnable(3042);
                                                     u50Var.n = true;
                                                 }
-                                                if (u50Var.H0.G0 != null) {
+                                                if (u50Var.H0.I0 != null) {
                                                     i11 = 33984;
-                                                    GLES20.glUniform2f(u50Var.s0, r4.getWidth(), u50Var.H0.G0.getHeight());
+                                                    GLES20.glUniform2f(u50Var.s0, r4.getWidth(), u50Var.H0.I0.getHeight());
                                                 } else {
                                                     i11 = 33984;
                                                 }
                                                 i10 = 36197;
                                                 f7 = 1.0f;
                                                 GLES20.glVertexAttribPointer(u50Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer3);
-                                                GLES20.glUniformMatrix4fv(u50Var.o0, 1, false, u50Var.H0.A0, 0);
+                                                GLES20.glUniformMatrix4fv(u50Var.o0, 1, false, u50Var.H0.C0, 0);
                                                 GLES20.glUniform1f(u50Var.u0, 1.0f);
-                                                GLES20.glBindTexture(36197, u50Var.H0.a0[0]);
+                                                GLES20.glBindTexture(36197, u50Var.H0.c0[0]);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                             }
-                                            a60 a60Var3 = u50Var.H0;
-                                            Size[] sizeArr = a60Var3.l0;
+                                            c60 c60Var3 = u50Var.H0;
+                                            Size[] sizeArr = c60Var3.n0;
                                             if (sizeArr != null) {
                                                 int i21 = u50Var.s0;
-                                                float width = sizeArr[a60Var3.d1].getWidth();
-                                                a60 a60Var4 = u50Var.H0;
+                                                float width = sizeArr[c60Var3.f1].getWidth();
+                                                c60 c60Var4 = u50Var.H0;
                                                 f10 = 2.0f;
-                                                GLES20.glUniform2f(i21, width, a60Var4.l0[a60Var4.d1].getHeight());
+                                                GLES20.glUniform2f(i21, width, c60Var4.n0[c60Var4.f1].getHeight());
                                                 int i22 = u50Var.t0;
-                                                a60 a60Var5 = u50Var.H0;
-                                                float width2 = (f7 / a60Var5.l0[a60Var5.d1].getWidth()) / 2.0f;
-                                                a60 a60Var6 = u50Var.H0;
-                                                GLES20.glUniform2f(i22, width2, (f7 / a60Var6.l0[a60Var6.d1].getHeight()) / 2.0f);
+                                                c60 c60Var5 = u50Var.H0;
+                                                float width2 = (f7 / c60Var5.n0[c60Var5.f1].getWidth()) / 2.0f;
+                                                c60 c60Var6 = u50Var.H0;
+                                                GLES20.glUniform2f(i22, width2, (f7 / c60Var6.n0[c60Var6.f1].getHeight()) / 2.0f);
                                             } else {
                                                 f10 = 2.0f;
                                             }
-                                            a60 a60Var7 = u50Var.H0;
-                                            int i23 = a60Var7.W[a60Var7.d1];
+                                            c60 c60Var7 = u50Var.H0;
+                                            int i23 = c60Var7.b0[c60Var7.f1];
                                             if (i23 != Integer.MIN_VALUE) {
                                                 i12 = 0;
-                                                GLES20.glUniformMatrix4fv(u50Var.o0, 1, false, u50Var.H0.z0, 0);
-                                                GLES20.glUniform1f(u50Var.u0, u50Var.H0.b0);
+                                                GLES20.glUniformMatrix4fv(u50Var.o0, 1, false, u50Var.H0.B0, 0);
+                                                GLES20.glUniform1f(u50Var.u0, u50Var.H0.d0);
                                                 GLES20.glBindTexture(i10, i23);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                             } else {
@@ -373,30 +373,30 @@ public final class d extends Handler {
                                                 u50Var.B0.postRunnable(new u6(u50Var, 15));
                                             }
                                             u50Var.C0++;
-                                            a60 a60Var8 = u50Var.H0;
-                                            if (a60Var8.a0[0] != 0) {
-                                                float f12 = a60Var8.b0;
-                                                if (f12 < f11 && !a60Var8.s0) {
+                                            c60 c60Var8 = u50Var.H0;
+                                            if (c60Var8.c0[0] != 0) {
+                                                float f12 = c60Var8.d0;
+                                                if (f12 < f11 && !c60Var8.u0) {
                                                     float f13 = (j10 / 2.0E8f) + f12;
-                                                    a60Var8.b0 = f13;
+                                                    c60Var8.d0 = f13;
                                                     if (f13 > f11) {
                                                         GLES20.glDisable(3042);
                                                         u50Var.n = false;
-                                                        a60 a60Var9 = u50Var.H0;
-                                                        a60Var9.b0 = 1.0f;
-                                                        GLES20.glDeleteTextures(1, a60Var9.a0, 0);
-                                                        a60 a60Var10 = u50Var.H0;
-                                                        a60Var10.a0[0] = 0;
-                                                        if (!a60Var10.I) {
-                                                            u50Var.H0.I = true;
+                                                        c60 c60Var9 = u50Var.H0;
+                                                        c60Var9.d0 = 1.0f;
+                                                        GLES20.glDeleteTextures(1, c60Var9.c0, 0);
+                                                        c60 c60Var10 = u50Var.H0;
+                                                        c60Var10.c0[0] = 0;
+                                                        if (!c60Var10.K) {
+                                                            u50Var.H0.K = true;
                                                             AndroidUtilities.runOnUIThread(new q50(u50Var, 4));
                                                             break;
                                                         }
                                                     }
                                                 }
                                             }
-                                            if (!a60Var8.I) {
-                                                u50Var.H0.I = true;
+                                            if (!c60Var8.K) {
+                                                u50Var.H0.K = true;
                                                 AndroidUtilities.runOnUIThread(new q50(u50Var, i19));
                                                 break;
                                             }
@@ -423,10 +423,10 @@ public final class d extends Handler {
                                 }
                                 u50Var.e0 = j16 - u50Var.d0;
                                 u50Var.d0 = j16;
-                                a60 a60Var11 = u50Var.H0;
-                                floatBuffer = a60Var11.C0;
-                                floatBuffer2 = a60Var11.B0;
-                                FloatBuffer floatBuffer32 = a60Var11.D0;
+                                c60 c60Var11 = u50Var.H0;
+                                floatBuffer = c60Var11.E0;
+                                floatBuffer2 = c60Var11.D0;
+                                FloatBuffer floatBuffer32 = c60Var11.F0;
                                 if (floatBuffer != null) {
                                 }
                                 FileLog.d("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
@@ -575,13 +575,13 @@ public final class d extends Handler {
                                 FileLog.e("InstantCamera pause encoder");
                             }
                             u50Var.D0 = true;
-                            File file = u50Var.H0.e0;
+                            File file = u50Var.H0.g0;
                             if (file != null) {
                                 file.delete();
-                                u50Var.H0.e0 = null;
+                                u50Var.H0.g0 = null;
                             }
-                            a60 a60Var12 = u50Var.H0;
-                            a60Var12.e0 = o8.x(a60Var12.d, true);
+                            c60 c60Var12 = u50Var.H0;
+                            c60Var12.g0 = o8.x(c60Var12.f, true);
                             try {
                                 FileLog.d("InstantCamera handlePauseRecording drain encoders");
                                 u50Var.e(false);
@@ -591,7 +591,7 @@ public final class d extends Handler {
                             MP4Builder mP4Builder = u50Var.K;
                             if (mP4Builder != null) {
                                 try {
-                                    mP4Builder.finishMovie(u50Var.H0.e0);
+                                    mP4Builder.finishMovie(u50Var.H0.g0);
                                 } catch (Exception e12) {
                                     FileLog.e(e12);
                                 }

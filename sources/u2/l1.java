@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class l1 implements d0, y2.h {
     public final g2.m a;
@@ -38,7 +38,7 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // y2.h
-    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void S(y2.j jVar, long j3, long j10, boolean z10) {
         Uri uri = ((k1) jVar).b.c;
         t tVar = new t(j10);
         this.d.getClass();
@@ -73,11 +73,11 @@ public final class l1 implements d0, y2.h {
 
     @Override // u2.d0
     public final void k(c0 c0Var, long j3) {
-        c0Var.b(this);
+        c0Var.a(this);
     }
 
     @Override // u2.d0
-    public final long l() {
+    public final long m() {
         return -9223372036854775807L;
     }
 
@@ -87,7 +87,7 @@ public final class l1 implements d0, y2.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
         Uri uri = ((k1) jVar).b.c;
@@ -126,7 +126,7 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // y2.h
-    public final void n(y2.j jVar, long j3, long j10, int i10) {
+    public final void o(y2.j jVar, long j3, long j10, int i10) {
         t tVar;
         k1 k1Var = (k1) jVar;
         g2.b0 b0Var = k1Var.b;
@@ -140,7 +140,7 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10) {
+    public final void p(y2.j jVar, long j3, long j10) {
         k1 k1Var = (k1) jVar;
         this.y = (int) k1Var.b.b;
         byte[] bArr = k1Var.c;
@@ -154,7 +154,7 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean q(i2.r0 r0Var) {
         if (this.w) {
             return false;
         }
@@ -174,7 +174,7 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // u2.d0
-    public final long q(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long r(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
         for (int i10 = 0; i10 < sVarArr.length; i10++) {
             c1 c1Var = c1VarArr[i10];
             ArrayList arrayList = this.h;
@@ -193,12 +193,12 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // u2.d0
-    public final p1 r() {
+    public final p1 s() {
         return this.f;
     }
 
     @Override // u2.e1
-    public final long s() {
+    public final long t() {
         return this.w ? Long.MIN_VALUE : 0L;
     }
 
@@ -211,11 +211,11 @@ public final class l1 implements d0, y2.h {
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
+    public final void v(long j3) {
     }
 
     @Override // u2.d0
-    public final long t(long j3, i2.p1 p1Var) {
+    public final long u(long j3, i2.p1 p1Var) {
         return j3;
     }
 }

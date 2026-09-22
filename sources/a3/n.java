@@ -32,7 +32,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import u2.c1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1648,7 +1648,7 @@ public final class n extends r2.r {
                 Surface D0 = D0(oVar);
                 if (i11 >= 23 && D0 != null) {
                     try {
-                        lVar.j(D0);
+                        lVar.k(D0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new x(th2);
@@ -2407,7 +2407,7 @@ public final class n extends r2.r {
             long nanoTime = System.nanoTime();
             y yVar = this.I1;
             if (yVar != null) {
-                yVar.a(j12, nanoTime, sVar, this.d0);
+                yVar.b(j12, nanoTime, sVar, this.d0);
             }
             I0(lVar, i10, nanoTime);
             O0(zVar.a);
@@ -2422,7 +2422,7 @@ public final class n extends r2.r {
                 y yVar2 = this.I1;
                 if (yVar2 != null) {
                     i13 = i10;
-                    yVar2.a(j12, j13, sVar, this.d0);
+                    yVar2.b(j12, j13, sVar, this.d0);
                 } else {
                     i13 = i10;
                 }

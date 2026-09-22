@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.Editable;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.k3;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.o61;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l extends k3 {
     public final /* synthetic */ int x;
@@ -29,18 +29,18 @@ public final class l extends k3 {
 
     @Override // org.telegram.ui.Cells.k3
     public final void a(boolean z10) {
-        m61 m61Var;
-        m61 m61Var2;
+        o61 o61Var;
+        o61 o61Var2;
         switch (this.x) {
             case 0:
-                if (z10 && (m61Var = this.y.a) != null) {
-                    m61Var.y0(2);
+                if (z10 && (o61Var = this.y.a) != null) {
+                    o61Var.y0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (m61Var2 = this.y.a) != null) {
-                    m61Var2.y0(3);
+                if (z10 && (o61Var2 = this.y.a) != null) {
+                    o61Var2.y0(3);
                     break;
                 }
                 break;

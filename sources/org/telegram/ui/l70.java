@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.t40 {
     public TLRPC.FileLocation E;
@@ -46,7 +46,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public String O;
     public final int P;
     public final boolean Q;
-    public org.telegram.ui.Components.hj0 R;
+    public org.telegram.ui.Components.kj0 R;
     public final boolean S;
     public String T;
     public final Location U;
@@ -55,7 +55,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public org.telegram.ui.Components.pz X;
     public k70 Y;
     public j70 a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public org.telegram.ui.Components.ju c;
     public ai.z5 d;
     public ci.s6 e;
@@ -255,7 +255,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 }
             }
         });
-        this.R = new org.telegram.ui.Components.hj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+        this.R = new org.telegram.ui.Components.kj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
         jd jdVar = new jd(this, context, 2);
         this.f = jdVar;
         jdVar.setScaleType(ImageView.ScaleType.CENTER);
@@ -319,14 +319,14 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.ju juVar5 = this.c;
         boolean z14 = LocaleController.isRTL;
         frameLayout6.addView(juVar5, w7.y5.d(-1, -2.0f, 16, z14 ? 5.0f : 96.0f, 0.0f, z14 ? 96.0f : 5.0f, 0.0f));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.q1();
         this.X = new org.telegram.ui.Components.pz(this.b, 1);
-        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
         j70 j70Var = new j70(this, context);
         this.a = j70Var;
-        vl0Var2.setAdapter(j70Var);
+        yl0Var2.setAdapter(j70Var);
         this.b.setLayoutManager(this.X);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
@@ -335,7 +335,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.b.setOnItemClickListener(new g70(this));
         org.telegram.ui.Components.y10 y10Var = new org.telegram.ui.Components.y10(context, this.resourceProvider, false);
         this.v = y10Var;
-        org.telegram.ui.Cells.f3.h(y10Var);
+        org.telegram.ui.Cells.f3.j(y10Var);
         idVar.addView(this.v, org.telegram.ui.Components.y10.b());
         this.v.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.f70
             public final /* synthetic */ l70 b;
@@ -570,7 +570,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
             CountDownLatch countDownLatch = new CountDownLatch(1);
             ArrayList arrayList2 = new ArrayList();
             l70Var = this;
-            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new org.telegram.ui.Components.vn0(l70Var, arrayList2, arrayList, countDownLatch, 11));
+            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new org.telegram.ui.Components.xn0(l70Var, arrayList2, arrayList, countDownLatch, 11));
             try {
                 countDownLatch.await();
             } catch (Exception e) {

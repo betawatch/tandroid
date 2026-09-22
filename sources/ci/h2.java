@@ -11,8 +11,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.jd0;
+import org.telegram.ui.Components.ln0;
 import org.telegram.ui.Components.m30;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.cp;
@@ -23,7 +23,7 @@ import org.telegram.ui.l80;
 import org.telegram.ui.ze0;
 import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class h2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -40,7 +40,7 @@ public final class h2 extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.b) {
             case 6:
-                ((jn0) this.c).getClass();
+                ((ln0) this.c).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -58,9 +58,9 @@ public final class h2 extends EditTextBoldCursor {
                 break;
             case 5:
                 super.onFocusChanged(z10, i10, rect);
-                gd0 gd0Var = (gd0) this.c;
+                jd0 jd0Var = (jd0) this.c;
                 float f7 = (z10 || isFocused()) ? 1.0f : 0.0f;
-                gd0Var.b(f7, f7, true);
+                jd0Var.b(f7, f7, true);
                 break;
             default:
                 super.onFocusChanged(z10, i10, rect);
@@ -208,7 +208,7 @@ public final class h2 extends EditTextBoldCursor {
             case 6:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((jn0) this.c).getClass();
+                        ((ln0) this.c).getClass();
                     }
                     break;
                 }

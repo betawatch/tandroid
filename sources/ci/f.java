@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class f extends dh.b {
     public final /* synthetic */ int n;
@@ -13,51 +13,51 @@ public final class f extends dh.b {
         this.n = 2;
     }
 
-    @Override // dh.b, dh.a
-    public int a() {
-        switch (this.n) {
-            case 2:
-                return b() ? 117440511 : 285212672;
-            default:
-                return super.a();
-        }
-    }
-
     @Override // dh.b
-    public boolean b() {
+    public boolean a() {
         switch (this.n) {
             case 0:
                 return true;
             case 1:
                 return true;
             default:
+                return super.a();
+        }
+    }
+
+    @Override // dh.b, dh.a
+    public int b() {
+        switch (this.n) {
+            case 2:
+                return a() ? 117440511 : 285212672;
+            default:
                 return super.b();
         }
     }
 
     @Override // dh.b, dh.a
-    public int d() {
+    public int g() {
         switch (this.n) {
             case 2:
-                if (b()) {
+                if (a()) {
                     return 301989887;
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.d();
+                return super.g();
         }
     }
 
     @Override // dh.b, dh.a
-    public int m() {
+    public int x() {
         switch (this.n) {
             case 2:
-                if (b()) {
+                if (a()) {
                     return 83886079;
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.m();
+                return super.x();
         }
     }
 

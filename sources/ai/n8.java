@@ -22,16 +22,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.aj;
+import org.telegram.ui.bj;
 import org.telegram.ui.fe;
 import org.telegram.ui.ln;
 import org.telegram.ui.rm;
-import org.telegram.ui.yi;
 import org.telegram.ui.zi;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a;
@@ -145,14 +145,14 @@ public final /* synthetic */ class n8 implements Runnable {
                     ii.a aVar = h0Var.a;
                     ii.w3 w3Var = ((ii.o3) f0Var).a;
                     w3Var.p3(false);
-                    w3Var.h3.J(new ii.t3(w3Var, aVar, i14), e0Var);
+                    w3Var.h3.L(new ii.t3(w3Var, aVar, i14), e0Var);
                     break;
                 }
                 break;
             case 11:
-                k2.j jVar = (k2.j) ((n4.y) obj).b;
+                k2.k kVar = (k2.k) ((n4.y) obj).b;
                 String str = e2.d0.a;
-                e2.c cVar = ((i2.b0) jVar).a.E;
+                e2.c cVar = ((i2.b0) kVar).a.E;
                 i2.v vVar = new i2.v(i14, 2);
                 cVar.getClass();
                 e2.d.g(Looper.myLooper() == ((e2.z) cVar.c).a.getLooper());
@@ -222,38 +222,38 @@ public final /* synthetic */ class n8 implements Runnable {
                 ((fe) obj).f.c(i14);
                 break;
             case 19:
-                ((aj) obj).a.F(this.b, 0, 0, 0, true, true);
+                ((bj) obj).a.E(this.b, 0, 0, 0, true, true);
                 break;
             case 20:
-                zn znVar = ((yi) obj).g;
+                zn znVar = ((zi) obj).g;
                 if (znVar.vb == i14) {
                     znVar.Ma();
                     break;
                 }
                 break;
             case 21:
-                zn znVar2 = ((zi) obj).g;
+                zn znVar2 = ((aj) obj).g;
                 if (znVar2.vb == i14) {
                     znVar2.Ma();
                     break;
                 }
                 break;
             case 22:
-                zn znVar3 = ((yi) obj).g;
+                zn znVar3 = ((zi) obj).g;
                 if (znVar3.vb == i14) {
                     znVar3.Ma();
                     break;
                 }
                 break;
             case 23:
-                zn znVar4 = ((zi) obj).g;
+                zn znVar4 = ((aj) obj).g;
                 if (znVar4.vb == i14) {
                     znVar4.Ma();
                     break;
                 }
                 break;
             case 24:
-                zn znVar5 = ((zi) obj).g;
+                zn znVar5 = ((aj) obj).g;
                 if (znVar5.vb == i14) {
                     znVar5.Ma();
                     break;
@@ -272,7 +272,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.t1((MessagesStorage.BooleanCallback) obj, i13), 250L);
                 break;
             case 28:
-                k90 k90Var = (k90) obj;
+                n90 n90Var = (n90) obj;
                 ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(i14).getPrivacyRules(11);
                 String string = LocaleController.getString(R.string.EditProfileBirthdayInfoContacts);
                 if (privacyRules != null && !privacyRules.isEmpty()) {
@@ -290,7 +290,7 @@ public final /* synthetic */ class n8 implements Runnable {
                         }
                     }
                 }
-                k90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
+                n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
                 break;
             default:
                 ((org.telegram.ui.Components.n8) obj).b(i14);

@@ -16,7 +16,7 @@ import android.view.Window;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class p extends s implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler k0;
@@ -33,7 +33,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean q0 = true;
     public boolean r0 = true;
     public int s0 = -1;
-    public final a6.m u0 = new a6.m(this, 5);
+    public final pb.c u0 = new pb.c(this, 6);
     public boolean z0 = false;
 
     @Override // androidx.fragment.app.s

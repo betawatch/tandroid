@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ez0 implements org.telegram.ui.ActionBar.s0, lv0, org.telegram.ui.Components.m8 {
     public final /* synthetic */ ProfileActivity a;
@@ -27,12 +27,12 @@ public final class ez0 implements org.telegram.ui.ActionBar.s0, lv0, org.telegra
 
     @Override // org.telegram.ui.lv0
     public void H(MessageObject messageObject) {
-        org.telegram.ui.Components.ph0 ph0Var = this.a.m0;
-        if (ph0Var == null || !ph0Var.a) {
+        org.telegram.ui.Components.sh0 sh0Var = this.a.m0;
+        if (sh0Var == null || !sh0Var.a) {
             return;
         }
-        ph0Var.O.d(0.0f, true);
-        ph0Var.invalidate();
+        sh0Var.O.d(0.0f, true);
+        sh0Var.invalidate();
     }
 
     @Override // org.telegram.ui.Components.m8
@@ -56,7 +56,7 @@ public final class ez0 implements org.telegram.ui.ActionBar.s0, lv0, org.telegra
 
     @Override // org.telegram.ui.ActionBar.s0
     public void e() {
-        org.telegram.ui.Components.mm0.d(new b5(this.a, 18));
+        org.telegram.ui.Components.om0.d(new b5(this.a, 18));
     }
 
     @Override // org.telegram.ui.lv0

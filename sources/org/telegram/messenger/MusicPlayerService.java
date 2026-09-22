@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -300,13 +300,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.f(this.playbackState.b());
         updateRepeatMode();
         updateShuffleMode();
-        a4.m mVar = new a4.m(1);
+        android.support.v4.media.c cVar = new android.support.v4.media.c(0);
         String str8 = str3;
-        mVar.w0("android.media.metadata.ALBUM_ARTIST", str8);
-        mVar.w0("android.media.metadata.ARTIST", str8);
-        mVar.u0(duration);
+        cVar.r0("android.media.metadata.ALBUM_ARTIST", str8);
+        cVar.r0("android.media.metadata.ARTIST", str8);
+        cVar.q0(duration);
         String str9 = str2;
-        mVar.w0("android.media.metadata.TITLE", str9);
+        cVar.r0("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -314,14 +314,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        mVar.w0("android.media.metadata.ALBUM", str6);
+        cVar.r0("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            mVar.t0("android.media.metadata.ALBUM_ART", bitmap3);
+            cVar.p0("android.media.metadata.ALBUM_ART", bitmap3);
         }
-        this.mediaSession.e(new MediaMetadataCompat((Bundle) mVar.b));
+        this.mediaSession.e(new MediaMetadataCompat((Bundle) cVar.b));
         builder.setVisibility(1);
         Notification build = builder.build();
         if (i10 >= 31) {

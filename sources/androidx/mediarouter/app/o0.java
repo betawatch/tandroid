@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -142,7 +142,7 @@ public final class o0 extends g.u {
         if (mediaSessionCompat$Token != null && this.F) {
             n4.y yVar2 = new n4.y(this.y, mediaSessionCompat$Token);
             this.Z = yVar2;
-            yVar2.W(rVar);
+            yVar2.Y(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.a).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -291,7 +291,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            k2.u b10 = this.r.b(vVar);
+            k2.e b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {

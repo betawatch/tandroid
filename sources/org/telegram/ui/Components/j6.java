@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -223,15 +223,15 @@ public final /* synthetic */ class j6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 26:
-                a60 a60Var = (a60) this.b;
-                if (!a60Var.q0) {
-                    CameraSession cameraSession = a60Var.r0;
+                c60 c60Var = (c60) this.b;
+                if (!c60Var.s0) {
+                    CameraSession cameraSession = c60Var.t0;
                     if (cameraSession != null) {
                         cameraSession.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
                     }
                 } else {
-                    Camera2Session camera2Session = a60Var.u0;
+                    Camera2Session camera2Session = c60Var.w0;
                     if (camera2Session != null) {
                         camera2Session.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
@@ -239,21 +239,21 @@ public final /* synthetic */ class j6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 27:
-                j70.P((j70) this.b, valueAnimator);
+                m70.P((m70) this.b, valueAnimator);
                 break;
             case 28:
-                j70 j70Var = ((i70) this.b).e;
-                j70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                viewGroup = ((org.telegram.ui.ActionBar.f3) j70Var).containerView;
+                m70 m70Var = ((l70) this.b).e;
+                m70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                viewGroup = ((org.telegram.ui.ActionBar.f3) m70Var).containerView;
                 viewGroup.invalidate();
                 break;
             default:
-                v70 v70Var = (v70) this.b;
-                v70Var.getClass();
+                y70 y70Var = (y70) this.b;
+                y70Var.getClass();
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t70 t70Var = v70Var.x;
-                if (t70Var != null) {
-                    t70Var.setProgress(floatValue6);
+                w70 w70Var = y70Var.x;
+                if (w70Var != null) {
+                    w70Var.setProgress(floatValue6);
                     break;
                 }
                 break;

@@ -1,47 +1,7 @@
 package d9;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class j implements i, Serializable {
-    public final transient Object a = new Object();
-    public final i b;
-    public volatile transient boolean c;
-    public transient Object d;
-
-    public j(i iVar) {
-        this.b = iVar;
-    }
-
-    @Override // d9.i
-    public final Object get() {
-        if (!this.c) {
-            synchronized (this.a) {
-                try {
-                    if (!this.c) {
-                        Object obj = this.b.get();
-                        this.d = obj;
-                        this.c = true;
-                        return obj;
-                    }
-                } finally {
-                }
-            }
-        }
-        return this.d;
-    }
-
-    public final String toString() {
-        Object obj;
-        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
-        if (this.c) {
-            obj = "<supplier that returned " + this.d + ">";
-        } else {
-            obj = this.b;
-        }
-        sb2.append(obj);
-        sb2.append(")");
-        return sb2.toString();
-    }
+public interface j {
+    Object get();
 }

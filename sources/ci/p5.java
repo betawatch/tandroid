@@ -11,11 +11,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.gh;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                v70 F = v70.F(e0Var.container, f6Var, c0Var);
+                y70 F = y70.F(e0Var.container, f6Var, c0Var);
                 F.W(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var)));
                 final int i12 = 0;
                 F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
@@ -188,17 +188,17 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((rh.g) this.d).b;
                 return rh.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
             default:
-                vl0 vl0Var = (vl0) this.b;
+                yl0 yl0Var = (yl0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != vl0Var) {
+                    if (view.getParent() != yl0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) callbackReturn.run(view);
                     boolean booleanValue = bool.booleanValue();
-                    s4.c1 U = vl0Var.U(view);
+                    s4.c1 U = yl0Var.U(view);
                     if (U != null) {
                         sparseIntArray.put(U.f, booleanValue ? 1 : 0);
                     }

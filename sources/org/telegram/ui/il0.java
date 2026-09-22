@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class il0 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -156,7 +156,7 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                             if (arrayList9.isEmpty()) {
                                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(str5);
                                 if (tL_availableReaction != null) {
-                                    j71Var2.A1.add(zg.o0.c(tL_availableReaction));
+                                    j71Var2.A1.add(zg.p0.c(tL_availableReaction));
                                 }
                             } else {
                                 j71Var2.A1.addAll(arrayList9);
@@ -171,15 +171,15 @@ public final /* synthetic */ class il0 implements Utilities.Callback {
                             Long l4 = (Long) it.next();
                             l4.getClass();
                             ArrayList arrayList11 = j71Var2.A1;
-                            zg.o0 o0Var = new zg.o0();
+                            zg.p0 p0Var = new zg.p0();
                             long longValue = l4.longValue();
-                            o0Var.g = longValue;
-                            o0Var.h = longValue;
-                            arrayList11.add(o0Var);
+                            p0Var.g = longValue;
+                            p0Var.h = longValue;
+                            arrayList11.add(p0Var);
                         }
                         Iterator it2 = linkedHashSet2.iterator();
                         while (it2.hasNext()) {
-                            j71Var2.A1.add(zg.o0.b((String) it2.next()));
+                            j71Var2.A1.add(zg.p0.b((String) it2.next()));
                         }
                         j71Var2.D1.addAll(arrayList3);
                         ArrayList arrayList12 = arrayList4;

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a5 implements Runnable {
     public final /* synthetic */ int a;
@@ -129,19 +129,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17 = 0; i17 < list2.size(); i17++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17);
                                                                                         int i18 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7 = arrayList6;
                                                                                             if (i18 >= arrayList7.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7.get(i18)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7.get(i18)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList7.get(i18);
                                                                                             } else {
                                                                                                 i18++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -170,19 +170,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList8 = arrayList6;
                                                                                             if (i21 >= arrayList8.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList8.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -211,19 +211,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList6;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -270,19 +270,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i172 = 0; i172 < list2.size(); i172++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i172);
+                                                                                        c5.n nVar = (c5.n) list2.get(i172);
                                                                                         int i18 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList72 = arrayList7;
                                                                                             if (i18 >= arrayList72.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i18)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i18)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList72.get(i18);
                                                                                             } else {
                                                                                                 i18++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -311,19 +311,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList8 = arrayList7;
                                                                                             if (i21 >= arrayList8.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList8.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -352,19 +352,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList7;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -411,19 +411,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i172 = 0; i172 < list2.size(); i172++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i172);
+                                                                                        c5.n nVar = (c5.n) list2.get(i172);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList72 = arrayList8;
                                                                                             if (i182 >= arrayList72.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList72.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -452,19 +452,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList8;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -493,19 +493,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList8;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -577,19 +577,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i172 = 0; i172 < list2.size(); i172++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i172);
+                                                                                        c5.n nVar = (c5.n) list2.get(i172);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList72 = arrayList62;
                                                                                             if (i182 >= arrayList72.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList72.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList72.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -618,19 +618,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList62;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -659,19 +659,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList62;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -718,19 +718,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i182 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList722.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -759,19 +759,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList72;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -800,19 +800,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList72;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -859,19 +859,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList8;
                                                                                             if (i182 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList722.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -900,19 +900,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList8;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -941,19 +941,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList9 = arrayList8;
                                                                                             if (i24 >= arrayList9.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList9.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList9.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1025,19 +1025,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList62;
                                                                                             if (i182 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList722.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -1066,19 +1066,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList62;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1107,19 +1107,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList62;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1166,19 +1166,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i182 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i182 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i182)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList722.get(i182);
                                                                                             } else {
                                                                                                 i182++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -1207,19 +1207,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList82 = arrayList72;
                                                                                             if (i21 >= arrayList82.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList82.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList82.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1248,19 +1248,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList72;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1307,19 +1307,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList82;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption.currency = a2.c;
                                                                                             tL_starsGiftOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption.loadingStorePrice = false;
@@ -1348,19 +1348,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1389,19 +1389,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1518,19 +1518,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList62;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -1559,19 +1559,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList62;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1600,19 +1600,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList62;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1659,19 +1659,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -1700,19 +1700,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList72;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1741,19 +1741,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList72;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1800,19 +1800,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList82;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -1841,19 +1841,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -1882,19 +1882,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -1966,19 +1966,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList622;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2007,19 +2007,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList622;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2048,19 +2048,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList622;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2107,19 +2107,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2148,19 +2148,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList72;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2189,19 +2189,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList72;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2248,19 +2248,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList82;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2289,19 +2289,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2330,19 +2330,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2414,19 +2414,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList622;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2455,19 +2455,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList622;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2496,19 +2496,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList622;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2555,19 +2555,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2596,19 +2596,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList72;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2637,19 +2637,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList72;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2696,19 +2696,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList82;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2737,19 +2737,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption.currency = a10.c;
                                                                                             tL_starsGiveawayOption.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption.loadingStorePrice = false;
@@ -2778,19 +2778,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -2907,19 +2907,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList622;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -2948,19 +2948,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList622;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -2989,19 +2989,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList622;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3048,19 +3048,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList72;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3089,19 +3089,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList72;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3130,19 +3130,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList72;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3189,19 +3189,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList82;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3230,19 +3230,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3271,19 +3271,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3355,19 +3355,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i1722 = 0; i1722 < list2.size(); i1722++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i1722);
+                                                                                        c5.n nVar = (c5.n) list2.get(i1722);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList722 = arrayList622;
                                                                                             if (i1822 >= arrayList722.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList722.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList722.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3396,19 +3396,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList622;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3437,19 +3437,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList622;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3496,19 +3496,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17222 = 0; i17222 < list2.size(); i17222++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17222);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17222);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7222 = arrayList722;
                                                                                             if (i1822 >= arrayList7222.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList7222.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3537,19 +3537,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList722;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3578,19 +3578,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList722;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3637,19 +3637,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17222 = 0; i17222 < list2.size(); i17222++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17222);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17222);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7222 = arrayList82;
                                                                                             if (i1822 >= arrayList7222.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList7222.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3678,19 +3678,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList82;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3719,19 +3719,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList92 = arrayList82;
                                                                                             if (i24 >= arrayList92.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList92.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList92.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3803,19 +3803,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17222 = 0; i17222 < list2.size(); i17222++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17222);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17222);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7222 = arrayList622;
                                                                                             if (i1822 >= arrayList7222.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList7222.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3844,19 +3844,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList622;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -3885,19 +3885,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList922 = arrayList622;
                                                                                             if (i24 >= arrayList922.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList922.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -3944,19 +3944,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17222 = 0; i17222 < list2.size(); i17222++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17222);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17222);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7222 = arrayList722;
                                                                                             if (i1822 >= arrayList7222.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList7222.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -3985,19 +3985,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList822 = arrayList722;
                                                                                             if (i21 >= arrayList822.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList822.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList822.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -4026,19 +4026,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList922 = arrayList722;
                                                                                             if (i24 >= arrayList922.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList922.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;
@@ -4085,19 +4085,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list2 = list;
                                                                                 if (list2 != null) {
                                                                                     for (int i17222 = 0; i17222 < list2.size(); i17222++) {
-                                                                                        c5.o oVar = (c5.o) list2.get(i17222);
+                                                                                        c5.n nVar = (c5.n) list2.get(i17222);
                                                                                         int i1822 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList7222 = arrayList822;
                                                                                             if (i1822 >= arrayList7222.size()) {
                                                                                                 tL_starsGiftOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(oVar.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiftOption) arrayList7222.get(i1822)).store_product.equals(nVar.c)) {
                                                                                                 tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) arrayList7222.get(i1822);
                                                                                             } else {
                                                                                                 i1822++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiftOption2 != null && (a2 = oVar.a()) != null) {
+                                                                                        if (tL_starsGiftOption2 != null && (a2 = nVar.a()) != null) {
                                                                                             tL_starsGiftOption2.currency = a2.c;
                                                                                             tL_starsGiftOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption2.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiftOption2.loadingStorePrice = false;
@@ -4126,19 +4126,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list3 = list;
                                                                                 if (list3 != null) {
                                                                                     for (int i20 = 0; i20 < list3.size(); i20++) {
-                                                                                        c5.o oVar2 = (c5.o) list3.get(i20);
+                                                                                        c5.n nVar2 = (c5.n) list3.get(i20);
                                                                                         int i21 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList8222 = arrayList822;
                                                                                             if (i21 >= arrayList8222.size()) {
                                                                                                 tL_starsGiveawayOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8222.get(i21)).store_product.equals(oVar2.c)) {
+                                                                                            } else if (((TL_stars.TL_starsGiveawayOption) arrayList8222.get(i21)).store_product.equals(nVar2.c)) {
                                                                                                 tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) arrayList8222.get(i21);
                                                                                             } else {
                                                                                                 i21++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = oVar2.a()) != null) {
+                                                                                        if (tL_starsGiveawayOption2 != null && (a10 = nVar2.a()) != null) {
                                                                                             tL_starsGiveawayOption2.currency = a10.c;
                                                                                             tL_starsGiveawayOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiveawayOption2.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsGiveawayOption2.loadingStorePrice = false;
@@ -4167,19 +4167,19 @@ public final /* synthetic */ class a5 implements Runnable {
                                                                                 List list4 = list;
                                                                                 if (list4 != null) {
                                                                                     for (int i23 = 0; i23 < list4.size(); i23++) {
-                                                                                        c5.o oVar3 = (c5.o) list4.get(i23);
+                                                                                        c5.n nVar3 = (c5.n) list4.get(i23);
                                                                                         int i24 = 0;
                                                                                         while (true) {
                                                                                             ArrayList arrayList922 = arrayList822;
                                                                                             if (i24 >= arrayList922.size()) {
                                                                                                 tL_starsTopupOption2 = null;
-                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(oVar3.c)) {
+                                                                                            } else if (((TL_stars.TL_starsTopupOption) arrayList922.get(i24)).store_product.equals(nVar3.c)) {
                                                                                                 tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) arrayList922.get(i24);
                                                                                             } else {
                                                                                                 i24++;
                                                                                             }
                                                                                         }
-                                                                                        if (tL_starsTopupOption2 != null && (a11 = oVar3.a()) != null) {
+                                                                                        if (tL_starsTopupOption2 != null && (a11 = nVar3.a()) != null) {
                                                                                             tL_starsTopupOption2.currency = a11.c;
                                                                                             tL_starsTopupOption2.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsTopupOption2.currency)) * (a11.b / Math.pow(10.0d, 6.0d)));
                                                                                             tL_starsTopupOption2.loadingStorePrice = false;

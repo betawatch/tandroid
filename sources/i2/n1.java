@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class n1 {
     public final f a;
@@ -48,7 +48,7 @@ public final class n1 {
             }
             b(fVar);
             e2.d.g(fVar.n == 1);
-            fVar.c.e();
+            fVar.c.f();
             fVar.n = 0;
             fVar.r = null;
             fVar.s = null;
@@ -138,7 +138,7 @@ public final class n1 {
             if (this.e) {
                 f fVar = this.a;
                 e2.d.g(fVar.n == 0);
-                fVar.c.e();
+                fVar.c.f();
                 fVar.s();
                 this.e = false;
                 return;
@@ -149,7 +149,7 @@ public final class n1 {
             f fVar2 = this.c;
             fVar2.getClass();
             e2.d.g(fVar2.n == 0);
-            fVar2.c.e();
+            fVar2.c.f();
             fVar2.s();
             this.f = false;
         }

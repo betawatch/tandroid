@@ -17,10 +17,10 @@ import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.s90;
 import org.telegram.ui.s00;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class k7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -106,7 +106,7 @@ public final class k7 extends LinearLayout implements NotificationCenter.Notific
             if (this.e == null) {
                 SpannableString spannableString = new SpannableString("x");
                 this.e = spannableString;
-                spannableString.setSpan(new p90(AndroidUtilities.dp(48.0f), s00Var), 0, this.e.length(), 33);
+                spannableString.setSpan(new s90(AndroidUtilities.dp(48.0f), s00Var), 0, this.e.length(), 33);
             }
             s00Var.c(this.e, z10, true);
             this.f = -1L;

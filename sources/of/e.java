@@ -25,7 +25,7 @@ import s4.t0;
 import s4.u0;
 import s4.z0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -382,23 +382,23 @@ public final class e {
                 c1 V2 = RecyclerView.V(view);
                 lf.h hVar = recyclerView.e;
                 n nVar = (n) hVar.c;
-                int indexOfChild = ((RecyclerView) ((ka.c) hVar.b).b).indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((o0.b) hVar.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
-                if (!nVar.C(indexOfChild)) {
+                if (!nVar.z(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                nVar.x(indexOfChild);
+                nVar.v(indexOfChild);
                 hVar.Y(view);
                 lf.h hVar2 = recyclerView.e;
                 n nVar2 = (n) hVar2.c;
-                int indexOfChild2 = ((RecyclerView) ((ka.c) hVar2.b).b).indexOfChild(view);
-                int y3 = (indexOfChild2 == -1 || nVar2.C(indexOfChild2)) ? -1 : indexOfChild2 - nVar2.y(indexOfChild2);
-                if (y3 == -1) {
+                int indexOfChild2 = ((RecyclerView) ((o0.b) hVar2.b).b).indexOfChild(view);
+                int w10 = (indexOfChild2 == -1 || nVar2.z(indexOfChild2)) ? -1 : indexOfChild2 - nVar2.w(indexOfChild2);
+                if (w10 == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + V2 + recyclerView.D());
                 }
-                recyclerView.e.y(y3);
+                recyclerView.e.y(w10);
                 i(view);
                 V2.a(8224);
                 c1Var3 = V2;

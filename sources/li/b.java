@@ -11,10 +11,10 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.ActionBar.n;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.yl0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class b {
     public final i a;
@@ -65,12 +65,12 @@ public final class b {
         viewGroup.setPadding(0, i13, 0, i11 - min2);
     }
 
-    public final void b(FrameLayout frameLayout, vl0 vl0Var, k kVar, f6 f6Var) {
+    public final void b(FrameLayout frameLayout, yl0 yl0Var, k kVar, f6 f6Var) {
         this.e = frameLayout;
-        this.f = vl0Var;
-        vl0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.g = new a(0, vl0Var, frameLayout);
-        this.a.a(vl0Var);
+        this.f = yl0Var;
+        yl0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.g = new a(0, yl0Var, frameLayout);
+        this.a.a(yl0Var);
         kVar.setCenterTitleAndGlass(true);
         kVar.M(this.b, eh.b.m(f6Var), false);
         kVar.setAddToContainer(false);
@@ -81,6 +81,6 @@ public final class b {
         eVar.q = 224;
         kVar.setBackground(eVar);
         kVar.setExtraHeight(AndroidUtilities.dp(12.0f));
-        vl0Var.setClipToPadding(false);
+        yl0Var.setClipToPadding(false);
     }
 }

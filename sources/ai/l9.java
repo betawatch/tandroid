@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class l9 {
     public static final Comparator X = Comparator$-CC.comparingInt(new f7(1));
@@ -552,7 +552,7 @@ public final class l9 {
             if (storyItem.media_areas != null) {
                 for (int i11 = 0; i11 < Math.min(2, storyItem.media_areas.size()); i11++) {
                     if (storyItem.media_areas.get(i11) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                        zg.o0 d = zg.o0.d(((TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i11)).reaction);
+                        zg.p0 d = zg.p0.d(((TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i11)).reaction);
                         if (d.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(d.f);
                             if (tL_availableReaction != null) {
@@ -1007,7 +1007,7 @@ public final class l9 {
         MessagesController.getInstance(i10).checkArchiveFolder();
     }
 
-    public final void g0(long j3, TL_stories.StoryItem storyItem, zg.o0 o0Var) {
+    public final void g0(long j3, TL_stories.StoryItem storyItem, zg.p0 p0Var) {
         if (storyItem == null) {
             return;
         }
@@ -1015,19 +1015,19 @@ public final class l9 {
         tL_stories_sendReaction.story_id = storyItem.id;
         int i10 = this.a;
         tL_stories_sendReaction.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        if (o0Var == null) {
+        if (p0Var == null) {
             tL_stories_sendReaction.reaction = new TLRPC.TL_reactionEmpty();
             storyItem.flags &= -32769;
             storyItem.sent_reaction = null;
-        } else if (o0Var.g != 0) {
+        } else if (p0Var.g != 0) {
             TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
-            tL_reactionCustomEmoji.document_id = o0Var.g;
+            tL_reactionCustomEmoji.document_id = p0Var.g;
             tL_stories_sendReaction.reaction = tL_reactionCustomEmoji;
             storyItem.flags |= 32768;
             storyItem.sent_reaction = tL_reactionCustomEmoji;
-        } else if (o0Var.f != null) {
+        } else if (p0Var.f != null) {
             TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-            tL_reactionEmoji.emoticon = o0Var.f;
+            tL_reactionEmoji.emoticon = p0Var.f;
             tL_stories_sendReaction.reaction = tL_reactionEmoji;
             storyItem.flags |= 32768;
             storyItem.sent_reaction = tL_reactionEmoji;

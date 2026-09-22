@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xm0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ pn0 a;
@@ -61,7 +61,7 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
             if (pn0Var.getParentActivity() == null) {
                 return;
             }
-            org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(pn0Var.getParentActivity(), null);
+            org.telegram.ui.Components.n90 n90Var = new org.telegram.ui.Components.n90(pn0Var.getParentActivity(), null);
             String string = LocaleController.getString(R.string.PassportInfo2);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
@@ -71,15 +71,15 @@ public final class xm0 extends org.telegram.ui.ActionBar.j {
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.l4(LocaleController.getString(R.string.PassportInfoUrl), 4, this), indexOf, lastIndexOf - 1, 33);
             }
-            k90Var.setText(spannableStringBuilder);
-            k90Var.setTextSize(1, 16.0f);
-            k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
-            k90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l5, false));
-            k90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-            k90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-            k90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+            n90Var.setText(spannableStringBuilder);
+            n90Var.setTextSize(1, 16.0f);
+            n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));
+            n90Var.setHighlightColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l5, false));
+            n90Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
+            n90Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+            n90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pn0Var.getParentActivity());
-            alertDialog$Builder.n(k90Var);
+            alertDialog$Builder.n(n90Var);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PassportInfoTitle);
             alertDialog$Builder.h(LocaleController.getString(R.string.Close), null);
             pn0Var.showDialog(alertDialog$Builder.a);

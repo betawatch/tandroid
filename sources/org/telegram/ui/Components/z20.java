@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class z20 implements NotificationCenter.NotificationCenterDelegate {
     public static z20 d0 = null;
@@ -45,7 +45,7 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     public float Q;
     public float R;
     public final f30 U;
-    public final kj0 V;
+    public final nj0 V;
     public boolean W;
     public boolean X;
     public boolean Y;
@@ -61,7 +61,7 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     public WindowManager n;
     public WindowManager.LayoutParams r;
     public final j9 s;
-    public final hj0 v;
+    public final kj0 v;
     public boolean w;
     public boolean x;
     public boolean y;
@@ -98,15 +98,15 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         f0Var.addView(s6Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        kj0 kj0Var = new kj0(context);
-        this.V = kj0Var;
-        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        hj0 hj0Var = new hj0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f), true, null);
-        this.v = hj0Var;
-        hj0Var.h = true;
-        kj0Var.setAnimation(hj0Var);
-        kj0Var.setColorFilter(-1);
-        frameLayout.addView(kj0Var, w7.y5.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
+        nj0 nj0Var = new nj0(context);
+        this.V = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        kj0 kj0Var = new kj0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f), true, null);
+        this.v = kj0Var;
+        kj0Var.h = true;
+        nj0Var.setAnimation(kj0Var);
+        nj0Var.setColorFilter(-1);
+        frameLayout.addView(nj0Var, w7.y5.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
         org.telegram.ui.v7 v7Var = new org.telegram.ui.v7(this, context, 2);
         this.e = v7Var;
         v7Var.setOnClickListener(new f0(this, 21));

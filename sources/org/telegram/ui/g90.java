@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g90 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class g90 implements Runnable {
                 break;
             case 3:
                 if (!launchActivity.q0.getFragmentStack().isEmpty()) {
-                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.gy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
+                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.iy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
                     break;
                 }
                 break;

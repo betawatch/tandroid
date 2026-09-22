@@ -16,9 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class vu0 extends org.telegram.ui.Components.bw0 {
+public final class vu0 extends org.telegram.ui.Components.dw0 {
     public final Paint A0;
     public boolean B0;
     public boolean C0;
@@ -36,7 +36,7 @@ public final class vu0 extends org.telegram.ui.Components.bw0 {
         setLayerType(2, null);
     }
 
-    @Override // org.telegram.ui.Components.bw0, org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.dw0, org.telegram.ui.Components.cw0
     public final void S() {
         super.S();
         PhotoViewer photoViewer = this.E0;
@@ -63,7 +63,7 @@ public final class vu0 extends org.telegram.ui.Components.bw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         PhotoViewer photoViewer = this.E0;
@@ -103,13 +103,13 @@ public final class vu0 extends org.telegram.ui.Components.bw0 {
             return;
         }
         int measuredHeight = ((int) ((photoViewer.a6 - 1.0f) * iu0Var.getWebView().getMeasuredHeight())) / 2;
-        org.telegram.ui.Components.k71 k71Var = photoViewer.z1;
-        if (k71Var != null && k71Var.j) {
-            k71Var.setBounds(photoViewer.f0.getLeft(), (photoViewer.f0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.f0.getRight(), photoViewer.f0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
+        org.telegram.ui.Components.n71 n71Var = photoViewer.z1;
+        if (n71Var != null && n71Var.j) {
+            n71Var.setBounds(photoViewer.f0.getLeft(), (photoViewer.f0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.Y5 / photoViewer.a6)), photoViewer.f0.getRight(), photoViewer.f0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
             photoViewer.z1.draw(canvas);
         }
-        org.telegram.ui.Components.xo0 xo0Var = photoViewer.A1;
-        if (xo0Var == null || !xo0Var.a()) {
+        org.telegram.ui.Components.zo0 zo0Var = photoViewer.A1;
+        if (zo0Var == null || !zo0Var.a()) {
             return;
         }
         photoViewer.A1.setBounds(photoViewer.f0.getLeft(), (int) ((photoViewer.F.getAlpha() * AndroidUtilities.dp(90.0f)) + AndroidUtilities.statusBarHeight), photoViewer.f0.getRight(), photoViewer.f0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.Y5 / photoViewer.a6)));
@@ -140,18 +140,18 @@ public final class vu0 extends org.telegram.ui.Components.bw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.cw0
     public final int getBottomPadding() {
         return this.E0.P0.getHeight();
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         org.telegram.ui.Components.pc.a(this, new a9(this, 6));
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         org.telegram.ui.Components.pc.h(this);
@@ -188,7 +188,7 @@ public final class vu0 extends org.telegram.ui.Components.bw0 {
     /* JADX WARN: Removed duplicated region for block: B:122:0x00c5  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00d8  */
-    @Override // org.telegram.ui.Components.bw0, org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.dw0, org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

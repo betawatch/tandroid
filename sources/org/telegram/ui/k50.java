@@ -8,9 +8,9 @@ import android.os.Build;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class k50 implements org.telegram.ui.Components.ok0 {
+public final class k50 implements org.telegram.ui.Components.rk0 {
     public final Path a = new Path();
     public final Paint b;
     public final /* synthetic */ i60 c;
@@ -22,16 +22,16 @@ public final class k50 implements org.telegram.ui.Components.ok0 {
         paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.rk0
+    public final void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = o0Var.f;
+        String str = p0Var.f;
         if (str == null) {
             str = "👍";
         }
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         tL_textWithEntities.text = str;
-        long j3 = o0Var.g;
+        long j3 = p0Var.g;
         if (j3 != 0) {
             tL_messageEntityCustomEmoji.document_id = j3;
             tL_messageEntityCustomEmoji.offset = 0;
@@ -46,7 +46,7 @@ public final class k50 implements org.telegram.ui.Components.ok0 {
         } else {
             i40Var.d();
         }
-        zg.b0 reactionsWindow = i60Var.K.getReactionsWindow();
+        zg.c0 reactionsWindow = i60Var.K.getReactionsWindow();
         if (reactionsWindow == null || reactionsWindow.q) {
             return;
         }
@@ -54,17 +54,17 @@ public final class k50 implements org.telegram.ui.Components.ok0 {
         i60Var.K.n();
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.rk0
     public final boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.rk0
     public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint = this.b;
         if (f7 > 0.0f) {
@@ -95,12 +95,12 @@ public final class k50 implements org.telegram.ui.Components.ok0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final boolean r() {
+    @Override // org.telegram.ui.Components.rk0
+    public final boolean q() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.rk0
     public final /* synthetic */ void o() {
     }
 }

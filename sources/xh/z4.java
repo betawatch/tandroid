@@ -37,16 +37,16 @@ import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.pj0;
@@ -55,7 +55,7 @@ import w7.y5;
 import yh.u5;
 import yh.w7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class z4 extends ab implements NotificationCenter.NotificationCenterDelegate, GiftAuctionController.OnAuctionUpdateListener {
     public final boolean X;
@@ -80,7 +80,7 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
     public boolean q0;
     public boolean r0;
     public final u4 s0;
-    public k61 t0;
+    public m61 t0;
     public int u0;
     public final oq[] v0;
     public boolean w0;
@@ -145,12 +145,12 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
         if (e instanceof ColorDrawable) {
             num = Integer.valueOf(((ColorDrawable) e).getColor());
         } else {
-            if (e instanceof kc0) {
-                kc0 kc0Var = (kc0) e;
-                if (kc0Var.q < 0) {
+            if (e instanceof nc0) {
+                nc0 nc0Var = (nc0) e;
+                if (nc0Var.q < 0) {
                     num = -16777216;
                 } else {
-                    int[] iArr = kc0Var.a;
+                    int[] iArr = nc0Var.a;
                     if (iArr != null && iArr.length > 0) {
                         num = Integer.valueOf(iArr[0]);
                     }
@@ -239,7 +239,7 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
         w0Var.U(messageObject, true);
         linearLayout.addView(w0Var, y5.t(-1, -1, 119, 0, sendPaidMessagesStars > j10 ? 0 : 8, 0, 8));
         t4Var.addView(linearLayout, y5.e(-1, -1, 119));
-        u4 u4Var = new u4(this, context, (aw0) this.containerView, LocaleController.getString(starGift != null ? R.string.Gift2Message : R.string.Gift2MessageOptional), MessagesController.getInstance(i10).stargiftsMessageLengthMax, this.resourcesProvider, fVar, i10);
+        u4 u4Var = new u4(this, context, (cw0) this.containerView, LocaleController.getString(starGift != null ? R.string.Gift2Message : R.string.Gift2MessageOptional), MessagesController.getInstance(i10).stargiftsMessageLengthMax, this.resourcesProvider, fVar, i10);
         this.s0 = u4Var;
         org.telegram.ui.Cells.e3 e3Var = u4Var.b;
         e3Var.getEditText().addTextChangedListener(new org.telegram.ui.Cells.j3());
@@ -339,12 +339,12 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
         b0Var.k1(true);
         this.t0.N(false);
         this.c.h1(this.t0.x.size(), AndroidUtilities.dp(200.0f));
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i17 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i17, 0, i17, AndroidUtilities.dp(68 + ((starGift != null && starGift.limited && this.o0 == null) ? 40 : 0)));
+        yl0Var.setPadding(i17, 0, i17, AndroidUtilities.dp(68 + ((starGift != null && starGift.limited && this.o0 == null) ? 40 : 0)));
         this.d.i(new y4(this));
-        this.d.setOnItemClickListener(new jl0() { // from class: xh.r4
-            @Override // org.telegram.ui.Components.jl0
+        this.d.setOnItemClickListener(new ml0() { // from class: xh.r4
+            @Override // org.telegram.ui.Components.ml0
             public final void d(int i18, View view2) {
                 TL_stars.StarGift starGift2;
                 z4 z4Var = z4.this;
@@ -353,11 +353,11 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
                 org.telegram.ui.Cells.w0 w0Var2 = z4Var.k0;
                 TLRPC.MessageAction messageAction2 = z4Var.l0;
                 MessageObject messageObject2 = z4Var.m0;
-                k61 k61Var = z4Var.t0;
+                m61 m61Var = z4Var.t0;
                 if (!z4Var.P) {
                     i18--;
                 }
-                w51 G = k61Var.G(i18);
+                y51 G = m61Var.G(i18);
                 if (G == null) {
                     return;
                 }
@@ -743,11 +743,11 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.starBalanceUpdated) {
             Z(true);
-            k61 k61Var = this.t0;
-            if (k61Var == null || this.e0 == null) {
+            m61 m61Var = this.t0;
+            if (m61Var == null || this.e0 == null) {
                 return;
             }
-            k61Var.N(true);
+            m61Var.N(true);
         }
     }
 
@@ -819,11 +819,11 @@ public class z4 extends ab implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        k61 k61Var = new k61(this.d, getContext(), this.Y, 0, true, new n4(this, 0), this.resourcesProvider);
-        this.t0 = k61Var;
-        k61Var.r = false;
-        return k61Var;
+    public final xl0 v(yl0 yl0Var) {
+        m61 m61Var = new m61(this.d, getContext(), this.Y, 0, true, new n4(this, 0), this.resourcesProvider);
+        this.t0 = m61Var;
+        m61Var.r = false;
+        return m61Var;
     }
 
     @Override // org.telegram.ui.Components.ab

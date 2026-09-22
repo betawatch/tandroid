@@ -4,11 +4,11 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.hh0;
 import org.telegram.ui.Components.rr;
 import org.telegram.ui.Components.ur;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class n4 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                     } else {
                         o4 o4Var = p4Var.F;
                         if (o4Var != null) {
-                            o4Var.i(false);
+                            o4Var.f(false);
                         }
                     }
                 } else {
@@ -88,11 +88,11 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
             default:
                 return super.onFling(motionEvent, motionEvent2, f7, f10);
             case 2:
-                eh0 eh0Var = (eh0) this.c;
-                if (!eh0Var.f && !eh0Var.h && f7 >= 600.0f) {
-                    eh0Var.e = false;
-                    eh0Var.h = false;
-                    eh0Var.a(0.0f, f7 / 6000.0f);
+                hh0 hh0Var = (hh0) this.c;
+                if (!hh0Var.f && !hh0Var.h && f7 >= 600.0f) {
+                    hh0Var.e = false;
+                    hh0Var.h = false;
+                    hh0Var.a(0.0f, f7 / 6000.0f);
                 }
                 return false;
         }
@@ -208,31 +208,31 @@ public final class n4 extends GestureDetector.SimpleOnGestureListener {
                 }
                 return false;
             default:
-                eh0 eh0Var = (eh0) this.c;
-                if (eh0Var.e || eh0Var.h) {
+                hh0 hh0Var = (hh0) this.c;
+                if (hh0Var.e || hh0Var.h) {
                     motionEvent3 = motionEvent2;
                 } else {
-                    if (eh0Var.y || eh0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
+                    if (hh0Var.y || hh0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
                         motionEvent3 = motionEvent2;
                     } else {
                         motionEvent3 = motionEvent2;
-                        if (!eh0Var.d(motionEvent3, eh0Var.getChildAt(eh0Var.b > 0.5f ? 1 : 0))) {
-                            eh0Var.e = true;
+                        if (!hh0Var.d(motionEvent3, hh0Var.getChildAt(hh0Var.b > 0.5f ? 1 : 0))) {
+                            hh0Var.e = true;
                             MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                            for (int i11 = 0; i11 < eh0Var.getChildCount(); i11++) {
-                                eh0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
+                            for (int i11 = 0; i11 < hh0Var.getChildCount(); i11++) {
+                                hh0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
                             }
                             obtain2.recycle();
                         }
                     }
-                    eh0Var.h = true;
+                    hh0Var.h = true;
                 }
-                if (eh0Var.e) {
-                    eh0Var.c = -1.0f;
-                    eh0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / eh0Var.getWidth()));
-                    eh0Var.c(true);
+                if (hh0Var.e) {
+                    hh0Var.c = -1.0f;
+                    hh0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / hh0Var.getWidth()));
+                    hh0Var.c(true);
                 }
-                return eh0Var.e;
+                return hh0Var.e;
         }
     }
 }

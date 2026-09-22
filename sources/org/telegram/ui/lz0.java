@@ -30,9 +30,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class lz0 implements org.telegram.ui.Components.ll0 {
+public final class lz0 implements org.telegram.ui.Components.ol0 {
     public int a = 0;
     public final /* synthetic */ Context b;
     public final /* synthetic */ ProfileActivity c;
@@ -471,7 +471,7 @@ public final class lz0 implements org.telegram.ui.Components.ll0 {
     /* JADX WARN: Removed duplicated region for block: B:133:0x0209  */
     /* JADX WARN: Removed duplicated region for block: B:134:0x01f0  */
     /* JADX WARN: Removed duplicated region for block: B:135:0x01e5  */
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.ol0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -589,7 +589,7 @@ public final class lz0 implements org.telegram.ui.Components.ll0 {
         String str11 = z11 ? "Force remove premium suggestions" : null;
         String str12 = z11 ? "Share device info" : null;
         String str13 = z11 ? "Force performance class" : null;
-        String str14 = (!z11 || org.telegram.ui.Components.a60.l()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
+        String str14 = (!z11 || org.telegram.ui.Components.c60.l()) ? null : !SharedConfig.bigCameraForRound ? "Force big camera for round" : "Disable big camera for round";
         String string15 = LocaleController.getString(ci.d1.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
         String str15 = BuildVars.DEBUG_VERSION ? SharedConfig.useSurfaceInStories ? "back to TextureView in stories" : "use SurfaceView in stories" : null;
         String str16 = BuildVars.DEBUG_PRIVATE_VERSION ? SharedConfig.photoViewerBlur ? "do not blur in photoviewer" : "blur in photoviewer" : null;

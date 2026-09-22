@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                     List m10 = u4Var.m();
                     if (indexOf >= 0 && indexOf < m10.size() && indexOf < arrayList.size()) {
                         final u uVar = (u) m10.get(indexOf);
-                        v70 F = u4Var.N.a.h3.F((View) arrayList.get(indexOf));
+                        y70 G = u4Var.N.a.h3.G((View) arrayList.get(indexOf));
                         boolean z10 = uVar.n;
                         final int i10 = 0;
-                        F.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.s4
+                        G.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -87,7 +87,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                             }
                         }, false);
                         final int i11 = 1;
-                        F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.s4
+                        G.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -133,13 +133,13 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                 }
                             }
                         }, true);
-                        F.a0(0.0f, -AndroidUtilities.dp(38.0f));
+                        G.a0(0.0f, -AndroidUtilities.dp(38.0f));
                         if (u4Var.H) {
-                            F.u = false;
-                            F.v = true;
-                            F.s = 0;
+                            G.u = false;
+                            G.v = true;
+                            G.s = 0;
                         }
-                        F.Z();
+                        G.Z();
                         break;
                     }
                 }

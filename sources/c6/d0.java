@@ -3,7 +3,7 @@ package c6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d0 extends g6.g {
     public final /* synthetic */ e0 b;
@@ -25,7 +25,7 @@ public final class d0 extends g6.g {
     @Override // g6.h
     public final void T(String str, String str2) {
         e0.G.b("Receive (type=text, ns=%s) %s", str, str2);
-        e0.k(this.b).post(new c5.v(this, str, str2, 3));
+        e0.k(this.b).post(new c5.u(this, str, str2, 3));
     }
 
     @Override // g6.h

@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bu extends org.telegram.ui.ActionBar.n2 {
-    public org.telegram.ui.Components.vl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public org.telegram.ui.Components.mz b;
     public xt c;
     public zt d;
@@ -68,8 +68,8 @@ public final class bu extends org.telegram.ui.ActionBar.n2 {
         a2.F();
         a2.H = new hg.d2(this, 9);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.actionBar.H(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y6, false), true);
-        this.actionBar.H(org.telegram.ui.ActionBar.j6.w0(null, i10, false), false);
+        this.actionBar.G(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y6, false), true);
+        this.actionBar.G(org.telegram.ui.ActionBar.j6.w0(null, i10, false), false);
         this.actionBar.setSearchCursorColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         this.f = false;
         this.e = false;
@@ -84,9 +84,9 @@ public final class bu extends org.telegram.ui.ActionBar.n2 {
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
         frameLayout.addView(this.b, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.a = vl0Var;
-        vl0Var.setSectionsType(3);
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.setSectionsType(3);
         this.a.setEmptyView(this.b);
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setFastScrollEnabled(0);

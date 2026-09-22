@@ -17,7 +17,7 @@ import v7.t6;
 import v7.u6;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -80,25 +80,25 @@ public abstract class q {
         }
     }
 
-    public static j1 j(Set set, d9.f fVar) {
+    public static j1 j(Set set, d9.g gVar) {
         if (set instanceof SortedSet) {
             Set set2 = (SortedSet) set;
             if (!(set2 instanceof j1)) {
-                return new k1(set2, fVar);
+                return new k1(set2, gVar);
             }
             j1 j1Var = (j1) set2;
-            d9.f fVar2 = j1Var.b;
-            fVar2.getClass();
-            return new k1((SortedSet) j1Var.a, new d9.g(Arrays.asList(fVar2, fVar)));
+            d9.g gVar2 = j1Var.b;
+            gVar2.getClass();
+            return new k1((SortedSet) j1Var.a, new d9.h(Arrays.asList(gVar2, gVar)));
         }
         if (!(set instanceof j1)) {
             set.getClass();
-            return new j1(set, fVar);
+            return new j1(set, gVar);
         }
         j1 j1Var2 = (j1) set;
-        d9.f fVar3 = j1Var2.b;
-        fVar3.getClass();
-        return new j1(j1Var2.a, new d9.g(Arrays.asList(fVar3, fVar)));
+        d9.g gVar3 = j1Var2.b;
+        gVar3.getClass();
+        return new j1(j1Var2.a, new d9.h(Arrays.asList(gVar3, gVar)));
     }
 
     public static Object k(AbstractCollection abstractCollection, String str) {
@@ -201,9 +201,9 @@ public abstract class q {
         return -1;
     }
 
-    public static void r(List list, d9.f fVar, int i10, int i11) {
+    public static void r(List list, d9.g gVar, int i10, int i11) {
         for (int size = list.size() - 1; size > i11; size--) {
-            if (fVar.apply(list.get(size))) {
+            if (gVar.apply(list.get(size))) {
                 list.remove(size);
             }
         }

@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class dw extends ym0 {
+public abstract class dw extends an0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
     public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
     public final zv E;
@@ -309,7 +309,7 @@ public abstract class dw extends ym0 {
                     zvVar.setAlpha(z10 ? 1.0f : 0.0f);
                 } else {
                     zvVar.setVisibility(0);
-                    zvVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(qr.h).withEndAction(new bi.f(22, this, z10)).start();
+                    zvVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(qr.h).withEndAction(new bi.f(23, this, z10)).start();
                 }
                 this.b.requestLayout();
                 this.a0 = false;
@@ -558,7 +558,7 @@ public abstract class dw extends ym0 {
                 if (zvVar5 != null) {
                     zvVar5.bringToFront();
                     if (zvVar5.getAlpha() < 1.0f) {
-                        zvVar5.animate().alpha(1.0f).setDuration(zg.e0.d() ? 0L : 200L).setInterpolator(qr.f).start();
+                        zvVar5.animate().alpha(1.0f).setDuration(zg.f0.d() ? 0L : 200L).setInterpolator(qr.f).start();
                     }
                 }
                 for (int i18 = 0; i18 < arrayList2.size(); i18++) {

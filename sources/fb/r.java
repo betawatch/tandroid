@@ -1,10 +1,22 @@
 package fb;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class r extends s {
-    @Override // fb.s
+public final class r extends t {
+    public final /* synthetic */ Method b;
+
+    public r(Method method) {
+        this.b = method;
+    }
+
+    @Override // fb.t
     public final Object a(Class cls) {
-        throw new UnsupportedOperationException("Cannot allocate " + cls + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
+        String J = of.b.J(cls);
+        if (J == null) {
+            return this.b.invoke(null, cls, Object.class);
+        }
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(J));
     }
 }

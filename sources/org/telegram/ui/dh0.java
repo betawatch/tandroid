@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import android.view.View;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class dh0 implements ah.k {
     public final /* synthetic */ gh0 a;
@@ -17,27 +17,7 @@ public final class dh0 implements ah.k {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ah.k
-    public void K(ah.a aVar) {
-        gh0 gh0Var = this.a;
-        RectF rectF = gh0Var.T;
-        aVar.a(gh0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-        aVar.b(SharedConfig.chatBlurEnabled());
-        SparseArray sparseArray = gh0Var.a;
-        int size = sparseArray.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            org.telegram.ui.ActionBar.n2 n2Var = ((yh1) sparseArray.valueAt(i10)).a;
-            View view = n2Var.fragmentView;
-            if (view != null && hh.k.c(view, gh0Var.b, rectF) && rectF.right > 0.0f && rectF.left < gh0Var.fragmentView.getMeasuredWidth() && (n2Var instanceof fh0) && ((fh0) n2Var).x() != null) {
-                aVar.c(rectF.left);
-                aVar.c(rectF.top);
-                aVar.a(n2Var.getClassGuid());
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ah.k
-    public void d(Canvas canvas) {
+    public void b(Canvas canvas) {
         fh.d x10;
         Canvas canvas2;
         gh0 gh0Var = this.a;
@@ -55,13 +35,33 @@ public final class dh0 implements ah.k {
                 canvas.save();
                 canvas.translate(rectF.left, rectF.top);
                 canvas2 = canvas;
-                x10.y(canvas2, 0.0f, 0.0f, measuredWidth, measuredHeight);
+                x10.v(canvas2, 0.0f, 0.0f, measuredWidth, measuredHeight);
                 canvas2.restore();
             } else {
                 canvas2 = canvas;
             }
             i10++;
             canvas = canvas2;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // ah.k
+    public void y(ah.a aVar) {
+        gh0 gh0Var = this.a;
+        RectF rectF = gh0Var.T;
+        aVar.a(gh0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+        aVar.b(SharedConfig.chatBlurEnabled());
+        SparseArray sparseArray = gh0Var.a;
+        int size = sparseArray.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            org.telegram.ui.ActionBar.n2 n2Var = ((yh1) sparseArray.valueAt(i10)).a;
+            View view = n2Var.fragmentView;
+            if (view != null && hh.k.c(view, gh0Var.b, rectF) && rectF.right > 0.0f && rectF.left < gh0Var.fragmentView.getMeasuredWidth() && (n2Var instanceof fh0) && ((fh0) n2Var).x() != null) {
+                aVar.c(rectF.left);
+                aVar.c(rectF.top);
+                aVar.a(n2Var.getClassGuid());
+            }
         }
     }
 }

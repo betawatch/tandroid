@@ -5,7 +5,7 @@ import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class jp implements org.telegram.ui.ActionBar.k6 {
     public boolean a = false;
@@ -37,9 +37,9 @@ public final class jp implements org.telegram.ui.ActionBar.k6 {
             }
             this.a = true;
         }
-        hj0 hj0Var = mpVar.F;
+        kj0 kj0Var = mpVar.F;
         int i12 = org.telegram.ui.ActionBar.j6.Oh;
-        hj0Var.setColorFilter(new PorterDuffColorFilter(mpVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
+        kj0Var.setColorFilter(new PorterDuffColorFilter(mpVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
         mpVar.setOverlayNavBarColor(mpVar.getThemedColor(org.telegram.ui.ActionBar.j6.a7));
         if (mpVar.P) {
             for (int i13 = 0; i13 < kpVar.h(); i13++) {
@@ -50,7 +50,7 @@ public final class jp implements org.telegram.ui.ActionBar.k6 {
             mpVar.P = false;
             this.a = false;
         }
-        mpVar.E();
+        mpVar.D();
         ci.n6 n6Var = mpVar.Z;
         if (n6Var != null) {
             int dp = AndroidUtilities.dp(0.0f);

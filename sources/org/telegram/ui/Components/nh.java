@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nh implements o1.g {
     public final /* synthetic */ int a = 1;
@@ -48,21 +48,21 @@ public final /* synthetic */ class nh implements o1.g {
                 linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
                 break;
             default:
-                jp0 jp0Var = (jp0) this.e;
+                lp0 lp0Var = (lp0) this.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    if (f7 > this.c / 2.0f || !jp0Var.s) {
+                    if (f7 > this.c / 2.0f || !lp0Var.s) {
                     }
-                } else if (f7 < this.d / 2.0f || !jp0Var.r) {
+                } else if (f7 < this.d / 2.0f || !lp0Var.r) {
                 }
-                jp0Var.s = !z10;
-                jp0Var.r = z10;
+                lp0Var.s = !z10;
+                lp0Var.r = z10;
                 break;
         }
     }
 
-    public /* synthetic */ nh(jp0 jp0Var, boolean z10, float f7, float f10) {
-        this.e = jp0Var;
+    public /* synthetic */ nh(lp0 lp0Var, boolean z10, float f7, float f10) {
+        this.e = lp0Var;
         this.b = z10;
         this.c = f7;
         this.d = f10;

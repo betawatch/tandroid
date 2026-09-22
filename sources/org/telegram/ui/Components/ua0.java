@@ -1,133 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ua0 extends vl0 {
-    public boolean X2;
-    public boolean Y2;
-    public int Z2;
-    public int a3;
-    public final /* synthetic */ va0 b3;
+public final class ua0 extends org.telegram.ui.tu0 {
+    public final /* synthetic */ ya0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ua0(va0 va0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.b3 = va0Var;
-        setOnScrollListener(new ai.r(this, 29));
-        i(new ta0(this));
+    public ua0(ya0 ya0Var) {
+        this.a = ya0Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10, int i11) {
-        va0 va0Var = this.b3;
-        va0Var.invalidate();
-        va0Var.b();
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        va0 va0Var = this.b3;
-        gg.k1 k1Var = va0Var.f;
-        gg.q1 q1Var = va0Var.e;
-        if (!va0Var.c.t ? this.Y2 || q1Var == null || q1Var.e == null || !q1Var.f || motionEvent.getY() >= q1Var.e.getBottom() : this.Y2 || q1Var == null || q1Var.e == null || !q1Var.f || motionEvent.getY() <= q1Var.e.getTop()) {
-            boolean z10 = !this.X2 && org.telegram.ui.st.q().r(motionEvent, va0Var.b, null, this.p2);
-            if (((k1Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && k1Var.N()) {
-                if (k1Var.n0 == null) {
-                    gg.g1 g1Var = new gg.g1(k1Var, k1Var.f, k1Var.n, k1Var.r, 0);
-                    k1Var.n0 = g1Var;
-                    g1Var.a();
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final org.telegram.ui.dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            ya0 ya0Var = this.a;
+            if (i10 < ya0Var.P.size()) {
+                int childCount = ya0Var.getListView().getChildCount();
+                Object obj = ya0Var.P.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = ya0Var.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.f2) {
+                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
+                        if (f2Var.getResult() == obj) {
+                            imageReceiver = f2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                org.telegram.ui.dv0 dv0Var = new org.telegram.ui.dv0();
+                                dv0Var.b = iArr[0];
+                                dv0Var.c = iArr[1];
+                                dv0Var.d = ya0Var.getListView();
+                                dv0Var.a = imageReceiver;
+                                dv0Var.e = imageReceiver.getBitmapSafe();
+                                dv0Var.h = imageReceiver.getRoundRadius(true);
+                                return dv0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
                 }
-                k1Var.n0.b();
-            }
-            if (super.onInterceptTouchEvent(motionEvent) || z10) {
-                return true;
             }
         }
-        return false;
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15 = i12 - i10;
-        int i16 = i13 - i11;
-        va0 va0Var = this.b3;
-        boolean g10 = va0Var.g();
-        s4.c0 currentLayoutManager = va0Var.getCurrentLayoutManager();
-        int L0 = g10 ? currentLayoutManager.L0() : currentLayoutManager.N0();
-        View m10 = currentLayoutManager.m(L0);
-        if (m10 != null) {
-            i14 = m10.getTop() - (g10 ? 0 : this.a3 - i16);
-        } else {
-            i14 = 0;
-        }
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (va0Var.H) {
-            va0Var.G = true;
-            currentLayoutManager.h1(0, 100000);
-            super.onLayout(false, i10, i11, i12, i13);
-            va0Var.G = false;
-            va0Var.H = false;
-        } else if (L0 != -1 && i15 == this.Z2 && i16 - this.a3 != 0) {
-            va0Var.G = true;
-            currentLayoutManager.i1(L0, i14, false);
-            super.onLayout(false, i10, i11, i12, i13);
-            va0Var.G = false;
-        }
-        this.a3 = i16;
-        this.Z2 = i15;
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        va0 va0Var = this.b3;
-        gg.q1 q1Var = va0Var.e;
-        if (q1Var != null) {
-            q1Var.d = Integer.valueOf(size);
-            ci.eb ebVar = q1Var.e;
-            if (ebVar != null) {
-                ebVar.requestLayout();
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            ya0 ya0Var = this.a;
+            if (i10 >= ya0Var.P.size()) {
+                return;
             }
+            ya0Var.x.f((TLRPC.BotInlineResult) ya0Var.P.get(i10), z10, i11);
         }
-        float min = (int) Math.min(AndroidUtilities.dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
-        va0Var.v = min;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        va0 va0Var = this.b3;
-        gg.q1 q1Var = va0Var.e;
-        if (va0Var.c.t) {
-            if (!this.Y2 && q1Var != null && q1Var.e != null && q1Var.f && motionEvent.getY() > q1Var.e.getTop()) {
-                return false;
-            }
-        } else if (!this.Y2 && q1Var != null && q1Var.e != null && q1Var.f && motionEvent.getY() < q1Var.e.getBottom()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b3.G) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.Components.vl0, android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        va0 va0Var = this.b3;
-        va0Var.invalidate();
-        va0Var.b();
     }
 }

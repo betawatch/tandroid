@@ -22,9 +22,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, Utilities.Callback5, org.telegram.ui.ActionBar.a2, gg.b2, GenericProvider, c90, df0, ll0, org.telegram.ui.oy, ai.t9, MessagesStorage.StringCallback, z81, LanguageDetector.StringCallback, dw0 {
+public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, Utilities.Callback5, org.telegram.ui.ActionBar.a2, gg.b2, GenericProvider, f90, gf0, ol0, org.telegram.ui.oy, ai.t9, MessagesStorage.StringCallback, b91, LanguageDetector.StringCallback, fw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -39,8 +39,8 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
     }
 
     @Override // gg.b2
-    public /* synthetic */ boolean F(int i10) {
-        return true;
+    public /* synthetic */ a0.i D() {
+        return null;
     }
 
     @Override // org.telegram.ui.oy
@@ -49,14 +49,8 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
     }
 
     @Override // gg.b2
-    public void a(int i10) {
-        f70 f70Var = (f70) this.b;
-        j70 j70Var = f70Var.n;
-        j70Var.J(f70Var.f - 1);
-        if (f70Var.h == null && !f70Var.e.e() && f70Var.h() <= 2) {
-            j70Var.s.e(false, true);
-        }
-        f70Var.l();
+    public /* synthetic */ boolean L(int i10) {
+        return true;
     }
 
     @Override // ai.t9
@@ -67,36 +61,41 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.f90
+    public void c() {
+        ((le0) this.b).p(true);
+    }
+
+    @Override // org.telegram.ui.Components.ol0
     public boolean d(int i10, View view) {
-        yj0 yj0Var;
+        bk0 bk0Var;
         switch (this.a) {
             case 15:
-                zj0 zj0Var = (zj0) this.b;
-                ArrayList arrayList = zj0Var.n;
-                if (zj0Var.f.j(i10) != 0 || (yj0Var = zj0Var.F) == null) {
+                ck0 ck0Var = (ck0) this.b;
+                ArrayList arrayList = ck0Var.n;
+                if (ck0Var.f.j(i10) != 0 || (bk0Var = ck0Var.F) == null) {
                     return true;
                 }
-                yj0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList.get(i10));
+                bk0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList.get(i10));
                 return true;
             default:
-                in0 in0Var = (in0) this.b;
-                hn0 hn0Var = in0Var.c;
-                MessageObject E = hn0Var.E(i10);
-                in0 in0Var2 = hn0Var.c;
+                kn0 kn0Var = (kn0) this.b;
+                jn0 jn0Var = kn0Var.c;
+                MessageObject E = jn0Var.E(i10);
+                kn0 kn0Var2 = jn0Var.c;
                 if (E == null) {
                     return false;
                 }
-                if (!in0Var.I.g()) {
-                    in0Var.I.a();
-                    hn0Var.q(0, in0Var2.r);
+                if (!kn0Var.I.g()) {
+                    kn0Var.I.a();
+                    jn0Var.q(0, kn0Var2.r);
                 }
-                if (in0Var.I.g()) {
-                    in0Var.I.e(E, view, 0);
-                    if (!in0Var.I.g()) {
-                        hn0Var.q(0, in0Var2.r);
+                if (kn0Var.I.g()) {
+                    kn0Var.I.e(E, view, 0);
+                    if (!kn0Var.I.g()) {
+                        jn0Var.q(0, kn0Var2.r);
                     }
-                    org.telegram.ui.p10 p10Var = in0Var.J;
+                    org.telegram.ui.p10 p10Var = kn0Var.J;
                     int id2 = E.getId();
                     p10Var.a = E.getDialogId();
                     p10Var.b = id2;
@@ -105,63 +104,69 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
         }
     }
 
-    @Override // org.telegram.ui.Components.c90
-    public void e() {
-        ((ie0) this.b).p(true);
-    }
-
-    @Override // org.telegram.ui.Components.z81
-    public void f(int i10, int i11) {
-        aw0 aw0Var = (aw0) this.b;
-        aw0Var.w = i10;
-        aw0Var.x = i11;
-        ci.eb ebVar = aw0Var.L;
+    @Override // org.telegram.ui.Components.b91
+    public void e(int i10, int i11) {
+        cw0 cw0Var = (cw0) this.b;
+        cw0Var.w = i10;
+        cw0Var.x = i11;
+        ci.eb ebVar = cw0Var.L;
         if (ebVar != null) {
             ebVar.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // gg.b2
+    public void f(int i10) {
+        i70 i70Var = (i70) this.b;
+        m70 m70Var = i70Var.n;
+        m70Var.J(i70Var.f - 1);
+        if (i70Var.h == null && !i70Var.e.e() && i70Var.h() <= 2) {
+            m70Var.s.e(false, true);
+        }
+        i70Var.l();
+    }
+
+    @Override // org.telegram.ui.Components.fw0
     public void g(int i10) {
-        Utilities.Callback callback = ((w51) this.b).C;
+        Utilities.Callback callback = ((y51) this.b).C;
         if (callback != null) {
             callback.run(Integer.valueOf(i10));
         }
     }
 
-    @Override // org.telegram.ui.Components.df0
+    @Override // org.telegram.ui.Components.gf0
     public void j(int i10, int i11) {
-        rf0 rf0Var = ((qf0) this.b).d;
-        if (i10 == rf0Var.b) {
-            rf0Var.G = i11;
-        } else if (i10 == rf0Var.r) {
-            rf0Var.P = i11;
-        } else if (i10 == rf0Var.d) {
-            rf0Var.I = i11;
-        } else if (i10 == rf0Var.c) {
-            rf0Var.H = i11;
-        } else if (i10 == rf0Var.f) {
-            rf0Var.J = i11;
-        } else if (i10 == rf0Var.e) {
-            rf0Var.K = i11;
-        } else if (i10 == rf0Var.v) {
-            rf0Var.R = i11;
-        } else if (i10 == rf0Var.s) {
-            rf0Var.Q = i11;
-        } else if (i10 == rf0Var.w) {
-            rf0Var.S = i11;
-        } else if (i10 == rf0Var.x) {
-            rf0Var.U = i11;
-        } else if (i10 == rf0Var.h) {
-            rf0Var.L = i11;
-        } else if (i10 == rf0Var.n) {
-            rf0Var.M = i11;
+        uf0 uf0Var = ((tf0) this.b).d;
+        if (i10 == uf0Var.b) {
+            uf0Var.G = i11;
+        } else if (i10 == uf0Var.r) {
+            uf0Var.P = i11;
+        } else if (i10 == uf0Var.d) {
+            uf0Var.I = i11;
+        } else if (i10 == uf0Var.c) {
+            uf0Var.H = i11;
+        } else if (i10 == uf0Var.f) {
+            uf0Var.J = i11;
+        } else if (i10 == uf0Var.e) {
+            uf0Var.K = i11;
+        } else if (i10 == uf0Var.v) {
+            uf0Var.R = i11;
+        } else if (i10 == uf0Var.s) {
+            uf0Var.Q = i11;
+        } else if (i10 == uf0Var.w) {
+            uf0Var.S = i11;
+        } else if (i10 == uf0Var.x) {
+            uf0Var.U = i11;
+        } else if (i10 == uf0Var.h) {
+            uf0Var.L = i11;
+        } else if (i10 == uf0Var.n) {
+            uf0Var.M = i11;
         }
-        vz vzVar = rf0Var.l0;
+        vz vzVar = uf0Var.l0;
         if (vzVar != null) {
             vzVar.e(true, false, false);
         }
-        rf0Var.g();
+        uf0Var.g();
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -177,26 +182,21 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                 ((n20) this.b).n();
                 break;
             case 7:
-                j70.Q((j70) this.b);
+                m70.Q((m70) this.b);
                 break;
             case 23:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
                 break;
             case 24:
-                iy0 iy0Var = (iy0) this.b;
-                iy0Var.e.presentFragment(new StickersActivity(iy0Var.d, null));
+                ky0 ky0Var = (ky0) this.b;
+                ky0Var.e.presentFragment(new StickersActivity(ky0Var.d, null));
                 b2Var.dismiss();
                 break;
             default:
-                AndroidUtilities.hideKeyboard((ky0) this.b);
+                AndroidUtilities.hideKeyboard((my0) this.b);
                 b2Var.dismiss();
                 break;
         }
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i l() {
-        return null;
     }
 
     @Override // org.telegram.ui.ActionBar.r0
@@ -215,57 +215,57 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
         ai.l9 storiesController2;
         switch (this.a) {
             case 20:
-                final jv0 jv0Var = ((cs0) this.b).d;
-                storiesController = jv0Var.getStoriesController();
+                final lv0 lv0Var = ((fs0) this.b).d;
+                storiesController = lv0Var.getStoriesController();
                 final int i10 = 0;
-                storiesController.r(jv0Var.j1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.as0
+                storiesController.r(lv0Var.j1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.ds0
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         int i11 = i10;
                         int i12 = 7;
-                        jv0 jv0Var2 = jv0Var;
+                        lv0 lv0Var2 = lv0Var;
                         ai.e9 e9Var = (ai.e9) obj;
                         switch (i11) {
                             case 0:
-                                int[] iArr = jv0.d2;
-                                AndroidUtilities.runOnUIThread(new wn0(i12, jv0Var2, e9Var), 100L);
+                                int[] iArr = lv0.d2;
+                                AndroidUtilities.runOnUIThread(new yn0(i12, lv0Var2, e9Var), 100L);
                                 break;
                             default:
-                                int[] iArr2 = jv0.d2;
-                                AndroidUtilities.runOnUIThread(new wn0(i12, jv0Var2, e9Var), 100L);
+                                int[] iArr2 = lv0.d2;
+                                AndroidUtilities.runOnUIThread(new yn0(i12, lv0Var2, e9Var), 100L);
                                 break;
                         }
                     }
                 });
                 break;
             case 21:
-                final jv0 jv0Var2 = ((nt0) this.b).d;
-                storiesController2 = jv0Var2.getStoriesController();
+                final lv0 lv0Var2 = ((pt0) this.b).d;
+                storiesController2 = lv0Var2.getStoriesController();
                 final int i11 = 1;
-                storiesController2.r(jv0Var2.j1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.as0
+                storiesController2.r(lv0Var2.j1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.ds0
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         int i112 = i11;
                         int i12 = 7;
-                        jv0 jv0Var22 = jv0Var2;
+                        lv0 lv0Var22 = lv0Var2;
                         ai.e9 e9Var = (ai.e9) obj;
                         switch (i112) {
                             case 0:
-                                int[] iArr = jv0.d2;
-                                AndroidUtilities.runOnUIThread(new wn0(i12, jv0Var22, e9Var), 100L);
+                                int[] iArr = lv0.d2;
+                                AndroidUtilities.runOnUIThread(new yn0(i12, lv0Var22, e9Var), 100L);
                                 break;
                             default:
-                                int[] iArr2 = jv0.d2;
-                                AndroidUtilities.runOnUIThread(new wn0(i12, jv0Var22, e9Var), 100L);
+                                int[] iArr2 = lv0.d2;
+                                AndroidUtilities.runOnUIThread(new yn0(i12, lv0Var22, e9Var), 100L);
                                 break;
                         }
                     }
                 });
                 break;
             default:
-                u41 u41Var = (u41) this.b;
-                u41Var.e0 = str;
-                u41Var.j0.N(true);
+                w41 w41Var = (w41) this.b;
+                w41Var.e0 = str;
+                w41Var.j0.N(true);
                 break;
         }
     }
@@ -273,16 +273,16 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
     @Override // org.telegram.ui.oy
     public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         long j3;
-        lo0 lo0Var = (lo0) this.b;
-        int i12 = lo0Var.I0;
+        no0 no0Var = (no0) this.b;
+        int i12 = no0Var.I0;
         ArrayList<MessageObject> arrayList2 = new ArrayList<>();
-        HashMap hashMap = lo0Var.A0;
+        HashMap hashMap = no0Var.A0;
         Iterator it = hashMap.keySet().iterator();
         while (it.hasNext()) {
             arrayList2.add((MessageObject) hashMap.get((org.telegram.ui.p10) it.next()));
         }
         hashMap.clear();
-        lo0Var.R(false);
+        no0Var.R(false);
         if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == AccountInstance.getInstance(i12).getUserConfig().getClientUserId() || charSequence != null) {
             for (int i13 = 0; i13 < arrayList.size(); i13++) {
                 long j10 = ((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId;
@@ -318,7 +318,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
     }
 
     @Override // gg.b2
-    public /* synthetic */ a0.i w() {
+    public /* synthetic */ a0.i y() {
         return null;
     }
 
@@ -360,16 +360,16 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
         switch (this.a) {
             case 1:
                 ky kyVar = (ky) this.b;
-                w51 w51Var = (w51) obj;
+                y51 y51Var = (y51) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
                 fy fyVar = kyVar.c;
                 kz kzVar = kyVar.F;
-                Object obj6 = w51Var.G;
+                Object obj6 = y51Var.G;
                 if (obj6 instanceof TLRPC.StickerSetCovered) {
-                    dy dyVar = (dy) w51Var.H;
+                    dy dyVar = (dy) y51Var.H;
                     long j3 = kyVar.d;
                     stickerSet = ((TLRPC.StickerSetCovered) obj6).set;
                     long j10 = stickerSet.id;
@@ -386,7 +386,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                         if (kyVar.d != 0 && kyVar.f.size() < kyVar.e.count && (stickerSet2 = MediaDataController.getInstance(kzVar.c1).getStickerSet(kyVar.e, false)) != null) {
                             kyVar.f = stickerSet2.documents;
                         }
-                        TLObject tLObject = (TLObject) w51Var.G;
+                        TLObject tLObject = (TLObject) y51Var.G;
                         document = null;
                         TLRPC.StickerSet stickerSet5 = stickerSet;
                         nh.b bVar = kzVar.L;
@@ -414,7 +414,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                         if (kyVar.d != 0) {
                             kyVar.f = stickerSet2.documents;
                         }
-                        TLObject tLObject2 = (TLObject) w51Var.G;
+                        TLObject tLObject2 = (TLObject) y51Var.G;
                         document = null;
                         TLRPC.StickerSet stickerSet52 = stickerSet;
                         nh.b bVar3 = kzVar.L;
@@ -449,7 +449,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                             }
                             if (kyVar.d != 0) {
                             }
-                            TLObject tLObject22 = (TLObject) w51Var.G;
+                            TLObject tLObject22 = (TLObject) y51Var.G;
                             document = null;
                             TLRPC.StickerSet stickerSet522 = stickerSet;
                             nh.b bVar32 = kzVar.L;
@@ -472,7 +472,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                     }
                     if (kyVar.d != 0) {
                     }
-                    TLObject tLObject222 = (TLObject) w51Var.G;
+                    TLObject tLObject222 = (TLObject) y51Var.G;
                     document = null;
                     TLRPC.StickerSet stickerSet5222 = stickerSet;
                     nh.b bVar322 = kzVar.L;
@@ -491,16 +491,16 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                 break;
             case 3:
                 fz fzVar = (fz) this.b;
-                w51 w51Var2 = (w51) obj;
+                y51 y51Var2 = (y51) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
                 ez ezVar = fzVar.c;
                 kz kzVar2 = fzVar.Q;
-                Object obj7 = w51Var2.G;
+                Object obj7 = y51Var2.G;
                 if (obj7 instanceof TLRPC.StickerSetCovered) {
-                    dy dyVar2 = (dy) w51Var2.H;
+                    dy dyVar2 = (dy) y51Var2.H;
                     long j13 = fzVar.d;
                     stickerSet3 = ((TLRPC.StickerSetCovered) obj7).set;
                     long j14 = stickerSet3.id;
@@ -517,7 +517,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                         if (fzVar.d != 0 && fzVar.f.size() < fzVar.e.count && (stickerSet4 = MediaDataController.getInstance(kzVar2.c1).getStickerSet(fzVar.e, false)) != null) {
                             fzVar.f = stickerSet4.documents;
                         }
-                        TLObject tLObject3 = (TLObject) w51Var2.G;
+                        TLObject tLObject3 = (TLObject) y51Var2.G;
                         document2 = null;
                         TLRPC.StickerSet stickerSet7 = stickerSet3;
                         nh.b bVar4 = kzVar2.N;
@@ -545,7 +545,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                         if (fzVar.d != 0) {
                             fzVar.f = stickerSet4.documents;
                         }
-                        TLObject tLObject32 = (TLObject) w51Var2.G;
+                        TLObject tLObject32 = (TLObject) y51Var2.G;
                         document2 = null;
                         TLRPC.StickerSet stickerSet72 = stickerSet3;
                         nh.b bVar42 = kzVar2.N;
@@ -580,7 +580,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                             }
                             if (fzVar.d != 0) {
                             }
-                            TLObject tLObject322 = (TLObject) w51Var2.G;
+                            TLObject tLObject322 = (TLObject) y51Var2.G;
                             document2 = null;
                             TLRPC.StickerSet stickerSet722 = stickerSet3;
                             nh.b bVar422 = kzVar2.N;
@@ -603,7 +603,7 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                     }
                     if (fzVar.d != 0) {
                     }
-                    TLObject tLObject3222 = (TLObject) w51Var2.G;
+                    TLObject tLObject3222 = (TLObject) y51Var2.G;
                     document2 = null;
                     TLRPC.StickerSet stickerSet7222 = stickerSet3;
                     nh.b bVar4222 = kzVar2.N;
@@ -621,11 +621,11 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                 }
                 break;
             case 12:
-                ih0 ih0Var = (ih0) this.b;
+                lh0 lh0Var = (lh0) this.b;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                Object obj8 = ((w51) obj).G;
+                Object obj8 = ((y51) obj).G;
                 if (obj8 instanceof MessageObject) {
                     MessageObject messageObject = (MessageObject) obj8;
                     Bundle bundle = new Bundle();
@@ -636,38 +636,38 @@ public final /* synthetic */ class mv implements org.telegram.ui.ActionBar.r0, U
                     }
                     bundle.putInt("message_id", messageObject.getId());
                     org.telegram.ui.zn znVar = new org.telegram.ui.zn(bundle);
-                    org.telegram.ui.uy uyVar = ih0Var.a;
+                    org.telegram.ui.uy uyVar = lh0Var.a;
                     org.telegram.ui.uy.d4(znVar, messageObject);
                     uyVar.presentFragment(znVar);
                     break;
                 }
                 break;
             case 16:
-                vl0.P0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((vl0) this.b).p2);
+                yl0.P0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((yl0) this.b).p2);
                 break;
             default:
-                vl0.P0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((s61) this.b).p2);
+                yl0.P0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((u61) this.b).p2);
                 break;
         }
     }
 
     @Override // gg.b2
-    public /* synthetic */ void G(ArrayList arrayList) {
+    public /* synthetic */ void O(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.c90
-    public /* synthetic */ void c() {
+    @Override // org.telegram.ui.Components.f90
+    public /* synthetic */ void a() {
     }
 
-    @Override // org.telegram.ui.Components.c90
+    @Override // org.telegram.ui.Components.f90
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.c90
+    @Override // org.telegram.ui.Components.f90
     public /* synthetic */ void i() {
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public /* synthetic */ void n() {
+    @Override // org.telegram.ui.Components.fw0
+    public /* synthetic */ void l() {
     }
 }

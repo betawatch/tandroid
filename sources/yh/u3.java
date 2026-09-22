@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class u3 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -38,11 +38,11 @@ public final class u3 extends FrameLayout {
                 if (keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 4) {
                     return super.dispatchKeyEvent(keyEvent);
                 }
-                zg.b0 b0Var = (zg.b0) this.c;
-                if (!b0Var.k) {
+                zg.c0 c0Var = (zg.c0) this.c;
+                if (!c0Var.k) {
                     return true;
                 }
-                b0Var.d();
+                c0Var.d();
                 return true;
             default:
                 return super.dispatchKeyEvent(keyEvent);
@@ -64,28 +64,28 @@ public final class u3 extends FrameLayout {
     public boolean fitSystemWindows(Rect rect) {
         switch (this.a) {
             case 2:
-                zg.b0 b0Var = (zg.b0) this.c;
-                float f7 = b0Var.u;
+                zg.c0 c0Var = (zg.c0) this.c;
+                float f7 = c0Var.u;
                 float f10 = rect.bottom;
-                if (f7 != f10 && b0Var.v) {
-                    b0Var.u = f10;
-                    u3 u3Var = b0Var.c;
-                    zg.a0 a0Var = b0Var.a;
-                    if (!b0Var.q) {
-                        float f11 = b0Var.t;
+                if (f7 != f10 && c0Var.v) {
+                    c0Var.u = f10;
+                    u3 u3Var = c0Var.c;
+                    zg.b0 b0Var = c0Var.a;
+                    if (!c0Var.q) {
+                        float f11 = c0Var.t;
                         int dp = AndroidUtilities.dp(32.0f);
-                        int i10 = b0Var.y;
+                        int i10 = c0Var.y;
                         if (i10 == 1 || i10 == 2) {
                             dp = AndroidUtilities.dp(24.0f);
                         }
                         float f12 = dp;
-                        if (a0Var.getMeasuredHeight() + f11 > (u3Var.getMeasuredHeight() - b0Var.u) - f12) {
-                            f11 = ((u3Var.getMeasuredHeight() - b0Var.u) - a0Var.getMeasuredHeight()) - f12;
+                        if (b0Var.getMeasuredHeight() + f11 > (u3Var.getMeasuredHeight() - c0Var.u) - f12) {
+                            f11 = ((u3Var.getMeasuredHeight() - c0Var.u) - b0Var.getMeasuredHeight()) - f12;
                         }
                         if (f11 < 0.0f) {
                             f11 = 0.0f;
                         }
-                        a0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.v(b0Var, 1)).setInterpolator(qr.f).start();
+                        b0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.w(c0Var, 1)).setInterpolator(qr.f).start();
                     }
                 }
                 return super.fitSystemWindows(rect);
@@ -129,9 +129,9 @@ public final class u3 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u3(zg.b0 b0Var, Context context) {
+    public u3(zg.c0 c0Var, Context context) {
         super(context);
-        this.c = b0Var;
+        this.c = c0Var;
         this.b = new ai.w4(this, 11);
     }
 

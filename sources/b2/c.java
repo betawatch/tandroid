@@ -19,9 +19,9 @@ import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.b7;
+import w7.a7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class c {
     public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
@@ -70,7 +70,7 @@ public abstract class c {
                 }
                 i13++;
             }
-            if (i12 == 1 && b7.a == null) {
+            if (i12 == 1 && a7.a == null) {
                 if (Build.VERSION.SDK_INT < 35) {
                     int c10 = c(false);
                     int c11 = c(true);
@@ -78,12 +78,12 @@ public abstract class c {
                         if (c11 == 0) {
                         }
                     }
-                    b7.a = Boolean.valueOf(z10);
+                    a7.a = Boolean.valueOf(z10);
                     if (!z10) {
                     }
                 }
                 z10 = false;
-                b7.a = Boolean.valueOf(z10);
+                a7.a = Boolean.valueOf(z10);
                 if (!z10) {
                 }
             }
@@ -155,9 +155,9 @@ public abstract class c {
         return 0;
     }
 
-    public static k2.e f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
+    public static k2.f f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
         if (!AudioManager.isOffloadedPlaybackSupported(audioFormat, audioAttributes)) {
-            return k2.e.d;
+            return k2.f.d;
         }
         ac.d dVar = new ac.d();
         dVar.a = true;

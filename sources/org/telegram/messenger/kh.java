@@ -11,7 +11,7 @@ import org.telegram.ui.jj1;
 import org.telegram.ui.kj1;
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kh implements Utilities.Callback2 {
     public final /* synthetic */ int a = 1;
@@ -33,7 +33,7 @@ public final /* synthetic */ class kh implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback2) this.d, (q2.b) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback2) this.d, (l5.j) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
                 ci.d dVar = (ci.d) this.c;
@@ -84,10 +84,10 @@ public final /* synthetic */ class kh implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ kh(org.telegram.ui.ActionBar.b2 b2Var, Utilities.Callback2 callback2, q2.b bVar, Context context, int i10) {
+    public /* synthetic */ kh(org.telegram.ui.ActionBar.b2 b2Var, Utilities.Callback2 callback2, l5.j jVar, Context context, int i10) {
         this.c = b2Var;
         this.d = callback2;
-        this.e = bVar;
+        this.e = jVar;
         this.f = context;
         this.b = i10;
     }

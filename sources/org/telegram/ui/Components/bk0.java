@@ -1,50 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk0 implements e2.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pk0 b;
-
-    public /* synthetic */ bk0(pk0 pk0Var, int i10) {
-        this.a = i10;
-        this.b = pk0Var;
-    }
-
-    @Override // e2.h
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                pk0 pk0Var = this.b;
-                ArrayList arrayList = pk0Var.d;
-                pk0Var.b.getClass();
-                int S = RecyclerView.S(view);
-                if (S >= 0 && S < arrayList.size() && (view instanceof nk0)) {
-                    ((nk0) view).f(((gk0) arrayList.get(S)).c, true);
-                    break;
-                }
-                break;
-            default:
-                if (view instanceof nk0) {
-                    nk0 nk0Var = (nk0) view;
-                    mk0 mk0Var = nk0Var.b;
-                    nk0Var.N = false;
-                    mk0Var.setAlpha(1.0f);
-                    if (!this.b.N0) {
-                        nk0Var.d();
-                        break;
-                    } else {
-                        mk0Var.setScaleX(nk0Var.I * (nk0Var.w ? 0.76f : 1.0f));
-                        mk0Var.setScaleY(nk0Var.I * (nk0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+public interface bk0 {
+    void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction);
 }

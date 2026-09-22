@@ -12,7 +12,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -443,11 +443,11 @@ public final class l0 implements TextWatcher {
                     bf1Var.n = "";
                 }
                 if (!str10.equals(bf1Var.n)) {
-                    org.telegram.ui.Components.t80 t80Var = new org.telegram.ui.Components.t80(1, null);
-                    t80Var.a(bf1Var.n);
-                    org.telegram.ui.Components.am0 am0Var = bf1Var.v;
-                    if (am0Var != null) {
-                        am0Var.b(t80Var, true);
+                    org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(1, null);
+                    w80Var.a(bf1Var.n);
+                    org.telegram.ui.Components.dm0 dm0Var = bf1Var.v;
+                    if (dm0Var != null) {
+                        dm0Var.b(w80Var, true);
                         break;
                     }
                 }

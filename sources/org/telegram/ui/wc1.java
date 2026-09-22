@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class wc1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class wc1 implements View.OnClickListener {
                 md1 md1Var = md1VarArr[0];
                 if (md1Var != null) {
                     Drawable background = md1Var.getBackground();
-                    if (background instanceof org.telegram.ui.Components.kc0) {
-                        ((org.telegram.ui.Components.kc0) background).x(false);
+                    if (background instanceof org.telegram.ui.Components.nc0) {
+                        ((org.telegram.ui.Components.nc0) background).x(false);
                     } else {
                         org.telegram.ui.ActionBar.h6 h6Var = xd1Var.s;
                         if (xd1Var.b == 2) {
@@ -57,8 +57,8 @@ public final class wc1 implements View.OnClickListener {
                 md1 md1Var2 = md1VarArr[1];
                 if (md1Var2 != null) {
                     Drawable background2 = md1Var2.getBackground();
-                    if (background2 instanceof org.telegram.ui.Components.kc0) {
-                        ((org.telegram.ui.Components.kc0) background2).x(false);
+                    if (background2 instanceof org.telegram.ui.Components.nc0) {
+                        ((org.telegram.ui.Components.nc0) background2).x(false);
                         break;
                     }
                 }

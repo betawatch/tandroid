@@ -1,44 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ta0 extends s4.n0 {
-    public final /* synthetic */ ua0 a;
+public final class ta0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ ya0 b;
 
-    public ta0(ua0 ua0Var) {
-        this.a = ua0Var;
+    public ta0(ya0 ya0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = ya0Var;
+        this.a = n2Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int S;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.o0 layoutManager = recyclerView.getLayoutManager();
-        va0 va0Var = this.a.b3;
-        if (layoutManager != va0Var.d || (S = RecyclerView.S(view)) == 0 || va0Var.f.N()) {
-            return;
-        }
-        if (va0Var.f.I() == null && va0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (S == 0) {
+    public final void a(boolean z10) {
+        ya0 ya0Var = this.b;
+        if (ya0Var.getNeededLayoutManager() != ya0Var.getCurrentLayoutManager() && ya0Var.a()) {
+            if (ya0Var.f.M0 > 0) {
+                ya0Var.N = true;
+                ya0Var.o(false);
                 return;
             }
-            S--;
-            oa0 oa0Var = va0Var.d;
-            oa0Var.B1();
-            if (S > oa0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
+            ya0Var.b.setLayoutManager(ya0Var.getNeededLayoutManager());
         }
-        rect.right = va0Var.d.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
+        if (z10 && !ya0Var.a()) {
+            z10 = false;
+        }
+        ya0Var.o((!z10 || ya0Var.f.K() > 0) ? z10 : false);
+    }
+
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
+
+    public final void c() {
+        ya0 ya0Var = this.b;
+        xp xpVar = ya0Var.J;
+        if (ya0Var.b.getLayoutManager() == ya0Var.d || !ya0Var.I) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(xpVar);
+        AndroidUtilities.runOnUIThread(xpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

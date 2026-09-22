@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import v7.j8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -118,11 +118,11 @@ public class h extends f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
+    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
         Object obj;
         Typeface j3;
         boolean z10;
-        if (hVarArr.length >= 1) {
+        if (iVarArr.length >= 1) {
             Method method = this.h;
             if (method == null) {
                 Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
@@ -130,9 +130,9 @@ public class h extends f {
             try {
                 if (method != null) {
                     HashMap hashMap = new HashMap();
-                    for (o0.h hVar : hVarArr) {
-                        if (hVar.e == 0) {
-                            Uri uri = hVar.a;
+                    for (o0.i iVar : iVarArr) {
+                        if (iVar.e == 0) {
+                            Uri uri = iVar.a;
                             if (!hashMap.containsKey(uri)) {
                                 hashMap.put(uri, j8.e(context, uri));
                             }
@@ -145,17 +145,17 @@ public class h extends f {
                         obj = null;
                     }
                     if (obj != null) {
-                        int length = hVarArr.length;
+                        int length = iVarArr.length;
                         int i11 = 0;
                         boolean z11 = false;
                         while (true) {
                             Method method2 = this.k;
                             if (i11 < length) {
-                                o0.h hVar2 = hVarArr[i11];
-                                ByteBuffer byteBuffer = (ByteBuffer) unmodifiableMap.get(hVar2.a);
+                                o0.i iVar2 = iVarArr[i11];
+                                ByteBuffer byteBuffer = (ByteBuffer) unmodifiableMap.get(iVar2.a);
                                 if (byteBuffer != null) {
                                     try {
-                                        z10 = ((Boolean) this.i.invoke(obj, byteBuffer, Integer.valueOf(hVar2.b), null, Integer.valueOf(hVar2.c), Integer.valueOf(hVar2.d ? 1 : 0))).booleanValue();
+                                        z10 = ((Boolean) this.i.invoke(obj, byteBuffer, Integer.valueOf(iVar2.b), null, Integer.valueOf(iVar2.c), Integer.valueOf(iVar2.d ? 1 : 0))).booleanValue();
                                     } catch (IllegalAccessException | InvocationTargetException unused2) {
                                         z10 = false;
                                         if (z10) {
@@ -176,7 +176,7 @@ public class h extends f {
                         }
                     }
                 } else {
-                    o0.h f7 = f(hVarArr, i10);
+                    o0.i f7 = f(iVarArr, i10);
                     ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f7.a, "r", null);
                     if (openFileDescriptor != null) {
                         try {

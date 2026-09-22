@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -215,9 +215,9 @@ public final /* synthetic */ class q1 implements Runnable {
                     mdVar.c0 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvites) tLObject3).invites.get(0);
                 }
                 mdVar.b0 = false;
-                org.telegram.ui.Components.d90 d90Var = mdVar.P;
+                org.telegram.ui.Components.g90 g90Var = mdVar.P;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported = mdVar.c0;
-                d90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
+                g90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
                 return;
             case 12:
                 ke keVar = (ke) this.d;
@@ -239,17 +239,17 @@ public final /* synthetic */ class q1 implements Runnable {
                 return;
             case 16:
                 zn znVar2 = (zn) this.d;
-                org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) this.b;
+                org.telegram.ui.Components.om0 om0Var = (org.telegram.ui.Components.om0) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 znVar2.getClass();
-                mm0Var.dismiss();
+                om0Var.dismiss();
                 znVar2.presentFragment(ProfileActivity.m4(user.id));
                 return;
             case 17:
                 zn znVar3 = (zn) this.d;
-                org.telegram.ui.Components.v70 v70Var = (org.telegram.ui.Components.v70) this.c;
+                org.telegram.ui.Components.y70 y70Var = (org.telegram.ui.Components.y70) this.c;
                 String str8 = (String) this.b;
-                v70Var.u();
+                y70Var.u();
                 fk0 fk0Var = new fk0(znVar3.getParentActivity(), znVar3);
                 fk0Var.v(str8, false);
                 fk0Var.show();
@@ -289,7 +289,7 @@ public final /* synthetic */ class q1 implements Runnable {
                         yf.d0.a(messageObject.messageOwner.action.photo, user2, false);
                         znVar6.getUserConfig().setCurrentUser(user2);
                         znVar6.getUserConfig().saveConfig(true);
-                        org.telegram.ui.Components.xc.a0(znVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new cj(bmVar, 5)), null).j();
+                        org.telegram.ui.Components.xc.a0(znVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new dj(bmVar, 5)), null).j();
                     }
                 }
                 messageObject.settingAvatar = false;
@@ -406,10 +406,10 @@ public final /* synthetic */ class q1 implements Runnable {
         }
     }
 
-    public /* synthetic */ q1(zn znVar, org.telegram.ui.Components.v70 v70Var, String str) {
+    public /* synthetic */ q1(zn znVar, org.telegram.ui.Components.y70 y70Var, String str) {
         this.a = 17;
         this.d = znVar;
-        this.c = v70Var;
+        this.c = y70Var;
         this.b = str;
     }
 }

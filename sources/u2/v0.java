@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     public static final Map g0;
@@ -41,13 +41,13 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     public long a0;
     public final g2.h b;
     public long b0;
-    public final n2.n c;
+    public final n2.m c;
     public boolean c0;
     public final qb.b d;
     public int d0;
     public final a5.a e;
     public boolean e0;
-    public final n2.k f;
+    public final n2.j f;
     public boolean f0;
     public final x0 h;
     public final y2.d n;
@@ -68,11 +68,11 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         h0 = new b2.s(rVar);
     }
 
-    public v0(Uri uri, g2.h hVar, lf.h hVar2, n2.n nVar, n2.k kVar, qb.b bVar, a5.a aVar, x0 x0Var, y2.d dVar, String str, int i10, b2.s sVar, long j3, z2.a aVar2) {
+    public v0(Uri uri, g2.h hVar, lf.h hVar2, n2.m mVar, n2.j jVar, qb.b bVar, a5.a aVar, x0 x0Var, y2.d dVar, String str, int i10, b2.s sVar, long j3, z2.a aVar2) {
         this.a = uri;
         this.b = hVar;
-        this.c = nVar;
-        this.f = kVar;
+        this.c = mVar;
+        this.f = jVar;
         this.d = bVar;
         this.e = aVar;
         this.h = x0Var;
@@ -109,7 +109,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     public final void B() {
         s0 s0Var = new s0(this, this.a, this.b, this.y, this, this.E);
         if (this.N) {
-            e2.d.g(v());
+            e2.d.g(l());
             long j3 = this.S;
             if (j3 != -9223372036854775807L && this.b0 > j3) {
                 this.e0 = true;
@@ -134,11 +134,11 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     public final boolean C() {
-        return this.W || v();
+        return this.W || l();
     }
 
     @Override // y2.h
-    public final void F(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void S(y2.j jVar, long j3, long j10, boolean z10) {
         s0 s0Var = (s0) jVar;
         Uri uri = s0Var.b.c;
         t tVar = new t(j10);
@@ -153,7 +153,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         if (this.Y > 0) {
             c0 c0Var = this.I;
             c0Var.getClass();
-            c0Var.m(this);
+            c0Var.l(this);
         }
     }
 
@@ -176,20 +176,20 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     public final void b() {
         for (b1 b1Var : this.K) {
             b1Var.D(true);
-            n2.h hVar = b1Var.h;
-            if (hVar != null) {
-                hVar.a(b1Var.e);
+            n2.g gVar = b1Var.h;
+            if (gVar != null) {
+                gVar.a(b1Var.e);
                 b1Var.h = null;
                 b1Var.g = null;
             }
         }
-        lf.h hVar2 = this.y;
-        c3.o oVar = (c3.o) hVar2.c;
+        lf.h hVar = this.y;
+        c3.o oVar = (c3.o) hVar.c;
         if (oVar != null) {
             oVar.release();
-            hVar2.c = null;
+            hVar.c = null;
         }
-        hVar2.d = null;
+        hVar.d = null;
     }
 
     @Override // u2.e1
@@ -207,7 +207,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
 
     @Override // u2.e1
     public final long d() {
-        return s();
+        return t();
     }
 
     public final void e() {
@@ -271,7 +271,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         boolean z10 = true;
         boolean z11 = this.a0 == j3;
         this.a0 = j3;
-        if (v()) {
+        if (l()) {
             this.b0 = j3;
             return j3;
         }
@@ -313,7 +313,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
             return;
         }
         e();
-        if (v()) {
+        if (l()) {
             return;
         }
         boolean[] zArr = (boolean[]) this.Q.d;
@@ -352,8 +352,12 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         }
     }
 
+    public final boolean l() {
+        return this.b0 != -9223372036854775807L;
+    }
+
     @Override // u2.d0
-    public final long l() {
+    public final long m() {
         if (this.X) {
             this.X = false;
             return this.a0;
@@ -374,7 +378,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
         c3.b0 b0Var;
@@ -427,7 +431,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // y2.h
-    public final void n(y2.j jVar, long j3, long j10, int i10) {
+    public final void o(y2.j jVar, long j3, long j10, int i10) {
         t tVar;
         s0 s0Var = (s0) jVar;
         g2.b0 b0Var = s0Var.b;
@@ -441,7 +445,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10) {
+    public final void p(y2.j jVar, long j3, long j10) {
         s0 s0Var = (s0) jVar;
         if (this.S == -9223372036854775807L && this.R != null) {
             long j11 = j(true);
@@ -456,11 +460,11 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         this.e0 = true;
         c0 c0Var = this.I;
         c0Var.getClass();
-        c0Var.m(this);
+        c0Var.l(this);
     }
 
     @Override // u2.e1
-    public final boolean p(i2.r0 r0Var) {
+    public final boolean q(i2.r0 r0Var) {
         if (this.e0) {
             return false;
         }
@@ -480,7 +484,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // u2.d0
-    public final long q(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long r(x2.s[] sVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
         x2.s sVar;
         e();
         com.google.firebase.messaging.t tVar = this.Q;
@@ -549,20 +553,20 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // u2.d0
-    public final p1 r() {
+    public final p1 s() {
         e();
         return (p1) this.Q.b;
     }
 
     @Override // u2.e1
-    public final long s() {
+    public final long t() {
         long j3;
         boolean z10;
         e();
         if (this.e0 || this.Y == 0) {
             return Long.MIN_VALUE;
         }
-        if (v()) {
+        if (l()) {
             return this.b0;
         }
         if (this.O) {
@@ -590,17 +594,13 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // u2.d0
-    public final long t(long j3, i2.p1 p1Var) {
+    public final long u(long j3, i2.p1 p1Var) {
         e();
         if (!this.R.f()) {
             return 0L;
         }
         c3.a0 j10 = this.R.j(j3);
         return p1Var.a(j3, j10.a.a, j10.b.a);
-    }
-
-    public final boolean v() {
-        return this.b0 != -9223372036854775807L;
     }
 
     public final void w() {
@@ -661,7 +661,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
         this.N = true;
         c0 c0Var = this.I;
         c0Var.getClass();
-        c0Var.b(this);
+        c0Var.a(this);
     }
 
     public final void x(int i10) {
@@ -690,7 +690,7 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
                 }
                 c0 c0Var = this.I;
                 c0Var.getClass();
-                c0Var.m(this);
+                c0Var.l(this);
             }
         }
     }
@@ -706,9 +706,9 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
             e2.a.n("ProgressiveMediaPeriod", "Extractor added new track (id=" + u0Var.a + ") after finishing tracks.");
             return new c3.n();
         }
-        n2.n nVar = this.c;
-        nVar.getClass();
-        b1 b1Var = new b1(this.n, nVar, this.f);
+        n2.m mVar = this.c;
+        mVar.getClass();
+        b1 b1Var = new b1(this.n, mVar, this.f);
         b1Var.f = this;
         int i11 = length + 1;
         u0[] u0VarArr = (u0[]) Arrays.copyOf(this.L, i11);
@@ -722,6 +722,6 @@ public final class v0 implements d0, c3.q, y2.h, y2.k, a1 {
     }
 
     @Override // u2.e1
-    public final void u(long j3) {
+    public final void v(long j3) {
     }
 }

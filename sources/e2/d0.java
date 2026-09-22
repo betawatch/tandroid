@@ -53,7 +53,7 @@ import v7.o7;
 import v7.q7;
 import v7.s6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final String a;
@@ -667,19 +667,19 @@ public abstract class d0 {
         return b1Var == null || !b1Var.u() || b1Var.d() == 1 || b1Var.d() == 4 || !(!z10 || b1Var.u0() == 0 || b1Var.u0() == 4);
     }
 
-    public static int b(c5.b0 b0Var, long j3) {
-        int i10 = b0Var.b - 1;
+    public static int b(c5.a0 a0Var, long j3) {
+        int i10 = a0Var.b - 1;
         int i11 = 0;
         while (i11 <= i10) {
             int i12 = (i11 + i10) >>> 1;
-            if (b0Var.f(i12) < j3) {
+            if (a0Var.f(i12) < j3) {
                 i11 = i12 + 1;
             } else {
                 i10 = i12 - 1;
             }
         }
         int i13 = i10 + 1;
-        if (i13 < b0Var.b && b0Var.f(i13) == j3) {
+        if (i13 < a0Var.b && a0Var.f(i13) == j3) {
             return i13;
         }
         if (i10 == -1) {

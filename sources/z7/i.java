@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class i extends e implements List, RandomAccess {
     public static final g b = new g(m.e, 0);
@@ -41,7 +41,7 @@ public abstract class i extends e implements List, RandomAccess {
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (w7.m9.a(get(i10), list.get(i10))) {
+                        if (w7.j9.a(get(i10), list.get(i10))) {
                         }
                     }
                     return true;
@@ -50,7 +50,7 @@ public abstract class i extends e implements List, RandomAccess {
                 Iterator it = list.iterator();
                 while (true) {
                     if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !w7.m9.a(listIterator.next(), it.next())) {
+                        if (!it.hasNext() || !w7.j9.a(listIterator.next(), it.next())) {
                             break;
                         }
                     } else if (!it.hasNext()) {
@@ -121,7 +121,7 @@ public abstract class i extends e implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: q */
     public i subList(int i10, int i11) {
-        w7.n9.b(i10, i11, size());
+        w7.m9.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? m.e : new h(this, i10, i12);
     }
@@ -136,7 +136,7 @@ public abstract class i extends e implements List, RandomAccess {
     public final g listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.n9.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(w7.m9.c(i10, size, "index"));
         }
         return isEmpty() ? b : new g(this, i10);
     }

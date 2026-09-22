@@ -24,11 +24,11 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
-    public static a4.m l;
+    public static android.support.v4.media.c l;
     public static i5.f m;
     public static ScheduledThreadPoolExecutor n;
     public final k9.h a;
@@ -58,10 +58,10 @@ public class FirebaseMessaging {
         nVar.d = bVar;
         nVar.e = bVar2;
         nVar.f = dVar;
-        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.w("Firebase-Messaging-Task"));
+        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.v("Firebase-Messaging-Task"));
         final int i11 = 1;
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Init"));
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("Firebase-Messaging-File-Io"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new c5.v("Firebase-Messaging-Init"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.v("Firebase-Messaging-File-Io"));
         this.j = false;
         m = fVar;
         this.a = hVar;
@@ -148,7 +148,7 @@ public class FirebaseMessaging {
                 }
             }
         });
-        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Topics-Io"));
+        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.v("Firebase-Messaging-Topics-Io"));
         int i12 = z.j;
         Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.y
             @Override // java.util.concurrent.Callable
@@ -245,7 +245,7 @@ public class FirebaseMessaging {
         synchronized (FirebaseMessaging.class) {
             try {
                 if (n == null) {
-                    n = new ScheduledThreadPoolExecutor(1, new c5.w("TAG"));
+                    n = new ScheduledThreadPoolExecutor(1, new c5.v("TAG"));
                 }
                 n.schedule(runnable, j3, TimeUnit.SECONDS);
             } catch (Throwable th2) {
@@ -254,19 +254,19 @@ public class FirebaseMessaging {
         }
     }
 
-    public static synchronized a4.m c(Context context) {
-        a4.m mVar;
+    public static synchronized android.support.v4.media.c c(Context context) {
+        android.support.v4.media.c cVar;
         synchronized (FirebaseMessaging.class) {
             try {
                 if (l == null) {
-                    l = new a4.m(context);
+                    l = new android.support.v4.media.c(context);
                 }
-                mVar = l;
+                cVar = l;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return mVar;
+        return cVar;
     }
 
     public static synchronized FirebaseMessaging getInstance(k9.h hVar) {
@@ -308,7 +308,7 @@ public class FirebaseMessaging {
 
     public final u d() {
         u b10;
-        a4.m c10 = c(this.b);
+        android.support.v4.media.c c10 = c(this.b);
         k9.h hVar = this.a;
         hVar.a();
         String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();

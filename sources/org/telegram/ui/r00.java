@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class r00 extends org.telegram.ui.Components.ab {
     public final MessagesController.DialogFilter X;
@@ -69,16 +69,16 @@ public final class r00 extends org.telegram.ui.Components.ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final void G(org.telegram.ui.Components.aw0 aw0Var) {
-        org.telegram.ui.Components.vl0 vl0Var = this.d;
-        vl0Var.setOverScrollMode(2);
-        vl0Var.setOnItemClickListener(new i(this, 10));
+    public final void F(org.telegram.ui.Components.cw0 cw0Var) {
+        org.telegram.ui.Components.yl0 yl0Var = this.d;
+        yl0Var.setOverScrollMode(2);
+        yl0Var.setOnItemClickListener(new i(this, 10));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
         jVar.o(org.telegram.ui.Components.qr.h);
         jVar.n(350L);
-        vl0Var.setItemAnimator(jVar);
+        yl0Var.setItemAnimator(jVar);
     }
 
     public final void Q() {
@@ -113,11 +113,11 @@ public final class r00 extends org.telegram.ui.Components.ab {
         n2Var.getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new m(this, 7));
     }
 
-    public final CharSequence R(vh.o oVar) {
+    public final CharSequence R(vh.n nVar) {
         Object obj;
         MessagesController.DialogFilter dialogFilter = this.X;
         if (dialogFilter != null) {
-            Paint.FontMetricsInt fontMetricsInt = oVar == null ? null : oVar.getPaint().getFontMetricsInt();
+            Paint.FontMetricsInt fontMetricsInt = nVar == null ? null : nVar.getPaint().getFontMetricsInt();
             obj = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(new SpannableStringBuilder(dialogFilter.name), fontMetricsInt, false), dialogFilter.entities, fontMetricsInt);
         } else {
             obj = "";
@@ -162,7 +162,7 @@ public final class r00 extends org.telegram.ui.Components.ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final org.telegram.ui.Components.ul0 v(org.telegram.ui.Components.vl0 vl0Var) {
+    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
         p00 p00Var = new p00(this);
         this.a0 = p00Var;
         return p00Var;

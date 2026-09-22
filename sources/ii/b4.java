@@ -18,21 +18,21 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.ug;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final ImageView E;
     public final y1 F;
     public final dc1 G;
     public final FrameLayout H;
-    public final kj0 I;
+    public final nj0 I;
     public final LinearLayout J;
     public int K;
     public final LinearLayout L;
@@ -108,7 +108,7 @@ public final class b4 extends FrameLayout {
         int v04 = j6.v0(i13, f6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(v04, mode));
-        w7.b6.a(imageView);
+        w7.a6.a(imageView);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         imageView.setOnClickListener(new ai.e2(mVar, 4));
         frameLayout.addView(imageView, w7.y5.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
@@ -123,7 +123,7 @@ public final class b4 extends FrameLayout {
         imageView2.setScaleType(scaleType);
         imageView2.setBackground(j6.f0(j6.v0(i12, f6Var), 1, -1));
         imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
-        w7.b6.a(imageView2);
+        w7.a6.a(imageView2);
         imageView2.setContentDescription("Undo");
         final int i14 = 7;
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -202,7 +202,7 @@ public final class b4 extends FrameLayout {
         imageView3.setScaleType(scaleType);
         imageView3.setBackground(j6.f0(j6.v0(i12, f6Var), 1, -1));
         imageView3.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
-        w7.b6.a(imageView3);
+        w7.a6.a(imageView3);
         imageView3.setContentDescription("Redo");
         final int i15 = 8;
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -297,7 +297,7 @@ public final class b4 extends FrameLayout {
         imageView4.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
         imageView4.setBackground(new c2(j6.Z(j6.v0(i11, f6Var), j6.v(j6.v0(i11, f6Var), j6.v0(i12, f6Var)), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f))));
         linearLayout2.addView(imageView4, w7.y5.p(44, 44, 0.0f, 19, 0, 0, 8, 0));
-        w7.b6.a(imageView4);
+        w7.a6.a(imageView4);
         imageView4.setContentDescription("AI");
         final int i16 = 9;
         imageView4.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -391,7 +391,7 @@ public final class b4 extends FrameLayout {
         ahVar.setBackground(j6.Z(j6.v0(i10, f6Var), j6.v0(i12, f6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
         ahVar.j(yg.e, false);
         linearLayout3.addView(ahVar, w7.y5.q(38, 38, 16));
-        w7.b6.a(ahVar);
+        w7.a6.a(ahVar);
         ahVar.setContentDescription("Emoji");
         final int i17 = 10;
         ahVar.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -474,7 +474,7 @@ public final class b4 extends FrameLayout {
         imageView5.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
         imageView5.setBackground(j6.Z(j6.v0(i10, f6Var), j6.v0(i12, f6Var), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f)));
         linearLayout3.addView(imageView5, w7.y5.t(38, 38, 16, 2, 0, 0, 0));
-        w7.b6.a(imageView5);
+        w7.a6.a(imageView5);
         imageView5.setContentDescription("Attach");
         final int i18 = 11;
         imageView5.setOnClickListener(new View.OnClickListener() { // from class: ii.x3
@@ -560,19 +560,19 @@ public final class b4 extends FrameLayout {
         frameLayout6.setClipToPadding(false);
         frameLayout6.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         frameLayout2.addView(frameLayout6, w7.y5.e(80, 60, 81));
-        kj0 kj0Var = new kj0(context);
-        this.I = kj0Var;
-        kj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
-        hj0 animatedDrawable = kj0Var.getAnimatedDrawable();
+        nj0 nj0Var = new nj0(context);
+        this.I = nj0Var;
+        nj0Var.f(R.raw.group_pip_delete_icon, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), null);
+        kj0 animatedDrawable = nj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             animatedDrawable.h = true;
             animatedDrawable.K(0);
             animatedDrawable.P(0);
         }
-        kj0Var.setScaleType(scaleType);
-        kj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
-        kj0Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
-        frameLayout6.addView(kj0Var, w7.y5.e(-1, -1, 119));
+        nj0Var.setScaleType(scaleType);
+        nj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(i13, f6Var), mode));
+        nj0Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
+        frameLayout6.addView(nj0Var, w7.y5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
         frameLayout7.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(i11, f6Var))));
         dc1Var.addView(frameLayout7, w7.y5.c(44.0f, -2));
@@ -1067,7 +1067,7 @@ public final class b4 extends FrameLayout {
         y1 y1Var = new y1(this, context, R.drawable.send_plane_24, f6Var, 1);
         this.F = y1Var;
         y1Var.setBackground(new c2(j6.b0(AndroidUtilities.dp(22.0f), j6.v0(j6.Yd, f6Var))));
-        w7.b6.a(y1Var);
+        w7.a6.a(y1Var);
         linearLayout2.addView(y1Var, w7.y5.p(44, 44, 0.0f, 5, 8, 0, 0, 0));
         y1Var.setContentDescription("Send");
         final int i25 = 6;
@@ -1222,16 +1222,16 @@ public final class b4 extends FrameLayout {
         }
         this.c0 = z10;
         float f7 = z10 ? 1.15f : 1.0f;
-        kj0 kj0Var = this.I;
+        nj0 nj0Var = this.I;
         if (z11) {
-            kj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(qr.h).start();
+            nj0Var.animate().scaleX(f7).scaleY(f7).setDuration(180L).setInterpolator(qr.h).start();
         } else {
-            kj0Var.animate().cancel();
-            kj0Var.setScaleX(f7);
-            kj0Var.setScaleY(f7);
+            nj0Var.animate().cancel();
+            nj0Var.setScaleX(f7);
+            nj0Var.setScaleY(f7);
         }
-        kj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(z10 ? j6.q7 : j6.G6, this.b), PorterDuff.Mode.SRC_IN));
-        hj0 animatedDrawable = kj0Var.getAnimatedDrawable();
+        nj0Var.setColorFilter(new PorterDuffColorFilter(j6.v0(z10 ? j6.q7 : j6.G6, this.b), PorterDuff.Mode.SRC_IN));
+        kj0 animatedDrawable = nj0Var.getAnimatedDrawable();
         if (animatedDrawable != null) {
             if (z10) {
                 if (animatedDrawable.a0 > 34) {

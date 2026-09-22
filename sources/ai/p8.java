@@ -31,14 +31,14 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.l31;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.n31;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.of;
 import org.telegram.ui.va0;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p8 implements Runnable {
     public final /* synthetic */ int a;
@@ -636,13 +636,13 @@ public final /* synthetic */ class p8 implements Runnable {
                 new yh.e0(context, i20, this.b, messageSuggestionParams, znVar, f6Var, 0, new of(viVar, znVar)).show();
                 return;
             default:
-                l31 l31Var = (l31) obj3;
+                n31 n31Var = (n31) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                ((v70) obj2).u();
-                TLRPC.User user3 = MessagesController.getInstance(l31Var.b).getUser(Long.valueOf(j3));
+                ((y70) obj2).u();
+                TLRPC.User user3 = MessagesController.getInstance(n31Var.b).getUser(Long.valueOf(j3));
                 if (user3 != null) {
-                    zn znVar2 = l31Var.h;
-                    org.telegram.ui.Components.d5.r(znVar2, -1, user3, chat, true, new z1(l31Var, j3, 6), znVar2.getResourceProvider());
+                    zn znVar2 = n31Var.h;
+                    org.telegram.ui.Components.d5.r(znVar2, -1, user3, chat, true, new z1(n31Var, j3, 6), znVar2.getResourceProvider());
                     return;
                 }
                 return;

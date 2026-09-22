@@ -1,82 +1,87 @@
 package q2;
 
 import android.content.Context;
-import android.os.CancellationSignal;
-import b2.r0;
+import android.graphics.Point;
 import b2.s;
+import b2.s0;
 import e2.d0;
-import hg.k0;
-import k2.u;
-import kotlin.jvm.internal.i;
-import v0.h;
-import v0.j;
-import zd.m;
+import h2.h;
+import h2.j;
+import h2.l;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import v7.m7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class b implements h {
-    public final Context a;
+public final class b extends l {
+    public final Context o;
+    public final int p;
 
-    public b(Context context, int i10) {
-        switch (i10) {
-            case 1:
-                i.e(context, "context");
-                this.a = context;
-                break;
-            default:
-                this.a = context;
-                break;
-        }
+    public b(Context context) {
+        super(new h[1], new a[1]);
+        this.o = context;
+        this.p = -1;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int b(s sVar) {
-        String str = sVar.r;
-        if (str == null || !r0.k(str)) {
-            return k0.b(0, 0, 0, 0);
-        }
-        String str2 = sVar.r;
-        String str3 = d0.a;
-        str2.getClass();
-        switch (str2) {
-            case "image/jpeg":
-            case "image/webp":
-            case "image/bmp":
-            case "image/png":
-                return k0.b(4, 0, 0, 0);
-        }
-        return k0.b(1, 0, 0, 0);
+    @Override // h2.l
+    public final h f() {
+        return new h(1, 0);
     }
 
-    public Object a(Context context, v0.e eVar, id.c cVar) {
-        m mVar = new m(1, w7.g.b(cVar));
-        mVar.s();
-        CancellationSignal cancellationSignal = new CancellationSignal();
-        mVar.u(new v0.g(cancellationSignal));
-        u uVar = new u(mVar, 27);
-        a3.b bVar = new a3.b(2);
-        i.e(context, "context");
-        j c10 = k6.h.c(new k6.h(this.a, 4), eVar);
-        if (c10 == null) {
-            uVar.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
-        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            uVar.onError(new w0.c("createCredential is not supported on this device", 3));
-        } else {
-            c10.onCreateCredential(context, eVar, cancellationSignal, bVar, uVar);
+    @Override // h2.l
+    public final j g() {
+        return new a(this);
+    }
+
+    @Override // h2.e
+    public final String getName() {
+        return "BitmapFactoryImageDecoder";
+    }
+
+    @Override // h2.l
+    public final h2.f h(Throwable th2) {
+        return new c("Unexpected decode error", th2);
+    }
+
+    @Override // h2.l
+    public final h2.f i(h hVar, j jVar, boolean z10) {
+        a aVar = (a) jVar;
+        ByteBuffer byteBuffer = hVar.c;
+        byteBuffer.getClass();
+        e2.d.g(byteBuffer.hasArray());
+        e2.d.b(byteBuffer.arrayOffset() == 0);
+        try {
+            int i10 = this.p;
+            if (i10 == -1) {
+                Context context = this.o;
+                if (context != null) {
+                    Point w10 = d0.w(context);
+                    int i11 = w10.x;
+                    int i12 = w10.y;
+                    s sVar = hVar.a;
+                    if (sVar != null) {
+                        int i13 = sVar.Q;
+                        if (i13 != -1) {
+                            i11 *= i13;
+                        }
+                        int i14 = sVar.R;
+                        if (i14 != -1) {
+                            i12 *= i14;
+                        }
+                    }
+                    i10 = (Math.max(i11, i12) * 2) - 1;
+                } else {
+                    i10 = 4096;
+                }
+            }
+            aVar.a = m7.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.timeUs = hVar.e;
+            return null;
+        } catch (s0 e) {
+            return new c("Could not decode image data with BitmapFactory.", e);
+        } catch (IOException e7) {
+            return new c(e7);
         }
-        Object r10 = mVar.r();
-        jd.a aVar = jd.a.a;
-        return r10;
     }
 }

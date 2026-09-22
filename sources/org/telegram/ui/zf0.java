@@ -2,11 +2,11 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class zf0 extends org.telegram.ui.Components.voip.n2 {
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.fw0 f;
+    public final /* synthetic */ org.telegram.ui.Components.hw0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zf0(bg0 bg0Var, Context context, int i10) {

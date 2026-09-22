@@ -1,47 +1,47 @@
 package ci;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public interface sc {
-    void A(float f7, int i10);
+    void B(float f7);
 
-    void C(float f7);
-
-    void F(float f7, boolean z10);
+    void D(float f7, boolean z10);
 
     void J(long j3);
 
-    void O(boolean z10);
+    void L(boolean z10);
 
-    void R(float f7, int i10);
+    void O(float f7, int i10);
 
-    void T(float f7);
+    void Q(float f7);
+
+    void U(float f7);
+
+    void W(float f7, int i10);
 
     void X(float f7);
 
-    void Z(float f7, int i10);
+    void Y();
 
-    void a0(float f7);
+    void b(int i10);
 
-    void b0();
+    void b0(float f7);
 
-    void e(int i10);
+    void c0(int i10, long j3);
 
-    void g0(float f7);
+    void f(float f7);
 
-    void h0(int i10, long j3);
+    void h0(long j3);
 
-    void i(float f7);
-
-    void l(float f7);
-
-    void l0(long j3);
+    void k(float f7);
 
     void m(long j3, boolean z10);
 
     void r();
 
-    void u(float f7);
+    void t(float f7);
 
-    void w(boolean z10);
+    void u(boolean z10);
+
+    void y(float f7, int i10);
 }

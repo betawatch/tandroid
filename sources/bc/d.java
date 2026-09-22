@@ -15,7 +15,7 @@ import org.telegram.ui.Cells.f3;
 import r0.l0;
 import r0.m0;
 import v7.s1;
-import w7.i9;
+import w7.h9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -28,7 +28,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -136,7 +136,7 @@ public final /* synthetic */ class d implements vf {
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            i9.a(length, array);
+            h9.a(length, array);
             cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {

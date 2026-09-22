@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class xt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class xt0 extends AnimatorListenerAdapter {
         photoViewer.e1.setVisibility(8);
         photoViewer.f1.setVisibility(8);
         photoViewer.g1.setVisibility(8);
-        org.telegram.ui.Components.cf0 cf0Var = photoViewer.C1;
-        if (cf0Var != null) {
-            cf0Var.setVisibility(4);
+        org.telegram.ui.Components.ff0 ff0Var = photoViewer.C1;
+        if (ff0Var != null) {
+            ff0Var.setVisibility(4);
         }
         photoViewer.o1.setVisibility(8);
         photoViewer.o1.setAlpha(0.0f);

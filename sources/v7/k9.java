@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class k9 extends i9 {
     public static final k9 e = new k9(0, new Object[0]);
@@ -14,7 +14,7 @@ public final class k9 extends i9 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.y7.a(i10, this.d);
+        w7.x7.a(i10, this.d);
         Object obj = this.c[i10];
         obj.getClass();
         return obj;

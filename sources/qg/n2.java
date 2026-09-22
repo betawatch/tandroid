@@ -55,7 +55,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.bj1;
@@ -66,7 +66,7 @@ import x7.ga;
 import x7.n7;
 import x7.p7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -84,7 +84,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
     public float P;
     public float Q;
     public float R;
-    public l11 S;
+    public n11 S;
     public int T;
     public int U;
     public boolean V;
@@ -186,7 +186,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         x1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         x1Var.b(0.33f, 10.0f);
         x1Var.setBrushWeight(this.F);
-        x1Var.setValueOverride(new l.d(this));
+        x1Var.setValueOverride(new ki.e0(this, 17));
         x1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         x1Var.setAlpha(0.0f);
         addView(x1Var, y5.c(-1.0f, -1));
@@ -2746,14 +2746,14 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         return this.I;
     }
 
-    public l11 getThanosEffect() {
-        if (!l11.c()) {
+    public n11 getThanosEffect() {
+        if (!n11.c()) {
             return null;
         }
         if (this.S == null) {
-            l11 l11Var = new l11(getContext(), new e2(this, 1));
-            this.S = l11Var;
-            addView(l11Var, y5.c(-1.0f, -1));
+            n11 n11Var = new n11(getContext(), new e2(this, 1));
+            this.S = n11Var;
+            addView(n11Var, y5.c(-1.0f, -1));
         }
         return this.S;
     }

@@ -1,31 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class sd0 extends v7.n {
-    public final /* synthetic */ ae0 a;
+public final /* synthetic */ class sd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ de0 b;
 
-    public sd0(ae0 ae0Var) {
-        this.a = ae0Var;
+    public /* synthetic */ sd0(de0 de0Var, int i10) {
+        this.a = i10;
+        this.b = de0Var;
     }
 
-    @Override // v7.n
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.m(true);
-    }
-
-    @Override // v7.n
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.m(true);
-    }
-
-    @Override // v7.n
-    public final void c(androidx.biometric.s sVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.k(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        de0 de0Var = this.b;
+        switch (i10) {
+            case 0:
+                EditTextBoldCursor editTextBoldCursor = de0Var.r;
+                if (de0Var.x.getVisibility() != 0 && editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
+            default:
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(de0Var.P, 0.0f);
+                ofFloat.addUpdateListener(new td0(de0Var, 0));
+                ofFloat.addListener(new gd0(de0Var, 1));
+                ofFloat.setDuration(420L);
+                ofFloat.setInterpolator(qr.h);
+                ofFloat.start();
+                break;
+        }
     }
 }

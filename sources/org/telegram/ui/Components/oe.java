@@ -9,7 +9,7 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class oe implements View.OnClickListener {
     public final /* synthetic */ org.telegram.ui.zn a;
@@ -31,21 +31,21 @@ public final class oe implements View.OnClickListener {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.f2 = !chatActivityEnterView.f2;
+        chatActivityEnterView.g2 = !chatActivityEnterView.g2;
         if (chatActivityEnterView.e0 == null) {
             chatActivityEnterView.e0 = new nr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.j6.Wk);
         }
-        chatActivityEnterView.e0.a(chatActivityEnterView.f2, true);
-        chatActivityEnterView.H1.setImageDrawable(chatActivityEnterView.e0);
-        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.P2, chatActivityEnterView.f2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.P2, znVar == null ? 0L : znVar.d());
+        chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
+        chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
+        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
+        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, znVar == null ? 0L : znVar.d());
         znVar.Q7();
         UndoView undoView = znVar.y3;
         if (undoView != null) {
-            undoView.j(!chatActivityEnterView.f2 ? 54 : 55, 0L, null);
+            undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
         }
-        ImageView imageView = chatActivityEnterView.H1;
-        if (chatActivityEnterView.f2) {
+        ImageView imageView = chatActivityEnterView.I1;
+        if (chatActivityEnterView.g2) {
             str = "AccDescrChanSilentOn";
             i10 = R.string.AccDescrChanSilentOn;
         } else {

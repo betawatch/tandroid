@@ -1,35 +1,15 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class wc0 extends po0 {
-    public final /* synthetic */ cd0 d;
+public interface wc0 {
+    void addOnLayoutChangeListener(View.OnLayoutChangeListener onLayoutChangeListener);
 
-    public wc0(cd0 cd0Var) {
-        this.d = cd0Var;
-    }
+    int getMeasuredHeight();
 
-    @Override // org.telegram.ui.Components.po0
-    public final boolean a() {
-        return true;
-    }
+    int getTop();
 
-    @Override // org.telegram.ui.Components.po0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.po0
-    public final void c(boolean z10) {
-        this.d.a(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.po0
-    public final CharSequence d() {
-        cd0 cd0Var = this.d;
-        Utilities.CallbackReturn callbackReturn = cd0Var.s0;
-        return callbackReturn != null ? (CharSequence) callbackReturn.run(Integer.valueOf(cd0Var.G)) : cd0Var.d(cd0Var.G);
-    }
+    void removeOnLayoutChangeListener(View.OnLayoutChangeListener onLayoutChangeListener);
 }

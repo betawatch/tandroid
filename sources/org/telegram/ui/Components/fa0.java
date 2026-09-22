@@ -1,48 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class fa0 implements vt0 {
-    public final /* synthetic */ ja0 a;
+public final class fa0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ma0 a;
 
-    public fa0(ja0 ja0Var) {
-        this.a = ja0Var;
+    public fa0(ma0 ma0Var) {
+        this.a = ma0Var;
     }
 
-    @Override // org.telegram.ui.Components.vt0
-    public final void R() {
-        this.a.a0();
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final vl0 f() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final boolean p() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public final void E() {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        ma0 ma0Var = this.a;
+        if (i10 == -1) {
+            if (ma0Var.V.L(true)) {
+                return;
+            }
+            ma0Var.finishFragment();
+            return;
+        }
+        if (i10 != 2) {
+            if (i10 == 10) {
+                ja0 ja0Var = ma0Var.V;
+                ja0Var.c1(ja0Var.getClosestTab(), false);
+                return;
+            } else {
+                if (i10 == 11) {
+                    ma0Var.V.L(true);
+                    ma0Var.V.getSearchItem().z(false);
+                    return;
+                }
+                return;
+            }
+        }
+        if (ma0Var.I != null) {
+            ArrayList arrayList = new ArrayList();
+            for (int i11 = 0; i11 < ma0Var.I.size(); i11++) {
+                TL_stories.StoryItem storyItem = ((MessageObject) ma0Var.I.valueAt(i11)).storyItem;
+                if (storyItem != null) {
+                    arrayList.add(storyItem);
+                }
+            }
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ma0Var.getParentActivity(), 0, ma0Var.getResourceProvider());
+            alertDialog$Builder.a.R = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteStoriesTitle : R.string.DeleteStoryTitle);
+            alertDialog$Builder.a.T = LocaleController.formatPluralString("DeleteStoriesSubtitle", arrayList.size(), new Object[0]);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new a3(13, this, arrayList));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new i2(19));
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            b2Var.show();
+            b2Var.h();
+        }
     }
 }

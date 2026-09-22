@@ -4,9 +4,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class te1 extends org.telegram.ui.Components.ul0 {
+public final class te1 extends org.telegram.ui.Components.xl0 {
     public final ArrayList c = new ArrayList();
     public final ArrayList d = new ArrayList();
     public se1 e;
@@ -17,7 +17,7 @@ public final class te1 extends org.telegram.ui.Components.ul0 {
         this.h = ue1Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -39,6 +39,6 @@ public final class te1 extends org.telegram.ui.Components.ul0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.h4(viewGroup.getContext(), 1, 0, false));
+        return new org.telegram.ui.Components.il0(new org.telegram.ui.Cells.h4(viewGroup.getContext(), 1, 0, false));
     }
 }

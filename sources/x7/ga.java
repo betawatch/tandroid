@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class ga {
     public static s k;
@@ -37,16 +37,16 @@ public final class ga {
         ja.b();
         this.g = "play-services-mlkit-image-labeling";
         qb.f a2 = qb.f.a();
-        c5.x xVar = new c5.x(this, 9);
+        c5.w wVar = new c5.w(this, 9);
         a2.getClass();
-        this.e = qb.f.b(xVar);
+        this.e = qb.f.b(wVar);
         qb.f a10 = qb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 3);
         a10.getClass();
         this.f = qb.f.b(pVar);
-        x xVar2 = l;
-        this.h = xVar2.containsKey("play-services-mlkit-image-labeling") ? y6.e.d(context, (String) xVar2.get("play-services-mlkit-image-labeling"), false) : -1;
+        x xVar = l;
+        this.h = xVar.containsKey("play-services-mlkit-image-labeling") ? y6.e.d(context, (String) xVar.get("play-services-mlkit-image-labeling"), false) : -1;
     }
 
     public static long a(ArrayList arrayList, double d) {

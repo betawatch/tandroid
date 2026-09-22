@@ -1,64 +1,21 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public abstract class d8 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb2;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder v = a4.a.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
-                }
-            }
-            objArr[i11] = sb2;
-            i11++;
+    public static int a(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
-        StringBuilder sb3 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+        if (i10 == 90) {
+            return 1;
         }
-        sb3.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
-            }
-            sb3.append(']');
+        if (i10 == 180) {
+            return 2;
         }
-        return sb3.toString();
+        if (i10 == 270) {
+            return 3;
+        }
+        throw new IllegalArgumentException(hg.k0.h(i10, "Invalid rotation: "));
     }
 }

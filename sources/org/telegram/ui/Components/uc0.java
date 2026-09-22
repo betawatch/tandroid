@@ -1,157 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class uc0 extends aw0 implements r0.m, View.OnLayoutChangeListener {
-    public int A0;
-    public boolean B0;
-    public final b2.q0 w0;
-    public View x0;
-    public tc0 y0;
-    public org.telegram.ui.ActionBar.d3 z0;
+public final class uc0 extends Drawable {
+    public tc0 a;
+    public final Paint b;
+    public int c;
+    public int d;
+    public final long e;
+    public int f;
 
-    public uc0(Context context) {
-        super(context, null);
-        this.w0 = new b2.q0();
+    public uc0() {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = 255;
+        this.d = 255;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.e = System.currentTimeMillis();
     }
 
-    public void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
-        tc0 tc0Var;
-        if (viewGroup != this.x0 || (tc0Var = this.y0) == null || ((org.telegram.ui.t7) tc0Var).getListView() == null) {
-            return;
+    public final void a(int i10) {
+        if (i10 != this.f) {
+            int alpha = Color.alpha(i10);
+            this.d = alpha;
+            this.b.setColor(i0.a.k(i10, (int) ((alpha / 255.0f) * this.c)));
         }
-        int top = this.y0.getTop();
-        if (i11 >= 0) {
-            org.telegram.ui.ActionBar.d3 d3Var = this.z0;
-            if (d3Var != null) {
-                d3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
-                return;
-            }
-            return;
-        }
-        if (top > this.A0) {
-            if (this.z0 == null || this.x0.canScrollVertically(i11)) {
-                return;
-            }
-            this.z0.onNestedScroll(viewGroup, 0, 0, i10, i11);
-            return;
-        }
-        vl0 listView = ((org.telegram.ui.t7) this.y0).getListView();
-        int L0 = ((s4.c0) listView.getLayoutManager()).L0();
-        if (L0 != -1) {
-            s4.c1 L = listView.L(L0);
-            int top2 = L != null ? L.a.getTop() : -1;
-            int paddingTop = listView.getPaddingTop();
-            if (top2 == paddingTop && L0 == 0) {
-                return;
-            }
-            iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
-            listView.scrollBy(0, i11);
-        }
+        this.f = i10;
     }
 
-    public final void Z() {
-        View view = this.x0;
-        if (view == null || this.y0 == null) {
-            return;
-        }
-        this.A0 = (view.getMeasuredHeight() - this.x0.getPaddingBottom()) - this.y0.getMeasuredHeight();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int min = Math.min(bounds.width(), bounds.height());
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        float dp = (min >> 1) - AndroidUtilities.dp(0.5f);
+        Paint paint = this.b;
+        canvas.drawCircle(centerX, centerY, dp, paint);
+        long currentTimeMillis = System.currentTimeMillis();
+        canvas.save();
+        long j3 = this.e;
+        canvas.rotate((((currentTimeMillis - j3) % 1500.0f) * 360.0f) / 1500.0f, bounds.centerX(), bounds.centerY());
+        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX(), bounds.centerY() - AndroidUtilities.dp(3.0f), paint);
+        canvas.restore();
+        canvas.save();
+        canvas.rotate((((currentTimeMillis - j3) % 4500.0f) * 360.0f) / 4500.0f, bounds.centerX(), bounds.centerY());
+        canvas.drawLine(bounds.centerX(), bounds.centerY(), AndroidUtilities.dp(2.3f) + bounds.centerX(), bounds.centerY(), paint);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.aw0
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final Drawable.ConstantState getConstantState() {
+        if (this.a == null) {
+            this.a = new tc0();
+        }
+        return this.a;
     }
 
-    public void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        tc0 tc0Var;
-        if (viewGroup != this.x0 || (tc0Var = this.y0) == null || ((org.telegram.ui.t7) tc0Var).getListView() == null) {
-            return;
-        }
-        vl0 listView = ((org.telegram.ui.t7) this.y0).getListView();
-        if (this.y0.getTop() == this.A0) {
-            iArr[1] = i13;
-            listView.scrollBy(0, i13);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
     }
 
-    public void o(int i10, View view) {
-        this.w0.a = 0;
-        org.telegram.ui.ActionBar.d3 d3Var = this.z0;
-        if (d3Var != null) {
-            d3Var.onStopNestedScroll(view);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.B0 = true;
-        tc0 tc0Var = this.y0;
-        if (tc0Var != null) {
-            tc0Var.addOnLayoutChangeListener(this);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.c != i10) {
+            this.c = i10;
+            this.b.setAlpha((int) ((this.d / 255.0f) * i10));
         }
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.B0 = false;
-        tc0 tc0Var = this.y0;
-        if (tc0Var != null) {
-            tc0Var.removeOnLayoutChangeListener(this);
-        }
-    }
-
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        Z();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        Z();
-    }
-
-    public boolean p(View view, View view2, int i10, int i11) {
-        return view != null && view.isAttachedToWindow() && i10 == 2;
-    }
-
-    public void s(View view, View view2, int i10, int i11) {
-        this.w0.a = i10;
-    }
-
-    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.d3 d3Var) {
-        this.z0 = d3Var;
-    }
-
-    public void setChildLayout(tc0 tc0Var) {
-        if (this.y0 != tc0Var) {
-            this.y0 = tc0Var;
-            if (this.B0 && tc0Var != null) {
-                org.telegram.ui.t7 t7Var = (org.telegram.ui.t7) tc0Var;
-                if (t7Var.getListView() != null) {
-                    t7Var.getListView().addOnLayoutChangeListener(this);
-                }
-            }
-        }
-        Z();
-    }
-
-    public void setTargetListView(View view) {
-        this.x0 = view;
-        Z();
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public void onStopNestedScroll(View view) {
-    }
-
-    public void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

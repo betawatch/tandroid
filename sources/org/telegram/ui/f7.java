@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f7 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final class f7 implements ViewTreeObserver.OnPreDrawListener {
                 break;
             case 1:
                 zn znVar = (zn) this.b;
-                oj ojVar = znVar.a1;
-                if (ojVar != null) {
-                    ojVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                pj pjVar = znVar.a1;
+                if (pjVar != null) {
+                    pjVar.getViewTreeObserver().removeOnPreDrawListener(this);
                 }
                 break;
             case 2:
@@ -71,9 +71,9 @@ public final class f7 implements ViewTreeObserver.OnPreDrawListener {
                     }
                     lq0Var.n.l();
                 }
-                org.telegram.ui.Components.vl0 vl0Var = ((lq0) this.b).h;
-                if (vl0Var != null) {
-                    vl0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.yl0 yl0Var = ((lq0) this.b).h;
+                if (yl0Var != null) {
+                    yl0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;
@@ -180,9 +180,9 @@ public final class f7 implements ViewTreeObserver.OnPreDrawListener {
                     }
                     wallpapersListActivity.C0();
                 }
-                org.telegram.ui.Components.vl0 vl0Var2 = ((WallpapersListActivity) this.b).F;
-                if (vl0Var2 != null) {
-                    vl0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
+                org.telegram.ui.Components.yl0 yl0Var2 = ((WallpapersListActivity) this.b).F;
+                if (yl0Var2 != null) {
+                    yl0Var2.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;
                 }
                 break;

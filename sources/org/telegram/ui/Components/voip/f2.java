@@ -49,14 +49,14 @@ import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.e80;
+import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.z9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.e01;
 import org.telegram.ui.i60;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class f2 {
     public static long a;
@@ -91,7 +91,7 @@ public abstract class f2 {
             }
             if (z14 && chat != null && !z13 && (chatFull2 = accountInstance.getMessagesController().getChatFull(chat.id)) != null && (peer = chatFull2.groupcall_default_join_as) != null) {
                 final TLRPC.InputPeer inputPeer2 = accountInstance.getMessagesController().getInputPeer(MessageObject.getPeerId(peer));
-                e80.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.w1
+                h80.t(activity, -chat.id, accountInstance, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.voip.w1
                     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                     public final void run(boolean z17) {
                         String str2 = str;
@@ -116,7 +116,7 @@ public abstract class f2 {
                 return;
             }
             if (z14 && chat != null) {
-                e80.u(activity, -chat.id, accountInstance, n2Var, !z13 ? 1 : 0, null, new x1(z13, activity, accountInstance, chat, str, user, z11, z12, n2Var));
+                h80.u(activity, -chat.id, accountInstance, n2Var, !z13 ? 1 : 0, null, new x1(z13, activity, accountInstance, chat, str, user, z11, z12, n2Var));
                 return;
             }
             if (z15 && !z10 && (inputPeer instanceof TLRPC.TL_inputPeerUser) && ChatObject.shouldSendAnonymously(chat) && (!ChatObject.isChannel(chat) || chat.megagroup)) {

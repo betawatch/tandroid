@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class si extends ul0 {
+public final class si extends xl0 {
     public int E;
     public int F;
     public int G;
@@ -43,7 +43,7 @@ public final class si extends ul0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -419,7 +419,7 @@ public final class si extends ul0 {
         oiVar.setImportantForAccessibility(1);
         oiVar.setFocusable(true);
         oiVar.setLayoutParams(new s4.p0(-2, -1));
-        return new fl0(oiVar);
+        return new il0(oiVar);
     }
 
     @Override // s4.h0

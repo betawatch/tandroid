@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.n90;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class d1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -142,13 +142,13 @@ public final class d1 extends LinearLayout {
                 textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
                 textView.setGravity(17);
                 addView(textView, w7.y5.t(-2, -2, 1, 0, 2, 0, 0));
-                k90 k90Var = new k90(context, f6Var);
-                this.d = k90Var;
-                k90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
-                k90Var.setTextSize(1, 14.0f);
-                k90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-                k90Var.setGravity(17);
-                addView(k90Var, w7.y5.t(-2, -2, 1, 0, 9, 0, 18));
+                n90 n90Var = new n90(context, f6Var);
+                this.d = n90Var;
+                n90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
+                n90Var.setTextSize(1, 14.0f);
+                n90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+                n90Var.setGravity(17);
+                addView(n90Var, w7.y5.t(-2, -2, 1, 0, 9, 0, 18));
                 break;
             default:
                 setOrientation(1);

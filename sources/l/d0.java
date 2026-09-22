@@ -20,7 +20,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d0 extends t implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
@@ -138,7 +138,7 @@ public final class d0 extends t implements PopupWindow.OnDismissListener, View.O
             this.H = t.m(iVar, context, this.f);
             this.G = true;
         }
-        j2Var.q(this.H);
+        j2Var.p(this.H);
         xVar2.setInputMethodMode(2);
         Rect rect = this.a;
         j2Var.M = rect != null ? new Rect(rect) : null;
@@ -210,7 +210,7 @@ public final class d0 extends t implements PopupWindow.OnDismissListener, View.O
             }
             x xVar2 = this.y;
             if (xVar2 != null) {
-                xVar2.v(e0Var);
+                xVar2.q(e0Var);
             }
             return true;
         }

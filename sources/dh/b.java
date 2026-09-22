@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class b implements a {
     public final f6 a;
@@ -26,18 +26,18 @@ public class b implements a {
         return this.d;
     }
 
-    @Override // dh.a
-    public int a() {
-        return this.f;
+    public boolean a() {
+        return AndroidUtilities.computePerceivedBrightness(j6.v0(this.b, this.a)) < 0.721f;
     }
 
-    public boolean b() {
-        return AndroidUtilities.computePerceivedBrightness(j6.v0(this.b, this.a)) < 0.721f;
+    @Override // dh.a
+    public int b() {
+        return this.f;
     }
 
     public final void c() {
         this.d = j6.l1(this.c, j6.v0(this.b, this.a));
-        if (b()) {
+        if (a()) {
             this.f = 687865855;
             this.h = 352321535;
             this.e = 0;
@@ -49,12 +49,12 @@ public class b implements a {
     }
 
     @Override // dh.a
-    public int d() {
+    public int g() {
         return this.h;
     }
 
     @Override // dh.a
-    public int m() {
+    public int x() {
         return this.e;
     }
 

@@ -70,20 +70,20 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.Components.yg;
-import org.telegram.ui.Components.zv0;
 import org.telegram.ui.au0;
 import org.telegram.ui.jr0;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCenter.NotificationCenterDelegate {
+public abstract class n0 extends dw0 implements r1, h, n1, bw0, NotificationCenter.NotificationCenterDelegate {
     public final g1 A0;
     public final TextView A1;
     public final k1 B0;
@@ -94,7 +94,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public float D1;
     public final Bitmap E0;
     public boolean E1;
-    public final pg.v1 F0;
+    public final pg.w1 F0;
     public o1.k F1;
     public final DispatchQueue G0;
     public final k0 G1;
@@ -105,7 +105,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public float J0;
     public final Paint J1;
     public float K0;
-    public final pg.s1 K1;
+    public final pg.t1 K1;
     public float L0;
     public boolean L1;
     public float M0;
@@ -118,7 +118,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public final int P1;
     public float Q0;
     public final eh.a Q1;
-    public uv0 R0;
+    public wv0 R0;
     public org.telegram.ui.ActionBar.n1 R1;
     public j S0;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout S1;
@@ -136,7 +136,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public boolean Y1;
     public final h0 Z0;
     public final d6 Z1;
-    public l11 a1;
+    public n11 a1;
     public final Paint a2;
     public final FrameLayout b1;
     public final Paint b2;
@@ -160,7 +160,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public int k2;
     public final x1 l1;
     public int l2;
-    public final ka.c m1;
+    public final o0.b m1;
     public int m2;
     public ArrayList n1;
     public boolean n2;
@@ -178,30 +178,29 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     public final TextView z1;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r14v29, types: [qg.v2] */
-    /* JADX WARN: Type inference failed for: r14v32, types: [android.view.View, qg.a0, qg.o2] */
+    /* JADX WARN: Type inference failed for: r1v25, types: [qg.v2] */
+    /* JADX WARN: Type inference failed for: r1v28, types: [android.view.View, qg.a0, qg.o2] */
     /* JADX WARN: Type inference failed for: r1v6, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r27v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Components.aw0, org.telegram.ui.Components.zv0, qg.n0, qg.n1, qg.r1] */
+    /* JADX WARN: Type inference failed for: r26v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Components.bw0, org.telegram.ui.Components.cw0, qg.n0, qg.n1, qg.r1] */
     public n0(Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, jr0 jr0Var, f6 f6Var) {
         super(context, activity);
         float f7;
         int i12;
         int i13;
-        Emoji.EmojiSpan[] emojiSpanArr;
         y1 y1Var;
+        Emoji.EmojiSpan[] emojiSpanArr;
         boolean z10 = false;
         this.g1 = 0;
         this.h1 = -1;
         final au0 au0Var = (au0) this;
-        this.m1 = new ka.c(au0Var, 16);
-        byte b10 = 1;
+        this.m1 = new o0.b(au0Var, 13);
         this.B1 = new Paint(1);
         this.C1 = new Paint(1);
         this.H1 = new Paint(1);
         this.I1 = new Paint(1);
         this.J1 = new Paint(1);
-        pg.s1 s1Var = new pg.s1(1.0f, 0.016773745f, -1);
-        this.K1 = s1Var;
+        pg.t1 t1Var = new pg.t1(1.0f, 0.016773745f, -1);
+        this.K1 = t1Var;
         this.O1 = new Paint(1);
         this.Y1 = false;
         this.Z1 = new d6((View) this, 350L, qr.h);
@@ -212,7 +211,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         new Matrix();
         this.d2 = new float[2];
         this.e2 = new int[2];
-        new p8.b(au0Var, 2);
+        new pg.c1(au0Var, 1);
         setDelegate(this);
         this.P1 = i10;
         this.Q1 = new eh.a(3, f6Var);
@@ -221,20 +220,20 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         pg.u0 e = pg.u0.e(i10);
         this.V1 = e;
         e.i(0, true);
-        s1Var.a = e.c();
-        s1Var.c = e.i;
+        t1Var.a = e.c();
+        t1Var.c = e.i;
         DispatchQueue dispatchQueue = new DispatchQueue("Paint");
         this.G0 = dispatchQueue;
         this.D0 = bitmap;
         this.E0 = bitmap2;
         this.o1 = i11;
-        pg.v1 v1Var = new pg.v1();
-        this.F0 = v1Var;
-        v1Var.a = new k2.v(au0Var, 19);
+        pg.w1 w1Var = new pg.w1();
+        this.F0 = w1Var;
+        w1Var.a = new k2.v(au0Var, 19);
         d0 d0Var = new d0(au0Var, context, new pg.s0(getPaintingSize(), bitmap2, i11, null), bitmap, bitmap2);
         this.W0 = d0Var;
         d0Var.setDelegate(new e0(au0Var, jr0Var));
-        d0Var.setUndoStore(v1Var);
+        d0Var.setUndoStore(w1Var);
         d0Var.setQueue(dispatchQueue);
         d0Var.setVisibility(4);
         addView(d0Var, y5.e(-1, -1, 51));
@@ -250,14 +249,14 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
             int i14 = 0;
             while (i14 < size) {
                 VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i14);
-                byte b11 = mediaEntity.type;
-                if (b11 == 0) {
+                byte b10 = mediaEntity.type;
+                if (b10 == 0) {
+                    f7 = 2.0f;
                     ?? i02 = i0(mediaEntity.parentObject, mediaEntity.document, z10);
                     if ((mediaEntity.subType & 2) != 0) {
                         i02.r(z10);
                     }
                     ViewGroup.LayoutParams layoutParams = i02.getLayoutParams();
-                    f7 = 2.0f;
                     layoutParams.width = mediaEntity.viewWidth;
                     layoutParams.height = mediaEntity.viewHeight;
                     i12 = size;
@@ -265,7 +264,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                     y1Var = i02;
                 } else {
                     f7 = 2.0f;
-                    if (b11 == b10) {
+                    if (b10 == 1) {
                         ?? j02 = j0(z10);
                         j02.setType(mediaEntity.subType);
                         j02.setTypeface(mediaEntity.textTypeface);
@@ -278,13 +277,13 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                             VideoEditedInfo.EmojiEntity emojiEntity = arrayList2.get(i15);
                             i15++;
                             VideoEditedInfo.EmojiEntity emojiEntity2 = emojiEntity;
-                            int i16 = size;
+                            int i16 = size2;
                             org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(emojiEntity2.document_id, j02.getFontMetricsInt());
                             int i17 = emojiEntity2.offset;
                             spannableString.setSpan(y5Var, i17, emojiEntity2.length + i17, 33);
+                            size = size;
                             i14 = i14;
-                            size2 = size2;
-                            size = i16;
+                            size2 = i16;
                         }
                         i12 = size;
                         i13 = i14;
@@ -296,14 +295,14 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                         }
                         j02.setText(replaceEmoji);
                         u0(j02, mediaEntity.textAlign);
-                        pg.s1 swatch = j02.getSwatch();
+                        pg.t1 swatch = j02.getSwatch();
                         swatch.a = mediaEntity.color;
                         j02.setSwatch(swatch);
                         y1Var = j02;
                     } else {
                         i12 = size;
                         i13 = i14;
-                        if (b11 == 2) {
+                        if (b10 == 2) {
                             y1 h02 = h0(mediaEntity.text, false);
                             h02.B0 = false;
                             if ((mediaEntity.subType & 2) != 0) {
@@ -320,7 +319,6 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                             i14 = i13 + 1;
                             size = i12;
                             z10 = false;
-                            b10 = 1;
                         }
                     }
                 }
@@ -332,7 +330,6 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                 i14 = i13 + 1;
                 size = i12;
                 z10 = false;
-                b10 = 1;
             }
         }
         this.Z0.setVisibility(4);
@@ -371,17 +368,17 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                     case 1:
                         au0 au0Var3 = au0Var;
                         d0 d0Var3 = au0Var3.W0;
-                        pg.v1 v1Var2 = au0Var3.F0;
-                        if (v1Var2.a()) {
+                        pg.w1 w1Var2 = au0Var3.F0;
+                        if (w1Var2.a()) {
                             if (d0Var3 != null && (d0Var3.getCurrentBrush() instanceof pg.l)) {
                                 d0Var3.b();
                                 au0Var3.t1.setSelectedIndex(1);
                                 au0Var3.b((pg.m) pg.m.a.get(0));
                             }
                             d0Var3.a();
-                            v1Var2.c.clear();
-                            v1Var2.b.clear();
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(v1Var2, 13));
+                            w1Var2.c.clear();
+                            w1Var2.b.clear();
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(w1Var2, 13));
                             au0Var3.Z0.removeAllViews();
                             break;
                         }
@@ -453,17 +450,17 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                     case 1:
                         au0 au0Var3 = au0Var;
                         d0 d0Var3 = au0Var3.W0;
-                        pg.v1 v1Var2 = au0Var3.F0;
-                        if (v1Var2.a()) {
+                        pg.w1 w1Var2 = au0Var3.F0;
+                        if (w1Var2.a()) {
                             if (d0Var3 != null && (d0Var3.getCurrentBrush() instanceof pg.l)) {
                                 d0Var3.b();
                                 au0Var3.t1.setSelectedIndex(1);
                                 au0Var3.b((pg.m) pg.m.a.get(0));
                             }
                             d0Var3.a();
-                            v1Var2.c.clear();
-                            v1Var2.b.clear();
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(v1Var2, 13));
+                            w1Var2.c.clear();
+                            w1Var2.b.clear();
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(w1Var2, 13));
                             au0Var3.Z0.removeAllViews();
                             break;
                         }
@@ -516,17 +513,17 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                     case 1:
                         au0 au0Var3 = au0Var;
                         d0 d0Var3 = au0Var3.W0;
-                        pg.v1 v1Var2 = au0Var3.F0;
-                        if (v1Var2.a()) {
+                        pg.w1 w1Var2 = au0Var3.F0;
+                        if (w1Var2.a()) {
                             if (d0Var3 != null && (d0Var3.getCurrentBrush() instanceof pg.l)) {
                                 d0Var3.b();
                                 au0Var3.t1.setSelectedIndex(1);
                                 au0Var3.b((pg.m) pg.m.a.get(0));
                             }
                             d0Var3.a();
-                            v1Var2.c.clear();
-                            v1Var2.b.clear();
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(v1Var2, 13));
+                            w1Var2.c.clear();
+                            w1Var2.b.clear();
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(w1Var2, 13));
                             au0Var3.Z0.removeAllViews();
                             break;
                         }
@@ -580,17 +577,17 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                     case 1:
                         au0 au0Var3 = au0Var;
                         d0 d0Var3 = au0Var3.W0;
-                        pg.v1 v1Var2 = au0Var3.F0;
-                        if (v1Var2.a()) {
+                        pg.w1 w1Var2 = au0Var3.F0;
+                        if (w1Var2.a()) {
                             if (d0Var3 != null && (d0Var3.getCurrentBrush() instanceof pg.l)) {
                                 d0Var3.b();
                                 au0Var3.t1.setSelectedIndex(1);
                                 au0Var3.b((pg.m) pg.m.a.get(0));
                             }
                             d0Var3.a();
-                            v1Var2.c.clear();
-                            v1Var2.b.clear();
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(v1Var2, 13));
+                            w1Var2.c.clear();
+                            w1Var2.b.clear();
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(w1Var2, 13));
                             au0Var3.Z0.removeAllViews();
                             break;
                         }
@@ -621,12 +618,12 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         l0Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0);
         l0Var.setBackground(new GradientDrawable(orientation, new int[]{0, TLObject.FLAG_31}));
         addView(l0Var, y5.e(-1, 104, 80));
-        s1 s1Var2 = new s1(context, bitmap2 != null);
-        this.t1 = s1Var2;
-        s1Var2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        s1Var2.setDelegate(this);
-        s1Var2.setSelectedIndex(1);
-        l0Var.addView(s1Var2, y5.c(48.0f, -1));
+        s1 s1Var = new s1(context, bitmap2 != null);
+        this.t1 = s1Var;
+        s1Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        s1Var.setDelegate(this);
+        s1Var.setSelectedIndex(1);
+        l0Var.addView(s1Var, y5.c(48.0f, -1));
         p1 p1Var = new p1(context);
         this.u1 = p1Var;
         p1Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -733,7 +730,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                 try {
                     SparseArray Z0 = cVar.Z0(hVar);
                     ArrayList arrayList = new ArrayList();
-                    uv0 paintingSize = n0Var.getPaintingSize();
+                    wv0 paintingSize = n0Var.getPaintingSize();
                     for (int i10 = 0; i10 < Z0.size(); i10++) {
                         t8.a aVar = (t8.a) Z0.get(Z0.keyAt(i10));
                         int i11 = n0Var.o1;
@@ -825,35 +822,35 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return 2;
     }
 
-    private uv0 getPaintingSize() {
-        uv0 uv0Var = this.R0;
-        if (uv0Var != null) {
-            return uv0Var;
+    private wv0 getPaintingSize() {
+        wv0 wv0Var = this.R0;
+        if (wv0Var != null) {
+            return wv0Var;
         }
         Bitmap bitmap = this.D0;
         float width = bitmap.getWidth();
         float height = bitmap.getHeight();
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         int i10 = devicePerformanceClass != 0 ? devicePerformanceClass != 2 ? 2560 : 3840 : 1280;
-        uv0 uv0Var2 = new uv0(width, height);
+        wv0 wv0Var2 = new wv0(width, height);
         float f7 = i10;
-        uv0Var2.a = f7;
+        wv0Var2.a = f7;
         float floor = (float) Math.floor((f7 * height) / width);
-        uv0Var2.b = floor;
+        wv0Var2.b = floor;
         if (floor > f7) {
-            uv0Var2.b = f7;
-            uv0Var2.a = (float) Math.floor((f7 * width) / height);
+            wv0Var2.b = f7;
+            wv0Var2.a = (float) Math.floor((f7 * width) / height);
         }
-        this.R0 = uv0Var2;
-        return uv0Var2;
+        this.R0 = wv0Var2;
+        return wv0Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setNewColor(int i10) {
-        pg.s1 s1Var = this.K1;
-        int i11 = s1Var.a;
-        s1Var.a = i10;
-        s0(s1Var, null);
+        pg.t1 t1Var = this.K1;
+        int i11 = t1Var.a;
+        t1Var.a = i10;
+        s0(t1Var, null);
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
         duration.addUpdateListener(new d5(this, i11, i10, 5));
         duration.start();
@@ -991,9 +988,9 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
             }
         }
         int c10 = pg.u0.e(i12).c();
-        pg.s1 s1Var = this.K1;
-        s1Var.a = c10;
-        s0(s1Var, null);
+        pg.t1 t1Var = this.K1;
+        t1Var.a = c10;
+        s0(t1Var, null);
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
         this.j1 = duration;
         duration.setInterpolator(qr.f);
@@ -1033,8 +1030,8 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         z0(true);
     }
 
-    @Override // org.telegram.ui.Components.zv0
-    public final void H(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.bw0
+    public final void G(int i10, boolean z10) {
         boolean z11;
         if (i10 > AndroidUtilities.dp(50.0f) && this.h2 && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
             if (z10) {
@@ -1110,11 +1107,11 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
             this.k1 = true;
         }
         d0Var.setBrush(mVar);
-        pg.s1 s1Var = this.K1;
-        int i10 = s1Var.a;
-        s1Var.a = pg.u0.e(this.P1).c();
-        s1Var.c = this.m1.get();
-        s0(s1Var, Integer.valueOf(i10));
+        pg.t1 t1Var = this.K1;
+        int i10 = t1Var.a;
+        t1Var.a = pg.u0.e(this.P1).c();
+        t1Var.c = this.m1.get();
+        s0(t1Var, Integer.valueOf(i10));
         this.X0.invalidate();
     }
 
@@ -1219,7 +1216,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return drawChild2;
     }
 
-    @Override // org.telegram.ui.Components.aw0, org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.Components.cw0, org.telegram.ui.ActionBar.z5
     public final void e() {
         this.O1.setColor(-15132391);
     }
@@ -1250,7 +1247,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
     }
 
     public final PointF g0() {
-        uv0 paintingSize = getPaintingSize();
+        wv0 paintingSize = getPaintingSize();
         float f7 = paintingSize.a / 2.0f;
         float f10 = paintingSize.b / 2.0f;
         if (this.H0 != null) {
@@ -1275,7 +1272,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return this.A0;
     }
 
-    @Override // org.telegram.ui.Components.bw0, org.telegram.ui.Components.aw0
+    @Override // org.telegram.ui.Components.dw0, org.telegram.ui.Components.cw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -1356,7 +1353,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return 0;
     }
 
-    public pg.e1 getRenderView() {
+    public pg.f1 getRenderView() {
         return this.W0;
     }
 
@@ -1370,21 +1367,21 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return (h0Var.getScaleY() * this.S0.getHeight()) + r2[1];
     }
 
-    public l11 getThanosEffect() {
-        if (!l11.c()) {
+    public n11 getThanosEffect() {
+        if (!n11.c()) {
             return null;
         }
         if (this.a1 == null) {
-            l11 l11Var = new l11(getContext(), new n(this, 0));
-            this.a1 = l11Var;
-            addView(l11Var);
+            n11 n11Var = new n11(getContext(), new n(this, 0));
+            this.a1 = n11Var;
+            addView(n11Var);
         }
         return this.a1;
     }
 
     public final y1 h0(String str, boolean z10) {
         float f7;
-        uv0 uv0Var;
+        wv0 wv0Var;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
@@ -1397,23 +1394,23 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         h0 h0Var = this.Z0;
         if (f7 > 1.0f) {
             float floor = (float) Math.floor(h0Var.getMeasuredWidth() * 0.5d);
-            uv0Var = new uv0(floor, floor / f7);
+            wv0Var = new wv0(floor, floor / f7);
         } else {
             float floor2 = (float) Math.floor(h0Var.getMeasuredHeight() * 0.5d);
-            uv0Var = new uv0(f7 * floor2, floor2);
+            wv0Var = new wv0(f7 * floor2, floor2);
         }
-        uv0 uv0Var2 = uv0Var;
+        wv0 wv0Var2 = wv0Var;
         Pair<Integer, Integer> imageOrientation = AndroidUtilities.getImageOrientation(str);
         if ((((Integer) imageOrientation.first).intValue() / 90) % 2 == 1) {
-            float f10 = uv0Var2.a;
-            uv0Var2.a = uv0Var2.b;
-            uv0Var2.b = f10;
+            float f10 = wv0Var2.a;
+            wv0Var2.a = wv0Var2.b;
+            wv0Var2.b = f10;
         }
         Context context = getContext();
         PointF g02 = g0();
         int intValue = ((Integer) imageOrientation.first).intValue();
         ((Integer) imageOrientation.second).getClass();
-        y1 y1Var = new y1(context, g02, uv0Var2, str, intValue);
+        y1 y1Var = new y1(context, g02, wv0Var2, str, intValue);
         y1Var.setDelegate(this);
         h0Var.addView(y1Var);
         if (z10) {
@@ -1541,9 +1538,9 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                 q6Var2 = new q6(new PointF(a2.x + sin + ((float) (Math.cos(d12) * d11 * tL_maskCoords.y)), a2.y + cos + ((float) (Math.sin(d12) * d11 * tL_maskCoords.y))), floor, f14);
                 Context context = getContext();
                 float floor2 = (float) Math.floor(getPaintingSize().a * d);
-                uv0 uv0Var = new uv0(floor2, floor2);
+                wv0 wv0Var = new wv0(floor2, floor2);
                 pointF = q6Var2.a;
-                a0 a0Var = new a0(this, context, pointF, q6Var2.c, q6Var2.b, uv0Var, document, obj);
+                a0 a0Var = new a0(this, context, pointF, q6Var2.c, q6Var2.b, wv0Var, document, obj);
                 isTextColorEmoji = MessageObject.isTextColorEmoji(document);
                 ImageReceiver imageReceiver = a0Var.x0;
                 if (isTextColorEmoji) {
@@ -1568,9 +1565,9 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         q6Var2 = q6Var;
         Context context2 = getContext();
         float floor22 = (float) Math.floor(getPaintingSize().a * d);
-        uv0 uv0Var2 = new uv0(floor22, floor22);
+        wv0 wv0Var2 = new wv0(floor22, floor22);
         pointF = q6Var2.a;
-        a0 a0Var2 = new a0(this, context2, pointF, q6Var2.c, q6Var2.b, uv0Var2, document, obj);
+        a0 a0Var2 = new a0(this, context2, pointF, q6Var2.c, q6Var2.b, wv0Var2, document, obj);
         isTextColorEmoji = MessageObject.isTextColorEmoji(document);
         ImageReceiver imageReceiver2 = a0Var2.x0;
         if (isTextColorEmoji) {
@@ -1589,7 +1586,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
 
     public final v2 j0(boolean z10) {
         ((au0) this).o2.g0.isFocusable();
-        uv0 paintingSize = getPaintingSize();
+        wv0 paintingSize = getPaintingSize();
         PointF A0 = A0(null);
         v2 v2Var = new v2(getContext(), A0, (int) (paintingSize.a / 9.0f), "", this.K1, this.U0);
         float f7 = paintingSize.a / 9.0f;
@@ -1741,19 +1738,19 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         return true;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
     }
 
-    @Override // org.telegram.ui.Components.bw0, org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.dw0, org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         int i14 = i12 - i10;
@@ -1776,9 +1773,9 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         int measuredWidth2 = ((measuredWidth - h0Var.getMeasuredWidth()) / 2) + ceil;
         int measuredHeight2 = ((d0Var.getMeasuredHeight() - h0Var.getMeasuredHeight()) / 2) + additionalTop;
         h0Var.layout(measuredWidth2, measuredHeight2, h0Var.getMeasuredWidth() + measuredWidth2, h0Var.getMeasuredHeight() + measuredHeight2);
-        l11 l11Var = this.a1;
-        if (l11Var != null) {
-            l11Var.layout(measuredWidth2, measuredHeight2, h0Var.getMeasuredWidth() + measuredWidth2, h0Var.getMeasuredHeight() + measuredHeight2);
+        n11 n11Var = this.a1;
+        if (n11Var != null) {
+            n11Var.layout(measuredWidth2, measuredHeight2, h0Var.getMeasuredWidth() + measuredWidth2, h0Var.getMeasuredHeight() + measuredHeight2);
         }
         i0 i0Var = this.Y0;
         i0Var.layout(ceil, additionalTop, i0Var.getMeasuredWidth() + ceil, i0Var.getMeasuredHeight() + additionalTop);
@@ -1818,9 +1815,9 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         h0Var.setScaleX(f12);
         h0Var.setScaleY(this.Q0);
         h0Var.measure(View.MeasureSpec.makeMeasureSpec((int) this.R0.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.R0.b, TLObject.FLAG_30));
-        l11 l11Var = this.a1;
-        if (l11Var != null) {
-            l11Var.measure(View.MeasureSpec.makeMeasureSpec((int) this.R0.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.R0.b, TLObject.FLAG_30));
+        n11 n11Var = this.a1;
+        if (n11Var != null) {
+            n11Var.measure(View.MeasureSpec.makeMeasureSpec((int) this.R0.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) this.R0.b, TLObject.FLAG_30));
             this.a1.setScaleX(this.Q0);
             this.a1.setScaleY(this.Q0);
         }
@@ -1876,19 +1873,19 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         this.Z0.removeView(jVar);
         if (jVar != null) {
             UUID uuid = jVar.getUUID();
-            pg.v1 v1Var = this.F0;
-            v1Var.b.remove(uuid);
-            v1Var.c.remove(uuid);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(v1Var, 13));
+            pg.w1 w1Var = this.F0;
+            w1Var.b.remove(uuid);
+            w1Var.c.remove(uuid);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(w1Var, 13));
         }
         x1 x1Var = this.l1;
-        ka.c cVar = this.m1;
-        x1Var.setValueOverride(cVar);
+        o0.b bVar = this.m1;
+        x1Var.setValueOverride(bVar);
         x1Var.setShowPreview(true);
-        float f7 = cVar.get();
-        pg.s1 s1Var = this.K1;
-        s1Var.c = f7;
-        s0(s1Var, null);
+        float f7 = bVar.get();
+        pg.t1 t1Var = this.K1;
+        t1Var.c = f7;
+        s0(t1Var, null);
     }
 
     @Override // qg.h
@@ -1967,8 +1964,8 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
             q0(jVar4);
         }
         j jVar5 = n0Var.S0;
-        ka.c cVar = n0Var.m1;
-        pg.s1 s1Var = n0Var.K1;
+        o0.b bVar = n0Var.m1;
+        pg.t1 t1Var = n0Var.K1;
         x1 x1Var = n0Var.l1;
         if (jVar5 == null) {
             ValueAnimator valueAnimator2 = n0Var.j1;
@@ -1979,10 +1976,10 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
                 w0(false);
             }
             B0(0);
-            x1Var.setValueOverride(cVar);
+            x1Var.setValueOverride(bVar);
             x1Var.setShowPreview(true);
-            s1Var.c = cVar.get();
-            s0(s1Var, null);
+            t1Var.c = bVar.get();
+            s0(t1Var, null);
             return z11;
         }
         i0 i0Var = n0Var.Y0;
@@ -1991,15 +1988,15 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         n0Var.Z0.bringChildToFront(n0Var.S0);
         j jVar6 = n0Var.S0;
         if (!(jVar6 instanceof v2)) {
-            x1Var.setValueOverride(cVar);
+            x1Var.setValueOverride(bVar);
             x1Var.setShowPreview(true);
-            s1Var.c = cVar.get();
-            s0(s1Var, null);
+            t1Var.c = bVar.get();
+            s0(t1Var, null);
             return true;
         }
         v2 v2Var3 = (v2) jVar6;
         v2Var3.z0 = false;
-        v2Var3.getSwatch().c = s1Var.c;
+        v2Var3.getSwatch().c = t1Var.c;
         s0(v2Var3.getSwatch(), null);
         x1Var.setValueOverride(new u5(v2Var3, (int) (n0Var.R0.a / 9.0f), 1));
         x1Var.setShowPreview(false);
@@ -2014,21 +2011,21 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         super.requestLayout();
     }
 
-    public final void s0(pg.s1 s1Var, Integer num) {
-        pg.s1 s1Var2 = this.K1;
-        if (s1Var2 != s1Var) {
-            s1Var2.a = s1Var.a;
-            s1Var2.b = s1Var.b;
-            s1Var2.c = s1Var.c;
+    public final void s0(pg.t1 t1Var, Integer num) {
+        pg.t1 t1Var2 = this.K1;
+        if (t1Var2 != t1Var) {
+            t1Var2.a = t1Var.a;
+            t1Var2.b = t1Var.b;
+            t1Var2.c = t1Var.c;
             int i10 = this.P1;
-            pg.u0.e(i10).h(s1Var.a, true);
-            pg.u0.e(i10).j(s1Var.c);
+            pg.u0.e(i10).h(t1Var.a, true);
+            pg.u0.e(i10).j(t1Var.c);
         }
-        int i11 = s1Var.a;
+        int i11 = t1Var.a;
         d0 d0Var = this.W0;
         d0Var.setColor(i11);
-        d0Var.setBrushSize(s1Var.c);
-        int i12 = s1Var2.a;
+        d0Var.setBrushSize(t1Var.c);
+        int i12 = t1Var2.a;
         if (num == null || num.intValue() == i12) {
             l0 l0Var = this.c1;
             if (l0Var != null) {
@@ -2041,7 +2038,7 @@ public abstract class n0 extends bw0 implements r1, h, n1, zv0, NotificationCent
         }
         j jVar = this.S0;
         if (jVar instanceof v2) {
-            ((v2) jVar).setSwatch(new pg.s1(s1Var.b, s1Var.c, s1Var.a));
+            ((v2) jVar).setSwatch(new pg.t1(t1Var.b, t1Var.c, t1Var.a));
         }
     }
 

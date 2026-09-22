@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class e implements a {
     public final f6 a;
@@ -31,15 +31,10 @@ public final class e implements a {
 
     @Override // dh.a
     public final int H() {
-        return b(this.e);
+        return a(this.e);
     }
 
-    @Override // dh.a
-    public final int a() {
-        return b(this.c);
-    }
-
-    public final int b(d dVar) {
+    public final int a(d dVar) {
         if (dVar == null) {
             return 0;
         }
@@ -47,25 +42,30 @@ public final class e implements a {
         return dVar.f(f6Var, ((f6Var instanceof ai.d) || f6Var != null) ? f6Var.a() : j6.I.q());
     }
 
+    @Override // dh.a
+    public final int b() {
+        return a(this.c);
+    }
+
     public final void c(int i10, int i11) {
         this.b = new c(i11, i10, 0);
     }
 
-    @Override // dh.a
-    public final int d() {
-        return b(this.d);
-    }
-
-    public final void e(int i10, int i11) {
+    public final void d(int i10, int i11) {
         this.d = new c(i11, i10, 0);
     }
 
-    public final void f(int i10, int i11) {
+    public final void e(int i10, int i11) {
         this.c = new c(i11, i10, 0);
     }
 
     @Override // dh.a
-    public final int m() {
-        return b(this.b);
+    public final int g() {
+        return a(this.d);
+    }
+
+    @Override // dh.a
+    public final int x() {
+        return a(this.b);
     }
 }

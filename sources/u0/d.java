@@ -8,9 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.r1;
+import pg.c1;
 import r0.i0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int H = ViewConfiguration.getTapTimeout();
@@ -20,7 +21,7 @@ public final class d implements View.OnTouchListener {
     public final a a;
     public final AccelerateInterpolator b;
     public final r1 c;
-    public p8.b d;
+    public c1 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -195,17 +196,17 @@ public final class d implements View.OnTouchListener {
             aVar.d = a10;
             if (!this.E && e()) {
                 if (this.d == null) {
-                    this.d = new p8.b(this, 7);
+                    this.d = new c1(this, 6);
                 }
                 this.E = true;
                 this.x = true;
                 if (this.w || (i10 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    p8.b bVar = this.d;
+                    c1 c1Var = this.d;
                     long j3 = i10;
                     WeakHashMap weakHashMap = i0.a;
-                    r1Var.postOnAnimationDelayed(bVar, j3);
+                    r1Var.postOnAnimationDelayed(c1Var, j3);
                 }
                 this.w = true;
             }

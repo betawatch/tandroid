@@ -8,13 +8,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u0 implements jl0 {
+public final /* synthetic */ class u0 implements ml0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class u0 implements jl0 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.ml0
     public final void d(int i10, View view) {
         int i11 = this.a;
         int i12 = 5;
@@ -40,7 +40,7 @@ public final /* synthetic */ class u0 implements jl0 {
                 r3 r3Var = (r3) obj3;
                 h1 h1Var = (h1) view;
                 m1 m1Var = h1Var.K;
-                v70 F = v70.F((ViewGroup) obj2, new d(), view);
+                y70 F = y70.F((ViewGroup) obj2, new d(), view);
                 F.p(15, -1, LocaleController.formatString(R.string.LiveStoryMessageSent, LocaleController.formatDateTime(m1Var.d, true)));
                 F.k();
                 F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new a1.e(i12, (jc) obj, m1Var), false);
@@ -66,11 +66,11 @@ public final /* synthetic */ class u0 implements jl0 {
                 if (nb0Var.e && !UserConfig.hasPremiumOnAccounts()) {
                     n2Var.showDialog(new rg.x0(n2Var, 10, true));
                     break;
-                } else if (!w7.g6.a(nb0Var)) {
+                } else if (!w7.f6.a(nb0Var)) {
                     org.telegram.ui.Cells.p pVar = new org.telegram.ui.Cells.p(context);
                     pVar.a = i10;
                     tVar.Y2.w0(pVar);
-                    w7.g6.b(nb0Var);
+                    w7.f6.b(nb0Var);
                     int i13 = org.telegram.ui.Cells.s.f;
                     sVar.b(true, true);
                     for (int i14 = 0; i14 < tVar.getChildCount(); i14++) {

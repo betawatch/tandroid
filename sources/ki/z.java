@@ -1,15 +1,15 @@
 package ki;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o0 b;
+    public final /* synthetic */ q0 b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ z(o0 o0Var, Exception exc, int i10) {
+    public /* synthetic */ z(q0 q0Var, Exception exc, int i10) {
         this.a = i10;
-        this.b = o0Var;
+        this.b = q0Var;
         this.c = exc;
     }
 

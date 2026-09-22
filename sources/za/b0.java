@@ -4,22 +4,22 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b0 {
     public static final b0 a = new b0();
-    public static final ka.c b;
+    public static final k2.e b;
 
     static {
-        ka.e eVar = new ka.e();
-        eVar.m(a0.class, g.a);
-        eVar.m(j0.class, h.a);
-        eVar.m(j.class, e.a);
-        eVar.m(b.class, d.a);
-        eVar.m(a.class, c.a);
-        eVar.m(p.class, f.a);
-        eVar.d = true;
-        b = new ka.c(eVar, 0);
+        ka.d dVar = new ka.d();
+        dVar.m(a0.class, g.a);
+        dVar.m(j0.class, h.a);
+        dVar.m(j.class, e.a);
+        dVar.m(b.class, d.a);
+        dVar.m(a.class, c.a);
+        dVar.m(p.class, f.a);
+        dVar.d = true;
+        b = new k2.e(dVar, 1);
     }
 
     public static b a(k9.h hVar) {

@@ -45,9 +45,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class z01 extends org.telegram.ui.Components.ul0 {
+public final class z01 extends org.telegram.ui.Components.xl0 {
     public final Context c;
     public final HashMap d = new HashMap();
     public final /* synthetic */ ProfileActivity e;
@@ -66,7 +66,7 @@ public final class z01 extends org.telegram.ui.Components.ul0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         ProfileActivity profileActivity = this.e;
         if (profileActivity.f3 != -1) {
@@ -1542,7 +1542,7 @@ public final class z01 extends org.telegram.ui.Components.ul0 {
                                     i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
                                     long a2 = profileActivity2.a();
                                     f6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                                    org.telegram.ui.Components.m01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, f6Var2);
+                                    org.telegram.ui.Components.o01.b(parentActivity, i131, a2, user5, str22, z35, z36, z21, f6Var2);
                                 }
                             });
                             abVar.f(user5, i10 != profileActivity.v4 - 1);
@@ -1563,7 +1563,7 @@ public final class z01 extends org.telegram.ui.Components.ul0 {
                             i131 = ((org.telegram.ui.ActionBar.n2) profileActivity2).currentAccount;
                             long a2 = profileActivity2.a();
                             f6Var2 = ((org.telegram.ui.ActionBar.n2) profileActivity2).resourceProvider;
-                            org.telegram.ui.Components.m01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, f6Var2);
+                            org.telegram.ui.Components.o01.b(parentActivity, i131, a2, user5, str222, z352, z362, z21, f6Var2);
                         }
                     });
                     abVar.f(user5, i10 != profileActivity.v4 - 1);
@@ -1667,7 +1667,7 @@ public final class z01 extends org.telegram.ui.Components.ul0 {
                                 boolean z37 = user6 == null && user6.bot && user6.bot_can_edit;
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 if (profileActivity.i4 >= 0) {
-                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.ds0(9, this, z37)));
+                                    spannableStringBuilder4.append(AndroidUtilities.replaceSingleTag(LocaleController.getString(z37 ? R.string.ProfileBotOpenAppInfoOwner : R.string.ProfileBotOpenAppInfo), new org.telegram.ui.Components.as0(10, this, z37)));
                                     if (botverification != null || l4 != null) {
                                         spannableStringBuilder4.append("\n\n\n");
                                     }
@@ -1960,7 +1960,7 @@ public final class z01 extends org.telegram.ui.Components.ul0 {
         if (i10 != 13) {
             abVar.setLayoutParams(new s4.p0(-1, -2));
         }
-        return new org.telegram.ui.Components.fl0(abVar);
+        return new org.telegram.ui.Components.il0(abVar);
     }
 
     @Override // s4.h0

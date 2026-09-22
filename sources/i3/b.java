@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a = new v(4);
@@ -57,18 +57,18 @@ public final class b implements o {
     public final boolean a(p pVar) {
         v vVar = this.a;
         l lVar = (l) pVar;
-        lVar.i(vVar.a, 0, 3, false);
+        lVar.h(vVar.a, 0, 3, false);
         vVar.J(0);
         if (vVar.A() == 4607062) {
-            lVar.i(vVar.a, 0, 2, false);
+            lVar.h(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & MediaDataController.MAX_LINKS_COUNT) == 0) {
-                lVar.i(vVar.a, 0, 4, false);
+                lVar.h(vVar.a, 0, 4, false);
                 vVar.J(0);
                 int j3 = vVar.j();
                 lVar.f = 0;
-                lVar.t(j3, false);
-                lVar.i(vVar.a, 0, 4, false);
+                lVar.s(j3, false);
+                lVar.h(vVar.a, 0, 4, false);
                 vVar.J(0);
                 if (vVar.j() == 0) {
                     return true;

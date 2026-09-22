@@ -16,13 +16,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class x8 extends org.telegram.ui.Components.ab implements NotificationCenter.NotificationCenterDelegate {
     public t8 X;
@@ -72,7 +72,7 @@ public final class x8 extends org.telegram.ui.Components.ab implements Notificat
         int l1 = org.telegram.ui.ActionBar.j6.l1(0.12f, themedColor);
         int l12 = org.telegram.ui.ActionBar.j6.l1(0.15f, themedColor);
         textView.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, l1, l12, l12));
-        w7.b6.b(textView, 0.1f, 1.5f);
+        w7.a6.b(textView, 0.1f, 1.5f);
         k3Var.addView(textView, w7.y5.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         ai.ba baVar = new ai.ba(29, this, textView);
         textView.setOnClickListener(new ai.f2(5, this, baVar));
@@ -102,9 +102,9 @@ public final class x8 extends org.telegram.ui.Components.ab implements Notificat
         s8Var.o(qr.h);
         s8Var.n(350L);
         this.d.setItemAnimator(s8Var);
-        vl0 vl0Var = this.d;
+        yl0 yl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i10, 0, i10, 0);
+        yl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.u0(this, context, d7Var, 2));
         t8 t8Var = this.X;
         if (t8Var != null) {
@@ -116,7 +116,7 @@ public final class x8 extends org.telegram.ui.Components.ab implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.k3 k3Var = x8Var.Z;
         org.telegram.ui.Cells.k3 k3Var2 = x8Var.Y;
-        w51 G = x8Var.X.G(i10 - 1);
+        y51 G = x8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -147,11 +147,11 @@ public final class x8 extends org.telegram.ui.Components.ab implements Notificat
         ai.y1 y1Var = new ai.y1(x8Var, 12);
         t2Var.G = o0Var;
         int i11 = (webPage2 == null || (webPage2.photo == null && !MessageObject.isVideoDocument(webPage2.document))) ? 8 : 0;
-        cc0 cc0Var = t2Var.x;
-        cc0Var.setVisibility(i11);
+        fc0 fc0Var = t2Var.x;
+        fc0Var.setVisibility(i11);
         t2Var.f.b(t2Var.a, o0Var, false);
         t2Var.w.a(!o0Var.f, false);
-        cc0Var.a(!o0Var.e, false);
+        fc0Var.a(!o0Var.e, false);
         t2Var.H = y1Var;
         t2Var.e.setImageDrawable(new e4(d7Var, 8));
         t2Var.show();
@@ -333,7 +333,7 @@ public final class x8 extends org.telegram.ui.Components.ab implements Notificat
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         t8 t8Var = new t8(this.d, getContext(), this.currentAccount, 0, true, new bi.v(this, 7), this.resourcesProvider);
         this.X = t8Var;
         return t8Var;

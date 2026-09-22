@@ -21,11 +21,11 @@ import org.telegram.messenger.rk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.c01;
 import org.telegram.ui.Components.l40;
 import org.telegram.ui.pj0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class d3 {
     public final TL_stars.TL_starGiftUnique a;
@@ -87,14 +87,14 @@ public final class d3 {
         rk.n(org.telegram.ui.ActionBar.j6.j5, f6Var, textView2, 1, 16.0f);
         f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
-            a01 a01Var = new a01(context, f6Var);
-            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            y3.q1(a01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            c01 c01Var = new c01(context, f6Var);
+            y3.q1(c01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            y3.q1(c01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            y3.q1(c01Var, u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
-                a01Var.c(LocaleController.getString(R.string.GiftValue2), v7.j0.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
+                c01Var.c(LocaleController.getString(R.string.GiftValue2), v7.j0.g("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
             }
-            f7.addView(a01Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
+            f7.addView(c01Var, w7.y5.t(-1, -2, 48, 23, 16, 23, 4));
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
         alertDialog$Builder.n(c3Var);

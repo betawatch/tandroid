@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p41 implements org.telegram.ui.Components.kl0, org.telegram.ui.Components.ml0, oy {
+public final /* synthetic */ class p41 implements org.telegram.ui.Components.nl0, org.telegram.ui.Components.pl0, oy {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
 
     public /* synthetic */ p41(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
@@ -29,7 +29,7 @@ public final /* synthetic */ class p41 implements org.telegram.ui.Components.kl0
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -78,7 +78,7 @@ public final /* synthetic */ class p41 implements org.telegram.ui.Components.kl0
         saveToGallerySettingsActivity.presentFragment(uyVar);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -93,15 +93,15 @@ public final /* synthetic */ class p41 implements org.telegram.ui.Components.kl0
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public /* synthetic */ void q(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
         ArrayList arrayList = saveToGallerySettingsActivity.s;
@@ -121,7 +121,7 @@ public final /* synthetic */ class p41 implements org.telegram.ui.Components.kl0
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

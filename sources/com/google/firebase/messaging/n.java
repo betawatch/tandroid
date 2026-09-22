@@ -62,13 +62,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mb1;
 import v7.e8;
 import v7.j0;
 import v7.w7;
-import w7.i6;
+import w7.h6;
 import y9.a2;
 import y9.l0;
 import y9.m0;
@@ -88,7 +88,7 @@ import y9.x0;
 import y9.y0;
 import y9.z1;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class n implements f6 {
     public Object a;
@@ -148,7 +148,7 @@ public final class n implements f6 {
     }
 
     public static a2 d(l0 l0Var, p3 p3Var) {
-        List g10 = ((c5.b0) p3Var.f).g();
+        List g10 = ((c5.a0) p3Var.f).g();
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < g10.size(); i10++) {
             x9.l lVar = (x9.l) g10.get(i10);
@@ -194,12 +194,12 @@ public final class n implements f6 {
         return false;
     }
 
-    public static n k(Context context, w9.u uVar, ba.c cVar, w9.a aVar, x9.e eVar, p3 p3Var, n4.y yVar, da.b bVar, m5.e eVar2, w9.j jVar) {
-        w9.p pVar = new w9.p(context, uVar, aVar, yVar, bVar);
+    public static n k(Context context, w9.v vVar, ba.c cVar, w9.a aVar, x9.e eVar, p3 p3Var, n4.y yVar, da.b bVar, m5.e eVar2, w9.j jVar) {
+        w9.q qVar = new w9.q(context, vVar, aVar, yVar, bVar);
         ba.b bVar2 = new ba.b(cVar, bVar, jVar);
         z9.a aVar2 = ca.a.b;
-        l5.s.b(context);
-        return new n(pVar, bVar2, new ca.a(new ca.c(l5.s.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), eVar2)), eVar, p3Var, uVar);
+        l5.t.b(context);
+        return new n(qVar, bVar2, new ca.a(new ca.c(l5.t.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), eVar2)), eVar, p3Var, vVar);
     }
 
     public static ColorStateList l(Context context, int i10) {
@@ -410,7 +410,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new fy0(this, i10, 0));
+                ofFloat.addUpdateListener(new hy0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -419,7 +419,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new fy0(this, i11, 1));
+                ofFloat2.addUpdateListener(new hy0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -428,7 +428,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new fy0(this, i12, 2));
+                ofFloat3.addUpdateListener(new hy0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -496,7 +496,7 @@ public final class n implements f6 {
                 e(aVar, (u2.f0) this.d, k1Var);
             }
         }
-        this.c = aVar.e();
+        this.c = aVar.d();
     }
 
     public void I() {
@@ -629,7 +629,7 @@ public final class n implements f6 {
 
     public l5.h g() {
         String str = ((String) this.a) == null ? " transportName" : "";
-        if (((l5.l) this.c) == null) {
+        if (((l5.m) this.c) == null) {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
@@ -642,7 +642,7 @@ public final class n implements f6 {
             str = j0.s(str, " autoMetadata");
         }
         if (str.isEmpty()) {
-            return new l5.h((String) this.a, (Integer) this.b, (l5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
+            return new l5.h((String) this.a, (Integer) this.b, (l5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
@@ -870,10 +870,10 @@ public final class n implements f6 {
         Iterator<Map.Entry<Thread, StackTraceElement[]>> it;
         n4.y yVar;
         boolean equals = str2.equals("crash");
-        w9.p pVar = (w9.p) this.a;
-        Context context = pVar.a;
+        w9.q qVar = (w9.q) this.a;
+        Context context = qVar.a;
         int i10 = context.getResources().getConfiguration().orientation;
-        n4.y yVar2 = pVar.d;
+        n4.y yVar2 = qVar.d;
         Stack stack = new Stack();
         for (Throwable th3 = th2; th3 != null; th3 = th3.getCause()) {
             stack.push(th3);
@@ -897,7 +897,7 @@ public final class n implements f6 {
         if (name == null) {
             throw new NullPointerException("Null name");
         }
-        List d = w9.p.d(stackTraceElementArr, 4);
+        List d = w9.q.d(stackTraceElementArr, 4);
         if (d == null) {
             throw new NullPointerException("Null frames");
         }
@@ -917,7 +917,7 @@ public final class n implements f6 {
                         throw new NullPointerException("Null name");
                     }
                     it = it2;
-                    List d10 = w9.p.d(C, 0);
+                    List d10 = w9.q.d(C, 0);
                     if (d10 == null) {
                         throw new NullPointerException("Null frames");
                     }
@@ -929,14 +929,14 @@ public final class n implements f6 {
             }
         }
         List unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-        p0 c10 = w9.p.c(tVar2, 0);
+        p0 c10 = w9.q.c(tVar2, 0);
         q0 q0Var = new q0(0L, "0", "0");
-        List a10 = pVar.a();
+        List a10 = qVar.a();
         if (a10 == null) {
             throw new NullPointerException("Null binaries");
         }
         nVar.c = new m0(new n0(unmodifiableList, c10, null, q0Var, a10), null, null, valueOf, b10, a2, i10);
-        nVar.d = pVar.b(i10);
+        nVar.d = qVar.b(i10);
         l0 i12 = nVar.i();
         ba.b bVar = (ba.b) this.b;
         x9.e eVar = (x9.e) this.d;
@@ -948,7 +948,7 @@ public final class n implements f6 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            i6.a("String array is empty and is ignored by put method.");
+            h6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -960,7 +960,7 @@ public final class n implements f6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                i6.a(sb2.toString());
+                h6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -968,7 +968,7 @@ public final class n implements f6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    i6.a(sb3.toString());
+                    h6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -984,7 +984,7 @@ public final class n implements f6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                i6.a("Input Array of elements is too big, cutting off.");
+                h6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
@@ -1030,7 +1030,7 @@ public final class n implements f6 {
                 ca.a aVar2 = (ca.a) this.c;
                 if (bVar2.a.f == null) {
                     try {
-                        str2 = (String) w9.w.a(((qa.c) ((w9.u) this.f).d).d());
+                        str2 = (String) w9.x.a(((qa.c) ((w9.v) this.f).d).d());
                     } catch (Exception e10) {
                         Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e10);
                         str2 = null;
@@ -1057,7 +1057,7 @@ public final class n implements f6 {
                                     arrayBlockingQueue = arrayBlockingQueue2;
                                     try {
                                         taskCompletionSource = taskCompletionSource2;
-                                        cVar.g.execute(new c5.v(cVar, bVar, taskCompletionSource2, false, 4));
+                                        cVar.g.execute(new c5.u(cVar, bVar, taskCompletionSource2, false, 4));
                                         bVar3.b("Closing task for report: " + bVar.b);
                                         taskCompletionSource.trySetResult(bVar);
                                     } catch (Throwable th2) {

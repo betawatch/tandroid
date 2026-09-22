@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class dz extends org.telegram.ui.ActionBar.n2 {
     public az a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.yl0 b;
     public s4.y c;
     public ImageView d;
     public final ArrayList e;
@@ -49,10 +49,10 @@ public final class dz extends org.telegram.ui.ActionBar.n2 {
     public static /* synthetic */ void U(dz dzVar, Context context, int i10) {
         ArrayList arrayList = dzVar.e;
         if (i10 == dzVar.h) {
-            org.telegram.ui.Components.j70 j70Var = new org.telegram.ui.Components.j70(context, dzVar.currentAccount, null, 0L, dzVar, null);
-            j70Var.Y(new fu(dzVar, 6));
-            j70Var.Z(arrayList);
-            dzVar.showDialog(j70Var);
+            org.telegram.ui.Components.m70 m70Var = new org.telegram.ui.Components.m70(context, dzVar.currentAccount, null, 0L, dzVar, null);
+            m70Var.Y(new fu(dzVar, 6));
+            m70Var.Z(arrayList);
+            dzVar.showDialog(m70Var);
         }
     }
 
@@ -61,7 +61,7 @@ public final class dz extends org.telegram.ui.ActionBar.n2 {
             return;
         }
         getParentActivity().finish();
-        AndroidUtilities.runOnUIThread(new cj(this, 26), 1000L);
+        AndroidUtilities.runOnUIThread(new dj(this, 26), 1000L);
     }
 
     public final void Z() {
@@ -106,9 +106,9 @@ public final class dz extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.setLayoutManager(new s4.c0(1, false));
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.b = yl0Var;
+        yl0Var.setLayoutManager(new s4.c0(1, false));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
         ((s4.j) this.b.getItemAnimator()).C = false;

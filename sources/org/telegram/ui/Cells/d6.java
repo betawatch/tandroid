@@ -18,7 +18,7 @@ import org.telegram.ui.Components.bu;
 import org.telegram.ui.a61;
 import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class d6 extends bu {
     public final /* synthetic */ int c;
@@ -63,7 +63,7 @@ public final class d6 extends bu {
     public void invalidate() {
         switch (this.c) {
             case 1:
-                if (!zg.e0.b) {
+                if (!zg.f0.b) {
                     super.invalidate();
                     break;
                 }

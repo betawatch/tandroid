@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class sr extends ImageView {
     public final /* synthetic */ int a = 1;
@@ -14,10 +14,10 @@ public final class sr extends ImageView {
     public final /* synthetic */ ViewGroup c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sr(ur urVar, Context context, n2.e eVar) {
+    public sr(ur urVar, Context context, l.d dVar) {
         super(context);
         this.c = urVar;
-        this.b = eVar;
+        this.b = dVar;
     }
 
     @Override // android.view.View
@@ -32,15 +32,15 @@ public final class sr extends ImageView {
                     removeCallbacks(urVar.h);
                 }
                 super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((n2.e) this.b).b).onTouchEvent(motionEvent);
+                return ((GestureDetector) ((l.d) this.b).b).onTouchEvent(motionEvent);
             default:
                 return super.onTouchEvent(motionEvent);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sr(pk0 pk0Var, Context context) {
+    public sr(sk0 sk0Var, Context context) {
         super(context);
-        this.c = pk0Var;
+        this.c = sk0Var;
     }
 }

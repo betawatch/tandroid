@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class f51 extends FrameLayout {
     public float a;
@@ -84,12 +84,12 @@ public final class f51 extends FrameLayout {
                 this.e = ceil;
             }
         }
-        org.telegram.ui.Components.v71 v71Var = secretMediaViewer.Q;
+        org.telegram.ui.Components.x71 x71Var = secretMediaViewer.Q;
         int B = org.telegram.messenger.l0.B(16.0f, getMeasuredWidth(), ceil);
         int measuredHeight = getMeasuredHeight();
-        v71Var.h = B;
-        v71Var.i = measuredHeight;
-        View view = v71Var.v;
+        x71Var.h = B;
+        x71Var.i = measuredHeight;
+        View view = x71Var.v;
         if (view != null) {
             view.invalidate();
         }

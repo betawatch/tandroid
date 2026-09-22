@@ -18,7 +18,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class l00 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -41,7 +41,7 @@ public final class l00 extends FrameLayout {
             return;
         }
         textViewArr[1].setText(str);
-        ((e80) this.e).E = true;
+        ((h80) this.e).E = true;
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(qr.g);
@@ -212,7 +212,7 @@ public final class l00 extends FrameLayout {
         switch (this.a) {
             case 0:
                 super.onLayout(z10, i10, i11, i12, i13);
-                n00.G((n00) this.e);
+                n00.F((n00) this.e);
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -309,9 +309,9 @@ public final class l00 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l00(e80 e80Var, Context context, boolean z10) {
+    public l00(h80 h80Var, Context context, boolean z10) {
         super(context);
-        this.e = e80Var;
+        this.e = h80Var;
         this.d = new TextView[2];
         this.b = !z10;
         setBackground(null);

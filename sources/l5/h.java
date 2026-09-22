@@ -3,20 +3,20 @@ package l5;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
     public final Integer b;
-    public final l c;
+    public final m c;
     public final long d;
     public final long e;
     public final Map f;
 
-    public h(String str, Integer num, l lVar, long j3, long j10, HashMap hashMap) {
+    public h(String str, Integer num, m mVar, long j3, long j10, HashMap hashMap) {
         this.a = str;
         this.b = num;
-        this.c = lVar;
+        this.c = mVar;
         this.d = j3;
         this.e = j10;
         this.f = hashMap;
@@ -43,11 +43,11 @@ public final class h {
         }
         nVar.a = str;
         nVar.b = this.b;
-        l lVar = this.c;
-        if (lVar == null) {
+        m mVar = this.c;
+        if (mVar == null) {
             throw new NullPointerException("Null encodedPayload");
         }
-        nVar.c = lVar;
+        nVar.c = mVar;
         nVar.d = Long.valueOf(this.d);
         nVar.e = Long.valueOf(this.e);
         nVar.f = new HashMap(this.f);

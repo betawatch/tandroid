@@ -32,23 +32,23 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.ig0;
+import org.telegram.ui.Components.lg0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sh;
-import org.telegram.ui.Components.tv0;
 import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.vv0;
 import org.webrtc.RendererCommon;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class j1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final tv0 b0 = new tv0(new ig0(17), new ig0(18));
-    public static final tv0 c0 = new tv0(new ig0(19), new ig0(20));
+    public static final vv0 b0 = new vv0(new lg0(17), new lg0(18));
+    public static final vv0 c0 = new vv0(new lg0(19), new lg0(20));
     public static final j1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
-    public n2.e G;
+    public l.d G;
     public boolean H;
     public boolean I;
     public View J;
@@ -164,7 +164,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         if (i11 >= 23) {
             j1Var.F.setStylusScaleEnabled(false);
         }
-        j1Var.G = new n2.e(activity2, new h1(j1Var, scaledTouchSlop));
+        j1Var.G = new l.d(activity2, new h1(j1Var, scaledTouchSlop));
         j1Var.e = new n6(j1Var, activity2);
         org.telegram.ui.f fVar = new org.telegram.ui.f(j1Var, activity2, i10);
         j1Var.d = fVar;

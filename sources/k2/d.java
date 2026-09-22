@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Handler;
 import ci.g7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class d extends ContentObserver {
     public final ContentResolver a;
@@ -25,6 +25,6 @@ public final class d extends ContentObserver {
     @Override // android.database.ContentObserver
     public final void onChange(boolean z10) {
         g7 g7Var = this.c;
-        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (a6.m) g7Var.i));
+        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (e) g7Var.i));
     }
 }

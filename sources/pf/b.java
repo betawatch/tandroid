@@ -3,12 +3,12 @@ package pf;
 import android.graphics.Rect;
 import android.view.Choreographer;
 import java.util.ArrayList;
+import vh.h;
 import vh.i;
-import vh.j;
 import w7.q;
 import yf.x;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -51,17 +51,17 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                 ((Runnable) this.b).run();
                 break;
             case 2:
-                j jVar = (j) this.b;
-                Rect rect = jVar.m;
+                i iVar = (i) this.b;
+                Rect rect = iVar.m;
                 long currentTimeMillis = System.currentTimeMillis();
-                if (currentTimeMillis - jVar.h > 32 && !jVar.j && !rect.isEmpty()) {
-                    jVar.h = currentTimeMillis;
-                    jVar.j = true;
-                    jVar.o.set(rect);
-                    jVar.a.postRunnable(new i(jVar, (jVar.d + 1) % 2, 0));
+                if (currentTimeMillis - iVar.h > 32 && !iVar.j && !rect.isEmpty()) {
+                    iVar.h = currentTimeMillis;
+                    iVar.j = true;
+                    iVar.o.set(rect);
+                    iVar.a.postRunnable(new h(iVar, (iVar.d + 1) % 2, 0));
                 }
                 rect.set(0, 0, 0, 0);
-                jVar.l = false;
+                iVar.l = false;
                 break;
             default:
                 x xVar = (x) this.b;

@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -36,13 +36,13 @@ public final /* synthetic */ class vf implements View.OnLongClickListener {
                 zn znVar2 = this.b;
                 int i10 = znVar2.nb;
                 if (i10 == 1 && (messageObject2 = znVar2.p5) != null) {
-                    znVar2.F(messageObject2.getId(), 0, 0, 0, true, true);
+                    znVar2.E(messageObject2.getId(), 0, 0, 0, true, true);
                     return true;
                 }
                 if (znVar2.f5 == null || i10 != 2 || (messageObject = znVar2.n5) == null) {
                     return false;
                 }
-                znVar2.F(messageObject.getId(), 0, 0, 0, true, true);
+                znVar2.E(messageObject.getId(), 0, 0, 0, true, true);
                 return true;
         }
     }

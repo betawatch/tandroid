@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ss extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.t40 {
     public qs E;
@@ -52,7 +52,7 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
     public TLRPC.Photo T;
     public org.telegram.ui.Components.v9 U;
     public FrameLayout V;
-    public org.telegram.ui.Components.s61 W;
+    public org.telegram.ui.Components.u61 W;
     public boolean X;
     public boolean Y;
     public MessageObject Z;
@@ -559,9 +559,9 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
             int i17 = org.telegram.ui.ActionBar.j6.v6;
             int i18 = org.telegram.ui.ActionBar.j6.u6;
             s8Var2.e(i17, i18);
-            final org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.photo_suggest_icon, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+            final org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.photo_suggest_icon, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
             this.x.e.setTranslationX(-AndroidUtilities.dp(8.0f));
-            this.x.e.setAnimation(hj0Var);
+            this.x.e.setAnimation(kj0Var);
             this.x.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ns
                 public final /* synthetic */ ss b;
 
@@ -582,7 +582,7 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
                             ai.f fVar = new ai.f(18);
                             final int i19 = 1;
-                            final org.telegram.ui.Components.hj0 hj0Var2 = hj0Var;
+                            final org.telegram.ui.Components.kj0 kj0Var2 = kj0Var;
                             u40Var.o(z12, fVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ls
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
@@ -590,32 +590,32 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                                         case 0:
                                             ss ssVar2 = ssVar;
                                             boolean h10 = ssVar2.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var3 = hj0Var2;
+                                            org.telegram.ui.Components.kj0 kj0Var3 = kj0Var2;
                                             if (!h10) {
-                                                hj0Var3.P(86);
+                                                kj0Var3.P(86);
                                                 ssVar2.y.e.d();
                                                 break;
                                             } else {
-                                                hj0Var3.N(0, false, false);
+                                                kj0Var3.N(0, false, false);
                                                 break;
                                             }
                                         default:
                                             ss ssVar3 = ssVar;
                                             boolean h11 = ssVar3.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var4 = hj0Var2;
+                                            org.telegram.ui.Components.kj0 kj0Var4 = kj0Var2;
                                             if (!h11) {
-                                                hj0Var4.P(85);
+                                                kj0Var4.P(85);
                                                 ssVar3.x.e.d();
                                                 break;
                                             } else {
-                                                hj0Var4.N(0, false, false);
+                                                kj0Var4.N(0, false, false);
                                                 break;
                                             }
                                     }
                                 }
                             }, 2);
-                            hj0Var2.M(0);
-                            hj0Var2.P(43);
+                            kj0Var2.M(0);
+                            kj0Var2.P(43);
                             ssVar.x.e.d();
                             break;
                         default:
@@ -628,7 +628,7 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
                             ai.f fVar2 = new ai.f(18);
                             final int i20 = 0;
-                            final org.telegram.ui.Components.hj0 hj0Var3 = hj0Var;
+                            final org.telegram.ui.Components.kj0 kj0Var3 = kj0Var;
                             u40Var2.o(z13, fVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ls
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
@@ -636,32 +636,32 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                                         case 0:
                                             ss ssVar22 = ssVar2;
                                             boolean h10 = ssVar22.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var32 = hj0Var3;
+                                            org.telegram.ui.Components.kj0 kj0Var32 = kj0Var3;
                                             if (!h10) {
-                                                hj0Var32.P(86);
+                                                kj0Var32.P(86);
                                                 ssVar22.y.e.d();
                                                 break;
                                             } else {
-                                                hj0Var32.N(0, false, false);
+                                                kj0Var32.N(0, false, false);
                                                 break;
                                             }
                                         default:
                                             ss ssVar3 = ssVar2;
                                             boolean h11 = ssVar3.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var4 = hj0Var3;
+                                            org.telegram.ui.Components.kj0 kj0Var4 = kj0Var3;
                                             if (!h11) {
-                                                hj0Var4.P(85);
+                                                kj0Var4.P(85);
                                                 ssVar3.x.e.d();
                                                 break;
                                             } else {
-                                                hj0Var4.N(0, false, false);
+                                                kj0Var4.N(0, false, false);
                                                 break;
                                             }
                                     }
                                 }
                             }, 1);
-                            hj0Var3.M(0);
-                            hj0Var3.P(43);
+                            kj0Var3.M(0);
+                            kj0Var3.P(43);
                             ssVar2.y.e.d();
                             break;
                     }
@@ -672,9 +672,9 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
             s8Var3.m(R.drawable.msg_addphoto, LocaleController.formatString(R.string.UserSetPhoto, user.first_name), false);
             this.y.setBackground(org.telegram.ui.ActionBar.j6.J0(f6Var, true));
             this.y.e(i17, i18);
-            final org.telegram.ui.Components.hj0 hj0Var2 = new org.telegram.ui.Components.hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+            final org.telegram.ui.Components.kj0 kj0Var2 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
             this.y.e.setTranslationX(-AndroidUtilities.dp(8.0f));
-            this.y.e.setAnimation(hj0Var2);
+            this.y.e.setAnimation(kj0Var2);
             this.y.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ns
                 public final /* synthetic */ ss b;
 
@@ -695,7 +695,7 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
                             ai.f fVar = new ai.f(18);
                             final int i19 = 1;
-                            final org.telegram.ui.Components.hj0 hj0Var22 = hj0Var2;
+                            final org.telegram.ui.Components.kj0 kj0Var22 = kj0Var2;
                             u40Var.o(z12, fVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ls
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
@@ -703,32 +703,32 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                                         case 0:
                                             ss ssVar22 = ssVar;
                                             boolean h10 = ssVar22.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var32 = hj0Var22;
+                                            org.telegram.ui.Components.kj0 kj0Var32 = kj0Var22;
                                             if (!h10) {
-                                                hj0Var32.P(86);
+                                                kj0Var32.P(86);
                                                 ssVar22.y.e.d();
                                                 break;
                                             } else {
-                                                hj0Var32.N(0, false, false);
+                                                kj0Var32.N(0, false, false);
                                                 break;
                                             }
                                         default:
                                             ss ssVar3 = ssVar;
                                             boolean h11 = ssVar3.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var4 = hj0Var22;
+                                            org.telegram.ui.Components.kj0 kj0Var4 = kj0Var22;
                                             if (!h11) {
-                                                hj0Var4.P(85);
+                                                kj0Var4.P(85);
                                                 ssVar3.x.e.d();
                                                 break;
                                             } else {
-                                                hj0Var4.N(0, false, false);
+                                                kj0Var4.N(0, false, false);
                                                 break;
                                             }
                                     }
                                 }
                             }, 2);
-                            hj0Var22.M(0);
-                            hj0Var22.P(43);
+                            kj0Var22.M(0);
+                            kj0Var22.P(43);
                             ssVar.x.e.d();
                             break;
                         default:
@@ -741,7 +741,7 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
                             ai.f fVar2 = new ai.f(18);
                             final int i20 = 0;
-                            final org.telegram.ui.Components.hj0 hj0Var3 = hj0Var2;
+                            final org.telegram.ui.Components.kj0 kj0Var3 = kj0Var2;
                             u40Var2.o(z13, fVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ls
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
@@ -749,32 +749,32 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
                                         case 0:
                                             ss ssVar22 = ssVar2;
                                             boolean h10 = ssVar22.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var32 = hj0Var3;
+                                            org.telegram.ui.Components.kj0 kj0Var32 = kj0Var3;
                                             if (!h10) {
-                                                hj0Var32.P(86);
+                                                kj0Var32.P(86);
                                                 ssVar22.y.e.d();
                                                 break;
                                             } else {
-                                                hj0Var32.N(0, false, false);
+                                                kj0Var32.N(0, false, false);
                                                 break;
                                             }
                                         default:
                                             ss ssVar3 = ssVar2;
                                             boolean h11 = ssVar3.P.h();
-                                            org.telegram.ui.Components.hj0 hj0Var4 = hj0Var3;
+                                            org.telegram.ui.Components.kj0 kj0Var4 = kj0Var3;
                                             if (!h11) {
-                                                hj0Var4.P(85);
+                                                kj0Var4.P(85);
                                                 ssVar3.x.e.d();
                                                 break;
                                             } else {
-                                                hj0Var4.N(0, false, false);
+                                                kj0Var4.N(0, false, false);
                                                 break;
                                             }
                                     }
                                 }
                             }, 1);
-                            hj0Var3.M(0);
-                            hj0Var3.P(43);
+                            kj0Var3.M(0);
+                            kj0Var3.P(43);
                             ssVar2.y.e.d();
                             break;
                     }
@@ -810,9 +810,9 @@ public final class ss extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
             g0();
         }
-        org.telegram.ui.Components.s61 s61Var = new org.telegram.ui.Components.s61(this, new b5(this, 7), new y0(this, i16), null);
-        this.W = s61Var;
-        s61Var.q1();
+        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(this, new b5(this, 7), new y0(this, i16), null);
+        this.W = u61Var;
+        u61Var.q1();
         this.W.setOnScrollListener(new ii.m3(4, this, frameLayout));
         this.W.setBackgroundColor(getThemedColor(i13));
         frameLayout.addView(this.W, w7.y5.e(-1, -1, 119));

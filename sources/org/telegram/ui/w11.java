@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class w11 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -58,7 +58,7 @@ public final class w11 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public int X;
     public int Y;
     public boolean Z;
-    public org.telegram.ui.Components.vl0 a;
+    public org.telegram.ui.Components.yl0 a;
     public boolean a0;
     public u11 b;
     public AnimatorSet c;
@@ -206,10 +206,10 @@ public final class w11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 int childCount = w11Var.a.getChildCount();
                 ArrayList arrayList = new ArrayList();
                 while (i11 < childCount) {
-                    org.telegram.ui.Components.fl0 fl0Var = (org.telegram.ui.Components.fl0) w11Var.a.U(w11Var.a.getChildAt(i11));
-                    int i15 = fl0Var.f;
-                    View view2 = fl0Var.a;
-                    int b10 = fl0Var.b();
+                    org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) w11Var.a.U(w11Var.a.getChildAt(i11));
+                    int i15 = il0Var.f;
+                    View view2 = il0Var.a;
+                    int b10 = il0Var.b();
                     if (b10 != w11Var.y && b10 != w11Var.W) {
                         if (i15 == 0) {
                             ((org.telegram.ui.Cells.n4) view2).a(arrayList, w11Var.n);
@@ -503,14 +503,14 @@ public final class w11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             k4Var.setValue((c11 / 60) - 1);
             k4Var.setWrapSelectorWheel(false);
             k4Var.setFormatter(new es(24));
-            org.telegram.ui.Components.cd0 cd0Var = new org.telegram.ui.Components.cd0(parentActivity2, f6Var);
-            cd0Var.setMinValue(0);
-            cd0Var.setMaxValue(0);
-            cd0Var.setTextColor(f02);
-            cd0Var.setValue(0);
-            cd0Var.setWrapSelectorWheel(false);
-            cd0Var.setFormatter(new es(25));
-            org.telegram.ui.Components.v3 v3Var = new org.telegram.ui.Components.v3(parentActivity2, j4Var, k4Var, cd0Var);
+            org.telegram.ui.Components.fd0 fd0Var = new org.telegram.ui.Components.fd0(parentActivity2, f6Var);
+            fd0Var.setMinValue(0);
+            fd0Var.setMaxValue(0);
+            fd0Var.setTextColor(f02);
+            fd0Var.setValue(0);
+            fd0Var.setWrapSelectorWheel(false);
+            fd0Var.setFormatter(new es(25));
+            org.telegram.ui.Components.v3 v3Var = new org.telegram.ui.Components.v3(parentActivity2, j4Var, k4Var, fd0Var);
             v3Var.setOrientation(1);
             FrameLayout frameLayout = new FrameLayout(parentActivity2);
             v3Var.addView(frameLayout, w7.y5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -527,7 +527,7 @@ public final class w11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             v3Var.addView(linearLayout, w7.y5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
             ai.p4 p4Var = new ai.p4(parentActivity2, 18);
             linearLayout.addView(j4Var, w7.y5.l(0.4f, 0, 270));
-            linearLayout.addView(cd0Var, w7.y5.o(0, -2, 0.2f, 16));
+            linearLayout.addView(fd0Var, w7.y5.o(0, -2, 0.2f, 16));
             linearLayout.addView(k4Var, w7.y5.l(0.4f, 0, 270));
             p4Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
             p4Var.setGravity(17);
@@ -601,15 +601,15 @@ public final class w11 extends org.telegram.ui.ActionBar.n2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, f6Var));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.a = vl0Var;
-        vl0Var.q1();
+        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
+        this.a = yl0Var;
+        yl0Var.q1();
         this.actionBar.setAdaptiveBackground(this.a);
         frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.vl0 vl0Var2 = this.a;
+        org.telegram.ui.Components.yl0 yl0Var2 = this.a;
         u11 u11Var = new u11(this, context);
         this.b = u11Var;
-        vl0Var2.setAdapter(u11Var);
+        yl0Var2.setAdapter(u11Var);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
         this.a.setLayoutManager(new gg.b0(17));

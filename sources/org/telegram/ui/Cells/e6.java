@@ -27,12 +27,12 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Components.yg;
+import org.telegram.ui.Components.yy0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class e6 extends FrameLayout implements wy0, le.d {
+public class e6 extends FrameLayout implements yy0, le.d {
     public Integer E;
     public final le.b a;
     public final le.b b;
@@ -181,7 +181,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         ah ahVar;
         if (i10 == 0) {
             np npVar = this.r;
@@ -216,7 +216,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public final void a(ci.i2 i2Var) {
         this.d.addTextChangedListener(i2Var);
     }
@@ -230,7 +230,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
         this.e = dVar;
         dVar.setFocusable(false);
         this.e.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Vh, this.c), 1, -1));
-        w7.b6.a(this.e);
+        w7.a6.a(this.e);
         qh.d dVar2 = this.e;
         boolean z10 = LocaleController.isRTL;
         addView(dVar2, w7.y5.d(48, 50.0f, (z10 ? 3 : 5) | 48, z10 ? 4.0f : 0.0f, 0.0f, z10 ? 0.0f : 4.0f, 0.0f));
@@ -281,12 +281,12 @@ public class e6 extends FrameLayout implements wy0, le.d {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public EditTextBoldCursor getEditField() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public Editable getEditText() {
         return this.d.getText();
     }
@@ -295,7 +295,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
         return this.y;
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public CharSequence getFieldText() {
         d6 d6Var = this.d;
         if (d6Var.length() > 0) {
@@ -304,7 +304,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public org.telegram.ui.ActionBar.n2 getParentFragment() {
         return null;
     }
@@ -468,7 +468,7 @@ public class e6 extends FrameLayout implements wy0, le.d {
         this.b.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.wy0
+    @Override // org.telegram.ui.Components.yy0
     public void setFieldText(CharSequence charSequence) {
         this.d.setText(charSequence);
     }

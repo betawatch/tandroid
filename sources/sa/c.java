@@ -29,7 +29,7 @@ import org.telegram.ui.Cells.c1;
 import qa.e;
 import v7.j0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -207,7 +207,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo e7;
+        PackageInfo b10;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -226,19 +226,19 @@ public final class c {
             if (eVar != null) {
                 try {
                     httpURLConnection.addRequestProperty("x-firebase-client", (String) Tasks.await(((na.c) eVar).b()));
-                } catch (InterruptedException e10) {
+                } catch (InterruptedException e7) {
                     Thread.currentThread().interrupt();
+                    Log.w("ContentValues", "Failed to get heartbeats header", e7);
+                } catch (ExecutionException e10) {
                     Log.w("ContentValues", "Failed to get heartbeats header", e10);
-                } catch (ExecutionException e11) {
-                    Log.w("ContentValues", "Failed to get heartbeats header", e11);
                 }
             }
             String str2 = null;
             try {
-                e7 = w6.b.a(context).e(64, context.getPackageName());
-                signatureArr = e7.signatures;
-            } catch (PackageManager.NameNotFoundException e12) {
-                Log.e("ContentValues", "No such package: " + context.getPackageName(), e12);
+                b10 = w6.b.a(context).b(64, context.getPackageName());
+                signatureArr = b10.signatures;
+            } catch (PackageManager.NameNotFoundException e11) {
+                Log.e("ContentValues", "No such package: " + context.getPackageName(), e11);
             }
             if (signatureArr != null && signatureArr.length == 1) {
                 int i10 = 0;
@@ -257,7 +257,7 @@ public final class c {
                     i10++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(e7.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {

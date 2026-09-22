@@ -9,9 +9,9 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public class rx extends um0 {
+public class rx extends wm0 {
     public boolean A0;
     public boolean B0;
     public VelocityTracker C0;
@@ -31,7 +31,7 @@ public class rx extends um0 {
         this.u0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.um0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wm0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -60,7 +60,7 @@ public class rx extends um0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.um0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.wm0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         kz kzVar = this.D0;
@@ -157,8 +157,8 @@ public class rx extends um0 {
                 c2.a aVar = (c2.a) kzVar.O0;
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) aVar.c;
                 if (aVar.d()) {
-                    chatActivityEnterView.D3 = false;
-                    if ((!aVar.a || yVelocity < AndroidUtilities.dp(200.0f)) && ((aVar.a || yVelocity > AndroidUtilities.dp(-200.0f)) && ((!(z10 = aVar.a) || chatActivityEnterView.B3 > 0.6f) && (z10 || chatActivityEnterView.B3 < 0.4f)))) {
+                    chatActivityEnterView.E3 = false;
+                    if ((!aVar.a || yVelocity < AndroidUtilities.dp(200.0f)) && ((aVar.a || yVelocity > AndroidUtilities.dp(-200.0f)) && ((!(z10 = aVar.a) || chatActivityEnterView.C3 > 0.6f) && (z10 || chatActivityEnterView.C3 < 0.4f)))) {
                         chatActivityEnterView.m1(z10, true, true, true);
                     } else {
                         chatActivityEnterView.m1(!aVar.a, true, true, true);
@@ -167,8 +167,8 @@ public class rx extends um0 {
             } else {
                 c2.a aVar2 = (c2.a) kzVar.O0;
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) aVar2.c;
-                if (chatActivityEnterView2.w3) {
-                    chatActivityEnterView2.D3 = false;
+                if (chatActivityEnterView2.x3) {
+                    chatActivityEnterView2.E3 = false;
                     chatActivityEnterView2.m1(aVar2.a, true, false, true);
                 }
             }
@@ -182,14 +182,14 @@ public class rx extends um0 {
             ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) aVar3.c;
             if (aVar3.d()) {
                 Point point = AndroidUtilities.displaySize;
-                int max = Math.max(Math.min(round + aVar3.b, 0), -(chatActivityEnterView3.C3 - (point.x > point.y ? chatActivityEnterView3.x2 : chatActivityEnterView3.w2)));
-                if (chatActivityEnterView3.c5 == null) {
+                int max = Math.max(Math.min(round + aVar3.b, 0), -(chatActivityEnterView3.D3 - (point.x > point.y ? chatActivityEnterView3.y2 : chatActivityEnterView3.x2)));
+                if (chatActivityEnterView3.d5 == null) {
                     float f10 = max;
                     chatActivityEnterView3.U0.setTranslationY(f10);
                     chatActivityEnterView3.setTranslationY(f10);
                 }
-                chatActivityEnterView3.B3 = max / (-(chatActivityEnterView3.C3 - r4));
-                chatActivityEnterView3.l1.invalidate();
+                chatActivityEnterView3.C3 = max / (-(chatActivityEnterView3.D3 - r4));
+                chatActivityEnterView3.m1.invalidate();
             }
         }
         cancelLongPress();

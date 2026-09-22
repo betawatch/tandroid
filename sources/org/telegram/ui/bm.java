@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class bm extends tu0 {
     public final /* synthetic */ MessageObject a;
@@ -31,13 +31,13 @@ public final class bm extends tu0 {
         MediaController.PhotoEntry photoEntry = this.b;
         if (photoEntry.imagePath != null || photoEntry.isVideo) {
             zn znVar = lmVar.Q;
-            cj cjVar = new cj(messageObject, 4);
+            dj djVar = new dj(messageObject, 4);
             org.telegram.ui.ActionBar.d5 parentLayout = znVar.getParentLayout();
             int currentAccount = znVar.getCurrentAccount();
             org.telegram.ui.Components.u40 u40Var = new org.telegram.ui.Components.u40(0, true, true);
             u40Var.a = znVar;
             u40Var.t(photoEntry);
-            u40Var.b = new ea(currentAccount, cjVar, parentLayout, u40Var);
+            u40Var.b = new ea(currentAccount, djVar, parentLayout, u40Var);
             return;
         }
         TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();

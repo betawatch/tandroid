@@ -20,9 +20,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class fz extends ul0 {
+public final class fz extends xl0 {
     public int L;
     public int M;
     public String N;
@@ -62,7 +62,7 @@ public final class fz extends ul0 {
         ezVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 7;
     }
@@ -457,6 +457,6 @@ public final class fz extends ul0 {
                 f2Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(68.0f)));
                 break;
         }
-        return new fl0(f2Var);
+        return new il0(f2Var);
     }
 }

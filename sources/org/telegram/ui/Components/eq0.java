@@ -1,138 +1,58 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class eq0 extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ fq0 x;
+public final class eq0 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final Rect b;
+    public final /* synthetic */ wq0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eq0(fq0 fq0Var, fq0 fq0Var2) {
-        super(fq0Var2);
-        this.x = fq0Var;
+    public eq0(wq0 wq0Var, int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = wq0Var;
+                this.b = new Rect();
+                break;
+            default:
+                this.c = wq0Var;
+                this.b = new Rect();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final boolean b() {
-        uq0 uq0Var = this.x.H0;
-        if (uq0Var.isDismissed() || !uq0Var.Y) {
-            return false;
-        }
-        return !uq0Var.d.m();
-    }
-
-    /* JADX WARN: Incorrect condition in loop: B:3:0x000f */
-    @Override // org.telegram.ui.ActionBar.p1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void e(float f7, float f10, boolean z10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        fq0 fq0Var = this.x;
-        uq0 uq0Var = fq0Var.H0;
-        int i10 = uq0.a1;
-        for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.f3) uq0Var).containerView;
-            View childAt = viewGroup2.getChildAt(i11);
-            if (childAt != uq0Var.h && childAt != uq0Var.v && childAt != uq0Var.S[1] && childAt != uq0Var.x && childAt != uq0Var.c && childAt != uq0Var.c0 && childAt != uq0Var.f) {
-                childAt.setTranslationY(f7);
-            }
-        }
-        wp0 wp0Var = uq0Var.F;
-        uq0Var.t0 = f7;
-        int i12 = fq0Var.B0;
-        if (i12 != -1) {
-            if (!z10) {
-                f10 = 1.0f - f10;
-            }
-            float f11 = 1.0f - f10;
-            uq0Var.p0 = (int) ((fq0Var.C0 * f10) + (i12 * f11));
-            float f12 = ((i12 - r6) * f11) + f7;
-            wp0Var.setTranslationY(f12);
-            if (z10) {
-                uq0Var.G.setTranslationY(f12);
-            } else {
-                uq0Var.G.setTranslationY(f12 + uq0Var.F.getPaddingTop());
-            }
-        } else {
-            int i13 = fq0Var.D0;
-            if (i13 != -1) {
-                float f13 = 1.0f - f10;
-                uq0Var.p0 = (int) ((fq0Var.E0 * f10) + (i13 * f13));
-                if (!z10) {
-                    f13 = f10;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        wq0 wq0Var;
+        org.telegram.ui.ActionBar.n1 n1Var;
+        wq0 wq0Var2;
+        org.telegram.ui.ActionBar.n1 n1Var2;
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getActionMasked() == 0 && (n1Var = (wq0Var = this.c).J0) != null && n1Var.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        wq0Var.J0.d(true);
+                        break;
+                    }
                 }
-                if (z10) {
-                    wp0Var.setTranslationY(f7 - ((i13 - r6) * f10));
-                } else {
-                    wp0Var.setTranslationY(((r6 - i13) * f13) + f7);
+                break;
+            default:
+                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (wq0Var2 = this.c).J0) != null && n1Var2.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        wq0Var2.J0.d(true);
+                        break;
+                    }
                 }
-            }
+                break;
         }
-        uq0Var.F.setTopGlowOffset((int) (uq0Var.p0 + uq0Var.t0));
-        uq0Var.b.setTranslationY(uq0Var.p0 + uq0Var.t0);
-        uq0Var.Q.setTranslationY(uq0Var.p0 + uq0Var.t0);
-        uq0Var.c.invalidate();
-        uq0Var.setCurrentPanTranslationY(uq0Var.t0);
-        uq0Var.Y0();
-        fq0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void f() {
-        uq0 uq0Var = this.x.H0;
-        zp0 zp0Var = uq0Var.d;
-        if (zp0Var == null || !zp0Var.m()) {
-            int i10 = uq0Var.N0;
-            AndroidUtilities.dp(20.0f);
-        }
-        uq0Var.r0 = false;
-        int i11 = uq0Var.p0;
-        uq0Var.q0 = i11;
-        uq0Var.F.setTopGlowOffset(i11);
-        uq0Var.b.setTranslationY(uq0Var.p0);
-        uq0Var.Q.setTranslationY(uq0Var.p0);
-        uq0Var.F.setTranslationY(0.0f);
-        uq0Var.G.setTranslationY(0.0f);
-        uq0Var.Y0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(int i10, boolean z10) {
-        fq0 fq0Var = this.x;
-        uq0 uq0Var = fq0Var.H0;
-        int i11 = uq0Var.q0;
-        int i12 = uq0Var.p0;
-        if (i11 != i12) {
-            fq0Var.B0 = i11;
-            fq0Var.C0 = i12;
-            uq0Var.r0 = true;
-            uq0Var.p0 = i11;
-        } else {
-            fq0Var.B0 = -1;
-        }
-        int i13 = fq0Var.z0;
-        int i14 = fq0Var.A0;
-        if (i13 != i14) {
-            fq0Var.D0 = 0;
-            fq0Var.E0 = 0;
-            uq0Var.r0 = true;
-            if (z10) {
-                fq0Var.E0 = i13 - i14;
-            } else {
-                fq0Var.E0 = 0 - (i13 - i14);
-            }
-            uq0Var.p0 = z10 ? fq0Var.B0 : fq0Var.C0;
-        } else {
-            fq0Var.D0 = -1;
-        }
-        uq0Var.F.setTopGlowOffset((int) (uq0Var.t0 + uq0Var.p0));
-        uq0Var.b.setTranslationY(uq0Var.t0 + uq0Var.p0);
-        uq0Var.Q.setTranslationY(uq0Var.t0 + uq0Var.p0);
-        fq0Var.invalidate();
+        return false;
     }
 }

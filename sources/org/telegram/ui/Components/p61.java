@@ -1,20 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class p61 extends nz {
-    public final /* synthetic */ s61 X;
+public abstract class p61 extends org.telegram.ui.ActionBar.n2 {
+    public o61 a;
+    public hg.q1 b;
+    public int c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p61(s61 s61Var, int i10) {
-        super(i10, false);
-        this.X = s61Var;
+    public p61() {
+        super(null);
+        this.c = -1;
     }
 
-    @Override // s4.c0
-    public final int W0(s4.z0 z0Var) {
-        return this.X.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
+    public abstract void U(ArrayList arrayList, m61 m61Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(y51 y51Var, View view);
+
+    public abstract boolean X(y51 y51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public View createView(Context context) {
+        hg.k0.v(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ro(this, 13));
+        hg.q1 q1Var = new hg.q1(context, null, 1);
+        this.b = q1Var;
+        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        o61 o61Var = new o61(this, this, new d(this, 22), new n61(this), new n61(this));
+        this.a = o61Var;
+        this.b.addView(o61Var, w7.y5.c(-1.0f, -1));
+        hg.q1 q1Var2 = this.b;
+        this.fragmentView = q1Var2;
+        return q1Var2;
     }
 }

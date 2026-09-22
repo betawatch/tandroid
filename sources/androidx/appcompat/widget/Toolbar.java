@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import k2.e;
+import ki.e0;
 import l.l;
 import l.n;
 import lf.h;
@@ -50,7 +52,7 @@ import r0.i0;
 import v7.w7;
 import w7.p;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -75,7 +77,7 @@ public class Toolbar extends ViewGroup {
     public ActionMenuView a;
     public ArrayList a0;
     public z0 b;
-    public final ka.c b0;
+    public final e b0;
     public z0 c;
     public l3 c0;
     public u d;
@@ -270,9 +272,9 @@ public class Toolbar extends ViewGroup {
             actionMenuView.setPopupTheme(this.v);
             this.a.setOnMenuItemClickListener(this.b0);
             ActionMenuView actionMenuView2 = this.a;
-            k2.u uVar = new k2.u(this, 5);
+            e0 e0Var = new e0(this, 3);
             actionMenuView2.getClass();
-            actionMenuView2.K = uVar;
+            actionMenuView2.K = e0Var;
             h3 h = h();
             h.a = (this.y & 112) | 8388613;
             this.a.setLayoutParams(h);
@@ -1572,7 +1574,7 @@ public class Toolbar extends ViewGroup {
         this.V = new int[2];
         this.W = new h(new e3(this, 1));
         this.a0 = new ArrayList();
-        this.b0 = new ka.c(this, 2);
+        this.b0 = new e(this, 3);
         this.j0 = new q4(this, 26);
         Context context2 = getContext();
         int[] iArr = f.a.x;

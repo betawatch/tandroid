@@ -9,7 +9,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class kp0 extends FrameLayout {
     public long a;
@@ -29,7 +29,7 @@ public final class kp0 extends FrameLayout {
         this.e = f1Var;
         frameLayout.setBackground(f1Var);
         addView(frameLayout, w7.y5.e(-1, -1, 119));
-        w7.b6.b(frameLayout, 0.025f, 1.25f);
+        w7.a6.b(frameLayout, 0.025f, 1.25f);
         org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
         this.f = v9Var;
         frameLayout.addView(v9Var, w7.y5.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));

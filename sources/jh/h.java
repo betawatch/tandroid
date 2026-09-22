@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.wq;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements le.d {
     public static final int[] s;
@@ -45,7 +45,7 @@ public final class h extends FrameLayout implements le.d {
     }
 
     @Override // le.d
-    public final void D(int i10, float f7, float f10, le.e eVar) {
+    public final void H(int i10, float f7, float f10, le.e eVar) {
         int i11 = i10 >> 16;
         int i12 = i10 & 65535;
         if (i11 >= 0) {
@@ -139,7 +139,7 @@ public final class h extends FrameLayout implements le.d {
                 bVar3.b = d;
                 bVar3.addView(d, y5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                b6.b(bVar3, 0.13f, 2.0f);
+                a6.b(bVar3, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
                 bVar3.setPivotX(AndroidUtilities.dp(f7));
                 bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));

@@ -20,10 +20,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.fz;
-import org.telegram.ui.Components.hx0;
-import org.telegram.ui.Components.j11;
-import org.telegram.ui.Components.k11;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.rl;
 import org.telegram.ui.Components.sh;
 import org.telegram.ui.PhotoViewer;
@@ -32,7 +32,7 @@ import org.telegram.ui.rf0;
 import org.telegram.ui.t51;
 import org.telegram.ui.ur0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class hd implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -149,7 +149,7 @@ public final /* synthetic */ class hd implements Utilities.Callback {
                     photoViewer.t5.setCutOutState(true);
                     photoViewer.W2(false, true);
                 } else {
-                    l11 thanosEffect = photoViewer.p5.getThanosEffect();
+                    n11 thanosEffect = photoViewer.p5.getThanosEffect();
                     qg.n2 n2Var2 = photoViewer.p5;
                     n2Var2.L = true;
                     n2Var2.E = k2Var;
@@ -290,12 +290,12 @@ public final /* synthetic */ class hd implements Utilities.Callback {
                                 jr0 jr0Var = new jr0(photoViewer, 13);
                                 rf0 rf0Var = new rf0(photoViewer, b10, jr0Var, 18);
                                 sh shVar = new sh(28);
-                                j11 j11Var = thanosEffect.a;
-                                if (j11Var != null) {
-                                    j11Var.c(matrix3, bitmap2, rf0Var, shVar);
+                                l11 l11Var = thanosEffect.a;
+                                if (l11Var != null) {
+                                    l11Var.c(matrix3, bitmap2, rf0Var, shVar);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new k11(matrix3, bitmap2, rf0Var, shVar));
+                                    thanosEffect.c.add(new m11(matrix3, bitmap2, rf0Var, shVar));
                                 }
                                 AndroidUtilities.runOnUIThread(jr0Var, 1200L);
                             }
@@ -314,7 +314,7 @@ public final /* synthetic */ class hd implements Utilities.Callback {
                     runnable2.run();
                     break;
                 } else {
-                    hx0.y3.fetch(UserConfig.selectedAccount, str2, new t51(linkedHashSet, runnable2, 1));
+                    jx0.y3.fetch(UserConfig.selectedAccount, str2, new t51(linkedHashSet, runnable2, 1));
                     break;
                 }
         }

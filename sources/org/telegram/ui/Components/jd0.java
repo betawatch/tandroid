@@ -1,23 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Typeface;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class jd0 {
-    public Paint a;
-    public Paint b;
-    public View c;
-    public i2.z d;
-    public long e;
-    public RectF f;
-    public float g;
-    public float h;
-    public float i;
-    public Path j;
-    public boolean k;
-    public boolean l;
+public final class jd0 extends kd0 {
+    public final ci.h2 L;
+
+    public jd0(Context context) {
+        super(context, null);
+        ci.h2 h2Var = new ci.h2(this, context, 5);
+        this.L = h2Var;
+        h2Var.setTextSize(1, 18.0f);
+        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        h2Var.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        h2Var.setBackground(null);
+        h2Var.setSingleLine(true);
+        h2Var.setInputType(1);
+        h2Var.setTypeface(Typeface.DEFAULT);
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l6, false));
+        h2Var.setCursorWidth(1.5f);
+        h2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        e(h2Var);
+        addView(h2Var, w7.y5.e(-1, -2, 16));
+    }
+
+    public EditTextBoldCursor getEditText() {
+        return this.L;
+    }
+
+    public void setHint(String str) {
+        setText(str);
+    }
 }

@@ -7,7 +7,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m9 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class m9 implements Runnable {
                 break;
             case 5:
                 v9 v9Var4 = this.b;
-                v9Var4.T = new a4.m(16);
+                v9Var4.T = new android.support.v4.media.c(15);
                 Context context = ApplicationLoader.applicationContext;
                 com.google.android.gms.internal.vision.x1 x1Var = new com.google.android.gms.internal.vision.x1();
                 x1Var.a = 256;

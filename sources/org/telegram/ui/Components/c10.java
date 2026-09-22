@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c10 extends ab {
     public boolean A0;
@@ -145,11 +145,11 @@ public final class c10 extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final void G(aw0 aw0Var) {
-        vl0 vl0Var = this.d;
-        vl0Var.setOverScrollMode(2);
-        vl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
-        vl0Var.setOnItemClickListener(new j(this, 8));
+    public final void F(cw0 cw0Var) {
+        yl0 yl0Var = this.d;
+        yl0Var.setOverScrollMode(2);
+        yl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
+        yl0Var.setOnItemClickListener(new j(this, 8));
     }
 
     public final void Q(boolean z10) {
@@ -183,11 +183,11 @@ public final class c10 extends ab {
         z00Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new ci.y0(this, z00Var, z10, 19));
         Q(true);
         while (true) {
-            vl0 vl0Var = this.d;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 return;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.h4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
@@ -404,7 +404,7 @@ public final class c10 extends ab {
             this.y0.a("", null);
         } else {
             boolean z10 = this.i0.size() >= arrayList2.size() - arrayList.size();
-            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new bi.f(23, this, z10));
+            this.y0.a(LocaleController.getString(z10 ? R.string.DeselectAll : R.string.SelectAll), new bi.f(24, this, z10));
         }
     }
 
@@ -422,7 +422,7 @@ public final class c10 extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
+    public final xl0 v(yl0 yl0Var) {
         return new w00(this);
     }
 

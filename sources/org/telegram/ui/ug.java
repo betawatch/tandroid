@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug implements Runnable {
     public final /* synthetic */ int a;
@@ -48,9 +48,9 @@ public final /* synthetic */ class ug implements Runnable {
                 }
                 break;
             case 1:
-                lk lkVar = znVar.Y;
-                if (lkVar != null && znVar.Bc != null) {
-                    if (lkVar.t0()) {
+                mk mkVar = znVar.Y;
+                if (mkVar != null && znVar.Bc != null) {
+                    if (mkVar.t0()) {
                         znVar.Y.m0(false);
                         AndroidUtilities.showKeyboard(znVar.Bc.a);
                         znVar.Bc.b.a.a(false, true);
@@ -188,8 +188,8 @@ public final /* synthetic */ class ug implements Runnable {
                 znVar.yc(0, znVar.P5 != 0 && SystemClock.elapsedRealtime() >= znVar.P5 + 150);
                 break;
             case 23:
-                pk pkVar = znVar.R2;
-                if ((pkVar == null || pkVar.getVisibility() != 0) && (f4Var = znVar.w1) != null) {
+                qk qkVar = znVar.R2;
+                if ((qkVar == null || qkVar.getVisibility() != 0) && (f4Var = znVar.w1) != null) {
                     f4Var.u();
                     break;
                 }

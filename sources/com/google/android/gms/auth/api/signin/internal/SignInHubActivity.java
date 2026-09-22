@@ -4,7 +4,6 @@ import a0.n;
 import a6.b;
 import a6.d;
 import a6.i;
-import a6.m;
 import aa.a;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -18,10 +17,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.m;
 import java.lang.reflect.Modifier;
 import java.util.Set;
+import pb.c;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -49,11 +50,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i T2 = i.T(this);
+                i S = i.S(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (T2) {
-                    synchronized (T2) {
-                        ((b) T2.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (S) {
+                    synchronized (S) {
+                        ((b) S.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -176,8 +177,8 @@ public class SignInHubActivity extends v {
     }
 
     public final void v() {
-        w1.b bVar = (w1.b) new a(f(), w1.b.f).l(w1.b.class);
-        m mVar = new m(this, 0);
+        w1.b bVar = (w1.b) new a(f(), w1.b.f).n(w1.b.class);
+        c cVar = new c(this, 1);
         boolean z10 = bVar.e;
         n nVar = bVar.d;
         if (z10) {
@@ -190,7 +191,7 @@ public class SignInHubActivity extends v {
         if (aVar == null) {
             try {
                 bVar.e = true;
-                Set set = com.google.android.gms.common.api.m.a;
+                Set set = m.a;
                 synchronized (set) {
                 }
                 d dVar = new d(this, set);
@@ -200,7 +201,7 @@ public class SignInHubActivity extends v {
                 w1.a aVar2 = new w1.a(dVar);
                 nVar.d(0, aVar2);
                 bVar.e = false;
-                p pVar = new p(aVar2.l, mVar);
+                p pVar = new p(aVar2.l, cVar);
                 aVar2.d(this, pVar);
                 p pVar2 = aVar2.n;
                 if (pVar2 != null) {
@@ -213,7 +214,7 @@ public class SignInHubActivity extends v {
                 throw th2;
             }
         } else {
-            p pVar3 = new p(aVar.l, mVar);
+            p pVar3 = new p(aVar.l, cVar);
             aVar.d(this, pVar3);
             p pVar4 = aVar.n;
             if (pVar4 != null) {

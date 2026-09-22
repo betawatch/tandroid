@@ -19,7 +19,7 @@ import org.telegram.ui.Components.r50;
 import org.telegram.ui.mb1;
 import v7.z7;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class t0 {
     public final Object a;
@@ -108,7 +108,7 @@ public final class t0 {
         b();
         this.o = wVar;
         c();
-        long q6 = this.a.q(wVar.c, this.i, this.c, zArr, j3);
+        long r10 = this.a.r(wVar.c, this.i, this.c, zArr, j3);
         for (int i12 = 0; i12 < fVarArr.length; i12++) {
             if (fVarArr[i12].b == -2 && this.o.b(i12)) {
                 c1VarArr[i12] = new u2.q();
@@ -125,7 +125,7 @@ public final class t0 {
                 e2.d.g(wVar.c[i13] == null);
             }
         }
-        return q6;
+        return r10;
     }
 
     public final void b() {
@@ -171,8 +171,8 @@ public final class t0 {
         if (!this.e) {
             return this.g.b;
         }
-        long s10 = this.f ? this.a.s() : Long.MIN_VALUE;
-        return s10 == Long.MIN_VALUE ? this.g.e : s10;
+        long t10 = this.f ? this.a.t() : Long.MIN_VALUE;
+        return t10 == Long.MIN_VALUE ? this.g.e : t10;
     }
 
     public final long e() {
@@ -182,7 +182,7 @@ public final class t0 {
     /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Object, u2.d0] */
     public final void f(float f7, b2.k1 k1Var, boolean z10) {
         this.e = true;
-        this.n = this.a.r();
+        this.n = this.a.s();
         x2.w j3 = j(f7, k1Var, z10);
         u0 u0Var = this.g;
         long j10 = u0Var.b;
@@ -200,7 +200,7 @@ public final class t0 {
     /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.Object, u2.e1] */
     public final boolean g() {
         if (this.e) {
-            return !this.f || this.a.s() == Long.MIN_VALUE;
+            return !this.f || this.a.t() == Long.MIN_VALUE;
         }
         return false;
     }

@@ -1,74 +1,25 @@
 package w3;
 
-import c3.g0;
+import e2.v;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class q {
-    public final boolean a;
-    public final String b;
-    public final g0 c;
-    public final int d;
-    public final byte[] e;
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0052, code lost:
-    
-        if (r6.equals("cbc1") == false) goto L14;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public q(boolean z10, String str, int i10, byte[] bArr, int i11, int i12, byte[] bArr2) {
-        char c10 = 0;
-        int i13 = 1;
-        e2.d.b((i10 == 0) ^ (bArr2 == null));
-        this.a = z10;
-        this.b = str;
-        this.d = i10;
-        this.e = bArr2;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case 3046605:
-                    break;
-                case 3046671:
-                    if (str.equals("cbcs")) {
-                        c10 = 1;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 3049879:
-                    if (str.equals("cenc")) {
-                        c10 = 2;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 3049895:
-                    if (str.equals("cens")) {
-                        c10 = 3;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                default:
-                    c10 = 65535;
-                    break;
-            }
-            switch (c10) {
-                case 0:
-                case 1:
-                    i13 = 2;
-                    break;
-                case 2:
-                case 3:
-                    break;
-                default:
-                    e2.a.n("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
-                    break;
-            }
-        }
-        this.c = new g0(i13, i11, i12, bArr);
-    }
+    public d a;
+    public long b;
+    public long c;
+    public int d;
+    public int e;
+    public boolean k;
+    public p m;
+    public boolean o;
+    public long p;
+    public boolean q;
+    public long[] f = new long[0];
+    public int[] g = new int[0];
+    public int[] h = new int[0];
+    public long[] i = new long[0];
+    public boolean[] j = new boolean[0];
+    public boolean[] l = new boolean[0];
+    public final v n = new v();
 }

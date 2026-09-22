@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ok extends ni {
     public static final /* synthetic */ int g0 = 0;
@@ -228,14 +228,14 @@ public final class ok extends ni {
         this.y = new nk(this, context);
         dkVar2.setOnScrollListener(new ai.r(this, 20));
         final int i12 = 0;
-        dkVar2.setOnItemClickListener(new jl0(this) { // from class: org.telegram.ui.Components.zj
+        dkVar2.setOnItemClickListener(new ml0(this) { // from class: org.telegram.ui.Components.zj
             public final /* synthetic */ ok b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.jl0
+            @Override // org.telegram.ui.Components.ml0
             public final void d(int i13, View view) {
                 switch (i12) {
                     case 0:
@@ -269,14 +269,14 @@ public final class ok extends ni {
         gg.s0 s0Var = new gg.s0(context, f6Var);
         this.H = s0Var;
         final int i13 = 1;
-        s0Var.setOnItemClickListener(new jl0(this) { // from class: org.telegram.ui.Components.zj
+        s0Var.setOnItemClickListener(new ml0(this) { // from class: org.telegram.ui.Components.zj
             public final /* synthetic */ ok b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.jl0
+            @Override // org.telegram.ui.Components.ml0
             public final void d(int i132, View view) {
                 switch (i13) {
                     case 0:
@@ -419,7 +419,7 @@ public final class ok extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void E(ni niVar) {
+    public final void D(ni niVar) {
         this.R.clear();
         this.T.clear();
         this.y.R.clear();
@@ -434,7 +434,7 @@ public final class ok extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void G() {
+    public final void F() {
         this.r.y0(0);
     }
 
@@ -967,12 +967,12 @@ public final class ok extends ni {
         }
         int i10 = 0;
         View childAt = dkVar.getChildAt(0);
-        fl0 fl0Var = (fl0) dkVar.H(childAt);
+        il0 il0Var = (il0) dkVar.H(childAt);
         int y3 = ((((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(8.0f);
-        if (y3 > 0 && fl0Var != null && fl0Var.b() == 0) {
+        if (y3 > 0 && il0Var != null && il0Var.b() == 0) {
             i10 = y3;
         }
-        if (y3 < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (y3 < 0 || il0Var == null || il0Var.b() != 0) {
             y3 = i10;
         }
         return AndroidUtilities.dp(13.0f) + y3;

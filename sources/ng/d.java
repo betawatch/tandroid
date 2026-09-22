@@ -33,13 +33,13 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.fg1;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -108,10 +108,10 @@ public abstract class d {
 
     public static pq d(int i10, String str) {
         a aVar = new a(i10);
-        t80 t80Var = new t80(1, null);
+        w80 w80Var = new w80(1, null);
         String trim = str.trim();
-        t80Var.a(trim.length() >= 1 ? trim.substring(0, 1).toUpperCase() : "");
-        pq pqVar = new pq(aVar, t80Var, 0, 0);
+        w80Var.a(trim.length() >= 1 ? trim.substring(0, 1).toUpperCase() : "");
+        pq pqVar = new pq(aVar, w80Var, 0, 0);
         pqVar.w = true;
         return pqVar;
     }
@@ -222,8 +222,8 @@ public abstract class d {
             }
             e.setBounds(0, 0, (int) (e.getIntrinsicWidth() * 0.65f), (int) (e.getIntrinsicHeight() * 0.65f));
             Drawable drawable = e.b;
-            if (drawable instanceof t80) {
-                ((t80) drawable).i = 0.7f;
+            if (drawable instanceof w80) {
+                ((w80) drawable).i = 0.7f;
             }
             if (paint != null) {
                 oq oqVar = new oq(0, e);

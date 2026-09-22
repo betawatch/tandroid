@@ -1,46 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class ij extends dh.b {
-    public final /* synthetic */ int n;
-    public final /* synthetic */ zn r;
+public final class ij extends org.telegram.ui.Components.i40 {
+    public final /* synthetic */ int I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ij(zn znVar, org.telegram.ui.ActionBar.f6 f6Var, int i10, int i11) {
-        super(i10, f6Var);
-        this.n = i11;
-        this.r = znVar;
+    public /* synthetic */ ij(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        super(i10, context, f6Var, z10);
+        this.I = i11;
     }
 
-    @Override // dh.b, dh.a
-    public final int H() {
-        int i10;
-        int i11;
-        switch (this.n) {
+    @Override // org.telegram.ui.Components.i40
+    public int c() {
+        switch (this.I) {
             case 0:
-                zn znVar = this.r;
-                i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
-                if (!eh.b.c(i10, znVar.ea)) {
-                    break;
-                } else if (znVar.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
-                    break;
-                } else {
-                    break;
+                return AndroidUtilities.dp(56.0f) / 2;
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.I) {
+            case 1:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused2) {
+                        return;
+                    }
+                }
+                break;
+            case 3:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused3) {
+                        return;
+                    }
                 }
                 break;
             default:
-                zn znVar2 = this.r;
-                i11 = ((org.telegram.ui.ActionBar.n2) znVar2).currentAccount;
-                if (!eh.b.c(i11, znVar2.ea)) {
-                    break;
-                } else if (znVar2.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
-                    break;
-                } else {
-                    break;
-                }
+                super.setVisibility(i10);
                 break;
         }
-        return this.d;
     }
 }

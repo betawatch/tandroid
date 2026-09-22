@@ -1,53 +1,270 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import android.os.Message;
+import android.util.SparseArray;
 import android.view.View;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class bl0 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Path c;
-    public final /* synthetic */ RectF d;
-    public final /* synthetic */ vl0 e;
+public class bl0 {
+    public final /* synthetic */ int a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public final Object e;
+    public final Object f;
+    public Object g;
+    public Object h;
+    public Object i;
+    public final Object j;
+    public Object k;
 
-    public bl0(vl0 vl0Var, View view, Path path, RectF rectF) {
-        this.e = vl0Var;
-        this.b = view;
-        this.c = path;
-        this.d = rectF;
+    public bl0(yl0 yl0Var, s4.c0 c0Var) {
+        this.a = 0;
+        this.j = new SparseArray();
+        this.k = new HashMap();
+        this.e = yl0Var;
+        this.f = c0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        View view = this.b;
-        canvas.translate(-view.getX(), -view.getY());
-        canvas.clipPath(this.c);
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, this.e.p2);
-        Paint paint = this.a;
-        paint.setColor(i0.a.k(v02, paint.getAlpha()));
-        canvas.drawRect(this.d, paint);
-        canvas.restore();
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a() {
+        switch (this.a) {
+            case 0:
+                ValueAnimator valueAnimator = (ValueAnimator) this.g;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                yl0 yl0Var = (yl0) this.e;
+                yl0Var.setVerticalScrollBarEnabled(true);
+                yl0Var.X1 = false;
+                s4.h0 adapter = yl0Var.getAdapter();
+                if (adapter instanceof zk0) {
+                    ((zk0) adapter).E();
+                }
+                this.g = null;
+                int childCount = yl0Var.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = yl0Var.getChildAt(i10);
+                    childAt.setTranslationY(0.0f);
+                    if (childAt instanceof org.telegram.ui.Cells.p4) {
+                        ((org.telegram.ui.Cells.p4) childAt).c(false, false);
+                    }
+                }
+                break;
+            default:
+                p4.q qVar = (p4.q) this.e;
+                if (!this.c && !this.d) {
+                    this.d = true;
+                    if (qVar != null) {
+                        qVar.h(0);
+                        qVar.d();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public void b() {
+        c0.k kVar;
+        p4.v vVar = (p4.v) this.f;
+        int i10 = this.b;
+        WeakReference weakReference = (WeakReference) this.j;
+        p4.x.b();
+        if (this.c || this.d) {
+            return;
+        }
+        p4.e eVar = (p4.e) weakReference.get();
+        if (eVar == null || eVar.g != this || ((kVar = (c0.k) this.k) != null && kVar.isCancelled())) {
+            a();
+            return;
+        }
+        this.c = true;
+        eVar.g = null;
+        p4.e eVar2 = (p4.e) weakReference.get();
+        if (eVar2 != null) {
+            HashMap hashMap = eVar2.b;
+            if (eVar2.d == vVar) {
+                Message obtainMessage = eVar2.a.obtainMessage(263, vVar);
+                obtainMessage.arg1 = i10;
+                obtainMessage.sendToTarget();
+                p4.q qVar = eVar2.e;
+                if (qVar != null) {
+                    qVar.h(i10);
+                    eVar2.e.d();
+                }
+                if (!hashMap.isEmpty()) {
+                    for (p4.q qVar2 : hashMap.values()) {
+                        qVar2.h(i10);
+                        qVar2.d();
+                    }
+                    hashMap.clear();
+                }
+                eVar2.e = null;
+            }
+        }
+        p4.e eVar3 = (p4.e) weakReference.get();
+        if (eVar3 == null) {
+            return;
+        }
+        p4.b bVar = eVar3.a;
+        p4.v vVar2 = (p4.v) this.g;
+        eVar3.d = vVar2;
+        eVar3.e = (p4.q) this.e;
+        p4.v vVar3 = (p4.v) this.h;
+        if (vVar3 == null) {
+            Message obtainMessage2 = bVar.obtainMessage(262, new q0.b(vVar, vVar2));
+            obtainMessage2.arg1 = i10;
+            obtainMessage2.sendToTarget();
+        } else {
+            Message obtainMessage3 = bVar.obtainMessage(264, new q0.b(vVar3, vVar2));
+            obtainMessage3.arg1 = i10;
+            obtainMessage3.sendToTarget();
+        }
+        eVar3.b.clear();
+        eVar3.g();
+        eVar3.l();
+        ArrayList arrayList = (ArrayList) this.i;
+        if (arrayList != null) {
+            eVar3.d.n(arrayList);
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    public void c(int i10, int i11, boolean z10) {
+        d(i10, i11, z10, false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public void d(int i10, int i11, boolean z10, boolean z11) {
+        s4.h0 h0Var;
+        long j3;
+        HashMap hashMap = (HashMap) this.k;
+        SparseArray sparseArray = (SparseArray) this.j;
+        s4.c0 c0Var = (s4.c0) this.f;
+        yl0 yl0Var = (yl0) this.e;
+        if (yl0Var.X1) {
+            return;
+        }
+        if (yl0Var.getItemAnimator() != null) {
+            if (z11) {
+                s4.m0 itemAnimator = yl0Var.getItemAnimator();
+                wk0 wk0Var = new wk0(this, i10, i11, z10);
+                boolean k10 = itemAnimator.k();
+                if (k10) {
+                    itemAnimator.b.add(wk0Var);
+                } else {
+                    d(i10, i11, z10, false);
+                }
+                if (k10) {
+                    return;
+                }
+            } else if (yl0Var.getItemAnimator().k()) {
+                return;
+            }
+        }
+        if (this.b == -1) {
+            c0Var.i1(i10, i11, z10);
+            return;
+        }
+        int childCount = yl0Var.getChildCount();
+        if (childCount == 0 || !MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
+            c0Var.i1(i10, i11, z10);
+            return;
+        }
+        boolean z12 = this.b == 0;
+        yl0Var.setScrollEnabled(false);
+        ArrayList arrayList = new ArrayList();
+        sparseArray.clear();
+        s4.h0 adapter = yl0Var.getAdapter();
+        hashMap.clear();
+        int i12 = 0;
+        while (i12 < childCount) {
+            View childAt = yl0Var.getChildAt(i12);
+            arrayList.add(childAt);
+            c0Var.getClass();
+            sparseArray.put(s4.o0.H(childAt), childAt);
+            if (adapter == null || !(adapter.b || this.c)) {
+                h0Var = adapter;
+            } else {
+                if (this.c) {
+                    int b10 = ((s4.p0) childAt.getLayoutParams()).a.b();
+                    if (b10 < 0) {
+                        h0Var = adapter;
+                        i12++;
+                        adapter = h0Var;
+                    } else {
+                        h0Var = adapter;
+                        j3 = adapter.i(b10);
+                    }
+                } else {
+                    h0Var = adapter;
+                    j3 = ((s4.p0) childAt.getLayoutParams()).a.e;
+                }
+                hashMap.put(Long.valueOf(j3), childAt);
+            }
+            if (childAt instanceof org.telegram.ui.Cells.p4) {
+                ((org.telegram.ui.Cells.p4) childAt).c(true, true);
+            }
+            i12++;
+            adapter = h0Var;
+        }
+        s4.h0 h0Var2 = adapter;
+        yl0Var.C0();
+        yl0Var.p0();
+        ra.a aVar = yl0Var.d;
+        aVar.m((ArrayList) aVar.d);
+        aVar.m((ArrayList) aVar.e);
+        aVar.b = 0;
+        of.e eVar = yl0Var.b;
+        s4.h0 h0Var3 = yl0Var.w;
+        eVar.d(h0Var3, h0Var3);
+        yl0Var.t0.f = true;
+        yl0Var.e.S();
+        eVar.l();
+        zk0 zk0Var = h0Var2 instanceof zk0 ? (zk0) h0Var2 : null;
+        c0Var.i1(i10, i11, z10);
+        if (h0Var2 != null) {
+            h0Var2.l();
+        }
+        yl0Var.C0();
+        yl0Var.setVerticalScrollBarEnabled(false);
+        w7.z5 z5Var = (w7.z5) this.i;
+        if (z5Var != null) {
+            z5Var.c();
+        }
+        yl0Var.X1 = true;
+        if (zk0Var != null) {
+            zk0Var.c = true;
+            zk0Var.d = false;
+            zk0Var.e.clear();
+            zk0Var.f.clear();
+        }
+        yl0Var.addOnLayoutChangeListener(new yk0(this, h0Var2, arrayList, z12, zk0Var));
+    }
+
+    public void e(w7.z5 z5Var) {
+        this.i = z5Var;
+    }
+
+    public bl0(p4.e eVar, p4.v vVar, p4.q qVar, int i10, p4.v vVar2, Collection collection) {
+        this.a = 1;
+        this.k = null;
+        this.c = false;
+        this.d = false;
+        this.j = new WeakReference(eVar);
+        this.g = vVar;
+        this.e = qVar;
+        this.b = i10;
+        this.f = eVar.d;
+        this.h = vVar2;
+        this.i = collection != null ? new ArrayList(collection) : null;
+        eVar.a.postDelayed(new org.telegram.ui.web.r0(this, 9), 15000L);
     }
 }

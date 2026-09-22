@@ -8,10 +8,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c7;
 import org.telegram.ui.Cells.f9;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.b20;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 View view = (View) obj;
                 return Boolean.valueOf(((view instanceof f9) || (view instanceof c7) || (view instanceof b20) || (view instanceof org.telegram.ui.Cells.w3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             default:
-                return Boolean.valueOf(k61.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(m61.K(((Integer) obj).intValue()));
         }
     }
 }

@@ -30,11 +30,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.rk;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.uw0;
 import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.yw0;
 import org.telegram.ui.k11;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public class j5 extends View implements Drawable.Callback {
     public final Path A0;
@@ -210,7 +210,7 @@ public class j5 extends View implements Drawable.Callback {
         int i10 = 0;
         while (i10 < size) {
             int i11 = i10 + 1;
-            Rect bounds = ((vh.h) arrayList.get(i10)).getBounds();
+            Rect bounds = ((vh.g) arrayList.get(i10)).getBounds();
             path.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
             i10 = i11;
         }
@@ -301,7 +301,7 @@ public class j5 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c10 = uw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
+                        StaticLayout c10 = ww0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
                         i14 = i16;
                         this.e = c10;
                         if (c10 != null) {
@@ -319,12 +319,12 @@ public class j5 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = uw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
+                            this.e = ww0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c11 = uw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
+                    StaticLayout c11 = ww0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
                     i13 = i16;
                     this.c = c11;
                 } else {
@@ -352,7 +352,7 @@ public class j5 extends View implements Drawable.Callback {
                 arrayList.clear();
                 StaticLayout staticLayout2 = this.c;
                 if (staticLayout2 != null && (staticLayout2.getText() instanceof Spannable)) {
-                    vh.h.b(this, this.c, -2, -2, stack, arrayList);
+                    vh.g.b(this, this.c, -2, -2, stack, arrayList);
                 }
                 a(i13);
             } catch (Exception unused) {
@@ -387,7 +387,7 @@ public class j5 extends View implements Drawable.Callback {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ((vh.h) obj).draw(canvas);
+                ((vh.g) obj).draw(canvas);
             }
             return;
         }
@@ -412,7 +412,7 @@ public class j5 extends View implements Drawable.Callback {
         while (i10 < size2) {
             Object obj2 = arrayList.get(i10);
             i10++;
-            ((vh.h) obj2).draw(canvas);
+            ((vh.g) obj2).draw(canvas);
         }
         canvas.restore();
     }
@@ -431,17 +431,17 @@ public class j5 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(ww0 ww0Var, String str) {
+    public final void g(yw0 yw0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == ww0Var) {
+        if (drawable == yw0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = ww0Var;
-        if (ww0Var != null) {
-            ww0Var.setCallback(this);
+        this.y = yw0Var;
+        if (yw0Var != null) {
+            yw0Var.setCallback(this);
         }
         f();
         this.E = str;

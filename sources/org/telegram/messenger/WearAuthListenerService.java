@@ -19,7 +19,7 @@ import org.telegram.ui.kj1;
 import org.telegram.ui.mb1;
 import org.telegram.ui.vy0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public class WearAuthListenerService extends x8.k {
     public static final String PATH_CANCEL = "/tg-wear-auth/cancel";
@@ -120,7 +120,7 @@ public class WearAuthListenerService extends x8.k {
         frameLayout2.addView(frameLayout3, w7.y5.e(52, 28, 17));
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
         frameLayout.addView(frameLayout2, w7.y5.p(-2, -2, 0.0f, 51, 6, 4, 6, 0));
-        w7.b6.a(frameLayout2);
+        w7.a6.a(frameLayout2);
         if (arrayList.size() <= 1) {
             frameLayout2.setVisibility(8);
         }
@@ -130,11 +130,11 @@ public class WearAuthListenerService extends x8.k {
         f7.addView(v9Var2, w7.y5.r(130, 130, 49, 32.0f, 32.0f, 32.0f, 9.66f));
         MediaDataController.getInstance(i12).setPlaceholderImage(v9Var2, "Utya3D", "😎", "130_130");
         int i13 = org.telegram.ui.ActionBar.j6.j5;
-        TextView b10 = w7.d6.b(context, 20.0f, i13, true, resourceProvider);
+        TextView b10 = w7.c6.b(context, 20.0f, i13, true, resourceProvider);
         b10.setGravity(17);
         b10.setText(LocaleController.getString(R.string.WearAuthTitle));
         f7.addView(b10, w7.y5.r(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
-        TextView b11 = w7.d6.b(context, 14.0f, i13, false, null);
+        TextView b11 = w7.c6.b(context, 14.0f, i13, false, null);
         b11.setGravity(17);
         b11.setText(LocaleController.getString(R.string.WearAuthText));
         f7.addView(b11, w7.y5.t(-1, -2, 49, 32, 0, 32, 24));

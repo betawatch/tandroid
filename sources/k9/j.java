@@ -6,7 +6,7 @@ import java.util.Arrays;
 import n4.y;
 import n6.l;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class j {
     public final String a;
@@ -52,12 +52,12 @@ public final class j {
 
     public final String toString() {
         m5.e eVar = new m5.e(this);
-        eVar.g(this.b, "applicationId");
-        eVar.g(this.a, "apiKey");
-        eVar.g(this.c, "databaseUrl");
-        eVar.g(this.e, "gcmSenderId");
-        eVar.g(this.f, "storageBucket");
-        eVar.g(this.g, "projectId");
+        eVar.c(this.b, "applicationId");
+        eVar.c(this.a, "apiKey");
+        eVar.c(this.c, "databaseUrl");
+        eVar.c(this.e, "gcmSenderId");
+        eVar.c(this.f, "storageBucket");
+        eVar.c(this.g, "projectId");
         return eVar.toString();
     }
 }

@@ -1,40 +1,59 @@
 package fb;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
-/* loaded from: classes.dex */
-public abstract class g {
-    public static final int a;
+import db.u;
+import db.v;
+import java.lang.reflect.Modifier;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import v7.n8;
 
-    static {
-        int i10;
-        String property = System.getProperty("java.version");
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* loaded from: classes.dex */
+public final class g implements v, Cloneable {
+    public static final g c = new g();
+    public List a;
+    public final List b;
+
+    public g() {
+        List list = Collections.EMPTY_LIST;
+        this.a = list;
+        this.b = list;
+    }
+
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final g clone() {
         try {
-            String[] split = property.split("[._]", 3);
-            i10 = Integer.parseInt(split[0]);
-            if (i10 == 1 && split.length > 1) {
-                i10 = Integer.parseInt(split[1]);
-            }
-        } catch (NumberFormatException unused) {
-            i10 = -1;
+            return (g) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
-        if (i10 == -1) {
-            try {
-                StringBuilder sb2 = new StringBuilder();
-                for (int i11 = 0; i11 < property.length(); i11++) {
-                    char charAt = property.charAt(i11);
-                    if (!Character.isDigit(charAt)) {
-                        break;
-                    }
-                    sb2.append(charAt);
-                }
-                i10 = Integer.parseInt(sb2.toString());
-            } catch (NumberFormatException unused2) {
-                i10 = -1;
+    }
+
+    public final boolean b(Class cls, boolean z10) {
+        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
+            n8 n8Var = ib.c.a;
+            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
+                return true;
             }
         }
-        if (i10 == -1) {
-            i10 = 6;
+        Iterator it = (z10 ? this.a : this.b).iterator();
+        while (it.hasNext()) {
+            if (((db.a) it.next()).shouldSkipClass(cls)) {
+                return true;
+            }
         }
-        a = i10;
+        return false;
+    }
+
+    @Override // db.v
+    public final u create(db.g gVar, kb.a aVar) {
+        Class cls = aVar.a;
+        boolean b10 = b(cls, true);
+        boolean b11 = b(cls, false);
+        if (b10 || b11) {
+            return new f(this, b11, b10, gVar, aVar);
+        }
+        return null;
     }
 }

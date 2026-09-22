@@ -1,11 +1,28 @@
 package v0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+import java.util.Collection;
+import java.util.List;
+
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class o {
-    public final b2.g a;
+    public final List a;
+    public final boolean b;
 
-    public o(b2.g gVar) {
-        this.a = gVar;
+    public o(List list, boolean z10) {
+        this.a = list;
+        this.b = z10;
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("credentialOptions should not be empty");
+        }
+        if (list.size() > 1) {
+            List<q> list2 = list;
+            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                for (q qVar : list2) {
+                }
+            }
+            for (q qVar2 : this.a) {
+            }
+        }
     }
 }

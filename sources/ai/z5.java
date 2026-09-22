@@ -19,7 +19,7 @@ import org.telegram.ui.l70;
 import org.telegram.ui.md;
 import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class z5 extends org.telegram.ui.Components.v9 {
     public final /* synthetic */ int G;
@@ -192,7 +192,7 @@ public final class z5 extends org.telegram.ui.Components.v9 {
                 ((org.telegram.ui.Components.c9) this.H).invalidate();
                 break;
             case 8:
-                if (!zg.e0.b(this)) {
+                if (!zg.f0.b(this)) {
                     super.invalidate();
                     ((zv) this.H).f();
                     break;
@@ -240,7 +240,7 @@ public final class z5 extends org.telegram.ui.Components.v9 {
                 ((org.telegram.ui.Components.c9) this.H).invalidate();
                 break;
             case 8:
-                if (!zg.e0.b(this)) {
+                if (!zg.f0.b(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }

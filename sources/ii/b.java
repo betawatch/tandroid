@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -79,10 +79,10 @@ public final /* synthetic */ class b implements Runnable {
                             } else {
                                 TL_iv.pageTableCell m10 = o5Var.m(left, top);
                                 if (m10 != null) {
-                                    v70 v70Var = w3Var.j4;
-                                    if (v70Var != null) {
+                                    y70 y70Var = w3Var.j4;
+                                    if (y70Var != null) {
                                         w3Var.j4 = null;
-                                        v70Var.u();
+                                        y70Var.u();
                                     }
                                     w3Var.h2(o5Var);
                                     w3Var.C0();

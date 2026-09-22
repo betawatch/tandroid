@@ -5,14 +5,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.dc0;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.xb0;
-import org.telegram.ui.ol;
+import org.telegram.ui.Components.ac0;
+import org.telegram.ui.Components.gc0;
+import org.telegram.ui.Components.rb0;
+import org.telegram.ui.pl;
 import org.telegram.ui.pn;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class s3 extends w7.i0 {
     public final /* synthetic */ int a;
@@ -51,39 +51,39 @@ public final class s3 extends w7.i0 {
                     }
                     znVar.e9 = false;
                     znVar.f9 = false;
-                    ol olVar = znVar.h9;
-                    if (olVar != null) {
-                        AndroidUtilities.cancelRunOnUIThread(olVar.H);
-                        olVar.a();
+                    pl plVar = znVar.h9;
+                    if (plVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(plVar.H);
+                        plVar.a();
                     }
                 }
                 znVar.vc();
                 break;
             default:
-                xb0 xb0Var = (xb0) this.b;
-                ob0 ob0Var = xb0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = xb0Var.s;
-                dc0 dc0Var = xb0Var.c0;
-                if (dc0Var.s) {
+                ac0 ac0Var = (ac0) this.b;
+                rb0 rb0Var = ac0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = ac0Var.s;
+                gc0 gc0Var = ac0Var.c0;
+                if (gc0Var.s) {
                     if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z10) {
-                        if (ob0Var.v - ob0Var.u <= MessagesController.getInstance(dc0Var.w).quoteLengthMax) {
-                            org.telegram.ui.Cells.z9 z9Var = ob0Var.W;
-                            MessageObject c10 = xb0Var.c(z9Var != null ? ((org.telegram.ui.Cells.u1) z9Var).getMessageObject() : null);
-                            MessagePreviewParams messagePreviewParams = dc0Var.d;
+                        if (rb0Var.v - rb0Var.u <= MessagesController.getInstance(gc0Var.w).quoteLengthMax) {
+                            org.telegram.ui.Cells.z9 z9Var = rb0Var.W;
+                            MessageObject c10 = ac0Var.c(z9Var != null ? ((org.telegram.ui.Cells.u1) z9Var).getMessageObject() : null);
+                            MessagePreviewParams messagePreviewParams = gc0Var.d;
                             if (messagePreviewParams.quote == null) {
-                                int i10 = ob0Var.u;
+                                int i10 = rb0Var.u;
                                 messagePreviewParams.quoteStart = i10;
-                                int i11 = ob0Var.v;
+                                int i11 = rb0Var.v;
                                 messagePreviewParams.quoteEnd = i11;
                                 messagePreviewParams.quote = pn.b(i10, i11, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(xb0Var.I);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(ac0Var.I);
                                 break;
                             }
                         } else {
-                            xb0Var.f();
+                            ac0Var.f();
                             break;
                         }
                     }

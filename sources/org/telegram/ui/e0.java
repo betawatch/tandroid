@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -34,16 +34,16 @@ public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
                 znVar.S8 = null;
                 znVar.z0.R = true;
                 znVar.g8(false, true, 0.0f);
-                lk lkVar = znVar.Y;
-                if (lkVar != null && lkVar.getEditField() != null) {
+                mk mkVar = znVar.Y;
+                if (mkVar != null && mkVar.getEditField() != null) {
                     znVar.Y.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;
             case 2:
-                nj njVar = (nj) this.b;
-                njVar.b = null;
-                zn znVar2 = njVar.w;
+                oj ojVar = (oj) this.b;
+                ojVar.b = null;
+                zn znVar2 = ojVar.w;
                 znVar2.Q8 = null;
                 znVar2.T8 = null;
                 znVar2.S8 = null;
@@ -53,8 +53,8 @@ public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
                 } else {
                     znVar2.R8 = true;
                 }
-                lk lkVar2 = znVar2.Y;
-                if (lkVar2 != null && lkVar2.getEditField() != null) {
+                mk mkVar2 = znVar2.Y;
+                if (mkVar2 != null && mkVar2.getEditField() != null) {
                     znVar2.Y.getEditField().setAllowDrawCursor(true);
                     break;
                 }

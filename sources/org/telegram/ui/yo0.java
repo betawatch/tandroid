@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yo0 implements yf.a0, r0.n, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class yo0 implements yf.a0, r0.n, org.telegram.ui.A
             return;
         }
         ArrayList arrayList2 = cq0Var.j0;
-        int a2 = yf.e0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.e(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
+        int a2 = yf.e0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.c(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
         int measuredWidth = cq0Var.d.getMeasuredWidth();
         for (int i12 = 0; i12 < a2; i12++) {
             RectF rectF = (RectF) arrayList.get(i12);
@@ -64,7 +64,7 @@ public final /* synthetic */ class yo0 implements yf.a0, r0.n, org.telegram.ui.A
         iVar.g(a2, arrayList);
         if (iVar.e(cq0Var.i0, cq0Var.d.getWidth(), cq0Var.d.getHeight())) {
             if (dVar != null) {
-                dVar.f();
+                dVar.e();
             }
             Iterator it = cq0Var.d0.iterator();
             while (it.hasNext()) {

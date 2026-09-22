@@ -12,11 +12,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ge extends LinearLayout {
     public final int a;
-    public final org.telegram.ui.Components.x81 b;
+    public final org.telegram.ui.Components.z81 b;
     public final fe c;
     public final long d;
     public final od e;
@@ -40,17 +40,17 @@ public final class ge extends LinearLayout {
         this.d = j3;
         this.e = odVar;
         setOrientation(1);
-        org.telegram.ui.Components.x81 x81Var = new org.telegram.ui.Components.x81(context, null);
-        this.b = x81Var;
+        org.telegram.ui.Components.z81 z81Var = new org.telegram.ui.Components.z81(context, null);
+        this.b = z81Var;
         fe feVar = new fe(this, context, i10, j3, i11, f6Var);
         this.c = feVar;
-        x81Var.setAdapter(feVar);
-        View n10 = x81Var.n(3, true);
+        z81Var.setAdapter(feVar);
+        View n10 = z81Var.n(3, true);
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, f6Var));
         addView(n10, w7.y5.n(-1, 48));
         addView(view, new LinearLayout.LayoutParams(w7.y5.z(-1.0f), w7.y5.z(1.0f / AndroidUtilities.density)));
-        addView(x81Var, w7.y5.n(-1, -1));
+        addView(z81Var, w7.y5.n(-1, -1));
         setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
         c(1);
         c(0);
@@ -424,18 +424,18 @@ public final class ge extends LinearLayout {
     public final void d() {
         int i10 = 0;
         while (true) {
-            org.telegram.ui.Components.x81 x81Var = this.b;
-            if (i10 >= x81Var.getViewPages().length) {
+            org.telegram.ui.Components.z81 z81Var = this.b;
+            if (i10 >= z81Var.getViewPages().length) {
                 return;
             }
-            View view = x81Var.getViewPages()[i10];
+            View view = z81Var.getViewPages()[i10];
             if (view instanceof ee) {
                 ee eeVar = (ee) view;
-                org.telegram.ui.Components.s61 s61Var = eeVar.a;
-                s61Var.Y2.N(true);
-                if (s61Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < s61Var.getChildCount(); i11++) {
-                        if (!(s61Var.getChildAt(i11) instanceof org.telegram.ui.Components.t00)) {
+                org.telegram.ui.Components.u61 u61Var = eeVar.a;
+                u61Var.Y2.N(true);
+                if (u61Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < u61Var.getChildCount(); i11++) {
+                        if (!(u61Var.getChildAt(i11) instanceof org.telegram.ui.Components.t00)) {
                         }
                     }
                 }
@@ -448,24 +448,24 @@ public final class ge extends LinearLayout {
 
     public final void e() {
         this.c.i();
-        org.telegram.ui.Components.x81 x81Var = this.b;
-        x81Var.o(false);
-        View[] viewArr = x81Var.e;
-        int[] iArr = x81Var.f;
-        if (iArr[0] != x81Var.L.h(x81Var.b)) {
-            x81Var.J(0);
+        org.telegram.ui.Components.z81 z81Var = this.b;
+        z81Var.o(false);
+        View[] viewArr = z81Var.e;
+        int[] iArr = z81Var.f;
+        if (iArr[0] != z81Var.L.h(z81Var.b)) {
+            z81Var.J(0);
             View view = viewArr[1];
             if (view != null) {
-                x81Var.h.put(iArr[1], view);
-                x81Var.removeView(viewArr[1]);
+                z81Var.h.put(iArr[1], view);
+                z81Var.removeView(viewArr[1]);
                 viewArr[1] = null;
             }
             viewArr[0].setTranslationX(0.0f);
-            x81Var.x(true);
+            z81Var.x(true);
         }
     }
 
-    public org.telegram.ui.Components.vl0 getCurrentListView() {
+    public org.telegram.ui.Components.yl0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof ee) {
             return ((ee) currentView).a;

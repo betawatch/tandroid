@@ -26,22 +26,22 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.o80;
 import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sb0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.vb0;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.cp0;
 import org.telegram.ui.vy0;
 import w7.y5;
 import yh.l5;
 import yh.u5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
 public final class h4 extends ab {
     public static final /* synthetic */ int k0 = 0;
@@ -170,7 +170,7 @@ public final class h4 extends ab {
         this.d.setLayoutManager(sVar);
         this.d.setOnItemClickListener(new s5.e(14, this, g4Var));
         this.d.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
-        this.d.setOnScrollListener(new sb0(this, 18));
+        this.d.setOnScrollListener(new vb0(this, 18));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -194,7 +194,7 @@ public final class h4 extends ab {
     }
 
     public static void P(h4 h4Var, g4 g4Var) {
-        v70 F = v70.F(h4Var.container, h4Var.resourcesProvider, h4Var.a0);
+        y70 F = y70.F(h4Var.container, h4Var.resourcesProvider, h4Var.a0);
         F.c(R.drawable.menu_sort_value, LocaleController.getString(u3.b.a), new y3(g4Var, 3), false);
         F.c(R.drawable.menu_sort_date, LocaleController.getString(u3.c.a), new y3(g4Var, 4), false);
         F.c(R.drawable.menu_sort_number, LocaleController.getString(u3.d.a), new y3(g4Var, 5), false);
@@ -206,7 +206,7 @@ public final class h4 extends ab {
 
     public static void Q(h4 h4Var, g4 g4Var, int i10) {
         TL_stars.SavedStarGift savedStarGift;
-        w51 G = h4Var.i0.G(i10 - 1);
+        y51 G = h4Var.i0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -268,17 +268,17 @@ public final class h4 extends ab {
         if (v3Var.f.isEmpty()) {
             return;
         }
-        v70 v70Var = new v70(h4Var.container, h4Var.resourcesProvider, h4Var.b0, false, true, false);
-        v70Var.t = false;
-        v70Var.Y = true;
-        v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-        v70Var.R = true;
-        v70Var.p = new ii.h(v70Var, 8);
+        y70 y70Var = new y70(h4Var.container, h4Var.resourcesProvider, h4Var.b0, false, true, false);
+        y70Var.t = false;
+        y70Var.Y = true;
+        y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        y70Var.R = true;
+        y70Var.p = new ii.h(y70Var, 8);
         String[] strArr = {""};
         ArrayList arrayList = new ArrayList(v3Var.f);
         Collections.sort(arrayList, new a4(g4Var, 2));
         int i10 = 0;
-        c4 c4Var = new c4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, v70Var, i10), null, h4Var.resourcesProvider);
+        c4 c4Var = new c4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, y70Var, i10), null, h4Var.resourcesProvider);
         c4Var.Y2.r = false;
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView = new ImageView(context);
@@ -300,14 +300,14 @@ public final class h4 extends ab {
         frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
         buVar.addTextChangedListener(new qn(strArr, c4Var, false, 11));
         if (arrayList.size() > 8) {
-            v70Var.r(frameLayout, y5.n(-1, 44));
-            v70Var.k();
+            y70Var.r(frameLayout, y5.n(-1, 44));
+            y70Var.k();
         }
         if (!v3Var.j.isEmpty()) {
-            v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 0), false);
+            y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 0), false);
         }
-        v70Var.q(c4Var);
-        v70Var.Z();
+        y70Var.q(c4Var);
+        y70Var.Z();
     }
 
     public static void S(h4 h4Var, g4 g4Var, Context context) {
@@ -315,17 +315,17 @@ public final class h4 extends ab {
         if (v3Var.h.isEmpty()) {
             return;
         }
-        v70 v70Var = new v70(h4Var.container, h4Var.resourcesProvider, h4Var.d0, false, true, false);
-        v70Var.t = false;
-        v70Var.Y = true;
-        v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-        v70Var.R = true;
-        v70Var.p = new ii.h(v70Var, 7);
+        y70 y70Var = new y70(h4Var.container, h4Var.resourcesProvider, h4Var.d0, false, true, false);
+        y70Var.t = false;
+        y70Var.Y = true;
+        y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        y70Var.R = true;
+        y70Var.p = new ii.h(y70Var, 7);
         String[] strArr = {""};
         ArrayList arrayList = new ArrayList(v3Var.h);
         Collections.sort(arrayList, new a4(g4Var, 1));
         int i10 = 2;
-        e4 e4Var = new e4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, v70Var, i10), null, h4Var.resourcesProvider);
+        e4 e4Var = new e4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, y70Var, i10), null, h4Var.resourcesProvider);
         e4Var.Y2.r = false;
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView = new ImageView(context);
@@ -347,14 +347,14 @@ public final class h4 extends ab {
         frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
         buVar.addTextChangedListener(new qn(strArr, e4Var, false, 13));
         if (arrayList.size() > 8) {
-            v70Var.r(frameLayout, y5.n(-1, 44));
-            v70Var.k();
+            y70Var.r(frameLayout, y5.n(-1, 44));
+            y70Var.k();
         }
         if (!v3Var.l.isEmpty()) {
-            v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 2), false);
+            y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 2), false);
         }
-        v70Var.q(e4Var);
-        v70Var.Z();
+        y70Var.q(e4Var);
+        y70Var.Z();
     }
 
     public static void T(h4 h4Var, ArrayList arrayList) {
@@ -366,7 +366,7 @@ public final class h4 extends ab {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(h4Var.currentAccount).getCurrentTime();
-            arrayList.add(w51.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            arrayList.add(y51.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
             ArrayList arrayList2 = l5Var.l;
             int size = arrayList2.size();
             int i10 = 0;
@@ -379,7 +379,7 @@ public final class h4 extends ab {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (!h4Var.g0.contains(Long.valueOf(savedStarGift.gift.id))) {
                     boolean z11 = savedStarGift.can_craft_at <= currentTime;
-                    w51 a2 = i1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    y51 a2 = i1.a(0, savedStarGift.gift, false, true, false, false, true);
                     a2.g = z11;
                     arrayList.add(a2);
                     i11++;
@@ -390,23 +390,23 @@ public final class h4 extends ab {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
-                    w51 o9 = w51.o((i15 - i13) + 1, 35);
+                    y51 o9 = y51.o((i15 - i13) + 1, 35);
                     o9.u = 1;
                     arrayList.add(o9);
                 }
             } else if (z10) {
-                arrayList.add(w51.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+                arrayList.add(y51.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
             }
             if (v3Var.e > 0 || h4Var.j0) {
                 h4Var.j0 = true;
                 String string = LocaleController.getString(R.string.GiftCraftSelectResale);
-                w51 w51Var = new w51(42);
-                w51Var.d = -2;
-                w51Var.o = string;
-                arrayList.add(w51Var);
+                y51 y51Var = new y51(42);
+                y51Var.d = -2;
+                y51Var.o = string;
+                arrayList.add(y51Var);
                 HorizontalScrollView horizontalScrollView = h4Var.Z;
                 if (horizontalScrollView != null) {
-                    arrayList.add(w51.j(-3, horizontalScrollView));
+                    arrayList.add(y51.j(-3, horizontalScrollView));
                 }
                 ArrayList arrayList3 = v3Var.d;
                 int size2 = arrayList3.size();
@@ -416,22 +416,22 @@ public final class h4 extends ab {
                     arrayList.add(i1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
                 }
                 if (v3Var.t || !v3Var.u) {
-                    w51 o10 = w51.o(10, 35);
+                    y51 o10 = y51.o(10, 35);
                     o10.u = 1;
                     arrayList.add(o10);
-                    w51 o11 = w51.o(11, 35);
+                    y51 o11 = y51.o(11, 35);
                     o11.u = 1;
                     arrayList.add(o11);
-                    w51 o12 = w51.o(12, 35);
+                    y51 o12 = y51.o(12, 35);
                     o12.u = 1;
                     arrayList.add(o12);
-                    w51 o13 = w51.o(13, 35);
+                    y51 o13 = y51.o(13, 35);
                     o13.u = 1;
                     arrayList.add(o13);
-                    w51 o14 = w51.o(14, 35);
+                    y51 o14 = y51.o(14, 35);
                     o14.u = 1;
                     arrayList.add(o14);
-                    w51 o15 = w51.o(15, 35);
+                    y51 o15 = y51.o(15, 35);
                     o15.u = 1;
                     arrayList.add(o15);
                 }
@@ -451,7 +451,7 @@ public final class h4 extends ab {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        new yh.d3(context, f6Var, tL_starGiftUnique, b3Var, i10, j3, hg.k0.j(tL_starGiftUnique.num, ',', sb2), true, new l80(h4Var, tL_starGiftUnique, j3, 1)).b();
+        new yh.d3(context, f6Var, tL_starGiftUnique, b3Var, i10, j3, hg.k0.j(tL_starGiftUnique.num, ',', sb2), true, new o80(h4Var, tL_starGiftUnique, j3, 1)).b();
     }
 
     public static void V(h4 h4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, yh.b3 b3Var, nf.e eVar) {
@@ -464,17 +464,17 @@ public final class h4 extends ab {
         if (v3Var.g.isEmpty()) {
             return;
         }
-        v70 v70Var = new v70(h4Var.container, h4Var.resourcesProvider, h4Var.c0, false, true, false);
-        v70Var.t = false;
-        v70Var.Y = true;
-        v70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-        v70Var.R = true;
-        v70Var.p = new ii.h(v70Var, 6);
+        y70 y70Var = new y70(h4Var.container, h4Var.resourcesProvider, h4Var.c0, false, true, false);
+        y70Var.t = false;
+        y70Var.Y = true;
+        y70Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        y70Var.R = true;
+        y70Var.p = new ii.h(y70Var, 6);
         String[] strArr = {""};
         ArrayList arrayList = new ArrayList(v3Var.g);
         Collections.sort(arrayList, new a4(g4Var, 0));
         int i10 = 1;
-        d4 d4Var = new d4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, v70Var, i10), null, h4Var.resourcesProvider);
+        d4 d4Var = new d4(context, h4Var.currentAccount, 0, false, new w3(strArr, g4Var, arrayList, i10), new x3(g4Var, y70Var, i10), null, h4Var.resourcesProvider);
         d4Var.Y2.r = false;
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView = new ImageView(context);
@@ -496,18 +496,18 @@ public final class h4 extends ab {
         frameLayout.addView(buVar, y5.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
         buVar.addTextChangedListener(new qn(strArr, d4Var, false, 12));
         if (arrayList.size() > 8) {
-            v70Var.r(frameLayout, y5.n(-1, 44));
-            v70Var.k();
+            y70Var.r(frameLayout, y5.n(-1, 44));
+            y70Var.k();
         }
         if (!v3Var.k.isEmpty()) {
-            v70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 1), false);
+            y70Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new y3(g4Var, 1), false);
         }
-        v70Var.q(d4Var);
-        v70Var.Z();
+        y70Var.q(d4Var);
+        y70Var.Z();
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final void F(float f7) {
+    public final void E(float f7) {
         float y3 = this.containerView.getY() + f7;
         yh.j2 j2Var = this.e0;
         float measuredHeight = y3 - j2Var.getMeasuredHeight();
@@ -524,16 +524,16 @@ public final class h4 extends ab {
 
     public final void Z() {
         int S;
-        w51 G;
+        y51 G;
         int i10 = 0;
         boolean z10 = false;
         boolean z11 = false;
         while (true) {
-            vl0 vl0Var = this.d;
-            if (i10 >= vl0Var.getChildCount()) {
+            yl0 yl0Var = this.d;
+            if (i10 >= yl0Var.getChildCount()) {
                 break;
             }
-            View childAt = vl0Var.getChildAt(i10);
+            View childAt = yl0Var.getChildAt(i10);
             if ((childAt instanceof t00) && (S = RecyclerView.S(childAt) - 1) >= 0 && (G = this.i0.G(S)) != null) {
                 if (G.d < 10) {
                     z10 = true;
@@ -553,8 +553,8 @@ public final class h4 extends ab {
     }
 
     @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        f4 f4Var = new f4(this, vl0Var, getContext(), this.currentAccount, new hi.a(this, 19), this.resourcesProvider);
+    public final xl0 v(yl0 yl0Var) {
+        f4 f4Var = new f4(this, yl0Var, getContext(), this.currentAccount, new hi.a(this, 19), this.resourcesProvider);
         this.i0 = f4Var;
         return f4Var;
     }

@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class yt implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.vl0 vl0Var;
+        org.telegram.ui.Components.yl0 yl0Var;
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets;
         int i10 = this.a;
         int i11 = 14;
@@ -88,8 +88,8 @@ public final /* synthetic */ class yt implements Runnable {
                 bu buVar = ztVar2.h;
                 if (buVar.f) {
                     ztVar2.e = arrayList3;
-                    if (buVar.e && (vl0Var = buVar.a) != null) {
-                        s4.h0 adapter = vl0Var.getAdapter();
+                    if (buVar.e && (yl0Var = buVar.a) != null) {
+                        s4.h0 adapter = yl0Var.getAdapter();
                         zt ztVar3 = buVar.d;
                         if (adapter != ztVar3) {
                             buVar.a.setAdapter(ztVar3);
@@ -152,9 +152,9 @@ public final /* synthetic */ class yt implements Runnable {
                 CharSequence charSequence = (CharSequence) obj;
                 uy uyVar4 = ((fx) obj2).a;
                 uyVar4.H2 = null;
-                org.telegram.ui.Components.zq0 zq0Var = uyVar4.G2;
-                if (zq0Var != null && zq0Var.h) {
-                    zq0Var.e(charSequence, false);
+                org.telegram.ui.Components.br0 br0Var = uyVar4.G2;
+                if (br0Var != null && br0Var.h) {
+                    br0Var.e(charSequence, false);
                     break;
                 }
                 break;
@@ -172,9 +172,9 @@ public final /* synthetic */ class yt implements Runnable {
             case 12:
                 gz gzVar = (gz) obj2;
                 zn znVar = gzVar.a;
-                org.telegram.ui.Components.gy0 gy0Var = new org.telegram.ui.Components.gy0(znVar.getParentActivity(), gzVar.a, ((MessageObject) obj).getInputStickerSet(), null, znVar.Y, znVar.getResourceProvider());
-                gy0Var.setCalcMandatoryInsets(znVar.x9());
-                znVar.showDialog(gy0Var);
+                org.telegram.ui.Components.iy0 iy0Var = new org.telegram.ui.Components.iy0(znVar.getParentActivity(), gzVar.a, ((MessageObject) obj).getInputStickerSet(), null, znVar.Y, znVar.getResourceProvider());
+                iy0Var.setCalcMandatoryInsets(znVar.x9());
+                znVar.showDialog(iy0Var);
                 break;
             case 13:
                 a00 a00Var = (a00) obj2;

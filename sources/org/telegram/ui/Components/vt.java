@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vt implements au, kl0 {
+public final /* synthetic */ class vt implements au, nl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ KeyEvent.Callback c;
@@ -18,12 +18,12 @@ public final /* synthetic */ class vt implements au, kl0 {
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
         tg.m1.Q((tg.m1) this.c, this.a, (org.telegram.ui.ActionBar.f6) this.d, this.b, view);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -40,7 +40,7 @@ public final /* synthetic */ class vt implements au, kl0 {
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

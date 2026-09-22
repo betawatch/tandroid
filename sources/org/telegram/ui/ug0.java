@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class ug0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ xg0 G;
@@ -24,9 +24,9 @@ public final class ug0 extends AnimatedPhoneNumberEditText {
         super.onFocusChanged(z10, i10, rect);
         xg0 xg0Var = this.G;
         yg0 yg0Var = xg0Var.V;
-        org.telegram.ui.Components.hd0 hd0Var = xg0Var.f;
+        org.telegram.ui.Components.kd0 kd0Var = xg0Var.f;
         float f7 = (z10 || xg0Var.a.isFocused()) ? 1.0f : 0.0f;
-        hd0Var.b(f7, f7, true);
+        kd0Var.b(f7, f7, true);
         if (!z10) {
             if (xg0Var.x == 2) {
                 xg0Var.setCountryButtonText(null);

@@ -1,28 +1,44 @@
 package zg;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.jc0;
+import yh.u3;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+    public final /* synthetic */ c0 b;
 
-    public /* synthetic */ v(b0 b0Var, int i10) {
+    public /* synthetic */ v(c0 c0Var, int i10) {
         this.a = i10;
-        this.b = b0Var;
+        this.b = c0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                b0 b0Var = this.b;
-                b0Var.getClass();
-                b0Var.a.setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.a.invalidate();
                 break;
             default:
-                this.b.a.invalidate();
+                c0 c0Var = this.b;
+                u3 u3Var = c0Var.c;
+                if (u3Var.getParent() != null) {
+                    if (c0Var.d) {
+                        AndroidUtilities.removeFromParent(u3Var);
+                    } else {
+                        try {
+                            c0Var.b.removeView(u3Var);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    jc0 jc0Var = c0Var.p;
+                    if (jc0Var != null) {
+                        jc0Var.run();
+                        break;
+                    }
+                }
                 break;
         }
     }

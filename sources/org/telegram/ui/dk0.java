@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class dk0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ int G;
@@ -24,23 +24,23 @@ public final class dk0 extends AnimatedPhoneNumberEditText {
             case 0:
                 super.onFocusChanged(z10, i10, rect);
                 fk0 fk0Var = (fk0) this.H;
-                org.telegram.ui.Components.hd0 hd0Var = fk0Var.s;
+                org.telegram.ui.Components.kd0 kd0Var = fk0Var.s;
                 float f7 = (z10 || fk0Var.Q.isFocused()) ? 1.0f : 0.0f;
-                hd0Var.b(f7, f7, true);
+                kd0Var.b(f7, f7, true);
                 break;
             case 1:
                 super.onFocusChanged(z10, i10, rect);
                 fk0 fk0Var2 = (fk0) this.H;
-                org.telegram.ui.Components.hd0 hd0Var2 = fk0Var2.s;
+                org.telegram.ui.Components.kd0 kd0Var2 = fk0Var2.s;
                 float f10 = (z10 || fk0Var2.O.isFocused()) ? 1.0f : 0.0f;
-                hd0Var2.b(f10, f10, true);
+                kd0Var2.b(f10, f10, true);
                 break;
             default:
                 super.onFocusChanged(z10, i10, rect);
                 xg0 xg0Var = (xg0) this.H;
-                org.telegram.ui.Components.hd0 hd0Var3 = xg0Var.f;
+                org.telegram.ui.Components.kd0 kd0Var3 = xg0Var.f;
                 float f11 = (z10 || xg0Var.b.isFocused()) ? 1.0f : 0.0f;
-                hd0Var3.b(f11, f11, true);
+                kd0Var3.b(f11, f11, true);
                 if (z10) {
                     xg0Var.V.c.setEditText(this);
                     break;

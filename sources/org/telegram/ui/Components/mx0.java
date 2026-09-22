@@ -1,128 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class mx0 extends Drawable {
-    public final int a;
-    public final int b;
-    public final p5[] c;
-    public final boolean e;
-    public int d = 255;
-    public final RectF f = new RectF();
-    public boolean g = false;
+public final class mx0 extends v9 implements NotificationCenter.NotificationCenterDelegate {
+    public final int G;
+    public int H;
+    public String I;
 
-    public mx0(int i10, ArrayList arrayList, boolean z10) {
-        this.e = z10;
-        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
-        this.a = max;
-        int min = Math.min(max * max, arrayList.size());
-        this.b = min;
-        this.c = new p5[min];
-        if (!arrayList.isEmpty()) {
-            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
-        }
-        int i11 = max < 2 ? 1 : 0;
-        for (int i12 = 0; i12 < this.b; i12++) {
-            this.c[i12] = p5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
-        }
+    public mx0(Context context, int i10) {
+        super(context);
+        this.I = AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME;
+        this.G = i10;
     }
 
-    public final void a(org.telegram.ui.Cells.u1 u1Var) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            this.c[i10].o(u1Var);
-        }
-    }
-
-    public final boolean b() {
-        return this.g;
-    }
-
-    public final boolean c(ArrayList arrayList) {
-        p5[] p5VarArr = this.c;
-        if (p5VarArr.length == arrayList.size()) {
-            for (int i10 = 0; i10 < p5VarArr.length; i10++) {
-                TLRPC.Document document = p5VarArr[i10].e;
-                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
-                }
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad) {
+            if (this.I.equals((String) objArr[0])) {
+                t();
             }
-            return true;
         }
-        return false;
     }
 
-    public final void d() {
-        this.g = false;
+    @Override // org.telegram.ui.Components.v9, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        t();
+        NotificationCenter.getInstance(this.G).addObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        p5 p5Var;
-        if (this.d <= 0) {
-            return;
+    @Override // org.telegram.ui.Components.v9, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.G).removeObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    public void setStickerNum(int i10) {
+        if (this.H != i10) {
+            this.H = i10;
+            t();
         }
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        int dp = AndroidUtilities.dp(48.0f);
-        int i10 = this.a;
-        float f7 = dp / i10;
-        float dp2 = AndroidUtilities.dp(48.0f) / i10;
-        canvas.save();
-        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
-        for (int i11 = 0; i11 < i10; i11++) {
-            for (int i12 = 0; i12 < i10; i12++) {
-                int i13 = (i11 * i10) + i12;
-                if (i13 >= 0) {
-                    p5[] p5VarArr = this.c;
-                    if (i13 < p5VarArr.length && (p5Var = p5VarArr[i13]) != null) {
-                        p5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
-                        p5VarArr[i13].setAlpha(this.d);
-                        p5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.j6.w3 : org.telegram.ui.ActionBar.j6.v3);
-                        p5VarArr[i13].draw(canvas);
-                    }
+    }
+
+    public void setStickerPackName(String str) {
+        this.I = str;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t() {
+        TLRPC.Document document;
+        SvgHelper.SvgDrawable svgThumb;
+        int i10 = this.G;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(this.I);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(this.I);
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        if (tL_messages_stickerSet != null) {
+            int size = tL_messages_stickerSet.documents.size();
+            int i11 = this.H;
+            if (size > i11) {
+                document = tL_messages_stickerSet.documents.get(i11);
+                svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
+                if (svgThumb != null) {
+                    svgThumb.overrideWidthAndHeight(512, 512);
+                }
+                if (document == null) {
+                    i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
+                    return;
+                } else {
+                    this.a.clearImage();
+                    MediaDataController.getInstance(i10).loadStickersByEmojiOrName(this.I, false, tL_messages_stickerSet == null);
+                    return;
                 }
             }
         }
-        canvas.restore();
-    }
-
-    public final void e() {
-        this.g = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        document = null;
+        svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
+        if (svgThumb != null) {
+        }
+        if (document == null) {
+        }
     }
 }

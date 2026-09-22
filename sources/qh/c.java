@@ -23,10 +23,10 @@ import org.telegram.ui.u41;
 import org.telegram.ui.ug;
 import org.telegram.ui.vy0;
 import org.telegram.ui.zn;
-import w7.b6;
+import w7.a6;
 import w7.y5;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
@@ -79,12 +79,12 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         this.b = bVar;
         int i11 = j6.Vh;
         bVar.setBackground(j6.f0(j6.v0(i11, f6Var), 1, -1));
-        b6.a(bVar);
+        a6.a(bVar);
         d dVar = new d(getContext(), 36);
         this.c = dVar;
         dVar.setBackground(j6.f0(j6.v0(i11, f6Var), 1, -1));
         dVar.setOnClickListener(new vy0(15, this, znVar));
-        b6.a(dVar);
+        a6.a(dVar);
         j5 j5Var = new j5(getContext());
         this.f = j5Var;
         j5Var.setTextSize(13);

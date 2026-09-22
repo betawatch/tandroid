@@ -22,9 +22,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes3.dex */
-public final class bz extends ul0 {
+public final class bz extends xl0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -40,9 +40,9 @@ public final class bz extends ul0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.xl0
     public final boolean D(s4.c1 c1Var) {
-        return c1Var.a instanceof vl0;
+        return c1Var.a instanceof yl0;
     }
 
     public final int E(Object obj) {
@@ -607,7 +607,7 @@ public final class bz extends ul0 {
                 int dp = AndroidUtilities.dp(13.0f);
                 int i14 = org.telegram.ui.ActionBar.j6.Me;
                 linearLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.12f, kzVar.z(i14))));
-                w7.b6.b(linearLayout, 0.1f, 1.5f);
+                w7.a6.b(linearLayout, 0.1f, 1.5f);
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
                     public final /* synthetic */ bz b;
 
@@ -664,6 +664,6 @@ public final class bz extends ul0 {
                 view = frameLayout;
                 break;
         }
-        return new fl0(view);
+        return new il0(view);
     }
 }

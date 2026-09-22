@@ -24,7 +24,7 @@ import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.r9;
 import v7.p8;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class o5 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
     public c3 E;
@@ -61,7 +61,7 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), 0);
         i1Var.setHint(LocaleController.getString(R.string.ArticleTableTitleHint));
         i1Var.setCenterEmptyHint(true);
-        i1Var.setListener(new a6.m(this, 28));
+        i1Var.setListener(new pb.c(this, 29));
         i1Var.setDelegate(new ei.d5(this, 21));
         addView(i1Var);
         a4 a4Var = new a4(this, context, 1);

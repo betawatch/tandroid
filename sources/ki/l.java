@@ -33,14 +33,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.b60;
+import org.telegram.ui.Components.oo0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.z50;
 import org.telegram.ui.i41;
-import org.telegram.ui.jl;
+import org.telegram.ui.kl;
 import rg.x0;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -222,30 +222,30 @@ public final /* synthetic */ class l implements Runnable {
                 }
                 return;
             case 1:
-                k2.u uVar = (k2.u) this.b;
-                h0 h0Var = (h0) this.c;
-                o0 o0Var = (o0) uVar.b;
-                o0Var.L++;
-                o0Var.v = true;
-                o0Var.l.b("camera switch started: target=" + h0Var);
-                z50 z50Var = (z50) o0Var.c.a;
-                jl jlVar = z50Var.x;
-                FrameLayout frameLayout = z50Var.v;
-                z50Var.q(false);
-                Bitmap bitmap = z50Var.h0;
+                e0 e0Var = (e0) this.b;
+                i0 i0Var = (i0) this.c;
+                q0 q0Var = (q0) e0Var.b;
+                q0Var.L++;
+                q0Var.v = true;
+                q0Var.l.b("camera switch started: target=" + i0Var);
+                b60 b60Var = q0Var.c.a;
+                kl klVar = b60Var.E;
+                FrameLayout frameLayout = b60Var.x;
+                b60Var.r(false);
+                Bitmap bitmap = b60Var.j0;
                 if (bitmap != null) {
-                    jlVar.setImageBitmap(bitmap);
-                    z50Var.g0 = true;
-                    jlVar.animate().cancel();
-                    jlVar.setAlpha(1.0f);
+                    klVar.setImageBitmap(bitmap);
+                    b60Var.i0 = true;
+                    klVar.animate().cancel();
+                    klVar.setAlpha(1.0f);
                 }
                 frameLayout.animate().cancel();
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
                 frameLayout.animate().rotationY(90.0f).setDuration(120L).start();
-                o0Var.n();
+                q0Var.n();
                 return;
             case 2:
-                ((o0) ((k2.u) this.b).b).g((Exception) this.c);
+                ((q0) ((e0) this.b).b).g((Exception) this.c);
                 return;
             case 3:
                 ((i9.c0) this.c).m(Boolean.valueOf(((m4.a0) this.b).o()));
@@ -260,10 +260,10 @@ public final /* synthetic */ class l implements Runnable {
                 ((m4.a0) this.b).u(null, (j1) this.c);
                 return;
             case 6:
-                i9.u uVar2 = (i9.u) this.b;
+                i9.u uVar = (i9.u) this.b;
                 ResultReceiver resultReceiver = (ResultReceiver) this.c;
                 try {
-                    p1Var = (p1) uVar2.a;
+                    p1Var = (p1) uVar.a;
                     e2.d.e(p1Var, "SessionResult must not be null");
                 } catch (InterruptedException e) {
                     e = e;
@@ -323,14 +323,14 @@ public final /* synthetic */ class l implements Runnable {
             case 10:
                 n2.d dVar = (n2.d) this.b;
                 b2.s sVar = (b2.s) this.c;
-                n2.f fVar2 = dVar.d;
-                if (fVar2.E == 0 || dVar.c) {
+                n2.e eVar = dVar.d;
+                if (eVar.E == 0 || dVar.c) {
                     return;
                 }
-                Looper looper = fVar2.I;
+                Looper looper = eVar.I;
                 looper.getClass();
-                dVar.b = fVar2.a(looper, dVar.a, sVar, false);
-                fVar2.x.add(dVar);
+                dVar.b = eVar.a(looper, dVar.a, sVar, false);
+                eVar.x.add(dVar);
                 return;
             case 11:
                 ((p2.b) ((o2.k) ((o2.q) this.b).c.b).b.d.get(((o2.j) this.c).x)).c(true);
@@ -417,7 +417,7 @@ public final /* synthetic */ class l implements Runnable {
                 return;
             case 26:
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((mo0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((oo0) this.c).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
                 if (kVar2.r1 == z10) {
                     return;

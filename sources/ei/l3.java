@@ -59,15 +59,16 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.gw0;
-import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.wm;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
+import org.telegram.ui.aj;
 import org.telegram.ui.fs0;
 import org.telegram.ui.gh0;
 import org.telegram.ui.gn;
@@ -79,10 +80,9 @@ import org.telegram.ui.pr0;
 import org.telegram.ui.r80;
 import org.telegram.ui.uy;
 import org.telegram.ui.xm;
-import org.telegram.ui.zi;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -555,8 +555,8 @@ public final /* synthetic */ class l3 implements Runnable {
                 return;
             case 17:
                 ln lnVar = (ln) this.c;
-                zi ziVar = (zi) this.d;
-                ziVar.b = lnVar.a.getMessagesController().ensureMessagesLoaded(-((TLRPC.Chat) this.e).id, this.b, new gn(lnVar, ziVar, (zn) this.f));
+                aj ajVar = (aj) this.d;
+                ajVar.b = lnVar.a.getMessagesController().ensureMessagesLoaded(-((TLRPC.Chat) this.e).id, this.b, new gn(lnVar, ajVar, (zn) this.f));
                 return;
             case 18:
                 ln lnVar2 = (ln) this.c;
@@ -623,15 +623,15 @@ public final /* synthetic */ class l3 implements Runnable {
                 fs.P((fs) this.c, (TLObject) this.d, (TLRPC.InputPeer) this.e, this.b, (int[]) this.f);
                 return;
             case 23:
-                iw0 iw0Var = (iw0) this.c;
+                kw0 kw0Var = (kw0) this.c;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
                 int i31 = this.b;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.f;
-                int[] iArr2 = iw0Var.e;
-                RLottieNative[] rLottieNativeArr = iw0Var.f1;
-                if (iw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new gw0(iw0Var, 2));
+                int[] iArr2 = kw0Var.e;
+                RLottieNative[] rLottieNativeArr = kw0Var.f1;
+                if (kw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new iw0(kw0Var, 2));
                     return;
                 }
                 boolean z14 = false;
@@ -643,21 +643,21 @@ public final /* synthetic */ class l3 implements Runnable {
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i33);
                             String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                             if (TextUtils.isEmpty(readRes)) {
-                                AndroidUtilities.runOnUIThread(new hw0(document, i31, messageObject2, u1Var2, tL_messages_stickerSet, 1));
+                                AndroidUtilities.runOnUIThread(new jw0(document, i31, messageObject2, u1Var2, tL_messages_stickerSet, 1));
                                 z14 = true;
                             } else {
                                 rLottieNativeArr[i32] = RLottieNative.b(readRes, iArr2, null, null);
-                                iw0Var.g1[i32] = iArr2[0];
+                                kw0Var.g1[i32] = iArr2[0];
                             }
                         }
                     }
                     i32++;
                 }
                 if (z14) {
-                    AndroidUtilities.runOnUIThread(new gw0(iw0Var, 3));
+                    AndroidUtilities.runOnUIThread(new iw0(kw0Var, 3));
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new wm(iw0Var, i31, u1Var2, 17));
+                    AndroidUtilities.runOnUIThread(new wm(kw0Var, i31, u1Var2, 17));
                     return;
                 }
             case 24:

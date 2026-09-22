@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.m01;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -73,14 +73,14 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 4:
                 a4 a4Var = (a4) obj;
-                a4Var.r5.invalidate();
+                a4Var.s5.invalidate();
                 a4Var.setAnimatedTop(0);
-                a4Var.r5.V2 = true;
-                View view = a4Var.F1;
+                a4Var.s5.V2 = true;
+                View view = a4Var.G1;
                 if (view != null && view.getVisibility() == 0) {
-                    a4Var.F1.setTranslationY(((1.0f - a4Var.getTopViewEnterProgress()) * a4Var.F1.getLayoutParams().height) + a4Var.S1);
+                    a4Var.G1.setTranslationY(((1.0f - a4Var.getTopViewEnterProgress()) * a4Var.G1.getLayoutParams().height) + a4Var.T1);
                 }
-                a4Var.r5.e2 = null;
+                a4Var.s5.e2 = null;
                 break;
             case 5:
                 b6 b6Var = (b6) obj;
@@ -249,9 +249,9 @@ public final class b extends AnimatorListenerAdapter {
             case 9:
                 super.onAnimationStart(animator);
                 p9 p9Var = (p9) this.b;
-                hj0 hj0Var = ((o9) p9Var.a.get(p9Var.d)).c;
-                hj0Var.L = 2;
-                hj0Var.start();
+                kj0 kj0Var = ((o9) p9Var.a.get(p9Var.d)).c;
+                kj0Var.L = 2;
+                kj0Var.start();
                 break;
             case 29:
                 ((org.telegram.ui.q4) this.b).setVisibility(0);

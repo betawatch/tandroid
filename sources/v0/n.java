@@ -1,28 +1,37 @@
 package v0;
 
-import java.util.Collection;
-import java.util.List;
+import android.os.Bundle;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-eaaffe05e5b4975c35db95ddc7f057e1a9a0a254a43fe066fa0ad675f8b3973e */
+/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
 /* loaded from: classes.dex */
-public final class n {
-    public final List a;
-    public final boolean b;
-
-    public n(List list, boolean z10) {
-        this.a = list;
-        this.b = z10;
-        if (list.isEmpty()) {
-            throw new IllegalArgumentException("credentialOptions should not be empty");
-        }
-        if (list.size() > 1) {
-            List<p> list2 = list;
-            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
-                for (p pVar : list2) {
+public class n extends b2.g {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n(String str, int i10, Bundle data) {
+        super(str, data);
+        switch (i10) {
+            case 2:
+                super("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+                if (str.length() <= 0) {
+                    throw new IllegalArgumentException("password should not be empty");
                 }
-            }
-            for (p pVar2 : this.a) {
-            }
+                return;
+            case 3:
+                super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data);
+                if (str.length() != 0) {
+                    try {
+                        new JSONObject(str);
+                        return;
+                    } catch (Exception unused) {
+                    }
+                }
+                throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
+            default:
+                kotlin.jvm.internal.i.e(data, "data");
+                if (str.length() <= 0) {
+                    throw new IllegalArgumentException("type should not be empty");
+                }
+                return;
         }
     }
 }
