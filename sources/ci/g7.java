@@ -12,7 +12,6 @@ import android.os.Looper;
 import android.provider.Settings;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.qr;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
@@ -56,14 +55,10 @@ public final class g7 {
         Looper myLooper = Looper.myLooper();
         boolean z10 = g0Var.i0 == myLooper;
         StringBuilder sb2 = new StringBuilder("Current looper (");
-        String str = BuildConfig.BETA_URL;
-        sb2.append(myLooper == null ? BuildConfig.BETA_URL : myLooper.getThread().getName());
+        sb2.append(myLooper == null ? "null" : myLooper.getThread().getName());
         sb2.append(") is not the playback looper (");
         Looper looper = g0Var.i0;
-        if (looper != null) {
-            str = looper.getThread().getName();
-        }
-        sb2.append(str);
+        sb2.append(looper != null ? looper.getThread().getName() : "null");
         sb2.append(")");
         e2.d.f(sb2.toString(), z10);
         k2.b bVar2 = g0Var.y;

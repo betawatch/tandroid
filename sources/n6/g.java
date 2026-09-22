@@ -24,7 +24,6 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -379,13 +378,13 @@ public abstract class g implements com.google.android.gms.common.api.c {
         }
         printWriter.append(" mService=");
         if (iInterface == null) {
-            printWriter.append(BuildConfig.BETA_URL);
+            printWriter.append("null");
         } else {
             printWriter.append((CharSequence) v()).append("@").append((CharSequence) Integer.toHexString(System.identityHashCode(iInterface.asBinder())));
         }
         printWriter.append(" mServiceBroker=");
         if (yVar == null) {
-            printWriter.println(BuildConfig.BETA_URL);
+            printWriter.println("null");
         } else {
             printWriter.append("IGmsServiceBroker@").println(Integer.toHexString(System.identityHashCode(yVar.a)));
         }

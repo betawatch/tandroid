@@ -2,7 +2,6 @@ package v7;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -14,7 +13,7 @@ public abstract class u6 {
         for (int i11 = 0; i11 < objArr.length; i11++) {
             Object obj = objArr[i11];
             if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+                sb2 = "null";
             } else {
                 try {
                     sb2 = obj.toString();

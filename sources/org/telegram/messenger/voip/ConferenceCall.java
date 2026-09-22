@@ -13,7 +13,6 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -96,7 +95,7 @@ public class ConferenceCall {
                 }
                 CallParticipant callParticipant = this.participants[i10];
                 if (callParticipant == null) {
-                    sb2.append(BuildConfig.BETA_URL);
+                    sb2.append("null");
                 } else {
                     sb2.append(callParticipant.toString());
                 }

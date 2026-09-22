@@ -18,7 +18,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.oc;
@@ -613,7 +612,7 @@ public final class s implements Runnable {
                 }
                 StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
                 int i10 = ((r9.j) this.c).c;
-                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
+                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
                 sb2.append("}");
                 return sb2.toString();
             default:

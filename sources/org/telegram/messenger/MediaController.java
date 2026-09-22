@@ -5483,7 +5483,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         if (BuildVars.LOGS_ENABLED) {
             StringBuilder sb2 = new StringBuilder("stop recording internal ");
             if (file == null) {
-                str = BuildConfig.BETA_URL;
+                str = "null";
             } else {
                 str = file.exists() + " " + file.length() + "  recordTimeCount " + this.recordTimeCount + " writedFrames" + this.writtenFrame;
             }

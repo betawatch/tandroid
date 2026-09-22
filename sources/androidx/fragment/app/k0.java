@@ -24,7 +24,6 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.q3;
 
@@ -2076,7 +2075,7 @@ public abstract class k0 {
                 sb2.append(Integer.toHexString(System.identityHashCode(this.w)));
                 sb2.append("}");
             } else {
-                sb2.append(BuildConfig.BETA_URL);
+                sb2.append("null");
             }
         }
         sb2.append("}}");
@@ -2128,7 +2127,7 @@ public abstract class k0 {
                     printWriter.println(sVar);
                     sVar.i(g11, fileDescriptor, printWriter, strArr);
                 } else {
-                    printWriter.println(BuildConfig.BETA_URL);
+                    printWriter.println("null");
                 }
             }
         }

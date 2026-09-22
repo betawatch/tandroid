@@ -8,7 +8,6 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
-import org.telegram.messenger.BuildConfig;
 import v7.c9;
 import v7.j8;
 import v7.x7;
@@ -39,7 +38,7 @@ public abstract class e {
         synchronized (e.class) {
             try {
                 l.i(context, "Context is null");
-                Log.d("e", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
+                Log.d("e", "preferredRenderer: ".concat("null"));
                 if (a) {
                     return 0;
                 }
@@ -71,7 +70,7 @@ public abstract class e {
                             Log.e("e", "Failed to retrieve renderer type or log initialization.", e);
                         }
                         int i10 = b;
-                        Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? BuildConfig.BETA_URL : "LATEST" : "LEGACY"));
+                        Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? "null" : "LATEST" : "LEGACY"));
                         return 0;
                     } catch (RemoteException e7) {
                         throw new androidx.car.app.j(e7);

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -99,7 +98,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
                         if (Y.contains(str2) && !Y.contains(str)) {
                             Collection.-EL.removeIf(hashSet, new r80(str2, 0));
                         }
-                        if (str != null && !BuildConfig.BETA_URL.equals(str)) {
+                        if (str != null && !"null".equals(str)) {
                             hashSet.add(str);
                         }
                         f41.a0(hashSet, Boolean.FALSE);

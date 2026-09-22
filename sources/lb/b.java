@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -203,7 +202,7 @@ public class b implements Closeable, Flushable {
             t();
         }
         a();
-        this.a.write(BuildConfig.BETA_URL);
+        this.a.write("null");
         return this;
     }
 

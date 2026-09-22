@@ -8,7 +8,6 @@ import android.util.Log;
 import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -38,7 +37,7 @@ public final class m extends o6.a {
         StringBuilder sb2 = new StringBuilder("DataItemParcelable[@");
         sb2.append(Integer.toHexString(hashCode()));
         byte[] bArr = this.c;
-        sb2.append(",dataSz=".concat((bArr == null ? BuildConfig.BETA_URL : Integer.valueOf(bArr.length)).toString()));
+        sb2.append(",dataSz=".concat((bArr == null ? "null" : Integer.valueOf(bArr.length)).toString()));
         HashMap hashMap = this.b;
         sb2.append(", numAssets=" + hashMap.size());
         sb2.append(", uri=".concat(String.valueOf(this.a)));

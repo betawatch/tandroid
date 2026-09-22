@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -136,7 +135,7 @@ public final class l9 {
                     str = str + ", ";
                 }
                 TL_stories.StoryItem storyItem = ((MessageObject) arrayList.get(i10)).storyItem;
-                str = storyItem == null ? str + BuildConfig.BETA_URL : str + storyItem.id + "@" + storyItem.dialogId;
+                str = storyItem == null ? str + "null" : str + storyItem.id + "@" + storyItem.dialogId;
             } catch (Exception unused) {
                 return "err";
             }
@@ -173,7 +172,7 @@ public final class l9 {
 
     public static String h0(List list) {
         if (list == null) {
-            return BuildConfig.BETA_URL;
+            return "null";
         }
         String str = "";
         for (int i10 = 0; i10 < list.size(); i10++) {
@@ -1504,7 +1503,7 @@ public final class l9 {
         String str;
         StringBuilder u10 = a4.a.u(j3, "StoriesController updateStoryItem ", " ");
         if (storyItem == null) {
-            str = BuildConfig.BETA_URL;
+            str = "null";
         } else {
             str = storyItem.id + "@" + storyItem.dialogId;
         }

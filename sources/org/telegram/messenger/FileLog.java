@@ -271,7 +271,7 @@ public class FileLog {
             }
             try {
                 final String str = "req -> " + simpleName + " : " + gson.e(tLObject);
-                String str2 = BuildConfig.BETA_URL;
+                String str2 = "null";
                 if (tLObject2 != null) {
                     str2 = "res -> " + tLObject2.getClass().getSimpleName() + " : " + gson.e(tLObject2);
                 } else if (tL_error != null) {

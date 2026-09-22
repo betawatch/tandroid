@@ -179,7 +179,7 @@ public class BetaUpdaterController {
             if (runnable != null) {
             }
         } catch (Exception e10) {
-            FileLog.e("Failed to check for beta update at null received: " + str, e10);
+            FileLog.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str, e10);
         }
     }
 

@@ -6,7 +6,6 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -54,7 +53,7 @@ public final class x4 {
         StringBuilder sb3 = new StringBuilder();
         u uVar2 = this.e;
         if (uVar2 == null) {
-            sb2 = BuildConfig.BETA_URL;
+            sb2 = "null";
         } else {
             String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
             if (uVar2.e != null) {

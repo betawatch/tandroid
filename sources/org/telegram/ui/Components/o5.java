@@ -13,7 +13,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -645,7 +644,7 @@ public class o5 extends Drawable {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("AnimatedEmojiDrawable{");
         TLRPC.Document document = this.e;
-        return a4.a.t(sb2, document == null ? BuildConfig.BETA_URL : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
+        return a4.a.t(sb2, document == null ? "null" : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
     }
 
     public final void v() {

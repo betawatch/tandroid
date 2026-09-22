@@ -208,13 +208,9 @@ public class ImageLocation {
         String strippedKeyInternal = getStrippedKeyInternal(obj, obj2, obj3);
         if (BuildVars.LOGS_ENABLED && (obj instanceof MessageObject) && (message = ((MessageObject) obj).messageOwner) != null && message.rich_message != null) {
             StringBuilder w10 = a4.a.w("[richmedia] strippedKey=", strippedKeyInternal, " fullObject=");
-            String str = BuildConfig.BETA_URL;
-            w10.append(obj2 == null ? BuildConfig.BETA_URL : obj2.getClass().getSimpleName());
+            w10.append(obj2 == null ? "null" : obj2.getClass().getSimpleName());
             w10.append(" stripped=");
-            if (obj3 != null) {
-                str = obj3.getClass().getSimpleName();
-            }
-            com.google.android.gms.internal.vision.e2.t(str, w10);
+            com.google.android.gms.internal.vision.e2.t(obj3 != null ? obj3.getClass().getSimpleName() : "null", w10);
         }
         return strippedKeyInternal;
     }

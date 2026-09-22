@@ -39,7 +39,6 @@ import java.util.concurrent.Executor;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
@@ -613,7 +612,7 @@ public final class a1 implements e6, eo0, zt, sc, cl0, fh.a, d71, p2.t, r2.k, y2
             dVar2.getClass();
             StringBuilder sb2 = new StringBuilder(64);
             if (obj2 == null) {
-                sb2.append(BuildConfig.BETA_URL);
+                sb2.append("null");
             } else {
                 Class<?> cls = obj2.getClass();
                 sb2.append(cls.getSimpleName());

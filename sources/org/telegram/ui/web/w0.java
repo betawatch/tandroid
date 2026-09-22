@@ -16,7 +16,6 @@ import android.webkit.WebView;
 import android.widget.LinearLayout;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -329,7 +328,7 @@ public final class w0 extends WebChromeClient {
         HashMap hashMap = z0Var.P;
         StringBuilder sb2 = new StringBuilder("onReceivedIcon favicon=");
         if (bitmap == null) {
-            str = BuildConfig.BETA_URL;
+            str = "null";
         } else {
             str = bitmap.getWidth() + "x" + bitmap.getHeight();
         }

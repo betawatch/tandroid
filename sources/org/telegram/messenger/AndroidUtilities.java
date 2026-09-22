@@ -1135,7 +1135,7 @@ public class AndroidUtilities {
                 while (i10 < length) {
                     CharSequence charSequence2 = charSequenceArr[i10];
                     if (charSequence2 == null) {
-                        charSequence2 = BuildConfig.BETA_URL;
+                        charSequence2 = "null";
                     }
                     spannableStringBuilder.append(charSequence2);
                     i10++;

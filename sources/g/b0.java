@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import m.k1;
 import m.l3;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.voip.r0;
 import r0.i0;
 import r0.l0;
@@ -142,7 +141,7 @@ public final class b0 extends j7 implements m.b {
             wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
-                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : BuildConfig.BETA_URL));
+                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : "null"));
             }
             wrapper = ((Toolbar) findViewById).getWrapper();
         }

@@ -16216,7 +16216,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 z11 = false;
                 if (BuildVars.LOGS_ENABLED) {
                     StringBuilder sb2 = new StringBuilder("processDialogsUpdate oldMsgs (count = ");
-                    sb2.append(arrayList3 == null ? BuildConfig.BETA_URL : Integer.valueOf(arrayList3.size()));
+                    sb2.append(arrayList3 == null ? "null" : Integer.valueOf(arrayList3.size()));
                     sb2.append(") old top_message = ");
                     sb2.append(dialog2.top_message);
                     sb2.append(" new top_message = ");

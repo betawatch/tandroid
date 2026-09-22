@@ -1600,10 +1600,10 @@ public class TranslateController extends BaseController {
                         str3 = com.google.android.gms.internal.vision.e2.i(1, 0, str3);
                         z10 = true;
                     }
-                    if (BuildConfig.BETA_URL.equals(str2)) {
+                    if ("null".equals(str2)) {
                         str2 = null;
                     }
-                    if (BuildConfig.BETA_URL.equals(str3)) {
+                    if ("null".equals(str3)) {
                         str3 = null;
                     }
                     if (str2 != null) {
@@ -1908,9 +1908,9 @@ public class TranslateController extends BaseController {
                     z10 = false;
                 }
                 String str = this.detectedDialogLanguage.get(Long.valueOf(keyAt));
-                String str2 = BuildConfig.BETA_URL;
+                String str2 = "null";
                 if (str == null) {
-                    str = BuildConfig.BETA_URL;
+                    str = "null";
                 }
                 String dialogTranslateTo = getDialogTranslateTo(keyAt);
                 if (dialogTranslateTo != null) {

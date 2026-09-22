@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -70,7 +69,7 @@ public abstract /* synthetic */ class c {
             case 10:
                 return "END_DOCUMENT";
             default:
-                return BuildConfig.BETA_URL;
+                return "null";
         }
     }
 

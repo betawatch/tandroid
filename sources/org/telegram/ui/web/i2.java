@@ -15,7 +15,6 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
@@ -376,33 +375,33 @@ public final class i2 {
         tL_webPage.url = str;
         tL_webPage.display_url = str;
         String string = jSONObject.getString("siteName");
-        if (string != null && !BuildConfig.BETA_URL.equals(string)) {
+        if (string != null && !"null".equals(string)) {
             tL_webPage.flags |= 2;
             tL_webPage.site_name = string;
         }
         String optString = jSONObject.optString("title");
-        if (optString != null && !BuildConfig.BETA_URL.equals(optString)) {
+        if (optString != null && !"null".equals(optString)) {
             tL_webPage.flags |= 4;
             tL_webPage.title = optString;
         }
         String optString2 = jSONObject.optString("byline");
-        if (optString2 != null && !BuildConfig.BETA_URL.equals(optString2) && !"by".equalsIgnoreCase(optString2)) {
+        if (optString2 != null && !"null".equals(optString2) && !"by".equalsIgnoreCase(optString2)) {
             tL_webPage.flags |= 256;
             tL_webPage.author = optString2;
         }
         String optString3 = jSONObject.optString("excerpt");
-        if (optString3 != null && !BuildConfig.BETA_URL.equals(optString3)) {
+        if (optString3 != null && !"null".equals(optString3)) {
             tL_webPage.flags |= 8;
             tL_webPage.description = optString3;
         }
         JSONArray optJSONArray = jSONObject.optJSONArray("content");
-        if (optJSONArray != null && !BuildConfig.BETA_URL.equals(optJSONArray)) {
+        if (optJSONArray != null && !"null".equals(optJSONArray)) {
             tL_webPage.flags |= 1024;
             String optString4 = jSONObject.optString("title");
-            if (BuildConfig.BETA_URL.equals(optString4)) {
+            if ("null".equals(optString4)) {
                 optString4 = null;
             }
-            BuildConfig.BETA_URL.equals(jSONObject.optString("publishedTime"));
+            "null".equals(jSONObject.optString("publishedTime"));
             JSONArray optJSONArray2 = jSONObject.optJSONArray("content");
             TL_iv.TL_page tL_page = new TL_iv.TL_page();
             tL_page.web = true;

@@ -11140,7 +11140,7 @@ public class NotificationsController extends BaseController implements Notificat
         boolean z13;
         if (BuildVars.LOGS_ENABLED) {
             StringBuilder sb2 = new StringBuilder("NotificationsController: processNewMessages msgs.size()=");
-            sb2.append(arrayList == null ? BuildConfig.BETA_URL : Integer.valueOf(arrayList.size()));
+            sb2.append(arrayList == null ? "null" : Integer.valueOf(arrayList.size()));
             sb2.append(" isLast=");
             z12 = z10;
             sb2.append(z12);

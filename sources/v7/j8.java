@@ -8,7 +8,6 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -19,7 +18,7 @@ public abstract class j8 {
     public static i8.e a(Context context) {
         i8.e eVar;
         n6.l.h(context);
-        Log.d("j8", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
+        Log.d("j8", "preferredRenderer: ".concat("null"));
         i8.e eVar2 = b;
         if (eVar2 != null) {
             return eVar2;

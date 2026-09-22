@@ -2,7 +2,6 @@ package y8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import org.telegram.messenger.BuildConfig;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
@@ -22,7 +21,7 @@ public final class k0 extends o6.a implements x8.g {
 
     public final String toString() {
         byte[] bArr = this.c;
-        String obj = (bArr == null ? BuildConfig.BETA_URL : Integer.valueOf(bArr.length)).toString();
+        String obj = (bArr == null ? "null" : Integer.valueOf(bArr.length)).toString();
         StringBuilder sb2 = new StringBuilder("MessageEventParcelable[");
         sb2.append(this.a);
         sb2.append(",");

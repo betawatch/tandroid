@@ -3,7 +3,6 @@ package com.google.android.recaptcha.internal;
 import a4.a;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Cells.q3;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
@@ -23,7 +22,7 @@ public final class zzmg {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                j3 = BuildConfig.BETA_URL;
+                j3 = "null";
             } else {
                 try {
                     j3 = obj.toString();

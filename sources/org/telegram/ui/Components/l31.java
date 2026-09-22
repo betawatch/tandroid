@@ -10,7 +10,6 @@ import java.net.URI;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.Utilities;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
@@ -68,7 +67,7 @@ public final class l31 extends Thread {
                 String str3 = "";
                 for (int i10 = 0; i10 < jSONArray2.length(); i10++) {
                     String string = jSONArray2.getJSONArray(i10).getString(0);
-                    if (string != null && !string.equals(BuildConfig.BETA_URL)) {
+                    if (string != null && !string.equals("null")) {
                         str3 = str3 + string;
                     }
                 }

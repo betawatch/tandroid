@@ -4449,7 +4449,7 @@ public class LocaleController {
                     } else if (obj instanceof Long) {
                         str3 = "" + ((Long) objArr[i11]);
                     } else {
-                        str3 = obj == null ? BuildConfig.BETA_URL : "";
+                        str3 = obj == null ? "null" : "";
                     }
                     str4 = "d";
                 }

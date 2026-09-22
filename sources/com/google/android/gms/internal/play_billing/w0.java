@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import org.telegram.messenger.BuildConfig;
 import v7.y5;
 
 /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
@@ -339,7 +338,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else if (obj == this) {
             sb2.append("this future");
         } else {

@@ -27,7 +27,6 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.MediaController;
 import v7.y7;
 
@@ -1573,13 +1572,9 @@ public final class g0 implements p {
         boolean z10 = this.z == null || this.i0 == myLooper;
         StringBuilder sb2 = new StringBuilder("DefaultAudioSink accessed on multiple threads: ");
         Looper looper = this.i0;
-        String str = BuildConfig.BETA_URL;
-        sb2.append(looper == null ? BuildConfig.BETA_URL : looper.getThread().getName());
+        sb2.append(looper == null ? "null" : looper.getThread().getName());
         sb2.append(" and ");
-        if (myLooper != null) {
-            str = myLooper.getThread().getName();
-        }
-        sb2.append(str);
+        sb2.append(myLooper != null ? myLooper.getThread().getName() : "null");
         e2.d.f(sb2.toString(), z10);
         if (this.z == null && (context = this.a) != null) {
             this.i0 = myLooper;

@@ -15,7 +15,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -1871,7 +1870,7 @@ public abstract class i0 extends kl0 {
                                         TLRPC.Chat chat6 = MessagesController.getInstance(i18).getChat(Long.valueOf(-this.U.a()));
                                         int i30 = R.string.SearchMessagesIn;
                                         if (chat6 == null) {
-                                            i15 = BuildConfig.BETA_URL;
+                                            i15 = "null";
                                             c10 = 0;
                                         } else {
                                             c10 = 0;

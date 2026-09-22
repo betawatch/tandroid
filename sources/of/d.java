@@ -30,7 +30,6 @@ import java.util.logging.Level;
 import m1.j;
 import m4.u0;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.ui.Components.wg;
@@ -155,7 +154,7 @@ public final class d extends i {
                 str = "UNLOCK";
                 break;
             default:
-                str = BuildConfig.BETA_URL;
+                str = "null";
                 break;
         }
         l4.append(str);
