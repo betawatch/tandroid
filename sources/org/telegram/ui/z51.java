@@ -1,103 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class z51 implements org.telegram.ui.Components.pl0 {
+public final class z51 extends View {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ Integer d;
-    public final /* synthetic */ j71 e;
+    public final /* synthetic */ Integer b;
 
-    public z51(j71 j71Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, Integer num) {
-        this.e = j71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ z51(Context context, Integer num, int i10) {
+        super(context);
         this.a = i10;
-        this.b = context;
-        this.c = f6Var;
-        this.d = num;
+        this.b = num;
     }
 
-    @Override // org.telegram.ui.Components.pl0
-    public final boolean c(float f7, float f10, int i10, View view) {
-        j71 j71Var = this.e;
-        int i11 = j71Var.V;
-        int i12 = this.a;
-        if (i12 != 11 && i12 != 13 && j71Var.h1) {
-            boolean z10 = view instanceof s61;
-            if (z10 && (i12 == 1 || i12 == 8)) {
-                j71Var.l();
-                try {
-                    j71Var.performHapticFeedback(0);
-                } catch (Exception unused) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, i11);
+                if (this.b != null) {
+                    setPivotX(r2.intValue());
+                    break;
                 }
-                s61 s61Var = (s61) view;
-                if (!s61Var.s && !UserConfig.getInstance(i11).isPremium()) {
-                    org.telegram.ui.Components.y5 y5Var = s61Var.e;
-                    TLRPC.Document document = y5Var.document;
-                    if (document == null) {
-                        document = org.telegram.ui.Components.p5.f(i11, y5Var.documentId);
-                    }
-                    j71Var.p(s61Var, Long.valueOf(s61Var.e.documentId), document, s61Var.v, null);
-                    return true;
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                if (this.b != null) {
+                    setPivotX(r2.intValue());
+                    break;
                 }
-                j71Var.S0 = s61Var;
-                j71Var.U0 = 0.0f;
-                j71Var.T0 = false;
-                if (s61Var.s) {
-                    j71Var.setBigReactionAnimatedEmoji(null);
-                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(j71Var.S0.x.f);
-                    if (tL_availableReaction != null) {
-                        j71Var.V0.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", j71Var.S0.x, 0);
-                    }
-                } else {
-                    j71Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.p5(4, i11, j71Var.S0.e.documentId));
-                }
-                j71Var.h0.invalidate();
-                j71Var.m();
-                return true;
-            }
-            if (z10) {
-                s61 s61Var2 = (s61) view;
-                if (s61Var2.e != null && (i12 == 0 || i12 == 12 || i12 == 9 || i12 == 10)) {
-                    TL_stars.TL_starGiftUnique tL_starGiftUnique = s61Var2.v;
-                    y51 y51Var = new y51(this, this.b, j71Var.T1, j71Var, s61Var2, this.c, view, tL_starGiftUnique);
-                    j71Var.X0 = y51Var;
-                    y51Var.show();
-                    try {
-                        view.performHapticFeedback(0, 1);
-                    } catch (Exception unused2) {
-                    }
-                    return true;
-                }
-            }
+                break;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pl0
-    public final void g() {
-        j71 j71Var = this.e;
-        if (j71Var.S0 != null) {
-            j71Var.T0 = true;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(j71Var.U0, 0.0f);
-            ofFloat.addUpdateListener(new i21(this, 7));
-            ofFloat.addListener(new gp0(this, 20));
-            ofFloat.setDuration(150L);
-            ofFloat.setInterpolator(org.telegram.ui.Components.qr.f);
-            ofFloat.start();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pl0
-    public final /* synthetic */ void q(float f7) {
     }
 }

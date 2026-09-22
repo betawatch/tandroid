@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f0 implements e0 {
     public final /* synthetic */ int a;
@@ -23,9 +23,9 @@ public final class f0 implements e0 {
             case 0:
                 Object obj = (e0) this.c;
                 if (obj == b0.b) {
-                    obj = a4.a.p("<supplier that returned ", String.valueOf(this.b), ">");
+                    obj = a4.a.q("<supplier that returned ", String.valueOf(this.b), ">");
                 }
-                return a4.a.p("Suppliers.memoize(", String.valueOf(obj), ")");
+                return a4.a.q("Suppliers.memoize(", String.valueOf(obj), ")");
             default:
                 return super.toString();
         }

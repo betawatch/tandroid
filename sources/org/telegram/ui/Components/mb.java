@@ -1,75 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class mb extends tb {
-    private lb button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.f6 resourcesProvider;
-    public ic timerView;
-    private boolean wrapWidth;
+public interface mb {
+    boolean a();
 
-    public mb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.resourcesProvider = f6Var;
-    }
+    void b(oc ocVar);
 
-    public lb getButton() {
-        return this.button;
-    }
+    void c(float f7);
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        lb lbVar = this.button;
-        if (lbVar != null && view != lbVar) {
-            i11 = org.telegram.messenger.rk.D(12.0f, lbVar.getMeasuredWidth(), i11);
-        }
-        super.measureChildWithMargins(view, i10, i11, i12, i13);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
+    void d(oc ocVar);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-        }
-        super.onMeasure(i10, i11);
-        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
+    boolean e();
 
-    public void setButton(lb lbVar) {
-        lb lbVar2 = this.button;
-        if (lbVar2 != null) {
-            removeCallback(lbVar2);
-            removeView(this.button);
-        }
-        this.button = lbVar;
-        if (lbVar != null) {
-            addCallback(lbVar);
-            addView(lbVar, 0, w7.y5.h(-2.0f, -2.0f, 8388629));
-        }
-    }
+    int f(int i10);
 
-    public void setTimer() {
-        ic icVar = new ic(getContext(), this.resourcesProvider);
-        this.timerView = icVar;
-        icVar.b = 5000L;
-        addView(icVar, w7.y5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-    }
+    boolean g(int i10);
 
-    public void setWrapWidth() {
-        this.wrapWidth = true;
-    }
+    int h(int i10);
 }

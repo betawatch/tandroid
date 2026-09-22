@@ -10,7 +10,6 @@ import android.util.Pair;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import e9.a1;
-import e9.g0;
 import e9.i0;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -31,17 +30,15 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import pg.c1;
-import u2.p1;
-import v7.j0;
+import u2.o1;
 import y9.w0;
 import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class t implements z3.m {
+public final class t implements z3.n {
     public static t f;
     public final /* synthetic */ int a;
     public Object b;
@@ -80,8 +77,8 @@ public final class t implements z3.m {
         }
     }
 
-    @Override // z3.m
-    public int K() {
+    @Override // z3.n
+    public int A() {
         switch (this.a) {
         }
         return 2;
@@ -89,11 +86,11 @@ public final class t implements z3.m {
 
     /* JADX WARN: Removed duplicated region for block: B:74:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x01fd  */
-    @Override // z3.m
+    @Override // z3.n
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void M(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public void B(byte[] bArr, int i10, int i11, z3.m mVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -254,7 +251,7 @@ public final class t implements z3.m {
                     i15 = 0;
                     i16 = 2;
                 }
-                hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
+                hVar.accept(new z3.b(-9223372036854775807L, -9223372036854775807L, arrayList));
                 break;
             default:
                 e2.v vVar4 = (e2.v) this.b;
@@ -342,17 +339,17 @@ public final class t implements z3.m {
                         if (bVar3 == null) {
                             a1Var = i0.z(bVar3);
                         } else {
-                            g0 g0Var = i0.b;
+                            e9.g0 g0Var = i0.b;
                             a1Var = a1.e;
                         }
-                        hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
+                        hVar.accept(new z3.b(-9223372036854775807L, 5000000L, a1Var));
                         break;
                     }
                 }
                 bVar3 = null;
                 if (bVar3 == null) {
                 }
-                hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
+                hVar.accept(new z3.b(-9223372036854775807L, 5000000L, a1Var));
                 break;
         }
     }
@@ -379,10 +376,10 @@ public final class t implements z3.m {
             str = str.concat(" parameterKey");
         }
         if (((String) this.d) == null) {
-            str = j0.s(str, " parameterValue");
+            str = w.c.g(str, " parameterValue");
         }
         if (((Long) this.e) == null) {
-            str = j0.s(str, " templateVersion");
+            str = w.c.g(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
@@ -780,7 +777,7 @@ public final class t implements z3.m {
     public Task k(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new o0.b(callable, 23));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new v8.s(callable));
             this.c = continueWith.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWith;
@@ -789,13 +786,20 @@ public final class t implements z3.m {
     public Task l(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new o0.b(callable, 23));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new v8.s(callable));
             this.c = continueWithTask.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWithTask;
     }
 
-    @Override // z3.m
+    @Override // z3.n
+    public /* synthetic */ z3.e r(int i10, int i11, byte[] bArr) {
+        switch (this.a) {
+        }
+        return w.c.a(this, bArr, i11);
+    }
+
+    @Override // z3.n
     public /* synthetic */ void reset() {
         int i10 = this.a;
     }
@@ -803,17 +807,10 @@ public final class t implements z3.m {
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((o0.b) this.e).toString();
+                return ((k2.c0) this.e).toString();
             default:
                 return super.toString();
         }
-    }
-
-    @Override // z3.m
-    public /* synthetic */ z3.d u(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return j0.a(this, bArr, i11);
     }
 
     public /* synthetic */ t(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
@@ -844,7 +841,7 @@ public final class t implements z3.m {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new c1(this, 7));
+        executorService.execute(new qg.b0(this, 6));
     }
 
     public t(List list) {
@@ -944,9 +941,9 @@ public final class t implements z3.m {
         }
     }
 
-    public t(o0.b bVar, Object obj, Object obj2, Object[] objArr) {
+    public t(k2.c0 c0Var, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = bVar;
+        this.e = c0Var;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;
@@ -976,11 +973,11 @@ public final class t implements z3.m {
         }
     }
 
-    public t(p1 p1Var, boolean[] zArr) {
+    public t(o1 o1Var, boolean[] zArr) {
         this.a = 11;
-        this.b = p1Var;
+        this.b = o1Var;
         this.c = zArr;
-        int i10 = p1Var.a;
+        int i10 = o1Var.a;
         this.d = new boolean[i10];
         this.e = new boolean[i10];
     }

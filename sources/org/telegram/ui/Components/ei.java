@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ei implements TextWatcher {
     public boolean a;
@@ -27,10 +27,10 @@ public final class ei implements TextWatcher {
         boolean z10;
         int i10;
         vi viVar = this.d;
-        o6 o6Var = viVar.s;
+        n6 n6Var = viVar.s;
         di diVar = viVar.P0;
         int i11 = viVar.J1;
-        o6 o6Var2 = viVar.v;
+        n6 n6Var2 = viVar.v;
         if (this.b != TextUtils.isEmpty(editable)) {
             ni niVar = viVar.y0;
             if (niVar != null) {
@@ -51,32 +51,32 @@ public final class ei implements TextWatcher {
         viVar.e.a(codePointCount > 0, true);
         int i12 = viVar.K;
         if (i12 <= 0 || (i10 = i12 - viVar.L) > 100) {
-            o6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new q8(this, 5));
-            o6Var.setAlpha(0.0f);
+            n6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new p8(this, 5));
+            n6Var.setAlpha(0.0f);
             z10 = true;
         } else {
             if (i10 < -9999) {
                 i10 = -9999;
             }
             long j3 = i10;
-            o6Var2.c(LocaleController.formatNumber(j3, ','), o6Var2.getVisibility() == 0, true);
-            if (o6Var2.getVisibility() != 0) {
-                o6Var2.setVisibility(0);
-                o6Var2.setAlpha(0.0f);
-                o6Var2.setScaleX(0.5f);
-                o6Var2.setScaleY(0.5f);
+            n6Var2.c(LocaleController.formatNumber(j3, ','), n6Var2.getVisibility() == 0, true);
+            if (n6Var2.getVisibility() != 0) {
+                n6Var2.setVisibility(0);
+                n6Var2.setAlpha(0.0f);
+                n6Var2.setScaleX(0.5f);
+                n6Var2.setScaleY(0.5f);
             }
-            o6Var2.animate().setListener(null).cancel();
-            o6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+            n6Var2.animate().setListener(null).cancel();
+            n6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
             if (i10 < 0) {
-                o6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
+                n6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.i6.p7));
                 z10 = false;
             } else {
-                o6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.y6));
+                n6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.i6.y6));
                 z10 = true;
             }
-            o6Var.c(LocaleController.formatNumber(j3, ','), false, true);
-            o6Var.setAlpha(1.0f);
+            n6Var.c(LocaleController.formatNumber(j3, ','), false, true);
+            n6Var.setAlpha(1.0f);
         }
         if (viVar.U0 != z10) {
             viVar.U0 = z10;

@@ -1,90 +1,79 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class nc extends lb {
-    public Runnable a;
-    public Runnable b;
-    public pc c;
-    public final TextView d;
-    public boolean e;
+    public final i9 a;
+    public final c90 b;
+    public final c90 c;
+    public final LinearLayout d;
 
-    public nc(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
-        super(context);
-        int i10 = org.telegram.ui.ActionBar.j6.Gi;
-        int F0 = f6Var != null ? f6Var.F0(i10) : org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+    public nc(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var);
+        i9 i9Var = new i9(context, false);
+        this.a = i9Var;
+        i9Var.setStyle(11);
+        i9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+        addView(i9Var, w7.x5.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
-            TextView textView = new TextView(context);
-            this.d = textView;
-            textView.setBackground(org.telegram.ui.ActionBar.j6.f0((F0 & 16777215) | 419430400, 7, -1));
-            textView.setTextSize(1, 14.0f);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(F0);
-            org.telegram.messenger.rk.l(R.string.UndoNoCaps, textView, 16);
-            float f7 = z11 ? 34.0f : 12.0f;
-            boolean z12 = LocaleController.isRTL;
-            w7.e6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
-            addView(textView, w7.y5.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+            LinearLayout linearLayout = new LinearLayout(getContext());
+            this.d = linearLayout;
+            linearLayout.setOrientation(1);
+            addView(linearLayout, w7.x5.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
+            vb vbVar = new vb(context, 2, null);
+            this.b = vbVar;
+            NotificationCenter.listenEmojiLoading(vbVar);
+            Typeface typeface = Typeface.SANS_SERIF;
+            vbVar.setTypeface(typeface);
+            vbVar.setTextSize(1, 14.0f);
+            vbVar.setTypeface(AndroidUtilities.bold());
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            vbVar.setEllipsize(truncateAt);
+            vbVar.setMaxLines(1);
+            linearLayout.addView(vbVar);
+            c90 c90Var = new c90(context, null);
+            this.c = c90Var;
+            c90Var.setTypeface(typeface);
+            c90Var.setTextSize(1, 12.0f);
+            c90Var.setEllipsize(truncateAt);
+            c90Var.setSingleLine(false);
+            c90Var.setMaxLines(3);
+            c90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Gi));
+            linearLayout.addView(c90Var, w7.x5.t(-2, -2, 0, 0, 0, 0, 0));
+        } else {
+            vb vbVar2 = new vb(context, 1, null);
+            this.b = vbVar2;
+            NotificationCenter.listenEmojiLoading(vbVar2);
+            vbVar2.setTypeface(Typeface.SANS_SERIF);
+            vbVar2.setTextSize(1, 15.0f);
+            vbVar2.setEllipsize(TextUtils.TruncateAt.END);
+            vbVar2.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+            vbVar2.setGravity(LocaleController.isRTL ? 5 : 3);
+            addView(vbVar2, w7.x5.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
-        if (z11) {
-            ImageView imageView = new ImageView(getContext());
-            imageView.setImageResource(R.drawable.chats_undo);
-            imageView.setColorFilter(new PorterDuffColorFilter(F0, PorterDuff.Mode.MULTIPLY));
-            if (!z10) {
-                imageView.setBackground(org.telegram.ui.ActionBar.j6.f0((F0 & 16777215) | 419430400, 1, -1));
-            }
-            w7.e6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
-            addView(imageView, w7.y5.h(56.0f, 48.0f, 16));
-        }
-        setOnClickListener(new f0(this, 6));
+        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Gi));
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.i6.Fi));
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void a(pc pcVar) {
-        this.c = pcVar;
+    @Override // org.telegram.ui.Components.sb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void b() {
-        this.c = null;
-        Runnable runnable = this.b;
-        if (runnable == null || this.e) {
-            return;
+    public void setTextColor(int i10) {
+        this.b.setTextColor(i10);
+        c90 c90Var = this.c;
+        if (c90Var != null) {
+            c90Var.setTextColor(i10);
         }
-        runnable.run();
-    }
-
-    public final void e(CharSequence charSequence) {
-        TextView textView = this.d;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-    }
-
-    public final void f() {
-        if (this.c != null) {
-            this.e = true;
-            Runnable runnable = this.a;
-            if (runnable != null) {
-                runnable.run();
-            }
-            pc pcVar = this.c;
-            if (pcVar != null) {
-                pcVar.b();
-            }
-        }
-    }
-
-    public nc(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
-        this(context, f6Var, z10, !z10);
     }
 }

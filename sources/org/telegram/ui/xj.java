@@ -14,16 +14,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class xj extends s4.t {
     public boolean S;
-    public final /* synthetic */ zn T;
+    public final /* synthetic */ bo T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xj(zn znVar, boolean z10) {
+    public xj(bo boVar, boolean z10) {
         super(z10);
-        this.T = znVar;
+        this.T = boVar;
     }
 
     @Override // s4.t
@@ -32,10 +32,10 @@ public final class xj extends s4.t {
         MessageObject messageObject;
         MessageObject.GroupedMessages X8;
         byte b10;
-        zn znVar = this.T;
-        lm lmVar = znVar.A0;
-        int i12 = lmVar.J;
-        if (i10 >= i12 && i10 < lmVar.K && (i11 = i10 - i12) >= 0 && i11 < lmVar.L().size() && (X8 = znVar.X8((messageObject = (MessageObject) znVar.A0.L().get(i11)))) != null) {
+        bo boVar = this.T;
+        nm nmVar = boVar.A0;
+        int i12 = nmVar.J;
+        if (i10 >= i12 && i10 < nmVar.K && (i11 = i10 - i12) >= 0 && i11 < nmVar.L().size() && (X8 = boVar.X8((messageObject = (MessageObject) boVar.A0.L().get(i11)))) != null) {
             MessageObject.GroupedMessagePosition position = X8.getPosition(messageObject);
             if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
                 int size = X8.posArray.size();
@@ -56,8 +56,8 @@ public final class xj extends s4.t {
 
     @Override // s4.t
     public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            return !((org.telegram.ui.Cells.t1) view).getMessageObject().isOutOwner();
         }
         return false;
     }
@@ -145,24 +145,24 @@ public final class xj extends s4.t {
         float f11;
         float f12;
         zg.l0 l0Var;
-        ah.i iVar;
+        ah.h hVar;
         boolean z11 = false;
-        zn znVar = this.T;
+        bo boVar = this.T;
         if (i10 < 0) {
-            float f13 = znVar.N9;
+            float f13 = boVar.N9;
             if (f13 != 0.0f) {
                 float f14 = f13 + i10;
-                znVar.N9 = f14;
+                boVar.N9 = f14;
                 if (f14 < 0.0f) {
                     i10 = (int) f14;
-                    znVar.N9 = 0.0f;
-                    znVar.x0.invalidate();
+                    boVar.N9 = 0.0f;
+                    boVar.x0.invalidate();
                 } else {
                     i10 = 0;
                 }
             }
         }
-        int childCount = znVar.x0.getChildCount();
+        int childCount = boVar.x0.getChildCount();
         int i13 = 0;
         while (true) {
             if (i13 >= childCount) {
@@ -170,10 +170,10 @@ public final class xj extends s4.t {
                 z10 = false;
                 break;
             }
-            View childAt = znVar.x0.getChildAt(i13);
-            float f15 = znVar.s9;
-            znVar.x0.getClass();
-            if (RecyclerView.S(childAt) == (znVar.Pa ? 0 : znVar.A0.h() - 1)) {
+            View childAt = boVar.x0.getChildAt(i13);
+            float f15 = boVar.s9;
+            boVar.x0.getClass();
+            if (RecyclerView.R(childAt) == (boVar.Pa ? 0 : boVar.A0.h() - 1)) {
                 i11 = super.o0(((float) (childAt.getTop() - i10)) > f15 ? (int) (childAt.getTop() - f15) : i10, eVar, z0Var);
                 z10 = true;
             } else {
@@ -183,38 +183,38 @@ public final class xj extends s4.t {
         if (!z10) {
             i11 = super.o0(i10, eVar, z0Var);
         }
-        if (!znVar.vc.f) {
-            SparseArray[] sparseArrayArr = znVar.W5;
-            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(znVar.e) && !znVar.e.megagroup) || (znVar.h4 && !UserObject.isBotForum(znVar.f))) && (i12 = znVar.R3) != 3 && i12 != 9 && i12 != 1 && znVar.x0.getScrollState() == 1)) {
-                uj ujVar = znVar.x0;
-                if (!ujVar.X1 && !ujVar.d2 && !znVar.A9()) {
-                    if (znVar.N9 == 0.0f && znVar.P9 != null) {
-                        ArrayList arrayList = znVar.eb;
+        if (!boVar.vc.f) {
+            SparseArray[] sparseArrayArr = boVar.W5;
+            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(boVar.e) && !boVar.e.megagroup) || (boVar.h4 && !UserObject.isBotForum(boVar.f))) && (i12 = boVar.R3) != 3 && i12 != 9 && i12 != 1 && boVar.x0.getScrollState() == 1)) {
+                uj ujVar = boVar.x0;
+                if (!ujVar.X1 && !ujVar.d2 && !boVar.A9()) {
+                    if (boVar.N9 == 0.0f && boVar.P9 != null) {
+                        ArrayList arrayList = boVar.eb;
                         if (arrayList != null && !arrayList.isEmpty()) {
-                            znVar.P9.i((TLRPC.Chat) znVar.eb.get(0));
-                        } else if (znVar.h4) {
-                            znVar.P9.j();
+                            boVar.P9.i((TLRPC.Chat) boVar.eb.get(0));
+                        } else if (boVar.h4) {
+                            boVar.P9.j();
                         } else {
-                            znVar.P9.h();
+                            boVar.P9.h();
                         }
                     }
-                    Animator animator = znVar.Q9;
+                    Animator animator = boVar.Q9;
                     if (animator != null) {
                         animator.removeAllListeners();
-                        znVar.Q9.cancel();
+                        boVar.Q9.cancel();
                     }
-                    if (znVar.N9 < AndroidUtilities.dp(110.0f)) {
-                        float dp = znVar.N9 / AndroidUtilities.dp(110.0f);
+                    if (boVar.N9 < AndroidUtilities.dp(110.0f)) {
+                        float dp = boVar.N9 / AndroidUtilities.dp(110.0f);
                         f10 = (1.0f - dp) * 0.65f;
                         f11 = dp * 0.45f;
-                    } else if (znVar.N9 < AndroidUtilities.dp(160.0f)) {
-                        float dp2 = (znVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
+                    } else if (boVar.N9 < AndroidUtilities.dp(160.0f)) {
+                        float dp2 = (boVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
                         f10 = (1.0f - dp2) * 0.45f;
                         f11 = dp2 * 0.05f;
                     } else {
                         f7 = 0.05f;
                         f12 = i10 * f7;
-                        znVar.N9 += f12;
+                        boVar.N9 += f12;
                         int i14 = (int) f12;
                         l0Var = zg.l0.B;
                         if (l0Var != null) {
@@ -223,33 +223,33 @@ public final class xj extends s4.t {
                                 l0Var.u = true;
                             }
                         }
-                        if (Build.VERSION.SDK_INT >= 31 && (iVar = znVar.F) != null) {
-                            iVar.f(0.0f, f12);
+                        if (Build.VERSION.SDK_INT >= 31 && (hVar = boVar.F) != null) {
+                            hVar.f(0.0f, f12);
                         }
-                        znVar.x0.invalidate();
+                        boVar.x0.invalidate();
                     }
                     f7 = f11 + f10;
                     f12 = i10 * f7;
-                    znVar.N9 += f12;
+                    boVar.N9 += f12;
                     int i142 = (int) f12;
                     l0Var = zg.l0.B;
                     if (l0Var != null) {
                     }
                     if (Build.VERSION.SDK_INT >= 31) {
-                        iVar.f(0.0f, f12);
+                        hVar.f(0.0f, f12);
                     }
-                    znVar.x0.invalidate();
+                    boVar.x0.invalidate();
                 }
             }
         }
-        if (znVar.N9 == 0.0f) {
-            znVar.x0.setOverScrollMode(0);
+        if (boVar.N9 == 0.0f) {
+            boVar.x0.setOverScrollMode(0);
         } else {
-            znVar.x0.setOverScrollMode(2);
+            boVar.x0.setOverScrollMode(2);
         }
-        if (znVar.P9 != null) {
-            le.b bVar = znVar.tc;
-            if (znVar.N9 > 0.0f && znVar.x0.getScrollState() == 1) {
+        if (boVar.P9 != null) {
+            le.b bVar = boVar.tc;
+            if (boVar.N9 > 0.0f && boVar.x0.getScrollState() == 1) {
                 z11 = true;
             }
             bVar.a(z11, true);

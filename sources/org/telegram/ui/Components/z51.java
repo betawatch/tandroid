@@ -1,36 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class z51 extends c61 {
-    public static boolean h = true;
-    public final int e;
-    public final e11 f;
+public abstract class z51 extends org.telegram.ui.ActionBar.n2 {
+    public y51 a;
+    public int b;
+    public int c;
 
-    public z51(String str, int i10, e11 e11Var) {
-        super(str, (e11) null);
-        this.e = i10;
-        this.f = e11Var;
+    public z51() {
+        super(null);
+        this.b = -1;
     }
 
-    @Override // org.telegram.ui.Components.c61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, h ? org.telegram.ui.ActionBar.j6.hc : org.telegram.ui.ActionBar.j6.fc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, h ? org.telegram.ui.ActionBar.j6.gc : org.telegram.ui.ActionBar.j6.ec, false));
-        }
-        e11 e11Var = this.f;
-        if (e11Var != null) {
-            e11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
-        }
+    public abstract void U(ArrayList arrayList, w51 w51Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(i51 i51Var, View view);
+
+    public abstract boolean X(i51 i51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public View createView(Context context) {
+        hg.c.x(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.to(this, 13));
+        hg.r1 r1Var = new hg.r1(context, null, 1);
+        r1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        y51 y51Var = new y51(this, this, new d(this, 22), new x51(this), new x51(this));
+        this.a = y51Var;
+        r1Var.addView(y51Var, w7.x5.c(-1.0f, -1));
+        this.fragmentView = r1Var;
+        return r1Var;
     }
 }

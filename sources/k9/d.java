@@ -9,9 +9,9 @@ import android.os.Bundle;
 import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
-import q9.s;
+import q9.r;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements pa.b {
     public final /* synthetic */ int a;
@@ -71,23 +71,23 @@ public final /* synthetic */ class d implements pa.b {
                     int i11 = jVar.c;
                     int i12 = jVar.b;
                     boolean z11 = i11 == 0;
-                    s sVar = jVar.a;
+                    r rVar = jVar.a;
                     if (z11) {
                         if (i12 == 2) {
-                            hashSet4.add(sVar);
+                            hashSet4.add(rVar);
                         } else {
-                            hashSet.add(sVar);
+                            hashSet.add(rVar);
                         }
                     } else if (i11 == 2) {
-                        hashSet3.add(sVar);
+                        hashSet3.add(rVar);
                     } else if (i12 == 2) {
-                        hashSet5.add(sVar);
+                        hashSet5.add(rVar);
                     } else {
-                        hashSet2.add(sVar);
+                        hashSet2.add(rVar);
                     }
                 }
                 if (!set2.isEmpty()) {
-                    hashSet.add(s.a(ma.a.class));
+                    hashSet.add(r.a(ma.a.class));
                 }
                 cVar.a = DesugarCollections.unmodifiableSet(hashSet);
                 cVar.b = DesugarCollections.unmodifiableSet(hashSet2);

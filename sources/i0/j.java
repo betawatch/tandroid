@@ -12,11 +12,11 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import v7.i8;
+import v7.h8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class j extends i8 {
+public final class j extends h8 {
     public static Font g(FontFamily fontFamily, int i10) {
         FontStyle fontStyle = new FontStyle((i10 & 1) != 0 ? 700 : 400, (i10 & 2) != 0 ? 1 : 0);
         Font font = fontFamily.getFont(0);
@@ -75,7 +75,7 @@ public final class j extends i8 {
         return (Math.abs(fontStyle.getWeight() - fontStyle2.getWeight()) / 100) + (fontStyle.getSlant() == fontStyle2.getSlant() ? 0 : 2);
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         try {
             FontFamily.Builder builder = null;
@@ -101,7 +101,7 @@ public final class j extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
         try {
             FontFamily h = h(iVarArr, context.getContentResolver());
@@ -115,7 +115,7 @@ public final class j extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface c(Context context, List list, int i10) {
         ContentResolver contentResolver = context.getContentResolver();
         try {
@@ -137,12 +137,12 @@ public final class j extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface d(Context context, InputStream inputStream) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         try {
             Font build = new Font.Builder(resources, i10).build();
@@ -153,7 +153,7 @@ public final class j extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final o0.i f(o0.i[] iVarArr, int i10) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }

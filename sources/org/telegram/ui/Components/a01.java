@@ -1,79 +1,72 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Path;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class a01 extends FrameLayout {
-    public final c01 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class a01 extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public int b;
+    public final Object c;
 
-    public a01(c01 c01Var, View view, boolean z10) {
-        super(c01Var.getContext());
-        this.a = c01Var;
-        setWillNotDraw(false);
-        if (!z10) {
-            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        }
-        addView(view, w7.y5.c(-1.0f, -1));
+    public a01(int i10) {
+        this.a = 0;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.b = i10;
+        paint.setColor(org.telegram.ui.ActionBar.i6.l1(0.3f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.nd, false)));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10 = this.c;
-        c01 c01Var = this.a;
-        if (z10 || this.d) {
-            canvas2 = canvas;
-            float dp = AndroidUtilities.dp(10.0f);
-            float[] fArr = c01Var.c;
-            boolean z11 = this.c;
-            float f7 = z11 ? dp : 0.0f;
-            fArr[1] = f7;
-            fArr[0] = f7;
-            float f10 = z11 ? dp : 0.0f;
-            fArr[3] = f10;
-            fArr[2] = f10;
-            boolean z12 = this.d;
-            float f11 = z12 ? dp : 0.0f;
-            fArr[5] = f11;
-            fArr[4] = f11;
-            if (!z12) {
-                dp = 0.0f;
-            }
-            fArr[7] = dp;
-            fArr[6] = dp;
-            c01Var.b.rewind();
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f12 = c01Var.h;
-            rectF.set(f12, f12, getWidth() - c01Var.h, (c01Var.h * AndroidUtilities.dp(this.d ? -1.0f : 1.0f)) + getHeight());
-            c01Var.b.addRoundRect(rectF, c01Var.c, Path.Direction.CW);
-            if (this.b) {
-                canvas2.drawPath(c01Var.b, c01Var.d);
-            }
-            canvas2.drawPath(c01Var.b, c01Var.e);
-        } else {
-            if (this.b) {
-                float f13 = c01Var.h;
-                canvas2 = canvas;
-                canvas2.drawRect(f13, f13, getWidth() + c01Var.h, getHeight() + c01Var.h, c01Var.d);
-            } else {
-                canvas2 = canvas;
-            }
-            float f14 = c01Var.h;
-            canvas2.drawRect(f14, f14, getWidth() - c01Var.h, getHeight() + c01Var.h, c01Var.e);
+    public void a(int i10) {
+        org.telegram.ui.vp0 vp0Var = (org.telegram.ui.vp0) this.c;
+        if (vp0Var != null) {
+            vp0Var.a = i10 / 2.0f;
+            vp0Var.d();
+            this.b = i10;
         }
-        super.onDraw(canvas2);
     }
 
-    public void setFilled(boolean z10) {
-        this.b = z10;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        switch (this.a) {
+            case 0:
+                float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(6.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = dp2 / 2.0f;
+                rectF.set(f7, dp - f10, this.b + f7, dp + f10);
+                canvas.drawRoundRect(rectF, f10, f10, (Paint) this.c);
+                break;
+            default:
+                org.telegram.ui.vp0 vp0Var = (org.telegram.ui.vp0) this.c;
+                if (vp0Var != null) {
+                    int i15 = (i12 + i14) / 2;
+                    int i16 = this.b;
+                    vp0Var.setBounds((int) (AndroidUtilities.dp(3.0f) + f7), i15 - this.b, (int) (f7 + AndroidUtilities.dp(5.0f) + i16), i15 + i16);
+                    vp0Var.draw(canvas);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(3.0f) + this.b;
+        }
+    }
+
+    public a01(boolean z10, int i10, int i11) {
+        this.a = 1;
+        this.b = AndroidUtilities.dp(21.0f);
+        this.c = z10 ? org.telegram.ui.vp0.c(i10, i11) : org.telegram.ui.vp0.a(i10, i11);
     }
 }

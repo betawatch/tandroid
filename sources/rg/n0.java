@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.nb0;
-import w7.y5;
+import org.telegram.ui.lb0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
-    public final f6 a;
+    public final e6 a;
     public final ArrayList b;
     public final m0 c;
     public final m0 d;
     public final m0 e;
     public final boolean f;
 
-    public n0(Context context, f6 f6Var) {
+    public n0(Context context, e6 e6Var) {
         super(context);
         this.b = new ArrayList();
-        this.a = f6Var;
-        for (nb0 nb0Var : nb0.values()) {
-            if (nb0Var.e) {
-                this.b.add(nb0Var);
+        this.a = e6Var;
+        for (lb0 lb0Var : lb0.values()) {
+            if (lb0Var.e) {
+                this.b.add(lb0Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -48,28 +48,28 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i10) {
-        nb0 nb0Var = (nb0) this.b.get(i10);
+        lb0 lb0Var = (lb0) this.b.get(i10);
         m0 m0Var = new m0(context);
-        v1 v1Var = new v1(20);
-        m0Var.e = v1Var;
+        u1 u1Var = new u1(20);
+        m0Var.e = u1Var;
         Paint paint = new Paint(1);
         m0Var.f = paint;
-        v1Var.r = 12;
-        v1Var.s = 8;
-        v1Var.t = 6;
+        u1Var.r = 12;
+        u1Var.s = 8;
+        u1Var.t = 6;
         if (i10 == 1) {
-            v1Var.N = 1001;
+            u1Var.N = 1001;
         }
         if (i10 == 0) {
-            v1Var.N = 1002;
+            u1Var.N = 1002;
         }
-        v1Var.O = this.a;
-        v1Var.P = j6.Zj;
-        v1Var.c();
+        u1Var.O = this.a;
+        u1Var.P = i6.Zj;
+        u1Var.c();
         paint.setColor(-1);
-        m0Var.setLayoutParams(y5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        m0Var.setForeground(nb0Var.c);
-        m0Var.setBackgroundResource(nb0Var.b);
+        m0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        m0Var.setForeground(lb0Var.c);
+        m0Var.setBackgroundResource(lb0Var.b);
         m0Var.setPadding(AndroidUtilities.dp(8.0f));
         m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
         addView(m0Var);

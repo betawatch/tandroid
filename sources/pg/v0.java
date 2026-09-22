@@ -1,86 +1,68 @@
 package pg;
 
-import android.graphics.Bitmap;
 import android.graphics.PointF;
-import org.telegram.ui.Components.wv0;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v0 {
-    public final float a;
-    public final float b;
-    public final PointF c;
-    public final PointF d;
-    public final float e;
-    public final PointF f;
-    public final PointF g;
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
 
-    public v0(t8.a aVar, Bitmap bitmap, wv0 wv0Var, boolean z10) {
-        PointF pointF = null;
-        PointF pointF2 = null;
-        PointF pointF3 = null;
-        PointF pointF4 = null;
-        for (t8.d dVar : aVar.b) {
-            PointF pointF5 = dVar.a;
-            int i10 = dVar.b;
-            if (i10 == 4) {
-                pointF = b(pointF5, bitmap, wv0Var, z10);
-            } else if (i10 == 5) {
-                pointF3 = b(pointF5, bitmap, wv0Var, z10);
-            } else if (i10 == 10) {
-                pointF2 = b(pointF5, bitmap, wv0Var, z10);
-            } else if (i10 == 11) {
-                pointF4 = b(pointF5, bitmap, wv0Var, z10);
-            }
+    public final boolean a(PointF pointF, float f7, float f10, float f11, int i10) {
+        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
         }
-        if (pointF != null && pointF2 != null) {
-            if (pointF.x < pointF2.x) {
-                PointF pointF6 = pointF2;
-                pointF2 = pointF;
-                pointF = pointF6;
-            }
-            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
-            this.d = pointF7;
-            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
-            this.e = hypot;
-            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
-            this.a = 2.35f * hypot;
-            float f7 = hypot * 0.8f;
-            double radians = (float) Math.toRadians(r0 - 90.0f);
-            this.c = new PointF((((float) Math.cos(radians)) * f7) + pointF7.x, (f7 * ((float) Math.sin(radians))) + pointF7.y);
+        if (i10 != -1) {
+            this.j.position(i10 * 20);
         }
-        if (pointF3 == null || pointF4 == null) {
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f7);
+        this.j.putFloat(f10);
+        this.j.putFloat(f11);
+        return true;
+    }
+
+    public final void b(int i10) {
+        int i11 = this.h + i10;
+        if (i11 > this.i || this.j == null) {
+            d();
+        }
+        this.h = i11;
+    }
+
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
             return;
         }
-        if (pointF3.x < pointF4.x) {
-            PointF pointF8 = pointF4;
-            pointF4 = pointF3;
-            pointF3 = pointF8;
-        }
-        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
-        this.f = pointF9;
-        float f10 = this.e * 0.7f;
-        double radians2 = (float) Math.toRadians(this.b + 90.0f);
-        this.g = new PointF((((float) Math.cos(radians2)) * f10) + pointF9.x, (f10 * ((float) Math.sin(radians2))) + pointF9.y);
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 
-    public static PointF b(PointF pointF, Bitmap bitmap, wv0 wv0Var, boolean z10) {
-        return new PointF((wv0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (wv0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
-    }
-
-    public final PointF a(int i10) {
-        if (i10 == 0) {
-            return this.c;
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
         }
-        if (i10 == 1) {
-            return this.d;
-        }
-        if (i10 == 2) {
-            return this.f;
-        }
-        if (i10 != 3) {
-            return null;
-        }
-        return this.g;
+        int max = Math.max(this.i * 2, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

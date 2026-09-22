@@ -2,7 +2,7 @@ package gb;
 
 import java.util.BitSet;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class w0 extends db.u {
     @Override // db.u
@@ -20,15 +20,15 @@ public class w0 extends db.u {
                     z10 = false;
                 } else {
                     if (p5 != 1) {
-                        StringBuilder k10 = hg.k0.k(p5, "Invalid bitset value ", ", expected 0 or 1; at path ");
-                        k10.append(aVar.j());
-                        throw new db.j(k10.toString());
+                        StringBuilder l4 = hg.c.l(p5, "Invalid bitset value ", ", expected 0 or 1; at path ");
+                        l4.append(aVar.j());
+                        throw new db.j(l4.toString());
                     }
                     z10 = true;
                 }
             } else {
                 if (c10 != 7) {
-                    throw new db.j("Invalid bitset value type: " + hg.k0.D(x10) + "; at path " + aVar.h());
+                    throw new db.j("Invalid bitset value type: " + hg.c.E(x10) + "; at path " + aVar.h());
                 }
                 z10 = aVar.n();
             }

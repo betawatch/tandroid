@@ -1,98 +1,313 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.R;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class dz0 extends Drawable {
-    public boolean a;
-    public final d6 b;
-    public final Drawable c;
-    public final Drawable d;
-    public int e = 255;
+public final class dz0 {
+    public fz0 a;
+    public cz0 b;
+    public TL_iv.pageTableCell c;
+    public final int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public int r = -1;
+    public final /* synthetic */ kz0 s;
 
-    public dz0(org.telegram.ui.Cells.u1 u1Var) {
-        this.b = new d6(u1Var, 420L, qr.h);
-        this.c = u1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
-        this.d = u1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
+    public dz0(kz0 kz0Var, int i10) {
+        this.s = kz0Var;
+        this.d = i10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        Drawable drawable = this.d;
-        drawable.setBounds(bounds);
-        drawable.setAlpha(this.e);
-        drawable.draw(canvas);
-        float e = this.b.e(this.a);
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float width = getBounds().width();
-        canvas.save();
-        if (e < 0.5f) {
-            float abs = Math.abs(e - 0.5f) + 0.5f;
-            canvas.scale(abs, abs, centerX, centerY);
+    public final void a(Canvas canvas, View view, boolean z10) {
+        boolean z11;
+        boolean z12;
+        Paint paint;
+        Paint paint2;
+        RectF rectF;
+        int i10;
+        int i11;
+        int i12;
+        org.telegram.ui.Cells.q9 q9Var;
+        Canvas canvas2 = canvas;
+        if (this.c == null) {
+            return;
         }
-        canvas.save();
-        if (e > 0.5f) {
-            float abs2 = Math.abs(e - 0.5f) + 0.5f;
-            float f7 = -abs2;
-            float f10 = width * 0.32f;
-            canvas.scale(f7, f7, getBounds().left + f10, getBounds().bottom - f10);
-            float f11 = 1.0f - abs2;
-            canvas.translate((-width) * f11 * 0.4f, f11 * width * 0.4f);
+        int i13 = this.p + this.k;
+        kz0 kz0Var = this.s;
+        int i14 = kz0Var.y;
+        Path path = kz0Var.L;
+        jz0 jz0Var = kz0Var.O;
+        float[] fArr = kz0Var.N;
+        RectF rectF2 = kz0Var.M;
+        boolean z13 = i13 == i14;
+        boolean z14 = this.q + this.l == kz0Var.E;
+        int dp = AndroidUtilities.dp(8.0f);
+        boolean z15 = this.c.header;
+        if (z15 || (kz0Var.H && this.a.a.b.a % 2 == 0)) {
+            int i15 = this.p;
+            if (i15 == 0 && this.q == 0) {
+                float f7 = dp;
+                fArr[1] = f7;
+                fArr[0] = f7;
+                z11 = true;
+            } else {
+                fArr[1] = 0.0f;
+                fArr[0] = 0.0f;
+                z11 = false;
+            }
+            if (z13 && this.q == 0) {
+                float f10 = dp;
+                fArr[3] = f10;
+                fArr[2] = f10;
+                z11 = true;
+            } else {
+                fArr[3] = 0.0f;
+                fArr[2] = 0.0f;
+            }
+            if (z13 && z14) {
+                float f11 = dp;
+                fArr[5] = f11;
+                fArr[4] = f11;
+                z11 = true;
+            } else {
+                fArr[5] = 0.0f;
+                fArr[4] = 0.0f;
+            }
+            if (i15 == 0 && z14) {
+                float f12 = dp;
+                fArr[7] = f12;
+                fArr[6] = f12;
+                z12 = true;
+            } else {
+                fArr[7] = 0.0f;
+                fArr[6] = 0.0f;
+                z12 = z11;
+            }
+            if (z12) {
+                rectF2.set(i15, this.q, i15 + this.k, r6 + this.l);
+                path.reset();
+                path.addRoundRect(rectF2, fArr, Path.Direction.CW);
+                if (this.c.header) {
+                    canvas2.drawPath(path, jz0Var.getHeaderPaint());
+                } else {
+                    canvas2.drawPath(path, jz0Var.getStripPaint());
+                }
+            } else if (z15) {
+                canvas2.drawRect(i15, this.q, i15 + this.k, r4 + this.l, jz0Var.getHeaderPaint());
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+                canvas2.drawRect(i15, this.q, this.k + i15, r1 + this.l, jz0Var.getStripPaint());
+            }
         }
-        Rect bounds2 = getBounds();
-        Drawable drawable2 = this.c;
-        drawable2.setBounds(bounds2);
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        if (e > 0.5f) {
-            float f12 = -(Math.abs(e - 0.5f) + 0.5f);
-            float f13 = 0.32f * width;
-            canvas.scale(f12, f12, getBounds().right - f13, getBounds().top + f13);
+        if (z10 && this.b != null) {
+            canvas2.save();
+            canvas2.translate(b(), c());
+            if (this.r >= 0 && (q9Var = kz0Var.a) != null) {
+                q9Var.a0(canvas2, (org.telegram.ui.Cells.p9) kz0Var.getParent().getParent(), this.r);
+            }
+            this.b.draw(canvas2, view);
+            canvas2.restore();
         }
-        canvas.rotate(180.0f, centerX, centerY);
-        if (e > 0.5f) {
-            float abs3 = 1.0f - (Math.abs(e - 0.5f) + 0.5f);
-            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
+        if (kz0Var.G) {
+            Paint linePaint = jz0Var.getLinePaint();
+            Paint linePaint2 = jz0Var.getLinePaint();
+            float strokeWidth = linePaint.getStrokeWidth() / 2.0f;
+            float strokeWidth2 = linePaint2.getStrokeWidth() / 2.0f;
+            int i16 = this.p;
+            if (i16 == 0) {
+                int i17 = this.q;
+                float f13 = i17;
+                float f14 = this.l + i17;
+                if (i17 == 0) {
+                    f13 += dp;
+                }
+                float f15 = f13;
+                if (f14 == kz0Var.E) {
+                    f14 -= dp;
+                }
+                float f16 = i16 + strokeWidth;
+                canvas2.drawLine(f16, f15, f16, f14, linePaint);
+                paint = linePaint;
+                paint2 = linePaint2;
+            } else {
+                paint = linePaint;
+                float f17 = i16 - strokeWidth2;
+                paint2 = linePaint2;
+                canvas.drawLine(f17, this.q, f17, r1 + this.l, paint2);
+            }
+            int i18 = this.q;
+            if (i18 == 0) {
+                int i19 = this.p;
+                float f18 = i19;
+                float f19 = this.k + i19;
+                if (i19 == 0) {
+                    f18 += dp;
+                }
+                float f20 = f18;
+                if (f19 == kz0Var.y) {
+                    f19 -= dp;
+                }
+                float f21 = i18 + strokeWidth;
+                canvas.drawLine(f20, f21, f19, f21, paint);
+            } else {
+                float f22 = i18 - strokeWidth2;
+                canvas.drawLine(this.p, f22, r2 + this.k, f22, paint2);
+            }
+            float f23 = (this.p + this.k) - strokeWidth;
+            Paint paint3 = paint;
+            canvas.drawLine(f23, (z13 && (i12 = this.q) == 0) ? i12 + dp : this.q - strokeWidth, f23, (z13 && z14) ? (this.q + this.l) - dp : (this.q + this.l) - strokeWidth, paint3);
+            int i20 = this.p;
+            float f24 = (this.q + this.l) - strokeWidth;
+            canvas.drawLine((i20 == 0 && z14) ? i20 + dp : i20 - strokeWidth, f24, (z13 && z14) ? (i20 + this.k) - dp : (i20 + this.k) - strokeWidth, f24, paint3);
+            int i21 = this.p;
+            if (i21 == 0 && (i11 = this.q) == 0) {
+                float f25 = i21 + strokeWidth;
+                float f26 = i11 + strokeWidth;
+                float f27 = dp * 2;
+                rectF2.set(f25, f26, f25 + f27, f27 + f26);
+                rectF = rectF2;
+                canvas.drawArc(rectF, -180.0f, 90.0f, false, paint3);
+            } else {
+                rectF = rectF2;
+            }
+            if (z13 && (i10 = this.q) == 0) {
+                float f28 = (this.p + this.k) - strokeWidth;
+                float f29 = dp * 2;
+                float f30 = i10 + strokeWidth;
+                rectF.set(f28 - f29, f30, f28, f29 + f30);
+                canvas.drawArc(rectF, 0.0f, -90.0f, false, paint3);
+            }
+            int i22 = this.p;
+            if (i22 == 0 && z14) {
+                float f31 = i22 + strokeWidth;
+                float f32 = (this.q + this.l) - strokeWidth;
+                float f33 = dp * 2;
+                rectF.set(f31, f32 - f33, f33 + f31, f32);
+                canvas.drawArc(rectF, 180.0f, -90.0f, false, paint3);
+            }
+            if (z13 && z14) {
+                float f34 = (this.p + this.k) - strokeWidth;
+                float f35 = dp * 2;
+                float f36 = (this.q + this.l) - strokeWidth;
+                rectF.set(f34 - f35, f36 - f35, f34, f36);
+                canvas.drawArc(rectF, 0.0f, 90.0f, false, paint3);
+            }
         }
-        drawable2.setBounds(getBounds());
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c.getIntrinsicHeight();
+    public final int b() {
+        return this.p + this.g;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c.getIntrinsicWidth();
+    public final int c() {
+        return this.q + this.h;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x002b, code lost:
+    
+        if (r3.align_right == false) goto L22;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d(int i10, int i11, boolean z10) {
+        this.k = i10;
+        this.l = i11;
+        if (z10) {
+            this.m = i11;
+        }
+        if (this.c != null) {
+            cz0 cz0Var = this.b;
+            if (cz0Var != null) {
+                Layout layout = cz0Var.getLayout();
+                int lineCount = layout != null ? layout.getLineCount() : 0;
+                if (!z10) {
+                    if (lineCount <= 1) {
+                        if (lineCount > 0) {
+                            TL_iv.pageTableCell pagetablecell = this.c;
+                            if (!pagetablecell.align_center) {
+                            }
+                        }
+                    }
+                    kz0 kz0Var = this.s;
+                    e(kz0Var.O.createTextLayout(this.c, this.k - (kz0Var.v * 2)));
+                    this.m = this.f + kz0Var.r + kz0Var.s;
+                }
+                f();
+            }
+            g();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.e = i10;
+    public final void e(cz0 cz0Var) {
+        this.b = cz0Var;
+        Layout layout = cz0Var != null ? cz0Var.getLayout() : null;
+        int i10 = 0;
+        if (layout == null) {
+            this.i = 0;
+            this.e = 0;
+            this.f = 0;
+            return;
+        }
+        this.e = 0;
+        this.i = 0;
+        int lineCount = layout.getLineCount();
+        while (i10 < lineCount) {
+            float lineLeft = layout.getLineLeft(i10);
+            this.i = i10 == 0 ? (int) Math.ceil(lineLeft) : Math.min(this.i, (int) Math.ceil(lineLeft));
+            this.e = (int) Math.ceil(Math.max(layout.getLineWidth(i10), this.e));
+            i10++;
+        }
+        this.f = layout.getHeight();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
+    public final void f() {
+        int i10 = -this.i;
+        this.g = i10;
+        TL_iv.pageTableCell pagetablecell = this.c;
+        boolean z10 = pagetablecell.align_right;
+        kz0 kz0Var = this.s;
+        if (z10) {
+            this.g = ((this.k - this.e) - kz0Var.v) + i10;
+        } else if (pagetablecell.align_center) {
+            this.g = Math.round((this.k - this.e) / 2.0f) + i10;
+        } else {
+            this.g = i10 + kz0Var.v;
+        }
+    }
+
+    public final void g() {
+        TL_iv.pageTableCell pagetablecell = this.c;
+        if (pagetablecell.valign_middle) {
+            this.h = (this.l - this.f) / 2;
+            return;
+        }
+        boolean z10 = pagetablecell.valign_bottom;
+        kz0 kz0Var = this.s;
+        if (z10) {
+            this.h = (this.l - this.f) - kz0Var.s;
+        } else {
+            this.h = kz0Var.r;
+        }
     }
 }

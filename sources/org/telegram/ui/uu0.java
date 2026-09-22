@@ -4,14 +4,14 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class uu0 extends ImageView {
     public int a;
     public boolean b;
     public boolean c;
     public boolean d;
-    public org.telegram.ui.Components.v71 e;
+    public org.telegram.ui.Components.g71 e;
     public final org.telegram.ui.Components.qr f;
     public ValueAnimator h;
     public final /* synthetic */ PhotoViewer n;
@@ -30,8 +30,8 @@ public final class uu0 extends ImageView {
 
     public static void a(uu0 uu0Var) {
         PhotoViewer photoViewer = uu0Var.n;
-        org.telegram.ui.Components.v71 v71Var = photoViewer.F2;
-        if (v71Var == null || v71Var.p() == -9223372036854775807L) {
+        org.telegram.ui.Components.g71 g71Var = photoViewer.F2;
+        if (g71Var == null || g71Var.p() == -9223372036854775807L) {
             ValueAnimator valueAnimator = uu0Var.h;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -63,7 +63,7 @@ public final class uu0 extends ImageView {
         if (uu0Var.h == null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
             uu0Var.h = ofFloat;
-            ofFloat.addUpdateListener(new b3(uu0Var, 23));
+            ofFloat.addUpdateListener(new b3(uu0Var, 24));
             uu0Var.h.setDuration(max);
             uu0Var.h.setInterpolator(uu0Var.f);
             uu0Var.h.start();

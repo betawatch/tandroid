@@ -1,81 +1,125 @@
 package l;
 
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class g extends BaseAdapter {
-    public int a = -1;
-    public final /* synthetic */ h b;
+public final class g implements x, AdapterView.OnItemClickListener {
+    public Context a;
+    public LayoutInflater b;
+    public k c;
+    public ExpandedMenuView d;
+    public w e;
+    public f f;
 
-    public g(h hVar) {
-        this.b = hVar;
-        a();
+    public g(ContextWrapper contextWrapper) {
+        this.a = contextWrapper;
+        this.b = LayoutInflater.from(contextWrapper);
     }
 
-    public final void a() {
-        l lVar = this.b.c;
-        n nVar = lVar.v;
-        if (nVar != null) {
-            lVar.i();
-            ArrayList arrayList = lVar.j;
-            int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                if (((n) arrayList.get(i10)) == nVar) {
-                    this.a = i10;
-                    return;
-                }
+    @Override // l.x
+    public final boolean b(m mVar) {
+        return false;
+    }
+
+    @Override // l.x
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // l.x
+    public final void d() {
+        f fVar = this.f;
+        if (fVar != null) {
+            fVar.notifyDataSetChanged();
+        }
+    }
+
+    @Override // l.x
+    public final void e(w wVar) {
+        throw null;
+    }
+
+    @Override // l.x
+    public final void g(k kVar, boolean z10) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.g(kVar, z10);
+        }
+    }
+
+    @Override // l.x
+    public final void i(Context context, k kVar) {
+        if (this.a != null) {
+            this.a = context;
+            if (this.b == null) {
+                this.b = LayoutInflater.from(context);
             }
         }
-        this.a = -1;
-    }
-
-    @Override // android.widget.Adapter
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final n getItem(int i10) {
-        h hVar = this.b;
-        l lVar = hVar.c;
-        lVar.i();
-        ArrayList arrayList = lVar.j;
-        hVar.getClass();
-        int i11 = this.a;
-        if (i11 >= 0 && i10 >= i11) {
-            i10++;
+        this.c = kVar;
+        f fVar = this.f;
+        if (fVar != null) {
+            fVar.notifyDataSetChanged();
         }
-        return (n) arrayList.get(i10);
     }
 
-    @Override // android.widget.Adapter
-    public final int getCount() {
-        h hVar = this.b;
-        l lVar = hVar.c;
-        lVar.i();
-        int size = lVar.j.size();
-        hVar.getClass();
-        return this.a < 0 ? size : size - 1;
-    }
-
-    @Override // android.widget.Adapter
-    public final long getItemId(int i10) {
-        return i10;
-    }
-
-    @Override // android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            view = this.b.b.inflate(R.layout.abc_list_menu_item_layout, viewGroup, false);
+    @Override // l.x
+    public final boolean j(d0 d0Var) {
+        boolean hasVisibleItems = d0Var.hasVisibleItems();
+        Context context = d0Var.a;
+        if (!hasVisibleItems) {
+            return false;
         }
-        ((z) view).b(getItem(i10));
-        return view;
+        l lVar = new l();
+        lVar.a = d0Var;
+        c5.b0 b0Var = new c5.b0(context);
+        g.c cVar = (g.c) b0Var.c;
+        g gVar = new g(cVar.a);
+        lVar.c = gVar;
+        gVar.e = lVar;
+        d0Var.b(gVar, context);
+        g gVar2 = lVar.c;
+        if (gVar2.f == null) {
+            gVar2.f = new f(gVar2);
+        }
+        cVar.i = gVar2.f;
+        cVar.j = lVar;
+        View view = d0Var.o;
+        if (view != null) {
+            cVar.e = view;
+        } else {
+            cVar.c = d0Var.n;
+            cVar.d = d0Var.m;
+        }
+        cVar.h = lVar;
+        g.g e = b0Var.e();
+        lVar.b = e;
+        e.setOnDismissListener(lVar);
+        WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();
+        attributes.type = 1003;
+        attributes.flags |= 131072;
+        lVar.b.show();
+        w wVar = this.e;
+        if (wVar == null) {
+            return true;
+        }
+        wVar.v(d0Var);
+        return true;
     }
 
-    @Override // android.widget.BaseAdapter
-    public final void notifyDataSetChanged() {
-        a();
-        super.notifyDataSetChanged();
+    @Override // l.x
+    public final boolean k(m mVar) {
+        return false;
+    }
+
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
+        this.c.q(this.f.getItem(i10), this, 0);
     }
 }

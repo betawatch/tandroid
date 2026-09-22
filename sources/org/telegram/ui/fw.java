@@ -1,78 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fw implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ uy b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ HashSet f;
 
-    public /* synthetic */ fw(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, org.telegram.messenger.video.d dVar) {
-        this.b = tLObject;
-        this.d = context;
-        this.e = a1Var;
-        this.c = j3;
-        this.f = bArr;
-        this.h = aVar;
-        this.n = xcVar;
-        this.r = dVar;
+    public /* synthetic */ fw(uy uyVar, int i10, ArrayList arrayList, boolean z10, HashSet hashSet) {
+        this.b = uyVar;
+        this.d = i10;
+        this.c = arrayList;
+        this.e = z10;
+        this.f = hashSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                uy.n0((uy) this.d, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.h, this.c, (TLRPC.TL_error) this.n, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
-                break;
-            case 1:
-                Context context = (Context) this.d;
-                ai.a1 a1Var = (ai.a1) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.h;
-                org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) this.n;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
-                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
-                c41 c41Var = new c41(context, a1Var, this.c, bArr);
-                c41Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                c41Var.s = new v31(aVar, xcVar, context, a1Var, dVar);
-                c41Var.show();
+                uy.p0(this.b, this.d, this.c, this.e, this.f);
                 break;
             default:
-                yh.y3.C0((yh.y3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
+                this.b.r4(this.c, this.d, false, this.e, this.f);
                 break;
         }
     }
 
-    public /* synthetic */ fw(uy uyVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = uyVar;
-        this.e = b2Var;
-        this.b = tLObject;
-        this.f = user;
-        this.h = chat;
-        this.c = j3;
-        this.n = tL_error;
-        this.r = tL_messages_checkHistoryImportPeer;
-    }
-
-    public /* synthetic */ fw(yh.y3 y3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
-        this.d = y3Var;
-        this.f = eVar;
-        this.e = b2Var;
-        this.b = tLObject;
-        this.h = tL_starGiftUnique;
-        this.n = tL_error;
-        this.c = j3;
-        this.r = charSequence;
+    public /* synthetic */ fw(uy uyVar, ArrayList arrayList, int i10, boolean z10, HashSet hashSet) {
+        this.b = uyVar;
+        this.c = arrayList;
+        this.d = i10;
+        this.e = z10;
+        this.f = hashSet;
     }
 }

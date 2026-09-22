@@ -5,17 +5,13 @@ import java.io.IOException;
 import u2.t;
 import y2.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements y2.h {
     public final /* synthetic */ g a;
 
-    public /* synthetic */ d(g gVar) {
-        this.a = gVar;
-    }
-
     @Override // y2.h
-    public void S(y2.j jVar, long j3, long j10, boolean z10) {
+    public void V(y2.j jVar, long j3, long j10, boolean z10) {
         this.a.w((p) jVar, j10);
     }
 
@@ -47,7 +43,7 @@ public final class d implements y2.h {
     }
 
     @Override // y2.h
-    public void p(y2.j jVar, long j3, long j10) {
+    public void q(y2.j jVar, long j3, long j10) {
         p pVar = (p) jVar;
         g gVar = this.a;
         long j11 = pVar.a;

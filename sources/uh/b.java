@@ -6,9 +6,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final a b;
@@ -70,8 +70,8 @@ public final class b extends Drawable {
         double d10 = d / ((1.0d - d) * 6.0d);
         double d11 = 1.0d + d10;
         double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
-        int b10 = q.b((int) (d10 * sqrt * 255.0d), 0, 255);
-        int b11 = q.b((int) (sqrt * 255.0d), 0, 255);
+        int b10 = p.b((int) (d10 * sqrt * 255.0d), 0, 255);
+        int b11 = p.b((int) (sqrt * 255.0d), 0, 255);
         if (b11 > 0 && this.c != null) {
             Paint paint = this.a;
             paint.setAlpha(b11);

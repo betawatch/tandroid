@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.x7;
+import v7.w7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n extends o6.a {
     public static final Parcelable.Creator<n> CREATOR = new v(13);
@@ -73,7 +73,7 @@ public final class n extends o6.a {
             if (mVar != null) {
                 jSONObject.put("containerMetadata", mVar.b());
             }
-            String b10 = x7.b(Integer.valueOf(this.f));
+            String b10 = w7.b(Integer.valueOf(this.f));
             if (b10 != null) {
                 jSONObject.put("repeatMode", b10);
             }
@@ -115,28 +115,28 @@ public final class n extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.l(parcel, 2, this.a);
-        w7.f0.l(parcel, 3, this.b);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.l(parcel, 2, this.a);
+        w7.e0.l(parcel, 3, this.b);
         int i11 = this.c;
-        w7.f0.s(parcel, 4, 4);
+        w7.e0.s(parcel, 4, 4);
         parcel.writeInt(i11);
-        w7.f0.l(parcel, 5, this.d);
-        w7.f0.k(parcel, 6, this.e, i10);
+        w7.e0.l(parcel, 5, this.d);
+        w7.e0.k(parcel, 6, this.e, i10);
         int i12 = this.f;
-        w7.f0.s(parcel, 7, 4);
+        w7.e0.s(parcel, 7, 4);
         parcel.writeInt(i12);
         List list = this.h;
-        w7.f0.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
+        w7.e0.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
         int i13 = this.n;
-        w7.f0.s(parcel, 9, 4);
+        w7.e0.s(parcel, 9, 4);
         parcel.writeInt(i13);
         long j3 = this.r;
-        w7.f0.s(parcel, 10, 8);
+        w7.e0.s(parcel, 10, 8);
         parcel.writeLong(j3);
         boolean z10 = this.s;
-        w7.f0.s(parcel, 11, 4);
+        w7.e0.s(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        w7.f0.r(parcel, q6);
+        w7.e0.r(parcel, q6);
     }
 }

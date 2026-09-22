@@ -3,21 +3,21 @@ package com.google.mlkit.vision.common.internal;
 import androidx.lifecycle.b0;
 import androidx.lifecycle.m;
 import androidx.lifecycle.s;
-import c5.a;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.io.Closeable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
+import lf.g;
 import qb.e;
-import u4.g;
+import wb.a;
 import wb.d;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, s {
-    public static final a e = new a("MobileVisionBase", "");
+    public static final g e = new g("MobileVisionBase", "");
     public final AtomicBoolean a = new AtomicBoolean(false);
     public final e b;
     public final CancellationTokenSource c;
@@ -29,7 +29,7 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         this.c = cancellationTokenSource;
         this.d = executor;
         eVar.b.incrementAndGet();
-        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(wb.a.b);
+        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(a.b);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -49,6 +49,6 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         if (aVar.b < 32 || aVar.c < 32) {
             return Tasks.forException(new mb.a("InputImage width and height should be at least 32!", 3));
         }
-        return this.b.a(this.d, new g(this, aVar), this.c.getToken());
+        return this.b.a(this.d, new u4.g(this, aVar), this.c.getToken());
     }
 }

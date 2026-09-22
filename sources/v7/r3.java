@@ -1,19 +1,21 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class r3 implements ia.d {
     public static final r3 a = new r3();
-
-    static {
-        j0.q(org.telegram.ui.Cells.c1.l(h.class, j0.m(3, org.telegram.ui.Cells.c1.l(h.class, j0.m(2, org.telegram.ui.Cells.c1.l(h.class, new e(1)))))));
-    }
+    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(1))));
+    public static final ia.c c = new ia.c("options", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(2))));
+    public static final ia.c d = new ia.c("identifyLanguageResult", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(3))));
+    public static final ia.c e = new ia.c("identifyPossibleLanguagesResult", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(4))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        g7 g7Var = (g7) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.a(b, g7Var.a);
+        eVar.a(c, g7Var.b);
+        eVar.a(d, g7Var.c);
+        eVar.a(e, null);
     }
 }

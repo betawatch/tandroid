@@ -10,9 +10,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.Future;
-import v7.n6;
+import v7.m6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o implements Closeable {
     public final URL a;
@@ -35,7 +35,7 @@ public final class o implements Closeable {
         }
         InputStream inputStream = openConnection.getInputStream();
         try {
-            byte[] b10 = n6.b(new d(inputStream));
+            byte[] b10 = m6.b(new d(inputStream));
             if (inputStream != null) {
                 inputStream.close();
             }

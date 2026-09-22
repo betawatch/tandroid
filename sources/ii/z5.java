@@ -4,11 +4,11 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.eb0;
-import org.telegram.ui.Components.fj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.ta0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class z5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -23,24 +23,24 @@ public final class z5 extends CharacterStyle {
     public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                textPaint.setColor(j6.v(j6.l1(0.55f, textPaint.getColor()), j6.l1(0.4f, j6.v0(j6.Oh, ((d6) this.b).a))));
+                textPaint.setColor(i6.v(i6.l1(0.55f, textPaint.getColor()), i6.l1(0.4f, i6.v0(i6.Oh, ((d6) this.b).a))));
                 break;
             case 1:
                 textPaint.setTypeface(AndroidUtilities.bold());
                 int alpha = textPaint.getAlpha();
-                int i10 = j6.n6;
-                ((eb0) this.b).getClass();
-                textPaint.setColor(j6.w0(null, i10, false));
+                int i10 = i6.n6;
+                ((ta0) this.b).getClass();
+                textPaint.setColor(i6.w0(null, i10, false));
                 textPaint.setAlpha(alpha);
                 break;
             default:
-                textPaint.setColor(j6.v(j6.l1(0.55f, textPaint.getColor()), j6.l1(0.4f, ((fj0) this.b).I)));
+                textPaint.setColor(i6.v(i6.l1(0.55f, textPaint.getColor()), i6.l1(0.4f, ((si0) this.b).I)));
                 break;
         }
     }
 
-    public z5(fj0 fj0Var) {
+    public z5(si0 si0Var) {
         this.a = 2;
-        this.b = fj0Var;
+        this.b = si0Var;
     }
 }

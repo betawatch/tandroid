@@ -1,41 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class lo0 implements vo0 {
-    public final /* synthetic */ xo0 a;
+public final class lo0 {
+    public final /* synthetic */ wo0 a;
 
-    public lo0(xo0 xo0Var) {
-        this.a = xo0Var;
+    public lo0(wo0 wo0Var) {
+        this.a = wo0Var;
     }
 
-    @Override // org.telegram.ui.vo0
-    public final void a(TL_account.Password password) {
-        this.a.a0 = password;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final void b() {
-        this.a.f0 = null;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        xo0 xo0Var = this.a;
-        vo0 vo0Var = xo0Var.T;
-        if (vo0Var != null) {
-            vo0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
+    public final void a(Exception exc) {
+        wo0 wo0Var = this.a;
+        if (wo0Var.Q0) {
+            return;
         }
-        if (xo0Var.S0) {
-            xo0Var.removeSelfFromStack();
+        wo0Var.H0(true, false);
+        wo0Var.D0(false);
+        if ((exc instanceof tc.a) || (exc instanceof tc.b)) {
+            org.telegram.ui.Components.c5.w0(wo0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
+        } else {
+            org.telegram.ui.Components.c5.w0(wo0Var, exc.getMessage());
         }
-        return xo0Var.T != null;
-    }
-
-    @Override // org.telegram.ui.vo0
-    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

@@ -1,6 +1,68 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public interface y9 {
+public final class y9 extends View {
+    public Bitmap a;
+    public Bitmap b;
+    public Paint c;
+    public int d;
+    public int e;
+    public x9 f;
+
+    public int getRating() {
+        return this.e;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        int i10 = 0;
+        while (i10 < this.d) {
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.i6.m5 : org.telegram.ui.ActionBar.i6.t5, false));
+            canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
+            i10++;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.d;
+        setMeasuredDimension(org.telegram.messenger.y0.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10;
+        float dp = AndroidUtilities.dp(-8.0f);
+        for (int i11 = 0; i11 < this.d; i11++) {
+            if (motionEvent.getX() > dp && motionEvent.getX() < AndroidUtilities.dp(48.0f) + dp && this.e != (i10 = i11 + 1)) {
+                this.e = i10;
+                x9 x9Var = this.f;
+                if (x9Var != null) {
+                    View view = ((le.a) x9Var).a;
+                    view.setEnabled(i10 > 0);
+                    ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
+                }
+                invalidate();
+                return true;
+            }
+            dp += AndroidUtilities.dp(48.0f);
+        }
+        return true;
+    }
+
+    public void setOnRatingChangeListener(x9 x9Var) {
+        this.f = x9Var;
+    }
 }

@@ -15,14 +15,14 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.n6 b;
+    public final org.telegram.ui.Components.m6 b;
     public final Paint c;
     public final Paint d;
     public boolean e;
@@ -37,34 +37,34 @@ public final class c extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         this.h = 1.0f;
-        w7.a6.a(this);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true, false);
-        this.b = n6Var;
-        n6Var.r(-9866632);
-        n6Var.t(AndroidUtilities.dp(9.0f));
-        n6Var.setCallback(this);
-        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        n6Var.D = true;
+        w7.z5.a(this);
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
+        this.b = m6Var;
+        m6Var.r(-9866632);
+        m6Var.t(AndroidUtilities.dp(9.0f));
+        m6Var.setCallback(this);
+        m6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        m6Var.D = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         FrameLayout frameLayout = new FrameLayout(context);
-        ah.m mVar = new ah.m();
-        mVar.a(bVar);
-        mVar.g.setColor(-14670806);
-        mVar.invalidateSelf();
-        mVar.f = AndroidUtilities.dp(1.0f);
-        frameLayout.setBackground(mVar);
-        addView(frameLayout, w7.y5.e(40, 40, 17));
+        ah.l lVar = new ah.l();
+        lVar.a(bVar);
+        lVar.g.setColor(-14670806);
+        lVar.invalidateSelf();
+        lVar.f = AndroidUtilities.dp(1.0f);
+        frameLayout.setBackground(lVar);
+        addView(frameLayout, w7.x5.e(40, 40, 17));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.menu_comments);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView, w7.y5.e(20, 20, 17));
+        frameLayout.addView(imageView, w7.x5.e(20, 20, 17));
         ImageView imageView2 = new ImageView(context);
         this.a = imageView2;
         imageView2.setImageResource(R.drawable.menu_comments_arrow);
         imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView2, w7.y5.e(20, 20, 17));
+        frameLayout.addView(imageView2, w7.x5.e(20, 20, 17));
         imageView2.setPivotX(AndroidUtilities.dp(10.27f));
         imageView2.setPivotY(AndroidUtilities.dp(9.58f));
     }
@@ -76,7 +76,7 @@ public final class c extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            rk.s(imageView.animate().rotation(z10 ? 0.0f : 180.0f), qr.h, 420L);
+            vl.r(imageView.animate().rotation(z10 ? 0.0f : 180.0f), qr.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -87,9 +87,9 @@ public final class c extends FrameLayout {
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
         super.dispatchDraw(canvas);
         float f7 = this.h;
-        org.telegram.ui.Components.n6 n6Var = this.b;
-        float g10 = n6Var.g() * f7;
-        float max = Math.max(AndroidUtilities.dp(12.0f), n6Var.d() + AndroidUtilities.dp(6.0f));
+        org.telegram.ui.Components.m6 m6Var = this.b;
+        float g10 = m6Var.g() * f7;
+        float max = Math.max(AndroidUtilities.dp(12.0f), m6Var.d() + AndroidUtilities.dp(6.0f));
         canvas.save();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
@@ -98,8 +98,8 @@ public final class c extends FrameLayout {
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
         rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
-        canvas.translate(((max - n6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
-        n6Var.draw(canvas);
+        canvas.translate(((max - m6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
+        m6Var.draw(canvas);
         canvas.restore();
         canvas.restore();
     }

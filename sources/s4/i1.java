@@ -1,9 +1,9 @@
 package s4;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i1 {
-    public static final c5.a0 d = new c5.a0(20, 6);
+    public static final c5.b0 d = new c5.b0(20, 6);
     public int a;
     public b2.q0 b;
     public b2.q0 c;

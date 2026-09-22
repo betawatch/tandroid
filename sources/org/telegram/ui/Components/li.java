@@ -18,9 +18,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class li extends cw0 {
+public final class li extends pv0 {
     public final ki A0;
     public final /* synthetic */ vi B0;
     public int w0;
@@ -36,7 +36,7 @@ public final class li extends cw0 {
         this.A0 = new ki(this, this);
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -167,8 +167,8 @@ public final class li extends cw0 {
             drawable3.draw(canvas);
             RectF rectF = this.x0;
             if (h == 2) {
-                org.telegram.ui.ActionBar.j6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.i6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha2);
                 i20 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingLeft;
                 i21 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingTop;
                 f12 = 24.0f;
@@ -182,12 +182,12 @@ public final class li extends cw0 {
                 f12 = 24.0f;
             }
             if ((f11 != 1.0f && h != 2) || viVar.y0.e()) {
-                Paint paint = org.telegram.ui.ActionBar.j6.t0;
+                Paint paint = org.telegram.ui.ActionBar.i6.t0;
                 if (viVar.y0.e()) {
                     customBackground = viVar.y0.getCustomActionBarBackground();
                 }
                 paint.setColor(customBackground);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha2);
                 i16 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingLeft;
                 i17 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingTop;
                 int measuredWidth5 = getMeasuredWidth();
@@ -197,8 +197,8 @@ public final class li extends cw0 {
                 rectF.set(i16, i17 + i25, f19, AndroidUtilities.dp(f12) + i19 + i25);
             }
             if (viVar.y0.e()) {
-                org.telegram.ui.ActionBar.j6.t0.setColor(viVar.y0.getCustomActionBarBackground());
-                org.telegram.ui.ActionBar.j6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.i6.t0.setColor(viVar.y0.getCustomActionBarBackground());
+                org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha2);
                 int p13 = viVar.p1(0);
                 if (!z10) {
                     p13 += AndroidUtilities.statusBarHeight;
@@ -210,7 +210,7 @@ public final class li extends cw0 {
                 i15 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingLeft;
                 rectF.set(i13, dp6, measuredWidth6 - i15, AndroidUtilities.dp(12.0f) + p13);
                 canvas.save();
-                canvas.drawRect(rectF, org.telegram.ui.ActionBar.j6.t0);
+                canvas.drawRect(rectF, org.telegram.ui.ActionBar.i6.t0);
                 canvas.restore();
             }
             if ((xhVar == null || xhVar.getAlpha() != 1.0f) && f11 != f7) {
@@ -227,16 +227,16 @@ public final class li extends cw0 {
                         f14 = 1.0f - alpha;
                     }
                 } else {
-                    themedColor = viVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ii);
+                    themedColor = viVar.getThemedColor(org.telegram.ui.ActionBar.i6.Ii);
                     if (xhVar != null) {
                         alpha = xhVar.getAlpha();
                         f14 = 1.0f - alpha;
                     }
                 }
                 int alpha4 = Color.alpha(themedColor);
-                org.telegram.ui.ActionBar.j6.t0.setColor(themedColor);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha((int) (niVar2.getAlpha() * alpha4 * f14 * f11));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.j6.t0);
+                org.telegram.ui.ActionBar.i6.t0.setColor(themedColor);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha((int) (niVar2.getAlpha() * alpha4 * f14 * f11));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.i6.t0);
             }
             canvas.restore();
         }
@@ -284,9 +284,9 @@ public final class li extends cw0 {
         ci.n6 n6Var = viVar.O0;
         ch.d dVar = viVar.A0;
         xh xhVar = viVar.i1;
-        x7 x7Var = viVar.X0;
+        w7 w7Var = viVar.X0;
         if (!(view instanceof ni) || view.getAlpha() <= 0.0f) {
-            if (view != x7Var) {
+            if (view != w7Var) {
                 if (!(view instanceof kz) || dVar == null) {
                     return super.drawChild(canvas, view, j3);
                 }
@@ -298,7 +298,7 @@ public final class li extends cw0 {
                 canvas.restore();
                 return drawChild2;
             }
-            float alpha2 = x7Var.getAlpha();
+            float alpha2 = w7Var.getAlpha();
             if (alpha2 <= 0.0f) {
                 return false;
             }
@@ -306,7 +306,7 @@ public final class li extends cw0 {
                 return super.drawChild(canvas, view, j3);
             }
             canvas.save();
-            float x10 = x7Var.getX();
+            float x10 = w7Var.getX();
             ni niVar2 = viVar.y0;
             if (niVar2 != null) {
                 int h = niVar2.h();
@@ -335,10 +335,10 @@ public final class li extends cw0 {
                                 dp = AndroidUtilities.dp(4.0f);
                             }
                             f10 = f14 - dp2;
-                            dp6 -= (int) (x7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
+                            dp6 -= (int) (w7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
                         }
                         f10 = f14 + dp;
-                        dp6 -= (int) (x7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
+                        dp6 -= (int) (w7Var.getAlpha() * ((currentActionBarHeight - f10) + AndroidUtilities.statusBarHeight));
                     }
                 }
                 if (!z10) {
@@ -348,7 +348,7 @@ public final class li extends cw0 {
             } else {
                 f7 = 0.0f;
             }
-            canvas.clipRect(x10, f7, x7Var.getX() + x7Var.getWidth(), x7Var.getY() + x7Var.getHeight());
+            canvas.clipRect(x10, f7, w7Var.getX() + w7Var.getWidth(), w7Var.getY() + w7Var.getHeight());
             boolean drawChild3 = super.drawChild(canvas, view, j3);
             canvas.restore();
             return drawChild3;
@@ -433,8 +433,8 @@ public final class li extends cw0 {
             drawable3 = ((org.telegram.ui.ActionBar.f3) viVar).shadowDrawable;
             drawable3.draw(canvas);
             if (h10 == 2) {
-                org.telegram.ui.ActionBar.j6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha(alpha3);
+                org.telegram.ui.ActionBar.i6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha3);
                 i22 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingLeft;
                 i23 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingTop;
                 int measuredWidth = getMeasuredWidth();
@@ -453,8 +453,8 @@ public final class li extends cw0 {
         }
         if (z11) {
             if (f13 != 1.0f && h10 != 2) {
-                org.telegram.ui.ActionBar.j6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha(alpha3);
+                org.telegram.ui.ActionBar.i6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha3);
                 i18 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingLeft;
                 i19 = ((org.telegram.ui.ActionBar.f3) viVar).backgroundPaddingTop;
                 int measuredWidth2 = getMeasuredWidth();
@@ -470,20 +470,20 @@ public final class li extends cw0 {
                     themedColor = TLObject.FLAG_29;
                     alpha = f13;
                 } else {
-                    themedColor = viVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ii);
+                    themedColor = viVar.getThemedColor(org.telegram.ui.ActionBar.i6.Ii);
                     alpha = xhVar == null ? 1.0f : 1.0f - xhVar.getAlpha();
                 }
                 int alpha4 = Color.alpha(themedColor);
-                org.telegram.ui.ActionBar.j6.t0.setColor(themedColor);
-                org.telegram.ui.ActionBar.j6.t0.setAlpha((int) (view.getAlpha() * alpha4 * alpha * f13));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.j6.t0);
+                org.telegram.ui.ActionBar.i6.t0.setColor(themedColor);
+                org.telegram.ui.ActionBar.i6.t0.setAlpha((int) (view.getAlpha() * alpha4 * alpha * f13));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.i6.t0);
             }
         }
         canvas.restore();
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ki kiVar = this.A0;
@@ -494,7 +494,7 @@ public final class li extends cw0 {
         viVar.P0.setAdjustPanLayoutHelper(kiVar);
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.A0.d();
@@ -542,7 +542,7 @@ public final class li extends cw0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0158  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0161  */
-    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -571,9 +571,9 @@ public final class li extends cw0 {
         int i21 = i12 - i10;
         if (liVar.w0 != i21) {
             liVar.w0 = i21;
-            mf mfVar = viVar.h0;
-            if (mfVar != null && !mfVar.q0) {
-                mfVar.dismiss();
+            kf kfVar = viVar.h0;
+            if (kfVar != null && !kfVar.q0) {
+                kfVar.dismiss();
             }
         }
         int childCount = liVar.getChildCount();
@@ -773,7 +773,7 @@ public final class li extends cw0 {
         int min = (int) (i17 / Math.min(4.5f, viVar.A1.h()));
         if (viVar.Y1 != min) {
             viVar.Y1 = min;
-            AndroidUtilities.runOnUIThread(new og(liVar, 21));
+            AndroidUtilities.runOnUIThread(new ng(liVar, 21));
         }
         liVar.y0 = false;
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
@@ -965,7 +965,7 @@ public final class li extends cw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.pv0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

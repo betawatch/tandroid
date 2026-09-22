@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void a(Map map) {
@@ -48,7 +48,7 @@ public abstract class b {
         String string = ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).getString(bytesToHex, null);
         if (string == null) {
             FileLog.d("BillingUtilities.getPurpose: purpose under " + bytesToHex + " not found");
-            throw new RuntimeException(a4.a.p("no purpose under ", bytesToHex, " found :("));
+            throw new RuntimeException(a4.a.q("no purpose under ", bytesToHex, " found :("));
         }
         FileLog.d("BillingUtilities.getPurpose: got {" + string + "} under " + bytesToHex);
         SerializedData serializedData3 = new SerializedData(Utilities.hexToBytes(string));

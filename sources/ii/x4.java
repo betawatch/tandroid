@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class x4 {
     public static ColorMatrixColorFilter f;
@@ -26,10 +26,10 @@ public final class x4 {
     public final RadialProgress2 d;
     public u e;
 
-    public x4(u4 u4Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public x4(u4 u4Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.a = new ImageReceiver(u4Var);
         this.b = new ImageReceiver(u4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, e6Var);
         this.d = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
@@ -50,7 +50,7 @@ public final class x4 {
             return;
         }
         int i10 = AndroidUtilities.displaySize.x;
-        String k10 = a4.a.k(i10, i10, "_");
+        String l4 = a4.a.l(i10, i10, "_");
         StringBuilder sb3 = new StringBuilder();
         u uVar2 = this.e;
         if (uVar2 == null) {
@@ -58,7 +58,7 @@ public final class x4 {
         } else {
             String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
             if (uVar2.e != null) {
-                StringBuilder h = v7.j0.h(str, ":local:");
+                StringBuilder h = w.c.h(str, ":local:");
                 h.append(this.e.e);
                 sb2 = h.toString();
             } else {
@@ -75,7 +75,7 @@ public final class x4 {
                         }
                     }
                 }
-                StringBuilder h10 = v7.j0.h(str, ":");
+                StringBuilder h10 = w.c.h(str, ":");
                 h10.append(this.e.a);
                 h10.append(":");
                 h10.append(j3);
@@ -84,7 +84,7 @@ public final class x4 {
         }
         sb3.append(sb2);
         sb3.append("@");
-        sb3.append(k10);
+        sb3.append(l4);
         if (sb3.toString().equals(null)) {
             return;
         }
@@ -93,7 +93,7 @@ public final class x4 {
         if (!uVar4.b) {
             if (uVar4.e != null) {
                 imageReceiver.setOrientation(uVar4.l, uVar4.m, true);
-                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), k10, null, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), l4, null, null, null, 0);
                 return;
             } else {
                 if (!uVar4.b() || (photo = this.e.g) == null) {
@@ -103,13 +103,13 @@ public final class x4 {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.e.g.sizes, 100);
                 imageReceiver.setOrientation(0, 0, false);
-                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), k10, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), k10, null, 0L, null, this.e.g, 0);
+                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), l4, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), l4, null, 0L, null, this.e.g, 0);
                 return;
             }
         }
         if (uVar4.e != null) {
             imageReceiver.setOrientation(0, 0, false);
-            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, k10, null, k10, null, 0L, null, null, 0);
+            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, l4, null, l4, null, 0L, null, null, 0);
             return;
         }
         if (!uVar4.b() || (document = this.e.h) == null) {
@@ -146,7 +146,7 @@ public final class x4 {
             }
         }
         imageReceiver.setOrientation(0, 0, false);
-        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), k10, ImageLocation.getForDocument(photoSize2, this.e.h), k10, null, 0L, null, this.e.h, 0);
+        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), l4, ImageLocation.getForDocument(photoSize2, this.e.h), l4, null, 0L, null, this.e.h, 0);
     }
 
     public final boolean b() {

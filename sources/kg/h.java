@@ -2,22 +2,22 @@ package kg;
 
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h extends f {
     public final Paint q;
     public int r;
-    public final f6 s;
+    public final e6 s;
 
-    public h(jg.a aVar, f6 f6Var) {
+    public h(jg.a aVar, e6 e6Var) {
         super(aVar, false, null);
         Paint paint = new Paint();
         this.q = paint;
         this.r = 0;
-        this.s = f6Var;
+        this.s = e6Var;
         this.c.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
         Paint paint2 = this.c;
         Paint.Style style = Paint.Style.STROKE;
@@ -29,6 +29,6 @@ public final class h extends f {
     @Override // kg.f
     public final void a() {
         super.a();
-        this.r = i0.a.d(0.3f, j6.v0(j6.d6, this.s), this.m);
+        this.r = i0.a.d(0.3f, i6.v0(i6.d6, this.s), this.m);
     }
 }

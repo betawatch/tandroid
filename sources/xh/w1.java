@@ -1,34 +1,72 @@
 package xh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bs0;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w1 implements le.d, Utilities.Callback2Return {
-    public final /* synthetic */ bs0 a;
+public final class w1 extends i81 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 T;
+    public final /* synthetic */ nr0 U;
 
-    public /* synthetic */ w1(bs0 bs0Var) {
-        this.a = bs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w1(nr0 nr0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null);
+        this.U = nr0Var;
+        this.T = n2Var;
     }
 
-    @Override // le.d
-    public void H(int i10, float f7, float f10, le.e eVar) {
-        this.a.l();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        bs0 bs0Var = this.a;
-        bs0Var.i();
-        if (((Integer) obj).intValue() != -1) {
-            return Boolean.FALSE;
+    @Override // org.telegram.ui.Components.i81
+    public final void h() {
+        nr0 nr0Var = this.U;
+        h81 h81Var = nr0Var.n;
+        if (!nr0Var.b() || h81Var == null) {
+            return;
         }
-        bs0Var.h(null, new t1(bs0Var, 0));
-        return Boolean.TRUE;
+        if (nr0Var.J == null) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.y0.h(R.string.Gift2NewCollection, new StringBuilder("+ ")));
+            oq oqVar = new oq(R.drawable.poll_add_plus, 0);
+            oqVar.spaceScaleX = 0.8f;
+            spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
+            nr0Var.J = spannableStringBuilder;
+        }
+        h81Var.a(-1, nr0Var.J);
     }
 
-    @Override // le.d
-    public /* synthetic */ void C(float f7, int i10) {
+    @Override // org.telegram.ui.Components.i81
+    public final boolean i(MotionEvent motionEvent) {
+        return !this.U.g();
+    }
+
+    @Override // org.telegram.ui.Components.i81
+    public final void w(boolean z10) {
+        nr0 nr0Var = this.U;
+        nr0Var.l();
+        org.telegram.ui.ActionBar.n2 n2Var = this.T;
+        if (n2Var instanceof ProfileActivity) {
+            ((ProfileActivity) n2Var).R();
+            View fragmentView = n2Var.getFragmentView();
+            if (fragmentView != null) {
+                fragmentView.invalidate();
+            }
+        }
+        nr0Var.o();
+    }
+
+    @Override // org.telegram.ui.Components.i81
+    public final void z(int i10) {
+        this.U.l();
+        org.telegram.ui.ActionBar.n2 n2Var = this.T;
+        if (n2Var instanceof ProfileActivity) {
+            ((ProfileActivity) n2Var).R();
+        }
     }
 }

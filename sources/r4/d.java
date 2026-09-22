@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.util.Log;
-import hg.k0;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -34,7 +33,7 @@ import java.util.zip.Inflater;
 import p4.s0;
 import t7.u;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final u a = new u();
@@ -153,7 +152,7 @@ public abstract class d {
                     return str2.replace("!", ":");
                 }
             } else if (!str2.endsWith(".apk")) {
-                return a4.a.s(a4.a.u(str), (Arrays.equals(bArr, bArr2) || Arrays.equals(bArr, bArr3)) ? ":" : "!", str2);
+                return a4.a.t(a4.a.v(str), (Arrays.equals(bArr, bArr2) || Arrays.equals(bArr, bArr3)) ? ":" : "!", str2);
             }
         }
         return str2;
@@ -177,7 +176,7 @@ public abstract class d {
         while (i11 < i10) {
             int read = inputStream.read(bArr, i11, i10 - i11);
             if (read < 0) {
-                throw new IllegalStateException(k0.h(i10, "Not enough bytes to read: "));
+                throw new IllegalStateException(hg.c.i(i10, "Not enough bytes to read: "));
             }
             i11 += read;
         }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bw0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,16 +19,16 @@ public final /* synthetic */ class bw0 implements Runnable {
             case 0:
                 mw0 mw0Var = this.b;
                 AndroidUtilities.runOnUIThread(new bw0(mw0Var, 3));
-                org.telegram.ui.Cells.u1 u1Var = mw0Var.L;
-                if (u1Var != null) {
-                    u1Var.setVisibility(0);
-                    org.telegram.ui.Cells.u1 u1Var2 = mw0Var.L;
-                    u1Var2.L7 = null;
-                    u1Var2.invalidate();
+                org.telegram.ui.Cells.t1 t1Var = mw0Var.L;
+                if (t1Var != null) {
+                    t1Var.setVisibility(0);
+                    org.telegram.ui.Cells.t1 t1Var2 = mw0Var.L;
+                    t1Var2.L7 = null;
+                    t1Var2.invalidate();
                 }
-                wm wmVar = mw0Var.e0;
-                if (wmVar != null) {
-                    AndroidUtilities.runOnUIThread(wmVar);
+                ym ymVar = mw0Var.e0;
+                if (ymVar != null) {
+                    AndroidUtilities.runOnUIThread(ymVar);
                     mw0Var.e0 = null;
                     break;
                 }

@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final class q6 extends View {
 
     public void b(float f7) {
         float dp = AndroidUtilities.dp(6.0f);
-        float a2 = w7.q.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.c.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
+        float a2 = w7.p.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.c.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
         this.d = a2;
         pg.x xVar = (pg.x) this.e;
         xVar.m(i0.a.k(xVar.f, (int) (a2 * 255.0f)), 1);
@@ -45,7 +45,7 @@ public final class q6 extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.c);
-                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.d6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
+                rectF.set(0.0f, 0.0f, ((org.telegram.ui.Components.c6) this.e).d(this.d, false) * getMeasuredWidth(), getMeasuredHeight());
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.b);
                 break;
             default:
@@ -61,7 +61,7 @@ public final class q6 extends View {
                 xVar.e.rewind();
                 xVar.e.addRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
                 canvas.clipPath(xVar.e);
-                qg.j1.x1(canvas, rectF2, AndroidUtilities.dp(6.0f));
+                qg.l1.w1(canvas, rectF2, AndroidUtilities.dp(6.0f));
                 canvas.restore();
                 rectF2.set(dp, f7, getWidth() - dp, f10);
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
@@ -70,7 +70,7 @@ public final class q6 extends View {
                 float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
                 float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
                 canvas.drawCircle(max, height, dp2, paint);
-                qg.j1.y1(max, height, strokeWidth, i0.a.k(xVar.f, (int) (this.d * 255.0f)), canvas);
+                qg.l1.x1(max, height, strokeWidth, i0.a.k(xVar.f, (int) (this.d * 255.0f)), canvas);
                 break;
         }
     }

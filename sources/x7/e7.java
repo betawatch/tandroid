@@ -1,31 +1,30 @@
 package x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public enum e7 implements a0 {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(8),
-    h(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF79(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF88(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF101(9);
+public final class e7 {
+    public final d7 a;
+    public final Integer b;
 
-    public final int a;
-
-    e7(int i10) {
-        this.a = i10;
+    public /* synthetic */ e7(o0.a aVar) {
+        this.a = (d7) aVar.b;
+        this.b = (Integer) aVar.c;
     }
 
-    @Override // x7.a0
-    public final int zza() {
-        return this.a;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof e7)) {
+            return false;
+        }
+        e7 e7Var = (e7) obj;
+        return n6.l.l(this.a, e7Var.a) && n6.l.l(this.b, e7Var.b) && n6.l.l(null, null) && n6.l.l(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

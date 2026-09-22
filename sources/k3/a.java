@@ -12,11 +12,10 @@ import c3.t;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -55,12 +54,12 @@ public final class a implements o {
             default:
                 h0 Z1 = qVar.Z1(0, 3);
                 qVar.X1(new t(-9223372036854775807L));
-                qVar.f1();
+                qVar.e1();
                 s sVar = (s) this.b;
                 r a2 = sVar.a();
                 a2.q = r0.n("text/x-unknown");
                 a2.j = sVar.r;
-                k0.s(a2, Z1);
+                hg.c.u(a2, Z1);
                 break;
         }
     }

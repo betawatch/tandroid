@@ -1,9 +1,9 @@
 package tc;
 
 import java.io.IOException;
-import v7.j0;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class g extends Exception {
     public final String a;
@@ -16,7 +16,7 @@ public abstract class g extends Exception {
     @Override // java.lang.Throwable
     public final String toString() {
         String str = this.a;
-        return a4.a.s(new StringBuilder(), super.toString(), str != null ? j0.g("; request-id: ", str) : "");
+        return a4.a.t(new StringBuilder(), super.toString(), str != null ? q3.i("; request-id: ", str) : "");
     }
 
     public g(String str, String str2, IOException iOException) {

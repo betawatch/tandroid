@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b6 implements j6 {
     public static final int[] h = new int[0];
@@ -638,9 +638,9 @@ public final class b6 implements j6 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder w10 = a4.a.w("Field ", str, " for ", name, " not found. Known fields are ");
-            w10.append(arrays);
-            throw new RuntimeException(w10.toString());
+            StringBuilder x10 = a4.a.x("Field ", str, " for ", name, " not found. Known fields are ");
+            x10.append(arrays);
+            throw new RuntimeException(x10.toString());
         }
     }
 
@@ -2272,14 +2272,14 @@ public final class b6 implements j6 {
             switch (l4) {
                 case 0:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 1:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2287,7 +2287,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 2:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, a5.p(unsafe.getLong(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.p(unsafe.getLong(v4Var2, j3)), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2295,7 +2295,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 3:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, a5.p(unsafe.getLong(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.p(unsafe.getLong(v4Var2, j3)), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2303,7 +2303,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 4:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, a5.m(unsafe.getInt(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.m(unsafe.getInt(v4Var2, j3)), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2311,7 +2311,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 5:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2319,7 +2319,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 6:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2327,7 +2327,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 7:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 1, i18);
+                        i18 = a4.a.C(i20 << 3, 1, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2340,9 +2340,9 @@ public final class b6 implements j6 {
                         if (object instanceof z4) {
                             Logger logger = a5.e;
                             int o16 = ((z4) object).o();
-                            i18 = a4.a.B(i24, a5.o(o16) + o16, i18);
+                            i18 = a4.a.C(i24, a5.o(o16) + o16, i18);
                         } else {
-                            i18 = a4.a.B(i24, a5.n((String) object), i18);
+                            i18 = a4.a.C(i24, a5.n((String) object), i18);
                         }
                     }
                     b6Var = this;
@@ -2356,7 +2356,7 @@ public final class b6 implements j6 {
                         Class cls = k6.a;
                         Logger logger2 = a5.e;
                         int a10 = ((v4) object2).a(o17);
-                        i18 = a4.a.B(i20 << 3, a5.o(a10) + a10, i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(a10) + a10, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
@@ -2366,7 +2366,7 @@ public final class b6 implements j6 {
                         z4 z4Var = (z4) unsafe.getObject(v4Var2, j3);
                         Logger logger3 = a5.e;
                         int o18 = z4Var.o();
-                        i18 = a4.a.B(i20 << 3, a5.o(o18) + o18, i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(o18) + o18, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2374,7 +2374,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 11:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, a5.o(unsafe.getInt(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(unsafe.getInt(v4Var2, j3)), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2382,7 +2382,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 12:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, a5.m(unsafe.getInt(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.m(unsafe.getInt(v4Var2, j3)), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2390,7 +2390,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 13:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2398,7 +2398,7 @@ public final class b6 implements j6 {
                     i14 = 1048575;
                 case 14:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2407,7 +2407,7 @@ public final class b6 implements j6 {
                 case 15:
                     if (b6Var.v(v4Var2, i15, i16, i17, i11)) {
                         int i25 = unsafe.getInt(v4Var2, j3);
-                        i18 = a4.a.B((i25 >> 31) ^ (i25 + i25), a5.o(i20 << 3), i18);
+                        i18 = a4.a.C((i25 >> 31) ^ (i25 + i25), a5.o(i20 << 3), i18);
                     }
                     b6Var = this;
                     i15 += 3;
@@ -2543,7 +2543,7 @@ public final class b6 implements j6 {
                                 Object c10 = q5Var.c(i26);
                                 if (c10 instanceof z4) {
                                     int o20 = ((z4) c10).o();
-                                    o12 = a4.a.B(o20, o20, o12);
+                                    o12 = a4.a.C(o20, o20, o12);
                                 } else {
                                     o12 = a5.n((String) c10) + o12;
                                 }
@@ -2553,7 +2553,7 @@ public final class b6 implements j6 {
                                 Object obj = list5.get(i27);
                                 if (obj instanceof z4) {
                                     int o21 = ((z4) obj).o();
-                                    o12 = a4.a.B(o21, o21, o12);
+                                    o12 = a4.a.C(o21, o21, o12);
                                 } else {
                                     o12 = a5.n((String) obj) + o12;
                                 }
@@ -2580,7 +2580,7 @@ public final class b6 implements j6 {
                         o13 = a5.o(i20 << 3) * size4;
                         for (int i28 = 0; i28 < size4; i28++) {
                             int a11 = ((v4) list6.get(i28)).a(o22);
-                            o13 = a4.a.B(a11, a11, o13);
+                            o13 = a4.a.C(a11, a11, o13);
                         }
                     }
                     i18 += o13;
@@ -2595,7 +2595,7 @@ public final class b6 implements j6 {
                         o12 = a5.o(i20 << 3) * size5;
                         for (int i29 = 0; i29 < list7.size(); i29++) {
                             int o23 = ((z4) list7.get(i29)).o();
-                            o12 = a4.a.B(o23, o23, o12);
+                            o12 = a4.a.C(o23, o23, o12);
                         }
                         i18 += o12;
                         i15 += 3;
@@ -2946,56 +2946,56 @@ public final class b6 implements j6 {
                     throw new ClassCastException();
                 case 51:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 52:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 53:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, a5.p(n(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.p(n(v4Var2, j3)), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 54:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, a5.p(n(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.p(n(v4Var2, j3)), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 55:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, a5.m(k(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.m(k(v4Var2, j3)), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 56:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 57:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 58:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 1, i18);
+                        i18 = a4.a.C(i20 << 3, 1, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
@@ -3007,9 +3007,9 @@ public final class b6 implements j6 {
                         if (object4 instanceof z4) {
                             Logger logger6 = a5.e;
                             int o26 = ((z4) object4).o();
-                            i18 = a4.a.B(i32, a5.o(o26) + o26, i18);
+                            i18 = a4.a.C(i32, a5.o(o26) + o26, i18);
                         } else {
-                            i18 = a4.a.B(i32, a5.n((String) object4), i18);
+                            i18 = a4.a.C(i32, a5.n((String) object4), i18);
                         }
                     }
                     i15 += 3;
@@ -3022,7 +3022,7 @@ public final class b6 implements j6 {
                         Class cls21 = k6.a;
                         Logger logger7 = a5.e;
                         int a13 = ((v4) object5).a(o27);
-                        i18 = a4.a.B(i20 << 3, a5.o(a13) + a13, i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(a13) + a13, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
@@ -3032,35 +3032,35 @@ public final class b6 implements j6 {
                         z4 z4Var2 = (z4) unsafe.getObject(v4Var2, j3);
                         Logger logger8 = a5.e;
                         int o28 = z4Var2.o();
-                        i18 = a4.a.B(i20 << 3, a5.o(o28) + o28, i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(o28) + o28, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 62:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, a5.o(k(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.o(k(v4Var2, j3)), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 63:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, a5.m(k(v4Var2, j3)), i18);
+                        i18 = a4.a.C(i20 << 3, a5.m(k(v4Var2, j3)), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case 64:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 4, i18);
+                        i18 = a4.a.C(i20 << 3, 4, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
                     i14 = 1048575;
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (b6Var.i(i20, i15, v4Var2)) {
-                        i18 = a4.a.B(i20 << 3, 8, i18);
+                        i18 = a4.a.C(i20 << 3, 8, i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;
@@ -3068,7 +3068,7 @@ public final class b6 implements j6 {
                 case 66:
                     if (b6Var.i(i20, i15, v4Var2)) {
                         int k10 = k(v4Var2, j3);
-                        i18 = a4.a.B((k10 >> 31) ^ (k10 + k10), a5.o(i20 << 3), i18);
+                        i18 = a4.a.C((k10 >> 31) ^ (k10 + k10), a5.o(i20 << 3), i18);
                     }
                     i15 += 3;
                     v4Var2 = v4Var;

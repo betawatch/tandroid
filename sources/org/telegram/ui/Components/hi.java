@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class hi implements pj {
     public final /* synthetic */ vi a;
@@ -16,22 +16,22 @@ public final class hi implements pj {
 
     @Override // org.telegram.ui.Components.pj
     public final void a(TLRPC.User user, boolean z10, int i10, long j3) {
-        org.telegram.ui.zn znVar = (org.telegram.ui.zn) this.a.f0;
-        if (znVar.f7()) {
-            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, znVar.T5, znVar.n5, znVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
-            of2.sendMessageChatArguments = znVar.C8();
+        org.telegram.ui.bo boVar = (org.telegram.ui.bo) this.a.f0;
+        if (boVar.f7()) {
+            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, boVar.T5, boVar.n5, boVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+            of2.sendMessageChatArguments = boVar.C8();
             of2.effect_id = 0L;
             of2.invert_media = false;
             of2.payStars = j3;
-            of2.monoForumPeer = znVar.N8();
-            of2.suggestionParams = znVar.g5;
-            znVar.getSendMessagesHelper().sendMessage(of2);
-            znVar.y6();
+            of2.monoForumPeer = boVar.N8();
+            of2.suggestionParams = boVar.g5;
+            boVar.getSendMessagesHelper().sendMessage(of2);
+            boVar.y6();
         }
     }
 
     @Override // org.telegram.ui.Components.pj
     public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
-        ((org.telegram.ui.zn) this.a.f0).db(arrayList, str, z10, i10, j3, z11);
+        ((org.telegram.ui.bo) this.a.f0).db(arrayList, str, z10, i10, j3, z11);
     }
 }

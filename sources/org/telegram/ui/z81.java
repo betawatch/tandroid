@@ -1,41 +1,34 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z81 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
-    public final /* synthetic */ i91 a;
+public final class z81 extends org.telegram.ui.Components.h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ z81(i91 i91Var) {
-        this.a = i91Var;
+    static {
+        org.telegram.ui.Components.h51.setup(new z81());
     }
 
-    @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.d;
-        i91 i91Var = this.a;
-        i91Var.S = i10;
-        i91Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, i91Var.S + i91Var.T);
-        return r0.l1.b;
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z10, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.e61 e61Var) {
+        ((a91) view).set(i51Var.z);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(i91.U(this.a, (org.telegram.ui.Components.y51) obj, (View) obj2));
+    @Override // org.telegram.ui.Components.h51
+    public final boolean contentsEquals(org.telegram.ui.Components.i51 i51Var, org.telegram.ui.Components.i51 i51Var2) {
+        return i51Var.z == i51Var2.z;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        i91.f0(this.a, (org.telegram.ui.Components.y51) obj);
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, org.telegram.ui.Components.ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new a91(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(org.telegram.ui.Components.i51 i51Var, org.telegram.ui.Components.i51 i51Var2) {
+        return i51Var.d == i51Var2.d;
     }
 }

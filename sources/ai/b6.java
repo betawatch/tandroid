@@ -14,16 +14,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class b6 extends FrameLayout {
     public final z5 a;
     public final a6 b;
     public final TextView[] c;
-    public oj0 d;
+    public bj0 d;
     public final d6 e;
     public Paint f;
     public float h;
@@ -38,7 +38,7 @@ public final class b6 extends FrameLayout {
         z5 z5Var = new z5(this, context, 0);
         this.a = z5Var;
         z5Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(z5Var, w7.y5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
+        addView(z5Var, w7.x5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
         setClipChildren(false);
         a6 a6Var = new a6(context, 0);
         this.b = a6Var;
@@ -48,7 +48,7 @@ public final class b6 extends FrameLayout {
         a6Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
         a6Var.setPivotX(0.0f);
         NotificationCenter.listenEmojiLoading(a6Var);
-        addView(a6Var, w7.y5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
+        addView(a6Var, w7.x5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
             this.c[i10].setTextSize(1, 12.0f);
@@ -57,7 +57,7 @@ public final class b6 extends FrameLayout {
             this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i10].setTextColor(-1);
             this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], w7.y5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
+            addView(this.c[i10], w7.x5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
         }
         this.b.setTextColor(-1);
     }
@@ -88,12 +88,12 @@ public final class b6 extends FrameLayout {
             }
             z11 = false;
         }
-        oj0 oj0Var = this.d;
+        bj0 bj0Var = this.d;
         z5 z5Var = this.a;
-        if (oj0Var == null) {
-            oj0 oj0Var2 = new oj0(z5Var);
-            this.d = oj0Var2;
-            oj0Var2.d(null, true, false);
+        if (bj0Var == null) {
+            bj0 bj0Var2 = new bj0(z5Var);
+            this.d = bj0Var2;
+            bj0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = z5Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class b6 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = ia.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                oj0 oj0Var3 = this.d;
-                oj0Var3.t = t10;
-                oj0Var3.a(canvas);
+                bj0 bj0Var3 = this.d;
+                bj0Var3.t = t10;
+                bj0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class b6 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            oj0 oj0Var4 = this.d;
-            oj0Var4.t = this.f;
-            oj0Var4.a(canvas);
+            bj0 bj0Var4 = this.d;
+            bj0Var4.t = this.f;
+            bj0Var4.a(canvas);
         }
     }
 
@@ -172,7 +172,7 @@ public final class b6 extends FrameLayout {
         TextView[] textViewArr = this.c;
         textViewArr[0].setOnClickListener(onClickListener);
         textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.j6.f0(822083583, 7, -1));
+        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.i6.f0(822083583, 7, -1));
     }
 
     public void setSubtitle(CharSequence charSequence) {

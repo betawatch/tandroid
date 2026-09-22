@@ -7,19 +7,19 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n0 b;
+    public final /* synthetic */ p0 b;
     public final /* synthetic */ j c;
 
-    public /* synthetic */ t(n0 n0Var, j jVar, int i10) {
+    public /* synthetic */ t(p0 p0Var, j jVar, int i10) {
         this.a = i10;
-        this.b = n0Var;
+        this.b = p0Var;
         this.c = jVar;
     }
 
@@ -27,17 +27,17 @@ public final /* synthetic */ class t implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.q0(this.c);
+                this.b.r0(this.c);
                 break;
             default:
-                final n0 n0Var = this.b;
-                LinearLayout linearLayout = new LinearLayout(n0Var.getContext());
+                final p0 p0Var = this.b;
+                LinearLayout linearLayout = new LinearLayout(p0Var.getContext());
                 linearLayout.setOrientation(0);
-                TextView textView = new TextView(n0Var.getContext());
-                int i10 = j6.E8;
-                eh.a aVar = n0Var.Q1;
-                textView.setTextColor(j6.v0(i10, aVar));
-                textView.setBackground(j6.K0(false));
+                TextView textView = new TextView(p0Var.getContext());
+                int i10 = i6.E8;
+                eh.a aVar = p0Var.Q1;
+                textView.setTextColor(i6.v0(i10, aVar));
+                textView.setBackground(i6.K0(false));
                 textView.setGravity(16);
                 textView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(14.0f), 0);
                 textView.setTextSize(1, 14.0f);
@@ -53,45 +53,45 @@ public final /* synthetic */ class t implements Runnable {
                         switch (i11) {
                             case 0:
                                 j jVar2 = jVar;
-                                n0 n0Var2 = n0Var;
-                                n0Var2.q0(jVar2);
-                                org.telegram.ui.ActionBar.n1 n1Var = n0Var2.R1;
+                                p0 p0Var2 = p0Var;
+                                p0Var2.r0(jVar2);
+                                org.telegram.ui.ActionBar.n1 n1Var = p0Var2.R1;
                                 if (n1Var != null && n1Var.isShowing()) {
-                                    n0Var2.R1.d(true);
+                                    p0Var2.R1.d(true);
                                     break;
                                 }
                                 break;
                             default:
-                                n0 n0Var3 = n0Var;
-                                n0Var3.getClass();
-                                ((o2) jVar).r(true);
-                                org.telegram.ui.ActionBar.n1 n1Var2 = n0Var3.R1;
+                                p0 p0Var3 = p0Var;
+                                p0Var3.getClass();
+                                ((q2) jVar).r(true);
+                                org.telegram.ui.ActionBar.n1 n1Var2 = p0Var3.R1;
                                 if (n1Var2 != null && n1Var2.isShowing()) {
-                                    n0Var3.R1.d(true);
+                                    p0Var3.R1.d(true);
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                linearLayout.addView(textView, y5.n(-2, 48));
-                if (jVar instanceof v2) {
-                    TextView textView2 = new TextView(n0Var.getContext());
-                    textView2.setTextColor(j6.v0(i10, aVar));
-                    textView2.setBackground(j6.K0(false));
+                linearLayout.addView(textView, x5.n(-2, 48));
+                if (jVar instanceof x2) {
+                    TextView textView2 = new TextView(p0Var.getContext());
+                    textView2.setTextColor(i6.v0(i10, aVar));
+                    textView2.setBackground(i6.K0(false));
                     textView2.setGravity(16);
                     textView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                     textView2.setTextSize(1, 14.0f);
                     textView2.setEllipsize(truncateAt);
                     textView2.setTag(1);
                     textView2.setText(LocaleController.getString(R.string.PaintEdit));
-                    textView2.setOnClickListener(new k(n0Var, 2));
-                    linearLayout.addView(textView2, y5.n(-2, 48));
+                    textView2.setOnClickListener(new k(p0Var, 2));
+                    linearLayout.addView(textView2, x5.n(-2, 48));
                 }
-                if (jVar instanceof o2) {
-                    TextView textView3 = new TextView(n0Var.getContext());
-                    textView3.setTextColor(j6.v0(i10, aVar));
-                    textView3.setBackgroundDrawable(j6.K0(false));
+                if (jVar instanceof q2) {
+                    TextView textView3 = new TextView(p0Var.getContext());
+                    textView3.setTextColor(i6.v0(i10, aVar));
+                    textView3.setBackgroundDrawable(i6.K0(false));
                     textView3.setGravity(16);
                     textView3.setEllipsize(truncateAt);
                     textView3.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -105,43 +105,43 @@ public final /* synthetic */ class t implements Runnable {
                             switch (i12) {
                                 case 0:
                                     j jVar2 = jVar;
-                                    n0 n0Var2 = n0Var;
-                                    n0Var2.q0(jVar2);
-                                    org.telegram.ui.ActionBar.n1 n1Var = n0Var2.R1;
+                                    p0 p0Var2 = p0Var;
+                                    p0Var2.r0(jVar2);
+                                    org.telegram.ui.ActionBar.n1 n1Var = p0Var2.R1;
                                     if (n1Var != null && n1Var.isShowing()) {
-                                        n0Var2.R1.d(true);
+                                        p0Var2.R1.d(true);
                                         break;
                                     }
                                     break;
                                 default:
-                                    n0 n0Var3 = n0Var;
-                                    n0Var3.getClass();
-                                    ((o2) jVar).r(true);
-                                    org.telegram.ui.ActionBar.n1 n1Var2 = n0Var3.R1;
+                                    p0 p0Var3 = p0Var;
+                                    p0Var3.getClass();
+                                    ((q2) jVar).r(true);
+                                    org.telegram.ui.ActionBar.n1 n1Var2 = p0Var3.R1;
                                     if (n1Var2 != null && n1Var2.isShowing()) {
-                                        n0Var3.R1.d(true);
+                                        p0Var3.R1.d(true);
                                         break;
                                     }
                                     break;
                             }
                         }
                     });
-                    linearLayout.addView(textView3, y5.n(-2, 48));
+                    linearLayout.addView(textView3, x5.n(-2, 48));
                 }
-                if (!(jVar instanceof y1)) {
-                    TextView textView4 = new TextView(n0Var.getContext());
-                    textView4.setTextColor(j6.v0(i10, aVar));
-                    textView4.setBackgroundDrawable(j6.K0(false));
+                if (!(jVar instanceof a2)) {
+                    TextView textView4 = new TextView(p0Var.getContext());
+                    textView4.setTextColor(i6.v0(i10, aVar));
+                    textView4.setBackgroundDrawable(i6.K0(false));
                     textView4.setGravity(16);
                     textView4.setEllipsize(truncateAt);
                     textView4.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
                     textView4.setText(LocaleController.getString(R.string.PaintDuplicate));
-                    textView4.setOnClickListener(new k(n0Var, 3));
-                    linearLayout.addView(textView4, y5.n(-2, 48));
+                    textView4.setOnClickListener(new k(p0Var, 3));
+                    linearLayout.addView(textView4, x5.n(-2, 48));
                 }
-                n0Var.S1.addView(linearLayout);
+                p0Var.S1.addView(linearLayout);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
                 layoutParams.width = -2;
                 layoutParams.height = -2;

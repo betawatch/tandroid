@@ -2,7 +2,7 @@ package k2;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b0 {
     public Exception a;
@@ -16,8 +16,8 @@ public final class b0 {
             this.a = exc;
         }
         if (this.b == -9223372036854775807L) {
-            synchronized (f0.o0) {
-                z10 = f0.q0 > 0;
+            synchronized (g0.o0) {
+                z10 = g0.q0 > 0;
             }
             if (!z10) {
                 this.b = 200 + elapsedRealtime;

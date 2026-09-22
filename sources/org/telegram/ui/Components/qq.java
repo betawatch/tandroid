@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class qq extends Drawable {
     public final Drawable a;
@@ -19,7 +19,7 @@ public final class qq extends Drawable {
         Paint paint = new Paint(1);
         this.b = paint;
         this.a = context.getResources().getDrawable(R.drawable.msg_filled_menu_groups);
-        paint.setColor(org.telegram.ui.ActionBar.j6.l1(0.1552f, -16777216));
+        paint.setColor(org.telegram.ui.ActionBar.i6.l1(0.1552f, -16777216));
         this.c = f7;
     }
 

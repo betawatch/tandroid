@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f2 implements o2 {
     public static final int[] n = new int[0];
@@ -578,7 +578,7 @@ public final class f2 implements o2 {
             sb2.append(str);
             sb2.append(" for ");
             sb2.append(name);
-            throw new RuntimeException(a4.a.s(sb2, " not found. Known fields are ", arrays));
+            throw new RuntimeException(a4.a.t(sb2, " not found. Known fields are ", arrays));
         }
     }
 
@@ -4806,13 +4806,13 @@ public final class f2 implements o2 {
                 switch (i20) {
                     case 0:
                         if ((i18 & i10) != 0) {
-                            i16 = a4.a.D(i19 << 3, 8, i16);
+                            i16 = a4.a.E(i19 << 3, 8, i16);
                             break;
                         }
                         break;
                     case 1:
                         if ((i18 & i10) != 0) {
-                            i16 = a4.a.D(i19 << 3, 4, i16);
+                            i16 = a4.a.E(i19 << 3, 4, i16);
                             break;
                         }
                     case 2:
@@ -4847,7 +4847,7 @@ public final class f2 implements o2 {
                         break;
                     case 7:
                         if ((i18 & i10) != 0) {
-                            i16 = a4.a.D(i19 << 3, 1, i16);
+                            i16 = a4.a.E(i19 << 3, 1, i16);
                         }
                         break;
                     case 8:
@@ -4893,12 +4893,12 @@ public final class f2 implements o2 {
                         break;
                     case 13:
                         if ((i18 & i10) != 0) {
-                            i16 = a4.a.D(i19 << 3, 4, i16);
+                            i16 = a4.a.E(i19 << 3, 4, i16);
                             break;
                         }
                     case 14:
                         if ((i18 & i10) != 0) {
-                            i16 = a4.a.D(i19 << 3, 8, i16);
+                            i16 = a4.a.E(i19 << 3, 8, i16);
                         }
                         break;
                     case 15:
@@ -4931,7 +4931,7 @@ public final class f2 implements o2 {
                         List list = (List) unsafe.getObject(obj, j3);
                         Class cls = p2.a;
                         if (list.size() != 0) {
-                            J = a4.a.E(i19, list.size(), p2.c(list));
+                            J = e2.c(i19, list.size(), p2.c(list));
                             i16 += J;
                             break;
                         }
@@ -4942,7 +4942,7 @@ public final class f2 implements o2 {
                         Class cls2 = p2.a;
                         int size = list2.size();
                         if (size != 0) {
-                            J = a4.a.E(i19, size, p2.k(list2));
+                            J = e2.c(i19, size, p2.k(list2));
                             i16 += J;
                             break;
                         }
@@ -4953,7 +4953,7 @@ public final class f2 implements o2 {
                         Class cls3 = p2.a;
                         int size2 = list3.size();
                         if (size2 != 0) {
-                            J = a4.a.E(i19, size2, p2.t(list3));
+                            J = e2.c(i19, size2, p2.t(list3));
                             i16 += J;
                             break;
                         }
@@ -4990,7 +4990,7 @@ public final class f2 implements o2 {
                         Class cls5 = p2.a;
                         int size4 = list5.size();
                         if (size4 != 0) {
-                            J = a4.a.E(i19, size4, p2.v(list5));
+                            J = e2.c(i19, size4, p2.v(list5));
                             i16 += J;
                             break;
                         }
@@ -5001,7 +5001,7 @@ public final class f2 implements o2 {
                         Class cls6 = p2.a;
                         int size5 = list6.size();
                         if (size5 != 0) {
-                            J = a4.a.E(i19, size5, p2.r(list6));
+                            J = e2.c(i19, size5, p2.r(list6));
                             i16 += J;
                             break;
                         }
@@ -5020,7 +5020,7 @@ public final class f2 implements o2 {
                         Class cls7 = p2.a;
                         int size6 = list7.size();
                         if (size6 != 0) {
-                            J = a4.a.E(i19, size6, p2.x(list7));
+                            J = e2.c(i19, size6, p2.x(list7));
                             i16 += J;
                             break;
                         }
@@ -5031,7 +5031,7 @@ public final class f2 implements o2 {
                         Class cls8 = p2.a;
                         int size7 = list8.size();
                         if (size7 != 0) {
-                            J = a4.a.E(i19, size7, p2.p(list8));
+                            J = e2.c(i19, size7, p2.p(list8));
                             i16 += J;
                             break;
                         }
@@ -5146,12 +5146,12 @@ public final class f2 implements o2 {
                         break;
                     case 51:
                         if (q(i19, i15, obj)) {
-                            i16 = a4.a.D(i19 << 3, 8, i16);
+                            i16 = a4.a.E(i19 << 3, 8, i16);
                         }
                         break;
                     case 52:
                         if (q(i19, i15, obj)) {
-                            i16 = a4.a.D(i19 << 3, 4, i16);
+                            i16 = a4.a.E(i19 << 3, 4, i16);
                             break;
                         }
                     case 53:
@@ -5189,7 +5189,7 @@ public final class f2 implements o2 {
                         break;
                     case 58:
                         if (q(i19, i15, obj)) {
-                            i16 = a4.a.D(i19 << 3, 1, i16);
+                            i16 = a4.a.E(i19 << 3, 1, i16);
                         }
                         break;
                     case 59:
@@ -5235,12 +5235,12 @@ public final class f2 implements o2 {
                         break;
                     case 64:
                         if (q(i19, i15, obj)) {
-                            i16 = a4.a.D(i19 << 3, 4, i16);
+                            i16 = a4.a.E(i19 << 3, 4, i16);
                             break;
                         }
                     case VoIPService.CALL_MIN_LAYER /* 65 */:
                         if (q(i19, i15, obj)) {
-                            i16 = a4.a.D(i19 << 3, 8, i16);
+                            i16 = a4.a.E(i19 << 3, 8, i16);
                         }
                         break;
                     case 66:
@@ -5283,14 +5283,14 @@ public final class f2 implements o2 {
             switch (i27) {
                 case 0:
                     if (r(i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 8, i26);
+                        i26 = a4.a.E(i28 << 3, 8, i26);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if (r(i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 4, i26);
+                        i26 = a4.a.E(i28 << 3, 4, i26);
                         break;
                     } else {
                         break;
@@ -5341,7 +5341,7 @@ public final class f2 implements o2 {
                     }
                 case 7:
                     if (r(i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 1, i26);
+                        i26 = a4.a.E(i28 << 3, 1, i26);
                         break;
                     } else {
                         break;
@@ -5398,14 +5398,14 @@ public final class f2 implements o2 {
                     }
                 case 13:
                     if (r(i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 4, i26);
+                        i26 = a4.a.E(i28 << 3, 4, i26);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if (r(i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 8, i26);
+                        i26 = a4.a.E(i28 << 3, 8, i26);
                         break;
                     } else {
                         break;
@@ -5446,7 +5446,7 @@ public final class f2 implements o2 {
                     List list11 = (List) y2.l(obj, j10);
                     Class cls11 = p2.a;
                     if (list11.size() != 0) {
-                        N = a4.a.E(i28, list11.size(), p2.c(list11));
+                        N = e2.c(i28, list11.size(), p2.c(list11));
                         i26 += N;
                         break;
                     }
@@ -5457,7 +5457,7 @@ public final class f2 implements o2 {
                     Class cls12 = p2.a;
                     int size10 = list12.size();
                     if (size10 != 0) {
-                        N = a4.a.E(i28, size10, p2.k(list12));
+                        N = e2.c(i28, size10, p2.k(list12));
                         i26 += N;
                         break;
                     }
@@ -5468,7 +5468,7 @@ public final class f2 implements o2 {
                     Class cls13 = p2.a;
                     int size11 = list13.size();
                     if (size11 != 0) {
-                        N = a4.a.E(i28, size11, p2.t(list13));
+                        N = e2.c(i28, size11, p2.t(list13));
                         i26 += N;
                         break;
                     }
@@ -5510,7 +5510,7 @@ public final class f2 implements o2 {
                     Class cls15 = p2.a;
                     int size13 = list15.size();
                     if (size13 != 0) {
-                        N = a4.a.E(i28, size13, p2.v(list15));
+                        N = e2.c(i28, size13, p2.v(list15));
                         i26 += N;
                         break;
                     }
@@ -5521,7 +5521,7 @@ public final class f2 implements o2 {
                     Class cls16 = p2.a;
                     int size14 = list16.size();
                     if (size14 != 0) {
-                        N = a4.a.E(i28, size14, p2.r(list16));
+                        N = e2.c(i28, size14, p2.r(list16));
                         i26 += N;
                         break;
                     }
@@ -5540,7 +5540,7 @@ public final class f2 implements o2 {
                     Class cls17 = p2.a;
                     int size15 = list17.size();
                     if (size15 != 0) {
-                        N = a4.a.E(i28, size15, p2.x(list17));
+                        N = e2.c(i28, size15, p2.x(list17));
                         i26 += N;
                         break;
                     }
@@ -5551,7 +5551,7 @@ public final class f2 implements o2 {
                     Class cls18 = p2.a;
                     int size16 = list18.size();
                     if (size16 != 0) {
-                        N = a4.a.E(i28, size16, p2.p(list18));
+                        N = e2.c(i28, size16, p2.p(list18));
                         i26 += N;
                         break;
                     }
@@ -5694,14 +5694,14 @@ public final class f2 implements o2 {
                     break;
                 case 51:
                     if (q(i28, i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 8, i26);
+                        i26 = a4.a.E(i28 << 3, 8, i26);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (q(i28, i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 4, i26);
+                        i26 = a4.a.E(i28 << 3, 4, i26);
                         break;
                     } else {
                         break;
@@ -5752,7 +5752,7 @@ public final class f2 implements o2 {
                     }
                 case 58:
                     if (q(i28, i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 1, i26);
+                        i26 = a4.a.E(i28 << 3, 1, i26);
                         break;
                     } else {
                         break;
@@ -5809,14 +5809,14 @@ public final class f2 implements o2 {
                     }
                 case 64:
                     if (q(i28, i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 4, i26);
+                        i26 = a4.a.E(i28 << 3, 4, i26);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (q(i28, i25, obj)) {
-                        i26 = a4.a.D(i28 << 3, 8, i26);
+                        i26 = a4.a.E(i28 << 3, 8, i26);
                         break;
                     } else {
                         break;

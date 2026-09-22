@@ -1,21 +1,14 @@
 package n7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class m1 implements IInterface {
-    public final IBinder a;
-    public final String b;
+public final class m1 implements l1 {
+    public static final b a;
 
-    public m1(IBinder iBinder, String str) {
-        this.a = iBinder;
-        this.b = str;
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    static {
+        int i10 = p.c;
+        Object[] objArr = z.r;
+        new c0("FIDO");
+        a = new b(Boolean.FALSE);
     }
 }

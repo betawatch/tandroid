@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.n70;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -32,15 +32,15 @@ public final /* synthetic */ class b implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.D2();
+                this.b.C2();
                 break;
             case 1:
-                this.b.u3();
+                this.b.t3();
                 break;
             case 2:
                 w3 w3Var = this.b;
                 if (w3Var.x3 != null && !w3Var.n3.y()) {
-                    if (w3Var.U4(w3Var.x3, w3Var.v3, w3Var.w3)) {
+                    if (w3Var.T4(w3Var.x3, w3Var.v3, w3Var.w3)) {
                         w3Var.A3 = true;
                         break;
                     } else {
@@ -69,7 +69,7 @@ public final /* synthetic */ class b implements Runnable {
                         View view2 = w3Var.x3;
                         if (view2 instanceof o5) {
                             o5 o5Var = (o5) view2;
-                            if (w3Var.k3(o5Var, left, top)) {
+                            if (w3Var.j3(o5Var, left, top)) {
                                 try {
                                     o5Var.performHapticFeedback(0);
                                 } catch (Exception unused) {
@@ -79,13 +79,13 @@ public final /* synthetic */ class b implements Runnable {
                             } else {
                                 TL_iv.pageTableCell m10 = o5Var.m(left, top);
                                 if (m10 != null) {
-                                    y70 y70Var = w3Var.j4;
-                                    if (y70Var != null) {
+                                    n70 n70Var = w3Var.j4;
+                                    if (n70Var != null) {
                                         w3Var.j4 = null;
-                                        y70Var.u();
+                                        n70Var.u();
                                     }
-                                    w3Var.h2(o5Var);
-                                    w3Var.C0();
+                                    w3Var.g2(o5Var);
+                                    w3Var.B0();
                                     w3Var.requestDisallowInterceptTouchEvent(true);
                                     w3Var.B3 = true;
                                     w3Var.D3 = m10;
@@ -98,7 +98,7 @@ public final /* synthetic */ class b implements Runnable {
                                     w3Var.A3 = true;
                                     break;
                                 } else {
-                                    w3Var.K4(w3Var.x3);
+                                    w3Var.J4(w3Var.x3);
                                     break;
                                 }
                             }
@@ -111,7 +111,7 @@ public final /* synthetic */ class b implements Runnable {
                                 if (i1Var.getVisibility() == 0) {
                                     break;
                                 }
-                                w3Var.K4(w3Var.x3);
+                                w3Var.J4(w3Var.x3);
                                 break;
                             }
                             w3Var.A3 = true;
@@ -125,7 +125,7 @@ public final /* synthetic */ class b implements Runnable {
                                     }
                                 }
                             }
-                            w3Var.K4(w3Var.x3);
+                            w3Var.J4(w3Var.x3);
                         }
                     }
                 }
@@ -145,10 +145,10 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 4:
-                this.b.p3(true);
+                this.b.o3(true);
                 break;
             default:
-                this.b.b3();
+                this.b.a3();
                 break;
         }
     }

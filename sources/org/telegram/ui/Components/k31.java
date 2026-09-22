@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k31 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m31 b;
+public final class k31 extends s4.j {
+    public final /* synthetic */ v31 F;
 
-    public /* synthetic */ k31(m31 m31Var, int i10) {
-        this.a = i10;
-        this.b = m31Var;
+    public k31(v31 v31Var) {
+        this.F = v31Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m31 m31Var = this.b;
-                m31Var.getClass();
-                m31Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m31Var.h();
-                m31Var.g();
-                break;
-            default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                m31 m31Var2 = this.b;
-                m31Var2.K = max;
-                m31Var2.h.invalidate();
-                break;
-        }
+    @Override // s4.j
+    public final void O() {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

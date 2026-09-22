@@ -1,16 +1,15 @@
 package e2;
 
 import e9.m0;
-import hg.k0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import v7.b8;
-import v7.u6;
-import v7.z7;
+import v7.a8;
+import v7.t6;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -26,7 +25,7 @@ public final class v {
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return z7.c((byte) 0, b8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), b8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), b8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return y7.c((byte) 0, a8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), a8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), a8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
@@ -56,7 +55,7 @@ public final class v {
         if (j3 >= 0) {
             return j3;
         }
-        throw new IllegalStateException(k0.h(j3, "Top bit not zero: "));
+        throw new IllegalStateException(hg.c.i(j3, "Top bit not zero: "));
     }
 
     public final long C() {
@@ -64,7 +63,7 @@ public final class v {
         if (r10 >= 0) {
             return r10;
         }
-        throw new IllegalStateException(a4.a.o(r10, "Top bit not zero: "));
+        throw new IllegalStateException(a4.a.p(r10, "Top bit not zero: "));
     }
 
     public final int D() {
@@ -97,11 +96,11 @@ public final class v {
         }
         i11 = 0;
         if (i11 == 0) {
-            throw new NumberFormatException(a4.a.o(j3, "Invalid UTF-8 sequence first byte: "));
+            throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence first byte: "));
         }
         for (i10 = 1; i10 < i11; i10++) {
             if ((this.a[this.b + i10] & 192) != 128) {
-                throw new NumberFormatException(a4.a.o(j3, "Invalid UTF-8 sequence continuation byte: "));
+                throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence continuation byte: "));
             }
             j3 = (j3 << 6) | (r3 & 63);
         }
@@ -254,15 +253,15 @@ public final class v {
         int g10;
         if (a() >= d(charset) && (g10 = g(charset)) != 0) {
             long j3 = g10 >>> 8;
-            u6.b(j3, "out of range: %s", (j3 >> 32) == 0);
+            t6.b(j3, "out of range: %s", (j3 >> 32) == 0);
             int i10 = (int) j3;
             if (!Character.isSupplementaryCodePoint(i10)) {
                 long j10 = i10;
                 char c10 = (char) j10;
-                u6.b(j10, "Out of range: %s", ((long) c10) == j10);
+                t6.b(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = z7.b(g10 & 255) + this.b;
+                        this.b = y7.b(g10 & 255) + this.b;
                         return c10;
                     }
                 }
@@ -398,7 +397,7 @@ public final class v {
         if (l4 >= 0) {
             return l4;
         }
-        throw new IllegalStateException(k0.h(l4, "Top bit not zero: "));
+        throw new IllegalStateException(hg.c.i(l4, "Top bit not zero: "));
     }
 
     public final int q() {

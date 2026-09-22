@@ -1,114 +1,80 @@
 package u2;
 
-import android.net.Uri;
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class i1 extends b2.k1 {
-    public static final Object q = new Object();
-    public final long e;
-    public final long f;
-    public final long g;
-    public final long h;
-    public final long i;
-    public final long j;
-    public final boolean k;
-    public final boolean l;
-    public final boolean m;
-    public final Object n;
-    public final b2.k0 o;
-    public final b2.e0 p;
+public final class i1 implements b1 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ k1 c;
 
-    static {
-        b2.y yVar = new b2.y();
-        b2.b0 b0Var = new b2.b0();
-        List list = Collections.EMPTY_LIST;
-        e9.a1 a1Var = e9.a1.e;
-        b2.d0 d0Var = new b2.d0();
-        b2.g0 g0Var = b2.g0.d;
-        Uri uri = Uri.EMPTY;
-        e2.d.g(b0Var.b == null || b0Var.a != null);
-        if (uri != null) {
-            new b2.f0(uri, null, b0Var.a != null ? new b2.c0(b0Var) : null, null, list, null, a1Var, -9223372036854775807L);
+    public i1(k1 k1Var) {
+        this.c = k1Var;
+    }
+
+    @Override // u2.b1
+    public final void a() {
+        k1 k1Var = this.c;
+        if (k1Var.v) {
+            return;
         }
-        new b2.a0(yVar);
-        new b2.e0(d0Var);
-        b2.n0 n0Var = b2.n0.K;
+        k1Var.r.a();
     }
 
-    public i1(long j3, long j10, long j11, long j12, long j13, long j14, boolean z10, boolean z11, boolean z12, na.d dVar, b2.k0 k0Var, b2.e0 e0Var) {
-        this.e = j3;
-        this.f = j10;
-        this.g = j11;
-        this.h = j12;
-        this.i = j13;
-        this.j = j14;
-        this.k = z10;
-        this.l = z11;
-        this.m = z12;
-        this.n = dVar;
-        k0Var.getClass();
-        this.o = k0Var;
-        this.p = e0Var;
-    }
-
-    @Override // b2.k1
-    public final int b(Object obj) {
-        return q.equals(obj) ? 0 : -1;
-    }
-
-    @Override // b2.k1
-    public final b2.h1 f(int i10, b2.h1 h1Var, boolean z10) {
-        e2.d.c(i10, 1);
-        Object obj = z10 ? q : null;
-        long j3 = -this.i;
-        h1Var.getClass();
-        h1Var.h(null, obj, 0, this.g, j3, b2.b.c, false);
-        return h1Var;
-    }
-
-    @Override // b2.k1
-    public final int h() {
-        return 1;
-    }
-
-    @Override // b2.k1
-    public final Object l(int i10) {
-        e2.d.c(i10, 1);
-        return q;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x002a, code lost:
-    
-        if (r1 > r5) goto L10;
-     */
-    @Override // b2.k1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final b2.j1 m(int i10, b2.j1 j1Var, long j3) {
-        long j10;
-        e2.d.c(i10, 1);
-        long j11 = this.j;
-        boolean z10 = this.l;
-        if (z10 && !this.m && j3 != 0) {
-            long j12 = this.h;
-            if (j12 != -9223372036854775807L) {
-                j11 += j3;
-            }
-            j10 = -9223372036854775807L;
-            j1Var.b(b2.j1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j10, this.h, 0, 0, this.i);
-            return j1Var;
+    public final void b() {
+        if (this.b) {
+            return;
         }
-        j10 = j11;
-        j1Var.b(b2.j1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j10, this.h, 0, 0, this.i);
-        return j1Var;
+        k1 k1Var = this.c;
+        k1Var.e.k(b2.r0.h(k1Var.s.r), k1Var.s, 0, null, 0L);
+        this.b = true;
     }
 
-    @Override // b2.k1
-    public final int o() {
+    @Override // u2.b1
+    public final boolean e() {
+        return this.c.w;
+    }
+
+    @Override // u2.b1
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
+        b();
+        k1 k1Var = this.c;
+        boolean z10 = k1Var.w;
+        if (z10 && k1Var.x == null) {
+            this.a = 2;
+        }
+        int i11 = this.a;
+        if (i11 == 2) {
+            hVar.addFlag(4);
+            return -4;
+        }
+        if ((i10 & 2) != 0 || i11 == 0) {
+            yVar.c = k1Var.s;
+            this.a = 1;
+            return -5;
+        }
+        if (!z10) {
+            return -3;
+        }
+        k1Var.x.getClass();
+        hVar.addFlag(1);
+        hVar.e = 0L;
+        if ((i10 & 4) == 0) {
+            hVar.b(k1Var.y);
+            hVar.c.put(k1Var.x, 0, k1Var.y);
+        }
+        if ((i10 & 1) == 0) {
+            this.a = 2;
+        }
+        return -4;
+    }
+
+    @Override // u2.b1
+    public final int j(long j3) {
+        b();
+        if (j3 <= 0 || this.a == 2) {
+            return 0;
+        }
+        this.a = 2;
         return 1;
     }
 }

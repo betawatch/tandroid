@@ -1,87 +1,80 @@
 package li;
 
-import ah.o;
-import ai.w0;
-import ai.x5;
-import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.kh;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.av;
-import org.telegram.ui.h6;
-import org.telegram.ui.w6;
-import org.telegram.ui.z6;
+import hg.c;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements bh.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class a {
+    public final ArrayList a = new ArrayList();
+    public int b;
 
-    public /* synthetic */ a(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public final RectF a(float f7, float f10, float f11, float f12) {
+        RectF rectF;
+        int i10 = this.b;
+        ArrayList arrayList = this.a;
+        if (i10 < arrayList.size()) {
+            rectF = (RectF) arrayList.get(this.b);
+            rectF.set(f7, f10, f11, f12);
+        } else {
+            rectF = new RectF(f7, f10, f11, f12);
+            arrayList.add(rectF);
+        }
+        this.b++;
+        return rectF;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        switch (this.a) {
+    public final RectF b(int i10) {
+        if (i10 >= 0 && i10 < this.b) {
+            return (RectF) this.a.get(i10);
         }
-        aVar.a = true;
+        StringBuilder l4 = c.l(i10, "index=", ", size=");
+        l4.append(this.b);
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        switch (this.a) {
-            case 0:
-                yl0 yl0Var = (yl0) this.b;
-                gh.d.a(yl0Var, canvas, rectF, yl0Var, (FrameLayout) this.c);
-                break;
-            case 1:
-                z6 z6Var = (z6) this.b;
-                h6 h6Var = (h6) this.c;
-                w0 w0Var = z6Var.b;
-                gh.d.a(w0Var, canvas, rectF, w0Var, h6Var);
-                w6 w6Var = z6Var.M;
-                if (w6Var != null) {
-                    int childCount = w6Var.h.getChildCount();
-                    for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = z6Var.M.h.getChildAt(i10);
-                        if (childAt instanceof yl0) {
-                            yl0 yl0Var2 = (yl0) childAt;
-                            gh.d.a(yl0Var2, canvas, rectF, yl0Var2, h6Var);
-                        }
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                av avVar = (av) this.b;
-                x5 x5Var = (x5) this.c;
-                int childCount2 = avVar.a.getChildCount();
-                for (int i11 = 0; i11 < childCount2; i11++) {
-                    View childAt2 = avVar.a.getChildAt(i11);
-                    if (childAt2 instanceof yl0) {
-                        yl0 yl0Var3 = (yl0) childAt2;
-                        gh.d.a(yl0Var3, canvas, rectF, yl0Var3, x5Var);
-                    }
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                ((o) this.c).f(canvas, rectF);
-                kh khVar = profileActivity.O.c2;
-                if (khVar != null) {
-                    khVar.f(canvas, rectF);
-                    break;
-                }
-                break;
+    public final void c(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.b)) {
+            StringBuilder l4 = c.l(i10, "index=", ", size=");
+            l4.append(this.b);
+            throw new IndexOutOfBoundsException(l4.toString());
         }
+        int i12 = i11 - 1;
+        ArrayList arrayList = this.a;
+        RectF rectF = (RectF) arrayList.get(i10);
+        if (i10 != i12) {
+            arrayList.set(i10, (RectF) arrayList.get(i12));
+            arrayList.set(i12, rectF);
+        }
+        this.b = i12;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        if (this.b != aVar.b) {
+            return false;
+        }
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (!((RectF) this.a.get(i10)).equals(aVar.a.get(i10))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final int hashCode() {
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            i10 = (i10 * 31) + ((RectF) this.a.get(i11)).hashCode();
+        }
+        return i10;
     }
 }

@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
-import v7.m7;
+import v7.l7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class h implements Callable {
                 }
                 try {
                     if (c10.e(context)) {
-                        startService = c0.d(context, intent2);
+                        startService = d0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
                         Log.d("FirebaseMessaging", "Missing wake lock permission, service start may be delayed");
@@ -102,7 +102,7 @@ public final /* synthetic */ class h implements Callable {
             case 1:
                 g2.i iVar = (g2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
-                return m7.a(bArr.length, iVar.c, bArr);
+                return l7.a(bArr.length, iVar.c, bArr);
             case 2:
                 g2.i iVar2 = (g2.i) this.b;
                 Uri uri = (Uri) this.c;
@@ -125,7 +125,7 @@ public final /* synthetic */ class h implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i13);
-                    Bitmap a2 = m7.a(copyOf.length, i11, copyOf);
+                    Bitmap a2 = l7.a(copyOf.length, i11, copyOf);
                     nVar.close();
                     return a2;
                 } catch (Throwable th2) {

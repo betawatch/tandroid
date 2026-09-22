@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.view.View;
 import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements e2.h {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class m implements e2.h {
                 }
                 break;
             case 2:
-                ((u2.z0) obj).b.release();
+                ((u2.y0) obj).b.release();
                 break;
             default:
                 ((ExecutorService) obj).shutdown();

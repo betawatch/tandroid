@@ -1,40 +1,68 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class j61 extends FrameLayout {
-    public int a;
-    public boolean b;
+public final class j61 extends NestedScrollView {
+    public boolean W;
+    public final /* synthetic */ k61 a0;
 
-    @Override // android.widget.FrameLayout, android.view.View
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j61(k61 k61Var, Context context) {
+        super(context);
+        this.a0 = k61Var;
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k61.m(this.a0);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
+    
+        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
+     */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onMeasure(int i10, int i11) {
-        int i12 = this.a;
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (this.b && view != null) {
-            i12 = view.getPaddingBottom() + view.getPaddingTop() + i12;
-        }
-        if (view != null && view.getMeasuredHeight() > 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i12, TLObject.FLAG_30));
-            return;
-        }
-        if (View.MeasureSpec.getMode(i11) != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - i12, TLObject.FLAG_30));
-            return;
-        }
         int size = View.MeasureSpec.getSize(i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
-        measureChildren(makeMeasureSpec, i11);
-        int i13 = 0;
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            i13 = Math.max(i13, getChildAt(i14).getMeasuredHeight());
+        k61 k61Var = this.a0;
+        measureChildWithMargins(k61Var.f, i10, 0, i11, 0);
+        int measuredHeight = k61Var.f.getMeasuredHeight();
+        int i12 = (size / 5) * 2;
+        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
         }
-        if (size > 0) {
-            i13 = Math.min(i13, size - i12);
+        i12 = size - measuredHeight;
+        if (i12 < 0) {
+            i12 = 0;
         }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
+        if (getPaddingTop() != i12) {
+            this.W = true;
+            setPadding(0, i12, 0, 0);
+            this.W = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        k61.m(this.a0);
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W) {
+            return;
+        }
+        super.requestLayout();
     }
 }

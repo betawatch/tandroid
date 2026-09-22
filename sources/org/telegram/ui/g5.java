@@ -10,12 +10,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g5 extends ReplacementSpan {
     public final Paint a;
     public final ImageReceiver b;
-    public final org.telegram.ui.Components.g9 c;
+    public final org.telegram.ui.Components.f9 c;
     public float d;
     public final int e;
     public View f;
@@ -29,20 +29,20 @@ public final class g5 extends ReplacementSpan {
         this(view, 18.0f, i10);
     }
 
-    public static void a(CharSequence charSequence, org.telegram.ui.Cells.x8 x8Var) {
+    public static void a(CharSequence charSequence, org.telegram.ui.Cells.w8 w8Var) {
         if (charSequence != null && (charSequence instanceof Spannable)) {
             Spannable spannable = (Spannable) charSequence;
             for (g5 g5Var : (g5[]) spannable.getSpans(0, spannable.length(), g5.class)) {
-                g5Var.d(x8Var);
+                g5Var.d(w8Var);
             }
         }
     }
 
     public final void b(TLRPC.Chat chat) {
         int i10 = this.e;
-        org.telegram.ui.Components.g9 g9Var = this.c;
-        g9Var.k(i10, chat);
-        this.b.setForUserOrChat(chat, g9Var);
+        org.telegram.ui.Components.f9 f9Var = this.c;
+        f9Var.k(i10, chat);
+        this.b.setForUserOrChat(chat, f9Var);
     }
 
     public final void c(long j3) {
@@ -88,7 +88,7 @@ public final class g5 extends ReplacementSpan {
                 int alpha2 = paint.getAlpha();
                 this.s = alpha2;
                 paint2.setAlpha(alpha2);
-                paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.j6.l1(this.s / 255.0f, 855638016));
+                paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.l1(this.s / 255.0f, 855638016));
             }
             canvas.drawCircle((AndroidUtilities.dp(this.d) / 2.0f) + 0.0f + f7, ((i12 + i14) / 2.0f) + this.r, AndroidUtilities.dp(this.d) / 2.0f, paint2);
         }
@@ -104,9 +104,9 @@ public final class g5 extends ReplacementSpan {
 
     public final void e(TLRPC.User user) {
         int i10 = this.e;
-        org.telegram.ui.Components.g9 g9Var = this.c;
-        g9Var.m(i10, user);
-        this.b.setForUserOrChat(user, g9Var);
+        org.telegram.ui.Components.f9 f9Var = this.c;
+        f9Var.m(i10, user);
+        this.b.setForUserOrChat(user, f9Var);
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -123,7 +123,7 @@ public final class g5 extends ReplacementSpan {
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.b = imageReceiver;
         imageReceiver.setInvalidateAll(true);
-        this.c = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+        this.c = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.e6) null);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(f7));
         this.d = f7;
         Paint paint = new Paint(1);

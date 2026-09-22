@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tw implements org.telegram.ui.Components.e00 {
     public final /* synthetic */ Context a;
@@ -98,12 +98,12 @@ public final class tw implements org.telegram.ui.Components.e00 {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.FilterDeleteAlert);
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.a3(29, this, dialogFilter));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.mf(28, this, dialogFilter));
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         uyVar.showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);
         if (textView != null) {
-            textView.setTextColor(uyVar.getThemedColor(org.telegram.ui.ActionBar.j6.q7));
+            textView.setTextColor(uyVar.getThemedColor(org.telegram.ui.ActionBar.i6.q7));
         }
     }
 }

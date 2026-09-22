@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tq extends View {
     public final Paint a;
@@ -35,17 +35,17 @@ public final class tq extends View {
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint2.setStrokeCap(Paint.Cap.ROUND);
         if (i10 == 0) {
-            this.f = org.telegram.ui.ActionBar.j6.B7;
-            this.h = org.telegram.ui.ActionBar.j6.C7;
+            this.f = org.telegram.ui.ActionBar.i6.B7;
+            this.h = org.telegram.ui.ActionBar.i6.C7;
         } else if (i10 == 1) {
-            this.f = org.telegram.ui.ActionBar.j6.D7;
-            this.h = org.telegram.ui.ActionBar.j6.E7;
+            this.f = org.telegram.ui.ActionBar.i6.D7;
+            this.h = org.telegram.ui.ActionBar.i6.E7;
         } else if (i10 == 2) {
-            this.f = org.telegram.ui.ActionBar.j6.F7;
-            this.h = org.telegram.ui.ActionBar.j6.G7;
+            this.f = org.telegram.ui.ActionBar.i6.F7;
+            this.h = org.telegram.ui.ActionBar.i6.G7;
         } else if (i10 == 3) {
-            this.f = org.telegram.ui.ActionBar.j6.H7;
-            this.h = org.telegram.ui.ActionBar.j6.I7;
+            this.f = org.telegram.ui.ActionBar.i6.H7;
+            this.h = org.telegram.ui.ActionBar.i6.I7;
         }
         b();
     }
@@ -62,14 +62,14 @@ public final class tq extends View {
         int i10 = this.f;
         Paint paint = this.a;
         if (i10 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         } else {
             paint.setColor(this.n);
         }
         int i11 = this.h;
         Paint paint2 = this.b;
         if (i11 >= 0) {
-            paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            paint2.setColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
         } else {
             paint2.setColor(this.r);
         }

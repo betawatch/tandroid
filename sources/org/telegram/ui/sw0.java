@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sw0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class sw0 implements org.telegram.ui.ActionBar.a2, 
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.Y();
@@ -34,11 +34,11 @@ public final /* synthetic */ class sw0 implements org.telegram.ui.ActionBar.a2, 
         ((Float) obj5).floatValue();
         tw0 tw0Var = this.b;
         tw0Var.getClass();
-        if (((org.telegram.ui.Components.y51) obj).d == 1) {
-            org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
-            boolean z10 = !x8Var.e.h;
+        if (((org.telegram.ui.Components.i51) obj).d == 1) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+            boolean z10 = !w8Var.e.h;
             tw0Var.r = z10;
-            x8Var.setChecked(z10);
+            w8Var.setChecked(z10);
             tw0Var.d.Y2.N(true);
             tw0Var.V(true);
         }

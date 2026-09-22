@@ -1,114 +1,88 @@
 package ki;
 
-import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession;
-import android.os.Build;
-import android.os.Handler;
-import ci.y0;
+import ai.r;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class e extends CameraCaptureSession.StateCallback {
-    public final /* synthetic */ h a;
+public final class e {
+    public c a;
+    public long f;
+    public long g;
+    public long h;
+    public View i;
+    public long j;
+    public long k;
+    public long l;
+    public int n;
+    public int o;
+    public final a b = new a(this);
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public li.b e = li.b.c;
+    public final RectF m = new RectF();
+    public final li.a p = new li.a();
+    public final li.a q = new li.a();
+    public final li.a r = new li.a();
+    public final ArrayList s = new ArrayList();
 
-    public e(h hVar) {
-        this.a = hVar;
-    }
-
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onClosed(CameraCaptureSession cameraCaptureSession) {
-        h hVar = this.a;
-        if (hVar.y != cameraCaptureSession) {
+    public final void a(ll0 ll0Var) {
+        if (ll0Var == null) {
             return;
         }
-        hVar.y = null;
-        hVar.z = null;
-        hVar.M = false;
-        hVar.j.b("capture session closed");
-    }
-
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onConfigureFailed(CameraCaptureSession cameraCaptureSession) {
-        cameraCaptureSession.close();
-        h hVar = this.a;
-        if (hVar.y == cameraCaptureSession) {
-            hVar.y = null;
-            hVar.z = null;
-        }
-        if (!hVar.R || hVar.x == null || hVar.T || hVar.X) {
-            hVar.j.b("stale capture session configuration failure ignored");
-        } else if (hVar.F == k0.c) {
-            hVar.o("60 fps session configuration failed", null);
-        } else {
-            hVar.u(new IllegalStateException("Camera capture session configuration failed"));
-        }
-    }
-
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onConfigured(CameraCaptureSession cameraCaptureSession) {
-        String str;
-        h hVar = this.a;
-        if (!hVar.R || hVar.x == null) {
-            cameraCaptureSession.close();
-            return;
-        }
-        hVar.y = cameraCaptureSession;
-        try {
-            boolean z10 = Build.VERSION.SDK_INT >= 23 && (cameraCaptureSession instanceof CameraConstrainedHighSpeedCaptureSession);
-            hVar.b0 = z10;
-            if (hVar.a0 && !z10) {
-                hVar.o("HAL returned a regular session for a high-speed request", null);
-                return;
+        ll0Var.E2.b.add(new mt() { // from class: ki.b
+            @Override // org.telegram.ui.Components.mt
+            public final void a(int i10, boolean z10) {
+                e.this.g++;
             }
-            hVar.C = hVar.D;
-            hVar.z = hVar.l(true);
-            o oVar = this.a.v;
-            if (oVar != null) {
-                Handler handler = oVar.k;
-                if (oVar.U && handler != null) {
-                    handler.post(new m(oVar, 1));
+        });
+        ll0Var.j(new r(this, 12));
+    }
+
+    public final void b(View view) {
+        tf.b a2;
+        tf.d dVar;
+        View view2 = this.i;
+        if (view2 != view) {
+            a aVar = this.b;
+            if (view2 != null && (dVar = (tf.d) view2.getTag(R.id.tag_view_on_post_draw_state)) != null) {
+                ArrayList arrayList = dVar.a;
+                if (arrayList.remove(aVar)) {
+                    tf.b bVar = dVar.b;
+                    if (bVar != null) {
+                        ((pe.b) bVar.a.b).remove(aVar);
+                    }
+                    if (arrayList.isEmpty()) {
+                        dVar.b = null;
+                        view2.removeOnAttachStateChangeListener(dVar.c);
+                        view2.setTag(R.id.tag_view_on_post_draw_state, null);
+                    }
                 }
             }
-            h hVar2 = this.a;
-            boolean z11 = hVar2.V;
-            hVar2.V = false;
-            hVar2.W = z11;
-            this.a.F();
-            k kVar = this.a.j;
-            StringBuilder sb2 = new StringBuilder("capture session configured: facing=");
-            sb2.append(this.a.C);
-            sb2.append(", mode=");
-            sb2.append(this.a.b0 ? "CONSTRAINED_HIGH_SPEED" : "REGULAR");
-            sb2.append(", fpsRange=");
-            sb2.append(this.a.G);
-            sb2.append(", elapsedMs=");
-            sb2.append(h.n(this.a.f0));
-            sb2.append(", segmentElapsedMs=");
-            sb2.append(h.n(this.a.d0));
-            if (z11) {
-                str = ", switchElapsedMs=" + h.n(this.a.g0);
-            } else {
-                str = "";
+            if (view != null) {
+                if (view.isAttachedToWindow() && view == view.getRootView()) {
+                    throw new IllegalArgumentException("Cannot add OnPostDrawListener to root view");
+                }
+                tf.d dVar2 = (tf.d) view.getTag(R.id.tag_view_on_post_draw_state);
+                if (dVar2 == null) {
+                    dVar2 = new tf.d();
+                    view.setTag(R.id.tag_view_on_post_draw_state, dVar2);
+                    view.addOnAttachStateChangeListener(dVar2.c);
+                }
+                ArrayList arrayList2 = dVar2.a;
+                if (!arrayList2.contains(aVar)) {
+                    arrayList2.add(aVar);
+                    if (view.isAttachedToWindow() && (a2 = tf.e.a(view, dVar2)) != null) {
+                        ((pe.b) a2.a.b).add(aVar);
+                    }
+                }
             }
-            sb2.append(str);
-            kVar.b(sb2.toString());
-            h hVar3 = this.a;
-            hVar3.c.post(new b(hVar3, 6));
-            h hVar4 = this.a;
-            e0 e0Var = hVar4.k;
-            ((q0) e0Var.b).h.post(new y0(e0Var, new g(hVar4.C, hVar4.E, hVar4.F, hVar4.q, hVar4.r, hVar4.K, hVar4.q()), z11, 7));
-            h hVar5 = this.a;
-            i0 i0Var = hVar5.B;
-            if (i0Var != hVar5.C) {
-                hVar5.G(i0Var);
-            }
-        } catch (Exception e) {
-            h hVar6 = this.a;
-            if (hVar6.F == k0.c) {
-                hVar6.o("60 fps request submission rejected", e);
-            } else {
-                hVar6.u(e);
-            }
+            this.i = view;
         }
     }
 }

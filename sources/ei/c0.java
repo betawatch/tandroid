@@ -17,12 +17,12 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class c0 extends View {
     public boolean E;
@@ -31,7 +31,7 @@ public final class c0 extends View {
     public final Paint b;
     public final TextPaint c;
     public final z d;
-    public final kj0 e;
+    public final xi0 e;
     public boolean f;
     public float h;
     public String n;
@@ -51,15 +51,15 @@ public final class c0 extends View {
         this.c = textPaint;
         z zVar = new z(this);
         this.d = zVar;
-        kj0 kj0Var = new kj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
-        this.e = kj0Var;
+        xi0 xi0Var = new xi0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+        this.e = xi0Var;
         this.n = LocaleController.getString(R.string.BotsMenuTitle);
         this.E = true;
-        paint.setColor(j6.w0(null, j6.cf, false));
-        int w02 = j6.w0(null, j6.ef, false);
+        paint.setColor(i6.w0(null, i6.cf, false));
+        int w02 = i6.w0(null, i6.ef, false);
         zVar.k = w02;
         zVar.j = w02;
-        kj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        xi0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         textPaint.setColor(w02);
         zVar.n = true;
         zVar.h = false;
@@ -69,12 +69,12 @@ public final class c0 extends View {
         zVar.a.setStrokeCap(Paint.Cap.ROUND);
         zVar.l = true;
         int dp = AndroidUtilities.dp(16.0f);
-        int w03 = j6.w0(null, j6.Qh, false);
-        org.telegram.ui.Cells.z i02 = j6.i0(dp, dp, dp, dp, 0, w03, w03);
+        int w03 = i6.w0(null, i6.Qh, false);
+        org.telegram.ui.Cells.z i02 = i6.i0(dp, dp, dp, dp, 0, w03, w03);
         this.y = i02;
         i02.setCallback(this);
-        kj0Var.setCallback(this);
-        kj0Var.R(this);
+        xi0Var.setCallback(this);
+        xi0Var.R(this);
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
@@ -118,11 +118,11 @@ public final class c0 extends View {
                     if (this.w) {
                         canvas.save();
                         canvas.translate(AndroidUtilities.dp(9.5f), AndroidUtilities.dp(6.0f));
-                        kj0 kj0Var = this.e;
-                        kj0Var.setBounds(0, 0, kj0Var.b, kj0Var.c);
-                        kj0Var.draw(canvas);
+                        xi0 xi0Var = this.e;
+                        xi0Var.setBounds(0, 0, xi0Var.b, xi0Var.c);
+                        xi0Var.draw(canvas);
                         canvas.restore();
-                        if (kj0Var.k0) {
+                        if (xi0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -204,14 +204,14 @@ public final class c0 extends View {
             textPaint.setTextSize(dp);
             this.F = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c10 = ww0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = jw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
         AndroidUtilities.dp(4.0f);
         int dp2 = AndroidUtilities.dp(40.0f);
         if (this.f) {
-            dp2 = org.telegram.messenger.l0.C(4.0f, (int) this.s, dp2);
+            dp2 = org.telegram.messenger.y0.C(4.0f, (int) this.s, dp2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
@@ -230,11 +230,11 @@ public final class c0 extends View {
             return;
         }
         if (this.x != z10) {
-            kj0 kj0Var = this.e;
-            kj0Var.stop();
-            kj0Var.h = true;
-            kj0Var.P(z10 ? kj0Var.e[0] : 1);
-            kj0Var.start();
+            xi0 xi0Var = this.e;
+            xi0Var.stop();
+            xi0Var.h = true;
+            xi0Var.P(z10 ? xi0Var.e[0] : 1);
+            xi0Var.start();
             this.x = z10;
         }
     }

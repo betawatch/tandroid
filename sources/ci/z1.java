@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class z1 extends a2 implements NotificationCenter.NotificationCenterDelegate {
     public final ai.w0 b;
@@ -21,7 +21,7 @@ public final class z1 extends a2 implements NotificationCenter.NotificationCente
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public z1(t2 t2Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         this.r = t2Var;
         this.f = new s1();
         this.h = new ArrayList();
@@ -41,13 +41,13 @@ public final class z1 extends a2 implements NotificationCenter.NotificationCente
         w0Var.setOnTouchListener(new q1(0, this, gVar));
         w0Var.setOnItemClickListener(gVar);
         w0Var.setOnScrollListener(new ai.r(this, 2));
-        addView(w0Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 58.0f, 0.0f, 40.0f));
-        f6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
-        l2 l2Var = new l2(context, f6Var);
+        addView(w0Var, w7.x5.d(-1, -1.0f, 119, 0.0f, 58.0f, 0.0f, 40.0f));
+        e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+        l2 l2Var = new l2(context, e6Var);
         this.d = l2Var;
         l2Var.v = new bi.v(this, 2);
         l2Var.a(2, false);
-        addView(l2Var, w7.y5.e(-1, -2, 48));
+        addView(l2Var, w7.x5.e(-1, -2, 48));
     }
 
     @Override // ci.a2

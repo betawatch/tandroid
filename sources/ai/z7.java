@@ -22,16 +22,16 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.il0;
-import org.telegram.ui.j71;
+import org.telegram.ui.fl0;
+import org.telegram.ui.h71;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z7 implements Runnable {
     public final /* synthetic */ int a;
@@ -173,47 +173,47 @@ public final /* synthetic */ class z7 implements Runnable {
                 ProfileActivity.m0((ProfileActivity) obj3, (TLRPC.User) obj2, (String) obj, z11, z10);
                 break;
             case 3:
-                final j71 j71Var = (j71) obj3;
+                final h71 h71Var = (h71) obj3;
                 final String str = (String) obj2;
                 String[] strArr = (String[]) obj;
                 final LinkedHashSet linkedHashSet = new LinkedHashSet();
                 final LinkedHashSet linkedHashSet2 = new LinkedHashSet();
-                HashMap<String, TLRPC.TL_availableReaction> reactionsMap = MediaDataController.getInstance(j71Var.V).getReactionsMap();
+                HashMap<String, TLRPC.TL_availableReaction> reactionsMap = MediaDataController.getInstance(h71Var.V).getReactionsMap();
                 final ArrayList arrayList4 = new ArrayList();
                 final ArrayList arrayList5 = new ArrayList();
                 boolean fullyConsistsOfEmojis = Emoji.fullyConsistsOfEmojis(str);
                 ArrayList arrayList6 = new ArrayList();
                 HashMap hashMap = new HashMap();
                 ArrayList arrayList7 = new ArrayList();
-                il0 il0Var = new il0(j71Var, str, this.b, arrayList4, reactionsMap, arrayList5, linkedHashSet, linkedHashSet2, arrayList7, arrayList6, this.c);
-                int i17 = j71Var.W;
+                fl0 fl0Var = new fl0(h71Var, str, this.b, arrayList4, reactionsMap, arrayList5, linkedHashSet, linkedHashSet2, arrayList7, arrayList6, this.c);
+                int i17 = h71Var.W;
                 if (i17 == 13) {
-                    Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.r51
+                    Utilities.doCallbacks(new Utilities.Callback() { // from class: org.telegram.ui.o51
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj4) {
                             Runnable runnable = (Runnable) obj4;
                             switch (i11) {
                                 case 0:
-                                    MediaDataController.getInstance(j71Var.V).getEmojiSuggestions(j71.a2, str, false, new rv0(7, linkedHashSet2, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(h71Var.V).getEmojiSuggestions(h71.a2, str, false, new rv0(6, linkedHashSet2, runnable), null, false, false, false, 0);
                                     break;
                                 default:
-                                    MediaDataController.getInstance(j71Var.V).getAnimatedEmojiByKeywords(str, new t51(linkedHashSet2, runnable, 0));
+                                    MediaDataController.getInstance(h71Var.V).getAnimatedEmojiByKeywords(str, new q51(linkedHashSet2, runnable, 0));
                                     break;
                             }
                         }
-                    }, il0Var);
+                    }, fl0Var);
                     break;
                 } else if (i17 == 14) {
                     if (fullyConsistsOfEmojis) {
                         final int i18 = 0;
-                        callback = new Utilities.Callback() { // from class: org.telegram.ui.s51
+                        callback = new Utilities.Callback() { // from class: org.telegram.ui.p51
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj4) {
                                 switch (i18) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(j71Var.V).getAvailableEffects();
+                                        TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(h71Var.V).getAvailableEffects();
                                         if (availableEffects != null) {
                                             for (int i19 = 0; i19 < availableEffects.effects.size(); i19++) {
                                                 try {
@@ -228,22 +228,22 @@ public final /* synthetic */ class z7 implements Runnable {
                                         runnable.run();
                                         break;
                                     default:
-                                        j71 j71Var2 = j71Var;
-                                        MediaDataController.getInstance(j71Var2.V).getEmojiSuggestions(j71.a2, str, false, new a1.d(j71Var2, arrayList5, arrayList4, (Runnable) obj4, 15), null, false, false, false, 0);
+                                        h71 h71Var2 = h71Var;
+                                        MediaDataController.getInstance(h71Var2.V).getEmojiSuggestions(h71.a2, str, false, new a1.d(h71Var2, arrayList5, arrayList4, (Runnable) obj4, 15), null, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     } else {
                         final int i19 = 1;
-                        callback = new Utilities.Callback() { // from class: org.telegram.ui.s51
+                        callback = new Utilities.Callback() { // from class: org.telegram.ui.p51
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj4) {
                                 switch (i19) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(j71Var.V).getAvailableEffects();
+                                        TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(h71Var.V).getAvailableEffects();
                                         if (availableEffects != null) {
                                             for (int i192 = 0; i192 < availableEffects.effects.size(); i192++) {
                                                 try {
@@ -258,36 +258,36 @@ public final /* synthetic */ class z7 implements Runnable {
                                         runnable.run();
                                         break;
                                     default:
-                                        j71 j71Var2 = j71Var;
-                                        MediaDataController.getInstance(j71Var2.V).getEmojiSuggestions(j71.a2, str, false, new a1.d(j71Var2, arrayList5, arrayList4, (Runnable) obj4, 15), null, false, false, false, 0);
+                                        h71 h71Var2 = h71Var;
+                                        MediaDataController.getInstance(h71Var2.V).getEmojiSuggestions(h71.a2, str, false, new a1.d(h71Var2, arrayList5, arrayList4, (Runnable) obj4, 15), null, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     }
-                    Utilities.doCallbacks(callback, il0Var);
+                    Utilities.doCallbacks(callback, fl0Var);
                     break;
                 } else {
                     final int i20 = 1;
-                    Utilities.doCallbacks(new hd(fullyConsistsOfEmojis, str, linkedHashSet, 4), new Utilities.Callback() { // from class: org.telegram.ui.r51
+                    Utilities.doCallbacks(new hd(fullyConsistsOfEmojis, str, linkedHashSet, 4), new Utilities.Callback() { // from class: org.telegram.ui.o51
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj4) {
                             Runnable runnable = (Runnable) obj4;
                             switch (i20) {
                                 case 0:
-                                    MediaDataController.getInstance(j71Var.V).getEmojiSuggestions(j71.a2, str, false, new rv0(7, linkedHashSet, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(h71Var.V).getEmojiSuggestions(h71.a2, str, false, new rv0(6, linkedHashSet, runnable), null, false, false, false, 0);
                                     break;
                                 default:
-                                    MediaDataController.getInstance(j71Var.V).getAnimatedEmojiByKeywords(str, new t51(linkedHashSet, runnable, 0));
+                                    MediaDataController.getInstance(h71Var.V).getAnimatedEmojiByKeywords(str, new q51(linkedHashSet, runnable, 0));
                                     break;
                             }
                         }
-                    }, new e4(j71Var, strArr, str, linkedHashSet, 11), new mk(j71Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new e4((Object) j71Var, str, arrayList6, (Object) hashMap, 12), new org.telegram.ui.y(j71Var, str, arrayList7, 8), il0Var);
+                    }, new e4(h71Var, strArr, str, linkedHashSet, 11), new nk(h71Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new e4((Object) h71Var, str, arrayList6, (Object) hashMap, 12), new org.telegram.ui.y(h71Var, str, arrayList7, 8), fl0Var);
                     break;
                 }
             case 4:
                 Runnable runnable = (Runnable) obj;
-                ((pg.s0) obj3).l((pg.t0) obj2, z11, z10);
+                ((pg.q0) obj3).l((pg.r0) obj2, z11, z10);
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -296,9 +296,9 @@ public final /* synthetic */ class z7 implements Runnable {
             default:
                 Bitmap[] bitmapArr = (Bitmap[]) obj2;
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
-                pg.s0 s0Var = ((pg.d1) obj3).y.c;
-                wv0 wv0Var = s0Var.g;
-                org.telegram.ui.Cells.f3 h = s0Var.h(new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), false, z11, z10);
+                pg.q0 q0Var = ((pg.a1) obj3).y.c;
+                jv0 jv0Var = q0Var.g;
+                n7.a1 h = q0Var.h(new RectF(0.0f, 0.0f, jv0Var.a, jv0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.b;
                 }
@@ -325,9 +325,9 @@ public final /* synthetic */ class z7 implements Runnable {
         this.c = z11;
     }
 
-    public /* synthetic */ z7(pg.d1 d1Var, boolean z10, boolean z11, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
+    public /* synthetic */ z7(pg.a1 a1Var, boolean z10, boolean z11, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
         this.a = 5;
-        this.d = d1Var;
+        this.d = a1Var;
         this.b = z10;
         this.c = z11;
         this.e = bitmapArr;

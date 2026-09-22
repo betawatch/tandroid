@@ -4,9 +4,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ji extends q6 {
+public final class ji extends p6 {
     public final /* synthetic */ int b;
     public final /* synthetic */ vi c;
 
@@ -25,8 +25,8 @@ public final class ji extends q6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q6
-    public final void c(Object obj, float f7) {
+    @Override // org.telegram.ui.Components.p6
+    public final void b(Object obj, float f7) {
         ViewGroup viewGroup;
         float f10;
         switch (this.b) {

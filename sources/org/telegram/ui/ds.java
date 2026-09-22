@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class ds extends LinearLayout {
     public final Paint a;
@@ -70,9 +70,9 @@ public abstract class ds extends LinearLayout {
                     i12 = 34;
                     i13 = 42;
                 }
-                addView(this.f[i15], w7.y5.t(i12, i13, 1, 0, 0, i15 != i10 + (-1) ? i16 : 0, 0));
+                addView(this.f[i15], w7.x5.t(i12, i13, 1, 0, 0, i15 != i10 + (-1) ? i16 : 0, 0));
                 this.f[i15].addTextChangedListener(new cs(this, i15, i10));
-                this.f[i15].setOnEditorActionListener(new ja(this, 3));
+                this.f[i15].setOnEditorActionListener(new ia(this, 3));
                 i15++;
             }
             return;
@@ -125,7 +125,7 @@ public abstract class ds extends LinearLayout {
                     }
                 }
                 float successProgress = gsVar.getSuccessProgress();
-                int d = i0.a.d(successProgress, i0.a.d(gsVar.getErrorProgress(), i0.a.d(gsVar.getFocusedProgress(), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k6, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l6, false)), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false)), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i7, false));
+                int d = i0.a.d(successProgress, i0.a.d(gsVar.getErrorProgress(), i0.a.d(gsVar.getFocusedProgress(), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k6, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.l6, false)), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false)), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i7, false));
                 Paint paint = this.a;
                 paint.setColor(d);
                 RectF rectF = AndroidUtilities.rectTmp;

@@ -1,156 +1,209 @@
 package qg;
 
+import ai.ob;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.os.Build;
-import android.text.SpannableStringBuilder;
-import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.view.ViewGroup;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ia;
-import org.telegram.ui.Components.ma;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class d2 extends ci.d {
-    public final ma h0;
-    public final RectF i0;
-    public int j0;
-    public final n2 k0;
-    public final f6 l0;
-    public int m0;
-    public boolean n0;
+public final class d2 extends j {
+    public jv0 q0;
+    public ob r0;
+    public ob s0;
+    public zg.g0 t0;
+    public zg.g0 u0;
+    public zg.p0 v0;
+    public c6 w0;
+    public c6 x0;
+    public boolean y0;
+    public float z0;
 
-    public d2(n2 n2Var, ContextThemeWrapper contextThemeWrapper, f6 f6Var, ia iaVar) {
-        super(contextThemeWrapper, f6Var, false);
-        this.i0 = new RectF();
-        this.m0 = 8;
-        this.l0 = f6Var;
-        this.k0 = n2Var;
-        this.h0 = new ma(iaVar, this, 0, true);
-        setWillNotDraw(false);
-        setTextColor(-1);
-        setFlickeringLoading(true);
-        this.d.u(AndroidUtilities.bold());
-        removeView(this.r);
-        setForeground(j6.Y(j6.l1(0.08f, -1), 8, 8));
-        setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+    @Override // qg.j
+    public final i a() {
+        c2 c2Var = new c2(this, getContext(), 0);
+        c2Var.r = new RectF();
+        return c2Var;
     }
 
-    @Override // ci.d, android.view.View
-    public void onDraw(Canvas canvas) {
-        boolean z10 = this.d0;
-        RectF rectF = this.i0;
-        if (z10) {
-            float d = this.d.d() + getPaddingLeft() + getPaddingRight();
-            rectF.set((getMeasuredWidth() - d) / 2.0f, 0.0f, (getMeasuredWidth() + d) / 2.0f, getMeasuredHeight());
-        } else {
-            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+    @Override // qg.j, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        jv0 jv0Var = this.q0;
+        int padding = getPadding();
+        float d = this.x0.d(1.0f, false);
+        if (d == 1.0f) {
+            this.s0 = null;
         }
-        super.onDraw(canvas);
+        canvas.save();
+        float f7 = this.z0;
+        canvas.scale(f7, f7, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        ob obVar = this.s0;
+        if (obVar != null) {
+            obVar.e = (int) ((1.0f - d) * 255.0f);
+            obVar.setBounds(padding, padding, ((int) jv0Var.a) - padding, ((int) jv0Var.b) - padding);
+            this.s0.draw(canvas);
+        }
+        ob obVar2 = this.r0;
+        obVar2.e = (int) (d * 255.0f);
+        obVar2.setBounds(padding, padding, ((int) jv0Var.a) - padding, ((int) jv0Var.b) - padding);
+        this.r0.draw(canvas);
+        Rect rect = AndroidUtilities.rectTmp2;
+        float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
+        rect.set((int) (this.r0.getBounds().centerX() - width), (int) (this.r0.getBounds().centerY() - width), (int) (this.r0.getBounds().centerX() + width), (int) (this.r0.getBounds().centerY() + width));
+        float d10 = this.w0.d(1.0f, false);
+        this.t0.c(rect);
+        this.u0.c(rect);
+        this.t0.d(this.r0.a == 1 ? -1 : -16777216);
+        if (d10 == 1.0f) {
+            this.t0.a(canvas);
+        } else {
+            canvas.save();
+            float f10 = 1.0f - d10;
+            canvas.scale(f10, f10, rect.centerX(), rect.top);
+            zg.g0 g0Var = this.u0;
+            g0Var.h = f10;
+            g0Var.a(canvas);
+            canvas.restore();
+            canvas.save();
+            canvas.scale(d10, d10, rect.centerX(), rect.bottom);
+            zg.g0 g0Var2 = this.t0;
+            g0Var2.h = d10;
+            g0Var2.a(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
-    @Override // ci.d, android.widget.FrameLayout, android.view.View
+    public zg.p0 getCurrentReaction() {
+        return this.v0;
+    }
+
+    @Override // qg.j
+    public float getMaxScale() {
+        return 1.8f;
+    }
+
+    @Override // qg.j
+    public float getMinScale() {
+        return 0.5f;
+    }
+
+    public int getPadding() {
+        return (int) ((this.q0.b - AndroidUtilities.dp(84.0f)) / 2.0f);
+    }
+
+    @Override // qg.j
+    public hk0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new hk0();
+        }
+        float scaleX = viewGroup.getScaleX();
+        float scale = (getScale() + 0.4f) * getMeasuredWidth();
+        float f7 = scale / 2.0f;
+        float f10 = scale * scaleX;
+        return new hk0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+    }
+
+    @Override // qg.j
+    public final void k() {
+        jv0 jv0Var = this.q0;
+        float f7 = jv0Var.a / 2.0f;
+        float f10 = jv0Var.b / 2.0f;
+        setX(getPositionX() - f7);
+        setY(getPositionY() - f10);
+        m();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.t0.b(true);
+        this.u0.b(true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.t0.b(false);
+        this.u0.b(false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        if (this.n0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.d.d()), TLObject.FLAG_30);
-        }
-        super.onMeasure(i10, i11);
+        jv0 jv0Var = this.q0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) jv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) jv0Var.b, TLObject.FLAG_30));
     }
 
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        k2[] k2VarArr;
-        n2 n2Var = this.k0;
-        if (!n2Var.y || (k2VarArr = n2Var.H) == null || k2VarArr.length <= 0) {
-            f7 = 0.0f;
-        }
-        super.setAlpha(f7);
-    }
-
-    public void setCancelState(boolean z10) {
-        this.j0 = 2;
-        g(LocaleController.getString(R.string.Cancel), z10, true);
-    }
-
-    public void setCutOutState(boolean z10) {
-        this.j0 = 0;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_magic_cut, 0);
-        oqVar.setSize(AndroidUtilities.dp(22.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(1.0f));
-        oqVar.setTranslateY(AndroidUtilities.dp(2.0f));
-        oqVar.spaceScaleX = 1.2f;
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationCutObject));
-        g(spannableStringBuilder, z10, true);
-    }
-
-    public void setEraseState(boolean z10) {
-        this.j0 = 3;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_button_erase, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationErase));
-        g(spannableStringBuilder, z10, true);
-    }
-
-    public void setOutlineState(boolean z10) {
-        this.j0 = 6;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_sticker_stroke, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationOutline));
-        g(spannableStringBuilder, z10, true);
-    }
-
-    public void setRad(int i10) {
-        this.m0 = i10;
-        setForeground(j6.Y(j6.v0(j6.i6, this.l0), i10, i10));
-    }
-
-    public void setRestoreState(boolean z10) {
-        this.j0 = 4;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.media_button_restore, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationRestore));
-        g(spannableStringBuilder, z10, true);
-    }
-
-    public void setUndoCutState(boolean z10) {
-        this.j0 = 1;
-    }
-
-    public void setUndoState(boolean z10) {
-        this.j0 = 5;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
-        oq oqVar = new oq(R.drawable.photo_undo2, 0);
-        oqVar.setSize(AndroidUtilities.dp(20.0f));
-        oqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
-        spannableStringBuilder.setSpan(oqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationUndo));
-        g(spannableStringBuilder, z10, true);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        if (Build.VERSION.SDK_INT < 24) {
-            super.setVisibility(8);
+    public final void q(boolean z10) {
+        if (z10) {
+            this.s0 = this.r0;
+            ob obVar = new ob(this);
+            this.r0 = obVar;
+            if (this.s0.a != 1) {
+                obVar.a();
+            }
+            this.r0.b(this.y0, false);
+            this.r0.c(getScaleX());
+            this.x0.d(0.0f, true);
         } else {
-            super.setVisibility(i10);
+            this.r0.a();
+        }
+        invalidate();
+    }
+
+    public final void r(boolean z10) {
+        boolean z11 = !this.y0;
+        this.y0 = z11;
+        if (!z10) {
+            this.r0.b(z11, z10);
+            return;
+        }
+        boolean[] zArr = {false};
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new ai.x(26, this, zArr));
+        ofFloat.addListener(new pk0(18, this, zArr));
+        ofFloat.setInterpolator(qr.g);
+        ofFloat.setDuration(350L);
+        ofFloat.start();
+    }
+
+    public final void s(zg.p0 p0Var, boolean z10) {
+        if (Objects.equals(this.v0, p0Var)) {
+            return;
+        }
+        if (!z10) {
+            this.v0 = p0Var;
+            this.t0.e(p0Var);
+            invalidate();
+            return;
+        }
+        this.v0 = p0Var;
+        this.u0.e(p0Var);
+        zg.g0 g0Var = this.t0;
+        this.t0 = this.u0;
+        this.u0 = g0Var;
+        this.w0.d(0.0f, true);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setScaleX(float f7) {
+        if (getScaleX() != f7) {
+            super.setScaleX(f7);
+            this.r0.c(f7);
+            invalidate();
         }
     }
 }

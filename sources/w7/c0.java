@@ -1,41 +1,13 @@
 package w7;
 
-import android.os.Build;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.support.v4.media.MediaBrowserCompat$MediaItem;
-import android.support.v4.media.MediaDescriptionCompat;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static Parcelable a(Parcelable parcelable, Parcelable.Creator creator) {
-        if (parcelable == null) {
-            return null;
-        }
-        Parcelable parcelable2 = (Parcelable) b(parcelable);
-        Parcel obtain = Parcel.obtain();
-        try {
-            parcelable2.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            return (Parcelable) b((Parcelable) creator.createFromParcel(obtain));
-        } finally {
-            obtain.recycle();
-        }
+    public static boolean a(int i10, int i11) {
+        return (i10 & i11) != 0;
     }
 
-    public static Object b(Parcelable parcelable) {
-        if (Build.VERSION.SDK_INT < 23) {
-            if (parcelable instanceof MediaBrowserCompat$MediaItem) {
-                MediaBrowserCompat$MediaItem mediaBrowserCompat$MediaItem = (MediaBrowserCompat$MediaItem) parcelable;
-                MediaDescriptionCompat mediaDescriptionCompat = mediaBrowserCompat$MediaItem.b;
-                return new MediaBrowserCompat$MediaItem(new MediaDescriptionCompat(mediaDescriptionCompat.a, mediaDescriptionCompat.b, mediaDescriptionCompat.c, mediaDescriptionCompat.d, mediaDescriptionCompat.e, mediaDescriptionCompat.f, mediaDescriptionCompat.h, mediaDescriptionCompat.n), mediaBrowserCompat$MediaItem.a);
-            }
-            if (parcelable instanceof MediaDescriptionCompat) {
-                MediaDescriptionCompat mediaDescriptionCompat2 = (MediaDescriptionCompat) parcelable;
-                return new MediaDescriptionCompat(mediaDescriptionCompat2.a, mediaDescriptionCompat2.b, mediaDescriptionCompat2.c, mediaDescriptionCompat2.d, mediaDescriptionCompat2.e, mediaDescriptionCompat2.f, mediaDescriptionCompat2.h, mediaDescriptionCompat2.n);
-            }
-        }
-        return parcelable;
+    public static int b(int i10, int i11, boolean z10) {
+        return z10 ? i10 | i11 : i10 & (~i11);
     }
 }

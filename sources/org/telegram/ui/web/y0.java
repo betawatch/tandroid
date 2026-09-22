@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class y0 implements DownloadListener {
     public final /* synthetic */ z0 a;
@@ -33,10 +33,10 @@ public final class y0 implements DownloadListener {
     */
     public final void onDownloadStart(String str, String str2, String str3, String str4, long j3) {
         String guessFileName;
-        StringBuilder w10 = a4.a.w("onDownloadStart ", str, " ", str2, " ");
-        a4.a.z(w10, str3, " ", str4, " ");
-        w10.append(j3);
-        String sb2 = w10.toString();
+        StringBuilder x10 = a4.a.x("onDownloadStart ", str, " ", str2, " ");
+        a4.a.A(x10, str3, " ", str4, " ");
+        x10.append(j3);
+        String sb2 = x10.toString();
         z0 z0Var = this.a;
         z0Var.c(sb2);
         try {
@@ -62,11 +62,11 @@ public final class y0 implements DownloadListener {
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = LocaleController.getString(R.string.WebDownloadAlertTitle);
             b2Var.T = AndroidUtilities.replaceTags(j3 > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j3)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape));
-            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new k2.v(b0Var, 15));
+            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new k2.v(b0Var, 14));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             TextView textView = (TextView) alertDialog$Builder.o().d(-2);
             if (textView != null) {
-                textView.setTextColor(j6.w0(null, j6.q7, false));
+                textView.setTextColor(i6.w0(null, i6.q7, false));
             }
         } catch (Exception e) {
             FileLog.e(e);

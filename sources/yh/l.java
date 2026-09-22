@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class l {
     public final int a;
@@ -48,7 +48,7 @@ public final class l {
         getconnectedstarrefbots.limit = 20;
         ArrayList arrayList = this.e;
         if (!arrayList.isEmpty()) {
-            TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) hg.k0.g(1, arrayList);
+            TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) hg.c.h(1, arrayList);
             getconnectedstarrefbots.flags |= 4;
             getconnectedstarrefbots.offset_date = connectedbotstarref.date;
             getconnectedstarrefbots.offset_link = connectedbotstarref.url;

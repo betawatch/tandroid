@@ -1,124 +1,90 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.os.SystemClock;
-import java.util.ArrayList;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class n21 {
-    public long a;
-    public boolean b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final int e;
-    public boolean f;
-    public float g;
-    public float h;
+public final class n21 extends e61 {
+    public final org.telegram.ui.l20 f3;
+    public final c6 g3;
+    public Drawable h3;
+    public int i3;
+    public final Paint j3;
 
-    public n21() {
-        this(40);
+    public n21(Context context, int i10, k21 k21Var, c21 c21Var, c21 c21Var2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i10, 0, false, k21Var, c21Var, c21Var2, e6Var);
+        this.f3 = new org.telegram.ui.l20();
+        this.g3 = new c6(this, 320L, qr.h);
+        this.j3 = new Paint(1);
     }
 
-    public final void a(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
-        m21 m21Var;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            m21 m21Var2 = (m21) arrayList.get(i11);
-            paint.setAlpha((int) (m21Var2.f * 255.0f * f10));
-            canvas.drawPoint(m21Var2.a, m21Var2.b, paint);
+    @Override // org.telegram.ui.Components.e61, org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.g3.e(canScrollVertically(-1));
+        if (e > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        } else {
+            canvas2 = canvas;
         }
-        double d = (f7 - 90.0f) * 0.017453292519943295d;
-        double sin = Math.sin(d);
-        double d10 = -Math.cos(d);
-        double width = rectF.width() / 2.0f;
-        float centerX = (float) (((-d10) * width) + rectF.centerX());
-        float centerY = (float) ((width * sin) + rectF.centerY());
-        ArrayList arrayList2 = this.d;
-        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
-        int i12 = 0;
-        while (i12 < clamp) {
-            if (arrayList2.isEmpty()) {
-                m21Var = new m21();
-            } else {
-                m21Var = (m21) arrayList2.get(i10);
-                arrayList2.remove(i10);
-            }
-            if (this.b && this.f) {
-                float f11 = (i12 + 1) / clamp;
-                m21Var.a = AndroidUtilities.lerp(this.g, centerX, f11);
-                m21Var.b = AndroidUtilities.lerp(this.h, centerY, f11);
-            } else {
-                m21Var.a = centerX;
-                m21Var.b = centerY;
-            }
-            double d11 = sin;
-            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
-            if (nextInt < 0.0d) {
-                nextInt += 6.283185307179586d;
-            }
-            m21Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
-            m21 m21Var3 = m21Var;
-            m21Var3.d = (float) hg.k0.e(nextInt, d10, Math.sin(nextInt) * d11);
-            m21Var3.f = 1.0f;
-            m21Var3.h = 0.0f;
-            if (this.b) {
-                m21Var3.g = Utilities.random.nextInt(200) + 600;
-                m21Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
-            } else {
-                m21Var3.g = Utilities.random.nextInt(100) + 400;
-                m21Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
-            }
-            arrayList.add(m21Var3);
-            i12++;
-            sin = d11;
-            i10 = 0;
-        }
-        this.f = true;
-        this.g = centerX;
-        this.h = centerY;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = Math.min(20L, elapsedRealtime - this.a);
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            m21 m21Var4 = (m21) arrayList.get(i13);
-            float f12 = m21Var4.h;
-            float f13 = m21Var4.g;
-            if (f12 >= f13) {
-                if (arrayList2.size() < this.e) {
-                    arrayList2.add(m21Var4);
+        float height = getHeight();
+        float f7 = 0.0f;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w21) {
+                w21 w21Var = (w21) childAt;
+                if (w21Var.y) {
+                    if (height > w21Var.getY()) {
+                        height = w21Var.getY();
+                        RecyclerView.R(w21Var);
+                    }
+                    if (f7 < w21Var.getY() + w21Var.getHeight()) {
+                        f7 = w21Var.getY() + w21Var.getHeight();
+                        RecyclerView.R(w21Var);
+                    }
                 }
-                arrayList.remove(i13);
-                i13--;
-                size2--;
-            } else {
-                m21Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f12 / f13);
-                float f14 = m21Var4.a;
-                float f15 = m21Var4.c;
-                float f16 = m21Var4.e;
-                float f17 = min;
-                m21Var4.a = a4.a.A(f15 * f16, f17, 200.0f, f14);
-                m21Var4.b = (((m21Var4.d * f16) * f17) / 200.0f) + m21Var4.b;
-                m21Var4.h += f17;
             }
-            i13++;
         }
-        this.a = elapsedRealtime;
-    }
-
-    public n21(int i10) {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.e = i10;
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.d.add(new m21());
+        if (f7 > height) {
+            int i11 = org.telegram.ui.ActionBar.i6.s9;
+            org.telegram.ui.ActionBar.e6 e6Var = this.p2;
+            int v02 = org.telegram.ui.ActionBar.i6.v0(i11, e6Var);
+            Paint paint = this.j3;
+            paint.setColor(v02);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set((getWidth() - AndroidUtilities.dp(56.0f)) / 2.0f, height, (AndroidUtilities.dp(56.0f) + getWidth()) / 2.0f, f7);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
+            if (this.h3 == null) {
+                this.h3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
+            }
+            int v03 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.b9, e6Var);
+            if (this.i3 != v03) {
+                Drawable drawable = this.h3;
+                this.i3 = v03;
+                drawable.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.SRC_IN));
+            }
+            this.h3.setBounds((int) (rectF.left + AndroidUtilities.dp(4.0f)), (int) (rectF.top + AndroidUtilities.dp(2.66f)), (int) (rectF.left + AndroidUtilities.dp(13.66f)), (int) (rectF.top + AndroidUtilities.dp(12.32f)));
+            this.h3.draw(canvas2);
+        }
+        super.dispatchDraw(canvas2);
+        if (e > 0.0f) {
+            canvas2.save();
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f));
+            this.f3.b(canvas2, rectF2, 1, e);
+            canvas2.restore();
+            canvas2.restore();
         }
     }
 }

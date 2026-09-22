@@ -1,22 +1,50 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class rj0 {
-    public final TLObject a;
-    public final long b;
-    public int c;
+public final /* synthetic */ class rj0 implements e2.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fk0 b;
 
-    public rj0(int i10, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i10;
-        if (tLObject instanceof TLRPC.User) {
-            this.b = ((TLRPC.User) tLObject).id;
-        } else if (tLObject instanceof TLRPC.Chat) {
-            this.b = -((TLRPC.Chat) tLObject).id;
+    public /* synthetic */ rj0(fk0 fk0Var, int i10) {
+        this.a = i10;
+        this.b = fk0Var;
+    }
+
+    @Override // e2.h
+    public final void accept(Object obj) {
+        View view = (View) obj;
+        switch (this.a) {
+            case 0:
+                fk0 fk0Var = this.b;
+                ArrayList arrayList = fk0Var.d;
+                fk0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof dk0)) {
+                    ((dk0) view).f(((wj0) arrayList.get(R)).c, true);
+                    break;
+                }
+                break;
+            default:
+                if (view instanceof dk0) {
+                    dk0 dk0Var = (dk0) view;
+                    ck0 ck0Var = dk0Var.b;
+                    dk0Var.N = false;
+                    ck0Var.setAlpha(1.0f);
+                    if (!this.b.N0) {
+                        dk0Var.d();
+                        break;
+                    } else {
+                        ck0Var.setScaleX(dk0Var.I * (dk0Var.w ? 0.76f : 1.0f));
+                        ck0Var.setScaleY(dk0Var.I * (dk0Var.w ? 0.76f : 1.0f));
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

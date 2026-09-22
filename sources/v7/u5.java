@@ -1,56 +1,42 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class u5 {
-    public static String a(com.google.android.gms.internal.cast.z4 z4Var) {
-        StringBuilder sb2 = new StringBuilder(z4Var.o());
-        for (int i10 = 0; i10 < z4Var.o(); i10++) {
-            byte i11 = z4Var.i(i10);
-            if (i11 == 34) {
-                sb2.append("\\\"");
-            } else if (i11 == 39) {
-                sb2.append("\\'");
-            } else if (i11 != 92) {
-                switch (i11) {
-                    case 7:
-                        sb2.append("\\a");
-                        break;
-                    case 8:
-                        sb2.append("\\b");
-                        break;
-                    case 9:
-                        sb2.append("\\t");
-                        break;
-                    case 10:
-                        sb2.append("\\n");
-                        break;
-                    case 11:
-                        sb2.append("\\v");
-                        break;
-                    case 12:
-                        sb2.append("\\f");
-                        break;
-                    case 13:
-                        sb2.append("\\r");
-                        break;
-                    default:
-                        if (i11 < 32 || i11 > 126) {
-                            sb2.append('\\');
-                            sb2.append((char) (((i11 >>> 6) & 3) + 48));
-                            sb2.append((char) (((i11 >>> 3) & 7) + 48));
-                            sb2.append((char) ((i11 & 7) + 48));
-                            break;
-                        } else {
-                            sb2.append((char) i11);
-                            break;
-                        }
-                        break;
-                }
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = v5.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
-                sb2.append("\\\\");
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
+                }
+                a2 = v5.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
+            throw new IndexOutOfBoundsException(a2);
         }
-        return sb2.toString();
+    }
+
+    public static void b(int i10, int i11) {
+        if (i10 < 0 || i10 > i11) {
+            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
+        }
+    }
+
+    public static void c(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : v5.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String d(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return v5.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return v5.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(hg.c.i(i11, "negative size: "));
     }
 }

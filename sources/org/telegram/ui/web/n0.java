@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class n0 extends WebViewClient {
     public boolean a = true;
@@ -57,7 +57,7 @@ public final class n0 extends WebViewClient {
             e1Var2.a = Utilities.fastRandom.nextLong();
             z0Var.e.b = System.currentTimeMillis();
             z0Var.e.c = d1.v(z0Var.getUrl());
-            z0Var.e.d = n2.a(z0Var);
+            z0Var.e.d = m2.a(z0Var);
             f1.c(z0Var.e);
         }
         z0Var.c("doUpdateVisitedHistory " + str + " " + z10);

@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yg implements zv0, oy {
     public final /* synthetic */ boolean a;
@@ -20,8 +20,8 @@ public final /* synthetic */ class yg implements zv0, oy {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ yg(zn znVar, boolean z10, MessageObject messageObject, int i10) {
-        this.c = znVar;
+    public /* synthetic */ yg(bo boVar, boolean z10, MessageObject messageObject, int i10) {
+        this.c = boVar;
         this.a = z10;
         this.d = messageObject;
         this.b = i10;
@@ -40,7 +40,7 @@ public final /* synthetic */ class yg implements zv0, oy {
     @Override // org.telegram.ui.zv0
     public void a(TLRPC.MessageMedia messageMedia) {
         int i10;
-        zn znVar = (zn) this.c;
+        bo boVar = (bo) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         if (!this.a) {
             if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
@@ -50,11 +50,11 @@ public final /* synthetic */ class yg implements zv0, oy {
                 }
             }
             messageObject.messageOwner.media = messageMedia;
-            znVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
+            boVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
             return;
         }
         TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
-        tL_messages_appendTodoList.peer = znVar.getMessagesController().getInputPeer(messageObject.getDialogId());
+        tL_messages_appendTodoList.peer = boVar.getMessagesController().getInputPeer(messageObject.getDialogId());
         tL_messages_appendTodoList.msg_id = messageObject.getId();
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
@@ -83,11 +83,11 @@ public final /* synthetic */ class yg implements zv0, oy {
             }
         }
         messageObject.messageOwner.media = messageMedia;
-        znVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
+        boVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
         Pattern pattern = LaunchActivity.B1;
@@ -106,7 +106,7 @@ public final /* synthetic */ class yg implements zv0, oy {
         if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, uyVar)) {
             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
             MediaDataController.getInstance(i12).saveDraft(j3, 0, str, null, null, false, 0L);
-            ((ActionBarLayout) launchActivity.O()).S(new zn(bundle), true, false);
+            ((ActionBarLayout) launchActivity.O()).S(new bo(bundle), true, false);
         }
         return true;
     }

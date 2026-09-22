@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class wf {
     public static m k;
@@ -38,9 +38,9 @@ public final class wf {
         zf.b();
         this.g = "subject-segmentation";
         qb.f a2 = qb.f.a();
-        c5.w wVar = new c5.w(this, 10);
+        c5.x xVar = new c5.x(this, 10);
         a2.getClass();
-        this.e = qb.f.b(wVar);
+        this.e = qb.f.b(xVar);
         qb.f a10 = qb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 4);

@@ -2,44 +2,44 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ch implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
 
-    public /* synthetic */ ch(zn znVar, int i10) {
+    public /* synthetic */ ch(bo boVar, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = boVar;
     }
 
     @Override // org.telegram.messenger.MessagesStorage.IntCallback
     public final void run(int i10) {
         switch (this.a) {
             case 0:
-                zn znVar = this.b;
-                if (znVar.getParentActivity() != null && znVar.fragmentView != null && i10 > 0) {
-                    org.telegram.ui.Components.xc.a0(znVar).m(org.telegram.ui.Components.wc.r, i10, 0, 0, znVar.ea).j();
+                bo boVar = this.b;
+                if (boVar.getParentActivity() != null && boVar.fragmentView != null && i10 > 0) {
+                    org.telegram.ui.Components.vc.a0(boVar).m(org.telegram.ui.Components.uc.r, i10, 0, 0, boVar.ea).j();
                     break;
                 }
                 break;
             case 1:
-                zn znVar2 = this.b;
+                bo boVar2 = this.b;
                 if (i10 != 0) {
-                    znVar2.E(i10, 0, 0, 0, false, true);
+                    boVar2.F(i10, 0, 0, 0, false, true);
                     break;
                 } else {
-                    znVar2.m6 = false;
-                    znVar2.H9();
+                    boVar2.m6 = false;
+                    boVar2.H9();
                     break;
                 }
             default:
-                zn znVar3 = this.b;
+                bo boVar3 = this.b;
                 if (i10 != 0) {
-                    znVar3.finishFragment();
+                    boVar3.finishFragment();
                     break;
                 } else {
-                    znVar3.Qc(true);
+                    boVar3.Qc(true);
                     break;
                 }
         }

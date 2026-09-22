@@ -12,13 +12,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.Components.pz0 {
+public final class a3 implements org.telegram.ui.Cells.ba, sj0, org.telegram.ui.Components.cz0 {
     public int E = -1;
     public int F = -1;
     public int G = -1;
-    public org.telegram.ui.Components.u5 H;
+    public org.telegram.ui.Components.t5 H;
     public ArrayList I;
     public Stack J;
     public AtomicReference K;
@@ -27,9 +27,9 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
     public View b;
     public boolean c;
     public StaticLayout d;
-    public org.telegram.ui.Components.h90 e;
-    public org.telegram.ui.Components.h90 f;
-    public org.telegram.ui.Components.h90 h;
+    public org.telegram.ui.Components.w80 e;
+    public org.telegram.ui.Components.w80 f;
+    public org.telegram.ui.Components.w80 h;
     public TL_iv.PageBlock n;
     public TL_iv.RichText r;
     public int s;
@@ -54,12 +54,12 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
         return this.E;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void attach(View view) {
         this.L = view;
         StaticLayout staticLayout = this.d;
         if (staticLayout != null) {
-            this.H = org.telegram.ui.Components.y5.update(0, view, false, this.H, staticLayout);
+            this.H = org.telegram.ui.Components.x5.update(0, view, false, this.H, staticLayout);
         }
     }
 
@@ -87,16 +87,16 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
         return this.G;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void detach(View view) {
         if (view == null) {
             view = this.L;
         }
-        org.telegram.ui.Components.y5.release(view, this.H);
+        org.telegram.ui.Components.x5.release(view, this.H);
         this.L = null;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void draw(Canvas canvas, View view) {
         float width;
         Object obj;
@@ -112,10 +112,10 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
             if (q3Var.c != this.n || ((obj = q3Var.b) != (richText = this.r) && (!(obj instanceof String) || richText != null))) {
                 this.h = null;
             } else if (-1 != q3Var.a) {
-                org.telegram.ui.Components.h90 h90Var = new org.telegram.ui.Components.h90(0);
-                this.h = h90Var;
-                h90Var.n = false;
-                h90Var.d(this.d, q3Var.a, 0.0f);
+                org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(0);
+                this.h = w80Var;
+                w80Var.n = false;
+                w80Var.d(this.d, q3Var.a, 0.0f);
                 this.h.o = 0;
                 StaticLayout staticLayout = this.d;
                 int i10 = q3Var.a;
@@ -123,17 +123,17 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
                 this.h.n = true;
             }
         }
-        org.telegram.ui.Components.h90 h90Var2 = this.h;
-        if (h90Var2 != null) {
-            canvas.drawPath(h90Var2, h4.y1);
+        org.telegram.ui.Components.w80 w80Var2 = this.h;
+        if (w80Var2 != null) {
+            canvas.drawPath(w80Var2, h4.y1);
         }
-        org.telegram.ui.Components.h90 h90Var3 = this.e;
-        if (h90Var3 != null) {
-            canvas.drawPath(h90Var3, h4.x1);
+        org.telegram.ui.Components.w80 w80Var3 = this.e;
+        if (w80Var3 != null) {
+            canvas.drawPath(w80Var3, h4.x1);
         }
-        org.telegram.ui.Components.h90 h90Var4 = this.f;
-        if (h90Var4 != null) {
-            canvas.drawPath(h90Var4, h4.z1);
+        org.telegram.ui.Components.w80 w80Var4 = this.f;
+        if (w80Var4 != null) {
+            canvas.drawPath(w80Var4, h4.z1);
         }
         if (u70Var.c.g(canvas, this)) {
             view.invalidate();
@@ -151,68 +151,68 @@ public final class a3 implements org.telegram.ui.Cells.ca, vj0, org.telegram.ui.
         if (arrayList == null || arrayList.isEmpty()) {
             this.d.draw(canvas);
         } else {
-            vh.g.g(view, false, this.d.getPaint().getColor(), 0, this.K, 0, this.d, this.I, canvas, false);
+            vh.h.g(view, false, this.d.getPaint().getColor(), 0, this.K, 0, this.d, this.I, canvas, false);
         }
         this.c = false;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final /* synthetic */ int getEmojiOnlyCount() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final Layout getLayout() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.vj0
+    @Override // org.telegram.ui.sj0
     public final View getParentView() {
         View view = this.L;
         return view != null ? view : this.b;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final CharSequence getPrefix() {
         return this.x;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getRow() {
         return this.w;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final /* synthetic */ Rect getSelectionBounds() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final CharSequence getText() {
         return this.d.getText();
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getX() {
         return this.s;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getY() {
         return this.v;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void setRow(int i10) {
         this.w = i10;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void setX(int i10) {
         this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.pz0
+    @Override // org.telegram.ui.Components.cz0
     public final void setY(int i10) {
         this.v = i10;
     }

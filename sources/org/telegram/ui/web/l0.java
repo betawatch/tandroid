@@ -13,11 +13,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class l0 implements View.OnLongClickListener {
     public final /* synthetic */ z0 a;
@@ -62,7 +62,7 @@ public final class l0 implements View.OnLongClickListener {
                     switch (i11) {
                         case 0:
                             z0 z0Var = l0Var.a;
-                            f3 j3 = rk.j(1, z0Var.getContext(), null, false);
+                            f3 j3 = vl.j(1, z0Var.getContext(), null, false);
                             try {
                                 parse = Uri.parse(str5);
                             } catch (Exception e) {
@@ -92,7 +92,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 d1 d1Var = z0Var2.Q;
                                                                 if (d1Var != null) {
-                                                                    new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                    new vc(d1Var, d1Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -113,7 +113,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 }
                                                                 d1 d1Var2 = z0Var2.Q;
                                                                 if (d1Var2 != null) {
-                                                                    new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                    new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e10) {
@@ -143,7 +143,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 d1 d1Var3 = z0Var3.Q;
                                                                 if (d1Var3 != null) {
-                                                                    new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                    new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -197,7 +197,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var = z0Var2.Q;
                                                             if (d1Var != null) {
-                                                                new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                new vc(d1Var, d1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -218,7 +218,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             }
                                                             d1 d1Var2 = z0Var2.Q;
                                                             if (d1Var2 != null) {
-                                                                new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e10) {
@@ -248,7 +248,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var3 = z0Var3.Q;
                                                             if (d1Var3 != null) {
-                                                                new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -299,7 +299,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var = z0Var2.Q;
                                                         if (d1Var != null) {
-                                                            new xc(d1Var, d1Var.e).k(false).k(true);
+                                                            new vc(d1Var, d1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -320,7 +320,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         }
                                                         d1 d1Var2 = z0Var2.Q;
                                                         if (d1Var2 != null) {
-                                                            new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e10) {
@@ -350,7 +350,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var3 = z0Var3.Q;
                                                         if (d1Var3 != null) {
-                                                            new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -382,7 +382,7 @@ public final class l0 implements View.OnLongClickListener {
                             break;
                         default:
                             z0 z0Var2 = l0Var.a;
-                            f3 j10 = rk.j(1, z0Var2.getContext(), null, false);
+                            f3 j10 = vl.j(1, z0Var2.getContext(), null, false);
                             try {
                                 Uri parse2 = Uri.parse(str5);
                                 str3 = nf.f.v(parse2, null, null, nf.f.a(parse2.getHost()), null);
@@ -414,7 +414,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 d1 d1Var = z0Var22.Q;
                                                                 if (d1Var != null) {
-                                                                    new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                    new vc(d1Var, d1Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -435,7 +435,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 }
                                                                 d1 d1Var2 = z0Var22.Q;
                                                                 if (d1Var2 != null) {
-                                                                    new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                    new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e102) {
@@ -465,7 +465,7 @@ public final class l0 implements View.OnLongClickListener {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 d1 d1Var3 = z0Var3.Q;
                                                                 if (d1Var3 != null) {
-                                                                    new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                    new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -521,7 +521,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var = z0Var22.Q;
                                                             if (d1Var != null) {
-                                                                new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                new vc(d1Var, d1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -542,7 +542,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             }
                                                             d1 d1Var2 = z0Var22.Q;
                                                             if (d1Var2 != null) {
-                                                                new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -572,7 +572,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var3 = z0Var3.Q;
                                                             if (d1Var3 != null) {
-                                                                new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -621,7 +621,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var = z0Var22.Q;
                                                         if (d1Var != null) {
-                                                            new xc(d1Var, d1Var.e).k(false).k(true);
+                                                            new vc(d1Var, d1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -642,7 +642,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         }
                                                         d1 d1Var2 = z0Var22.Q;
                                                         if (d1Var2 != null) {
-                                                            new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -672,7 +672,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var3 = z0Var3.Q;
                                                         if (d1Var3 != null) {
-                                                            new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -741,7 +741,7 @@ public final class l0 implements View.OnLongClickListener {
                 switch (i112) {
                     case 0:
                         z0 z0Var = l0Var.a;
-                        f3 j3 = rk.j(1, z0Var.getContext(), null, false);
+                        f3 j3 = vl.j(1, z0Var.getContext(), null, false);
                         try {
                             parse = Uri.parse(str5);
                         } catch (Exception e) {
@@ -771,7 +771,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var = z0Var22.Q;
                                                             if (d1Var != null) {
-                                                                new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                new vc(d1Var, d1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -792,7 +792,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             }
                                                             d1 d1Var2 = z0Var22.Q;
                                                             if (d1Var2 != null) {
-                                                                new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -822,7 +822,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var3 = z0Var3.Q;
                                                             if (d1Var3 != null) {
-                                                                new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -876,7 +876,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var = z0Var22.Q;
                                                         if (d1Var != null) {
-                                                            new xc(d1Var, d1Var.e).k(false).k(true);
+                                                            new vc(d1Var, d1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -897,7 +897,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         }
                                                         d1 d1Var2 = z0Var22.Q;
                                                         if (d1Var2 != null) {
-                                                            new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -927,7 +927,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var3 = z0Var3.Q;
                                                         if (d1Var3 != null) {
-                                                            new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -978,7 +978,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     d1 d1Var = z0Var22.Q;
                                                     if (d1Var != null) {
-                                                        new xc(d1Var, d1Var.e).k(false).k(true);
+                                                        new vc(d1Var, d1Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -999,7 +999,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     }
                                                     d1 d1Var2 = z0Var22.Q;
                                                     if (d1Var2 != null) {
-                                                        new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e102) {
@@ -1029,7 +1029,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     d1 d1Var3 = z0Var3.Q;
                                                     if (d1Var3 != null) {
-                                                        new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                        new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1061,7 +1061,7 @@ public final class l0 implements View.OnLongClickListener {
                         break;
                     default:
                         z0 z0Var2 = l0Var.a;
-                        f3 j10 = rk.j(1, z0Var2.getContext(), null, false);
+                        f3 j10 = vl.j(1, z0Var2.getContext(), null, false);
                         try {
                             Uri parse2 = Uri.parse(str5);
                             str3 = nf.f.v(parse2, null, null, nf.f.a(parse2.getHost()), null);
@@ -1093,7 +1093,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var = z0Var22.Q;
                                                             if (d1Var != null) {
-                                                                new xc(d1Var, d1Var.e).k(false).k(true);
+                                                                new vc(d1Var, d1Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1114,7 +1114,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             }
                                                             d1 d1Var2 = z0Var22.Q;
                                                             if (d1Var2 != null) {
-                                                                new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e102) {
@@ -1144,7 +1144,7 @@ public final class l0 implements View.OnLongClickListener {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             d1 d1Var3 = z0Var3.Q;
                                                             if (d1Var3 != null) {
-                                                                new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1200,7 +1200,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var = z0Var22.Q;
                                                         if (d1Var != null) {
-                                                            new xc(d1Var, d1Var.e).k(false).k(true);
+                                                            new vc(d1Var, d1Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1221,7 +1221,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         }
                                                         d1 d1Var2 = z0Var22.Q;
                                                         if (d1Var2 != null) {
-                                                            new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e102) {
@@ -1251,7 +1251,7 @@ public final class l0 implements View.OnLongClickListener {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         d1 d1Var3 = z0Var3.Q;
                                                         if (d1Var3 != null) {
-                                                            new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1300,7 +1300,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     d1 d1Var = z0Var22.Q;
                                                     if (d1Var != null) {
-                                                        new xc(d1Var, d1Var.e).k(false).k(true);
+                                                        new vc(d1Var, d1Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1321,7 +1321,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     }
                                                     d1 d1Var2 = z0Var22.Q;
                                                     if (d1Var2 != null) {
-                                                        new xc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        new vc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e102) {
@@ -1351,7 +1351,7 @@ public final class l0 implements View.OnLongClickListener {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     d1 d1Var3 = z0Var3.Q;
                                                     if (d1Var3 != null) {
-                                                        new xc(d1Var3, d1Var3.e).k(false).k(true);
+                                                        new vc(d1Var3, d1Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }

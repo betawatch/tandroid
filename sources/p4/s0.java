@@ -18,10 +18,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.u6;
-import org.telegram.ui.fm0;
+import org.telegram.ui.Cells.l7;
+import org.telegram.ui.em0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -36,7 +36,7 @@ public final class s0 {
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.g(this, 8);
-        this.h = new u6(this, 28);
+        this.h = new l7(this, 27);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -51,13 +51,13 @@ public final class s0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).v();
+            ((r4.c) this.c).q();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new fm0(this, i10, serializable, 13));
+        ((Executor) this.b).execute(new em0(this, i10, serializable, 13));
     }
 
     public void c() {

@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.kt;
-import w7.q;
+import org.telegram.ui.Components.oi0;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -37,8 +37,8 @@ public final class a extends Path {
     public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
         Stack stack = this.c;
         int i10 = 0;
-        g gVar = (stack == null || stack.isEmpty()) ? new g() : (g) stack.remove(0);
-        gVar.y = false;
+        h hVar = (stack == null || stack.isEmpty()) ? new h() : (h) stack.remove(0);
+        hVar.y = false;
         ArrayList arrayList = this.g;
         if (arrayList != null) {
             float f13 = (f10 + f12) / 2.0f;
@@ -46,38 +46,38 @@ public final class a extends Path {
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                bj0 bj0Var = (bj0) arrayList.get(i10);
-                if (f13 >= bj0Var.b && f13 <= bj0Var.c) {
-                    gVar.y = true;
+                oi0 oi0Var = (oi0) arrayList.get(i10);
+                if (f13 >= oi0Var.b && f13 <= oi0Var.c) {
+                    hVar.y = true;
                     break;
                 }
                 i10++;
             }
         }
-        gVar.n = -1.0f;
-        ValueAnimator valueAnimator = gVar.r;
+        hVar.n = -1.0f;
+        ValueAnimator valueAnimator = hVar.r;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        gVar.p = true;
+        hVar.p = true;
         int max = (int) Math.max(f7, this.e);
         int i11 = (int) f10;
         int i12 = this.f;
-        gVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
-        gVar.h(this.b.getPaint().getColor());
-        gVar.t = kt.c;
-        int width = gVar.getBounds().width() / AndroidUtilities.dp(6.0f);
-        int i13 = g.B;
-        int b10 = q.b(width * i13, i13, g.A);
-        Stack stack2 = gVar.c;
-        gVar.d = b10;
-        while (gVar.h.size() + stack2.size() < b10) {
+        hVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
+        hVar.h(this.b.getPaint().getColor());
+        hVar.t = kt.c;
+        int width = hVar.getBounds().width() / AndroidUtilities.dp(6.0f);
+        int i13 = h.B;
+        int b10 = p.b(width * i13, i13, h.A);
+        Stack stack2 = hVar.c;
+        hVar.d = b10;
+        while (hVar.h.size() + stack2.size() < b10) {
             stack2.push(new c());
         }
         View view = this.a;
         if (view != null) {
-            gVar.i = view;
+            hVar.i = view;
         }
-        this.d.add(gVar);
+        this.d.add(hVar);
     }
 }

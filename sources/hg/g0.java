@@ -1,96 +1,83 @@
 package hg;
 
-import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.ek;
+import org.telegram.ui.Components.gl;
+import org.telegram.ui.Components.in;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.nj;
+import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.yk;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class g0 extends xl0 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public String e;
-    public final /* synthetic */ i0 f;
+public final class g0 extends pz {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ ni V;
 
-    public g0(i0 i0Var, Context context) {
-        this.f = i0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g0(ni niVar, int i10, ll0 ll0Var, int i11) {
+        super(i10, 0, ll0Var);
+        this.U = i11;
+        this.V = niVar;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.size() + 2;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == h() - 1 ? 2 : 0;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        this.f.L();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // s4.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.c1 c1Var, int i10) {
-        Object obj;
-        if (c1Var.f != 0) {
-            return;
-        }
-        x1 x1Var = (x1) c1Var.a;
-        boolean z10 = i10 != h() + (-2);
-        int i11 = i10 - 1;
-        if (i11 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i11 < arrayList.size()) {
-                obj = arrayList.get(i11);
-                if (obj instanceof a2) {
-                    return;
+    @Override // s4.o0
+    public int[] t(View view, Rect rect) {
+        switch (this.U) {
+            case 4:
+                int C = this.n - C();
+                int top = (view.getTop() + rect.top) - view.getScrollY();
+                int height = rect.height() + top;
+                int min = Math.min(0, top);
+                int max = Math.max(0, height - C);
+                if (min == 0) {
+                    min = Math.min(top, max);
                 }
-                a2 a2Var = (a2) obj;
-                x1Var.a(a2Var, this.e, z10);
-                x1Var.d.a(this.f.w.contains(Integer.valueOf(a2Var.a)), false);
-                return;
-            }
-        }
-        obj = null;
-        if (obj instanceof a2) {
+                return new int[]{0, min};
+            default:
+                return super.t(view, rect);
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View x1Var;
-        Context context = this.c;
-        if (i10 == 0) {
-            x1Var = new x1(context, this.f.a, false);
-        } else if (i10 != 1) {
-            x1Var = new View(context);
-            x1Var.setTag(-33024);
-        } else {
-            x1Var = new View(context);
-            x1Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-            x1Var.setTag(-33024);
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.U) {
+            case 0:
+                f0 f0Var = new f0(this, recyclerView.getContext());
+                f0Var.a = i10;
+                w0(f0Var);
+                break;
+            case 1:
+                nj njVar = new nj(this, recyclerView.getContext());
+                njVar.a = i10;
+                w0(njVar);
+                break;
+            case 2:
+                ek ekVar = new ek(this, recyclerView.getContext());
+                ekVar.a = i10;
+                w0(ekVar);
+                break;
+            case 3:
+                yk ykVar = new yk(this, recyclerView.getContext());
+                ykVar.a = i10;
+                w0(ykVar);
+                break;
+            default:
+                in inVar = new in(this, recyclerView.getContext());
+                inVar.a = i10;
+                w0(inVar);
+                break;
         }
-        return new il0(x1Var);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(gl glVar, ai.w0 w0Var) {
+        super(0, 0, w0Var);
+        this.U = 3;
+        this.V = glVar;
     }
 }

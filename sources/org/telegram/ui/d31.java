@@ -4,9 +4,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class d31 implements org.telegram.ui.ActionBar.k6 {
+public final class d31 implements org.telegram.ui.ActionBar.j6 {
     public boolean a = false;
     public final /* synthetic */ e31 b;
 
@@ -14,7 +14,7 @@ public final class d31 implements org.telegram.ui.ActionBar.k6 {
         this.b = e31Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.ActionBar.j6
     public final void a(float f7) {
         ArrayList arrayList;
         e31 e31Var = this.b;
@@ -37,7 +37,7 @@ public final class d31 implements org.telegram.ui.ActionBar.k6 {
             }
             this.a = true;
         }
-        e31Var.E.setColorFilter(new PorterDuffColorFilter(e31Var.d.getThemedColor(org.telegram.ui.ActionBar.j6.Oh), PorterDuff.Mode.SRC_IN));
+        e31Var.E.setColorFilter(new PorterDuffColorFilter(e31Var.d.getThemedColor(org.telegram.ui.ActionBar.i6.Oh), PorterDuff.Mode.SRC_IN));
         if (e31Var.Q) {
             org.telegram.ui.Components.kp kpVar3 = e31Var.b;
             for (int i12 = 0; i12 < kpVar3.h(); i12++) {
@@ -50,7 +50,7 @@ public final class d31 implements org.telegram.ui.ActionBar.k6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.ActionBar.j6
     public final void b() {
     }
 }

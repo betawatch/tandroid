@@ -9,17 +9,15 @@ import b2.n;
 import b2.r;
 import b2.r0;
 import b2.s0;
-import c3.b0;
 import c3.h0;
 import c3.i0;
-import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
 import c3.x;
-import c5.a0;
+import c5.b0;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.m;
 import e2.d0;
@@ -40,13 +38,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import k2.c0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
-import z3.k;
+import z3.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -60,8 +59,8 @@ public final class d implements o {
     public long C;
     public long D;
     public long E;
-    public a0 F;
-    public a0 G;
+    public b0 F;
+    public b0 G;
     public boolean H;
     public boolean I;
     public int J;
@@ -91,7 +90,7 @@ public final class d implements o {
     public boolean d0;
     public final boolean e;
     public q e0;
-    public final k f;
+    public final l f;
     public final v g;
     public final v h;
     public final v i;
@@ -125,7 +124,7 @@ public final class d implements o {
         k0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    public d(k kVar, int i10) {
+    public d(l lVar, int i10) {
         b bVar = new b();
         this.s = -1L;
         this.t = -9223372036854775807L;
@@ -135,8 +134,8 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new o0.b(this, 19);
-        this.f = kVar;
+        bVar.d = new c0(this, 28);
+        this.f = lVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
         this.b = new e();
@@ -168,9 +167,9 @@ public final class d implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        a0 a0Var = new a0(8, (byte) 0);
-        v vVar = (v) a0Var.c;
-        l lVar = (l) pVar;
+        b0 b0Var = new b0(8, (byte) 0);
+        v vVar = (v) b0Var.c;
+        c3.l lVar = (c3.l) pVar;
         long j3 = lVar.c;
         long j10 = 1024;
         if (j3 != -1 && j3 <= 1024) {
@@ -179,33 +178,33 @@ public final class d implements o {
         int i10 = (int) j10;
         lVar.h(vVar.a, 0, 4, false);
         long z10 = vVar.z();
-        a0Var.b = 4;
+        b0Var.b = 4;
         while (true) {
             if (z10 != 440786851) {
-                int i11 = a0Var.b + 1;
-                a0Var.b = i11;
+                int i11 = b0Var.b + 1;
+                b0Var.b = i11;
                 if (i11 == i10) {
                     break;
                 }
                 lVar.h(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
-                long h = a0Var.h(lVar);
-                long j11 = a0Var.b;
+                long h = b0Var.h(lVar);
+                long j11 = b0Var.b;
                 if (h != Long.MIN_VALUE && (j3 == -1 || j11 + h < j3)) {
                     while (true) {
-                        long j12 = a0Var.b;
+                        long j12 = b0Var.b;
                         long j13 = j11 + h;
                         if (j12 < j13) {
-                            if (a0Var.h(lVar) != Long.MIN_VALUE) {
-                                long h10 = a0Var.h(lVar);
+                            if (b0Var.h(lVar) != Long.MIN_VALUE) {
+                                long h10 = b0Var.h(lVar);
                                 if (h10 < 0 || h10 > 2147483647L) {
                                     break;
                                 }
                                 if (h10 != 0) {
                                     int i12 = (int) h10;
                                     lVar.s(i12, false);
-                                    a0Var.b += i12;
+                                    b0Var.b += i12;
                                 }
                             } else {
                                 break;
@@ -497,7 +496,7 @@ public final class d implements o {
         int i18;
         String str5;
         com.google.android.gms.internal.clearcut.e a10;
-        b0 tVar;
+        c3.b0 tVar;
         int i19;
         long[] jArr;
         d dVar3 = this;
@@ -565,9 +564,9 @@ public final class d implements o {
                             bVar.g = eVar.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        o0.b bVar2 = bVar.d;
+                        c0 c0Var = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = bVar2.b;
+                        Object obj2 = c0Var.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -683,10 +682,10 @@ public final class d implements o {
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            o0.b bVar3 = bVar.d;
+                            c0 c0Var2 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar4 = (d) bVar3.b;
+                            d dVar4 = (d) c0Var2.b;
                             e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
@@ -747,8 +746,8 @@ public final class d implements o {
                                     dVar4.s = position;
                                     dVar4.r = j10;
                                 } else if (i25 == 475249515) {
-                                    dVar4.F = new a0(2, (byte) 0);
-                                    dVar4.G = new a0(2, (byte) 0);
+                                    dVar4.F = new b0(2, (byte) 0);
+                                    dVar4.G = new b0(2, (byte) 0);
                                 } else if (i25 == 524531317 && !dVar4.y) {
                                     if (!dVar4.d || dVar4.C == -1) {
                                         dVar4.e0.X1(new t(dVar4.v));
@@ -769,7 +768,7 @@ public final class d implements o {
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            bVar2.h(i24, bVar.a(pVar2, (int) j12));
+                            c0Var.k(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 3) {
@@ -788,7 +787,7 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar5 = (d) bVar2.b;
+                            d dVar5 = (d) c0Var.b;
                             if (i24 == 134) {
                                 dVar5.d(i24);
                                 dVar5.x.c = str;
@@ -807,7 +806,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            bVar2.b(i24, (int) bVar.g, pVar2);
+                            c0Var.h(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -820,7 +819,7 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar6 = (d) bVar2.b;
+                            d dVar6 = (d) c0Var.b;
                             if (i24 == 181) {
                                 dVar6.d(i24);
                                 dVar6.x.S = (int) intBitsToFloat;
@@ -889,9 +888,9 @@ public final class d implements o {
                             bVar.e = 0;
                         }
                     } else {
-                        o0.b bVar4 = bVar.d;
+                        c0 c0Var3 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar7 = (d) bVar4.b;
+                        d dVar7 = (d) c0Var3.b;
                         SparseArray sparseArray = dVar7.c;
                         e2.d.h(dVar7.e0);
                         if (i28 != 160) {
@@ -2733,13 +2732,13 @@ public final class d implements o {
                                 if (sparseArray.size() == 0) {
                                     throw s0.a(null, "No valid tracks were found");
                                 }
-                                dVar7.e0.f1();
+                                dVar7.e0.e1();
                             } else if (i28 == 475249515) {
                                 if (!dVar7.y) {
                                     q qVar2 = dVar7.e0;
-                                    a0 a0Var = dVar7.F;
-                                    a0 a0Var2 = dVar7.G;
-                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || a0Var == null || (i19 = a0Var.b) == 0 || a0Var2 == null || a0Var2.b != i19) {
+                                    b0 b0Var = dVar7.F;
+                                    b0 b0Var2 = dVar7.G;
+                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
                                         tVar = new t(dVar7.v);
                                     } else {
                                         int[] iArr = new int[i19];
@@ -2748,8 +2747,8 @@ public final class d implements o {
                                         long[] jArr4 = new long[i19];
                                         int i54 = 0;
                                         while (i54 < i19) {
-                                            jArr4[i54] = a0Var.f(i54);
-                                            jArr2[i54] = a0Var2.f(i54) + dVar7.s;
+                                            jArr4[i54] = b0Var.f(i54);
+                                            jArr2[i54] = b0Var2.f(i54) + dVar7.s;
                                             i54++;
                                             jArr4 = jArr4;
                                         }

@@ -7,30 +7,30 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import l.a0;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
-import lf.h;
+import l.m;
+import l.z;
+import lf.i;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public l a;
+    public k a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.listViewStyle);
     }
 
-    @Override // l.k
-    public final boolean a(n nVar) {
-        return this.a.q(nVar, null, 0);
+    @Override // l.j
+    public final boolean a(m mVar) {
+        return this.a.q(mVar, null, 0);
     }
 
-    @Override // l.a0
-    public final void b(l lVar) {
-        this.a = lVar;
+    @Override // l.z
+    public final void b(k kVar) {
+        this.a = kVar;
     }
 
     public int getWindowAnimations() {
@@ -45,13 +45,13 @@ public final class ExpandedMenuView extends ListView implements k, a0, AdapterVi
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
-        a((n) getAdapter().getItem(i10));
+        a((m) getAdapter().getItem(i10));
     }
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        h Q = h.Q(context, attributeSet, b, i10);
+        i Q = i.Q(context, attributeSet, b, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         if (typedArray.hasValue(0)) {
             setBackgroundDrawable(Q.F(0));

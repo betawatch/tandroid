@@ -1,122 +1,135 @@
 package qg;
 
-import ai.bb;
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import ci.n6;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.qr;
-import w7.y5;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.SweepGradient;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.au0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class m0 extends LinearLayout {
-    public final TextView a;
-    public final n6 b;
-    public ImageView c;
-    public ImageView d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public final ImageView n;
-    public final /* synthetic */ n0 r;
+public final class m0 extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ au0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(n0 n0Var, Context context) {
+    public m0(au0 au0Var, Context context) {
         super(context);
-        this.r = n0Var;
-        setOrientation(0);
-        int i10 = j6.i6;
-        eh.a aVar = n0Var.Q1;
-        setBackground(j6.f0(j6.v0(i10, aVar), 2, -1));
-        n6 n6Var = new n6(this, context);
-        this.b = n6Var;
-        addView(n6Var, y5.t(-2, -2, 19, 16, 0, 16, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.c;
-        int i11 = j6.E8;
-        imageView2.setColorFilter(j6.v0(i11, aVar));
-        n6Var.addView(this.c, y5.e(-2, -2, 17));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(j6.v0(i11, aVar));
-        this.d.setVisibility(8);
-        n6Var.addView(this.d, y5.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextColor(j6.v0(i11, aVar));
-        textView.setTextSize(1, 16.0f);
-        addView(textView, y5.t(-2, -2, 19, 0, 0, 16, 0));
-        ImageView imageView4 = new ImageView(context);
-        this.n = imageView4;
-        imageView4.setImageResource(R.drawable.msg_text_check);
-        imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.h7, aVar), PorterDuff.Mode.MULTIPLY));
-        imageView4.setVisibility(8);
-        addView(imageView4, y5.n(50, -1));
-    }
-
-    public final void a(int i10, boolean z10, boolean z11) {
-        if (!z11) {
-            this.c.setImageResource(i10);
-            return;
-        }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.h = null;
-            a(i10, false, false);
-            return;
-        }
-        this.f = z10;
-        this.d.setImageResource(i10);
-        this.d.setVisibility(0);
-        this.d.setAlpha(1.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new bb(11, this, z10));
-        this.h.addListener(new pg.d0(this, 1));
-        this.h.setInterpolator(qr.h);
-        this.h.setDuration(420L);
-        this.h.start();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
+        this.c = au0Var;
+        new Path();
+        setWillNotDraw(false);
+        Paint paint = au0Var.H1;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
     @Override // android.view.View
-    public final boolean performClick() {
-        n0 n0Var = this.r;
-        org.telegram.ui.ActionBar.n1 n1Var = n0Var.R1;
-        if (n1Var != null && n1Var.isShowing()) {
-            n0Var.R1.d(true);
+    public final void onDraw(Canvas canvas) {
+        ViewGroup barView;
+        Canvas canvas2 = canvas;
+        super.onDraw(canvas);
+        au0 au0Var = this.c;
+        pg.q1 q1Var = au0Var.K1;
+        Paint paint = au0Var.I1;
+        Paint paint2 = au0Var.H1;
+        Paint paint3 = au0Var.J1;
+        barView = au0Var.getBarView();
+        Rect rect = AndroidUtilities.rectTmp2;
+        int left = barView.getLeft();
+        l0 l0Var = au0Var.G1;
+        rect.set(AndroidUtilities.lerp(left, l0Var.getLeft(), au0Var.N1), AndroidUtilities.lerp(barView.getTop(), l0Var.getTop(), au0Var.N1), AndroidUtilities.lerp(barView.getRight(), l0Var.getRight(), au0Var.N1), AndroidUtilities.lerp(barView.getBottom(), l0Var.getBottom(), au0Var.N1));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(rect);
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), au0Var.N1);
+        if (au0Var.c2 != null) {
+            rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
+            au0Var.c2.q(lerp);
+            au0Var.c2.setBounds(rect);
+            au0Var.c2.draw(canvas2);
+        } else {
+            canvas2.drawRoundRect(rectF, lerp, lerp, au0Var.O1);
         }
-        return super.performClick();
-    }
-
-    public void setIcon(int i10) {
-        a(i10, true, false);
+        if (barView.getChildCount() < 1 || au0Var.N1 == 1.0f) {
+            return;
+        }
+        canvas2.save();
+        canvas2.translate(barView.getLeft(), barView.getTop());
+        View childAt = barView.getChildAt(0);
+        if (barView instanceof r1) {
+            childAt = ((r1) barView).getColorClickableView();
+        }
+        if (childAt.getAlpha() != 0.0f) {
+            canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
+            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - au0Var.N1) * 255.0f));
+            int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
+            int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
+            float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
+            float y3 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
+            int i10 = q1Var.a;
+            int i11 = au0Var.h1;
+            View view = childAt;
+            if (i11 != -1) {
+                ViewGroup viewGroup = i11 == 0 ? au0Var.t1 : i11 == 2 ? au0Var.u1 : null;
+                View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
+                if (viewGroup instanceof r1) {
+                    childAt2 = ((r1) viewGroup).getColorClickableView();
+                }
+                x10 = AndroidUtilities.lerp(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), au0Var.i1);
+                y3 = AndroidUtilities.lerp(y3, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), au0Var.i1);
+            }
+            if (l0Var != null && l0Var.getChildCount() > 0) {
+                View childAt3 = l0Var.getChildAt(0);
+                x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (l0Var.getX() - barView.getLeft()), au0Var.N1);
+                y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (l0Var.getY() - barView.getTop()), au0Var.N1);
+                i10 = i0.a.d(au0Var.N1, q1Var.a, au0Var.V1.b(0));
+            }
+            float f7 = x10;
+            float f10 = y3;
+            if (f7 != this.a || f10 != this.b) {
+                this.a = f7;
+                this.b = f10;
+                paint2.setShader(new SweepGradient(f7, f10, new int[]{-1356981, -1146130, -10452764, -16711681, -7352832, -256, -23296, -1356981}, (float[]) null));
+            }
+            float min = (Math.min(width, height) / 2.0f) - AndroidUtilities.dp(0.5f);
+            if (l0Var != null && l0Var.getChildCount() > 0) {
+                View childAt4 = l0Var.getChildAt(0);
+                min = AndroidUtilities.lerp(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), au0Var.N1);
+            }
+            float f11 = min;
+            rectF.set(f7 - f11, f10 - f11, f7 + f11, f10 + f11);
+            canvas2 = canvas;
+            canvas2.drawArc(rectF, 0.0f, 360.0f, false, paint2);
+            paint.setColor(i10);
+            paint.setAlpha((int) (view.getAlpha() * paint.getAlpha()));
+            paint3.setColor(i10);
+            paint3.setAlpha((int) (view.getAlpha() * 255.0f));
+            float dp = f11 - AndroidUtilities.dp(3.0f);
+            if (l0Var != null && l0Var.getSelectedColorIndex() != 0) {
+                dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, au0Var.N1);
+            }
+            l1.x1(f7, f10, dp, paint.getColor(), canvas2);
+            if (l0Var != null && l0Var.getSelectedColorIndex() == 0) {
+                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * au0Var.N1));
+                canvas2.drawCircle(f7, f10, com.google.android.gms.internal.vision.e2.b(1.0f, au0Var.N1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
+            }
+        }
+        canvas2.restore();
     }
 
     @Override // android.view.View
-    public void setSelected(boolean z10) {
-        this.n.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        k0 k0Var = this.c.d1;
+        if (k0Var != null) {
+            k0Var.invalidate();
+        }
     }
 }

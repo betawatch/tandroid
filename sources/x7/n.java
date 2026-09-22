@@ -1,6 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n extends o {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class n extends o {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.n8.a(i10, this.d);
+        w7.m8.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class n extends o {
     @Override // x7.o, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final o subList(int i10, int i11) {
-        w7.n8.b(i10, i11, this.d);
+        w7.m8.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

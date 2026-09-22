@@ -9,9 +9,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o extends org.telegram.ui.Components.xl0 {
+public final class o extends org.telegram.ui.Components.kl0 {
     public final Context c;
     public final /* synthetic */ p d;
 
@@ -20,7 +20,7 @@ public final class o extends org.telegram.ui.Components.xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -51,16 +51,16 @@ public final class o extends org.telegram.ui.Components.xl0 {
         ArrayList arrayList = pVar.h;
         if (j(i10) != 0) {
             if (j(i10) == 2) {
-                org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+                org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
                 if (i10 == pVar.w) {
-                    f9Var.setTopPadding(17);
-                    f9Var.setBottomPadding(10);
-                    f9Var.setText(LocaleController.getString(pVar.H == 5 ? R.string.ArchivedEmojiInfo : R.string.ArchivedStickersInfo));
+                    e9Var.setTopPadding(17);
+                    e9Var.setBottomPadding(10);
+                    e9Var.setText(LocaleController.getString(pVar.H == 5 ? R.string.ArchivedEmojiInfo : R.string.ArchivedStickersInfo));
                     return;
                 } else {
-                    f9Var.setTopPadding(10);
-                    f9Var.setBottomPadding(17);
-                    f9Var.setText(null);
+                    e9Var.setTopPadding(10);
+                    e9Var.setBottomPadding(17);
+                    e9Var.setText(null);
                     return;
                 }
             }
@@ -70,22 +70,22 @@ public final class o extends org.telegram.ui.Components.xl0 {
         org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i12);
         wVar.b(stickerSetCovered, i12 != arrayList.size() - 1);
-        org.telegram.ui.Components.ki0 ki0Var = wVar.f;
+        org.telegram.ui.Components.xh0 xh0Var = wVar.f;
         i11 = ((org.telegram.ui.ActionBar.n2) pVar).currentAccount;
         boolean isStickerPackInstalled = MediaDataController.getInstance(i11).isStickerPackInstalled(stickerSetCovered.set.id);
         wVar.a(isStickerPackInstalled, false, false);
         if (isStickerPackInstalled) {
             iVar.l(stickerSetCovered.set.id);
-            if (ki0Var != null) {
-                ki0Var.a(false, false);
+            if (xh0Var != null) {
+                xh0Var.a(false, false);
             }
         } else {
             boolean z10 = iVar.h(stickerSetCovered.set.id) >= 0;
-            if (ki0Var != null) {
-                ki0Var.a(z10, false);
+            if (xh0Var != null) {
+                xh0Var.a(z10, false);
             }
         }
-        wVar.setOnCheckedChangeListener(new ah.b(28, this, stickerSetCovered));
+        wVar.setOnCheckedChangeListener(new ah.b(27, this, stickerSetCovered));
     }
 
     @Override // s4.h0
@@ -94,14 +94,14 @@ public final class o extends org.telegram.ui.Components.xl0 {
         View view = null;
         if (i10 == 0) {
             org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(context, true);
-            wVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            wVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
             view = wVar;
         } else if (i10 == 1) {
-            view = new org.telegram.ui.Cells.t4(context);
+            view = new org.telegram.ui.Cells.s4(context);
         } else if (i10 == 2) {
-            view = new org.telegram.ui.Cells.f9(context);
+            view = new org.telegram.ui.Cells.e9(context);
         }
         view.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.il0(view);
+        return new org.telegram.ui.Components.vk0(view);
     }
 }

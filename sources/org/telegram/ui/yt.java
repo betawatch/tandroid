@@ -1,346 +1,70 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
+import android.content.Context;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Timer;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yt implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class yt extends org.telegram.ui.Components.kl0 {
+    public final Context c;
+    public Timer d;
+    public ArrayList e;
+    public final ArrayList f = new ArrayList();
+    public final /* synthetic */ au h;
 
-    public /* synthetic */ yt(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public yt(au auVar, Context context, HashMap hashMap) {
+        this.h = auVar;
+        this.c = context;
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            Iterator it2 = ((List) it.next()).iterator();
+            while (it2.hasNext()) {
+                this.f.add((vt) it2.next());
+            }
+        }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.yl0 yl0Var;
-        TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets;
-        int i10 = this.a;
-        int i11 = 14;
-        int i12 = 24;
-        int i13 = 0;
-        int i14 = 1;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                zt ztVar = (zt) obj2;
-                String lowerCase = ((String) obj).trim().toLowerCase();
-                if (lowerCase.length() == 0) {
-                    AndroidUtilities.runOnUIThread(new yt(i14, ztVar, new ArrayList()));
-                    break;
-                } else {
-                    String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = ztVar.f;
-                    int size = arrayList2.size();
-                    while (i13 < size) {
-                        Object obj3 = arrayList2.get(i13);
-                        i13++;
-                        vt vtVar = (vt) obj3;
-                        String str = vtVar.a;
-                        if (str == null) {
-                            str = "";
-                        }
-                        String lowerCase2 = str.toLowerCase();
-                        String lowerCase3 = AndroidUtilities.translitSafe(vtVar.a).toLowerCase();
-                        String str2 = vtVar.b;
-                        if (str2 == null) {
-                            str2 = "";
-                        }
-                        String lowerCase4 = str2.toLowerCase();
-                        String lowerCase5 = AndroidUtilities.translitSafe(vtVar.b).toLowerCase();
-                        String str3 = vtVar.c;
-                        if (str3 == null) {
-                            str3 = "";
-                        }
-                        String concat = TextUtils.isEmpty(str3) ? "" : "+".concat(str3);
-                        if (lowerCase2.startsWith(lowerCase) || lowerCase2.contains(" ".concat(lowerCase)) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, lowerCase3) || lowerCase4.startsWith(lowerCase) || lowerCase4.contains(" ".concat(lowerCase)) || lowerCase5.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, lowerCase5) || str3.startsWith(lowerCase) || concat.startsWith(lowerCase)) {
-                            arrayList.add(vtVar);
-                        }
-                    }
-                    AndroidUtilities.runOnUIThread(new yt(1, ztVar, arrayList));
-                    break;
-                }
-                break;
-            case 1:
-                zt ztVar2 = (zt) obj2;
-                ArrayList arrayList3 = (ArrayList) obj;
-                bu buVar = ztVar2.h;
-                if (buVar.f) {
-                    ztVar2.e = arrayList3;
-                    if (buVar.e && (yl0Var = buVar.a) != null) {
-                        s4.h0 adapter = yl0Var.getAdapter();
-                        zt ztVar3 = buVar.d;
-                        if (adapter != ztVar3) {
-                            buVar.a.setAdapter(ztVar3);
-                            buVar.a.setFastScrollVisible(false);
-                        }
-                    }
-                    ztVar2.l();
-                    break;
-                }
-                break;
-            case 2:
-                MessagesController.getInstance(((du) obj2).currentAccount).processUpdates((TLRPC.Updates) obj, false);
-                break;
-            case 3:
-                uy.e0((uy) obj2, (String) obj);
-                break;
-            case 4:
-                ei.k3.j(((uy) obj2).currentAccount, ((TLRPC.TL_attachMenuBot) obj).bot_id, null);
-                break;
-            case 5:
-                uy uyVar = (uy) obj2;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) obj;
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                    f3VarArr[0] = null;
-                }
-                AndroidUtilities.runOnUIThread(new qv(uyVar, i12), 300L);
-                break;
-            case 6:
-                ((ty) obj).a.postOnAnimation(new qv((uy) obj2, i11));
-                break;
-            case 7:
-                uy uyVar2 = (uy) obj2;
-                uyVar2.getMessagesController().addDialogToFolder((ArrayList) obj, (uyVar2.V2 == 0 && uyVar2.X2 == 0) ? 0 : 1, -1, null, 0L);
-                break;
-            case 8:
-                ArrayList arrayList4 = (ArrayList) obj;
-                uy uyVar3 = ((tw) obj2).b;
-                uyVar3.y3 = 2;
-                uyVar3.A4(true, true);
-                uyVar3.o3();
-                while (i13 < arrayList4.size()) {
-                    long j3 = ((TLRPC.Dialog) arrayList4.get(i13)).id;
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList4.get(i13);
-                    if (uyVar3.getMessagesController().isForum(j3) || uyVar3.getMessagesController().isMonoForumWithManageRights(j3)) {
-                        uyVar3.getMessagesController().markAllTopicsAsRead(j3);
-                    }
-                    uyVar3.getMessagesController().markMentionsAsRead(j3, 0L);
-                    MessagesController messagesController = uyVar3.getMessagesController();
-                    int i15 = dialog.top_message;
-                    messagesController.markDialogAsRead(j3, i15, i15, dialog.last_message_date, false, 0L, 0, true, 0);
-                    i13++;
-                }
-                break;
-            case 9:
-                ((tw) obj2).d((MessagesController.DialogFilter) obj);
-                break;
-            case 10:
-                CharSequence charSequence = (CharSequence) obj;
-                uy uyVar4 = ((fx) obj2).a;
-                uyVar4.H2 = null;
-                org.telegram.ui.Components.br0 br0Var = uyVar4.G2;
-                if (br0Var != null && br0Var.h) {
-                    br0Var.e(charSequence, false);
-                    break;
-                }
-                break;
-            case 11:
-                org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj;
-                ((tx) obj2).b.removeSelfFromStack();
-                if (n2VarArr[1] != null) {
-                    n2VarArr[0].removeSelfFromStack();
-                    n2VarArr[1].finishFragment();
-                    break;
-                } else {
-                    n2VarArr[0].finishFragment();
-                    break;
-                }
-            case 12:
-                gz gzVar = (gz) obj2;
-                zn znVar = gzVar.a;
-                org.telegram.ui.Components.iy0 iy0Var = new org.telegram.ui.Components.iy0(znVar.getParentActivity(), gzVar.a, ((MessageObject) obj).getInputStickerSet(), null, znVar.Y, znVar.getResourceProvider());
-                iy0Var.setCalcMandatoryInsets(znVar.x9());
-                znVar.showDialog(iy0Var);
-                break;
-            case 13:
-                a00 a00Var = (a00) obj2;
-                a00Var.getClass();
-                ((org.telegram.ui.ActionBar.b2) obj).dismiss();
-                b00 b00Var = a00Var.E;
-                c00 c00Var = b00Var.c;
-                Utilities.Callback callback = c00Var.x;
-                if (callback != null) {
-                    callback.run(c00Var.d);
-                }
-                b00Var.c.finishFragment();
-                break;
-            case 14:
-                f10 f10Var = (f10) obj2;
-                c00 c00Var2 = new c00(f10Var.r, ((w00) obj).m);
-                c00Var2.y = new f00(f10Var, 1);
-                c00Var2.x = new f00(f10Var, 2);
-                f10Var.presentFragment(c00Var2);
-                break;
-            case 15:
-                f10 f10Var2 = (f10) obj2;
-                Runnable runnable = (Runnable) obj;
-                f10Var2.h = false;
-                f10Var2.s = false;
-                f10Var2.r.flags = f10Var2.y;
-                f10Var2.i0(true);
-                f10Var2.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 16:
-                f10 f10Var3 = (f10) obj2;
-                TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList5 = f10Var3.L;
-                f10Var3.N = false;
-                if (tLObject instanceof TL_chatlists.TL_chatlists_exportedInvites) {
-                    TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject;
-                    f10Var3.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-                    f10Var3.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                    arrayList5.clear();
-                    arrayList5.addAll(tL_chatlists_exportedInvites.invites);
-                    f10Var3.w0();
-                }
-                f10Var3.M = 0;
-                break;
-            case 17:
-                f10 f10Var4 = (f10) obj2;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj;
-                MessagesController.DialogFilter dialogFilter = f10Var4.r;
-                if (b2Var != null) {
-                    try {
-                        b2Var.dismiss();
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                }
-                f10Var4.getMessagesController().removeFilter(dialogFilter);
-                f10Var4.getMessagesStorage().deleteDialogFilter(dialogFilter);
-                f10Var4.finishFragment();
-                break;
-            case 18:
-                f10 f10Var5 = (f10) obj2;
-                f10Var5.getClass();
-                f10Var5.m0(((TL_chatlists.TL_chatlists_exportedChatlistInvite) obj).invite);
-                break;
-            case 19:
-                FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) obj2;
-                if (((TLRPC.TL_messages_toggleDialogFilterTags) obj).enabled && !filtersSetupActivity.x) {
-                    filtersSetupActivity.getMessagesController().loadRemoteFilters(true);
-                    filtersSetupActivity.x = true;
-                    break;
-                }
-                break;
-            case 20:
-                FiltersSetupActivity filtersSetupActivity2 = ((e20) obj2).e;
-                filtersSetupActivity2.getMessagesController().suggestedFilters.remove((TLRPC.TL_dialogFilterSuggested) obj);
-                filtersSetupActivity2.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogFiltersUpdated, new Object[0]);
-                break;
-            case 21:
-                ArrayList arrayList6 = (ArrayList) obj;
-                ArrayList arrayList7 = ((i60) obj2).Y1;
-                for (int i16 = 0; i16 < arrayList7.size(); i16++) {
-                    if (((org.telegram.ui.Components.voip.u) arrayList7.get(i16)).w != null) {
-                        arrayList6.remove(((org.telegram.ui.Components.voip.u) arrayList7.get(i16)).w);
-                    }
-                }
-                while (i13 < arrayList6.size()) {
-                    ChatObject.VideoParticipant videoParticipant = (ChatObject.VideoParticipant) arrayList6.get(i13);
-                    if (videoParticipant.participant.self) {
-                        if (VoIPService.getSharedInstance() != null) {
-                            VoIPService.getSharedInstance().setLocalSink(null, videoParticipant.presentation);
-                        }
-                    } else if (VoIPService.getSharedInstance() != null) {
-                        VoIPService.getSharedInstance().removeRemoteSink(videoParticipant.participant, videoParticipant.presentation);
-                    }
-                    i13++;
-                }
-                break;
-            case 22:
-                i60 i60Var = (i60) obj2;
-                i60Var.d.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShowAlert, 6, ((TLRPC.TL_error) obj).text);
-                i60Var.dismiss();
-                break;
-            case 23:
-                w5 w5Var = (w5) obj2;
-                try {
-                    Bitmap bitmap = ((org.telegram.ui.Components.voip.s2) obj).e.getBitmap(100, 100);
-                    if (bitmap == null) {
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(new yt(i12, w5Var, ci.n0.b(bitmap, true)));
-                        break;
-                    }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            case 24:
-                ((i60) ((w5) obj2).b).U0.setNewColors((int[]) obj);
-                break;
-            case 25:
-                t70.V((t70) obj2, (TLRPC.TL_error) obj);
-                break;
-            case 26:
-                p70 p70Var = (p70) obj2;
-                String str4 = (String) obj;
-                q70 q70Var = p70Var.a;
-                q70Var.e = str4;
-                TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet = new TLRPC.TL_messages_getStickerSet();
-                TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
-                tL_messages_getStickerSet.stickerset = tL_inputStickerSetShortName;
-                tL_inputStickerSetShortName.short_name = str4;
-                q70Var.c = q70Var.h.getConnectionsManager().sendRequest(tL_messages_getStickerSet, new oo(i12, p70Var, str4), 66);
-                break;
-            case 27:
-                TLObject tLObject2 = (TLObject) obj;
-                q70 q70Var2 = ((p70) obj2).a;
-                if (tLObject2 != null) {
-                    t70.a0(q70Var2.h, (TLRPC.TL_messages_stickerSet) tLObject2);
-                    break;
-                } else {
-                    t70.a0(q70Var2.h, null);
-                    break;
-                }
-            case 28:
-                s70 s70Var = (s70) obj2;
-                String str5 = (String) obj;
-                s70Var.h = str5;
-                t70 t70Var = s70Var.r;
-                if (t70Var.N) {
-                    TLRPC.TL_messages_searchEmojiStickerSets tL_messages_searchEmojiStickerSets = new TLRPC.TL_messages_searchEmojiStickerSets();
-                    tL_messages_searchEmojiStickerSets.q = str5;
-                    tL_messages_searchStickerSets = tL_messages_searchEmojiStickerSets;
-                } else {
-                    TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets2 = new TLRPC.TL_messages_searchStickerSets();
-                    tL_messages_searchStickerSets2.q = str5;
-                    tL_messages_searchStickerSets = tL_messages_searchStickerSets2;
-                }
-                s70Var.n = t70Var.getConnectionsManager().sendRequest(tL_messages_searchStickerSets, new ba(s70Var, str5, str5, i11), 66);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(8, (m80) obj2, (CacheByChatsController.KeepMediaException) obj), 150L);
-                break;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        ArrayList arrayList = this.e;
+        if (arrayList == null) {
+            return 0;
         }
+        return arrayList.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        String str;
+        vt vtVar = (vt) this.e.get(i10);
+        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) c1Var.a;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(au.V(vtVar), eaVar.getTextView().getPaint().getFontMetricsInt(), false);
+        if (this.h.h) {
+            str = "+" + vtVar.c;
+        } else {
+            str = null;
+        }
+        eaVar.c(replaceEmoji, str, false, false);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.vk0(au.U(this.c));
     }
 }

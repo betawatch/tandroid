@@ -1,34 +1,62 @@
 package tg;
 
-import android.content.DialogInterface;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class w implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+    public final /* synthetic */ b0 b;
 
-    public /* synthetic */ w(a0 a0Var, int i10) {
+    public /* synthetic */ w(b0 b0Var, int i10) {
         this.a = i10;
-        this.b = a0Var;
+        this.b = b0Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                vg.r rVar = this.b.g0.r;
-                if (rVar != null) {
-                    rVar.setPaused(false);
-                    break;
-                }
+                b0 b0Var = this.b;
+                b0Var.dismiss();
+                AndroidUtilities.runOnUIThread(new u(b0Var, 2), 220L);
+                break;
+            case 1:
+                b0 b0Var2 = this.b;
+                b0Var2.q0.b(false);
+                k.j(b0Var2.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 2:
+                b0 b0Var3 = this.b;
+                b0Var3.n0 = b0Var3.Y.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
+                b0Var3.a0(true, true);
+                b0Var3.Z(true);
+                break;
+            case 3:
+                b0 b0Var4 = this.b;
+                b0Var4.dismiss();
+                AndroidUtilities.runOnUIThread(new u(b0Var4, 1), 220L);
+                break;
+            case 4:
+                b0 b0Var5 = this.b;
+                b0Var5.q0.b(false);
+                k.j(b0Var5.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 5:
+                b0 b0Var6 = this.b;
+                ArrayList arrayList = b0Var6.f0;
+                arrayList.clear();
+                arrayList.addAll((List) obj);
+                b0Var6.a0(true, true);
                 break;
             default:
-                vg.r rVar2 = this.b.g0.r;
-                if (rVar2 != null) {
-                    rVar2.setPaused(false);
-                    break;
-                }
+                b0 b0Var7 = this.b;
+                b0Var7.q0.b(false);
+                k.j(b0Var7.getContext(), (TLRPC.TL_error) obj);
                 break;
         }
     }

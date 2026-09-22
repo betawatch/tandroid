@@ -1,20 +1,20 @@
 package m4;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements j0 {
+public final /* synthetic */ class c0 implements k0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ l0 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ c0(k0 k0Var, long j3, int i10) {
+    public /* synthetic */ c0(l0 l0Var, long j3, int i10) {
         this.a = i10;
-        this.b = k0Var;
+        this.b = l0Var;
         this.c = j3;
     }
 
-    @Override // m4.j0
-    public final void f(r rVar) {
+    @Override // m4.k0
+    public final void g(r rVar) {
         switch (this.a) {
             case 0:
                 this.b.g.t.Y((int) this.c);

@@ -1,120 +1,42 @@
 package hg;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.zn;
-import w7.y5;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class e extends FrameLayout {
-    public final int a;
-    public final g9 b;
-    public final v9 c;
-    public final LinearLayout d;
-    public final o6 e;
-    public final o6 f;
-    public final dq h;
-    public final ImageView n;
-    public boolean r;
-    public long s;
-    public long v;
-    public int w;
-    public String x;
-    public float y;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f b;
 
-    public e(Activity activity, f6 f6Var, zn znVar) {
-        super(activity);
-        this.a = znVar.getCurrentAccount();
-        this.r = false;
-        v9 v9Var = new v9(activity);
-        this.c = v9Var;
-        TLRPC.User user = znVar.getMessagesController().getUser(Long.valueOf(this.v));
-        g9 g9Var = new g9((f6) null);
-        this.b = g9Var;
-        g9Var.r(user);
-        v9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        v9Var.e(user, g9Var);
-        addView(v9Var, y5.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(activity);
-        this.d = linearLayout;
-        linearLayout.setOrientation(1);
-        o6 o6Var = new o6(activity, false, false, false);
-        this.e = o6Var;
-        o6Var.n = false;
-        o6Var.getDrawable().o(true, false, false);
-        o6Var.setTypeface(AndroidUtilities.bold());
-        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        o6Var.setText(UserObject.getUserName(user));
-        o6Var.setTextColor(j6.v0(j6.G6, f6Var));
-        o6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(o6Var, y5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
-        o6 o6Var2 = new o6(activity, false, false, false);
-        this.f = o6Var2;
-        o6Var2.n = false;
-        o6Var2.getDrawable().o(true, false, false);
-        o6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        o6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
-        o6Var2.setTextColor(j6.v0(j6.ge, f6Var));
-        o6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(o6Var2, y5.n(-1, 17));
-        addView(linearLayout, y5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
-        dq dqVar = new dq(activity);
-        this.h = dqVar;
-        dqVar.getDrawable().o(true, true, false);
-        dqVar.b(0.75f, 350L, qr.h);
-        dqVar.setScaleProperty(0.6f);
-        dqVar.setTypeface(AndroidUtilities.bold());
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = j6.Oh;
-        int v02 = j6.v0(i10, f6Var);
-        int v = j6.v(j6.v0(i10, f6Var), j6.l1(0.12f, -1));
-        dqVar.setBackgroundDrawable(j6.i0(dp, dp, dp, dp, v02, v, v));
-        dqVar.setTextSize(AndroidUtilities.dp(14.0f));
-        dqVar.setGravity(5);
-        dqVar.setTextColor(j6.v0(j6.Sh, f6Var));
-        dqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
-        dqVar.setOnClickListener(new ai.v0(this, 24));
-        dqVar.setOnWidthUpdatedListener(new d(this, 0));
-        dqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
-        addView(dqVar, y5.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
-        ImageView imageView = new ImageView(activity);
-        this.n = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.msg_mini_customize);
-        imageView.setBackground(j6.M(j6.v0(j6.i6, f6Var), 0, 0));
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.de, f6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new ai.d0(this, znVar, f6Var, 7));
-        addView(imageView, y5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
+    public /* synthetic */ e(f fVar, int i10) {
+        this.a = i10;
+        this.b = fVar;
     }
 
-    public final void a() {
-        float f7 = this.y;
-        float d = this.h.getDrawable().d() + f7 + r1.getPaddingLeft() + r1.getPaddingRight() + AndroidUtilities.dp(12.0f);
-        this.e.setRightPadding(d);
-        this.f.setRightPadding(d);
-    }
-
-    public void setLeftMargin(float f7) {
-        this.y = f7;
-        this.c.setTranslationX(f7);
-        this.d.setTranslationX(f7);
-        a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        f fVar = this.b;
+        switch (i10) {
+            case 0:
+                fVar.a();
+                break;
+            case 1:
+                fVar.getClass();
+                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
+                int i11 = fVar.a;
+                disablepeerconnectedbot.peer = MessagesController.getInstance(i11).getInputPeer(fVar.s);
+                ConnectionsManager.getInstance(i11).sendRequest(disablepeerconnectedbot, null);
+                MessagesController.getNotificationsSettings(i11).edit().remove("dialog_botid" + fVar.s).remove("dialog_boturl" + fVar.s).remove("dialog_botflags" + fVar.s).apply();
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(fVar.s));
+                g.a(i11).f = false;
+                break;
+            default:
+                nf.f.s(fVar.getContext(), fVar.x);
+                break;
+        }
     }
 }

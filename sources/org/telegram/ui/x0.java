@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class x0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final class x0 extends AnimatorListenerAdapter {
                 arrayList2.add(arrayList.remove(size));
             }
             h4Var.O0.T(h4Var.u0[0].b);
-            org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
-            r9Var.E0 = h4Var.u0[0].d;
-            r9Var.f(true);
+            org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
+            q9Var.E0 = h4Var.u0[0].d;
+            q9Var.f(true);
             h4Var.i0(false);
             h4Var.f0();
             h4Var.u0[1].b();
@@ -54,7 +54,7 @@ public final class x0 extends AnimatorListenerAdapter {
                     ((y2) obj).a();
                 }
                 if (obj instanceof TLRPC.WebPage) {
-                    org.telegram.ui.web.j2.o((TLRPC.WebPage) obj);
+                    org.telegram.ui.web.i2.o((TLRPC.WebPage) obj);
                 }
             }
         } else {

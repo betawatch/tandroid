@@ -2,7 +2,7 @@ package bc;
 
 import qb.g;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements q9.d {
     public static final /* synthetic */ a b = new a(0);
@@ -17,9 +17,9 @@ public final /* synthetic */ class a implements q9.d {
     public final Object G(cf.c cVar) {
         switch (this.a) {
             case 0:
-                return new c((g) cVar.b(g.class));
+                return new c((g) cVar.a(g.class));
             default:
-                return new b((c) cVar.b(c.class), (qb.d) cVar.b(qb.d.class));
+                return new b((c) cVar.a(c.class), (qb.d) cVar.a(qb.d.class));
         }
     }
 }

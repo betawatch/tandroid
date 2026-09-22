@@ -1,100 +1,106 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bo b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ se(zn znVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, boolean z10, boolean z11) {
-        this.e = znVar;
-        this.c = str;
-        this.f = characterStyle;
-        this.h = messageObject;
-        this.n = u1Var;
-        this.b = z10;
-        this.d = z11;
+    public /* synthetic */ se(bo boVar, MessageObject messageObject, int i10) {
+        this.a = i10;
+        this.b = boVar;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        TLRPC.WebPage webPage;
         switch (this.a) {
             case 0:
-                zn znVar = (zn) this.e;
-                String str = (String) this.c;
-                CharacterStyle characterStyle = (CharacterStyle) this.f;
-                MessageObject messageObject = (MessageObject) this.h;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.n;
-                if (!str.startsWith("video?")) {
-                    if (this.b && !this.d) {
-                        znVar.getParentActivity();
-                        nf.f.n(str);
-                        break;
-                    } else {
-                        znVar.J9(messageObject, false, false);
-                        znVar.Z9(characterStyle, str, false, u1Var, messageObject);
+                MessageObject messageObject = this.c;
+                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
+                    LaunchActivity launchActivity = LaunchActivity.G1;
+                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.G1.P().l(messageObject) == null) {
+                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
                         break;
                     }
-                } else {
-                    znVar.U7(characterStyle, false, messageObject, u1Var);
-                    break;
                 }
                 break;
             case 1:
-                wh.n nVar = (wh.n) this.e;
-                Runnable runnable = (Runnable) this.f;
-                String str2 = (String) this.c;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
-                TLObject tLObject = (TLObject) this.n;
-                nVar.w = false;
-                nVar.z = true;
-                if (this.b) {
-                    AndroidUtilities.cancelRunOnUIThread(runnable);
+                bo boVar = this.b;
+                boVar.getClass();
+                MessageObject messageObject2 = this.c;
+                TLRPC.Message message = messageObject2.messageOwner;
+                int i10 = message.ttl;
+                boolean z10 = i10 != Integer.MAX_VALUE;
+                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
+                message.destroyTime = boVar.getConnectionsManager().getCurrentTime() + i11;
+                messageObject2.messageOwner.destroyTimeMillis = boVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
+                if (boVar.h == null) {
+                    boVar.getMessagesController().markMessageAsRead2(boVar.T5, messageObject2.getId(), null, i11, 0L, z10);
+                    break;
+                } else {
+                    boVar.getMessagesController().markMessageAsRead(boVar.T5, messageObject2.messageOwner.random_id, i11);
+                    break;
                 }
-                wh.n.k(nVar.q, false, false);
-                if (TextUtils.equals(str2, nVar.t) && tL_error == null) {
-                    nVar.z = true;
-                    nVar.g((TLRPC.TL_messages_chatInviteImporters) tLObject, str2, this.d, false);
+            case 2:
+                int id2 = this.c.getId();
+                bo boVar2 = this.b;
+                boVar2.Xa(id2, 0, true, 0, true, 0, null, null, new ug(boVar2, 13));
+                if (boVar2.h6.isEmpty()) {
+                    boVar2.Lb(false);
                     break;
                 }
                 break;
+            case 3:
+                bo boVar3 = this.b;
+                boVar3.getClass();
+                MessageObject messageObject3 = this.c;
+                boVar3.Xa(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == boVar3.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
+                break;
+            case 4:
+                bo boVar4 = this.b;
+                boVar4.getClass();
+                MessageObject messageObject4 = this.c;
+                boVar4.Xa(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == boVar4.L6 ? 1 : 0, false, 0, null, null, null);
+                break;
+            case 5:
+                bo boVar5 = this.b;
+                boVar5.getClass();
+                MessageObject messageObject5 = this.c;
+                boVar5.F(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, messageObject5.getDialogId() == boVar5.L6 ? 1 : 0, 0, true, false);
+                break;
+            case 6:
+                bo boVar6 = this.b;
+                boVar6.getClass();
+                MessageObject messageObject6 = this.c;
+                if (!messageObject6.isVideo()) {
+                    MediaController.getInstance().playMessage(messageObject6);
+                    break;
+                } else {
+                    boVar6.ha(null, messageObject6);
+                    break;
+                }
+            case 7:
+                bo boVar7 = this.b;
+                boVar7.getMessagesController().pinMessage(boVar7.e, boVar7.f, this.c.getId(), true, false, false);
+                boVar7.A3 = null;
+                break;
             default:
-                yh.y3.A0((yh.y3) this.e, (TLObject) this.c, this.b, (TLRPC.Document) this.f, this.d, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
+                bo boVar8 = this.b;
+                org.telegram.ui.Components.vc.a0(boVar8).c(LocaleController.getString(R.string.AdHidden)).j();
+                MessageObject messageObject7 = this.c;
+                boVar8.Fa(messageObject7);
+                boVar8.Ha(messageObject7);
                 break;
         }
-    }
-
-    public /* synthetic */ se(wh.n nVar, boolean z10, Runnable runnable, String str, TLRPC.TL_error tL_error, TLObject tLObject, boolean z11) {
-        this.e = nVar;
-        this.b = z10;
-        this.f = runnable;
-        this.c = str;
-        this.h = tL_error;
-        this.n = tLObject;
-        this.d = z11;
-    }
-
-    public /* synthetic */ se(yh.y3 y3Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
-        this.e = y3Var;
-        this.c = tLObject;
-        this.b = z10;
-        this.f = document;
-        this.d = z11;
-        this.h = tL_error;
-        this.n = savestargift;
     }
 }

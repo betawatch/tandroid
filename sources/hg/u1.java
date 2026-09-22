@@ -1,71 +1,35 @@
 package hg;
 
-import ai.e4;
-import android.view.KeyEvent;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class u1 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ r1 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ a2 c;
-    public final /* synthetic */ TextView d;
-    public final /* synthetic */ e4 e;
-    public final /* synthetic */ Utilities.Callback f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] g;
-    public final /* synthetic */ View h;
+public final class u1 implements TextWatcher {
+    public final /* synthetic */ TextView a;
+    public final /* synthetic */ Runnable[] b;
 
-    public u1(r1 r1Var, int i10, a2 a2Var, TextView textView, e4 e4Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
-        this.a = r1Var;
-        this.b = i10;
-        this.c = a2Var;
-        this.d = textView;
-        this.e = e4Var;
-        this.f = callback;
-        this.g = b2VarArr;
-        this.h = view;
+    public u1(TextView textView, Runnable[] runnableArr) {
+        this.a = textView;
+        this.b = runnableArr;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a.getAlpha() > 0.0f) {
+            Runnable[] runnableArr = this.b;
+            AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
+            AndroidUtilities.runOnUIThread(runnableArr[0]);
         }
-        r1 r1Var = this.a;
-        String obj = r1Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 32) {
-            AndroidUtilities.shakeView(r1Var);
-            return true;
-        }
-        b2 f7 = b2.f(this.b);
-        a2 a2Var = this.c;
-        int i11 = a2Var == null ? -1 : a2Var.a;
-        a2 d = f7.d(obj);
-        if (d != null && d.a != i11) {
-            AndroidUtilities.shakeView(r1Var);
-            this.d.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
-            this.e.run(Boolean.TRUE);
-            return true;
-        }
-        this.f.run(obj);
-        org.telegram.ui.ActionBar.b2[] b2VarArr = this.g;
-        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
-        }
-        if (b2VarArr[0] == y1.h) {
-            y1.h = null;
-        }
-        View view = this.h;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

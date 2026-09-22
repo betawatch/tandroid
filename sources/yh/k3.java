@@ -1,83 +1,15 @@
 package yh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class k3 {
-    public final v3 a;
-    public p3 b;
-    public p3 c;
-    public p3 d;
-    public g3 h;
-    public g3 i;
-    public g3 j;
-    public g3 k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public b1 r;
-    public b1 s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
+public final class k3 extends g3 {
+    public final TL_stars.starGiftAttributePattern c;
 
-    public k3(v3 v3Var) {
-        this.a = v3Var;
-        v3Var.c.addOnAttachStateChangeListener(new ai.u2(this, 15));
-    }
-
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        g3 g3Var = this.h;
-        if (g3Var != null) {
-            g3Var.a();
-        }
-        g3 g3Var2 = this.i;
-        if (g3Var2 != null) {
-            g3Var2.a();
-        }
-        g3 g3Var3 = this.j;
-        if (g3Var3 != null) {
-            g3Var3.a();
-        }
-        g3 g3Var4 = this.k;
-        if (g3Var4 != null) {
-            g3Var4.a();
-        }
-        c();
-    }
-
-    public final void b() {
-        if (this.o && !this.v) {
-            this.v = true;
-            AndroidUtilities.runOnUIThread(new e3(this, 1));
-        }
-    }
-
-    public final void c() {
-        if (this.o) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((i3) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+    public k3(TL_stars.starGiftAttributePattern stargiftattributepattern) {
+        this.a = stargiftattributepattern.name;
+        this.b = stargiftattributepattern.getRarityPermille();
+        this.c = stargiftattributepattern;
     }
 }

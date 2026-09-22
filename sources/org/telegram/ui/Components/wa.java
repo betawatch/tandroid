@@ -1,41 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class wa extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ cw0 u1;
-    public final /* synthetic */ ab v1;
+public final class wa extends s4.j0 {
+    public final /* synthetic */ s4.j0 a;
+    public final /* synthetic */ xa b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wa(ab abVar, Context context, cw0 cw0Var) {
-        super(context, null);
-        this.v1 = abVar;
-        this.u1 = cw0Var;
+    public wa(xa xaVar, s4.j0 j0Var) {
+        this.b = xaVar;
+        this.a = j0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ab abVar = this.v1;
-        if (abVar.L && abVar.M) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // s4.j0
+    public final void a() {
+        this.a.a();
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            this.u1.invalidate();
-        }
+    @Override // s4.j0
+    public final void b(int i10, int i11) {
+        this.a.b(i10 + (!((za) this.b.f).P ? 1 : 0), i11);
     }
 
-    @Override // android.view.View
-    public final void setTag(Object obj) {
-        super.setTag(obj);
-        this.v1.M();
+    @Override // s4.j0
+    public final void c(int i10, int i11, Object obj) {
+        this.a.c(i10 + (!((za) this.b.f).P ? 1 : 0), i11, obj);
+    }
+
+    @Override // s4.j0
+    public final void d(int i10, int i11) {
+        this.a.d(i10 + (!((za) this.b.f).P ? 1 : 0), i11);
+    }
+
+    @Override // s4.j0
+    public final void e(int i10, int i11) {
+        int i12 = !((za) this.b.f).P ? 1 : 0;
+        this.a.e(i10 + i12, i11 + i12);
+    }
+
+    @Override // s4.j0
+    public final void f(int i10, int i11) {
+        this.a.f(i10 + (!((za) this.b.f).P ? 1 : 0), i11);
     }
 }

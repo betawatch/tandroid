@@ -9,9 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ks extends f6 {
+public final class ks extends e6 {
     public boolean E;
     public boolean F;
     public ch.d s;
@@ -53,10 +53,10 @@ public final class ks extends f6 {
             for (int i10 = 0; i10 < entriesCount; i10++) {
                 le.g n10 = jVar.n(i10);
                 float paddingTop = getPaddingTop() + n10.b().top;
-                View view2 = ((e6) n10.a).a;
+                View view2 = ((d6) n10.a).a;
                 float c10 = n10.c();
                 if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
-                    id capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
+                    gd capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
                     int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
                     int i11 = -dp;
                     capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);
@@ -77,14 +77,14 @@ public final class ks extends f6 {
         while (i12 < entriesCount2) {
             le.g n11 = jVar.n(i12);
             float paddingTop2 = getPaddingTop() + n11.b().top;
-            View view4 = ((e6) n11.a).a;
+            View view4 = ((d6) n11.a).a;
             float min = Math.min(1.0f, n11.c.a) * n11.c();
             if (min > 0.0f && view3 != view4) {
-                int alpha = org.telegram.ui.ActionBar.j6.k0.getAlpha();
-                org.telegram.ui.ActionBar.j6.k0.setAlpha((int) (alpha * min));
+                int alpha = org.telegram.ui.ActionBar.i6.k0.getAlpha();
+                org.telegram.ui.ActionBar.i6.k0.setAlpha((int) (alpha * min));
                 float f7 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.j6.k0);
-                org.telegram.ui.ActionBar.j6.k0.setAlpha(alpha);
+                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.i6.k0);
+                org.telegram.ui.ActionBar.i6.k0.setAlpha(alpha);
             }
             i12++;
             canvas2 = canvas;
@@ -119,7 +119,7 @@ public final class ks extends f6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.f6
+    @Override // org.telegram.ui.Components.e6
     public final void e() {
         j();
         invalidate();
@@ -142,7 +142,7 @@ public final class ks extends f6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.e6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         j();

@@ -6,10 +6,10 @@ import java.util.IdentityHashMap;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import v7.o8;
-import v7.s7;
+import v7.n8;
+import v7.r7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class u1 implements f1, r, y1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(u1.class, Object.class, "_state$volatile");
@@ -102,7 +102,7 @@ public class u1 implements f1, r, y1 {
                     k1Var.a(th2);
                 } catch (Throwable th3) {
                     if (jVar != null) {
-                        s7.a(jVar, th3);
+                        r7.a(jVar, th3);
                     } else {
                         jVar = new androidx.car.app.j("Exception in completion handler " + k1Var + " for " + this, th3);
                     }
@@ -298,7 +298,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return o8.a(this, gVar);
+        return n8.a(this, gVar);
     }
 
     @Override // zd.f1
@@ -568,7 +568,7 @@ public class u1 implements f1, r, y1 {
                         k1Var.a(th2);
                     } catch (Throwable th4) {
                         if (jVar != null) {
-                            s7.a(jVar, th4);
+                            r7.a(jVar, th4);
                         } else {
                             jVar = new androidx.car.app.j("Exception in completion handler " + k1Var + " for " + this, th4);
                         }
@@ -583,7 +583,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return o8.b(this, gVar);
+        return n8.b(this, gVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -627,7 +627,7 @@ public class u1 implements f1, r, y1 {
                     i10++;
                     Throwable th3 = (Throwable) obj2;
                     if (th3 != q6 && th3 != q6 && !(th3 instanceof CancellationException) && newSetFromMap.add(th3)) {
-                        s7.a(q6, th3);
+                        r7.a(q6, th3);
                     }
                 }
             }
@@ -661,7 +661,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return o8.c(this, hVar);
+        return n8.c(this, hVar);
     }
 
     public final Throwable q(n1 n1Var, ArrayList arrayList) {

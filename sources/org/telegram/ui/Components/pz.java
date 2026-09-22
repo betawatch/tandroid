@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class pz extends s4.c0 {
     public final SparseArray I;
@@ -21,13 +21,13 @@ public class pz extends s4.c0 {
     public int S;
     public final boolean T;
 
-    public pz(yl0 yl0Var, int i10) {
+    public pz(ll0 ll0Var, int i10) {
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = yl0Var;
+        this.N = ll0Var;
         this.M = i10;
     }
 
@@ -35,8 +35,8 @@ public class pz extends s4.c0 {
     public final void P(View view) {
         if (this.T) {
             RecyclerView recyclerView = this.N;
-            View G = recyclerView.G(view);
-            if ((G == null ? null : recyclerView.U(G)).b() == B() - 1) {
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
                 ((ViewGroup.MarginLayoutParams) ((s4.p0) view.getLayoutParams())).height = Math.max(this.J, 0);
             }
         }
@@ -146,14 +146,14 @@ public class pz extends s4.c0 {
         }
     }
 
-    public pz(int i10, int i11, yl0 yl0Var) {
+    public pz(int i10, int i11, ll0 ll0Var) {
         super(1, false);
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = yl0Var;
+        this.N = ll0Var;
         this.M = i10;
     }
 }

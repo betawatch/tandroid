@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h extends RecyclerView {
     public final e U0;
@@ -68,7 +68,7 @@ public final class h extends RecyclerView {
         return f7;
     }
 
-    public final void D0(int i10, TLRPC.InputGroupCall inputGroupCall) {
+    public final void C0(int i10, TLRPC.InputGroupCall inputGroupCall) {
         int i11;
         e eVar = this.U0;
         if (eVar.d && (i11 = eVar.e) != -1 && eVar.f != null) {

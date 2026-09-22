@@ -5,16 +5,15 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import c5.b0;
+import c5.c0;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.internal.clearcut.t;
 import com.google.android.gms.internal.clearcut.z1;
 import g7.l;
 import g7.q;
-import hg.k0;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -160,7 +159,7 @@ public abstract class b extends Binder implements IInterface {
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 }
-                b0 b0Var = (b0) this;
+                c0 c0Var = (c0) this;
                 if (i10 != 1) {
                     return false;
                 }
@@ -168,9 +167,9 @@ public abstract class b extends Binder implements IInterface {
                 int i12 = com.google.android.gms.internal.play_billing.d.a;
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(hg.c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                b0Var.b.a(Integer.valueOf(readInt));
+                c0Var.b.a(Integer.valueOf(readInt));
                 return true;
             case 4:
                 if (i10 <= 16777215) {

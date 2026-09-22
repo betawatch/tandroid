@@ -15,13 +15,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.p01;
 import org.webrtc.MediaStreamTrack;
-import v7.r8;
+import v7.q8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -737,7 +737,7 @@ public abstract class d4 {
 
     public static a B(c4 c4Var, boolean z10) {
         TL_iv.PageBlock pageblockslideshow = z10 ? new TL_iv.pageBlockSlideshow() : new TL_iv.pageBlockCollage();
-        ArrayList h32 = w3.h3(pageblockslideshow);
+        ArrayList g32 = w3.g3(pageblockslideshow);
         ArrayList arrayList = c4Var.e;
         int size = arrayList.size();
         CharSequence charSequence = null;
@@ -756,17 +756,17 @@ public abstract class d4 {
                         if (E > 0) {
                             TL_iv.PageBlock y3 = y(E, equals, c4Var2.b("data-spoiler"));
                             J(y3);
-                            h32.add(y3);
+                            g32.add(y3);
                         }
                     }
                 }
             }
         }
-        if (h32.isEmpty()) {
+        if (g32.isEmpty()) {
             return null;
         }
-        if (h32.size() == 1) {
-            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) h32.get(0);
+        if (g32.size() == 1) {
+            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) g32.get(0);
             if (charSequence != null && charSequence.length() > 0) {
                 I(pageBlock, charSequence);
             }
@@ -879,7 +879,7 @@ public abstract class d4 {
             a aVar = (a) list3.get(i19);
             if (!aVar.i) {
                 if (aVar.k.size() > i18) {
-                    cVar2.c(sb3);
+                    cVar2.b(sb3);
                     Long l4 = (Long) ((a) list3.get(iArr[0])).k.get(i18);
                     long longValue = l4.longValue();
                     int i20 = iArr[0];
@@ -898,14 +898,14 @@ public abstract class d4 {
                     sb3.append("<blockquote>");
                     d7.c cVar3 = new d7.c(1);
                     F(sb3, list3, iArr, i20, i11, i12, i13, i14, cVar3, z10, i18 + 1, map);
-                    cVar3.c(sb3);
+                    cVar3.b(sb3);
                     c(sb3, map != null ? k((TL_iv.RichText) map.get(l4)) : null);
                     sb3.append("</blockquote>");
                     i17 = i10;
                     i18 = i15;
                 } else {
-                    if (w3.y3(aVar)) {
-                        cVar2.c(sb3);
+                    if (w3.x3(aVar)) {
+                        cVar2.b(sb3);
                         a aVar3 = (a) list3.get(iArr[0]);
                         sb3.append(((TL_iv.pageBlockDetails) aVar3.b).open ? "<details open>" : "<details>");
                         sb3.append("<summary>");
@@ -916,7 +916,7 @@ public abstract class d4 {
                         F(sb3, list3, iArr, i10, i11, i12, i13, i14, cVar4, true, i15, map);
                         list2 = list3;
                         i16 = i10;
-                        cVar4.c(sb3);
+                        cVar4.b(sb3);
                         int i22 = iArr[0];
                         if (i22 <= i16 && i22 < list2.size() && ((a) list2.get(iArr[0])).i) {
                             iArr[0] = iArr[0] + 1;
@@ -926,7 +926,7 @@ public abstract class d4 {
                         i16 = i10;
                         list2 = list3;
                         if (aVar.c <= 0 || l(aVar.b) == null) {
-                            cVar2.c(sb3);
+                            cVar2.b(sb3);
                             int i23 = iArr[0];
                             TL_iv.PageBlock pageBlock = aVar.b;
                             if (pageBlock instanceof TL_iv.pageBlockDivider) {
@@ -976,16 +976,16 @@ public abstract class d4 {
                                 } else {
                                     sb3 = sb2;
                                     String str3 = "<figcaption>";
-                                    if (w3.C3(pageBlock)) {
+                                    if (w3.B3(pageBlock)) {
                                         String str4 = pageBlock instanceof TL_iv.pageBlockSlideshow ? "slideshow" : "collage";
                                         sb3.append("<div class=\"");
                                         sb3.append(str4);
                                         sb3.append("\">");
-                                        ArrayList h32 = w3.h3(pageBlock);
-                                        if (h32 != null) {
+                                        ArrayList g32 = w3.g3(pageBlock);
+                                        if (g32 != null) {
                                             int i25 = 0;
-                                            while (i25 < h32.size()) {
-                                                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) h32.get(i25);
+                                            while (i25 < g32.size()) {
+                                                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) g32.get(i25);
                                                 ArrayList arrayList3 = aVar.h;
                                                 u uVar = (arrayList3 == null || i25 >= arrayList3.size()) ? null : (u) aVar.h.get(i25);
                                                 if (pageBlock2 instanceof TL_iv.pageBlockVideo) {
@@ -1118,7 +1118,7 @@ public abstract class d4 {
                             int i26 = aVar.c;
                             boolean z12 = aVar.d > 0;
                             while (arrayList.size() > i26) {
-                                cVar2.b(sb3);
+                                cVar2.a(sb3);
                             }
                             while (true) {
                                 str2 = "<ul>";
@@ -1131,8 +1131,8 @@ public abstract class d4 {
                                 sb3.append(str2);
                                 arrayList.add(Boolean.valueOf(z12));
                             }
-                            if (!arrayList.isEmpty() && ((Boolean) hg.k0.g(1, arrayList)).booleanValue() != z12) {
-                                cVar2.b(sb3);
+                            if (!arrayList.isEmpty() && ((Boolean) hg.c.h(1, arrayList)).booleanValue() != z12) {
+                                cVar2.a(sb3);
                                 sb3.append(z12 ? "<ol>" : "<ul>");
                                 arrayList.add(Boolean.valueOf(z12));
                             }
@@ -1277,7 +1277,7 @@ public abstract class d4 {
     }
 
     public static CharSequence K(a aVar, int i10, int i11, int i12, int i13, int i14) {
-        CharSequence r10 = w3.y3(aVar) ? f6.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true) : d6.A(aVar.b);
+        CharSequence r10 = w3.x3(aVar) ? f6.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true) : d6.A(aVar.b);
         if (r10 == null) {
             r10 = "";
         }
@@ -1493,19 +1493,19 @@ public abstract class d4 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (f11 f11Var : (f11[]) spanned.getSpans(i22, nextSpanTransition, f11.class)) {
-                    e11 e11Var = f11Var.b;
-                    if (e11Var != null) {
-                        i24 |= e11Var.a;
+                for (p01 p01Var : (p01[]) spanned.getSpans(i22, nextSpanTransition, p01.class)) {
+                    o01 o01Var = p01Var.b;
+                    if (o01Var != null) {
+                        i24 |= o01Var.a;
                     }
                 }
-                e61[] e61VarArr = (e61[]) spanned.getSpans(i22, nextSpanTransition, e61.class);
-                String url = e61VarArr.length > 0 ? e61VarArr[c10].getURL() : null;
-                org.telegram.ui.Components.y5[] y5VarArr = (org.telegram.ui.Components.y5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.y5.class);
-                if (y5VarArr.length > 0) {
-                    org.telegram.ui.Components.y5 y5Var = y5VarArr[c10];
-                    if (!y5Var.standard) {
-                        j3 = y5Var.getDocumentId();
+                o51[] o51VarArr = (o51[]) spanned.getSpans(i22, nextSpanTransition, o51.class);
+                String url = o51VarArr.length > 0 ? o51VarArr[c10].getURL() : null;
+                org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.x5.class);
+                if (x5VarArr.length > 0) {
+                    org.telegram.ui.Components.x5 x5Var = x5VarArr[c10];
+                    if (!x5Var.standard) {
+                        j3 = x5Var.getDocumentId();
                         i11 = i24 & 256;
                         if (i11 != 0) {
                             sb2.append("<spoiler>");
@@ -1857,12 +1857,12 @@ public abstract class d4 {
         spannableStringBuilder.append((CharSequence) str);
         int length2 = spannableStringBuilder.length();
         if (j3 != 0) {
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.x5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            e11 e11Var = new e11();
-            e11Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new f11(e11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            o01 o01Var = new o01();
+            o01Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new p01(o01Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(f6.k(str2), length, length2, 33);
@@ -2322,7 +2322,7 @@ public abstract class d4 {
                             if (arrayList3.isEmpty()) {
                                 arrayList2.add(c4Var);
                             } else {
-                                ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var);
+                                ((c4) hg.c.h(1, arrayList3)).e.add(c4Var);
                             }
                         }
                     } else if (str.startsWith("<!--", i12)) {
@@ -2364,7 +2364,7 @@ public abstract class d4 {
                             c4 c4Var2 = null;
                             if (!trim.isEmpty()) {
                                 int i14 = 0;
-                                while (i14 < trim.length() && !r8.a(trim.charAt(i14))) {
+                                while (i14 < trim.length() && !q8.a(trim.charAt(i14))) {
                                     i14++;
                                 }
                                 String lowerCase = trim.substring(0, i14).toLowerCase();
@@ -2372,16 +2372,16 @@ public abstract class d4 {
                                     c4Var2 = new c4();
                                     c4Var2.a = lowerCase;
                                     while (i14 < trim.length()) {
-                                        while (i14 < trim.length() && r8.a(trim.charAt(i14))) {
+                                        while (i14 < trim.length() && q8.a(trim.charAt(i14))) {
                                             i14++;
                                         }
                                         if (i14 < trim.length()) {
                                             int i15 = i14;
-                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !r8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && trim.charAt(i15) != '=' && !q8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             String lowerCase2 = trim.substring(i14, i15).toLowerCase();
-                                            while (i15 < trim.length() && r8.a(trim.charAt(i15))) {
+                                            while (i15 < trim.length() && q8.a(trim.charAt(i15))) {
                                                 i15++;
                                             }
                                             if (i15 >= trim.length() || trim.charAt(i15) != '=') {
@@ -2394,7 +2394,7 @@ public abstract class d4 {
                                                     }
                                                     if (i15 < trim.length() || !(trim.charAt(i15) == '\"' || trim.charAt(i15) == c10)) {
                                                         i11 = i15;
-                                                        while (i11 < trim.length() && !r8.a(trim.charAt(i11))) {
+                                                        while (i11 < trim.length() && !q8.a(trim.charAt(i11))) {
                                                             i11++;
                                                         }
                                                         str2 = trim.substring(i15, i11);
@@ -2411,7 +2411,7 @@ public abstract class d4 {
                                                             i10++;
                                                         }
                                                     }
-                                                } while (r8.a(trim.charAt(i15)));
+                                                } while (q8.a(trim.charAt(i15)));
                                                 if (i15 < trim.length()) {
                                                 }
                                                 i11 = i15;
@@ -2437,7 +2437,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var2);
                                 } else {
-                                    ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var2);
+                                    ((c4) hg.c.h(1, arrayList3)).e.add(c4Var2);
                                 }
                                 if (!endsWith) {
                                     String str3 = c4Var2.a;
@@ -2515,7 +2515,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var3);
                                 } else {
-                                    ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var3);
+                                    ((c4) hg.c.h(1, arrayList3)).e.add(c4Var3);
                                 }
                             }
                         }
@@ -2528,7 +2528,7 @@ public abstract class d4 {
                             if (size >= 0) {
                                 if (((c4) arrayList3.get(size)).a.equals(lowerCase3)) {
                                     while (arrayList3.size() > size) {
-                                        a4.a.x(1, arrayList3);
+                                        a4.a.y(1, arrayList3);
                                     }
                                 } else {
                                     size--;

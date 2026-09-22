@@ -15,11 +15,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Cells.q3;
 import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.v81;
 import org.telegram.ui.i60;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p extends s2 {
     public float g0;
@@ -88,7 +89,7 @@ public final class p extends s2 {
         ImageView imageView = uVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (uVar.x0.getAlpha() == 1.0f) {
-                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new t81(this, 4)).start();
+                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new v81(this, 3)).start();
             } else if (uVar.x0.getParent() != null) {
                 pVar.removeView(uVar.x0);
             }
@@ -112,7 +113,7 @@ public final class p extends s2 {
         float f7;
         nr nrVar;
         float f10;
-        int b10;
+        int a2;
         float f11;
         int i10;
         float f12;
@@ -183,12 +184,12 @@ public final class p extends s2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (uVar.r || uVar.b) {
                     f10 = 10.0f;
-                    b10 = (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    a2 = (int) q3.a(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
-                    b10 = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
+                    a2 = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
                 }
-                int measuredWidth = (getMeasuredWidth() - b10) / 2;
+                int measuredWidth = (getMeasuredWidth() - a2) / 2;
                 boolean z10 = uVar.h;
                 float f19 = (z10 || uVar.f) ? m0Var.n : 0.0f;
                 float f20 = f18;
@@ -199,10 +200,10 @@ public final class p extends s2 {
                     f20 = (z10 || uVar.f) ? m0Var.n : m0Var.c;
                 }
                 float f21 = f11;
-                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - b10) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
+                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - a2) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
                 nrVar = nrVar2;
-                int i11 = dp3 + b10;
-                drawable.setBounds(measuredWidth, dp3, measuredWidth + b10, i11);
+                int i11 = dp3 + a2;
+                drawable.setBounds(measuredWidth, dp3, measuredWidth + a2, i11);
                 drawable.draw(canvas);
                 float f22 = m0Var.c;
                 if (f22 > f7 || f19 > f7) {
@@ -215,7 +216,7 @@ public final class p extends s2 {
                         rVar.setAlpha(0.0f);
                     }
                     i10 = i11;
-                    canvas.drawText(this.m0, (b10 / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
+                    canvas.drawText(this.m0, (a2 / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
                 } else {
                     rVar.setAlpha(0.0f);
                     i10 = i11;
@@ -225,7 +226,7 @@ public final class p extends s2 {
                 if (m0Var.c < 1.0f && f19 < 1.0f) {
                     textPaint.setAlpha((int) ((1.0d - Math.max(r3, f19)) * 255.0d));
                     canvas.save();
-                    canvas.translate((b10 / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
+                    canvas.translate((a2 / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
                     this.o0.draw(canvas);
                     canvas.restore();
                 }
@@ -246,9 +247,9 @@ public final class p extends s2 {
                         hVar.g = f23;
                         if (f23 > 4.0f) {
                             hVar.g = 0.0f;
-                            org.telegram.ui.web.r0 r0Var = hVar.p;
-                            if (r0Var != null) {
-                                r0Var.run();
+                            org.telegram.ui.web.u0 u0Var = hVar.p;
+                            if (u0Var != null) {
+                                u0Var.run();
                             }
                         }
                         hVar.h = currentTimeMillis;

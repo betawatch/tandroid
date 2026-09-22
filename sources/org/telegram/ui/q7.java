@@ -1,24 +1,104 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q7 extends org.telegram.ui.Cells.k7 {
-    public final /* synthetic */ l7 l0;
-    public final /* synthetic */ r7 m0;
+public final class q7 extends g7 {
+    public final /* synthetic */ s7 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q7(r7 r7Var, Context context, l7 l7Var) {
-        super(context, 0, null);
-        this.m0 = r7Var;
-        this.l0 = l7Var;
+    public q7(s7 s7Var) {
+        super(s7Var, 3);
+        this.n = s7Var;
     }
 
-    @Override // org.telegram.ui.Cells.k7
-    public final void a() {
-        t7 t7Var = this.m0.n;
-        l7 l7Var = this.l0;
-        t7.b(t7Var, (zh.a) l7Var.getTag(), l7Var);
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        k7 k7Var = (k7) c1Var.a;
+        org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) k7Var.b.getChildAt(0);
+        zh.a aVar = ((m7) this.e.get(i10)).d;
+        boolean z10 = aVar == k7Var.getTag();
+        boolean z11 = i10 != this.e.size() - 1;
+        k7Var.setTag(aVar);
+        s7 s7Var = this.n;
+        if (aVar.f == null) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.out = true;
+            tL_message.id = i10;
+            tL_message.peer_id = new TLRPC.TL_peerUser();
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            tL_message.from_id = tL_peerUser;
+            TLRPC.Peer peer = tL_message.peer_id;
+            long clientUserId = UserConfig.getInstance(s7Var.d.getCurrentAccount()).getClientUserId();
+            tL_peerUser.user_id = clientUserId;
+            peer.user_id = clientUserId;
+            tL_message.date = (int) (System.currentTimeMillis() / 1000);
+            tL_message.message = "";
+            tL_message.attachPath = aVar.a.getPath();
+            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+            tL_message.media = tL_messageMediaDocument;
+            tL_messageMediaDocument.flags |= 3;
+            tL_messageMediaDocument.document = new TLRPC.TL_document();
+            tL_message.flags |= 768;
+            tL_message.dialog_id = aVar.b;
+            String fileExtension = FileLoader.getFileExtension(aVar.a);
+            TLRPC.Document document = tL_message.media.document;
+            document.id = 0L;
+            document.access_hash = 0L;
+            document.file_reference = new byte[0];
+            document.date = tL_message.date;
+            if (fileExtension.length() <= 0) {
+                fileExtension = "mp3";
+            }
+            document.mime_type = "audio/".concat(fileExtension);
+            TLRPC.Document document2 = tL_message.media.document;
+            document2.size = aVar.c;
+            document2.dc_id = 0;
+            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
+            if (aVar.e == null) {
+                c3.k0 k0Var = new c3.k0();
+                aVar.e = k0Var;
+                k0Var.b = true;
+                Utilities.globalQueue.postRunnable(new q1(s7Var, aVar, tL_documentAttributeAudio, 4));
+            }
+            tL_documentAttributeAudio.flags |= 3;
+            tL_message.media.document.attributes.add(tL_documentAttributeAudio);
+            TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
+            tL_documentAttributeFilename.file_name = aVar.a.getName();
+            tL_message.media.document.attributes.add(tL_documentAttributeFilename);
+            MessageObject messageObject = new MessageObject(s7Var.d.getCurrentAccount(), tL_message, false, false);
+            aVar.f = messageObject;
+            messageObject.mediaExists = true;
+        }
+        i7Var.f(aVar.f, z11);
+        boolean z12 = aVar.e.b;
+        boolean z13 = !z12;
+        if (!z10) {
+            i7Var.g0 = !z12 ? 1.0f : 0.0f;
+        }
+        if (i7Var.f0 != z13) {
+            i7Var.f0 = z13;
+            i7Var.invalidate();
+        }
+        k7Var.d = z11;
+        k7Var.c.setText(AndroidUtilities.formatFileSize(aVar.c));
+        k7Var.a.a(this.n.f.j.contains(aVar), z10);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        k7 k7Var = new k7(this, viewGroup.getContext(), 1);
+        k7Var.e = 3;
+        p7 p7Var = new p7(this, viewGroup.getContext(), k7Var);
+        p7Var.setCheckForButtonPress(true);
+        k7Var.b.addView(p7Var);
+        return new org.telegram.ui.Components.vk0(k7Var);
     }
 }

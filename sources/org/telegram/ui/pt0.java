@@ -4,7 +4,7 @@ import android.R;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,8 +30,8 @@ public final /* synthetic */ class pt0 implements Runnable {
                 PhotoViewer photoViewer = this.b.b;
                 uu0 uu0Var = photoViewer.E2;
                 if (uu0Var != null) {
-                    org.telegram.ui.Components.v71 v71Var = photoViewer.F2;
-                    if (uu0Var.e != v71Var) {
+                    org.telegram.ui.Components.g71 g71Var = photoViewer.F2;
+                    if (uu0Var.e != g71Var) {
                         uu0Var.c = false;
                         uu0Var.d = false;
                         if (uu0Var.b) {
@@ -40,8 +40,8 @@ public final /* synthetic */ class pt0 implements Runnable {
                         }
                         uu0Var.setImageResource(R.color.transparent);
                     }
-                    if (v71Var != null) {
-                        i2.e0 e0Var = v71Var.d;
+                    if (g71Var != null) {
+                        i2.e0 e0Var = g71Var.d;
                         if (e0Var != null) {
                             try {
                                 e0Var.B1();
@@ -55,16 +55,16 @@ public final /* synthetic */ class pt0 implements Runnable {
                             } catch (Exception unused) {
                             }
                         }
-                        long p5 = v71Var.p() - v71Var.n();
+                        long p5 = g71Var.p() - g71Var.n();
                         if (!uu0Var.c && !uu0Var.d && !uu0Var.b && p5 < 5250.0f) {
-                            Uri uri = v71Var.F;
+                            Uri uri = g71Var.F;
                             int i11 = uu0Var.a + 1;
                             uu0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new fm0(uu0Var, uri, i11, 2));
+                            Utilities.globalQueue.postRunnable(new em0(uu0Var, uri, i11, 2));
                             uu0Var.b = true;
                         }
                     }
-                    uu0Var.e = v71Var;
+                    uu0Var.e = g71Var;
                     break;
                 }
                 break;

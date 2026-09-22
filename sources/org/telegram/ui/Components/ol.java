@@ -5,7 +5,7 @@ import java.util.Comparator;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ol implements Comparator {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class ol implements Comparator {
                 }
                 return -1;
             default:
-                kz kzVar = ((xw) obj3).G0;
+                kz kzVar = ((ww) obj3).G0;
                 int indexOf3 = kzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj);
                 int indexOf4 = kzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
                 if (indexOf3 < 0 || indexOf4 < 0) {

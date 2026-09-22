@@ -1,71 +1,62 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.view.View;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class sf1 extends s4.j {
-    public Runnable F;
-    public int G;
-    public final /* synthetic */ fg1 H;
+public final class sf1 extends View {
+    public final HashMap a;
+    public final /* synthetic */ tf1 b;
 
-    public sf1(fg1 fg1Var) {
-        this.H = fg1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sf1(tf1 tf1Var, Activity activity) {
+        super(activity);
+        this.b = tf1Var;
+        this.a = new HashMap();
     }
 
-    @Override // s4.j
-    public final void F() {
-        if (this.G == -1) {
-            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
-            Runnable runnable = this.F;
-            if (runnable != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                this.F = null;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int dp;
+        tf1 tf1Var = this.b;
+        eg1 eg1Var = tf1Var.d;
+        int size = View.MeasureSpec.getSize(i10);
+        int dp2 = AndroidUtilities.dp(64.0f);
+        int i13 = 0;
+        int i14 = 0;
+        for (int i15 = 0; i15 < tf1Var.F().size(); i15++) {
+            if (tf1Var.F().get(i15) != null && ((vf1) tf1Var.F().get(i15)).c != null) {
+                String str = ((vf1) tf1Var.F().get(i15)).c.title;
+                HashMap hashMap = this.a;
+                Boolean bool = (Boolean) hashMap.get(str);
+                if (bool == null) {
+                    int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (eg1Var.isInPreviewMode() ? 11 : 50) + 4);
+                    if (LocaleController.isRTL) {
+                        i12 = size - dp3;
+                        dp = AndroidUtilities.dp((eg1Var.isInPreviewMode() ? 11 : 50) + 13);
+                    } else {
+                        i12 = size - dp3;
+                        dp = AndroidUtilities.dp(22.0f);
+                    }
+                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.i6.B0[0].measureText(str) <= ((float) ((i12 - dp) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.i6.I0.measureText("00:00"))))));
+                    hashMap.put(str, bool);
+                }
+                int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
+                if (((vf1) tf1Var.F().get(i15)).c.id == 1) {
+                    dp2 = dp4;
+                }
+                if (((vf1) tf1Var.F().get(i15)).c.hidden) {
+                    i13++;
+                }
+                i14 += dp4;
             }
         }
-    }
-
-    @Override // s4.j
-    public final void N() {
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.F = null;
-        }
-        rf1 rf1Var = new rf1(this, 0);
-        this.F = rf1Var;
-        AndroidUtilities.runOnUIThread(rf1Var);
-    }
-
-    @Override // s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        rf1 rf1Var = new rf1(this, 1);
-        this.F = rf1Var;
-        AndroidUtilities.runOnUIThread(rf1Var);
-    }
-
-    @Override // s4.j
-    public final void z(s4.c1 c1Var) {
-        fg1 fg1Var = this.H;
-        View view = fg1Var.b1;
-        if (view == c1Var.a) {
-            view.setTranslationX(0.0f);
-            jf1 jf1Var = fg1Var.O;
-            if (jf1Var != null) {
-                jf1Var.F.clear();
-            }
-            View view2 = fg1Var.b1;
-            if (view2 instanceof cg1) {
-                cg1 cg1Var = (cg1) view2;
-                cg1Var.setTopicIcon(cg1Var.Y4);
-            }
-            fg1Var.b1 = null;
-        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, i13 > 0 ? (((eg1Var.N.getMeasuredHeight() - eg1Var.N.getPaddingTop()) - eg1Var.N.getPaddingBottom()) - i14) + dp2 : 0), TLObject.FLAG_30));
     }
 }

@@ -2,13 +2,13 @@ package w9;
 
 import android.util.Log;
 import java.io.IOException;
-import org.telegram.ui.mb1;
+import org.telegram.ui.kb1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i {
     public static final ba.a d = new ba.a(2);
-    public static final mb1 e = new mb1(8);
+    public static final kb1 e = new kb1(8);
     public final ba.c a;
     public String b = null;
     public String c = null;

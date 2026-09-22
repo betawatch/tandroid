@@ -1,53 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ri extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ org.telegram.ui.Components.sk0 o;
-    public final /* synthetic */ zn p;
+    public final /* synthetic */ org.telegram.ui.Components.fk0 o;
+    public final /* synthetic */ bo p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ri(zn znVar, eb ebVar, org.telegram.ui.Components.sk0 sk0Var) {
-        super(ebVar, -2, -2);
-        this.p = znVar;
-        this.o = sk0Var;
+    public ri(bo boVar, db dbVar, org.telegram.ui.Components.fk0 fk0Var) {
+        super(dbVar, -2, -2);
+        this.p = boVar;
+        this.o = fk0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.n1
     public final void d(boolean z10) {
         super.d(true);
-        org.telegram.ui.Components.sk0 sk0Var = this.o;
-        if (sk0Var != null) {
-            sk0Var.d();
+        org.telegram.ui.Components.fk0 fk0Var = this.o;
+        if (fk0Var != null) {
+            fk0Var.d();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        zn znVar = this.p;
-        if (znVar.Q8 != this) {
+        bo boVar = this.p;
+        if (boVar.Q8 != this) {
             return;
         }
-        org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
-        org.telegram.ui.Components.pc pcVar2 = znVar.n1;
-        if (pcVar == pcVar2 && pcVar2 != null) {
-            pcVar2.b();
-            znVar.n1 = null;
+        org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
+        org.telegram.ui.Components.oc ocVar2 = boVar.n1;
+        if (ocVar == ocVar2 && ocVar2 != null) {
+            ocVar2.b();
+            boVar.n1 = null;
         }
-        znVar.Q8 = null;
-        znVar.T8 = null;
-        znVar.S8 = null;
-        znVar.z0.R = true;
-        if (znVar.R8) {
-            znVar.g8(false, true, 0.0f);
+        boVar.Q8 = null;
+        boVar.T8 = null;
+        boVar.S8 = null;
+        boVar.z0.R = true;
+        if (boVar.R8) {
+            boVar.g8(false, true, 0.0f);
         } else {
-            znVar.R8 = true;
+            boVar.R8 = true;
         }
-        mk mkVar = znVar.Y;
+        mk mkVar = boVar.Y;
         if (mkVar == null || mkVar.getEditField() == null) {
             return;
         }
-        znVar.Y.getEditField().setAllowDrawCursor(true);
+        boVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

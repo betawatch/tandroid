@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class d extends FrameLayout {
     public boolean a;
@@ -26,7 +26,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (this.a && (view instanceof b2)) {
+        if (this.a && (view instanceof d2)) {
             return true;
         }
         return super.drawChild(canvas, view, j3);
@@ -34,7 +34,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        if (!(view instanceof v2)) {
+        if (!(view instanceof x2)) {
             super.measureChildWithMargins(view, i10, i11, i12, i13);
             return;
         }
@@ -70,7 +70,7 @@ public abstract class d extends FrameLayout {
         if (!this.f && actionMasked == 2) {
             float x10 = motionEvent.getX();
             float y3 = motionEvent.getY();
-            if (this.c || a7.a(x10, y3, this.d, this.e) > AndroidUtilities.touchSlop) {
+            if (this.c || z6.a(x10, y3, this.d, this.e) > AndroidUtilities.touchSlop) {
                 this.c = true;
                 b10.n = true;
                 b10.e(x10 - this.d, y3 - this.e);

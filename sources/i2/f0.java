@@ -3,14 +3,14 @@ package i2;
 import java.util.Set;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ag0;
-import org.telegram.ui.Components.mn0;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.pf0;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xm0;
 import org.telegram.ui.f10;
 import yh.u5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,22 +35,22 @@ public final /* synthetic */ class f0 implements Runnable {
                 int i10 = this.c;
                 int i11 = n1VarArr[i10].a.b;
                 j2.a p5 = fVar.p();
-                fVar.q(p5, 1033, new ga.a(p5, i10, i11, this.b));
+                fVar.q(p5, 1033, new hg.r(p5, i10, i11, this.b));
                 break;
             case 1:
-                ((ag0) this.d).a.b.x3(this.c, this.b);
+                ((pf0) this.d).a.b.x3(this.c, this.b);
                 break;
             case 2:
-                mn0 mn0Var = (mn0) this.d;
-                mn0Var.o = null;
-                mn0Var.c(this.c, this.b, true);
+                xm0 xm0Var = (xm0) this.d;
+                xm0Var.o = null;
+                xm0Var.c(this.c, this.b, true);
                 break;
             case 3:
-                xc a02 = xc.a0((f10) this.d);
+                vc a02 = vc.a0((f10) this.d);
                 boolean z10 = this.b;
                 int i12 = z10 ? R.raw.folder_in : R.raw.folder_out;
                 int i13 = this.c;
-                pc M = a02.M(z10 ? LocaleController.formatPluralString("FolderLinkAddedChats", i13, new Object[0]) : LocaleController.formatPluralString("FolderLinkRemovedChats", i13, new Object[0]), LocaleController.getString(R.string.FolderLinkChatlistUpdate), i12);
+                oc M = a02.M(z10 ? LocaleController.formatPluralString("FolderLinkAddedChats", i13, new Object[0]) : LocaleController.formatPluralString("FolderLinkRemovedChats", i13, new Object[0]), LocaleController.getString(R.string.FolderLinkChatlistUpdate), i12);
                 M.j = 5000;
                 M.j();
                 break;

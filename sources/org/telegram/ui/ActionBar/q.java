@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.rk;
-import org.telegram.ui.Components.j8;
+import org.telegram.messenger.vl;
+import org.telegram.ui.Components.i8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -143,11 +143,11 @@ public final /* synthetic */ class q implements Runnable {
                 break;
             case 15:
                 Drawable drawable2 = (Drawable) obj;
-                j6.d = null;
-                j6.N();
-                if (!j6.b) {
-                    j6.i(drawable2);
-                    j6.h(drawable2);
+                i6.d = null;
+                i6.N();
+                if (!i6.b) {
+                    i6.i(drawable2);
+                    i6.h(drawable2);
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
                 break;
@@ -155,17 +155,17 @@ public final /* synthetic */ class q implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                rk.m(1, (n2) obj);
+                vl.n(1, (n2) obj);
                 break;
             case 18:
-                j8 j8Var = (j8) j6.e5.remove((MessageObject) obj);
-                if (j8Var != null) {
-                    j8Var.i = null;
+                i8 i8Var = (i8) i6.e5.remove((MessageObject) obj);
+                if (i8Var != null) {
+                    i8Var.i = null;
                     break;
                 }
                 break;
             default:
-                ((i6) obj).s();
+                ((h6) obj).s();
                 break;
         }
     }

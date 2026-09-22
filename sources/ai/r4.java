@@ -8,43 +8,43 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.n50;
+import org.telegram.ui.Components.o50;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class r4 implements n50 {
+public final class r4 implements o50 {
     public final /* synthetic */ f6 a;
 
     public r4(f6 f6Var) {
         this.a = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final long a() {
         return this.a.B1;
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final int getClassGuid() {
         return this.a.z2;
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final View getFragmentView() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final Activity getParentActivity() {
         return AndroidUtilities.findActivity(this.a.getContext());
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final void q(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j3) {
         AccountInstance accountInstance;
         AccountInstance accountInstance2;
@@ -74,7 +74,7 @@ public final class r4 implements n50 {
         f6Var.k0(j3 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.n50
+    @Override // org.telegram.ui.Components.o50
     public final /* synthetic */ boolean v() {
         return false;
     }

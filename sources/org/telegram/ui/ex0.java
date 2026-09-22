@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ex0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -42,12 +42,12 @@ public final /* synthetic */ class ex0 implements ValueAnimator.AnimatorUpdateLi
                 }
                 break;
             default:
-                lb1 lb1Var = (lb1) this.b;
+                jb1 jb1Var = (jb1) this.b;
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 org.telegram.ui.Components.ui uiVar = (org.telegram.ui.Components.ui) this.d;
-                lb1Var.getClass();
-                lb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(lb1Var.a);
+                jb1Var.getClass();
+                jb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(jb1Var.a);
                 uiVar.invalidate();
                 break;
         }

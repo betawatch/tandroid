@@ -23,7 +23,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -32,7 +32,7 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     public TextView b;
     public org.telegram.ui.Components.voip.v2 c;
     public org.telegram.ui.Components.voip.v2 d;
-    public v9 e;
+    public u9 e;
     public RectF f;
     public Paint h;
     public LinearGradient n;
@@ -130,12 +130,12 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
         super.onAttachedToWindow();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null && sharedInstance.groupCall != null) {
-            g9 g9Var = new g9((org.telegram.ui.ActionBar.f6) null);
+            f9 f9Var = new f9((org.telegram.ui.ActionBar.e6) null);
             TLRPC.Chat chat = sharedInstance.getChat();
-            g9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[g9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[g9.e(chat != null ? chat.id : 0L)], false));
-            g9Var.k(i10, chat);
+            f9Var.i(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.p8[f9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q8[f9.e(chat != null ? chat.id : 0L)], false));
+            f9Var.k(i10, chat);
             if (chat != null) {
-                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", g9Var, null);
+                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", f9Var, null);
             }
             if (!sharedInstance.isConference() || (call = sharedInstance.groupCall) == null) {
                 str = !TextUtils.isEmpty(sharedInstance.groupCall.call.title) ? sharedInstance.groupCall.call.title : chat != null ? chat.title : "";
@@ -238,10 +238,10 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
                         this.w = true;
                         invalidate();
                         if (this.w) {
-                            int d = i0.a.d(1.0f - this.E, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ch, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.eh, false));
-                            int d10 = i0.a.d(1.0f - this.E, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.dh, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fh, false));
-                            int d11 = i0.a.d(this.F, d, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gh, false));
-                            int d12 = i0.a.d(this.F, d10, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hh, false));
+                            int d = i0.a.d(1.0f - this.E, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ch, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.eh, false));
+                            int d10 = i0.a.d(1.0f - this.E, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.dh, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.fh, false));
+                            int d11 = i0.a.d(this.F, d, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gh, false));
+                            int d12 = i0.a.d(this.F, d10, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hh, false));
                             this.w = false;
                             int i12 = this.r;
                             if (i12 == 0) {

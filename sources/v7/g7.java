@@ -1,41 +1,15 @@
 package v7;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public abstract class g7 {
-    public static f4.g a(f4.g gVar, String[] strArr, Map map) {
-        int i10 = 0;
-        if (gVar == null) {
-            if (strArr == null) {
-                return null;
-            }
-            if (strArr.length == 1) {
-                return (f4.g) map.get(strArr[0]);
-            }
-            if (strArr.length > 1) {
-                f4.g gVar2 = new f4.g();
-                int length = strArr.length;
-                while (i10 < length) {
-                    gVar2.a((f4.g) map.get(strArr[i10]));
-                    i10++;
-                }
-                return gVar2;
-            }
-        } else {
-            if (strArr != null && strArr.length == 1) {
-                gVar.a((f4.g) map.get(strArr[0]));
-                return gVar;
-            }
-            if (strArr != null && strArr.length > 1) {
-                int length2 = strArr.length;
-                while (i10 < length2) {
-                    gVar.a((f4.g) map.get(strArr[i10]));
-                    i10++;
-                }
-            }
-        }
-        return gVar;
+public final class g7 {
+    public final b6 a;
+    public final f6 b;
+    public final e7 c;
+
+    public /* synthetic */ g7(r1 r1Var) {
+        this.a = (b6) r1Var.b;
+        this.b = (f6) r1Var.d;
+        this.c = (e7) r1Var.c;
     }
 }

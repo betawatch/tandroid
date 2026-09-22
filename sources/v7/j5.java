@@ -1,24 +1,26 @@
 package v7;
 
-import android.os.Bundle;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class j5 {
-    public static Map a(String str, Bundle bundle) {
-        Map map = (Map) bundle.getSerializable(str);
-        if (map == null) {
-            return com.google.android.gms.internal.cast.u0.n;
-        }
-        HashMap hashMap = new HashMap();
-        for (Map.Entry entry : map.entrySet()) {
-            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
-                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
+    public static String a(String str) {
+        int length = str.length();
+        int i10 = 0;
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
+            if (charAt >= 'a' && charAt <= 'z') {
+                char[] charArray = str.toCharArray();
+                while (i10 < length) {
+                    char c10 = charArray[i10];
+                    if (c10 >= 'a' && c10 <= 'z') {
+                        charArray[i10] = (char) (c10 ^ ' ');
+                    }
+                    i10++;
+                }
+                return String.valueOf(charArray);
             }
+            i10++;
         }
-        return DesugarCollections.unmodifiableMap(hashMap);
+        return str;
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f80 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class f80 implements Runnable {
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     h80Var.getClass();
-                    AndroidUtilities.runOnUIThread(new vq(h80Var, arrayList, arrayList2, 12));
+                    AndroidUtilities.runOnUIThread(new xq(h80Var, arrayList, arrayList2, 12));
                     break;
                 } else {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -61,7 +61,7 @@ public final /* synthetic */ class f80 implements Runnable {
                         while (true) {
                             if (i12 < i10) {
                                 String str2 = strArr[i12];
-                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.l0.v(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.l0.v(" ", str2, translitString2)))) {
+                                if (lowerCase2.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, translitString2)))) {
                                     z10 = true;
                                 }
                                 if (z10) {
@@ -73,7 +73,7 @@ public final /* synthetic */ class f80 implements Runnable {
                             }
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new vq(h80Var, arrayList3, arrayList4, 12));
+                    AndroidUtilities.runOnUIThread(new xq(h80Var, arrayList3, arrayList4, 12));
                     break;
                 }
                 break;

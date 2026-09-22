@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.web.r0;
+import org.telegram.ui.web.u0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p {
     public final int a;
     public final TLRPC.InputPeer b;
     public final int c;
     public final byte[] d;
-    public final r0 e;
+    public final u0 e;
     public final Utilities.Callback f;
     public String g;
     public boolean h;
     public boolean i;
     public final ArrayList j = new ArrayList();
 
-    public p(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, r0 r0Var, Utilities.Callback callback) {
+    public p(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, u0 u0Var, Utilities.Callback callback) {
         this.a = i10;
         this.b = inputPeer;
         this.c = i11;
         this.d = bArr;
-        this.e = r0Var;
+        this.e = u0Var;
         this.f = callback;
     }
 

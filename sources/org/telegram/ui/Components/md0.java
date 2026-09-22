@@ -1,23 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class md0 {
-    public Paint a;
-    public Paint b;
-    public View c;
-    public i2.z d;
-    public long e;
-    public RectF f;
-    public float g;
-    public float h;
-    public float i;
-    public Path j;
-    public boolean k;
-    public boolean l;
+public final class md0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nd0 b;
+
+    public /* synthetic */ md0(nd0 nd0Var, int i10) {
+        this.a = i10;
+        this.b = nd0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
+        switch (this.a) {
+            case 0:
+                sd0 sd0Var = this.b.d;
+                sd0Var.P = 1.0f;
+                sd0Var.f(1.0f);
+                break;
+            default:
+                nd0 nd0Var = this.b;
+                Runnable runnable = nd0Var.c;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                if (SharedConfig.passcodeType == 1 && nd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = nd0Var.d.r) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(nd0Var.d.r);
+                    break;
+                }
+                break;
+        }
+    }
 }

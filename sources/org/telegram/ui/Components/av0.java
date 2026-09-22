@@ -1,146 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class av0 {
-    public boolean g;
-    public boolean h;
-    public int k;
-    public int m;
-    public int n;
-    public boolean o;
-    public int p;
-    public boolean r;
-    public int t;
-    public int u;
-    public boolean v;
-    public boolean w;
-    public final ArrayList a = new ArrayList();
-    public final SparseArray[] b = {new SparseArray(), new SparseArray()};
-    public final ArrayList c = new ArrayList();
-    public final HashMap d = new HashMap();
-    public final ArrayList e = new ArrayList();
-    public final int[] f = {0, 0};
-    public final boolean[] i = {false, true};
-    public final int[] j = {0, 0};
-    public boolean l = true;
-    public int q = 0;
-    public final ArrayList s = new ArrayList();
-    public s4.u0 x = new s4.u0();
+public final class av0 extends kl0 {
+    public final Context c;
+    public final /* synthetic */ cv0 d;
 
-    public final boolean a(MessageObject messageObject, int i10, boolean z10, boolean z11) {
-        SparseArray[] sparseArrayArr = this.b;
-        if (sparseArrayArr[i10].indexOfKey(messageObject.getId()) >= 0) {
-            return false;
+    public av0(cv0 cv0Var, Context context) {
+        this.d = cv0Var;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return LocationController.getLocationsCount() + 1;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 == 0 ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        TextView textView;
+        int i11 = c1Var.f;
+        if (i11 == 0) {
+            ((org.telegram.ui.Cells.w7) c1Var.a).setDialog(cv0.p(i10 - 1));
+        } else if (i11 == 1 && (textView = this.d.e) != null) {
+            textView.setText(LocaleController.formatString("SharingLiveLocationTitle", R.string.SharingLiveLocationTitle, LocaleController.formatPluralString("Chats", LocationController.getLocationsCount(), new Object[0])));
         }
-        String str = messageObject.monthKey;
-        HashMap hashMap = this.d;
-        ArrayList arrayList = (ArrayList) hashMap.get(str);
-        if (arrayList == null) {
-            arrayList = new ArrayList();
-            hashMap.put(messageObject.monthKey, arrayList);
-            ArrayList arrayList2 = this.c;
-            if (z10) {
-                arrayList2.add(0, messageObject.monthKey);
-            } else {
-                arrayList2.add(messageObject.monthKey);
-            }
-        }
-        ArrayList arrayList3 = this.a;
-        if (z10) {
-            arrayList.add(0, messageObject);
-            arrayList3.add(0, messageObject);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout w7Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        Context context = this.c;
+        cv0 cv0Var = this.d;
+        if (i10 != 0) {
+            w7Var = new ai.x5(context, 18);
+            w7Var.setWillNotDraw(false);
+            TextView textView = new TextView(context);
+            cv0Var.e = textView;
+            textView.setTextColor(cv0Var.getThemedColor(org.telegram.ui.ActionBar.i6.J5));
+            cv0Var.e.setTextSize(1, 14.0f);
+            cv0Var.e.setGravity(17);
+            cv0Var.e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
+            w7Var.addView(cv0Var.e, w7.x5.c(40.0f, -1));
         } else {
-            arrayList.add(messageObject);
-            arrayList3.add(messageObject);
+            e6Var = ((org.telegram.ui.ActionBar.f3) cv0Var).resourcesProvider;
+            w7Var = new org.telegram.ui.Cells.w7(54, context, e6Var, false);
         }
-        sparseArrayArr[i10].put(messageObject.getId(), messageObject);
-        int[] iArr = this.j;
-        if (z11) {
-            iArr[i10] = Math.max(messageObject.getId(), iArr[i10]);
-            this.k = Math.min(messageObject.getId(), this.k);
-        } else if (messageObject.getId() > 0) {
-            iArr[i10] = Math.min(messageObject.getId(), iArr[i10]);
-            this.k = Math.max(messageObject.getId(), this.k);
-        }
-        if (!this.v && messageObject.isVideo()) {
-            this.v = true;
-        }
-        if (!this.w && messageObject.isPhoto()) {
-            this.w = true;
-        }
-        return true;
-    }
-
-    public final MessageObject b(int i10, int i11) {
-        SparseArray[] sparseArrayArr = this.b;
-        MessageObject messageObject = (MessageObject) sparseArrayArr[i11].get(i10);
-        if (messageObject == null) {
-            return null;
-        }
-        String str = messageObject.monthKey;
-        HashMap hashMap = this.d;
-        ArrayList arrayList = (ArrayList) hashMap.get(str);
-        if (arrayList == null) {
-            return null;
-        }
-        arrayList.remove(messageObject);
-        this.a.remove(messageObject);
-        sparseArrayArr[i11].remove(messageObject.getId());
-        if (arrayList.isEmpty()) {
-            hashMap.remove(messageObject.monthKey);
-            this.c.remove(messageObject.monthKey);
-        }
-        int[] iArr = this.f;
-        int i12 = iArr[i11] - 1;
-        iArr[i11] = i12;
-        if (i12 < 0) {
-            iArr[i11] = 0;
-        }
-        return messageObject;
-    }
-
-    public final ArrayList c() {
-        return this.r ? this.s : this.a;
-    }
-
-    public final int d() {
-        return this.r ? this.t : this.m;
-    }
-
-    public final int e() {
-        int[] iArr = this.f;
-        return iArr[0] + iArr[1];
-    }
-
-    public final void f(int i10, int i11, int i12) {
-        SparseArray[] sparseArrayArr = this.b;
-        MessageObject messageObject = (MessageObject) sparseArrayArr[i10].get(i11);
-        if (messageObject != null) {
-            sparseArrayArr[i10].remove(i11);
-            sparseArrayArr[i10].put(i12, messageObject);
-            messageObject.messageOwner.id = i12;
-            int[] iArr = this.j;
-            iArr[i10] = Math.min(i12, iArr[i10]);
-        }
-    }
-
-    public final void g(boolean z10) {
-        if (this.r == z10) {
-            return;
-        }
-        this.r = z10;
-        if (z10) {
-            this.t = this.m;
-            this.u = this.n;
-            ArrayList arrayList = this.s;
-            arrayList.clear();
-            arrayList.addAll(this.a);
-        }
+        return new vk0(w7Var);
     }
 }

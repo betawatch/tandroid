@@ -1,31 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ep0 extends LinearLayout {
+public final /* synthetic */ class ep0 implements ah.m {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ ll0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ep0(Context context, int i10, int i11) {
-        super(context);
+    public /* synthetic */ ep0(ll0 ll0Var, int i10) {
         this.a = i10;
-        this.b = i11;
+        this.b = ll0Var;
     }
 
-    @Override // android.view.View
-    public final int getSuggestedMinimumWidth() {
-        return AndroidUtilities.dp(260.0f);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
+    @Override // ah.m
+    public final boolean a(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                return ((jp0) this.b).drawChild(canvas, view, j3);
+            default:
+                return ((qt0) this.b).drawChild(canvas, view, j3);
+        }
     }
 }

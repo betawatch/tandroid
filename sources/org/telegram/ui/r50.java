@@ -17,7 +17,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class r50 extends Dialog {
     public final ai.n4 a;
@@ -35,7 +35,7 @@ public final class r50 extends Dialog {
         this.f = new Matrix();
         this.b = s50Var;
         s50Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new of(27, this, s50Var), 14.0f);
+        AndroidUtilities.makeGlobalBlurBitmap(new nf(27, this, s50Var), 14.0f);
         ai.n4 n4Var = new ai.n4(this, context, s50Var);
         this.a = n4Var;
         n4Var.setOnClickListener(new a(this, 29));
@@ -49,7 +49,7 @@ public final class r50 extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
         this.n = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 15));
+        ofFloat.addUpdateListener(new b3(this, 16));
         this.n.addListener(new ai.t2(this, f7, q50Var, 3));
         this.n.setDuration(420L);
         this.n.setInterpolator(org.telegram.ui.Components.qr.h);

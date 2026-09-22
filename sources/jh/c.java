@@ -11,42 +11,42 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.jj;
-import w7.a6;
-import w7.y5;
+import w7.x5;
+import w7.z5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
-    public final f6 a;
+    public final e6 a;
     public final cf.c b;
     public final cf.c c;
     public float d;
 
-    public c(Context context, f6 f6Var, jj jjVar, ah.c cVar) {
+    public c(Context context, e6 e6Var, jj jjVar, ah.c cVar) {
         super(context);
         cf.c cVar2 = new cf.c(this);
         this.b = cVar2;
         cf.c cVar3 = new cf.c(this);
         this.c = cVar3;
-        this.a = f6Var;
-        ih.a c10 = ih.a.c(cVar, context, jjVar, f6Var);
+        this.a = e6Var;
+        ih.a c10 = ih.a.c(cVar, context, jjVar, e6Var);
         cVar2.a = c10;
         c10.setOnClickListener(new e2(5));
-        a6.b((ih.a) cVar2.a, 0.065f, 2.0f);
-        ih.a c11 = ih.a.c(cVar, context, jjVar, f6Var);
+        z5.b((ih.a) cVar2.a, 0.065f, 2.0f);
+        ih.a c11 = ih.a.c(cVar, context, jjVar, e6Var);
         cVar3.a = c11;
         c11.setOnClickListener(new e2(5));
-        a6.b((ih.a) cVar3.a, 0.065f, 2.0f);
+        z5.b((ih.a) cVar3.a, 0.065f, 2.0f);
         a(cVar2, LocaleController.getString(R.string.Reply), R.drawable.input_reply, false);
         a(cVar3, LocaleController.getString(R.string.Forward), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
-        addView((ih.a) cVar2.a, y5.m(1.0f, 0, 56, 1, -1, 0));
-        addView((ih.a) cVar3.a, y5.m(1.0f, 0, 56, -1, 1, 0));
+        addView((ih.a) cVar2.a, x5.m(1.0f, 0, 56, 1, -1, 0));
+        addView((ih.a) cVar3.a, x5.m(1.0f, 0, 56, -1, 1, 0));
     }
 
     public final void a(cf.c cVar, String str, int i10, boolean z10) {
@@ -56,19 +56,19 @@ public final class c extends LinearLayout {
         textView.setTextSize(1, 15.0f);
         textView.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
         textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        int i11 = j6.Xk;
-        f6 f6Var = this.a;
-        textView.setTextColor(j6.v0(i11, f6Var));
+        int i11 = i6.Xk;
+        e6 e6Var = this.a;
+        textView.setTextColor(i6.v0(i11, e6Var));
         textView.setTypeface(AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Wk, f6Var), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.Wk, e6Var), PorterDuff.Mode.MULTIPLY));
         Drawable drawable = z10 ? mutate : null;
         if (z10) {
             mutate = null;
         }
         textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
         cVar.b = textView;
-        ((ih.a) cVar.a).addView(textView, y5.e(-2, -2, 17));
+        ((ih.a) cVar.a).addView(textView, x5.e(-2, -2, 17));
     }
 
     public final void b(cf.c cVar) {

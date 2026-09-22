@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class eq extends Drawable {
     public final Drawable a;
@@ -18,7 +18,7 @@ public final class eq extends Drawable {
     public final float[] f;
 
     public eq(Drawable drawable) {
-        ah.d dVar = new ah.d(this, 3);
+        i.f fVar = new i.f(this, 2);
         this.c = new RectF();
         this.d = new RectF();
         this.e = false;
@@ -30,7 +30,7 @@ public final class eq extends Drawable {
         this.a = drawable;
         if (drawable != null) {
             drawable.setBounds(getBounds());
-            this.a.setCallback(dVar);
+            this.a.setCallback(fVar);
         }
     }
 

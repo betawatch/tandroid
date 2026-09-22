@@ -13,19 +13,18 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.t40;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bo;
 import org.telegram.ui.dv0;
-import org.telegram.ui.h01;
+import org.telegram.ui.i01;
 import org.telegram.ui.i60;
 import org.telegram.ui.uy;
-import org.telegram.ui.web.g1;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.c5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
+public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.b5, org.telegram.ui.ActionBar.a2, t5.b, r9.g, t40 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -40,14 +39,14 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         this.e = obj3;
     }
 
-    @Override // org.telegram.ui.Components.c5
+    @Override // org.telegram.ui.Components.b5
     public void J(int i10, int i11, boolean z10) {
-        zn.d0((zn) this.c, (ArrayList) this.d, this.b, (om0) this.e, z10, i10);
+        bo.r0((bo) this.c, (ArrayList) this.d, this.b, (am0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.t40
     public void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        zn znVar = (zn) this.c;
+        bo boVar = (bo) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
         TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
         if (inputFile == null && inputFile2 == null && videoSize == null) {
@@ -70,23 +69,23 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
             tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
             tL_photos_uploadProfilePhoto.flags |= 16;
         }
-        znVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ai.fa(znVar, fileLocationArr, str, fileLocationArr2, this.b));
+        boVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ai.fa(boVar, fileLocationArr, str, fileLocationArr2, this.b));
     }
 
     @Override // r9.g
-    public ScheduledFuture a(final l.d dVar) {
+    public ScheduledFuture a(final k2.u uVar) {
         switch (this.a) {
             case 5:
                 r9.f fVar = (r9.f) this.c;
                 Runnable runnable = (Runnable) this.d;
-                return fVar.b.schedule(new r9.d(fVar, runnable, dVar, 1), this.b, (TimeUnit) this.e);
+                return fVar.b.schedule(new r9.d(fVar, runnable, uVar, 1), this.b, (TimeUnit) this.e);
             default:
                 final r9.f fVar2 = (r9.f) this.c;
                 final Callable callable = (Callable) this.d;
                 return fVar2.b.schedule(new Callable() { // from class: r9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new g1(17, callable, dVar));
+                        return f.this.a.submit(new p2.b(11, callable, uVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
@@ -118,37 +117,41 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // t5.b
-    public Object g() {
-        da.b bVar = (da.b) this.c;
-        Iterable iterable = (Iterable) this.d;
-        l5.i iVar = (l5.i) this.e;
-        s5.h hVar = (s5.h) ((s5.d) bVar.c);
-        hVar.getClass();
-        if (iterable.iterator().hasNext()) {
-            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.h.g(iterable);
-            SQLiteDatabase a2 = hVar.a();
-            a2.beginTransaction();
-            try {
-                a2.compileStatement(str).execute();
-                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
-                while (rawQuery.moveToNext()) {
-                    try {
-                        hVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
-                    } catch (Throwable th2) {
-                        rawQuery.close();
-                        throw th2;
-                    }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 2:
+                ChatObject.Call call = (ChatObject.Call) this.c;
+                org.telegram.ui.Cells.z1[] z1VarArr = (org.telegram.ui.Cells.z1[]) this.d;
+                Runnable runnable = (Runnable) this.e;
+                boolean z10 = false;
+                org.telegram.ui.Cells.z1 z1Var = z1VarArr[0];
+                if (z1Var != null && z1Var.b()) {
+                    z10 = true;
                 }
-                rawQuery.close();
-                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
-                a2.setTransactionSuccessful();
-            } finally {
-                a2.endTransaction();
-            }
+                i60.w1(call, z10, this.b, runnable);
+                break;
+            default:
+                i01 i01Var = (i01) this.c;
+                uy uyVar = (uy) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                ProfileActivity profileActivity = i01Var.b;
+                profileActivity.N1 = true;
+                Bundle i11 = a4.a.i("scrollToTopOnResume", true);
+                long j3 = -this.b;
+                i11.putLong("chat_id", j3);
+                if (profileActivity.getMessagesController().checkCanOpenChat(i11, uyVar)) {
+                    bo boVar = new bo(i11);
+                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
+                    int i12 = NotificationCenter.closeChats;
+                    notificationCenter.removeObserver(profileActivity, i12);
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
+                    profileActivity.getMessagesController().addUserToChat(j3, user, 0, null, boVar, true, null, null);
+                    profileActivity.presentFragment(boVar, true);
+                    break;
+                }
+                break;
         }
-        hVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
-        return null;
     }
 
     @Override // org.telegram.ui.Components.t40
@@ -161,41 +164,37 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 2:
-                ChatObject.Call call = (ChatObject.Call) this.c;
-                org.telegram.ui.Cells.a2[] a2VarArr = (org.telegram.ui.Cells.a2[]) this.d;
-                Runnable runnable = (Runnable) this.e;
-                boolean z10 = false;
-                org.telegram.ui.Cells.a2 a2Var = a2VarArr[0];
-                if (a2Var != null && a2Var.b()) {
-                    z10 = true;
+    @Override // t5.b
+    public Object i() {
+        da.b bVar = (da.b) this.c;
+        Iterable iterable = (Iterable) this.d;
+        l5.i iVar = (l5.i) this.e;
+        s5.g gVar = (s5.g) ((s5.d) bVar.c);
+        gVar.getClass();
+        if (iterable.iterator().hasNext()) {
+            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.g.g(iterable);
+            SQLiteDatabase a2 = gVar.a();
+            a2.beginTransaction();
+            try {
+                a2.compileStatement(str).execute();
+                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
+                while (rawQuery.moveToNext()) {
+                    try {
+                        gVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
+                    } catch (Throwable th2) {
+                        rawQuery.close();
+                        throw th2;
+                    }
                 }
-                i60.w1(call, z10, this.b, runnable);
-                break;
-            default:
-                h01 h01Var = (h01) this.c;
-                uy uyVar = (uy) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = h01Var.b;
-                profileActivity.N1 = true;
-                Bundle i11 = a4.a.i("scrollToTopOnResume", true);
-                long j3 = -this.b;
-                i11.putLong("chat_id", j3);
-                if (profileActivity.getMessagesController().checkCanOpenChat(i11, uyVar)) {
-                    zn znVar = new zn(i11);
-                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
-                    int i12 = NotificationCenter.closeChats;
-                    notificationCenter.removeObserver(profileActivity, i12);
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
-                    profileActivity.getMessagesController().addUserToChat(j3, user, 0, null, znVar, true, null, null);
-                    profileActivity.presentFragment(znVar, true);
-                    break;
-                }
-                break;
+                rawQuery.close();
+                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
+                a2.setTransactionSuccessful();
+            } finally {
+                a2.endTransaction();
+            }
         }
+        gVar.c(new ai.z1(((u5.a) bVar.g).q() + this.b, iVar));
+        return null;
     }
 
     @Override // org.telegram.ui.Components.t40
@@ -211,9 +210,9 @@ public final /* synthetic */ class z6 implements m8, org.telegram.ui.Components.
         this.b = j3;
     }
 
-    public /* synthetic */ z6(h01 h01Var, long j3, uy uyVar, TLRPC.User user) {
+    public /* synthetic */ z6(i01 i01Var, long j3, uy uyVar, TLRPC.User user) {
         this.a = 3;
-        this.c = h01Var;
+        this.c = i01Var;
         this.b = j3;
         this.d = uyVar;
         this.e = user;

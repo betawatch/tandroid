@@ -14,9 +14,9 @@ import java.lang.reflect.Array;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -134,7 +134,7 @@ public abstract class c {
                         float f12 = 0.0f;
                         z10 = f11 < 0.0f && f11 <= 100.0f;
                         if (f7 == 1.0f || z10) {
-                            int b10 = q.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                            int b10 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                             if (z10) {
                                 iArr = trimStateSet;
                                 i11 = depth2;
@@ -280,7 +280,7 @@ public abstract class c {
                 }
                 if (f7 == 1.0f) {
                 }
-                int b102 = q.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                int b102 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                 if (z10) {
                 }
                 color = (16777215 & color) | (b102 << 24);

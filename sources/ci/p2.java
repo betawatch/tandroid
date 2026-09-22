@@ -6,9 +6,9 @@ import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.g10;
-import org.telegram.ui.sl0;
+import org.telegram.ui.pl0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class p2 extends TimerTask {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final class p2 extends TimerTask {
                 AndroidUtilities.runOnUIThread(new g10(this, 23));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new sl0(this, 5));
+                AndroidUtilities.runOnUIThread(new pl0(this, 5));
                 break;
         }
     }

@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh implements Runnable {
     public final /* synthetic */ int a;
@@ -26,6 +26,7 @@ public final /* synthetic */ class sh implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        vc a02;
         switch (this.a) {
             case 0:
                 break;
@@ -51,12 +52,6 @@ public final /* synthetic */ class sh implements Runnable {
                 }
                 break;
             case 7:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                break;
-            case 8:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 9:
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
@@ -65,77 +60,89 @@ public final /* synthetic */ class sh implements Runnable {
                     break;
                 }
                 break;
-            case 10:
-                int i12 = x01.f;
+            case 8:
+                int i12 = h01.f;
                 break;
-            case 11:
+            case 9:
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                n11.f = Boolean.TRUE;
+                x01.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
-            case 12:
+            case 10:
                 SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                n11.f = Boolean.TRUE;
+                x01.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
-            case 13:
-                int i13 = n31.f0;
+            case 11:
+                int i13 = x21.f0;
                 break;
-            case 14:
+            case 12:
                 SavedMessagesController.openSavedMessages();
                 break;
-            case 15:
+            case 13:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
                 break;
-            case 16:
+            case 14:
                 org.telegram.ui.Components.voip.m2.i();
                 break;
-            case 17:
+            case 15:
                 ai.w7.p();
                 break;
-            case 18:
+            case 16:
                 org.telegram.ui.i60 i60Var = org.telegram.ui.i60.D3;
                 if (i60Var != null) {
                     i60Var.show();
                     break;
                 }
                 break;
-            case 19:
+            case 17:
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().setMicMute(false, true, false);
                     break;
                 }
                 break;
-            case 20:
+            case 18:
                 Pattern pattern = LaunchActivity.B1;
                 break;
-            case 21:
+            case 19:
                 Pattern pattern2 = LaunchActivity.B1;
                 break;
-            case 22:
+            case 20:
                 Pattern pattern3 = LaunchActivity.B1;
                 ApplicationLoader.mainInterfacePausedStageQueue = false;
                 ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
                 break;
+            case 21:
+                break;
+            case 22:
+                CallReceiver.checkLastReceivedCall();
+                break;
             case 23:
+                CallReceiver.checkLastReceivedCall();
                 break;
             case 24:
-                CallReceiver.checkLastReceivedCall();
+                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 25:
-                CallReceiver.checkLastReceivedCall();
+                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 26:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
-            case 27:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
-            case 28:
                 Drawable[] drawableArr = PhotoViewer.U8;
                 break;
+            case 27:
+                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 28:
+                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
             default:
-                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && (a02 = vc.a0(U)) != null) {
+                    oc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    M.j = 5000;
+                    M.j();
+                    break;
+                }
                 break;
         }
     }

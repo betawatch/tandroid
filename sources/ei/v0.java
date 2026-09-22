@@ -13,15 +13,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.w6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.v6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class v0 extends Drawable implements w6 {
+public final class v0 extends Drawable implements v6 {
     public final Paint a;
     public final Paint b;
     public final Paint c;
@@ -48,30 +48,30 @@ public final class v0 extends Drawable implements w6 {
         paint2.setColor(-1);
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
         this.f = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.L5, false), PorterDuff.Mode.SRC_IN));
-        g9 g9Var = new g9((f6) null);
-        g9Var.r(user);
-        imageReceiver.setForUserOrChat(user, g9Var);
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.L5, false), PorterDuff.Mode.SRC_IN));
+        f9 f9Var = new f9((e6) null);
+        f9Var.r(user);
+        imageReceiver.setForUserOrChat(user, f9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(25.0f));
-        g9 g9Var2 = new g9((f6) null);
-        g9Var2.r(user2);
-        imageReceiver2.setForUserOrChat(user2, g9Var2);
+        f9 f9Var2 = new f9((e6) null);
+        f9Var2.r(user2);
+        imageReceiver2.setForUserOrChat(user2, f9Var2);
         imageReceiver2.setRoundRadius(AndroidUtilities.dp(25.0f));
     }
 
-    @Override // org.telegram.ui.Components.w6
-    public final void a(nj0 nj0Var) {
-        this.e.setParentView(nj0Var);
-        this.d.setParentView(nj0Var);
+    @Override // org.telegram.ui.Components.v6
+    public final void a(aj0 aj0Var) {
+        this.e.setParentView(aj0Var);
+        this.d.setParentView(aj0Var);
     }
 
-    @Override // org.telegram.ui.Components.w6
+    @Override // org.telegram.ui.Components.v6
     public final void b(ImageReceiver imageReceiver) {
         this.d.onDetachedFromWindow();
         this.e.onDetachedFromWindow();
     }
 
-    @Override // org.telegram.ui.Components.w6
+    @Override // org.telegram.ui.Components.v6
     public final void c(ImageReceiver imageReceiver) {
         this.d.onAttachedToWindow();
         this.e.onAttachedToWindow();
@@ -80,7 +80,7 @@ public final class v0 extends Drawable implements w6 {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        int w02 = j6.w0(null, j6.L5, false);
+        int w02 = i6.w0(null, i6.L5, false);
         Paint paint = this.b;
         paint.setColor(w02);
         float dp = AndroidUtilities.dp(136.0f) / 2.0f;

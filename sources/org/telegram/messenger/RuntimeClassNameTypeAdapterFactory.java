@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -105,7 +105,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new kb.a(Class.forName(n10)));
                         } catch (ClassNotFoundException e10) {
-                            throw new androidx.car.app.j(v7.j0.g("Cannot find class ", n10), e10);
+                            throw new androidx.car.app.j(org.telegram.ui.Cells.q3.i("Cannot find class ", n10), e10);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
@@ -132,13 +132,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                     fb.d.l(jsonTree, bVar);
                     return;
                 }
-                fb.n nVar = jsonTree.i().a;
-                if (nVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
+                fb.m mVar = jsonTree.i().a;
+                if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
                 db.l lVar = new db.l();
                 lVar.o(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new db.m(simpleName));
-                Iterator it = ((fb.l) nVar.entrySet()).iterator();
+                Iterator it = ((fb.k) mVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
                     lVar.o((String) entry.getKey(), (db.i) entry.getValue());

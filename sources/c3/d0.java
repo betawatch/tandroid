@@ -4,7 +4,7 @@ import b2.r0;
 import e9.a1;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -40,8 +40,8 @@ public final class d0 implements o {
         String str = this.c;
         rVar.p = r0.n(str);
         rVar.q = r0.n(str);
-        hg.k0.s(rVar, Z1);
-        this.f.f1();
+        hg.c.u(rVar, Z1);
+        this.f.e1();
         this.f.X1(new e0());
         this.e = 1;
     }

@@ -30,9 +30,9 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.c1;
+import u2.b1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1583,7 +1583,7 @@ public final class n extends r2.r {
     public final void I0(r2.l lVar, int i10, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.f(i10, j3);
+        lVar.g(i10, j3);
         Trace.endSection();
         this.O0.e++;
         this.v1 = 0;
@@ -1593,7 +1593,7 @@ public final class n extends r2.r {
             of.b bVar = this.Z0;
             if (!equals && !x1Var.equals(this.D1)) {
                 this.D1 = x1Var;
-                bVar.Z(x1Var);
+                bVar.W(x1Var);
             }
             a0 a0Var = this.c1;
             boolean z10 = a0Var.e != 3;
@@ -1603,7 +1603,7 @@ public final class n extends r2.r {
             if (!z10 || (surface = this.n1) == null) {
                 return;
             }
-            bVar.V(surface);
+            bVar.S(surface);
             this.q1 = true;
         }
     }
@@ -1616,13 +1616,13 @@ public final class n extends r2.r {
             if (surface != null) {
                 x1 x1Var = this.D1;
                 if (x1Var != null) {
-                    bVar.Z(x1Var);
+                    bVar.W(x1Var);
                 }
                 Surface surface3 = this.n1;
                 if (surface3 == null || !this.q1) {
                     return;
                 }
-                bVar.V(surface3);
+                bVar.S(surface3);
                 return;
             }
             return;
@@ -1657,14 +1657,14 @@ public final class n extends r2.r {
                     if (i11 < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.e();
+                    lVar.f();
                 }
             }
         }
         if (surface != null) {
             x1 x1Var2 = this.D1;
             if (x1Var2 != null) {
-                bVar.Z(x1Var2);
+                bVar.W(x1Var2);
             }
         } else {
             this.D1 = null;
@@ -1689,9 +1689,9 @@ public final class n extends r2.r {
             j10 -= -this.J1;
         }
         if (j3 < -500000 && !z10) {
-            c1 c1Var = this.r;
-            c1Var.getClass();
-            int j11 = c1Var.j(j10 - this.v);
+            b1 b1Var = this.r;
+            b1Var.getClass();
+            int j11 = b1Var.j(j10 - this.v);
             if (j11 != 0) {
                 PriorityQueue priorityQueue = this.f1;
                 if (z11) {
@@ -1813,7 +1813,7 @@ public final class n extends r2.r {
         List B0 = B0(this.X0, iVar, sVar, z10, this.F1);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(B0);
-        Collections.sort(arrayList, new c8(new k2.v(sVar, 28), 3));
+        Collections.sort(arrayList, new c8(new k2.v(sVar, 27), 3));
         return arrayList;
     }
 
@@ -2109,7 +2109,7 @@ public final class n extends r2.r {
     @Override // r2.r
     public final i2.h a0(n4.y yVar) {
         i2.h a02 = super.a0(yVar);
-        b2.s sVar = (b2.s) yVar.b;
+        b2.s sVar = (b2.s) yVar.c;
         sVar.getClass();
         of.b bVar = this.Z0;
         Handler handler = (Handler) bVar.b;
@@ -2125,7 +2125,7 @@ public final class n extends r2.r {
         int i10;
         r2.l lVar = this.b0;
         if (lVar != null) {
-            lVar.i(this.r1);
+            lVar.j(this.r1);
         }
         if (this.F1) {
             i10 = sVar.y;
@@ -2203,7 +2203,7 @@ public final class n extends r2.r {
             this.r1 = intValue2;
             r2.l lVar = this.b0;
             if (lVar != null) {
-                lVar.i(intValue2);
+                lVar.j(intValue2);
                 return;
             }
             return;
@@ -2361,7 +2361,7 @@ public final class n extends r2.r {
         of.b bVar = this.Z0;
         if (!equals && !x1Var.equals(this.D1)) {
             this.D1 = x1Var;
-            bVar.Z(x1Var);
+            bVar.W(x1Var);
         }
         this.O0.e++;
         a0 a0Var = this.c1;
@@ -2370,7 +2370,7 @@ public final class n extends r2.r {
         a0Var.l.getClass();
         a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
         if (z10 && (surface = this.n1) != null) {
-            bVar.V(surface);
+            bVar.S(surface);
             this.q1 = true;
         }
         d0(j3);
@@ -2507,8 +2507,8 @@ public final class n extends r2.r {
         try {
             super.o();
         } finally {
-            bVar.P(this.O0);
-            bVar.Z(x1.d);
+            bVar.I(this.O0);
+            bVar.W(x1.d);
         }
     }
 
@@ -2667,7 +2667,7 @@ public final class n extends r2.r {
                 l0();
                 j0();
             } finally {
-                hg.k0.A(this.V, null);
+                hg.c.D(this.V, null);
                 this.V = null;
             }
         } finally {
@@ -2752,7 +2752,7 @@ public final class n extends r2.r {
         boolean z10;
         int i10 = 0;
         if (!r0.m(sVar.r)) {
-            return hg.k0.b(0, 0, 0, 0);
+            return hg.c.b(0, 0, 0, 0);
         }
         boolean z11 = sVar.v != null;
         Context context = this.X0;
@@ -2761,11 +2761,11 @@ public final class n extends r2.r {
             B0 = B0(context, iVar, sVar, false, false);
         }
         if (B0.isEmpty()) {
-            return hg.k0.b(1, 0, 0, 0);
+            return hg.c.b(1, 0, 0, 0);
         }
         int i11 = sVar.S;
         if (i11 != 0 && i11 != 2) {
-            return hg.k0.b(2, 0, 0, 0);
+            return hg.c.b(2, 0, 0, 0);
         }
         r2.o oVar = (r2.o) B0.get(0);
         boolean e = oVar.e(sVar);
@@ -2794,7 +2794,7 @@ public final class n extends r2.r {
             if (!B02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(B02);
-                Collections.sort(arrayList, new c8(new k2.v(sVar, 28), i13));
+                Collections.sort(arrayList, new c8(new k2.v(sVar, 27), i13));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(sVar) && oVar3.f(sVar)) {
                     i10 = 32;

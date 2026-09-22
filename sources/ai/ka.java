@@ -6,23 +6,23 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.c60;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.w50;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class ka extends z4.a {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ Context d;
     public final /* synthetic */ jc e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
     public final /* synthetic */ zb g;
 
-    public ka(zb zbVar, Context context, jc jcVar, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ka(zb zbVar, Context context, jc jcVar, org.telegram.ui.ActionBar.e6 e6Var) {
         this.g = zbVar;
         this.d = context;
         this.e = jcVar;
-        this.f = f6Var;
+        this.f = e6Var;
     }
 
     @Override // z4.a
@@ -56,21 +56,21 @@ public final class ka extends z4.a {
             jaVar = (f6) arrayList.remove(0);
             jaVar.o1.a.getImageReceiver().setVisible(true, true);
             if (jaVar.e2 != null) {
-                jaVar.b2.P0();
+                jaVar.b2.Q0();
                 jaVar.b2.setAlpha(1.0f - jaVar.d4);
             }
-            sk0 sk0Var = jaVar.f2;
-            if (sk0Var != null) {
-                sk0Var.n();
+            fk0 fk0Var = jaVar.f2;
+            if (fk0Var != null) {
+                fk0Var.n();
             }
-            sk0 sk0Var2 = jaVar.r3;
-            if (sk0Var2 != null) {
-                sk0Var2.n();
+            fk0 fk0Var2 = jaVar.r3;
+            if (fk0Var2 != null) {
+                fk0Var2.n();
             }
-            c60 c60Var = jaVar.J2;
-            if (c60Var != null) {
-                AndroidUtilities.removeFromParent(c60Var);
-                jaVar.J2.c(true);
+            w50 w50Var = jaVar.J2;
+            if (w50Var != null) {
+                AndroidUtilities.removeFromParent(w50Var);
+                jaVar.J2.h(true);
                 jaVar.J2 = null;
             }
             jaVar.setActive(false);

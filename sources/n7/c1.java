@@ -1,40 +1,53 @@
 package n7;
 
-import com.google.android.gms.internal.vision.e2;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public abstract class c1 implements Comparable {
-    public static int c(byte b10) {
-        return (b10 >> 5) & 7;
+public final class c1 extends e1 {
+    public final String a;
+
+    public c1(String str) {
+        this.a = str;
     }
 
-    public static c1 d(byte... bArr) {
-        bArr.getClass();
-        e1 e1Var = new e1(new ByteArrayInputStream(Arrays.copyOf(bArr, bArr.length)));
-        try {
-            return a.k(e1Var);
-        } finally {
-            try {
-                e1Var.close();
-            } catch (IOException unused) {
-            }
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        e1 e1Var = (e1) obj;
+        int zza = e1Var.zza();
+        int c10 = e1.c((byte) 96);
+        if (c10 != zza) {
+            return c10 - e1Var.zza();
         }
-    }
-
-    public int a() {
-        return 0;
-    }
-
-    public final c1 b(Class cls) {
-        if (cls.isInstance(this)) {
-            return (c1) cls.cast(this);
+        String str = ((c1) e1Var).a;
+        int length = str.length();
+        String str2 = this.a;
+        if (str2.length() == length) {
+            return str2.compareTo(str);
         }
-        throw new b1(e2.j("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+        return str2.length() - str.length();
     }
 
-    public abstract int zza();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && c1.class == obj.getClass()) {
+            return this.a.equals(((c1) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(e1.c((byte) 96)), this.a});
+    }
+
+    public final String toString() {
+        return a4.a.t(new StringBuilder("\""), this.a, "\"");
+    }
+
+    @Override // n7.e1
+    public final int zza() {
+        return e1.c((byte) 96);
+    }
 }

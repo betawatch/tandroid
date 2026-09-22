@@ -12,9 +12,9 @@ import android.util.SparseArray;
 import b2.r0;
 import e9.a1;
 import java.util.List;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b c = new b(e9.i0.z(a.d));
@@ -36,7 +36,7 @@ public final class b {
         aVar.u(6, 8);
         aVar.u(8, 8);
         aVar.u(14, 8);
-        e = aVar.d();
+        e = aVar.e();
     }
 
     public b(a1 a1Var) {
@@ -69,16 +69,16 @@ public final class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b b(Context context, Intent intent, b2.e eVar, e eVar2) {
+    public static b b(Context context, Intent intent, b2.e eVar, a6.m mVar) {
         AudioManager e7 = c2.d.e(context);
-        if (eVar2 == null) {
-            eVar2 = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
+        if (mVar == null) {
+            mVar = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
         }
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 33 && (e2.d0.N(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
             return g0.a.c(e7, eVar);
         }
-        if (i10 >= 23 && e0.b.o(e7, eVar2)) {
+        if (i10 >= 23 && e0.b.o(e7, mVar)) {
             return c;
         }
         e9.l0 l0Var = new e9.l0(4);
@@ -87,7 +87,7 @@ public final class b {
             a1 d10 = b2.c.d(eVar);
             d10.getClass();
             l0Var.d(d10);
-            return new b(a(10, z7.f(l0Var.i())));
+            return new b(a(10, y7.f(l0Var.i())));
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z10 = Settings.Global.getInt(contentResolver, "use_external_surround_sound_flag", 0) == 1;
@@ -102,19 +102,19 @@ public final class b {
             l0Var.d(a1Var);
         }
         if (intent == null || z10 || intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) != 1) {
-            return new b(a(10, z7.f(l0Var.i())));
+            return new b(a(10, y7.f(l0Var.i())));
         }
         int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
         if (intArrayExtra != null) {
-            List a2 = z7.a(intArrayExtra);
+            List a2 = y7.a(intArrayExtra);
             a2.getClass();
             l0Var.d(a2);
         }
-        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), z7.f(l0Var.i())));
+        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), y7.f(l0Var.i())));
     }
 
-    public static b c(Context context, b2.e eVar, e eVar2) {
-        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, eVar2);
+    public static b c(Context context, b2.e eVar, a6.m mVar) {
+        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, mVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00cb, code lost:

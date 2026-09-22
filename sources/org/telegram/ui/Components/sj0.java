@@ -1,143 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class sj0 extends FrameLayout {
-    public final t00 a;
-    public final TextView b;
-    public final j9 c;
-    public final ImageView d;
-    public final v9 e;
-    public final int f;
-    public boolean h;
-    public final ArrayList n;
-    public final ArrayList r;
-    public final MessageObject s;
-    public int v;
-    public q0.a w;
+public final class sj0 extends s4.n0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fk0 b;
 
-    public sj0(Context context, int i10, MessageObject messageObject) {
-        super(context);
-        this.n = new ArrayList();
-        this.r = new ArrayList();
-        this.f = i10;
-        this.s = messageObject;
-        t00 t00Var = new t00(context, null);
-        this.a = t00Var;
-        t00Var.f(org.telegram.ui.ActionBar.j6.G8, org.telegram.ui.ActionBar.j6.i6, -1);
-        t00Var.setViewType(13);
-        t00Var.setIsSingleCell(false);
-        addView(t00Var, w7.y5.c(-1.0f, -2));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        org.telegram.messenger.rk.t(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E8, false), 1, 16.0f, 1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.y5.i(-2.0f, -2.0f, 8388627, 40.0f, 0.0f, 62.0f, 0.0f));
-        j9 j9Var = new j9(context, false);
-        this.c = j9Var;
-        j9Var.setStyle(11);
-        j9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
-        addView(j9Var, w7.y5.i(56.0f, -1.0f, 8388629, 0.0f, 0.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.d = imageView;
-        addView(imageView, w7.y5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
-        Drawable mutate = context.getDrawable(R.drawable.msg_reactions).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.F8, false), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageDrawable(mutate);
-        imageView.setVisibility(8);
-        v9 v9Var = new v9(context);
-        this.e = v9Var;
-        addView(v9Var, w7.y5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
-        textView.setAlpha(0.0f);
-        j9Var.setAlpha(0.0f);
-        setBackground(org.telegram.ui.ActionBar.j6.K0(false));
+    public /* synthetic */ sj0(fk0 fk0Var, int i10) {
+        this.a = i10;
+        this.b = fk0Var;
     }
 
-    public final void a() {
-        int i10 = this.f;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        TLRPC.TL_messages_getMessageReactionsList tL_messages_getMessageReactionsList = new TLRPC.TL_messages_getMessageReactionsList();
-        MessageObject messageObject = this.s;
-        tL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(messageObject.getDialogId());
-        tL_messages_getMessageReactionsList.id = messageObject.getId();
-        tL_messages_getMessageReactionsList.limit = 3;
-        tL_messages_getMessageReactionsList.reaction = null;
-        tL_messages_getMessageReactionsList.offset = null;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReactionsList, new x1(this, 10), 64);
-    }
-
-    public List<rj0> getSeenUsers() {
-        return this.n;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        int i10 = this.f;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        MessageObject messageObject = this.s;
-        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(messageObject.getChatId()));
-        TLRPC.ChatFull chatFull = messagesController.getChatFull(messageObject.getChatId());
-        if (chat == null || !messageObject.isOutOwner() || !messageObject.isSent() || messageObject.isEditing() || messageObject.isSending() || messageObject.isSendError() || messageObject.isContentUnread() || messageObject.isUnread() || ConnectionsManager.getInstance(i10).getCurrentTime() - messageObject.messageOwner.date >= 604800 || ((!ChatObject.isMegagroup(chat) && ChatObject.isChannel(chat)) || chatFull == null || chatFull.participants_count > MessagesController.getInstance(i10).chatReadMarkSizeThreshold || (messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
-            a();
-            return;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        switch (this.a) {
+            case 0:
+                super.a(rect, view, recyclerView, z0Var);
+                fk0 fk0Var = this.b;
+                if (!fk0Var.q()) {
+                    recyclerView.getClass();
+                    int R = RecyclerView.R(view);
+                    if (R == 0) {
+                        rect.left = AndroidUtilities.dp(6.0f);
+                    }
+                    rect.right = AndroidUtilities.dp(4.0f);
+                    if (R == fk0Var.a0.h() - 1) {
+                        if ((!fk0Var.U.isEmpty() && !MessagesController.getInstance(fk0Var.J).premiumFeaturesBlocked()) || fk0Var.q()) {
+                            rect.right = AndroidUtilities.dp(2.0f);
+                            break;
+                        } else {
+                            rect.right = AndroidUtilities.dp(6.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = 0;
+                    rect.right = 0;
+                    break;
+                }
+                break;
+            default:
+                recyclerView.getClass();
+                int R2 = RecyclerView.R(view);
+                if (R2 == 0) {
+                    rect.left = AndroidUtilities.dp(8.0f);
+                }
+                if (R2 == this.b.a0.h() - 1) {
+                    rect.right = AndroidUtilities.dp(8.0f);
+                    break;
+                }
+                break;
         }
-        TLRPC.TL_messages_getMessageReadParticipants tL_messages_getMessageReadParticipants = new TLRPC.TL_messages_getMessageReadParticipants();
-        tL_messages_getMessageReadParticipants.msg_id = messageObject.getId();
-        tL_messages_getMessageReadParticipants.peer = MessagesController.getInstance(i10).getInputPeer(messageObject.getDialogId());
-        TLRPC.Peer peer = messageObject.messageOwner.from_id;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReadParticipants, new ai.u1(this, peer != null ? peer.user_id : 0L, chat, 2), 64);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.v;
-        if (i12 > 0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30);
-        }
-        t00 t00Var = this.a;
-        if (t00Var.getVisibility() != 0) {
-            super.onMeasure(i10, i11);
-            return;
-        }
-        this.h = true;
-        t00Var.setVisibility(8);
-        super.onMeasure(i10, i11);
-        t00Var.getLayoutParams().width = getMeasuredWidth();
-        t00Var.setVisibility(0);
-        this.h = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.h) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setSeenCallback(q0.a aVar) {
-        this.w = aVar;
     }
 }

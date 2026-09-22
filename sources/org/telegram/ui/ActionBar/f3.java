@@ -42,14 +42,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mb0;
+import org.telegram.ui.kb0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class f3 extends Dialog implements j2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -125,7 +125,7 @@ public class f3 extends Dialog implements j2 {
     private int overlayDrawNavBarColor;
     public boolean pauseAllHeavyOperations;
     protected int playingImagesLayerNum;
-    protected f6 resourcesProvider;
+    protected e6 resourcesProvider;
     private int rightInset;
     public boolean scrollNavBar;
     private Integer selectedPos;
@@ -151,10 +151,10 @@ public class f3 extends Dialog implements j2 {
     protected boolean useLightStatusBar;
     protected boolean useSmoothKeyboard;
     protected boolean waitingKeyboard;
-    private yf.l0 windowVisibilityManager;
+    private yf.k0 windowVisibilityManager;
 
-    public f3(Context context, f6 f6Var, boolean z10, boolean z11) {
-        this(z11 ? 2 : 1, context, f6Var, z10);
+    public f3(Context context, e6 e6Var, boolean z10, boolean z11) {
+        this(z11 ? 2 : 1, context, e6Var, z10);
     }
 
     public static /* synthetic */ int access$1012(f3 f3Var, int i10) {
@@ -234,7 +234,7 @@ public class f3 extends Dialog implements j2 {
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(f3Var.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
         ofFloat2.addUpdateListener(new p2(f3Var, 6));
         arrayList.add(ofFloat2);
-        arrayList.add(ObjectAnimator.ofInt(f3Var.backDrawable, r6.d, f3Var.dimBehind ? f3Var.dimBehindAlpha : 0));
+        arrayList.add(ObjectAnimator.ofInt(f3Var.backDrawable, q6.d, f3Var.dimBehind ? f3Var.dimBehindAlpha : 0));
         arrayList.add(f3Var.navigationBarAnimation);
         f3Var.appendOpenAnimator(true, arrayList);
         f3Var.currentSheetAnimation.playTogether(arrayList);
@@ -326,7 +326,7 @@ public class f3 extends Dialog implements j2 {
     */
     public void dismiss() {
         long j3;
-        pc pcVar;
+        oc ocVar;
         z2 z2Var = this.delegate;
         if ((z2Var == null || z2Var.g()) && !this.dismissed) {
             int i10 = 1;
@@ -365,7 +365,7 @@ public class f3 extends Dialog implements j2 {
                         arrayList.add(ofFloat3);
                     }
                 }
-                arrayList.add(ObjectAnimator.ofInt(this.backDrawable, r6.d, 0));
+                arrayList.add(ObjectAnimator.ofInt(this.backDrawable, q6.d, 0));
                 arrayList.add(this.navigationBarAnimation);
                 appendOpenAnimator(false, arrayList);
                 this.currentSheetAnimation.playTogether(arrayList);
@@ -381,19 +381,19 @@ public class f3 extends Dialog implements j2 {
                 this.currentSheetAnimation.addListener(new w2(this, i10));
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
                 this.currentSheetAnimation.start();
-                pcVar = pc.w;
-                if (pcVar != null && pcVar.l && pcVar.r) {
+                ocVar = oc.w;
+                if (ocVar != null && ocVar.l && ocVar.r) {
                     if (j3 <= 0) {
-                        pcVar.c((long) (j3 * 0.6f), MessagesController.getGlobalMainSettings().getBoolean("view_animations", true));
+                        ocVar.c((long) (j3 * 0.6f), MessagesController.getGlobalMainSettings().getBoolean("view_animations", true));
                     } else {
-                        pcVar.b();
+                        ocVar.b();
                     }
                 }
                 l(false);
             }
             j3 = 0;
-            pcVar = pc.w;
-            if (pcVar != null) {
+            ocVar = oc.w;
+            if (ocVar != null) {
                 if (j3 <= 0) {
                 }
             }
@@ -426,7 +426,7 @@ public class f3 extends Dialog implements j2 {
         int i11 = 0;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.containerView, (Property<ViewGroup, Float>) View.TRANSLATION_Y, Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())) + AndroidUtilities.dp(10.0f) + getContainerViewHeight() + this.keyboardHeight);
         ofFloat.addUpdateListener(new p2(this, 2));
-        this.currentSheetAnimation.playTogether(ofFloat, ObjectAnimator.ofInt(this.backDrawable, r6.d, 0));
+        this.currentSheetAnimation.playTogether(ofFloat, ObjectAnimator.ofInt(this.backDrawable, q6.d, 0));
         this.currentSheetAnimation.setDuration(this.cellType == 4 ? 330L : 180L);
         this.currentSheetAnimation.setInterpolator(qr.g);
         this.currentSheetAnimation.addListener(new x2(this, i10, i11));
@@ -464,7 +464,7 @@ public class f3 extends Dialog implements j2 {
     }
 
     public void fixNavigationBar() {
-        fixNavigationBar(getThemedColor(j6.a7));
+        fixNavigationBar(getThemedColor(i6.a7));
     }
 
     public void forceKeyboardOnDismiss() {
@@ -492,8 +492,8 @@ public class f3 extends Dialog implements j2 {
     }
 
     @Override // org.telegram.ui.ActionBar.j2
-    public xc getBulletinFactory() {
-        return new xc(this.topBulletinContainer, this.resourcesProvider);
+    public vc getBulletinFactory() {
+        return new vc(this.topBulletinContainer, this.resourcesProvider);
     }
 
     public d3 getContainer() {
@@ -541,7 +541,7 @@ public class f3 extends Dialog implements j2 {
         return i0.a.d(f7, i10, this.navBarColor);
     }
 
-    public f6 getResourcesProvider() {
+    public e6 getResourcesProvider() {
         return this.resourcesProvider;
     }
 
@@ -580,12 +580,12 @@ public class f3 extends Dialog implements j2 {
         return 0;
     }
 
-    public ArrayList<l6> getThemeDescriptions() {
+    public ArrayList<k6> getThemeDescriptions() {
         return null;
     }
 
     public int getThemedColor(int i10) {
-        return j6.v0(i10, this.resourcesProvider);
+        return i6.v0(i10, this.resourcesProvider);
     }
 
     public TextView getTitleView() {
@@ -662,7 +662,7 @@ public class f3 extends Dialog implements j2 {
             window.setWindowAnimations(R.style.DialogNoAnimation);
             setContentView(this.container, new ViewGroup.LayoutParams(-1, -1));
         }
-        if (this.useLightStatusBar && Build.VERSION.SDK_INT >= 23 && j6.w0(null, j6.s8, true) == -1) {
+        if (this.useLightStatusBar && Build.VERSION.SDK_INT >= 23 && i6.w0(null, i6.s8, true) == -1) {
             this.container.setSystemUiVisibility(this.container.getSystemUiVisibility() | 8192);
         }
         if (this.useLightNavBar && Build.VERSION.SDK_INT >= 26) {
@@ -675,24 +675,24 @@ public class f3 extends Dialog implements j2 {
             this.containerView.setPadding(this.backgroundPaddingLeft, ((this.applyTopPadding ? AndroidUtilities.dp(8.0f) : 0) + this.backgroundPaddingTop) - 1, this.backgroundPaddingLeft, this.applyBottomPadding ? AndroidUtilities.dp(8.0f) : 0);
         }
         this.containerView.setVisibility(4);
-        this.container.addView(this.containerView, 0, w7.y5.e(-1, -2, 80));
+        this.container.addView(this.containerView, 0, w7.x5.e(-1, -2, 80));
         if (this.topBulletinContainer == null) {
             FrameLayout frameLayout = new FrameLayout(getContext());
             this.topBulletinContainer = frameLayout;
             d3 d3Var = this.container;
-            d3Var.addView(frameLayout, d3Var.indexOfChild(this.containerView) + 1, w7.y5.e(-1, -2, 80));
+            d3Var.addView(frameLayout, d3Var.indexOfChild(this.containerView) + 1, w7.x5.e(-1, -2, 80));
         }
         if (this.title != null) {
             u2 u2Var = new u2(this, getContext());
             this.titleView = u2Var;
             u2Var.setText(this.title);
             if (this.bigTitle) {
-                this.titleView.setTextColor(getThemedColor(j6.j5));
+                this.titleView.setTextColor(getThemedColor(i6.j5));
                 this.titleView.setTextSize(1, 20.0f);
                 this.titleView.setTypeface(AndroidUtilities.bold());
                 this.titleView.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(this.multipleLinesTitle ? 14.0f : 6.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(8.0f));
             } else {
-                this.titleView.setTextColor(getThemedColor(j6.q5));
+                this.titleView.setTextColor(getThemedColor(i6.q5));
                 this.titleView.setTextSize(1, 16.0f);
                 this.titleView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(this.multipleLinesTitle ? 8.0f : 0.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
             }
@@ -707,7 +707,7 @@ public class f3 extends Dialog implements j2 {
             }
             this.titleView.setGravity(16);
             i10 = 48;
-            this.containerView.addView(this.titleView, w7.y5.c(this.multipleLinesTitle ? -2.0f : 48, -1));
+            this.containerView.addView(this.titleView, w7.x5.c(this.multipleLinesTitle ? -2.0f : 48, -1));
             this.titleView.setOnTouchListener(new bi.d(1));
         } else {
             i10 = 0;
@@ -718,14 +718,14 @@ public class f3 extends Dialog implements j2 {
                 ((ViewGroup) this.customView.getParent()).removeView(this.customView);
             }
             if (this.useBackgroundTopPadding) {
-                this.containerView.addView(this.customView, w7.y5.d(-1, -2.0f, this.customViewGravity, 0.0f, i10, 0.0f, 0.0f));
+                this.containerView.addView(this.customView, w7.x5.d(-1, -2.0f, this.customViewGravity, 0.0f, i10, 0.0f, 0.0f));
             } else {
                 this.containerView.setClipToPadding(false);
                 this.containerView.setClipChildren(false);
                 this.container.setClipToPadding(false);
                 this.container.setClipChildren(false);
                 float f7 = i10;
-                this.containerView.addView(this.customView, w7.y5.d(-1, -2.0f, this.customViewGravity, 0.0f, f7, 0.0f, 0.0f));
+                this.containerView.addView(this.customView, w7.x5.d(-1, -2.0f, this.customViewGravity, 0.0f, f7, 0.0f, 0.0f));
                 ((ViewGroup.MarginLayoutParams) this.customView.getLayoutParams()).topMargin = AndroidUtilities.dp(f7) + (-this.backgroundPaddingTop);
             }
         } else if (this.items != null) {
@@ -740,7 +740,7 @@ public class f3 extends Dialog implements j2 {
                     CharSequence charSequence = this.items[i11];
                     int[] iArr = this.itemIcons;
                     y2Var.a(charSequence, iArr != null ? iArr[i11] : 0, null, this.bigTitle);
-                    this.containerView.addView(y2Var, w7.y5.d(-1, 48.0f, 51, 0.0f, i10, 0.0f, 0.0f));
+                    this.containerView.addView(y2Var, w7.x5.d(-1, 48.0f, 51, 0.0f, i10, 0.0f, 0.0f));
                     i10 += 48;
                     y2Var.setTag(Integer.valueOf(i11));
                     y2Var.setOnClickListener(new x(this, 2));
@@ -800,13 +800,13 @@ public class f3 extends Dialog implements j2 {
         }
     }
 
-    public yf.k0 obtainWindowVisibilityController() {
+    public yf.j0 obtainWindowVisibilityController() {
         if (this.windowVisibilityManager == null) {
-            this.windowVisibilityManager = new yf.l0(getWindow());
+            this.windowVisibilityManager = new yf.k0(getWindow());
         }
-        yf.l0 l0Var = this.windowVisibilityManager;
-        l0Var.getClass();
-        return new mb0(l0Var);
+        yf.k0 k0Var = this.windowVisibilityManager;
+        k0Var.getClass();
+        return new kb0(k0Var);
     }
 
     @Override // org.telegram.ui.ActionBar.j2
@@ -1037,7 +1037,7 @@ public class f3 extends Dialog implements j2 {
         }
         if (this.attachedFragment != null) {
             LaunchActivity.G1.H(true, true, true);
-            AndroidUtilities.setLightNavigationBar(getWindowView(), AndroidUtilities.computePerceivedBrightness(getNavigationBarColor(getThemedColor(j6.a7))) >= 0.721f);
+            AndroidUtilities.setLightNavigationBar(getWindowView(), AndroidUtilities.computePerceivedBrightness(getNavigationBarColor(getThemedColor(i6.a7))) >= 0.721f);
         } else {
             AndroidUtilities.setNavigationBarColor(this, this.overlayDrawNavBarColor);
             AndroidUtilities.setLightNavigationBar(this, ((double) AndroidUtilities.computePerceivedBrightness(this.overlayDrawNavBarColor)) > 0.721d);
@@ -1064,7 +1064,7 @@ public class f3 extends Dialog implements j2 {
     public void setUseLightStatusBar(boolean z10) {
         this.useLightStatusBar = z10;
         if (Build.VERSION.SDK_INT >= 23) {
-            int w02 = j6.w0(null, j6.s8, true);
+            int w02 = i6.w0(null, i6.s8, true);
             int systemUiVisibility = this.container.getSystemUiVisibility();
             this.container.setSystemUiVisibility((this.useLightStatusBar && w02 == -1) ? systemUiVisibility | 8192 : systemUiVisibility & (-8193));
         }
@@ -1130,7 +1130,7 @@ public class f3 extends Dialog implements j2 {
     }
 
     public f3(Context context, boolean z10) {
-        this(1, context, (f6) null, z10);
+        this(1, context, (e6) null, z10);
     }
 
     public void fixNavigationBar(int i10) {
@@ -1152,13 +1152,13 @@ public class f3 extends Dialog implements j2 {
         this.bigTitle = z10;
     }
 
-    public f3(int i10, Context context, f6 f6Var, boolean z10) {
+    public f3(int i10, Context context, e6 e6Var, boolean z10) {
         super(context, R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
         this.useHardwareLayer = true;
         this.backDrawable = new e3();
         this.useLightStatusBar = true;
-        int i11 = j6.h5;
+        int i11 = i6.h5;
         this.behindKeyboardColorKey = i11;
         this.canDismissWithSwipe = true;
         this.canDismissWithTouchOutside = true;
@@ -1175,13 +1175,13 @@ public class f3 extends Dialog implements j2 {
         this.itemViews = new ArrayList<>();
         this.dismissRunnable = new o2(this, 2);
         this.navigationBarAlpha = 0.0f;
-        this.navBarColorKey = j6.a7;
+        this.navBarColorKey = i6.a7;
         this.pauseAllHeavyOperations = true;
         this.notificationsLocker = new AnimationNotificationsLocker();
         this.useBackgroundTopPadding = true;
         this.customViewGravity = 51;
         this.smoothContainerViewLayoutUntil = -1L;
-        this.resourcesProvider = f6Var;
+        this.resourcesProvider = e6Var;
         if (i10 == 3) {
             AndroidUtilities.enableEdgeToEdge(getWindow());
             this.drawNavigationBar = false;
@@ -1229,9 +1229,9 @@ public class f3 extends Dialog implements j2 {
         }
         this.backDrawable.setAlpha(0);
         if (i10 == 3) {
-            p pVar = new p(this, 5);
+            n nVar = new n(this, 6);
             WeakHashMap weakHashMap = r0.i0.a;
-            r0.a0.j(s2Var, pVar);
+            r0.a0.j(s2Var, nVar);
         }
     }
 

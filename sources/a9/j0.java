@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.IllegalFormatException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j0 {
     public final String a;
@@ -25,7 +25,7 @@ public final class j0 {
                 str2 = str2 + " [" + TextUtils.join(", ", objArr) + "]";
             }
         }
-        return a4.a.C(str, " : ", str2);
+        return a4.a.D(str, " : ", str2);
     }
 
     public final void a(RemoteException remoteException, String str, Object... objArr) {

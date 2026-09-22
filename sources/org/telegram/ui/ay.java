@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ay extends tu0 {
     public final /* synthetic */ boolean[] a;
@@ -38,18 +38,18 @@ public final class ay extends tu0 {
     public final void D() {
         int i10;
         uy uyVar = this.b;
-        org.telegram.ui.Components.br0 br0Var = uyVar.G2;
-        if (br0Var != null) {
+        org.telegram.ui.Components.mq0 mq0Var = uyVar.G2;
+        if (mq0Var != null) {
             i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-            br0Var.i(i10, uyVar.D2);
+            mq0Var.i(i10, uyVar.D2);
         }
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         uy uyVar = this.b;
-        org.telegram.ui.Components.br0 br0Var = uyVar.G2;
-        org.telegram.ui.Components.v9 f7 = br0Var != null ? br0Var.f(i10) : null;
+        org.telegram.ui.Components.mq0 mq0Var = uyVar.G2;
+        org.telegram.ui.Components.u9 f7 = mq0Var != null ? mq0Var.f(i10) : null;
         if (f7 == null) {
             return null;
         }
@@ -167,8 +167,8 @@ public final class ay extends tu0 {
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Components.br0 br0Var = this.b.G2;
-        org.telegram.ui.Components.v9 f7 = br0Var != null ? br0Var.f(i10) : null;
+        org.telegram.ui.Components.mq0 mq0Var = this.b.G2;
+        org.telegram.ui.Components.u9 f7 = mq0Var != null ? mq0Var.f(i10) : null;
         if (f7 != null) {
             return f7.getImageReceiver().getBitmapSafe();
         }
@@ -190,10 +190,10 @@ public final class ay extends tu0 {
             }
             exVar.setFieldText(charSequence);
         }
-        org.telegram.ui.Components.br0 br0Var = uyVar.G2;
-        if (br0Var != null) {
+        org.telegram.ui.Components.mq0 mq0Var = uyVar.G2;
+        if (mq0Var != null) {
             i13 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-            br0Var.i(i13, uyVar.D2);
+            mq0Var.i(i13, uyVar.D2);
         }
         if ((z10 && i11 == 0) || uyVar.C2 == null || arrayList2.isEmpty()) {
             PhotoViewer.t1().G0(true, false);
@@ -212,7 +212,7 @@ public final class ay extends tu0 {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final void s() {
         ex exVar;
-        org.telegram.ui.Components.ld f12;
+        org.telegram.ui.Components.jd f12;
         PhotoViewer t12 = PhotoViewer.t1();
         CharSequence charSequence = null;
         if (t12.Q1() && (f12 = t12.f1()) != null) {

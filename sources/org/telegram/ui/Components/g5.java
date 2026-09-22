@@ -1,94 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-import android.os.SystemClock;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class g5 {
-    public final View a;
-    public final Runnable b;
-    public int c;
-    public int d;
-    public boolean e;
-    public final long f;
-    public final TimeInterpolator g;
-    public boolean h;
-    public long i;
-    public int j;
+public final /* synthetic */ class g5 implements l5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o5 b;
 
-    public g5(View view) {
-        this.f = 200L;
-        this.g = qr.f;
-        this.a = view;
-        this.e = true;
+    public /* synthetic */ g5(o5 o5Var, int i10) {
+        this.a = i10;
+        this.b = o5Var;
     }
 
-    public final int a(int i10, boolean z10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = this.f;
-        if (z10 || j3 <= 0 || this.e) {
-            this.d = i10;
-            this.c = i10;
-            this.h = false;
-            this.e = false;
-        } else if (this.d != i10) {
-            this.h = true;
-            this.d = i10;
-            this.j = this.c;
-            this.i = elapsedRealtime;
+    @Override // org.telegram.ui.Components.l5
+    public final void a(TLRPC.Document document) {
+        switch (this.a) {
+            case 0:
+                o5 o5Var = this.b;
+                o5Var.e = document;
+                o5Var.j(false);
+                break;
+            default:
+                o5 o5Var2 = this.b;
+                o5Var2.e = document;
+                o5Var2.j(false);
+                break;
         }
-        if (this.h) {
-            float a2 = w7.q.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
-            if (elapsedRealtime - this.i >= 0) {
-                TimeInterpolator timeInterpolator = this.g;
-                if (timeInterpolator == null) {
-                    this.c = i0.a.d(a2, this.j, this.d);
-                } else {
-                    this.c = i0.a.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
-                }
-            }
-            if (a2 >= 1.0f) {
-                this.h = false;
-            } else {
-                View view = this.a;
-                if (view != null) {
-                    view.invalidate();
-                }
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
-        }
-        return this.c;
-    }
-
-    public g5(View view, long j3, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        qr qrVar = qr.f;
-        this.a = view;
-        this.f = j3;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public g5(View view, long j3, TimeInterpolator timeInterpolator, int i10) {
-        this.f = 200L;
-        qr qrVar = qr.f;
-        this.a = view;
-        this.f = j3;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public g5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        qr qrVar = qr.f;
-        this.b = runnable;
-        this.f = j3;
-        this.g = timeInterpolator;
-        this.e = true;
     }
 }

@@ -1,59 +1,132 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class zg {
-    public static final zg d;
-    public static final zg e;
-    public static final /* synthetic */ zg[] f;
-    public final yg a;
-    public final yg b;
-    public final int c;
+public class zg extends aj0 {
+    public xg r;
+    public yg s;
+    public final int v;
+    public final wg w;
 
-    static {
-        int i10 = R.raw.voice_and_video;
-        yg ygVar = yg.a;
-        yg ygVar2 = yg.b;
-        zg zgVar = new zg("VOICE_TO_VIDEO", 0, ygVar, ygVar2, i10);
-        d = zgVar;
-        int i11 = R.raw.sticker_to_keyboard;
-        yg ygVar3 = yg.c;
-        yg ygVar4 = yg.d;
-        zg zgVar2 = new zg("STICKER_TO_KEYBOARD", 1, ygVar3, ygVar4, i11);
-        int i12 = R.raw.smile_to_keyboard;
-        yg ygVar5 = yg.e;
-        zg zgVar3 = new zg("SMILE_TO_KEYBOARD", 2, ygVar5, ygVar4, i12);
-        zg zgVar4 = new zg("VIDEO_TO_VOICE", 3, ygVar2, ygVar, i10);
-        e = zgVar4;
-        zg zgVar5 = new zg("KEYBOARD_TO_STICKER", 4, ygVar4, ygVar3, R.raw.keyboard_to_sticker);
-        int i13 = R.raw.keyboard_to_gif;
-        yg ygVar6 = yg.f;
-        f = new zg[]{zgVar, zgVar2, zgVar3, zgVar4, zgVar5, new zg("KEYBOARD_TO_GIF", 5, ygVar4, ygVar6, i13), new zg("KEYBOARD_TO_SMILE", 6, ygVar4, ygVar5, R.raw.keyboard_to_smile), new zg("GIF_TO_KEYBOARD", 7, ygVar6, ygVar4, R.raw.gif_to_keyboard), new zg("GIF_TO_SMILE", 8, ygVar6, ygVar5, R.raw.gif_to_smile), new zg("SMILE_TO_GIF", 9, ygVar5, ygVar6, R.raw.smile_to_gif), new zg("SMILE_TO_STICKER", 10, ygVar5, ygVar3, R.raw.smile_to_sticker), new zg("STICKER_TO_SMILE", 11, ygVar3, ygVar5, R.raw.sticker_to_smile)};
+    public zg(Context context) {
+        this(context, 32);
     }
 
-    public zg(String str, int i10, yg ygVar, yg ygVar2, int i11) {
-        this.a = ygVar;
-        this.b = ygVar2;
-        this.c = i11;
+    public xg getCurrentState() {
+        return this.r;
     }
 
-    public static zg valueOf(String str) {
-        return (zg) Enum.valueOf(zg.class, str);
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00cf  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void j(xg xgVar, boolean z10) {
+        int ordinal;
+        yg ygVar;
+        if (z10 && xgVar == this.r) {
+            return;
+        }
+        xg xgVar2 = this.r;
+        this.r = xgVar;
+        yg ygVar2 = null;
+        wg wgVar = this.w;
+        if (z10 && xgVar2 != null) {
+            yg[] values = yg.values();
+            int length = values.length;
+            int i10 = 0;
+            while (true) {
+                if (i10 >= length) {
+                    ygVar = null;
+                    break;
+                }
+                ygVar = values[i10];
+                if (ygVar.a == xgVar2 && ygVar.b == xgVar) {
+                    break;
+                } else {
+                    i10++;
+                }
+            }
+            if (ygVar != null) {
+                xg xgVar3 = this.r;
+                yg[] values2 = yg.values();
+                int length2 = values2.length;
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= length2) {
+                        break;
+                    }
+                    yg ygVar3 = values2[i11];
+                    if (ygVar3.a == xgVar2 && ygVar3.b == xgVar3) {
+                        ygVar2 = ygVar3;
+                        break;
+                    }
+                    i11++;
+                }
+                if (ygVar2 == this.s) {
+                    return;
+                }
+                this.s = ygVar2;
+                xi0 xi0Var = (xi0) wgVar.get(ygVar2);
+                xi0Var.stop();
+                if (ygVar2 == yg.e) {
+                    xi0Var.P(30);
+                    xi0Var.T(0.0f, false);
+                } else if (ygVar2 == yg.d) {
+                    xi0Var.P(60);
+                    xi0Var.T(0.5f, false);
+                } else {
+                    xi0Var.T(0.0f, false);
+                }
+                xi0Var.K(0);
+                xi0Var.t0 = new ng(this, 20);
+                setAnimation(xi0Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(xi0Var, 1));
+                ordinal = xgVar.ordinal();
+                if (ordinal != 0) {
+                    setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
+                    return;
+                } else {
+                    if (ordinal != 1) {
+                        return;
+                    }
+                    setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
+                    return;
+                }
+            }
+        }
+        xg xgVar4 = this.r;
+        yg[] values3 = yg.values();
+        int length3 = values3.length;
+        int i12 = 0;
+        while (true) {
+            if (i12 >= length3) {
+                break;
+            }
+            yg ygVar4 = values3[i12];
+            if (ygVar4.a == xgVar4) {
+                ygVar2 = ygVar4;
+                break;
+            }
+            i12++;
+        }
+        xi0 xi0Var2 = (xi0) wgVar.get(ygVar2);
+        xi0Var2.stop();
+        xi0Var2.T(xgVar != xg.a ? 0.0f : 0.5f, false);
+        setAnimation(xi0Var2);
+        ordinal = xgVar.ordinal();
+        if (ordinal != 0) {
+        }
     }
 
-    public static zg[] values() {
-        return (zg[]) f.clone();
+    public zg(Context context, int i10) {
+        super(context);
+        this.w = new wg(this, 0);
+        this.v = i10;
     }
 }

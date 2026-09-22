@@ -1,47 +1,14 @@
 package pg;
 
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i1 {
-    public final l a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public boolean l;
+    public double a;
+    public double b;
+    public double c;
+    public double d;
 
-    public i1(l lVar) {
-        this.a = lVar;
-    }
-
-    public final void a(RectF rectF) {
-        l lVar = this.a;
-        if (lVar.o() == 4) {
-            float f7 = this.b;
-            float f10 = this.k;
-            float f11 = this.c;
-            rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
-            rectF.union(this.d, this.e);
-            rectF.union(this.i, this.j);
-        } else {
-            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
-            float f12 = this.b;
-            float f13 = max * 1.42f;
-            float f14 = this.c;
-            rectF.set(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
-            if (lVar.o() == 3) {
-                rectF.union(this.i, this.j);
-            }
-        }
-        float f15 = (-this.f) - 3.0f;
-        rectF.inset(f15, f15);
+    public final String toString() {
+        return "RectD{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
     }
 }

@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.voip.v2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a implements d {
     public final e a;
@@ -30,7 +30,7 @@ public final class a implements d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, e eVar) {
+    public final void D(int i10, float f7, float f10, e eVar) {
         v2 v2Var = this.e;
         if (i10 == 1) {
             v2Var.setTranslationX(this.a.e);

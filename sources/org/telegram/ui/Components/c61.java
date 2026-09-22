@@ -1,53 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public class c61 extends URLSpan {
-    public final boolean a;
-    public final e11 b;
-    public TLObject c;
-    public String d;
+public final class c61 extends g.p {
+    public final /* synthetic */ b61 c;
+    public final /* synthetic */ e61 d;
 
-    public c61(String str) {
-        this(str, (e11) null);
+    public c61(e61 e61Var, b61 b61Var) {
+        this.d = e61Var;
+        this.c = b61Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            nf.f.s(view.getContext(), url);
-            return;
+    @Override // g.p
+    public final int i(int i10) {
+        int i11;
+        w51 w51Var = this.d.Y2;
+        b61 b61Var = this.c;
+        if (w51Var == null) {
+            return b61Var.J;
         }
-        nf.f.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        e11 e11Var = this.b;
-        if (e11Var != null) {
-            e11Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(i10 == color && !this.a);
-    }
-
-    public c61(String str, int i10) {
-        this(str, (e11) null);
-        this.a = true;
-    }
-
-    public c61(String str, e11 e11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = e11Var;
+        i51 G = w51Var.G(i10);
+        return (G == null || (i11 = G.u) == -1) ? b61Var.J : i11;
     }
 }

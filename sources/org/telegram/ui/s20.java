@@ -4,9 +4,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.ol0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.bl0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ i60 b;
 
@@ -16,11 +16,11 @@ public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, 
     }
 
     @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
         return i60.z(this.b, l1Var);
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.bl0
     public boolean d(int i10, View view) {
         switch (this.a) {
             case 1:
@@ -38,11 +38,11 @@ public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, 
                     if (view instanceof org.telegram.ui.Components.voip.l) {
                         return i60Var2.F1(view);
                     }
-                    if (view instanceof org.telegram.ui.Cells.f4) {
+                    if (view instanceof org.telegram.ui.Cells.e4) {
                         i60Var2.I1();
-                        org.telegram.ui.Components.nj0 nj0Var = ((org.telegram.ui.Cells.f4) view).f;
-                        if (nj0Var.isEnabled()) {
-                            nj0Var.callOnClick();
+                        org.telegram.ui.Components.aj0 aj0Var = ((org.telegram.ui.Cells.e4) view).f;
+                        if (aj0Var.isEnabled()) {
+                            aj0Var.callOnClick();
                             return true;
                         }
                     }

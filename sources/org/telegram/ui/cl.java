@@ -1,66 +1,49 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class cl extends org.telegram.ui.Components.sk0 {
-    public final int[] l1;
-    public ValueAnimator m1;
-    public boolean n1;
-    public final /* synthetic */ zn o1;
+public final class cl implements LayoutTransition.TransitionListener {
+    public bl a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ bo d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cl(zn znVar, zn znVar2, Activity activity, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(3, i10, activity, znVar2, f6Var);
-        this.o1 = znVar;
-        this.l1 = new int[2];
-        this.n1 = true;
+    public cl(bo boVar, org.telegram.ui.ActionBar.z zVar) {
+        this.d = boVar;
+        this.c = zVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.k kVar;
-        super.onLayout(z10, i10, i11, i12, i13);
-        kVar = ((org.telegram.ui.ActionBar.n2) this.o1).actionBar;
-        org.telegram.ui.ActionBar.v0 k10 = kVar.j(null).k(28);
-        if (k10 != null) {
-            int[] iArr = this.l1;
-            getLocationInWindow(iArr);
-            float x10 = getX();
-            float width = getWidth() + x10;
-            k10.getLocationInWindow(iArr);
-            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
-            int dp = AndroidUtilities.dp(20.0f);
-            boolean z11 = LocaleController.isRTL;
-            float f7 = width2 + (dp * (z11 ? -1 : 1));
-            if (z11) {
-                s(f7 - x10, !this.n1);
-            } else {
-                s(f7 - width, !this.n1);
-            }
-            this.n1 = false;
-        }
-    }
-
-    public final void s(float f7, boolean z10) {
-        ValueAnimator valueAnimator = this.m1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.m1 = null;
-        }
-        if (!z10) {
-            setBubbleOffset(f7);
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
-        this.m1 = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 5));
-        this.m1.setInterpolator(org.telegram.ui.Components.qr.h);
-        this.m1.setDuration(420L);
-        this.m1.start();
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.bl] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.bl
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) cl.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
+                }
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

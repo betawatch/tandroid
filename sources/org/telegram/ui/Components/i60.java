@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class i60 extends ro0 {
-    @Override // org.telegram.ui.Components.ro0
-    public final boolean a() {
-        return j() > 0;
+public final class i60 extends v80 {
+    public final /* synthetic */ m60 L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i60(m60 m60Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f3 f3Var, boolean z10) {
+        super(context, n2Var, f3Var, false, z10);
+        this.L = m60Var;
     }
 
-    @Override // org.telegram.ui.Components.ro0
-    public final boolean b() {
-        return j() < i();
+    @Override // org.telegram.ui.Components.v80
+    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        r60 r60Var = this.L.c;
+        org.telegram.ui.ActionBar.d3 d3Var = r60Var.container;
+        e6Var = ((org.telegram.ui.ActionBar.f3) r60Var).resourcesProvider;
+        oc Q = new vc(d3Var, e6Var).Q(i10, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
-
-    @Override // org.telegram.ui.Components.ro0
-    public final void c(boolean z10) {
-        int h = h();
-        if (z10) {
-            h *= -1;
-        }
-        k(Math.min(i(), Math.max(0, j() + h)));
-    }
-
-    public int h() {
-        return 1;
-    }
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract void k(int i10);
 }

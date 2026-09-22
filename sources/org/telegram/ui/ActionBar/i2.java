@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i2 extends f3 {
     public final /* synthetic */ l2 b;
@@ -19,8 +19,8 @@ public final class i2 extends f3 {
     public final /* synthetic */ f3[] e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i2(Activity activity, f6 f6Var, l2 l2Var, d5[] d5VarArr, n2 n2Var, f3[] f3VarArr) {
-        super(1, (Context) activity, f6Var, true);
+    public i2(Activity activity, e6 e6Var, l2 l2Var, d5[] d5VarArr, n2 n2Var, f3[] f3VarArr) {
+        super(1, (Context) activity, e6Var, true);
         this.b = l2Var;
         this.c = d5VarArr;
         this.d = n2Var;
@@ -86,7 +86,7 @@ public final class i2 extends f3 {
         n2 n2Var = this.d;
         l2 l2Var = this.b;
         if (l2Var == null || !l2Var.e) {
-            fixNavigationBar(j6.v0(j6.i5, n2Var.getResourceProvider()));
+            fixNavigationBar(i6.v0(i6.i5, n2Var.getResourceProvider()));
         } else {
             AndroidUtilities.setLightNavigationBar((Dialog) f3VarArr[0], true);
         }

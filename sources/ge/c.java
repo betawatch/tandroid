@@ -2,7 +2,6 @@ package ge;
 
 import ee.r;
 import ee.v;
-import hg.k0;
 import java.io.Closeable;
 import java.lang.Thread;
 import java.util.ArrayList;
@@ -12,10 +11,10 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.q3;
 import zd.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
@@ -39,16 +38,16 @@ public final class c implements Executor, Closeable {
         this.c = j3;
         this.d = str;
         if (i10 < 1) {
-            throw new IllegalArgumentException(k0.i(i10, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(hg.c.j(i10, "Core pool size ", " should be at least 1").toString());
         }
         if (i11 < i10) {
-            throw new IllegalArgumentException(a4.a.l(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
+            throw new IllegalArgumentException(a4.a.m(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i11 > 2097150) {
-            throw new IllegalArgumentException(k0.i(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(hg.c.j(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j3 <= 0) {
-            throw new IllegalArgumentException(c1.j(j3, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(q3.h(j3, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -140,7 +139,7 @@ public final class c implements Executor, Closeable {
         }
         if (jVar != null) {
             if (!(jVar.b.a == 1 ? this.f.a(jVar) : this.e.a(jVar))) {
-                throw new RejectedExecutionException(a4.a.s(new StringBuilder(), this.d, " was terminated"));
+                throw new RejectedExecutionException(a4.a.t(new StringBuilder(), this.d, " was terminated"));
             }
         }
         if (z10) {
@@ -395,9 +394,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb5.append(i17);
         sb5.append(", max = ");
-        k0.t(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        k0.t(sb5, i11, ", parked = ", i12, ", dormant = ");
-        k0.t(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
+        hg.c.v(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        hg.c.v(sb5, i11, ", parked = ", i12, ", dormant = ");
+        hg.c.v(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

@@ -9,11 +9,11 @@ import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
-import lf.h;
+import lf.i;
 import n6.l;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final q8.a b;
@@ -44,10 +44,10 @@ public final class c extends g {
         }
     }
 
-    public final SparseArray Z0(h hVar) {
+    public final SparseArray Z0(i iVar) {
         ByteBuffer I;
         a[] n10;
-        Bitmap bitmap = (Bitmap) hVar.d;
+        Bitmap bitmap = (Bitmap) iVar.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
@@ -63,16 +63,16 @@ public final class c extends g {
                 float blue = Color.blue(pixel);
                 I.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i14 % 2 == 0 && i13 % 2 == 0) {
-                    float b10 = c1.b(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
-                    float b11 = c1.b(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    float a2 = q3.a(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float a10 = q3.a(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i15 = i11 + 1;
-                    I.put(i11, (byte) b10);
+                    I.put(i11, (byte) a2);
                     i11 += 2;
-                    I.put(i15, (byte) b11);
+                    I.put(i15, (byte) a10);
                 }
             }
         } else {
-            I = hVar.I();
+            I = iVar.I();
         }
         synchronized (this.d) {
             if (!this.e) {
@@ -80,7 +80,7 @@ public final class c extends g {
             }
             u2 u2Var = this.c;
             l.h(I);
-            n10 = u2Var.n(I, g3.b(hVar));
+            n10 = u2Var.n(I, g3.b(iVar));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

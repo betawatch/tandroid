@@ -3,9 +3,9 @@ package ai;
 import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.n70;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class b3 implements View.OnLongClickListener {
             case 0:
                 f6 f6Var = this.b;
                 if (!f6Var.D0(true)) {
-                    y70 F = y70.F(f6Var.J0.v, f6Var.B0, view);
+                    n70 F = n70.F(f6Var.J0.v, f6Var.B0, view);
                     F.c(R.drawable.msg_edit, LocaleController.getString(R.string.LiveStoryMessageEditStars), new c3(f6Var, 6), false);
                     F.l(R.drawable.menu_delete_paid, LocaleController.getString(R.string.LiveStoryMessageRemoveStars), new c3(f6Var, 7), f6Var.L3 > 0);
                     F.V(5);

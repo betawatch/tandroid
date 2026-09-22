@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 import zd.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d {
     public final qa.d a;
@@ -70,7 +70,7 @@ public final class d {
                     r42 = aVar.e;
                     gd.i iVar = gd.i.a;
                     if (r42 != 0) {
-                        u7.b(obj);
+                        t7.b(obj);
                         ie.d dVar2 = this.d;
                         if (!dVar2.c() && !this.c.b()) {
                             return iVar;
@@ -91,7 +91,7 @@ public final class d {
                             }
                             aVar2 = (ie.a) aVar.a;
                             try {
-                                u7.b(obj);
+                                t7.b(obj);
                                 ((ie.d) aVar2).e(null);
                                 return iVar;
                             } catch (Throwable th2) {
@@ -102,7 +102,7 @@ public final class d {
                         }
                         aVar3 = aVar.b;
                         dVar = (d) aVar.a;
-                        u7.b(obj);
+                        t7.b(obj);
                         str = (String) obj;
                         if (str != null) {
                             Log.w("SessionConfigFetcher", "Error getting Firebase Installation ID. Skipping this Session Event.");
@@ -139,7 +139,7 @@ public final class d {
                     }
                     aVar3 = aVar.b;
                     dVar = (d) aVar.a;
-                    u7.b(obj);
+                    t7.b(obj);
                     if (dVar.c.b()) {
                         Log.d("SessionConfigFetcher", "Remote settings cache not expired. Using cached values.");
                         ((ie.d) aVar3).e(null);

@@ -3,22 +3,22 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class lw0 extends org.telegram.ui.Cells.u1 {
+public final class lw0 extends org.telegram.ui.Cells.t1 {
     public final /* synthetic */ int Ge;
     public final /* synthetic */ int He;
     public final /* synthetic */ int Ie;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lw0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, f6Var);
+    public /* synthetic */ lw0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, e6Var);
         this.Ge = i13;
         this.He = i11;
         this.Ie = i12;
     }
 
-    @Override // org.telegram.ui.Cells.u1
+    @Override // org.telegram.ui.Cells.t1
     public final void Y1(Canvas canvas) {
         switch (this.Ge) {
             case 0:
@@ -34,7 +34,7 @@ public final class lw0 extends org.telegram.ui.Cells.u1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u1, android.view.View
+    @Override // org.telegram.ui.Cells.t1, android.view.View
     public final void onMeasure(int i10, int i11) {
         switch (this.Ge) {
             case 0:
@@ -46,7 +46,7 @@ public final class lw0 extends org.telegram.ui.Cells.u1 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.u1, android.view.View
+    @Override // org.telegram.ui.Cells.t1, android.view.View
     public final void setPressed(boolean z10) {
         int i10 = this.Ge;
     }

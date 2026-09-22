@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 1:
-                org.telegram.ui.Cells.i3 i3Var = ((org.telegram.ui.Cells.k3) this.b).b;
+                org.telegram.ui.Cells.g3 g3Var = ((org.telegram.ui.Cells.i3) this.b).b;
                 if (i10 == 5) {
-                    i3Var.requestFocus();
-                    i3Var.setSelection(i3Var.length());
+                    g3Var.requestFocus();
+                    g3Var.setSelection(g3Var.length());
                     break;
                 }
                 break;
@@ -42,23 +42,23 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 3:
-                de0 de0Var = (de0) this.b;
+                sd0 sd0Var = (sd0) this.b;
                 if (i10 != 6) {
-                    de0Var.getClass();
+                    sd0Var.getClass();
                     break;
                 } else {
-                    de0Var.k(false);
+                    sd0Var.k(false);
                     break;
                 }
             case 4:
-                p4 p4Var = (p4) this.b;
+                o4 o4Var = (o4) this.b;
                 if (i10 == 6) {
-                    p4Var.b.a.callOnClick();
+                    o4Var.b.a.callOnClick();
                     break;
                 }
                 break;
             case 5:
-                ci.h2 h2Var = ((ln0) this.b).e;
+                ci.h2 h2Var = ((wm0) this.b).e;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
                         h2Var.hideActionMode();
@@ -68,10 +68,10 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 6:
-                wq0 wq0Var = (wq0) this.b;
+                hq0 hq0Var = (hq0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(wq0Var.y0.r);
+                        AndroidUtilities.hideKeyboard(hq0Var.y0.r);
                         break;
                     }
                 }
@@ -91,19 +91,19 @@ public final /* synthetic */ class e1 implements TextView.OnEditorActionListener
                 }
                 break;
             case 9:
-                f21 f21Var = (f21) this.b;
+                p11 p11Var = (p11) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(f21Var.b);
+                        AndroidUtilities.hideKeyboard(p11Var.b);
                         break;
                     }
                 }
                 break;
             default:
-                d71 d71Var = (d71) this.b;
+                n61 n61Var = (n61) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        AndroidUtilities.hideKeyboard(d71Var.J);
+                        AndroidUtilities.hideKeyboard(n61Var.J);
                         break;
                     }
                 }

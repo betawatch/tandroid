@@ -4,33 +4,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ d(f fVar, int i10) {
+    public /* synthetic */ d(g gVar, int i10) {
         this.a = i10;
-        this.b = fVar;
+        this.b = gVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                f fVar = this.b;
-                if (fVar.j.isEmpty()) {
-                    fVar.i = true;
-                    f.n = null;
-                    e eVar = fVar.f;
-                    if (eVar != null) {
-                        eVar.a = false;
-                        fVar.f = null;
+                g gVar = this.b;
+                if (gVar.j.isEmpty()) {
+                    gVar.i = true;
+                    g.n = null;
+                    f fVar = gVar.f;
+                    if (fVar != null) {
+                        fVar.a = false;
+                        gVar.f = null;
                     }
-                    fVar.d.removeView(fVar.e);
-                    if (fVar.d.getParent() instanceof ViewGroup) {
-                        ((ViewGroup) fVar.d.getParent()).removeView(fVar.d);
+                    gVar.d.removeView(gVar.e);
+                    if (gVar.d.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) gVar.d.getParent()).removeView(gVar.d);
                         break;
                     }
                 }

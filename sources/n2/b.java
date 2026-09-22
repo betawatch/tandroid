@@ -20,16 +20,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-import n4.y;
-import w7.b0;
+import w7.a0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
     public final q b;
-    public final y c;
-    public final android.support.v4.media.c d;
+    public final of.b c;
+    public final a4.m d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -51,10 +50,10 @@ public final class b implements g {
     public o w;
     public p x;
 
-    public b(UUID uuid, q qVar, y yVar, android.support.v4.media.c cVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, com.google.firebase.messaging.m mVar, Looper looper, qb.b bVar, j2.k kVar) {
+    public b(UUID uuid, q qVar, of.b bVar, a4.m mVar, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, com.google.firebase.messaging.m mVar2, Looper looper, qb.b bVar2, j2.k kVar) {
         this.l = uuid;
-        this.c = yVar;
-        this.d = cVar;
+        this.c = bVar;
+        this.d = mVar;
         this.b = qVar;
         this.e = z10;
         this.f = z11;
@@ -66,9 +65,9 @@ public final class b implements g {
             this.a = DesugarCollections.unmodifiableList(list);
         }
         this.g = hashMap;
-        this.k = mVar;
+        this.k = mVar2;
         this.h = new e2.i();
-        this.i = bVar;
+        this.i = bVar2;
         this.j = kVar;
         this.o = 2;
         this.m = looper;
@@ -114,14 +113,14 @@ public final class b implements g {
                 jVar.e();
             }
         }
-        android.support.v4.media.c cVar2 = this.d;
+        a4.m mVar = this.d;
         int i12 = this.p;
-        e eVar = (e) cVar2.b;
+        e eVar = (e) mVar.b;
         if (i12 == 1 && eVar.E > 0 && eVar.v != -9223372036854775807L) {
             eVar.y.add(this);
             Handler handler = eVar.J;
             handler.getClass();
-            handler.postAtTime(new g0(this, 14), this, SystemClock.uptimeMillis() + eVar.v);
+            handler.postAtTime(new g0(this, 13), this, SystemClock.uptimeMillis() + eVar.v);
         } else if (i12 == 0) {
             eVar.w.remove(this);
             if (eVar.G == this) {
@@ -130,17 +129,17 @@ public final class b implements g {
             if (eVar.H == this) {
                 eVar.H = null;
             }
-            y yVar = eVar.n;
-            HashSet hashSet = (HashSet) yVar.a;
+            of.b bVar = eVar.n;
+            HashSet hashSet = (HashSet) bVar.b;
             hashSet.remove(this);
-            if (((b) yVar.b) == this) {
-                yVar.b = null;
+            if (((b) bVar.c) == this) {
+                bVar.c = null;
                 if (!hashSet.isEmpty()) {
-                    b bVar = (b) hashSet.iterator().next();
-                    yVar.b = bVar;
-                    p m10 = bVar.b.m();
-                    bVar.x = m10;
-                    android.support.v4.media.session.f fVar2 = bVar.r;
+                    b bVar2 = (b) hashSet.iterator().next();
+                    bVar.c = bVar2;
+                    p m10 = bVar2.b.m();
+                    bVar2.x = m10;
+                    android.support.v4.media.session.f fVar2 = bVar2.r;
                     String str2 = d0.a;
                     m10.getClass();
                     fVar2.getClass();
@@ -228,7 +227,7 @@ public final class b implements g {
         p();
         byte[] bArr = this.u;
         e2.d.h(bArr);
-        return this.b.q0(str, bArr);
+        return this.b.r0(str, bArr);
     }
 
     @Override // n2.g
@@ -294,17 +293,17 @@ public final class b implements g {
             p();
             byte[] bArr2 = this.u;
             Pair pair = null;
-            Map c10 = bArr2 == null ? null : this.b.c(bArr2);
-            if (c10 != null) {
+            Map d = bArr2 == null ? null : this.b.d(bArr2);
+            if (d != null) {
                 long j10 = -9223372036854775807L;
                 try {
-                    str2 = (String) c10.get("LicenseDurationRemaining");
+                    str2 = (String) d.get("LicenseDurationRemaining");
                 } catch (NumberFormatException unused) {
                 }
                 if (str2 != null) {
                     j3 = Long.parseLong(str2);
                     Long valueOf = Long.valueOf(j3);
-                    str = (String) c10.get("PlaybackDurationRemaining");
+                    str = (String) d.get("PlaybackDurationRemaining");
                     if (str != null) {
                         j10 = Long.parseLong(str);
                     }
@@ -312,7 +311,7 @@ public final class b implements g {
                 }
                 j3 = -9223372036854775807L;
                 Long valueOf2 = Long.valueOf(j3);
-                str = (String) c10.get("PlaybackDurationRemaining");
+                str = (String) d.get("PlaybackDurationRemaining");
                 if (str != null) {
                 }
                 pair = new Pair(valueOf2, Long.valueOf(j10));
@@ -354,7 +353,7 @@ public final class b implements g {
             i11 = d0.x(d0.y(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo()));
         } else {
             if (Build.VERSION.SDK_INT < 23 || !e0.b.r(th2)) {
-                if (!(th2 instanceof NotProvisionedException) && !b0.b(th2)) {
+                if (!(th2 instanceof NotProvisionedException) && !a0.b(th2)) {
                     if (th2 instanceof DeniedByServerException) {
                         i11 = 6007;
                     } else if (th2 instanceof w) {
@@ -390,7 +389,7 @@ public final class b implements g {
             if (!(th2 instanceof Error)) {
                 throw new IllegalStateException("Unexpected Throwable subclass", th2);
             }
-            if (!b0.c(th2) && !b0.b(th2)) {
+            if (!a0.c(th2) && !a0.b(th2)) {
                 throw ((Error) th2);
             }
         }
@@ -400,8 +399,8 @@ public final class b implements g {
     }
 
     public final void m(Throwable th2, boolean z10) {
-        if ((th2 instanceof NotProvisionedException) || b0.b(th2)) {
-            this.c.W(this);
+        if ((th2 instanceof NotProvisionedException) || a0.b(th2)) {
+            this.c.R(this);
         } else {
             l(z10 ? 1 : 2, th2);
         }
@@ -434,19 +433,19 @@ public final class b implements g {
             this.u.getClass();
             return true;
         } catch (NotProvisionedException unused) {
-            this.c.W(this);
+            this.c.R(this);
             return false;
         } catch (Exception e) {
             e = e;
-            if (b0.b(e)) {
+            if (a0.b(e)) {
                 l(1, e);
                 return false;
             }
-            this.c.W(this);
+            this.c.R(this);
             return false;
         } catch (NoSuchMethodError e7) {
             e = e7;
-            if (b0.b(e)) {
+            if (a0.b(e)) {
             }
         }
     }

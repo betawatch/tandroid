@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class sk extends TextView {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final class sk extends TextView {
                 break;
             case 3:
                 super.draw(canvas);
-                u81 u81Var = (u81) this.b;
-                org.telegram.ui.Components.voip.h hVar = u81Var.c;
+                r81 r81Var = (r81) this.b;
+                org.telegram.ui.Components.voip.h hVar = r81Var.c;
                 if (hVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = u81Var.d;
+                    SessionsActivity sessionsActivity = r81Var.d;
                     if (sessionsActivity.W && sessionsActivity.X) {
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -101,7 +101,7 @@ public final class sk extends TextView {
             case 5:
                 super.onLayout(z10, i10, i11, i12, i13);
                 if (z10) {
-                    ((ti1) this.b).H();
+                    ((ui1) this.b).H();
                     break;
                 }
                 break;
@@ -121,13 +121,13 @@ public final class sk extends TextView {
             case 2:
                 super.onMeasure(i10, i11);
                 if (LocaleController.isRTL) {
-                    ((org.telegram.ui.Components.j41) this.b).b.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.t31) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
             case 6:
                 super.onMeasure(i10, i11);
-                ((org.telegram.ui.web.z1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
+                ((org.telegram.ui.web.y1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
                 break;
             default:
                 super.onMeasure(i10, i11);

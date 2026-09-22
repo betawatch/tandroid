@@ -1,142 +1,72 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ja implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ja implements TextWatcher {
+    public final /* synthetic */ ka a;
 
-    public /* synthetic */ ja(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public ja(ka kaVar) {
+        this.a = kaVar;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.v0 v0Var;
-        org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.ActionBar.v0 v0Var2;
-        switch (this.a) {
-            case 0:
-                la laVar = (la) this.b;
-                if (i10 != 6 || (v0Var = laVar.c.a) == null) {
-                    return false;
-                }
-                v0Var.performClick();
-                return true;
-            case 1:
-                zn znVar = (zn) this.b;
-                if (i10 == 6) {
-                    qh.c cVar = znVar.Bc;
-                    if (cVar != null && (u1Var = cVar.n) != null) {
-                        znVar.ua(u1Var);
-                        return true;
-                    }
-                } else {
-                    znVar.getClass();
-                }
-                return false;
-            case 2:
-                uo uoVar = (uo) this.b;
-                if (i10 != 6 || (v0Var2 = uoVar.a) == null) {
-                    return false;
-                }
-                v0Var2.performClick();
-                return true;
-            case 3:
-                ds dsVar = (ds) this.b;
-                if (i10 == 5) {
-                    dsVar.a();
-                    return true;
-                }
-                dsVar.getClass();
-                return false;
-            case 4:
-                return i10 == 6 && ((e70) this.b).o0();
-            case 5:
-                re0 re0Var = (re0) this.b;
-                if (i10 == 5) {
-                    re0Var.h(null);
-                    return true;
-                }
-                re0Var.getClass();
-                return false;
-            case 6:
-                ze0 ze0Var = (ze0) this.b;
-                if (i10 == 5) {
-                    ze0Var.h(null);
-                    return true;
-                }
-                ze0Var.getClass();
-                return false;
-            case 7:
-                nf0 nf0Var = (nf0) this.b;
-                if (i10 == 5) {
-                    nf0Var.h(null);
-                    return true;
-                }
-                nf0Var.getClass();
-                return false;
-            case 8:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                int i11 = passcodeActivity.E;
-                if (i11 == 0) {
-                    passcodeActivity.h0();
-                    return true;
-                }
-                if (i11 != 1) {
-                    return false;
-                }
-                passcodeActivity.g0();
-                return true;
-            case 9:
-                ln0 ln0Var = (ln0) this.b;
-                if (i10 == 5) {
-                    ln0Var.h(null);
-                    return true;
-                }
-                ln0Var.getClass();
-                return false;
-            case 10:
-                o21 o21Var = (o21) this.b;
-                o21Var.getClass();
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        return false;
-                    }
-                    o21Var.finishFragment();
-                    return true;
-                }
-                int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                EditTextBoldCursor[] editTextBoldCursorArr = o21Var.a;
-                if (intValue >= editTextBoldCursorArr.length) {
-                    return true;
-                }
-                editTextBoldCursorArr[intValue].requestFocus();
-                return true;
-            case 11:
-                t71 t71Var = (t71) this.b;
-                if (keyEvent == null) {
-                    return false;
-                }
-                if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
-                    return false;
-                }
-                AndroidUtilities.hideKeyboard(t71Var.c0);
-                return false;
-            default:
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                twoStepVerificationActivity.getClass();
-                if (i10 != 5 && i10 != 6) {
-                    return false;
-                }
-                twoStepVerificationActivity.t0();
-                return true;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        qa qaVar = this.a.c;
+        if (qaVar.r.startsWith("@")) {
+            qaVar.r = qaVar.r.substring(1);
         }
+        if (qaVar.r.length() > 0) {
+            StringBuilder sb2 = new StringBuilder("https://");
+            i10 = ((org.telegram.ui.ActionBar.n2) qaVar).currentAccount;
+            sb2.append(MessagesController.getInstance(i10).linkPrefix);
+            sb2.append("/");
+            sb2.append(qaVar.r);
+            String sb3 = sb2.toString();
+            String formatString = LocaleController.formatString("UsernameHelpLink", R.string.UsernameHelpLink, sb3);
+            int indexOf = formatString.indexOf(sb3);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
+            if (indexOf >= 0) {
+                spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(sb3, qaVar, 3), indexOf, sb3.length() + indexOf, 33);
+            }
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        ka kaVar = this.a;
+        qa qaVar = kaVar.c;
+        String str = qaVar.r;
+        qaVar.r = charSequence == null ? "" : charSequence.toString();
+        qa qaVar2 = kaVar.c;
+        na naVar = qaVar2.E;
+        if (naVar == null || str == null) {
+            return;
+        }
+        naVar.b(qaVar2.r);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        ka kaVar = this.a;
+        qa qaVar = kaVar.c;
+        String str = qaVar.r;
+        qaVar.r = charSequence == null ? "" : charSequence.toString();
+        qa qaVar2 = kaVar.c;
+        na naVar = qaVar2.E;
+        if (naVar != null && str != null) {
+            naVar.b(qaVar2.r);
+        }
+        if (qaVar.n) {
+            return;
+        }
+        qaVar.d0(qaVar.r);
     }
 }

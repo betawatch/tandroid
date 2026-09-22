@@ -11,12 +11,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.yg0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.w80;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class n2 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -43,27 +43,27 @@ public class n2 extends TextView {
 
     public void c() {
         CharSequence text;
-        r90 r90Var = (r90) this.c;
+        g90 g90Var = (g90) this.c;
         Layout layout = getLayout();
         if (layout == null || (text = layout.getText()) == null) {
             return;
         }
-        h90 h90Var = new h90(0);
+        w80 w80Var = new w80(0);
         float dp = AndroidUtilities.dp(3.0f);
         float dp2 = AndroidUtilities.dp(6.0f);
-        h90Var.q = dp;
-        h90Var.r = dp2;
+        w80Var.q = dp;
+        w80Var.r = dp2;
         int length = text.length();
-        h90Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, h90Var);
+        w80Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, w80Var);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(h90Var.s, h90Var.u, h90Var.t, h90Var.v);
+        rectF.set(w80Var.s, w80Var.u, w80Var.t, w80Var.v);
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        r90Var.x = h90Var;
-        r90Var.j(4.0f);
-        int themedColor = ((yg0) this.d).getThemedColor(j6.Ld);
-        r90Var.f(j6.l1(0.85f, themedColor), j6.l1(2.0f, themedColor), j6.l1(3.5f, themedColor), j6.l1(6.0f, themedColor));
-        r90Var.k();
+        g90Var.x = w80Var;
+        g90Var.j(4.0f);
+        int themedColor = ((wg0) this.d).getThemedColor(i6.Ld);
+        g90Var.f(i6.l1(0.85f, themedColor), i6.l1(2.0f, themedColor), i6.l1(3.5f, themedColor), i6.l1(6.0f, themedColor));
+        g90Var.k();
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -83,7 +83,7 @@ public class n2 extends TextView {
                 super.onDraw(canvas);
                 break;
             default:
-                r90 r90Var = (r90) this.c;
+                g90 g90Var = (g90) this.c;
                 canvas.save();
                 if ((getGravity() & 16) == 0 || getLayout() == null) {
                     paddingTop = getPaddingTop();
@@ -94,10 +94,10 @@ public class n2 extends TextView {
                 ((org.telegram.ui.Cells.z) this.b).draw(canvas);
                 canvas.restore();
                 super.onDraw(canvas);
-                if (a() || r90Var.c()) {
+                if (a() || g90Var.c()) {
                     canvas.save();
                     canvas.translate(getPaddingLeft(), paddingTop);
-                    r90Var.draw(canvas);
+                    g90Var.draw(canvas);
                     canvas.restore();
                     invalidate();
                     break;
@@ -159,15 +159,15 @@ public class n2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(yg0 yg0Var, Context context) {
+    public n2(wg0 wg0Var, Context context) {
         super(context);
-        this.d = yg0Var;
-        org.telegram.ui.Cells.z f02 = j6.f0(j6.l1(0.1f, j6.w0(null, j6.I6, false)), 7, -1);
+        this.d = wg0Var;
+        org.telegram.ui.Cells.z f02 = i6.f0(i6.l1(0.1f, i6.w0(null, i6.I6, false)), 7, -1);
         this.b = f02;
-        r90 r90Var = new r90();
-        this.c = r90Var;
+        g90 g90Var = new g90();
+        this.c = g90Var;
         f02.setCallback(this);
-        r90Var.C = true;
-        r90Var.u = 0.8f;
+        g90Var.C = true;
+        g90Var.u = 0.8f;
     }
 }

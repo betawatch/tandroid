@@ -1,143 +1,68 @@
 package u2;
 
-import java.util.Arrays;
-import java.util.Random;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class f1 implements h1 {
-    public final Random a;
-    public final int[] b;
-    public final int[] c;
+public final class f1 implements g1 {
+    public final int a;
 
-    public f1() {
-        this(new Random());
+    public f1(int i10) {
+        this.a = i10;
     }
 
-    @Override // u2.h1
-    public final h1 a(int i10, int i11) {
-        int i12 = i11 - i10;
-        int[] iArr = this.b;
-        int[] iArr2 = new int[iArr.length - i12];
-        int i13 = 0;
-        for (int i14 = 0; i14 < iArr.length; i14++) {
-            int i15 = iArr[i14];
-            if (i15 < i10 || i15 >= i11) {
-                int i16 = i14 - i13;
-                if (i15 >= i10) {
-                    i15 -= i12;
-                }
-                iArr2[i16] = i15;
-            } else {
-                i13++;
-            }
-        }
-        return new f1(iArr2, new Random(this.a.nextLong()));
+    @Override // u2.g1
+    public final g1 a(int i10, int i11) {
+        return new f1((this.a - i11) + i10);
     }
 
-    @Override // u2.h1
+    @Override // u2.g1
     public final int b() {
-        int[] iArr = this.b;
-        if (iArr.length > 0) {
-            return iArr[0];
-        }
-        return -1;
+        return this.a > 0 ? 0 : -1;
     }
 
-    @Override // u2.h1
+    @Override // u2.g1
     public final int c(int i10) {
-        int i11 = this.c[i10] - 1;
+        int i11 = i10 - 1;
         if (i11 >= 0) {
-            return this.b[i11];
+            return i11;
         }
         return -1;
     }
 
-    @Override // u2.h1
+    @Override // u2.g1
     public final int d(int i10) {
-        int i11 = this.c[i10] + 1;
-        int[] iArr = this.b;
-        if (i11 < iArr.length) {
-            return iArr[i11];
+        int i11 = i10 + 1;
+        if (i11 < this.a) {
+            return i11;
         }
         return -1;
     }
 
-    @Override // u2.h1
-    public final h1 e(int i10, int i11) {
-        int[] iArr;
-        Random random;
-        int[] iArr2 = new int[i11];
-        int[] iArr3 = new int[i11];
-        int i12 = 0;
-        while (true) {
-            iArr = this.b;
-            random = this.a;
-            if (i12 >= i11) {
-                break;
-            }
-            iArr2[i12] = random.nextInt(iArr.length + 1);
-            int i13 = i12 + 1;
-            int nextInt = random.nextInt(i13);
-            iArr3[i12] = iArr3[nextInt];
-            iArr3[nextInt] = i12 + i10;
-            i12 = i13;
-        }
-        Arrays.sort(iArr2);
-        int[] iArr4 = new int[iArr.length + i11];
-        int i14 = 0;
-        int i15 = 0;
-        for (int i16 = 0; i16 < iArr.length + i11; i16++) {
-            if (i14 >= i11 || i15 != iArr2[i14]) {
-                int i17 = i15 + 1;
-                int i18 = iArr[i15];
-                iArr4[i16] = i18;
-                if (i18 >= i10) {
-                    iArr4[i16] = i18 + i11;
-                }
-                i15 = i17;
-            } else {
-                iArr4[i16] = iArr3[i14];
-                i14++;
-            }
-        }
-        return new f1(iArr4, new Random(random.nextLong()));
+    @Override // u2.g1
+    public final g1 e(int i10, int i11) {
+        return new f1(this.a + i11);
     }
 
-    @Override // u2.h1
+    @Override // u2.g1
     public final int g() {
-        int[] iArr = this.b;
-        if (iArr.length > 0) {
-            return iArr[iArr.length - 1];
+        int i10 = this.a;
+        if (i10 > 0) {
+            return i10 - 1;
         }
         return -1;
     }
 
-    @Override // u2.h1
+    @Override // u2.g1
     public final int getLength() {
-        return this.b.length;
+        return this.a;
     }
 
-    @Override // u2.h1
-    public final h1 h() {
-        return new f1(new Random(this.a.nextLong()));
+    @Override // u2.g1
+    public final g1 h() {
+        return new f1(0);
     }
 
-    public f1(int[] iArr, Random random) {
-        this.b = iArr;
-        this.a = random;
-        this.c = new int[iArr.length];
-        for (int i10 = 0; i10 < iArr.length; i10++) {
-            this.c[iArr[i10]] = i10;
-        }
-    }
-
-    public f1(Random random) {
-        this(new int[0], random);
-    }
-
-    @Override // u2.h1
-    public final h1 f() {
+    @Override // u2.g1
+    public final g1 f() {
         return this;
     }
 }

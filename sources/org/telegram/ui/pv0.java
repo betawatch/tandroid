@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class pv0 {
     public float A;
@@ -54,8 +54,8 @@ public class pv0 {
     public ImageReceiver g;
     public ImageReceiver h;
     public boolean i;
-    public final vh.g j;
-    public vh.f k;
+    public final vh.h j;
+    public vh.g k;
     public final Path l;
     public final float[] m;
     public boolean n;
@@ -75,7 +75,7 @@ public class pv0 {
     public pv0(ViewGroup viewGroup, ViewGroup viewGroup2) {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new vh.g();
+        this.j = new vh.h();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];
@@ -178,7 +178,7 @@ public class pv0 {
                     boolean z11 = (messageObject == null || !messageObject.hasMediaSpoilers() || messageObject.isMediaSpoilersRevealed) ? false : true;
                     this.i = z11;
                     if (z11 && this.k == null) {
-                        vh.f e = vh.f.e(this.d);
+                        vh.g e = vh.g.e(this.d);
                         this.k = e;
                         if (e != null) {
                             e.k.put(this.d, Integer.valueOf(i10));
@@ -303,7 +303,7 @@ public class pv0 {
                         this.d.b.setScaleY(1.0f);
                         lv0 lv0Var = this.E;
                         if (lv0Var != null) {
-                            this.d.d.setImageBitmap(lv0Var.h0().getBitmap((int) this.z, (int) this.y));
+                            this.d.d.setImageBitmap(lv0Var.j0().getBitmap((int) this.z, (int) this.y));
                             this.d.d.s((int) this.z, (int) this.y);
                             this.d.d.getImageReceiver().setRoundRadius(imageReceiver.getRoundRadius(true));
                         }
@@ -315,10 +315,10 @@ public class pv0 {
                         imageReceiver5.onAttachedToWindow();
                         Drawable drawable = imageReceiver.getDrawable();
                         this.f.setImageBitmap(drawable);
-                        if (drawable instanceof org.telegram.ui.Components.c6) {
-                            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) drawable;
-                            c6Var.f(this.d);
-                            c6Var.R = true;
+                        if (drawable instanceof org.telegram.ui.Components.b6) {
+                            org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) drawable;
+                            b6Var.f(this.d);
+                            b6Var.R = true;
                         }
                         this.f.setImageCoords(this.u, this.v, this.x, this.w);
                         this.f.setAspectFit(imageReceiver.isAspectFit());
@@ -330,7 +330,7 @@ public class pv0 {
                 }
                 lv0 lv0Var2 = this.E;
                 if (lv0Var2 != null) {
-                    lv0Var2.D0(messageObject);
+                    lv0Var2.E0(messageObject);
                 }
                 this.P = 0.0f;
                 i12 = i14;
@@ -367,16 +367,16 @@ public class pv0 {
         if (ov0Var != null && ov0Var.getParent() != null) {
             this.a.removeView(this.d);
             this.d.d.getImageReceiver().clearImage();
-            vh.f fVar = this.k;
-            if (fVar != null) {
-                fVar.b(this.d);
+            vh.g gVar = this.k;
+            if (gVar != null) {
+                gVar.b(this.d);
                 this.k = null;
             }
             ImageReceiver imageReceiver = this.f;
             if (imageReceiver != null) {
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof org.telegram.ui.Components.c6) {
-                    ((org.telegram.ui.Components.c6) drawable).w(this.d);
+                if (drawable instanceof org.telegram.ui.Components.b6) {
+                    ((org.telegram.ui.Components.b6) drawable).w(this.d);
                 }
             }
         }
@@ -413,8 +413,8 @@ public class pv0 {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
             this.C = ofFloat;
-            ofFloat.addUpdateListener(new b3(this, 24));
-            this.C.addListener(new gp0(this, 11));
+            ofFloat.addUpdateListener(new b3(this, 25));
+            this.C.addListener(new cr0(this, 10));
             this.C.setDuration(220L);
             this.C.setInterpolator(org.telegram.ui.Components.qr.f);
             this.C.start();
@@ -444,8 +444,8 @@ public class pv0 {
         return this.e.onTouchEvent(motionEvent);
     }
 
-    public final void h(zh zhVar) {
-        this.F = zhVar;
+    public final void h(ue ueVar) {
+        this.F = ueVar;
     }
 
     public final boolean i() {
@@ -481,17 +481,17 @@ public class pv0 {
         if (this.c) {
             return true;
         }
-        if (!(imageReceiver.getDrawable() instanceof org.telegram.ui.Components.c6)) {
+        if (!(imageReceiver.getDrawable() instanceof org.telegram.ui.Components.b6)) {
             return imageReceiver.hasNotThumbOrOnlyStaticThumb();
         }
-        AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.c6) imageReceiver.getDrawable()).u0;
+        AnimatedFileDrawableStream animatedFileDrawableStream = ((org.telegram.ui.Components.b6) imageReceiver.getDrawable()).u0;
         return animatedFileDrawableStream == null || !animatedFileDrawableStream.isWaitingForLoad();
     }
 
     public pv0() {
         this.g = new ImageReceiver();
         this.h = new ImageReceiver();
-        this.j = new vh.g();
+        this.j = new vh.h();
         this.l = new Path();
         this.m = new float[8];
         this.Q = new float[2];

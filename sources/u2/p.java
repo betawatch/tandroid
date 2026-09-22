@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -205,10 +205,10 @@ public final class p implements e0 {
                         rVar.b = ((b2.j0) i0Var3.get(i10)).f;
                         rVar.a = ((b2.j0) i0Var3.get(i10)).g;
                         b2.s sVar = new b2.s(rVar);
-                        s5.e eVar = new s5.e(6, this, sVar);
+                        tg.d dVar = new tg.d(5, this, sVar);
                         of.b bVar = this.b;
-                        r5.d dVar = new r5.d(eVar, 10);
-                        lf.h hVar = new lf.h(5);
+                        r5.e eVar = new r5.e(dVar, 9);
+                        lf.i iVar = new lf.i(5);
                         qb.b bVar2 = new qb.b(26);
                         if (this.c.W(sVar)) {
                             b2.r a12 = sVar.a();
@@ -231,14 +231,14 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new x0(k0Var3, bVar, dVar, hVar.A(k0Var3), bVar2, 1048576, sVar2);
+                        aVarArr[i11] = new w0(k0Var3, bVar, eVar, iVar.A(k0Var3), bVar2, 1048576, sVar2);
                     } else {
                         of.b bVar3 = this.b;
                         bVar3.getClass();
-                        aVarArr[i10 + 1] = new m1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
+                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
-                a11 = new p0(aVarArr);
+                a11 = new o0(aVarArr);
             }
             b2.a0 a0Var3 = k0Var2.e;
             if (a0Var3.b != 0 || a0Var3.d != Long.MIN_VALUE || a0Var3.f) {

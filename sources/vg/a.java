@@ -7,29 +7,29 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.y5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ci.d a;
     public final View b;
-    public final f6 c;
+    public final e6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, f6 f6Var) {
+    public a(Context context, e6 e6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = f6Var;
+        this.c = e6Var;
         View view = new View(context);
         this.b = view;
-        addView(view, y5.n(-1, -1));
-        ci.d dVar = new ci.d(context, f6Var, true);
+        addView(view, x5.n(-1, -1));
+        ci.d dVar = new ci.d(context, e6Var, true);
         this.a = dVar;
-        addView(dVar, y5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+        addView(dVar, x5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
 
     public final void a(int i10, boolean z10) {
@@ -40,7 +40,7 @@ public final class a extends FrameLayout {
         dVar.setEnabled(true);
         dVar.b(i10, z10);
         dVar.g(LocaleController.getString(R.string.BoostingStartGiveaway), z10, true);
-        this.b.setBackgroundColor(j6.v0(j6.h5, this.c));
+        this.b.setBackgroundColor(i6.v0(i6.h5, this.c));
     }
 
     public final void b(boolean z10) {
@@ -51,7 +51,7 @@ public final class a extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            int v02 = j6.v0(j6.a7, this.c);
+            int v02 = i6.v0(i6.a7, this.c);
             Paint paint = this.d;
             paint.setColor(v02);
             paint.setAlpha(255);

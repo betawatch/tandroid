@@ -3,9 +3,9 @@ package yh;
 import android.os.Bundle;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x5 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class x5 implements Runnable {
                     int i10 = starsTransaction.flags & 8192;
                     long j3 = this.d;
                     if (i10 == 0) {
-                        U.presentFragment(zn.R9(j3));
+                        U.presentFragment(bo.R9(j3));
                         break;
                     } else {
-                        U.presentFragment(zn.Q9(starsTransaction.giveaway_post_id, j3));
+                        U.presentFragment(bo.Q9(starsTransaction.giveaway_post_id, j3));
                         break;
                     }
                 }
@@ -47,10 +47,10 @@ public final /* synthetic */ class x5 implements Runnable {
                     int i11 = starsTransaction2.flags & 8192;
                     long j10 = this.d;
                     if (i11 == 0) {
-                        U2.presentFragment(zn.R9(j10));
+                        U2.presentFragment(bo.R9(j10));
                         break;
                     } else {
-                        U2.presentFragment(zn.Q9(starsTransaction2.giveaway_post_id, j10));
+                        U2.presentFragment(bo.Q9(starsTransaction2.giveaway_post_id, j10));
                         break;
                     }
                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class x5 implements Runnable {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", -this.d);
                     bundle.putInt("message_id", this.c.msg_id);
-                    U3.presentFragment(new zn(bundle));
+                    U3.presentFragment(new bo(bundle));
                     break;
                 }
                 break;
@@ -74,10 +74,10 @@ public final /* synthetic */ class x5 implements Runnable {
                     int i12 = starsTransaction3.flags & 8192;
                     long j11 = this.d;
                     if (i12 == 0) {
-                        U4.presentFragment(zn.R9(j11));
+                        U4.presentFragment(bo.R9(j11));
                         break;
                     } else {
-                        U4.presentFragment(zn.Q9(starsTransaction3.giveaway_post_id, j11));
+                        U4.presentFragment(bo.Q9(starsTransaction3.giveaway_post_id, j11));
                         break;
                     }
                 }
@@ -90,10 +90,10 @@ public final /* synthetic */ class x5 implements Runnable {
                     int i13 = starsTransaction4.flags & 8192;
                     long j12 = this.d;
                     if (i13 == 0) {
-                        U5.presentFragment(zn.R9(j12));
+                        U5.presentFragment(bo.R9(j12));
                         break;
                     } else {
-                        U5.presentFragment(zn.Q9(starsTransaction4.giveaway_post_id, j12));
+                        U5.presentFragment(bo.Q9(starsTransaction4.giveaway_post_id, j12));
                         break;
                     }
                 }

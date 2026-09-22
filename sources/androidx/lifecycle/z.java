@@ -4,7 +4,7 @@ import ai.q4;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -30,7 +30,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a4.a.p("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a4.a.q("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -46,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.i0(this.e);
+            yVar.a.p0(this.e);
         }
     }
 
@@ -112,25 +112,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(pb.c cVar) {
+    public final void e(a6.m mVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, cVar);
+        x xVar = new x(this, mVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(cVar);
+        o.c i10 = fVar.i(mVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar2 = new o.c(cVar, xVar);
+            o.c cVar = new o.c(mVar, xVar);
             fVar.d++;
-            o.c cVar3 = fVar.b;
-            if (cVar3 == null) {
-                fVar.a = cVar2;
-                fVar.b = cVar2;
+            o.c cVar2 = fVar.b;
+            if (cVar2 == null) {
+                fVar.a = cVar;
+                fVar.b = cVar;
             } else {
-                cVar3.c = cVar2;
-                cVar2.d = cVar3;
-                fVar.b = cVar2;
+                cVar2.c = cVar;
+                cVar.d = cVar2;
+                fVar.b = cVar;
             }
             obj = null;
         }

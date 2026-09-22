@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -65,7 +65,7 @@ public final class t implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(w7.q.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int d = i0.a.d(w7.p.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             s sVar = actionBarLayout.G;
             if (sVar != null && sVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {
@@ -79,7 +79,7 @@ public final class t implements Runnable {
         }
         float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : qr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
-            float a2 = w7.q.a(interpolation, 0.0f, 1.0f);
+            float a2 = w7.p.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z12) {
                 float f10 = (0.3f * interpolation) + 0.7f;
@@ -94,7 +94,7 @@ public final class t implements Runnable {
                     actionBarLayout.J.setScaleY(f12);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a2));
-                j6.s0.setAlpha((int) (a2 * 255.0f));
+                i6.s0.setAlpha((int) (a2 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
@@ -102,7 +102,7 @@ public final class t implements Runnable {
             }
         } else {
             float f13 = 1.0f - interpolation;
-            float a10 = w7.q.a(f13, 0.0f, 1.0f);
+            float a10 = w7.p.a(f13, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z12) {
                 float f14 = (f13 * 0.1f) + 0.9f;
@@ -110,7 +110,7 @@ public final class t implements Runnable {
                 actionBarLayout.v.setScaleY(f14);
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
                 if (actionBarLayout.J == null) {
-                    j6.s0.setAlpha((int) (a10 * 255.0f));
+                    i6.s0.setAlpha((int) (a10 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

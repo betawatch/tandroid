@@ -8,19 +8,19 @@ import android.view.ViewParent;
 import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class g3 implements l.y {
-    public l.l a;
-    public l.n b;
+public final class g3 implements l.x {
+    public l.k a;
+    public l.m b;
     public final /* synthetic */ Toolbar c;
 
     public g3(Toolbar toolbar) {
         this.c = toolbar;
     }
 
-    @Override // l.y
-    public final boolean b(l.n nVar) {
+    @Override // l.x
+    public final boolean b(l.m mVar) {
         Toolbar toolbar = this.c;
         toolbar.c();
         ViewParent parent = toolbar.n.getParent();
@@ -30,9 +30,9 @@ public final class g3 implements l.y {
             }
             toolbar.addView(toolbar.n);
         }
-        View actionView = nVar.getActionView();
+        View actionView = mVar.getActionView();
         toolbar.r = actionView;
-        this.b = nVar;
+        this.b = mVar;
         ViewParent parent2 = actionView.getParent();
         if (parent2 != toolbar) {
             if (parent2 instanceof ViewGroup) {
@@ -52,8 +52,8 @@ public final class g3 implements l.y {
             }
         }
         toolbar.requestLayout();
-        nVar.C = true;
-        nVar.n.p(false);
+        mVar.C = true;
+        mVar.n.p(false);
         KeyEvent.Callback callback = toolbar.r;
         if (callback instanceof k.b) {
             ((k.b) callback).onActionViewExpanded();
@@ -62,17 +62,17 @@ public final class g3 implements l.y {
         return true;
     }
 
-    @Override // l.y
+    @Override // l.x
     public final boolean c() {
         return false;
     }
 
-    @Override // l.y
+    @Override // l.x
     public final void d() {
         if (this.b != null) {
-            l.l lVar = this.a;
-            if (lVar != null) {
-                int size = lVar.f.size();
+            l.k kVar = this.a;
+            if (kVar != null) {
+                int size = kVar.f.size();
                 for (int i10 = 0; i10 < size; i10++) {
                     if (this.a.getItem(i10) == this.b) {
                         return;
@@ -83,23 +83,23 @@ public final class g3 implements l.y {
         }
     }
 
-    @Override // l.y
-    public final void i(Context context, l.l lVar) {
-        l.n nVar;
-        l.l lVar2 = this.a;
-        if (lVar2 != null && (nVar = this.b) != null) {
-            lVar2.d(nVar);
+    @Override // l.x
+    public final void i(Context context, l.k kVar) {
+        l.m mVar;
+        l.k kVar2 = this.a;
+        if (kVar2 != null && (mVar = this.b) != null) {
+            kVar2.d(mVar);
         }
-        this.a = lVar;
+        this.a = kVar;
     }
 
-    @Override // l.y
-    public final boolean j(l.e0 e0Var) {
+    @Override // l.x
+    public final boolean j(l.d0 d0Var) {
         return false;
     }
 
-    @Override // l.y
-    public final boolean k(l.n nVar) {
+    @Override // l.x
+    public final boolean k(l.m mVar) {
         Toolbar toolbar = this.c;
         KeyEvent.Callback callback = toolbar.r;
         if (callback instanceof k.b) {
@@ -115,13 +115,13 @@ public final class g3 implements l.y {
         arrayList.clear();
         this.b = null;
         toolbar.requestLayout();
-        nVar.C = false;
-        nVar.n.p(false);
+        mVar.C = false;
+        mVar.n.p(false);
         toolbar.t();
         return true;
     }
 
-    @Override // l.y
-    public final void g(l.l lVar, boolean z10) {
+    @Override // l.x
+    public final void g(l.k kVar, boolean z10) {
     }
 }

@@ -1,99 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.KeyEvent;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
-import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class hf implements Runnable {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class hf implements View.OnTouchListener {
+    public final /* synthetic */ int a = 0;
+    public final Rect b = new Rect();
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ hf(KeyEvent.Callback callback, int i10, int i11) {
-        this.a = i11;
-        this.c = callback;
-        this.b = i10;
+    public hf(org.telegram.ui.jq0 jq0Var) {
+        this.c = jq0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int currentPage;
-        int i10 = this.a;
-        KeyEvent.Callback callback = this.c;
-        switch (i10) {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        jf jfVar;
+        org.telegram.ui.ActionBar.n1 n1Var;
+        org.telegram.ui.ActionBar.n1 n1Var2;
+        switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) callback;
-                dg dgVar = chatActivityEnterView.U0;
-                if (dgVar != null && (currentPage = dgVar.getCurrentPage()) != this.b) {
-                    this.b = currentPage;
-                    boolean z10 = chatActivityEnterView.x3;
-                    boolean z11 = currentPage == 1 || currentPage == 2;
-                    chatActivityEnterView.x3 = z11;
-                    boolean z12 = chatActivityEnterView.y3;
-                    chatActivityEnterView.y3 = currentPage == 0;
-                    if (chatActivityEnterView.z3) {
-                        if (chatActivityEnterView.R1 != 0) {
-                            chatActivityEnterView.l1(currentPage != 0 ? 1 : 2, true);
-                            chatActivityEnterView.L();
-                        } else if (!z11) {
-                            chatActivityEnterView.m1(false, true, false, true);
-                        }
-                    }
-                    if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {
-                        chatActivityEnterView.K(true);
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                if (motionEvent.getActionMasked() == 0 && (jfVar = chatActivityEnterView.N0) != null && jfVar.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        chatActivityEnterView.N0.dismiss();
                         break;
                     }
                 }
                 break;
             case 1:
-                int i11 = this.b;
-                mp mpVar = (mp) callback;
-                s4.o0 layoutManager = mpVar.w.getLayoutManager();
-                if (layoutManager != null) {
-                    int min = i11 > mpVar.Q ? Math.min(i11 + 1, mpVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
-                    gp gpVar = mpVar.H;
-                    gpVar.a = min;
-                    layoutManager.w0(gpVar);
+                org.telegram.ui.jq0 jq0Var = (org.telegram.ui.jq0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (n1Var = jq0Var.I) != null && n1Var.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        jq0Var.I.d(true);
+                        break;
+                    }
                 }
-                mpVar.Q = i11;
                 break;
             default:
-                int i12 = this.b;
-                ci.m9 m9Var = (ci.m9) callback;
-                if (((hf) m9Var.f) == this) {
-                    ArrayList arrayList = new ArrayList();
-                    TextView textView = (TextView) ((ArrayList) m9Var.b).get(i12);
-                    Property property = View.SCALE_X;
-                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
-                    Property property2 = View.SCALE_Y;
-                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
-                    Property property3 = View.ALPHA;
-                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
-                    TextView textView2 = (TextView) ((ArrayList) m9Var.c).get(i12);
-                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 1.0f));
-                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 1.0f));
-                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 1.0f));
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    m9Var.e = animatorSet;
-                    animatorSet.setDuration(150L);
-                    ((AnimatorSet) m9Var.e).playTogether(arrayList);
-                    ((AnimatorSet) m9Var.e).addListener(new gd0(this, 3));
-                    ((AnimatorSet) m9Var.e).start();
-                    break;
+                org.telegram.ui.ar0 ar0Var = (org.telegram.ui.ar0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (n1Var2 = ar0Var.m0) != null && n1Var2.isShowing()) {
+                    Rect rect3 = this.b;
+                    view.getHitRect(rect3);
+                    if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        ar0Var.m0.d(true);
+                        break;
+                    }
                 }
                 break;
         }
+        return false;
+    }
+
+    public hf(org.telegram.ui.ar0 ar0Var) {
+        this.c = ar0Var;
     }
 
     public hf(ChatActivityEnterView chatActivityEnterView) {
-        this.a = 0;
         this.c = chatActivityEnterView;
-        this.b = -1;
     }
 }

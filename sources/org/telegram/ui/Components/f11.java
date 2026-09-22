@@ -1,61 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f11 extends MetricAffectingSpan {
-    public final int a;
-    public final e11 b;
+public final class f11 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ThemeEditorView.EditorAlert b;
 
-    public f11(e11 e11Var, int i10) {
-        this.b = e11Var;
-        if (i10 > 0) {
-            this.a = i10;
+    public f11(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
+        this.b = editorAlert;
+        this.a = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.b.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
         }
+        animatorSetArr[0] = null;
     }
 
-    public final void a(TextPaint textPaint) {
-        e11 e11Var = this.b;
-        if (w7.d0.a(e11Var.a, 49152)) {
-            float textSize = textPaint.getTextSize();
-            textPaint.setTextSize(0.75f * textSize);
-            if (w7.d0.a(e11Var.a, 32768)) {
-                textPaint.baselineShift -= (int) (textSize * 0.35f);
-            } else if (w7.d0.a(e11Var.a, 16384)) {
-                textPaint.baselineShift += (int) (textSize * 0.12f);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.b;
+        AnimatorSet[] animatorSetArr = editorAlert.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
         }
-    }
-
-    public final e11 b() {
-        return this.b;
-    }
-
-    public final boolean c() {
-        return (this.b.a & 256) > 0;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
+        if (!this.a) {
+            editorAlert.w[0].setVisibility(4);
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
-        }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        animatorSetArr[0] = null;
     }
 }

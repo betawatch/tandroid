@@ -9,18 +9,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class jj extends ni {
     public ai.w0 n;
     public int r;
     public bi.l s;
-    public ya v;
+    public xa v;
     public int w;
     public q0.a x;
 
     @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         vi viVar = this.b;
         try {
             viVar.X0.getTitleTextView().setBuildFullLayout(true);
@@ -31,8 +31,8 @@ public final class jj extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void F() {
-        this.n.y0(0);
+    public final void G() {
+        this.n.x0(0);
     }
 
     @Override // org.telegram.ui.Components.ni
@@ -43,10 +43,10 @@ public final class jj extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        il0 il0Var = (il0) w0Var.H(childAt);
+        vk0 vk0Var = (vk0) w0Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || il0Var == null || il0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || vk0Var == null || vk0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);
@@ -90,7 +90,7 @@ public final class jj extends ni {
         int i12;
         int i13;
         ai.w0 w0Var = this.n;
-        ya yaVar = this.v;
+        xa xaVar = this.v;
         if (AndroidUtilities.isTablet()) {
             this.w = 4;
         } else {
@@ -105,10 +105,10 @@ public final class jj extends ni {
         int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
         if (this.r != dp) {
             this.r = dp;
-            yaVar.l();
+            xaVar.l();
         }
         this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
-        int ceil = (int) Math.ceil((((ArrayList) yaVar.e).size() - 1) / this.w);
+        int ceil = (int) Math.ceil((((ArrayList) xaVar.e).size() - 1) / this.w);
         Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
         if (!AndroidUtilities.isTablet()) {
             Point point2 = AndroidUtilities.displaySize;

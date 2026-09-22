@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class u0 extends db.u {
     public static db.i a(lb.a aVar, int i10) {
@@ -14,13 +14,13 @@ public class u0 extends db.u {
             return new db.m(aVar.v());
         }
         if (c10 == 6) {
-            return new db.m(new fb.i(aVar.v()));
+            return new db.m(new fb.h(aVar.v()));
         }
         if (c10 == 7) {
             return new db.m(Boolean.valueOf(aVar.n()));
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(hg.k0.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(hg.c.E(i10)));
         }
         aVar.t();
         return db.k.a;
@@ -55,9 +55,9 @@ public class u0 extends db.u {
                 throw new IllegalArgumentException("Couldn't write " + iVar.getClass());
             }
             bVar.c();
-            Iterator it = ((fb.l) iVar.i().a.entrySet()).iterator();
-            while (((fb.k) it).hasNext()) {
-                fb.m b10 = ((fb.k) it).b();
+            Iterator it = ((fb.k) iVar.i().a.entrySet()).iterator();
+            while (((fb.j) it).hasNext()) {
+                fb.l b10 = ((fb.j) it).b();
                 bVar.g((String) b10.getKey());
                 b((db.i) b10.getValue(), bVar);
             }
@@ -91,7 +91,7 @@ public class u0 extends db.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + hg.k0.D(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + hg.c.E(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
         int c10 = m1.j.c(x11);

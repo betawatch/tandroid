@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class e5 extends Drawable {
     public final Paint a;
@@ -110,11 +110,11 @@ public class e5 extends Drawable {
         canvas.translate(((AndroidUtilities.dp(24.0f) / 2) - AndroidUtilities.dp(9.0f)) - (AndroidUtilities.dp(1.0f) * this.f), AndroidUtilities.dp(24.0f) / 2);
         int i11 = this.j;
         if (i11 == 0) {
-            i11 = j6.w0(null, j6.v8, false);
+            i11 = i6.w0(null, i6.v8, false);
         }
         int i12 = this.k;
         if (i12 == 0) {
-            i12 = j6.w0(null, j6.s8, false);
+            i12 = i6.w0(null, i6.s8, false);
         }
         boolean z10 = this.h;
         Paint paint = this.a;
@@ -145,8 +145,8 @@ public class e5 extends Drawable {
                 abs2 = (Math.abs(this.f) * AndroidUtilities.dpf2(3.0f)) + AndroidUtilities.dpf2(5.0f);
                 abs3 = (Math.abs(this.f) * AndroidUtilities.dpf2(7.0f)) + AndroidUtilities.dpf2(2.0f);
             } else {
-                int w02 = j6.w0(null, j6.y8, false);
-                AndroidUtilities.getOffsetColor(i12, j6.w0(null, j6.w8, false), this.f, 1.0f);
+                int w02 = i6.w0(null, i6.y8, false);
+                AndroidUtilities.getOffsetColor(i12, i6.w0(null, i6.w8, false), this.f, 1.0f);
                 paint.setColor(AndroidUtilities.getOffsetColor(i11, w02, this.f, 1.0f));
                 paint.setAlpha(this.o);
                 canvas.drawLine(this.f * AndroidUtilities.dp(1.0f), 0.0f, (AndroidUtilities.dp(18.0f) - (AndroidUtilities.dp(1.0f) * this.f)) - 0.0f, 0.0f, paint);

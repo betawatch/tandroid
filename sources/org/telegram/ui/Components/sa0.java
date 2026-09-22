@@ -1,36 +1,26 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class sa0 extends g.p {
-    public final /* synthetic */ ya0 c;
+public final class sa0 extends x5 {
+    public final /* synthetic */ ta0 a;
 
-    public sa0(ya0 ya0Var) {
-        this.c = ya0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sa0(ta0 ta0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = ta0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        ya0 ya0Var = this.c;
-        gg.k1 k1Var = ya0Var.f;
-        if (i10 == 0) {
-            return 100;
-        }
-        int i11 = i10 - 1;
-        Object J = k1Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
-        }
-        if (J instanceof TLRPC.Document) {
-            return 20;
-        }
-        if (k1Var.I() != null || k1Var.U != null) {
-            i10 = i11;
-        }
-        ra0 ra0Var = ya0Var.d;
-        ra0Var.B1();
-        return ra0Var.R.get(i10);
+    @Override // org.telegram.ui.Components.x5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        ta0 ta0Var = this.a;
+        int i15 = ta0Var.y;
+        int i16 = i14 + i12;
+        int i17 = this.measuredSize;
+        ta0Var.c.set((int) f7, hg.c.C(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
     }
 }

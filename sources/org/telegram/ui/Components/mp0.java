@@ -1,123 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class mp0 extends yw0 {
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public float d;
-    public final Paint e;
+public final class mp0 extends ju {
+    public boolean V;
+    public int W;
+    public int a0;
+    public ValueAnimator b0;
+    public final /* synthetic */ hq0 c0;
 
-    public mp0(boolean z10) {
-        if (z10) {
-            Paint paint = new Paint(1);
-            this.e = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mp0(hq0 hq0Var, Context context, sp0 sp0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, sp0Var, null, 1, true, e6Var);
+        this.c0 = hq0Var;
     }
 
-    @Override // org.telegram.ui.Components.yw0
-    public final void b(int i10) {
-        Paint paint = this.e;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
+    @Override // org.telegram.ui.Components.ju
+    public final void c(float f7) {
+        this.c0.Y0();
     }
 
-    @Override // org.telegram.ui.Components.yw0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.yw0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.j6.d2;
-        }
-        Paint paint2 = paint;
-        int i10 = 0;
-        while (i10 < 3) {
-            if (i10 == 0) {
-                paint2.setAlpha((int) (this.d * 255.0f));
-            } else if (i10 == 2) {
-                paint2.setAlpha((int) ((1.0f - this.d) * 255.0f));
-            } else {
-                paint2.setAlpha(255);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.V) {
+            bu editText = this.c0.d.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new h70(editText, 18));
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
-            float dp = (AndroidUtilities.dp(5.0f) * i10) + (AndroidUtilities.dp(5.0f) * this.d);
-            float f7 = 8.0f;
-            Canvas canvas2 = canvas;
-            canvas2.drawLine(dp, AndroidUtilities.dp(this.a ? 3.0f : 4.0f), dp + AndroidUtilities.dp(4.0f), AndroidUtilities.dp(this.a ? 7.0f : 8.0f), paint2);
-            float dp2 = AndroidUtilities.dp(this.a ? 11.0f : 12.0f);
-            float dp3 = dp + AndroidUtilities.dp(4.0f);
-            if (this.a) {
-                f7 = 7.0f;
-            }
-            canvas2.drawLine(dp, dp2, dp3, AndroidUtilities.dp(f7), paint2);
-            i10++;
-            canvas = canvas2;
+            this.b0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(qr.f);
+            ofFloat.start();
+            this.V = false;
         }
-        if (!this.c) {
-            return;
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.ju
+    public final void f() {
+        super.f();
+        kz emojiView = getEmojiView();
+        hq0 hq0Var = this.c0;
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.w2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(hq0Var.G0.d);
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.b;
-        this.b = currentTimeMillis;
-        if (j3 > 50) {
-            j3 = 50;
+        FrameLayout frameLayout = hq0Var.c0;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
         }
-        this.d = (j3 / 500.0f) + this.d;
-        while (true) {
-            float f10 = this.d;
-            if (f10 <= 1.0f) {
-                a();
-                return;
-            }
-            this.d = f10 - 1.0f;
+        lp0 lp0Var = hq0Var.c;
+        if (lp0Var != null) {
+            lp0Var.bringToFront();
+        }
+        lp0 lp0Var2 = hq0Var.f;
+        if (lp0Var2 != null) {
+            lp0Var2.bringToFront();
         }
     }
 
-    @Override // org.telegram.ui.Components.yw0
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(14.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.ju
+    public final void q(int i10, int i11) {
+        hq0 hq0Var = this.c0;
+        lp0 lp0Var = hq0Var.c;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.V = false;
+        } else {
+            this.V = true;
+            this.W = getEditText().getMeasuredHeight();
+            this.a0 = getEditText().getScrollY();
+            invalidate();
+        }
+        hq0Var.v0 = lp0Var.getTop() + hq0Var.u0;
+        lp0Var.invalidate();
     }
 }

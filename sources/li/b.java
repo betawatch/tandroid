@@ -1,86 +1,20 @@
 package li;
 
-import android.os.Build;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import k2.v;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.n;
-import org.telegram.ui.Components.yl0;
-import w7.y5;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class b {
-    public final i a;
-    public final ah.c b;
-    public final ah.c c;
-    public final ah.i d;
-    public FrameLayout e;
-    public ViewGroup f;
-    public bh.a g;
+    public static final b c = new b(Float.POSITIVE_INFINITY);
+    public final float a;
+    public final float b;
 
-    public b(i iVar, n nVar) {
-        this.a = iVar;
-        iVar.a = new v(this, 2);
-        iVar.d = new mi.b(AndroidUtilities.dp(48.0f));
-        fh.c cVar = new fh.c();
-        cVar.a(nVar.a.getThemedColor(j6.a7));
-        iVar.s.add(new g(cVar, nVar));
-        this.c = new ah.c(cVar);
-        if (Build.VERSION.SDK_INT < 31 || !SharedConfig.chatBlurEnabled()) {
-            this.d = null;
-            ah.c cVar2 = new ah.c(cVar);
-            this.b = cVar2;
-            cVar2.h = iVar;
-            return;
+    public b(float f7) {
+        if (Float.isNaN(Float.POSITIVE_INFINITY)) {
+            throw new IllegalArgumentException("epsX must be >= 0");
         }
-        ah.i iVar2 = new ah.i(false);
-        this.d = iVar2;
-        iVar.i.add(iVar2);
-        fh.d dVar = new fh.d(cVar);
-        dVar.f = cVar;
-        ah.c cVar3 = new ah.c(dVar);
-        this.b = cVar3;
-        cVar3.h = iVar;
-        int dp = AndroidUtilities.dp(LiteMode.isEnabled(262144) ? 8.0f : 48.0f);
-        cVar3.b = dp;
-        cVar3.c = dp;
-        cVar3.i = LiteMode.isEnabled(262144);
-        int i10 = LiteMode.isEnabled(262144) ? -2 : -3;
-        dVar.d = iVar2;
-        dVar.e = i10;
-    }
-
-    public static void a(ViewGroup viewGroup, int i10, int i11, int i12) {
-        int min = Math.min(0, i10 - AndroidUtilities.dp(48.0f));
-        int i13 = (i10 + i12) - min;
-        int min2 = Math.min(0, i11 - AndroidUtilities.dp(48.0f));
-        AndroidUtilities.setViewLayoutMargins(viewGroup, 0, min, 0, min2);
-        viewGroup.setPadding(0, i13, 0, i11 - min2);
-    }
-
-    public final void b(FrameLayout frameLayout, yl0 yl0Var, k kVar, f6 f6Var) {
-        this.e = frameLayout;
-        this.f = yl0Var;
-        yl0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.g = new a(0, yl0Var, frameLayout);
-        this.a.a(yl0Var);
-        kVar.setCenterTitleAndGlass(true);
-        kVar.M(this.b, eh.b.m(f6Var), false);
-        kVar.setAddToContainer(false);
-        AndroidUtilities.removeFromParent(kVar);
-        frameLayout.addView(kVar, y5.e(-1, -2, 48));
-        ah.e eVar = new ah.e(this.c.c(kVar, null, false));
-        eVar.b(-AndroidUtilities.dp(50.0f), true);
-        eVar.q = 224;
-        kVar.setBackground(eVar);
-        kVar.setExtraHeight(AndroidUtilities.dp(12.0f));
-        yl0Var.setClipToPadding(false);
+        if (Float.isNaN(f7) || f7 < 0.0f) {
+            throw new IllegalArgumentException("epsY must be >= 0");
+        }
+        this.a = Float.POSITIVE_INFINITY;
+        this.b = f7;
     }
 }

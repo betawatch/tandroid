@@ -15,13 +15,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.ja0;
-import v7.s6;
+import org.telegram.ui.js0;
+import v7.r6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class i extends w7.m {
-    public static final ja0 b = new ja0(28);
+public final class i extends w7.l {
+    public static final js0 b = new js0(19);
     public final g a;
 
     public i(g gVar) {
@@ -37,14 +37,14 @@ public final class i extends w7.m {
         byte[] bArr = new byte[i12];
         vVar.h(0, i12, bArr);
         if (i11 == 2) {
-            concat = "image/" + s6.b(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
+            concat = "image/" + r6.b(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             v = 2;
         } else {
             v = v(0, bArr);
-            String b10 = s6.b(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+            String b10 = r6.b(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
             concat = b10.indexOf(47) == -1 ? "image/".concat(b10) : b10;
         }
         int i13 = bArr[v + 1] & 255;
@@ -732,7 +732,7 @@ public final class i extends w7.m {
         }
     }
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }

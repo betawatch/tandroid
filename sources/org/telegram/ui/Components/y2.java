@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y2 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -68,10 +68,10 @@ public final /* synthetic */ class y2 implements Utilities.Callback2 {
                     reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPersonalDetails();
                 }
                 ConnectionsManager.getInstance(i11).sendRequest(reportprofilephoto, null);
-                new xc(kb.a(this.b), dVar).E(dVar).j();
+                new vc(jb.a(this.b), dVar).E(dVar).j();
                 break;
             default:
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj4;
                 Runnable runnable = (Runnable) obj3;
                 GiftAuctionController.Auction auction = (GiftAuctionController.Auction) obj;
                 if (auction != null) {
@@ -84,32 +84,32 @@ public final /* synthetic */ class y2 implements Utilities.Callback2 {
                         ai.l8 l8Var = new ai.l8(context, i12, auction, j10, runnable);
                         TLObject user = peerDialogId >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(peerDialogId)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-peerDialogId));
                         TLObject user2 = j10 >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(j10)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-j10));
-                        LinearLayout f7 = org.telegram.messenger.rk.f(context, 1);
-                        f7.addView(new gi.a(context, user, user2), w7.y5.t(-1, -2, 48, 0, -4, 0, 0));
+                        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+                        f7.addView(new gi.a(context, user, user2), w7.x5.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context);
                         NotificationCenter.listenEmojiLoading(textView);
                         textView.setText(LocaleController.getString(R.string.Gift2AuctionsChangeRecipient));
-                        int i13 = org.telegram.ui.ActionBar.j6.j5;
-                        org.telegram.ui.Cells.c1.q(i13, f6Var, textView, 1, 20.0f);
+                        int i13 = org.telegram.ui.ActionBar.i6.j5;
+                        org.telegram.ui.Cells.q3.p(i13, e6Var, textView, 1, 20.0f);
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                        f7.addView(textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        f7.addView(textView, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context);
-                        org.telegram.messenger.rk.n(i13, f6Var, textView2, 1, 16.0f);
-                        org.telegram.messenger.rk.q(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j10)}, textView2);
-                        f7.addView(textView2, w7.y5.t(-1, -2, 48, 24, 4, 24, 4));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+                        org.telegram.messenger.vl.o(i13, e6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.vl.q(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j10)}, textView2);
+                        f7.addView(textView2, w7.x5.t(-1, -2, 48, 24, 4, 24, 4));
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
                         alertDialog$Builder.n(f7);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new r5.d(l8Var, 15));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new r5.e(l8Var, 14));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                         alertDialog$Builder.a.show();
                         break;
                     } else if (auction.auctionUserState.bid_date > 0 && !auction.isFinished()) {
-                        xh.m mVar = new xh.m(context, f6Var, null, auction);
+                        xh.m mVar = new xh.m(context, e6Var, null, auction);
                         mVar.n0 = runnable;
                         mVar.show();
                         break;
                     } else {
-                        new xh.v(context, f6Var, j10, auction.gift, runnable).show();
+                        new xh.v(context, e6Var, j10, auction.gift, runnable).show();
                         break;
                     }
                 }
@@ -117,9 +117,9 @@ public final /* synthetic */ class y2 implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ y2(Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10, long j3, Runnable runnable) {
+    public /* synthetic */ y2(Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10, long j3, Runnable runnable) {
         this.b = context;
-        this.e = f6Var;
+        this.e = e6Var;
         this.c = i10;
         this.d = j3;
         this.f = runnable;

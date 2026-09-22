@@ -3,39 +3,39 @@ package sh;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.m6;
 import org.telegram.ui.Components.qr;
 import yf.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d extends c {
-    public final n6 d;
-    public final oj0 e;
+    public final m6 d;
+    public final bj0 e;
     public final le.b f;
     public float h;
 
-    public d(u1 u1Var, f6 f6Var) {
-        super(f6Var);
-        oj0 oj0Var = new oj0(u1Var);
-        this.e = oj0Var;
-        oj0Var.d(null, true, false);
-        oj0Var.v = 650.0f;
-        oj0Var.e(0.69f, false);
-        oj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new le.b(u1Var, qr.h, 260L);
-        n6 n6Var = new n6(true, false, false, false);
-        this.d = n6Var;
-        n6Var.u(AndroidUtilities.bold());
-        n6Var.t(AndroidUtilities.dp(13.0f));
-        n6Var.b = 17;
-        int v02 = j6.v0(j6.i6, f6Var);
+    public d(t1 t1Var, e6 e6Var) {
+        super(e6Var);
+        bj0 bj0Var = new bj0(t1Var);
+        this.e = bj0Var;
+        bj0Var.d(null, true, false);
+        bj0Var.v = 650.0f;
+        bj0Var.e(0.69f, false);
+        bj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new le.b(t1Var, qr.h, 260L);
+        m6 m6Var = new m6(true, false, false, false);
+        this.d = m6Var;
+        m6Var.u(AndroidUtilities.bold());
+        m6Var.t(AndroidUtilities.dp(13.0f));
+        m6Var.b = 17;
+        int v02 = i6.v0(i6.i6, e6Var);
         if (this.b != v02) {
-            j6.B1(this.a, v02, false);
+            i6.B1(this.a, v02, false);
             this.b = v02;
         }
     }

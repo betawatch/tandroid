@@ -3,11 +3,11 @@ package fi;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.u9;
 import org.telegram.ui.dv0;
 import org.telegram.ui.tu0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class m extends tu0 {
     public final /* synthetic */ p a;
@@ -32,9 +32,9 @@ public final class m extends tu0 {
                 dv0 dv0Var = new dv0();
                 dv0Var.b = iArr[0];
                 dv0Var.c = iArr[1];
-                v9 v9Var = pVar.v;
-                dv0Var.d = v9Var;
-                ImageReceiver imageReceiver = v9Var.getImageReceiver();
+                u9 u9Var = pVar.v;
+                dv0Var.d = u9Var;
+                ImageReceiver imageReceiver = u9Var.getImageReceiver();
                 dv0Var.a = imageReceiver;
                 dv0Var.f = -pVar.b;
                 dv0Var.e = imageReceiver.getBitmapSafe();

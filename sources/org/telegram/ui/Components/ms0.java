@@ -1,26 +1,48 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.view.ViewGroup;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ms0 extends s4.s {
-    public final /* synthetic */ lv0 Q;
+public final class ms0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ms0(lv0 lv0Var) {
-        super(3);
-        this.Q = lv0Var;
+    public /* synthetic */ ms0(ViewGroup viewGroup, Object obj, int i10) {
+        this.c = i10;
+        this.e = viewGroup;
+        this.d = obj;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        if (this.Q.o1) {
-            i10 = 0;
+    @Override // g.p
+    public final int i(int i10) {
+        int i11;
+        switch (this.c) {
+            case 0:
+                rt0 rt0Var = (rt0) this.d;
+                s4.h0 adapter = rt0Var.r.getAdapter();
+                yu0 yu0Var = (yu0) this.e;
+                su0 su0Var = yu0Var.I;
+                if (adapter == su0Var) {
+                    if (su0Var.j(i10) == 2) {
+                        return rt0Var.s.J;
+                    }
+                    return 1;
+                }
+                if (yu0.v(yu0Var, adapter) == -1) {
+                    return 1;
+                }
+                ((vu0) adapter).getClass();
+                return 1;
+            default:
+                bi.i iVar = (bi.i) this.d;
+                w51 w51Var = ((e61) this.e).Y2;
+                if (w51Var == null) {
+                    return iVar.J;
+                }
+                i51 G = w51Var.G(i10);
+                return (G == null || (i11 = G.u) == -1) ? iVar.J : i11;
         }
-        return super.o0(i10, eVar, z0Var);
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
-        return false;
     }
 }

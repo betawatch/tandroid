@@ -1,21 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public interface yy0 {
-    void a(ci.i2 i2Var);
+public final class yy0 {
+    public final ez0 a;
+    public final gz0 b;
+    public boolean c = true;
 
-    EditTextBoldCursor getEditField();
-
-    Editable getEditText();
-
-    CharSequence getFieldText();
-
-    org.telegram.ui.ActionBar.n2 getParentFragment();
-
-    int getVisibility();
-
-    void setFieldText(CharSequence charSequence);
+    public yy0(ez0 ez0Var, gz0 gz0Var) {
+        this.a = ez0Var;
+        this.b = gz0Var;
+    }
 }

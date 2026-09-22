@@ -10,7 +10,7 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class AnimatedPhoneNumberEditText extends f40 {
     public String E;
@@ -103,7 +103,7 @@ public class AnimatedPhoneNumberEditText extends f40 {
         }
         if (isEmpty) {
             int length = str2.length();
-            ci.y0 y0Var = new ci.y0(this, z10, str, 17);
+            ci.y0 y0Var = new ci.y0(this, z10, str, 16);
             Runnable runnable = this.F;
             if (runnable != null) {
                 removeCallbacks(runnable);
@@ -125,7 +125,7 @@ public class AnimatedPhoneNumberEditText extends f40 {
                 kVar.c = true;
                 arrayList2.add(kVar);
                 arrayList.add(Float.valueOf(f10));
-                postDelayed(new og(kVar, 7), i11 * 5);
+                postDelayed(new ng(kVar, 7), i11 * 5);
             }
             this.F = y0Var;
             postDelayed(y0Var, (length * 5) + 150);

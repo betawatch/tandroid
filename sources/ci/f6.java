@@ -12,56 +12,56 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.ky;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class f6 implements ly {
+public final class f6 implements ky {
     public final /* synthetic */ r6 a;
 
     public f6(r6 r6Var) {
         this.a = r6Var;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ long a() {
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean b() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ int f() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final boolean k() {
-        qg.b editText = ((qg.v2) this.a.J0).getEditText();
+        qg.b editText = ((qg.x2) this.a.J0).getEditText();
         if (editText == null || editText.length() == 0) {
             return false;
         }
@@ -69,19 +69,19 @@ public final class f6 implements ly {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final void l(String str) {
-        qg.v2 v2Var;
+        qg.x2 x2Var;
         qg.b editText;
         Emoji.EmojiSpan[] emojiSpanArr;
         qg.j jVar = this.a.J0;
-        if ((jVar instanceof qg.v2) && (editText = (v2Var = (qg.v2) jVar).getEditText()) != null) {
+        if ((jVar instanceof qg.x2) && (editText = (x2Var = (qg.x2) jVar).getEditText()) != null) {
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd < 0) {
                 selectionEnd = 0;
             }
             try {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, v2Var.getFontMetricsInt(), false);
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, x2Var.getFontMetricsInt(), false);
                 if ((replaceEmoji instanceof Spanned) && (emojiSpanArr = (Emoji.EmojiSpan[]) ((Spanned) replaceEmoji).getSpans(0, replaceEmoji.length(), Emoji.EmojiSpan.class)) != null) {
                     for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
                         emojiSpan.scale = 0.85f;
@@ -98,25 +98,25 @@ public final class f6 implements ly {
         }
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final void n() {
         r6 r6Var = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(r6Var.getContext(), 0, r6Var.G1);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new a1.c(this, 19));
-        hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
+        hg.c.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ float p() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
-        org.telegram.ui.Components.y5 y5Var;
-        qg.b editText = ((qg.v2) this.a.J0).getEditText();
+        org.telegram.ui.Components.x5 x5Var;
+        qg.b editText = ((qg.x2) this.a.J0).getEditText();
         if (editText == null) {
             return;
         }
@@ -127,12 +127,12 @@ public final class f6 implements ly {
         try {
             SpannableString spannableString = new SpannableString(str);
             if (document != null) {
-                y5Var = new org.telegram.ui.Components.y5(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
-                y5Var.document = document;
+                x5Var = new org.telegram.ui.Components.x5(document.id, 1.0f, editText.getPaint().getFontMetricsInt());
+                x5Var.document = document;
             } else {
-                y5Var = new org.telegram.ui.Components.y5(j3, 1.0f, editText.getPaint().getFontMetricsInt());
+                x5Var = new org.telegram.ui.Components.x5(j3, 1.0f, editText.getPaint().getFontMetricsInt());
             }
-            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
+            spannableString.setSpan(x5Var, 0, spannableString.length(), 33);
             editText.setText(editText.getText().insert(selectionEnd, spannableString));
             int length = selectionEnd + spannableString.length();
             editText.setSelection(length, length);
@@ -143,64 +143,64 @@ public final class f6 implements ly {
         }
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ boolean z() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void i(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void o(u51 u51Var) {
+    @Override // org.telegram.ui.Components.ky
+    public final /* synthetic */ void o(e51 e51Var) {
     }
 
-    @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.ly
-    public final /* synthetic */ void y(long j3) {
-    }
-
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final void q() {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.ky
+    public final /* synthetic */ void s(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.ky
+    public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void u() {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void w() {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
+    public final /* synthetic */ void y(long j3) {
+    }
+
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void e(Object obj, Object obj2) {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.ly
+    @Override // org.telegram.ui.Components.ky
     public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
     }
 }

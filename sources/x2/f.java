@@ -1,18 +1,17 @@
 package x2;
 
 import b2.l1;
-import hg.k0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class f extends o implements Comparable {
+public final class f extends n implements Comparable {
     public final int e;
     public final int f;
 
-    public f(int i10, l1 l1Var, int i11, j jVar, int i12) {
+    public f(int i10, l1 l1Var, int i11, i iVar, int i12) {
         super(i10, l1Var, i11);
         int i13;
-        this.e = k0.d(i12, jVar.t0) ? 1 : 0;
+        this.e = hg.c.d(i12, iVar.t0) ? 1 : 0;
         b2.s sVar = this.d;
         int i14 = sVar.y;
         int i15 = -1;
@@ -22,13 +21,13 @@ public final class f extends o implements Comparable {
         this.f = i15;
     }
 
-    @Override // x2.o
+    @Override // x2.n
     public final int a() {
         return this.e;
     }
 
-    @Override // x2.o
-    public final /* bridge */ /* synthetic */ boolean b(o oVar) {
+    @Override // x2.n
+    public final /* bridge */ /* synthetic */ boolean b(n nVar) {
         return false;
     }
 

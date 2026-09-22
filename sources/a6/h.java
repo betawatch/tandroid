@@ -6,11 +6,10 @@ import android.os.Bundle;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
 import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final a5.a a = new a5.a("GoogleSignInCommon", new String[0]);
@@ -28,13 +27,13 @@ public abstract class h {
     }
 
     public static void b(Context context) {
-        i.S(context).V();
-        Set set = m.a;
+        i.T(context).U();
+        Set set = com.google.android.gms.common.api.m.a;
         synchronized (set) {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((m) it.next()).e();
+            ((com.google.android.gms.common.api.m) it.next()).e();
         }
         com.google.android.gms.common.api.internal.h.a();
     }

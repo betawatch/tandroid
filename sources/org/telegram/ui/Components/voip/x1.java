@@ -4,13 +4,13 @@ import android.app.Activity;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f80;
+import org.telegram.ui.Components.u70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.i60;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements f80, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class x1 implements u70, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ TLRPC.User a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ String c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class x1 implements f80, org.telegram.ui.ActionBar.
         this.r = accountInstance;
     }
 
-    @Override // org.telegram.ui.Components.f80
+    @Override // org.telegram.ui.Components.u70
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         boolean z13 = this.d;
         Activity activity = this.h;
@@ -59,7 +59,7 @@ public final /* synthetic */ class x1 implements f80, org.telegram.ui.ActionBar.
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         final TLRPC.User user = this.a;
         final TLRPC.Chat chat = this.b;

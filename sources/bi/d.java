@@ -7,33 +7,33 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Pattern;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Cells.y2;
+import org.telegram.ui.Cells.x2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.de0;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.ei0;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.i8;
-import org.telegram.ui.Components.iy0;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.h8;
+import org.telegram.ui.Components.hq0;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.no0;
 import org.telegram.ui.Components.ok;
-import org.telegram.ui.Components.ri0;
+import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.vu;
-import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.yn0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PopupNotificationActivity;
-import org.telegram.ui.fk0;
+import org.telegram.ui.bo;
+import org.telegram.ui.ck0;
 import org.telegram.ui.h4;
-import org.telegram.ui.i9;
-import org.telegram.ui.ra;
-import org.telegram.ui.vb;
-import org.telegram.ui.xo0;
-import org.telegram.ui.zn;
+import org.telegram.ui.h9;
+import org.telegram.ui.qa;
+import org.telegram.ui.ub;
+import org.telegram.ui.wo0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -56,26 +56,26 @@ public final /* synthetic */ class d implements View.OnTouchListener {
             case 2:
                 return true;
             case 4:
-                int i12 = i9.e;
+                int i12 = h9.e;
                 break;
             case 5:
-                int i13 = y2.w;
+                int i13 = x2.w;
                 break;
             case 6:
-                Paint paint = ra.H;
+                Paint paint = qa.H;
                 break;
             case 7:
-                int i14 = vb.Q0;
+                int i14 = ub.Q0;
                 break;
             case 8:
-                int i15 = zn.Gc;
+                int i15 = bo.Gc;
                 break;
             case 10:
-                Pattern pattern = d5.a;
+                Pattern pattern = c5.a;
             case 9:
                 return true;
             case 11:
-                i8 i8Var = i8.T0;
+                h8 h8Var = h8.T0;
                 break;
             case 12:
                 int i16 = ChatActivityEnterView.n5;
@@ -99,22 +99,22 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i21 = mz.h;
                 break;
             case 19:
-                int[] iArr = de0.a0;
+                int[] iArr = sd0.a0;
                 break;
             case 20:
-                int i22 = ri0.R;
+                int i22 = ei0.R;
                 break;
             case 21:
-                int i23 = no0.Z0;
+                int i23 = yn0.Y0;
                 break;
             case 22:
-                int i24 = wq0.a1;
+                int i24 = hq0.a1;
                 break;
             case 23:
-                int[] iArr2 = lv0.d2;
+                int[] iArr2 = yu0.d2;
                 break;
             case 24:
-                int i25 = iy0.u0;
+                int i25 = vx0.u0;
                 break;
             case 25:
                 int i26 = UndoView.e0;
@@ -123,10 +123,10 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i27 = UndoView.e0;
                 break;
             case 27:
-                int i28 = fk0.d0;
+                int i28 = ck0.d0;
                 break;
             case 28:
-                List list = xo0.g1;
+                List list = wo0.g1;
                 break;
             default:
                 int i29 = PopupNotificationActivity.b0;

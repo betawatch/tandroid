@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class q7 extends FrameLayout {
     public float E;
@@ -29,7 +29,7 @@ public abstract class q7 extends FrameLayout {
     public ai.q0 n;
     public n r;
     public float s;
-    public qg.c2 v;
+    public qg.e2 v;
     public ValueAnimator w;
     public boolean x;
     public ValueAnimator y;
@@ -110,14 +110,14 @@ public abstract class q7 extends FrameLayout {
         rectF.set(((1.0f - p7Var.getScaleX()) * (p7Var.getWidth() / 2.0f)) + p7Var.getX(), ((1.0f - p7Var.getScaleY()) * (p7Var.getHeight() / 2.0f)) + p7Var.getY(), (p7Var.getX() + p7Var.getWidth()) - ((1.0f - p7Var.getScaleX()) * (p7Var.getWidth() / 2.0f)), (p7Var.getY() + p7Var.getHeight()) - ((1.0f - p7Var.getScaleY()) * (p7Var.getHeight() / 2.0f)));
         float dp = AndroidUtilities.dp(2.0f);
         float dp2 = AndroidUtilities.dp(0.66f);
-        int l1 = org.telegram.ui.ActionBar.j6.l1(this.s, TLObject.FLAG_29);
+        int l1 = org.telegram.ui.ActionBar.i6.l1(this.s, TLObject.FLAG_29);
         Paint paint = this.e;
         paint.setShadowLayer(dp, 0.0f, dp2, l1);
         paint.setAlpha((int) (this.s * 255.0f));
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), Math.min(rectF.width() / 2.0f, rectF.height() / 2.0f) - 1.0f, paint);
         super.dispatchDraw(canvas);
-        qg.c2 c2Var = this.v;
-        if (c2Var != null && c2Var.getWidth() > 0 && this.v.getHeight() > 0) {
+        qg.e2 e2Var = this.v;
+        if (e2Var != null && e2Var.getWidth() > 0 && this.v.getHeight() > 0) {
             canvas.save();
             canvas.translate(rectF.left, rectF.top);
             canvas.scale(rectF.width() / this.v.getWidth(), rectF.height() / this.v.getHeight());
@@ -134,8 +134,8 @@ public abstract class q7 extends FrameLayout {
             float dp3 = AndroidUtilities.dp(3.33f);
             Paint paint2 = this.f;
             paint2.setStrokeWidth(dp3);
-            paint2.setColor(org.telegram.ui.ActionBar.j6.l1(this.s, -1090519041));
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.33f), org.telegram.ui.ActionBar.j6.l1(this.s, TLObject.FLAG_29));
+            paint2.setColor(org.telegram.ui.ActionBar.i6.l1(this.s, -1090519041));
+            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.33f), org.telegram.ui.ActionBar.i6.l1(this.s, TLObject.FLAG_29));
             rectF.inset(-AndroidUtilities.dp(7.665f), -AndroidUtilities.dp(7.665f));
             canvas.drawArc(rectF, -90.0f, clamp * 360.0f, false, paint2);
             if (this.d <= 0) {

@@ -11,26 +11,26 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.z5;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout implements z5 {
-    public final f6 a;
+    public final e6 a;
     public final ImageView b;
     public final TextView c;
 
-    public d(Context context, f6 f6Var) {
+    public d(Context context, e6 e6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = e6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_arrow_back);
-        addView(imageView, y5.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, x5.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(LocaleController.getString(R.string.EmojiSearchBackToSearch));
@@ -38,20 +38,20 @@ public final class d extends FrameLayout implements z5 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, y5.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
+        addView(textView, x5.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
         e();
     }
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
-        int i10 = j6.Wk;
-        f6 f6Var = this.a;
+        int i10 = i6.Wk;
+        e6 e6Var = this.a;
         int i11 = (int) 153.0f;
-        this.c.setTextColor(i0.a.k(j6.v0(i10, f6Var), i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(j6.v0(i10, f6Var), i11), PorterDuff.Mode.MULTIPLY);
+        this.c.setTextColor(i0.a.k(i6.v0(i10, e6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(i6.v0(i10, e6Var), i11), PorterDuff.Mode.MULTIPLY);
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
-        imageView.setBackground(j6.f0(i0.a.k(j6.v0(i10, f6Var), (int) 25.5f), 1, -1));
+        imageView.setBackground(i6.f0(i0.a.k(i6.v0(i10, e6Var), (int) 25.5f), 1, -1));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

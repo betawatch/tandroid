@@ -1,33 +1,69 @@
 package org.telegram.ui;
 
+import java.util.Comparator;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class yq implements kq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ sr b;
+public final /* synthetic */ class yq implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public yq(sr srVar, TLObject tLObject) {
-        this.b = srVar;
-        this.a = tLObject;
+    public /* synthetic */ yq(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.kq
-    public final void a(TLRPC.User user) {
-        sr.c0(this.b, user);
-    }
-
-    @Override // org.telegram.ui.kq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            sr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a7 A[RETURN, SYNTHETIC] */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        TLRPC.UserStatus userStatus;
+        TLRPC.UserStatus userStatus2;
+        switch (this.a) {
+            case 0:
+                ur urVar = (ur) this.c;
+                urVar.getClass();
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
+                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
+                long peerId = MessageObject.getPeerId(channelParticipant.peer);
+                long peerId2 = MessageObject.getPeerId(channelParticipant2.peer);
+                int i11 = this.b;
+                int i12 = -100;
+                if (peerId > 0) {
+                    TLRPC.User user = urVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant.peer)));
+                    i10 = (user == null || (userStatus2 = user.status) == null) ? 0 : user.self ? i11 + 50000 : userStatus2.expires;
+                } else {
+                    i10 = -100;
+                }
+                if (peerId2 > 0) {
+                    TLRPC.User user2 = urVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant2.peer)));
+                    i12 = (user2 == null || (userStatus = user2.status) == null) ? 0 : user2.self ? i11 + 50000 : userStatus.expires;
+                }
+                if (i10 > 0 && i12 > 0) {
+                    if (i10 <= i12) {
+                        if (i10 >= i12) {
+                            return 0;
+                        }
+                    }
+                }
+                if (i10 < 0 && i12 < 0) {
+                    if (i10 <= i12) {
+                        return i10 < i12 ? -1 : 0;
+                    }
+                }
+                if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
+                    return ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) ? 0 : 1;
+                }
+            default:
+                return org.telegram.ui.Components.r30.M((org.telegram.ui.Components.r30) this.c, this.b, (TLObject) obj, (TLObject) obj2);
         }
     }
 }

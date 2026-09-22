@@ -1,66 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lr0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ lv0 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ int e;
+public final class lr0 extends vu0 {
+    public final /* synthetic */ yu0 G;
 
-    public /* synthetic */ lr0(lv0 lv0Var, org.telegram.ui.ActionBar.f6 f6Var, int i10, MessageObject messageObject) {
-        this.b = lv0Var;
-        this.c = f6Var;
-        this.e = i10;
-        this.d = messageObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lr0(yu0 yu0Var, Context context) {
+        super(yu0Var, context, 0, true);
+        this.G = yu0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(this.b.getContext(), 3, this.c)};
-                int i10 = this.e;
-                int sendVote = SendMessagesHelper.getInstance(i10).sendVote(this.d, null, new ls(b2VarArr, 1));
-                if (sendVote != 0) {
-                    AndroidUtilities.runOnUIThread(new pr0(b2VarArr, i10, sendVote, 0), 500L);
-                    break;
-                }
-                break;
-            default:
-                lv0 lv0Var = this.b;
-                Context context = lv0Var.getContext();
-                org.telegram.ui.ActionBar.f6 f6Var = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.P0 = false;
-                MessageObject messageObject = this.d;
-                if (messageObject.isQuiz()) {
-                    b2Var.R = LocaleController.getString(R.string.StopQuizAlertTitle);
-                    b2Var.T = LocaleController.getString(R.string.StopQuizAlertText);
-                } else {
-                    b2Var.R = LocaleController.getString(R.string.StopPollAlertTitle);
-                    b2Var.T = LocaleController.getString(R.string.StopPollAlertText);
-                }
-                alertDialog$Builder.k(LocaleController.getString(R.string.Stop), new org.telegram.ui.ea(lv0Var, f6Var, messageObject, this.e, 4));
-                hg.k0.p(R.string.Cancel, alertDialog$Builder, null);
-                break;
+    @Override // org.telegram.ui.Components.vu0, s4.h0
+    public final void l() {
+        super.l();
+        yu0 yu0Var = this.G;
+        rt0 W = yu0Var.W(9);
+        if (W != null && W.r.getVisibility() == 0) {
+            yu0Var.f0.l();
         }
-    }
-
-    public /* synthetic */ lr0(lv0 lv0Var, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject, int i10) {
-        this.b = lv0Var;
-        this.c = f6Var;
-        this.d = messageObject;
-        this.e = i10;
+        if (W != null) {
+            is0 is0Var = W.w;
+            ai.d9 d9Var = this.s;
+            is0Var.e(d9Var != null && (d9Var.k() || (yu0Var.i0() && this.s.g() > 0)), true);
+        }
     }
 }

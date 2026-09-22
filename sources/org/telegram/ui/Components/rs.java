@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public class rs extends m61 {
+public class rs extends w51 {
     public final int N;
     public final int O;
     public final boolean P;
@@ -37,8 +37,8 @@ public class rs extends m61 {
     public boolean g0;
     public final x2 h0;
 
-    public rs(yl0 yl0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(yl0Var, context, i10, 0, true, null, f6Var);
+    public rs(ll0 ll0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(ll0Var, context, i10, 0, true, null, e6Var);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
@@ -50,19 +50,19 @@ public class rs extends m61 {
         this.O = i11;
         this.P = z10;
         this.Q = new qs(i10, new ms(this, 1));
-        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, f6Var, context)), true);
+        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, e6Var, context)), true);
         N(false);
         MediaDataController.getInstance(i10).loadHints(true);
     }
 
     public final void V() {
         boolean isEmpty = TextUtils.isEmpty(this.e0);
-        yl0 yl0Var = this.d;
+        ll0 ll0Var = this.d;
         if (isEmpty) {
             if (!this.g0) {
-                if (yl0Var != null) {
-                    for (int i10 = 0; i10 < yl0Var.getChildCount(); i10++) {
-                        if (!(yl0Var.getChildAt(i10) instanceof t00)) {
+                if (ll0Var != null) {
+                    for (int i10 = 0; i10 < ll0Var.getChildCount(); i10++) {
+                        if (!(ll0Var.getChildAt(i10) instanceof t00)) {
                         }
                     }
                 }
@@ -70,13 +70,13 @@ public class rs extends m61 {
             this.Q.a();
             break;
         }
-        if (this.b0 && !this.Z && yl0Var != null) {
+        if (this.b0 && !this.Z && ll0Var != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= yl0Var.getChildCount()) {
+                if (i11 >= ll0Var.getChildCount()) {
                     break;
                 }
-                if (!(yl0Var.getChildAt(i11) instanceof t00)) {
+                if (!(ll0Var.getChildAt(i11) instanceof t00)) {
                     i11++;
                 } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
                     W(true);
@@ -111,7 +111,7 @@ public class rs extends m61 {
         if (z10) {
             ArrayList arrayList = this.T;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.c.h(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.c0;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {

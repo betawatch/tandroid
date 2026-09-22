@@ -1,94 +1,106 @@
 package x2;
 
-import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFormat;
-import android.media.AudioManager;
-import android.media.Spatializer;
-import android.os.Handler;
-import android.os.Looper;
-import e2.d0;
-import j$.util.Objects;
-import k2.c0;
+import b2.l1;
+import e9.i0;
+import e9.x0;
+import e9.y0;
+import e9.z;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class l {
-    public final Spatializer a;
-    public final boolean b;
-    public final Handler c;
-    public final k d;
+public final class l extends n implements Comparable {
+    public final int e;
+    public final boolean f;
+    public final boolean h;
+    public final boolean n;
+    public final int r;
+    public final int s;
+    public final int v;
+    public final int w;
+    public final boolean x;
 
-    public l(Context context, q qVar, Boolean bool) {
-        AudioManager e = context == null ? null : c2.d.e(context);
-        if (e == null || (bool != null && bool.booleanValue())) {
-            this.a = null;
-            this.b = false;
-            this.c = null;
-            this.d = null;
-            return;
-        }
-        Spatializer spatializer = e.getSpatializer();
-        this.a = spatializer;
-        this.b = spatializer.getImmersiveAudioLevel() != 0;
-        k kVar = new k(qVar);
-        this.d = kVar;
-        Looper myLooper = Looper.myLooper();
-        e2.d.h(myLooper);
-        Handler handler = new Handler(myLooper);
-        this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new c0(handler, 0), kVar);
-    }
-
-    public final boolean a(b2.e eVar, b2.s sVar) {
-        String str = sVar.r;
-        String str2 = sVar.r;
-        int i10 = sVar.J;
-        if (Objects.equals(str, "audio/eac3-joc")) {
-            if (i10 == 16) {
-                i10 = 12;
+    public l(int i10, l1 l1Var, int i11, i iVar, int i12, String str, String str2) {
+        super(i10, l1Var, i11);
+        int i13;
+        int i14;
+        int i15 = 0;
+        this.f = hg.c.d(i12, false);
+        int i16 = this.d.e;
+        int i17 = iVar.y;
+        i0 i0Var = iVar.v;
+        int i18 = i16 & (~i17);
+        this.h = (i18 & 1) != 0;
+        this.n = (i18 & 2) != 0;
+        i0 z10 = str2 != null ? i0.z(str2) : i0Var.isEmpty() ? i0.z("") : i0Var;
+        int i19 = 0;
+        while (true) {
+            int size = z10.size();
+            i13 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (i19 >= size) {
+                i19 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                i14 = 0;
+                break;
+            } else {
+                i14 = p.d(this.d, (String) z10.get(i19), iVar.z);
+                if (i14 > 0) {
+                    break;
+                } else {
+                    i19++;
+                }
             }
-        } else if (Objects.equals(str2, "audio/iamf")) {
-            if (i10 == -1) {
-                i10 = 6;
-            }
-        } else if (Objects.equals(str2, "audio/ac4") && (i10 == 18 || i10 == 21)) {
-            i10 = 24;
         }
-        int s10 = d0.s(i10);
-        if (s10 == 0) {
-            return false;
+        this.r = i19;
+        this.s = i14;
+        int i20 = str2 != null ? 1088 : iVar.w;
+        int i21 = this.d.f;
+        y0 y0Var = p.l;
+        i13 = (i21 == 0 || i21 != i20) ? Integer.bitCount(i20 & i21) : i13;
+        this.v = i13;
+        this.x = (1088 & this.d.f) != 0;
+        int d = p.d(this.d, str, p.g(str) == null);
+        this.w = d;
+        boolean z11 = i14 > 0 || (i0Var.isEmpty() && i13 > 0) || this.h || (this.n && d > 0);
+        if (hg.c.d(i12, iVar.t0) && z11) {
+            i15 = 1;
         }
-        AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(s10);
-        int i11 = sVar.K;
-        if (i11 != -1) {
-            channelMask.setSampleRate(i11);
-        }
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.canBeSpatialized((AudioAttributes) eVar.b().a, channelMask.build());
+        this.e = i15;
     }
 
-    public final boolean b() {
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.isAvailable();
+    @Override // x2.n
+    public final int a() {
+        return this.e;
     }
 
-    public final boolean c() {
-        Spatializer spatializer = this.a;
-        spatializer.getClass();
-        return spatializer.isEnabled();
+    @Override // x2.n
+    public final /* bridge */ /* synthetic */ boolean b(n nVar) {
+        return false;
     }
 
-    public final void d() {
-        k kVar;
-        Handler handler;
-        Spatializer spatializer = this.a;
-        if (spatializer == null || (kVar = this.d) == null || (handler = this.c) == null) {
-            return;
+    @Override // java.lang.Comparable
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public final int compareTo(l lVar) {
+        z c10 = z.a.c(this.f, lVar.f);
+        Integer valueOf = Integer.valueOf(this.r);
+        Integer valueOf2 = Integer.valueOf(lVar.r);
+        x0 x0Var = x0.b;
+        x0 x0Var2 = x0.c;
+        z b10 = c10.b(valueOf, valueOf2, x0Var2);
+        int i10 = lVar.s;
+        int i11 = this.s;
+        z a2 = b10.a(i11, i10);
+        int i12 = lVar.v;
+        int i13 = this.v;
+        z c11 = a2.a(i13, i12).c(this.h, lVar.h);
+        Boolean valueOf3 = Boolean.valueOf(this.n);
+        Boolean valueOf4 = Boolean.valueOf(lVar.n);
+        if (i11 != 0) {
+            x0Var = x0Var2;
         }
-        spatializer.removeOnSpatializerStateChangedListener(kVar);
-        handler.removeCallbacksAndMessages(null);
+        z a10 = c11.b(valueOf3, valueOf4, x0Var).a(this.w, lVar.w);
+        if (i13 == 0) {
+            a10 = a10.d(this.x, lVar.x);
+        }
+        return a10.e();
     }
 }

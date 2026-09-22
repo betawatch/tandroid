@@ -8,56 +8,56 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.v9;
-import w7.y5;
+import org.telegram.ui.Components.u9;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout implements z5 {
-    public final v9 a;
-    public final f6 b;
+    public final u9 a;
+    public final e6 b;
     public final TextView c;
     public final TextView d;
 
-    public e(Context context, f6 f6Var) {
+    public e(Context context, e6 e6Var) {
         super(context);
-        this.b = f6Var;
-        v9 v9Var = new v9(context);
-        this.a = v9Var;
-        v9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(v9Var, y5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        this.b = e6Var;
+        u9 u9Var = new u9(context);
+        this.a = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(u9Var, x5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
-        addView(textView, y5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        addView(textView, x5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, y5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        addView(textView2, x5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
         e();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Drawable drawable = j6.S0;
-        v9 v9Var = this.a;
-        yf.p.a(canvas, drawable, (v9Var.getWidth() / 2.0f) + v9Var.getLeft(), (v9Var.getHeight() / 2.0f) + v9Var.getTop(), v9Var.getHeight());
+        Drawable drawable = i6.S0;
+        u9 u9Var = this.a;
+        yf.p.a(canvas, drawable, (u9Var.getWidth() / 2.0f) + u9Var.getLeft(), (u9Var.getHeight() / 2.0f) + u9Var.getTop(), u9Var.getHeight());
     }
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
-        int i10 = j6.G6;
-        f6 f6Var = this.b;
-        this.c.setTextColor(j6.v0(i10, f6Var));
-        this.d.setTextColor(j6.v0(j6.z6, f6Var));
+        int i10 = i6.G6;
+        e6 e6Var = this.b;
+        this.c.setTextColor(i6.v0(i10, e6Var));
+        this.d.setTextColor(i6.v0(i6.z6, e6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

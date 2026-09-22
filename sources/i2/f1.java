@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f1 {
     public final j2.k a;
@@ -18,7 +18,7 @@ public final class f1 {
     public final e2.z i;
     public boolean k;
     public g2.c0 l;
-    public u2.h1 j = new u2.f1();
+    public u2.g1 j = new u2.e1();
     public final IdentityHashMap c = new IdentityHashMap();
     public final HashMap d = new HashMap();
     public final ArrayList b = new ArrayList();
@@ -32,9 +32,9 @@ public final class f1 {
         this.i = zVar;
     }
 
-    public final b2.k1 a(int i10, ArrayList arrayList, u2.h1 h1Var) {
+    public final b2.k1 a(int i10, ArrayList arrayList, u2.g1 g1Var) {
         if (!arrayList.isEmpty()) {
-            this.j = h1Var;
+            this.j = g1Var;
             for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
                 e1 e1Var = (e1) arrayList.get(i11 - i10);
                 ArrayList arrayList2 = this.b;
@@ -135,10 +135,10 @@ public final class f1 {
         a5.a aVar = a0Var.c;
         aVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar.d;
-        u2.k0 k0Var = new u2.k0();
-        k0Var.a = handler;
-        k0Var.b = c1Var;
-        copyOnWriteArrayList.add(k0Var);
+        u2.j0 j0Var = new u2.j0();
+        j0Var.a = handler;
+        j0Var.b = c1Var;
+        copyOnWriteArrayList.add(j0Var);
         Looper myLooper2 = Looper.myLooper();
         if (myLooper2 == null) {
             myLooper2 = Looper.getMainLooper();

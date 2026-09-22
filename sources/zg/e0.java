@@ -14,23 +14,22 @@ import ii.v5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.bu;
-import yh.s5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class e0 extends bu {
-    public final f6 c;
-    public final l.d d;
+    public final e6 c;
+    public final k2.u d;
     public Runnable e;
     public int f;
 
-    public e0(Context context, int i10, f6 f6Var) {
-        super(context, f6Var);
-        this.c = f6Var;
-        this.d = new l.d(getContext(), new d0());
+    public e0(Context context, int i10, e6 e6Var) {
+        super(context, e6Var);
+        this.c = e6Var;
+        this.d = new k2.u(getContext(), new d0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i11 = Build.VERSION.SDK_INT;
@@ -42,14 +41,14 @@ public abstract class e0 extends bu {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(12.0f));
-        setTextColor(j6.v0(j6.Ud, f6Var));
-        setLinkTextColor(j6.v0(j6.hc, f6Var));
-        setHighlightColor(j6.v0(j6.uf, f6Var));
-        int i12 = j6.Vd;
-        setHintColor(j6.v0(i12, f6Var));
-        setHintTextColor(j6.v0(i12, f6Var));
-        setCursorColor(j6.v0(j6.Wd, f6Var));
-        setHandlesColor(j6.v0(j6.vf, f6Var));
+        setTextColor(i6.v0(i6.Ud, e6Var));
+        setLinkTextColor(i6.v0(i6.hc, e6Var));
+        setHighlightColor(i6.v0(i6.uf, e6Var));
+        int i12 = i6.Vd;
+        setHintColor(i6.v0(i12, e6Var));
+        setHintTextColor(i6.v0(i12, e6Var));
+        setCursorColor(i6.v0(i6.Wd, e6Var));
+        setHandlesColor(i6.v0(i6.vf, e6Var));
         if (i11 >= 28) {
             setFallbackLineSpacing(false);
         }
@@ -112,16 +111,16 @@ public abstract class e0 extends bu {
     public final void n(boolean z10) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
         for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
-            s5 s5Var = new s5(7, this, bVar);
+            v vVar = new v(1, this, bVar);
             if (z10) {
                 setCursorVisible(false);
                 ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
                 ofInt.addUpdateListener(new a(bVar, this, 1));
-                ofInt.addListener(new pg.d0(s5Var, 12));
+                ofInt.addListener(new qg.n0(vVar, 11));
                 ofInt.setDuration(200L);
                 ofInt.start();
             } else {
-                s5Var.run();
+                vVar.run();
             }
         }
     }

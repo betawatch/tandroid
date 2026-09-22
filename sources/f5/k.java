@@ -3,21 +3,22 @@ package f5;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.u6;
+import k2.c0;
+import w7.t6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ o0.b E;
-    public static final /* synthetic */ o0.b F;
-    public static final /* synthetic */ o0.b G;
-    public static final /* synthetic */ o0.b H;
-    public static final /* synthetic */ o0.b I;
-    public static final /* synthetic */ o0.b s;
-    public static final /* synthetic */ o0.b v;
-    public static final /* synthetic */ o0.b w;
-    public static final /* synthetic */ o0.b x;
-    public static final /* synthetic */ o0.b y;
+    public static final /* synthetic */ c0 E;
+    public static final /* synthetic */ c0 F;
+    public static final /* synthetic */ c0 G;
+    public static final /* synthetic */ c0 H;
+    public static final /* synthetic */ c0 I;
+    public static final /* synthetic */ c0 s;
+    public static final /* synthetic */ c0 v;
+    public static final /* synthetic */ c0 w;
+    public static final /* synthetic */ c0 x;
+    public static final /* synthetic */ c0 y;
     public Date e;
     public Date f;
     public long h;
@@ -43,13 +44,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = u6.b(e5.b.j(byteBuffer));
-            this.f = u6.b(e5.b.j(byteBuffer));
+            this.e = t6.b(e5.b.j(byteBuffer));
+            this.f = t6.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = u6.b(e5.b.i(byteBuffer));
-            this.f = u6.b(e5.b.i(byteBuffer));
+            this.e = t6.b(e5.b.i(byteBuffer));
+            this.f = t6.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -66,19 +67,19 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(u6.a(this.e));
-            byteBuffer.putLong(u6.a(this.f));
+            byteBuffer.putLong(t6.a(this.e));
+            byteBuffer.putLong(t6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) u6.a(this.e));
-            byteBuffer.putInt((int) u6.a(this.f));
+            byteBuffer.putInt((int) t6.a(this.e));
+            byteBuffer.putInt((int) t6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
         String str = this.r;
         if (str.getBytes().length != 3) {
-            throw new IllegalArgumentException(a4.a.p("\"", str, "\" language string isn't exactly 3 characters long!"));
+            throw new IllegalArgumentException(a4.a.q("\"", str, "\" language string isn't exactly 3 characters long!"));
         }
         int i10 = 0;
         for (int i11 = 0; i11 < 3; i11++) {
@@ -111,6 +112,6 @@ public final class k extends com.googlecode.mp4parser.c {
         sb2.append(this.n);
         sb2.append(";language=");
         e2.q(re.a.b(y, this, this));
-        return a4.a.s(sb2, this.r, "]");
+        return a4.a.t(sb2, this.r, "]");
     }
 }

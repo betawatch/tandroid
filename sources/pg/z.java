@@ -1,25 +1,25 @@
 package pg;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
+    public final /* synthetic */ d0 b;
 
-    public /* synthetic */ z(e0 e0Var, int i10) {
+    public /* synthetic */ z(d0 d0Var, int i10) {
         this.a = i10;
-        this.b = e0Var;
+        this.b = d0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                e0 e0Var = this.b;
-                m mVar = e0Var.A;
+                d0 d0Var = this.b;
+                m mVar = d0Var.A;
                 if (mVar != null) {
-                    e0Var.a.g(mVar);
-                    e0Var.A = null;
+                    d0Var.a.g(mVar);
+                    d0Var.A = null;
                     break;
                 }
                 break;

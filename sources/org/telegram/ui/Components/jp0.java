@@ -1,47 +1,68 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jp0 extends LinearLayout {
-    public final sv0 a;
-    public final TextView b;
-    public final TextView c;
+public final class jp0 extends ll0 {
+    public final /* synthetic */ int X2;
+    public final /* synthetic */ hq0 Y2;
 
-    public jp0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        setLayoutParams(new s4.p0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        sv0 sv0Var = new sv0(context);
-        this.a = sv0Var;
-        addView(sv0Var, w7.y5.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.y5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.j6.E8;
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), 102));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jp0(hq0 hq0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, e6Var);
+        this.X2 = i10;
+        this.Y2 = hq0Var;
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean E0(float f7) {
+        switch (this.X2) {
+            case 0:
+                hq0 hq0Var = this.Y2;
+                if (f7 >= AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 58.0f : 111.0f) + hq0Var.G0.b) {
+                }
+                break;
+            default:
+                hq0 hq0Var2 = this.Y2;
+                if (f7 >= AndroidUtilities.dp((!hq0Var2.h0 || hq0Var2.o0[1] == null) ? 58.0f : 111.0f) + hq0Var2.G0.b) {
+                }
+                break;
+        }
+        return true;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.X2) {
+            case 0:
+                hq0 hq0Var = this.Y2;
+                ll0 ll0Var = hq0Var.E;
+                if (ll0Var.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 58.0f : 111.0f) + hq0Var.p0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (ll0Var.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                hq0 hq0Var2 = this.Y2;
+                ll0 ll0Var2 = hq0Var2.E;
+                if (ll0Var2.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!hq0Var2.h0 || hq0Var2.o0[1] == null) ? 58.0f : 111.0f) + hq0Var2.p0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (ll0Var2.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+        }
     }
 }

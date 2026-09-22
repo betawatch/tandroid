@@ -1,35 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gf implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Dialog b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class gf implements o1.g {
+    public boolean a = false;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ fv0 c;
 
-    public /* synthetic */ gf(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i10) {
-        this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = dialog;
+    public gf(float f7, fv0 fv0Var) {
+        this.b = f7;
+        this.c = fv0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                chatActivityEnterView.p0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView.p0.postDelayed(new og(this.b, 18), 100L);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                chatActivityEnterView2.p0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView2.p0.postDelayed(new og(this.b, 18), 100L);
-                break;
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        if (this.a || f7 < this.b) {
+            return;
         }
-        return true;
+        this.a = true;
+        try {
+            this.c.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
     }
 }

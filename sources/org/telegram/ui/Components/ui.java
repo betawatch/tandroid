@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ui extends View {
     public final /* synthetic */ int a = 0;
@@ -47,19 +47,19 @@ public final class ui extends View {
         switch (this.a) {
             case 0:
                 yf.y yVar = (yf.y) this.d;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.c;
                 int i10 = this.b;
-                yVar.b(org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+                yVar.b(org.telegram.ui.ActionBar.i6.l1(0.5f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var)));
                 yVar.draw(canvas);
                 yf.y yVar2 = (yf.y) this.e;
-                yVar2.b(org.telegram.ui.ActionBar.j6.l1(0.95f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+                yVar2.b(org.telegram.ui.ActionBar.i6.l1(0.95f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var)));
                 yVar2.draw(canvas);
                 break;
             default:
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.di0) arrayList.get(i11)).a(canvas);
+                        ((org.telegram.ui.bi0) arrayList.get(i11)).a(canvas);
                     }
                     break;
                 }
@@ -86,11 +86,11 @@ public final class ui extends View {
         }
     }
 
-    public ui(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ui(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.d = new yf.y(2);
         this.e = new yf.y(2);
-        this.c = f6Var;
+        this.c = e6Var;
         this.b = i10;
     }
 }

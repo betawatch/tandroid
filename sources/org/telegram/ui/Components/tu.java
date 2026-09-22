@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tu extends OrientationEventListener {
     public final /* synthetic */ vu a;
@@ -19,8 +19,8 @@ public final class tu extends OrientationEventListener {
     public final void onOrientationChanged(int i10) {
         Activity activity;
         vu vuVar = this.a;
-        r91 r91Var = vuVar.c;
-        if (vuVar.F != null && r91Var.getVisibility() == 0 && (activity = vuVar.r) != null && r91Var.T && vuVar.M) {
+        c91 c91Var = vuVar.c;
+        if (vuVar.F != null && c91Var.getVisibility() == 0 && (activity = vuVar.r) != null && c91Var.T && vuVar.M) {
             if (i10 >= 240 && i10 <= 300) {
                 vuVar.N = true;
                 return;

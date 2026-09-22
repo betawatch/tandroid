@@ -5,16 +5,17 @@ import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
+import k2.c0;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ o0.b E;
-    public static final /* synthetic */ o0.b F;
-    public static final /* synthetic */ o0.b w;
-    public static final /* synthetic */ o0.b x;
-    public static final /* synthetic */ o0.b y;
+    public static final /* synthetic */ c0 E;
+    public static final /* synthetic */ c0 F;
+    public static final /* synthetic */ c0 w;
+    public static final /* synthetic */ c0 x;
+    public static final /* synthetic */ c0 y;
     public String e;
     public String f;
     public long h;
@@ -109,6 +110,6 @@ public final class j extends com.googlecode.mp4parser.c {
         sb2.append(this.e);
         sb2.append(";name=");
         e2.q(re.a.b(E, this, this));
-        return a4.a.s(sb2, this.f, "]");
+        return a4.a.t(sb2, this.f, "]");
     }
 }

@@ -1,43 +1,112 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import j$.time.LocalDate;
+import j$.time.Period;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.BirthdayController;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o11 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ Runnable[] a;
+public final class o11 {
+    public final int a;
+    public boolean b;
+    public q11 c;
+    public final boolean[] g;
+    public boolean i;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final ArrayList j = new ArrayList();
 
-    public o11(Runnable[] runnableArr) {
-        this.a = runnableArr;
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        if (imageReceiver.hasBitmapImage()) {
-            Runnable[] runnableArr = this.a;
-            if (runnableArr[0] != null) {
-                org.telegram.ui.Components.kj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                if (lottieAnimation == null) {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                } else if (lottieAnimation.y()) {
-                    lottieAnimation.A0 = new e01(runnableArr, 5);
-                } else {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
+    public o11(int i10, int i11) {
+        boolean[] zArr = new boolean[2];
+        this.g = zArr;
+        this.a = i11;
+        if (i11 <= 0) {
+            zArr[0] = true;
+        } else {
+            ArrayList arrayList = new ArrayList();
+            HashSet hashSet = new HashSet();
+            String i12 = hg.c.i(i11, "");
+            for (int i13 = 0; i13 < i12.length(); i13++) {
+                int charAt = i12.charAt(i13) - '0';
+                if (charAt >= 0 && charAt <= 9) {
+                    arrayList.add(Integer.valueOf(charAt));
+                    hashSet.add(Integer.valueOf(charAt));
                 }
             }
+            TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+            String[] strArr = r11.s;
+            tL_inputStickerSetShortName.short_name = "FestiveFontEmoji";
+            MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName, 0, false, new y(this, hashSet, arrayList, 7));
+        }
+        String str = r11.s[Utilities.random.nextInt(3)];
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
+        tL_inputStickerSetShortName2.short_name = "EmojiAnimations";
+        MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName2, 0, false, new mj0(6, this, str));
+    }
+
+    public static o11 c(int i10, TLRPC.UserFull userFull, o11 o11Var) {
+        TL_account.TL_birthday tL_birthday;
+        if (!LiteMode.isEnabled(2) || !BirthdayController.isToday(userFull)) {
+            if (o11Var == null) {
+                return null;
+            }
+            o11Var.b(false);
+            return null;
+        }
+        int years = (userFull == null || (tL_birthday = userFull.birthday) == null || (tL_birthday.flags & 1) == 0) ? 0 : Period.between(LocalDate.of(tL_birthday.year, tL_birthday.month, tL_birthday.day), LocalDate.now()).getYears();
+        if (o11Var != null) {
+            if (o11Var.a == years) {
+                return o11Var;
+            }
+            o11Var.b(false);
+        }
+        return new o11(i10, years);
+    }
+
+    public final void a() {
+        if (this.b || this.f.size() < this.e.size()) {
+            return;
+        }
+        boolean[] zArr = this.g;
+        int i10 = 0;
+        if (zArr[0] && zArr[1]) {
+            this.b = true;
+            ArrayList arrayList = this.h;
+            int size = arrayList.size();
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ((Runnable) obj).run();
+            }
+            arrayList.clear();
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.h5.b(this, imageReceiver);
+    public final void b(boolean z10) {
+        if (!z10 && !this.j.isEmpty()) {
+            this.i = true;
+            return;
+        }
+        this.h.clear();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i10 >= arrayList.size()) {
+                arrayList.clear();
+                return;
+            } else {
+                ((q11) arrayList.get(i10)).onDetachedFromWindow();
+                i10++;
+            }
+        }
     }
 }

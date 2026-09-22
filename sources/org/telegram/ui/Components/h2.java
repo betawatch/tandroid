@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h2 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -15,13 +15,13 @@ public final /* synthetic */ class h2 implements Utilities.Callback {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ h2(int i10, int i11, p3 p3Var, r3 r3Var, int i12, q3 q3Var) {
+    public /* synthetic */ h2(int i10, int i11, o3 o3Var, q3 q3Var, int i12, p3 p3Var) {
         this.b = i10;
         this.c = i11;
-        this.e = p3Var;
-        this.f = r3Var;
+        this.e = o3Var;
+        this.f = q3Var;
         this.d = i12;
-        this.g = q3Var;
+        this.g = p3Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -30,9 +30,9 @@ public final /* synthetic */ class h2 implements Utilities.Callback {
         int i11;
         switch (this.a) {
             case 0:
-                p3 p3Var = (p3) this.e;
-                r3 r3Var = (r3) this.f;
-                q3 q3Var = (q3) this.g;
+                o3 o3Var = (o3) this.e;
+                q3 q3Var = (q3) this.f;
+                p3 p3Var = (p3) this.g;
                 Boolean bool = (Boolean) obj;
                 int i12 = this.b;
                 int i13 = i12 % 60;
@@ -45,8 +45,8 @@ public final /* synthetic */ class h2 implements Utilities.Callback {
                     i16 = 59;
                 }
                 if (bool.booleanValue()) {
-                    i11 = p3Var.getValue();
-                    i10 = r3Var.getValue();
+                    i11 = o3Var.getValue();
+                    i10 = q3Var.getValue();
                 } else {
                     int i18 = this.d;
                     i10 = i18 % 60;
@@ -56,56 +56,56 @@ public final /* synthetic */ class h2 implements Utilities.Callback {
                         i10 = 59;
                     }
                 }
-                p3Var.setMinValue(i14);
-                p3Var.setMaxValue(i17);
+                o3Var.setMinValue(i14);
+                o3Var.setMaxValue(i17);
                 if (i11 > i17) {
-                    p3Var.setValue(i17);
+                    o3Var.setValue(i17);
                     i11 = i17;
                 } else if (i11 < i14) {
-                    p3Var.setValue(i14);
+                    o3Var.setValue(i14);
                     i11 = i14;
                 }
                 if (i11 <= i14) {
-                    r3Var.setMinValue(i13);
-                    r3Var.setMaxValue(i14 == i17 ? i16 : 59);
+                    q3Var.setMinValue(i13);
+                    q3Var.setMaxValue(i14 == i17 ? i16 : 59);
                 } else if (i11 >= i17) {
                     if (i14 != i17) {
                         i13 = 0;
                     }
-                    r3Var.setMinValue(i13);
-                    r3Var.setMaxValue(i16);
+                    q3Var.setMinValue(i13);
+                    q3Var.setMaxValue(i16);
                 } else if (i14 == i17) {
-                    r3Var.setMinValue(i13);
-                    r3Var.setMaxValue(i16);
+                    q3Var.setMinValue(i13);
+                    q3Var.setMaxValue(i16);
                 } else {
-                    r3Var.setMinValue(0);
-                    r3Var.setMaxValue(59);
+                    q3Var.setMinValue(0);
+                    q3Var.setMaxValue(59);
                 }
-                if (i10 > r3Var.getMaxValue()) {
-                    i10 = r3Var.getMaxValue();
-                    r3Var.setValue(i10);
-                } else if (i10 < r3Var.getMinValue()) {
-                    i10 = r3Var.getMinValue();
-                    r3Var.setValue(i10);
+                if (i10 > q3Var.getMaxValue()) {
+                    i10 = q3Var.getMaxValue();
+                    q3Var.setValue(i10);
+                } else if (i10 < q3Var.getMinValue()) {
+                    i10 = q3Var.getMinValue();
+                    q3Var.setValue(i10);
                 }
                 if (!bool.booleanValue()) {
-                    p3Var.setValue(i11);
-                    r3Var.setValue(i10);
+                    o3Var.setValue(i11);
+                    q3Var.setValue(i10);
                 }
-                q3Var.invalidate();
+                p3Var.invalidate();
                 break;
             default:
-                yh.y3.E0((yh.y3) this.e, this.b, this.c, this.d, (TL_stars.TL_starGiftUnique) this.f, (tg.m1[]) this.g, (Long) obj);
+                yh.z3.E0((yh.z3) this.e, this.b, this.c, this.d, (TL_stars.TL_starGiftUnique) this.f, (tg.n1[]) this.g, (Long) obj);
                 break;
         }
     }
 
-    public /* synthetic */ h2(yh.y3 y3Var, int i10, int i11, int i12, TL_stars.TL_starGiftUnique tL_starGiftUnique, tg.m1[] m1VarArr) {
-        this.e = y3Var;
+    public /* synthetic */ h2(yh.z3 z3Var, int i10, int i11, int i12, TL_stars.TL_starGiftUnique tL_starGiftUnique, tg.n1[] n1VarArr) {
+        this.e = z3Var;
         this.b = i10;
         this.c = i11;
         this.d = i12;
         this.f = tL_starGiftUnique;
-        this.g = m1VarArr;
+        this.g = n1VarArr;
     }
 }

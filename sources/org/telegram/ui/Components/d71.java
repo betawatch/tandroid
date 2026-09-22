@@ -1,36 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class d71 extends b20 {
-    public final ci.h2 J;
-    public final /* synthetic */ e71 K;
+public interface d71 {
+    void onError(g71 g71Var, Exception exc);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d71(e71 e71Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.K = e71Var;
-        ci.h2 h2Var = this.r;
-        this.J = h2Var;
-        h2Var.setImeOptions(268435459);
-        h2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
-        h2Var.addTextChangedListener(new ci.i2(this, 14));
-        h2Var.setOnEditorActionListener(new e1(this, 10));
-    }
+    void onRenderedFirstFrame();
 
-    @Override // org.telegram.ui.Components.b20
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
+    void onRenderedFirstFrame(j2.a aVar);
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.K.D(motionEvent, this.J);
-        return super.onInterceptTouchEvent(motionEvent);
-    }
+    void onSeekFinished(j2.a aVar);
+
+    void onSeekStarted(j2.a aVar);
+
+    void onStateChanged(boolean z10, int i10);
+
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
 }

@@ -1,59 +1,66 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class nb0 {
-    public static final nb0 h;
-    public static final /* synthetic */ nb0[] n;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
+public final /* synthetic */ class nb0 implements org.telegram.ui.Components.b5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.sv0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xb0 b;
 
-    static {
-        int i10 = R.drawable.icon_background_sa;
-        int i11 = R.mipmap.icon_foreground_sa;
-        nb0 nb0Var = new nb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
-        h = nb0Var;
-        n = new nb0[]{nb0Var, new nb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new nb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new nb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new nb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new nb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
+    public /* synthetic */ nb0(xb0 xb0Var, int i10) {
+        this.a = i10;
+        this.b = xb0Var;
     }
 
-    public nb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = z10;
+    @Override // org.telegram.ui.Components.b5
+    public void J(int i10, int i11, boolean z10) {
+        this.b.V(i10);
     }
 
-    public static nb0 valueOf(String str) {
-        return (nb0) Enum.valueOf(nb0.class, str);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        xb0 xb0Var = this.b;
+        xb0Var.T.a(xb0Var.e);
+        xb0Var.finishFragment();
     }
 
-    public static nb0[] values() {
-        return (nb0[]) n.clone();
-    }
-
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    @Override // org.telegram.ui.Components.sv0
+    public void g(int i10) {
+        switch (this.a) {
+            case 2:
+                xb0 xb0Var = this.b;
+                if (i10 >= xb0Var.P.size()) {
+                    xb0Var.w.setText("");
+                    break;
+                } else {
+                    xb0Var.w.setText(LocaleController.formatDateAudio(xb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
+                }
+            default:
+                xb0 xb0Var2 = this.b;
+                xb0Var2.F.clearFocus();
+                xb0Var2.O = true;
+                ArrayList arrayList = xb0Var2.R;
+                if (i10 < arrayList.size()) {
+                    xb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    xb0Var2.F.setText("");
+                }
+                xb0Var2.O = false;
+                break;
         }
-        return this.f;
+    }
+
+    @Override // org.telegram.ui.Components.sv0
+    public /* synthetic */ void l() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

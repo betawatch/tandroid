@@ -5,7 +5,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ju0 implements Runnable {
     public final /* synthetic */ String a;
@@ -76,6 +76,6 @@ public final class ju0 implements Runnable {
         if (this.d.x8 != this) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new rf0(this, this, iArr, 20));
+        AndroidUtilities.runOnUIThread(new pf0(this, this, iArr, 20));
     }
 }

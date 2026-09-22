@@ -3,7 +3,7 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public enum e implements Parcelable {
     b("none"),
@@ -25,7 +25,7 @@ public enum e implements Parcelable {
                 return eVar;
             }
         }
-        throw new d(a4.a.p("Attestation conveyance preference ", str, " not supported"));
+        throw new d(a4.a.q("Attestation conveyance preference ", str, " not supported"));
     }
 
     @Override // android.os.Parcelable

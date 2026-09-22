@@ -1,16 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final class tc1 extends s4.j {
-    public final /* synthetic */ xd1 F;
+import android.app.Activity;
+import android.view.MotionEvent;
 
-    public tc1(xd1 xd1Var) {
-        this.F = xd1Var;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class tc1 extends ci.i8 {
+    public tc1(Activity activity) {
+        super(activity, 3);
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.u0.g1();
+    @Override // ci.i8, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -9,7 +9,6 @@ import android.media.metrics.PlaybackMetrics;
 import android.media.metrics.PlaybackStateEvent;
 import android.media.metrics.TrackChangeEvent;
 import android.net.Uri;
-import android.os.HandlerThread;
 import android.text.TextUtils;
 import android.view.View;
 import ii.a5;
@@ -25,7 +24,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
@@ -43,12 +41,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.v71;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.id;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,20 +59,22 @@ public final /* synthetic */ class x1 implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(13:145|146|147|(3:194|195|(10:197|198|(2:189|190)|151|(1:153)|154|155|156|(1:(1:159))(7:161|162|163|164|165|166|167)|160))|149|(0)|151|(0)|154|155|156|(0)(0)|160) */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x0328, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(12:132|(2:133|134)|(3:181|182|(10:184|185|(2:176|177)|138|(1:140)|141|142|143|(1:(1:146))(7:148|149|150|151|152|153|154)|147))|136|(0)|138|(0)|141|142|143|(0)(0)|147) */
+    /* JADX WARN: Code restructure failed: missing block: B:174:0x030f, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x037a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x0361, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x02f4  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0322  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x032a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x02e6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x036b  */
+    /* JADX WARN: Removed duplicated region for block: B:131:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x02db  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0309  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0311 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x02cd A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -93,7 +93,7 @@ public final /* synthetic */ class x1 implements Runnable {
         TLRPC.Photo photo;
         int i11 = -1;
         int i12 = 4;
-        View A1 = null;
+        View z12 = null;
         r8 = null;
         r8 = null;
         String str3 = null;
@@ -105,7 +105,7 @@ public final /* synthetic */ class x1 implements Runnable {
         int i13 = 0;
         boolean z11 = false;
         int i14 = 0;
-        boolean z12 = true;
+        boolean z13 = true;
         switch (this.a) {
             case 0:
                 c2 c2Var = (c2) this.b;
@@ -144,41 +144,41 @@ public final /* synthetic */ class x1 implements Runnable {
                 ((e2.a0) this.b).e((Typeface) this.c);
                 return;
             case 2:
-                hg.f fVar = (hg.f) this.b;
+                hg.g gVar = (hg.g) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                fVar.e = false;
+                gVar.e = false;
                 TL_account.connectedBots connectedbots = tLObject instanceof TL_account.connectedBots ? (TL_account.connectedBots) tLObject : null;
-                fVar.c = connectedbots;
+                gVar.c = connectedbots;
                 if (connectedbots != null) {
-                    MessagesController.getInstance(fVar.a).putUsers(fVar.c.users, false);
+                    MessagesController.getInstance(gVar.a).putUsers(gVar.c.users, false);
                 }
-                fVar.b = System.currentTimeMillis();
-                fVar.f = true;
-                fVar.d();
+                gVar.b = System.currentTimeMillis();
+                gVar.f = true;
+                gVar.d();
                 return;
             case 3:
-                hg.l0.R((hg.l0) this.b, (kd) this.c);
+                hg.m0.R((hg.m0) this.b, (id) this.c);
                 return;
             case 4:
-                MessagesController.getInstance(((hg.u0) this.b).currentAccount).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
+                MessagesController.getInstance(((hg.v0) this.b).currentAccount).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 5:
-                hg.g1 g1Var = (hg.g1) this.b;
-                y51 y51Var = (y51) this.c;
-                g1Var.getClass();
-                g1Var.X(y51Var.d);
+                hg.h1 h1Var = (hg.h1) this.b;
+                i51 i51Var = (i51) this.c;
+                h1Var.getClass();
+                h1Var.X(i51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
-                hg.a2 a2Var2 = (hg.a2) this.c;
+                hg.b2 b2Var = (hg.b2) this.c;
                 try {
                     try {
                         sQLitePreparedStatement2 = messagesStorage.getDatabase().executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
                         sQLitePreparedStatement2.requery();
-                        sQLitePreparedStatement2.bindInteger(1, a2Var2.a);
-                        sQLitePreparedStatement2.bindString(2, a2Var2.b);
-                        sQLitePreparedStatement2.bindInteger(3, a2Var2.c);
-                        sQLitePreparedStatement2.bindInteger(4, a2Var2.f);
+                        sQLitePreparedStatement2.bindInteger(1, b2Var.a);
+                        sQLitePreparedStatement2.bindString(2, b2Var.b);
+                        sQLitePreparedStatement2.bindInteger(3, b2Var.c);
+                        sQLitePreparedStatement2.bindInteger(4, b2Var.f);
                         sQLitePreparedStatement2.step();
                     } catch (Exception e7) {
                         FileLog.e(e7);
@@ -195,21 +195,21 @@ public final /* synthetic */ class x1 implements Runnable {
                     throw th2;
                 }
             case 7:
-                hg.b2 b2Var = (hg.b2) this.b;
+                hg.c2 c2Var2 = (hg.c2) this.b;
                 MessagesStorage messagesStorage2 = (MessagesStorage) this.c;
-                ArrayList arrayList3 = b2Var.b;
+                ArrayList arrayList3 = c2Var2.b;
                 try {
                     try {
                         SQLiteDatabase database = messagesStorage2.getDatabase();
                         database.executeFast("DELETE FROM business_replies").stepThis().dispose();
                         sQLitePreparedStatement = database.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?)");
                         for (int i16 = 0; i16 < arrayList3.size(); i16++) {
-                            hg.a2 a2Var3 = (hg.a2) arrayList3.get(i16);
+                            hg.b2 b2Var2 = (hg.b2) arrayList3.get(i16);
                             sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindInteger(1, a2Var3.a);
-                            sQLitePreparedStatement.bindString(2, a2Var3.b);
-                            sQLitePreparedStatement.bindInteger(3, a2Var3.c);
-                            sQLitePreparedStatement.bindInteger(4, a2Var3.f);
+                            sQLitePreparedStatement.bindInteger(1, b2Var2.a);
+                            sQLitePreparedStatement.bindString(2, b2Var2.b);
+                            sQLitePreparedStatement.bindInteger(3, b2Var2.c);
+                            sQLitePreparedStatement.bindInteger(4, b2Var2.f);
                             sQLitePreparedStatement.step();
                         }
                         if (sQLitePreparedStatement == null) {
@@ -230,10 +230,10 @@ public final /* synthetic */ class x1 implements Runnable {
                     throw th3;
                 }
             case 8:
-                hg.b2 b2Var2 = (hg.b2) this.b;
+                hg.c2 c2Var3 = (hg.c2) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                ArrayList arrayList4 = b2Var2.b;
-                int i17 = b2Var2.a;
+                ArrayList arrayList4 = c2Var3.b;
+                int i17 = c2Var3.a;
                 if (tLObject2 instanceof TLRPC.TL_messages_quickReplies) {
                     TLRPC.TL_messages_quickReplies tL_messages_quickReplies = (TLRPC.TL_messages_quickReplies) tLObject2;
                     MessagesController.getInstance(i17).putUsers(tL_messages_quickReplies.users, false);
@@ -242,12 +242,12 @@ public final /* synthetic */ class x1 implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     for (int i18 = 0; i18 < tL_messages_quickReplies.quick_replies.size(); i18++) {
                         TLRPC.TL_quickReply tL_quickReply = tL_messages_quickReplies.quick_replies.get(i18);
-                        hg.a2 a2Var4 = new hg.a2();
-                        a2Var4.a = tL_quickReply.shortcut_id;
-                        a2Var4.b = tL_quickReply.shortcut;
-                        a2Var4.f = tL_quickReply.count;
-                        a2Var4.d = tL_quickReply.top_message;
-                        a2Var4.c = i18;
+                        hg.b2 b2Var3 = new hg.b2();
+                        b2Var3.a = tL_quickReply.shortcut_id;
+                        b2Var3.b = tL_quickReply.shortcut;
+                        b2Var3.f = tL_quickReply.count;
+                        b2Var3.d = tL_quickReply.top_message;
+                        b2Var3.c = i18;
                         int i19 = 0;
                         while (true) {
                             if (i19 < tL_messages_quickReplies.messages.size()) {
@@ -261,21 +261,21 @@ public final /* synthetic */ class x1 implements Runnable {
                         }
                         if (message != null) {
                             MessageObject messageObject = new MessageObject(i17, message, false, true);
-                            a2Var4.e = messageObject;
+                            b2Var3.e = messageObject;
                             messageObject.generateThumbs(false);
-                            a2Var4.e.applyQuickReply(tL_quickReply.shortcut, tL_quickReply.shortcut_id);
+                            b2Var3.e.applyQuickReply(tL_quickReply.shortcut, tL_quickReply.shortcut_id);
                         }
-                        arrayList5.add(a2Var4);
+                        arrayList5.add(b2Var3);
                     }
                     arrayList = arrayList5;
                 }
-                b2Var2.e = false;
+                c2Var3.e = false;
                 if (arrayList != null) {
                     arrayList4.clear();
                     arrayList4.addAll(arrayList);
                 }
-                b2Var2.f = true;
-                b2Var2.l();
+                c2Var3.f = true;
+                c2Var3.l();
                 NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 9:
@@ -303,23 +303,23 @@ public final /* synthetic */ class x1 implements Runnable {
                     long j10 = -9223372036854775807L;
                     if (e0Var.J) {
                         if (((i2.g1) l0Var.f).b.equals(e0Var.j0.b) && ((i2.g1) l0Var.f).d == e0Var.j0.s) {
-                            z12 = false;
+                            z13 = false;
                         }
-                        if (z12) {
+                        if (z13) {
                             if (k1Var.p() || ((i2.g1) l0Var.f).b.b()) {
                                 j10 = ((i2.g1) l0Var.f).d;
                             } else {
-                                i2.g1 g1Var2 = (i2.g1) l0Var.f;
-                                u2.f0 f0Var = g1Var2.b;
-                                long j11 = g1Var2.d;
+                                i2.g1 g1Var = (i2.g1) l0Var.f;
+                                u2.f0 f0Var = g1Var.b;
+                                long j11 = g1Var.d;
                                 Object obj = f0Var.a;
-                                b2.h1 h1Var = e0Var.o;
-                                k1Var.g(obj, h1Var);
-                                j10 = j11 + h1Var.e;
+                                b2.h1 h1Var2 = e0Var.o;
+                                k1Var.g(obj, h1Var2);
+                                j10 = j11 + h1Var2.e;
                             }
                         }
                         j3 = j10;
-                        z10 = z12;
+                        z10 = z13;
                     } else {
                         j3 = -9223372036854775807L;
                         z10 = false;
@@ -337,7 +337,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((v71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((g71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -370,9 +370,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                m61 m61Var = xVar.Z;
-                if (m61Var != null) {
-                    m61Var.N(true);
+                w51 w51Var = xVar.Z;
+                if (w51Var != null) {
+                    w51Var.N(true);
                     return;
                 }
                 return;
@@ -385,12 +385,22 @@ public final /* synthetic */ class x1 implements Runnable {
                     FileLog.e(e11);
                     str = null;
                 }
-                if (TextUtils.isEmpty(str) || !v7.j0.r(str)) {
+                if (TextUtils.isEmpty(str) || !w.c.p(str)) {
                     try {
                         query = w3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e12) {
                         e = e12;
                         str2 = null;
+                        FileLog.e(e);
+                        if (TextUtils.isEmpty(str2)) {
+                        }
+                        String replace = str2.replace('/', '_').replace('\\', '_');
+                        openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
+                        if (openInputStream == null) {
+                        }
+                        str = str3;
+                        if (TextUtils.isEmpty(str)) {
+                        }
                     }
                     if (query != null) {
                         try {
@@ -404,9 +414,9 @@ public final /* synthetic */ class x1 implements Runnable {
                                         FileLog.e(e);
                                         if (TextUtils.isEmpty(str2)) {
                                         }
-                                        String replace = str2.replace('/', '_').replace('\\', '_');
+                                        String replace2 = str2.replace('/', '_').replace('\\', '_');
                                         openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                                        if (openInputStream != null) {
+                                        if (openInputStream == null) {
                                         }
                                         str = str3;
                                         if (TextUtils.isEmpty(str)) {
@@ -419,11 +429,11 @@ public final /* synthetic */ class x1 implements Runnable {
                                 if (TextUtils.isEmpty(str2)) {
                                     str2 = "document_" + SharedConfig.getLastLocalId();
                                 }
-                                String replace2 = str2.replace('/', '_').replace('\\', '_');
+                                String replace22 = str2.replace('/', '_').replace('\\', '_');
                                 openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                                if (openInputStream != null) {
+                                if (openInputStream == null) {
                                     try {
-                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace2);
+                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace22);
                                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                                         try {
                                             AndroidUtilities.copyFile(openInputStream, fileOutputStream);
@@ -448,19 +458,19 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     if (TextUtils.isEmpty(str2)) {
                     }
-                    String replace22 = str2.replace('/', '_').replace('\\', '_');
+                    String replace222 = str2.replace('/', '_').replace('\\', '_');
                     openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                    if (openInputStream != null) {
+                    if (openInputStream == null) {
                     }
                     str = str3;
                 }
-                if (TextUtils.isEmpty(str) || !v7.j0.r(str)) {
+                if (TextUtils.isEmpty(str) || !w.c.p(str)) {
                     return;
                 }
                 AndroidUtilities.runOnUIThread(new x1(14, w3Var, str));
                 return;
             case 14:
-                ((w3) this.b).d2((String) this.c);
+                ((w3) this.b).c2((String) this.c);
                 return;
             case 15:
                 w3 w3Var2 = (w3) this.b;
@@ -520,10 +530,10 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (aVar == null) {
                     n3Var.getClass();
                 } else {
-                    A1 = n3Var.e.A1(aVar);
+                    z12 = n3Var.e.z1(aVar);
                 }
-                if (A1 instanceof d6) {
-                    d6 d6Var2 = (d6) A1;
+                if (z12 instanceof d6) {
+                    d6 d6Var2 = (d6) z12;
                     d6Var2.B();
                     d6Var2.getEditText().setSelection(d6Var2.getEditText().length());
                     return;
@@ -532,17 +542,17 @@ public final /* synthetic */ class x1 implements Runnable {
             case 17:
                 a5 a5Var = (a5) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
-                boolean z13 = a5Var.e;
-                boolean z14 = a5Var.d;
+                boolean z14 = a5Var.e;
+                boolean z15 = a5Var.d;
                 z4 z4Var = a5Var.s;
                 if (a5Var.w) {
                     return;
                 }
                 a5Var.y = 0;
-                if (a5Var.c || z14 || z13) {
+                if (a5Var.c || z15 || z14) {
                     if ((tLObject4 instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) tLObject4).document) != null) {
-                        if (!z13) {
-                            if (z14) {
+                        if (!z14) {
+                            if (z15) {
                                 a5Var.x = true;
                                 a5Var.e();
                                 z4Var.e(document);
@@ -615,45 +625,33 @@ public final /* synthetic */ class x1 implements Runnable {
             case 25:
                 n4.y yVar = (n4.y) this.b;
                 String str5 = (String) this.c;
-                k2.k kVar = (k2.k) yVar.b;
+                k2.j jVar = (k2.j) yVar.c;
                 String str6 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) kVar).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1012, new j2.c(p5, str5, 27));
+                j2.f fVar = ((i2.b0) jVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1012, new j2.c(p5, str5, 26));
                 return;
             case 26:
-                ((k2.o) this.b).S((k2.l) this.c);
+                ((k2.n) this.b).Y((k2.k) this.c);
                 return;
             case 27:
-                ((ki.h) this.b).G((ki.i0) this.c);
+                ((i9.c0) this.c).m(Boolean.valueOf(((m4.a0) this.b).o()));
                 return;
             case 28:
-                ki.h hVar = (ki.h) this.b;
-                HandlerThread handlerThread = (HandlerThread) this.c;
-                hVar.h();
-                ki.j jVar = hVar.w;
-                if (jVar != null) {
-                    jVar.o();
-                    hVar.w = null;
-                }
-                handlerThread.quitSafely();
+                m4.a0 a0Var = (m4.a0) this.b;
+                Runnable runnable = (Runnable) this.c;
+                a0Var.getClass();
+                runnable.run();
                 return;
             default:
-                ki.o oVar = (ki.o) this.b;
-                CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                oVar.getClass();
-                try {
-                    try {
-                        oVar.c();
-                        oVar.U = true;
-                    } finally {
-                        countDownLatch.countDown();
-                    }
-                } catch (RuntimeException e14) {
-                    oVar.Y = e14;
-                    oVar.d();
-                }
+                ((m4.a0) this.b).u(null, (m4.k1) this.c);
                 return;
         }
+    }
+
+    public /* synthetic */ x1(m4.a0 a0Var, m4.r rVar, Runnable runnable) {
+        this.a = 28;
+        this.b = a0Var;
+        this.c = runnable;
     }
 }

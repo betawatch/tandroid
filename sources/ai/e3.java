@@ -18,14 +18,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                             f4Var.l0 = new c3(f6Var, 9);
                             f6Var.F0 = f4Var;
                             f4Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                            a5Var.addView(f6Var.F0, w7.y5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
+                            a5Var.addView(f6Var.F0, w7.x5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User user = MessagesController.getInstance(f6Var.C2).getUser(Long.valueOf(f6Var.B1));
                         if (user != null) {
@@ -193,35 +193,35 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 }
             case 7:
                 Context context = f6Var.getContext();
-                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var.B0;
-                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, f6Var2, false);
-                f3Var.fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var2));
+                org.telegram.ui.ActionBar.e6 e6Var = f6Var.B0;
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, e6Var, false);
+                f3Var.fixNavigationBar(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, e6Var));
                 LinearLayout linearLayout = new LinearLayout(f6Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(f6Var.getContext());
-                v9Var.getImageReceiver().setAutoRepeat(1);
-                MediaDataController.getInstance(f6Var.C2).setPlaceholderImage(v9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
-                linearLayout.addView(v9Var, w7.y5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
+                org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(f6Var.getContext());
+                u9Var.getImageReceiver().setAutoRepeat(1);
+                MediaDataController.getInstance(f6Var.C2).setPlaceholderImage(u9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
+                linearLayout.addView(u9Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(f6Var.getContext());
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(17);
-                rk.n(org.telegram.ui.ActionBar.j6.j5, f6Var2, textView, 1, 20.0f);
+                vl.o(org.telegram.ui.ActionBar.i6.j5, e6Var, textView, 1, 20.0f);
                 textView.setText(LocaleController.getString(R.string.StoryQualityPremium));
-                linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
+                linearLayout.addView(textView, w7.x5.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(f6Var.getContext());
                 textView2.setGravity(17);
-                rk.n(org.telegram.ui.ActionBar.j6.r5, f6Var2, textView2, 1, 14.0f);
-                org.telegram.messenger.l0.l(R.string.StoryQualityPremiumText, textView2);
-                linearLayout.addView(textView2, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
-                ci.d dVar = new ci.d(f6Var.getContext(), f6Var2, true);
+                vl.o(org.telegram.ui.ActionBar.i6.r5, e6Var, textView2, 1, 14.0f);
+                org.telegram.messenger.y0.m(R.string.StoryQualityPremiumText, textView2);
+                linearLayout.addView(textView2, w7.x5.t(-1, -2, 1, 32, 9, 32, 19));
+                ci.d dVar = new ci.d(f6Var.getContext(), e6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
                 oq oqVar = new oq(R.drawable.mini_switch_lock, 0);
                 oqVar.setTopOffset(1);
                 spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
                 dVar.f(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) LocaleController.getString(R.string.OptionPremiumRequiredTitle)), false);
-                linearLayout.addView(dVar, w7.y5.q(-1, 48, 1));
+                linearLayout.addView(dVar, w7.x5.q(-1, 48, 1));
                 dVar.setOnClickListener(new f2(2, f6Var, f3Var));
                 f3Var.setCustomView(linearLayout);
                 ((ac) f6Var.Q1).h(f3Var);
@@ -254,19 +254,19 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
             case 10:
                 h5 h5Var = f6Var.K0;
                 boolean z12 = h5Var.v0;
-                org.telegram.ui.Cells.ba baVar = h5Var.W;
+                org.telegram.ui.Cells.aa aaVar = h5Var.W;
                 if (!z12) {
                     f6Var.h3 = true;
                     h5Var.D(false);
                     break;
-                } else if (!baVar.y()) {
+                } else if (!aaVar.y()) {
                     h5Var.C();
                     break;
-                } else if (baVar.y() && Math.abs(h5Var.g0 - h5Var.i0) < AndroidUtilities.touchSlop && Math.abs(h5Var.h0 - h5Var.j0) < AndroidUtilities.touchSlop) {
-                    org.telegram.ui.Cells.ea eaVar = baVar.o(h5Var.getContext()).r;
-                    eaVar.m();
-                    if (!eaVar.i && eaVar.e) {
-                        eaVar.f(false);
+                } else if (aaVar.y() && Math.abs(h5Var.g0 - h5Var.i0) < AndroidUtilities.touchSlop && Math.abs(h5Var.h0 - h5Var.j0) < AndroidUtilities.touchSlop) {
+                    org.telegram.ui.Cells.da daVar = aaVar.o(h5Var.getContext()).r;
+                    daVar.m();
+                    if (!daVar.i && daVar.e) {
+                        daVar.f(false);
                         break;
                     }
                 }

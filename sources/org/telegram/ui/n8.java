@@ -1,68 +1,58 @@
 package org.telegram.ui;
 
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ k9 b;
 
-    public /* synthetic */ n8(int i10, boolean[] zArr) {
+    public /* synthetic */ n8(k9 k9Var, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = k9Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                boolean z10 = !zArr[0];
-                zArr[0] = z10;
-                ((org.telegram.ui.Cells.a2) view).c(z10, true);
-                break;
+                Long l4 = (Long) view.getTag();
+                k9 k9Var = this.b;
+                ChatObject.Call groupCall = k9Var.getMessagesController().getGroupCall(l4.longValue(), false);
+                TLRPC.Chat chat = k9Var.getMessagesController().getChat(l4);
+                k9Var.Q = chat;
+                if (groupCall == null) {
+                    k9Var.R = l4;
+                    k9Var.getMessagesController().loadFullChat(l4.longValue(), 0, true);
+                    break;
+                } else {
+                    org.telegram.ui.Components.voip.f2.l(chat, null, false, null, k9Var.getParentActivity(), k9Var, k9Var.getAccountInstance());
+                    break;
+                }
             case 1:
-                boolean[] zArr2 = this.b;
-                boolean z11 = !zArr2[1];
-                zArr2[1] = z11;
-                ((org.telegram.ui.Cells.a2) view).c(z11, true);
+                this.b.k0(true);
                 break;
             case 2:
-                boolean[] zArr3 = this.b;
-                boolean z12 = !zArr3[0];
-                zArr3[0] = z12;
-                ((org.telegram.ui.Cells.a2) view).c(z12, true);
-                break;
-            case 3:
-                boolean[] zArr4 = this.b;
-                boolean z13 = !zArr4[0];
-                zArr4[0] = z13;
-                ((org.telegram.ui.Cells.a2) view).c(z13, true);
-                break;
-            case 4:
-                if (view.isEnabled()) {
-                    boolean[] zArr5 = this.b;
-                    boolean z14 = !zArr5[0];
-                    zArr5[0] = z14;
-                    ((org.telegram.ui.Cells.a2) view).c(z14, true);
-                    break;
+                k9 k9Var2 = this.b;
+                org.telegram.ui.Components.n70 H = org.telegram.ui.Components.n70.H(k9Var2, k9Var2.F);
+                H.s = 8;
+                if (k9Var2.getUserConfig().showCallsTab) {
+                    H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new j8(k9Var2, 1), false);
                 }
-                break;
-            case 5:
-                boolean[] zArr6 = this.b;
-                boolean z15 = !zArr6[0];
-                zArr6[0] = z15;
-                ((org.telegram.ui.Cells.a2) view).c(z15, true);
+                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteAllCalls), new j8(k9Var2, 2), true);
+                H.Z();
+                H.X(-AndroidUtilities.dp(64.0f));
                 break;
             default:
-                if (view.isEnabled()) {
-                    boolean[] zArr7 = this.b;
-                    boolean z16 = !zArr7[0];
-                    zArr7[0] = z16;
-                    ((org.telegram.ui.Cells.a2) view).c(z16, true);
-                    break;
-                }
+                k9 k9Var3 = this.b;
+                k9Var3.getClass();
+                k9.m0(k9Var3);
                 break;
         }
     }

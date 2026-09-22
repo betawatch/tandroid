@@ -17,11 +17,11 @@ import ci.f4;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.v5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -115,7 +115,7 @@ public final class s extends View {
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
-            d10.c.setColor(j6.w0(null, j6.Oh, false));
+            d10.c.setColor(i6.w0(null, i6.Oh, false));
             canvas.drawRoundRect(rectF, f7, f7, d10.c);
         } else {
             if (this.v) {

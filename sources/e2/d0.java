@@ -1,5 +1,6 @@
 package e2;
 
+import a3.k0;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,7 +21,6 @@ import b2.b1;
 import b2.r0;
 import b2.s0;
 import ci.b9;
-import hg.k0;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.math.BigDecimal;
@@ -49,11 +49,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
-import v7.o7;
-import v7.q7;
-import v7.s6;
+import v7.n7;
+import v7.p7;
+import v7.r6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final String a;
@@ -162,7 +162,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? k0.i(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? hg.c.j(i10, "custom (", ")") : "?";
         }
     }
 
@@ -208,12 +208,12 @@ public abstract class d0 {
         int i10;
         if (str == null) {
             String scheme = uri.getScheme();
-            if (scheme == null || (!s6.a("rtsp", scheme) && !s6.a("rtspt", scheme))) {
+            if (scheme == null || (!r6.a("rtsp", scheme) && !r6.a("rtspt", scheme))) {
                 String lastPathSegment = uri.getLastPathSegment();
                 if (lastPathSegment != null) {
                     int lastIndexOf = lastPathSegment.lastIndexOf(46);
                     if (lastIndexOf >= 0) {
-                        String b10 = s6.b(lastPathSegment.substring(lastIndexOf + 1));
+                        String b10 = r6.b(lastPathSegment.substring(lastIndexOf + 1));
                         b10.getClass();
                         switch (b10) {
                             case "ism":
@@ -320,11 +320,11 @@ public abstract class d0 {
         }
         if (i10 == 30) {
             String str = Build.MODEL;
-            if (s6.a(str, "moto g(20)") || s6.a(str, "rmx3231")) {
+            if (r6.a(str, "moto g(20)") || r6.a(str, "rmx3231")) {
                 return true;
             }
         }
-        return i10 == 34 && s6.a(Build.MODEL, "sm-x200");
+        return i10 == 34 && r6.a(Build.MODEL, "sm-x200");
     }
 
     public static boolean M(int i10) {
@@ -394,7 +394,7 @@ public abstract class d0 {
         if (!replace.isEmpty() && !replace.equals(TranslateController.UNKNOWN_LANGUAGE)) {
             str = replace;
         }
-        String b10 = s6.b(str);
+        String b10 = r6.b(str);
         int i10 = 0;
         String str2 = b10.split("-", 2)[0];
         if (g == null) {
@@ -418,9 +418,9 @@ public abstract class d0 {
         }
         String str4 = (String) g.get(str2);
         if (str4 != null) {
-            StringBuilder u10 = a4.a.u(str4);
-            u10.append(b10.substring(str2.length()));
-            b10 = u10.toString();
+            StringBuilder v = a4.a.v(str4);
+            v.append(b10.substring(str2.length()));
+            b10 = v.toString();
             str2 = str4;
         }
         if (!"no".equals(str2) && !"i".equals(str2) && !"zh".equals(str2)) {
@@ -494,17 +494,17 @@ public abstract class d0 {
         RoundingMode roundingMode = RoundingMode.DOWN;
         int i10 = 0;
         if (j3 >= 1000000 && j3 % 1000000 == 0) {
-            long b10 = q7.b(j3, 1000000L, RoundingMode.UNNECESSARY);
+            long b10 = p7.b(j3, 1000000L, RoundingMode.UNNECESSARY);
             while (i10 < jArr.length) {
-                jArr[i10] = q7.b(jArr[i10], b10, roundingMode);
+                jArr[i10] = p7.b(jArr[i10], b10, roundingMode);
                 i10++;
             }
             return;
         }
         if (j3 < 1000000 && 1000000 % j3 == 0) {
-            long b11 = q7.b(1000000L, j3, RoundingMode.UNNECESSARY);
+            long b11 = p7.b(1000000L, j3, RoundingMode.UNNECESSARY);
             while (i10 < jArr.length) {
-                jArr[i10] = q7.d(jArr[i10], b11);
+                jArr[i10] = p7.d(jArr[i10], b11);
                 i10++;
             }
             return;
@@ -514,14 +514,14 @@ public abstract class d0 {
             long j11 = jArr[i11];
             if (j11 != 0) {
                 if (j3 >= j11 && j3 % j11 == 0) {
-                    jArr[i11] = q7.b(1000000L, q7.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
+                    jArr[i11] = p7.b(1000000L, p7.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
                 } else if (j3 >= j11 || j11 % j3 != 0) {
                     j10 = j3;
                     jArr[i11] = Z(j11, 1000000L, j10, roundingMode);
                     i11++;
                     j3 = j10;
                 } else {
-                    jArr[i11] = q7.d(1000000L, q7.b(j11, j3, RoundingMode.UNNECESSARY));
+                    jArr[i11] = p7.d(1000000L, p7.b(j11, j3, RoundingMode.UNNECESSARY));
                 }
             }
             j10 = j3;
@@ -534,7 +534,7 @@ public abstract class d0 {
         if (j3 == 0 || j10 == 0) {
             return 0L;
         }
-        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? Z(j3, j10, j11, roundingMode) : q7.d(j10, q7.b(j3, j11, RoundingMode.UNNECESSARY)) : q7.b(j10, q7.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : q7.d(j3, q7.b(j10, j11, RoundingMode.UNNECESSARY)) : q7.b(j3, q7.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
+        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? Z(j3, j10, j11, roundingMode) : p7.d(j10, p7.b(j3, j11, RoundingMode.UNNECESSARY)) : p7.b(j10, p7.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : p7.d(j3, p7.b(j10, j11, RoundingMode.UNNECESSARY)) : p7.b(j3, p7.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -553,20 +553,20 @@ public abstract class d0 {
     public static long Z(long j3, long j10, long j11, RoundingMode roundingMode) {
         double d10;
         long j12;
-        long d11 = q7.d(j3, j10);
+        long d11 = p7.d(j3, j10);
         if (d11 != Long.MAX_VALUE && d11 != Long.MIN_VALUE) {
-            return q7.b(d11, j11, roundingMode);
+            return p7.b(d11, j11, roundingMode);
         }
-        long c10 = q7.c(Math.abs(j10), Math.abs(j11));
+        long c10 = p7.c(Math.abs(j10), Math.abs(j11));
         RoundingMode roundingMode2 = RoundingMode.UNNECESSARY;
-        long b10 = q7.b(j10, c10, roundingMode2);
-        long b11 = q7.b(j11, c10, roundingMode2);
-        long c11 = q7.c(Math.abs(j3), Math.abs(b11));
-        long b12 = q7.b(j3, c11, roundingMode2);
-        long b13 = q7.b(b11, c11, roundingMode2);
-        long d12 = q7.d(b12, b10);
+        long b10 = p7.b(j10, c10, roundingMode2);
+        long b11 = p7.b(j11, c10, roundingMode2);
+        long c11 = p7.c(Math.abs(j3), Math.abs(b11));
+        long b12 = p7.b(j3, c11, roundingMode2);
+        long b13 = p7.b(b11, c11, roundingMode2);
+        long d12 = p7.d(b12, b10);
         if (d12 != Long.MAX_VALUE && d12 != Long.MIN_VALUE) {
-            return q7.b(d12, b13, roundingMode);
+            return p7.b(d12, b13, roundingMode);
         }
         double d13 = b12 * (b10 / b13);
         if (d13 > 9.223372036854776E18d) {
@@ -576,7 +576,7 @@ public abstract class d0 {
             return Long.MIN_VALUE;
         }
         int i10 = g9.c.a;
-        if (!o7.b(d13)) {
+        if (!n7.b(d13)) {
             throw new ArithmeticException("input is infinite or NaN");
         }
         switch (g9.b.a[roundingMode.ordinal()]) {
@@ -667,19 +667,19 @@ public abstract class d0 {
         return b1Var == null || !b1Var.u() || b1Var.d() == 1 || b1Var.d() == 4 || !(!z10 || b1Var.u0() == 0 || b1Var.u0() == 4);
     }
 
-    public static int b(c5.a0 a0Var, long j3) {
-        int i10 = a0Var.b - 1;
+    public static int b(c5.b0 b0Var, long j3) {
+        int i10 = b0Var.b - 1;
         int i11 = 0;
         while (i11 <= i10) {
             int i12 = (i11 + i10) >>> 1;
-            if (a0Var.f(i12) < j3) {
+            if (b0Var.f(i12) < j3) {
                 i11 = i12 + 1;
             } else {
                 i10 = i12 - 1;
             }
         }
         int i13 = i10 + 1;
-        if (i13 < a0Var.b && a0Var.f(i13) == j3) {
+        if (i13 < b0Var.b && b0Var.f(i13) == j3) {
             return i13;
         }
         if (i10 == -1) {
@@ -743,7 +743,7 @@ public abstract class d0 {
         b9 b9Var = new b9(14, c0Var, wVar);
         i9.q qVar = i9.q.a;
         c0Var.a(b9Var, qVar);
-        wVar.a(new a3.k0(wVar, c0Var, pVar, 22), qVar);
+        wVar.a(new k0(wVar, c0Var, pVar, 22), qVar);
         return c0Var;
     }
 

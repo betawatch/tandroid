@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class jt implements SensorEventListener {
     public int E;
@@ -33,7 +33,7 @@ public final class jt implements SensorEventListener {
     public final PowerManager.WakeLock h;
     public boolean n;
     public boolean r;
-    public v71 s;
+    public g71 s;
     public boolean v;
     public long w;
     public int x;
@@ -65,11 +65,11 @@ public final class jt implements SensorEventListener {
     }
 
     public final void a() {
-        v71 v71Var = this.s;
-        if (v71Var == null) {
+        g71 g71Var = this.s;
+        if (g71Var == null) {
             return;
         }
-        v71Var.S(this.r ? 0 : 3);
+        g71Var.S(this.r ? 0 : 3);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:125:0x02b5, code lost:

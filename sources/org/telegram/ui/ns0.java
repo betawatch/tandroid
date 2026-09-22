@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ns0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,70 +31,70 @@ public final /* synthetic */ class ns0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new fs0((ss0) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 1));
+                AndroidUtilities.runOnUIThread(new es0((ss0) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 1));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new h90(this.b, tLObject, this.c, this.d, tL_error, 17));
+                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 17));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new fs0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, (TL_account.setAccountTTL) this.d, 4));
+                AndroidUtilities.runOnUIThread(new es0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, (TL_account.setAccountTTL) this.d, 4));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new h90(this.b, tLObject, this.c, this.d, tL_error, 21));
+                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 21));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new h90(this.b, tLObject, this.c, this.d, tL_error, 19));
+                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 19));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new h90(this.b, tLObject, this.c, this.d, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 20));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new fs0((h01) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 10));
+                AndroidUtilities.runOnUIThread(new es0((i01) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 10));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new h90(this.b, tL_error, tLObject, this.c, this.d, 24));
+                AndroidUtilities.runOnUIThread(new g90(this.b, tL_error, tLObject, this.c, this.d, 24));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new fs0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_authorization) this.d, 13));
+                AndroidUtilities.runOnUIThread(new es0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_authorization) this.d, 13));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new fs0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 12));
+                AndroidUtilities.runOnUIThread(new es0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 12));
                 break;
             case 10:
-                ma1 ma1Var = (ma1) this.b;
+                ka1 ka1Var = (ka1) this.b;
                 String str = (String) this.c;
-                ab1 ab1Var = (ab1) this.d;
+                ya1 ya1Var = (ya1) this.d;
                 boolean z10 = true;
                 jg.b bVar = null;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
                     try {
                         JSONObject jSONObject = new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data);
-                        na1 na1Var = ma1Var.r;
-                        int i10 = na1Var.i;
-                        if (na1Var != ma1Var.w.w) {
+                        la1 la1Var = ka1Var.r;
+                        int i10 = la1Var.i;
+                        if (la1Var != ka1Var.w.w) {
                             z10 = false;
                         }
-                        bVar = bb1.e0(jSONObject, i10, z10);
+                        bVar = za1.e0(jSONObject, i10, z10);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                    Toast.makeText(ma1Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                    Toast.makeText(ka1Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                AndroidUtilities.runOnUIThread(new fs0(ma1Var, bVar, str, ab1Var, 16));
+                AndroidUtilities.runOnUIThread(new es0(ka1Var, bVar, str, ya1Var, 16));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new fs0((xe1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 18));
+                AndroidUtilities.runOnUIThread(new es0((we1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 18));
                 break;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
                 byte[] bArr = (byte[]) this.c;
                 byte[] bArr2 = (byte[]) this.d;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new w81(17, twoStepVerificationActivity, tL_error));
+                    AndroidUtilities.runOnUIThread(new pb1(11, twoStepVerificationActivity, tL_error));
                     break;
                 } else {
-                    Utilities.globalQueue.postRunnable(new fs0(twoStepVerificationActivity, bArr, tLObject, bArr2, 19));
+                    Utilities.globalQueue.postRunnable(new es0(twoStepVerificationActivity, bArr, tLObject, bArr2, 19));
                     break;
                 }
         }

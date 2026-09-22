@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ul extends cm {
     public final /* synthetic */ boolean b;
@@ -39,10 +39,10 @@ public final class ul extends cm {
         int childCount = tlVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = tlVar.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.u5) {
-                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) childAt;
-                u5Var.a.getImageReceiver().setVisible(true, true);
-                u5Var.g(true);
+            if (childAt instanceof org.telegram.ui.Cells.t5) {
+                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) childAt;
+                t5Var.a.getImageReceiver().setVisible(true, true);
+                t5Var.g(true);
             }
         }
     }
@@ -92,7 +92,7 @@ public final class ul extends cm {
         chatAttachAlertPhotoLayout.t0 = false;
         if (ChatAttachAlertPhotoLayout.q1) {
             vi viVar = chatAttachAlertPhotoLayout.b;
-            viVar.Z1.C1(0, true, true, 0, 0, 0L, viVar.s1(), false, 0L);
+            viVar.Z1.B1(0, true, true, 0, 0, 0L, viVar.s1(), false, 0L);
             return;
         }
         if (!chatAttachAlertPhotoLayout.b0) {
@@ -115,7 +115,7 @@ public final class ul extends cm {
             ((MediaController.PhotoEntry) arrayList.get(i10)).editedInfo = videoEditedInfo;
         }
         org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-        if (!(n2Var instanceof org.telegram.ui.zn) || !((org.telegram.ui.zn) n2Var).v()) {
+        if (!(n2Var instanceof org.telegram.ui.bo) || !((org.telegram.ui.bo) n2Var).v()) {
             int size = arrayList.size();
             for (int i13 = 0; i13 < size; i13++) {
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) ChatAttachAlertPhotoLayout.r1.get(i13);
@@ -128,14 +128,14 @@ public final class ul extends cm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        d5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z11, z10, i11));
+        c5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z11, z10, i11));
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final boolean u() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         if (chatAttachAlertPhotoLayout.b0 && chatAttachAlertPhotoLayout.P != null) {
-            AndroidUtilities.runOnUIThread(new og(this, 24), 1000L);
+            AndroidUtilities.runOnUIThread(new ng(this, 24), 1000L);
             chatAttachAlertPhotoLayout.l0.b(0.0f, false);
             chatAttachAlertPhotoLayout.B0 = 0.0f;
             chatAttachAlertPhotoLayout.P.setZoom(0.0f);

@@ -1,13 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class y5 {
-    public static void a(int i10, Object[] objArr) {
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (objArr[i11] == null) {
-                throw new NullPointerException(hg.k0.h(i11, "at index "));
-            }
-        }
-    }
+    public abstract com.google.android.gms.internal.play_billing.f0 a(com.google.android.gms.internal.play_billing.w0 w0Var);
+
+    public abstract com.google.android.gms.internal.play_billing.k0 b(com.google.android.gms.internal.play_billing.w0 w0Var);
+
+    public abstract void c(com.google.android.gms.internal.play_billing.k0 k0Var, com.google.android.gms.internal.play_billing.k0 k0Var2);
+
+    public abstract void d(com.google.android.gms.internal.play_billing.k0 k0Var, Thread thread);
+
+    public abstract boolean e(com.google.android.gms.internal.play_billing.w0 w0Var, com.google.android.gms.internal.play_billing.f0 f0Var, com.google.android.gms.internal.play_billing.f0 f0Var2);
+
+    public abstract boolean f(com.google.android.gms.internal.play_billing.l0 l0Var, Object obj, Object obj2);
+
+    public abstract boolean g(com.google.android.gms.internal.play_billing.l0 l0Var, com.google.android.gms.internal.play_billing.k0 k0Var, com.google.android.gms.internal.play_billing.k0 k0Var2);
 }

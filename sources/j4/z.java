@@ -6,7 +6,7 @@ import e9.i0;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class z implements c3.o {
     public boolean e;
@@ -64,7 +64,7 @@ public final class z implements c3.o {
             }
             y yVar = (y) sparseArray.valueAt(i10);
             yVar.f = false;
-            yVar.a.d();
+            yVar.a.c();
             i10++;
         }
     }
@@ -172,9 +172,7 @@ public final class z implements c3.o {
             if (j15 != -9223372036854775807L) {
                 e2.b0 b0Var2 = xVar.b;
                 t7.u uVar = new t7.u();
-                n4.y yVar = new n4.y();
-                yVar.a = b0Var2;
-                yVar.b = new e2.v();
+                n4.y yVar = new n4.y(b0Var2);
                 long j16 = 1 + j15;
                 i10 = 4;
                 h3.a aVar = new h3.a(uVar, yVar, j15, j16, 0L, length, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
@@ -240,14 +238,14 @@ public final class z implements c3.o {
                     iVar = null;
                 }
                 if (iVar != null) {
-                    iVar.e(this.j, new f0(i16, 256));
+                    iVar.d(this.j, new f0(i16, 256));
                     yVar2 = new y(iVar, this.a);
                     sparseArray.put(i16, yVar2);
                 }
             }
             if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.f1();
+                this.j.e1();
             }
         }
         pVar.a(0, 2, vVar2.a);
@@ -291,9 +289,9 @@ public final class z implements c3.o {
             }
             yVar2.g = b0Var3.b(j3);
         }
-        iVar2.g(4, yVar2.g);
-        iVar2.b(vVar2);
-        iVar2.f(false);
+        iVar2.f(4, yVar2.g);
+        iVar2.a(vVar2);
+        iVar2.e(false);
         vVar2.I(vVar2.a.length);
         return 0;
     }

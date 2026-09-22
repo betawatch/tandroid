@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s61 b;
+public final class p61 extends rg.b1 {
+    public final /* synthetic */ q61 M;
 
-    public /* synthetic */ p61(s61 s61Var, int i10) {
-        this.a = i10;
-        this.b = s61Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p61(q61 q61Var, Context context) {
+        super(context, 2, null);
+        this.M = q61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var = this.b;
-                s61Var.N = floatValue;
-                s61Var.V.h0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var2 = this.b;
-                s61Var2.N = floatValue2;
-                s61Var2.V.h0.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s61 s61Var3 = this.b;
-                s61Var3.N = floatValue3;
-                s61Var3.V.h0.invalidate();
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        q61 q61Var = this.M;
+        if (q61Var.getParent() instanceof View) {
+            ((View) q61Var.getParent()).invalidate();
         }
     }
 }

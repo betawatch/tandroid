@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a0 implements Parcelable {
 
@@ -21,7 +21,7 @@ public final class a0 implements Parcelable {
                 return a0Var;
             }
         }
-        throw new z(a4.a.p("PublicKeyCredentialType ", str, " not supported"));
+        throw new z(a4.a.q("PublicKeyCredentialType ", str, " not supported"));
     }
 
     public static a0 valueOf(String str) {

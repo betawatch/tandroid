@@ -14,10 +14,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.ui.Cells.f3;
-import v7.j0;
+import n7.a1;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h implements cf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -35,14 +35,14 @@ public final class h implements cf.a {
     public final BitSet a;
     public final BitSet b;
     public final HashMap c;
-    public final f3 d;
+    public final a1 d;
     public String e;
     public int f;
     public b g;
     public f6.f h;
 
-    public h(f3 f3Var) {
-        List list = (List) f3Var.b;
+    public h(a1 a1Var) {
+        List list = (List) a1Var.b;
         HashMap hashMap = new HashMap();
         c(Arrays.asList(new ze.a(0), new ze.a(1)), hashMap);
         c(list, hashMap);
@@ -65,7 +65,7 @@ public final class h implements cf.a {
         bitSet2.set(60);
         bitSet2.set(38);
         this.a = bitSet2;
-        this.d = f3Var;
+        this.d = a1Var;
     }
 
     public static void b(char c10, ef.a aVar, HashMap hashMap) {
@@ -234,7 +234,7 @@ public final class h implements cf.a {
                     if (d11 != null) {
                         i10 = 1;
                         String i12 = e2.i(1, 1, d11);
-                        kVar = new bf.k(1, j0.g("mailto:", i12), null);
+                        kVar = new bf.k(1, q3.i("mailto:", i12), null);
                         kVar.b(new s(i12));
                     } else {
                         i10 = 1;

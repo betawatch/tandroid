@@ -1,17 +1,16 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes.dex */
-public final class l6 {
-    public final f8 a;
-    public final k6 b;
-    public final i6 c;
-    public final h7 d;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-    public /* synthetic */ l6(oi.f fVar) {
-        this.a = (f8) fVar.a;
-        this.b = (k6) fVar.b;
-        this.c = (i6) fVar.c;
-        this.d = (h7) fVar.d;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes.dex */
+public abstract class l6 {
+    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2) {
+        while (!atomicReferenceFieldUpdater.compareAndSet(g4Var, obj, obj2)) {
+            if (atomicReferenceFieldUpdater.get(g4Var) != obj && atomicReferenceFieldUpdater.get(g4Var) != obj) {
+                return false;
+            }
+        }
+        return true;
     }
 }

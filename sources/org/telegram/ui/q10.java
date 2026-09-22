@@ -5,16 +5,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q10 extends org.telegram.ui.Components.xl0 {
+public final class q10 extends org.telegram.ui.Components.kl0 {
     public final /* synthetic */ x10 c;
 
     public q10(x10 x10Var) {
         this.c = x10Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -36,13 +36,13 @@ public final class q10 extends org.telegram.ui.Components.xl0 {
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         if (c1Var.f == 0) {
-            org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) c1Var.a;
+            org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) c1Var.a;
             x10 x10Var = this.c;
             MessageObject messageObject = (MessageObject) x10Var.f.get(i10);
-            s2Var.O = x10Var.p0;
-            s2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
-            s2Var.s2 = i10 != h() - 1;
-            s2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.mk(this, s2Var, messageObject, s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId(), 1));
+            r2Var.O = x10Var.p0;
+            r2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+            r2Var.s2 = i10 != h() - 1;
+            r2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.mk(this, r2Var, messageObject, r2Var.getMessage() != null && r2Var.getMessage().getId() == messageObject.getId(), 1));
         }
     }
 
@@ -53,9 +53,9 @@ public final class q10 extends org.telegram.ui.Components.xl0 {
         if (i10 == 0) {
             a0Var = new gg.a0(2, viewGroup.getContext(), true);
         } else if (i10 != 3) {
-            org.telegram.ui.Cells.w3 w3Var = new org.telegram.ui.Cells.w3(viewGroup.getContext(), null);
-            w3Var.setText(LocaleController.getString(R.string.SearchMessages));
-            a0Var = w3Var;
+            org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
+            v3Var.setText(LocaleController.getString(R.string.SearchMessages));
+            a0Var = v3Var;
         } else {
             org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(viewGroup.getContext(), null);
             t00Var.setIsSingleCell(true);

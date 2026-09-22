@@ -4,7 +4,7 @@ import e2.d0;
 import j$.util.Objects;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b {
     public final long a;
@@ -38,10 +38,10 @@ public final class b {
     public final String toString() {
         String str = d0.a;
         Locale locale = Locale.US;
-        StringBuilder t10 = a4.a.t(this.a, "Segment: startTimeMs=", ", endTimeMs=");
-        t10.append(this.b);
-        t10.append(", speedDivisor=");
-        t10.append(this.c);
-        return t10.toString();
+        StringBuilder u10 = a4.a.u(this.a, "Segment: startTimeMs=", ", endTimeMs=");
+        u10.append(this.b);
+        u10.append(", speedDivisor=");
+        u10.append(this.c);
+        return u10.toString();
     }
 }

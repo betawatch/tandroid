@@ -2,16 +2,16 @@ package xh;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r1 b;
+    public final /* synthetic */ q1 b;
     public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ m0(r1 r1Var, Utilities.Callback callback, int i10) {
+    public /* synthetic */ m0(q1 q1Var, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = r1Var;
+        this.b = q1Var;
         this.c = callback;
     }
 
@@ -19,31 +19,31 @@ public final /* synthetic */ class m0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                r1 r1Var = this.b;
+                q1 q1Var = this.b;
                 Utilities.Callback callback = this.c;
                 if (callback != null) {
-                    r1Var.getClass();
+                    q1Var.getClass();
                     callback.run(Boolean.FALSE);
                 }
-                r1Var.dismiss();
+                q1Var.dismiss();
                 break;
             case 1:
-                r1 r1Var2 = this.b;
+                q1 q1Var2 = this.b;
                 Utilities.Callback callback2 = this.c;
                 if (callback2 != null) {
-                    r1Var2.getClass();
+                    q1Var2.getClass();
                     callback2.run(Boolean.FALSE);
                 }
-                r1Var2.dismiss();
+                q1Var2.dismiss();
                 break;
             default:
-                r1 r1Var3 = this.b;
+                q1 q1Var3 = this.b;
                 Utilities.Callback callback3 = this.c;
                 if (callback3 != null) {
-                    r1Var3.getClass();
+                    q1Var3.getClass();
                     callback3.run(Boolean.FALSE);
                 }
-                r1Var3.dismiss();
+                q1Var3.dismiss();
                 break;
         }
     }

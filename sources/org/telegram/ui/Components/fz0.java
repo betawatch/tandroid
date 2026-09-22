@@ -1,28 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fz0 extends fd0 {
-    public final /* synthetic */ gz0 w0;
+public final class fz0 extends ViewGroup.MarginLayoutParams {
+    public hz0 a;
+    public hz0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fz0(gz0 gz0Var, Context context) {
-        super(context, 13, null);
-        this.w0 = gz0Var;
+    public fz0() {
+        super(-2, -2);
+        hz0 hz0Var = hz0.e;
+        this.a = hz0Var;
+        this.b = hz0Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = hz0Var;
+        this.b = hz0Var;
     }
 
-    @Override // org.telegram.ui.Components.fd0, android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float dp = AndroidUtilities.dp(31.0f);
-        gz0 gz0Var = this.w0;
-        gz0Var.d.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h7, false));
-        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, gz0Var.d);
-        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
-        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, gz0Var.d);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || fz0.class != obj.getClass()) {
+            return false;
+        }
+        fz0 fz0Var = (fz0) obj;
+        return this.b.equals(fz0Var.b) && this.a.equals(fz0Var.a);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

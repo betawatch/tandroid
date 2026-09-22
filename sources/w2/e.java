@@ -1,5 +1,6 @@
 package w2;
 
+import a4.i;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -7,12 +8,12 @@ import android.os.Message;
 import android.os.Parcel;
 import b2.r0;
 import b2.s;
+import c5.m;
 import e2.d0;
 import e9.a1;
 import e9.i0;
 import ei.d5;
 import h2.h;
-import hg.k0;
 import i2.b0;
 import i2.e0;
 import i2.f;
@@ -21,14 +22,15 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import n4.y;
-import u2.c1;
+import org.telegram.ui.Cells.q3;
+import u2.b1;
 import u2.f0;
-import v7.j0;
-import z3.i;
+import z3.g;
 import z3.j;
-import z3.m;
+import z3.k;
+import z3.n;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e extends f implements Handler.Callback {
     public final na.d I;
@@ -37,10 +39,10 @@ public final class e extends f implements Handler.Callback {
     public final d L;
     public boolean M;
     public int N;
-    public z3.e O;
-    public i P;
-    public j Q;
-    public j R;
+    public z3.f O;
+    public j P;
+    public k Q;
+    public k R;
     public int S;
     public final Handler T;
     public final b0 U;
@@ -55,7 +57,7 @@ public final class e extends f implements Handler.Callback {
     public e(b0 b0Var, Looper looper) {
         super(3);
         Handler handler;
-        o0.b bVar = d.C;
+        v8.s sVar = d.C;
         this.U = b0Var;
         if (looper == null) {
             handler = null;
@@ -64,10 +66,10 @@ public final class e extends f implements Handler.Callback {
             handler = new Handler(looper, this);
         }
         this.T = handler;
-        this.L = bVar;
+        this.L = sVar;
         this.I = new na.d(28);
         this.J = new h(1, 0);
-        this.V = new y();
+        this.V = new y(17);
         this.a0 = -9223372036854775807L;
         this.Z = -9223372036854775807L;
     }
@@ -77,13 +79,13 @@ public final class e extends f implements Handler.Callback {
         boolean equals = Objects.equals(sVar.r, "application/x-media3-cues");
         String str = sVar.r;
         if (!equals) {
-            o0.b bVar = (o0.b) this.L;
-            bVar.getClass();
-            if (!((qb.b) bVar.b).W(sVar) && !Objects.equals(str, "application/cea-608") && !Objects.equals(str, "application/x-mp4-cea-608") && !Objects.equals(str, "application/cea-708")) {
-                return r0.l(str) ? k0.b(1, 0, 0, 0) : k0.b(0, 0, 0, 0);
+            v8.s sVar2 = (v8.s) this.L;
+            sVar2.getClass();
+            if (!((qb.b) sVar2.a).W(sVar) && !Objects.equals(str, "application/cea-608") && !Objects.equals(str, "application/x-mp4-cea-608") && !Objects.equals(str, "application/cea-708")) {
+                return r0.l(str) ? hg.c.b(1, 0, 0, 0) : hg.c.b(0, 0, 0, 0);
             }
         }
-        return k0.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
+        return hg.c.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
     }
 
     public final void C() {
@@ -95,10 +97,10 @@ public final class e extends f implements Handler.Callback {
             return Long.MAX_VALUE;
         }
         this.Q.getClass();
-        if (this.S >= this.Q.g()) {
+        if (this.S >= this.Q.A()) {
             return Long.MAX_VALUE;
         }
-        return this.Q.d(this.S);
+        return this.Q.g(this.S);
     }
 
     public final long E(long j3) {
@@ -115,12 +117,12 @@ public final class e extends f implements Handler.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void F() {
-        z3.e bVar;
+        z3.f bVar;
         char c10 = 1;
         this.M = true;
         s sVar = this.Y;
         sVar.getClass();
-        qb.b bVar2 = (qb.b) ((o0.b) this.L).b;
+        qb.b bVar2 = (qb.b) ((v8.s) this.L).a;
         String str = sVar.r;
         int i10 = sVar.O;
         if (str != null) {
@@ -151,17 +153,17 @@ public final class e extends f implements Handler.Callback {
                     bVar = new a4.d(str, i10);
                     break;
                 case 2:
-                    bVar = new a4.i(i10, sVar.u);
+                    bVar = new i(i10, sVar.u);
                     break;
             }
             this.O = bVar;
             bVar.a(this.w);
         }
         if (!bVar2.W(sVar)) {
-            throw new IllegalArgumentException(j0.g("Attempted to create decoder for unsupported MIME type: ", str));
+            throw new IllegalArgumentException(q3.i("Attempted to create decoder for unsupported MIME type: ", str));
         }
-        m v = bVar2.v(sVar);
-        bVar = new b(v.getClass().getSimpleName().concat("Decoder"), v);
+        n x10 = bVar2.x(sVar);
+        bVar = new b(x10.getClass().getSimpleName().concat("Decoder"), x10);
         this.O = bVar;
         bVar.a(this.w);
     }
@@ -178,14 +180,14 @@ public final class e extends f implements Handler.Callback {
     public final void H() {
         this.P = null;
         this.S = -1;
-        j jVar = this.Q;
-        if (jVar != null) {
-            jVar.release();
+        k kVar = this.Q;
+        if (kVar != null) {
+            kVar.release();
             this.Q = null;
         }
-        j jVar2 = this.R;
-        if (jVar2 != null) {
-            jVar2.release();
+        k kVar2 = this.R;
+        if (kVar2 != null) {
+            kVar2.release();
             this.R = null;
         }
     }
@@ -216,11 +218,11 @@ public final class e extends f implements Handler.Callback {
             if (Objects.equals(sVar.r, "application/x-media3-cues")) {
                 a aVar = this.K;
                 aVar.getClass();
-                if (aVar.d(this.Z) == Long.MIN_VALUE) {
+                if (aVar.a(this.Z) == Long.MIN_VALUE) {
                     try {
-                        c1 c1Var = this.r;
-                        c1Var.getClass();
-                        c1Var.a();
+                        b1 b1Var = this.r;
+                        b1Var.getClass();
+                        b1Var.a();
                         return true;
                     } catch (IOException unused) {
                         return false;
@@ -231,12 +233,12 @@ public final class e extends f implements Handler.Callback {
                     return false;
                 }
                 if (this.W) {
-                    j jVar = this.Q;
+                    k kVar = this.Q;
                     long j3 = this.Z;
-                    if (jVar == null || jVar.g() <= 0 || jVar.d(jVar.g() - 1) <= j3) {
-                        j jVar2 = this.R;
+                    if (kVar == null || kVar.A() <= 0 || kVar.g(kVar.A() - 1) <= j3) {
+                        k kVar2 = this.R;
                         long j10 = this.Z;
-                        if ((jVar2 == null || jVar2.g() <= 0 || jVar2.d(jVar2.g() - 1) <= j10) && this.P != null) {
+                        if ((kVar2 == null || kVar2.A() <= 0 || kVar2.g(kVar2.A() - 1) <= j10) && this.P != null) {
                             return false;
                         }
                     }
@@ -260,9 +262,9 @@ public final class e extends f implements Handler.Callback {
         this.Z = -9223372036854775807L;
         if (this.O != null) {
             H();
-            z3.e eVar = this.O;
-            eVar.getClass();
-            eVar.release();
+            z3.f fVar = this.O;
+            fVar.getClass();
+            fVar.release();
             this.O = null;
             this.N = 0;
         }
@@ -291,16 +293,16 @@ public final class e extends f implements Handler.Callback {
         }
         if (this.N == 0) {
             H();
-            z3.e eVar = this.O;
-            eVar.getClass();
-            eVar.flush();
-            eVar.a(this.w);
+            z3.f fVar = this.O;
+            fVar.getClass();
+            fVar.flush();
+            fVar.a(this.w);
             return;
         }
         H();
-        z3.e eVar2 = this.O;
-        eVar2.getClass();
-        eVar2.release();
+        z3.f fVar2 = this.O;
+        fVar2.getClass();
+        fVar2.release();
         this.O = null;
         this.N = 0;
         F();
@@ -311,7 +313,7 @@ public final class e extends f implements Handler.Callback {
         s sVar = sVarArr[0];
         this.Y = sVar;
         if (Objects.equals(sVar.r, "application/x-media3-cues")) {
-            this.K = this.Y.P == 1 ? new c() : new l.d(26);
+            this.K = this.Y.P == 1 ? new c() : new m();
             return;
         }
         C();
@@ -350,7 +352,7 @@ public final class e extends f implements Handler.Callback {
                     if (hVar.isEndOfStream()) {
                         this.W = true;
                     } else {
-                        hVar.e();
+                        hVar.c();
                         ByteBuffer byteBuffer = hVar.c;
                         byteBuffer.getClass();
                         long j13 = hVar.e;
@@ -365,29 +367,29 @@ public final class e extends f implements Handler.Callback {
                         obtain.recycle();
                         ArrayList parcelableArrayList = readBundle.getParcelableArrayList("c");
                         parcelableArrayList.getClass();
-                        z3.a aVar = new z3.a(j13, readBundle.getLong("d"), e2.d.j(new x2.h(9), parcelableArrayList));
+                        z3.b bVar = new z3.b(j13, readBundle.getLong("d"), e2.d.j(new z3.a(0), parcelableArrayList));
                         hVar.clear();
-                        z11 = this.K.z(aVar, j3);
+                        z11 = this.K.c(bVar, j3);
                     }
                 }
             }
-            long d = this.K.d(this.Z);
-            if (d == Long.MIN_VALUE && this.W && !z11) {
+            long a2 = this.K.a(this.Z);
+            if (a2 == Long.MIN_VALUE && this.W && !z11) {
                 this.X = true;
             }
-            if (d != Long.MIN_VALUE && d <= j3) {
+            if (a2 != Long.MIN_VALUE && a2 <= j3) {
                 z11 = true;
             }
             if (z11) {
-                i0 u10 = this.K.u(j3);
-                long J = this.K.J(j3);
-                d2.d dVar = new d2.d(E(J), u10);
+                i0 b10 = this.K.b(j3);
+                long d = this.K.d(j3);
+                d2.d dVar = new d2.d(E(d), b10);
                 if (handler != null) {
                     handler.obtainMessage(1, dVar).sendToTarget();
                 } else {
                     G(dVar);
                 }
-                this.K.R(J);
+                this.K.e(d);
             }
             this.Z = j3;
             return;
@@ -395,14 +397,14 @@ public final class e extends f implements Handler.Callback {
         C();
         this.Z = j3;
         if (this.R == null) {
-            z3.e eVar = this.O;
-            eVar.getClass();
-            eVar.b(j3);
+            z3.f fVar = this.O;
+            fVar.getClass();
+            fVar.b(j3);
             try {
-                z3.e eVar2 = this.O;
-                eVar2.getClass();
-                this.R = (j) eVar2.c();
-            } catch (z3.f e) {
+                z3.f fVar2 = this.O;
+                fVar2.getClass();
+                this.R = (k) fVar2.c();
+            } catch (g e) {
                 e2.a.f("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.Y, e);
                 d2.d dVar2 = new d2.d(E(this.Z), a1.e);
                 if (handler != null) {
@@ -411,9 +413,9 @@ public final class e extends f implements Handler.Callback {
                     G(dVar2);
                 }
                 H();
-                z3.e eVar3 = this.O;
-                eVar3.getClass();
-                eVar3.release();
+                z3.f fVar3 = this.O;
+                fVar3.getClass();
+                fVar3.release();
                 this.O = null;
                 this.N = 0;
                 F();
@@ -434,15 +436,15 @@ public final class e extends f implements Handler.Callback {
         } else {
             z10 = false;
         }
-        j jVar = this.R;
-        if (jVar != null) {
-            if (jVar.isEndOfStream()) {
+        k kVar = this.R;
+        if (kVar != null) {
+            if (kVar.isEndOfStream()) {
                 if (!z10 && D() == Long.MAX_VALUE) {
                     if (this.N == 2) {
                         H();
-                        z3.e eVar4 = this.O;
-                        eVar4.getClass();
-                        eVar4.release();
+                        z3.f fVar4 = this.O;
+                        fVar4.getClass();
+                        fVar4.release();
                         this.O = null;
                         this.N = 0;
                         F();
@@ -451,29 +453,29 @@ public final class e extends f implements Handler.Callback {
                         this.X = true;
                     }
                 }
-            } else if (jVar.timeUs <= j3) {
-                j jVar2 = this.Q;
-                if (jVar2 != null) {
-                    jVar2.release();
+            } else if (kVar.timeUs <= j3) {
+                k kVar2 = this.Q;
+                if (kVar2 != null) {
+                    kVar2.release();
                 }
-                this.S = jVar.a(j3);
-                this.Q = jVar;
+                this.S = kVar.d(j3);
+                this.Q = kVar;
                 this.R = null;
                 z10 = true;
             }
         }
         if (z10) {
             this.Q.getClass();
-            int a2 = this.Q.a(j3);
-            if (a2 == 0 || this.Q.g() == 0) {
+            int d10 = this.Q.d(j3);
+            if (d10 == 0 || this.Q.A() == 0) {
                 j11 = this.Q.timeUs;
-            } else if (a2 == -1) {
-                j jVar3 = this.Q;
-                j11 = jVar3.d(jVar3.g() - 1);
+            } else if (d10 == -1) {
+                k kVar3 = this.Q;
+                j11 = kVar3.g(kVar3.A() - 1);
             } else {
-                j11 = this.Q.d(a2 - 1);
+                j11 = this.Q.g(d10 - 1);
             }
-            d2.d dVar3 = new d2.d(E(j11), this.Q.f(j3));
+            d2.d dVar3 = new d2.d(E(j11), this.Q.l(j3));
             if (handler != null) {
                 handler.obtainMessage(1, dVar3).sendToTarget();
             } else {
@@ -485,50 +487,50 @@ public final class e extends f implements Handler.Callback {
         }
         while (!this.W) {
             try {
-                i iVar = this.P;
-                if (iVar == null) {
-                    z3.e eVar5 = this.O;
-                    eVar5.getClass();
-                    iVar = (i) eVar5.d();
-                    if (iVar == null) {
+                j jVar = this.P;
+                if (jVar == null) {
+                    z3.f fVar5 = this.O;
+                    fVar5.getClass();
+                    jVar = (j) fVar5.d();
+                    if (jVar == null) {
                         return;
                     } else {
-                        this.P = iVar;
+                        this.P = jVar;
                     }
                 }
                 if (this.N == 1) {
-                    iVar.setFlags(4);
-                    z3.e eVar6 = this.O;
-                    eVar6.getClass();
-                    eVar6.e(iVar);
+                    jVar.setFlags(4);
+                    z3.f fVar6 = this.O;
+                    fVar6.getClass();
+                    fVar6.e(jVar);
                     this.P = null;
                     this.N = 2;
                     return;
                 }
-                int w10 = w(yVar, iVar, 0);
+                int w10 = w(yVar, jVar, 0);
                 if (w10 == -4) {
-                    if (iVar.isEndOfStream()) {
+                    if (jVar.isEndOfStream()) {
                         this.W = true;
                         this.M = false;
                     } else {
-                        s sVar2 = (s) yVar.b;
+                        s sVar2 = (s) yVar.c;
                         if (sVar2 == null) {
                             return;
                         }
-                        iVar.r = sVar2.w;
-                        iVar.e();
-                        this.M &= !iVar.isKeyFrame();
+                        jVar.r = sVar2.w;
+                        jVar.c();
+                        this.M &= !jVar.isKeyFrame();
                     }
                     if (!this.M) {
-                        z3.e eVar7 = this.O;
-                        eVar7.getClass();
-                        eVar7.e(iVar);
+                        z3.f fVar7 = this.O;
+                        fVar7.getClass();
+                        fVar7.e(jVar);
                         this.P = null;
                     }
                 } else if (w10 == -3) {
                     return;
                 }
-            } catch (z3.f e7) {
+            } catch (g e7) {
                 e2.a.f("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.Y, e7);
                 d2.d dVar4 = new d2.d(E(this.Z), a1.e);
                 if (handler != null) {
@@ -537,9 +539,9 @@ public final class e extends f implements Handler.Callback {
                     G(dVar4);
                 }
                 H();
-                z3.e eVar8 = this.O;
-                eVar8.getClass();
-                eVar8.release();
+                z3.f fVar8 = this.O;
+                fVar8.getClass();
+                fVar8.release();
                 this.O = null;
                 this.N = 0;
                 F();

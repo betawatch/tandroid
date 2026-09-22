@@ -6,7 +6,7 @@ import android.os.Build;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class uq extends Path {
     public static ArrayList g;
@@ -40,14 +40,14 @@ public class uq extends Path {
             return;
         }
         ArrayList arrayList = this.a;
-        if (arrayList.size() <= 0 || !((RectF) hg.k0.g(1, arrayList)).contains(rectF)) {
-            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) hg.k0.g(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) hg.k0.g(1, arrayList)).bottom) > this.d) {
+        if (arrayList.size() <= 0 || !((RectF) hg.c.h(1, arrayList)).contains(rectF)) {
+            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) hg.c.h(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) hg.c.h(1, arrayList)).bottom) > this.d) {
                 ArrayList arrayList2 = g;
                 RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
                 rectF2.set(rectF);
                 arrayList.add(rectF2);
             } else {
-                ((RectF) hg.k0.g(1, arrayList)).union(rectF);
+                ((RectF) hg.c.h(1, arrayList)).union(rectF);
             }
             this.b = false;
         }
@@ -151,9 +151,9 @@ public class uq extends Path {
         RectF rectF;
         if (Build.VERSION.SDK_INT >= 34 && this.c) {
             ArrayList arrayList = this.a;
-            if (arrayList.size() <= 0 || !((RectF) hg.k0.g(1, arrayList)).contains(f7, f10, f11, f12)) {
-                if (arrayList.size() > 0 && Math.abs(f10 - ((RectF) hg.k0.g(1, arrayList)).top) <= this.d && Math.abs(f12 - ((RectF) hg.k0.g(1, arrayList)).bottom) <= this.d) {
-                    ((RectF) hg.k0.g(1, arrayList)).union(f7, f10, f11, f12);
+            if (arrayList.size() <= 0 || !((RectF) hg.c.h(1, arrayList)).contains(f7, f10, f11, f12)) {
+                if (arrayList.size() > 0 && Math.abs(f10 - ((RectF) hg.c.h(1, arrayList)).top) <= this.d && Math.abs(f12 - ((RectF) hg.c.h(1, arrayList)).bottom) <= this.d) {
+                    ((RectF) hg.c.h(1, arrayList)).union(f7, f10, f11, f12);
                 } else {
                     ArrayList arrayList2 = g;
                     if (arrayList2 != null && arrayList2.size() > 0) {

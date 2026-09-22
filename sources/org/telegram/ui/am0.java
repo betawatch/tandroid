@@ -1,105 +1,81 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class am0 implements View.OnClickListener {
+public final /* synthetic */ class am0 implements org.telegram.ui.ActionBar.a2, zt, cn0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pn0 b;
+    public final /* synthetic */ on0 b;
 
-    public /* synthetic */ am0(pn0 pn0Var, int i10) {
+    public /* synthetic */ am0(on0 on0Var, int i10) {
         this.a = i10;
-        this.b = pn0Var;
+        this.b = on0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.zt
+    public void a1(vt vtVar) {
         switch (this.a) {
-            case 0:
-                pn0 pn0Var = this.b;
-                pn0Var.S0 = 2;
-                pn0Var.D1();
-                break;
-            case 1:
-                this.b.d1();
-                break;
             case 2:
-                pn0 pn0Var2 = this.b;
-                pn0Var2.S0 = 3;
-                pn0Var2.D1();
-                break;
-            case 3:
-                pn0 pn0Var3 = this.b;
-                pn0Var3.S0 = 1;
-                pn0Var3.D1();
-                break;
-            case 4:
-                pn0 pn0Var4 = this.b;
-                pn0Var4.S0 = 4;
-                pn0Var4.D1();
-                break;
-            case 5:
-                pn0.e0(this.b);
-                break;
-            case 6:
-                pn0 pn0Var5 = this.b;
-                pn0Var5.f = true;
-                pn0Var5.L.callOnClick();
-                pn0Var5.f = false;
-                break;
-            case 7:
-                pn0 pn0Var6 = this.b;
-                pn0Var6.S0 = 0;
-                pn0Var6.D1();
-                break;
-            case 8:
-                pn0 pn0Var7 = this.b;
-                pn0Var7.S0 = 4;
-                pn0Var7.D1();
-                break;
-            case 9:
-                this.b.d1();
-                break;
-            case 10:
-                pn0.b0(this.b);
-                break;
-            case 11:
-                pn0.c0(this.b);
-                break;
-            case 12:
-                this.b.C1();
-                break;
-            case 13:
-                pn0 pn0Var8 = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pn0Var8.getParentActivity());
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.TelegramPassportDeleteTitle);
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.TelegramPassportDeleteAlert);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new cm0(pn0Var8, 5));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                pn0Var8.showDialog(b2Var);
-                TextView textView = (TextView) b2Var.d(-1);
-                if (textView != null) {
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-                    break;
-                }
-                break;
-            case 14:
-                this.b.C1();
-                break;
-            case 15:
-                pn0.V(this.b);
+                on0 on0Var = this.b;
+                on0Var.Y[5].setText(vtVar.a);
+                on0Var.s = vtVar.d;
                 break;
             default:
-                pn0 pn0Var9 = this.b;
-                pn0Var9.f = true;
-                pn0Var9.L.callOnClick();
-                pn0Var9.f = false;
+                on0 on0Var2 = this.b;
+                on0Var2.Y[0].setText(vtVar.a);
+                if (on0Var2.U0.indexOf(vtVar.a) != -1) {
+                    on0Var2.Z0 = true;
+                    String str = (String) on0Var2.V0.get(vtVar.a);
+                    on0Var2.Y[1].setText(str);
+                    String str2 = (String) on0Var2.X0.get(str);
+                    on0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    on0Var2.Z0 = false;
+                }
+                AndroidUtilities.runOnUIThread(new xl0(on0Var2, 3), 300L);
+                on0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = on0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.cn0
+    public void b(String str, String str2) {
+        this.b.x1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                on0 on0Var = this.b;
+                on0Var.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    on0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                on0.a0(this.b);
+                break;
+            case 4:
+                nf.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
                 break;
         }
     }

@@ -1,44 +1,56 @@
 package zg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jc0;
-import yh.u3;
+import android.view.ViewParent;
+import com.google.android.gms.internal.vision.e2;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Components.fk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c0 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ v(c0 c0Var, int i10) {
+    public /* synthetic */ v(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = c0Var;
+        this.b = obj;
+        this.c = obj2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.a.invalidate();
+                c0 c0Var = (c0) this.b;
+                fk0 fk0Var = (fk0) this.c;
+                c0Var.l = true;
+                c0Var.a.invalidate();
+                fk0Var.b1 = false;
+                fk0Var.invalidate();
+                c0Var.c(true);
+                break;
+            case 1:
+                e0 e0Var = (e0) this.b;
+                b bVar = (b) this.c;
+                e0Var.getText().delete(e0Var.getText().getSpanStart(bVar), e0Var.getText().getSpanEnd(bVar));
+                e0Var.setCursorVisible(true);
+                e0Var.setLongClickable(true);
                 break;
             default:
-                c0 c0Var = this.b;
-                u3 u3Var = c0Var.c;
-                if (u3Var.getParent() != null) {
-                    if (c0Var.d) {
-                        AndroidUtilities.removeFromParent(u3Var);
-                    } else {
-                        try {
-                            c0Var.b.removeView(u3Var);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    jc0 jc0Var = c0Var.p;
-                    if (jc0Var != null) {
-                        jc0Var.run();
-                        break;
-                    }
+                q0 q0Var = (q0) this.b;
+                n0 n0Var = (n0) this.c;
+                q0Var.getClass();
+                TLRPC.ReactionCount reactionCount = n0Var.a;
+                ViewParent viewParent = q0Var.z;
+                if (e2.u(viewParent)) {
+                    ((o4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
                 }
+                n0Var.Y.c(false);
+                q0Var.S = null;
+                q0Var.T = false;
+                q0Var.U = null;
                 break;
         }
     }

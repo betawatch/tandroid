@@ -12,12 +12,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
 import yf.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class e extends qh.e implements Drawable.Callback, le.d {
     public final String b;
@@ -40,12 +40,12 @@ public final class e extends qh.e implements Drawable.Callback, le.d {
         this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
         this.d = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
         tpVar.setCallback(this);
-        tpVar.b(j6.w0(null, j6.o7, false));
+        tpVar.b(i6.w0(null, i6.o7, false));
         tpVar.a = AndroidUtilities.dp(15.0f);
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         qh.d dVar = this.h;
         if (dVar != null) {
             dVar.invalidate();
@@ -73,13 +73,13 @@ public final class e extends qh.e implements Drawable.Callback, le.d {
         imageReceiver.draw(canvas);
         tp tpVar = this.f;
         tpVar.setBounds(0, 0, i10, i11);
-        int w02 = j6.w0(null, j6.a7, false);
+        int w02 = i6.w0(null, i6.a7, false);
         le.b bVar = this.s;
         int d = i0.a.d(bVar.e, w02, TLObject.FLAG_30);
         Paint paint = this.e;
         paint.setColor(d);
         canvas.drawRoundRect(0.0f, 0.0f, f7, f10, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), paint);
-        int d10 = i0.a.d(bVar.e, j6.w0(null, j6.o7, false), -1);
+        int d10 = i0.a.d(bVar.e, i6.w0(null, i6.o7, false), -1);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         a5.a aVar = this.c;
         aVar.getClass();

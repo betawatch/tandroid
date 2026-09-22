@@ -8,9 +8,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class e41 extends org.telegram.ui.Components.xl0 {
+public final class e41 extends org.telegram.ui.Components.kl0 {
     public final Context c;
     public final boolean d;
     public final /* synthetic */ f41 e;
@@ -21,7 +21,7 @@ public final class e41 extends org.telegram.ui.Components.xl0 {
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -71,7 +71,7 @@ public final class e41 extends org.telegram.ui.Components.xl0 {
             }
             return;
         }
-        org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
+        org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
         boolean z11 = this.d;
         f41 f41Var = this.e;
         TranslateController.Language language = null;
@@ -94,8 +94,8 @@ public final class e41 extends org.telegram.ui.Components.xl0 {
         if (str == null) {
             str = language.displayName;
         }
-        y8Var.b(str, language.displayName, false, !z10);
-        y8Var.setChecked(f41Var.r.contains(language.code));
+        x8Var.b(str, language.displayName, false, !z10);
+        x8Var.setChecked(f41Var.r.contains(language.code));
     }
 
     @Override // s4.h0
@@ -103,14 +103,14 @@ public final class e41 extends org.telegram.ui.Components.xl0 {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            view = new org.telegram.ui.Cells.y8(context);
+            view = new org.telegram.ui.Cells.x8(context);
         } else if (i10 != 2) {
-            view = new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.c1) null);
+            view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.q3) null);
         } else {
-            org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context);
-            n4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
-            view = n4Var;
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = m4Var;
         }
-        return new org.telegram.ui.Components.il0(view);
+        return new org.telegram.ui.Components.vk0(view);
     }
 }

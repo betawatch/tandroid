@@ -1,36 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+public final class q11 extends org.telegram.ui.ActionBar.f5 {
+    public final /* synthetic */ SparseIntArray R;
 
-    public /* synthetic */ q11(ThemeEditorView themeEditorView, int i10) {
-        this.a = i10;
-        this.b = themeEditorView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q11(boolean z10, SparseIntArray sparseIntArray) {
+        super(2, z10, false, null);
+        this.R = sparseIntArray;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ThemeEditorView themeEditorView = this.b;
-                o11 o11Var = themeEditorView.a;
-                if (o11Var != null) {
-                    o11Var.setBackground(null);
-                    themeEditorView.h.removeView(themeEditorView.a);
-                    break;
-                }
-                break;
-            default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.j6.r1(themeEditorView2.m, true, false, false);
-                themeEditorView2.a();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f5
+    public final int g(int i10) {
+        return this.R.get(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final int h(int i10) {
+        return this.R.get(i10);
     }
 }

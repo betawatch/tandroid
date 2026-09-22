@@ -1,6 +1,9 @@
 package pg;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.os.Looper;
+import org.telegram.ui.Cells.l7;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,25 +18,28 @@ public final /* synthetic */ class z0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                d1 d1Var = this.b.b.d;
-                if (d1Var != null) {
-                    d1Var.postRunnable(d1Var.w);
-                    break;
+                a1 a1Var = this.b;
+                l7 l7Var = a1Var.w;
+                z0 z0Var = a1Var.s;
+                if (z0Var != null) {
+                    a1Var.cancelRunnable(z0Var);
+                    a1Var.s = null;
                 }
+                a1Var.cancelRunnable(l7Var);
+                a1Var.postRunnable(l7Var);
                 break;
             case 1:
-                d1 d1Var2 = this.b.b.d;
-                if (d1Var2 != null) {
-                    d1Var2.postRunnable(d1Var2.w);
-                    break;
-                }
+                a1 a1Var2 = this.b;
+                a1Var2.s = null;
+                a1Var2.w.run();
                 break;
             default:
-                f1 f1Var = this.b.b;
-                d1 d1Var3 = f1Var.d;
-                d1Var3.getClass();
-                d1Var3.postRunnable(new b1(d1Var3, 2));
-                f1Var.d = null;
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
                 break;
         }
     }

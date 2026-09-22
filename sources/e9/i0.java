@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
+import v7.s6;
 import v7.t6;
-import v7.u6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class i0 extends d0 implements List, RandomAccess, j$.util.List {
     public static final g0 b = new g0(a1.e, 0);
@@ -90,7 +90,7 @@ public abstract class i0 extends d0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: C, reason: merged with bridge method [inline-methods] */
     public i0 subList(int i10, int i11) {
-        u6.f(i10, i11, size());
+        t6.f(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? a1.e : new h0(this, i10, i12);
     }
@@ -121,13 +121,13 @@ public abstract class i0 extends d0 implements List, RandomAccess, j$.util.List 
                         Iterator it = iterator();
                         Iterator it2 = list.iterator();
                         while (it.hasNext()) {
-                            if (it2.hasNext() && t6.a(it.next(), it2.next())) {
+                            if (it2.hasNext() && s6.a(it.next(), it2.next())) {
                             }
                         }
                         return !it2.hasNext();
                     }
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (t6.a(get(i10), list.get(i10))) {
+                        if (s6.a(get(i10), list.get(i10))) {
                         }
                     }
                 }
@@ -217,7 +217,7 @@ public abstract class i0 extends d0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: x, reason: merged with bridge method [inline-methods] */
     public final g0 listIterator(int i10) {
-        u6.e(i10, size());
+        t6.e(i10, size());
         return isEmpty() ? b : new g0(this, i10);
     }
 

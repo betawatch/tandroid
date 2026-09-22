@@ -1,51 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.UndoView;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xm implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ln b;
-    public final /* synthetic */ MessageObject c;
+public abstract class xm extends org.telegram.ui.Components.ll0 implements ai.s9 {
+    public final /* synthetic */ bo X2;
 
-    public /* synthetic */ xm(ln lnVar, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = lnVar;
-        this.c = messageObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xm(bo boVar, Context context, zn znVar) {
+        super(context, znVar);
+        this.X2 = boVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ln lnVar = this.b;
-                zn znVar = lnVar.a;
-                znVar.Q7();
-                UndoView undoView = znVar.y3;
-                if (undoView != null) {
-                    int i10 = (znVar.Y.getVisibility() != 0 || znVar.R.getVisibility() == 0) ? 17 : 16;
-                    MessageObject messageObject = this.c;
-                    undoView.k(0L, i10, messageObject.getDiceEmoji(), null, null, new xm(lnVar, messageObject, 2));
-                    break;
-                }
-                break;
-            case 1:
-                zn znVar2 = this.b.a;
-                znVar2.vb = this.c.getId();
-                znVar2.wb = 0;
-                break;
-            default:
-                zn znVar3 = this.b.a;
-                if (znVar3.f7()) {
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), znVar3.T5, znVar3.n5, znVar3.X3, null, false, null, null, null, true, 0, 0, null, false);
-                    of2.sendMessageChatArguments = znVar3.C8();
-                    znVar3.getSendMessagesHelper().sendMessage(of2);
-                    break;
-                }
-                break;
-        }
+    @Override // ai.s9
+    public final void a(int[] iArr) {
+        bo boVar = this.X2;
+        iArr[0] = ((int) boVar.s9) - AndroidUtilities.dp(4.0f);
+        iArr[1] = org.telegram.messenger.y0.z(3.0f, boVar.x0.getPaddingBottom(), boVar.x0.getMeasuredHeight());
     }
 }

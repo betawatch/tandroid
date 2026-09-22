@@ -1,31 +1,16 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class f8 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final k9 e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+public abstract class f8 {
+    public boolean a() {
+        return false;
+    }
 
-    public /* synthetic */ f8(e8 e8Var) {
-        this.a = e8Var.a;
-        this.b = e8Var.b;
-        this.c = e8Var.c;
-        this.d = e8Var.d;
-        this.e = (k9) e8Var.k;
-        this.f = e8Var.e;
-        this.g = (Boolean) e8Var.f;
-        this.h = (Boolean) e8Var.g;
-        this.i = (Boolean) e8Var.h;
-        this.j = e8Var.i;
-        this.k = (Integer) e8Var.j;
+    public abstract void c();
+
+    public abstract void d();
+
+    public void b() {
     }
 }

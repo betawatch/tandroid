@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.br0;
 import org.telegram.ui.Components.e40;
+import org.telegram.ui.Components.mq0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e9;
-import org.telegram.ui.ea;
+import org.telegram.ui.d9;
+import org.telegram.ui.da;
 import org.telegram.ui.my0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new c9((e9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                AndroidUtilities.runOnUIThread(new c9((d9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
+                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 14));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new c9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
@@ -63,7 +63,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c9((e40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((br0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new c9((mq0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new my0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
@@ -81,18 +81,18 @@ public final /* synthetic */ class u implements RequestDelegate {
                         String str2 = tL_premiumGiftCodeOption.store_product;
                         if (str2 != null) {
                             c5.a aVar = new c5.a();
-                            aVar.c = "inapp";
-                            aVar.b = str2;
+                            aVar.b = "inapp";
+                            aVar.a = str2;
                             arrayList2.add(aVar.a());
                         }
                     }
                     boolean isEmpty = arrayList2.isEmpty();
                     int i11 = this.b;
-                    if (isEmpty || !tg.s.h()) {
-                        AndroidUtilities.runOnUIThread(new tg.n(chat, i11, arrayList, callback, 0));
+                    if (isEmpty || !tg.t.h()) {
+                        AndroidUtilities.runOnUIThread(new tg.p(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new ea(arrayList, chat, i11, callback, 9));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new da(arrayList, chat, i11, callback, 9));
                         break;
                     }
                 }

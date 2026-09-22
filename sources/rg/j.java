@@ -14,10 +14,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j extends b {
     public final ArrayList d;
@@ -28,8 +28,8 @@ public final class j extends b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public j(Context context, int i10, f6 f6Var) {
-        super(context, f6Var);
+    public j(Context context, int i10, e6 e6Var) {
+        super(context, e6Var);
         SparseIntArray sparseIntArray;
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
@@ -65,7 +65,7 @@ public final class j extends b {
             this.e = createBitmap;
             Canvas canvas = new Canvas(createBitmap);
             Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{j6.w0(null, j6.Lj, false), j6.w0(null, j6.Mj, false), j6.w0(null, j6.Nj, false), j6.w0(null, j6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
             canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
         }
         sparseIntArray = null;
@@ -78,7 +78,7 @@ public final class j extends b {
         this.e = createBitmap2;
         Canvas canvas2 = new Canvas(createBitmap2);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{j6.w0(null, j6.Lj, false), j6.w0(null, j6.Mj, false), j6.w0(null, j6.Nj, false), j6.w0(null, j6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
     }
 

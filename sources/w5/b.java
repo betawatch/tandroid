@@ -1,10 +1,9 @@
 package w5;
 
 import java.util.Arrays;
-import m5.e;
 import n6.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b implements com.google.android.gms.common.api.b {
     public static final b c;
@@ -12,14 +11,14 @@ public final class b implements com.google.android.gms.common.api.b {
     public final String b;
 
     static {
-        e eVar = new e((char) 0, 26);
-        eVar.b = Boolean.FALSE;
-        c = new b(eVar);
+        o0.a aVar = new o0.a(21, (byte) 0);
+        aVar.b = Boolean.FALSE;
+        c = new b(aVar);
     }
 
-    public b(e eVar) {
-        this.a = ((Boolean) eVar.b).booleanValue();
-        this.b = (String) eVar.c;
+    public b(o0.a aVar) {
+        this.a = ((Boolean) aVar.b).booleanValue();
+        this.b = (String) aVar.c;
     }
 
     public final boolean equals(Object obj) {

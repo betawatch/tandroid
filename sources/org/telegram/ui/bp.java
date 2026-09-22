@@ -1,38 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class bp implements org.telegram.ui.Components.f90 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ip b;
+public final /* synthetic */ class bp implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kp b;
 
-    public bp(ip ipVar, Context context) {
-        this.b = ipVar;
-        this.a = context;
+    public /* synthetic */ bp(kp kpVar, int i10) {
+        this.a = i10;
+        this.b = kpVar;
     }
 
-    @Override // org.telegram.ui.Components.f90
-    public final void c() {
-        this.b.X(true);
-    }
-
-    @Override // org.telegram.ui.Components.f90
-    public final void h() {
-        ip ipVar = this.b;
-        org.telegram.ui.Components.c70 c70Var = new org.telegram.ui.Components.c70(this.a, ipVar.l0, ipVar.Y, ipVar.o0, ipVar, ipVar.Z, true, ChatObject.isChannel(ipVar.X));
-        ip ipVar2 = this.b;
-        ipVar2.p0 = c70Var;
-        ipVar2.p0.show();
-    }
-
-    @Override // org.telegram.ui.Components.f90
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // org.telegram.ui.Components.f90
-    public final /* synthetic */ void i() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        kp kpVar = this.b;
+        switch (i10) {
+            case 0:
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kpVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                if (kpVar.a0) {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, kpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, kpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new x5(13, kpVar, currentChannel));
+                kpVar.showDialog(b2Var);
+                break;
+            case 1:
+                if (!kpVar.V) {
+                    kpVar.V = true;
+                    kpVar.b0();
+                    break;
+                }
+                break;
+            case 2:
+                if (kpVar.V) {
+                    if (!kpVar.c0) {
+                        kpVar.Z();
+                        break;
+                    } else {
+                        kpVar.V = false;
+                        kpVar.b0();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                yh0 yh0Var = new yh0(kpVar.Z, 0L, 0);
+                yh0Var.g0(kpVar.Y, kpVar.l0);
+                kpVar.presentFragment(yh0Var);
+                break;
+            default:
+                boolean z10 = !kpVar.b0;
+                kpVar.b0 = z10;
+                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
+                break;
+        }
     }
 }

@@ -19,11 +19,11 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import m4.q0;
-import n4.y;
-import w7.b0;
+import k2.c0;
+import m4.u0;
+import w7.a0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public int E;
@@ -36,15 +36,15 @@ public final class e implements m {
     public j2.k L;
     public volatile androidx.mediarouter.app.c M;
     public final UUID a;
-    public final q0 b;
+    public final u0 b;
     public final com.google.firebase.messaging.m c;
     public final HashMap d;
     public final boolean e;
     public final int[] f;
     public final boolean h;
-    public final y n;
+    public final of.b n;
     public final qb.b r;
-    public final android.support.v4.media.c s;
+    public final a4.m s;
     public final long v;
     public final ArrayList w;
     public final Set x;
@@ -61,8 +61,8 @@ public final class e implements m {
         this.f = iArr;
         this.h = z11;
         this.r = bVar;
-        this.n = new y(25);
-        this.s = new android.support.v4.media.c(this, 29);
+        this.n = new of.b(28);
+        this.s = new a4.m(this, 27);
         this.w = new ArrayList();
         this.x = Collections.newSetFromMap(new IdentityHashMap());
         this.y = Collections.newSetFromMap(new IdentityHashMap());
@@ -77,7 +77,7 @@ public final class e implements m {
         f g10 = bVar.g();
         g10.getClass();
         Throwable cause = g10.getCause();
-        return (cause instanceof ResourceBusyException) || b0.c(cause);
+        return (cause instanceof ResourceBusyException) || a0.c(cause);
     }
 
     public static ArrayList f(b2.o oVar, UUID uuid, boolean z10) {
@@ -111,11 +111,11 @@ public final class e implements m {
     }
 
     @Override // n2.m
-    public final int M0(b2.s sVar) {
+    public final int L0(b2.s sVar) {
         h(false);
         q qVar = this.F;
         qVar.getClass();
-        int l02 = qVar.l0();
+        int m0 = qVar.m0();
         b2.o oVar = sVar.v;
         if (oVar == null) {
             int h = r0.h(sVar.r);
@@ -147,11 +147,11 @@ public final class e implements m {
                 return 1;
             }
         }
-        return l02;
+        return m0;
     }
 
     @Override // n2.m
-    public final g Z0(j jVar, b2.s sVar) {
+    public final g Y0(j jVar, b2.s sVar) {
         h(false);
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
@@ -170,7 +170,7 @@ public final class e implements m {
             int h = r0.h(sVar.r);
             q qVar = this.F;
             qVar.getClass();
-            if (qVar.l0() != 2 || !r.c) {
+            if (qVar.m0() != 2 || !r.c) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i10 >= iArr.length) {
@@ -182,7 +182,7 @@ public final class e implements m {
                     }
                     i10++;
                 }
-                if (i10 != -1 && qVar.l0() != 1) {
+                if (i10 != -1 && qVar.m0() != 1) {
                     b bVar2 = this.G;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;
@@ -261,7 +261,7 @@ public final class e implements m {
                     bVar = new qb.b(13);
                 }
                 this.F = bVar;
-                bVar.d(new l.d(this, 5));
+                bVar.a(new c0(this, 6));
                 return;
             } catch (UnsupportedSchemeException e) {
                 throw new w(e);
@@ -362,13 +362,13 @@ public final class e implements m {
     }
 
     @Override // n2.m
-    public final l k0(j jVar, b2.s sVar) {
+    public final l j0(j jVar, b2.s sVar) {
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
         d dVar = new d(this, jVar);
         Handler handler = this.J;
         handler.getClass();
-        handler.post(new ki.l(10, dVar, sVar));
+        handler.post(new m4.g0(4, dVar, sVar));
         return dVar;
     }
 

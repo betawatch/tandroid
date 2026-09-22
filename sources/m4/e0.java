@@ -16,13 +16,13 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import yh.b7;
+import org.telegram.ui.Components.w51;
+import yh.c7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(k0 k0Var, int i10, n4.a0 a0Var, j0 j0Var, boolean z10) {
+    public /* synthetic */ e0(l0 l0Var, int i10, n4.a0 a0Var, k0 k0Var, boolean z10) {
         this.a = 0;
-        this.d = k0Var;
+        this.d = l0Var;
         this.c = i10;
         this.e = a0Var;
-        this.f = j0Var;
+        this.f = k0Var;
         this.b = z10;
     }
 
@@ -47,21 +47,21 @@ public final /* synthetic */ class e0 implements Runnable {
         TLRPC.Document document;
         switch (this.a) {
             case 0:
-                k0 k0Var = (k0) this.d;
+                l0 l0Var = (l0) this.d;
                 n4.a0 a0Var = (n4.a0) this.e;
-                j0 j0Var = (j0) this.f;
-                a0 a0Var2 = k0Var.g;
+                k0 k0Var = (k0) this.f;
+                a0 a0Var2 = l0Var.g;
                 if (!a0Var2.j()) {
-                    boolean isActive = ((n4.r) k0Var.k.a).a.isActive();
+                    boolean isActive = ((n4.r) l0Var.k.b).a.isActive();
                     int i10 = this.c;
                     if (isActive) {
-                        r L = k0Var.L(a0Var);
-                        if (k0Var.f.B(L, i10)) {
+                        r L = l0Var.L(a0Var);
+                        if (l0Var.f.B(L, i10)) {
                             na.d dVar = a0Var2.e;
                             a0Var2.s(L);
                             dVar.getClass();
                             try {
-                                j0Var.f(L);
+                                k0Var.g(L);
                             } catch (RemoteException e) {
                                 e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
                             }
@@ -75,9 +75,9 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder k10 = hg.k0.k(i10, "Ignore incoming player command before initialization. command=", ", pid=");
-                        k10.append(a0Var.a.b);
-                        e2.a.n("MediaSessionLegacyStub", k10.toString());
+                        StringBuilder l4 = hg.c.l(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        l4.append(a0Var.a.b);
+                        e2.a.n("MediaSessionLegacyStub", l4.toString());
                         break;
                     }
                 }
@@ -154,13 +154,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 break;
             case 4:
-                pg.s0 s0Var = (pg.s0) this.d;
-                pg.t0 t0Var = (pg.t0) this.e;
+                pg.q0 q0Var = (pg.q0) this.d;
+                pg.r0 r0Var = (pg.r0) this.e;
                 Runnable runnable = (Runnable) this.f;
                 boolean z10 = this.b;
-                s0Var.d(t0Var, this.c, z10 ? s0Var.h : null);
+                q0Var.d(r0Var, this.c, z10 ? q0Var.h : null);
                 if (z10) {
-                    s0Var.h = null;
+                    q0Var.h = null;
                 }
                 if (runnable != null) {
                     runnable.run();
@@ -217,8 +217,8 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new b7(zArr));
-                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, j6.a7, 0.3f);
+                    imageReceiver.setDelegate(new c7(zArr));
+                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, i6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
                     imageReceiver.setImage(ImageLocation.getForDocument(document), "160_160_nr", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "160_160", svgThumb, document.size, "tgs", tL_messages_stickerSet, 1);
@@ -240,19 +240,19 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(m61 m61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(w51 w51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = m61Var;
+        this.d = w51Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;
         this.f = tLObject;
     }
 
-    public /* synthetic */ e0(pg.s0 s0Var, pg.t0 t0Var, int i10, boolean z10, Runnable runnable) {
+    public /* synthetic */ e0(pg.q0 q0Var, pg.r0 r0Var, int i10, boolean z10, Runnable runnable) {
         this.a = 4;
-        this.d = s0Var;
-        this.e = t0Var;
+        this.d = q0Var;
+        this.e = r0Var;
         this.c = i10;
         this.b = z10;
         this.f = runnable;

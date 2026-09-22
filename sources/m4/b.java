@@ -3,7 +3,7 @@ package m4;
 import ai.g3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -35,37 +35,37 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 1:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 7, f1.P0(new ai.i(9)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 7, g1.P0(new ai.i(9)));
                 break;
             case 2:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 12, f1.P0(new ai.i(11)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 12, g1.P0(new ai.i(11)));
                 break;
             case 3:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 11, f1.P0(new ai.i(8)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 11, g1.P0(new ai.i(8)));
                 break;
             case 4:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 3, f1.P0(new ai.i(14)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 3, g1.P0(new ai.i(14)));
                 break;
             case 5:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 1, f1.P0(new ai.i(5)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 1, g1.P0(new ai.i(5)));
                 break;
             case 6:
-                f1 f1Var = this.b.g;
-                f1Var.getClass();
+                g1 g1Var = this.b.g;
+                g1Var.getClass();
                 r rVar2 = this.c;
-                f1Var.N0(rVar2, TLObject.FLAG_31, 1, f1.P0(new g3(2, f1Var, rVar2)));
+                g1Var.N0(rVar2, TLObject.FLAG_31, 1, g1.P0(new g3(2, g1Var, rVar2)));
                 break;
             case 7:
-                f1 f1Var2 = this.b.g;
-                f1Var2.getClass();
+                g1 g1Var2 = this.b.g;
+                g1Var2.getClass();
                 r rVar3 = this.c;
-                f1Var2.N0(rVar3, TLObject.FLAG_31, 1, f1.P0(new g3(2, f1Var2, rVar3)));
+                g1Var2.N0(rVar3, TLObject.FLAG_31, 1, g1.P0(new g3(2, g1Var2, rVar3)));
                 break;
             case 8:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 1, f1.P0(new ai.i(5)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 1, g1.P0(new ai.i(5)));
                 break;
             default:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 9, f1.P0(new ai.i(12)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 9, g1.P0(new ai.i(12)));
                 break;
         }
     }

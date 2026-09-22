@@ -9,11 +9,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
-    public final org.telegram.ui.Components.d6 b;
+    public final org.telegram.ui.Components.c6 b;
     public final ImageReceiver c;
     public c0 d;
     public TextureView e;
@@ -31,7 +31,7 @@ public final class d0 {
 
     public d0(e0 e0Var) {
         this.p = e0Var;
-        this.b = new org.telegram.ui.Components.d6(e0Var, 0L, 1200L, qr.g);
+        this.b = new org.telegram.ui.Components.c6(e0Var, 0L, 1200L, qr.g);
         this.c = new ImageReceiver(e0Var);
     }
 
@@ -54,7 +54,7 @@ public final class d0 {
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
         sb2.append("_");
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
-        String s10 = a4.a.s(sb2, (o8Var == null || !o8Var.K) ? "" : "_g", "_exif");
+        String t10 = a4.a.t(sb2, (o8Var == null || !o8Var.K) ? "" : "_g", "_exif");
         o8 o8Var2 = this.n;
         e0 e0Var = this.p;
         ImageReceiver imageReceiver = this.c;
@@ -71,7 +71,7 @@ public final class d0 {
                 } else {
                     String str = o8Var2.N;
                     if (str != null) {
-                        imageReceiver.setImage(str, s10, null, null, 0L);
+                        imageReceiver.setImage(str, t10, null, null, 0L);
                     } else {
                         imageReceiver.clearImage();
                     }
@@ -104,7 +104,7 @@ public final class d0 {
             }
             this.d.play();
         } else {
-            imageReceiver.setImage(o8Var2.L.getAbsolutePath(), s10, null, null, 0L);
+            imageReceiver.setImage(o8Var2.L.getAbsolutePath(), t10, null, null, 0L);
         }
         e0Var.invalidate();
     }

@@ -3,9 +3,9 @@ package k1;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e extends kd.j implements rd.p {
     public Iterator a;
@@ -41,7 +41,7 @@ public final class e extends kd.j implements rd.p {
         jd.a aVar = jd.a.a;
         int i10 = this.c;
         if (i10 == 0) {
-            u7.b(obj);
+            t7.b(obj);
             obj = this.d;
             it = this.e.iterator();
             list = this.f;
@@ -49,7 +49,7 @@ public final class e extends kd.j implements rd.p {
             Object obj2 = this.b;
             Iterator it2 = this.a;
             List list2 = (List) this.d;
-            u7.b(obj);
+            t7.b(obj);
             if (((Boolean) obj).booleanValue()) {
                 list2.add(new d(1, null));
                 this.d = list2;
@@ -67,7 +67,7 @@ public final class e extends kd.j implements rd.p {
             }
             it = this.a;
             list = (List) this.d;
-            u7.b(obj);
+            t7.b(obj);
         }
         if (!it.hasNext()) {
             return obj;

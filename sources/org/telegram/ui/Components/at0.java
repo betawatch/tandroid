@@ -1,30 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class at0 implements ValueAnimator.AnimatorUpdateListener {
+public final class at0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ eu0 b;
-    public final /* synthetic */ lv0 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f1 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f1 c;
+    public final /* synthetic */ ct0 d;
 
-    public /* synthetic */ at0(lv0 lv0Var, eu0 eu0Var, int i10) {
+    public /* synthetic */ at0(ct0 ct0Var, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, int i10) {
         this.a = i10;
-        this.c = lv0Var;
-        this.b = eu0Var;
+        this.d = ct0Var;
+        this.b = f1Var;
+        this.c = f1Var2;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
+                yu0 yu0Var = this.d.d;
+                if (!yu0Var.H1) {
+                    org.telegram.ui.ActionBar.f1 f1Var = this.b;
+                    boolean z10 = f1Var.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.f1 f1Var2 = this.c;
+                    if (!z10 && f1Var2.getCheckView().a.q) {
+                        float f7 = -yu0Var.s1;
+                        yu0Var.s1 = f7;
+                        AndroidUtilities.shakeViewSpring(f1Var2, f7);
+                        break;
+                    } else {
+                        f1Var2.setChecked(!f1Var2.getCheckView().a.q);
+                        if (f1Var2.getCheckView().a.q && f1Var.getCheckView().a.q) {
+                            yu0Var.t1[0].q = 0;
+                        } else {
+                            yu0Var.t1[0].q = 2;
+                        }
+                        yu0.s(yu0Var);
+                        break;
+                    }
+                }
                 break;
             default:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
+                yu0 yu0Var2 = this.d.d;
+                if (!yu0Var2.H1) {
+                    org.telegram.ui.ActionBar.f1 f1Var3 = this.b;
+                    boolean z11 = f1Var3.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.f1 f1Var4 = this.c;
+                    if (!z11 && f1Var4.getCheckView().a.q) {
+                        float f10 = -yu0Var2.s1;
+                        yu0Var2.s1 = f10;
+                        AndroidUtilities.shakeViewSpring(f1Var4, f10);
+                        break;
+                    } else {
+                        f1Var4.setChecked(!f1Var4.getCheckView().a.q);
+                        if (f1Var3.getCheckView().a.q && f1Var4.getCheckView().a.q) {
+                            yu0Var2.t1[0].q = 0;
+                        } else {
+                            yu0Var2.t1[0].q = 1;
+                        }
+                        yu0.s(yu0Var2);
+                        break;
+                    }
+                }
                 break;
         }
     }

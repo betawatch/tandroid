@@ -6,22 +6,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class w extends o6.a {
     public static final Parcelable.Creator<w> CREATOR;
     public final a0 a;
-    public final n7.s0 b;
+    public final n7.t0 b;
     public final List c;
 
     static {
-        n7.o.r(2, n7.a.c, n7.a.d);
+        n7.p.r(2, n7.a.c, n7.a.d);
         CREATOR = new w.a(26);
     }
 
     public w(String str, byte[] bArr, ArrayList arrayList) {
-        n7.s0 s0Var = n7.s0.c;
-        n7.s0 t10 = n7.s0.t(bArr.length, bArr);
+        n7.t0 t0Var = n7.t0.c;
+        n7.t0 t10 = n7.t0.t(bArr.length, bArr);
         n6.l.h(str);
         try {
             this.a = a0.a(str);
@@ -55,16 +55,16 @@ public final class w extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.a);
         String c10 = u6.b.c(this.b.u());
-        return a4.a.s(a4.a.w("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
+        return a4.a.t(a4.a.x("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
+        int q6 = w7.e0.q(parcel, 20293);
         this.a.getClass();
-        w7.f0.l(parcel, 2, "public-key");
-        w7.f0.c(parcel, 3, this.b.u());
-        w7.f0.p(parcel, 4, this.c);
-        w7.f0.r(parcel, q6);
+        w7.e0.l(parcel, 2, "public-key");
+        w7.e0.c(parcel, 3, this.b.u());
+        w7.e0.p(parcel, 4, this.c);
+        w7.e0.r(parcel, q6);
     }
 }

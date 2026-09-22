@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import g7.l;
 import g7.q;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public interface a extends IInterface {
     void E0(Status status, l lVar);

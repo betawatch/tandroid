@@ -2,7 +2,6 @@ package be;
 
 import ee.t;
 import ee.v;
-import hg.k0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,11 +10,11 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.k;
-import v7.u7;
+import v7.t7;
 import zd.i2;
 import zd.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -41,7 +40,7 @@ public class b {
     public b(int i10) {
         this.a = i10;
         if (i10 < 0) {
-            throw new IllegalArgumentException(k0.i(i10, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(hg.c.j(i10, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         h hVar = d.a;
         this.bufferEnd$volatile = i10 != 0 ? i10 != Integer.MAX_VALUE ? i10 : Long.MAX_VALUE : 0L;
@@ -442,7 +441,7 @@ public class b {
                 }
             } else {
                 if (i10 != 3) {
-                    throw new IllegalStateException(k0.h(i10, "unexpected close status: ").toString());
+                    throw new IllegalStateException(hg.c.i(i10, "unexpected close status: ").toString());
                 }
                 h b10 = b(1152921504606846975L & j3);
                 Object obj = null;
@@ -573,7 +572,7 @@ public class b {
         } else {
             f7 = f();
         }
-        cVar.resumeWith(u7.a(f7));
+        cVar.resumeWith(t7.a(f7));
     }
 
     public final boolean m(Object obj, k kVar) {

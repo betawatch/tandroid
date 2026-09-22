@@ -10,7 +10,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 MessagesController.lambda$openByUserName$458((org.telegram.ui.ActionBar.b2[]) this.b, (boolean[]) this.c, (org.telegram.ui.ActionBar.n2) this.d);
                 break;
             case 12:
-                ((MessagesController) this.b).lambda$didReceivedNotification$50((org.telegram.ui.ActionBar.i6) this.c, (org.telegram.ui.ActionBar.h6) this.d);
+                ((MessagesController) this.b).lambda$didReceivedNotification$50((org.telegram.ui.ActionBar.h6) this.c, (org.telegram.ui.ActionBar.g6) this.d);
                 break;
             case 13:
                 ((MessagesController) this.b).lambda$processDialogsUpdateRead$223((LongSparseIntArray) this.c, (LongSparseIntArray) this.d);

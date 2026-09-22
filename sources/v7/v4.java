@@ -1,19 +1,41 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v4 implements ia.d {
     public static final v4 a = new v4();
-
-    static {
-        j0.q(org.telegram.ui.Cells.c1.l(h.class, j0.m(2, org.telegram.ui.Cells.c1.l(h.class, new e(1)))));
-    }
+    public static final ia.c b = new ia.c("appId", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(1))));
+    public static final ia.c c = new ia.c("appVersion", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(2))));
+    public static final ia.c d = new ia.c("firebaseProjectId", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(3))));
+    public static final ia.c e = new ia.c("mlSdkVersion", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(4))));
+    public static final ia.c f = new ia.c("tfliteSchemaVersion", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(5))));
+    public static final ia.c g = new ia.c("gcmSenderId", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(6))));
+    public static final ia.c h = new ia.c("apiKey", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(7))));
+    public static final ia.c i = new ia.c("languages", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(8))));
+    public static final ia.c j = new ia.c("mlSdkInstanceId", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(9))));
+    public static final ia.c k = new ia.c("isClearcutClient", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(10))));
+    public static final ia.c l = new ia.c("isStandaloneMlkit", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(11))));
+    public static final ia.c m = new ia.c("isJsonLogging", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(12))));
+    public static final ia.c n = new ia.c("buildLevel", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(13))));
+    public static final ia.c o = new ia.c("optionalModuleVersion", hg.c.o(org.telegram.ui.Cells.q3.k(h.class, new e(14))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        e8 e8Var = (e8) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.a(b, e8Var.a);
+        eVar.a(c, e8Var.b);
+        eVar.a(d, null);
+        eVar.a(e, e8Var.c);
+        eVar.a(f, e8Var.d);
+        eVar.a(g, null);
+        eVar.a(h, null);
+        eVar.a(i, e8Var.e);
+        eVar.a(j, e8Var.f);
+        eVar.a(k, e8Var.g);
+        eVar.a(l, e8Var.h);
+        eVar.a(m, e8Var.i);
+        eVar.a(n, e8Var.j);
+        eVar.a(o, e8Var.k);
     }
 }

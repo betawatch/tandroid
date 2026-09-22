@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kg implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public final /* synthetic */ class kg implements Runnable {
                             peerSettings.flags &= -16385;
                             peerSettings.charge_paid_message_stars = 0L;
                         }
-                        MessagesController.getNotificationsSettings(i11).edit().putLong(a4.a.o(j10, "dialog_bar_paying_"), 0L).apply();
+                        MessagesController.getNotificationsSettings(i11).edit().putLong(a4.a.p(j10, "dialog_bar_paying_"), 0L).apply();
                         MessagesController.getInstance(i11).loadPeerSettings(MessagesController.getInstance(i11).getUser(Long.valueOf(j10)), MessagesController.getInstance(i11).getChat(Long.valueOf(-j10)), true);
                         ContactsController.getInstance(i11).loadPrivacySettings(true);
                         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j10));

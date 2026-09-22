@@ -10,7 +10,6 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.rk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -19,14 +18,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.om0;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.bo;
+import org.telegram.ui.pe;
 import org.telegram.ui.r00;
-import org.telegram.ui.re;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -115,16 +114,16 @@ public final /* synthetic */ class ga implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.c);
                 break;
             case 2:
-                zn znVar = (zn) obj5;
-                om0 om0Var = (om0) obj;
-                ((y70) obj4).n0 = true;
-                Activity parentActivity = znVar.getParentActivity();
+                bo boVar = (bo) obj5;
+                am0 am0Var = (am0) obj;
+                ((n70) obj4).n0 = true;
+                Activity parentActivity = boVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.z6 z6Var = new ci.z6(znVar, (ArrayList) obj2, j11, om0Var, 1);
-                re reVar = new re(om0Var, i11);
-                Pattern pattern = org.telegram.ui.Components.d5.a;
-                org.telegram.ui.Components.d5.K(parentActivity, j11, j10, 0, true, z6Var, reVar, new org.telegram.ui.Components.b5(null), null);
+                ci.z6 z6Var = new ci.z6(boVar, (ArrayList) obj2, j11, am0Var, 1);
+                pe peVar = new pe(am0Var, i11);
+                Pattern pattern = org.telegram.ui.Components.c5.a;
+                org.telegram.ui.Components.c5.K(parentActivity, j11, j10, 0, true, z6Var, peVar, new org.telegram.ui.Components.a5(null), null);
                 break;
             case 3:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
@@ -139,7 +138,7 @@ public final /* synthetic */ class ga implements Runnable {
                         n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
                         new r00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        rk.p(R.string.UnknownError, xc.a0(n2Var), null);
+                        org.telegram.messenger.y0.p(R.string.UnknownError, vc.a0(n2Var), null);
                     } else {
                         new r00(n2Var, dialogFilter, null).show();
                     }
@@ -150,7 +149,7 @@ public final /* synthetic */ class ga implements Runnable {
                 }
                 break;
             case 4:
-                yh.y3.i0((yh.y3) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
+                yh.z3.i0((yh.z3) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
                 break;
             case 5:
                 ((boolean[]) obj3)[0] = true;

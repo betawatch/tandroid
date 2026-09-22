@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g30 extends s4.s0 {
     public final /* synthetic */ i60 a;
@@ -38,11 +38,11 @@ public final class g30 extends s4.s0 {
             return;
         }
         o50Var.getChildAt(0);
-        org.telegram.ui.Components.il0 il0Var = (org.telegram.ui.Components.il0) o50Var.L(0);
-        if (il0Var != null) {
-            View view = il0Var.a;
+        org.telegram.ui.Components.vk0 vk0Var = (org.telegram.ui.Components.vk0) o50Var.K(0);
+        if (vk0Var != null) {
+            View view = vk0Var.a;
             if (view.getTop() > 0) {
-                o50Var.w0(0, view.getTop(), null);
+                o50Var.v0(0, view.getTop(), null);
             }
         }
     }

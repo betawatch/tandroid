@@ -1,81 +1,76 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class tu0 extends s4.v {
-    public final /* synthetic */ vu0 d;
+public final class tu0 extends ai.sc {
+    public final /* synthetic */ vu0 h;
 
-    public tu0(vu0 vu0Var) {
-        this.d = vu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tu0(vu0 vu0Var, ai.l9 l9Var, long j3, int i10) {
+        super(i10, j3, l9Var);
+        this.h = vu0Var;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        c1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        SavedMessagesController.SavedDialog r10;
-        int l4 = s4.v.l(0, 0);
-        lv0 lv0Var = this.d.x;
-        return (!lv0Var.C1 || recyclerView.getAdapter() == lv0Var.S || (r10 = r(c1Var)) == null || !r10.pinned) ? l4 : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        vu0 vu0Var = this.d;
-        ArrayList arrayList = vu0Var.f;
-        lv0 lv0Var = vu0Var.x;
-        if (!lv0Var.C1 || recyclerView.getAdapter() == lv0Var.S) {
-            return false;
+    @Override // ai.sc
+    public final void a(ArrayList arrayList) {
+        xr0 xr0Var;
+        MessageObject messageObject;
+        vu0 vu0Var = this.h;
+        yu0 yu0Var = vu0Var.F;
+        int i10 = 0;
+        while (true) {
+            rt0[] rt0VarArr = yu0Var.k0;
+            if (i10 >= rt0VarArr.length) {
+                xr0Var = null;
+                break;
+            }
+            xr0 xr0Var2 = rt0VarArr[i10].h;
+            if (xr0Var2 != null && xr0Var2.getAdapter() == vu0Var) {
+                xr0Var = yu0Var.k0[i10].h;
+                break;
+            }
+            i10++;
         }
-        SavedMessagesController.SavedDialog r10 = r(c1Var);
-        SavedMessagesController.SavedDialog r11 = r(c1Var2);
-        if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        arrayList.remove(b10);
-        arrayList.add(b11, r10);
-        vu0Var.p(b10, b11);
-        vu0Var.h = true;
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        du0 du0Var;
-        vu0 vu0Var = this.d;
-        yq0 yq0Var = vu0Var.n;
-        if (c1Var != null && (du0Var = vu0Var.s) != null) {
-            du0Var.e1(false);
-        }
-        if (i10 == 0) {
-            AndroidUtilities.cancelRunOnUIThread(yq0Var);
-            AndroidUtilities.runOnUIThread(yq0Var, 300L);
-        }
-    }
-
-    public final SavedMessagesController.SavedDialog r(s4.c1 c1Var) {
-        int b10;
-        if (c1Var != null && (b10 = c1Var.b()) >= 0) {
-            vu0 vu0Var = this.d;
-            if (b10 < vu0Var.f.size()) {
-                return (SavedMessagesController.SavedDialog) vu0Var.f.get(b10);
+        if (xr0Var != null) {
+            for (int i11 = 0; i11 < xr0Var.getChildCount(); i11++) {
+                View childAt = xr0Var.getChildAt(i11);
+                if ((childAt instanceof org.telegram.ui.Cells.t7) && (messageObject = ((org.telegram.ui.Cells.t7) childAt).getMessageObject()) != null && messageObject.isStory()) {
+                    arrayList.add(Integer.valueOf(messageObject.storyItem.id));
+                }
             }
         }
-        return null;
     }
 
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // ai.sc
+    public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        TL_stories.StoryItem storyItem;
+        ai.d9 d9Var = this.h.s;
+        ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
+        d9Var.getClass();
+        if (arrayList != null && arrayList2 != null) {
+            boolean z10 = false;
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                Integer num = (Integer) arrayList.get(i10);
+                num.intValue();
+                if (i10 >= arrayList2.size()) {
+                    break;
+                }
+                TL_stories.StoryViews storyViews = arrayList2.get(i10);
+                MessageObject messageObject = (MessageObject) d9Var.j.get(num);
+                if (messageObject != null && (storyItem = messageObject.storyItem) != null) {
+                    storyItem.views = storyViews;
+                    z10 = true;
+                }
+            }
+            if (z10) {
+                d9Var.x();
+            }
+        }
+        return true;
     }
 }

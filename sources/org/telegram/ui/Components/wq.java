@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class wq extends View {
     public final vq a;
 
-    public wq(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public wq(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         setVisibility(8);
-        vq vqVar = new vq(this, true, f6Var);
+        vq vqVar = new vq(this, true, e6Var);
         this.a = vqVar;
         vqVar.G = true;
     }

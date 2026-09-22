@@ -1,1028 +1,307 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextUtils;
-import android.util.SparseArray;
-import android.util.TypedValue;
-import android.view.KeyEvent;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.text.SpannableString;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.Locale;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public class fd0 extends LinearLayout {
-    public static final qr v0 = new qr(0.0f, 0.5f, 0.5f, 1.0f);
-    public int E;
-    public boolean F;
-    public int G;
-    public int H;
-    public dd0 I;
-    public cd0 J;
-    public bd0 K;
-    public long L;
-    public final SparseArray M;
-    public int[] N;
-    public final Paint O;
-    public int P;
-    public int Q;
-    public int R;
-    public final bn0 S;
-    public final bn0 T;
-    public int U;
-    public ad0 V;
-    public float W;
-    public int a;
-    public long a0;
-    public int b;
-    public float b0;
-    public int c;
-    public VelocityTracker c0;
-    public final TextView d;
-    public final int d0;
-    public final int e;
-    public final int e0;
-    public final int f;
-    public final int f0;
-    public boolean g0;
-    public final int h;
-    public boolean h0;
-    public final Paint i0;
-    public final int j0;
-    public int k0;
-    public int l0;
-    public int m0;
-    public int n;
-    public boolean n0;
-    public boolean o0;
-    public final ed0 p0;
-    public int q0;
-    public final boolean r;
-    public boolean r0;
-    public final int s;
-    public Utilities.CallbackReturn s0;
-    public Integer t0;
-    public int u0;
-    public int v;
-    public String[] w;
-    public int x;
-    public boolean y;
+public final class fd0 extends FrameLayout {
+    public Bitmap a;
+    public HashMap b;
+    public boolean c;
+    public BitmapDrawable d;
+    public boolean e;
 
-    public fd0(LaunchActivity launchActivity) {
-        this(launchActivity, null);
+    public fd0(Context context) {
+        super(context);
+        this.e = true;
     }
 
-    public static int g(int i10, int i11) {
-        if (i11 != -1) {
-            int size = View.MeasureSpec.getSize(i10);
-            int mode = View.MeasureSpec.getMode(i10);
-            if (mode == Integer.MIN_VALUE) {
-                return View.MeasureSpec.makeMeasureSpec(Math.min(size, i11), TLObject.FLAG_30);
-            }
-            if (mode == 0) {
-                return View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30);
-            }
-            if (mode != 1073741824) {
-                throw new IllegalArgumentException(hg.k0.h(mode, "Unknown measure mode: "));
-            }
+    public final void a() {
+        this.a = null;
+        this.d = null;
+        setBackground(null);
+        HashMap hashMap = this.b;
+        if (hashMap != null) {
+            hashMap.clear();
         }
-        return i10;
+        removeAllViews();
     }
 
-    public static int k(int i10, int i11, int i12) {
-        if (i10 == -1) {
-            return i11;
-        }
-        int max = Math.max(i10, i11);
-        int mode = View.MeasureSpec.getMode(i12);
-        int size = View.MeasureSpec.getSize(i12);
-        return mode != Integer.MIN_VALUE ? mode != 1073741824 ? max : size : size < max ? 16777216 | size : max;
-    }
-
-    public final void a(boolean z10) {
-        this.d.setVisibility(4);
-        if (!h(this.S)) {
-            h(this.T);
-        }
-        this.U = 0;
-        if (z10) {
-            this.S.d(-this.P, 300);
-        } else {
-            this.S.d(this.P, 300);
-        }
-        invalidate();
-    }
-
-    public final void b(int i10) {
-        String str;
-        SparseArray sparseArray = this.M;
-        if (((String) sparseArray.get(i10)) != null) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, qg.b] */
+    public final void b(ArrayList arrayList, boolean z10, boolean z11, boolean z12) {
+        u9 u9Var;
+        int i10;
+        int i11;
+        setClipChildren(z12);
+        a();
+        this.b = new HashMap();
+        if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        int i11 = this.x;
-        if (i10 < i11 || i10 > this.E) {
-            str = "";
-        } else {
-            String[] strArr = this.w;
-            if (strArr != null) {
-                str = strArr[i10 - i11];
-            } else {
-                bd0 bd0Var = this.K;
-                str = bd0Var != null ? bd0Var.e(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
-            }
-        }
-        sparseArray.put(i10, str);
-    }
-
-    public final boolean c() {
-        int i10 = this.Q - this.R;
-        if (i10 == 0) {
-            return false;
-        }
-        this.U = 0;
-        int abs = Math.abs(i10);
-        int i11 = this.P;
-        if (abs > i11 / 2) {
-            if (i10 > 0) {
-                i11 = -i11;
-            }
-            i10 += i11;
-        }
-        this.T.d(i10, 800);
-        invalidate();
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void computeScroll() {
-        bn0 bn0Var = this.S;
-        if (bn0Var.q) {
-            bn0Var = this.T;
-            if (bn0Var.q) {
-                return;
-            }
-        }
-        bn0Var.b();
-        int i10 = bn0Var.k;
-        if (this.U == 0) {
-            this.U = bn0Var.c;
-        }
-        scrollBy(0, i10 - this.U);
-        this.U = i10;
-        if (!bn0Var.q) {
-            invalidate();
-            return;
-        }
-        if (bn0Var == this.S) {
-            if (!c()) {
-                n();
-            }
-            i(0);
-        } else if (this.k0 != 1) {
-            n();
-        }
-    }
-
-    @Override // android.view.View
-    public final int computeVerticalScrollExtent() {
-        return getHeight();
-    }
-
-    @Override // android.view.View
-    public final int computeVerticalScrollOffset() {
-        return this.R;
-    }
-
-    @Override // android.view.View
-    public final int computeVerticalScrollRange() {
-        return ((this.E - this.x) + 1) * this.P;
-    }
-
-    public CharSequence d(int i10) {
-        return this.d.getText();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0047, code lost:
-    
-        requestFocus();
-        r5.q0 = r0;
-        j();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0053, code lost:
-    
-        if (r5.S.q == false) goto L34;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0055, code lost:
-    
-        if (r0 != 20) goto L32;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0057, code lost:
-    
-        r6 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x005a, code lost:
-    
-        a(r6);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0059, code lost:
-    
-        r6 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x005d, code lost:
-    
-        return true;
-     */
-    @Override // android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        int keyCode = keyEvent.getKeyCode();
-        if (keyCode == 19 || keyCode == 20) {
-            int action = keyEvent.getAction();
-            if (action != 0) {
-                if (action == 1 && this.q0 == keyCode) {
-                    this.q0 = -1;
-                    return true;
+        int size = arrayList.size();
+        for (int i12 = 0; i12 < size; i12++) {
+            VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i12);
+            byte b10 = mediaEntity.type;
+            if (b10 == 0) {
+                u9 u9Var2 = new u9(getContext());
+                u9Var2.setLayerNum(12);
+                u9Var2.setAspectFit(true);
+                ImageReceiver imageReceiver = u9Var2.getImageReceiver();
+                if (z10) {
+                    imageReceiver.setAllowDecodeSingleFrame(true);
+                    imageReceiver.setAllowStartLottieAnimation(false);
+                    if (z11) {
+                        imageReceiver.setDelegate(new o2(22));
+                    }
                 }
-            } else if (!this.g0) {
+                imageReceiver.setImage(ImageLocation.getForDocument(mediaEntity.document), null, null, null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(mediaEntity.document.thumbs, 90), mediaEntity.document), null, null, 0L, "webp", mediaEntity.parentObject, 1);
+                if ((2 & mediaEntity.subType) != 0) {
+                    u9Var2.setScaleX(-1.0f);
+                }
+                mediaEntity.view = u9Var2;
+                u9Var = u9Var2;
+            } else if (b10 == 1) {
+                ?? ed0Var = new ed0(getContext());
+                ed0Var.setBackgroundColor(0);
+                ed0Var.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
+                ed0Var.setTextSize(0, mediaEntity.fontSize);
+                ed0Var.setTypeface(mediaEntity.textTypeface.d());
+                SpannableString spannableString = new SpannableString(Emoji.replaceEmoji(mediaEntity.text, ed0Var.getPaint().getFontMetricsInt(), false));
+                ArrayList<VideoEditedInfo.EmojiEntity> arrayList2 = mediaEntity.entities;
+                int size2 = arrayList2.size();
+                int i13 = 0;
+                while (i13 < size2) {
+                    VideoEditedInfo.EmojiEntity emojiEntity = arrayList2.get(i13);
+                    i13++;
+                    VideoEditedInfo.EmojiEntity emojiEntity2 = emojiEntity;
+                    x5 x5Var = new x5(emojiEntity2.document_id, ed0Var.getPaint().getFontMetricsInt());
+                    int i14 = emojiEntity2.offset;
+                    spannableString.setSpan(x5Var, i14, emojiEntity2.length + i14, 33);
+                }
+                Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spannableString.getSpans(0, spannableString.length(), Emoji.EmojiSpan.class);
+                if (emojiSpanArr != null) {
+                    for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
+                        emojiSpan.scale = 0.85f;
+                    }
+                }
+                ed0Var.setText(spannableString);
+                int i15 = 17;
+                ed0Var.setGravity(17);
+                int i16 = mediaEntity.textAlign;
+                if (i16 != 1) {
+                    i10 = 2;
+                    i15 = i16 != 2 ? 19 : 21;
+                } else {
+                    i10 = 2;
+                }
+                ed0Var.setGravity(i15);
+                int i17 = Build.VERSION.SDK_INT;
+                int i18 = mediaEntity.textAlign;
+                if (i18 != 1) {
+                    int i19 = 3;
+                    if (i18 == i10 ? LocaleController.isRTL : !LocaleController.isRTL) {
+                        i19 = 2;
+                    }
+                    i11 = i19;
+                } else {
+                    i11 = 4;
+                }
+                ed0Var.setTextAlignment(i11);
+                ed0Var.setHorizontallyScrolling(false);
+                ed0Var.setImeOptions(TLObject.FLAG_28);
+                ed0Var.setFocusableInTouchMode(true);
+                ed0Var.setEnabled(false);
+                ed0Var.setInputType(ed0Var.getInputType() | 16384);
+                if (i17 >= 23) {
+                    ed0Var.setBreakStrategy(0);
+                }
+                ed0Var.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+                int i20 = mediaEntity.color;
+                byte b11 = mediaEntity.subType;
+                if (b11 == 0) {
+                    ed0Var.setFrameColor(i20);
+                    i20 = AndroidUtilities.computePerceivedBrightness(mediaEntity.color) >= 0.721f ? -16777216 : -1;
+                } else if (b11 == 1) {
+                    ed0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -1728053248 : -1711276033);
+                } else if (b11 == 2) {
+                    ed0Var.setFrameColor(AndroidUtilities.computePerceivedBrightness(i20) >= 0.25f ? -16777216 : -1);
+                } else {
+                    ed0Var.setFrameColor(0);
+                }
+                ed0Var.setTextColor(i20);
+                ed0Var.setCursorColor(i20);
+                ed0Var.setHandlesColor(i20);
+                ed0Var.setHighlightColor(org.telegram.ui.ActionBar.i6.l1(0.4f, i20));
+                mediaEntity.view = ed0Var;
+                u9Var = ed0Var;
+            } else {
+                u9Var = null;
             }
-        } else if (keyCode == 23 || keyCode == 66) {
-            j();
+            if (u9Var != null) {
+                addView(u9Var);
+                u9Var.setRotation((float) (((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d));
+                this.b.put(u9Var, mediaEntity);
+            }
         }
-        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    public final void c() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            getChildAt(i10).setVisibility(0);
+        }
+        setBackground(this.d);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 1 || actionMasked == 3) {
-            j();
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (this.e) {
+            return super.drawChild(canvas, view, j3);
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return false;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTrackballEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 1 || actionMasked == 3) {
-            j();
-        }
-        return super.dispatchTrackballEvent(motionEvent);
-    }
-
-    public final int e(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        return (!this.F || i10 <= (i14 = this.E) || (i16 = i14 - (i15 = this.x)) == 0) ? (!this.y || i10 >= (i11 = this.x) || (i13 = (i12 = this.E) - i11) == 0) ? i10 : (i12 - ((i11 - i10) % i13)) + 1 : (((i10 - i14) % i16) + i15) - 1;
-    }
-
-    public final void f() {
-        this.M.clear();
-        int[] iArr = this.N;
-        int value = getValue();
-        for (int i10 = 0; i10 < this.N.length; i10++) {
-            int i11 = (i10 - this.b) + value;
-            if (this.g0) {
-                i11 = e(i11);
-            }
-            iArr[i10] = i11;
-            b(i11);
-        }
-    }
-
-    @Override // android.view.View
-    public float getBottomFadingEdgeStrength() {
-        return 0.9f;
-    }
-
-    public String[] getDisplayedValues() {
-        return this.w;
-    }
-
-    public int getItemsCount() {
+    public Bitmap getBitmap() {
         return this.a;
     }
 
-    public int getMaxValue() {
-        return this.E;
-    }
-
-    public int getMinValue() {
-        return this.x;
-    }
-
-    @Override // android.view.View
-    public int getSolidColor() {
-        return 0;
-    }
-
-    @Override // android.view.View
-    public float getTopFadingEdgeStrength() {
-        return 0.9f;
-    }
-
-    public int getValue() {
-        return this.G;
-    }
-
-    public boolean getWrapSelectorWheel() {
-        return this.g0;
-    }
-
-    public final boolean h(bn0 bn0Var) {
-        bn0Var.q = true;
-        int i10 = bn0Var.e - bn0Var.k;
-        int i11 = this.Q - ((this.R + i10) % this.P);
-        if (i11 == 0) {
-            return false;
-        }
-        int abs = Math.abs(i11);
-        int i12 = this.P;
-        if (abs > i12 / 2) {
-            i11 = i11 > 0 ? i11 - i12 : i11 + i12;
-        }
-        scrollBy(0, i10 + i11);
-        return true;
-    }
-
-    public final void i(int i10) {
-        String str;
-        if (this.k0 == i10) {
-            return;
-        }
-        this.k0 = i10;
-        cd0 cd0Var = this.J;
-        if (cd0Var != null) {
-            cd0Var.n(i10);
-        }
-        if (i10 == 0) {
-            AccessibilityManager accessibilityManager = (AccessibilityManager) getContext().getSystemService("accessibility");
-            if (accessibilityManager.isTouchExplorationEnabled()) {
-                String[] strArr = this.w;
-                if (strArr == null) {
-                    int i11 = this.G;
-                    bd0 bd0Var = this.K;
-                    str = bd0Var != null ? bd0Var.e(i11) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i11));
-                } else {
-                    str = strArr[this.G - this.x];
-                }
-                AccessibilityEvent obtain = AccessibilityEvent.obtain();
-                obtain.setEventType(16384);
-                obtain.getText().add(str);
-                accessibilityManager.sendAccessibilityEvent(obtain);
-            }
-        }
-    }
-
-    public final void j() {
-        ad0 ad0Var = this.V;
-        if (ad0Var != null) {
-            removeCallbacks(ad0Var);
-        }
-        this.p0.a();
-    }
-
-    public final void l(int i10, boolean z10) {
-        cd0 cd0Var;
-        dd0 dd0Var;
-        if (this.G == i10) {
-            return;
-        }
-        int e = this.g0 ? e(i10) : Math.min(Math.max(i10, this.x), this.E);
-        int i11 = this.G;
-        this.H = e;
-        this.G = e;
-        n();
-        if (Math.abs(i11 - e) > 0.9f) {
-            AndroidUtilities.vibrateCursor(this);
-        }
-        if (z10 && (dd0Var = this.I) != null) {
-            dd0Var.q(this, this.G);
-        }
-        f();
-        invalidate();
-        if (this.k0 != 0 || (cd0Var = this.J) == null) {
-            return;
-        }
-        cd0Var.n(0);
-    }
-
-    public final void m() {
-        int i10;
-        if (this.r) {
-            String[] strArr = this.w;
-            Paint paint = this.O;
-            int i11 = 0;
-            if (strArr == null) {
-                float f7 = 0.0f;
-                for (int i12 = 0; i12 <= 9; i12++) {
-                    float measureText = paint.measureText(String.format(Locale.getDefault(), "%d", Integer.valueOf(i12)));
-                    if (measureText > f7) {
-                        f7 = measureText;
-                    }
-                }
-                for (int i13 = this.E; i13 > 0; i13 /= 10) {
-                    i11++;
-                }
-                i10 = (int) (i11 * f7);
-            } else {
-                int length = strArr.length;
-                int i14 = 0;
-                while (i11 < length) {
-                    float measureText2 = paint.measureText(strArr[i11]);
-                    if (measureText2 > i14) {
-                        i14 = (int) measureText2;
-                    }
-                    i11++;
-                }
-                i10 = i14;
-            }
-            TextView textView = this.d;
-            int paddingRight = textView.getPaddingRight() + textView.getPaddingLeft() + i10;
-            if (this.n != paddingRight) {
-                int i15 = this.h;
-                if (paddingRight > i15) {
-                    this.n = paddingRight;
-                } else {
-                    this.n = i15;
-                }
-                invalidate();
-            }
-        }
-    }
-
-    public final void n() {
-        String str;
-        String[] strArr = this.w;
-        if (strArr == null) {
-            int i10 = this.G;
-            bd0 bd0Var = this.K;
-            str = bd0Var != null ? bd0Var.e(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
-        } else {
-            str = strArr[this.G - this.x];
-        }
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        TextView textView = this.d;
-        if (str.equals(textView.getText().toString())) {
-            return;
-        }
-        textView.setText(str);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        j();
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onDraw(Canvas canvas) {
-        float width;
-        float measuredHeight;
-        boolean z10;
-        int i10;
-        int i11 = this.u0;
-        if (i11 == 5) {
-            this.O.setTextAlign(Paint.Align.RIGHT);
-            width = getWidth();
-        } else if (i11 == 3) {
-            this.O.setTextAlign(Paint.Align.LEFT);
-            width = 0.0f;
-        } else {
-            this.O.setTextAlign(Paint.Align.CENTER);
-            width = getWidth() / 2.0f;
-        }
-        float f7 = width + this.c;
-        float f10 = this.R;
-        int[] iArr = this.N;
-        for (int i12 = 0; i12 < iArr.length; i12++) {
-            String str = (String) this.M.get(iArr[i12]);
-            if (str != null && (i12 != this.b || this.d.getVisibility() != 0)) {
-                if (this.a > 3) {
-                    float measuredHeight2 = getMeasuredHeight() / 2.0f;
-                    float measuredHeight3 = getMeasuredHeight() * 0.5f;
-                    float textSize = f10 - (this.O.getTextSize() / 2.0f);
-                    if (textSize < measuredHeight2) {
-                        measuredHeight = textSize / measuredHeight3;
-                        z10 = true;
-                    } else {
-                        measuredHeight = (getMeasuredHeight() - textSize) / measuredHeight3;
-                        z10 = false;
-                    }
-                    float interpolation = v0.getInterpolation(Utilities.clamp(measuredHeight, 1.0f, 0.0f));
-                    float textSize2 = this.O.getTextSize() * (1.0f - interpolation);
-                    if (!z10) {
-                        textSize2 = -textSize2;
-                    }
-                    canvas.save();
-                    canvas.translate(0.0f, textSize2);
-                    canvas.scale((0.2f * interpolation) + 0.8f, interpolation, f7, textSize);
-                    if (interpolation < 0.1f) {
-                        i10 = this.O.getAlpha();
-                        this.O.setAlpha((int) ((i10 * interpolation) / 0.1f));
-                    } else {
-                        i10 = -1;
-                    }
-                    canvas.drawText(str, f7, f10, this.O);
-                    canvas.restore();
-                    if (i10 != -1) {
-                        this.O.setAlpha(i10);
-                    }
-                } else {
-                    canvas.drawText(str, f7, f10, this.O);
-                }
-            }
-            f10 += this.P;
-        }
-        if (this.r0) {
-            canvas.drawRect(0.0f, this.l0, getRight(), this.j0 + r0, this.i0);
-            canvas.drawRect(0.0f, r15 - this.j0, getRight(), this.m0, this.i0);
-        }
+    public Bitmap getThumb() {
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        float max = Math.max(measuredWidth / AndroidUtilities.dp(120.0f), measuredHeight / AndroidUtilities.dp(120.0f));
+        Bitmap createBitmap = Bitmap.createBitmap((int) (measuredWidth / max), (int) (measuredHeight / max), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        float f7 = 1.0f / max;
+        canvas.scale(f7, f7);
+        draw(canvas);
+        return createBitmap;
     }
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (!isEnabled() || motionEvent.getActionMasked() != 0) {
-            return false;
-        }
-        j();
-        this.d.setVisibility(4);
-        float y3 = motionEvent.getY();
-        this.W = y3;
-        this.b0 = y3;
-        this.a0 = motionEvent.getEventTime();
-        float f7 = this.W;
-        if (f7 < this.l0) {
-            if (this.k0 == 0) {
-                ed0 ed0Var = this.p0;
-                ed0Var.a();
-                ed0Var.c = 1;
-                ed0Var.b = 2;
-                ((fd0) ed0Var.d).postDelayed(ed0Var, ViewConfiguration.getTapTimeout());
-            }
-        } else if (f7 > this.m0 && this.k0 == 0) {
-            ed0 ed0Var2 = this.p0;
-            ed0Var2.a();
-            ed0Var2.c = 1;
-            ed0Var2.b = 1;
-            ((fd0) ed0Var2.d).postDelayed(ed0Var2, ViewConfiguration.getTapTimeout());
-        }
-        getParent().requestDisallowInterceptTouchEvent(true);
-        bn0 bn0Var = this.S;
-        if (!bn0Var.q) {
-            bn0Var.q = true;
-            this.T.q = true;
-            i(0);
-            return true;
-        }
-        bn0 bn0Var2 = this.T;
-        if (!bn0Var2.q) {
-            bn0Var.q = true;
-            bn0Var2.q = true;
-            return true;
-        }
-        float f10 = this.W;
-        if (f10 < this.l0) {
-            long longPressTimeout = ViewConfiguration.getLongPressTimeout();
-            Runnable runnable = this.V;
-            if (runnable == null) {
-                this.V = new ad0(this);
-            } else {
-                removeCallbacks(runnable);
-            }
-            ad0 ad0Var = this.V;
-            ad0Var.a = false;
-            postDelayed(ad0Var, longPressTimeout);
-            return true;
-        }
-        if (f10 > this.m0) {
-            long longPressTimeout2 = ViewConfiguration.getLongPressTimeout();
-            Runnable runnable2 = this.V;
-            if (runnable2 == null) {
-                this.V = new ad0(this);
-            } else {
-                removeCallbacks(runnable2);
-            }
-            ad0 ad0Var2 = this.V;
-            ad0Var2.a = true;
-            postDelayed(ad0Var2, longPressTimeout2);
-        }
-        return true;
+        return false;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        int measuredWidth2 = this.d.getMeasuredWidth();
-        int measuredHeight2 = this.d.getMeasuredHeight();
-        int i14 = (measuredWidth - measuredWidth2) / 2;
-        int i15 = (measuredHeight - measuredHeight2) / 2;
-        this.d.layout(i14, i15, measuredWidth2 + i14, measuredHeight2 + i15);
-        if (z10) {
-            f();
-            int length = this.N.length;
-            int i16 = this.s;
-            int bottom = (int) (((((getBottom() - getTop()) + i16) - (length * i16)) / r2.length) + 0.5f);
-            this.v = bottom;
-            this.P = bottom + i16;
-            int top = (this.d.getTop() + this.d.getBaseline()) - (this.P * this.b);
-            this.Q = top;
-            this.R = top;
-            n();
-            setVerticalFadingEdgeEnabled(true);
-            setFadingEdgeLength(((getBottom() - getTop()) - i16) / 2);
-            this.l0 = ((getHeight() - i16) - this.v) / 2;
-            this.m0 = ((getHeight() + i16) + this.v) / 2;
+        int i14;
+        int i15;
+        int i16;
+        int measuredHeight;
+        if (this.b != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight2 = getMeasuredHeight();
+            int childCount = getChildCount();
+            for (int i17 = 0; i17 < childCount; i17++) {
+                View childAt = getChildAt(i17);
+                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
+                if (mediaEntity != null) {
+                    int measuredWidth2 = childAt.getMeasuredWidth();
+                    int measuredHeight3 = childAt.getMeasuredHeight();
+                    if (childAt instanceof qg.b) {
+                        if (mediaEntity.customTextView) {
+                            i14 = ((int) (((mediaEntity.width / 2.0f) + mediaEntity.x) * measuredWidth)) - (childAt.getMeasuredWidth() / 2);
+                            i16 = (int) (((mediaEntity.height / 2.0f) + mediaEntity.y) * measuredHeight2);
+                            measuredHeight = childAt.getMeasuredHeight() / 2;
+                        } else {
+                            i14 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
+                            i16 = (int) (measuredHeight2 * mediaEntity.textViewY);
+                            measuredHeight = childAt.getMeasuredHeight() / 2;
+                        }
+                        i15 = i16 - measuredHeight;
+                    } else {
+                        i14 = (int) (measuredWidth * mediaEntity.x);
+                        i15 = (int) (measuredHeight2 * mediaEntity.y);
+                    }
+                    childAt.layout(i14, i15, measuredWidth2 + i14, measuredHeight3 + i15);
+                }
+            }
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(g(i10, this.n), g(i11, this.f));
-        setMeasuredDimension(k(this.h, getMeasuredWidth(), i10), k(this.e, getMeasuredHeight(), i11));
+        this.c = true;
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        if (this.b != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            int childCount = getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = getChildAt(i12);
+                VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) this.b.get(childAt);
+                if (mediaEntity != null) {
+                    if (childAt instanceof qg.b) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        float measuredWidth2 = mediaEntity.customTextView ? (mediaEntity.width * getMeasuredWidth()) / mediaEntity.viewWidth : mediaEntity.scale * ((mediaEntity.textViewWidth * measuredWidth) / mediaEntity.viewWidth);
+                        childAt.setScaleX(measuredWidth2);
+                        childAt.setScaleY(measuredWidth2);
+                    } else {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * mediaEntity.width), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * mediaEntity.height), TLObject.FLAG_30));
+                    }
+                }
+            }
+        }
+        this.c = false;
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!isEnabled()) {
-            return false;
+        return false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
         }
-        if (this.c0 == null) {
-            this.c0 = VelocityTracker.obtain();
-        }
-        this.c0.addMovement(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 1) {
-            if (actionMasked != 2) {
-                return true;
-            }
-            float y3 = motionEvent.getY();
-            if (this.k0 == 1) {
-                scrollBy(0, (int) (y3 - this.b0));
-                invalidate();
-            } else if (((int) Math.abs(y3 - this.W)) > this.d0) {
-                j();
-                i(1);
-            }
-            this.b0 = y3;
-            return true;
-        }
-        ad0 ad0Var = this.V;
-        if (ad0Var != null) {
-            removeCallbacks(ad0Var);
-        }
-        this.p0.a();
-        VelocityTracker velocityTracker = this.c0;
-        velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.f0);
-        int yVelocity = (int) velocityTracker.getYVelocity();
-        if (Math.abs(yVelocity) > this.e0) {
-            this.U = 0;
-            if (yVelocity > 0) {
-                this.S.c(0, 0, 0, yVelocity, 0, 0, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-            } else {
-                this.S.c(0, ConnectionsManager.DEFAULT_DATACENTER_ID, 0, yVelocity, 0, 0, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-            }
-            invalidate();
-            i(2);
-        } else {
-            int y10 = (int) motionEvent.getY();
-            int abs = (int) Math.abs(y10 - this.W);
-            long eventTime = motionEvent.getEventTime() - this.a0;
-            if (abs > this.d0 || eventTime >= ViewConfiguration.getTapTimeout()) {
-                c();
-            } else {
-                int i10 = (y10 / this.P) - this.b;
-                if (i10 > 0) {
-                    a(true);
-                    ed0 ed0Var = this.p0;
-                    ed0Var.a();
-                    ed0Var.c = 2;
-                    ed0Var.b = 1;
-                    ((fd0) ed0Var.d).post(ed0Var);
-                } else if (i10 < 0) {
-                    a(false);
-                    ed0 ed0Var2 = this.p0;
-                    ed0Var2.a();
-                    ed0Var2.c = 2;
-                    ed0Var2.b = 2;
-                    ((fd0) ed0Var2.d).post(ed0Var2);
-                }
-            }
-            i(0);
-        }
-        this.c0.recycle();
-        this.c0 = null;
-        return true;
+        super.requestLayout();
     }
 
     @Override // android.view.View
-    public final void scrollBy(int i10, int i11) {
-        int[] iArr = this.N;
-        boolean z10 = this.g0;
-        if (!z10 && i11 > 0 && iArr[this.b] <= this.x) {
-            int i12 = this.R + i11;
-            int i13 = this.Q;
-            if (i12 > i13) {
-                this.R = i13;
-                return;
-            }
+    public void setAlpha(float f7) {
+        super.setAlpha(f7);
+        BitmapDrawable bitmapDrawable = this.d;
+        if (bitmapDrawable != null) {
+            bitmapDrawable.setAlpha((int) (255.0f * f7));
         }
-        if (!z10 && i11 < 0 && iArr[this.b] >= this.E) {
-            int i14 = this.R + i11;
-            int i15 = this.Q;
-            if (i14 < i15) {
-                this.R = i15;
-                return;
-            }
-        }
-        this.R += i11;
-        while (true) {
-            int i16 = this.R;
-            if (i16 - this.Q <= this.v) {
-                break;
-            }
-            this.R = i16 - this.P;
-            System.arraycopy(iArr, 0, iArr, 1, iArr.length - 1);
-            int i17 = iArr[1] - 1;
-            if (this.g0 && i17 < this.x) {
-                i17 = this.E;
-            }
-            iArr[0] = i17;
-            b(i17);
-            if (!this.g0 && iArr[this.b] <= this.x) {
-                int i18 = this.R;
-                int i19 = this.Q;
-                if (i18 > i19) {
-                    this.R = i19;
-                }
-            }
-        }
-        while (true) {
-            int i20 = this.R;
-            if (i20 - this.Q >= (-this.v)) {
-                l(iArr[this.b], true);
-                return;
-            }
-            this.R = i20 + this.P;
-            System.arraycopy(iArr, 1, iArr, 0, iArr.length - 1);
-            int i21 = iArr[iArr.length - 2] + 1;
-            if (this.g0 && i21 > this.E) {
-                i21 = this.x;
-            }
-            iArr[iArr.length - 1] = i21;
-            b(i21);
-            if (!this.g0 && iArr[this.b] >= this.E) {
-                int i22 = this.R;
-                int i23 = this.Q;
-                if (i22 < i23) {
-                    this.R = i23;
-                }
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt != null && childAt.getParent() == this) {
+                childAt.setAlpha(f7);
             }
         }
     }
 
-    public void setAllItemsCount(int i10) {
-        this.t0 = Integer.valueOf(i10);
-        setWrapSelectorWheel(this.h0);
-    }
-
-    public void setContentDescriptionCallback(Utilities.CallbackReturn<Integer, CharSequence> callbackReturn) {
-        this.s0 = callbackReturn;
-    }
-
-    public void setDisplayedValues(String[] strArr) {
-        if (this.w == strArr) {
-            return;
-        }
-        this.w = strArr;
-        n();
-        f();
-        m();
-    }
-
-    public void setDrawDividers(boolean z10) {
-        this.r0 = z10;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        super.setEnabled(z10);
-        this.d.setEnabled(z10);
-    }
-
-    public void setFormatter(bd0 bd0Var) {
-        if (bd0Var == this.K) {
-            return;
-        }
-        this.K = bd0Var;
-        f();
-        n();
-    }
-
-    @Override // android.widget.LinearLayout
-    public void setGravity(int i10) {
-        this.u0 = i10;
-        super.setGravity(i10);
-    }
-
-    public void setItemCount(int i10) {
-        if (this.a == i10) {
-            return;
-        }
-        this.a = i10;
-        this.b = i10 / 2;
-        this.N = new int[i10];
-        f();
-    }
-
-    public void setMaxValue(int i10) {
-        cd0 cd0Var;
-        this.F = true;
-        if (this.E == i10) {
-            return;
-        }
-        if (i10 < 0) {
-            throw new IllegalArgumentException("maxValue must be >= 0");
-        }
-        this.E = i10;
-        if (i10 < this.G) {
-            int i11 = this.H;
-            if (i10 >= i11) {
-                this.G = i11;
-            } else {
-                this.G = i10;
-            }
-        }
-        setWrapSelectorWheel(this.h0);
-        f();
-        n();
-        m();
-        invalidate();
-        if (this.k0 != 0 || (cd0Var = this.J) == null) {
-            return;
-        }
-        cd0Var.n(0);
-    }
-
-    public void setMinValue(int i10) {
-        cd0 cd0Var;
-        this.y = true;
-        if (this.x == i10) {
-            return;
-        }
-        if (i10 < 0) {
-            throw new IllegalArgumentException("minValue must be >= 0");
-        }
-        this.x = i10;
-        if (i10 > this.G) {
-            int i11 = this.H;
-            if (i10 <= i11) {
-                this.G = i11;
-            } else {
-                this.G = i10;
-            }
-        }
-        setWrapSelectorWheel(this.h0);
-        f();
-        n();
-        m();
-        invalidate();
-        if (this.k0 != 0 || (cd0Var = this.J) == null) {
-            return;
-        }
-        cd0Var.n(0);
-    }
-
-    public void setOnLongPressUpdateInterval(long j3) {
-        this.L = j3;
-    }
-
-    public void setOnScrollListener(cd0 cd0Var) {
-        this.J = cd0Var;
-    }
-
-    public void setOnValueChangedListener(dd0 dd0Var) {
-        this.I = dd0Var;
-    }
-
-    public void setSelectorColor(int i10) {
-        this.i0.setColor(i10);
-    }
-
-    public void setTextColor(int i10) {
-        this.d.setTextColor(i10);
-        this.O.setColor(i10);
-    }
-
-    public void setTextOffset(int i10) {
-        this.c = i10;
-        invalidate();
-    }
-
-    public void setValue(int i10) {
-        l(i10, false);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x001b, code lost:
-    
-        if (r5 != false) goto L14;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setWrapSelectorWheel(boolean z10) {
-        Integer num;
-        boolean z11 = true;
-        if (!this.F || !this.y || ((num = this.t0) != null && (this.E - this.x) + 1 >= num.intValue())) {
-            this.h0 = z10;
-        }
-        z11 = false;
-        this.g0 = z11;
-    }
-
-    public fd0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(context, 18, f6Var);
-    }
-
-    public fd0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.a = 3;
-        this.b = 1;
-        this.L = 300L;
-        this.M = new SparseArray();
-        this.N = new int[this.a];
-        this.Q = TLObject.FLAG_31;
-        this.k0 = 0;
-        this.q0 = -1;
-        this.r0 = true;
-        int dp = AndroidUtilities.dp(i10);
-        this.s = dp;
-        Paint paint = new Paint();
-        this.i0 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var));
-        this.j0 = (int) TypedValue.applyDimension(1, 2.0f, getResources().getDisplayMetrics());
-        TypedValue.applyDimension(1, 48.0f, getResources().getDisplayMetrics());
-        this.e = -1;
-        int applyDimension = (int) TypedValue.applyDimension(1, 180.0f, getResources().getDisplayMetrics());
-        this.f = applyDimension;
-        int i11 = this.e;
-        if (i11 != -1 && applyDimension != -1 && i11 > applyDimension) {
-            throw new IllegalArgumentException("minHeight > maxHeight");
-        }
-        this.h = (int) TypedValue.applyDimension(1, 64.0f, getResources().getDisplayMetrics());
-        this.n = -1;
-        this.r = true;
-        this.p0 = new ed0(this);
-        setWillNotDraw(false);
-        TextView textView = new TextView(getContext());
-        this.d = textView;
-        textView.setGravity(17);
-        this.d.setSingleLine(true);
-        this.d.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        this.d.setBackgroundResource(0);
-        float f7 = dp;
-        this.d.setTextSize(0, f7);
-        this.d.setVisibility(4);
-        addView(this.d, new LinearLayout.LayoutParams(-1, -2));
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-        this.d0 = viewConfiguration.getScaledTouchSlop();
-        this.e0 = viewConfiguration.getScaledMinimumFlingVelocity();
-        this.f0 = viewConfiguration.getScaledMaximumFlingVelocity() / 8;
-        Paint paint2 = new Paint();
-        paint2.setAntiAlias(true);
-        paint2.setTextAlign(Paint.Align.CENTER);
-        paint2.setTextSize(f7);
-        paint2.setTypeface(this.d.getTypeface());
-        paint2.setColor(this.d.getTextColors().getColorForState(LinearLayout.ENABLED_STATE_SET, -1));
-        this.O = paint2;
-        this.S = new bn0(getContext(), null);
-        this.T = new bn0(getContext(), new DecelerateInterpolator(2.5f));
-        n();
-        setImportantForAccessibility(1);
-        setAccessibilityDelegate(new zc0(this));
+    public void setBitmap(Bitmap bitmap) {
+        this.a = bitmap;
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
+        this.d = bitmapDrawable;
+        setBackground(bitmapDrawable);
     }
 }

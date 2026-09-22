@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class f4 extends FrameLayout {
     public Path a;
@@ -67,7 +67,7 @@ public final class f4 extends FrameLayout {
 
     public void setProgress(float f7) {
         this.b = f7;
-        this.d = i0.a.d(f7, j6.w0(null, j6.cf, false), this.c);
+        this.d = i0.a.d(f7, i6.w0(null, i6.cf, false), this.c);
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             getChildAt(i10).setAlpha(f7);
         }

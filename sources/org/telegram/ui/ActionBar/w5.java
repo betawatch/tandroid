@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w5 extends Drawable {
     public final RectF a = new RectF();
@@ -34,7 +34,7 @@ public final class w5 extends Drawable {
         rectF.right -= this.d;
         rectF.bottom -= this.e;
         float f7 = this.f;
-        canvas.drawRoundRect(rectF, f7, f7, j6.z);
+        canvas.drawRoundRect(rectF, f7, f7, i6.z);
     }
 
     @Override // android.graphics.drawable.Drawable

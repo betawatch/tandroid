@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class p2 extends FrameLayout implements org.telegram.ui.Cells.q9 {
+public final class p2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final k2 a;
     public final n2 b;
     public final o2 c;
@@ -50,7 +50,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         n2 n2Var = new n2(this);
         this.b = n2Var;
         k2Var.setAdapter(n2Var);
-        AndroidUtilities.setViewPagerEdgeEffectColor(k2Var, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        AndroidUtilities.setViewPagerEdgeEffectColor(k2Var, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
         addView(k2Var);
         o2 o2Var = new o2(this, context);
         this.c = o2Var;
@@ -58,7 +58,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.e;
         if (a3Var != null) {
@@ -171,7 +171,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.q9 {
             if (p5 != null) {
                 int height = this.e.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.r = height;
-                dp = org.telegram.messenger.l0.C(4.0f, height, dp);
+                dp = org.telegram.messenger.y0.C(4.0f, height, dp);
                 a3 a3Var = this.e;
                 a3Var.s = i13;
                 a3Var.v = this.n;
@@ -181,7 +181,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.q9 {
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.d;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.ww0.a();
+                alignment = org.telegram.ui.Components.jw0.a();
             }
             a3 p10 = h4.p(h4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
             this.f = p10;

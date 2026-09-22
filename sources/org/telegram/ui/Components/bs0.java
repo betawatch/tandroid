@@ -1,25 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class bs0 extends xh.s2 {
-    public final /* synthetic */ lv0 U;
+public final class bs0 extends s4.n0 {
+    public final /* synthetic */ ur0 a;
+    public final /* synthetic */ yu0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bs0(int i10, long j3, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var, lv0 lv0Var) {
-        super(i10, j3, context, n2Var, f6Var);
-        this.U = lv0Var;
+    public bs0(yu0 yu0Var, ur0 ur0Var) {
+        this.b = yu0Var;
+        this.a = ur0Var;
     }
 
-    @Override // xh.s2
-    public final void p(boolean z10) {
-        lv0 lv0Var = this.U;
-        TextView textView = lv0Var.q0;
-        textView.setVisibility(0);
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new as0(0, this, z10)).start();
-        lv0Var.q1(true);
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        ur0 ur0Var = this.a;
+        if (ur0Var.h.getAdapter() == this.b.O) {
+            recyclerView.getClass();
+            int R = RecyclerView.R(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            vr0 vr0Var = ur0Var.x;
+            vr0Var.B1();
+            if (R <= vr0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+            rect.right = ur0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+            return;
+        }
+        if (!(view instanceof org.telegram.ui.Cells.t7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
+        }
+        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
+        ur0Var.h.getClass();
+        int R2 = RecyclerView.R(t7Var);
+        int i10 = ur0Var.x.J;
+        t7Var.a0 = R2 < i10;
+        int i11 = R2 % i10;
+        t7Var.V = i11 == 0;
+        t7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

@@ -12,7 +12,7 @@ import n4.i0;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class q {
     public final Bundle a;
@@ -121,7 +121,7 @@ public final class q {
     public void h(String str, Bitmap bitmap) {
         Integer num = (Integer) n4.m.c.get(str);
         if (num != null && num.intValue() != 2) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a Bitmap"));
         }
         this.a.putParcelable(str, bitmap);
     }
@@ -129,7 +129,7 @@ public final class q {
     public void i(long j3, String str) {
         Integer num = (Integer) n4.m.c.get(str);
         if (num != null && num.intValue() != 0) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a long"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a long"));
         }
         this.a.putLong(str, j3);
     }
@@ -140,7 +140,7 @@ public final class q {
         int i10 = i0Var.a;
         Integer num = (Integer) n4.m.c.get(str);
         if (num != null && num.intValue() != 3) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Rating"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a Rating"));
         }
         if (i0Var.c == null) {
             if (i0Var.b()) {
@@ -177,7 +177,7 @@ public final class q {
     public void k(String str, String str2) {
         Integer num = (Integer) n4.m.c.get(str);
         if (num != null && num.intValue() != 1) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a String"));
         }
         this.a.putCharSequence(str, str2);
     }
@@ -185,7 +185,7 @@ public final class q {
     public void l(CharSequence charSequence, String str) {
         Integer num = (Integer) n4.m.c.get(str);
         if (num != null && num.intValue() != 1) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a CharSequence"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a CharSequence"));
         }
         this.a.putCharSequence(str, charSequence);
     }

@@ -2,18 +2,20 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fs0 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ lv0 d;
+public final class fs0 extends ClippingImageView {
+    public final /* synthetic */ ll0 R;
 
-    public fs0(lv0 lv0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.d = lv0Var;
-        this.a = context;
-        this.b = n2Var;
-        this.c = f6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fs0(Context context, qt0 qt0Var) {
+        super(context);
+        this.R = qt0Var;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.R.invalidate();
     }
 }

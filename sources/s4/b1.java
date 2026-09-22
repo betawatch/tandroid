@@ -6,9 +6,9 @@ import android.widget.OverScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
-import org.telegram.ui.Cells.m2;
+import org.telegram.ui.Cells.l2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b1 implements Runnable {
     public int a;
@@ -21,11 +21,11 @@ public final class b1 implements Runnable {
 
     public b1(RecyclerView recyclerView) {
         this.h = recyclerView;
-        m2 m2Var = RecyclerView.T0;
-        this.d = m2Var;
+        l2 l2Var = RecyclerView.T0;
+        this.d = l2Var;
         this.e = false;
         this.f = false;
-        this.c = new OverScroller(recyclerView.getContext(), m2Var);
+        this.c = new OverScroller(recyclerView.getContext(), l2Var);
     }
 
     public final void a() {
@@ -98,7 +98,7 @@ public final class b1 implements Runnable {
         }
         this.f = false;
         this.e = true;
-        recyclerView.q();
+        recyclerView.p();
         OverScroller overScroller = this.c;
         recyclerView.O0 = true;
         if (overScroller.computeScrollOffset()) {
@@ -111,7 +111,7 @@ public final class b1 implements Runnable {
             int[] iArr2 = recyclerView.I0;
             iArr2[0] = 0;
             iArr2[1] = 0;
-            if (recyclerView.w(i14, i15, 1, iArr2, null)) {
+            if (recyclerView.v(i14, i15, 1, iArr2, null)) {
                 i10 = i14 - iArr[0];
                 i11 = i15 - iArr[1];
             } else {
@@ -119,12 +119,12 @@ public final class b1 implements Runnable {
                 i11 = i15;
             }
             if (recyclerView.getOverScrollMode() != 2) {
-                recyclerView.p(i10, i11);
+                recyclerView.o(i10, i11);
             }
             if (recyclerView.w != null) {
                 iArr[0] = 0;
                 iArr[1] = 0;
-                recyclerView.u0(i10, i11, iArr);
+                recyclerView.t0(i10, i11, iArr);
                 i12 = iArr[0];
                 i13 = iArr[1];
                 i10 -= i12;
@@ -151,11 +151,11 @@ public final class b1 implements Runnable {
             int[] iArr3 = recyclerView.I0;
             iArr3[0] = 0;
             iArr3[1] = 0;
-            recyclerView.x(i12, i13, i10, i11, null, 1, iArr3);
+            recyclerView.w(i12, i13, i10, i11, null, 1, iArr3);
             int i16 = i10 - iArr[0];
             int i17 = i11 - iArr[1];
             if (i12 != 0 || i13 != 0) {
-                recyclerView.y(i12, i13);
+                recyclerView.x(i12, i13);
             }
             awakenScrollBars = recyclerView.awakenScrollBars();
             if (!awakenScrollBars) {
@@ -173,23 +173,23 @@ public final class b1 implements Runnable {
                         currVelocity = 0;
                     }
                     if (i18 < 0) {
-                        recyclerView.A();
+                        recyclerView.z();
                         if (recyclerView.V.isFinished()) {
                             recyclerView.V.onAbsorb(-i18);
                         }
                     } else if (i18 > 0) {
-                        recyclerView.B();
+                        recyclerView.A();
                         if (recyclerView.a0.isFinished()) {
                             recyclerView.a0.onAbsorb(i18);
                         }
                     }
                     if (currVelocity < 0) {
-                        recyclerView.C();
+                        recyclerView.B();
                         if (recyclerView.W.isFinished()) {
                             recyclerView.W.onAbsorb(-currVelocity);
                         }
                     } else if (currVelocity > 0) {
-                        recyclerView.z();
+                        recyclerView.y();
                         if (recyclerView.b0.isFinished()) {
                             recyclerView.b0.onAbsorb(currVelocity);
                         }
@@ -223,7 +223,7 @@ public final class b1 implements Runnable {
         this.e = false;
         if (!this.f) {
             recyclerView.setScrollState(0);
-            recyclerView.B0(1);
+            recyclerView.A0(1);
         } else {
             recyclerView.removeCallbacks(this);
             WeakHashMap weakHashMap2 = r0.i0.a;

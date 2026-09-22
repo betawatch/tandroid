@@ -1,35 +1,74 @@
 package r9;
 
-import android.os.Handler;
-import android.os.Looper;
+import i9.s;
+import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.logging.Logger;
+import l5.p;
+import n6.l;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j implements Executor {
-    public static final j a;
-    public static final Handler b;
-    public static final /* synthetic */ j[] c;
+    public static final Logger f = Logger.getLogger(j.class.getName());
+    public final Executor a;
+    public final ArrayDeque b = new ArrayDeque();
+    public int c = 1;
+    public long d = 0;
+    public final s e = new s(this);
 
-    static {
-        j jVar = new j("INSTANCE", 0);
-        a = jVar;
-        c = new j[]{jVar};
-        b = new Handler(Looper.getMainLooper());
-    }
-
-    public static j valueOf(String str) {
-        return (j) Enum.valueOf(j.class, str);
-    }
-
-    public static j[] values() {
-        return (j[]) c.clone();
+    public j(Executor executor) {
+        l.h(executor);
+        this.a = executor;
     }
 
     @Override // java.util.concurrent.Executor
     public final void execute(Runnable runnable) {
-        b.post(runnable);
+        l.h(runnable);
+        synchronized (this.b) {
+            int i10 = this.c;
+            if (i10 != 4 && i10 != 3) {
+                long j3 = this.d;
+                p pVar = new p(1, runnable);
+                this.b.add(pVar);
+                this.c = 2;
+                try {
+                    this.a.execute(this.e);
+                    if (this.c != 2) {
+                        return;
+                    }
+                    synchronized (this.b) {
+                        try {
+                            if (this.d == j3 && this.c == 2) {
+                                this.c = 3;
+                            }
+                        } finally {
+                        }
+                    }
+                    return;
+                } catch (Error | RuntimeException e) {
+                    synchronized (this.b) {
+                        try {
+                            int i11 = this.c;
+                            boolean z10 = true;
+                            if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(pVar)) {
+                                z10 = false;
+                            }
+                            if (!(e instanceof RejectedExecutionException) || z10) {
+                                throw e;
+                            }
+                        } finally {
+                        }
+                    }
+                    return;
+                }
+            }
+            this.b.add(runnable);
+        }
+    }
+
+    public final String toString() {
+        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.a + "}";
     }
 }

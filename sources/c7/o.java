@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o implements Parcelable {
     public static final Parcelable.Creator<o> CREATOR = new r0(19);
@@ -31,7 +31,7 @@ public final class o implements Parcelable {
                             c0Var = pVar;
                         }
                     }
-                    throw new n(hg.k0.i(i10, "Algorithm with COSE value ", " not supported"));
+                    throw new n(hg.c.j(i10, "Algorithm with COSE value ", " not supported"));
                 }
                 c0 c0Var2 = values[i11];
                 if (c0Var2.a == i10) {
@@ -60,7 +60,7 @@ public final class o implements Parcelable {
     }
 
     public final String toString() {
-        return a4.a.p("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
+        return a4.a.q("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
     }
 
     /* JADX WARN: Type inference failed for: r2v1, types: [c7.a, java.lang.Enum] */

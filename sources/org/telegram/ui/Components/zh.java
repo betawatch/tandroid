@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class zh extends View {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final class zh extends View {
                 String format = String.format("%d", Integer.valueOf(Math.max(1, viVar.y0.getSelectedItemsCount())));
                 int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(viVar.J0.measureText(format))), AndroidUtilities.dp(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
-                viVar.J0.setColor(i0.a.k(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.C5), (int) (((viVar.V0 * 0.42d) + 0.58d) * Color.alpha(r5))));
-                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+                viVar.J0.setColor(i0.a.k(viVar.getThemedColor(org.telegram.ui.ActionBar.i6.C5), (int) (((viVar.V0 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
                 int i10 = max / 2;
                 viVar.K0.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
                 canvas.drawRoundRect(viVar.K0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), viVar.L0);
-                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.W9));
+                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.i6.W9));
                 viVar.K0.set(AndroidUtilities.dp(2.0f) + r6, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
                 canvas.drawRoundRect(viVar.K0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), viVar.L0);
                 canvas.drawText(format, measuredWidth - (r2 / 2), AndroidUtilities.dp(16.2f), viVar.J0);

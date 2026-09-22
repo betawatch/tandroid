@@ -27,12 +27,12 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class s3 extends FrameLayout {
     public static int d0;
@@ -75,7 +75,7 @@ public final class s3 extends FrameLayout {
     public static final HashMap e0 = new HashMap();
     public static final r3 f0 = new r3(45);
 
-    public s3(Context context, org.telegram.ui.ActionBar.f6 f6Var, float f7, boolean z10) {
+    public s3(Context context, org.telegram.ui.ActionBar.e6 e6Var, float f7, boolean z10) {
         super(context);
         this.b = new Paint(3);
         Paint paint = new Paint(1);
@@ -103,24 +103,24 @@ public final class s3 extends FrameLayout {
         textPaint2.setTextSize(AndroidUtilities.dp(11.33f));
         textPaint2.setColor(-1);
         this.v = context.getResources().getDrawable(R.drawable.play_mini_video).mutate();
-        q3 q3Var = new q3(this, context, f6Var);
+        q3 q3Var = new q3(this, context, e6Var);
         this.J = q3Var;
         if (z10) {
             q3Var.setDrawBackgroundAsArc(7);
         } else {
             q3Var.setDrawBackgroundAsArc(6);
         }
-        q3Var.b(org.telegram.ui.ActionBar.j6.W9, org.telegram.ui.ActionBar.j6.X9, org.telegram.ui.ActionBar.j6.V9);
+        q3Var.b(org.telegram.ui.ActionBar.i6.W9, org.telegram.ui.ActionBar.i6.X9, org.telegram.ui.ActionBar.i6.V9);
         CheckBoxBase checkBoxBase = q3Var.getCheckBoxBase();
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
         if (checkBoxBase.u != i10) {
             checkBoxBase.u = i10;
             checkBoxBase.b();
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.I = frameLayout;
-        frameLayout.addView(q3Var, w7.y5.e(26, 26, 17));
-        addView(frameLayout, w7.y5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(q3Var, w7.x5.e(26, 26, 17));
+        addView(frameLayout, w7.x5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setVisibility(0);
         frameLayout.setImportantForAccessibility(2);
         q3Var.setImportantForAccessibility(2);
@@ -368,7 +368,7 @@ public final class s3 extends FrameLayout {
         q3 q3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            rk.s(q3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), qr.h, 320L);
+            vl.r(q3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), qr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

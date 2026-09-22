@@ -1,109 +1,79 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class hf0 extends View {
-    public Paint a;
-    public Paint b;
-    public int c;
-    public int d;
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public bc0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
     public float e;
-    public boolean f;
-    public int h;
-    public int n;
-    public gf0 r;
-
-    public final void a(int i10, boolean z10) {
-        gf0 gf0Var;
-        int i11 = this.h;
-        if (i10 < i11) {
-            i10 = i11;
-        } else {
-            int i12 = this.n;
-            if (i10 > i12) {
-                i10 = i12;
-            }
-        }
-        this.e = (i10 - i11) / (this.n - i11);
-        invalidate();
-        if (!z10 || (gf0Var = this.r) == null) {
-            return;
-        }
-        gf0Var.j(((Integer) getTag()).intValue(), getProgress());
-    }
-
-    public int getProgress() {
-        return (int) ((this.e * (this.n - r0)) + this.h);
-    }
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public c6 s;
+    public boolean v;
+    public jf0 w;
+    public ci.ka x;
+    public boolean y;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        int measuredHeight = getMeasuredHeight();
-        int i10 = this.c;
-        int i11 = (measuredHeight - i10) / 2;
-        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-        float f7 = i10 / 2;
-        canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() - r9, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), this.a);
-        if (this.h == 0) {
-            canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else if (this.e > 0.5f) {
-            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else {
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, AndroidUtilities.dp(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
+            return;
         }
-        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10 = this.c;
-        if (motionEvent != null) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-            if (motionEvent.getAction() == 0) {
-                float measuredHeight = (getMeasuredHeight() - i10) / 2;
-                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                    this.f = true;
-                    this.d = (int) (x10 - measuredWidth);
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.f) {
-                    this.f = false;
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 2 && this.f) {
-                float f7 = (int) (x10 - this.d);
-                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
-                gf0 gf0Var = this.r;
-                if (gf0Var != null) {
-                    gf0Var.j(((Integer) getTag()).intValue(), getProgress());
-                }
-                invalidate();
-                return true;
-            }
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
-        return false;
     }
 
-    public void setDelegate(gf0 gf0Var) {
-        this.r = gf0Var;
+    public void setAllowTouch(boolean z10) {
+        this.v = z10;
     }
 
-    public void setProgress(int i10) {
-        a(i10, true);
+    public void setFilterView(jf0 jf0Var) {
+        this.w = jf0Var;
     }
 }

@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.rf0;
+import org.telegram.ui.Components.gf0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -173,12 +173,12 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurAngle);
                 int i11 = 0;
                 while (i11 < 4) {
-                    rf0 rf0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                    serializedData.writeFloat(rf0Var.a);
-                    serializedData.writeFloat(rf0Var.b);
-                    serializedData.writeFloat(rf0Var.c);
-                    serializedData.writeFloat(rf0Var.d);
-                    serializedData.writeFloat(rf0Var.e);
+                    gf0 gf0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                    serializedData.writeFloat(gf0Var.a);
+                    serializedData.writeFloat(gf0Var.b);
+                    serializedData.writeFloat(gf0Var.c);
+                    serializedData.writeFloat(gf0Var.d);
+                    serializedData.writeFloat(gf0Var.e);
                     i11++;
                 }
             } else {
@@ -255,28 +255,28 @@ public class VideoEditedInfo {
         long j12 = this.videoOffset;
         String str3 = bytesToHex;
         String str4 = this.originalPath;
-        StringBuilder t10 = a4.a.t(j3, "-1_", "_");
-        t10.append(j10);
-        t10.append("_");
-        t10.append(i14);
-        t10.append("_");
-        t10.append(i15);
-        t10.append("_");
-        t10.append(i16);
-        t10.append("_");
-        t10.append(i17);
-        t10.append("_");
-        t10.append(i18);
-        t10.append("_");
-        t10.append(i19);
-        t10.append("_");
-        t10.append(j11);
-        t10.append("_");
-        t10.append(i20);
-        t10.append("_");
-        t10.append(j12);
-        t10.append("_-");
-        return a4.a.q(str3, "_", str4, t10);
+        StringBuilder u10 = a4.a.u(j3, "-1_", "_");
+        u10.append(j10);
+        u10.append("_");
+        u10.append(i14);
+        u10.append("_");
+        u10.append(i15);
+        u10.append("_");
+        u10.append(i16);
+        u10.append("_");
+        u10.append(i17);
+        u10.append("_");
+        u10.append(i18);
+        u10.append("_");
+        u10.append(i19);
+        u10.append("_");
+        u10.append(j11);
+        u10.append("_");
+        u10.append(i20);
+        u10.append("_");
+        u10.append(j12);
+        u10.append("_-");
+        return a4.a.r(str3, "_", str4, u10);
     }
 
     public boolean needConvert() {
@@ -354,12 +354,12 @@ public class VideoEditedInfo {
                             this.filterState.blurAngle = serializedData.readFloat(false);
                             int i11 = 0;
                             while (i11 < 4) {
-                                rf0 rf0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                                rf0Var.a = serializedData.readFloat(false);
-                                rf0Var.b = serializedData.readFloat(false);
-                                rf0Var.c = serializedData.readFloat(false);
-                                rf0Var.d = serializedData.readFloat(false);
-                                rf0Var.e = serializedData.readFloat(false);
+                                gf0 gf0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                                gf0Var.a = serializedData.readFloat(false);
+                                gf0Var.b = serializedData.readFloat(false);
+                                gf0Var.c = serializedData.readFloat(false);
+                                gf0Var.d = serializedData.readFloat(false);
+                                gf0Var.e = serializedData.readFloat(false);
                                 i11++;
                             }
                         }
@@ -436,9 +436,9 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class Part extends TLObject {
-        public org.telegram.ui.Components.c6 animatedFileDrawable;
+        public org.telegram.ui.Components.b6 animatedFileDrawable;
         public float currentFrame;
         public long duration;
         public int flags;
@@ -561,7 +561,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;
@@ -577,7 +577,7 @@ public class VideoEditedInfo {
         public int W;
         public float additionalHeight;
         public float additionalWidth;
-        public org.telegram.ui.Components.c6 animatedFileDrawable;
+        public org.telegram.ui.Components.b6 animatedFileDrawable;
         public Bitmap bitmap;
         public Canvas canvas;
         public int color;
@@ -591,7 +591,7 @@ public class VideoEditedInfo {
         public int fontSize;
         public float framesPerDraw;
         public float height;
-        public qg.o0 linkSettings;
+        public qg.q0 linkSettings;
         public boolean looped;
         public RLottieNative lottieNative;
         public Matrix matrix;
@@ -610,7 +610,7 @@ public class VideoEditedInfo {
         public byte subType;
         public String text;
         public int textAlign;
-        public pg.k0 textTypeface;
+        public pg.j0 textTypeface;
         public String textTypefaceKey;
         public float textViewHeight;
         public float textViewWidth;
@@ -706,14 +706,14 @@ public class VideoEditedInfo {
             abstractSerializedData.writeInt32(this.viewWidth);
             abstractSerializedData.writeInt32(this.viewHeight);
             abstractSerializedData.writeInt32(this.textAlign);
-            pg.k0 k0Var = this.textTypeface;
-            if (k0Var == null) {
+            pg.j0 j0Var = this.textTypeface;
+            if (j0Var == null) {
                 str = this.textTypefaceKey;
                 if (str == null) {
                     str = "";
                 }
             } else {
-                str = k0Var.a;
+                str = j0Var.a;
             }
             abstractSerializedData.writeString(str);
             abstractSerializedData.writeFloat(this.scale);
@@ -797,7 +797,7 @@ public class VideoEditedInfo {
         }
 
         public MediaEntity(AbstractSerializedData abstractSerializedData, boolean z10, boolean z11) {
-            pg.k0 k0Var;
+            pg.j0 j0Var;
             this.text = "";
             this.entities = new ArrayList<>();
             this.segmentedPath = "";
@@ -824,19 +824,19 @@ public class VideoEditedInfo {
             this.textAlign = abstractSerializedData.readInt32(z11);
             String readString = abstractSerializedData.readString(z11);
             this.textTypefaceKey = readString;
-            pg.k0 k0Var2 = pg.k0.e;
-            qg.o0 o0Var = null;
+            pg.j0 j0Var2 = pg.j0.e;
+            qg.q0 q0Var = null;
             if (readString != null && !TextUtils.isEmpty(readString)) {
-                List c10 = pg.k0.c();
+                List c10 = pg.j0.c();
                 for (int i11 = 0; i11 < c10.size(); i11++) {
-                    k0Var = (pg.k0) c10.get(i11);
-                    if (k0Var != null && TextUtils.equals(readString, k0Var.a)) {
+                    j0Var = (pg.j0) c10.get(i11);
+                    if (j0Var != null && TextUtils.equals(readString, j0Var.a)) {
                         break;
                     }
                 }
             }
-            k0Var = null;
-            this.textTypeface = k0Var;
+            j0Var = null;
+            this.textTypeface = j0Var;
             this.scale = abstractSerializedData.readFloat(z11);
             this.textViewWidth = abstractSerializedData.readFloat(z11);
             this.textViewHeight = abstractSerializedData.readFloat(z11);
@@ -871,11 +871,11 @@ public class VideoEditedInfo {
                 this.mediaArea = TL_stories.MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z11), z11);
                 int readInt323 = abstractSerializedData.readInt32(z11);
                 if (-625858389 != readInt323) {
-                    int i12 = qg.o0.j;
+                    int i12 = qg.q0.j;
                 } else {
-                    o0Var = new qg.o0();
+                    q0Var = new qg.q0();
                 }
-                this.linkSettings = (qg.o0) TLObject.TLdeserialize(qg.o0.class, o0Var, abstractSerializedData, readInt323, z11);
+                this.linkSettings = (qg.q0) TLObject.TLdeserialize(qg.q0.class, q0Var, abstractSerializedData, readInt323, z11);
                 return;
             }
             if (b10 == 4) {

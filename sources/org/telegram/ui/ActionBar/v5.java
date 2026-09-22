@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v5 extends Drawable {
     public final RectF a = new RectF();
@@ -33,15 +33,15 @@ public final class v5 extends Drawable {
         float f12 = bounds.bottom;
         RectF rectF = this.a;
         rectF.set(f7, f10, f11, f12);
-        j6.s(this.b, this.c, null);
+        i6.s(this.b, this.c, null);
         float f13 = this.d;
         Paint paint = this.e;
         if (paint == null) {
-            paint = j6.S0("paintChatActionBackground");
+            paint = i6.S0("paintChatActionBackground");
         }
         canvas.drawRoundRect(rectF, f13, f13, paint);
-        if (j6.a1()) {
-            canvas.drawRoundRect(rectF, f13, f13, j6.S0("paintChatActionBackgroundDarken"));
+        if (i6.a1()) {
+            canvas.drawRoundRect(rectF, f13, f13, i6.S0("paintChatActionBackgroundDarken"));
         }
     }
 

@@ -1,17 +1,29 @@
 package x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class ca {
-    public final boolean equals(Object obj) {
-        return obj == this || (obj instanceof ca);
+public final class ca implements ea {
+    public final ArrayList a;
+
+    public ca(Context context, ba baVar) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        baVar.getClass();
+        arrayList.add(new ga(context, baVar));
     }
 
-    public final int hashCode() {
-        return -1705342425;
-    }
-
-    public final String toString() {
-        return "MLKitLoggingOptions{libraryName=play-services-mlkit-image-labeling, enableFirelog=true, firelogEventType=1}";
+    @Override // x7.ea
+    public final void a(a5.a aVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((ea) obj).a(aVar);
+        }
     }
 }

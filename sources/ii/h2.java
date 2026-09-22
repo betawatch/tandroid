@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class h2 {
-    public final android.support.v4.media.c a;
+    public final a4.m a;
     public boolean e;
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
@@ -24,8 +24,8 @@ public final class h2 {
     public final i2.g0 g = new i2.g0(this, 6);
     public g2 d = b();
 
-    public h2(android.support.v4.media.c cVar) {
-        this.a = cVar;
+    public h2(a4.m mVar) {
+        this.a = mVar;
     }
 
     public static void e(TL_iv.PageBlock pageBlock) {
@@ -204,20 +204,20 @@ public final class h2 {
             }
         }
         e2 e2Var = g2Var.b;
-        android.support.v4.media.c cVar = this.a;
-        w3 w3Var = (w3) cVar.b;
+        a4.m mVar = this.a;
+        w3 w3Var = (w3) mVar.b;
         w3Var.n3.f(false);
         ArrayList arrayList3 = w3Var.l3;
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
-        w3Var.t4();
+        w3Var.s4();
         w3Var.Y2.N(false);
         if (e2Var.a >= 0) {
             w3Var.post(new gg.x1(15, w3Var, e2Var));
         }
         w3Var.h3.onContentChanged();
         this.f = false;
-        ((w3) cVar.b).h3.I();
+        ((w3) mVar.b).h3.F();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -243,8 +243,8 @@ public final class h2 {
     public final g2 b() {
         e2 e2Var;
         m0 m0Var;
-        android.support.v4.media.c cVar = this.a;
-        ArrayList arrayList = ((w3) cVar.b).l3;
+        a4.m mVar = this.a;
+        ArrayList arrayList = ((w3) mVar.b).l3;
         HashMap hashMap = new HashMap();
         g2 g2Var = this.d;
         if (g2Var != null) {
@@ -281,13 +281,13 @@ public final class h2 {
             }
             f2VarArr[i10] = new f2(aVar.a, byteArray, aVar.c, aVar.d, aVar.e, aVar.f, aVar.i, aVar.g, aVar.h != null ? new ArrayList(aVar.h) : null, new ArrayList(arrayList2));
         }
-        View findFocus = ((w3) cVar.b).findFocus();
+        View findFocus = ((w3) mVar.b).findFocus();
         if (findFocus instanceof i1) {
             ?? r12 = (i1) findFocus;
             int selectionStart = r12.getSelectionStart();
             int selectionEnd = r12.getSelectionEnd();
-            ?? V2 = w3.V2(r12);
-            if (V2 == 0 || V2.getRow() == null) {
+            ?? U2 = w3.U2(r12);
+            if (U2 == 0 || U2.getRow() == null) {
                 if (!(r12 instanceof m0)) {
                     ViewParent parent = r12.getParent();
                     while (true) {
@@ -318,11 +318,11 @@ public final class h2 {
                 } else {
                     e2Var = new e2(m0Var.getRow().a, -1, selectionStart, selectionEnd);
                 }
-            } else if (r12 == V2.getTitleEditText()) {
-                e2Var = new e2(V2.getRow().a, 0, selectionStart, selectionEnd);
+            } else if (r12 == U2.getTitleEditText()) {
+                e2Var = new e2(U2.getRow().a, 0, selectionStart, selectionEnd);
             } else {
-                r5 o9 = V2.o(r12);
-                e2Var = new e2(V2.getRow().a, o9 != null ? V2.k(o9.b) : -1, selectionStart, selectionEnd);
+                r5 o9 = U2.o(r12);
+                e2Var = new e2(U2.getRow().a, o9 != null ? U2.k(o9.b) : -1, selectionStart, selectionEnd);
             }
             return new g2(f2VarArr, e2Var);
         }
@@ -357,7 +357,7 @@ public final class h2 {
         }
         this.c.clear();
         this.d = b10;
-        ((w3) this.a.b).h3.I();
+        ((w3) this.a.b).h3.F();
     }
 
     public final void d() {
@@ -382,7 +382,7 @@ public final class h2 {
         i2.g0 g0Var = this.g;
         AndroidUtilities.cancelRunOnUIThread(g0Var);
         AndroidUtilities.runOnUIThread(g0Var, 800L);
-        ((w3) this.a.b).h3.I();
+        ((w3) this.a.b).h3.F();
     }
 
     public final void h() {
@@ -412,7 +412,7 @@ public final class h2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((w3) this.a.b).h3.I();
+        ((w3) this.a.b).h3.F();
     }
 
     public final void k() {

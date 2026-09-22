@@ -1,32 +1,91 @@
 package hg;
 
-import org.telegram.messenger.AndroidUtilities;
+import ai.m8;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class g {
+    public static volatile g[] g = new g[4];
+    public static final Object[] h = new Object[4];
+    public final int a;
+    public long b;
+    public TL_account.connectedBots c;
+    public final ArrayList d = new ArrayList();
+    public boolean e;
+    public boolean f;
 
-    public /* synthetic */ g(m mVar, int i10) {
-        this.a = i10;
-        this.b = mVar;
+    static {
+        for (int i10 = 0; i10 < 4; i10++) {
+            h[i10] = new Object();
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m.Y(this.b);
-                break;
-            case 1:
-                m.Z(this.b);
-                break;
-            default:
-                g gVar = this.b.e;
-                AndroidUtilities.cancelRunOnUIThread(gVar);
-                AndroidUtilities.runOnUIThread(gVar, 5000L);
-                break;
+    public g(int i10) {
+        this.a = i10;
+    }
+
+    public static g a(int i10) {
+        g gVar;
+        g gVar2 = g[i10];
+        if (gVar2 != null) {
+            return gVar2;
+        }
+        synchronized (h[i10]) {
+            try {
+                gVar = g[i10];
+                if (gVar == null) {
+                    g[] gVarArr = g;
+                    g gVar3 = new g(i10);
+                    gVarArr[i10] = gVar3;
+                    gVar = gVar3;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return gVar;
+    }
+
+    public final void b() {
+        this.f = false;
+        c(null);
+    }
+
+    public final void c(Utilities.Callback callback) {
+        boolean z10;
+        if (callback != null) {
+            this.d.add(callback);
+        }
+        if (this.e) {
+            return;
+        }
+        if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
+            this.e = true;
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new m8(this, 11));
+        } else if (z10) {
+            d();
+        }
+    }
+
+    public final void d() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            if (i10 >= arrayList.size()) {
+                arrayList.clear();
+                NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updatedChatbot, new Object[0]);
+                return;
+            } else {
+                if (arrayList.get(i10) != null) {
+                    ((Utilities.Callback) arrayList.get(i10)).run(this.c);
+                }
+                i10++;
+            }
         }
     }
 }

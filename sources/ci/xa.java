@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,7 +69,7 @@ public final /* synthetic */ class xa implements Runnable {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                             ia iaVar = ocVar.q0;
                             if (iaVar != null) {
-                                new org.telegram.ui.Components.xc(iaVar.container, dVar).d0(tL_error, true);
+                                new org.telegram.ui.Components.vc(iaVar.container, dVar).d0(tL_error, true);
                                 a0Var.run();
                                 break;
                             }
@@ -79,7 +79,7 @@ public final /* synthetic */ class xa implements Runnable {
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
                             b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                            org.telegram.messenger.l0.n(R.string.OK, alertDialog$Builder, null);
+                            hg.c.A(R.string.OK, alertDialog$Builder, null);
                             break;
                         }
                     }
@@ -157,12 +157,12 @@ public final /* synthetic */ class xa implements Runnable {
                 break;
             default:
                 ((boolean[]) obj2)[0] = true;
-                ((yh.u5) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.c, this.d, (TLRPC.TL_textWithEntities) tLObject, (xh.n4) obj);
+                ((yh.u5) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.c, this.d, (TLRPC.TL_textWithEntities) tLObject, (xh.m4) obj);
                 break;
         }
     }
 
-    public /* synthetic */ xa(yh.u5 u5Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, xh.n4 n4Var) {
+    public /* synthetic */ xa(yh.u5 u5Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, xh.m4 m4Var) {
         this.e = u5Var;
         this.f = zArr;
         this.h = starGift;
@@ -170,6 +170,6 @@ public final /* synthetic */ class xa implements Runnable {
         this.c = z11;
         this.d = j3;
         this.n = tL_textWithEntities;
-        this.r = n4Var;
+        this.r = m4Var;
     }
 }

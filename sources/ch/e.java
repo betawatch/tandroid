@@ -1,6 +1,6 @@
 package ch;
 
-import ah.j;
+import ah.i;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
@@ -10,9 +10,9 @@ import android.graphics.Rect;
 import android.graphics.RenderNode;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final fh.a G;
@@ -24,7 +24,7 @@ public final class e extends d {
     public final Paint M;
     public final Paint N;
     public boolean O;
-    public j P;
+    public i P;
 
     public e(fh.a aVar) {
         Paint paint = new Paint(1);
@@ -64,7 +64,7 @@ public final class e extends d {
             w();
         }
         this.O = false;
-        int l1 = j6.l1(this.J.getAlpha() * this.p, this.d);
+        int l1 = i6.l1(this.J.getAlpha() * this.p, this.d);
         if (Color.alpha(l1) != 0) {
             float f7 = this.n;
             float f10 = this.o;
@@ -170,13 +170,13 @@ public final class e extends d {
                 i10 = AndroidUtilities.dp(11.0f);
             }
             int max = Math.max(Math.min(i10, Math.min(rect2.width(), rect2.height()) / 5), 1);
-            j jVar = this.P;
+            i iVar = this.P;
             float width = rect2.width();
             float height = rect2.height();
             float[] fArr = cVar.c;
-            jVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
+            iVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
         }
-        this.G.v(beginRecording, f11, f12, f13, f14);
+        this.G.y(beginRecording, f11, f12, f13, f14);
         beginRecording.save();
         this.K.endRecording();
         RecordingCanvas beginRecording2 = this.J.beginRecording();

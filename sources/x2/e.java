@@ -8,13 +8,12 @@ import e9.i0;
 import e9.x0;
 import e9.y0;
 import e9.z;
-import hg.k0;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class e extends o implements Comparable {
+public final class e extends n implements Comparable {
     public final int E;
     public final int F;
     public final boolean G;
@@ -28,7 +27,7 @@ public final class e extends o implements Comparable {
     public final int e;
     public final boolean f;
     public final String h;
-    public final j n;
+    public final i n;
     public final boolean r;
     public final int s;
     public final int v;
@@ -48,7 +47,7 @@ public final class e extends o implements Comparable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(int i10, l1 l1Var, int i11, j jVar, int i12, boolean z10, d dVar, int i13) {
+    public e(int i10, l1 l1Var, int i11, i iVar, int i12, boolean z10, d dVar, int i13) {
         super(i10, l1Var, i11);
         int i14;
         int i15;
@@ -59,19 +58,19 @@ public final class e extends o implements Comparable {
         int i18;
         b2.s sVar;
         boolean z12;
-        j jVar2;
+        i iVar2;
         boolean z13;
         o1 o1Var;
         char c10;
-        this.n = jVar;
-        boolean z14 = jVar.r0;
-        i0 i0Var = jVar.t;
-        i0 i0Var2 = jVar.p;
+        this.n = iVar;
+        boolean z14 = iVar.r0;
+        i0 i0Var = iVar.t;
+        i0 i0Var2 = iVar.p;
         int i19 = z14 ? 24 : 16;
         int i20 = 0;
         this.x = false;
-        this.h = q.g(this.d.d);
-        this.r = k0.d(i12, false);
+        this.h = p.g(this.d.d);
+        this.r = hg.c.d(i12, false);
         int i21 = 0;
         while (true) {
             int size = i0Var2.size();
@@ -81,7 +80,7 @@ public final class e extends o implements Comparable {
                 i15 = 0;
                 break;
             } else {
-                i15 = q.d(this.d, (String) i0Var2.get(i21), false);
+                i15 = p.d(this.d, (String) i0Var2.get(i21), false);
                 if (i15 > 0) {
                     break;
                 } else {
@@ -92,7 +91,7 @@ public final class e extends o implements Comparable {
         this.v = i21;
         this.s = i15;
         int i22 = this.d.f;
-        int i23 = jVar.q;
+        int i23 = iVar.q;
         this.w = (i22 == 0 || i22 != i23) ? Integer.bitCount(i22 & i23) : ConnectionsManager.DEFAULT_DATACENTER_ID;
         b2.s sVar2 = this.d;
         int i24 = sVar2.f;
@@ -139,12 +138,12 @@ public final class e extends o implements Comparable {
             this.I = sVar2.K;
             int i26 = sVar2.j;
             this.J = i26;
-            this.f = (i26 != -1 || i26 <= jVar.s) && (i25 == -1 || i25 <= jVar.r) && dVar.apply(sVar2);
+            this.f = (i26 != -1 || i26 <= iVar.s) && (i25 == -1 || i25 <= iVar.r) && dVar.apply(sVar2);
             E = d0.E();
             i16 = 0;
             while (true) {
                 if (i16 >= E.length) {
-                    i17 = q.d(this.d, E[i16], false);
+                    i17 = p.d(this.d, E[i16], false);
                     if (i17 <= 0) {
                         i16++;
                     }
@@ -171,11 +170,11 @@ public final class e extends o implements Comparable {
             this.M = (i12 & 64) != 64;
             sVar = this.d;
             z12 = this.f;
-            jVar2 = this.n;
-            z13 = jVar2.t0;
-            o1Var = jVar2.u;
-            if (k0.d(i12, z13) && ((z12 || jVar2.q0) && (o1Var.a != 2 || q.i(jVar2, i12, sVar)))) {
-                i20 = (k0.d(i12, false) || !z12 || sVar.j == -1 || jVar2.C || jVar2.B || (!jVar2.u0 && z10) || o1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
+            iVar2 = this.n;
+            z13 = iVar2.t0;
+            o1Var = iVar2.u;
+            if (hg.c.d(i12, z13) && ((z12 || iVar2.q0) && (o1Var.a != 2 || p.i(iVar2, i12, sVar)))) {
+                i20 = (hg.c.d(i12, false) || !z12 || sVar.j == -1 || iVar2.C || iVar2.B || (!iVar2.u0 && z10) || o1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
             }
             this.e = i20;
         }
@@ -186,7 +185,7 @@ public final class e extends o implements Comparable {
         this.I = sVar2.K;
         int i262 = sVar2.j;
         this.J = i262;
-        this.f = (i262 != -1 || i262 <= jVar.s) && (i252 == -1 || i252 <= jVar.r) && dVar.apply(sVar2);
+        this.f = (i262 != -1 || i262 <= iVar.s) && (i252 == -1 || i252 <= iVar.r) && dVar.apply(sVar2);
         E = d0.E();
         i16 = 0;
         while (true) {
@@ -207,26 +206,26 @@ public final class e extends o implements Comparable {
         this.M = (i12 & 64) != 64;
         sVar = this.d;
         z12 = this.f;
-        jVar2 = this.n;
-        z13 = jVar2.t0;
-        o1Var = jVar2.u;
-        if (k0.d(i12, z13)) {
-            if (k0.d(i12, false)) {
+        iVar2 = this.n;
+        z13 = iVar2.t0;
+        o1Var = iVar2.u;
+        if (hg.c.d(i12, z13)) {
+            if (hg.c.d(i12, false)) {
             }
         }
         this.e = i20;
     }
 
-    @Override // x2.o
+    @Override // x2.n
     public final int a() {
         return this.e;
     }
 
-    @Override // x2.o
-    public final boolean b(o oVar) {
+    @Override // x2.n
+    public final boolean b(n nVar) {
         int i10;
         String str;
-        e eVar = (e) oVar;
+        e eVar = (e) nVar;
         b2.s sVar = eVar.d;
         this.n.getClass();
         b2.s sVar2 = this.d;
@@ -242,7 +241,7 @@ public final class e extends o implements Comparable {
     public final int compareTo(e eVar) {
         boolean z10 = this.r;
         boolean z11 = this.f;
-        y0 a2 = (z11 && z10) ? q.l : q.l.a();
+        y0 a2 = (z11 && z10) ? p.l : p.l.a();
         boolean z12 = eVar.r;
         int i10 = eVar.J;
         z c10 = z.a.c(z10, z12);
@@ -253,7 +252,7 @@ public final class e extends o implements Comparable {
         boolean z13 = this.n.B;
         int i11 = this.J;
         if (z13) {
-            b10 = b10.b(Integer.valueOf(i11), Integer.valueOf(i10), q.l.a());
+            b10 = b10.b(Integer.valueOf(i11), Integer.valueOf(i10), p.l.a());
         }
         z b11 = b10.c(this.L, eVar.L).c(this.M, eVar.M).c(this.N, eVar.N).b(Integer.valueOf(this.H), Integer.valueOf(eVar.H), a2).b(Integer.valueOf(this.I), Integer.valueOf(eVar.I), a2);
         if (Objects.equals(this.h, eVar.h)) {

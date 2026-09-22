@@ -13,13 +13,13 @@ import java.util.NavigableMap;
 import java.util.RandomAccess;
 import java.util.Set;
 import java.util.SortedMap;
-import x7.ra;
+import x7.qa;
 import z7.de;
 import z7.ed;
 import z7.l9;
 import z7.lg;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class d extends AbstractMap {
     public final /* synthetic */ int a;
@@ -138,13 +138,13 @@ public class d extends AbstractMap {
                 this.c = bVar2;
                 return bVar2;
             case 1:
-                ra raVar = (ra) this.c;
-                if (raVar != null) {
-                    return raVar;
+                qa qaVar = (qa) this.c;
+                if (qaVar != null) {
+                    return qaVar;
                 }
-                ra raVar2 = new ra(this);
-                this.c = raVar2;
-                return raVar2;
+                qa qaVar2 = new qa(this);
+                this.c = qaVar2;
+                return qaVar2;
             default:
                 l9 l9Var = (l9) this.c;
                 if (l9Var != null) {

@@ -10,10 +10,10 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.util.StateSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class y5 {
-    public static final int a = j6.d6;
+    public static final int a = i6.d6;
     public static float[] b;
 
     public static float[] a(float... fArr) {
@@ -28,11 +28,11 @@ public abstract class y5 {
         float[] fArr = b;
         float f7 = fArr[1];
         if (f7 > 0.01f) {
-            fArr[1] = Math.min(1.0f, Math.max(0.0f, f7 + (j6.I.q() ? 0.25f : -0.25f)));
+            fArr[1] = Math.min(1.0f, Math.max(0.0f, f7 + (i6.I.q() ? 0.25f : -0.25f)));
             float[] fArr2 = b;
-            fArr2[2] = Math.min(1.0f, Math.max(0.0f, fArr2[2] + (j6.I.q() ? 0.05f : -0.05f)));
+            fArr2[2] = Math.min(1.0f, Math.max(0.0f, fArr2[2] + (i6.I.q() ? 0.05f : -0.05f)));
         } else {
-            fArr[2] = Math.min(1.0f, Math.max(0.0f, fArr[2] + (j6.I.q() ? 0.1f : -0.1f)));
+            fArr[2] = Math.min(1.0f, Math.max(0.0f, fArr[2] + (i6.I.q() ? 0.1f : -0.1f)));
         }
         return Color.HSVToColor(127, b);
     }
@@ -94,6 +94,6 @@ public abstract class y5 {
     }
 
     public static org.telegram.ui.Cells.z f(float[] fArr, int i10) {
-        return e(fArr, j6.w0(null, i10, false));
+        return e(fArr, i6.w0(null, i10, false));
     }
 }

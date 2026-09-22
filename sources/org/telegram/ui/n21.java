@@ -1,34 +1,92 @@
 package org.telegram.ui;
 
-import android.transition.Transition;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class n21 implements Transition.TransitionListener {
-    public final /* synthetic */ Runnable a;
+public final class n21 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p21 b;
 
-    public n21(Runnable runnable) {
-        this.a = runnable;
+    public /* synthetic */ n21(p21 p21Var, int i10) {
+        this.a = i10;
+        this.b = p21Var;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.run();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                this.b.U(true);
+                break;
+            case 1:
+                p21 p21Var = this.b;
+                if (!p21Var.K) {
+                    EditTextBoldCursor editTextBoldCursor = p21Var.a[1];
+                    int selectionStart = editTextBoldCursor.getSelectionStart();
+                    String obj = editTextBoldCursor.getText().toString();
+                    StringBuilder sb2 = new StringBuilder(obj.length());
+                    int i10 = 0;
+                    while (i10 < obj.length()) {
+                        int i11 = i10 + 1;
+                        String substring = obj.substring(i10, i11);
+                        if ("0123456789".contains(substring)) {
+                            sb2.append(substring);
+                        }
+                        i10 = i11;
+                    }
+                    p21Var.K = true;
+                    int intValue = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                    if (intValue < 0 || intValue > 65535 || !obj.equals(sb2.toString())) {
+                        if (intValue < 0) {
+                            editTextBoldCursor.setText("0");
+                        } else if (intValue > 65535) {
+                            editTextBoldCursor.setText("65535");
+                        } else {
+                            editTextBoldCursor.setText(sb2.toString());
+                        }
+                    } else if (selectionStart >= 0) {
+                        editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                    }
+                    p21Var.K = false;
+                    p21Var.U(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.U(true);
+                break;
+        }
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

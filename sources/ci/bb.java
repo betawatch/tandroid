@@ -4,11 +4,11 @@ import android.animation.ValueAnimator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.dw;
+import org.telegram.ui.Components.cw;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.mi1;
+import org.telegram.ui.ni1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -47,22 +47,22 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                dw dwVar = (dw) obj;
-                dwVar.getClass();
+                cw cwVar = (cw) obj;
+                cwVar.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dwVar.L = floatValue2;
-                dwVar.K = AndroidUtilities.lerp(f10, f7, floatValue2);
-                dwVar.b.invalidate();
+                cwVar.L = floatValue2;
+                cwVar.K = AndroidUtilities.lerp(f10, f7, floatValue2);
+                cwVar.b.invalidate();
                 break;
             case 3:
-                mi1 mi1Var = (mi1) obj;
-                mi1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ni1 ni1Var = (ni1) obj;
+                ni1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float dp = f10 + AndroidUtilities.dp(28.0f);
                 float dp2 = f7 + AndroidUtilities.dp(52.0f);
-                float f11 = mi1Var.y;
-                mi1Var.G = dp - (dp * f11);
-                mi1Var.H = dp2 - (f11 * dp2);
-                mi1Var.invalidate();
+                float f11 = ni1Var.y;
+                ni1Var.G = dp - (dp * f11);
+                ni1Var.H = dp2 - (f11 * dp2);
+                ni1Var.invalidate();
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj;

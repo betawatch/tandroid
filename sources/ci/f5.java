@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f5 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class f5 implements Runnable {
                 LinearLayout linearLayout = new LinearLayout(r6Var.getContext());
                 linearLayout.setOrientation(0);
                 final qg.j jVar = this.c;
-                boolean z10 = jVar instanceof qg.f1;
+                boolean z10 = jVar instanceof qg.h1;
                 if (!z10) {
                     TextView textView = new TextView(r6Var.getContext());
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, e6Var));
+                    textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
                     textView.setGravity(16);
                     textView.setLines(1);
                     textView.setSingleLine();
@@ -58,7 +58,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i10) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z11 = jVar3 instanceof qg.c2;
+                                    boolean z11 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z11) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -79,7 +79,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -103,7 +103,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -113,7 +113,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -122,16 +122,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -156,19 +156,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -183,11 +183,11 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView, w7.y5.n(-2, 44));
+                    linearLayout.addView(textView, w7.x5.n(-2, 44));
                 }
-                if (jVar instanceof qg.v2) {
+                if (jVar instanceof qg.x2) {
                     TextView textView2 = new TextView(r6Var.getContext());
-                    textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, e6Var));
+                    textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
                     textView2.setGravity(16);
                     textView2.setLines(1);
                     textView2.setSingleLine();
@@ -206,7 +206,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 switch (i11) {
                                     case 0:
                                         qg.j jVar3 = jVar;
-                                        boolean z11 = jVar3 instanceof qg.c2;
+                                        boolean z11 = jVar3 instanceof qg.e2;
                                         r6 r6Var2 = r6Var;
                                         if (z11) {
                                             ec ecVar = ((qb) r6Var2).A2.c1;
@@ -227,7 +227,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                         r6 r6Var3 = r6Var;
                                         r6Var3.getClass();
                                         try {
-                                            ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                            ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                         } catch (Exception e) {
                                             FileLog.e(e);
                                         }
@@ -251,7 +251,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                         r6 r6Var5 = r6Var;
                                         r6Var5.D0(null, true);
                                         qg.j jVar5 = jVar;
-                                        r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                        r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                         org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                         if (n1Var4 != null && n1Var4.isShowing()) {
                                             r6Var5.H1.d(true);
@@ -261,7 +261,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     case 4:
                                         r6 r6Var6 = r6Var;
                                         r6Var6.D0(null, true);
-                                        r6Var6.K0((qg.r0) jVar);
+                                        r6Var6.K0((qg.t0) jVar);
                                         org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                         if (n1Var5 != null && n1Var5.isShowing()) {
                                             r6Var6.H1.d(true);
@@ -270,16 +270,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                         break;
                                     case 5:
                                         qg.j jVar6 = jVar;
-                                        if (jVar6 instanceof qg.o2) {
-                                            ((qg.o2) jVar6).r(true);
-                                        } else if (jVar6 instanceof qg.b2) {
-                                            ((qg.b2) jVar6).r(true);
-                                        } else if (jVar6 instanceof qg.c2) {
-                                            qg.c2 c2Var = (qg.c2) jVar6;
-                                            c2Var.r0 = !c2Var.r0;
-                                            c2Var.invalidate();
+                                        if (jVar6 instanceof qg.q2) {
+                                            ((qg.q2) jVar6).r(true);
+                                        } else if (jVar6 instanceof qg.d2) {
+                                            ((qg.d2) jVar6).r(true);
+                                        } else if (jVar6 instanceof qg.e2) {
+                                            qg.e2 e2Var = (qg.e2) jVar6;
+                                            e2Var.r0 = !e2Var.r0;
+                                            e2Var.invalidate();
                                         } else {
-                                            ((qg.y1) jVar6).r(true);
+                                            ((qg.a2) jVar6).r(true);
                                         }
                                         r6 r6Var7 = r6Var;
                                         org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -304,19 +304,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                         qg.j jVar7 = jVar;
                                         if (jVar7 != null) {
                                             PointF Q0 = r6Var9.Q0(jVar7);
-                                            if (jVar7 instanceof qg.o2) {
-                                                qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                                o2Var.setDelegate(r6Var9);
-                                                k6Var2.addView(o2Var);
+                                            if (jVar7 instanceof qg.q2) {
+                                                qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                                q2Var.setDelegate(r6Var9);
+                                                k6Var2.addView(q2Var);
                                                 r6Var9.g0();
-                                                jVar2 = o2Var;
-                                            } else if (jVar7 instanceof qg.v2) {
-                                                qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                                v2Var.setDelegate(r6Var9);
-                                                v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                                jVar2 = q2Var;
+                                            } else if (jVar7 instanceof qg.x2) {
+                                                qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                                x2Var.setDelegate(r6Var9);
+                                                x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                                k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                                 r6Var9.g0();
-                                                jVar2 = v2Var;
+                                                jVar2 = x2Var;
                                             }
                                             r6Var9.B0(jVar2);
                                             r6Var9.D0(null, true);
@@ -342,7 +342,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 switch (i12) {
                                     case 0:
                                         qg.j jVar3 = jVar;
-                                        boolean z11 = jVar3 instanceof qg.c2;
+                                        boolean z11 = jVar3 instanceof qg.e2;
                                         r6 r6Var2 = r6Var;
                                         if (z11) {
                                             ec ecVar = ((qb) r6Var2).A2.c1;
@@ -363,7 +363,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                         r6 r6Var3 = r6Var;
                                         r6Var3.getClass();
                                         try {
-                                            ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                            ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                         } catch (Exception e) {
                                             FileLog.e(e);
                                         }
@@ -387,7 +387,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                         r6 r6Var5 = r6Var;
                                         r6Var5.D0(null, true);
                                         qg.j jVar5 = jVar;
-                                        r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                        r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                         org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                         if (n1Var4 != null && n1Var4.isShowing()) {
                                             r6Var5.H1.d(true);
@@ -397,7 +397,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     case 4:
                                         r6 r6Var6 = r6Var;
                                         r6Var6.D0(null, true);
-                                        r6Var6.K0((qg.r0) jVar);
+                                        r6Var6.K0((qg.t0) jVar);
                                         org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                         if (n1Var5 != null && n1Var5.isShowing()) {
                                             r6Var6.H1.d(true);
@@ -406,16 +406,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                         break;
                                     case 5:
                                         qg.j jVar6 = jVar;
-                                        if (jVar6 instanceof qg.o2) {
-                                            ((qg.o2) jVar6).r(true);
-                                        } else if (jVar6 instanceof qg.b2) {
-                                            ((qg.b2) jVar6).r(true);
-                                        } else if (jVar6 instanceof qg.c2) {
-                                            qg.c2 c2Var = (qg.c2) jVar6;
-                                            c2Var.r0 = !c2Var.r0;
-                                            c2Var.invalidate();
+                                        if (jVar6 instanceof qg.q2) {
+                                            ((qg.q2) jVar6).r(true);
+                                        } else if (jVar6 instanceof qg.d2) {
+                                            ((qg.d2) jVar6).r(true);
+                                        } else if (jVar6 instanceof qg.e2) {
+                                            qg.e2 e2Var = (qg.e2) jVar6;
+                                            e2Var.r0 = !e2Var.r0;
+                                            e2Var.invalidate();
                                         } else {
-                                            ((qg.y1) jVar6).r(true);
+                                            ((qg.a2) jVar6).r(true);
                                         }
                                         r6 r6Var7 = r6Var;
                                         org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -440,19 +440,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                         qg.j jVar7 = jVar;
                                         if (jVar7 != null) {
                                             PointF Q0 = r6Var9.Q0(jVar7);
-                                            if (jVar7 instanceof qg.o2) {
-                                                qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                                o2Var.setDelegate(r6Var9);
-                                                k6Var2.addView(o2Var);
+                                            if (jVar7 instanceof qg.q2) {
+                                                qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                                q2Var.setDelegate(r6Var9);
+                                                k6Var2.addView(q2Var);
                                                 r6Var9.g0();
-                                                jVar2 = o2Var;
-                                            } else if (jVar7 instanceof qg.v2) {
-                                                qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                                v2Var.setDelegate(r6Var9);
-                                                v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                                jVar2 = q2Var;
+                                            } else if (jVar7 instanceof qg.x2) {
+                                                qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                                x2Var.setDelegate(r6Var9);
+                                                x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                                k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                                 r6Var9.g0();
-                                                jVar2 = v2Var;
+                                                jVar2 = x2Var;
                                             }
                                             r6Var9.B0(jVar2);
                                             r6Var9.D0(null, true);
@@ -468,8 +468,8 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         });
                     }
-                    linearLayout.addView(textView2, w7.y5.n(-2, 44));
-                } else if (jVar instanceof qg.u0) {
+                    linearLayout.addView(textView2, w7.x5.n(-2, 44));
+                } else if (jVar instanceof qg.w0) {
                     TextView h02 = r6Var.h0(1, LocaleController.getString(R.string.PaintEdit));
                     final int i13 = 3;
                     h02.setOnClickListener(new View.OnClickListener() { // from class: ci.k5
@@ -479,7 +479,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i13) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z11 = jVar3 instanceof qg.c2;
+                                    boolean z11 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z11) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -500,7 +500,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -524,7 +524,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -534,7 +534,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -543,16 +543,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -577,19 +577,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -604,8 +604,8 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(h02, w7.y5.n(-2, 44));
-                } else if (jVar instanceof qg.r0) {
+                    linearLayout.addView(h02, w7.x5.n(-2, 44));
+                } else if (jVar instanceof qg.t0) {
                     TextView h03 = r6Var.h0(1, LocaleController.getString(R.string.PaintEdit));
                     final int i14 = 4;
                     h03.setOnClickListener(new View.OnClickListener() { // from class: ci.k5
@@ -615,7 +615,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i14) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z11 = jVar3 instanceof qg.c2;
+                                    boolean z11 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z11) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -636,7 +636,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -660,7 +660,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -670,7 +670,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -679,16 +679,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -713,19 +713,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -740,9 +740,9 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(h03, w7.y5.n(-2, 44));
+                    linearLayout.addView(h03, w7.x5.n(-2, 44));
                 }
-                if ((jVar instanceof qg.o2) || (jVar instanceof qg.c2) || (jVar instanceof qg.y1) || (jVar instanceof qg.b2)) {
+                if ((jVar instanceof qg.q2) || (jVar instanceof qg.e2) || (jVar instanceof qg.a2) || (jVar instanceof qg.d2)) {
                     TextView h04 = r6Var.h0(4, LocaleController.getString(R.string.Flip));
                     final int i15 = 5;
                     h04.setOnClickListener(new View.OnClickListener() { // from class: ci.k5
@@ -752,7 +752,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i15) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z11 = jVar3 instanceof qg.c2;
+                                    boolean z11 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z11) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -773,7 +773,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -797,7 +797,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -807,7 +807,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -816,16 +816,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -850,19 +850,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -877,12 +877,12 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(h04, w7.y5.n(-2, 44));
+                    linearLayout.addView(h04, w7.x5.n(-2, 44));
                 }
-                boolean z11 = jVar instanceof qg.y1;
-                if (k6Var.indexOfChild(jVar) != k6Var.getChildCount() - 1 && !(jVar instanceof qg.b2)) {
+                boolean z11 = jVar instanceof qg.a2;
+                if (k6Var.indexOfChild(jVar) != k6Var.getChildCount() - 1 && !(jVar instanceof qg.d2)) {
                     TextView textView3 = new TextView(r6Var.getContext());
-                    textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, e6Var));
+                    textView3.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
                     textView3.setLines(1);
                     textView3.setSingleLine();
                     textView3.setEllipsize(TextUtils.TruncateAt.END);
@@ -900,7 +900,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i16) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z112 = jVar3 instanceof qg.c2;
+                                    boolean z112 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z112) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -921,7 +921,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -945,7 +945,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -955,7 +955,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -964,16 +964,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -998,19 +998,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -1025,10 +1025,10 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView3, w7.y5.n(-2, 44));
-                } else if (!z11 && !z10 && !(jVar instanceof qg.c2) && !(jVar instanceof qg.u0) && !(jVar instanceof qg.w2) && !(jVar instanceof qg.r0) && !(jVar instanceof qg.b2)) {
+                    linearLayout.addView(textView3, w7.x5.n(-2, 44));
+                } else if (!z11 && !z10 && !(jVar instanceof qg.e2) && !(jVar instanceof qg.w0) && !(jVar instanceof qg.y2) && !(jVar instanceof qg.t0) && !(jVar instanceof qg.d2)) {
                     TextView textView4 = new TextView(r6Var.getContext());
-                    textView4.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, e6Var));
+                    textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
                     textView4.setLines(1);
                     textView4.setSingleLine();
                     textView4.setEllipsize(TextUtils.TruncateAt.END);
@@ -1046,7 +1046,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             switch (i17) {
                                 case 0:
                                     qg.j jVar3 = jVar;
-                                    boolean z112 = jVar3 instanceof qg.c2;
+                                    boolean z112 = jVar3 instanceof qg.e2;
                                     r6 r6Var2 = r6Var;
                                     if (z112) {
                                         ec ecVar = ((qb) r6Var2).A2.c1;
@@ -1067,7 +1067,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var3 = r6Var;
                                     r6Var3.getClass();
                                     try {
-                                        ((qg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((qg.x2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -1091,7 +1091,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                     r6 r6Var5 = r6Var;
                                     r6Var5.D0(null, true);
                                     qg.j jVar5 = jVar;
-                                    r6Var5.L0((qg.u0) jVar5, new ai.m0(2, r6Var5, jVar5));
+                                    r6Var5.L0((qg.w0) jVar5, new ai.m0(2, r6Var5, jVar5));
                                     org.telegram.ui.ActionBar.n1 n1Var4 = r6Var5.H1;
                                     if (n1Var4 != null && n1Var4.isShowing()) {
                                         r6Var5.H1.d(true);
@@ -1101,7 +1101,7 @@ public final /* synthetic */ class f5 implements Runnable {
                                 case 4:
                                     r6 r6Var6 = r6Var;
                                     r6Var6.D0(null, true);
-                                    r6Var6.K0((qg.r0) jVar);
+                                    r6Var6.K0((qg.t0) jVar);
                                     org.telegram.ui.ActionBar.n1 n1Var5 = r6Var6.H1;
                                     if (n1Var5 != null && n1Var5.isShowing()) {
                                         r6Var6.H1.d(true);
@@ -1110,16 +1110,16 @@ public final /* synthetic */ class f5 implements Runnable {
                                     break;
                                 case 5:
                                     qg.j jVar6 = jVar;
-                                    if (jVar6 instanceof qg.o2) {
-                                        ((qg.o2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.b2) {
-                                        ((qg.b2) jVar6).r(true);
-                                    } else if (jVar6 instanceof qg.c2) {
-                                        qg.c2 c2Var = (qg.c2) jVar6;
-                                        c2Var.r0 = !c2Var.r0;
-                                        c2Var.invalidate();
+                                    if (jVar6 instanceof qg.q2) {
+                                        ((qg.q2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.d2) {
+                                        ((qg.d2) jVar6).r(true);
+                                    } else if (jVar6 instanceof qg.e2) {
+                                        qg.e2 e2Var = (qg.e2) jVar6;
+                                        e2Var.r0 = !e2Var.r0;
+                                        e2Var.invalidate();
                                     } else {
-                                        ((qg.y1) jVar6).r(true);
+                                        ((qg.a2) jVar6).r(true);
                                     }
                                     r6 r6Var7 = r6Var;
                                     org.telegram.ui.ActionBar.n1 n1Var6 = r6Var7.H1;
@@ -1144,19 +1144,19 @@ public final /* synthetic */ class f5 implements Runnable {
                                     qg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF Q0 = r6Var9.Q0(jVar7);
-                                        if (jVar7 instanceof qg.o2) {
-                                            qg.j o2Var = new qg.o2(r6Var9.getContext(), (qg.o2) jVar7, Q0);
-                                            o2Var.setDelegate(r6Var9);
-                                            k6Var2.addView(o2Var);
+                                        if (jVar7 instanceof qg.q2) {
+                                            qg.j q2Var = new qg.q2(r6Var9.getContext(), (qg.q2) jVar7, Q0);
+                                            q2Var.setDelegate(r6Var9);
+                                            k6Var2.addView(q2Var);
                                             r6Var9.g0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof qg.v2) {
-                                            qg.v2 v2Var = new qg.v2(r6Var9.getContext(), (qg.v2) jVar7, Q0);
-                                            v2Var.setDelegate(r6Var9);
-                                            v2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            k6Var2.addView(v2Var, w7.y5.c(-2.0f, -2));
+                                            jVar2 = q2Var;
+                                        } else if (jVar7 instanceof qg.x2) {
+                                            qg.x2 x2Var = new qg.x2(r6Var9.getContext(), (qg.x2) jVar7, Q0);
+                                            x2Var.setDelegate(r6Var9);
+                                            x2Var.setMaxWidth(r6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            k6Var2.addView(x2Var, w7.x5.c(-2.0f, -2));
                                             r6Var9.g0();
-                                            jVar2 = v2Var;
+                                            jVar2 = x2Var;
                                         }
                                         r6Var9.B0(jVar2);
                                         r6Var9.D0(null, true);
@@ -1171,12 +1171,12 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView4, w7.y5.n(-2, 44));
+                    linearLayout.addView(textView4, w7.x5.n(-2, 44));
                 }
                 int i18 = 0;
                 while (i18 < linearLayout.getChildCount()) {
                     View childAt = linearLayout.getChildAt(i18);
-                    int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var);
+                    int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, e6Var);
                     int i19 = 8;
                     int i20 = i18 == 0 ? 8 : 0;
                     int i21 = i18 == linearLayout.getChildCount() - 1 ? 8 : 0;
@@ -1184,7 +1184,7 @@ public final /* synthetic */ class f5 implements Runnable {
                     if (i18 != 0) {
                         i19 = 0;
                     }
-                    childAt.setBackground(org.telegram.ui.ActionBar.j6.a0(v02, i20, i21, i22, i19));
+                    childAt.setBackground(org.telegram.ui.ActionBar.i6.a0(v02, i20, i21, i22, i19));
                     i18++;
                 }
                 r6Var.I1.addView(linearLayout);

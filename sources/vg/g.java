@@ -13,14 +13,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.vy0;
-import w7.y5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.wy0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView r;
@@ -28,19 +28,19 @@ public final class g extends c {
     public TLRPC.Chat v;
     public boolean w;
 
-    public g(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public g(Context context, e6 e6Var) {
+        super(context, e6Var);
         this.d.setTypeface(AndroidUtilities.bold());
         ImageView imageView = new ImageView(context);
         this.r = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(j6.f0(j6.w0(null, j6.Vh, false), 1, -1));
+        imageView.setBackground(i6.f0(i6.w0(null, i6.Vh, false), 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.m6, false), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.m6, false), PorterDuff.Mode.MULTIPLY));
         imageView.setContentDescription(LocaleController.getString(R.string.Delete));
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, y5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
+        addView(imageView, x5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
         this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
     }
 
@@ -53,12 +53,12 @@ public final class g extends c {
         String string;
         this.w = z10;
         this.v = chat;
-        g9 g9Var = this.b;
-        g9Var.q(chat);
+        f9 f9Var = this.b;
+        f9Var.q(chat);
         int dp = AndroidUtilities.dp(20.0f);
-        v9 v9Var = this.c;
-        v9Var.setRoundRadius(dp);
-        v9Var.e(chat, g9Var);
+        u9 u9Var = this.c;
+        u9Var.setRoundRadius(dp);
+        u9Var.e(chat, f9Var);
         String str = chat.title;
         a6 a6Var = this.d;
         a6Var.k(Emoji.replaceEmoji(str, a6Var.getPaint().getFontMetricsInt(), false));
@@ -73,7 +73,7 @@ public final class g extends c {
         } else {
             setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", i10, new Object[0]));
         }
-        this.e.setTextColor(j6.v0(j6.r5, this.a));
+        this.e.setTextColor(i6.v0(i6.r5, this.a));
         setDivider(true);
         ImageView imageView = this.r;
         if (z10) {
@@ -81,7 +81,7 @@ public final class g extends c {
         } else {
             imageView.setVisibility(4);
         }
-        imageView.setOnClickListener(new vy0(21, this, chat));
+        imageView.setOnClickListener(new wy0(21, this, chat));
     }
 
     public TLRPC.Chat getChat() {

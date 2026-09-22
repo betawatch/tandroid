@@ -20,7 +20,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ft0 implements qt {
     public final /* synthetic */ String a;
@@ -44,28 +44,31 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ MessageObject A() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qt
-    public final boolean B() {
+    public final boolean A() {
         return this.h.x7 != null;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean D() {
+    public final /* synthetic */ boolean C() {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
+    public final /* synthetic */ boolean D(TLRPC.Document document) {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ String G(boolean z10) {
+    public final /* synthetic */ String F(boolean z10) {
         return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final void G(CharSequence charSequence, String str, nf nfVar) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.w7 = true;
+        R();
+        photoViewer.p5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, nfVar, null);
     }
 
     @Override // org.telegram.ui.qt
@@ -179,7 +182,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ org.telegram.ui.Components.y70 i(ci.n6 n6Var) {
+    public final /* synthetic */ org.telegram.ui.Components.n70 i(ci.n6 n6Var) {
         return null;
     }
 
@@ -207,15 +210,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final void u(CharSequence charSequence, String str, of ofVar) {
-        PhotoViewer photoViewer = this.h;
-        photoViewer.w7 = true;
-        R();
-        photoViewer.p5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.v1(), this.c.thumbPath, ofVar, null);
-    }
-
-    @Override // org.telegram.ui.qt
-    public final void w(TLRPC.StickerSet stickerSet, String str) {
+    public final void v(TLRPC.StickerSet stickerSet, String str) {
         PhotoViewer photoViewer = this.h;
         photoViewer.w7 = true;
         R();
@@ -223,7 +218,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final boolean y() {
+    public final boolean x() {
         PhotoViewer photoViewer = this.h;
         bv0 bv0Var = photoViewer.d;
         if (bv0Var != null) {
@@ -233,7 +228,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final void z(String str) {
+    public final void y(String str) {
         PhotoViewer photoViewer = this.h;
         bv0 bv0Var = photoViewer.d;
         if (bv0Var == null) {
@@ -258,11 +253,16 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void C(TLRPC.Document document) {
+    public final /* synthetic */ MessageObject z() {
+        return null;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void F(TLRPC.Document document) {
+    public final /* synthetic */ void B(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void E(TLRPC.Document document) {
     }
 
     @Override // org.telegram.ui.qt
@@ -298,7 +298,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void v(TLRPC.Document document) {
+    public final /* synthetic */ void u(TLRPC.Document document) {
     }
 
     @Override // org.telegram.ui.qt
@@ -306,7 +306,7 @@ public final class ft0 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
+    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
     }
 
     @Override // org.telegram.ui.qt

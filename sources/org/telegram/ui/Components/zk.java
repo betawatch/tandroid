@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class zk extends s4.s0 {
     public final /* synthetic */ gl a;
@@ -15,7 +15,7 @@ public final class zk extends s4.s0 {
 
     @Override // s4.s0
     public final void a(RecyclerView recyclerView, int i10) {
-        il0 il0Var;
+        vk0 vk0Var;
         gl glVar = this.a;
         ai.w0 w0Var = glVar.P;
         vi viVar = glVar.b;
@@ -27,12 +27,12 @@ public final class zk extends s4.s0 {
         if (i10 == 0) {
             int dp = AndroidUtilities.dp(13.0f);
             int backgroundPaddingTop = viVar.getBackgroundPaddingTop();
-            if (((viVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (il0Var = (il0) w0Var.L(0)) == null) {
+            if (((viVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (vk0Var = (vk0) w0Var.K(0)) == null) {
                 return;
             }
-            View view = il0Var.a;
+            View view = vk0Var.a;
             if (view.getTop() > glVar.A0 - glVar.z0) {
-                w0Var.w0(0, view.getTop() - (glVar.A0 - glVar.z0), null);
+                w0Var.v0(0, view.getTop() - (glVar.A0 - glVar.z0), null);
             }
         }
     }

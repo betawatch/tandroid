@@ -26,53 +26,52 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.c7;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Cells.s8;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.o6;
+import org.telegram.ui.Cells.a7;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.u9;
 import org.telegram.ui.web.b1;
-import org.telegram.ui.web.g1;
 import s4.c1;
-import tg.u;
+import tg.v;
 import vg.d0;
 import vg.h;
 import vg.i;
 import vg.l;
 import vg.r;
-import vg.v;
+import vg.u;
 import vg.w;
 import vg.x;
 import vg.y;
-import yh.f7;
+import yh.g7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b extends og.b {
-    public final f6 d;
-    public yl0 f;
-    public u h;
-    public u n;
+    public final e6 d;
+    public ll0 f;
+    public v h;
+    public v n;
     public r r;
-    public u s;
+    public v s;
     public TLRPC.Chat v;
     public ArrayList e = new ArrayList();
     public final HashMap w = new HashMap();
 
-    public b(f6 f6Var) {
-        this.d = f6Var;
+    public b(e6 e6Var) {
+        this.d = e6Var;
         b1 b1Var = new b1(this, 13);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new g1(26, messagesStorage, b1Var));
+        messagesStorage.getStorageQueue().postRunnable(new p2.b(20, messagesStorage, b1Var));
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;
@@ -125,21 +124,21 @@ public final class b extends og.b {
             int i13 = aVar.i;
             TLRPC.User user = (TLRPC.User) aVar.f;
             boolean z10 = aVar.b;
-            v9 v9Var = dVar.c;
-            f6 f6Var = dVar.a;
+            u9 u9Var = dVar.c;
+            e6 e6Var = dVar.a;
             a6 a6Var = dVar.d;
             j5 j5Var = dVar.e;
-            g9 g9Var = dVar.b;
+            f9 f9Var = dVar.b;
             boolean z11 = dVar.r == i12;
             dVar.r = i12;
             if (i12 == 0) {
                 a6Var.k(LocaleController.getString(R.string.BoostingCreateGiveaway));
                 dVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
-                j5Var.setTextColor(j6.v0(j6.r5, f6Var));
-                g9Var.g(16);
-                g9Var.i(-15292942, -15630089);
+                j5Var.setTextColor(i6.v0(i6.r5, e6Var));
+                f9Var.g(16);
+                f9Var.i(-15292942, -15630089);
                 dVar.setDivider(true);
-                dVar.setBackground(j6.V0(dVar.getContext(), R.drawable.greydivider_bottom, j6.b7));
+                dVar.setBackground(i6.V0(dVar.getContext(), R.drawable.greydivider_bottom, i6.b7));
             } else if (i12 == 1) {
                 a6Var.k(LocaleController.getString(R.string.BoostingAwardSpecificUsers));
                 if (i13 == 1 && user != null) {
@@ -149,11 +148,11 @@ public final class b extends og.b {
                 } else {
                     dVar.setSubtitle(dVar.e(LocaleController.getString(R.string.BoostingSelectRecipients)));
                 }
-                j5Var.setTextColor(j6.v0(j6.n5, f6Var));
-                g9Var.g(6);
-                g9Var.i(-3905294, -6923014);
+                j5Var.setTextColor(i6.v0(i6.n5, e6Var));
+                f9Var.g(6);
+                f9Var.i(-3905294, -6923014);
                 dVar.setDivider(false);
-                dVar.setBackground(j6.V0(dVar.getContext(), R.drawable.greydivider_top, j6.b7));
+                dVar.setBackground(i6.V0(dVar.getContext(), R.drawable.greydivider_top, i6.b7));
             } else if (i12 == 2) {
                 a6Var.k(LocaleController.getString(R.string.BoostingPremium));
                 if (i13 == 1 && user != null) {
@@ -163,27 +162,27 @@ public final class b extends og.b {
                 } else {
                     dVar.setSubtitle(dVar.e(LocaleController.getString(R.string.BoostingWinnersRandomly)));
                 }
-                j5Var.setTextColor(j6.v0(j6.n5, f6Var));
-                g9Var.g(25);
-                g9Var.i(-3905294, -6923014);
+                j5Var.setTextColor(i6.v0(i6.n5, e6Var));
+                f9Var.g(25);
+                f9Var.i(-3905294, -6923014);
                 dVar.setDivider(true);
-                dVar.setBackground(j6.V0(dVar.getContext(), R.drawable.greydivider_bottom, j6.b7));
+                dVar.setBackground(i6.V0(dVar.getContext(), R.drawable.greydivider_bottom, i6.b7));
             } else if (i12 == 3) {
-                a6Var.k(s8.a(LocaleController.getString(R.string.BoostingStars)));
+                a6Var.k(r8.a(LocaleController.getString(R.string.BoostingStars)));
                 dVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
-                j5Var.setTextColor(j6.v0(j6.r5, f6Var));
-                g9Var.g(26);
-                g9Var.i(-146917, -625593);
+                j5Var.setTextColor(i6.v0(i6.r5, e6Var));
+                f9Var.g(26);
+                f9Var.i(-146917, -625593);
                 dVar.setDivider(false);
-                dVar.setBackground(j6.V0(dVar.getContext(), R.drawable.greydivider_top, j6.b7));
+                dVar.setBackground(i6.V0(dVar.getContext(), R.drawable.greydivider_top, i6.b7));
             }
             dVar.f.a(z10, z11);
-            v9Var.setImageDrawable(g9Var);
-            v9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+            u9Var.setImageDrawable(f9Var);
+            u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
             return;
         }
         if (i11 == 5) {
-            v vVar = (v) view;
+            vg.v vVar = (vg.v) view;
             List list = aVar.k;
             int i14 = aVar.i;
             vVar.getClass();
@@ -196,7 +195,7 @@ public final class b extends og.b {
             return;
         }
         if (i11 == 6) {
-            ((n4) view).setText(aVar.c);
+            ((m4) view).setText(aVar.c);
             return;
         }
         if (i11 == 7) {
@@ -225,7 +224,7 @@ public final class b extends og.b {
                 ((h) view).setDate(aVar.h);
                 break;
             case 11:
-                vg.u uVar = (vg.u) view;
+                u uVar = (u) view;
                 int i16 = aVar.l;
                 boolean z12 = aVar.b;
                 boolean z13 = aVar.g;
@@ -241,7 +240,7 @@ public final class b extends og.b {
                 }
                 uVar.f.a(z12, false);
                 uVar.setDivider(z13);
-                uVar.e.setTextColor(j6.v0(j6.n5, uVar.a));
+                uVar.e.setTextColor(i6.v0(i6.n5, uVar.a));
                 if (list2.size() == 0) {
                     uVar.setSubtitle(uVar.e(LocaleController.getString(R.string.BoostingFromAllCountries)));
                     break;
@@ -294,10 +293,10 @@ public final class b extends og.b {
                 x xVar = (x) view;
                 xVar.setText(aVar.c);
                 int i19 = aVar.i;
-                o6 o6Var = xVar.r;
+                n6 n6Var = xVar.r;
                 String formatPluralString = i19 > 0 ? LocaleController.formatPluralString("BoostingBoostsCountTitle", i19, Integer.valueOf(i19)) : "";
-                o6Var.a();
-                o6Var.c(formatPluralString, true, true);
+                n6Var.a();
+                n6Var.c(formatPluralString, true, true);
                 break;
             case 14:
                 ((vg.e) view).setGiveaway((TL_stories.PrepaidGiveaway) aVar.f);
@@ -323,21 +322,21 @@ public final class b extends og.b {
                 long j10 = aVar.h;
                 boolean z18 = aVar.b;
                 TextView textView = wVar.f;
-                o6 o6Var2 = wVar.d;
-                o6 o6Var3 = wVar.e;
+                n6 n6Var2 = wVar.d;
+                n6 n6Var3 = wVar.e;
                 boolean z19 = wVar.r == tL_starsGiveawayOption;
                 wVar.a.a(z18, z19);
                 wVar.r = tL_starsGiveawayOption;
                 if (z19) {
-                    o6Var3.a();
+                    n6Var3.a();
                 }
                 if (tL_starsGiveawayOption == null) {
-                    o6Var2.c(wVar.h, false, true);
-                    o6Var3.c(wVar.n, z19, true);
+                    n6Var2.c(wVar.h, false, true);
+                    n6Var3.c(wVar.n, z19, true);
                     textView.setText("");
                 } else {
-                    o6Var2.c(LocaleController.formatPluralStringComma("GiveawayStars", (int) tL_starsGiveawayOption.stars, ' '), false, true);
-                    o6Var3.c(LocaleController.formatPluralStringComma("BoostingStarOptionPerUser", (int) j10, ','), z19, true);
+                    n6Var2.c(LocaleController.formatPluralStringComma("GiveawayStars", (int) tL_starsGiveawayOption.stars, ' '), false, true);
+                    n6Var3.c(LocaleController.formatPluralStringComma("BoostingStarOptionPerUser", (int) j10, ','), z19, true);
                     textView.setText(BillingController.getInstance().formatCurrency(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
                 }
                 int i21 = i20 + 1;
@@ -354,87 +353,87 @@ public final class b extends og.b {
     public final c1 x(ViewGroup viewGroup, int i10) {
         View view;
         Context context = viewGroup.getContext();
-        f6 f6Var = this.d;
+        e6 e6Var = this.d;
         switch (i10) {
             case 2:
-                view = new vg.d(context, f6Var);
+                view = new vg.d(context, e6Var);
                 break;
             case 3:
                 view = new View(context);
                 break;
             case 4:
-                view = new c7(context, j6.v0(j6.a7, f6Var), 0);
+                view = new a7(context, i6.v0(i6.a7, e6Var), 0);
                 break;
             case 5:
-                view = new v(context, f6Var);
+                view = new vg.v(context, e6Var);
                 break;
             case 6:
-                View n4Var = new n4(context, j6.L6, 21, 15, 3, false, false, this.d);
-                n4Var.setBackgroundColor(j6.v0(j6.h5, f6Var));
-                view = n4Var;
+                View m4Var = new m4(context, i6.L6, 21, 15, 3, false, false, this.d);
+                m4Var.setBackgroundColor(i6.v0(i6.h5, e6Var));
+                view = m4Var;
                 break;
             case 7:
-                view = new d0(context, f6Var);
+                view = new d0(context, e6Var);
                 break;
             case 8:
-                view = new vg.b(context, f6Var);
+                view = new vg.b(context, e6Var);
                 break;
             case 9:
-                view = new vg.g(context, f6Var);
+                view = new vg.g(context, e6Var);
                 break;
             case 10:
-                view = new h(context, f6Var);
+                view = new h(context, e6Var);
                 break;
             case 11:
-                vg.u uVar = new vg.u(context, f6Var);
+                u uVar = new u(context, e6Var);
                 uVar.c.setVisibility(8);
                 view = uVar;
                 break;
             case 12:
-                view = new i(context, f6Var);
+                view = new i(context, e6Var);
                 break;
             case 13:
-                View xVar = new x(context, f6Var);
-                xVar.setBackgroundColor(j6.v0(j6.h5, f6Var));
+                View xVar = new x(context, e6Var);
+                xVar.setBackgroundColor(i6.v0(i6.h5, e6Var));
                 view = xVar;
                 break;
             case 14:
-                view = new vg.e(context, f6Var);
+                view = new vg.e(context, e6Var);
                 break;
             case 15:
-                y yVar = new y(context, f6Var);
+                y yVar = new y(context, e6Var);
                 yVar.setHeight(50);
                 view = yVar;
                 break;
             case 16:
-                view = new l(context, f6Var);
+                view = new l(context, e6Var);
                 break;
             case 17:
-                view = new w(context, f6Var);
+                view = new w(context, e6Var);
                 break;
             case 18:
-                f7 f7Var = new f7(context);
+                g7 g7Var = new g7(context);
                 String string = LocaleController.getString(R.string.NotifyMoreOptions);
-                boolean z10 = f7Var.c == -1;
-                f7Var.c = -1;
-                o6 o6Var = f7Var.a;
-                o6Var.c(string, z10, true);
-                int w02 = j6.w0(null, j6.o6, false);
-                o6Var.setTextColor(w02);
+                boolean z10 = g7Var.c == -1;
+                g7Var.c = -1;
+                n6 n6Var = g7Var.a;
+                n6Var.c(string, z10, true);
+                int w02 = i6.w0(null, i6.o6, false);
+                n6Var.setTextColor(w02);
                 PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN);
-                ImageView imageView = f7Var.b;
+                ImageView imageView = g7Var.b;
                 imageView.setColorFilter(porterDuffColorFilter);
                 if (z10) {
                     imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(qr.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }
-                f7Var.d = false;
-                f7Var.setWillNotDraw(true);
-                view = f7Var;
+                g7Var.d = false;
+                g7Var.setWillNotDraw(true);
+                view = g7Var;
                 break;
             default:
-                view = new r(context, f6Var);
+                view = new r(context, e6Var);
                 break;
         }
         return e2.k(view, view, -1, -2);

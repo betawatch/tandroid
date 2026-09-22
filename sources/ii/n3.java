@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class n3 {
     public final /* synthetic */ int a;
@@ -32,24 +32,24 @@ public final class n3 {
         TL_iv.PageBlock pageBlock = aVar.b;
         TL_iv.PageBlock pageBlock2 = aVar2.b;
         int i12 = this.d;
-        TL_iv.PageBlock M1 = w3.M1(w3Var, aVar, this.c, i10 == i11 ? i12 : -1);
-        TL_iv.PageBlock M12 = i10 == i11 ? null : w3.M1(w3Var, aVar2, 0, i12);
-        if (M1 != null) {
-            aVar.b = M1;
+        TL_iv.PageBlock L1 = w3.L1(w3Var, aVar, this.c, i10 == i11 ? i12 : -1);
+        TL_iv.PageBlock L12 = i10 == i11 ? null : w3.L1(w3Var, aVar2, 0, i12);
+        if (L1 != null) {
+            aVar.b = L1;
         }
-        if (M12 != null) {
-            aVar2.b = M12;
+        if (L12 != null) {
+            aVar2.b = L12;
         }
         try {
-            ArrayList<TL_iv.PageBlock> Z2 = w3Var.Z2(i10, i11 + 1, 0, false);
-            ArrayList<TLRPC.Photo> B2 = w3Var.B2(i10, i11);
-            ArrayList<TLRPC.Document> A2 = w3Var.A2(i10, i11);
+            ArrayList<TL_iv.PageBlock> Y2 = w3Var.Y2(i10, i11 + 1, 0, false);
+            ArrayList<TLRPC.Photo> A2 = w3Var.A2(i10, i11);
+            ArrayList<TLRPC.Document> z22 = w3Var.z2(i10, i11);
             aVar.b = pageBlock;
             aVar2.b = pageBlock2;
             TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
-            richMessage.blocks = Z2;
-            richMessage.photos = B2;
-            richMessage.documents = A2;
+            richMessage.blocks = Y2;
+            richMessage.photos = A2;
+            richMessage.documents = z22;
             return richMessage;
         } catch (Throwable th2) {
             aVar.b = pageBlock;

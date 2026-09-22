@@ -7,9 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
-import v7.s6;
+import v7.r6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class r0 {
     public static final ArrayList a = new ArrayList();
@@ -89,7 +89,7 @@ public abstract class r0 {
         q0 f7;
         String str2 = null;
         if (str != null) {
-            String b10 = s6.b(str.trim());
+            String b10 = r6.b(str.trim());
             if (b10.startsWith("avc1") || b10.startsWith("avc3")) {
                 return MediaController.VIDEO_MIME_TYPE;
             }
@@ -326,7 +326,7 @@ public abstract class r0 {
         if (str == null) {
             return null;
         }
-        b10 = s6.b(str);
+        b10 = r6.b(str);
         b10.getClass();
         switch (b10) {
             case "video/x-mvhevc":

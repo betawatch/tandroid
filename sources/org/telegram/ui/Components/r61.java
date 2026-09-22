@@ -1,20 +1,45 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Point;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class r61 extends nz {
-    public final /* synthetic */ u61 X;
+public final class r61 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ n7.a1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r61(u61 u61Var, int i10) {
-        super(i10, false);
-        this.X = u61Var;
+    public r61(n7.a1 a1Var, View view) {
+        this.c = a1Var;
+        o1.k kVar = new o1.k(view, o1.h.n, 0.0f);
+        a1Var.c = kVar;
+        kVar.u.a(1.0f);
+        ((o1.k) a1Var.c).u.b(350.0f);
     }
 
-    @Override // s4.c0
-    public final int W0(s4.z0 z0Var) {
-        return this.X.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = AndroidUtilities.displaySize;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
+        }
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
+            return;
+        }
+        n7.a1 a1Var = this.c;
+        ((o1.k) a1Var.c).c();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((o1.k) a1Var.c).u.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.k) a1Var.c).f();
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class l0 extends View {
     public final Paint a;
@@ -129,15 +129,15 @@ public final class l0 extends View {
         }
         canvas.translate(gVar.d * 1.0f, gVar.e * 1.0f);
         float f17 = (gVar.f / z11) * containerWidth;
-        qg.y1 y1Var = m0Var.b;
-        float lerp6 = (y1Var == null || (cropState = y1Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
+        qg.a2 a2Var = m0Var.b;
+        float lerp6 = (a2Var == null || (cropState = a2Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
         canvas.scale(lerp6, lerp6);
         canvas.translate(gVar.b * f15 * 1.0f, gVar.c * f16 * 1.0f);
         float d = m0Var.d.d(i10, false) + m0Var.b.getOrientation() + gVar.g;
         MediaController.CropState cropState4 = m0Var.b.G0;
         canvas.rotate(cropState4 == null ? AndroidUtilities.lerp(0.0f, d, m0Var.s) : AndroidUtilities.lerp(cropState4.cropRotate + cropState4.transformRotation, d, m0Var.s));
         canvas.rotate(m0Var.b.getOrientation());
-        org.telegram.ui.Components.d6 d6Var = m0Var.c;
+        org.telegram.ui.Components.c6 c6Var = m0Var.c;
         if (m0Var.E) {
             MediaController.CropState cropState5 = m0Var.b.G0;
             if (cropState5 != null && cropState5.mirrored) {
@@ -151,11 +151,11 @@ public final class l0 extends View {
             }
             z10 = false;
         }
-        canvas.scale(AndroidUtilities.lerp(1.0f, -1.0f, d6Var.e(z10)), 1.0f);
+        canvas.scale(AndroidUtilities.lerp(1.0f, -1.0f, c6Var.e(z10)), 1.0f);
         canvas.translate((-m0Var.b.getContentWidth()) / 2.0f, (-m0Var.b.getContentHeight()) / 2.0f);
-        qg.y1 y1Var2 = m0Var.b;
-        Paint paint2 = y1Var2.F0;
-        Bitmap bitmap = y1Var2.A0;
+        qg.a2 a2Var2 = m0Var.b;
+        Paint paint2 = a2Var2.F0;
+        Bitmap bitmap = a2Var2.A0;
         if (bitmap != null) {
             paint2.setAlpha(255);
             canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);

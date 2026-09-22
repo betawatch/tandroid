@@ -23,7 +23,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class FileLoadOperation {
     private static final int FINISH_CODE_DEFAULT = 0;
@@ -154,7 +154,7 @@ public class FileLoadOperation {
     public static volatile DispatchQueue filesQueue = new DispatchQueue("writeFileQueue");
     private static final Object lockObject = new Object();
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface FileLoadOperationDelegate {
         void didChangedLoadProgress(FileLoadOperation fileLoadOperation, long j3, long j10);
 
@@ -171,7 +171,7 @@ public class FileLoadOperation {
         void saveFilePath(FilePathDatabase.PathData pathData, File file);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class PreloadRange {
         private long fileOffset;
         private long length;
@@ -182,7 +182,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class Range {
         private long end;
         private long start;
@@ -197,7 +197,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class RequestInfo {
         public boolean cancelled;
         public boolean cancelling;
@@ -456,7 +456,7 @@ public class FileLoadOperation {
                     requestInfo.cancelling = true;
                     if (runnable == null) {
                         requestInfo.cancelled = true;
-                        l0.m(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
+                        y0.n(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true);
                     } else {
                         requestInfo.whenCancelled = new f0(requestInfo, iArr, runnable, 21);
@@ -1347,7 +1347,7 @@ public class FileLoadOperation {
             sb2.append(" conType=");
             sb2.append(i11);
             sb2.append(" reqId");
-            l0.m(requestInfo.requestToken, sb2);
+            y0.n(requestInfo.requestToken, sb2);
         }
         if (requestInfo == this.priorityRequestInfo) {
             if (BuildVars.DEBUG_VERSION) {
@@ -1498,7 +1498,7 @@ public class FileLoadOperation {
                     sb2.append(" of ");
                     sb2.append(this.totalBytesCount);
                     sb2.append(" prefSize=");
-                    l0.m(this.preloadPrefixSize, sb2);
+                    y0.n(this.preloadPrefixSize, sb2);
                 }
             }
             if (this.fileMetadata != null) {
@@ -1787,7 +1787,7 @@ public class FileLoadOperation {
             sb2.append(" reqToken=");
             sb2.append(requestInfo.requestToken);
             sb2.append(" (state=");
-            FileLog.e(new FileLog.IgnoreSentException(a4.a.n(this.state, ")", sb2)));
+            FileLog.e(new FileLog.IgnoreSentException(a4.a.o(this.state, ")", sb2)));
             return false;
         }
         int i13 = requestInfo.requestToken;
@@ -2411,11 +2411,11 @@ public class FileLoadOperation {
                             }
                             fileLoadOperation.requestedPreloadedBytesRanges.put(Long.valueOf(j10), 1);
                             if (BuildVars.DEBUG_VERSION) {
-                                StringBuilder t10 = a4.a.t(j10, "start next preload from ", " size ");
-                                t10.append(fileLoadOperation.totalBytesCount);
-                                t10.append(" for ");
-                                t10.append(fileLoadOperation.cacheFilePreload);
-                                FileLog.d(t10.toString());
+                                StringBuilder u10 = a4.a.u(j10, "start next preload from ", " size ");
+                                u10.append(fileLoadOperation.totalBytesCount);
+                                u10.append(" for ");
+                                u10.append(fileLoadOperation.cacheFilePreload);
+                                FileLog.d(u10.toString());
                             }
                             fileLoadOperation.preloadNotRequestedBytesCount -= fileLoadOperation.currentDownloadChunkSize;
                         }
@@ -2491,7 +2491,7 @@ public class FileLoadOperation {
                         }
                         if (fileLoadOperation.streamPriorityStartOffset != j3) {
                             if (BuildVars.DEBUG_VERSION) {
-                                hg.k0.u(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
+                                hg.c.w(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
                             }
                             j11 = j3;
                             fileLoadOperation.streamPriorityStartOffset = j11;
@@ -2526,7 +2526,7 @@ public class FileLoadOperation {
                                 sb2.append(" conType=");
                                 sb2.append(i13);
                                 sb2.append(" priority=");
-                                l0.m(fileLoadOperation.priority, sb2);
+                                y0.n(fileLoadOperation.priority, sb2);
                             }
                             AndroidUtilities.runOnUIThread(new m2(fileLoadOperation, sendRequestSync, 3));
                             fileLoadOperation.requestsCount++;
@@ -2598,13 +2598,13 @@ public class FileLoadOperation {
     */
     public boolean start(final FileLoadOperationStream fileLoadOperationStream, final long j3, final boolean z10) {
         long j10;
-        String r10;
+        String s10;
         String str;
         String str2;
         String str3;
-        String r11;
-        String r12;
-        String r13;
+        String s11;
+        String s12;
+        String s13;
         Object obj;
         boolean exists;
         boolean z11;
@@ -2620,7 +2620,7 @@ public class FileLoadOperation {
         long j14;
         RandomAccessFile randomAccessFile;
         String str4;
-        String s10;
+        String g10;
         this.startTime = System.currentTimeMillis();
         updateParams();
         if (this.currentDownloadChunkSize == 0) {
@@ -2677,40 +2677,40 @@ public class FileLoadOperation {
         if (this.webLocation != null) {
             String MD5 = Utilities.MD5(this.webFile.url);
             if (this.encryptFile) {
-                str4 = v7.j0.s(MD5, ".temp.enc");
-                str = a4.a.s(v7.j0.h(MD5, "."), this.ext, ".enc");
+                str4 = w.c.g(MD5, ".temp.enc");
+                str = a4.a.t(w.c.h(MD5, "."), this.ext, ".enc");
                 if (this.key != null) {
-                    s10 = v7.j0.s(MD5, "_64.iv.enc");
+                    g10 = w.c.g(MD5, "_64.iv.enc");
                     String str5 = str4;
-                    str2 = s10;
-                    r10 = str5;
+                    str2 = g10;
+                    s10 = str5;
                     j10 = 0;
                 }
-                s10 = null;
+                g10 = null;
                 String str52 = str4;
-                str2 = s10;
-                r10 = str52;
+                str2 = g10;
+                s10 = str52;
                 j10 = 0;
             } else {
-                String s11 = v7.j0.s(MD5, ".temp");
-                StringBuilder h = v7.j0.h(MD5, ".");
+                String g11 = w.c.g(MD5, ".temp");
+                StringBuilder h = w.c.h(MD5, ".");
                 h.append(this.ext);
                 String sb2 = h.toString();
                 if (this.key != null) {
-                    s10 = v7.j0.s(MD5, "_64.iv");
-                    str4 = s11;
+                    g10 = w.c.g(MD5, "_64.iv");
+                    str4 = g11;
                     str = sb2;
                     String str522 = str4;
-                    str2 = s10;
-                    r10 = str522;
+                    str2 = g10;
+                    s10 = str522;
                     j10 = 0;
                 } else {
-                    str4 = s11;
+                    str4 = g11;
                     str = sb2;
-                    s10 = null;
+                    g10 = null;
                     String str5222 = str4;
-                    str2 = s10;
-                    r10 = str5222;
+                    str2 = g10;
+                    s10 = str5222;
                     j10 = 0;
                 }
             }
@@ -2720,7 +2720,7 @@ public class FileLoadOperation {
             this.state = 1;
             obj = this.parentObject;
             if (!(obj instanceof TLRPC.TL_theme)) {
-                this.cacheFileFinal = new File(ApplicationLoader.getFilesDirFixed(), a4.a.r(new StringBuilder("remote"), ((TLRPC.TL_theme) obj).id, ".attheme"));
+                this.cacheFileFinal = new File(ApplicationLoader.getFilesDirFixed(), a4.a.s(new StringBuilder("remote"), ((TLRPC.TL_theme) obj).id, ".attheme"));
             } else if (this.encryptFile) {
                 this.cacheFileFinal = new File(this.storePath, str);
             } else {
@@ -2747,12 +2747,12 @@ public class FileLoadOperation {
                 }
             }
             if (exists) {
-                this.cacheFileTemp = new File(this.tempPath, r10);
+                this.cacheFileTemp = new File(this.tempPath, s10);
                 if (this.ungzip) {
-                    this.cacheFileGzipTemp = new File(this.tempPath, v7.j0.s(r10, ".gz"));
+                    this.cacheFileGzipTemp = new File(this.tempPath, w.c.g(s10, ".gz"));
                 }
                 if (this.encryptFile) {
-                    File file = new File(FileLoader.getInternalCacheDir(), v7.j0.s(str, ".key"));
+                    File file = new File(FileLoader.getInternalCacheDir(), w.c.g(str, ".key"));
                     try {
                         RandomAccessFile randomAccessFile2 = new RandomAccessFile(file, "rws");
                         long length = file.length();
@@ -2831,13 +2831,13 @@ public class FileLoadOperation {
                 }
                 boolean[] zArr2 = {false};
                 long j182 = 8;
-                if (this.supportsPreloading || r11 == null) {
+                if (this.supportsPreloading || s11 == null) {
                     z13 = z12;
                     j11 = 8;
                     j12 = 2;
                     i11 = 1;
                 } else {
-                    this.cacheFilePreload = new File(this.tempPath, r11);
+                    this.cacheFilePreload = new File(this.tempPath, s11);
                     try {
                         RandomAccessFile randomAccessFile4 = new RandomAccessFile(this.cacheFilePreload, "rws");
                         this.preloadStream = randomAccessFile4;
@@ -3080,7 +3080,7 @@ public class FileLoadOperation {
                         sb3.append(" final = ");
                         sb3.append(this.cacheFileFinal);
                         sb3.append(" priority");
-                        l0.m(this.priority, sb3);
+                        y0.n(this.priority, sb3);
                     }
                 }
                 if (str2 != null) {
@@ -3191,13 +3191,13 @@ public class FileLoadOperation {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(this.datacenterId);
                 sb4.append("_");
-                r10 = a4.a.r(sb4, this.location.id, ".temp");
+                s10 = a4.a.s(sb4, this.location.id, ".temp");
                 str = this.datacenterId + "_" + this.location.id + this.ext;
                 if (this.key != null) {
                     StringBuilder sb5 = new StringBuilder();
                     sb5.append(this.datacenterId);
                     sb5.append("_");
-                    str2 = a4.a.r(sb5, this.location.id, "_64.iv");
+                    str2 = a4.a.s(sb5, this.location.id, "_64.iv");
                 } else {
                     str2 = null;
                 }
@@ -3205,14 +3205,14 @@ public class FileLoadOperation {
                     StringBuilder sb6 = new StringBuilder();
                     sb6.append(this.datacenterId);
                     sb6.append("_");
-                    str3 = a4.a.r(sb6, this.location.id, "_64.pt");
+                    str3 = a4.a.s(sb6, this.location.id, "_64.pt");
                 } else {
                     str3 = null;
                 }
                 StringBuilder sb7 = new StringBuilder();
                 sb7.append(this.datacenterId);
                 sb7.append("_");
-                r11 = a4.a.r(sb7, this.location.id, "_64.preload");
+                s11 = a4.a.s(sb7, this.location.id, "_64.preload");
                 this.requestInfos = new ArrayList<>(this.currentMaxDownloadRequests);
                 this.cancelledRequestInfos = new ArrayList<>();
                 this.delayedRequestInfos = new ArrayList<>(this.currentMaxDownloadRequests - 1);
@@ -3231,22 +3231,22 @@ public class FileLoadOperation {
             StringBuilder sb8 = new StringBuilder();
             sb8.append(this.datacenterId);
             sb8.append("_");
-            r12 = a4.a.r(sb8, this.location.id, ".temp.enc");
+            s12 = a4.a.s(sb8, this.location.id, ".temp.enc");
             StringBuilder sb9 = new StringBuilder();
             sb9.append(this.datacenterId);
             sb9.append("_");
             sb9.append(this.location.id);
-            str = a4.a.s(sb9, this.ext, ".enc");
+            str = a4.a.t(sb9, this.ext, ".enc");
             if (this.key != null) {
                 StringBuilder sb10 = new StringBuilder();
                 sb10.append(this.datacenterId);
                 sb10.append("_");
-                r13 = a4.a.r(sb10, this.location.id, "_64.iv.enc");
-                String str6 = r12;
-                str2 = r13;
-                r10 = str6;
+                s13 = a4.a.s(sb10, this.location.id, "_64.iv.enc");
+                String str6 = s12;
+                str2 = s13;
+                s10 = str6;
             }
-            r10 = r12;
+            s10 = s12;
             str2 = null;
         } else {
             int i14 = this.datacenterId;
@@ -3258,13 +3258,13 @@ public class FileLoadOperation {
                 StringBuilder sb11 = new StringBuilder();
                 sb11.append(this.location.volume_id);
                 sb11.append("_");
-                r10 = a4.a.n(this.location.local_id, ".temp", sb11);
+                s10 = a4.a.o(this.location.local_id, ".temp", sb11);
                 str = this.location.volume_id + "_" + this.location.local_id + "." + this.ext;
                 if (this.key != null) {
                     StringBuilder sb12 = new StringBuilder();
                     sb12.append(this.location.volume_id);
                     sb12.append("_");
-                    str2 = a4.a.n(this.location.local_id, "_64.iv", sb12);
+                    str2 = a4.a.o(this.location.local_id, "_64.iv", sb12);
                 } else {
                     str2 = null;
                 }
@@ -3272,14 +3272,14 @@ public class FileLoadOperation {
                     StringBuilder sb13 = new StringBuilder();
                     sb13.append(this.location.volume_id);
                     sb13.append("_");
-                    str3 = a4.a.n(this.location.local_id, "_64.pt", sb13);
+                    str3 = a4.a.o(this.location.local_id, "_64.pt", sb13);
                 } else {
                     str3 = null;
                 }
                 StringBuilder sb14 = new StringBuilder();
                 sb14.append(this.location.volume_id);
                 sb14.append("_");
-                r11 = a4.a.n(this.location.local_id, "_64.preload", sb14);
+                s11 = a4.a.o(this.location.local_id, "_64.preload", sb14);
                 this.requestInfos = new ArrayList<>(this.currentMaxDownloadRequests);
                 this.cancelledRequestInfos = new ArrayList<>();
                 this.delayedRequestInfos = new ArrayList<>(this.currentMaxDownloadRequests - 1);
@@ -3298,27 +3298,27 @@ public class FileLoadOperation {
             StringBuilder sb15 = new StringBuilder();
             sb15.append(this.location.volume_id);
             sb15.append("_");
-            r12 = a4.a.n(this.location.local_id, ".temp.enc", sb15);
+            s12 = a4.a.o(this.location.local_id, ".temp.enc", sb15);
             StringBuilder sb16 = new StringBuilder();
             sb16.append(this.location.volume_id);
             sb16.append("_");
             sb16.append(this.location.local_id);
             sb16.append(".");
-            str = a4.a.s(sb16, this.ext, ".enc");
+            str = a4.a.t(sb16, this.ext, ".enc");
             if (this.key != null) {
                 StringBuilder sb17 = new StringBuilder();
                 sb17.append(this.location.volume_id);
                 sb17.append("_");
-                r13 = a4.a.n(this.location.local_id, "_64.iv.enc", sb17);
-                String str62 = r12;
-                str2 = r13;
-                r10 = str62;
+                s13 = a4.a.o(this.location.local_id, "_64.iv.enc", sb17);
+                String str62 = s12;
+                str2 = s13;
+                s10 = str62;
             }
-            r10 = r12;
+            s10 = s12;
             str2 = null;
         }
         str3 = null;
-        r11 = null;
+        s11 = null;
         this.requestInfos = new ArrayList<>(this.currentMaxDownloadRequests);
         this.cancelledRequestInfos = new ArrayList<>();
         this.delayedRequestInfos = new ArrayList<>(this.currentMaxDownloadRequests - 1);

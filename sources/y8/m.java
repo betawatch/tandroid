@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new c(8);
@@ -56,8 +56,8 @@ public final class m extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 2, this.a, i10);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.k(parcel, 2, this.a, i10);
         Bundle bundle = new Bundle();
         ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
         n6.l.h(classLoader);
@@ -65,8 +65,8 @@ public final class m extends o6.a {
         for (Map.Entry entry : this.b.entrySet()) {
             bundle.putParcelable((String) entry.getKey(), new DataItemAssetParcelable((x8.f) entry.getValue()));
         }
-        w7.f0.b(parcel, 4, bundle);
-        w7.f0.c(parcel, 5, this.c);
-        w7.f0.r(parcel, q6);
+        w7.e0.b(parcel, 4, bundle);
+        w7.e0.c(parcel, 5, this.c);
+        w7.e0.r(parcel, q6);
     }
 }

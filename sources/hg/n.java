@@ -1,40 +1,562 @@
 package hg;
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
+import ai.g4;
+import ai.m8;
+import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import androidx.recyclerview.widget.RecyclerView;
+import ci.d7;
+import ci.j4;
+import ci.t2;
+import ei.u2;
+import java.util.ArrayList;
+import m.s2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.f3;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.v5;
+import org.telegram.ui.Cells.g3;
+import org.telegram.ui.Components.go;
+import org.telegram.ui.Components.ho;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.jo;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.tp;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.z51;
+import org.telegram.ui.st;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
-    public final /* synthetic */ Object c;
+public final class n extends z51 implements NotificationCenter.NotificationCenterDelegate {
+    public TLRPC.InputDocument E;
+    public boolean F;
+    public String G;
+    public String H;
+    public long I;
+    public boolean J;
+    public g4 L;
+    public pr e;
+    public org.telegram.ui.ActionBar.v0 f;
+    public k h;
+    public j n;
+    public v5 r;
+    public m s;
+    public m v;
+    public String y;
+    public final h d = new h(this, 1);
+    public boolean w = true;
+    public TLRPC.Document x = getMediaDataController().getGreetingsSticker();
+    public boolean K = g0();
 
-    public /* synthetic */ n(KeyEvent.Callback callback, Object obj, int i10) {
-        this.a = i10;
-        this.b = callback;
-        this.c = obj;
+    public static void Y(n nVar) {
+        n nVar2;
+        st.q().T = null;
+        if (nVar.getParentActivity() == null) {
+            return;
+        }
+        if (nVar.getParentActivity() == null || nVar.getParentActivity() == null || nVar.L != null) {
+            nVar2 = nVar;
+        } else {
+            nVar2 = nVar;
+            g4 g4Var = new g4(nVar2, nVar.getParentActivity(), nVar, nVar.resourceProvider, 1);
+            nVar2.L = g4Var;
+            g4Var.Z1 = new a4.m(nVar2, 17);
+        }
+        nVar2.L.j0.f0();
+        nVar2.L.J1(1, false);
+        g4 g4Var2 = nVar2.L;
+        g4Var2.U1 = true;
+        g4Var2.i1(new bi.v(nVar2, 22));
+        nVar2.L.r1();
+        g4 g4Var3 = nVar2.L;
+        g4Var3.r = null;
+        if (nVar2.visibleDialog != null) {
+            g4Var3.show();
+        } else {
+            nVar2.showDialog(g4Var3);
+        }
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                View view = (View) this.b;
-                s sVar = (s) this.c;
-                if (view != null) {
-                    view.clearFocus();
-                }
-                sVar.requestFocus();
-                AndroidUtilities.showKeyboard(sVar);
-                break;
-            default:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((f3) this.b, (Integer) this.c, dialogInterface);
-                break;
+    public static void Z(n nVar) {
+        j jVar = nVar.n;
+        if (jVar != null && jVar.isAttachedToWindow() && nVar.w) {
+            j jVar2 = nVar.n;
+            TLRPC.Document greetingsSticker = MediaDataController.getInstance(nVar.currentAccount).getGreetingsSticker();
+            h hVar = new h(nVar, 2);
+            if (greetingsSticker == null) {
+                jVar2.getClass();
+                return;
+            }
+            AnimatorSet animatorSet = jVar2.F;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+            }
+            jVar2.n.getImageReceiver().setDelegate(new ho(jVar2, hVar));
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(greetingsSticker, i6.lc, 1.0f);
+            if (svgThumb != null) {
+                jVar2.n.n(ImageLocation.getForDocument(greetingsSticker), jo.b(greetingsSticker), svgThumb, greetingsSticker);
+            } else {
+                jVar2.n.j(ImageLocation.getForDocument(greetingsSticker), jo.b(greetingsSticker), ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(greetingsSticker.thumbs, 90), greetingsSticker), null, 0, greetingsSticker);
+            }
+            jVar2.n.setOnClickListener(new go(jVar2, greetingsSticker, 1));
         }
+    }
+
+    public static void b0(n nVar) {
+        if (nVar.h.getParent() instanceof View) {
+            int top = ((View) nVar.h.getParent()).getTop();
+            float clamp = Utilities.clamp((top + r1) / (nVar.h.getMeasuredHeight() - AndroidUtilities.dp(36.0f)), 1.0f, 0.65f);
+            nVar.n.setScaleX(clamp);
+            nVar.n.setScaleY(clamp);
+            nVar.n.setAlpha(Utilities.clamp(clamp * 2.0f, 1.0f, 0.0f));
+            nVar.h.invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.z51
+    public final void U(ArrayList arrayList, w51 w51Var) {
+        arrayList.add(i51.k(this.h));
+        com.google.android.gms.internal.vision.e2.n(R.string.BusinessIntroHeader, arrayList);
+        arrayList.add(i51.k(this.s));
+        arrayList.add(i51.k(this.v));
+        if (this.w) {
+            arrayList.add(i51.f(LocaleController.getString(R.string.BusinessIntroSticker), LocaleController.getString(R.string.BusinessIntroStickerRandom), 1));
+        } else if (this.y != null) {
+            String string = LocaleController.getString(R.string.BusinessIntroSticker);
+            String str = this.y;
+            i51 i51Var = new i51(3);
+            i51Var.d = 1;
+            i51Var.l = string;
+            i51Var.G = str;
+            arrayList.add(i51Var);
+        } else {
+            String string2 = LocaleController.getString(R.string.BusinessIntroSticker);
+            TLRPC.Document document = this.x;
+            i51 i51Var2 = new i51(3);
+            i51Var2.d = 1;
+            i51Var2.l = string2;
+            i51Var2.G = document;
+            arrayList.add(i51Var2);
+        }
+        arrayList.add(i51.B(LocaleController.getString(R.string.BusinessIntroInfo)));
+        boolean g02 = g0();
+        this.K = !g02;
+        if (!g02) {
+            arrayList.add(i51.B(null));
+            i51 e = i51.e(2, LocaleController.getString(R.string.BusinessIntroReset));
+            e.r = true;
+            arrayList.add(e);
+        }
+        i51 i51Var3 = new i51(8);
+        i51Var3.l = null;
+        arrayList.add(i51Var3);
+    }
+
+    @Override // org.telegram.ui.Components.z51
+    public final CharSequence V() {
+        return LocaleController.getString(R.string.BusinessIntro);
+    }
+
+    @Override // org.telegram.ui.Components.z51
+    public final void W(i51 i51Var, View view) {
+        int i10 = i51Var.d;
+        if (i10 == 1) {
+            t2 t2Var = new t2(getParentActivity(), getResourceProvider(), true, true);
+            t2Var.y = new ah.b(13, this, view);
+            int i11 = 0;
+            t2Var.E = new h(this, i11);
+            View[] viewPages = t2Var.f.getViewPages();
+            while (i11 < viewPages.length) {
+                View view2 = viewPages[i11];
+                if (view2 instanceof ci.e2) {
+                    ci.d2 d2Var = ((ci.e2) view2).c;
+                    if (d2Var.H == null) {
+                        d2Var.D(null);
+                    }
+                }
+                i11++;
+            }
+            showDialog(t2Var);
+            return;
+        }
+        if (i10 == 2) {
+            this.s.setText("");
+            this.v.setText("");
+            AndroidUtilities.hideKeyboard(this.s.b);
+            AndroidUtilities.hideKeyboard(this.v.b);
+            this.w = true;
+            this.n.d("", "");
+            j jVar = this.n;
+            TLRPC.Document greetingsSticker = MediaDataController.getInstance(this.currentAccount).getGreetingsSticker();
+            this.x = greetingsSticker;
+            jVar.setSticker(greetingsSticker);
+            h hVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(hVar);
+            AndroidUtilities.runOnUIThread(hVar, 5000L);
+            e0(true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.z51
+    public final boolean X(i51 i51Var, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.z51, org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        AndroidUtilities.requestAdjustResize(getParentActivity(), this.classGuid);
+        getUserConfig().getCurrentUser();
+        this.n = new j(context, this.currentAccount, this.x, getResourceProvider());
+        k kVar = new k(this, context);
+        this.h = kVar;
+        kVar.setWillNotDraw(false);
+        this.r = new v5(this.n, this.h, AndroidUtilities.dp(16.0f), getThemedPaint("paintChatActionBackground"));
+        this.n.setBackground(new ColorDrawable(0));
+        l lVar = new l(context, 0);
+        lVar.setScaleType(ImageView.ScaleType.MATRIX);
+        lVar.setImageDrawable(d7.e(null, this.currentAccount, getUserConfig().getClientUserId(), i6.I.q()));
+        this.h.addView(lVar, x5.e(-1, -1, 119));
+        this.h.addView(this.n, x5.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
+        m mVar = new m(this, context, LocaleController.getString(R.string.BusinessIntroTitleHint), getMessagesController().introTitleLengthLimit, this.resourceProvider, 0);
+        this.s = mVar;
+        mVar.h = true;
+        mVar.setShowLimitOnFocus(true);
+        m mVar2 = this.s;
+        int i10 = i6.d6;
+        mVar2.setBackgroundColor(getThemedColor(i10));
+        this.s.setDivider(true);
+        m mVar3 = this.s;
+        mVar3.getClass();
+        org.telegram.ui.Cells.g gVar = new org.telegram.ui.Cells.g(mVar3, 4);
+        g3 g3Var = mVar3.b;
+        g3Var.setImeOptions(6);
+        g3Var.setOnEditorActionListener(new s2(gVar, 2));
+        m mVar4 = new m(this, context, LocaleController.getString(R.string.BusinessIntroMessageHint), getMessagesController().introDescriptionLengthLimit, this.resourceProvider, 1);
+        this.v = mVar4;
+        mVar4.setShowLimitOnFocus(true);
+        this.v.setBackgroundColor(getThemedColor(i10));
+        this.v.setDivider(true);
+        m mVar5 = this.v;
+        mVar5.getClass();
+        org.telegram.ui.Cells.g gVar2 = new org.telegram.ui.Cells.g(mVar5, 4);
+        g3 g3Var2 = mVar5.b;
+        g3Var2.setImeOptions(6);
+        g3Var2.setOnEditorActionListener(new s2(gVar2, 2));
+        this.n.d("", "");
+        super.createView(context);
+        this.a.p1();
+        y51 y51Var = this.a;
+        y51Var.Y2.r = false;
+        this.actionBar.setAdaptiveBackground(y51Var);
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 10));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
+        int i11 = i6.v8;
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+        this.e = new pr(mutate, new tp(i6.w0(null, i11, false)));
+        this.f = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.e);
+        e0(false);
+        this.a.addOnLayoutChangeListener(new u2(this, 1));
+        this.a.j(new ai.r(this, 9));
+        y51 y51Var2 = this.a;
+        y51Var2.a3 = true;
+        y51Var2.setClipChildren(false);
+        View view = this.fragmentView;
+        if (view instanceof ViewGroup) {
+            ((ViewGroup) view).setClipChildren(false);
+        }
+        i0();
+        new j4(this.fragmentView, false, new ai.y1(this, 19));
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.userInfoDidLoad) {
+            i0();
+        }
+    }
+
+    public final void e0(boolean z10) {
+        if (this.f == null) {
+            return;
+        }
+        boolean f02 = f0();
+        this.f.setEnabled(f02);
+        if (z10) {
+            this.f.animate().alpha(f02 ? 1.0f : 0.0f).scaleX(f02 ? 1.0f : 0.0f).scaleY(f02 ? 1.0f : 0.0f).setDuration(180L).start();
+        } else {
+            this.f.setAlpha(f02 ? 1.0f : 0.0f);
+            this.f.setScaleX(f02 ? 1.0f : 0.0f);
+            this.f.setScaleY(f02 ? 1.0f : 0.0f);
+        }
+        y51 y51Var = this.a;
+        if (y51Var == null || y51Var.Y2 == null || this.K == (!g0())) {
+            return;
+        }
+        y51 y51Var2 = this.a;
+        if (y51Var2 != null && y51Var2.getChildCount() > 0) {
+            View view = null;
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i11 = -1;
+            for (int i12 = 0; i12 < this.a.getChildCount(); i12++) {
+                int R = RecyclerView.R(this.a.getChildAt(i12));
+                View childAt = this.a.getChildAt(i12);
+                if (R != -1 && childAt.getTop() < i10) {
+                    i10 = childAt.getTop();
+                    i11 = R;
+                    view = childAt;
+                }
+            }
+            if (view != null) {
+                this.b = i11;
+                int top = view.getTop();
+                this.c = top;
+                if (this.b == 0 && top > AndroidUtilities.dp(88.0f)) {
+                    this.c = AndroidUtilities.dp(88.0f);
+                }
+                this.a.X2.h1(i11, view.getTop() - this.a.getPaddingTop());
+            }
+        }
+        this.a.Y2.N(true);
+        int i13 = this.b;
+        if (i13 >= 0) {
+            y51 y51Var3 = this.a;
+            y51Var3.X2.h1(i13, this.c - y51Var3.getPaddingTop());
+        }
+    }
+
+    public final boolean f0() {
+        TLRPC.Document document;
+        String charSequence = this.s.getText().toString();
+        String str = this.G;
+        if (str == null) {
+            str = "";
+        }
+        if (!TextUtils.equals(charSequence, str)) {
+            return true;
+        }
+        String charSequence2 = this.v.getText().toString();
+        String str2 = this.H;
+        if (!TextUtils.equals(charSequence2, str2 != null ? str2 : "")) {
+            return true;
+        }
+        boolean z10 = this.w;
+        if (((z10 || (document = this.x) == null) ? 0L : document.id) == this.I) {
+            return (z10 || this.E == null) ? false : true;
+        }
+        return true;
+    }
+
+    public final boolean g0() {
+        m mVar = this.s;
+        if (mVar == null || this.v == null) {
+            return true;
+        }
+        return TextUtils.isEmpty(mVar.getText()) && TextUtils.isEmpty(this.v.getText()) && this.w;
+    }
+
+    public final void h0() {
+        TLRPC.Document document;
+        pr prVar = this.e;
+        if (prVar.c > 0.0f) {
+            return;
+        }
+        prVar.a(1.0f);
+        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+        TL_account.updateBusinessIntro updatebusinessintro = new TL_account.updateBusinessIntro();
+        if (!g0()) {
+            updatebusinessintro.flags |= 1;
+            TL_account.TL_inputBusinessIntro tL_inputBusinessIntro = new TL_account.TL_inputBusinessIntro();
+            updatebusinessintro.intro = tL_inputBusinessIntro;
+            tL_inputBusinessIntro.title = this.s.getText().toString();
+            updatebusinessintro.intro.description = this.v.getText().toString();
+            if (!this.w && (this.x != null || this.E != null)) {
+                TL_account.TL_inputBusinessIntro tL_inputBusinessIntro2 = updatebusinessintro.intro;
+                tL_inputBusinessIntro2.flags |= 1;
+                TLRPC.InputDocument inputDocument = this.E;
+                if (inputDocument != null) {
+                    tL_inputBusinessIntro2.sticker = inputDocument;
+                } else {
+                    tL_inputBusinessIntro2.sticker = getMessagesController().getInputDocument(this.x);
+                }
+            }
+            if (userFull != null) {
+                userFull.flags2 |= 16;
+                TL_account.TL_businessIntro tL_businessIntro = new TL_account.TL_businessIntro();
+                userFull.business_intro = tL_businessIntro;
+                TL_account.TL_inputBusinessIntro tL_inputBusinessIntro3 = updatebusinessintro.intro;
+                tL_businessIntro.title = tL_inputBusinessIntro3.title;
+                tL_businessIntro.description = tL_inputBusinessIntro3.description;
+                if (!this.w && (document = this.x) != null) {
+                    tL_businessIntro.flags |= 1;
+                    tL_businessIntro.sticker = document;
+                }
+            }
+        } else if (userFull != null) {
+            userFull.flags2 &= -17;
+            userFull.business_intro = null;
+        }
+        getConnectionsManager().sendRequest(updatebusinessintro, new m8(this, 12));
+        getMessagesStorage().updateUserInfo(userFull, false);
+    }
+
+    public final void i0() {
+        w51 w51Var;
+        if (this.J) {
+            return;
+        }
+        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+        if (userFull == null) {
+            getMessagesController().loadUserInfo(getUserConfig().getCurrentUser(), true, getClassGuid());
+            return;
+        }
+        TL_account.TL_businessIntro tL_businessIntro = userFull.business_intro;
+        if (tL_businessIntro != null) {
+            m mVar = this.s;
+            String str = tL_businessIntro.title;
+            this.G = str;
+            mVar.setText(str);
+            m mVar2 = this.v;
+            String str2 = userFull.business_intro.description;
+            this.H = str2;
+            mVar2.setText(str2);
+            this.x = userFull.business_intro.sticker;
+        } else {
+            m mVar3 = this.s;
+            this.G = "";
+            mVar3.setText("");
+            m mVar4 = this.v;
+            this.H = "";
+            mVar4.setText("");
+            this.E = null;
+            this.x = null;
+        }
+        TLRPC.Document document = this.x;
+        this.I = document == null ? 0L : document.id;
+        this.w = document == null;
+        j jVar = this.n;
+        if (jVar != null) {
+            jVar.d(this.s.getText().toString(), this.v.getText().toString());
+            j jVar2 = this.n;
+            TLRPC.Document document2 = this.x;
+            if (document2 == null || this.w) {
+                document2 = MediaDataController.getInstance(this.currentAccount).getGreetingsSticker();
+            }
+            jVar2.setSticker(document2);
+        }
+        if (this.w) {
+            h hVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(hVar);
+            AndroidUtilities.runOnUIThread(hVar, 5000L);
+        }
+        y51 y51Var = this.a;
+        if (y51Var != null && (w51Var = y51Var.Y2) != null) {
+            w51Var.N(true);
+        }
+        this.J = true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onBackPressed(boolean z10) {
+        if (!f0()) {
+            return super.onBackPressed(z10);
+        }
+        if (!z10) {
+            return false;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.UnsavedChanges);
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.BusinessIntroUnsavedChanges);
+        final int i10 = 0;
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new org.telegram.ui.ActionBar.a2(this) { // from class: hg.i
+            public final /* synthetic */ n b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
+                switch (i10) {
+                    case 0:
+                        this.b.h0();
+                        break;
+                    default:
+                        this.b.finishFragment();
+                        break;
+                }
+            }
+        });
+        final int i11 = 1;
+        alertDialog$Builder.h(LocaleController.getString(R.string.PassportDiscard), new org.telegram.ui.ActionBar.a2(this) { // from class: hg.i
+            public final /* synthetic */ n b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i112) {
+                switch (i11) {
+                    case 0:
+                        this.b.h0();
+                        break;
+                    default:
+                        this.b.finishFragment();
+                        break;
+                }
+            }
+        });
+        showDialog(alertDialog$Builder.a);
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
+        MediaDataController.getInstance(this.currentAccount).checkStickers(0);
+        MediaDataController.getInstance(this.currentAccount).loadRecents(0, false, true, false);
+        MediaDataController.getInstance(this.currentAccount).loadRecents(2, false, true, false);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.a.setPadding(0, 0, 0, i13);
+        this.a.setClipToPadding(false);
     }
 }

@@ -1,6 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i {
     public final v2.d a;
@@ -20,14 +20,14 @@ public final class i {
     }
 
     public final i a(long j3, m2.m mVar) {
-        long t10;
-        long t11;
+        long v;
+        long v9;
         h d = this.b.d();
         h d10 = mVar.d();
         if (d == null) {
             return new i(j3, mVar, this.c, this.a, this.f, d);
         }
-        if (!d.F()) {
+        if (!d.H()) {
             return new i(j3, mVar, this.c, this.a, this.f, d10);
         }
         long P = d.P(j3);
@@ -44,32 +44,32 @@ public final class i {
         long b11 = d10.b(M2);
         long j12 = this.f;
         if (c10 == b11) {
-            t10 = j10 - M2;
+            v = j10 - M2;
         } else {
             if (c10 < b11) {
                 throw new u2.b();
             }
             if (b11 < b10) {
-                t11 = j12 - (d10.t(b10, j3) - M);
-                return new i(j3, mVar, this.c, this.a, t11, d10);
+                v9 = j12 - (d10.v(b10, j3) - M);
+                return new i(j3, mVar, this.c, this.a, v9, d10);
             }
-            t10 = d.t(b11, j3) - M2;
+            v = d.v(b11, j3) - M2;
         }
-        t11 = t10 + j12;
-        return new i(j3, mVar, this.c, this.a, t11, d10);
+        v9 = v + j12;
+        return new i(j3, mVar, this.c, this.a, v9, d10);
     }
 
     public final long b(long j3) {
         h hVar = this.d;
         e2.d.h(hVar);
-        return hVar.e(this.e, j3) + this.f;
+        return hVar.f(this.e, j3) + this.f;
     }
 
     public final long c(long j3) {
         long b10 = b(j3);
         h hVar = this.d;
         e2.d.h(hVar);
-        return (hVar.Q(this.e, j3) + b10) - 1;
+        return (hVar.S(this.e, j3) + b10) - 1;
     }
 
     public final long d() {
@@ -94,6 +94,6 @@ public final class i {
     public final boolean g(long j3, long j10) {
         h hVar = this.d;
         e2.d.h(hVar);
-        return hVar.F() || j10 == -9223372036854775807L || e(j3) <= j10;
+        return hVar.H() || j10 == -9223372036854775807L || e(j3) <= j10;
     }
 }

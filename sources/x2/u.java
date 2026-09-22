@@ -1,23 +1,16 @@
 package x2;
 
-import u2.p1;
+import b2.q1;
+import i2.o0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class u {
-    public final int a;
-    public final int[] b;
-    public final p1[] c;
-    public final int[] d;
-    public final int[][][] e;
-    public final p1 f;
+public abstract class u {
+    public o0 a;
+    public y2.c b;
+    public t c;
 
-    public u(int[] iArr, p1[] p1VarArr, int[] iArr2, int[][][] iArr3, p1 p1Var) {
-        this.b = iArr;
-        this.c = p1VarArr;
-        this.e = iArr3;
-        this.d = iArr2;
-        this.f = p1Var;
-        this.a = iArr.length;
-    }
+    public abstract void a();
+
+    public abstract void b(q1 q1Var);
 }

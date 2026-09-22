@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w21 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class w21 implements Runnable {
                 boolean z10 = z21Var.r;
                 if (z10) {
                     if (z10 && z21Var.F == null) {
-                        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
-                        z21Var.F = kj0Var;
-                        kj0Var.R(z21Var);
+                        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
+                        z21Var.F = xi0Var;
+                        xi0Var.R(z21Var);
                         z21Var.F.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
                         z21Var.F.K(1);
                         z21Var.F.start();
@@ -49,14 +49,14 @@ public final /* synthetic */ class w21 implements Runnable {
                         long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
                         int i11 = (int) (max % 60);
                         int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.yo0 yo0Var = z21Var.s;
+                        org.telegram.ui.Components.jo0 jo0Var = z21Var.s;
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(min < 10 ? "0" : "");
                         sb2.append(min);
                         sb2.append(":");
                         sb2.append(i11 < 10 ? "0" : "");
                         sb2.append(i11);
-                        yo0Var.q(sb2.toString(), true, false);
+                        jo0Var.q(sb2.toString(), true, false);
                     }
                     if (z21Var.isAttachedToWindow()) {
                         AndroidUtilities.runOnUIThread(z21Var.N, 1000L);

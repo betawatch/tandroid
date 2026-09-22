@@ -10,19 +10,19 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import v7.n8;
+import v7.m8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class x implements db.v {
     public final of.b a;
-    public final fb.g b;
+    public final fb.f b;
     public final j c;
     public final ArrayList d;
 
-    public x(of.b bVar, fb.g gVar, j jVar, ArrayList arrayList) {
+    public x(of.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
         this.a = bVar;
-        this.b = gVar;
+        this.b = fVar;
         this.c = jVar;
         this.d = arrayList;
     }
@@ -89,7 +89,7 @@ public final class x implements db.v {
                         Method a2 = ib.c.a.a(cls2, field3);
                         ib.c.f(a2);
                         if (a2.getAnnotation(eb.b.class) != null && field3.getAnnotation(eb.b.class) == null) {
-                            throw new db.j(a4.a.p("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
+                            throw new db.j(a4.a.q("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
                         }
                         z11 = c11;
                         method = a2;
@@ -189,10 +189,10 @@ public final class x implements db.v {
 
     public final boolean c(Field field, boolean z10) {
         boolean z11;
-        fb.g gVar = this.b;
-        gVar.getClass();
-        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !gVar.b(field.getType(), z10)) {
-            List list = z10 ? gVar.a : gVar.b;
+        fb.f fVar = this.b;
+        fVar.getClass();
+        if ((136 & field.getModifiers()) == 0 && !field.isSynthetic() && !fVar.b(field.getType(), z10)) {
+            List list = z10 ? fVar.a : fVar.b;
             if (!list.isEmpty()) {
                 db.b bVar = new db.b(field);
                 Iterator it = list.iterator();
@@ -214,11 +214,11 @@ public final class x implements db.v {
         if (!Object.class.isAssignableFrom(cls)) {
             return null;
         }
-        n8 n8Var = ib.c.a;
+        m8 m8Var = ib.c.a;
         if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.Q(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.K(aVar), b(gVar, aVar, cls, false));
     }
 }

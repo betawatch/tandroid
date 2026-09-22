@@ -6,10 +6,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 final class zzlg extends j implements p {
     Object zza;
@@ -61,19 +61,19 @@ final class zzlg extends j implements p {
         a aVar = a.a;
         int i10 = this.zzb;
         if (i10 == 0) {
-            u7.b(obj);
+            t7.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
         } else if (i10 == 1) {
-            u7.b(obj);
+            t7.b(obj);
         } else {
             if (i10 != 2) {
-                u7.b(obj);
+                t7.b(obj);
                 return i.a;
             }
             zzhkVar = (zzhk) this.zza;
-            u7.b(obj);
+            t7.b(obj);
             this.zza = null;
             this.zzb = 3;
         }

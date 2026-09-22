@@ -1,29 +1,106 @@
 package x7;
 
-import android.content.Context;
+import android.os.SystemClock;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import z7.hb;
+import z7.lg;
+import z7.wf;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class da implements fa {
-    public final ArrayList a;
+public final /* synthetic */ class da implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public da(Context context, ca caVar) {
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        caVar.getClass();
-        arrayList.add(new ha(context, caVar));
+    public /* synthetic */ da(fa faVar, r0 r0Var, long j3) {
+        this.c = faVar;
+        this.d = r0Var;
+        this.b = j3;
     }
 
-    @Override // x7.fa
-    public final void a(a5.a aVar) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((fa) obj).a(aVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fa faVar = (fa) this.c;
+                r0 r0Var = (r0) this.d;
+                HashMap hashMap = faVar.j;
+                o7 o7Var = o7.f;
+                if (!hashMap.containsKey(o7Var)) {
+                    j jVar = new j();
+                    f fVar = new f();
+                    if (!jVar.isEmpty()) {
+                        throw new IllegalArgumentException();
+                    }
+                    fVar.c = jVar;
+                    hashMap.put(o7Var, fVar);
+                }
+                f fVar2 = (f) hashMap.get(o7Var);
+                Long valueOf = Long.valueOf(this.b);
+                j jVar2 = fVar2.c;
+                Collection collection = (Collection) jVar2.get(r0Var);
+                if (collection == null) {
+                    ArrayList arrayList = new ArrayList(3);
+                    if (!arrayList.add(valueOf)) {
+                        throw new AssertionError("New Collection violated the Collection spec");
+                    }
+                    fVar2.d++;
+                    jVar2.put(r0Var, arrayList);
+                } else if (collection.add(valueOf)) {
+                    fVar2.d++;
+                }
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                if (faVar.c(o7Var, elapsedRealtime)) {
+                    faVar.i.put(o7Var, Long.valueOf(elapsedRealtime));
+                    qb.m.a.execute(new qg.b0(faVar, 7));
+                    return;
+                }
+                return;
+            default:
+                wf wfVar = (wf) this.c;
+                hb hbVar = hb.N1;
+                z7.i1 i1Var = (z7.i1) this.d;
+                HashMap hashMap2 = wfVar.j;
+                if (!hashMap2.containsKey(hbVar)) {
+                    z7.d dVar = new z7.d();
+                    lg lgVar = new lg();
+                    if (!dVar.isEmpty()) {
+                        throw new IllegalArgumentException();
+                    }
+                    lgVar.c = dVar;
+                    hashMap2.put(hbVar, lgVar);
+                }
+                lg lgVar2 = (lg) hashMap2.get(hbVar);
+                Long valueOf2 = Long.valueOf(this.b);
+                z7.d dVar2 = lgVar2.c;
+                Collection collection2 = (Collection) dVar2.get(i1Var);
+                if (collection2 == null) {
+                    ArrayList arrayList2 = new ArrayList(3);
+                    if (!arrayList2.add(valueOf2)) {
+                        throw new AssertionError("New Collection violated the Collection spec");
+                    }
+                    dVar2.put(i1Var, arrayList2);
+                } else {
+                    collection2.add(valueOf2);
+                }
+                long elapsedRealtime2 = SystemClock.elapsedRealtime();
+                if (wfVar.d(hbVar, elapsedRealtime2)) {
+                    wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
+                    qb.m.a.execute(new qg.b0(wfVar));
+                    return;
+                }
+                return;
         }
+    }
+
+    public /* synthetic */ da(wf wfVar, z7.i1 i1Var, long j3) {
+        hb hbVar = hb.b;
+        this.c = wfVar;
+        this.d = i1Var;
+        this.b = j3;
     }
 }

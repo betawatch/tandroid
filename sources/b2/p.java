@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void M0(int i10, int i11) {
+    public void O0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).t(i10, i11);
     }
@@ -154,20 +154,10 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(22));
+            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(17));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void i0(Object obj) {
-        this.b = true;
-        pb.c cVar = (pb.c) this.c;
-        cVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
     }
 
     @Override // s4.e0
@@ -177,8 +167,18 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void k1(int i10, int i11) {
+    public void l1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void p0(Object obj) {
+        this.b = true;
+        a6.m mVar = (a6.m) this.c;
+        mVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     public String toString() {
@@ -203,7 +203,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
                 sb2.append(" }");
                 return sb2.toString();
             case 8:
-                return ((pb.c) this.c).toString();
+                return ((a6.m) this.c).toString();
             default:
                 return super.toString();
         }
@@ -236,10 +236,10 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         this.b = z10;
     }
 
-    public p(a6.d dVar, pb.c cVar) {
+    public p(a6.d dVar, a6.m mVar) {
         this.a = 8;
         this.b = false;
-        this.c = cVar;
+        this.c = mVar;
     }
 
     public p(StringBuilder sb2) {

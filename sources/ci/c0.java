@@ -4,7 +4,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class c0 extends VideoPlayerHolderBase {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class c0 extends VideoPlayerHolderBase {
                 TextureView textureView = z1Var.J;
                 if (textureView != null && !z1Var.F) {
                     textureView.setAlpha(0.0f);
-                    textureView.animate().alpha(1.0f).setListener(new pg.d0(this, 5)).setDuration(200L);
+                    textureView.animate().alpha(1.0f).setListener(new qg.n0(this, 4)).setDuration(200L);
                     break;
                 }
                 break;

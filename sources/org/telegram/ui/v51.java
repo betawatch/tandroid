@@ -1,41 +1,43 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class v51 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ j71 d;
+public final class v51 extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ h71 R;
 
-    public /* synthetic */ v51(j71 j71Var, int i10) {
-        this.c = i10;
-        this.d = j71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v51(h71 h71Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = h71Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.Q) {
             case 0:
-                j71 j71Var = this.d;
-                return (j71Var.w0.indexOfKey(i10) >= 0 || j71Var.z0.indexOfKey(i10) >= 0 || i10 == j71Var.f || i10 == j71Var.y || i10 == j71Var.n || i10 == j71Var.h || i10 == j71Var.v || i10 == j71Var.a || i10 == j71Var.x) ? j71Var.r0.J : ((i10 < j71Var.E || i10 >= j71Var.F) && !j71Var.Q) ? 5 : 8;
+                try {
+                    ci.m1 m1Var = new ci.m1(this, recyclerView.getContext(), 3);
+                    m1Var.a = i10;
+                    w0(m1Var);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
             default:
-                j71 j71Var2 = this.d;
-                t61 t61Var = j71Var2.q0;
-                int j3 = t61Var.j(i10);
-                if (j3 == 6) {
-                    return j71Var2.r0.J;
+                try {
+                    ci.m1 m1Var2 = new ci.m1(this, recyclerView.getContext(), 5);
+                    m1Var2.a = i10;
+                    w0(m1Var2);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
                 }
-                if (j3 != 5) {
-                    j71 j71Var3 = t61Var.s;
-                    if (j71Var3.W != 14 ? i10 <= (i11 = t61Var.c) || (i10 - i11) - 1 >= j71Var3.C1.size() : (arrayList = j71Var3.B1) == null || i10 < (i12 = t61Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
         }
     }
 }

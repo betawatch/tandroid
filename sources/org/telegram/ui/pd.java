@@ -1,105 +1,63 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import android.widget.EditText;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements View.OnFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class pd implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ pd(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ pd(int i10, ci.d dVar, org.telegram.ui.ActionBar.f3 f3Var, long j3) {
+        this.b = i10;
+        this.d = dVar;
+        this.e = f3Var;
+        this.c = j3;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                zd zdVar = ((ke) this.b).U0;
-                float f7 = z10 ? 1.0f : 0.0f;
-                zdVar.b(f7, f7, true);
-                break;
-            case 1:
-                uy uyVar = (uy) this.b;
-                if (z10) {
-                    uyVar.Y.b(true);
-                    break;
+                je jeVar = (je) this.d;
+                Context context = (Context) this.e;
+                if (view.isEnabled()) {
+                    ci.d dVar = jeVar.T0;
+                    if (!dVar.N) {
+                        dVar.setLoading(true);
+                        TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
+                        int i10 = this.b;
+                        tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new ai.v1(24, jeVar, context));
+                        break;
+                    }
                 }
                 break;
-            case 2:
-                yg0 yg0Var = ((ie0) this.b).W;
-                if (z10) {
-                    yg0Var.c.setEditText((EditText) view);
-                    yg0Var.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 3:
-                org.telegram.ui.Components.kd0 kd0Var = (org.telegram.ui.Components.kd0) this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                kd0Var.b(f10, f10, true);
-                break;
-            case 4:
-                org.telegram.ui.Components.kd0 kd0Var2 = ((re0) this.b).x;
-                float f11 = z10 ? 1.0f : 0.0f;
-                kd0Var2.b(f11, f11, true);
-                break;
-            case 5:
-                org.telegram.ui.Components.kd0 kd0Var3 = ((ze0) this.b).b;
-                float f12 = z10 ? 1.0f : 0.0f;
-                kd0Var3.b(f12, f12, true);
-                break;
-            case 6:
-                yg0 yg0Var2 = ((cf0) this.b).y;
-                if (z10) {
-                    yg0Var2.c.setEditText((EditText) view);
-                    yg0Var2.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 7:
-                org.telegram.ui.Components.kd0 kd0Var4 = ((nf0) this.b).a;
-                float f13 = z10 ? 1.0f : 0.0f;
-                kd0Var4.b(f13, f13, true);
-                break;
-            case 8:
-                yg0 yg0Var3 = ((bg0) this.b).s0;
-                if (z10) {
-                    yg0Var3.c.setEditText((EditText) view);
-                    yg0Var3.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.Components.kd0 kd0Var5 = ((xg0) this.b).e;
-                float f14 = z10 ? 1.0f : 0.0f;
-                kd0Var5.b(f14, f14, true);
-                break;
-            case 10:
-                org.telegram.ui.Components.kd0 kd0Var6 = ((PasscodeActivity) this.b).f;
-                float f15 = z10 ? 1.0f : 0.0f;
-                kd0Var6.b(f15, f15, true);
-                break;
-            case 11:
-                ce1 ce1Var = (ce1) this.b;
-                if (!z10) {
-                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
-                    break;
-                } else {
-                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
-                    break;
-                }
             default:
-                org.telegram.ui.Components.kd0 kd0Var7 = ((TwoStepVerificationActivity) this.b).v;
-                float f16 = z10 ? 1.0f : 0.0f;
-                kd0Var7.b(f16, f16, true);
+                ci.d dVar2 = (ci.d) this.d;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.e;
+                TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
+                createconferencecall.random_id = Utilities.random.nextInt();
+                int i11 = this.b;
+                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new ai.j8(i11, dVar2, f3Var, this.c));
                 break;
         }
+    }
+
+    public /* synthetic */ pd(je jeVar, int i10, long j3, Context context) {
+        this.d = jeVar;
+        this.b = i10;
+        this.c = j3;
+        this.e = context;
     }
 }

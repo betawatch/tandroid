@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class iq extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -61,7 +61,7 @@ public final class iq extends EditTextBoldCursor {
         s4.c0 c0Var;
         View view2;
         iq iqVar2;
-        ly lyVar;
+        ky kyVar;
         int i10 = this.b;
         int i11 = this.c;
         FrameLayout frameLayout = this.d;
@@ -105,7 +105,7 @@ public final class iq extends EditTextBoldCursor {
                             View view3 = kzVar.D0;
                             View view4 = kzVar.P;
                             py pyVar = kzVar.j0;
-                            nw nwVar = kzVar.h0;
+                            mw mwVar = kzVar.h0;
                             AnimatorSet animatorSet = kzVar.M0;
                             if (animatorSet != null) {
                                 animatorSet.cancel();
@@ -128,7 +128,7 @@ public final class iq extends EditTextBoldCursor {
                                         xyVar = kzVar.o0;
                                         view = kzVar.p0;
                                         c0Var = kzVar.i0;
-                                        view2 = nwVar;
+                                        view2 = mwVar;
                                     } else {
                                         xyVar = kzVar.G0;
                                         view = kzVar.B0;
@@ -138,7 +138,7 @@ public final class iq extends EditTextBoldCursor {
                                 }
                                 if (xyVar == null) {
                                     iqVar2 = iqVar3;
-                                } else if (xyVar2 == xyVar && (lyVar = kzVar.t1) != null && lyVar.A()) {
+                                } else if (xyVar2 == xyVar && (kyVar = kzVar.t1) != null && kyVar.A()) {
                                     AnimatorSet animatorSet2 = new AnimatorSet();
                                     kzVar.M0 = animatorSet2;
                                     Property property = View.TRANSLATION_Y;
@@ -185,16 +185,16 @@ public final class iq extends EditTextBoldCursor {
                                         view2.setPadding(0, 0, 0, kzVar.p2);
                                     } else if (view2 == view4) {
                                         view2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), kzVar.p2);
-                                    } else if (view2 == nwVar) {
+                                    } else if (view2 == mwVar) {
                                         view2.setPadding(0, kzVar.b1, 0, kzVar.p2);
                                     }
-                                    if (view2 == nwVar) {
+                                    if (view2 == mwVar) {
                                         boolean z10 = kzVar.n0.x.size() > 0;
                                         pyVar.K = z10;
                                         if (z10) {
                                             pyVar.G("", true);
-                                            if (nwVar.getAdapter() != pyVar) {
-                                                nwVar.setAdapter(pyVar);
+                                            if (mwVar.getAdapter() != pyVar) {
+                                                mwVar.setAdapter(pyVar);
                                             }
                                         }
                                     }

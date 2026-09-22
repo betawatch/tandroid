@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h extends View.BaseSavedState {
     public static final Parcelable.Creator<h> CREATOR = new p7.j(23);
@@ -14,7 +14,7 @@ public final class h extends View.BaseSavedState {
         StringBuilder sb2 = new StringBuilder("HorizontalScrollView.SavedState{");
         sb2.append(Integer.toHexString(System.identityHashCode(this)));
         sb2.append(" scrollPosition=");
-        return a4.a.n(this.a, "}", sb2);
+        return a4.a.o(this.a, "}", sb2);
     }
 
     @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable

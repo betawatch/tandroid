@@ -1,58 +1,58 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ak implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
 
-    public /* synthetic */ ak(zn znVar, int i10) {
+    public /* synthetic */ ak(bo boVar, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = boVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        zn znVar = this.b;
+        bo boVar = this.b;
         switch (i10) {
             case 0:
-                zn.i2(znVar);
+                bo.i2(boVar);
                 break;
             case 1:
-                zn.i2(znVar);
+                bo.i2(boVar);
                 break;
             case 2:
-                int i11 = zn.Gc;
-                znVar.Ma();
+                int i11 = bo.Gc;
+                boVar.Ma();
                 break;
             case 3:
-                int i12 = zn.Gc;
-                znVar.Ma();
+                int i12 = bo.Gc;
+                boVar.Ma();
                 break;
             case 4:
-                int i13 = zn.Gc;
-                znVar.Ma();
+                int i13 = bo.Gc;
+                boVar.Ma();
                 break;
             case 5:
-                int i14 = zn.Gc;
-                znVar.Ma();
+                int i14 = bo.Gc;
+                boVar.Ma();
                 break;
             case 6:
-                int i15 = zn.Gc;
-                znVar.Ma();
+                int i15 = bo.Gc;
+                boVar.Ma();
                 break;
             case 7:
-                int i16 = zn.Gc;
-                znVar.Ma();
+                int i16 = bo.Gc;
+                boVar.Ma();
                 break;
             case 8:
-                int i17 = zn.Gc;
-                znVar.Ma();
+                int i17 = bo.Gc;
+                boVar.Ma();
                 break;
             default:
-                int i18 = zn.Gc;
-                znVar.Ma();
+                int i18 = bo.Gc;
+                boVar.Ma();
                 break;
         }
     }

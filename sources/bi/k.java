@@ -3,11 +3,11 @@ package bi;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Cells.u7;
+import org.telegram.ui.Cells.t7;
 import s4.n0;
 import s4.z0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class k extends n0 {
     public final /* synthetic */ int a;
@@ -22,22 +22,22 @@ public final class k extends n0 {
     public final void a(Rect rect, View view, RecyclerView recyclerView, z0 z0Var) {
         switch (this.a) {
             case 0:
-                if (!(view instanceof u7)) {
+                if (!(view instanceof t7)) {
                     rect.left = 0;
                     rect.top = 0;
                     rect.bottom = 0;
                     rect.right = 0;
                     break;
                 } else {
-                    u7 u7Var = (u7) view;
+                    t7 t7Var = (t7) view;
                     u uVar = this.b;
                     uVar.f.getClass();
-                    int S = RecyclerView.S(u7Var);
+                    int R = RecyclerView.R(t7Var);
                     int i10 = uVar.h.J;
-                    u7Var.a0 = S < i10;
-                    int i11 = S % i10;
-                    u7Var.V = i11 == 0;
-                    u7Var.W = i11 == i10 - 1;
+                    t7Var.a0 = R < i10;
+                    int i11 = R % i10;
+                    t7Var.V = i11 == 0;
+                    t7Var.W = i11 == i10 - 1;
                     rect.left = 0;
                     rect.top = 0;
                     rect.bottom = 0;
@@ -45,22 +45,22 @@ public final class k extends n0 {
                     break;
                 }
             default:
-                if (!(view instanceof u7)) {
+                if (!(view instanceof t7)) {
                     rect.left = 0;
                     rect.top = 0;
                     rect.bottom = 0;
                     rect.right = 0;
                     break;
                 } else {
-                    u7 u7Var2 = (u7) view;
+                    t7 t7Var2 = (t7) view;
                     u uVar2 = this.b;
                     uVar2.r.getClass();
-                    int S2 = RecyclerView.S(u7Var2);
+                    int R2 = RecyclerView.R(t7Var2);
                     int i12 = uVar2.s.J;
-                    u7Var2.a0 = S2 < i12;
-                    int i13 = S2 % i12;
-                    u7Var2.V = i13 == 0;
-                    u7Var2.W = i13 == i12 - 1;
+                    t7Var2.a0 = R2 < i12;
+                    int i13 = R2 % i12;
+                    t7Var2.V = i13 == 0;
+                    t7Var2.W = i13 == i12 - 1;
                     rect.left = 0;
                     rect.top = 0;
                     rect.bottom = 0;

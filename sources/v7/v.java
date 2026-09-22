@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class v {
     /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
@@ -27,7 +27,7 @@ public abstract class v {
         ApplicationInfo applicationInfo;
         qb.b cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new qb.b(2);
         PackageManager packageManager = context.getPackageManager();
-        w7.o6.a(packageManager, "Package manager required to locate emoji font provider");
+        w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {

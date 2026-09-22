@@ -1,11 +1,11 @@
 package xh;
 
 import android.view.MotionEvent;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.c90;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class w0 extends n90 {
+public final class w0 extends c90 {
     @Override // android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (getAlpha() < 0.95f) {

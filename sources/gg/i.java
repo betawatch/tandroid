@@ -5,11 +5,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.f9;
+import org.telegram.ui.Cells.e9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class i extends f9 {
+public final class i extends e9 {
     public int E;
     public final /* synthetic */ m F;
     public int v;
@@ -23,7 +23,7 @@ public final class i extends f9 {
         this.F = mVar;
     }
 
-    @Override // org.telegram.ui.Cells.f9
+    @Override // org.telegram.ui.Cells.e9
     public final void a() {
         m mVar = this.F;
         Drawable drawable = mVar.O;
@@ -35,7 +35,7 @@ public final class i extends f9 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.f9
+    @Override // org.telegram.ui.Cells.e9
     public final void b() {
         m mVar = this.F;
         Drawable drawable = mVar.O;

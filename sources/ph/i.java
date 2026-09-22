@@ -10,7 +10,7 @@ import org.telegram.ui.web.b1;
 import r0.i1;
 import r0.l1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i implements g, f, d {
     public View E;
@@ -34,7 +34,7 @@ public final class i implements g, f, d {
     /* JADX WARN: Multi-variable type inference failed */
     public i(Runnable runnable) {
         this.h = runnable;
-        this.a = new le.e(0, new m5.e(this, runnable, 0 == true ? 1 : 0, 15), p1.w, 250L);
+        this.a = new le.e(0, new o0.a(this, runnable, 0 == true ? 1 : 0, 11), p1.w, 250L);
     }
 
     @Override // ph.d

@@ -1,35 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.DialogInterface;
+import org.telegram.messenger.AccountInstance;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p70 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class p70 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ AccountInstance b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ p70(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ p70(AccountInstance accountInstance, int i10, int i11) {
+        this.a = i11;
+        this.b = accountInstance;
+        this.c = i10;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                y70 y70Var = (y70) this.b;
-                if (y70Var.D()) {
-                    y70Var.O();
-                    break;
-                }
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             default:
-                qx0 qx0Var = (qx0) this.b;
-                ai.p4 p4Var = qx0Var.h;
-                if (p4Var != null && p4Var.getLayout() != null) {
-                    qx0Var.F = p4Var.getLayout().getLineWidth(0);
-                    break;
-                }
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
         }
     }

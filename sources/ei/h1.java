@@ -18,16 +18,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.fs0;
+import org.telegram.ui.es0;
 import org.telegram.ui.m6;
 import org.telegram.ui.mu0;
 import org.telegram.ui.r5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -89,14 +89,14 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                     b2VarArr[0] = null;
                 }
                 if (tL_error != null) {
-                    xc.a0(n2Var).d0(tL_error, false);
+                    vc.a0(n2Var).d0(tL_error, false);
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.l0.o(R.string.CommunityNoChatsToAdd, xc.a0(n2Var), R.raw.info, 36);
+                        org.telegram.messenger.y0.o(R.string.CommunityNoChatsToAdd, vc.a0(n2Var), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
-                        xc.a0(n2Var).Q(R.raw.info, 36, "").j();
+                        vc.a0(n2Var).Q(R.raw.info, 36, "").j();
                         break;
                     } else {
                         n2Var.showDialog(new fi.k0(n2Var, 0L, arrayList, new r4(n2Var, chat, this.b, 1)));
@@ -197,7 +197,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                         if (U != null) {
                             if (str2 != null) {
-                                new xc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(str2, false);
+                                new vc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(str2, false);
                                 break;
                             } else if (passkey != null) {
                                 int i14 = this.b;
@@ -235,7 +235,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                 if (updates2 != null && tL_error3 == null) {
                     MessagesController.getInstance(this.b).processUpdates(updates2, false);
                 }
-                AndroidUtilities.runOnUIThread(new fs0(n2Var2, tL_error3, eVar, b2Var2, 27));
+                AndroidUtilities.runOnUIThread(new es0(n2Var2, tL_error3, eVar, b2Var2, 27));
                 break;
         }
     }

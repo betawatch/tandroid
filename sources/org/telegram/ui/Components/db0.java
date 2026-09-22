@@ -1,26 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class db0 extends y5 {
-    public final /* synthetic */ eb0 a;
+public final class db0 extends g.p {
+    public final /* synthetic */ pb0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db0(eb0 eb0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = eb0Var;
+    public db0(pb0 pb0Var) {
+        this.c = pb0Var;
     }
 
-    @Override // org.telegram.ui.Components.y5, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        eb0 eb0Var = this.a;
-        int i15 = eb0Var.y;
-        int i16 = i14 + i12;
-        int i17 = this.measuredSize;
-        eb0Var.c.set((int) f7, hg.k0.z(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
+    @Override // g.p
+    public final int i(int i10) {
+        MessageObject messageObject;
+        MessageObject.GroupedMessages a2;
+        if (i10 < 0) {
+            return MediaDataController.MAX_STYLE_RUNS_COUNT;
+        }
+        pb0 pb0Var = this.c;
+        return (i10 >= pb0Var.r.previewMessages.size() || (a2 = pb0.a(pb0Var, (messageObject = pb0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

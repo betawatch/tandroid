@@ -4,7 +4,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b40 extends q4 {
     public final /* synthetic */ i60 U;
@@ -15,7 +15,7 @@ public final class b40 extends q4 {
         this.U = i60Var;
     }
 
-    @Override // org.telegram.ui.q4, org.telegram.ui.Components.wh0
+    @Override // org.telegram.ui.q4, org.telegram.ui.Components.jh0
     public final void c() {
         i60 i60Var = this.U;
         AccountInstance accountInstance = i60Var.d;

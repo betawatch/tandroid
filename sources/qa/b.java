@@ -1,9 +1,9 @@
 package qa;
 
 import java.io.IOException;
-import org.telegram.ui.Cells.f3;
+import n7.a1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class b implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        ra.b z10;
+        ra.b E;
         ra.b i10;
         int i11;
         switch (this.a) {
@@ -36,15 +36,15 @@ public final /* synthetic */ class b implements Runnable {
                     try {
                         k9.h hVar = cVar.a;
                         hVar.a();
-                        f3 e = f3.e(hVar.a);
+                        a1 e = a1.e(hVar.a);
                         try {
-                            z10 = cVar.c.z();
+                            E = cVar.c.E();
                             if (e != null) {
-                                e.A();
+                                e.I();
                             }
                         } catch (Throwable th2) {
                             if (e != null) {
-                                e.A();
+                                e.I();
                             }
                             throw th2;
                         }
@@ -52,13 +52,13 @@ public final /* synthetic */ class b implements Runnable {
                     }
                 }
                 try {
-                    int i12 = z10.b;
+                    int i12 = E.b;
                     if (!(i12 == 5)) {
                         if (!(i12 == 3)) {
-                            if (cVar.d.a(z10)) {
-                                i10 = cVar.c(z10);
+                            if (cVar.d.a(E)) {
+                                i10 = cVar.c(E);
                                 cVar.f(i10);
-                                cVar.m(z10, i10);
+                                cVar.m(E, i10);
                                 if (i10.b == 4) {
                                     cVar.l(i10.a);
                                 }
@@ -77,9 +77,9 @@ public final /* synthetic */ class b implements Runnable {
                             return;
                         }
                     }
-                    i10 = cVar.i(z10);
+                    i10 = cVar.i(E);
                     cVar.f(i10);
-                    cVar.m(z10, i10);
+                    cVar.m(E, i10);
                     if (i10.b == 4) {
                     }
                     i11 = i10.b;

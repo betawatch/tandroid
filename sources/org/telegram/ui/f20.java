@@ -8,12 +8,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class f20 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public org.telegram.ui.Components.ki0 c;
+    public org.telegram.ui.Components.xh0 c;
     public boolean d;
     public TLRPC.TL_dialogFilterSuggested e;
 
@@ -24,7 +24,7 @@ public final class f20 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
@@ -41,9 +41,9 @@ public final class f20 extends FrameLayout {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
         measureChildWithMargins(this.c, i10, 0, i11, 0);
         TextView textView = this.a;
-        org.telegram.ui.Components.ki0 ki0Var = this.c;
-        measureChildWithMargins(textView, i10, ki0Var.getMeasuredWidth(), i11, 0);
-        measureChildWithMargins(this.b, i10, ki0Var.getMeasuredWidth(), i11, 0);
+        org.telegram.ui.Components.xh0 xh0Var = this.c;
+        measureChildWithMargins(textView, i10, xh0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, xh0Var.getMeasuredWidth(), i11, 0);
     }
 
     public void setAddOnClickListener(View.OnClickListener onClickListener) {

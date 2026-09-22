@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.drawable.ShapeDrawable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.a40;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ ShapeDrawable a;
@@ -25,20 +25,20 @@ public final class h0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         a40 a40Var = this.b;
-        j9 j9Var = a40Var.J;
+        i9 i9Var = a40Var.J;
         TextView textView = a40Var.K;
         float f7 = a40Var.O;
         ShapeDrawable shapeDrawable = this.a;
         if (f7 == 1.0f) {
             shapeDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            j9Var.setTranslationX(0.0f);
+            i9Var.setTranslationX(0.0f);
             textView.setTranslationX(0.0f);
         } else {
             float interpolation = 1.0f - qr.f.getInterpolation(f7);
             float left = (a40Var.P - getLeft()) * interpolation;
             float left2 = (a40Var.Q - textView.getLeft()) * interpolation;
             shapeDrawable.setBounds((int) left, 0, getMeasuredWidth() + ((int) ((a40Var.R - getRight()) * interpolation)), getMeasuredHeight());
-            j9Var.setTranslationX(left);
+            i9Var.setTranslationX(left);
             textView.setTranslationX(-left2);
         }
         shapeDrawable.draw(canvas);

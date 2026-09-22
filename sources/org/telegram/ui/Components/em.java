@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class em extends s4.n0 implements bh.a {
     public Drawable a;
@@ -50,21 +50,21 @@ public final class em extends s4.n0 implements bh.a {
             }
             return;
         }
-        s4.c1 L = recyclerView.L(0);
-        if (L != null) {
-            top = L.a.getTop();
+        s4.c1 K = recyclerView.K(0);
+        if (K != null) {
+            top = K.a.getTop();
         } else {
-            L = recyclerView.L(chatAttachAlertPhotoLayout.M0);
-            if (L == null) {
+            K = recyclerView.K(chatAttachAlertPhotoLayout.M0);
+            if (K == null) {
                 if (aVar != null) {
                     aVar.a = true;
                     return;
                 }
                 return;
             }
-            top = (L.a.getTop() - AndroidUtilities.dp(2.0f)) - chatAttachAlertPhotoLayout.K0;
+            top = (K.a.getTop() - AndroidUtilities.dp(2.0f)) - chatAttachAlertPhotoLayout.K0;
         }
-        int left = L.a.getLeft();
+        int left = K.a.getLeft();
         int i10 = chatAttachAlertPhotoLayout.K0;
         int i11 = left + i10;
         int dp = AndroidUtilities.dp(2.0f) + (i10 * 2) + top;
@@ -108,7 +108,7 @@ public final class em extends s4.n0 implements bh.a {
             }
             if (drawable != null) {
                 int dp3 = AndroidUtilities.dp(24.0f);
-                int B = org.telegram.messenger.l0.B(7.0f, i11, dp3);
+                int B = org.telegram.messenger.y0.B(7.0f, i11, dp3);
                 int dp4 = AndroidUtilities.dp(7.0f) + top;
                 drawable.setBounds(B, dp4, B + dp3, dp3 + dp4);
                 drawable.draw(canvas);

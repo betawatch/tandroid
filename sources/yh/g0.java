@@ -20,11 +20,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
-    public l5 F;
+    public m5 F;
     public final ArrayList G;
     public final ArrayList H;
     public final HashSet I;
@@ -45,12 +45,12 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     public float v;
     public float w;
     public float x;
-    public final org.telegram.ui.Components.d6 y;
+    public final org.telegram.ui.Components.c6 y;
 
     public g0(Context context, int i10, long j3, org.telegram.ui.j0 j0Var) {
         super(context);
         this.d = true;
-        this.y = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
+        this.y = new org.telegram.ui.Components.c6(this, 0L, 350L, qr.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();
@@ -76,7 +76,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     */
     public final void a() {
         TLRPC.EmojiStatus emojiStatus;
-        l5 G;
+        m5 G;
         boolean z10;
         int i10;
         ArrayList arrayList;
@@ -159,19 +159,19 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         } else {
                             float dp = AndroidUtilities.dp(22.5f);
                             int i18 = f0Var6.d;
-                            f0Var6.h = new RadialGradient(0.0f, 0.0f, dp, new int[]{i18, org.telegram.ui.ActionBar.j6.l1(0.0f, i18)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                            f0Var6.h = new RadialGradient(0.0f, 0.0f, dp, new int[]{i18, org.telegram.ui.ActionBar.i6.l1(0.0f, i18)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                             Paint paint = new Paint(1);
                             f0Var6.i = paint;
                             paint.setShader(f0Var6.h);
                             TLRPC.Document document = f0Var6.b;
                             if (document != null) {
-                                f0Var6.j = org.telegram.ui.Components.p5.m(i13, i14, document);
+                                f0Var6.j = org.telegram.ui.Components.o5.m(i13, i14, document);
                             } else {
-                                f0Var6.j = org.telegram.ui.Components.p5.n(i13, f0Var6.c, null, i14);
+                                f0Var6.j = org.telegram.ui.Components.o5.n(i13, f0Var6.c, null, i14);
                             }
-                            org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this, 0L, 320L, (TimeInterpolator) null);
-                            f0Var6.k = d6Var;
-                            d6Var.d(0.0f, true);
+                            org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this, 0L, 320L, (TimeInterpolator) null);
+                            f0Var6.k = c6Var;
+                            c6Var.d(0.0f, true);
                             if (isAttachedToWindow()) {
                                 f0Var6.j.a(this);
                             }
@@ -371,7 +371,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             float d = f0Var2.k.d(f12, z10);
             float lerp = AndroidUtilities.lerp(0.5f, f12, d);
             int i11 = i10;
-            float z11 = org.telegram.messenger.l0.z(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
+            float A = org.telegram.messenger.y0.A(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
             int i12 = f0Var2.g;
             float f19 = 1.6f;
             if (i12 != 0) {
@@ -402,7 +402,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         f10 = AndroidUtilities.lerp(f16, f10, g0Var.L.getInterpolation(clamp01));
                         lerp = AndroidUtilities.lerp(lerp / 2.0f, lerp, clamp01);
                     }
-                    if (z11 <= 0.0f) {
+                    if (A <= 0.0f) {
                         f11 = f16;
                         arrayList = arrayList2;
                     } else {
@@ -418,10 +418,10 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         float a2 = f0Var2.m.a(0.1f) * f21;
                         canvas.scale(a2, a2);
                         f0Var2.f.d();
-                        f0Var2.f.b(canvas, f0Var2.d, z11);
+                        f0Var2.f.b(canvas, f0Var2.d, A);
                         Paint paint = f0Var2.i;
                         if (paint != null) {
-                            paint.setAlpha((int) (z11 * 255.0f * 1.0f));
+                            paint.setAlpha((int) (A * 255.0f * 1.0f));
                             float f23 = (-dp3) / 2.0f;
                             f0Var = f0Var2;
                             canvas.drawRect(f23, f23, f22, f22, f0Var2.i);
@@ -433,7 +433,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                             int i13 = (-dp4) / 2;
                             int i14 = dp4 / 2;
                             f0Var.j.setBounds(i13, i13, i14, i14);
-                            f0Var.j.setAlpha((int) (z11 * 255.0f));
+                            f0Var.j.setAlpha((int) (A * 255.0f));
                             f0Var.j.draw(canvas);
                         }
                         canvas.restore();
@@ -458,7 +458,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                 }
                 if (clamp01 < 1.0f) {
                 }
-                if (z11 <= 0.0f) {
+                if (A <= 0.0f) {
                 }
                 i10 = i11 + 1;
                 g0Var = this;
@@ -480,7 +480,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             }
             if (clamp01 < 1.0f) {
             }
-            if (z11 <= 0.0f) {
+            if (A <= 0.0f) {
             }
             i10 = i11 + 1;
             g0Var = this;

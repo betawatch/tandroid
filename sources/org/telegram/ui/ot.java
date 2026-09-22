@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ot implements Runnable {
     public final /* synthetic */ st a;
@@ -71,7 +71,7 @@ public final class ot implements Runnable {
         float f11;
         float f12;
         ci.n6 n6Var7;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         int i15;
         TLRPC.Document document3;
         qt qtVar5;
@@ -104,7 +104,7 @@ public final class ot implements Runnable {
         float f15;
         float f16;
         ci.n6 n6Var14;
-        org.telegram.ui.ActionBar.f6 f6Var2;
+        org.telegram.ui.ActionBar.e6 e6Var2;
         TLRPC.Document document10;
         int i18;
         TLRPC.Document document11;
@@ -132,7 +132,7 @@ public final class ot implements Runnable {
         ci.n6 n6Var23;
         ci.n6 n6Var24;
         ci.n6 n6Var25;
-        org.telegram.ui.ActionBar.f6 f6Var3;
+        org.telegram.ui.ActionBar.e6 e6Var3;
         TLRPC.Document document15;
         int i22;
         qt qtVar15;
@@ -155,7 +155,7 @@ public final class ot implements Runnable {
         ci.n6 n6Var26;
         ci.n6 n6Var27;
         int i27;
-        fc1 fc1Var;
+        ec1 ec1Var;
         View view;
         View view2;
         View view3;
@@ -163,7 +163,7 @@ public final class ot implements Runnable {
         View view5;
         View view6;
         ci.n6 n6Var28;
-        org.telegram.ui.Components.y70 i28;
+        org.telegram.ui.Components.n70 i28;
         TLRPC.Document unused;
         st stVar = this.a;
         ah.c cVar = stVar.t;
@@ -261,7 +261,7 @@ public final class ot implements Runnable {
             }
             i10 = 0;
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, stVar.z.getContext(), stVar.c0);
-            org.telegram.ui.ActionBar.f6 f6Var4 = null;
+            org.telegram.ui.ActionBar.e6 e6Var4 = null;
             ch.d c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout2, null, true);
             c10.o(eh.b.k(stVar.c0));
             c10.q(AndroidUtilities.dp(12.0f));
@@ -274,24 +274,24 @@ public final class ot implements Runnable {
                 ArrayList arrayList3 = new ArrayList();
                 if (stVar.T == null) {
                     qt qtVar28 = stVar.l;
-                    if (qtVar28 == null || !qtVar28.B()) {
-                        if (stVar.l.y()) {
+                    if (qtVar28 == null || !qtVar28.A()) {
+                        if (stVar.l.x()) {
                             arrayList.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList3, arrayList2, 0);
+                            org.telegram.ui.Cells.q3.o(R.drawable.msg_send, arrayList3, arrayList2, 0);
                         }
                         arrayList.add(LocaleController.getString(R.string.AddToFavorites));
-                        org.telegram.ui.Cells.c1.p(R.drawable.msg_fave, arrayList3, arrayList2, 1);
+                        org.telegram.ui.Cells.q3.o(R.drawable.msg_fave, arrayList3, arrayList2, 1);
                     } else {
                         arrayList.add(LocaleController.getString(R.string.SetIntroSticker));
-                        org.telegram.ui.Cells.c1.p(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
+                        org.telegram.ui.Cells.q3.o(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
                     }
                 }
                 qt qtVar29 = stVar.l;
-                if (qtVar29 == null || !qtVar29.B()) {
+                if (qtVar29 == null || !qtVar29.A()) {
                     qt qtVar30 = stVar.l;
                     arrayList.add(LocaleController.getString((qtVar30 == null || !qtVar30.J()) ? R.string.AddToStickerPack : R.string.StickersReplaceSticker));
                     qt qtVar31 = stVar.l;
-                    org.telegram.ui.Cells.c1.p((qtVar31 == null || !qtVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
+                    org.telegram.ui.Cells.q3.o((qtVar31 == null || !qtVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
                 }
                 int i30 = 7;
                 org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(0, stVar.w, stVar.c0, true, false);
@@ -300,27 +300,27 @@ public final class ot implements Runnable {
                 f1Var.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
                 FrameLayout frameLayout = new FrameLayout(stVar.z.getContext());
                 LinearLayout linearLayout = new LinearLayout(stVar.z.getContext());
-                linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, stVar.c0));
+                linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, stVar.c0));
                 linearLayout.setOrientation(1);
                 if (stVar.w == null) {
-                    fc1Var = null;
+                    ec1Var = null;
                 } else {
                     ArrayList arrayList4 = new ArrayList();
                     arrayList4.add(new TLRPC.TL_stickerSetNoCovered());
                     TLRPC.TL_messages_getMyStickers tL_messages_getMyStickers = new TLRPC.TL_messages_getMyStickers();
                     tL_messages_getMyStickers.limit = 100;
-                    ConnectionsManager.getInstance(stVar.r).sendRequest(tL_messages_getMyStickers, new ba(stVar, arrayList4, tL_messages_getMyStickers, i30));
-                    fc1 fc1Var2 = new fc1(stVar.w, i30, f6Var4);
-                    fc1Var2.setLayoutManager(new s4.c0());
-                    fc1Var2.i(new ci.r1(arrayList4, 4));
-                    fc1Var2.setAdapter(new pt(stVar, arrayList4));
-                    fc1Var = fc1Var2;
+                    ConnectionsManager.getInstance(stVar.r).sendRequest(tL_messages_getMyStickers, new aa(stVar, arrayList4, tL_messages_getMyStickers, i30));
+                    ec1 ec1Var2 = new ec1(stVar.w, i30, e6Var4);
+                    ec1Var2.setLayoutManager(new s4.c0());
+                    ec1Var2.i(new ci.r1(arrayList4, 4));
+                    ec1Var2.setAdapter(new pt(stVar, arrayList4));
+                    ec1Var = ec1Var2;
                 }
-                fc1Var.setOnItemClickListener(new i(this, 5));
+                ec1Var.setOnItemClickListener(new i(this, 5));
                 frameLayout.addView(f1Var);
                 linearLayout.addView(frameLayout);
-                linearLayout.addView(new org.telegram.ui.ActionBar.k1(stVar.z.getContext(), stVar.c0), w7.y5.n(-1, 8));
-                ai.s0 s0Var = new ai.s0(this, arrayList2, fc1Var, linearLayout, actionBarPopupWindow$ActionBarPopupWindowLayout2, 13);
+                linearLayout.addView(new org.telegram.ui.ActionBar.k1(stVar.z.getContext(), stVar.c0), w7.x5.n(-1, 8));
+                ai.s0 s0Var = new ai.s0(this, arrayList2, ec1Var, linearLayout, actionBarPopupWindow$ActionBarPopupWindowLayout2, 13);
                 for (int i31 = 0; i31 < arrayList.size(); i31++) {
                     org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, ((Integer) arrayList3.get(i31)).intValue(), (CharSequence) arrayList.get(i31), false, stVar.c0);
                     c11.setTag(Integer.valueOf(i31));
@@ -328,13 +328,13 @@ public final class ot implements Runnable {
                 }
                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                linearLayout.addView(fc1Var, new LinearLayout.LayoutParams(actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredHeight() * 1.5f)));
+                linearLayout.addView(ec1Var, new LinearLayout.LayoutParams(actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredHeight() * 1.5f)));
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.b(linearLayout);
-                frameLayout.setOnClickListener(new uf(actionBarPopupWindow$ActionBarPopupWindowLayout2, 2));
+                frameLayout.setOnClickListener(new tf(actionBarPopupWindow$ActionBarPopupWindowLayout2, 2));
                 i0.b bVar11 = stVar.q;
                 int i32 = bVar11.d + bVar11.b;
                 int min3 = ((int) (Math.min(stVar.z.getWidth(), stVar.z.getHeight() - i32) / 1.8f)) / 2;
-                stVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.y5.d(-2, -2.0f, 49, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((stVar.e + Math.max(r0 + min3, ((stVar.z.getHeight() - i32) - stVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f));
+                stVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.x5.d(-2, -2.0f, 49, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((stVar.e + Math.max(r0 + min3, ((stVar.z.getHeight() - i32) - stVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f));
                 stVar.L = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.setTranslationY(-AndroidUtilities.dp(12.0f));
                 stVar.L.setAlpha(0.0f);
@@ -350,10 +350,10 @@ public final class ot implements Runnable {
                 view6 = stVar.L;
                 view6.animate().translationY(0.0f).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.qr.h).start();
                 if (stVar.P == null) {
-                    org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(stVar, stVar.z.getContext(), UserConfig.selectedAccount, stVar.c0);
-                    stVar.P = ybVar;
-                    ybVar.N0 = true;
-                    ybVar.setPadding(0, AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f));
+                    org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(stVar, stVar.z.getContext(), UserConfig.selectedAccount, stVar.c0);
+                    stVar.P = xbVar;
+                    xbVar.N0 = true;
+                    xbVar.setPadding(0, AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f));
                     stVar.P.setClipChildren(false);
                     stVar.P.setClipToPadding(false);
                     stVar.P.setVisibility(0);
@@ -362,8 +362,8 @@ public final class ot implements Runnable {
                     stVar.P.setMiniBubblesOffset(-AndroidUtilities.dp(14.0f));
                     FrameLayout frameLayout2 = new FrameLayout(stVar.z.getContext());
                     stVar.Q = frameLayout2;
-                    frameLayout2.addView(stVar.P, w7.y5.d(-2, 116.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
-                    stVar.z.addView(stVar.Q, w7.y5.d(-2, -2.0f, 1, 0.0f, 100.0f, 0.0f, 0.0f));
+                    frameLayout2.addView(stVar.P, w7.x5.d(-2, 116.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
+                    stVar.z.addView(stVar.Q, w7.x5.d(-2, -2.0f, 1, 0.0f, 100.0f, 0.0f, 0.0f));
                 }
                 stVar.P.setSelectedEmojis(stVar.o);
                 stVar.P.setDelegate(new ft(stVar));
@@ -391,7 +391,7 @@ public final class ot implements Runnable {
                             i16 = stVar.V;
                             if (qtVar9.l(i16)) {
                                 arrayList5.add(LocaleController.getString(R.string.SendEmojiPreview));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList7, arrayList6, 0);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_send, arrayList7, arrayList6, 0);
                             }
                             qtVar10 = stVar.l;
                             document5 = stVar.W;
@@ -399,23 +399,23 @@ public final class ot implements Runnable {
                             if (P != null) {
                                 if (P.booleanValue()) {
                                     arrayList5.add(LocaleController.getString(R.string.SetAsEmojiStatus));
-                                    org.telegram.ui.Cells.c1.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
+                                    org.telegram.ui.Cells.q3.o(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
                                 } else {
                                     arrayList5.add(LocaleController.getString(R.string.RemoveStatus));
-                                    org.telegram.ui.Cells.c1.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
+                                    org.telegram.ui.Cells.q3.o(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
                                 }
                             }
                             qtVar11 = stVar.l;
                             document6 = stVar.W;
-                            if (qtVar11.E(document6)) {
+                            if (qtVar11.D(document6)) {
                                 arrayList5.add(LocaleController.getString(R.string.CopyEmojiPreview));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_copy, arrayList7, arrayList6, 3);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_copy, arrayList7, arrayList6, 3);
                             }
                             qtVar12 = stVar.l;
                             document7 = stVar.W;
                             if (qtVar12.N(document7)) {
                                 arrayList5.add(LocaleController.getString(R.string.RemoveFromRecent));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList7, arrayList6, 4);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_delete, arrayList7, arrayList6, 4);
                             }
                             i17 = stVar.r;
                             MediaDataController mediaDataController = MediaDataController.getInstance(i17);
@@ -432,7 +432,7 @@ public final class ot implements Runnable {
                                         }
                                     }
                                     arrayList5.add(LocaleController.getString(isStickerInFavorites ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                                    org.telegram.ui.Cells.c1.p(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
+                                    org.telegram.ui.Cells.q3.o(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
                                 }
                             }
                             if (arrayList5.isEmpty()) {
@@ -445,7 +445,7 @@ public final class ot implements Runnable {
                             for (int i35 = 0; i35 < arrayList7.size(); i35++) {
                                 iArr[i35] = ((Integer) arrayList7.get(i35)).intValue();
                             }
-                            org.telegram.ui.Components.ic0 ic0Var = new org.telegram.ui.Components.ic0(this, arrayList6, isStickerInFavorites);
+                            org.telegram.ui.Components.xb0 xb0Var = new org.telegram.ui.Components.xb0(this, arrayList6, isStickerInFavorites);
                             boolean h = st.h(stVar, actionBarPopupWindow$ActionBarPopupWindowLayout2);
                             int i36 = 0;
                             while (i36 < arrayList5.size()) {
@@ -453,15 +453,15 @@ public final class ot implements Runnable {
                                 boolean z12 = i36 == arrayList5.size() + (-1);
                                 int intValue = ((Integer) arrayList7.get(i36)).intValue();
                                 CharSequence charSequence = (CharSequence) arrayList5.get(i36);
-                                f6Var2 = stVar.c0;
+                                e6Var2 = stVar.c0;
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
-                                org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(z11, z12, actionBarPopupWindow$ActionBarPopupWindowLayout3, intValue, charSequence, false, f6Var2);
+                                org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(z11, z12, actionBarPopupWindow$ActionBarPopupWindowLayout3, intValue, charSequence, false, e6Var2);
                                 if (((Integer) arrayList6.get(i36)).intValue() == 4) {
-                                    c12.setIconColor(st.d(stVar, org.telegram.ui.ActionBar.j6.p7));
-                                    c12.setTextColor(st.d(stVar, org.telegram.ui.ActionBar.j6.q7));
+                                    c12.setIconColor(st.d(stVar, org.telegram.ui.ActionBar.i6.p7));
+                                    c12.setTextColor(st.d(stVar, org.telegram.ui.ActionBar.i6.q7));
                                 }
                                 c12.setTag(Integer.valueOf(i36));
-                                c12.setOnClickListener(ic0Var);
+                                c12.setOnClickListener(xb0Var);
                                 i36++;
                                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout3;
                             }
@@ -575,7 +575,7 @@ public final class ot implements Runnable {
                             qtVar7 = stVar.l;
                             if (!qtVar7.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendGifPreview));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList10, arrayList9, 0);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_send, arrayList10, arrayList9, 0);
                             }
                         }
                         qtVar3 = stVar.l;
@@ -584,13 +584,13 @@ public final class ot implements Runnable {
                             qtVar6 = stVar.l;
                             if (!qtVar6.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendWithoutSound));
-                                org.telegram.ui.Cells.c1.p(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
+                                org.telegram.ui.Cells.q3.o(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
                             }
                         }
                         qtVar4 = stVar.l;
                         if (qtVar4.b()) {
                             arrayList8.add(LocaleController.getString(R.string.Schedule));
-                            org.telegram.ui.Cells.c1.p(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
+                            org.telegram.ui.Cells.q3.o(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
                         }
                         document = stVar.W;
                         if (document != null) {
@@ -598,7 +598,7 @@ public final class ot implements Runnable {
                             document4 = stVar.W;
                             if (qtVar5.e(document4)) {
                                 arrayList8.add(LocaleController.getString(R.string.AddACaption));
-                                org.telegram.ui.Cells.c1.n(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
+                                org.telegram.ui.Cells.q3.n(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
                             }
                         }
                         document2 = stVar.W;
@@ -609,10 +609,10 @@ public final class ot implements Runnable {
                             z10 = mediaDataController2.hasRecentGif(document3);
                             if (z10) {
                                 arrayList8.add(LocaleController.formatString("Delete", R.string.Delete, new Object[0]));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList10, arrayList9, 1);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_delete, arrayList10, arrayList9, 1);
                             } else {
                                 arrayList8.add(LocaleController.formatString("SaveToGIFs", R.string.SaveToGIFs, new Object[0]));
-                                org.telegram.ui.Cells.c1.p(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
+                                org.telegram.ui.Cells.q3.o(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
                             }
                         } else {
                             z10 = false;
@@ -631,12 +631,12 @@ public final class ot implements Runnable {
                         for (int i44 = 0; i44 < arrayList8.size(); i44++) {
                             int intValue2 = ((Integer) arrayList10.get(i44)).intValue();
                             CharSequence charSequence2 = (CharSequence) arrayList8.get(i44);
-                            f6Var = stVar.c0;
-                            org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, intValue2, charSequence2, false, f6Var);
+                            e6Var = stVar.c0;
+                            org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, intValue2, charSequence2, false, e6Var);
                             c13.setTag(Integer.valueOf(i44));
                             c13.setOnClickListener(dtVar);
                             if (z10 && i44 == arrayList8.size() - 1) {
-                                c13.c(st.d(stVar, org.telegram.ui.ActionBar.j6.q7), st.d(stVar, org.telegram.ui.ActionBar.j6.p7));
+                                c13.c(st.d(stVar, org.telegram.ui.ActionBar.i6.q7), st.d(stVar, org.telegram.ui.ActionBar.i6.p7));
                             }
                         }
                         nt ntVar = new nt(this, actionBarPopupWindow$ActionBarPopupWindowLayout);
@@ -739,9 +739,9 @@ public final class ot implements Runnable {
                     i26 = stVar.r;
                     if (!AccountInstance.getInstance(i26).getUserConfig().isPremium()) {
                         if (stVar.O == null) {
-                            jh1 jh1Var = new jh1(stVar.z.getContext(), stVar.c0);
-                            stVar.O = jh1Var;
-                            stVar.z.addView(jh1Var, w7.y5.c(-1.0f, -1));
+                            ih1 ih1Var = new ih1(stVar.z.getContext(), stVar.c0);
+                            stVar.O = ih1Var;
+                            stVar.z.addView(ih1Var, w7.x5.c(-1.0f, -1));
                             stVar.O.setOnClickListener(new gt(stVar, i34));
                             stVar.O.a.r.setOnClickListener(new gt(stVar, i33));
                         }
@@ -775,7 +775,7 @@ public final class ot implements Runnable {
                         qtVar25 = stVar.l;
                         if (!qtVar25.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList13, arrayList12, 0);
+                            org.telegram.ui.Cells.q3.o(R.drawable.msg_send, arrayList13, arrayList12, 0);
                         }
                     }
                     qtVar21 = stVar.l;
@@ -784,18 +784,18 @@ public final class ot implements Runnable {
                         qtVar24 = stVar.l;
                         if (!qtVar24.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendWithoutSound));
-                            org.telegram.ui.Cells.c1.n(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
+                            org.telegram.ui.Cells.q3.n(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
                         }
                     }
                     qtVar22 = stVar.l;
                     if (qtVar22.b()) {
                         arrayList11.add(LocaleController.getString(R.string.Schedule));
-                        org.telegram.ui.Cells.c1.p(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
+                        org.telegram.ui.Cells.q3.o(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
                     }
                     qtVar23 = stVar.l;
                     if (qtVar23.f()) {
                         arrayList11.add(LocaleController.getString(R.string.ImportStickersRemoveMenu));
-                        org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList13, arrayList12, 5);
+                        org.telegram.ui.Cells.q3.o(R.drawable.msg_delete, arrayList13, arrayList12, 5);
                     }
                 }
                 document14 = stVar.W;
@@ -807,19 +807,19 @@ public final class ot implements Runnable {
                         }
                     }
                     arrayList11.add(LocaleController.getString(isStickerInFavorites2 ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                    org.telegram.ui.Cells.c1.p(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
+                    org.telegram.ui.Cells.q3.o(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
                 }
                 qtVar14 = stVar.l;
                 if (qtVar14 != null && (inputStickerSet = stVar.a0) != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
                     qtVar19 = stVar.l;
                     if (qtVar19.Q()) {
                         arrayList11.add(LocaleController.formatString(R.string.ViewPackPreview, new Object[0]));
-                        org.telegram.ui.Cells.c1.p(R.drawable.msg_media, arrayList13, arrayList12, 1);
+                        org.telegram.ui.Cells.q3.o(R.drawable.msg_media, arrayList13, arrayList12, 1);
                     }
                 }
                 if (stVar.p) {
                     arrayList11.add(LocaleController.getString(R.string.DeleteFromRecent));
-                    org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList13, arrayList12, 4);
+                    org.telegram.ui.Cells.q3.o(R.drawable.msg_delete, arrayList13, arrayList12, 4);
                 }
                 if (stVar.a0 != null) {
                     document15 = stVar.W;
@@ -830,11 +830,11 @@ public final class ot implements Runnable {
                             qtVar17 = stVar.l;
                             if (qtVar17 != null) {
                                 qtVar18 = stVar.l;
-                                if (qtVar18.D()) {
+                                if (qtVar18.C()) {
                                     TLRPC.StickerSet stickerSet2 = stickerSet.set;
                                     if (!stickerSet2.emojis && !stickerSet2.masks) {
                                         arrayList11.add(LocaleController.getString(R.string.EditSticker));
-                                        org.telegram.ui.Cells.c1.n(R.drawable.msg_edit, 7, arrayList13, arrayList12);
+                                        org.telegram.ui.Cells.q3.n(R.drawable.msg_edit, 7, arrayList13, arrayList12);
                                     }
                                 }
                             }
@@ -846,7 +846,7 @@ public final class ot implements Runnable {
                                 unused = stVar.W;
                                 if (qtVar16.I()) {
                                     arrayList11.add(LocaleController.getString(R.string.DeleteSticker));
-                                    org.telegram.ui.Cells.c1.n(R.drawable.msg_delete, 8, arrayList13, arrayList12);
+                                    org.telegram.ui.Cells.q3.n(R.drawable.msg_delete, 8, arrayList13, arrayList12);
                                 }
                             }
                         }
@@ -863,14 +863,14 @@ public final class ot implements Runnable {
                 for (int i52 = 0; i52 < arrayList11.size(); i52++) {
                     int intValue3 = ((Integer) arrayList13.get(i52)).intValue();
                     CharSequence charSequence3 = (CharSequence) arrayList11.get(i52);
-                    f6Var3 = stVar.c0;
-                    org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, intValue3, charSequence3, false, f6Var3);
+                    e6Var3 = stVar.c0;
+                    org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, intValue3, charSequence3, false, e6Var3);
                     c14.setTag(Integer.valueOf(i52));
                     c14.setOnClickListener(ktVar);
                     if (((Integer) arrayList12.get(i52)).intValue() == 8) {
-                        int d10 = st.d(stVar, org.telegram.ui.ActionBar.j6.q7);
+                        int d10 = st.d(stVar, org.telegram.ui.ActionBar.i6.q7);
                         c14.c(d10, d10);
-                        c14.setSelectorColor(org.telegram.ui.ActionBar.j6.l1(0.1f, d10));
+                        c14.setSelectorColor(org.telegram.ui.ActionBar.i6.l1(0.1f, d10));
                     }
                 }
                 lt ltVar = new lt(this, actionBarPopupWindow$ActionBarPopupWindowLayout2);
@@ -937,7 +937,7 @@ public final class ot implements Runnable {
         }
         i10 = 1;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout22 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, stVar.z.getContext(), stVar.c0);
-        org.telegram.ui.ActionBar.f6 f6Var42 = null;
+        org.telegram.ui.ActionBar.e6 e6Var42 = null;
         ch.d c102 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout22, null, true);
         c102.o(eh.b.k(stVar.c0));
         c102.q(AndroidUtilities.dp(12.0f));

@@ -1,9 +1,9 @@
 package gg;
 
 import org.telegram.ui.o10;
-import org.telegram.ui.xv;
+import org.telegram.ui.wv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class w implements Runnable {
                 i0 i0Var = this.b;
                 o10 o10Var = i0Var.A0;
                 if (o10Var != null) {
-                    ((xv) o10Var).h(false, null, i0Var.y0, i0Var.z0);
+                    ((wv) o10Var).i(false, null, i0Var.y0, i0Var.z0);
                     break;
                 }
                 break;

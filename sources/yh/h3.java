@@ -1,34 +1,138 @@
 package yh;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class h3 extends f3 {
-    public final Paint c;
-    public final Matrix d;
-    public final RadialGradient e;
-    public final int f;
-    public final int g;
-    public final int h;
+public final class h3 {
+    public final Runnable a;
+    public g3 b;
+    public g3 c;
+    public g3 d;
+    public int e;
+    public float f;
+    public final ArrayList g;
+    public final g3 h;
+    public final g3 i;
+    public final float j;
+    public final int k;
+    public int l;
+    public final org.telegram.ui.Components.c6 m;
+    public int n = -1;
 
-    public h3(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
-        this.a = stargiftattributebackdrop.name;
-        this.b = stargiftattributebackdrop.getRarityPermille();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new Matrix();
-        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.e = radialGradient;
-        paint.setShader(radialGradient);
-        this.g = stargiftattributebackdrop.text_color | (-16777216);
-        int i10 = stargiftattributebackdrop.pattern_color;
-        this.h = i10 | (-16777216);
-        this.f = i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), i10 | (-16777216));
+    public h3(Runnable runnable, ArrayList arrayList, g3 g3Var, g3 g3Var2, float f7, int i10) {
+        this.f = 0.0f;
+        this.a = runnable;
+        this.g = arrayList;
+        this.h = g3Var;
+        this.i = g3Var2;
+        this.j = f7;
+        this.k = i10;
+        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(runnable, 300L, qr.h);
+        this.m = c6Var;
+        c6Var.a(true);
+        this.f = -0.5f;
+        this.e = 1;
+        this.l = i10;
+        this.b = g3Var;
+        this.c = d(false);
+        this.d = d(false);
+    }
+
+    public final void a() {
+        g3 g3Var = this.h;
+        if (g3Var != null) {
+            g3Var.a();
+        }
+        g3 g3Var2 = this.i;
+        if (g3Var2 != null) {
+            g3Var2.a();
+        }
+    }
+
+    public final boolean b(float f7) {
+        return this.c == this.i && this.f + f7 >= ((float) this.e) + 0.5f;
+    }
+
+    public final boolean c() {
+        return this.c == this.i && this.f >= ((float) this.e) + 0.5f;
+    }
+
+    public final g3 d(boolean z10) {
+        ArrayList arrayList;
+        if (z10) {
+            g3 g3Var = this.i;
+            if (g3Var.b()) {
+                int i10 = this.l;
+                if (i10 <= 0) {
+                    return g3Var;
+                }
+                this.l = i10 - 1;
+            }
+        }
+        ArrayList arrayList2 = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            arrayList = this.g;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            if (i11 != this.n && ((g3) arrayList.get(i11)).b()) {
+                arrayList2.add(Integer.valueOf(i11));
+            }
+            i11++;
+        }
+        if (arrayList2.isEmpty()) {
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                if (((g3) arrayList.get(i12)).b()) {
+                    arrayList2.add(Integer.valueOf(i12));
+                }
+            }
+            if (arrayList2.isEmpty()) {
+                return this.h;
+            }
+        }
+        int intValue = ((Integer) AndroidUtilities.randomOf(arrayList2)).intValue();
+        this.n = intValue;
+        return (g3) arrayList.get(intValue);
+    }
+
+    public final void e() {
+        this.b = this.c;
+        this.c = this.i;
+        this.d = null;
+        int i10 = this.e + 1;
+        this.e = i10;
+        this.f = i10 + 0.5f;
+    }
+
+    public final float f(float f7, boolean z10) {
+        long j3;
+        g3 g3Var;
+        int i10 = this.l;
+        int i11 = this.k;
+        if (i10 >= i11) {
+            j3 = 450;
+        } else {
+            j3 = i11 == 3 ? 4500 : 2500;
+        }
+        org.telegram.ui.Components.c6 c6Var = this.m;
+        c6Var.g = j3;
+        float lerp = (f7 * AndroidUtilities.lerp(i11 == 3 ? 0.75f : 2.0f, 7.5f, c6Var.e(i10 >= i11)) * this.j) + this.f;
+        this.f = lerp;
+        g3 g3Var2 = this.i;
+        if (lerp >= 0.0f) {
+            double d = lerp;
+            if (Math.floor(d) + 1.0d > this.e && (g3Var = this.c) != g3Var2) {
+                this.b = g3Var;
+                g3 g3Var3 = this.d;
+                this.c = g3Var3;
+                this.d = g3Var3 == g3Var2 ? null : d(z10);
+                this.e = ((int) Math.floor(d)) + 1;
+            }
+        }
+        return this.c == g3Var2 ? Math.min(lerp, this.e + 0.5f) : lerp;
     }
 }

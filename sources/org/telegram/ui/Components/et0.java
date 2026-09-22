@@ -1,61 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class et0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lv0 b;
+public final class et0 extends org.telegram.ui.eo {
+    public final /* synthetic */ yu0 f;
 
-    public /* synthetic */ et0(lv0 lv0Var, int i10) {
-        this.a = i10;
-        this.b = lv0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public et0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle) {
+        super(context, d5Var, bundle);
+        this.f = yu0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.L0 = null;
-                break;
-            default:
-                lv0 lv0Var = this.b;
-                org.telegram.ui.ActionBar.v0 v0Var = lv0Var.n0;
-                eu0[] eu0VarArr = lv0Var.k0;
-                lv0Var.f1 = null;
-                if (lv0Var.i1) {
-                    eu0VarArr[1].setVisibility(8);
-                    if (v0Var == null || lv0Var.D()) {
-                        lv0Var.o0 = lv0Var.b0(0.0f);
-                        lv0Var.s1(0.0f);
-                    } else {
-                        v0Var.setVisibility(lv0Var.v0() ? 8 : 4);
-                        lv0Var.o0 = 0.0f;
-                    }
-                    lv0Var.q1(false);
-                    lv0Var.x0 = 0;
-                } else {
-                    eu0 eu0Var = eu0VarArr[0];
-                    eu0VarArr[0] = eu0VarArr[1];
-                    eu0VarArr[1] = eu0Var;
-                    eu0Var.setVisibility(8);
-                    if (v0Var != null && lv0Var.x0 == 2) {
-                        v0Var.setVisibility(lv0Var.v0() ? 8 : 4);
-                    }
-                    lv0Var.x0 = 0;
-                    lv0Var.Z0(1.0f, eu0VarArr[0].F);
-                    lv0Var.L0();
-                    lv0Var.f1();
-                }
-                lv0Var.g1 = false;
-                lv0Var.y1 = false;
-                lv0Var.x1 = false;
-                lv0Var.N0(false);
-                lv0Var.G.setEnabled(true);
-                lv0Var.I0.setEnabled(true);
-                break;
+    @Override // org.telegram.ui.eo
+    public final void b(boolean z10) {
+        org.telegram.ui.ActionBar.v0 v0Var = this.f.n0;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(z10);
         }
     }
 }

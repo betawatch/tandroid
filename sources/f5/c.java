@@ -1,11 +1,12 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import k2.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class c extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ o0.b e;
+    public static final /* synthetic */ c0 e;
 
     static {
         re.a aVar = new re.a(c.class, "ChunkOffsetBox.java");
@@ -20,6 +21,6 @@ public abstract class c extends com.googlecode.mp4parser.c {
         sb2.append("[entryCount=");
         t tVar = (t) this;
         e2.q(re.a.b(t.h, tVar, tVar));
-        return a4.a.n(tVar.f.length, "]", sb2);
+        return a4.a.o(tVar.f.length, "]", sb2);
     }
 }

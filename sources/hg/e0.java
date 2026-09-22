@@ -1,83 +1,79 @@
 package hg;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.ek;
-import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.in;
-import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.nj;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.yk;
-import org.telegram.ui.Components.yl0;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class e0 extends pz {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ ni V;
+public final class e0 implements TextWatcher {
+    public final /* synthetic */ k0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e0(ni niVar, int i10, yl0 yl0Var, int i11) {
-        super(i10, 0, yl0Var);
-        this.U = i11;
-        this.V = niVar;
+    public e0(k0 k0Var) {
+        this.a = k0Var;
     }
 
-    @Override // s4.o0
-    public int[] t(View view, Rect rect) {
-        switch (this.U) {
-            case 4:
-                int C = this.n - C();
-                int top = (view.getTop() + rect.top) - view.getScrollY();
-                int height = rect.height() + top;
-                int min = Math.min(0, top);
-                int max = Math.max(0, height - C);
-                if (min == 0) {
-                    min = Math.min(top, max);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int currentTop;
+        k0 k0Var = this.a;
+        ai.w0 w0Var = k0Var.s;
+        mz mzVar = k0Var.E;
+        h0 h0Var = k0Var.x;
+        String obj = editable.toString();
+        if (obj.isEmpty()) {
+            if (w0Var.getAdapter() != h0Var) {
+                currentTop = k0Var.getCurrentTop();
+                mzVar.c();
+                w0Var.setAdapter(h0Var);
+                h0Var.l();
+                if (currentTop > 0) {
+                    k0Var.v.h1(0, -currentTop);
                 }
-                return new int[]{0, min};
-            default:
-                return super.t(view, rect);
+            }
+        } else if (mzVar != null) {
+            mzVar.setText(LocaleController.getString(R.string.NoResult));
+        }
+        i0 i0Var = k0Var.y;
+        if (i0Var != null) {
+            k0 k0Var2 = i0Var.f;
+            ai.w0 w0Var2 = k0Var2.s;
+            ArrayList arrayList = i0Var.d;
+            arrayList.clear();
+            i0Var.e = obj;
+            String translitSafe = AndroidUtilities.translitSafe(obj);
+            if (translitSafe.startsWith("/")) {
+                translitSafe = translitSafe.substring(1);
+            }
+            ArrayList arrayList2 = c2.f(UserConfig.selectedAccount).b;
+            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                b2 b2Var = (b2) arrayList2.get(i10);
+                if (!c2.g(b2Var.b)) {
+                    String translitSafe2 = AndroidUtilities.translitSafe(b2Var.b);
+                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y0.w(" ", translitSafe, translitSafe2)) {
+                        arrayList.add(b2Var);
+                    }
+                }
+            }
+            s4.h0 adapter = w0Var2.getAdapter();
+            i0 i0Var2 = k0Var2.y;
+            if (adapter != i0Var2) {
+                w0Var2.setAdapter(i0Var2);
+            }
+            i0Var.l();
         }
     }
 
-    @Override // s4.c0, s4.o0
-    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
-        switch (this.U) {
-            case 0:
-                d0 d0Var = new d0(this, recyclerView.getContext());
-                d0Var.a = i10;
-                w0(d0Var);
-                break;
-            case 1:
-                nj njVar = new nj(this, recyclerView.getContext());
-                njVar.a = i10;
-                w0(njVar);
-                break;
-            case 2:
-                ek ekVar = new ek(this, recyclerView.getContext());
-                ekVar.a = i10;
-                w0(ekVar);
-                break;
-            case 3:
-                yk ykVar = new yk(this, recyclerView.getContext());
-                ykVar.a = i10;
-                w0(ykVar);
-                break;
-            default:
-                in inVar = new in(this, recyclerView.getContext());
-                inVar.a = i10;
-                w0(inVar);
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(gl glVar, ai.w0 w0Var) {
-        super(0, 0, w0Var);
-        this.U = 3;
-        this.V = glVar;
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

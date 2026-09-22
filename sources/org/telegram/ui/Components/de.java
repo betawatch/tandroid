@@ -1,62 +1,71 @@
 package org.telegram.ui.Components;
 
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class de implements Utilities.Callback4 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+public final /* synthetic */ class de implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+    public final /* synthetic */ Object j;
 
-    public /* synthetic */ de(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
-        this.c = j3;
-        this.d = f6Var;
+    public /* synthetic */ de(fg fgVar, Object obj, MediaController.PhotoEntry photoEntry, boolean z10, int i10, int i11, boolean z11, String str, Object obj2) {
+        this.h = fgVar;
+        this.b = obj;
+        this.i = photoEntry;
+        this.c = z10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z11;
+        this.g = str;
+        this.j = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback4
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = this.d;
-        long j3 = this.c;
+        Object obj2 = this.i;
+        Object obj3 = this.h;
         switch (i10) {
             case 0:
-                Integer num = (Integer) obj2;
-                Integer num2 = (Integer) obj3;
-                Boolean bool = (Boolean) obj4;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
                 int i11 = ChatActivityEnterView.n5;
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.Q0((TL_iv.RichMessage) obj);
-                if (!chatActivityEnterView.c() || num.intValue() != 0) {
-                    chatActivityEnterView.T0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
-                    break;
-                } else {
-                    d5.M(chatActivityEnterView.O2, j3, new qe(chatActivityEnterView, 0), f6Var);
+                pd pdVar = new pd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
+                if (!chatActivityEnterView.s1(pdVar)) {
+                    pdVar.run();
                     break;
                 }
+                break;
             default:
-                Integer num3 = (Integer) obj2;
-                Integer num4 = (Integer) obj3;
-                Boolean bool2 = (Boolean) obj4;
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.E0.setText((CharSequence) obj);
-                if (chatActivityEnterView2.Z1 == null) {
-                    if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
-                        chatActivityEnterView2.T0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
-                        break;
-                    } else {
-                        d5.M(chatActivityEnterView2.O2, j3, new re(chatActivityEnterView2), f6Var);
-                        break;
-                    }
-                } else {
-                    chatActivityEnterView2.d0();
+                fg fgVar = (fg) obj3;
+                pd pdVar2 = new pd(fgVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!fgVar.a.s1(pdVar2)) {
+                    pdVar2.run();
                     break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ de(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10, int i11, Object obj, boolean z11) {
+        this.h = chatActivityEnterView;
+        this.i = document;
+        this.g = str;
+        this.j = sendAnimationData;
+        this.c = z10;
+        this.d = i10;
+        this.e = i11;
+        this.b = obj;
+        this.f = z11;
     }
 }

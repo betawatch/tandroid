@@ -4,16 +4,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u0 extends o6.a {
     public static final Parcelable.Creator<u0> CREATOR = new r0(13);
-    public final n7.s0 a;
-    public final n7.s0 b;
+    public final n7.t0 a;
+    public final n7.t0 b;
 
-    public u0(n7.s0 s0Var, n7.s0 s0Var2) {
-        this.a = s0Var;
-        this.b = s0Var2;
+    public u0(n7.t0 t0Var, n7.t0 t0Var2) {
+        this.a = t0Var;
+        this.b = t0Var2;
     }
 
     public final boolean equals(Object obj) {
@@ -30,11 +30,11 @@ public final class u0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        n7.s0 s0Var = this.a;
-        w7.f0.c(parcel, 1, s0Var == null ? null : s0Var.u());
-        n7.s0 s0Var2 = this.b;
-        w7.f0.c(parcel, 2, s0Var2 != null ? s0Var2.u() : null);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.e0.q(parcel, 20293);
+        n7.t0 t0Var = this.a;
+        w7.e0.c(parcel, 1, t0Var == null ? null : t0Var.u());
+        n7.t0 t0Var2 = this.b;
+        w7.e0.c(parcel, 2, t0Var2 != null ? t0Var2.u() : null);
+        w7.e0.r(parcel, q6);
     }
 }

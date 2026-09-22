@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bx extends gg.m {
     public final /* synthetic */ ty d0;
@@ -34,14 +34,14 @@ public final class bx extends gg.m {
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(uyVar.getParentActivity(), 3, null);
         TLRPC.RequestPeerType requestPeerType = uyVar.G;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            Bundle g10 = org.telegram.ui.Cells.c1.g(0, "step");
+            Bundle e = org.telegram.ui.Cells.q3.e(0, "step");
             Boolean bool = uyVar.G.has_username;
             if (bool != null) {
-                g10.putBoolean("forcePublic", bool.booleanValue());
+                e.putBoolean("forcePublic", bool.booleanValue());
             }
-            md mdVar = new md(g10);
-            mdVar.t0 = new m6(uyVar, mdVar, b2Var, 2);
-            uyVar.presentFragment(mdVar);
+            ld ldVar = new ld(e);
+            ldVar.t0 = new m6(uyVar, ldVar, b2Var, 2);
+            uyVar.presentFragment(ldVar);
             return;
         }
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
@@ -69,27 +69,27 @@ public final class bx extends gg.m {
         return this.e0.R0 == 0;
     }
 
-    @Override // gg.m, org.telegram.ui.Cells.o2
-    public final void a(org.telegram.ui.Cells.s2 s2Var) {
+    @Override // gg.m, org.telegram.ui.Cells.n2
+    public final void a(org.telegram.ui.Cells.r2 r2Var) {
         ty tyVar = this.d0;
         tyVar.a.getClass();
-        this.e0.o4(s2Var, RecyclerView.S(s2Var), 0.0f, tyVar.d);
+        this.e0.o4(r2Var, RecyclerView.R(r2Var), 0.0f, tyVar.d);
     }
 
-    @Override // gg.m, org.telegram.ui.Cells.o2
-    public final void d(org.telegram.ui.Cells.s2 s2Var) {
+    @Override // gg.m, org.telegram.ui.Cells.n2
+    public final void d(org.telegram.ui.Cells.r2 r2Var) {
         int i10;
-        if (s2Var.getMessage() != null) {
+        if (r2Var.getMessage() != null) {
             uy uyVar = this.e0;
             TopicsController topicsController = uyVar.getMessagesController().getTopicsController();
-            long j3 = -s2Var.getDialogId();
+            long j3 = -r2Var.getDialogId();
             i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j3, MessageObject.getTopicId(i10, s2Var.getMessage().messageOwner, true));
+            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j3, MessageObject.getTopicId(i10, r2Var.getMessage().messageOwner, true));
             if (findTopic != null) {
                 if (uyVar.l2) {
-                    uyVar.O3(s2Var.getDialogId(), findTopic.id, false, null);
+                    uyVar.O3(r2Var.getDialogId(), findTopic.id, false, null);
                 } else {
-                    ng.d.m(uyVar, -s2Var.getDialogId(), findTopic, 0);
+                    ng.d.m(uyVar, -r2Var.getDialogId(), findTopic, 0);
                 }
             }
         }

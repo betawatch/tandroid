@@ -1,48 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f70 extends lx0 {
-    public final /* synthetic */ int K;
+public final /* synthetic */ class f70 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n70 b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f70(Context context, View view, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(context, view, i10, f6Var);
-        this.K = i11;
+    public /* synthetic */ f70(n70 n70Var, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = n70Var;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.ui.Components.lx0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.K) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
+                this.c.run();
+                n70 n70Var = this.b;
+                if (n70Var.J) {
+                    n70Var.u();
+                    break;
+                }
                 break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lx0, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.K) {
             case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    e(false, false);
+                n70 n70Var2 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    n70Var2.getClass();
+                    break;
+                } else {
+                    int i10 = -n70Var2.K;
+                    n70Var2.K = i10;
+                    AndroidUtilities.shakeViewSpring(view, i10);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    runnable2.run();
+                    break;
+                }
+            case 3:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                n70 n70Var3 = this.b;
+                if (n70Var3.J) {
+                    n70Var3.u();
+                    break;
+                }
+                break;
+            case 4:
+                this.c.run();
+                n70 n70Var4 = this.b;
+                if (n70Var4.J) {
+                    n70Var4.u();
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i10);
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                n70 n70Var5 = this.b;
+                if (n70Var5.J) {
+                    n70Var5.u();
+                    break;
+                }
                 break;
         }
     }

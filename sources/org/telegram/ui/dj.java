@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dj implements Runnable {
     public final /* synthetic */ int a;
@@ -39,26 +39,27 @@ public final /* synthetic */ class dj implements Runnable {
         int i11;
         int i12;
         int i13 = this.a;
-        int i14 = 0;
+        int i14 = 9;
+        int i15 = 0;
         Object obj = this.b;
         switch (i13) {
             case 0:
                 ej ejVar = (ej) obj;
-                i10 = ((org.telegram.ui.ActionBar.n2) ((zn) ejVar.e)).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((bo) ejVar.e)).currentAccount;
                 NotificationCenter.getInstance(i10).onAnimationFinish(ejVar.c);
                 break;
             case 1:
-                zn.X1(((uj) obj).y3);
+                bo.X1(((uj) obj).y3);
                 break;
             case 2:
                 ((xj) obj).T.A0.O(false);
                 break;
             case 3:
                 xi xiVar = (xi) obj;
-                zn znVar = xiVar.b;
-                if (znVar.e2 != null) {
+                bo boVar = xiVar.b;
+                if (boVar.e2 != null) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(znVar.e2, (Property<org.telegram.ui.Components.i40, Float>) View.ALPHA, 0.0f));
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(boVar.e2, (Property<org.telegram.ui.Components.i40, Float>) View.ALPHA, 0.0f));
                     animatorSet.addListener(new t4(xiVar, 19));
                     animatorSet.setDuration(300L);
                     animatorSet.start();
@@ -70,50 +71,50 @@ public final /* synthetic */ class dj implements Runnable {
                 break;
             case 5:
                 Bundle bundle = new Bundle();
-                lm lmVar = ((bm) obj).c.a;
-                i11 = ((org.telegram.ui.ActionBar.n2) lmVar.Q).currentAccount;
+                nm nmVar = ((dm) obj).c.a;
+                i11 = ((org.telegram.ui.ActionBar.n2) nmVar.Q).currentAccount;
                 bundle.putLong("user_id", UserConfig.getInstance(i11).clientUserId);
-                lmVar.Q.presentFragment(new ProfileActivity(bundle, null));
+                nmVar.Q.presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 6:
-                ((pm) obj).c.e9(true);
+                ((rm) obj).c.e9(true);
                 break;
             case 7:
                 ((aj) obj).c(false);
                 break;
             case 8:
-                zn znVar2 = ((mn) obj).h;
-                znVar2.getNotificationCenter().onAnimationFinish(znVar2.I9);
+                bo boVar2 = ((on) obj).h;
+                boVar2.getNotificationCenter().onAnimationFinish(boVar2.I9);
                 break;
             case 9:
-                zn znVar3 = ((rn) obj).h;
-                znVar3.j0.getSearchField().requestFocus();
-                AndroidUtilities.showKeyboard(znVar3.j0.getSearchField());
-                if (znVar3.pa > 0) {
-                    rf rfVar = new rf(znVar3, 8);
-                    znVar3.qa = rfVar;
-                    AndroidUtilities.runOnUIThread(rfVar, 200L);
+                bo boVar3 = ((tn) obj).h;
+                boVar3.j0.getSearchField().requestFocus();
+                AndroidUtilities.showKeyboard(boVar3.j0.getSearchField());
+                if (boVar3.pa > 0) {
+                    qf qfVar = new qf(boVar3, i14);
+                    boVar3.qa = qfVar;
+                    AndroidUtilities.runOnUIThread(qfVar, 200L);
                     break;
                 }
                 break;
             case 10:
-                uo uoVar = ((qo) obj).a;
-                uoVar.e.setImageDrawable(uoVar.r);
-                uoVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
-                TLRPC.User user = uoVar.D0;
+                wo woVar = ((so) obj).a;
+                woVar.e.setImageDrawable(woVar.r);
+                woVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
+                TLRPC.User user = woVar.D0;
                 if (user != null) {
                     user.photo = null;
-                    uoVar.getMessagesController().putUser(uoVar.D0, true);
+                    woVar.getMessagesController().putUser(woVar.D0, true);
                 }
-                uoVar.O0 = true;
-                if (uoVar.R0 == null) {
-                    uoVar.R0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                woVar.O0 = true;
+                if (woVar.R0 == null) {
+                    woVar.R0 = new org.telegram.ui.Components.xi0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 }
-                uoVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
-                uoVar.b0.e.setAnimation(uoVar.R0);
+                woVar.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
+                woVar.b0.e.setAnimation(woVar.R0);
                 break;
             case 11:
-                ((xq) obj).run(0);
+                ((zq) obj).run(0);
                 break;
             case 12:
                 ((yr) obj).invalidateSelf();
@@ -122,9 +123,9 @@ public final /* synthetic */ class dj implements Runnable {
                 hs hsVar = (hs) obj;
                 ArrayList arrayList = hsVar.c;
                 int size = arrayList.size();
-                while (i14 < size) {
-                    Object obj2 = arrayList.get(i14);
-                    i14++;
+                while (i15 < size) {
+                    Object obj2 = arrayList.get(i15);
+                    i15++;
                     ((View) obj2).invalidate();
                 }
                 hsVar.invalidateSelf();
@@ -153,7 +154,7 @@ public final /* synthetic */ class dj implements Runnable {
                 ((AccountInstance) obj).getDownloadController().loadDownloadingFiles();
                 break;
             case 19:
-                ((org.telegram.ui.Cells.a3) obj).d();
+                ((org.telegram.ui.Cells.z2) obj).d();
                 break;
             case 20:
                 ((org.telegram.ui.Cells.xa) obj).b();
@@ -199,12 +200,12 @@ public final /* synthetic */ class dj implements Runnable {
                     try {
                         jSONObject.put("v", 1);
                         JSONArray jSONArray = new JSONArray();
-                        for (int i15 = 0; i15 < arrayList3.size(); i15++) {
+                        for (int i16 = 0; i16 < arrayList3.size(); i16++) {
                             try {
                                 JSONObject jSONObject2 = new JSONObject();
-                                jSONObject2.put("i", ((Integer) arrayList2.get(i15)).intValue() + 1);
-                                jSONObject2.put("t", ((Long) arrayList3.get(i15)).longValue() / 1000.0f);
-                                jSONArray.put(i15, jSONObject2);
+                                jSONObject2.put("i", ((Integer) arrayList2.get(i16)).intValue() + 1);
+                                jSONObject2.put("t", ((Long) arrayList3.get(i16)).longValue() / 1000.0f);
+                                jSONArray.put(i16, jSONObject2);
                             } catch (JSONException e) {
                                 e = e;
                                 gzVar.r = 0;

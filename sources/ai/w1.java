@@ -19,12 +19,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.tv0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.hv0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, tv0, uv0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
+public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, gv0, hv0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w1(int i10) {
@@ -241,7 +241,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
                 b2.l1 l1Var = new b2.l1(bundle8.getString(b2.l1.g, ""), (b2.s[]) j3.toArray(new b2.s[0]));
                 int[] intArray = bundle7.getIntArray(b2.m1.d);
                 intArray.getClass();
-                return new b2.m1(l1Var, v7.z7.a(intArray));
+                return new b2.m1(l1Var, v7.y7.a(intArray));
             case 16:
                 b2.r1 r1Var = (b2.r1) obj;
                 r1Var.getClass();
@@ -261,17 +261,17 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
                 aVar.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    aVar.l(eVar, byteArrayOutputStream);
+                    aVar.j(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
             case 20:
                 ca.a.b.getClass();
-                return z9.a.a.v((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
+                return z9.a.a.e((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
         }
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.hv0
     public void b(Object obj, float f7) {
         m2 m2Var = (m2) obj;
         switch (this.a) {
@@ -290,19 +290,8 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.tv0
-    public float get(Object obj) {
-        m2 m2Var = (m2) obj;
-        switch (this.a) {
-            case 1:
-                return m2Var.N;
-            default:
-                return m2Var.O;
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 5:
                 b2Var.dismiss();
@@ -310,6 +299,17 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
             default:
                 b2Var.dismiss();
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gv0
+    public float get(Object obj) {
+        m2 m2Var = (m2) obj;
+        switch (this.a) {
+            case 1:
+                return m2Var.N;
+            default:
+                return m2Var.O;
         }
     }
 

@@ -1,37 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f61 extends c61 {
-    public final int e;
-    public final e11 f;
+public final /* synthetic */ class f61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public f61(String str, int i10, e11 e11Var) {
-        super(str, (e11) null);
-        this.e = i10;
-        this.f = e11Var;
+    public /* synthetic */ f61(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.c61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
-        }
-        e11 e11Var = this.f;
-        if (e11Var != null) {
-            e11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                g61 g61Var = (g61) this.b;
+                g61Var.getClass();
+                g61Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g61Var.invalidate();
+                break;
+            case 1:
+                m61 m61Var = (m61) this.b;
+                m61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m61Var.b = floatValue;
+                m61Var.setTranslationY(floatValue);
+                break;
+            default:
+                h81 h81Var = (h81) this.b;
+                h81Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h81Var.setAnimationIdicatorProgress(floatValue2);
+                g81 g81Var = h81Var.y;
+                if (g81Var != null) {
+                    ((ka.c) g81Var).h(floatValue2);
+                    break;
+                }
+                break;
         }
     }
 }

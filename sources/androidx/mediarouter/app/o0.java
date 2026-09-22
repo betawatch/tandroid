@@ -30,8 +30,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -136,14 +137,14 @@ public final class o0 extends g.u {
         n4.y yVar = this.Z;
         r rVar = this.a0;
         if (yVar != null) {
-            yVar.b0(rVar);
+            yVar.Z(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
             n4.y yVar2 = new n4.y(this.y, mediaSessionCompat$Token);
             this.Z = yVar2;
-            yVar2.Y(rVar);
-            MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.a).a.getMetadata();
+            yVar2.V(rVar);
+            MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
                 Parcel obtain = Parcel.obtain();
@@ -291,7 +292,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            k2.e b10 = this.r.b(vVar);
+            ia b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {

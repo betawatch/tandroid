@@ -1,22 +1,10 @@
 package fb;
 
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class r extends t {
-    public final /* synthetic */ Method b;
-
-    public r(Method method) {
-        this.b = method;
-    }
-
-    @Override // fb.t
+public final class r extends s {
+    @Override // fb.s
     public final Object a(Class cls) {
-        String J = of.b.J(cls);
-        if (J == null) {
-            return this.b.invoke(null, cls, Object.class);
-        }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(J));
+        throw new UnsupportedOperationException("Cannot allocate " + cls + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
     }
 }

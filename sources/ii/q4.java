@@ -17,16 +17,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Cells.r9;
-import v7.q8;
+import v7.p8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
+public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     public final int[] E;
-    public final org.telegram.ui.ActionBar.f6 n;
+    public final org.telegram.ui.ActionBar.e6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView v;
@@ -34,12 +34,12 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
     public int x;
     public a3 y;
 
-    public q4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public q4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.r = new Paint(1);
         this.x = 0;
         this.E = new int[4];
-        this.n = f6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         ImageView imageView = new ImageView(context);
@@ -53,7 +53,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
         horizontalScrollView.setPadding(0, 0, 0, 0);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, w7.y5.e(-1, -2, 16));
+        addView(horizontalScrollView, w7.x5.e(-1, -2, 16));
         e();
     }
 
@@ -71,19 +71,19 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
-        int i10 = j6.uf;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        this.r.setColor(j6.v0(i10, f6Var));
-        this.x = j6.v0(j6.G6, f6Var);
+        int i10 = i6.uf;
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        this.r.setColor(i6.v0(i10, e6Var));
+        this.x = i6.v0(i6.G6, e6Var);
         this.v.setColorFilter(new PorterDuffColorFilter(this.x, PorterDuff.Mode.SRC_IN));
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int[] iArr = this.E;
         i(iArr);
-        arrayList.add(q8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+        arrayList.add(p8.a(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -131,16 +131,16 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, q9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         a3 a3Var;
-        r9 textSelectionHelper;
-        if (this.x != j6.v0(j6.G6, this.n)) {
+        q9 textSelectionHelper;
+        if (this.x != i6.v0(i6.G6, this.n)) {
             e();
         }
         if (this.w == null || (a3Var = this.y) == null || (textSelectionHelper = a3Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.y() || !(getParent() instanceof RecyclerView)) {
             return;
         }
         ((RecyclerView) getParent()).getClass();
-        int S = RecyclerView.S(this);
-        if (S >= 0 && S >= textSelectionHelper.u0 && S <= textSelectionHelper.x0) {
+        int R = RecyclerView.R(this);
+        if (R >= 0 && R >= textSelectionHelper.u0 && R <= textSelectionHelper.x0) {
             i(this.E);
             canvas.drawRoundRect(r0[0], r0[1], r0[2], r0[3], AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.r);
         }

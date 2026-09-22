@@ -16,17 +16,17 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.j40;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.qe;
-import org.telegram.ui.zn;
-import w7.a6;
-import w7.y5;
+import org.telegram.ui.bo;
+import org.telegram.ui.ue;
+import w7.x5;
+import w7.z5;
 import yf.h0;
-import yf.j0;
+import yf.i0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements le.d {
     public static final int[] H;
@@ -38,11 +38,11 @@ public class e extends FrameLayout implements le.d {
     public int G;
     public final n[] a;
     public final View.OnClickListener[] b;
-    public final qe[] c;
+    public final ue[] c;
     public d d;
     public final FrameLayout e;
     public final HashSet f;
-    public final f6 h;
+    public final e6 h;
     public final ah.c n;
     public final dh.a r;
     public ch.d s;
@@ -62,11 +62,11 @@ public class e extends FrameLayout implements le.d {
         K = new RectF();
     }
 
-    public e(ah.c cVar, Context context, dh.a aVar, f6 f6Var) {
+    public e(ah.c cVar, Context context, dh.a aVar, e6 e6Var) {
         super(context);
         this.a = new n[5];
         this.b = new View.OnClickListener[5];
-        this.c = new qe[5];
+        this.c = new ue[5];
         this.f = new HashSet();
         qr qrVar = qr.h;
         this.v = new le.b(99, this, qrVar, 320L, false);
@@ -75,14 +75,14 @@ public class e extends FrameLayout implements le.d {
         this.G = 0;
         this.n = cVar;
         this.r = aVar;
-        this.h = f6Var;
+        this.h = e6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(22.0f);
-        k2 k2Var = j0.a;
+        k2 k2Var = i0.a;
         frameLayout.setOutlineProvider(new h0(0, dp));
-        addView(frameLayout, y5.e(-1, 44, 16));
+        addView(frameLayout, x5.e(-1, 44, 16));
     }
 
     @Override // le.d
@@ -99,59 +99,59 @@ public class e extends FrameLayout implements le.d {
             if (i11 >= nVarArr.length || (nVar = nVarArr[i11]) == null || i12 != 1 || !((le.b) nVar.d).f) {
                 return;
             }
-            qe qeVar = this.c[i11];
-            if (qeVar != null) {
+            ue ueVar = this.c[i11];
+            if (ueVar != null) {
                 final ih.a aVar = (ih.a) nVar.c;
                 boolean z10 = nVar.b;
-                int i13 = qeVar.a;
-                final zn znVar = qeVar.b;
+                int i13 = ueVar.a;
+                final bo boVar = ueVar.b;
                 switch (i13) {
-                    case 26:
-                        if (znVar.J0 == null && !z10 && (((f4Var = znVar.L0) == null || !f4Var.V) && j40.h.c())) {
+                    case 24:
+                        if (boVar.J0 == null && !z10 && (((f4Var = boVar.L0) == null || !f4Var.V) && j40.h.c())) {
                             final int i14 = 1;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i14) {
                                         case 0:
-                                            zn znVar2 = znVar;
-                                            if (znVar2.getParentActivity() != null) {
-                                                float f10 = znVar2.v.e(2).d / AndroidUtilities.density;
-                                                float width = ((r3.getWidth() / 2.0f) + (znVar2.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                ci.f4 f4Var2 = new ci.f4(znVar2.getParentActivity(), 3);
-                                                znVar2.L0 = f4Var2;
+                                            bo boVar2 = boVar;
+                                            if (boVar2.getParentActivity() != null) {
+                                                float f10 = boVar2.v.e(2).d / AndroidUtilities.density;
+                                                float width = ((r3.getWidth() / 2.0f) + (boVar2.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
+                                                ci.f4 f4Var2 = new ci.f4(boVar2.getParentActivity(), 3);
+                                                boVar2.L0 = f4Var2;
                                                 f4Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                znVar2.L0.p(false);
-                                                ci.f4 f4Var3 = znVar2.L0;
+                                                boVar2.L0.p(false);
+                                                ci.f4 f4Var3 = boVar2.L0;
                                                 String string = LocaleController.getString(R.string.Suggest2ChannelSendHint);
                                                 if (f4Var3.getMeasuredWidth() < 0) {
                                                     f4Var3.G = string;
                                                 } else {
                                                     f4Var3.H.q(string, !LocaleController.isRTL, true);
                                                 }
-                                                znVar2.L0.l(1.0f, (-width) + 7.33f);
-                                                znVar2.X0.addView(znVar2.L0, w7.y5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
-                                                ci.f4 f4Var4 = znVar2.L0;
-                                                f4Var4.l0 = new rf(znVar2, 16);
+                                                boVar2.L0.l(1.0f, (-width) + 7.33f);
+                                                boVar2.X0.addView(boVar2.L0, w7.x5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
+                                                ci.f4 f4Var4 = boVar2.L0;
+                                                f4Var4.l0 = new qf(boVar2, 21);
                                                 f4Var4.u();
                                                 org.telegram.ui.Components.j40.f.b();
                                                 break;
                                             }
                                             break;
                                         default:
-                                            zn znVar3 = znVar;
-                                            if (znVar3.getParentActivity() != null) {
-                                                float f11 = znVar3.v.e(2).d / AndroidUtilities.density;
-                                                float width2 = ((r3.getWidth() / 2.0f) + (znVar3.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                ci.f4 f4Var5 = new ci.f4(znVar3.getParentActivity(), 3);
-                                                znVar3.J0 = f4Var5;
+                                            bo boVar3 = boVar;
+                                            if (boVar3.getParentActivity() != null) {
+                                                float f11 = boVar3.v.e(2).d / AndroidUtilities.density;
+                                                float width2 = ((r3.getWidth() / 2.0f) + (boVar3.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
+                                                ci.f4 f4Var5 = new ci.f4(boVar3.getParentActivity(), 3);
+                                                boVar3.J0 = f4Var5;
                                                 f4Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                znVar3.J0.p(false);
-                                                znVar3.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
-                                                znVar3.J0.l(1.0f, (-width2) + 7.33f);
-                                                znVar3.X0.addView(znVar3.J0, w7.y5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
-                                                ci.f4 f4Var6 = znVar3.J0;
-                                                f4Var6.l0 = new rf(znVar3, 29);
+                                                boVar3.J0.p(false);
+                                                boVar3.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
+                                                boVar3.J0.l(1.0f, (-width2) + 7.33f);
+                                                boVar3.X0.addView(boVar3.J0, w7.x5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
+                                                ci.f4 f4Var6 = boVar3.J0;
+                                                f4Var6.l0 = new ug(boVar3, 0);
                                                 f4Var6.u();
                                                 org.telegram.ui.Components.j40.h.b();
                                                 break;
@@ -164,51 +164,51 @@ public class e extends FrameLayout implements le.d {
                         }
                         break;
                     default:
-                        if (znVar.L0 == null && !z10 && j40.f.c()) {
+                        if (boVar.L0 == null && !z10 && j40.f.c()) {
                             final int i15 = 0;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.cf
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.bf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i15) {
                                         case 0:
-                                            zn znVar2 = znVar;
-                                            if (znVar2.getParentActivity() != null) {
-                                                float f10 = znVar2.v.e(2).d / AndroidUtilities.density;
-                                                float width = ((r3.getWidth() / 2.0f) + (znVar2.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                ci.f4 f4Var2 = new ci.f4(znVar2.getParentActivity(), 3);
-                                                znVar2.L0 = f4Var2;
+                                            bo boVar2 = boVar;
+                                            if (boVar2.getParentActivity() != null) {
+                                                float f10 = boVar2.v.e(2).d / AndroidUtilities.density;
+                                                float width = ((r3.getWidth() / 2.0f) + (boVar2.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
+                                                ci.f4 f4Var2 = new ci.f4(boVar2.getParentActivity(), 3);
+                                                boVar2.L0 = f4Var2;
                                                 f4Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                znVar2.L0.p(false);
-                                                ci.f4 f4Var3 = znVar2.L0;
+                                                boVar2.L0.p(false);
+                                                ci.f4 f4Var3 = boVar2.L0;
                                                 String string = LocaleController.getString(R.string.Suggest2ChannelSendHint);
                                                 if (f4Var3.getMeasuredWidth() < 0) {
                                                     f4Var3.G = string;
                                                 } else {
                                                     f4Var3.H.q(string, !LocaleController.isRTL, true);
                                                 }
-                                                znVar2.L0.l(1.0f, (-width) + 7.33f);
-                                                znVar2.X0.addView(znVar2.L0, w7.y5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
-                                                ci.f4 f4Var4 = znVar2.L0;
-                                                f4Var4.l0 = new rf(znVar2, 16);
+                                                boVar2.L0.l(1.0f, (-width) + 7.33f);
+                                                boVar2.X0.addView(boVar2.L0, w7.x5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
+                                                ci.f4 f4Var4 = boVar2.L0;
+                                                f4Var4.l0 = new qf(boVar2, 21);
                                                 f4Var4.u();
                                                 org.telegram.ui.Components.j40.f.b();
                                                 break;
                                             }
                                             break;
                                         default:
-                                            zn znVar3 = znVar;
-                                            if (znVar3.getParentActivity() != null) {
-                                                float f11 = znVar3.v.e(2).d / AndroidUtilities.density;
-                                                float width2 = ((r3.getWidth() / 2.0f) + (znVar3.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                ci.f4 f4Var5 = new ci.f4(znVar3.getParentActivity(), 3);
-                                                znVar3.J0 = f4Var5;
+                                            bo boVar3 = boVar;
+                                            if (boVar3.getParentActivity() != null) {
+                                                float f11 = boVar3.v.e(2).d / AndroidUtilities.density;
+                                                float width2 = ((r3.getWidth() / 2.0f) + (boVar3.X0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
+                                                ci.f4 f4Var5 = new ci.f4(boVar3.getParentActivity(), 3);
+                                                boVar3.J0 = f4Var5;
                                                 f4Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                znVar3.J0.p(false);
-                                                znVar3.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
-                                                znVar3.J0.l(1.0f, (-width2) + 7.33f);
-                                                znVar3.X0.addView(znVar3.J0, w7.y5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
-                                                ci.f4 f4Var6 = znVar3.J0;
-                                                f4Var6.l0 = new rf(znVar3, 29);
+                                                boVar3.J0.p(false);
+                                                boVar3.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
+                                                boVar3.J0.l(1.0f, (-width2) + 7.33f);
+                                                boVar3.X0.addView(boVar3.J0, w7.x5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
+                                                ci.f4 f4Var6 = boVar3.J0;
+                                                f4Var6.l0 = new ug(boVar3, 0);
                                                 f4Var6.u();
                                                 org.telegram.ui.Components.j40.h.b();
                                                 break;
@@ -227,7 +227,7 @@ public class e extends FrameLayout implements le.d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         if (i10 == 99) {
             invalidate();
             return;
@@ -325,7 +325,7 @@ public class e extends FrameLayout implements le.d {
         if (dVar != null) {
             float f14 = this.y;
             float f15 = this.E;
-            hh.g gVar = ((qe) dVar).b.S;
+            hh.g gVar = ((ue) dVar).b.S;
             gVar.x = f14;
             gVar.y = f15;
             gVar.invalidate();
@@ -376,10 +376,10 @@ public class e extends FrameLayout implements le.d {
                     } else if (i10 == 3) {
                         d.setContentDescription(LocaleController.getString(R.string.BroadcastGroupInfo));
                     }
-                    a6.b(d, 0.13f, 2.0f);
+                    z5.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);
                     d.setOnClickListener(new o4(this, i10, 3));
-                    addView(d, y5.c(56.0f, 56));
+                    addView(d, x5.c(56.0f, 56));
                     nVarArr[i10] = new n(d, bVar);
                     a();
                 }

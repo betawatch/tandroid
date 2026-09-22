@@ -17,13 +17,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ba;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.aa;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t81;
-import w7.y5;
+import org.telegram.ui.Components.v81;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class v2 extends FrameLayout {
     public String E;
@@ -81,7 +81,7 @@ public class v2 extends FrameLayout {
             textView.setTextSize(1, 11.0f);
             textView.setTextColor(-1);
             textView.setImportantForAccessibility(2);
-            this.f.addView(textView, y5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
+            this.f.addView(textView, x5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
             this.h[i10] = textView;
         }
         this.h[1].setVisibility(8);
@@ -118,7 +118,7 @@ public class v2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new u2(this, 0));
-            this.U.addListener(new t81(this, 10));
+            this.U.addListener(new v81(this, 9));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -137,11 +137,11 @@ public class v2 extends FrameLayout {
             int alpha = Color.alpha(i12);
             float f10 = this.T;
             if (alpha != 255 || AndroidUtilities.computePerceivedBrightness(i12) <= 0.5d) {
-                org.telegram.ui.Cells.z h02 = j6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-1, (int) (f7 * 76.5f)));
+                org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-1, (int) (f7 * 76.5f)));
                 this.N = h02;
                 h02.setCallback(this);
             } else {
-                org.telegram.ui.Cells.z h03 = j6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-16777216, (int) (f7 * 25.5f)));
+                org.telegram.ui.Cells.z h03 = i6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-16777216, (int) (f7 * 25.5f)));
                 this.N = h03;
                 h03.setCallback(this);
             }
@@ -202,7 +202,7 @@ public class v2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
         ofFloat.addUpdateListener(new bb(8, this, z14));
-        this.v.addListener(new ba(25, this, z14));
+        this.v.addListener(new aa(25, this, z14));
         this.v.setDuration(150L).start();
         invalidate();
     }
@@ -271,7 +271,7 @@ public class v2 extends FrameLayout {
                     canvas.drawCircle(width, dp, dp2, paint);
                 }
                 if (this.N == null) {
-                    org.telegram.ui.Cells.z h02 = j6.h0(AndroidUtilities.dp(f12), 0, -16777216);
+                    org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(f12), 0, -16777216);
                     this.N = h02;
                     h02.setCallback(this);
                 }

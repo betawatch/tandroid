@@ -1,35 +1,34 @@
 package org.telegram.ui.Components;
 
-import java.util.function.ToDoubleFunction;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z71 implements ToDoubleFunction {
-    public final /* synthetic */ int a;
+public final class z71 extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ i81 d;
 
-    public /* synthetic */ z71(int i10) {
-        this.a = i10;
+    public z71(i81 i81Var, View view, float f7) {
+        this.d = i81Var;
+        this.b = view;
+        this.c = f7;
     }
 
-    @Override // java.util.function.ToDoubleFunction
-    public final double applyAsDouble(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((c81) obj).a;
-            case 1:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 2:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 3:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 4:
-                return yh.s0.P((TL_stars.starGiftAttributeBackdrop) obj);
-            case 5:
-                return yh.s0.P((TL_stars.starGiftAttributePattern) obj);
-            default:
-                return yh.s0.P((TL_stars.starGiftAttributeModel) obj);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
         }
+        this.d.E(this.b, this.c);
     }
 }

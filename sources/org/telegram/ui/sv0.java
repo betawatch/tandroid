@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class sv0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ aw0 a;
@@ -27,7 +27,7 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
         aw0 aw0Var = this.a;
         boolean[] zArr = aw0Var.w;
         CharSequence[] charSequenceArr = aw0Var.v;
-        zn znVar = aw0Var.f;
+        bo boVar = aw0Var.f;
         if (i10 == -1) {
             if (aw0Var.h0(true)) {
                 aw0Var.finishFragment();
@@ -99,8 +99,8 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                         tL_messageMediaToDo.todo.list.add(todoItem);
                     }
                 }
-                if (znVar.c()) {
-                    org.telegram.ui.Components.d5.L(znVar.getParentActivity(), znVar.a(), new rv0(0, this, tL_messageMediaToDo));
+                if (boVar.c()) {
+                    org.telegram.ui.Components.c5.L(boVar.getParentActivity(), boVar.a(), new d20(29, this, tL_messageMediaToDo));
                     return;
                 } else {
                     aw0Var.e0.a(tL_messageMediaToDo);
@@ -119,13 +119,13 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                 if (i22 <= 0) {
                     aw0Var.c.getChildCount();
                     for (int i23 = aw0Var.n0; i23 < aw0Var.n0 + aw0Var.y; i23++) {
-                        s4.c1 L = aw0Var.c.L(i23);
-                        if (L != null) {
-                            View view = L.a;
-                            if (view instanceof org.telegram.ui.Cells.e6) {
-                                org.telegram.ui.Cells.e6 e6Var = (org.telegram.ui.Cells.e6) view;
-                                if (e6Var.getTop() > AndroidUtilities.dp(40.0f)) {
-                                    aw0Var.h.f(e6Var.getCheckBox(), true);
+                        s4.c1 K = aw0Var.c.K(i23);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.d6) {
+                                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) view;
+                                if (d6Var.getTop() > AndroidUtilities.dp(40.0f)) {
+                                    aw0Var.h.f(d6Var.getCheckBox(), true);
                                     return;
                                 }
                             } else {
@@ -201,8 +201,8 @@ public final class sv0 extends org.telegram.ui.ActionBar.j {
                     tL_messageMediaPoll.results.flags |= 16;
                 }
             }
-            if (znVar.c()) {
-                org.telegram.ui.Components.d5.L(znVar.getParentActivity(), znVar.a(), new rv0(this, tL_messageMediaPoll, arrayList));
+            if (boVar.c()) {
+                org.telegram.ui.Components.c5.L(boVar.getParentActivity(), boVar.a(), new rv0(this, tL_messageMediaPoll, arrayList));
             } else {
                 aw0Var.e0.a(tL_messageMediaPoll);
                 aw0Var.finishFragment();

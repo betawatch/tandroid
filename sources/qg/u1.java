@@ -1,76 +1,231 @@
 package qg;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.rk;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.yl0;
+import org.telegram.messenger.R;
+import org.telegram.ui.Cells.va;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.xi0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class u1 extends yl0 implements NotificationCenter.NotificationCenterDelegate {
-    public final Path X2;
-    public q0.a Y2;
+public final class u1 extends LinearLayout {
+    public final aj0[] a;
+    public t1 b;
+    public final Paint c;
+    public final int d;
+    public boolean e;
+    public int f;
+    public int h;
+    public float n;
+    public ValueAnimator r;
 
-    public u1(Context context) {
-        super(context, null);
-        this.X2 = new Path();
+    public u1(Context context, boolean z10) {
+        super(context);
+        List list = pg.m.a;
+        this.a = new aj0[list.size() + 2];
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.f = 1;
+        this.h = -1;
+        this.n = 0.0f;
+        setOrientation(0);
+        setGravity(16);
         setWillNotDraw(false);
-        setLayoutManager(new s4.c0());
-        setAdapter(new t1());
-        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         setClipToPadding(false);
-    }
+        paint.setColor(822083583);
+        this.d = list.size() - (!z10 ? 1 : 0);
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            List list2 = pg.m.a;
+            if (i10 >= list2.size() + 2) {
+                return;
+            }
+            aj0[] aj0VarArr = this.a;
+            boolean z11 = i10 == 0;
+            boolean z12 = i10 == list2.size() + 1;
+            aj0 aj0Var = new aj0(getContext());
+            aj0Var.setPadding(AndroidUtilities.dp(z11 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(z12 ? 0.0f : 8.0f), AndroidUtilities.dp(8.0f));
+            aj0Var.setLayoutParams(x5.l(1.0f, 0, 40));
+            aj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            aj0VarArr[i11] = aj0Var;
+            if (i10 == 0) {
+                final int i12 = 0;
+                this.a[i11].setOnClickListener(new View.OnClickListener(this) { // from class: qg.s1
+                    public final /* synthetic */ u1 b;
 
-    @Override // org.telegram.ui.Components.yl0
-    public final Integer X0(int i10) {
-        return 285212671;
-    }
+                    {
+                        this.b = this;
+                    }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.customTypefacesLoaded) {
-            getAdapter().l();
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i12) {
+                            case 0:
+                                this.b.b.a();
+                                break;
+                            default:
+                                this.b.b.y();
+                                break;
+                        }
+                    }
+                });
+            } else if (i10 > 0 && i10 <= list2.size()) {
+                pg.m mVar = (pg.m) list2.get(i10 - 1);
+                if (z10 || !(mVar instanceof pg.b)) {
+                    this.a[i11].f(mVar.e(), 28, 28, null);
+                    this.a[i11].setOnClickListener(new va(this, i11, mVar, 18));
+                } else {
+                    i10++;
+                }
+            } else if (i10 == list2.size() + 1) {
+                this.a[i11].setImageResource(R.drawable.msg_add);
+                final int i13 = 1;
+                this.a[i11].setOnClickListener(new View.OnClickListener(this) { // from class: qg.s1
+                    public final /* synthetic */ u1 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i13) {
+                            case 0:
+                                this.b.b.a();
+                                break;
+                            default:
+                                this.b.b.y();
+                                break;
+                        }
+                    }
+                });
+            }
+            addView(this.a[i11]);
+            i11++;
+            i10++;
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        q0.a aVar = this.Y2;
-        if (aVar != null) {
-            Path path = this.X2;
-            aVar.accept(path);
-            canvas.save();
-            canvas.clipPath(path);
+    public final void a(int i10) {
+        if (i10 >= 0) {
+            aj0[] aj0VarArr = this.a;
+            if (i10 >= aj0VarArr.length) {
+                return;
+            }
+            if (this.r == null || this.h != i10) {
+                aj0 aj0Var = aj0VarArr[i10];
+                if (aj0Var != null) {
+                    Drawable drawable = aj0Var.getDrawable();
+                    if (drawable instanceof xi0) {
+                        xi0 xi0Var = (xi0) drawable;
+                        xi0Var.M(0);
+                        xi0Var.start();
+                    }
+                }
+                ValueAnimator valueAnimator = this.r;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                if (this.f == i10) {
+                    return;
+                }
+                if (this.e) {
+                    this.e = false;
+                    AndroidUtilities.updateImageViewImageAnimated(aj0VarArr[this.d + 1], R.drawable.msg_add);
+                }
+                this.h = i10;
+                this.n = 0.0f;
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(250L);
+                this.r = duration;
+                duration.setInterpolator(qr.f);
+                this.r.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 9));
+                this.r.addListener(new n0(this, 1));
+                this.r.start();
+            }
         }
-        super.draw(canvas);
-        if (this.Y2 != null) {
-            canvas.restore();
+    }
+
+    public final void b(int i10) {
+        a(i10);
+        this.b.v().i(i10 - 1, true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2 || motionEvent.getAction() == 1) {
+            float x10 = motionEvent.getX();
+            motionEvent.getY();
+            for (int i10 = 1; i10 < getChildCount() - 1; i10++) {
+                View childAt = getChildAt(i10);
+                if (x10 >= childAt.getLeft() && x10 <= childAt.getRight()) {
+                    if (this.r != null) {
+                        if (this.h != i10) {
+                            a(i10);
+                            post(new org.telegram.ui.web.u0(childAt, 15));
+                            return true;
+                        }
+                    } else if (this.f != i10) {
+                        a(i10);
+                        post(new org.telegram.ui.web.u0(childAt, 15));
+                        return true;
+                    }
+                }
+            }
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = this.f;
+        aj0[] aj0VarArr = this.a;
+        aj0 aj0Var = aj0VarArr[i10];
+        int i11 = this.h;
+        aj0 aj0Var2 = i11 != -1 ? aj0VarArr[i11] : null;
+        float f7 = 0.0f;
+        float f10 = aj0Var2 != null ? this.n : 0.0f;
+        float f11 = 1.0f;
+        if (f10 > 0.25f && f10 < 0.75f) {
+            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.y0.y(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
+        }
+        float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((aj0Var.getWidth() - aj0Var.getPaddingLeft()) - aj0Var.getPaddingRight(), (aj0Var.getHeight() - aj0Var.getPaddingTop()) - aj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
+        float width = (aj0Var.getWidth() / 2.0f) + aj0Var.getX();
+        int i12 = this.f;
+        int i13 = this.d;
+        float dp2 = (i12 == i13 + 1 ? AndroidUtilities.dp(4.0f) : 0.0f) + width;
+        float width2 = aj0Var2 != null ? (aj0Var2.getWidth() / 2.0f) + aj0Var2.getX() : 0.0f;
+        int i14 = this.h;
+        if (i14 != -1 && i14 == i13 + 1) {
+            f7 = AndroidUtilities.dp(4.0f);
+        }
+        canvas.drawCircle(AndroidUtilities.lerp(dp2, width2 + f7, f10), (aj0Var.getHeight() / 2.0f) + aj0Var.getY(), dp, this.c);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
+    public void setDelegate(t1 t1Var) {
+        this.b = t1Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, rk.C(16.0f, AndroidUtilities.dp(48.0f) * Math.min(pg.k0.c().size(), 6), TLObject.FLAG_30));
-    }
-
-    public void setMaskProvider(q0.a aVar) {
-        this.Y2 = aVar;
+    public void setSelectedIndex(int i10) {
+        this.f = i10;
+        if (this.e) {
+            this.e = false;
+            AndroidUtilities.updateImageViewImageAnimated(this.a[this.d + 1], R.drawable.msg_add);
+        }
         invalidate();
     }
 }

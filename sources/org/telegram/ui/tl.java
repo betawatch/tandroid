@@ -1,50 +1,24 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tl extends tu0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ zn c;
+    public final /* synthetic */ bo a;
 
-    public tl(zn znVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = znVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public tl(bo boVar) {
+        this.a = boVar;
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean S() {
-        return false;
+    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return bo.A1(this.a, messageObject, fileLocation, i10, z10, false);
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
-        }
-        this.c.eb(arrayList, i11, z10, z11);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean x(int i10) {
-        return this.b[i10];
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return i10;
+    public final boolean K() {
+        return true;
     }
 }

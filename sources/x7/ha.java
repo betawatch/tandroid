@@ -1,27 +1,41 @@
 package x7;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class ha implements fa {
-    public final q9.n a;
-    public final ca b;
+public abstract class ha {
+    public static t7.r a;
 
-    public ha(Context context, ca caVar) {
-        this.b = caVar;
-        j5.a aVar = j5.a.e;
-        l5.t.b(context);
-        l5.r c10 = l5.t.a().c(aVar);
-        if (j5.a.d.contains(new i5.c("json"))) {
-            new q9.n(new v7.b9(c10, 4));
+    public static synchronized fa a(ba baVar) {
+        fa faVar;
+        synchronized (ha.class) {
+            try {
+                if (a == null) {
+                    a = new t7.r(3);
+                }
+                faVar = (fa) a.O0(baVar);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        this.a = new q9.n(new v7.b9(c10, 5));
+        return faVar;
     }
 
-    @Override // x7.fa
-    public final void a(a5.a aVar) {
-        this.b.getClass();
-        ((l5.s) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.B(), i5.d.a, null) : new i5.a(null, aVar.B(), i5.d.b, null), new j2.e(22));
+    public static synchronized fa b() {
+        fa a2;
+        synchronized (ha.class) {
+            byte b10 = (byte) (((byte) 1) | 2);
+            if (b10 != 3) {
+                StringBuilder sb2 = new StringBuilder();
+                if ((b10 & 1) == 0) {
+                    sb2.append(" enableFirelog");
+                }
+                if ((b10 & 2) == 0) {
+                    sb2.append(" firelogEventType");
+                }
+                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+            }
+            a2 = a(new ba());
+        }
+        return a2;
     }
 }

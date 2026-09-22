@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class xw extends s4.c0 {
     public boolean I;
@@ -74,7 +74,7 @@ public final class xw extends s4.c0 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M.T, 0.0f);
             this.K = ofFloat;
             ofFloat.addUpdateListener(new ai.x(21, this, tyVar));
-            this.K.addListener(new org.telegram.ui.Components.t81(this, 17));
+            this.K.addListener(new org.telegram.ui.Components.v81(this, 16));
             this.K.setDuration(200L);
             this.K.setInterpolator(org.telegram.ui.Components.qr.f);
             this.K.start();
@@ -314,9 +314,9 @@ public final class xw extends s4.c0 {
                                             if (valueAnimator != null) {
                                                 valueAnimator.cancel();
                                             }
-                                            org.telegram.ui.Cells.s2 s2Var = axVar3.H;
-                                            if (s2Var != null) {
-                                                s2Var.removeCallbacks(axVar3.d0);
+                                            org.telegram.ui.Cells.r2 r2Var = axVar3.H;
+                                            if (r2Var != null) {
+                                                r2Var.removeCallbacks(axVar3.d0);
                                             }
                                             axVar3.x = 0.0f;
                                             axVar3.y = false;

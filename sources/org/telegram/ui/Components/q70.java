@@ -1,85 +1,56 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q70 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y70 b;
-    public final /* synthetic */ Runnable c;
+public final class q70 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ w70 b;
 
-    public /* synthetic */ q70(y70 y70Var, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = y70Var;
-        this.c = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q70(w70 w70Var, Context context) {
+        super(context);
+        this.b = w70Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                Runnable runnable = this.c;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        w70 w70Var = this.b;
+        ArrayList arrayList = w70Var.h;
+        if (w70Var.s == 0) {
+            int size = View.MeasureSpec.getSize(i10);
+            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) w70Var.d.getLayoutParams();
+            if (dp > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = w70Var.v;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, w70Var.v);
+                    }
+                    this.a = true;
                 }
-                break;
-            case 1:
-                this.c.run();
-                y70 y70Var = this.b;
-                if (y70Var.J) {
-                    y70Var.u();
-                    break;
+            } else {
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (w70Var.v != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(w70Var.v);
+                        arrayList.add(max, w70Var.v);
+                    }
+                    this.a = true;
                 }
-                break;
-            case 2:
-                y70 y70Var2 = this.b;
-                Runnable runnable2 = this.c;
-                if (runnable2 == null) {
-                    y70Var2.getClass();
-                    break;
-                } else {
-                    int i10 = -y70Var2.K;
-                    y70Var2.K = i10;
-                    AndroidUtilities.shakeViewSpring(view, i10);
-                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    runnable2.run();
-                    break;
-                }
-            case 3:
-                Runnable runnable3 = this.c;
-                if (runnable3 != null) {
-                    runnable3.run();
-                }
-                y70 y70Var3 = this.b;
-                if (y70Var3.J) {
-                    y70Var3.u();
-                    break;
-                }
-                break;
-            case 4:
-                this.c.run();
-                y70 y70Var4 = this.b;
-                if (y70Var4.J) {
-                    y70Var4.u();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable4 = this.c;
-                if (runnable4 != null) {
-                    runnable4.run();
-                }
-                y70 y70Var5 = this.b;
-                if (y70Var5.J) {
-                    y70Var5.u();
-                    break;
-                }
-                break;
+            }
         }
+        super.onMeasure(i10, i11);
     }
 }

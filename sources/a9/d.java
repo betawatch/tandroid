@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -35,32 +35,32 @@ public final class d implements ServiceConnection {
     /* JADX WARN: Type inference failed for: r1v4 */
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        m5.e eVar;
+        o0.a aVar;
         ?? r12 = 0;
-        vf.e eVar2 = null;
+        vf.e eVar = null;
         switch (this.a) {
             case 0:
-                e eVar3 = (e) this.b;
-                eVar3.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
-                eVar3.a().post(new b(this, iBinder));
+                e eVar2 = (e) this.b;
+                eVar2.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
+                eVar2.a().post(new b(this, iBinder));
                 break;
             case 1:
                 com.google.android.gms.internal.play_billing.u.g("BillingClientTesting", "Billing Override Service connected.");
-                c5.c0 c0Var = (c5.c0) this.b;
+                c5.d0 d0Var = (c5.d0) this.b;
                 int i10 = com.google.android.gms.internal.play_billing.f.b;
                 if (iBinder != null) {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
                     r12 = queryLocalInterface instanceof com.google.android.gms.internal.play_billing.g ? (com.google.android.gms.internal.play_billing.g) queryLocalInterface : new com.google.android.gms.internal.play_billing.e(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService", 2);
                 }
-                c0Var.E = r12;
-                c0Var.D = 2;
-                int i11 = c5.d0.a;
-                i3 c10 = c5.d0.c(26, m3.b);
+                d0Var.E = r12;
+                d0Var.D = 2;
+                int i11 = c5.e0.a;
+                i3 c10 = c5.e0.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                of.b bVar = c0Var.h;
+                of.b bVar = d0Var.h;
                 bVar.getClass();
                 try {
-                    bVar.j0(c10, (p3) bVar.b);
+                    bVar.f0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
@@ -73,17 +73,17 @@ public final class d implements ServiceConnection {
                     if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof vf.e)) {
                         vf.c cVar = new vf.c();
                         cVar.a = iBinder;
-                        eVar2 = cVar;
+                        eVar = cVar;
                     } else {
-                        eVar2 = (vf.e) queryLocalInterface2;
+                        eVar = (vf.e) queryLocalInterface2;
                     }
                 }
-                m5.e eVar4 = new m5.e(24, eVar2, componentName);
+                o0.a aVar2 = new o0.a(19, eVar, componentName);
                 if (((nf.d) ((WeakReference) this.b).get()) != null) {
-                    nf.f.b = eVar4;
-                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (eVar = nf.f.b) != null) {
+                    nf.f.b = aVar2;
+                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (aVar = nf.f.b) != null) {
                         try {
-                            ((vf.c) ((vf.e) eVar.b)).H0();
+                            ((vf.c) ((vf.e) aVar.b)).H0();
                             break;
                         } catch (RemoteException unused) {
                             return;
@@ -96,7 +96,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 StringBuilder sb2 = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                oi.f fVar = (oi.f) this.b;
+                ni.f fVar = (ni.f) this.b;
                 LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) fVar.c;
                 sb2.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb2.toString());
@@ -119,9 +119,9 @@ public final class d implements ServiceConnection {
                 break;
             case 1:
                 com.google.android.gms.internal.play_billing.u.h("BillingClientTesting", "Billing Override Service disconnected.");
-                c5.c0 c0Var = (c5.c0) this.b;
-                c0Var.E = null;
-                c0Var.D = 0;
+                c5.d0 d0Var = (c5.d0) this.b;
+                d0Var.E = null;
+                d0Var.D = 0;
                 break;
             case 2:
                 if (((nf.d) ((WeakReference) this.b).get()) != null) {
@@ -131,7 +131,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                oi.f fVar = (oi.f) this.b;
+                ni.f fVar = (ni.f) this.b;
                 fVar.b = null;
                 fVar.getClass();
                 break;

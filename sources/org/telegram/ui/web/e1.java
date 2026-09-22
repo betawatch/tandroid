@@ -4,22 +4,22 @@ import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class e1 extends TLObject {
     public long a;
     public long b;
     public String c;
-    public n2 d;
+    public m2 d;
 
     @Override // org.telegram.tgnet.TLObject
     public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
         this.a = inputSerializedData.readInt64(z10);
         this.b = inputSerializedData.readInt64(z10);
         this.c = inputSerializedData.readString(z10);
-        n2 n2Var = new n2();
-        this.d = n2Var;
-        n2Var.readParams(inputSerializedData, z10);
+        m2 m2Var = new m2();
+        this.d = m2Var;
+        m2Var.readParams(inputSerializedData, z10);
     }
 
     @Override // org.telegram.tgnet.TLObject

@@ -1,33 +1,33 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class bd0 extends s4.s0 {
-    public final /* synthetic */ kd0 a;
+public final class bd0 extends gg.u0 {
+    public final /* synthetic */ id0 N;
 
-    public bd0(kd0 kd0Var) {
-        this.a = kd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bd0(id0 id0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, false, z10);
+        this.N = id0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        boolean z10 = i10 != 0;
-        kd0 kd0Var = this.a;
-        kd0Var.Q = z10;
-        if (z10 || kd0Var.L == null) {
-            return;
+    @Override // s4.h0
+    public final void l() {
+        id0 id0Var = this.N;
+        org.telegram.ui.ActionBar.v0 v0Var = id0Var.w;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(id0Var.W.J);
         }
-        kd0Var.L = null;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        kd0 kd0Var = this.a;
-        kd0Var.A0(false);
-        if (kd0Var.L != null) {
-            kd0Var.N += i11;
+        TextView textView = id0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, id0Var.W.x)));
         }
+        super.l();
     }
 }

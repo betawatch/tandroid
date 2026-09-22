@@ -13,12 +13,12 @@ import android.text.TextPaint;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
 import yf.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a extends c implements le.d {
     public final le.b d;
@@ -29,15 +29,15 @@ public final class a extends c implements le.d {
     public int r;
     public int s;
 
-    public a(Context context, f6 f6Var) {
-        super(f6Var);
+    public a(Context context, e6 e6Var) {
+        super(e6Var);
         this.d = new le.b(0, this, qr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
-        this.h = new TextPaint(j6.P2);
-        int v02 = j6.v0(j6.i6, f6Var);
+        this.h = new TextPaint(i6.P2);
+        int v02 = i6.v0(i6.i6, e6Var);
         if (this.b != v02) {
-            j6.B1(this.a, v02, false);
+            i6.B1(this.a, v02, false);
             this.b = v02;
         }
         b();
@@ -45,7 +45,7 @@ public final class a extends c implements le.d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, e eVar) {
+    public final void D(int i10, float f7, float f10, e eVar) {
         b();
         c();
         invalidateSelf();

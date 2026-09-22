@@ -1,9 +1,9 @@
 package fi;
 
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class g implements Runnable {
             default:
                 p pVar = this.b;
                 pVar.getClass();
-                pVar.presentFragment(zn.R9(this.c));
+                pVar.presentFragment(bo.R9(this.c));
                 break;
         }
     }

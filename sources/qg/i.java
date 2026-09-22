@@ -8,19 +8,19 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.hk0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.uk0;
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public int d;
-    public final d6 e;
+    public final c6 e;
     public boolean f;
     public final /* synthetic */ j h;
 
@@ -34,7 +34,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new d6(this, 0L, 250L, qr.h);
+        this.e = new c6(this, 0L, 250L, qr.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -55,7 +55,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        uk0 selectionBounds = jVar.getSelectionBounds();
+        hk0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;
@@ -140,8 +140,8 @@ public abstract class i extends FrameLayout {
                             jVar.s = true;
                             AndroidUtilities.cancelRunOnUIThread(eVar);
                             int[] C = jVar.F.C(jVar);
-                            float a2 = a7.a(C[0], C[1], jVar.b, jVar.c);
-                            float a10 = a7.a(C[0], C[1], f7, f10);
+                            float a2 = z6.a(C[0], C[1], jVar.b, jVar.c);
+                            float a10 = z6.a(C[0], C[1], f7, f10);
                             float f15 = 0.0f;
                             if (a2 > 0.0f) {
                                 jVar.j(a10 / a2);
@@ -185,7 +185,7 @@ public abstract class i extends FrameLayout {
                 if (getParent() instanceof d) {
                     ((d) getParent()).invalidate();
                 }
-                if (a11 == 3 && (jVar instanceof b2)) {
+                if (a11 == 3 && (jVar instanceof d2)) {
                     AndroidUtilities.runOnUIThread(eVar, ViewConfiguration.getLongPressTimeout());
                 }
                 z10 = true;

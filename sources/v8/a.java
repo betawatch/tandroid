@@ -11,7 +11,7 @@ import com.google.android.gms.tasks.Task;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final long a = TimeUnit.MINUTES.toMillis(10);
@@ -19,25 +19,25 @@ public abstract class a {
     public static final /* synthetic */ int c = 0;
 
     public static void a(Task task, Activity activity) {
-        u uVar = new u();
-        int incrementAndGet = u.f.incrementAndGet();
-        uVar.a = incrementAndGet;
-        u.e.put(incrementAndGet, uVar);
-        u.d.postDelayed(uVar, a);
-        task.addOnCompleteListener(uVar);
+        v vVar = new v();
+        int incrementAndGet = v.f.incrementAndGet();
+        vVar.a = incrementAndGet;
+        v.e.put(incrementAndGet, vVar);
+        v.d.postDelayed(vVar, a);
+        task.addOnCompleteListener(vVar);
         FragmentTransaction beginTransaction = activity.getFragmentManager().beginTransaction();
-        int i10 = uVar.a;
+        int i10 = vVar.a;
         Bundle bundle = new Bundle();
         bundle.putInt("resolveCallId", i10);
         bundle.putInt("requestCode", 991);
         bundle.putLong("initializationElapsedRealtime", b);
-        v vVar = new v();
-        vVar.setArguments(bundle);
-        int i11 = uVar.a;
+        w wVar = new w();
+        wVar.setArguments(bundle);
+        int i11 = vVar.a;
         StringBuilder sb2 = new StringBuilder(58);
         sb2.append("com.google.android.gms.wallet.AutoResolveHelper");
         sb2.append(i11);
-        beginTransaction.add(vVar, sb2.toString()).commit();
+        beginTransaction.add(wVar, sb2.toString()).commit();
     }
 
     public static void b(Activity activity, int i10, int i11, Intent intent) {

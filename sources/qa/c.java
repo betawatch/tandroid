@@ -17,25 +17,25 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
+import n7.a1;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.f3;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final f3 c;
+    public final a1 c;
     public final j d;
     public final n e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final r9.i i;
+    public final r9.j i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -44,10 +44,10 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
+    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.j jVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        f3 f3Var = new f3(hVar);
+        a1 a1Var = new a1(hVar);
         if (u.b == null) {
             u.b = new u();
         }
@@ -55,7 +55,7 @@ public final class c implements d {
         if (j.d == null) {
             j.d = new j(uVar);
         }
-        j jVar = j.d;
+        j jVar2 = j.d;
         n nVar = new n(new q9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
@@ -63,12 +63,12 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = f3Var;
-        this.d = jVar;
+        this.c = a1Var;
+        this.d = jVar2;
         this.e = nVar;
         this.f = hVar2;
         this.h = executorService;
-        this.i = iVar;
+        this.i = jVar;
     }
 
     public final void a(i iVar) {
@@ -85,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.w(r2);
+        r4.z(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b z10;
+        ra.b E;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                f3 e = f3.e(hVar.a);
+                a1 e = a1.e(hVar.a);
                 try {
-                    z10 = this.c.z();
-                    int i10 = z10.b;
-                    boolean z11 = true;
+                    E = this.c.E();
+                    int i10 = E.b;
+                    boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
-                        z11 = false;
+                        z10 = false;
                     }
                     if (e != null) {
-                        e.A();
+                        e.I();
                     }
                 } catch (Throwable th2) {
                     if (e != null) {
-                        e.A();
+                        e.I();
                     }
                     throw th2;
                 }
@@ -118,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(z10);
+        k(E);
         this.i.execute(new b(this, 1));
     }
 
@@ -238,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                f3 e = f3.e(hVar.a);
+                a1 e = a1.e(hVar.a);
                 try {
-                    this.c.w(bVar);
+                    this.c.z(bVar);
                     if (e != null) {
-                        e.A();
+                        e.I();
                     }
                 } catch (Throwable th2) {
                     if (e != null) {
-                        e.A();
+                        e.I();
                     }
                     throw th2;
                 }

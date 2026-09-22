@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ii implements fk {
     public final /* synthetic */ vi a;
@@ -32,8 +32,8 @@ public final class ii implements fk {
             ((fk) obj).k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
             return;
         }
-        if (obj instanceof org.telegram.ui.pn0) {
-            org.telegram.ui.pn0 pn0Var = (org.telegram.ui.pn0) obj;
+        if (obj instanceof org.telegram.ui.on0) {
+            org.telegram.ui.on0 on0Var = (org.telegram.ui.on0) obj;
             ArrayList arrayList4 = new ArrayList();
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
@@ -41,7 +41,7 @@ public final class ii implements fk {
                 sendingMediaInfo.path = (String) arrayList.get(i11);
                 arrayList4.add(sendingMediaInfo);
             }
-            pn0Var.G1(arrayList4);
+            on0Var.G1(arrayList4);
         }
     }
 
@@ -54,10 +54,10 @@ public final class ii implements fk {
             return;
         }
         org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-        if (n2Var instanceof org.telegram.ui.zn) {
-            ((org.telegram.ui.zn) n2Var).l(j3, arrayList, z10, i10);
-        } else if (n2Var instanceof org.telegram.ui.pn0) {
-            ((org.telegram.ui.pn0) n2Var).G1(arrayList);
+        if (n2Var instanceof org.telegram.ui.bo) {
+            ((org.telegram.ui.bo) n2Var).l(j3, arrayList, z10, i10);
+        } else if (n2Var instanceof org.telegram.ui.on0) {
+            ((org.telegram.ui.on0) n2Var).G1(arrayList);
         }
     }
 
@@ -74,14 +74,14 @@ public final class ii implements fk {
             ((fk) obj).w();
             return;
         }
-        if (obj instanceof org.telegram.ui.pn0) {
-            org.telegram.ui.pn0 pn0Var = (org.telegram.ui.pn0) obj;
-            pn0Var.getClass();
+        if (obj instanceof org.telegram.ui.on0) {
+            org.telegram.ui.on0 on0Var = (org.telegram.ui.on0) obj;
+            on0Var.getClass();
             try {
                 Intent intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                 intent.setType("*/*");
-                pn0Var.startActivityForResult(intent, 21);
+                on0Var.startActivityForResult(intent, 21);
             } catch (Exception e) {
                 FileLog.e(e);
             }

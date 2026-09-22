@@ -1,169 +1,249 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.TextPaint;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bj0 {
-    public final View a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final fj0 e;
-    public final TextPaint f;
-    public RectF g;
+    public static DecelerateInterpolator A;
+    public final View i;
+    public boolean k;
+    public boolean l;
+    public Drawable m;
+    public Drawable n;
+    public final Paint p;
+    public boolean u;
+    public long a = 0;
+    public float b = 0.0f;
+    public float c = 0.0f;
+    public float d = 0.0f;
+    public long e = 0;
+    public float f = 0.0f;
+    public final RectF g = new RectF();
+    public final RectF h = new RectF();
+    public float j = 1.0f;
+    public int o = -1;
+    public int q = AndroidUtilities.dp(4.0f);
+    public final boolean r = true;
+    public final float s = 1.0f;
+    public Paint t = null;
+    public float v = 3000.0f;
+    public final Path w = new Path();
+    public final Matrix x = new Matrix();
+    public final PathMeasure y = new PathMeasure();
+    public final Path z = new Path();
 
-    public bj0(du duVar, Layout layout, Spanned spanned, fj0 fj0Var) {
-        int i10;
-        int i11;
-        this.a = duVar;
-        this.e = fj0Var;
-        this.f = layout.getPaint();
-        fj0Var.c = spanned.getSpanStart(fj0Var);
-        boolean z10 = fj0Var.a;
-        int spanEnd = spanned.getSpanEnd(fj0Var);
-        fj0Var.d = spanEnd;
-        if (spanEnd - 1 >= 0 && spanEnd < spanned.length() && spanned.charAt(fj0Var.d) != '\n' && spanned.charAt(fj0Var.d - 1) == '\n') {
-            fj0Var.d--;
+    public bj0(View view) {
+        if (A == null) {
+            A = new DecelerateInterpolator();
         }
-        int lineForOffset = layout.getLineForOffset(fj0Var.c);
-        int lineForOffset2 = layout.getLineForOffset(fj0Var.d);
-        fj0Var.f = lineForOffset2 - lineForOffset < 1;
-        fj0Var.h = lineForOffset <= 0;
-        fj0Var.n = lineForOffset2 + 1 >= layout.getLineCount();
-        if (z10) {
-            int lineTop = layout.getLineTop(lineForOffset);
-            if (fj0Var.f) {
-                i10 = 0;
-            } else {
-                i10 = (fj0Var.h ? 2 : 0) + 3;
-            }
-            this.b = AndroidUtilities.dp(3 - i10) + lineTop;
-            int lineBottom = layout.getLineBottom(lineForOffset2);
-            if (fj0Var.f) {
-                i11 = 0;
-            } else {
-                i11 = (fj0Var.n ? 2 : 0) + 3;
-            }
-            this.c = lineBottom - AndroidUtilities.dp(2 - i11);
-        } else {
-            this.b = AndroidUtilities.dp(3 - (fj0Var.f ? 1 : 2)) + layout.getLineTop(lineForOffset);
-            this.c = layout.getLineBottom(lineForOffset2) - AndroidUtilities.dp(2 - (fj0Var.f ? 1 : 2));
-        }
-        fj0Var.r = false;
-        float f7 = 0.0f;
-        while (lineForOffset <= lineForOffset2) {
-            f7 = Math.max(f7, layout.getLineRight(lineForOffset));
-            if (layout.getLineLeft(lineForOffset) > 0.0f) {
-                fj0Var.r = true;
-            }
-            lineForOffset++;
-        }
-        this.d = (int) Math.ceil(f7);
-        if (z10 && duVar != null && fj0Var.J == null) {
-            fj0Var.J = new xi0(duVar);
-        }
+        Paint paint = new Paint(1);
+        this.p = paint;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        Paint paint2 = new Paint(1);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        new Paint(1);
+        this.i = view;
     }
 
-    public final void a(Canvas canvas, int i10, int i11) {
-        RectF rectF;
-        int i12;
-        int i13;
-        Path.Direction direction;
-        fj0 fj0Var = this.e;
-        int i14 = fj0Var.I;
-        float[] fArr = fj0Var.y;
-        boolean z10 = fj0Var.a;
-        Paint paint = fj0Var.x;
-        Paint paint2 = fj0Var.F;
-        Path path = fj0Var.H;
-        float[] fArr2 = fj0Var.G;
-        Path path2 = fj0Var.E;
-        Drawable drawable = fj0Var.w;
-        if (i14 != i11) {
-            fj0Var.I = i11;
-            drawable.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
-            paint2.setColor(i11);
-            paint.setColor(i0.a.k(i11, 30));
-        }
-        int dp = z10 ? i10 : AndroidUtilities.dp(32.0f) + this.d;
-        int i15 = ((double) dp) >= ((double) i10) * 0.95d ? i10 : dp;
-        canvas.save();
-        canvas.translate(0.0f, 0.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        int i16 = this.b;
-        float f7 = i16;
-        float f10 = i15;
-        int i17 = i15;
-        int i18 = this.c;
-        float f11 = i18;
-        rectF2.set(0.0f, f7, f10, f11);
-        fArr[7] = 0.0f;
-        fArr[6] = 0.0f;
-        fArr[1] = 0.0f;
-        fArr[0] = 0.0f;
-        float dp2 = AndroidUtilities.dp(4.0f);
-        fArr[5] = dp2;
-        fArr[4] = dp2;
-        fArr[3] = dp2;
-        fArr[2] = dp2;
-        path2.rewind();
-        Path.Direction direction2 = Path.Direction.CW;
-        path2.addRoundRect(rectF2, fArr, direction2);
-        canvas.drawPath(path2, paint);
-        if (!z10 || this.a == null || fj0Var.J == null) {
-            rectF = rectF2;
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-        } else {
-            if (this.g == null) {
-                this.g = new RectF();
+    public final void a(Canvas canvas) {
+        Paint paint;
+        Drawable drawable = this.n;
+        RectF rectF = this.g;
+        float f7 = this.s;
+        if (drawable != null) {
+            if (this.r) {
+                drawable.setAlpha((int) (this.j * 255.0f * f7));
+            } else {
+                drawable.setAlpha((int) (f7 * 255.0f));
             }
-            int dp3 = AndroidUtilities.dp(3.333f);
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-            rectF = rectF2;
-            fj0Var.J.a(canvas, this.g, i17 - dp3, i18 - dp3, i11, fj0Var.e, b());
+            this.n.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            this.n.draw(canvas);
         }
-        rectF.set(-AndroidUtilities.dp(3.0f), f7, 0.0f, f11);
-        float dp4 = AndroidUtilities.dp(4.0f);
-        fArr2[7] = dp4;
-        fArr2[6] = dp4;
-        fArr2[1] = dp4;
-        fArr2[0] = dp4;
-        fArr2[5] = 0.0f;
-        fArr2[4] = 0.0f;
-        fArr2[3] = 0.0f;
-        fArr2[2] = 0.0f;
+        Drawable drawable2 = this.m;
+        if (drawable2 != null) {
+            if (this.n != null) {
+                drawable2.setAlpha((int) org.telegram.messenger.y0.A(1.0f, this.j, 255.0f, f7));
+            } else {
+                drawable2.setAlpha((int) (f7 * 255.0f));
+            }
+            this.m.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            this.m.draw(canvas);
+        }
+        if (!this.k && !this.l) {
+            g(false);
+            return;
+        }
+        Paint paint2 = this.t;
+        if (paint2 != null) {
+            paint = paint2;
+        } else {
+            int i10 = this.o;
+            Paint paint3 = this.p;
+            paint3.setColor(i10);
+            if (this.l) {
+                paint3.setAlpha((int) (this.j * 255.0f * f7));
+            } else {
+                paint3.setAlpha((int) (f7 * 255.0f));
+            }
+            paint = paint3;
+        }
+        float f10 = rectF.left;
+        float f11 = this.q;
+        float f12 = rectF.top + f11;
+        float f13 = rectF.right - f11;
+        float f14 = rectF.bottom - f11;
+        RectF rectF2 = this.h;
+        rectF2.set(f10 + f11, f12, f13, f14);
+        b(this.b - 90.0f, Math.max(4.0f, this.f * 360.0f), canvas, paint, rectF2);
+        g(true);
+    }
+
+    public final void b(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
+        if (!this.u) {
+            canvas.drawArc(rectF, f7, f10, false, paint);
+            return;
+        }
+        float height = rectF.height() * 0.32f;
+        if (Math.abs(f10) == 360.0f) {
+            canvas.drawRoundRect(rectF, height, height, paint);
+            return;
+        }
+        float f11 = ((((int) f7) / 90) * 90) + 90;
+        float f12 = (-199.0f) + f11;
+        float f13 = ((f7 + f10) - f12) / 360.0f;
+        Path path = this.w;
         path.rewind();
-        path.addRoundRect(rectF, fArr2, direction);
-        canvas.drawPath(path, paint2);
-        if (!fj0Var.r) {
-            int intrinsicHeight = (int) (((i12 + i13) - drawable.getIntrinsicHeight()) / 2.0f);
-            if (intrinsicHeight > AndroidUtilities.dp(8.0f) + i12) {
-                intrinsicHeight = AndroidUtilities.dp(4.0f) + i12;
-            }
-            drawable.setBounds((i17 - drawable.getIntrinsicWidth()) - AndroidUtilities.dp(4.0f), intrinsicHeight, i17 - AndroidUtilities.dp(4.0f), drawable.getIntrinsicHeight() + intrinsicHeight);
-            drawable.setAlpha((int) 255.0f);
-            drawable.draw(canvas);
+        path.addRoundRect(rectF, height, height, Path.Direction.CW);
+        Matrix matrix = this.x;
+        matrix.reset();
+        matrix.postRotate(f11, rectF.centerX(), rectF.centerY());
+        path.transform(matrix);
+        PathMeasure pathMeasure = this.y;
+        pathMeasure.setPath(path, false);
+        float length = pathMeasure.getLength();
+        Path path2 = this.z;
+        path2.reset();
+        pathMeasure.getSegment(((f7 - f12) / 360.0f) * length, length * f13, path2, true);
+        path2.rLineTo(0.0f, 0.0f);
+        canvas.drawPath(path2, paint);
+        if (f13 > 1.0f) {
+            b(f7 + 90.0f, f10 - 90.0f, canvas, paint, rectF);
         }
-        canvas.restore();
     }
 
-    public final boolean b() {
-        return this.e.a && ((float) (this.c - this.b)) > (this.f.getTextSize() * 1.3f) * ((float) 3);
+    public final void c() {
+        int dp = AndroidUtilities.dp(2.0f);
+        RectF rectF = this.g;
+        int i10 = ((int) rectF.left) - dp;
+        int i11 = ((int) rectF.top) - dp;
+        int i12 = dp * 2;
+        this.i.invalidate(i10, i11, ((int) rectF.right) + i12, ((int) rectF.bottom) + i12);
+    }
+
+    public final void d(Drawable drawable, boolean z10, boolean z11) {
+        Drawable drawable2;
+        this.a = System.currentTimeMillis();
+        if (!z11 || (drawable2 = this.m) == drawable) {
+            this.n = null;
+            this.l = false;
+        } else {
+            this.n = drawable2;
+            this.l = this.k;
+            this.j = 1.0f;
+            e(1.0f, z11);
+        }
+        this.k = z10;
+        this.m = drawable;
+        if (z11) {
+            c();
+        } else {
+            this.i.invalidate();
+        }
+    }
+
+    public final void e(float f7, boolean z10) {
+        if (f7 != 1.0f && this.j != 0.0f && this.n != null) {
+            this.j = 0.0f;
+            this.n = null;
+        }
+        if (z10) {
+            if (this.f > f7) {
+                this.f = f7;
+            }
+            this.d = this.f;
+        } else {
+            this.f = f7;
+            this.d = f7;
+        }
+        this.c = f7;
+        this.e = 0L;
+        c();
+    }
+
+    public final void f(int i10, int i11, int i12, int i13) {
+        this.g.set(i10, i11, i12, i13);
+    }
+
+    public final void g(boolean z10) {
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        if (!z10) {
+            if (this.n != null) {
+                float f7 = this.j - (j3 / 200.0f);
+                this.j = f7;
+                if (f7 <= 0.0f) {
+                    this.j = 0.0f;
+                    this.n = null;
+                }
+                c();
+                return;
+            }
+            return;
+        }
+        if (this.f != 1.0f) {
+            this.b = ((360 * j3) / this.v) + this.b;
+            float f10 = this.c;
+            float f11 = this.d;
+            float f12 = f10 - f11;
+            if (f12 > 0.0f) {
+                long j10 = this.e + j3;
+                this.e = j10;
+                if (j10 >= 300) {
+                    this.f = f10;
+                    this.d = f10;
+                    this.e = 0L;
+                } else {
+                    this.f = (A.getInterpolation(j10 / 300.0f) * f12) + f11;
+                }
+            }
+            c();
+        }
+        if (this.f < 1.0f || this.n == null) {
+            return;
+        }
+        float f13 = this.j - (j3 / 200.0f);
+        this.j = f13;
+        if (f13 <= 0.0f) {
+            this.j = 0.0f;
+            this.n = null;
+        }
+        c();
     }
 }

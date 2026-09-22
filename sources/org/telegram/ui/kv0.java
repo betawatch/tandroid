@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class kv0 extends FrameLayout {
     public float a;
@@ -30,8 +30,8 @@ public final class kv0 extends FrameLayout {
         o1.j jVar = new o1.j(0.0f);
         this.n = jVar;
         o1.k kVar = new o1.k(jVar);
-        kVar.u = org.telegram.ui.Cells.c1.m(0.0f, 750.0f, 1.0f);
-        kVar.b(new vd0(this, 3));
+        kVar.u = org.telegram.ui.Cells.q3.l(0.0f, 750.0f, 1.0f);
+        kVar.b(new td0(this, 3));
         this.r = kVar;
         setWillNotDraw(false);
     }
@@ -53,10 +53,10 @@ public final class kv0 extends FrameLayout {
         float f11 = 1.0f - (0.1f * f10);
         photoViewer.o3.setScaleX(f11);
         photoViewer.o3.setScaleY(f11);
-        org.telegram.ui.Components.x71 x71Var = photoViewer.q3;
-        if (x71Var.y != f10) {
-            x71Var.y = f10;
-            x71Var.v.invalidate();
+        org.telegram.ui.Components.i71 i71Var = photoViewer.q3;
+        if (i71Var.y != f10) {
+            i71Var.y = f10;
+            i71Var.v.invalidate();
         }
     }
 
@@ -77,10 +77,10 @@ public final class kv0 extends FrameLayout {
             } else {
                 photoViewer.o3.setScaleX(1.0f);
                 photoViewer.o3.setScaleY(1.0f);
-                org.telegram.ui.Components.x71 x71Var = photoViewer.q3;
-                if (x71Var.y != 0.0f) {
-                    x71Var.y = 0.0f;
-                    x71Var.v.invalidate();
+                org.telegram.ui.Components.i71 i71Var = photoViewer.q3;
+                if (i71Var.y != 0.0f) {
+                    i71Var.y = 0.0f;
+                    i71Var.v.invalidate();
                 }
             }
             a(this.a);
@@ -126,10 +126,10 @@ public final class kv0 extends FrameLayout {
         }
         this.d = false;
         super.onMeasure(i10, i11);
-        org.telegram.ui.Components.v71 v71Var = photoViewer.F2;
+        org.telegram.ui.Components.g71 g71Var = photoViewer.F2;
         long j3 = 0;
-        if (v71Var != null) {
-            long p5 = v71Var.p();
+        if (g71Var != null) {
+            long p5 = g71Var.p();
             if (p5 != -9223372036854775807L) {
                 j3 = p5;
             }
@@ -152,12 +152,12 @@ public final class kv0 extends FrameLayout {
                 this.h = ceil;
             }
         }
-        org.telegram.ui.Components.x71 x71Var = photoViewer.q3;
+        org.telegram.ui.Components.i71 i71Var = photoViewer.q3;
         int measuredWidth = ((getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - ceil) - i12;
         int measuredHeight = getMeasuredHeight();
-        x71Var.h = measuredWidth;
-        x71Var.i = measuredHeight;
-        View view = x71Var.v;
+        i71Var.h = measuredWidth;
+        i71Var.i = measuredHeight;
+        View view = i71Var.v;
         if (view != null) {
             view.invalidate();
         }

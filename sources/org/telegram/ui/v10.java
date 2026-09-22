@@ -12,9 +12,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.v10;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class v10 extends org.telegram.ui.Components.xl0 {
+public final class v10 extends org.telegram.ui.Components.kl0 {
     public final Context c;
     public final /* synthetic */ x10 d;
 
@@ -23,7 +23,7 @@ public final class v10 extends org.telegram.ui.Components.xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -60,46 +60,46 @@ public final class v10 extends org.telegram.ui.Components.xl0 {
                 }
                 return;
             }
-            org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) view;
-            s2Var.s2 = i10 != h() - 1;
+            org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) view;
+            r2Var.s2 = i10 != h() - 1;
             MessageObject messageObject = (MessageObject) arrayList.get(i10);
-            boolean z10 = s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId();
-            s2Var.O = x10Var.p0;
-            s2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+            boolean z10 = r2Var.getMessage() != null && r2Var.getMessage().getId() == messageObject.getId();
+            r2Var.O = x10Var.p0;
+            r2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
             if (!x10Var.o0.g()) {
-                s2Var.V(false, z10);
+                r2Var.V(false, z10);
                 return;
             }
             int id2 = messageObject.getId();
             p10Var.a = messageObject.getDialogId();
             p10Var.b = id2;
-            s2Var.V(x10Var.o0.c(p10Var), z10);
+            r2Var.V(x10Var.o0.c(p10Var), z10);
             return;
         }
-        org.telegram.ui.Cells.v7 v7Var = (org.telegram.ui.Cells.v7) view;
-        v7Var.setItemsCount(x10Var.s);
-        v7Var.setIsFirst(i10 == 0);
+        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
+        u7Var.setItemsCount(x10Var.s);
+        u7Var.setIsFirst(i10 == 0);
         int i13 = 0;
         while (true) {
             int i14 = x10Var.s;
             if (i13 >= i14) {
-                v7Var.requestLayout();
+                u7Var.requestLayout();
                 return;
             }
             int i15 = (i14 * i10) + i13;
             if (i15 < arrayList.size()) {
                 MessageObject messageObject2 = (MessageObject) arrayList.get(i15);
-                v7Var.c(i13, arrayList.indexOf(messageObject2), messageObject2);
+                u7Var.c(i13, arrayList.indexOf(messageObject2), messageObject2);
                 if (x10Var.o0.g()) {
                     int id3 = messageObject2.getId();
                     p10Var.a = messageObject2.getDialogId();
                     p10Var.b = id3;
-                    v7Var.b(i13, x10Var.o0.c(p10Var));
+                    u7Var.b(i13, x10Var.o0.c(p10Var));
                 } else {
-                    v7Var.b(i13, false);
+                    u7Var.b(i13, false);
                 }
             } else {
-                v7Var.c(i13, i15, null);
+                u7Var.c(i13, i15, null);
             }
             i13++;
         }
@@ -115,47 +115,47 @@ public final class v10 extends org.telegram.ui.Components.xl0 {
         ?? r62;
         Context context = this.c;
         if (i10 == 0) {
-            final org.telegram.ui.Cells.v7 v7Var = new org.telegram.ui.Cells.v7(context);
+            final org.telegram.ui.Cells.u7 u7Var = new org.telegram.ui.Cells.u7(context);
             Paint paint = new Paint();
-            v7Var.n = paint;
-            v7Var.s = UserConfig.selectedAccount;
-            v7Var.r = 1;
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lh, false));
-            v7Var.b = new MessageObject[6];
-            v7Var.a = new org.telegram.ui.Cells.r7[6];
-            v7Var.c = new int[6];
+            u7Var.n = paint;
+            u7Var.s = UserConfig.selectedAccount;
+            u7Var.r = 1;
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Lh, false));
+            u7Var.b = new MessageObject[6];
+            u7Var.a = new org.telegram.ui.Cells.q7[6];
+            u7Var.c = new int[6];
             for (int i11 = 0; i11 < 6; i11++) {
-                v7Var.a[i11] = new org.telegram.ui.Cells.r7(v7Var, context);
-                v7Var.addView(v7Var.a[i11]);
-                v7Var.a[i11].setVisibility(4);
-                v7Var.a[i11].setTag(Integer.valueOf(i11));
-                v7Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(v7Var, 10));
-                v7Var.a[i11].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.q7
+                u7Var.a[i11] = new org.telegram.ui.Cells.q7(u7Var, context);
+                u7Var.addView(u7Var.a[i11]);
+                u7Var.a[i11].setVisibility(4);
+                u7Var.a[i11].setTag(Integer.valueOf(i11));
+                u7Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(u7Var, 10));
+                u7Var.a[i11].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.p7
                     @Override // android.view.View.OnLongClickListener
                     public final boolean onLongClick(View view) {
-                        v7 v7Var2 = v7.this;
-                        if (v7Var2.d == null) {
+                        u7 u7Var2 = u7.this;
+                        if (u7Var2.d == null) {
                             return false;
                         }
                         int intValue = ((Integer) view.getTag()).intValue();
-                        s7 s7Var = v7Var2.d;
-                        int i12 = v7Var2.c[intValue];
-                        MessageObject messageObject = v7Var2.b[intValue];
-                        org.telegram.ui.g gVar = (org.telegram.ui.g) s7Var;
+                        r7 r7Var = u7Var2.d;
+                        int i12 = u7Var2.c[intValue];
+                        MessageObject messageObject = u7Var2.b[intValue];
+                        org.telegram.ui.g gVar = (org.telegram.ui.g) r7Var;
                         x10 x10Var = ((v10) gVar.b).d;
                         if (!x10Var.o0.g()) {
-                            x10.a(x10Var, messageObject, v7Var2, intValue);
+                            x10.a(x10Var, messageObject, u7Var2, intValue);
                             return true;
                         }
                         x10 x10Var2 = ((v10) gVar.b).d;
                         SpannableStringBuilder[] spannableStringBuilderArr = x10.s0;
-                        x10Var2.f(i12, v7Var2, messageObject, intValue);
+                        x10Var2.f(i12, u7Var2, messageObject, intValue);
                         return true;
                     }
                 });
             }
-            v7Var.setDelegate(new g(this, 17));
-            frameLayout = v7Var;
+            u7Var.setDelegate(new g(this, 17));
+            frameLayout = u7Var;
         } else {
             if (i10 != 2) {
                 r62 = new l10(this, context, 1);
@@ -163,9 +163,9 @@ public final class v10 extends org.telegram.ui.Components.xl0 {
                 r62.setViewType(2);
                 return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);
             }
-            FrameLayout w3Var = new org.telegram.ui.Cells.w3(context, null);
-            w3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false) & (-218103809));
-            frameLayout = w3Var;
+            FrameLayout v3Var = new org.telegram.ui.Cells.v3(context, null);
+            v3Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.e7, false) & (-218103809));
+            frameLayout = v3Var;
         }
         r62 = frameLayout;
         return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);

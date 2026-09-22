@@ -1,45 +1,368 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ta0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
-    public final /* synthetic */ ya0 b;
+public final class ta0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public int E;
+    public int F;
+    public CharSequence G;
+    public int H;
+    public SpannableStringBuilder I;
+    public int J;
+    public boolean K;
+    public ValueAnimator L;
+    public float M;
+    public Rect N;
+    public Rect O;
+    public final int a;
+    public TLRPC.InputStickerSet b;
+    public final Rect c;
+    public o5 d;
+    public boolean e;
+    public final g90 f;
+    public final TextPaint h;
+    public final CharSequence n;
+    public StaticLayout r;
+    public final String s;
+    public SpannableStringBuilder v;
+    public StaticLayout w;
+    public int x;
+    public int y;
 
-    public ta0(ya0 ya0Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.b = ya0Var;
-        this.a = n2Var;
-    }
-
-    public final void a(boolean z10) {
-        ya0 ya0Var = this.b;
-        if (ya0Var.getNeededLayoutManager() != ya0Var.getCurrentLayoutManager() && ya0Var.a()) {
-            if (ya0Var.f.M0 > 0) {
-                ya0Var.N = true;
-                ya0Var.o(false);
-                return;
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0109, code lost:
+    
+        r4 = null;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ta0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList, int i11) {
+        super(context);
+        String str;
+        TLRPC.Document document;
+        TLRPC.TL_messages_stickerSet stickerSet;
+        TLRPC.StickerSet stickerSet2;
+        ArrayList<TLRPC.Document> arrayList2;
+        this.c = new Rect();
+        this.e = false;
+        this.J = -1;
+        this.K = true;
+        this.M = 0.0f;
+        this.a = i10;
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, e6Var), 0, 16));
+        TextPaint textPaint = new TextPaint(1);
+        this.h = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
+        if (arrayList.size() > 1) {
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(i11 == 0 ? LocaleController.formatPluralString("MessageContainsEmojiPacks", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("MessageContainsReactionsPacks", arrayList.size(), new Object[0]));
+            this.n = replaceTags;
+            f51[] f51VarArr = (f51[]) replaceTags.getSpans(0, replaceTags.length(), f51.class);
+            for (int i12 = 0; f51VarArr != null && i12 < f51VarArr.length; i12++) {
+                int spanStart = replaceTags.getSpanStart(f51VarArr[i12]);
+                int spanEnd = replaceTags.getSpanEnd(f51VarArr[i12]);
+                replaceTags.removeSpan(f51VarArr[i12]);
+                replaceTags.setSpan(new ii.z5(1, this), spanStart, spanEnd, 33);
             }
-            ya0Var.b.setLayoutManager(ya0Var.getNeededLayoutManager());
-        }
-        if (z10 && !ya0Var.a()) {
-            z10 = false;
-        }
-        ya0Var.o((!z10 || ya0Var.f.K() > 0) ? z10 : false);
-    }
-
-    public final void b(boolean z10) {
-        this.b.l(z10);
-    }
-
-    public final void c() {
-        ya0 ya0Var = this.b;
-        xp xpVar = ya0Var.J;
-        if (ya0Var.b.getLayoutManager() == ya0Var.d || !ya0Var.I) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(xpVar);
-        AndroidUtilities.runOnUIThread(xpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        if (arrayList.size() != 1) {
+            if (i11 == 4) {
+                this.n = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StickersCheckStickersBotForMoreOptions), org.telegram.ui.ActionBar.i6.gc, 2, null, e6Var);
+                return;
+            }
+            return;
+        }
+        String string = i11 == 0 ? LocaleController.getString(R.string.MessageContainsEmojiPack) : i11 == 3 ? LocaleController.getString(R.string.MessageContainsReactionPack) : LocaleController.getString(R.string.MessageContainsReactionsPack);
+        String[] split = string.split("%s");
+        if (split.length <= 1) {
+            this.n = string;
+            return;
+        }
+        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) arrayList.get(0);
+        this.b = inputStickerSet;
+        if (inputStickerSet == null || (stickerSet = MediaDataController.getInstance(i10).getStickerSet(this.b, false)) == null || (stickerSet2 = stickerSet.set) == null) {
+            str = null;
+            document = null;
+        } else {
+            str = stickerSet2.title;
+            int i13 = 0;
+            while (true) {
+                ArrayList<TLRPC.Document> arrayList3 = stickerSet.documents;
+                if (arrayList3 == null || i13 >= arrayList3.size()) {
+                    break;
+                }
+                if (stickerSet.documents.get(i13).id == stickerSet.set.thumb_document_id) {
+                    document = stickerSet.documents.get(i13);
+                    break;
+                }
+                i13++;
+            }
+            if (document == null && (arrayList2 = stickerSet.documents) != null && arrayList2.size() > 0) {
+                document = stickerSet.documents.get(0);
+            }
+        }
+        if (str == null || document == null) {
+            this.n = split[0];
+            this.s = split[1];
+            g90 g90Var = new g90(e6Var);
+            this.f = g90Var;
+            g90Var.l = org.telegram.ui.ActionBar.i6.G8;
+            g90Var.m = org.telegram.ui.ActionBar.i6.i6;
+            g90Var.j(4.0f);
+            return;
+        }
+        SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
+        spannableString.setSpan(new qa0(this, document, this.h.getFontMetricsInt()), 0, spannableString.length(), 33);
+        o5 m10 = o5.m(i10, 0, document);
+        this.d = m10;
+        m10.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.n6, e6Var), PorterDuff.Mode.SRC_IN));
+        this.d.a(this);
+        SpannableString spannableString2 = new SpannableString(str);
+        spannableString2.setSpan(new ii.z5(1, this), 0, spannableString2.length(), 33);
+        this.n = new SpannableStringBuilder().append((CharSequence) split[0]).append((CharSequence) spannableString).append(' ').append((CharSequence) spannableString2).append((CharSequence) split[1]);
+        this.M = 1.0f;
+        this.b = null;
+    }
+
+    public final int a(int i10, boolean z10) {
+        int i11;
+        float f7;
+        if (i10 <= 0) {
+            return 0;
+        }
+        CharSequence charSequence = this.G;
+        TextPaint textPaint = this.h;
+        CharSequence charSequence2 = this.n;
+        if (charSequence2 != charSequence || this.F != i10) {
+            if (charSequence2 != null) {
+                StaticLayout staticLayout = new StaticLayout(charSequence2, 0, charSequence2.length(), textPaint, Math.max(i10, 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.r = staticLayout;
+                g90 g90Var = this.f;
+                if (g90Var != null && this.O == null) {
+                    int lineCount = staticLayout.getLineCount() - 1;
+                    this.x = AndroidUtilities.dp(2.0f) + ((int) this.r.getPrimaryHorizontal(charSequence2.length()));
+                    this.y = this.r.getLineTop(lineCount);
+                    this.E = r3 - this.y;
+                    float min = Math.min(AndroidUtilities.dp(100.0f), this.r.getWidth() - this.x);
+                    if (this.N == null) {
+                        this.N = new Rect();
+                    }
+                    Rect rect = this.N;
+                    int i12 = this.x;
+                    rect.set(i12, this.y, (int) (i12 + min), r3);
+                    g90Var.setBounds(this.N);
+                    this.e = true;
+                }
+            } else {
+                this.r = null;
+                this.e = false;
+            }
+            this.G = charSequence2;
+            this.F = i10;
+        }
+        SpannableStringBuilder spannableStringBuilder = this.v;
+        if (spannableStringBuilder != this.I || this.H != i10) {
+            if (spannableStringBuilder != null) {
+                SpannableStringBuilder spannableStringBuilder2 = this.v;
+                i11 = i10;
+                this.w = new StaticLayout(spannableStringBuilder2, 0, spannableStringBuilder2.length(), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            } else {
+                i11 = i10;
+                this.w = null;
+            }
+            this.I = this.v;
+            this.H = i11;
+        }
+        StaticLayout staticLayout2 = this.r;
+        int height = staticLayout2 != null ? staticLayout2.getHeight() : 0;
+        if (this.w != null) {
+            f7 = (r14.getHeight() - this.E) * (z10 ? 1.0f : this.M);
+        } else {
+            f7 = 0.0f;
+        }
+        return height + ((int) f7);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0049, code lost:
+    
+        r2 = null;
+     */
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        String str;
+        TLRPC.Document document;
+        ArrayList<TLRPC.Document> arrayList;
+        if (i10 != NotificationCenter.groupStickersDidLoad || this.b == null) {
+            return;
+        }
+        int i12 = this.a;
+        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(i12).getStickerSet(this.b, false);
+        if (stickerSet == null) {
+            return;
+        }
+        TLRPC.StickerSet stickerSet2 = stickerSet.set;
+        if (stickerSet2 != null) {
+            str = stickerSet2.title;
+            int i13 = 0;
+            while (true) {
+                ArrayList<TLRPC.Document> arrayList2 = stickerSet.documents;
+                if (arrayList2 == null || i13 >= arrayList2.size()) {
+                    break;
+                }
+                if (stickerSet.documents.get(i13).id == stickerSet.set.thumb_document_id) {
+                    document = stickerSet.documents.get(i13);
+                    break;
+                }
+                i13++;
+            }
+            if (document == null && (arrayList = stickerSet.documents) != null && arrayList.size() > 0) {
+                document = stickerSet.documents.get(0);
+            }
+        } else {
+            str = null;
+            document = null;
+        }
+        if (str == null || document == null) {
+            return;
+        }
+        o5 m10 = o5.m(i12, 0, document);
+        this.d = m10;
+        m10.a(this);
+        invalidate();
+        SpannableString spannableString = new SpannableString(" ");
+        spannableString.setSpan(new ra0(this, 0), 0, 1, 33);
+        SpannableString spannableString2 = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
+        spannableString2.setSpan(new sa0(this, document, this.h.getFontMetricsInt()), 0, spannableString2.length(), 33);
+        SpannableString spannableString3 = new SpannableString(str);
+        spannableString3.setSpan(new ii.z5(1, this), 0, spannableString3.length(), 33);
+        this.v = new SpannableStringBuilder().append((CharSequence) spannableString).append((CharSequence) spannableString2).append(' ').append((CharSequence) spannableString3).append((CharSequence) this.s);
+        int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
+        int a2 = a((this.J - getPaddingLeft()) - getPaddingRight(), true);
+        if (this.N != null && this.w != null) {
+            if (this.O == null) {
+                this.O = new Rect();
+            }
+            StaticLayout staticLayout = this.w;
+            float primaryHorizontal = staticLayout.getPrimaryHorizontal(staticLayout.getLineEnd(0));
+            Rect rect = this.O;
+            Rect rect2 = this.N;
+            rect.set(rect2.left, rect2.top, (int) primaryHorizontal, rect2.bottom);
+        }
+        this.b = null;
+        ValueAnimator valueAnimator = this.L;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        boolean z10 = Math.abs(measuredHeight - a2) > AndroidUtilities.dp(3.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M, 1.0f);
+        this.L = ofFloat;
+        ofFloat.addUpdateListener(new ai.bb(7, this, z10));
+        this.L.setInterpolator(qr.h);
+        this.L.setStartDelay(150L);
+        this.L.setDuration(400L);
+        this.L.start();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.a(this);
+        }
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.groupStickersDidLoad);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.o(this);
+        }
+        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.groupStickersDidLoad);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Rect rect;
+        super.onDraw(canvas);
+        if (this.r != null) {
+            canvas.save();
+            canvas.translate(getPaddingLeft(), getPaddingTop());
+            TextPaint textPaint = this.h;
+            textPaint.setAlpha(255);
+            this.r.draw(canvas);
+            g90 g90Var = this.f;
+            if (g90Var != null && this.e) {
+                g90Var.setAlpha((int) ((1.0f - this.M) * 255.0f));
+                Rect rect2 = this.N;
+                if (rect2 != null && (rect = this.O) != null) {
+                    float f7 = this.M;
+                    Rect rect3 = AndroidUtilities.rectTmp2;
+                    AndroidUtilities.lerp(rect2, rect, f7, rect3);
+                    g90Var.setBounds(rect3);
+                }
+                g90Var.draw(canvas);
+                invalidate();
+            }
+            if (this.w != null) {
+                canvas.save();
+                canvas.translate(0.0f, this.y);
+                textPaint.setAlpha((int) (this.M * 255.0f));
+                this.w.draw(canvas);
+                canvas.restore();
+            }
+            o5 o5Var = this.d;
+            if (o5Var != null) {
+                o5Var.setAlpha((int) (this.M * 255.0f));
+                this.d.setBounds(this.c);
+                this.d.draw(canvas);
+            }
+            canvas.restore();
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        int size = View.MeasureSpec.getSize(i10);
+        if (this.K && (i12 = this.J) > 0) {
+            size = Math.min(size, i12);
+        }
+        this.J = size;
+        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
+        if (paddingLeft < 0) {
+            paddingLeft = 0;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + a(paddingLeft, false), TLObject.FLAG_30));
     }
 }

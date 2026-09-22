@@ -8,7 +8,7 @@ import java.util.concurrent.CancellationException;
 import jd.a;
 import kotlin.jvm.internal.i;
 import rd.l;
-import v7.o8;
+import v7.n8;
 import wd.b;
 import zd.a1;
 import zd.b0;
@@ -25,7 +25,7 @@ import zd.t;
 import zd.t1;
 import zd.u1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class zzde implements h0 {
     private final /* synthetic */ s zza;
@@ -63,7 +63,7 @@ public final class zzde implements h0 {
     public final f get(g gVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return o8.a(u1Var, gVar);
+        return n8.a(u1Var, gVar);
     }
 
     @Override // zd.f1
@@ -92,19 +92,19 @@ public final class zzde implements h0 {
         return b0.b;
     }
 
-    public final he.c getOnAwait() {
+    public final he.b getOnAwait() {
         t tVar = (t) this.zza;
         tVar.getClass();
         kotlin.jvm.internal.s.a(3, r1.a);
         kotlin.jvm.internal.s.a(3, s1.a);
-        return new a6.i(tVar, 22);
+        return new a6.i(tVar, 23);
     }
 
     public final he.a getOnJoin() {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
         kotlin.jvm.internal.s.a(3, t1.a);
-        return new he.b(u1Var);
+        return new xa.c(u1Var, 24);
     }
 
     @Override // zd.f1
@@ -140,7 +140,7 @@ public final class zzde implements h0 {
     public final h minusKey(g gVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return o8.b(u1Var, gVar);
+        return n8.b(u1Var, gVar);
     }
 
     public final f1 plus(f1 f1Var) {
@@ -166,7 +166,7 @@ public final class zzde implements h0 {
     public final h plus(h hVar) {
         u1 u1Var = (u1) this.zza;
         u1Var.getClass();
-        return o8.c(u1Var, hVar);
+        return n8.c(u1Var, hVar);
     }
 
     public final boolean cancel(Throwable th2) {

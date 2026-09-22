@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.view.TextureView;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class of0 extends TextureView {
-    public final /* synthetic */ uf0 a;
+public final class of0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pf0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public of0(uf0 uf0Var, Context context) {
-        super(context);
-        this.a = uf0Var;
+    public /* synthetic */ of0(pf0 pf0Var, int i10) {
+        this.a = i10;
+        this.b = pf0Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View.MeasureSpec.getSize(i10);
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.TextureView
-    public final void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        vz vzVar = this.a.l0;
-        if (vzVar != null) {
-            int width = getWidth();
-            int height = getHeight();
-            oa oaVar = vzVar.I;
-            if (oaVar == null) {
-                return;
-            }
-            Matrix matrix2 = oaVar.v;
-            matrix.invert(matrix2);
-            float f7 = width;
-            float f10 = height;
-            matrix2.preScale(f7, f10);
-            matrix2.postScale(1.0f / f7, 1.0f / f10);
-            oaVar.c(matrix2);
-            vzVar.e(false, false, false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.a.n.setVisibility(8);
+                break;
+            default:
+                this.b.a.h.setVisibility(8);
+                break;
         }
     }
 }

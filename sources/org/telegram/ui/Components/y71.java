@@ -1,57 +1,50 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PhotoViewer;
+import android.content.Context;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d81 b;
+public final class y71 extends h81 {
+    public final /* synthetic */ i81 t0;
 
-    public /* synthetic */ y71(d81 d81Var, int i10) {
-        this.a = i10;
-        this.b = d81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y71(i81 i81Var, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i10, context, e6Var, z10);
+        this.t0 = i81Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d81 d81Var = this.b;
-                d81Var.h = 0.0f;
-                c6 c6Var = d81Var.b;
-                if (c6Var != null) {
-                    c6Var.u();
-                    d81Var.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                d81 d81Var2 = this.b;
-                d81Var2.a = true;
-                d81Var2.e = null;
-                if (d81Var2.b != null) {
-                    d81Var2.s = true;
-                    PhotoViewer photoViewer = d81Var2.M.a;
-                    if (photoViewer.u3) {
-                        photoViewer.a3(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                d81 d81Var3 = this.b;
-                d81Var3.a = true;
-                d81Var3.e = null;
-                if (d81Var3.b != null) {
-                    d81Var3.s = true;
-                    PhotoViewer photoViewer2 = d81Var3.M.a;
-                    if (photoViewer2.u3) {
-                        photoViewer2.a3(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.h81
+    public final void e(float f7, int i10, int i11) {
+        float f10 = f7 < 0.0f ? 0.0f : f7 > 1.0f ? 1.0f : f7;
+        this.F = i10;
+        SparseIntArray sparseIntArray = this.b0;
+        this.G = sparseIntArray.get(i10);
+        if (f10 > 0.0f) {
+            g81 g81Var = this.y;
+            if (g81Var != null) {
+                a81 a81Var = ((i81) ((ka.c) g81Var).b).L;
+            }
+            this.L = i11;
+            this.M = sparseIntArray.get(i11);
+        } else {
+            this.L = -1;
+            this.M = -1;
         }
+        this.K = f10;
+        this.v.f1();
+        invalidate();
+        c(i10);
+        if (f10 >= 1.0f) {
+            this.L = -1;
+            this.M = -1;
+            this.F = i11;
+            this.G = sparseIntArray.get(i11);
+        }
+        g81 g81Var2 = this.y;
+        if (g81Var2 != null) {
+            ((i81) ((ka.c) g81Var2).b).s();
+        }
+        this.t0.y(f7 <= 0.5f ? i10 : i11, i10 < i11);
     }
 }

@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class s30 extends org.telegram.ui.Components.c8 {
+public final class s30 extends org.telegram.ui.Components.b8 {
     public final /* synthetic */ i60 E;
     public final /* synthetic */ Activity y;
 
@@ -18,16 +18,16 @@ public final class s30 extends org.telegram.ui.Components.c8 {
         this.y = activity;
     }
 
-    @Override // org.telegram.ui.Components.c8
+    @Override // org.telegram.ui.Components.b8
     public final TextView a() {
         TextView textView = new TextView(this.y);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hg, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hg, false));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(51);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new tv(9, this, textView));
+        textView.setOnClickListener(new sv(9, this, textView));
         return textView;
     }
 }

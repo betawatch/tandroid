@@ -3,7 +3,7 @@ package ci;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final /* synthetic */ class e1 implements Utilities.Callback {
                 break;
             case 1:
                 i1 i1Var = t2Var.f;
-                ValueAnimator valueAnimator = i1Var.R;
+                ValueAnimator valueAnimator = i1Var.Q;
                 if ((valueAnimator == null || !valueAnimator.isRunning()) && i1Var.getCurrentPosition() != num.intValue()) {
-                    i1Var.E(num.intValue());
+                    i1Var.D(num.intValue());
                     s2 s2Var = t2Var.h;
                     s2Var.F = num.intValue();
                     s2Var.invalidate();

@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p40 implements ti {
     public final /* synthetic */ u40 a;
@@ -17,7 +17,7 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         vi viVar;
         u40 u40Var = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = u40Var.a;
@@ -94,7 +94,7 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void L0() {
+    public final void K0() {
         AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
     }
 
@@ -104,26 +104,26 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean f0() {
+    public final boolean c0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void v0() {
+    public final void u0() {
         this.a.r();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void y0(gh ghVar) {
-        ghVar.run();
+    public final void x0(fh fhVar) {
+        fhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void V0(Object obj) {
+    public final /* synthetic */ void U0(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void k1(TLRPC.User user) {
+    public final void j1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti

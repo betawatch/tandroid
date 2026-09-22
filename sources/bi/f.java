@@ -27,24 +27,25 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d4;
-import org.telegram.ui.Components.az0;
 import org.telegram.ui.Components.b40;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.c60;
-import org.telegram.ui.Components.dw;
-import org.telegram.ui.Components.kn0;
+import org.telegram.ui.Components.cw;
 import org.telegram.ui.Components.kp;
 import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.lv0;
-import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.u50;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.vm0;
+import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.pm;
-import org.telegram.ui.uo;
+import org.telegram.ui.rm;
+import org.telegram.ui.wo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -66,12 +67,12 @@ public final /* synthetic */ class f implements Runnable {
         switch (i10) {
             case 0:
                 u uVar = (u) obj;
-                zr0 zr0Var = uVar.W;
+                mr0 mr0Var = uVar.W;
                 if (!z10) {
-                    zr0Var.b(uVar.a.E);
+                    mr0Var.b(uVar.a.E);
                     break;
                 } else {
-                    new y(zr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(zr0Var, 4)).show();
+                    new y(mr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(mr0Var, 4)).show();
                     break;
                 }
             case 1:
@@ -117,9 +118,9 @@ public final /* synthetic */ class f implements Runnable {
                 ((t0) obj).f(z10, false);
                 break;
             case 7:
-                k2.k kVar = (k2.k) ((n4.y) obj).b;
+                k2.j jVar = (k2.j) ((n4.y) obj).c;
                 String str = d0.a;
-                e0 e0Var = ((b0) kVar).a;
+                e0 e0Var = ((b0) jVar).a;
                 if (e0Var.a0 != z10) {
                     e0Var.a0 = z10;
                     e0Var.m.e(23, new i2.x(i11, z10));
@@ -127,71 +128,51 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 8:
-                ki.h hVar = (ki.h) obj;
-                hVar.L = z10;
-                hVar.M = hVar.q();
-                hVar.N = 0;
-                hVar.O = 0;
-                ki.k kVar2 = hVar.j;
-                StringBuilder sb2 = new StringBuilder("torch requested: enabled=");
-                sb2.append(z10);
-                sb2.append(", available=");
-                sb2.append(hVar.q());
-                sb2.append(", cameraId=");
-                sb2.append(hVar.o);
-                sb2.append(", facing=");
-                sb2.append(hVar.C);
-                sb2.append(", sessionMode=");
-                sb2.append(hVar.b0 ? "CONSTRAINED_HIGH_SPEED" : "REGULAR");
-                kVar2.b(sb2.toString());
-                hVar.a();
-                break;
-            case 9:
                 ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
                 break;
-            case 10:
+            case 9:
                 ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z10);
                 break;
-            case 11:
+            case 10:
                 ((LocationController) obj).lambda$startFusedLocationRequest$5(z10);
                 break;
-            case 12:
+            case 11:
                 ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z10);
                 break;
-            case 13:
+            case 12:
                 ((UserConfig) obj).lambda$saveConfig$0(z10);
                 break;
-            case 14:
+            case 13:
                 ((CameraController) obj).lambda$recordVideo$11(z10);
                 break;
-            case 15:
+            case 14:
                 ((VideoCapturerDevice) obj).lambda$new$0(z10);
                 break;
-            case 16:
+            case 15:
                 ((VoIPService) obj).lambda$startGroupCall$27(z10);
                 break;
-            case 17:
+            case 16:
                 ((AudioManager) obj).setSpeakerphoneOn(z10);
                 break;
-            case 18:
+            case 17:
                 ((ConnectionsManager) obj).lambda$setIsUpdating$22(z10);
                 break;
-            case 19:
+            case 18:
                 nf.f.s((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
-            case 20:
-                az0 az0Var = ((pm) obj).c.d1;
-                if (az0Var != null && z10) {
-                    az0Var.setVisibility(8);
+            case 19:
+                ny0 ny0Var = ((rm) obj).c.d1;
+                if (ny0Var != null && z10) {
+                    ny0Var.setVisibility(8);
                     break;
                 }
                 break;
-            case 21:
-                uo uoVar = (uo) obj;
-                uoVar.x0.autotranslation = z10;
-                uoVar.getMessagesController().putChat(uoVar.x0, false);
+            case 20:
+                wo woVar = (wo) obj;
+                woVar.x0.autotranslation = z10;
+                woVar.getMessagesController().putChat(woVar.x0, false);
                 break;
-            case 22:
+            case 21:
                 mp mpVar = (mp) obj;
                 kp kpVar = mpVar.h;
                 if (kpVar != null && kpVar.d != null && !mpVar.isDismissed()) {
@@ -216,18 +197,18 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
                 break;
-            case 23:
-                dw dwVar = (dw) obj;
+            case 22:
+                cw cwVar = (cw) obj;
                 if (!z10) {
-                    dwVar.E.setVisibility(8);
+                    cwVar.E.setVisibility(8);
                     break;
                 }
                 break;
-            case 24:
+            case 23:
                 c10 c10Var = (c10) obj;
                 c10Var.R(c10Var.y0, z10);
                 break;
-            case 25:
+            case 24:
                 b40 b40Var = (b40) obj;
                 if (!z10) {
                     b40Var.r.setVisibility(8);
@@ -236,42 +217,51 @@ public final /* synthetic */ class f implements Runnable {
                     b40Var.getClass();
                     break;
                 }
-            case 26:
-                c60 c60Var = ((u50) obj).H0;
-                if (!c60Var.l0) {
+            case 25:
+                w50 w50Var = ((v50) obj).H0;
+                if (!w50Var.g0) {
                     try {
-                        c60Var.performHapticFeedback(3, 2);
+                        w50Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    AndroidUtilities.lockOrientation(c60Var.n.getParentActivity());
-                    c60Var.i0 = z10 ? c60Var.k0 : 0L;
-                    c60Var.h0 = System.currentTimeMillis();
-                    c60Var.j0 = true;
-                    c60Var.u();
-                    c60Var.invalidate();
-                    NotificationCenter.getInstance(c60Var.f).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(c60Var.V), Boolean.FALSE);
+                    AndroidUtilities.lockOrientation(w50Var.c.getParentActivity());
+                    w50Var.d0 = z10 ? w50Var.f0 : 0L;
+                    w50Var.c0 = System.currentTimeMillis();
+                    w50Var.e0 = true;
+                    w50Var.r();
+                    w50Var.invalidate();
+                    NotificationCenter.getInstance(w50Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(w50Var.Q), Boolean.FALSE);
                     break;
                 }
                 break;
+            case 26:
+                ba0 ba0Var = (ba0) obj;
+                if (!z10) {
+                    ba0Var.getClass();
+                    break;
+                } else {
+                    ba0Var.G.setVisibility(8);
+                    break;
+                }
             case 27:
-                ma0 ma0Var = (ma0) obj;
+                ((vm0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
+                break;
+            case 28:
+                yu0 yu0Var = (yu0) obj;
                 if (!z10) {
-                    ma0Var.getClass();
+                    yu0Var.m0.setVisibility(8);
                     break;
                 } else {
-                    ma0Var.G.setVisibility(8);
+                    yu0Var.getClass();
                     break;
                 }
-            case 28:
-                ((kn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
-                break;
             default:
-                lv0 lv0Var = (lv0) obj;
+                nr0 nr0Var = (nr0) obj;
                 if (!z10) {
-                    lv0Var.m0.setVisibility(8);
+                    nr0Var.U.q0.setVisibility(0);
                     break;
                 } else {
-                    lv0Var.getClass();
+                    nr0Var.getClass();
                     break;
                 }
         }

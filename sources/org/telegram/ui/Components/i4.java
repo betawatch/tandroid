@@ -1,66 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class i4 extends LinearLayout {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ fd0 c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i4(Context context, fd0 fd0Var, int i10) {
-        super(context);
-        this.a = i10;
-        this.c = fd0Var;
-        this.b = false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                h4 h4Var = (h4) this.c;
-                this.b = true;
-                Point point = AndroidUtilities.displaySize;
-                int i12 = point.x > point.y ? 3 : 5;
-                h4Var.setItemCount(i12);
-                h4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-                this.b = false;
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                m4 m4Var = (m4) this.c;
-                this.b = true;
-                Point point2 = AndroidUtilities.displaySize;
-                int i13 = point2.x > point2.y ? 3 : 5;
-                m4Var.setItemCount(i13);
-                m4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
-                this.b = false;
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-        }
+public final class i4 extends uc0 {
+    @Override // org.telegram.ui.Components.uc0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Times", i10 + 1, new Object[0]);
     }
 }

@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
 
-    public /* synthetic */ qg(zn znVar, int i10) {
+    public /* synthetic */ qg(bo boVar, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = boVar;
     }
 
     @Override // q0.a
@@ -16,44 +16,44 @@ public final /* synthetic */ class qg implements q0.a {
         switch (this.a) {
             case 0:
                 Integer num = (Integer) obj;
-                zn znVar = this.b;
-                znVar.getClass();
+                bo boVar = this.b;
+                boVar.getClass();
                 if (num.intValue() != 0) {
-                    znVar.Bc(true);
-                    znVar.E(num.intValue(), 0, 0, 0, false, true);
+                    boVar.Bc(true);
+                    boVar.F(num.intValue(), 0, 0, 0, false, true);
                     break;
                 } else {
-                    znVar.l1 = 0;
-                    znVar.Bc(true);
-                    znVar.getMessagesController().markReactionsAsRead(znVar.T5, znVar.d());
+                    boVar.l1 = 0;
+                    boVar.Bc(true);
+                    boVar.getMessagesController().markReactionsAsRead(boVar.T5, boVar.d());
                     break;
                 }
             case 1:
                 Integer num2 = (Integer) obj;
-                zn znVar2 = this.b;
-                znVar2.getClass();
+                bo boVar2 = this.b;
+                boVar2.getClass();
                 if (num2.intValue() != 0) {
-                    int i10 = znVar2.m1 - 1;
-                    znVar2.m1 = i10;
+                    int i10 = boVar2.m1 - 1;
+                    boVar2.m1 = i10;
                     if (i10 <= 0) {
-                        znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
+                        boVar2.getMessagesController().markPollVotesAsRead(boVar2.T5, boVar2.d());
                     }
-                    znVar2.Ac(true);
-                    znVar2.E(num2.intValue(), 0, 0, 0, false, true);
+                    boVar2.Ac(true);
+                    boVar2.F(num2.intValue(), 0, 0, 0, false, true);
                     break;
                 } else {
-                    znVar2.m1 = 0;
-                    znVar2.Ac(true);
-                    znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
+                    boVar2.m1 = 0;
+                    boVar2.Ac(true);
+                    boVar2.getMessagesController().markPollVotesAsRead(boVar2.T5, boVar2.d());
                     break;
                 }
             default:
-                zn znVar3 = this.b;
-                znVar3.getClass();
+                bo boVar3 = this.b;
+                boVar3.getClass();
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                znVar3.f7 = booleanValue;
+                boVar3.f7 = booleanValue;
                 if (!booleanValue) {
-                    znVar3.r8();
+                    boVar3.r8();
                     break;
                 }
                 break;

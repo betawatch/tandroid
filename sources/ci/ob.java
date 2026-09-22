@@ -1,6 +1,6 @@
 package ci;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class ob implements sc {
     public final /* synthetic */ bi.v a;
@@ -10,32 +10,28 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final void D(float f7, boolean z10) {
+    public final void H(float f7, boolean z10) {
         this.a.run(Boolean.FALSE, Float.valueOf(f7));
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void B(float f7) {
+    public final /* synthetic */ void F(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void J(long j3) {
+    public final /* synthetic */ void O(long j3) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void L(boolean z10) {
+    public final /* synthetic */ void Q(boolean z10) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void Q(float f7) {
+    public final /* synthetic */ void V(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void U(float f7) {
-    }
-
-    @Override // ci.sc
-    public final /* synthetic */ void X(float f7) {
+    public final /* synthetic */ void Z(float f7) {
     }
 
     @Override // ci.sc
@@ -43,54 +39,58 @@ public final class ob implements sc {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void b0(float f7) {
+    public final /* synthetic */ void e0(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void f(float f7) {
+    public final /* synthetic */ void f0() {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void h0(long j3) {
+    public final /* synthetic */ void h(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void k(float f7) {
+    public final /* synthetic */ void i0(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void t(float f7) {
+    public final /* synthetic */ void n(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void u(boolean z10) {
+    public final /* synthetic */ void o0(long j3) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void Y() {
+    public final /* synthetic */ void s() {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void r() {
+    public final /* synthetic */ void u(float f7) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void O(float f7, int i10) {
+    public final /* synthetic */ void w(boolean z10) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void W(float f7, int i10) {
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void c0(int i10, long j3) {
+    public final /* synthetic */ void T(float f7, int i10) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void m(long j3, boolean z10) {
+    public final /* synthetic */ void d0(float f7, int i10) {
     }
 
     @Override // ci.sc
-    public final /* synthetic */ void y(float f7, int i10) {
+    public final /* synthetic */ void j0(int i10, long j3) {
+    }
+
+    @Override // ci.sc
+    public final /* synthetic */ void o(long j3, boolean z10) {
     }
 }

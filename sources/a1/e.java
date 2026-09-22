@@ -7,8 +7,6 @@ import ai.c3;
 import ai.d2;
 import ai.d9;
 import ai.da;
-import ai.e6;
-import ai.e9;
 import ai.f6;
 import ai.fb;
 import ai.h1;
@@ -50,6 +48,7 @@ import ci.nc;
 import ci.o8;
 import ci.oc;
 import e2.d0;
+import hg.r;
 import i2.a0;
 import i2.b0;
 import i2.e0;
@@ -72,8 +71,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.rk;
 import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.vl;
+import org.telegram.messenger.y0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
@@ -81,18 +81,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.a2;
-import org.telegram.ui.Cells.f9;
-import org.telegram.ui.Cells.n4;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.e9;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.z1;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.ProfileActivity;
 import rg.x0;
 import v0.i;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -105,7 +106,7 @@ public final /* synthetic */ class e implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0164 A[Catch: all -> 0x00f0, TryCatch #0 {all -> 0x00f0, blocks: (B:32:0x00a6, B:35:0x00b6, B:37:0x00d6, B:39:0x00e1, B:41:0x00f5, B:43:0x00fb, B:46:0x014c, B:48:0x0164, B:49:0x0169, B:54:0x011f, B:56:0x0123), top: B:31:0x00a6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0166 A[Catch: all -> 0x00f2, TryCatch #0 {all -> 0x00f2, blocks: (B:32:0x00a8, B:35:0x00b8, B:37:0x00d8, B:39:0x00e3, B:41:0x00f7, B:43:0x00fd, B:46:0x014e, B:48:0x0166, B:49:0x016b, B:54:0x0121, B:56:0x0125), top: B:31:0x00a8 }] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -117,6 +118,7 @@ public final /* synthetic */ class e implements Runnable {
         int i10;
         boolean z10;
         int i11 = 12;
+        int i12 = 14;
         String str = null;
         switch (this.a) {
             case 0:
@@ -141,7 +143,7 @@ public final /* synthetic */ class e implements Runnable {
                 String str3 = d0.a;
                 j2.f fVar = ((b0) l0Var2).a.s;
                 j2.a p5 = fVar.p();
-                fVar.q(p5, 1030, new ga.a(p5, exc, 15));
+                fVar.q(p5, 1030, new r(p5, exc, i12));
                 break;
             case 4:
                 of.b bVar3 = (of.b) this.b;
@@ -150,7 +152,7 @@ public final /* synthetic */ class e implements Runnable {
                 String str5 = d0.a;
                 j2.f fVar2 = ((b0) l0Var3).a.s;
                 j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1019, new ga.a(p10, str4, 22));
+                fVar2.q(p10, 1019, new r(p10, str4, 21));
                 break;
             case 5:
                 ((jc) this.b).H(ProfileActivity.m4(((m1) this.c).c));
@@ -170,106 +172,106 @@ public final /* synthetic */ class e implements Runnable {
                 f6 f6Var = r3Var2.i0;
                 if (j3 != UserConfig.getInstance(f6Var.C2).getClientUserId() && ((d2Var = r3Var2.h0.A0) == null || j3 != DialogObject.getPeerDialogId(d2Var.i()))) {
                     if (f6Var.O3 != null) {
-                        for (int i12 = 0; i12 < f6Var.O3.peers.size(); i12++) {
-                            if (j3 != DialogObject.getPeerDialogId(f6Var.O3.peers.get(i12).peer)) {
+                        for (int i13 = 0; i13 < f6Var.O3.peers.size(); i13++) {
+                            if (j3 != DialogObject.getPeerDialogId(f6Var.O3.peers.get(i13).peer)) {
                             }
                         }
                     }
                     Context context = r3Var2.getContext();
                     long j10 = m1Var.c;
-                    q0 q0Var = new q0(r7, r3Var2, m1Var);
+                    q0 q0Var = new q0(r8, r3Var2, m1Var);
                     b1 b1Var = new b1();
-                    f3 f3Var = new f3(1, context, (org.telegram.ui.ActionBar.f6) b1Var, false);
+                    f3 f3Var = new f3(1, context, (e6) b1Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout f7 = rk.f(context, 1);
-                    TextView f10 = org.telegram.messenger.l0.f(context, 1, 20.0f);
-                    f10.setTextColor(b1Var.F0(j6.j5));
-                    f10.setTypeface(AndroidUtilities.bold());
-                    f10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    f7.addView(f10, y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-                    n4 n4Var = new n4(context, b1Var);
-                    n4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    f7.addView(n4Var, y5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
-                    final a2 a2Var = new a2(4, 21, context, b1Var, true);
-                    np checkBoxRound = a2Var.getCheckBoxRound();
-                    int i13 = j6.V6;
-                    int i14 = j6.g7;
-                    int i15 = j6.k7;
-                    checkBoxRound.b(i13, i14, i15);
-                    a2Var.e(LocaleController.getString(R.string.DeleteReportSpam), null, false, true, false);
-                    a2Var.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                    LinearLayout f7 = vl.f(context, 1);
+                    TextView g10 = y0.g(context, 1, 20.0f);
+                    g10.setTextColor(b1Var.G0(i6.j5));
+                    g10.setTypeface(AndroidUtilities.bold());
+                    g10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
+                    f7.addView(g10, x5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    m4 m4Var = new m4(context, b1Var);
+                    m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
+                    f7.addView(m4Var, x5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    final z1 z1Var = new z1(4, 21, context, b1Var, true);
+                    np checkBoxRound = z1Var.getCheckBoxRound();
+                    int i14 = i6.V6;
+                    int i15 = i6.g7;
+                    int i16 = i6.k7;
+                    checkBoxRound.b(i14, i15, i16);
+                    z1Var.e(LocaleController.getString(R.string.DeleteReportSpam), null, false, true, false);
+                    z1Var.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (r2) {
                                 case 0:
-                                    a2Var.c(!r3.b(), true);
+                                    z1Var.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    a2Var.c(!r3.b(), true);
+                                    z1Var.c(!r3.b(), true);
                                     break;
                                 default:
-                                    a2Var.c(!r3.b(), true);
+                                    z1Var.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
-                    int i16 = j6.i6;
-                    a2Var.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
-                    f7.addView(a2Var, y5.n(-1, -2));
-                    final a2 a2Var2 = new a2(4, 21, context, b1Var, true);
-                    a2Var2.getCheckBoxRound().b(i13, i14, i15);
-                    final int i17 = 1;
-                    a2Var2.e(LocaleController.formatString(R.string.DeleteAllFrom, DialogObject.getName(j10)), null, false, true, false);
-                    a2Var2.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i17) {
-                                case 0:
-                                    a2Var2.c(!r3.b(), true);
-                                    break;
-                                case 1:
-                                    a2Var2.c(!r3.b(), true);
-                                    break;
-                                default:
-                                    a2Var2.c(!r3.b(), true);
-                                    break;
-                            }
-                        }
-                    });
-                    a2Var2.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
-                    f7.addView(a2Var2, y5.n(-1, -2));
-                    final a2 a2Var3 = new a2(4, 21, context, b1Var, true);
-                    a2Var3.getCheckBoxRound().b(i13, i14, i15);
-                    a2Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
-                    final int i18 = 2;
-                    a2Var3.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                    int i17 = i6.i6;
+                    z1Var.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    f7.addView(z1Var, x5.n(-1, -2));
+                    final z1 z1Var2 = new z1(4, 21, context, b1Var, true);
+                    z1Var2.getCheckBoxRound().b(i14, i15, i16);
+                    final int i18 = 1;
+                    z1Var2.e(LocaleController.formatString(R.string.DeleteAllFrom, DialogObject.getName(j10)), null, false, true, false);
+                    z1Var2.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i18) {
                                 case 0:
-                                    a2Var3.c(!r3.b(), true);
+                                    z1Var2.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    a2Var3.c(!r3.b(), true);
+                                    z1Var2.c(!r3.b(), true);
                                     break;
                                 default:
-                                    a2Var3.c(!r3.b(), true);
+                                    z1Var2.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
-                    a2Var3.setBackground(j6.f0(b1Var.F0(i16), 2, -1));
-                    f7.addView(a2Var3, y5.n(-1, -2));
-                    f9 f9Var = new f9(context, b1Var);
-                    f9Var.setBackgroundColor(-16777216);
-                    f9Var.setFixedSize(12);
-                    f7.addView(f9Var, y5.n(-1, -2));
+                    z1Var2.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    f7.addView(z1Var2, x5.n(-1, -2));
+                    final z1 z1Var3 = new z1(4, 21, context, b1Var, true);
+                    z1Var3.getCheckBoxRound().b(i14, i15, i16);
+                    z1Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
+                    final int i19 = 2;
+                    z1Var3.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            switch (i19) {
+                                case 0:
+                                    z1Var3.c(!r3.b(), true);
+                                    break;
+                                case 1:
+                                    z1Var3.c(!r3.b(), true);
+                                    break;
+                                default:
+                                    z1Var3.c(!r3.b(), true);
+                                    break;
+                            }
+                        }
+                    });
+                    z1Var3.setBackground(i6.f0(b1Var.G0(i17), 2, -1));
+                    f7.addView(z1Var3, x5.n(-1, -2));
+                    e9 e9Var = new e9(context, b1Var);
+                    e9Var.setBackgroundColor(-16777216);
+                    e9Var.setFixedSize(12);
+                    f7.addView(e9Var, x5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     ci.d dVar = new ci.d(context, b1Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
-                    dVar.setOnClickListener(new s0(a2Var, a2Var2, a2Var3, q0Var, f3Var, 0));
-                    frameLayout.addView(dVar, y5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-                    f7.addView(frameLayout, y5.n(-1, -2));
+                    dVar.setOnClickListener(new s0(z1Var, z1Var2, z1Var3, q0Var, f3Var, 0));
+                    frameLayout.addView(dVar, x5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
+                    f7.addView(frameLayout, x5.n(-1, -2));
                     f3Var.setCustomView(f7);
                     f3Var.show();
                     break;
@@ -285,10 +287,10 @@ public final /* synthetic */ class e implements Runnable {
                 ArrayList arrayList = (ArrayList) this.c;
                 d2Var2.getClass();
                 int size = arrayList.size();
-                int i19 = 0;
-                while (i19 < size) {
-                    Object obj = arrayList.get(i19);
-                    i19++;
+                int i20 = 0;
+                while (i20 < size) {
+                    Object obj = arrayList.get(i20);
+                    i20++;
                     TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) obj;
                     NotificationCenter.getInstance(d2Var2.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryMessageUpdate, Long.valueOf(tL_updateGroupCallMessage.call.id), tL_updateGroupCallMessage, Boolean.TRUE);
                 }
@@ -308,15 +310,15 @@ public final /* synthetic */ class e implements Runnable {
             case 11:
                 f6 f6Var3 = (f6) this.b;
                 oc E = oc.E((Activity) this.c, f6Var3.C2);
-                e6 e6Var = f6Var3.M2;
+                ai.e6 e6Var = f6Var3.M2;
                 long j11 = (e6Var == null || (icVar = (ic) e6Var.c) == null) ? 0L : icVar.currentPosition;
                 File h = f6Var3.O1.h();
                 TL_stories.StoryItem storyItem = f6Var3.O1.a;
                 o8 o8Var = new o8();
                 o8Var.n = true;
                 o8Var.t = storyItem.media;
-                int i20 = o8Var.a;
-                o8Var.q = MessagesController.getInstance(i20).getPeer(storyItem.dialogId);
+                int i21 = o8Var.a;
+                o8Var.q = MessagesController.getInstance(i21).getPeer(storyItem.dialogId);
                 o8Var.r = storyItem.id;
                 o8Var.s = storyItem.caption;
                 o8Var.L = h;
@@ -333,16 +335,16 @@ public final /* synthetic */ class e implements Runnable {
                     o8Var.K = true;
                     TLRPC.Document document = messageMedia.document;
                     if (document != null && document.attributes != null) {
-                        int i21 = 0;
+                        int i22 = 0;
                         while (true) {
-                            if (i21 < storyItem.media.document.attributes.size()) {
-                                TLRPC.DocumentAttribute documentAttribute = storyItem.media.document.attributes.get(i21);
+                            if (i22 < storyItem.media.document.attributes.size()) {
+                                TLRPC.DocumentAttribute documentAttribute = storyItem.media.document.attributes.get(i22);
                                 if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
                                     o8Var.k0 = documentAttribute.w;
                                     o8Var.l0 = documentAttribute.h;
                                     o8Var.i = documentAttribute.duration;
                                 } else {
-                                    i21++;
+                                    i22++;
                                 }
                             }
                         }
@@ -353,12 +355,12 @@ public final /* synthetic */ class e implements Runnable {
                         if (str6 != null) {
                             o8Var.N = str6;
                         } else if (document2.thumbs != null) {
-                            for (int i22 = 0; i22 < storyItem.media.document.thumbs.size(); i22++) {
-                                TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i22);
+                            for (int i23 = 0; i23 < storyItem.media.document.thumbs.size(); i23++) {
+                                TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i23);
                                 if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
                                     o8Var.O = ImageLoader.getStrippedPhotoBitmap(photoSize.bytes, null);
                                 } else {
-                                    File pathToAttach = FileLoader.getInstance(i20).getPathToAttach(photoSize, true);
+                                    File pathToAttach = FileLoader.getInstance(i21).getPathToAttach(photoSize, true);
                                     if (pathToAttach != null && pathToAttach.exists()) {
                                         o8Var.N = pathToAttach.getAbsolutePath();
                                     }
@@ -373,10 +375,10 @@ public final /* synthetic */ class e implements Runnable {
                 RectF rectF = E.H;
                 WindowManager.LayoutParams layoutParams = E.h;
                 WindowManager windowManager = E.f;
-                int i23 = E.c;
+                int i24 = E.c;
                 if (!E.d) {
-                    if (MessagesController.getInstance(i23).isFrozen()) {
-                        org.telegram.ui.b.b(i23);
+                    if (MessagesController.getInstance(i24).isFrozen()) {
+                        org.telegram.ui.b.b(i24);
                     } else {
                         E.u0 = false;
                         E.e = false;
@@ -387,7 +389,7 @@ public final /* synthetic */ class e implements Runnable {
                             E.g0();
                         }
                         E.K1 = o8Var;
-                        ja.a(i23, o8Var);
+                        ja.a(i24, o8Var);
                         o8 o8Var2 = E.K1;
                         E.O1 = (o8Var2 == null || !o8Var2.K) ? 0 : 1;
                         E.s0.g = false;
@@ -404,8 +406,8 @@ public final /* synthetic */ class e implements Runnable {
                         }
                         E.r.c();
                         ac acVar = E.h0;
-                        int i24 = E.J;
-                        acVar.setBackgroundColor((i24 == 1 || i24 == 0) ? 0 : -14737633);
+                        int i25 = E.J;
+                        acVar.setBackgroundColor((i25 == 1 || i25 == 0) ? 0 : -14737633);
                         E.r.setTranslationX(0.0f);
                         E.r.setTranslationY(0.0f);
                         E.r.b(0.0f);
@@ -427,7 +429,7 @@ public final /* synthetic */ class e implements Runnable {
                     }
                 }
                 E.Q = new c3(f6Var3, i11);
-                E.R = new k3(r7, f6Var3, E);
+                E.R = new k3(r8, f6Var3, E);
                 break;
             case 12:
                 w5 w5Var = (w5) this.b;
@@ -456,23 +458,23 @@ public final /* synthetic */ class e implements Runnable {
                 v8 v8Var = (v8) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 y8 y8Var = v8Var.q;
-                int i25 = v8Var.c;
+                int i26 = v8Var.c;
                 ArrayList arrayList2 = v8Var.i;
                 v8Var.I = 0;
                 if (tLObject instanceof TL_stories.TL_foundStories) {
                     TL_stories.TL_foundStories tL_foundStories = (TL_stories.TL_foundStories) tLObject;
-                    MessagesController.getInstance(i25).putUsers(tL_foundStories.users, false);
-                    MessagesController.getInstance(i25).putChats(tL_foundStories.chats, false);
+                    MessagesController.getInstance(i26).putUsers(tL_foundStories.users, false);
+                    MessagesController.getInstance(i26).putChats(tL_foundStories.chats, false);
                     ArrayList<TL_stories.TL_foundStory> arrayList3 = tL_foundStories.stories;
                     int size2 = arrayList3.size();
-                    int i26 = 0;
-                    while (i26 < size2) {
-                        TL_stories.TL_foundStory tL_foundStory = arrayList3.get(i26);
-                        i26++;
+                    int i27 = 0;
+                    while (i27 < size2) {
+                        TL_stories.TL_foundStory tL_foundStory = arrayList3.get(i27);
+                        i27++;
                         TL_stories.TL_foundStory tL_foundStory2 = tL_foundStory;
                         tL_foundStory2.storyItem.dialogId = DialogObject.getPeerDialogId(tL_foundStory2.peer);
                         tL_foundStory2.storyItem.messageId = arrayList2.size();
-                        MessageObject messageObject = new MessageObject(i25, tL_foundStory2.storyItem);
+                        MessageObject messageObject = new MessageObject(i26, tL_foundStory2.storyItem);
                         messageObject.generateThumbs(false);
                         ArrayList arrayList4 = new ArrayList();
                         arrayList4.add(Integer.valueOf(arrayList2.size()));
@@ -514,11 +516,11 @@ public final /* synthetic */ class e implements Runnable {
                     ArrayList arrayList8 = new ArrayList(tL_albums.albums.size());
                     ArrayList<TL_stories.TL_storyAlbum> arrayList9 = tL_albums.albums;
                     int size3 = arrayList9.size();
-                    int i27 = 0;
-                    while (i27 < size3) {
-                        TL_stories.TL_storyAlbum tL_storyAlbum = arrayList9.get(i27);
-                        i27++;
-                        arrayList8.add(e9.a(tL_storyAlbum));
+                    int i28 = 0;
+                    while (i28 < size3) {
+                        TL_stories.TL_storyAlbum tL_storyAlbum = arrayList9.get(i28);
+                        i28++;
+                        arrayList8.add(ai.e9.a(tL_storyAlbum));
                     }
                     arrayList7.clear();
                     arrayList7.addAll(arrayList8);
@@ -565,7 +567,7 @@ public final /* synthetic */ class e implements Runnable {
             case 21:
                 k9 k9Var2 = (k9) this.b;
                 k9Var2.c.c((File) this.c);
-                AndroidUtilities.runOnUIThread(new i9(k9Var2, r7));
+                AndroidUtilities.runOnUIThread(new i9(k9Var2, r8));
                 break;
             case 22:
                 y9.a((y9) this.b, (h8) this.c);
@@ -581,10 +583,10 @@ public final /* synthetic */ class e implements Runnable {
                 try {
                     long peerDialogId = DialogObject.getPeerDialogId(tL_updateStory.peer);
                     TL_stories.StoryItem storyItem2 = tL_updateStory.story;
-                    int i28 = storyItem2.id;
+                    int i29 = storyItem2.id;
                     if (storyItem2 instanceof TL_stories.TL_storyItemDeleted) {
                         Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data, custom_params FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i28, new Object[0]);
+                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data, custom_params FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i29, new Object[0]);
                         if (queryFinalized.next()) {
                             NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
                             NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(1);
@@ -600,14 +602,14 @@ public final /* synthetic */ class e implements Runnable {
                             z10 = false;
                         }
                         queryFinalized.dispose();
-                        database.executeFast("DELETE FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i28).stepThis().dispose();
+                        database.executeFast("DELETE FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i29).stepThis().dispose();
                         if (z10) {
                             i10 = -1;
                             SQLiteCursor queryFinalized2 = database.queryFinalized("SELECT count, max_read FROM stories_counter WHERE dialog_id = " + peerDialogId, new Object[0]);
-                            r7 = queryFinalized2.next() ? queryFinalized2.intValue(1) : 0;
+                            r8 = queryFinalized2.next() ? queryFinalized2.intValue(1) : 0;
                             queryFinalized2.dispose();
                             Locale locale2 = Locale.US;
-                            database.executeFast("UPDATE stories_counter SET count = " + (r7 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
+                            database.executeFast("UPDATE stories_counter SET count = " + (r8 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
                             break;
                         }
                         i10 = 0;
@@ -616,12 +618,12 @@ public final /* synthetic */ class e implements Runnable {
                         }
                         queryFinalized22.dispose();
                         Locale locale22 = Locale.US;
-                        database.executeFast("UPDATE stories_counter SET count = " + (r7 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
+                        database.executeFast("UPDATE stories_counter SET count = " + (r8 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
                     } else {
                         if (storyItem2 instanceof TL_stories.TL_storyItem) {
                             y9Var.l(peerDialogId, storyItem2);
                             Locale locale3 = Locale.US;
-                            SQLiteCursor queryFinalized3 = database.queryFinalized("SELECT story_id FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i28, new Object[0]);
+                            SQLiteCursor queryFinalized3 = database.queryFinalized("SELECT story_id FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id = " + i29, new Object[0]);
                             boolean next = queryFinalized3.next();
                             queryFinalized3.dispose();
                             if (!next) {
@@ -631,7 +633,7 @@ public final /* synthetic */ class e implements Runnable {
                                 }
                                 queryFinalized222.dispose();
                                 Locale locale222 = Locale.US;
-                                database.executeFast("UPDATE stories_counter SET count = " + (r7 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
+                                database.executeFast("UPDATE stories_counter SET count = " + (r8 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
                             }
                         }
                         i10 = 0;
@@ -640,7 +642,7 @@ public final /* synthetic */ class e implements Runnable {
                         }
                         queryFinalized2222.dispose();
                         Locale locale2222 = Locale.US;
-                        database.executeFast("UPDATE stories_counter SET count = " + (r7 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
+                        database.executeFast("UPDATE stories_counter SET count = " + (r8 + i10) + " WHERE dialog_id = " + peerDialogId).stepThis().dispose();
                     }
                 } catch (Throwable th2) {
                     messagesStorage.checkSQLException(th2);

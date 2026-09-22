@@ -3,7 +3,7 @@ package ii;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusCh
                 break;
             case 2:
                 w3 w3Var = (w3) this.b;
-                w3Var.a3 = (view2 == null || w3Var.G(view2) == null) ? false : true;
+                w3Var.a3 = (view2 == null || w3Var.F(view2) == null) ? false : true;
                 if (view2 instanceof i1) {
                     w3Var.L3 = (i1) view2;
                     break;

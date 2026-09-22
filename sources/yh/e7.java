@@ -1,50 +1,50 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.Components.yl0;
+import android.widget.LinearLayout;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.dv0;
+import org.telegram.ui.tu0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class e7 extends x51 {
-    public static final /* synthetic */ int a = 0;
+public final class e7 extends tu0 {
+    public final /* synthetic */ u9 a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ long c;
 
-    static {
-        x51.setup(new e7());
+    public e7(u9 u9Var, LinearLayout linearLayout, long j3) {
+        this.a = u9Var;
+        this.b = linearLayout;
+        this.c = j3;
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final void bindView(View view, y51 y51Var, boolean z10, m61 m61Var, u61 u61Var) {
-        f7 f7Var = (f7) view;
-        org.telegram.ui.Components.o6 o6Var = f7Var.a;
-        ImageView imageView = f7Var.b;
-        int i10 = f7Var.c;
-        int i11 = y51Var.d;
-        boolean z11 = i10 == i11;
-        f7Var.c = i11;
-        o6Var.c(y51Var.l, z11, true);
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, y51Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, false);
-        o6Var.setTextColor(w02);
-        imageView.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
-        if (z11) {
-            imageView.animate().rotation(y51Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(qr.h);
-        } else {
-            imageView.setRotation(y51Var.f ? 0.0f : 180.0f);
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        u9 u9Var = this.a;
+        ImageReceiver imageReceiver = u9Var.getImageReceiver();
+        int[] iArr = new int[2];
+        u9Var.getLocationInWindow(iArr);
+        dv0 dv0Var = new dv0();
+        dv0Var.b = iArr[0];
+        dv0Var.c = iArr[1];
+        dv0Var.d = this.b;
+        dv0Var.m = null;
+        dv0Var.a = imageReceiver;
+        if (z10) {
+            dv0Var.e = imageReceiver.getBitmapSafe();
         }
-        f7Var.d = z10;
-        f7Var.setWillNotDraw(!z10);
+        dv0Var.h = imageReceiver.getRoundRadius(true);
+        dv0Var.f = this.c;
+        dv0Var.j = 0;
+        dv0Var.i = 0;
+        return dv0Var;
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new f7(context);
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final boolean K() {
+        return true;
     }
 }

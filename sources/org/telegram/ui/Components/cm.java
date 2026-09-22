@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class cm extends org.telegram.ui.tu0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -69,12 +69,12 @@ public abstract class cm extends org.telegram.ui.tu0 {
                             break;
                         }
                         View childAt = tlVar2.getChildAt(i11);
-                        if (!(childAt instanceof org.telegram.ui.Cells.u5) || ((Integer) childAt.getTag()).intValue() != i10) {
+                        if (!(childAt instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt.getTag()).intValue() != i10) {
                             i11++;
-                        } else if ((viVar.f0 instanceof org.telegram.ui.zn) && viVar.T1) {
-                            ((org.telegram.ui.Cells.u5) childAt).b(Q, z10, false);
+                        } else if ((viVar.f0 instanceof org.telegram.ui.bo) && viVar.T1) {
+                            ((org.telegram.ui.Cells.t5) childAt).b(Q, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.u5) childAt).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.t5) childAt).b(-1, z10, false);
                         }
                     }
                     int childCount2 = tlVar.getChildCount();
@@ -84,12 +84,12 @@ public abstract class cm extends org.telegram.ui.tu0 {
                             break;
                         }
                         View childAt2 = tlVar.getChildAt(i12);
-                        if (!(childAt2 instanceof org.telegram.ui.Cells.u5) || ((Integer) childAt2.getTag()).intValue() != i10) {
+                        if (!(childAt2 instanceof org.telegram.ui.Cells.t5) || ((Integer) childAt2.getTag()).intValue() != i10) {
                             i12++;
-                        } else if ((viVar.f0 instanceof org.telegram.ui.zn) && viVar.T1) {
-                            ((org.telegram.ui.Cells.u5) childAt2).b(Q, z10, false);
+                        } else if ((viVar.f0 instanceof org.telegram.ui.bo) && viVar.T1) {
+                            ((org.telegram.ui.Cells.t5) childAt2).b(Q, z10, false);
                         } else {
-                            ((org.telegram.ui.Cells.u5) childAt2).b(-1, z10, false);
+                            ((org.telegram.ui.Cells.t5) childAt2).b(-1, z10, false);
                         }
                     }
                     viVar.V1(z10 ? 1 : 2);

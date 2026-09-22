@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q60 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ c70 b;
+public final class q60 extends org.telegram.ui.Cells.e9 {
+    public final org.telegram.ui.Cells.l7 v;
+    public boolean w;
+    public final /* synthetic */ r60 x;
 
-    public q60(c70 c70Var, s4.c0 c0Var) {
-        this.b = c70Var;
-        this.a = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q60(r60 r60Var, Context context) {
+        super(context);
+        this.x = r60Var;
+        this.v = new org.telegram.ui.Cells.l7(this, 15);
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        c70 c70Var = this.b;
-        c70.O(c70Var);
-        if (!c70Var.R || c70Var.Q) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.ui.Cells.l7 l7Var = this.v;
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        if (this.w) {
+            AndroidUtilities.runOnUIThread(l7Var, 500L);
         }
-        if (c70Var.S - this.a.N0() < 10) {
-            c70Var.X();
-        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AndroidUtilities.cancelRunOnUIThread(this.v);
     }
 }

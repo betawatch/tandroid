@@ -1,40 +1,31 @@
 package x7;
 
-import android.graphics.Rect;
-import android.view.View;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class d7 implements r0.n, ce.b {
-    public Object a;
-    public Object b;
+public enum d7 implements a0 {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
 
-    @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
-        z4.g gVar = (z4.g) this.b;
-        r0.l1 h = r0.i0.h(view, l1Var);
-        if (h.a.n()) {
-            return h;
-        }
-        Rect rect = (Rect) this.a;
-        rect.left = h.b();
-        rect.top = h.d();
-        rect.right = h.c();
-        rect.bottom = h.a();
-        int childCount = gVar.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            r0.l1 b10 = r0.i0.b(gVar.getChildAt(i10), h);
-            rect.left = Math.min(b10.b(), rect.left);
-            rect.top = Math.min(b10.d(), rect.top);
-            rect.right = Math.min(b10.c(), rect.right);
-            rect.bottom = Math.min(b10.a(), rect.bottom);
-        }
-        return h.f(rect.left, rect.top, rect.right, rect.bottom);
+    public final int a;
+
+    d7(int i10) {
+        this.a = i10;
     }
 
-    @Override // ce.b
-    public Object u(ce.c cVar, kd.c cVar2) {
-        Object u10 = ((n4.y) this.a).u(new k1.p(cVar, (za.y) this.b), cVar2);
-        return u10 == jd.a.a ? u10 : gd.i.a;
+    @Override // x7.a0
+    public final int zza() {
+        return this.a;
     }
 }

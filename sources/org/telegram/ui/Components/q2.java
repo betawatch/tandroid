@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         TLRPC.User user;
         String string;
         switch (this.a) {
@@ -62,7 +62,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2 {
                         MessagesController.getInstance(currentAccount).putUser(user, true);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        n2Var2.presentFragment(new org.telegram.ui.zn(bundle));
+                        n2Var2.presentFragment(new org.telegram.ui.bo(bundle));
                         break;
                     } else {
                         org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(n2Var2.getParentActivity(), 3, null);

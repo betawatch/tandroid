@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import a4.a;
 import java.util.Map;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 final class zzuk implements Map.Entry, Comparable {
     final /* synthetic */ zzuo zza;
@@ -64,7 +64,7 @@ final class zzuk implements Map.Entry, Comparable {
     }
 
     public final String toString() {
-        return a.C(String.valueOf(this.zzb), "=", String.valueOf(this.zzc));
+        return a.D(String.valueOf(this.zzb), "=", String.valueOf(this.zzc));
     }
 
     public final Comparable zza() {

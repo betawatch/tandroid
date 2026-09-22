@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements e2.h {
     public final /* synthetic */ int a;
@@ -17,15 +17,15 @@ public final /* synthetic */ class h0 implements e2.h {
 
     @Override // e2.h
     public final void accept(Object obj) {
-        l0 l0Var = (l0) obj;
+        k0 k0Var = (k0) obj;
         switch (this.a) {
             case 0:
                 a5.a aVar = this.b;
-                l0Var.e(aVar.b, (f0) aVar.c, this.c, this.d);
+                k0Var.e(aVar.b, (f0) aVar.c, this.c, this.d);
                 break;
             default:
                 a5.a aVar2 = this.b;
-                l0Var.j(aVar2.b, (f0) aVar2.c, this.c, this.d);
+                k0Var.j(aVar2.b, (f0) aVar2.c, this.c, this.d);
                 break;
         }
     }

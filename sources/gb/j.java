@@ -2,7 +2,7 @@ package gb;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j implements db.v {
     public static final i c;
@@ -22,7 +22,7 @@ public final class j implements db.v {
 
     public final db.u a(of.b bVar, db.g gVar, kb.a aVar, eb.a aVar2, boolean z10) {
         db.u uVar;
-        Object p22 = bVar.Q(new kb.a(aVar2.value())).p2();
+        Object p22 = bVar.K(new kb.a(aVar2.value())).p2();
         boolean nullSafe = aVar2.nullSafe();
         if (p22 instanceof db.u) {
             uVar = (db.u) p22;

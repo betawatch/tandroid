@@ -5,7 +5,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h60 {
     public float c;
@@ -25,11 +25,11 @@ public final class h60 {
     public final void a() {
         int i10 = this.i;
         if (i60.p1(i10)) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.2f, 100.0f, 0.85f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.2f, 100.0f, 0.85f);
             this.b = 1.0f;
         } else if (i10 == 1) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.3f, 100.0f, 0.2f);
-            this.b = a4.a.A(Utilities.random.nextInt(100), 0.3f, 100.0f, 0.7f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.3f, 100.0f, 0.2f);
+            this.b = a4.a.B(Utilities.random.nextInt(100), 0.3f, 100.0f, 0.7f);
         } else {
             this.a = a4.a.e(Utilities.random.nextInt(100), 100.0f, 0.2f, 0.8f);
             this.b = Utilities.random.nextInt(100) / 100.0f;

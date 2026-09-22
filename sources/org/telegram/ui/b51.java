@@ -1,62 +1,85 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class b51 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.sm0 b;
+public final class b51 extends FrameLayout {
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public final org.telegram.ui.Components.x11 d;
+    public boolean e;
+    public long f;
+    public long h;
+    public final org.telegram.ui.Components.xi0 n;
+    public final TextPaint r;
+    public StaticLayout s;
+    public float v;
+    public float w;
+    public final /* synthetic */ SecretMediaViewer x;
 
-    public /* synthetic */ b51(org.telegram.ui.Components.sm0 sm0Var, int i10) {
-        this.a = i10;
-        this.b = sm0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b51(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.x = secretMediaViewer;
+        this.c = new RectF();
+        this.d = new org.telegram.ui.Components.x11();
+        this.r = new TextPaint(1);
+        setWillNotDraw(false);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        paint.setColor(-1644826);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.a = paint2;
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setColor(-1644826);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        new Paint(1).setColor(2130706432);
+        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        this.n = xi0Var;
+        xi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        xi0Var.R(this);
+        xi0Var.start();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
-                secretMediaViewer.Z.getNextView().setText((CharSequence) null);
-                bu0 bu0Var = secretMediaViewer.a0;
-                bu0Var.l0 = false;
-                if (bu0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) bu0Var.o0.getLayoutParams()).topMargin = bu0Var.m0;
-                    bu0Var.m0 = -1;
-                    bu0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((SecretMediaViewer) this.b.b).Z.setTranslationY(0.0f);
-                break;
-        }
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
+        */
+    @Override // android.view.View
+    public final void onDraw(android.graphics.Canvas r11) {
+        /*
+            Method dump skipped, instructions count: 227
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.b51.onDraw(android.graphics.Canvas):void");
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                bu0 bu0Var = ((SecretMediaViewer) this.b.b).a0;
-                Method method = bu0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(bu0Var, null);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float dpf2 = AndroidUtilities.dpf2(10.5f);
+        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
+        setPivotX(measuredWidth);
+        setPivotY(measuredHeight);
     }
 }

@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -48,7 +48,7 @@ public final class m0 extends d2 implements o0 {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
-        r();
+        q();
         xVar.setInputMethodMode(2);
         h();
         r1 r1Var = this.c;
@@ -79,7 +79,7 @@ public final class m0 extends d2 implements o0 {
         this.T = (j0) listAdapter;
     }
 
-    public final void r() {
+    public final void q() {
         int i10;
         p0 p0Var = this.W;
         Rect rect = p0Var.n;

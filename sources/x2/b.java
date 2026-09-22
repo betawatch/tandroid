@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final y2.c g;
@@ -77,18 +77,18 @@ public final class b extends c {
         return -9223372036854775807L;
     }
 
-    @Override // x2.s
+    @Override // x2.r
     public final int c() {
         return this.r;
     }
 
-    @Override // x2.c, x2.s
+    @Override // x2.c, x2.r
     public final void g() {
         this.t = -9223372036854775807L;
         this.u = null;
     }
 
-    @Override // x2.c, x2.s
+    @Override // x2.c, x2.r
     public final int i(long j3, List list) {
         int i10;
         int i11;
@@ -120,12 +120,12 @@ public final class b extends c {
         return size;
     }
 
-    @Override // x2.c, x2.s
+    @Override // x2.c, x2.r
     public final void j() {
         this.u = null;
     }
 
-    @Override // x2.s
+    @Override // x2.r
     public final void k(long j3, long j10, long j11, List list, v2.l[] lVarArr) {
         long x10;
         this.p.getClass();
@@ -184,17 +184,17 @@ public final class b extends c {
         this.r = w10;
     }
 
-    @Override // x2.s
+    @Override // x2.r
     public final int n() {
         return this.s;
     }
 
-    @Override // x2.c, x2.s
+    @Override // x2.c, x2.r
     public final void p(float f7) {
         this.q = f7;
     }
 
-    @Override // x2.s
+    @Override // x2.r
     public final Object q() {
         return null;
     }

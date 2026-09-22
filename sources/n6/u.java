@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u extends o6.a {
     public static final Parcelable.Creator<u> CREATOR = new m8.h(15);
@@ -23,13 +23,13 @@ public final class u extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.s(parcel, 1, 4);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        w7.f0.k(parcel, 2, this.b, i10);
-        w7.f0.s(parcel, 3, 4);
+        w7.e0.k(parcel, 2, this.b, i10);
+        w7.e0.s(parcel, 3, 4);
         parcel.writeInt(this.c);
-        w7.f0.k(parcel, 4, this.d, i10);
-        w7.f0.r(parcel, q6);
+        w7.e0.k(parcel, 4, this.d, i10);
+        w7.e0.r(parcel, q6);
     }
 }

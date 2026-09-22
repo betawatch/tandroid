@@ -1,29 +1,48 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u60 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w60 b;
+public final class u60 extends yw0 {
+    public final /* synthetic */ int K;
 
-    public /* synthetic */ u60(w60 w60Var, int i10) {
-        this.a = i10;
-        this.b = w60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u60(Context context, View view, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(context, view, i10, e6Var);
+        this.K = i11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.yw0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.K) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this.b, tL_error, tLObject, 22));
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new bv(16, this.b, tL_error));
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yw0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.K) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

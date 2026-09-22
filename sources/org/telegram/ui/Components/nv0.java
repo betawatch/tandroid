@@ -1,71 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Region;
+import android.graphics.text.MeasuredText;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class nv0 extends xl0 {
-    public final Context c;
-    public final /* synthetic */ pv0 d;
-
-    public nv0(pv0 pv0Var, Context context) {
-        this.d = pv0Var;
-        this.c = context;
+public final class nv0 extends Canvas {
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path) {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
+    @Override // android.graphics.Canvas
+    public final void drawText(CharSequence charSequence, int i10, int i11, float f7, float f10, Paint paint) {
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return LocationController.getLocationsCount() + 1;
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(String str, Path path, float f7, float f10, Paint paint) {
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        TextView textView;
-        int i11 = c1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.x7) c1Var.a).setDialog(pv0.p(i10 - 1));
-        } else if (i11 == 1 && (textView = this.d.e) != null) {
-            textView.setText(LocaleController.formatString("SharingLiveLocationTitle", R.string.SharingLiveLocationTitle, LocaleController.formatPluralString("Chats", LocationController.getLocationsCount(), new Object[0])));
-        }
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path, Region.Op op) {
+        return false;
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout x7Var;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        Context context = this.c;
-        pv0 pv0Var = this.d;
-        if (i10 != 0) {
-            x7Var = new ai.x5(context, 18);
-            x7Var.setWillNotDraw(false);
-            TextView textView = new TextView(context);
-            pv0Var.e = textView;
-            textView.setTextColor(pv0Var.getThemedColor(org.telegram.ui.ActionBar.j6.J5));
-            pv0Var.e.setTextSize(1, 14.0f);
-            pv0Var.e.setGravity(17);
-            pv0Var.e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-            x7Var.addView(pv0Var.e, w7.y5.c(40.0f, -1));
-        } else {
-            f6Var = ((org.telegram.ui.ActionBar.f3) pv0Var).resourcesProvider;
-            x7Var = new org.telegram.ui.Cells.x7(54, context, f6Var, false);
-        }
-        return new il0(x7Var);
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, int i10, int i11, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(char[] cArr, int i10, int i11, float f7, float f10, Paint paint) {
     }
 }

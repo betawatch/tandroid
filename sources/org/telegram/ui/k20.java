@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class k20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,24 +22,24 @@ public final class k20 implements View.OnClickListener {
             case 0:
                 g gVar = new g(this, 18);
                 Context context = this.b;
-                org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8(context, false, gVar, 1);
+                org.telegram.ui.Components.s8 s8Var = new org.telegram.ui.Components.s8(context, false, gVar, 1);
                 sg.f fVar = this.c.c;
-                t8Var.e(fVar != null ? fVar.C : 0, 0);
-                t8Var.f(-1, 1, 1, false);
+                s8Var.e(fVar != null ? fVar.C : 0, 0);
+                s8Var.f(-1, 1, 1, false);
                 org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
-                f3Var.setCustomView(t8Var);
+                f3Var.setCustomView(s8Var);
                 f3Var.setDimBehind(false);
                 f3Var.show();
                 break;
             default:
                 g gVar2 = new g(this, 19);
                 Context context2 = this.b;
-                org.telegram.ui.Components.t8 t8Var2 = new org.telegram.ui.Components.t8(context2, false, gVar2, 2);
+                org.telegram.ui.Components.s8 s8Var2 = new org.telegram.ui.Components.s8(context2, false, gVar2, 2);
                 sg.f fVar2 = this.c.c;
-                t8Var2.e(fVar2 == null ? 0 : fVar2.B, 0);
-                t8Var2.f(-1, 1, 1, false);
+                s8Var2.e(fVar2 == null ? 0 : fVar2.B, 0);
+                s8Var2.f(-1, 1, 1, false);
                 org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
-                f3Var2.setCustomView(t8Var2);
+                f3Var2.setCustomView(s8Var2);
                 f3Var2.setDimBehind(false);
                 f3Var2.show();
                 break;

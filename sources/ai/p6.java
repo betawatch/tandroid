@@ -3,11 +3,11 @@ package ai;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class p6 extends yl0 implements s9 {
+public final class p6 extends ll0 implements s9 {
     public final /* synthetic */ j7 X2;
     public final /* synthetic */ j7 Y2;
 
@@ -24,7 +24,7 @@ public final class p6 extends yl0 implements s9 {
         iArr[1] = getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.Y2.n = View.MeasureSpec.getSize(i11);
         super.onMeasure(i10, i11);

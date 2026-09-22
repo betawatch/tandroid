@@ -1,248 +1,58 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.widget.EditText;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class rq0 extends tu0 {
-    public final /* synthetic */ cr0 a;
+public final class rq0 extends org.telegram.ui.ActionBar.g5 {
+    public final pl0 f = new pl0(this, 11);
+    public final /* synthetic */ ar0 h;
 
-    public rq0(cr0 cr0Var) {
-        this.a = cr0Var;
+    public rq0(ar0 ar0Var) {
+        this.h = ar0Var;
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        cr0 cr0Var = this.a;
-        org.telegram.ui.Cells.u5 V = cr0.V(cr0Var, i10);
-        if (V == null) {
-            return null;
+    @Override // org.telegram.ui.ActionBar.g5
+    public final boolean b() {
+        this.h.finishFragment();
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void p(ci.h2 h2Var) {
+        this.h.b0(h2Var);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        int i10;
+        if (editText.getText().length() != 0) {
+            pl0 pl0Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(pl0Var);
+            AndroidUtilities.runOnUIThread(pl0Var, 1200L);
+            return;
         }
-        org.telegram.ui.Components.v9 imageView = V.getImageView();
-        int[] iArr = new int[2];
-        imageView.getLocationInWindow(iArr);
-        dv0 dv0Var = new dv0();
-        dv0Var.b = iArr[0];
-        dv0Var.c = iArr[1];
-        dv0Var.d = cr0Var.K;
-        ImageReceiver imageReceiver = imageView.getImageReceiver();
-        dv0Var.a = imageReceiver;
-        dv0Var.e = imageReceiver.getBitmapSafe();
-        dv0Var.k = V.getScale();
-        V.g(false);
-        return dv0Var;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void G() {
-        cr0 cr0Var = this.a;
-        int childCount = cr0Var.K.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = cr0Var.K.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.u5) {
-                ((org.telegram.ui.Cells.u5) childAt).g(true);
-            }
+        ar0 ar0Var = this.h;
+        ar0Var.f.clear();
+        ar0Var.h.clear();
+        ar0Var.v = null;
+        ar0Var.s = true;
+        ar0Var.r = false;
+        if (ar0Var.x != 0) {
+            i10 = ((org.telegram.ui.ActionBar.n2) ar0Var).currentAccount;
+            ConnectionsManager.getInstance(i10).cancelRequest(ar0Var.x, true);
+            ar0Var.x = 0;
         }
+        ar0Var.N.d.setText(LocaleController.getString(R.string.NoRecentSearches));
+        ar0Var.N.e(false, true);
+        ar0Var.j0();
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final int H() {
-        return this.a.b.size();
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final int Q(Object obj) {
-        Object valueOf = obj instanceof MediaController.PhotoEntry ? Integer.valueOf(((MediaController.PhotoEntry) obj).imageId) : obj instanceof MediaController.SearchImage ? ((MediaController.SearchImage) obj).id : null;
-        if (valueOf == null) {
-            return -1;
-        }
-        cr0 cr0Var = this.a;
-        if (!cr0Var.b.containsKey(valueOf)) {
-            return -1;
-        }
-        cr0Var.b.remove(valueOf);
-        int indexOf = cr0Var.c.indexOf(valueOf);
-        if (indexOf >= 0) {
-            cr0Var.c.remove(indexOf);
-        }
-        if (cr0Var.e) {
-            cr0Var.h0();
-        }
-        return indexOf;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void W(int i10) {
-        cr0 cr0Var = this.a;
-        MediaController.AlbumEntry albumEntry = cr0Var.J;
-        org.telegram.ui.Cells.u5 V = cr0.V(cr0Var, i10);
-        if (V != null) {
-            if (albumEntry == null) {
-                V.e((MediaController.SearchImage) cr0Var.f.get(i10));
-                return;
-            }
-            org.telegram.ui.Components.v9 imageView = V.getImageView();
-            imageView.q(0, true);
-            MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
-            String str = photoEntry.thumbPath;
-            if (str != null) {
-                imageView.f(str, null, org.telegram.ui.ActionBar.j6.R4);
-                return;
-            }
-            if (photoEntry.path == null) {
-                imageView.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
-                return;
-            }
-            imageView.p(photoEntry.orientation, photoEntry.invert, true);
-            if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
-                imageView.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
-                return;
-            }
-            imageView.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, org.telegram.ui.ActionBar.j6.R4);
-        }
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void Z(int i10) {
-        cr0 cr0Var = this.a;
-        int childCount = cr0Var.K.getChildCount();
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = cr0Var.K.getChildAt(i11);
-            if (childAt.getTag() != null) {
-                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) childAt;
-                int intValue = ((Integer) childAt.getTag()).intValue();
-                MediaController.AlbumEntry albumEntry = cr0Var.J;
-                if (albumEntry == null ? !(intValue < 0 || intValue >= cr0Var.f.size()) : !(intValue < 0 || intValue >= albumEntry.photos.size())) {
-                    if (intValue == i10) {
-                        u5Var.g(true);
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final ArrayList c() {
-        return this.a.c;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Cells.u5 V = cr0.V(this.a, i10);
-        if (V != null) {
-            return V.getImageView().getImageReceiver().getBitmapSafe();
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        int Y;
-        boolean z10;
-        cr0 cr0Var = this.a;
-        MediaController.AlbumEntry albumEntry = cr0Var.J;
-        if (albumEntry != null) {
-            if (i10 < 0 || i10 >= albumEntry.photos.size()) {
-                return -1;
-            }
-            MediaController.PhotoEntry photoEntry = cr0Var.J.photos.get(i10);
-            Y = cr0Var.Y(-1, photoEntry);
-            if (Y == -1) {
-                photoEntry.editedInfo = videoEditedInfo;
-                Y = cr0Var.c.indexOf(Integer.valueOf(photoEntry.imageId));
-                z10 = true;
-            } else {
-                photoEntry.editedInfo = null;
-                z10 = false;
-            }
-        } else {
-            if (i10 < 0 || i10 >= cr0Var.f.size()) {
-                return -1;
-            }
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) cr0Var.f.get(i10);
-            Y = cr0Var.Y(-1, searchImage);
-            if (Y == -1) {
-                searchImage.editedInfo = videoEditedInfo;
-                Y = cr0Var.c.indexOf(searchImage.id);
-                z10 = true;
-            } else {
-                searchImage.editedInfo = null;
-                z10 = false;
-            }
-        }
-        int childCount = cr0Var.K.getChildCount();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= childCount) {
-                break;
-            }
-            View childAt = cr0Var.K.getChildAt(i11);
-            if (((Integer) childAt.getTag()).intValue() == i10) {
-                ((org.telegram.ui.Cells.u5) childAt).b(cr0Var.e ? Y : -1, z10, false);
-            } else {
-                i11++;
-            }
-        }
-        cr0Var.i0(z10 ? 1 : 2);
-        cr0Var.s0.a();
-        return Y;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        cr0 cr0Var = this.a;
-        ArrayList arrayList = cr0Var.f;
-        MediaController.AlbumEntry albumEntry = cr0Var.J;
-        if (cr0Var.b.isEmpty()) {
-            if (albumEntry != null) {
-                if (i10 < 0 || i10 >= albumEntry.photos.size()) {
-                    return;
-                }
-                MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
-                photoEntry.editedInfo = videoEditedInfo;
-                cr0Var.Y(-1, photoEntry);
-            } else {
-                if (i10 < 0 || i10 >= arrayList.size()) {
-                    return;
-                }
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) arrayList.get(i10);
-                searchImage.editedInfo = videoEditedInfo;
-                cr0Var.Y(-1, searchImage);
-            }
-        }
-        cr0Var.e0(i11, z10);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean u() {
-        cr0 cr0Var = this.a;
-        cr0Var.s0.i(0, true, true);
-        cr0Var.finishFragment();
-        return true;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final HashMap v() {
-        return this.a.b;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean x(int i10) {
-        cr0 cr0Var = this.a;
-        MediaController.AlbumEntry albumEntry = cr0Var.J;
-        return albumEntry != null ? i10 >= 0 && i10 < albumEntry.photos.size() && cr0Var.b.containsKey(Integer.valueOf(cr0Var.J.photos.get(i10).imageId)) : i10 >= 0 && i10 < cr0Var.f.size() && cr0Var.b.containsKey(((MediaController.SearchImage) cr0Var.f.get(i10)).id);
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
-    public final boolean z() {
-        return this.a.E;
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 }

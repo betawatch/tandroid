@@ -3,12 +3,12 @@ package rg;
 import android.view.View;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x implements a2, ol0 {
+public final /* synthetic */ class x implements a2, bl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ j0 b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class x implements a2, ol0 {
         this.b = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.bl0
     public boolean d(int i10, View view) {
         j0 j0Var = this.b;
         j0Var.d.getOnItemClickListener().d(i10, view);
@@ -31,7 +31,7 @@ public final /* synthetic */ class x implements a2, ol0 {
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(b2 b2Var, int i10) {
+    public void f(b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 j0 j0Var = this.b;
@@ -45,7 +45,7 @@ public final /* synthetic */ class x implements a2, ol0 {
                 break;
             default:
                 this.b.dismiss();
-                tg.m1.e0(0, null);
+                tg.n1.e0(0, null);
                 break;
         }
     }

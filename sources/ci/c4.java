@@ -7,22 +7,22 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class c4 extends View implements x2 {
-    public final org.telegram.ui.Components.n6 a;
+    public final org.telegram.ui.Components.m6 a;
 
     public c4(Activity activity) {
         super(activity);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(true, true, true, false);
-        this.a = n6Var;
-        n6Var.k(0.35f, 300L, qr.h);
-        n6Var.r(-1);
-        n6Var.t(AndroidUtilities.dp(14.0f));
-        n6Var.p(AndroidUtilities.dp(1.4f), AndroidUtilities.dp(0.4f), 1275068416);
-        n6Var.b = 1;
-        n6Var.setCallback(this);
-        n6Var.G = AndroidUtilities.displaySize.x;
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(true, true, true, false);
+        this.a = m6Var;
+        m6Var.k(0.35f, 300L, qr.h);
+        m6Var.r(-1);
+        m6Var.t(AndroidUtilities.dp(14.0f));
+        m6Var.p(AndroidUtilities.dp(1.4f), AndroidUtilities.dp(0.4f), 1275068416);
+        m6Var.b = 1;
+        m6Var.setCallback(this);
+        m6Var.G = AndroidUtilities.displaySize.x;
     }
 
     @Override // android.view.View
@@ -30,9 +30,9 @@ public final class c4 extends View implements x2 {
         super.draw(canvas);
         int width = getWidth();
         int height = getHeight();
-        org.telegram.ui.Components.n6 n6Var = this.a;
-        n6Var.setBounds(0, 0, width, height);
-        n6Var.draw(canvas);
+        org.telegram.ui.Components.m6 m6Var = this.a;
+        m6Var.setBounds(0, 0, width, height);
+        m6Var.draw(canvas);
     }
 
     @Override // android.view.View

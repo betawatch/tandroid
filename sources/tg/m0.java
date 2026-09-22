@@ -1,120 +1,80 @@
 package tg;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import ai.a6;
+import android.os.CountDownTimer;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import com.google.android.gms.internal.vision.e2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import java.util.Date;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.c7;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.xl0;
-import rg.q1;
+import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class m0 extends xl0 {
-    public final /* synthetic */ s0 c;
+public final class m0 extends CountDownTimer {
+    public final /* synthetic */ t0 a;
 
-    public m0(s0 s0Var) {
-        this.c = s0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(t0 t0Var) {
+        super(Long.MAX_VALUE, 1000L);
+        this.a = t0Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 3;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.c.Y.size() + 3;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                return 3;
+    @Override // android.os.CountDownTimer
+    public final void onTick(long j3) {
+        t0 t0Var = this.a;
+        ll0 ll0Var = t0Var.d;
+        ArrayList arrayList = t0Var.Y;
+        ArrayList arrayList2 = new ArrayList(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
+            if (tL_myBoost.cooldown_until_date > 0) {
+                arrayList2.add(tL_myBoost);
+            }
+            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
+                tL_myBoost.cooldown_until_date = 0;
             }
         }
-        return i11;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        s0 s0Var = this.c;
-        if (i11 == 3) {
-            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) s0Var.Y.get(i10 - 3);
-            xg.l lVar = (xg.l) view;
-            lVar.setBoost(tL_myBoost);
-            lVar.c(s0Var.X.contains(tL_myBoost), false);
+        if (arrayList2.isEmpty()) {
             return;
         }
-        if (i11 == 2) {
-            n4 n4Var = (n4) view;
-            n4Var.setTextSize(15.0f);
-            n4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-            n4Var.setText(LocaleController.getString(R.string.BoostingRemoveBoostFrom));
-            return;
-        }
-        if (i11 == 0) {
-            r0 r0Var = (r0) view;
-            s0Var.b0 = r0Var;
-            TLRPC.Chat chat = s0Var.Z;
-            n90 n90Var = r0Var.e;
-            try {
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), j6.gc, 2, new q1(s0Var, 9));
-                int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
-                replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                n90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                n90Var.post(new qg.v(r0Var, indexOf, 2));
-            } catch (Exception e) {
-                FileLog.e(e);
+        for (int i11 = 0; i11 < ll0Var.getChildCount(); i11++) {
+            View childAt = ll0Var.getChildAt(i11);
+            if (childAt instanceof xg.l) {
+                xg.l lVar = (xg.l) childAt;
+                if (arrayList2.contains(lVar.getBoost())) {
+                    j5 j5Var = lVar.e;
+                    a6 a6Var = lVar.d;
+                    int i12 = lVar.I.cooldown_until_date;
+                    if (i12 > 0) {
+                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, xg.l.f((i12 * 1000) - System.currentTimeMillis())));
+                        a6Var.setAlpha(0.65f);
+                        j5Var.setAlpha(0.65f);
+                        lVar.i(0.3f, false);
+                    } else {
+                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.I.expires * 1000))));
+                        if (a6Var.getAlpha() < 1.0f) {
+                            a6Var.animate().alpha(1.0f).start();
+                            j5Var.animate().alpha(1.0f).start();
+                            lVar.i(1.0f, true);
+                        } else {
+                            a6Var.setAlpha(1.0f);
+                            j5Var.setAlpha(1.0f);
+                            lVar.i(1.0f, false);
+                        }
+                    }
+                }
             }
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        f6 f6Var;
-        Context context = viewGroup.getContext();
-        s0 s0Var = this.c;
-        if (i10 == 0) {
-            r0 r0Var = new r0(context);
-            r0Var.a(s0Var.X, s0Var.Z);
-            view = r0Var;
-        } else if (i10 == 1) {
-            view = new c7(context, j6.w0(null, j6.a7, false), 0);
-        } else if (i10 == 2) {
-            view = new n4(context, 22);
-        } else if (i10 != 3) {
-            view = new View(context);
-        } else {
-            f6Var = ((f3) s0Var).resourcesProvider;
-            view = new xg.l(context, true, false, f6Var, true);
-        }
-        return e2.k(view, view, -1, -2);
+    @Override // android.os.CountDownTimer
+    public final void onFinish() {
     }
 }

@@ -1,173 +1,178 @@
 package xh;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.za;
-import org.telegram.ui.vy0;
-import w7.a6;
-import w7.y5;
-import yh.l5;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.vc;
+import yh.u5;
+import yh.x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class m4 extends ab implements NotificationCenter.NotificationCenterDelegate {
-    public final int X;
-    public final l5 Y;
-    public final HashSet Z;
-    public final nz a0;
-    public final FrameLayout b0;
-    public final ci.d c0;
-    public y70 d0;
-    public m61 e0;
-    public i0.b f0;
+public final /* synthetic */ class m4 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y4 b;
 
-    /* JADX WARN: Illegal instructions before constructor call */
+    public /* synthetic */ m4(y4 y4Var, int i10) {
+        this.a = i10;
+        this.b = y4Var;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01db  */
+    /* JADX WARN: Type inference failed for: r7v5 */
+    /* JADX WARN: Type inference failed for: r7v7 */
+    @Override // org.telegram.messenger.Utilities.Callback2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m4(org.telegram.ui.ActionBar.n2 n2Var, long j3, int i10, ei.r4 r4Var) {
-        super(r3, n2Var, new za(r4));
-        Activity parentActivity = n2Var.getParentActivity();
-        za zaVar = new za();
-        zaVar.f = 2;
-        zaVar.b = 3;
-        zaVar.g = n2Var.getResourceProvider();
-        this.Z = new HashSet();
-        this.f0 = i0.b.e;
-        Context context = getContext();
-        fh.c cVar = new fh.c();
-        cVar.a(getThemedColor(j6.d6));
-        ah.c cVar2 = new ah.c(cVar);
-        fh.c cVar3 = new fh.c();
-        int i11 = j6.a7;
-        cVar3.a(getThemedColor(i11));
-        ah.c cVar4 = new ah.c(cVar3);
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        setBackgroundColor(getThemedColor(i11));
-        K();
-        this.X = i10;
-        this.Y = new l5(this.currentAccount, j3, true);
-        this.e.setActionBarMenuOnItemClick(new j4(this, this.e.n().a(1, R.drawable.ic_ab_other), j3));
-        ci.d dVar = new ci.d(getContext(), this.resourcesProvider, true);
-        this.c0 = dVar;
-        dVar.g(LocaleController.getString(R.string.Gift2CollectionAddGiftsButton), false, true);
-        dVar.setEnabled(false);
-        dVar.setStateListAnimator(null);
-        dVar.e();
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b0 = frameLayout;
-        int i12 = this.backgroundPaddingLeft;
-        frameLayout.setPadding(i12, 0, i12, 0);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(dVar, y5.c(-1.0f, -1));
-        frameLayout2.setOnClickListener(new vy0(27, this, r4Var));
-        ch.d c10 = cVar2.c(frameLayout2, null, false);
-        c10.o(eh.b.j(this.resourcesProvider));
-        c10.q(AndroidUtilities.dp(28.0f));
-        c10.p(AndroidUtilities.dp(5.0f));
-        frameLayout2.setBackground(c10);
-        a6.b(frameLayout2, 0.02f, 1.5f);
-        frameLayout.addView(frameLayout2, y5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
-        ah.e eVar = new ah.e(cVar4.c(frameLayout, null, false));
-        eVar.b(AndroidUtilities.dp(40.0f), true);
-        eVar.q = 220;
-        frameLayout.setBackground(eVar);
-        this.containerView.addView(frameLayout, y5.e(-1, -2, 80));
-        getContext();
-        nz nzVar = new nz(3, false);
-        this.a0 = nzVar;
-        nzVar.O = new k4(this);
-        this.d.setPadding(AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0);
-        this.d.setClipToPadding(false);
-        this.d.setSelectorType(9);
-        this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(nzVar);
-        this.d.setOnItemClickListener(new ai.g(this, 20));
-        this.d.j(new l4(this));
-        s4.j jVar = new s4.j();
-        jVar.m = false;
-        jVar.C = false;
-        jVar.o(qr.h);
-        jVar.n(350L);
-        this.d.setItemAnimator(jVar);
-        this.e0.N(true);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        S();
-    }
-
-    public final void S() {
-        this.d.setPadding(AndroidUtilities.dp(9.0f) + this.f0.a + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.f0.c + this.backgroundPaddingLeft, this.f0.d);
-        i0.b bVar = this.f0;
-        int i10 = bVar.a;
-        int i11 = this.backgroundPaddingLeft;
-        this.b0.setPadding(i10 + i11, 0, bVar.c + i11, bVar.d);
-    }
-
-    public final boolean T() {
-        yl0 yl0Var = this.d;
-        if (yl0Var != null && yl0Var.G) {
-            for (int i10 = 0; i10 < yl0Var.getChildCount(); i10++) {
-                if (yl0Var.getChildAt(i10) instanceof t00) {
-                    return true;
+    public final void run(Object obj, Object obj2) {
+        int i10;
+        char c10;
+        String formatString;
+        int i11;
+        boolean z10;
+        String formatString2;
+        CharSequence replaceArrows;
+        int i12 = this.a;
+        y4 y4Var = this.b;
+        switch (i12) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                rg.k kVar = y4Var.e0;
+                FrameLayout frameLayout = y4Var.o0;
+                boolean z11 = y4Var.a0;
+                boolean z12 = y4Var.b0;
+                TL_stars.StarGift starGift = y4Var.c0;
+                String str = y4Var.f0;
+                boolean z13 = y4Var.X;
+                int i13 = y4Var.Y;
+                MessagesController messagesController = MessagesController.getInstance(i13);
+                long j3 = y4Var.Z;
+                long sendPaidMessagesStars = messagesController.getSendPaidMessagesStars(j3);
+                arrayList.add(i51.j(-1, y4Var.h0));
+                if (sendPaidMessagesStars <= 0) {
+                    arrayList.add(i51.j(-2, y4Var.s0));
+                    arrayList.add(i51.C(AndroidUtilities.dp(12.0f)));
                 }
-            }
+                if (starGift != null) {
+                    if (!starGift.can_upgrade || z13) {
+                        arrayList.add(i51.A(-5, null));
+                    } else {
+                        arrayList.add(i51.A(-3, null));
+                        i51 i14 = i51.i(2, x7.X0(false, LocaleController.formatString(z13 ? R.string.Gift2UpgradeSelf : R.string.Gift2Upgrade, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
+                        i14.K(y4Var.q0);
+                        arrayList.add(i14);
+                        if (z12) {
+                            replaceArrows = LocaleController.formatString(j3 < 0 ? R.string.Gift2NoUpgradeChannelForcedInfo : R.string.Gift2NoUpgradeForcedInfo, str);
+                        } else if (z11) {
+                            replaceArrows = LocaleController.formatString(j3 < 0 ? R.string.Gift2UpgradeChannelForcedInfo : R.string.Gift2UpgradeForcedInfo, str);
+                        } else {
+                            if (z13) {
+                                formatString2 = LocaleController.getString(R.string.Gift2UpgradeSelfInfo);
+                                z10 = true;
+                            } else {
+                                z10 = true;
+                                formatString2 = LocaleController.formatString(j3 >= 0 ? R.string.Gift2UpgradeInfo : R.string.Gift2UpgradeChannelInfo, str);
+                            }
+                            replaceArrows = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(formatString2, new o4(y4Var, 2)), z10);
+                        }
+                        i51 A = i51.A(-5, replaceArrows);
+                        A.g = (z11 || z12) ? false : true;
+                        arrayList.add(A);
+                    }
+                    i51 i15 = i51.i(1, LocaleController.getString(z13 ? R.string.Gift2HideSelf : R.string.Gift2Hide));
+                    i15.K(y4Var.p0);
+                    arrayList.add(i15);
+                    if (z13) {
+                        i11 = R.string.Gift2HideSelfInfo;
+                    } else if (j3 < 0) {
+                        i11 = R.string.Gift2HideChannelInfo;
+                    } else {
+                        i10 = 1;
+                        c10 = 0;
+                        formatString = LocaleController.formatString(R.string.Gift2HideInfo, str);
+                        arrayList.add(i51.A(-6, formatString));
+                        if (frameLayout != null) {
+                            int i16 = starGift.gifts_per_round;
+                            Object[] objArr = new Object[i10];
+                            objArr[c10] = Integer.valueOf(i16);
+                            CharSequence replaceArrows2 = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("Gift2AuctionInfoLearnMore2", i16, objArr), new o4(y4Var, 3)), i10);
+                            arrayList.add(i51.j(-43, frameLayout));
+                            arrayList.add(i51.A(-44, replaceArrows2));
+                        }
+                    }
+                    formatString = LocaleController.getString(i11);
+                    i10 = 1;
+                    c10 = 0;
+                    arrayList.add(i51.A(-6, formatString));
+                    if (frameLayout != null) {
+                    }
+                } else {
+                    if (sendPaidMessagesStars <= 0) {
+                        arrayList.add(i51.A(-3, LocaleController.formatString(R.string.Gift2MessagePremiumInfo, str)));
+                    }
+                    if (kVar != null && (kVar.c != null || kVar.d != null)) {
+                        i51 i17 = i51.i(3, x7.X0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
+                        i17.K(y4Var.r0);
+                        arrayList.add(i17);
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(u5.y(i13, false).p().amount, ','));
+                        spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+                        arrayList.add(i51.A(-7, TextUtils.concat(x7.X0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new o4(y4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
+                    }
+                }
+                if (y4Var.P) {
+                    Collections.reverse(arrayList);
+                    break;
+                }
+                break;
+            default:
+                String str2 = (String) obj2;
+                TL_stars.StarGift starGift2 = y4Var.c0;
+                t4 t4Var = y4Var.s0;
+                if (!((Boolean) obj).booleanValue()) {
+                    if (!"STARGIFT_USAGE_LIMITED".equalsIgnoreCase(str2)) {
+                        if ("STARGIFT_USER_USAGE_LIMITED".equalsIgnoreCase(str2)) {
+                            AndroidUtilities.hideKeyboard(t4Var);
+                            y4Var.dismiss();
+                            vc X = y4Var.X();
+                            if (X != null && starGift2 != null && starGift2.limited_per_user) {
+                                X.R(starGift2.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift2.per_user_total))).j();
+                                break;
+                            }
+                        }
+                    } else {
+                        AndroidUtilities.hideKeyboard(t4Var);
+                        y4Var.dismiss();
+                        u5 y3 = u5.y(y4Var.Y, false);
+                        if (starGift2 != null && y3.D) {
+                            starGift2.availability_remains = 0;
+                            y3.c0(y3.F, y3.G, y3.H);
+                            NotificationCenter.getInstance(y3.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starGiftSoldOut, starGift2);
+                            break;
+                        }
+                    }
+                } else {
+                    Runnable runnable = y4Var.g0;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    AndroidUtilities.hideKeyboard(t4Var);
+                    y4Var.dismiss();
+                }
+                y4Var.n0.setLoading(false);
+                break;
         }
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        m61 m61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (m61Var = this.e0) == null) {
-            return;
-        }
-        m61Var.N(true);
-        if (T()) {
-            this.Y.a();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        super.dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final r0.l1 onApplyWindowInsetsToRoot(View view, r0.l1 l1Var) {
-        this.f0 = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        S();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.ab
-    public final xl0 v(yl0 yl0Var) {
-        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
-        this.e0 = m61Var;
-        m61Var.r = false;
-        return m61Var;
-    }
-
-    @Override // org.telegram.ui.Components.ab
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
     }
 }

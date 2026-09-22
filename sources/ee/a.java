@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.s7;
-import v7.u7;
+import v7.r7;
+import v7.t7;
 import zd.a0;
 import zd.b0;
 import zd.b2;
@@ -16,7 +16,7 @@ import zd.f1;
 import zd.g2;
 import zd.w0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final v a = new v("NO_DECISION", 0);
@@ -71,14 +71,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    s7.a(runtimeException, th2);
+                    r7.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            s7.a(th2, new g(hVar));
+            r7.a(th2, new g(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -110,7 +110,7 @@ public abstract class a {
         if (!(obj instanceof z)) {
             Object fold = hVar.fold(null, x.d);
             kotlin.jvm.internal.i.c(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
-            a4.a.y(fold);
+            a4.a.z(fold);
             throw null;
         }
         z zVar = (z) obj;
@@ -172,7 +172,7 @@ public abstract class a {
             } else {
                 CancellationException cancellationException = f1Var.getCancellationException();
                 hVar.c(vVar, cancellationException);
-                hVar.resumeWith(u7.a(cancellationException));
+                hVar.resumeWith(t7.a(cancellationException));
             }
             while (a10.j()) {
             }
@@ -285,7 +285,7 @@ public abstract class a {
         if (obj instanceof Integer) {
             return hVar.fold(new z(((Number) obj).intValue(), hVar), x.e);
         }
-        a4.a.y(obj);
+        a4.a.z(obj);
         throw null;
     }
 }

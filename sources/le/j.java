@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import k2.u;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j implements Iterable {
     public final f a;
@@ -22,13 +23,13 @@ public final class j implements Iterable {
         if (interpolator == null || j3 <= 0) {
             this.c = null;
         } else {
-            this.c = new e(0, new l.d(this, 2), interpolator, j3);
+            this.c = new e(0, new u(this, 3), interpolator, j3);
         }
     }
 
     public final void i(float f7) {
         i iVar = this.d;
-        boolean z10 = iVar.a.i(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
+        boolean z10 = iVar.a.k(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -44,7 +45,7 @@ public final class j implements Iterable {
             z10 = z11 || z10;
         }
         if (z10) {
-            this.a.A();
+            this.a.E();
             if (f7 == 1.0f) {
                 q(true);
             }
@@ -165,9 +166,9 @@ public final class j implements Iterable {
             p();
             mVar3.c = f17;
         }
-        if (fVar.h()) {
+        if (fVar.i()) {
             p();
-            fVar.j();
+            fVar.l();
         }
     }
 
@@ -255,7 +256,7 @@ public final class j implements Iterable {
             }
             i.a(iVar, size2, false);
             o(false);
-            this.a.A();
+            this.a.E();
             return;
         }
         if (list != null && !list.isEmpty()) {

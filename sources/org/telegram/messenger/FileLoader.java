@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -75,7 +75,7 @@ public class FileLoader extends BaseController {
     private static SparseArray<File> mediaDirs = null;
     private static final FileLoader[] Instance = new FileLoader[4];
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -161,7 +161,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -249,7 +249,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -264,12 +264,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j3, long j10, boolean z10);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -310,7 +310,7 @@ public class FileLoader extends BaseController {
             int i12 = i11 + 1;
             sb2.append(i12);
             fileLoaderPriorityQueueArr[i11] = new FileLoaderPriorityQueue(i10, sb2.toString(), 0, fileLoaderQueue);
-            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, hg.k0.h(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
+            this.largeFilesQueue[i11] = new FileLoaderPriorityQueue(i10, hg.c.i(i12, "largeFilesQueue dc"), 1, fileLoaderQueue);
             i11 = i12;
         }
     }
@@ -813,7 +813,7 @@ public class FileLoader extends BaseController {
         sb2.append(" position in queue ");
         sb2.append(fileLoadOperation.getPositionInQueue());
         sb2.append(" account=");
-        l0.m(this.currentAccount, sb2);
+        y0.n(this.currentAccount, sb2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1294,18 +1294,18 @@ public class FileLoader extends BaseController {
                             fileLoaderPriorityQueue.add(fileLoadOperation8);
                             fileLoaderPriorityQueue.checkLoadingOperations(!fileLoadOperation8.isStory && i20 >= 1048576);
                             if (BuildVars.LOGS_ENABLED) {
-                                StringBuilder v = a4.a.v("create load operation fileName=", str6, " documentName=");
-                                v.append(getDocumentFileName(document));
-                                v.append(" size=");
-                                v.append(AndroidUtilities.formatFileSize(fileLoadOperation8.totalBytesCount));
-                                v.append(" position in queue ");
-                                v.append(fileLoadOperation8.getPositionInQueue());
-                                v.append(" account=");
-                                hg.k0.t(v, this.currentAccount, " cacheType=", i11, " priority=");
-                                v.append(fileLoadOperation8.getPriority());
-                                v.append(" stream=");
-                                v.append(fileStreamLoadOperation);
-                                FileLog.d(v.toString());
+                                StringBuilder w10 = a4.a.w("create load operation fileName=", str6, " documentName=");
+                                w10.append(getDocumentFileName(document));
+                                w10.append(" size=");
+                                w10.append(AndroidUtilities.formatFileSize(fileLoadOperation8.totalBytesCount));
+                                w10.append(" position in queue ");
+                                w10.append(fileLoadOperation8.getPositionInQueue());
+                                w10.append(" account=");
+                                hg.c.v(w10, this.currentAccount, " cacheType=", i11, " priority=");
+                                w10.append(fileLoadOperation8.getPriority());
+                                w10.append(" stream=");
+                                w10.append(fileStreamLoadOperation);
+                                FileLog.d(w10.toString());
                             }
                             return fileLoadOperation8;
                         }
@@ -1399,9 +1399,9 @@ public class FileLoader extends BaseController {
     /* renamed from: removeLoadingVideoInternal, reason: merged with bridge method [inline-methods] */
     public void lambda$removeLoadingVideo$1(TLRPC.Document document, boolean z10) {
         String attachFileName = getAttachFileName(document);
-        StringBuilder u10 = a4.a.u(attachFileName);
-        u10.append(z10 ? "p" : "");
-        if (this.loadingVideos.remove(u10.toString()) != null) {
+        StringBuilder v = a4.a.v(attachFileName);
+        v.append(z10 ? "p" : "");
+        if (this.loadingVideos.remove(v.toString()) != null) {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.videoLoadingStateChanged, attachFileName);
         }
     }
@@ -1674,7 +1674,7 @@ public class FileLoader extends BaseController {
     }
 
     public void onNetworkChanged(boolean z10) {
-        fileLoaderQueue.postRunnable(new bi.f(9, this, z10));
+        fileLoaderQueue.postRunnable(new bi.f(8, this, z10));
     }
 
     public void removeLoadingVideo(TLRPC.Document document, boolean z10, boolean z11) {
@@ -1716,13 +1716,13 @@ public class FileLoader extends BaseController {
         }
         String attachFileName = getAttachFileName(document);
         HashMap<String, Boolean> hashMap = this.loadingVideos;
-        StringBuilder u10 = a4.a.u(attachFileName);
-        u10.append(z10 ? "" : "p");
-        if (hashMap.containsKey(u10.toString())) {
+        StringBuilder v = a4.a.v(attachFileName);
+        v.append(z10 ? "" : "p");
+        if (hashMap.containsKey(v.toString())) {
             HashMap<String, Boolean> hashMap2 = this.loadingVideos;
-            StringBuilder u11 = a4.a.u(attachFileName);
-            u11.append(z10 ? "p" : "");
-            hashMap2.put(u11.toString(), Boolean.TRUE);
+            StringBuilder v9 = a4.a.v(attachFileName);
+            v9.append(z10 ? "p" : "");
+            hashMap2.put(v9.toString(), Boolean.TRUE);
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.videoLoadingStateChanged, attachFileName);
         }
     }
@@ -1730,9 +1730,9 @@ public class FileLoader extends BaseController {
     /* renamed from: setLoadingVideoInternal, reason: merged with bridge method [inline-methods] */
     public void lambda$setLoadingVideo$0(TLRPC.Document document, boolean z10) {
         String attachFileName = getAttachFileName(document);
-        StringBuilder u10 = a4.a.u(attachFileName);
-        u10.append(z10 ? "p" : "");
-        this.loadingVideos.put(u10.toString(), Boolean.TRUE);
+        StringBuilder v = a4.a.v(attachFileName);
+        v.append(z10 ? "p" : "");
+        this.loadingVideos.put(v.toString(), Boolean.TRUE);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.videoLoadingStateChanged, attachFileName);
     }
 
@@ -1846,7 +1846,7 @@ public class FileLoader extends BaseController {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(document.dc_id);
                 sb2.append("_");
-                return a4.a.r(sb2, document.id, substring);
+                return a4.a.s(sb2, document.id, substring);
             }
             return document.dc_id + "_" + document.id;
         }
@@ -1855,14 +1855,14 @@ public class FileLoader extends BaseController {
             StringBuilder sb3 = new StringBuilder();
             sb3.append(secureDocument.secureFile.dc_id);
             sb3.append("_");
-            return a4.a.r(sb3, secureDocument.secureFile.id, ".jpg");
+            return a4.a.s(sb3, secureDocument.secureFile.id, ".jpg");
         }
         if (tLObject instanceof TLRPC.TL_secureFile) {
             TLRPC.TL_secureFile tL_secureFile = (TLRPC.TL_secureFile) tLObject;
             StringBuilder sb4 = new StringBuilder();
             sb4.append(tL_secureFile.dc_id);
             sb4.append("_");
-            return a4.a.r(sb4, tL_secureFile.id, ".jpg");
+            return a4.a.s(sb4, tL_secureFile.id, ".jpg");
         }
         if (tLObject instanceof WebFile) {
             WebFile webFile = (WebFile) tLObject;

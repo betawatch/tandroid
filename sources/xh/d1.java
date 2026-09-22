@@ -1,30 +1,26 @@
 package xh;
 
-import android.view.ViewTreeObserver;
-import org.telegram.ui.ActionBar.f6;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.m5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class d1 extends i4 {
-    public final /* synthetic */ ViewTreeObserver N;
-    public final /* synthetic */ n0 O;
+public final class d1 extends m5 {
+    public final /* synthetic */ e1 M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(long j3, String str, long j10, f6 f6Var, ViewTreeObserver viewTreeObserver, n0 n0Var) {
-        super(j3, str, j10, f6Var);
-        this.N = viewTreeObserver;
-        this.O = n0Var;
+    public d1(e1 e1Var, ViewGroup viewGroup, int i10) {
+        super(i10, viewGroup);
+        this.M = e1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onPause() {
-        super.onPause();
-        this.N.removeOnPreDrawListener(this.O);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onResume() {
-        super.onResume();
-        this.N.addOnPreDrawListener(this.O);
+    @Override // org.telegram.ui.Components.m5, org.telegram.ui.Components.u5
+    public final void invalidate() {
+        super.invalidate();
+        Drawable drawable = this.M;
+        if (drawable.getCallback() != null) {
+            drawable.getCallback().invalidateDrawable(drawable);
+        }
     }
 }

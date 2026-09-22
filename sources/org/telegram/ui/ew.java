@@ -1,62 +1,78 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ew implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uy b;
+public final /* synthetic */ class ew implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ ew(uy uyVar, int i10) {
-        this.a = i10;
-        this.b = uyVar;
+    public /* synthetic */ ew(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.vc vcVar, org.telegram.messenger.video.d dVar) {
+        this.b = tLObject;
+        this.d = context;
+        this.e = a1Var;
+        this.c = j3;
+        this.f = bArr;
+        this.h = aVar;
+        this.n = vcVar;
+        this.r = dVar;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                uy uyVar = this.b;
-                uyVar.r4(uyVar.I2, 104, true, true, null);
+                uy.n0((uy) this.d, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.h, this.c, (TLRPC.TL_error) this.n, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
                 break;
             case 1:
-                uy uyVar2 = this.b;
-                ArrayList arrayList = uyVar2.I2;
-                if (uyVar2.getParentActivity() != null) {
-                    boolean z10 = true;
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        long longValue = ((Long) arrayList.get(i10)).longValue();
-                        if (DialogObject.isEncryptedDialog(longValue)) {
-                            z10 = false;
-                        }
-                        TLRPC.Chat chat = uyVar2.getMessagesController().getChat(Long.valueOf(-longValue));
-                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
-                            z10 = false;
-                        }
-                    }
-                    org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(uyVar2, view);
-                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new qv(uyVar2, 19), false);
-                    H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new qv(uyVar2, 20), z10);
-                    H.Z();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.p4(view);
+                Context context = (Context) this.d;
+                ai.a1 a1Var = (ai.a1) this.e;
+                byte[] bArr = (byte[]) this.f;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.h;
+                org.telegram.ui.Components.vc vcVar = (org.telegram.ui.Components.vc) this.n;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
+                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
+                c41 c41Var = new c41(context, a1Var, this.c, bArr);
+                c41Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
+                c41Var.s = new v31(aVar, vcVar, context, a1Var, dVar);
+                c41Var.show();
                 break;
             default:
-                uy uyVar3 = this.b;
-                uyVar3.getContactsController().loadGlobalPrivacySetting();
-                uyVar3.K4();
+                yh.z3.C0((yh.z3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
                 break;
         }
-        return true;
+    }
+
+    public /* synthetic */ ew(uy uyVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+        this.d = uyVar;
+        this.e = b2Var;
+        this.b = tLObject;
+        this.f = user;
+        this.h = chat;
+        this.c = j3;
+        this.n = tL_error;
+        this.r = tL_messages_checkHistoryImportPeer;
+    }
+
+    public /* synthetic */ ew(yh.z3 z3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
+        this.d = z3Var;
+        this.f = eVar;
+        this.e = b2Var;
+        this.b = tLObject;
+        this.h = tL_starGiftUnique;
+        this.n = tL_error;
+        this.c = j3;
+        this.r = charSequence;
     }
 }

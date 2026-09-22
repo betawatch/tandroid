@@ -21,11 +21,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o80;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.d80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class k implements Runnable {
                 final boolean[] zArr = (boolean[]) this.e;
                 hi.a aVar = (hi.a) this.f;
                 final ImageView imageView = (ImageView) this.h;
-                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.n;
+                final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.n;
                 final int[] iArr = (int[]) this.r;
                 if (!TextUtils.isEmpty(strArr[0].trim())) {
                     final boolean z10 = zArr[0];
@@ -73,9 +73,9 @@ public final /* synthetic */ class k implements Runnable {
                             if (TextUtils.equals(str, strArr[0])) {
                                 boolean booleanValue = bool.booleanValue();
                                 ImageView imageView2 = imageView;
-                                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
+                                org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
                                 if (booleanValue) {
-                                    imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.q7, f6Var2), PorterDuff.Mode.SRC_IN));
+                                    imageView2.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.q7, e6Var2), PorterDuff.Mode.SRC_IN));
                                     if (!z10) {
                                         int[] iArr2 = iArr;
                                         int i10 = -iArr2[0];
@@ -83,7 +83,7 @@ public final /* synthetic */ class k implements Runnable {
                                         AndroidUtilities.shakeViewSpring(imageView2, i10);
                                     }
                                 } else {
-                                    imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.G6, f6Var2), PorterDuff.Mode.SRC_IN));
+                                    imageView2.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.G6, e6Var2), PorterDuff.Mode.SRC_IN));
                                 }
                                 if (bitmap != null) {
                                     imageView2.setImageBitmap(bitmap);
@@ -108,27 +108,27 @@ public final /* synthetic */ class k implements Runnable {
                 break;
             case 3:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
-                tg.v vVar = (tg.v) this.c;
+                tg.w wVar = (tg.w) this.c;
                 TLObject tLObject = (TLObject) this.d;
                 List list = (List) this.e;
                 c5.h hVar = (c5.h) this.f;
-                tg.v vVar2 = (tg.v) this.h;
+                tg.w wVar2 = (tg.w) this.h;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.n;
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.r;
                 if (tL_error == null) {
                     if (tLObject != null) {
-                        BillingController.getInstance().addResultListener(((c5.n) list.get(0)).c, new ci.l5(3, hVar, vVar2));
-                        BillingController.getInstance().setOnCanceled(new tg.q(vVar, 0));
+                        BillingController.getInstance().addResultListener(((c5.o) list.get(0)).c, new ci.l5(3, hVar, wVar2));
+                        BillingController.getInstance().setOnCanceled(new tg.s(wVar, 0));
                         BillingController billingController = BillingController.getInstance();
                         Activity parentActivity = n2Var.getParentActivity();
                         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar = new of.b(7, false);
-                        bVar.X((c5.n) list.get(0));
-                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.H()));
+                        bVar.U((c5.o) list.get(0));
+                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.C()));
                         break;
                     }
                 } else {
-                    vVar.run(tL_error);
+                    wVar.run(tL_error);
                     break;
                 }
                 break;
@@ -143,14 +143,14 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.r;
                 if (tL_error2 == null) {
                     if (tLObject2 != null) {
-                        BillingController.getInstance().addResultListener(((c5.n) list2.get(0)).c, new ci.l5(2, hVar2, callback2));
+                        BillingController.getInstance().addResultListener(((c5.o) list2.get(0)).c, new ci.l5(2, hVar2, callback2));
                         BillingController.getInstance().setOnCanceled(new ab(1, callback));
                         BillingController billingController2 = BillingController.getInstance();
                         Activity parentActivity2 = n2Var2.getParentActivity();
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar2 = new of.b(7, false);
-                        bVar2.X((c5.n) list2.get(0));
-                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.H()));
+                        bVar2.U((c5.o) list2.get(0));
+                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.C()));
                         break;
                     }
                 } else {
@@ -160,7 +160,7 @@ public final /* synthetic */ class k implements Runnable {
                 break;
             case 5:
                 TLObject tLObject3 = (TLObject) this.b;
-                c5.n nVar = (c5.n) this.c;
+                c5.o oVar = (c5.o) this.c;
                 c5.h hVar3 = (c5.h) this.d;
                 ai.m0 m0Var = (ai.m0) this.e;
                 Activity activity = (Activity) this.f;
@@ -176,40 +176,40 @@ public final /* synthetic */ class k implements Runnable {
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(nVar.c, new ci.l5(5, hVar3, m0Var));
-                    BillingController.getInstance().setOnCanceled(new yh.k4(m0Var, 2));
+                    BillingController.getInstance().addResultListener(oVar.c, new ci.l5(5, hVar3, m0Var));
+                    BillingController.getInstance().setOnCanceled(new yh.l4(m0Var, 2));
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar3 = new of.b(7, false);
-                    bVar3.X((c5.n) list3.get(0));
-                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.H()));
+                    bVar3.U((c5.o) list3.get(0));
+                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.C()));
                     break;
                 }
             default:
                 TLObject tLObject4 = (TLObject) this.b;
-                c5.n nVar2 = (c5.n) this.c;
+                c5.o oVar2 = (c5.o) this.c;
                 c5.h hVar4 = (c5.h) this.d;
-                o80 o80Var = (o80) this.e;
+                d80 d80Var = (d80) this.e;
                 Activity activity2 = (Activity) this.f;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) this.h;
                 List list4 = (List) this.n;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.r;
                 if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject4 instanceof TLRPC.TL_boolFalse)) {
-                        o80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
+                        d80Var.run(Boolean.FALSE, tL_error4 != null ? tL_error4.text : "SERVER_ERROR");
                         break;
                     } else {
-                        o80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
+                        d80Var.run(Boolean.FALSE, "PURCHASE_FORBIDDEN");
                         break;
                     }
                 } else {
-                    BillingController.getInstance().addResultListener(nVar2.c, new ci.l5(4, hVar4, o80Var));
-                    BillingController.getInstance().setOnCanceled(new yh.m4(o80Var, 0));
+                    BillingController.getInstance().addResultListener(oVar2.c, new ci.l5(4, hVar4, d80Var));
+                    BillingController.getInstance().setOnCanceled(new yh.n4(d80Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar4 = new of.b(7, false);
-                    bVar4.X((c5.n) list4.get(0));
-                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.H()));
+                    bVar4.U((c5.o) list4.get(0));
+                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.C()));
                     break;
                 }
         }

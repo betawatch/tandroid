@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f2 extends FrameLayout implements org.telegram.ui.Cells.q9, d3 {
+public final class f2 extends FrameLayout implements org.telegram.ui.Cells.p9, d3 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -31,7 +31,7 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.q9, d
         ii.a4 a4Var = new ii.a4(context, u70Var);
         this.d = a4Var;
         a4Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(a4Var, w7.y5.c(-2.0f, -1));
+        addView(a4Var, w7.x5.c(-2.0f, -1));
         e2 e2Var = new e2(this, context, u70Var, f4Var);
         this.e = e2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
@@ -47,18 +47,18 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.q9, d
             a4Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.d2
                 @Override // android.view.View.OnScrollChangeListener
                 public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                    org.telegram.ui.Cells.r9 r9Var = ((h4) u70.this).O0;
-                    if (r9Var == null || !r9Var.y()) {
+                    org.telegram.ui.Cells.q9 q9Var = ((h4) u70.this).O0;
+                    if (q9Var == null || !q9Var.y()) {
                         return;
                     }
-                    r9Var.x();
+                    q9Var.x();
                 }
             });
         }
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -97,10 +97,10 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.q9, d
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.rk.a(this);
+        return org.telegram.messenger.vl.b(this);
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.z9
+    @Override // android.view.View, org.telegram.ui.Cells.y9
     public final void invalidate() {
         this.e.invalidate();
         super.invalidate();

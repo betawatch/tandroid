@@ -18,17 +18,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.g01;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class l3 {
     public final n3 a;
     public int b;
     public int c;
-    public final org.telegram.ui.Components.d6 d;
-    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.c6 d;
+    public final org.telegram.ui.Components.c6 e;
     public final Paint f = new Paint(1);
     public final Paint g = new Paint(1);
     public final Paint h;
@@ -43,8 +43,8 @@ public final class l3 {
     public final Bitmap q;
     public final Drawable r;
     public int s;
-    public final w01 t;
-    public w01 u;
+    public final g01 t;
+    public g01 u;
     public float v;
     public final float[] w;
     public final Path x;
@@ -57,7 +57,7 @@ public final class l3 {
         Paint paint = new Paint(1);
         this.h = paint;
         this.i = new Paint(3);
-        org.telegram.ui.Cells.z f02 = j6.f0(822083583, 1, -1);
+        org.telegram.ui.Cells.z f02 = i6.f0(822083583, 1, -1);
         this.k = f02;
         this.s = -1;
         this.w = new float[8];
@@ -72,12 +72,12 @@ public final class l3 {
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
         qr qrVar = qr.h;
-        this.d = new org.telegram.ui.Components.d6(view, 320L, qrVar);
-        this.e = new org.telegram.ui.Components.d6(view, 320L, qrVar);
+        this.d = new org.telegram.ui.Components.c6(view, 320L, qrVar);
+        this.e = new org.telegram.ui.Components.c6(view, 320L, qrVar);
         this.q = n3Var.F;
         String b10 = n3Var.b();
         textPaint = o3.getTextPaint();
-        this.t = new w01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
+        this.t = new g01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
         int i10 = n3Var.q;
         this.m = i10;
         this.o = AndroidUtilities.computePerceivedBrightness(i10) < 0.721f;
@@ -85,8 +85,8 @@ public final class l3 {
         if (h4Var != null) {
             ArrayList arrayList = h4Var.d0;
             if (!arrayList.isEmpty()) {
-                Object g10 = hg.k0.g(1, arrayList);
-                if ((g10 instanceof TLRPC.WebPage) && ((page = ((TLRPC.WebPage) g10).cached_page) == null || page.local == null)) {
+                Object h = hg.c.h(1, arrayList);
+                if ((h instanceof TLRPC.WebPage) && ((page = ((TLRPC.WebPage) h).cached_page) == null || page.local == null)) {
                     this.r = view.getContext().getResources().getDrawable(R.drawable.msg_instant).mutate();
                 }
             }
@@ -110,7 +110,7 @@ public final class l3 {
         paint.setColor(d);
         float f12 = f10 * 255.0f;
         paint.setAlpha((int) f12);
-        paint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), j6.l1(f10, TLObject.FLAG_28));
+        paint.setShadowLayer(AndroidUtilities.dp(2.33f), 0.0f, AndroidUtilities.dp(1.0f), i6.l1(f10, TLObject.FLAG_28));
         float[] fArr = this.w;
         fArr[3] = f7;
         fArr[2] = f7;
@@ -130,7 +130,7 @@ public final class l3 {
         if (f13 > 0.0f && this.v > 0.0f && f10 > 0.0f) {
             canvas2.save();
             canvas2.clipPath(path);
-            int l1 = j6.l1(0.07f * f10 * this.v, AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? -16777216 : -1);
+            int l1 = i6.l1(0.07f * f10 * this.v, AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? -16777216 : -1);
             Paint paint2 = this.g;
             paint2.setColor(l1);
             float f14 = rectF.left;
@@ -154,7 +154,7 @@ public final class l3 {
         zVar.setBounds(dp, i11, dp2, dp3);
         if (this.j != d11) {
             this.j = d11;
-            j6.B1(zVar, d11, false);
+            i6.B1(zVar, d11, false);
         }
         zVar.draw(canvas2);
         canvas2.restore();
@@ -201,16 +201,16 @@ public final class l3 {
                 i10 = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
         }
-        w01 w01Var = this.u;
-        if (w01Var != null) {
-            w01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
-            w01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.l0.z(1.0f, this.v, f10, f11), d10, canvas2);
+        g01 g01Var = this.u;
+        if (g01Var != null) {
+            g01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
+            g01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.y0.A(1.0f, this.v, f10, f11), d10, canvas2);
         }
         float width = rectF.width() - AndroidUtilities.dp(100.0f);
         float f19 = i10;
-        w01 w01Var2 = this.t;
-        w01Var2.p = (int) (width - f19);
-        w01Var2.c(f19 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f10 * f11, d10, canvas);
+        g01 g01Var2 = this.t;
+        g01Var2.p = (int) (width - f19);
+        g01Var2.c(f19 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f10 * f11, d10, canvas);
     }
 
     public final float b() {

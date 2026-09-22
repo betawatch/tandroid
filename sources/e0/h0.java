@@ -12,13 +12,13 @@ import android.media.metrics.LogSessionId;
 import android.media.session.MediaSession;
 import android.os.Build;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static k2.f a(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
+    public static k2.e a(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
         int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(audioFormat, audioAttributes);
         if (playbackOffloadSupport == 0) {
-            return k2.f.d;
+            return k2.e.d;
         }
         ac.d dVar = new ac.d();
         boolean z11 = Build.VERSION.SDK_INT > 32 && playbackOffloadSupport == 2;
@@ -70,7 +70,7 @@ public abstract class h0 {
 
     public static void g(n4.y yVar, ComponentName componentName) {
         try {
-            MediaSession mediaSession = ((n4.r) yVar.a).a;
+            MediaSession mediaSession = ((n4.r) yVar.b).a;
             mediaSession.getClass();
             mediaSession.setMediaButtonBroadcastReceiver(componentName);
         } catch (IllegalArgumentException e) {

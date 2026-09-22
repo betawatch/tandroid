@@ -11,21 +11,21 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
-    public final org.telegram.ui.ActionBar.f6 b;
+    public final org.telegram.ui.ActionBar.e6 b;
     public final k0 c;
     public boolean d;
 
-    public l0(Context context, org.telegram.ui.ActionBar.f6 f6Var, k0 k0Var) {
-        this.b = f6Var;
+    public l0(Context context, org.telegram.ui.ActionBar.e6 e6Var, k0 k0Var) {
+        this.b = e6Var;
         this.c = k0Var;
-        i1 i1Var = new i1(context, f6Var);
+        i1 i1Var = new i1(context, e6Var);
         this.a = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         i1Var.setAllowNewlines(false);
@@ -33,7 +33,7 @@ public final class l0 {
         i1Var.setGravity(8388659);
         i1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         i1Var.setHint(LocaleController.getString(R.string.AddCaption));
-        i1Var.setListener(new n4.y(this, k0Var, false));
+        i1Var.setListener(new n4.y(this, k0Var, false, 19));
         i1Var.setDelegate(new ah.b(17, this, k0Var));
         a();
     }
@@ -58,19 +58,19 @@ public final class l0 {
     public final void a() {
         i1 i1Var = this.a;
         i1Var.t();
-        int v02 = j6.v0(j6.G6, this.b);
-        i1Var.setTextColor(j6.l1(0.5f, v02));
-        i1Var.setHintTextColor(j6.l1(0.35f, v02));
+        int v02 = i6.v0(i6.G6, this.b);
+        i1Var.setTextColor(i6.l1(0.5f, v02));
+        i1Var.setHintTextColor(i6.l1(0.35f, v02));
     }
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a H = this.c.H();
-        if (H == null || (pageBlock = H.b) == null) {
+        a N = this.c.N();
+        if (N == null || (pageBlock = N.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = H.b.caption.text;
+        TL_iv.RichText richText = N.b.caption.text;
         String l4 = f6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
@@ -82,14 +82,14 @@ public final class l0 {
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        r9 A = k0Var.A();
-        if (A != null) {
+        q9 E = k0Var.E();
+        if (E != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            A.a0(canvas, k0Var.F(), 0);
+            E.a0(canvas, k0Var.K(), 0);
             canvas.restore();
         }
     }
@@ -138,11 +138,11 @@ public final class l0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a H = this.c.H();
-        if (H == null || (pageBlock = H.b) == null) {
+        a N = this.c.N();
+        if (N == null || (pageBlock = N.b) == null) {
             return;
         }
         d(pageBlock);
-        H.b.caption.text = f6.f(this.a.getText());
+        N.b.caption.text = f6.f(this.a.getText());
     }
 }

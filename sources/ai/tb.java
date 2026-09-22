@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class tb implements GestureDetector.OnGestureListener {
     public final /* synthetic */ jc a;
@@ -48,7 +48,7 @@ public final class tb implements GestureDetector.OnGestureListener {
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         float f11;
-        org.telegram.ui.Components.pc pcVar;
+        org.telegram.ui.Components.oc ocVar;
         jc jcVar = this.a;
         if (!jcVar.j0) {
             return false;
@@ -82,9 +82,9 @@ public final class tb implements GestureDetector.OnGestureListener {
                 jcVar.e0 = (0.05f * f10) + f12;
             }
             xb xbVar = jcVar.s;
-            org.telegram.ui.Components.pc pcVar2 = org.telegram.ui.Components.pc.w;
-            if (pcVar2 != null && pcVar2.h == xbVar) {
-                pcVar2.b();
+            org.telegram.ui.Components.oc ocVar2 = org.telegram.ui.Components.oc.w;
+            if (ocVar2 != null && ocVar2.h == xbVar) {
+                ocVar2.b();
             }
             if (jcVar.n0.getCurrentPeerView() != null) {
                 jcVar.n0.getCurrentPeerView().invalidate();
@@ -102,9 +102,9 @@ public final class tb implements GestureDetector.OnGestureListener {
                 f11 = 0.3f;
                 jcVar.W -= f10 * f11;
                 xb xbVar2 = jcVar.s;
-                pcVar = org.telegram.ui.Components.pc.w;
-                if (pcVar != null && pcVar.h == xbVar2) {
-                    pcVar.b();
+                ocVar = org.telegram.ui.Components.oc.w;
+                if (ocVar != null && ocVar.h == xbVar2) {
+                    ocVar.b();
                 }
                 jc.k(jcVar);
                 return true;
@@ -113,9 +113,9 @@ public final class tb implements GestureDetector.OnGestureListener {
         f11 = 0.6f;
         jcVar.W -= f10 * f11;
         xb xbVar22 = jcVar.s;
-        pcVar = org.telegram.ui.Components.pc.w;
-        if (pcVar != null) {
-            pcVar.b();
+        ocVar = org.telegram.ui.Components.oc.w;
+        if (ocVar != null) {
+            ocVar.b();
         }
         jc.k(jcVar);
         return true;

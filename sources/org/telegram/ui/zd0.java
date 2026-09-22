@@ -1,191 +1,106 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zd0 implements RequestDelegate {
+public final /* synthetic */ class zd0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ie0 b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.TL_auth_resetLoginEmail d;
+    public final /* synthetic */ ge0 b;
 
-    public /* synthetic */ zd0(ie0 ie0Var, Bundle bundle, TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail, int i10) {
+    public /* synthetic */ zd0(ge0 ge0Var, int i10) {
         this.a = i10;
-        this.b = ie0Var;
-        this.c = bundle;
-        this.d = tL_auth_resetLoginEmail;
+        this.b = ge0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final ie0 ie0Var = this.b;
-                final Bundle bundle = this.c;
-                final TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ce0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        String str;
-                        int i11;
-                        String str2;
-                        int i12;
-                        int i13 = i10;
-                        TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail2 = tL_auth_resetLoginEmail;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        Bundle bundle2 = bundle;
-                        TLObject tLObject2 = tLObject;
-                        ie0 ie0Var2 = ie0Var;
-                        switch (i13) {
-                            case 0:
-                                yg0 yg0Var = ie0Var2.W;
-                                if (yg0Var.getParentActivity() != null) {
-                                    ie0Var2.V = false;
-                                    if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                        if (tL_error2 != null && (str = tL_error2.text) != null) {
-                                            if (!str.contains("TASK_ALREADY_EXISTS")) {
-                                                if (!tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
-                                                    i11 = ((org.telegram.ui.ActionBar.n2) yg0Var).currentAccount;
-                                                    org.telegram.ui.Components.d5.f0(i11, tL_error2, yg0Var, tL_auth_resetLoginEmail2, new Object[0]);
-                                                    break;
-                                                } else {
-                                                    yg0Var.u1(0, true, null, true);
-                                                    yg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
-                                                    break;
-                                                }
-                                            } else {
-                                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ie0Var2.getContext());
-                                                String string = LocaleController.getString(R.string.LoginEmailResetPremiumRequiredTitle);
-                                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                                                b2Var.R = string;
-                                                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(gf.b.c().b("+" + ie0Var2.L))));
-                                                org.telegram.messenger.l0.n(R.string.OK, alertDialog$Builder, null);
-                                                break;
-                                            }
-                                        }
-                                    } else {
-                                        yg0Var.g1(bundle2, (TLRPC.TL_auth_sentCode) tLObject2, true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                yg0 yg0Var2 = ie0Var2.W;
-                                if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                    if (tL_error2 != null && (str2 = tL_error2.text) != null) {
-                                        if (!str2.contains("PHONE_CODE_EXPIRED")) {
-                                            i12 = ((org.telegram.ui.ActionBar.n2) yg0Var2).currentAccount;
-                                            org.telegram.ui.Components.d5.f0(i12, tL_error2, yg0Var2, tL_auth_resetLoginEmail2, new Object[0]);
-                                            break;
-                                        } else {
-                                            yg0Var2.u1(0, true, null, true);
-                                            yg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject2;
-                                    TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
-                                    if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeEmailCode) {
-                                        auth_sentcodetype.email_pattern = ie0Var2.y.getString("emailPattern");
-                                        ie0Var2.x = true;
-                                    }
-                                    yg0Var2.g1(bundle2, tL_auth_sentCode, true);
-                                    break;
-                                }
-                                break;
-                        }
+                this.b.p();
+                break;
+            case 1:
+                ge0 ge0Var = this.b;
+                ge0Var.postDelayed(new zd0(ge0Var, 2), 150L);
+                zd0 zd0Var = ge0Var.S;
+                ge0Var.removeCallbacks(zd0Var);
+                ge0Var.postDelayed(zd0Var, 3000L);
+                ge0Var.R = true;
+                break;
+            case 2:
+                de0 de0Var = this.b.a;
+                int i10 = 0;
+                de0Var.e = false;
+                de0Var.f[0].requestFocus();
+                while (true) {
+                    gs[] gsVarArr = de0Var.f;
+                    if (i10 >= gsVarArr.length) {
+                        break;
+                    } else {
+                        gsVarArr[i10].i(0.0f);
+                        i10++;
                     }
-                });
+                }
+            case 3:
+                ge0 ge0Var2 = this.b;
+                ge0Var2.postDelayed(new zd0(ge0Var2, 5), 150L);
+                break;
+            case 4:
+                ge0 ge0Var3 = this.b;
+                fe0 fe0Var = ge0Var3.Q;
+                boolean z10 = false;
+                ge0Var3.R = false;
+                int i11 = 0;
+                while (true) {
+                    gs[] gsVarArr2 = ge0Var3.a.f;
+                    if (i11 >= gsVarArr2.length) {
+                        if (fe0Var.getCurrentView() != ge0Var3.e) {
+                            fe0Var.showNext();
+                            FrameLayout frameLayout = ge0Var3.h;
+                            if (ge0Var3.f.getVisibility() != 0 && ge0Var3.W.F != 3 && !ge0Var3.P) {
+                                z10 = true;
+                            }
+                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
+                            break;
+                        }
+                    } else {
+                        gsVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
+                break;
+            case 5:
+                de0 de0Var2 = this.b.a;
+                int i12 = 0;
+                de0Var2.e = false;
+                de0Var2.f[0].requestFocus();
+                while (true) {
+                    gs[] gsVarArr3 = de0Var2.f;
+                    if (i12 >= gsVarArr3.length) {
+                        break;
+                    } else {
+                        gsVarArr3[i12].i(0.0f);
+                        i12++;
+                    }
+                }
+            case 6:
+                this.b.q(true);
+                break;
+            case 7:
+                this.b.r();
                 break;
             default:
-                final int i11 = 1;
-                final ie0 ie0Var2 = this.b;
-                final Bundle bundle2 = this.c;
-                final TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail2 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ce0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        String str;
-                        int i112;
-                        String str2;
-                        int i12;
-                        int i13 = i11;
-                        TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail22 = tL_auth_resetLoginEmail2;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        Bundle bundle22 = bundle2;
-                        TLObject tLObject2 = tLObject;
-                        ie0 ie0Var22 = ie0Var2;
-                        switch (i13) {
-                            case 0:
-                                yg0 yg0Var = ie0Var22.W;
-                                if (yg0Var.getParentActivity() != null) {
-                                    ie0Var22.V = false;
-                                    if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                        if (tL_error2 != null && (str = tL_error2.text) != null) {
-                                            if (!str.contains("TASK_ALREADY_EXISTS")) {
-                                                if (!tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
-                                                    i112 = ((org.telegram.ui.ActionBar.n2) yg0Var).currentAccount;
-                                                    org.telegram.ui.Components.d5.f0(i112, tL_error2, yg0Var, tL_auth_resetLoginEmail22, new Object[0]);
-                                                    break;
-                                                } else {
-                                                    yg0Var.u1(0, true, null, true);
-                                                    yg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
-                                                    break;
-                                                }
-                                            } else {
-                                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ie0Var22.getContext());
-                                                String string = LocaleController.getString(R.string.LoginEmailResetPremiumRequiredTitle);
-                                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                                                b2Var.R = string;
-                                                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(gf.b.c().b("+" + ie0Var22.L))));
-                                                org.telegram.messenger.l0.n(R.string.OK, alertDialog$Builder, null);
-                                                break;
-                                            }
-                                        }
-                                    } else {
-                                        yg0Var.g1(bundle22, (TLRPC.TL_auth_sentCode) tLObject2, true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                yg0 yg0Var2 = ie0Var22.W;
-                                if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                    if (tL_error2 != null && (str2 = tL_error2.text) != null) {
-                                        if (!str2.contains("PHONE_CODE_EXPIRED")) {
-                                            i12 = ((org.telegram.ui.ActionBar.n2) yg0Var2).currentAccount;
-                                            org.telegram.ui.Components.d5.f0(i12, tL_error2, yg0Var2, tL_auth_resetLoginEmail22, new Object[0]);
-                                            break;
-                                        } else {
-                                            yg0Var2.u1(0, true, null, true);
-                                            yg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject2;
-                                    TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
-                                    if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeEmailCode) {
-                                        auth_sentcodetype.email_pattern = ie0Var22.y.getString("emailPattern");
-                                        ie0Var22.x = true;
-                                    }
-                                    yg0Var2.g1(bundle22, tL_auth_sentCode, true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                ge0 ge0Var4 = this.b;
+                org.telegram.ui.Components.aj0 aj0Var = ge0Var4.w;
+                aj0Var.getAnimatedDrawable().N(0, false, false);
+                aj0Var.d();
+                de0 de0Var3 = ge0Var4.a;
+                if (de0Var3 != null && de0Var3.f != null) {
+                    de0Var3.setText("");
+                    de0Var3.f[0].requestFocus();
+                    break;
+                }
                 break;
         }
     }

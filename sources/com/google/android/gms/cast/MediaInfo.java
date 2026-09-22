@@ -24,10 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
-import v7.p5;
-import w7.f0;
+import v7.o5;
+import w7.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -319,34 +319,34 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.H;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q6 = f0.q(parcel, 20293);
+        int q6 = e0.q(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        f0.l(parcel, 2, str);
-        f0.s(parcel, 3, 4);
+        e0.l(parcel, 2, str);
+        e0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        f0.l(parcel, 4, this.c);
-        f0.k(parcel, 5, this.d, i10);
-        f0.s(parcel, 6, 8);
+        e0.l(parcel, 4, this.c);
+        e0.k(parcel, 5, this.d, i10);
+        e0.s(parcel, 6, 8);
         parcel.writeLong(this.e);
-        f0.p(parcel, 7, this.f);
-        f0.k(parcel, 8, this.h, i10);
-        f0.l(parcel, 9, this.n);
+        e0.p(parcel, 7, this.f);
+        e0.k(parcel, 8, this.h, i10);
+        e0.l(parcel, 9, this.n);
         List list = this.r;
-        f0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        e0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        f0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        f0.l(parcel, 12, this.v);
-        f0.k(parcel, 13, this.w, i10);
-        f0.s(parcel, 14, 8);
+        e0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        e0.l(parcel, 12, this.v);
+        e0.k(parcel, 13, this.w, i10);
+        e0.s(parcel, 14, 8);
         parcel.writeLong(this.x);
-        f0.l(parcel, 15, this.y);
-        f0.l(parcel, 16, this.E);
-        f0.l(parcel, 17, this.F);
-        f0.l(parcel, 18, this.G);
-        f0.r(parcel, q6);
+        e0.l(parcel, 15, this.y);
+        e0.l(parcel, 16, this.E);
+        e0.l(parcel, 17, this.F);
+        e0.l(parcel, 18, this.G);
+        e0.r(parcel, q6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:105:0x02a5  */
@@ -434,7 +434,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         int i17 = i16 + 1;
                         int length = objArr.length;
                         if (length < i17) {
-                            objArr = Arrays.copyOf(objArr, p5.a(length, i17));
+                            objArr = Arrays.copyOf(objArr, o5.a(length, i17));
                         }
                         objArr[i16] = optString3;
                         i15++;

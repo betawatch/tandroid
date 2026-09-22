@@ -17,17 +17,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.fd0;
-import org.telegram.ui.Components.kb;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.jb;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ti1;
-import org.telegram.ui.y51;
-import org.telegram.ui.zo0;
+import org.telegram.ui.ui1;
+import org.telegram.ui.w51;
+import org.telegram.ui.yo0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditText) obj2);
                 break;
             case 7:
-                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((fd0) obj2).getValue()));
+                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((uc0) obj2).getValue()));
                 break;
             case 8:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj;
@@ -126,11 +126,11 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                     try {
                         String str = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
                         if (lastFragment != null) {
-                            pc Q = xc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            oc Q = vc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q.j = 5000;
                             Q.j();
                         } else {
-                            pc Q2 = new xc(kb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            oc Q2 = new vc(jb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q2.j = 5000;
                             Q2.j();
                         }
@@ -150,23 +150,23 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 launchActivity.E0.remove(b2Var);
                 break;
             case 10:
-                zo0 zo0Var = (zo0) obj2;
+                yo0 yo0Var = (yo0) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    zo0Var.run(Boolean.FALSE);
+                    yo0Var.run(Boolean.FALSE);
                     break;
                 }
                 break;
             case 11:
-                y51 y51Var = (y51) obj2;
+                w51 w51Var = (w51) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    y51Var.c(true);
+                    w51Var.c(true);
                 }
-                y51Var.w = null;
+                w51Var.w = null;
                 break;
             case 12:
-                ti1 ti1Var = (ti1) obj2;
+                ui1 ui1Var = (ui1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    ti1Var.u0.b();
+                    ui1Var.u0.b();
                     break;
                 }
                 break;
@@ -196,9 +196,9 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                xh.n4 n4Var = (xh.n4) obj2;
+                xh.m4 m4Var = (xh.m4) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    n4Var.run(Boolean.FALSE, null);
+                    m4Var.run(Boolean.FALSE, null);
                     break;
                 }
                 break;

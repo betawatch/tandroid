@@ -4,18 +4,18 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ki implements org.telegram.ui.Components.pl0 {
-    public final /* synthetic */ zn a;
+public final class ki implements org.telegram.ui.Components.cl0 {
+    public final /* synthetic */ bo a;
 
-    public ki(zn znVar) {
-        this.a = znVar;
+    public ki(bo boVar) {
+        this.a = boVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.cl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -25,31 +25,31 @@ public final class ki implements org.telegram.ui.Components.pl0 {
         org.telegram.ui.ActionBar.k kVar;
         View view2;
         boolean z12;
-        zn znVar = this.a;
-        sm smVar = znVar.c9;
-        if ((smVar == null || !smVar.z) && !znVar.b9()) {
-            z10 = ((org.telegram.ui.ActionBar.n2) znVar).inPreviewMode;
-            if (!z10 && !znVar.Oa) {
-                znVar.D4 = true;
+        bo boVar = this.a;
+        um umVar = boVar.c9;
+        if ((umVar == null || !umVar.z) && !boVar.b9()) {
+            z10 = ((org.telegram.ui.ActionBar.n2) boVar).inPreviewMode;
+            if (!z10 && !boVar.Oa) {
+                boVar.D4 = true;
                 if (view instanceof org.telegram.ui.Cells.w0) {
                     org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
                     MessageObject messageObject = w0Var.getMessageObject();
                     if (messageObject != null) {
                         if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
                             z11 = false;
-                            kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-                            if (!kVar.s() || (znVar.A9() && !z11)) {
+                            kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
+                            if (!kVar.s() || (boVar.A9() && !z11)) {
                                 view2 = view;
-                                zn.b2(znVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
+                                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
                                 z12 = true;
                             } else {
                                 view2 = view;
-                                z12 = znVar.I7(view2, false, true, f7, f10, true, true, false);
+                                z12 = boVar.I7(view2, false, true, f7, f10, true, true, false);
                             }
-                            if (view2 instanceof org.telegram.ui.Cells.u1) {
-                                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view2;
-                                if (u1Var.getMessageObject() != null && u1Var.getMessageObject().type != 27) {
-                                    zn.c2(znVar, i10);
+                            if (view2 instanceof org.telegram.ui.Cells.t1) {
+                                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
+                                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().type != 27) {
+                                    bo.c2(boVar, i10);
                                     return true;
                                 }
                             }
@@ -58,13 +58,13 @@ public final class ki implements org.telegram.ui.Components.pl0 {
                     }
                 }
                 z11 = true;
-                kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
                 if (kVar.s()) {
                 }
                 view2 = view;
-                zn.b2(znVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
+                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
                 z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.u1) {
+                if (view2 instanceof org.telegram.ui.Cells.t1) {
                 }
                 return z12;
             }
@@ -72,11 +72,11 @@ public final class ki implements org.telegram.ui.Components.pl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void g() {
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.cl0
     public final /* synthetic */ void q(float f7) {
     }
 }

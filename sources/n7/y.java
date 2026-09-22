@@ -1,100 +1,52 @@
 package n7;
 
-import java.util.Iterator;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class y extends o {
-    public static final Object[] r;
-    public static final y s;
-    public final transient Object[] d;
-    public final transient int e;
-    public final transient Object[] f;
-    public final transient int h;
-    public final transient int n;
+public final class y extends n {
+    public static final y e = new y(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    static {
-        Object[] objArr = new Object[0];
-        r = objArr;
-        s = new y(0, 0, 0, objArr, objArr);
+    public y(int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
     }
 
-    public y(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = i10;
-        this.f = objArr2;
-        this.h = i11;
-        this.n = i12;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        a.e(i10, this.d);
+        Object obj = this.c[i10];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        Object[] objArr = this.f;
-        if (objArr.length == 0) {
-            return false;
-        }
-        int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
-        while (true) {
-            int i10 = this.h & rotateLeft;
-            Object obj2 = objArr[i10];
-            if (obj2 == null) {
-                return false;
-            }
-            if (obj2.equals(obj)) {
-                return true;
-            }
-            rotateLeft = i10 + 1;
-        }
-    }
-
-    @Override // n7.o, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
-    }
-
-    @Override // n7.h
+    @Override // n7.n, n7.i
     public final int i(Object[] objArr) {
-        Object[] objArr2 = this.d;
-        int i10 = this.n;
+        Object[] objArr2 = this.c;
+        int i10 = this.d;
         System.arraycopy(objArr2, 0, objArr, 0, i10);
         return i10;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return t().listIterator(0);
-    }
-
-    @Override // n7.h
+    @Override // n7.i
     public final int n() {
-        return this.n;
+        return this.d;
     }
 
-    @Override // n7.h
+    @Override // n7.i
     public final int o() {
         return 0;
     }
 
-    @Override // n7.h
-    public final d0 p() {
-        return t().listIterator(0);
-    }
-
-    @Override // n7.h
+    @Override // n7.i
     public final Object[] q() {
-        return this.d;
+        return this.c;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.n;
-    }
-
-    @Override // n7.o
-    public final m u() {
-        return m.t(this.n, this.d);
+        return this.d;
     }
 }

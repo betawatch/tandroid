@@ -6,7 +6,6 @@ import android.os.CancellationSignal;
 import android.os.Parcel;
 import android.os.ResultReceiver;
 import hd.r;
-import hg.k0;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.i;
@@ -14,7 +13,7 @@ import rd.l;
 import rd.p;
 import v7.f0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -61,7 +60,7 @@ public abstract class d {
             return false;
         }
         kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.c(k0.i(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        pVar2.a = new w0.c(hg.c.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
             pVar2.a = new w0.b("activity is cancelled by the user.");
         }

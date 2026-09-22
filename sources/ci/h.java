@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -26,7 +26,7 @@ public final class h implements TextWatcher {
         String str;
         m mVar = this.c;
         e eVar = mVar.c0;
-        org.telegram.ui.Components.o6 o6Var = mVar.v;
+        org.telegram.ui.Components.n6 n6Var = mVar.v;
         mVar.w = Character.codePointCount(editable, 0, editable.length());
         int captionLimit = mVar.getCaptionLimit();
         if (mVar.w + 25 > captionLimit) {
@@ -34,13 +34,13 @@ public final class h implements TextWatcher {
         } else {
             str = null;
         }
-        o6Var.a();
-        o6Var.setText(str);
-        o6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        n6Var.a();
+        n6Var.setText(str);
+        n6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
         if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
             int i10 = -mVar.N;
             mVar.N = i10;
-            AndroidUtilities.shakeViewSpring(o6Var, i10);
+            AndroidUtilities.shakeViewSpring(n6Var, i10);
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
         int i11 = mVar.w;
@@ -78,7 +78,7 @@ public final class h implements TextWatcher {
         if (mVar.M == null) {
             i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ai.d(), 0);
             mVar.M = iVar;
-            mVar.T = new org.telegram.ui.Components.ma(mVar.O, iVar, 0, false);
+            mVar.T = new org.telegram.ui.Components.la(mVar.O, iVar, 0, false);
             mVar.M.p(new a6.i(mVar, 11));
             ah.c cVar = mVar.h0;
             if (cVar != null) {
@@ -87,7 +87,7 @@ public final class h implements TextWatcher {
                 c10.o(eh.b.i(mVar.a));
                 iVar2.setBackgroundDrawable(c10);
             }
-            mVar.b.addView(mVar.M, w7.y5.e(-1, -1, 83));
+            mVar.b.addView(mVar.M, w7.x5.e(-1, -1, 83));
             mVar.w();
         }
         if (mVar.M.getAdapter() != null) {

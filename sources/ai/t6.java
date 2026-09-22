@@ -3,11 +3,11 @@ package ai;
 import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.wm0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class t6 extends ln0 {
+public final class t6 extends wm0 {
     public a1.e h;
     public final /* synthetic */ j7 n;
 
@@ -17,7 +17,7 @@ public final class t6 extends ln0 {
         this.n = j7Var;
     }
 
-    @Override // org.telegram.ui.Components.ln0
+    @Override // org.telegram.ui.Components.wm0
     public final void a(String str) {
         a1.e eVar = this.h;
         if (eVar != null) {

@@ -1,12 +1,9 @@
 package a3;
 
 import ai.o1;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import ki.q0;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileUploadOperation;
 import org.telegram.messenger.MediaDataController;
@@ -19,16 +16,14 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.p01;
 import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.r01;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg1;
+import org.telegram.ui.bo;
+import org.telegram.ui.eg1;
 import org.telegram.ui.uy;
-import org.telegram.ui.zn;
-import yh.y3;
+import yh.z3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,119 +42,97 @@ public final /* synthetic */ class g0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j3 = this.c;
+        long j10 = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        switch (i10) {
             case 0:
-                of.b bVar = (of.b) this.d;
-                String str = (String) this.e;
-                long j3 = this.b;
-                long j10 = this.c;
-                l0 l0Var = (l0) bVar.c;
-                String str2 = e2.d0.a;
+                l0 l0Var = (l0) ((of.b) obj2).c;
+                String str = e2.d0.a;
                 j2.f fVar = ((i2.b0) l0Var).a.s;
                 j2.a p5 = fVar.p();
-                fVar.q(p5, 1016, new j2.c(p5, str, j10, j3));
-                return;
+                fVar.q(p5, 1016, new j2.c(p5, (String) obj, this.c, this.b));
+                break;
             case 1:
-                ((o1) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);
-                return;
+                long j11 = this.c;
+                ((o1) obj2).n(this.b, (TLRPC.TL_textWithEntities) obj, j11);
+                break;
             case 2:
-                n4.y yVar = (n4.y) this.d;
-                String str3 = (String) this.e;
-                long j11 = this.b;
-                long j12 = this.c;
-                k2.k kVar = (k2.k) yVar.b;
-                String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.b0) kVar).a.s;
+                k2.j jVar = (k2.j) ((n4.y) obj2).c;
+                String str2 = e2.d0.a;
+                j2.f fVar2 = ((i2.b0) jVar).a.s;
                 j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1008, new ga.a(p10, str3, j12, j11));
-                return;
+                fVar2.q(p10, 1008, new hg.r(p10, (String) obj, this.c, this.b));
+                break;
             case 3:
-                q0 q0Var = (q0) this.d;
-                ki.m0 m0Var = (ki.m0) this.e;
-                long j13 = this.b;
-                long j14 = this.c;
-                ki.n0 n0Var = q0Var.d;
-                long j15 = m0Var.a;
-                File file = m0Var.b;
-                r01 r01Var = (r01) n0Var;
-                synchronized (r01Var) {
-                    p01 p01Var = (p01) r01Var.c.get(Long.valueOf(j15));
-                    if (!r01Var.d && p01Var != null && !p01Var.e) {
-                        r01Var.c(p01Var);
-                        p01Var.b = Math.max(p01Var.b, j13 + j14);
-                        FileLoader.getInstance(r01Var.a).checkUploadNewDataAvailable(file.getAbsolutePath(), r01Var.b, p01Var.b, 0L);
-                        return;
-                    }
-                    return;
-                }
+                ((FileUploadOperation) obj2).lambda$checkNewDataAvailable$4((Float) obj, this.b, this.c);
+                break;
             case 4:
-                ((FileUploadOperation) this.d).lambda$checkNewDataAvailable$4((Float) this.e, this.b, this.c);
-                return;
+                ((MediaDataController) obj2).lambda$loadPinnedMessages$163(this.b, this.c, (ArrayList) obj);
+                break;
             case 5:
-                ((MediaDataController) this.d).lambda$loadPinnedMessages$163(this.b, this.c, (ArrayList) this.e);
-                return;
+                ((MediaDataController) obj2).lambda$saveDraftReplyMessage$192(this.b, this.c, (TLRPC.Message) obj);
+                break;
             case 6:
-                ((MediaDataController) this.d).lambda$saveDraftReplyMessage$192(this.b, this.c, (TLRPC.Message) this.e);
-                return;
+                ((MessagesStorage) obj2).lambda$loadPendingTasks$29(this.b, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj);
+                break;
             case 7:
-                ((MessagesStorage) this.d).lambda$loadPendingTasks$29(this.b, this.c, (TLRPC.TL_messages_deleteScheduledMessages) this.e);
-                return;
+                long j12 = this.c;
+                ((MessagesStorage) obj2).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) obj, j12);
+                break;
             case 8:
-                ((MessagesStorage) this.d).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) this.e, this.c);
-                return;
+                ((MessagesStorage) obj2).lambda$getUnreadMention$156(this.b, this.c, (MessagesStorage.IntCallback) obj);
+                break;
             case 9:
-                ((MessagesStorage) this.d).lambda$getUnreadMention$156(this.b, this.c, (MessagesStorage.IntCallback) this.e);
-                return;
+                ((NotificationsSettingsFacade) obj2).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) obj);
+                break;
             case 10:
-                ((NotificationsSettingsFacade) this.d).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) this.e);
-                return;
+                long j13 = this.c;
+                ((SecretChatHelper) obj2).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) obj, j13);
+                break;
             case 11:
-                ((SecretChatHelper) this.d).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) this.e, this.c);
-                return;
+                ((GroupCallMessagesController) obj2).lambda$processUpdate$3(this.b, this.c, (byte[]) obj);
+                break;
             case 12:
-                ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
-                return;
+                ((po) obj2).d(this.b, this.c, (HashSet) obj);
+                break;
             case 13:
-                ((po) this.d).d(this.b, this.c, (HashSet) this.e);
-                return;
-            case 14:
-                uy uyVar = (uy) this.d;
-                long j16 = this.b;
-                long j17 = this.c;
-                fg1 fg1Var = (fg1) this.e;
+                uy uyVar = (uy) obj2;
+                eg1 eg1Var = (eg1) obj;
                 if (uyVar.C2 == null) {
                     uyVar.finishFragment();
-                    return;
+                    break;
+                } else {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(MessagesStorage.TopicKey.of(j10, j3));
+                    uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, eg1Var);
+                    if (uyVar.i2) {
+                        uyVar.C2 = null;
+                        break;
+                    }
                 }
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(MessagesStorage.TopicKey.of(j16, j17));
-                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, fg1Var);
-                if (uyVar.i2) {
-                    uyVar.C2 = null;
-                    return;
-                }
-                return;
-            case 15:
-                LaunchActivity launchActivity = (LaunchActivity) this.d;
-                long j18 = this.b;
-                long j19 = this.c;
-                zn znVar = (zn) this.e;
+                break;
+            case 14:
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                bo boVar = (bo) obj;
                 Pattern pattern = LaunchActivity.B1;
-                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j18, j19);
-                StringBuilder t10 = a4.a.t(j18, "LaunchActivity openForum after load ", " ");
-                t10.append(j19);
-                t10.append(" TL_forumTopic ");
-                t10.append(findTopic);
-                FileLog.d(t10.toString());
+                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j10, j3);
+                StringBuilder u10 = a4.a.u(j10, "LaunchActivity openForum after load ", " ");
+                u10.append(j3);
+                u10.append(" TL_forumTopic ");
+                u10.append(findTopic);
+                FileLog.d(u10.toString());
                 if (launchActivity.q0 != null) {
-                    ng.d.a(znVar, MessagesStorage.TopicKey.of(-j18, j19));
-                    ((ActionBarLayout) launchActivity.O()).P(znVar);
-                    return;
+                    ng.d.a(boVar, MessagesStorage.TopicKey.of(-j10, j3));
+                    ((ActionBarLayout) launchActivity.O()).P(boVar);
+                    break;
                 }
-                return;
+                break;
             default:
-                y3.f0((y3) this.d, this.b, this.c, (Utilities.Callback) this.e);
-                return;
+                z3.f0((z3) obj2, this.b, this.c, (Utilities.Callback) obj);
+                break;
         }
     }
 

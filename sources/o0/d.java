@@ -1,5 +1,6 @@
 package o0;
 
+import a4.m;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -15,16 +16,17 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import w7.a8;
+import k2.c0;
+import w7.z7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a0.k a = new a0.k(2);
     public static final a4.e b = new a4.e(21);
 
     public static j4.f a(Context context, List list) {
-        a8.a("FontProvider.getFontFamilyResult");
+        z7.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -44,7 +46,7 @@ public abstract class d {
     public static ProviderInfo b(PackageManager packageManager, e eVar, Resources resources) {
         a4.e eVar2 = b;
         a0.k kVar = a;
-        a8.a("FontProvider.getProvider");
+        z7.a("FontProvider.getProvider");
         try {
             List list = eVar.d;
             String str = eVar.a;
@@ -94,18 +96,18 @@ public abstract class d {
     }
 
     public static i[] c(Context context, e eVar, String str) {
-        a8.a("FontProvider.query");
+        z7.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a bVar = Build.VERSION.SDK_INT < 24 ? new b(context, build) : new k2.e(context, build);
+            b c0Var = Build.VERSION.SDK_INT < 24 ? new c0(context, build) : new m(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                a8.a("ContentQueryWrapper.query");
+                z7.a("ContentQueryWrapper.query");
                 try {
-                    cursor = bVar.d(build, strArr, new String[]{eVar.c});
+                    cursor = c0Var.G(build, strArr, new String[]{eVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -124,7 +126,7 @@ public abstract class d {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    bVar.close();
+                    c0Var.close();
                     return (i[]) arrayList.toArray(new i[0]);
                 } finally {
                 }
@@ -132,7 +134,7 @@ public abstract class d {
                 if (cursor != null) {
                     cursor.close();
                 }
-                bVar.close();
+                c0Var.close();
                 throw th2;
             }
         } finally {

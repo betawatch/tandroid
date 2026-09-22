@@ -11,9 +11,9 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
-import v7.z5;
+import v7.y5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -256,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String p5 = a4.a.p("inputFuture=[", t0Var.toString(), "]");
+        String q6 = a4.a.q("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return p5;
+            return q6;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return p5;
+            return q6;
         }
-        return p5 + ", remaining delay=[" + delay + " ms]";
+        return q6 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                z5 z5Var = l0.h;
-                z5Var.c(k0Var3, k0Var2);
-                if (z5Var.g(this, k0Var2, k0Var3)) {
+                y5 y5Var = l0.h;
+                y5Var.c(k0Var3, k0Var2);
+                if (y5Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        z5 z5Var = l0.h;
-                        z5Var.c(k0Var3, k0Var2);
-                        if (z5Var.g(this, k0Var2, k0Var3)) {
+                        y5 y5Var = l0.h;
+                        y5Var.c(k0Var3, k0Var2);
+                        if (y5Var.g(this, k0Var2, k0Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a4.a.C(str, " for ", w0Var));
+                        throw new TimeoutException(a4.a.D(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

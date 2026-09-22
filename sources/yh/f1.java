@@ -6,18 +6,18 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ z3 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ long e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ f1(y3 y3Var, long j3, long j10, Utilities.Callback callback, long j11) {
-        this.b = y3Var;
+    public /* synthetic */ f1(z3 z3Var, long j3, long j10, Utilities.Callback callback, long j11) {
+        this.b = z3Var;
         this.c = j3;
         this.d = j10;
         this.f = callback;
@@ -36,8 +36,8 @@ public final /* synthetic */ class f1 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ f1(y3 y3Var, org.telegram.ui.ActionBar.b2 b2Var, long j3, long j10, long j11) {
-        this.b = y3Var;
+    public /* synthetic */ f1(z3 z3Var, org.telegram.ui.ActionBar.b2 b2Var, long j3, long j10, long j11) {
+        this.b = z3Var;
         this.f = b2Var;
         this.c = j3;
         this.d = j10;

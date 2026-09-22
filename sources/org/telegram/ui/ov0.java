@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ov0 extends FrameLayout {
     public final FrameLayout a;
     public final TextureView b;
     public final k4 c;
-    public final org.telegram.ui.Components.v9 d;
+    public final org.telegram.ui.Components.u9 d;
     public final /* synthetic */ pv0 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -30,19 +30,19 @@ public final class ov0 extends FrameLayout {
         this.a = frameLayout;
         frameLayout.setOutlineProvider(new nv0());
         frameLayout.setClipToOutline(true);
-        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
-        this.d = v9Var;
-        frameLayout.addView(v9Var);
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        frameLayout.addView(u9Var);
         frameLayout.setWillNotDraw(false);
         k4 k4Var = new k4(context);
         this.c = k4Var;
         k4Var.setBackgroundColor(0);
-        frameLayout.addView(k4Var, w7.y5.e(-1, -1, 17));
+        frameLayout.addView(k4Var, w7.x5.e(-1, -1, 17));
         TextureView textureView = new TextureView(context);
         this.b = textureView;
         textureView.setOpaque(false);
-        k4Var.addView(textureView, w7.y5.c(-1.0f, -1));
-        addView(frameLayout, w7.y5.c(-2.0f, -2));
+        k4Var.addView(textureView, w7.x5.c(-1.0f, -1));
+        addView(frameLayout, w7.x5.c(-2.0f, -2));
         setWillNotDraw(false);
     }
 
@@ -50,7 +50,7 @@ public final class ov0 extends FrameLayout {
         float f7;
         pv0 pv0Var = this.e;
         float[] fArr = pv0Var.m;
-        vh.g gVar = pv0Var.j;
+        vh.h hVar = pv0Var.j;
         Path path = pv0Var.l;
         if (!pv0Var.n || pv0Var.e == null || pv0Var.a == null) {
             return;
@@ -156,9 +156,9 @@ public final class ov0 extends FrameLayout {
                 canvas.translate(pv0Var.f.getImageX(), pv0Var.f.getImageY());
                 pv0Var.k.c(canvas, pv0Var.d, (int) pv0Var.f.getImageWidth(), (int) pv0Var.f.getImageHeight(), 1.0f, false);
             } else {
-                gVar.h(i0.a.k(-1, (int) (pv0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
-                gVar.setBounds((int) pv0Var.f.getImageX(), (int) pv0Var.f.getImageY(), (int) pv0Var.f.getImageX2(), (int) pv0Var.f.getImageY2());
-                gVar.draw(canvas);
+                hVar.h(i0.a.k(-1, (int) (pv0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
+                hVar.setBounds((int) pv0Var.f.getImageX(), (int) pv0Var.f.getImageY(), (int) pv0Var.f.getImageX2(), (int) pv0Var.f.getImageY2());
+                hVar.draw(canvas);
             }
             canvas.restore();
             invalidate();
@@ -192,7 +192,7 @@ public final class ov0 extends FrameLayout {
             super.dispatchDraw(canvas);
             f7 = measuredHeight;
         } else {
-            mv0Var.b(fArr);
+            mv0Var.g(fArr);
             canvas.save();
             float f13 = 1.0f - interpolation;
             float f14 = fArr[0] * f13;

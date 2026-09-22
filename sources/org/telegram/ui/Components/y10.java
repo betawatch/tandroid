@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class y10 extends FrameLayout implements le.d {
     public final le.b a;
     public final le.b b;
-    public final nj0 c;
+    public final aj0 c;
     public final RadialProgressView d;
-    public final org.telegram.ui.ActionBar.f6 e;
+    public final org.telegram.ui.ActionBar.e6 e;
     public ArrayList f;
     public final boolean h;
     public final fh.c n;
@@ -27,16 +27,16 @@ public final class y10 extends FrameLayout implements le.d {
     public float w;
     public boolean x;
 
-    public y10(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(context, f6Var, false);
+    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        this(context, e6Var, false);
     }
 
     public static FrameLayout.LayoutParams b() {
-        return w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return w7.x5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return w7.x5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static void d(View view, float f7) {
@@ -59,7 +59,7 @@ public final class y10 extends FrameLayout implements le.d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         int i11 = 0;
         if (i10 == 0) {
             d(this, f7);
@@ -109,26 +109,26 @@ public final class y10 extends FrameLayout implements le.d {
     public final void g() {
         boolean z10 = this.h;
         RadialProgressView radialProgressView = this.d;
-        nj0 nj0Var = this.c;
-        org.telegram.ui.ActionBar.f6 f6Var = this.e;
+        aj0 aj0Var = this.c;
+        org.telegram.ui.ActionBar.e6 e6Var = this.e;
         if (!z10) {
-            int i10 = org.telegram.ui.ActionBar.j6.O9;
-            nj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN);
-            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-            setBackground(org.telegram.ui.ActionBar.j6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Qh, f6Var)));
+            int i10 = org.telegram.ui.ActionBar.i6.O9;
+            aj0Var.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN);
+            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
+            setBackground(org.telegram.ui.ActionBar.i6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, e6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Qh, e6Var)));
             return;
         }
-        int i11 = org.telegram.ui.ActionBar.j6.v8;
-        nj0Var.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        this.n.a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        this.s.c();
+        int i11 = org.telegram.ui.ActionBar.i6.v8;
+        aj0Var.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i11, e6Var), PorterDuff.Mode.SRC_IN);
+        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.i6.v0(i11, e6Var));
+        this.n.a(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        this.s.d();
         this.r.v();
         invalidate();
         int dp = AndroidUtilities.dp(18.0f);
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, e6Var);
         int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(org.telegram.ui.ActionBar.j6.W(dp, v02, dp2, dp2, dp2, dp2));
+        setBackground(org.telegram.ui.ActionBar.i6.W(dp, v02, dp2, dp2, dp2, dp2));
     }
 
     public boolean getButtonVisible() {
@@ -167,30 +167,30 @@ public final class y10 extends FrameLayout implements le.d {
         }
     }
 
-    public y10(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+    public y10(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         super(context);
         qr qrVar = qr.h;
         this.a = new le.b(0, this, qrVar, 380L, true);
         this.b = new le.b(1, this, qrVar, 380L, false);
-        this.e = f6Var;
+        this.e = e6Var;
         this.h = z10;
-        nj0 nj0Var = new nj0(context);
-        this.c = nj0Var;
-        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(nj0Var, w7.y5.c(-1.0f, -1));
+        aj0 aj0Var = new aj0(context);
+        this.c = aj0Var;
+        aj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(aj0Var, w7.x5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
         radialProgressView.setStrokeWidth(2.0f);
-        addView(radialProgressView, w7.y5.c(-1.0f, -1));
+        addView(radialProgressView, w7.x5.c(-1.0f, -1));
         d(radialProgressView, 0.0f);
-        w7.a6.a(this);
+        w7.z5.a(this);
         if (!z10) {
-            setOutlineProvider(yf.j0.a);
+            setOutlineProvider(yf.i0.a);
             setTranslationZ(AndroidUtilities.dpf2(0.5f));
         }
         if (z10) {
-            ci.f fVar = new ci.f(org.telegram.ui.ActionBar.j6.h5, null);
+            ci.f fVar = new ci.f(org.telegram.ui.ActionBar.i6.h5, null);
             this.s = fVar;
             fh.c cVar = new fh.c();
             this.n = cVar;

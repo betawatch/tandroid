@@ -18,10 +18,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationsController;
-import org.telegram.ui.Components.lz0;
-import org.telegram.ui.Components.nz0;
+import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.yy0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i0 implements j4.a0 {
     public int a;
@@ -52,7 +52,7 @@ public final class i0 implements j4.a0 {
         }
     }
 
-    public static void a(float[] fArr, int i10, float f7, float f10, float f11, float f12) {
+    public static void c(float[] fArr, int i10, float f7, float f10, float f11, float f12) {
         int i11 = i10 * 8;
         fArr[i11] = f7;
         fArr[i11 + 1] = f10;
@@ -71,7 +71,7 @@ public final class i0 implements j4.a0 {
     }
 
     @Override // j4.a0
-    public void b(e2.v vVar) {
+    public void a(e2.v vVar) {
         e2.b0 b0Var;
         e2.b0 b0Var2;
         SparseArray sparseArray;
@@ -112,7 +112,7 @@ public final class i0 implements j4.a0 {
                     j4.g0 a2 = fVar.a(21, new j6.l(21, null, 0, null, e2.d0.b));
                     d0Var.r = a2;
                     if (a2 != null) {
-                        a2.c(b0Var, d0Var.m, new j4.f0(D, 21, 8192));
+                        a2.b(b0Var, d0Var.m, new j4.f0(D, 21, 8192));
                     }
                 }
                 sparseArray2.clear();
@@ -269,7 +269,7 @@ public final class i0 implements j4.a0 {
                         if (g0Var != d0Var.r) {
                             i10 = i25;
                             b0Var2 = b0Var6;
-                            g0Var.c(b0Var2, d0Var.m, new j4.f0(i10, keyAt, 8192));
+                            g0Var.b(b0Var2, d0Var.m, new j4.f0(i10, keyAt, 8192));
                         } else {
                             b0Var2 = b0Var6;
                             i10 = i25;
@@ -291,7 +291,7 @@ public final class i0 implements j4.a0 {
                     if (d0Var.o) {
                         return;
                     }
-                    d0Var.m.f1();
+                    d0Var.m.e1();
                     d0Var.n = 0;
                     d0Var.o = true;
                     return;
@@ -300,7 +300,7 @@ public final class i0 implements j4.a0 {
                 int i27 = i13 == 1 ? 0 : d0Var.n - 1;
                 d0Var.n = i27;
                 if (i27 == 0) {
-                    d0Var.m.f1();
+                    d0Var.m.e1();
                     d0Var.o = true;
                 }
             }
@@ -322,12 +322,12 @@ public final class i0 implements j4.a0 {
             return;
         }
         iArr[i10] = 1;
-        for (lz0 lz0Var : ((lz0[][]) this.c)[i10]) {
-            f(lz0Var.a.b);
-            lz0[] lz0VarArr = (lz0[]) this.b;
+        for (yy0 yy0Var : ((yy0[][]) this.c)[i10]) {
+            f(yy0Var.a.b);
+            yy0[] yy0VarArr = (yy0[]) this.b;
             int i11 = this.a;
             this.a = i11 - 1;
-            lz0VarArr[i11] = lz0Var;
+            yy0VarArr[i11] = yy0Var;
         }
         iArr[i10] = 2;
     }
@@ -630,7 +630,7 @@ public final class i0 implements j4.a0 {
     }
 
     @Override // j4.a0
-    public void c(e2.b0 b0Var, c3.q qVar, j4.f0 f0Var) {
+    public void b(e2.b0 b0Var, c3.q qVar, j4.f0 f0Var) {
     }
 
     public i0(c3.z zVar, c3.j0 j0Var, byte[] bArr, c3.k0[] k0VarArr, int i10) {
@@ -649,30 +649,30 @@ public final class i0 implements j4.a0 {
         this.a = i10;
     }
 
-    public i0(nz0 nz0Var, lz0[] lz0VarArr) {
-        this.e = nz0Var;
-        int length = lz0VarArr.length;
-        this.b = new lz0[length];
+    public i0(az0 az0Var, yy0[] yy0VarArr) {
+        this.e = az0Var;
+        int length = yy0VarArr.length;
+        this.b = new yy0[length];
         this.a = length - 1;
-        int e = nz0Var.e() + 1;
-        lz0[][] lz0VarArr2 = new lz0[e][];
+        int e = az0Var.e() + 1;
+        yy0[][] yy0VarArr2 = new yy0[e][];
         int[] iArr = new int[e];
-        for (lz0 lz0Var : lz0VarArr) {
-            int i10 = lz0Var.a.a;
+        for (yy0 yy0Var : yy0VarArr) {
+            int i10 = yy0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
         for (int i11 = 0; i11 < e; i11++) {
-            lz0VarArr2[i11] = new lz0[iArr[i11]];
+            yy0VarArr2[i11] = new yy0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (lz0 lz0Var2 : lz0VarArr) {
-            int i12 = lz0Var2.a.a;
-            lz0[] lz0VarArr3 = lz0VarArr2[i12];
+        for (yy0 yy0Var2 : yy0VarArr) {
+            int i12 = yy0Var2.a.a;
+            yy0[] yy0VarArr3 = yy0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            lz0VarArr3[i13] = lz0Var2;
+            yy0VarArr3[i13] = yy0Var2;
         }
-        this.c = lz0VarArr2;
-        this.d = new int[((nz0) this.e).e() + 1];
+        this.c = yy0VarArr2;
+        this.d = new int[((az0) this.e).e() + 1];
     }
 }

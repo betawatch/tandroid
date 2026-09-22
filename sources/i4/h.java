@@ -27,9 +27,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.q6;
+import v7.p6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
@@ -209,7 +209,7 @@ public abstract class h {
                     i11 = 1;
                     i12 = (i22 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                q6.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
+                p6.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
             } else {
                 i11 = 1;
             }
@@ -223,24 +223,24 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                q6.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
+                p6.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                q6.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
+                p6.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
             }
             if (bVar.e != null) {
-                q6.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
+                p6.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
             }
             int i23 = bVar.n;
             if (i23 == 1) {
-                q6.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
+                p6.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
             } else if (i23 == 2) {
-                q6.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
+                p6.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
             } else if (i23 == 3) {
-                q6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
+                p6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
             }
             if (bVar.q) {
                 spannableStringBuilder.setSpan(new d2.f(), i13, length, 33);

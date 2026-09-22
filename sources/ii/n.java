@@ -6,11 +6,11 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.fh;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class n implements ti {
     public final /* synthetic */ vi a;
@@ -22,7 +22,7 @@ public final class n implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         vi viVar = this.a;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = viVar.j0;
         w3 w3Var = this.b.r;
@@ -40,9 +40,9 @@ public final class n implements ti {
                 if (!(obj instanceof MediaController.PhotoEntry)) {
                     i13++;
                 } else if (aVar != null) {
-                    w3Var.U1(aVar, (MediaController.PhotoEntry) obj);
+                    w3Var.T1(aVar, (MediaController.PhotoEntry) obj);
                 } else {
-                    w3Var.g2((MediaController.PhotoEntry) obj);
+                    w3Var.f2((MediaController.PhotoEntry) obj);
                 }
             }
         }
@@ -56,29 +56,29 @@ public final class n implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final boolean f0() {
+    public final boolean c0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void y0(gh ghVar) {
-        NotificationCenter.getInstance(this.b.n).doOnIdle(ghVar);
+    public final void x0(fh fhVar) {
+        NotificationCenter.getInstance(this.b.n).doOnIdle(fhVar);
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void V0(Object obj) {
+    public final void K0() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void k1(TLRPC.User user) {
+    public final /* synthetic */ void U0(Object obj) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void L0() {
+    public final void j1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void v0() {
+    public final /* synthetic */ void u0() {
     }
 
     @Override // org.telegram.ui.Components.ti

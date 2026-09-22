@@ -20,11 +20,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.g01;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class w7 extends View {
     public v7 E;
@@ -38,27 +38,27 @@ public final class w7 extends View {
     public final int a;
     public final ka b;
     public la c;
-    public final org.telegram.ui.Components.d6 d;
+    public final org.telegram.ui.Components.c6 d;
     public final RectF e;
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public w01 r;
-    public w01 s;
+    public g01 r;
+    public g01 s;
     public final Path v;
     public final Paint w;
-    public final org.telegram.ui.Components.yc x;
+    public final org.telegram.ui.Components.wc x;
     public boolean y;
 
     public w7(Activity activity, int i10, ka kaVar) {
         super(activity);
-        this.d = new org.telegram.ui.Components.d6(this, 0L, 320L, qr.h);
+        this.d = new org.telegram.ui.Components.c6(this, 0L, 320L, qr.h);
         this.e = new RectF();
         this.f = new RectF();
         this.h = new ImageReceiver(this);
         this.v = new Path();
         this.w = new Paint(1);
-        this.x = new org.telegram.ui.Components.yc(this);
+        this.x = new org.telegram.ui.Components.wc(this);
         this.J = new int[2];
         this.K = new int[2];
         this.a = i10;
@@ -70,7 +70,7 @@ public final class w7 extends View {
         if (v7Var == null) {
             return;
         }
-        this.r = new w01(v7Var.b(), 16.0f, AndroidUtilities.bold());
+        this.r = new g01(v7Var.b(), 16.0f, AndroidUtilities.bold());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -82,7 +82,7 @@ public final class w7 extends View {
             oqVar.setScale(1.25f, 1.25f);
             spannableStringBuilder.setSpan(oqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new w01(spannableStringBuilder, 14.0f, null);
+        this.s = new g01(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class w7 extends View {
         float f10;
         Object obj;
         float e = this.d.e(this.y);
-        w01 w01Var = this.r;
-        if (w01Var == null || this.s == null || e <= 0.0f) {
+        g01 g01Var = this.r;
+        if (g01Var == null || this.s == null || e <= 0.0f) {
             return;
         }
-        w01Var.p = getWidth() * 0.7f;
+        g01Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float dp = AndroidUtilities.dp(5.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
@@ -123,7 +123,7 @@ public final class w7 extends View {
         if (i10 < 29 || (obj = this.G) == null || this.F == null) {
             f7 = dp;
             f10 = 2.0f;
-            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e, -587202560));
+            paint.setColor(org.telegram.ui.ActionBar.i6.l1(e, -587202560));
             canvas.drawRoundRect(rectF2, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), paint);
         } else {
             RenderNode c10 = org.telegram.messenger.b.c(obj);
@@ -141,7 +141,7 @@ public final class w7 extends View {
             canvas.scale(max3, max3);
             canvas.drawRenderNode(c10);
             canvas.restore();
-            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e, 1879048192));
+            paint.setColor(org.telegram.ui.ActionBar.i6.l1(e, 1879048192));
             canvas.drawRoundRect(rectF2, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), paint);
         }
         canvas.save();
@@ -156,9 +156,9 @@ public final class w7 extends View {
             imageReceiver.draw(canvas);
         }
         float centerY = rectF.centerY() - ((this.s.j() + (this.r.j() + dp4)) / f10);
-        w01 w01Var2 = this.r;
-        w01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (w01Var2.j() / f10) + centerY, e, -1, canvas);
-        this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.j6.v(-16777216, -1610612737), canvas);
+        g01 g01Var2 = this.r;
+        g01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (g01Var2.j() / f10) + centerY, e, -1, canvas);
+        this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.i6.v(-16777216, -1610612737), canvas);
         canvas.restore();
     }
 
@@ -166,10 +166,10 @@ public final class w7 extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         la laVar;
         boolean z10 = this.y;
-        org.telegram.ui.Components.yc ycVar = this.x;
+        org.telegram.ui.Components.wc wcVar = this.x;
         if (!z10 || this.E == null) {
             this.L = false;
-            ycVar.c(false);
+            wcVar.c(false);
             return false;
         }
         int action = motionEvent.getAction();
@@ -177,23 +177,23 @@ public final class w7 extends View {
         if (action == 0) {
             if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.L = true;
-                ycVar.c(true);
+                wcVar.c(true);
             }
         } else if (motionEvent.getAction() == 2) {
-            if (ycVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                ycVar.c(false);
+            if (wcVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                wcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h && (laVar = this.c) != null && this.E != null) {
+            if (wcVar.h && (laVar = this.c) != null && this.E != null) {
                 laVar.run(new r7(this, 1));
             }
-            ycVar.c(false);
+            wcVar.c(false);
             this.L = false;
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            wcVar.c(false);
             this.L = false;
         }
-        return this.L || ycVar.h;
+        return this.L || wcVar.h;
     }
 
     @Override // android.view.View

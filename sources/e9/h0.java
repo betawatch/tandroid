@@ -2,9 +2,9 @@ package e9;
 
 import java.util.Iterator;
 import java.util.ListIterator;
-import v7.u6;
+import v7.t6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h0 extends i0 {
     public final transient int c;
@@ -20,14 +20,14 @@ public final class h0 extends i0 {
     @Override // e9.i0, java.util.List
     /* renamed from: C */
     public final i0 subList(int i10, int i11) {
-        u6.f(i10, i11, this.d);
+        t6.f(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }
 
     @Override // java.util.List
     public final Object get(int i10) {
-        u6.c(i10, this.d);
+        t6.c(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 

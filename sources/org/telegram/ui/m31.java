@@ -14,11 +14,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class m31 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout a;
-    public org.telegram.ui.Components.yl0 b;
+    public org.telegram.ui.Components.ll0 b;
     public i31 c;
     public int d;
     public int e;
@@ -50,20 +50,20 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (m31Var.n != null) {
                 return;
             }
-            a71[] a71VarArr = new a71[1];
-            org.telegram.ui.Components.n5 n5Var = l31Var.a;
-            if (n5Var != null) {
-                n5Var.f();
+            y61[] y61VarArr = new y61[1];
+            org.telegram.ui.Components.m5 m5Var = l31Var.a;
+            if (m5Var != null) {
+                m5Var.f();
                 l31Var.b();
                 Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(n5Var.getBounds());
+                rect.set(m5Var.getBounds());
                 i11 = (-(l31Var.getHeight() - rect.centerY())) - AndroidUtilities.dp(16.0f);
                 i10 = rect.centerX() - ((AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) - ((int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f)));
             } else {
                 i10 = 0;
                 i11 = 0;
             }
-            j31 j31Var = new j31(m31Var, m31Var, m31Var.getParentActivity(), Integer.valueOf(i10), l31Var, a71VarArr);
+            j31 j31Var = new j31(m31Var, m31Var, m31Var.getParentActivity(), Integer.valueOf(i10), l31Var, y61VarArr);
             String doubleTapReaction = m31Var.getMediaDataController().getDoubleTapReaction();
             if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
                 try {
@@ -80,12 +80,12 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
             }
             j31Var.setRecentReactions(arrayList);
             j31Var.setSaveState(3);
-            j31Var.y(n5Var, l31Var);
+            j31Var.y(m5Var, l31Var);
             k31 k31Var = new k31(m31Var, j31Var);
             m31Var.n = k31Var;
-            a71VarArr[0] = k31Var;
+            y61VarArr[0] = k31Var;
             k31Var.showAsDropDown(l31Var, 0, i11, 53);
-            a71VarArr[0].b();
+            y61VarArr[0].b();
         }
     }
 
@@ -111,21 +111,21 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setActionBarMenuOnItemClick(new v70(this, 25));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.yl0 yl0Var = new org.telegram.ui.Components.yl0(context, null);
-        this.b = yl0Var;
-        yl0Var.q1();
+        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(context, null);
+        this.b = ll0Var;
+        ll0Var.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         ((s4.j) this.b.getItemAnimator()).m = false;
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.yl0 yl0Var2 = this.b;
+        org.telegram.ui.Components.ll0 ll0Var2 = this.b;
         i31 i31Var = new i31(this, context);
         this.c = i31Var;
-        yl0Var2.setAdapter(i31Var);
+        ll0Var2.setAdapter(i31Var);
         this.b.setOnItemClickListener(new a31(this, 1));
-        linearLayout.addView(this.b, w7.y5.n(-1, -1));
+        linearLayout.addView(this.b, w7.x5.n(-1, -1));
         this.a = linearLayout;
         this.fragmentView = linearLayout;
-        linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
         this.c.l();
         c0();
         return this.a;
@@ -146,7 +146,7 @@ public final class m31 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
-        return w7.b6.a(new wy0(4, this), org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.G6, org.telegram.ui.ActionBar.j6.z6, org.telegram.ui.ActionBar.j6.i6, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.B6, org.telegram.ui.ActionBar.j6.p7, org.telegram.ui.ActionBar.j6.f6, org.telegram.ui.ActionBar.j6.g6, org.telegram.ui.ActionBar.j6.O6, org.telegram.ui.ActionBar.j6.P6, org.telegram.ui.ActionBar.j6.Q6, org.telegram.ui.ActionBar.j6.R6);
+        return w7.a6.a(new xy0(4, this), org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.G6, org.telegram.ui.ActionBar.i6.z6, org.telegram.ui.ActionBar.i6.i6, org.telegram.ui.ActionBar.i6.a7, org.telegram.ui.ActionBar.i6.B6, org.telegram.ui.ActionBar.i6.p7, org.telegram.ui.ActionBar.i6.f6, org.telegram.ui.ActionBar.i6.g6, org.telegram.ui.ActionBar.i6.O6, org.telegram.ui.ActionBar.i6.P6, org.telegram.ui.ActionBar.i6.Q6, org.telegram.ui.ActionBar.i6.R6);
     }
 
     @Override // org.telegram.ui.ActionBar.n2

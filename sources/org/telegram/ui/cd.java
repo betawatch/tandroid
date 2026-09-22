@@ -1,38 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements RequestDelegate {
+public final /* synthetic */ class cd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ md b;
+    public final /* synthetic */ ld b;
 
-    public /* synthetic */ cd(md mdVar, int i10) {
+    public /* synthetic */ cd(ld ldVar, int i10) {
         this.a = i10;
-        this.b = mdVar;
+        this.b = ldVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(23, this.b, tLObject));
+                ld ldVar = this.b;
+                ldVar.j0 = true;
+                ldVar.h0();
                 break;
             case 1:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new dd(this.b, 3));
-                    break;
-                }
+                ld ldVar2 = this.b;
+                ldVar2.x = null;
+                ldVar2.y = null;
+                ldVar2.l0 = null;
+                ldVar2.m0 = null;
+                ldVar2.o0 = null;
+                ldVar2.n0 = null;
+                ldVar2.p0 = 0.0d;
+                ldVar2.e0(false, true);
+                ldVar2.e.h(null, null, ldVar2.s, null);
+                ldVar2.h.setAnimation(ldVar2.J);
+                ldVar2.J.M(0);
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(21, this.b, tL_error));
+                this.b.g0(true);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new q1(this.b, tL_error, tLObject, 11));
+                ld ldVar3 = this.b;
+                ldVar3.j0 = true;
+                if (ldVar3.w.length() > 0) {
+                    ldVar3.d0(ldVar3.w.getText().toString());
+                }
+                ldVar3.h0();
                 break;
         }
     }

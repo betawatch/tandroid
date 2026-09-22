@@ -8,7 +8,7 @@ import android.os.Trace;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i extends Handler implements Runnable {
     public final int a;
@@ -45,7 +45,7 @@ public final class i extends Handler implements Runnable {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.D();
+                    this.b.H();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -60,7 +60,7 @@ public final class i extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             h hVar = this.d;
             hVar.getClass();
-            hVar.S(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            hVar.V(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -98,13 +98,13 @@ public final class i extends Handler implements Runnable {
         h hVar = this.d;
         hVar.getClass();
         if (this.n) {
-            hVar.S(this.b, elapsedRealtime, j3, false);
+            hVar.V(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i11 = message.what;
         if (i11 == 2) {
             try {
-                hVar.p(this.b, elapsedRealtime, j3);
+                hVar.q(this.b, elapsedRealtime, j3);
                 return;
             } catch (RuntimeException e) {
                 e2.a.f("LoadTask", "Unexpected exception handling load completed", e);

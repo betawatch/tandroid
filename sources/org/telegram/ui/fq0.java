@@ -1,28 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final class fq0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ lq0 a;
+import android.text.Editable;
 
-    public fq0(lq0 lq0Var) {
-        this.a = lq0Var;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class fq0 implements zq0 {
+    public final /* synthetic */ jq0 a;
+
+    public fq0(jq0 jq0Var) {
+        this.a = jq0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        lq0 lq0Var = this.a;
-        if (i10 == -1) {
-            lq0Var.finishFragment();
+    @Override // org.telegram.ui.zq0
+    public final void a() {
+        jq0 jq0Var = this.a;
+        if (jq0Var.b.size() != 0) {
+            jq0Var.Q.invalidate();
+            jq0Var.W(true);
+        } else {
+            jq0Var.Q.setPivotX(0.0f);
+            jq0Var.Q.setPivotY(0.0f);
+            jq0Var.W(false);
+        }
+    }
+
+    @Override // org.telegram.ui.zq0
+    public final void b(Editable editable) {
+        jq0 jq0Var = this.a;
+        org.telegram.ui.Components.ju juVar = jq0Var.M;
+        jq0Var.a = editable;
+        juVar.setText(editable);
+    }
+
+    @Override // org.telegram.ui.zq0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.zq0
+    public final void i(int i10, boolean z10, boolean z11) {
+        jq0 jq0Var = this.a;
+        jq0Var.removeSelfFromStack();
+        if (z10) {
             return;
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                lq0.U(lq0Var, null);
-            }
-        } else if (lq0Var.V != null) {
-            lq0Var.finishFragment(false);
-            lq0Var.V.b();
-        }
+        jq0Var.V(jq0Var.b, jq0Var.c, z11, i10);
+    }
+
+    @Override // org.telegram.ui.zq0
+    public final /* synthetic */ void g() {
     }
 }

@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class r00 extends org.telegram.ui.Components.ab {
+public final class r00 extends org.telegram.ui.Components.za {
     public final MessagesController.DialogFilter X;
     public final ArrayList Y;
     public final FrameLayout Z;
@@ -37,17 +37,17 @@ public final class r00 extends org.telegram.ui.Components.ab {
         }
         U(false);
         this.e.setTitle(R(null));
-        fixNavigationBar(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+        fixNavigationBar(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false));
         TextView textView = new TextView(getContext());
         this.b0 = textView;
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
         textView.setTypeface(AndroidUtilities.bold());
-        textView.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.j6.Oh));
+        textView.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.i6.Oh));
         textView.setText(LocaleController.getString(R.string.FolderLinkShareButton));
         textView.setGravity(17);
         textView.setOnClickListener(new a(this, 22));
-        FrameLayout.LayoutParams d = w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
+        FrameLayout.LayoutParams d = w7.x5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
         int i10 = d.leftMargin;
         int i11 = this.backgroundPaddingLeft;
         d.leftMargin = i10 + i11;
@@ -55,7 +55,7 @@ public final class r00 extends org.telegram.ui.Components.ab {
         this.containerView.addView(textView, d);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.Z = frameLayout;
-        this.containerView.addView(frameLayout, w7.y5.d(-1, 100.0f, 80, 6.0f, 0.0f, 6.0f, 0.0f));
+        this.containerView.addView(frameLayout, w7.x5.d(-1, 100.0f, 80, 6.0f, 0.0f, 6.0f, 0.0f));
         T();
     }
 
@@ -68,17 +68,17 @@ public final class r00 extends org.telegram.ui.Components.ab {
         n2Var.getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new org.telegram.messenger.ja(n2Var, dialogFilter, g10Var, currentTimeMillis, 5));
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final void F(org.telegram.ui.Components.cw0 cw0Var) {
-        org.telegram.ui.Components.yl0 yl0Var = this.d;
-        yl0Var.setOverScrollMode(2);
-        yl0Var.setOnItemClickListener(new i(this, 10));
+    @Override // org.telegram.ui.Components.za
+    public final void G(org.telegram.ui.Components.pv0 pv0Var) {
+        org.telegram.ui.Components.ll0 ll0Var = this.d;
+        ll0Var.setOverScrollMode(2);
+        ll0Var.setOnItemClickListener(new i(this, 10));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
         jVar.o(org.telegram.ui.Components.qr.h);
         jVar.n(350L);
-        yl0Var.setItemAnimator(jVar);
+        ll0Var.setItemAnimator(jVar);
     }
 
     public final void Q() {
@@ -113,11 +113,11 @@ public final class r00 extends org.telegram.ui.Components.ab {
         n2Var.getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new m(this, 7));
     }
 
-    public final CharSequence R(vh.n nVar) {
+    public final CharSequence R(vh.o oVar) {
         Object obj;
         MessagesController.DialogFilter dialogFilter = this.X;
         if (dialogFilter != null) {
-            Paint.FontMetricsInt fontMetricsInt = nVar == null ? null : nVar.getPaint().getFontMetricsInt();
+            Paint.FontMetricsInt fontMetricsInt = oVar == null ? null : oVar.getPaint().getFontMetricsInt();
             obj = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(new SpannableStringBuilder(dialogFilter.name), fontMetricsInt, false), dialogFilter.entities, fontMetricsInt);
         } else {
             obj = "";
@@ -161,14 +161,14 @@ public final class r00 extends org.telegram.ui.Components.ab {
         }
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final org.telegram.ui.Components.xl0 v(org.telegram.ui.Components.yl0 yl0Var) {
+    @Override // org.telegram.ui.Components.za
+    public final org.telegram.ui.Components.kl0 v(org.telegram.ui.Components.ll0 ll0Var) {
         p00 p00Var = new p00(this);
         this.a0 = p00Var;
         return p00Var;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final CharSequence y() {
         return R(null);
     }

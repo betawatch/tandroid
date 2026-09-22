@@ -1,26 +1,30 @@
 package xh;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.xc;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class c1 extends yh.y3 {
-    public final /* synthetic */ r1 r1;
+public final class c1 extends h4 {
+    public final /* synthetic */ ViewTreeObserver N;
+    public final /* synthetic */ n0 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c1(r1 r1Var, Context context, int i10, long j3, f6 f6Var) {
-        super(context, i10, j3, f6Var, null);
-        this.r1 = r1Var;
+    public c1(long j3, String str, long j10, e6 e6Var, ViewTreeObserver viewTreeObserver, n0 n0Var) {
+        super(j3, str, j10, e6Var);
+        this.N = viewTreeObserver;
+        this.O = n0Var;
     }
 
-    @Override // yh.y3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
-    public final xc getBulletinFactory() {
-        f6 f6Var;
-        r1 r1Var = this.r1;
-        org.telegram.ui.ActionBar.d3 d3Var = r1Var.container;
-        f6Var = r1Var.resourcesProvider;
-        return new xc(d3Var, f6Var);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onPause() {
+        super.onPause();
+        this.N.removeOnPreDrawListener(this.O);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        this.N.addOnPreDrawListener(this.O);
     }
 }

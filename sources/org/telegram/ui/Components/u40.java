@@ -40,9 +40,9 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class u40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.nq0 {
+public final class u40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.lq0 {
     public String E;
     public boolean F;
     public boolean H;
@@ -473,7 +473,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
                 if (intent == null || intent.getData() == null) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new bv(12, this, intent.getData()));
+                AndroidUtilities.runOnUIThread(new ny(6, this, intent.getData()));
                 return;
             }
             if (i10 == 15) {
@@ -555,10 +555,10 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
             parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 151);
             return;
         }
-        org.telegram.ui.lq0 lq0Var = new org.telegram.ui.lq0(this.Q ? 3 : 1, false, false, null);
-        lq0Var.x = this.J;
-        lq0Var.V = new q40(this);
-        this.a.presentFragment(lq0Var);
+        org.telegram.ui.jq0 jq0Var = new org.telegram.ui.jq0(this.Q ? 3 : 1, false, false, null);
+        jq0Var.x = this.J;
+        jq0Var.V = new q40(this);
+        this.a.presentFragment(jq0Var);
     }
 
     public final void o(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
@@ -593,7 +593,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
             this.a.showDialog(viVar2);
             return;
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a.getParentActivity(), (org.telegram.ui.ActionBar.f6) null, false);
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) this.a.getParentActivity(), (org.telegram.ui.ActionBar.e6) null, false);
         f3Var.fixNavigationBar();
         if (i10 == 1) {
             f3Var.title = LocaleController.formatString("SetPhotoFor", R.string.SetPhotoFor, this.L.first_name);
@@ -609,20 +609,20 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
         ArrayList arrayList2 = new ArrayList();
         final ArrayList arrayList3 = new ArrayList();
         arrayList.add(LocaleController.getString(R.string.ChooseTakePhoto));
-        org.telegram.ui.Cells.c1.n(R.drawable.msg_camera, 0, arrayList2, arrayList3);
+        org.telegram.ui.Cells.q3.n(R.drawable.msg_camera, 0, arrayList2, arrayList3);
         if (this.Q) {
             arrayList.add(LocaleController.getString(R.string.ChooseRecordVideo));
-            org.telegram.ui.Cells.c1.n(R.drawable.msg_video, 4, arrayList2, arrayList3);
+            org.telegram.ui.Cells.q3.n(R.drawable.msg_video, 4, arrayList2, arrayList3);
         }
         arrayList.add(LocaleController.getString(R.string.ChooseFromGallery));
-        org.telegram.ui.Cells.c1.n(R.drawable.msg_photos, 1, arrayList2, arrayList3);
+        org.telegram.ui.Cells.q3.n(R.drawable.msg_photos, 1, arrayList2, arrayList3);
         if (this.J) {
             arrayList.add(LocaleController.getString(R.string.ChooseFromSearch));
-            org.telegram.ui.Cells.c1.n(R.drawable.msg_search, 2, arrayList2, arrayList3);
+            org.telegram.ui.Cells.q3.n(R.drawable.msg_search, 2, arrayList2, arrayList3);
         }
         if (z10) {
             arrayList.add(LocaleController.getString(R.string.DeletePhoto));
-            org.telegram.ui.Cells.c1.n(R.drawable.msg_delete, 3, arrayList2, arrayList3);
+            org.telegram.ui.Cells.q3.n(R.drawable.msg_delete, 3, arrayList2, arrayList3);
         }
         int[] iArr = new int[arrayList2.size()];
         int size = arrayList2.size();
@@ -642,7 +642,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
         f3Var.setOnHideListener(onDismissListener);
         this.a.showDialog(f3Var);
         if (z10) {
-            f3Var.setItemColor(arrayList.size() - 1, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p7, false));
+            f3Var.setItemColor(arrayList.size() - 1, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.p7, false));
         }
     }
 
@@ -667,14 +667,14 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.cr0 cr0Var = new org.telegram.ui.cr0(0, null, hashMap, arrayList, 1, false, null, this.R);
-        cr0Var.s0 = new o40(this, hashMap, arrayList);
-        cr0Var.f0(1, false);
-        cr0Var.p0 = this.b.getInitialSearchString();
+        org.telegram.ui.ar0 ar0Var = new org.telegram.ui.ar0(0, null, hashMap, arrayList, 1, false, null, this.R);
+        ar0Var.s0 = new o40(this, hashMap, arrayList);
+        ar0Var.f0(1, false);
+        ar0Var.p0 = this.b.getInitialSearchString();
         if (this.S) {
-            this.a.showAsSheet(cr0Var);
+            this.a.showAsSheet(ar0Var);
         } else {
-            this.a.presentFragment(cr0Var);
+            this.a.presentFragment(ar0Var);
         }
     }
 
@@ -707,7 +707,7 @@ public final class u40 implements NotificationCenter.NotificationCenterDelegate,
             sb2.append("/");
             sb2.append(this.h.location.volume_id);
             sb2.append("_");
-            this.v = a4.a.n(this.h.location.local_id, ".jpg", sb2);
+            this.v = a4.a.o(this.h.location.local_id, ".jpg", sb2);
             if (this.K) {
                 if (messageObject == null || messageObject.videoEditedInfo == null) {
                     t40 t40Var = this.b;

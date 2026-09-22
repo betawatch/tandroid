@@ -1,37 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.View;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class bm0 extends hc {
-    public final cm0 c;
+public final /* synthetic */ class bm0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ im0 b;
 
-    public bm0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        cm0 cm0Var = new cm0();
-        this.c = cm0Var;
-        imageView.setImageDrawable(cm0Var);
+    public /* synthetic */ bm0(im0 im0Var, int i10) {
+        this.a = i10;
+        this.b = im0Var;
     }
 
-    @Override // org.telegram.ui.Components.tb
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        cm0 cm0Var = this.c;
-        cm0Var.getClass();
-        cm0Var.g = System.currentTimeMillis();
-        cm0Var.invalidateSelf();
-    }
-
-    @Override // org.telegram.ui.Components.tb
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        cm0 cm0Var = this.c;
-        cm0Var.g = -1L;
-        cm0Var.invalidateSelf();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                break;
+            case 1:
+                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                break;
+            case 2:
+                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                break;
+            case 3:
+                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                break;
+            default:
+                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                break;
+        }
     }
 }

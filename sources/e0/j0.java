@@ -3,7 +3,7 @@ package e0;
 import android.app.Notification;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j0 {
     public final String a;
@@ -44,6 +44,6 @@ public final class j0 {
         StringBuilder sb2 = new StringBuilder("NotifyTask[packageName:");
         sb2.append(this.a);
         sb2.append(", id:");
-        return a4.a.n(this.b, ", tag:null]", sb2);
+        return a4.a.o(this.b, ", tag:null]", sb2);
     }
 }

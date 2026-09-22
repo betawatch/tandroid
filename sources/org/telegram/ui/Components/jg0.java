@@ -2,65 +2,61 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jg0 extends org.telegram.ui.k4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class jg0 extends ll0 {
+    public final yf.y X2;
+    public long Y2;
+    public final /* synthetic */ pg0 Z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jg0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public jg0(pg0 pg0Var, Context context) {
+        super(context, null);
+        this.Z2 = pg0Var;
+        this.X2 = new yf.y(8);
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        MessageObject playingMessageObject;
-        switch (this.h) {
-            case 0:
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-                    pipRoundVideoView.E.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.j6.k2);
-                }
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) (this.Z2.E + AndroidUtilities.statusBarHeight));
     }
 
-    @Override // org.telegram.ui.k4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i10, i11);
-                r91 r91Var = (r91) this.n;
-                if (r91Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = r91Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = r91Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7;
+        pg0 pg0Var = this.Z2;
+        if (pg0Var.L) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long abs = Math.abs(this.Y2 - elapsedRealtime);
+            if (abs > 17) {
+                abs = 16;
+            }
+            this.Y2 = elapsedRealtime;
+            pg0Var.J += (abs * pg0Var.K) / 1800.0f;
+            while (true) {
+                f7 = pg0Var.J;
+                float f10 = pg0Var.K * 2.0f;
+                if (f7 < f10) {
+                    break;
+                } else {
+                    pg0Var.J = f7 - f10;
                 }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+            }
+            pg0Var.I.setTranslate(f7, 0.0f);
+            pg0Var.H.setLocalMatrix(pg0Var.I);
+            f1();
+            invalidate();
         }
+        super.dispatchDraw(canvas);
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.navigationBarHeight;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        yf.y yVar = this.X2;
+        yVar.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
+        yVar.b(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i5, this.p2));
+        yVar.draw(canvas);
     }
 }

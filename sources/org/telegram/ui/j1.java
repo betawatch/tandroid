@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class j1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
+public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final ai.w0 a;
     public final g1 b;
     public a3 c;
@@ -47,11 +47,11 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         g1 g1Var = new g1(this);
         this.b = g1Var;
         w0Var.setAdapter(g1Var);
-        addView(w0Var, w7.y5.c(-2.0f, -1));
+        addView(w0Var, w7.x5.c(-2.0f, -1));
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -153,7 +153,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.e = dp2;
                 this.f = dp2;
-                i12 = org.telegram.messenger.rk.x(18.0f, dp2, size);
+                i12 = org.telegram.messenger.vl.w(18.0f, dp2, size);
                 dp = i12;
             } else {
                 this.e = 0;
@@ -179,7 +179,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
             if (p5 != null) {
                 int height = j1Var.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 j1Var.n = height;
-                measuredHeight = org.telegram.messenger.l0.C(4.0f, height, measuredHeight);
+                measuredHeight = org.telegram.messenger.y0.C(4.0f, height, measuredHeight);
                 a3 a3Var = j1Var.c;
                 a3Var.s = j1Var.f;
                 a3Var.v = j1Var.h;
@@ -189,7 +189,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
             TL_iv.pageBlockCollage pageblockcollage3 = j1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (j1Var.w.G) {
-                alignment = org.telegram.ui.Components.ww0.a();
+                alignment = org.telegram.ui.Components.jw0.a();
             }
             a3 p10 = h4.p(h4Var, j1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, j1Var.w);
             j1Var.d = p10;

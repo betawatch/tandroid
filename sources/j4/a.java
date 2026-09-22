@@ -4,7 +4,7 @@ import e9.a1;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
@@ -77,15 +77,15 @@ public final class a implements c3.o {
 
     @Override // c3.o
     public final void g(c3.q qVar) {
-        this.a.e(qVar, new f0(0, 1));
-        qVar.f1();
+        this.a.d(qVar, new f0(0, 1));
+        qVar.e1();
         qVar.X1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.c = false;
-        this.a.d();
+        this.a.c();
     }
 
     @Override // c3.o
@@ -109,7 +109,7 @@ public final class a implements c3.o {
             bVar.o = 0L;
             this.c = true;
         }
-        bVar.b(vVar);
+        bVar.a(vVar);
         return 0;
     }
 

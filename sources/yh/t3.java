@@ -2,36 +2,42 @@ package yh;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class t3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ v3 a;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w3 b;
 
-    public t3(v3 v3Var) {
-        this.a = v3Var;
+    public /* synthetic */ t3(w3 w3Var, int i10) {
+        this.a = i10;
+        this.b = w3Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        v3 v3Var = this.a;
-        s2 s2Var = v3Var.i0;
-        v3Var.s0 = v3Var.r0;
-        v3Var.d(v3Var.U);
-        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = v3Var.e;
-        int i10 = 2 - v3Var.r0;
-        stargiftattributemodelArr[i10] = (TL_stars.starGiftAttributeModel) v3Var.W.f;
-        w7.Z0(v3Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - v3Var.r0].document, 160);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v3Var.a0.f;
-        if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);
-            m10.m = true;
-            m10.v();
+        switch (this.a) {
+            case 0:
+                this.b.d0 = false;
+                break;
+            case 1:
+                this.b.d0 = false;
+                break;
+            case 2:
+                this.b.N.setVisibility(4);
+                break;
+            case 3:
+                w3 w3Var = this.b;
+                w3Var.s0 = w3Var.r0;
+                w3Var.d(w3Var.U);
+                break;
+            default:
+                w3 w3Var2 = this.b;
+                w3Var2.t0 = 1.0f;
+                w3Var2.b.setScaleX(1.0f);
+                w3Var2.b.setScaleY(w3Var2.t0);
+                w3Var2.invalidate();
+                break;
         }
-        AndroidUtilities.cancelRunOnUIThread(s2Var);
-        AndroidUtilities.runOnUIThread(s2Var, 2500L);
     }
 }

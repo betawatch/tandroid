@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.m01;
+import org.telegram.ui.n01;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -76,9 +76,9 @@ public final class b extends AnimatorListenerAdapter {
                 a4Var.s5.invalidate();
                 a4Var.setAnimatedTop(0);
                 a4Var.s5.V2 = true;
-                View view = a4Var.G1;
+                View view = a4Var.F1;
                 if (view != null && view.getVisibility() == 0) {
-                    a4Var.G1.setTranslationY(((1.0f - a4Var.getTopViewEnterProgress()) * a4Var.G1.getLayoutParams().height) + a4Var.T1);
+                    a4Var.F1.setTranslationY(((1.0f - a4Var.getTopViewEnterProgress()) * a4Var.F1.getLayoutParams().height) + a4Var.S1);
                 }
                 a4Var.s5.e2 = null;
                 break;
@@ -90,10 +90,10 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 6:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                m01 m01Var = profileStoriesView.h;
+                n01 n01Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                m01Var.R = 1.0f;
-                m01Var.invalidate();
+                n01Var.R = 1.0f;
+                n01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 7:
@@ -249,9 +249,9 @@ public final class b extends AnimatorListenerAdapter {
             case 9:
                 super.onAnimationStart(animator);
                 p9 p9Var = (p9) this.b;
-                kj0 kj0Var = ((o9) p9Var.a.get(p9Var.d)).c;
-                kj0Var.L = 2;
-                kj0Var.start();
+                xi0 xi0Var = ((o9) p9Var.a.get(p9Var.d)).c;
+                xi0Var.L = 2;
+                xi0Var.start();
                 break;
             case 29:
                 ((org.telegram.ui.q4) this.b).setVisibility(0);

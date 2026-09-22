@@ -1,45 +1,17 @@
 package tg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Chat b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ Utilities.Callback e;
+public final class n {
+    public final /* synthetic */ b0 a;
+    public final /* synthetic */ e6 b;
+    public final /* synthetic */ o c;
 
-    public /* synthetic */ n(TLRPC.Chat chat, int i10, ArrayList arrayList, Utilities.Callback callback, int i11) {
-        this.a = i11;
-        this.b = chat;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = callback;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Chat chat = this.b;
-                ArrayList arrayList = this.d;
-                if (chat == null) {
-                    s.m(this.c, arrayList);
-                }
-                this.e.run(arrayList);
-                break;
-            default:
-                TLRPC.Chat chat2 = this.b;
-                ArrayList arrayList2 = this.d;
-                if (chat2 == null) {
-                    s.m(this.c, arrayList2);
-                }
-                this.e.run(arrayList2);
-                break;
-        }
+    public n(o oVar, b0 b0Var, e6 e6Var) {
+        this.c = oVar;
+        this.a = b0Var;
+        this.b = e6Var;
     }
 }

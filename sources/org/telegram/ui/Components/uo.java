@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.bb1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uo implements Runnable {
     public final /* synthetic */ int a;
@@ -24,17 +24,17 @@ public final /* synthetic */ class uo implements Runnable {
                 break;
             case 2:
                 mp mpVar = this.b;
-                org.telegram.ui.zn znVar = mpVar.v;
-                org.telegram.ui.ActionBar.n2 d02 = bb1.d0(znVar.getMessagesController().getChat(Long.valueOf(-znVar.a())), true);
+                org.telegram.ui.bo boVar = mpVar.v;
+                org.telegram.ui.ActionBar.n2 d02 = za1.d0(boVar.getMessagesController().getChat(Long.valueOf(-boVar.a())), true);
                 org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                 l2Var.a = true;
-                d02.setResourceProvider(znVar.getResourceProvider());
+                d02.setResourceProvider(boVar.getResourceProvider());
                 l2Var.c = new sh(2);
                 l2Var.d = new uo(mpVar, 3);
                 l2Var.b = new uo(mpVar, 4);
                 l2Var.e = true;
                 mpVar.X = d02;
-                znVar.showAsSheet(d02, l2Var);
+                boVar.showAsSheet(d02, l2Var);
                 break;
             case 3:
                 this.b.u();

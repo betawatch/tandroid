@@ -1,36 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cp0 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kp0 b;
-    public final /* synthetic */ o1.k c;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ cp0(kp0 kp0Var, o1.k kVar, int i10) {
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class cp0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hq0 b;
+
+    public /* synthetic */ cp0(hq0 hq0Var, int i10) {
         this.a = i10;
-        this.b = kp0Var;
-        this.c = kVar;
+        this.b = hq0Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (!z10) {
-                    this.b.z.remove(this.c);
-                    hVar.c();
-                    break;
-                }
+                hq0 hq0Var = this.b;
+                hq0Var.A0 = true;
+                b20 b20Var = hq0Var.y0;
+                b20Var.r.setText("");
+                AndroidUtilities.showKeyboard(b20Var.r);
                 break;
             default:
-                kp0 kp0Var = this.b;
-                if (!z10) {
-                    kp0Var.z.remove(this.c);
-                    hVar.c();
+                sh shVar = new sh(7);
+                hq0 hq0Var2 = this.b;
+                if (!hq0Var2.isKeyboardVisible()) {
+                    shVar.run();
                     break;
                 } else {
-                    kp0Var.getClass();
+                    b20 b20Var2 = hq0Var2.y0;
+                    if (b20Var2 != null) {
+                        AndroidUtilities.hideKeyboard(b20Var2.r);
+                    }
+                    AndroidUtilities.runOnUIThread(shVar, 300L);
                     break;
                 }
         }

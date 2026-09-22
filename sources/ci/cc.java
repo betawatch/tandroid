@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.graphics.Matrix;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class cc extends d7 {
     public final /* synthetic */ oc C0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cc(oc ocVar, Activity activity, org.telegram.ui.Components.ia iaVar, c7 c7Var) {
-        super(activity, iaVar, c7Var);
+    public cc(oc ocVar, Activity activity, org.telegram.ui.Components.ha haVar, c7 c7Var) {
+        super(activity, haVar, c7Var);
         this.C0 = ocVar;
     }
 
@@ -57,8 +57,8 @@ public final class cc extends d7 {
         }
         for (int i10 = 0; i10 < ocVar.v1.R0.getChildCount(); i10++) {
             View childAt = ocVar.v1.R0.getChildAt(i10);
-            if (childAt instanceof qg.f1) {
-                ((qg.f1) childAt).s();
+            if (childAt instanceof qg.h1) {
+                ((qg.h1) childAt).s();
             }
         }
     }

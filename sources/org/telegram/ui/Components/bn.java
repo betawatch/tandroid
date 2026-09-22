@@ -8,7 +8,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bn implements org.telegram.ui.qt {
     public final /* synthetic */ int a;
@@ -20,27 +20,22 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ MessageObject A() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean B() {
+    public final /* synthetic */ boolean A() {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean D() {
+    public final /* synthetic */ boolean C() {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
+    public final /* synthetic */ boolean D(TLRPC.Document document) {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ String G(boolean z10) {
+    public final /* synthetic */ String F(boolean z10) {
         return null;
     }
 
@@ -110,8 +105,8 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final y70 i(ci.n6 n6Var) {
-        y70 F = y70.F(n6Var, null, new View(this.b.getContext()));
+    public final n70 i(ci.n6 n6Var) {
+        n70 F = n70.F(n6Var, null, new View(this.b.getContext()));
         F.s = 0;
         F.t = false;
         int i10 = R.drawable.msg_replace;
@@ -176,16 +171,21 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean y() {
+    public final /* synthetic */ boolean x() {
         return true;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void C(TLRPC.Document document) {
+    public final /* synthetic */ MessageObject z() {
+        return null;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void F(TLRPC.Document document) {
+    public final /* synthetic */ void B(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void E(TLRPC.Document document) {
     }
 
     @Override // org.telegram.ui.qt
@@ -229,11 +229,11 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void v(TLRPC.Document document) {
+    public final /* synthetic */ void u(TLRPC.Document document) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void z(String str) {
+    public final /* synthetic */ void y(String str) {
     }
 
     @Override // org.telegram.ui.qt
@@ -241,15 +241,15 @@ public final class bn implements org.telegram.ui.qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
+    public final /* synthetic */ void v(TLRPC.StickerSet stickerSet, String str) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
+    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void u(CharSequence charSequence, String str, org.telegram.ui.of ofVar) {
+    public final /* synthetic */ void G(CharSequence charSequence, String str, org.telegram.ui.nf nfVar) {
     }
 
     @Override // org.telegram.ui.qt

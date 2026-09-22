@@ -22,16 +22,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.aj;
 import org.telegram.ui.bj;
-import org.telegram.ui.fe;
-import org.telegram.ui.ln;
-import org.telegram.ui.rm;
+import org.telegram.ui.bo;
+import org.telegram.ui.ee;
+import org.telegram.ui.nn;
+import org.telegram.ui.tm;
 import org.telegram.ui.zi;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a;
@@ -144,15 +144,15 @@ public final /* synthetic */ class n8 implements Runnable {
                     ii.f0 f0Var = h0Var.E;
                     ii.a aVar = h0Var.a;
                     ii.w3 w3Var = ((ii.o3) f0Var).a;
-                    w3Var.p3(false);
-                    w3Var.h3.L(new ii.t3(w3Var, aVar, i14), e0Var);
+                    w3Var.o3(false);
+                    w3Var.h3.H(new ii.t3(w3Var, aVar, i14), e0Var);
                     break;
                 }
                 break;
             case 11:
-                k2.k kVar = (k2.k) ((n4.y) obj).b;
+                k2.j jVar = (k2.j) ((n4.y) obj).c;
                 String str = e2.d0.a;
-                e2.c cVar = ((i2.b0) kVar).a.E;
+                e2.c cVar = ((i2.b0) jVar).a.E;
                 i2.v vVar = new i2.v(i14, 2);
                 cVar.getClass();
                 e2.d.g(Looper.myLooper() == ((e2.z) cVar.c).a.getLooper());
@@ -179,7 +179,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 }
                 break;
             case 13:
-                ((nh.a) obj).w0(i14, 0, null);
+                ((nh.a) obj).v0(i14, 0, null);
                 break;
             case 14:
                 ConnectionsManager.lambda$onUpdateConfig$21(i14, (TLRPC.TL_config) obj);
@@ -191,80 +191,80 @@ public final /* synthetic */ class n8 implements Runnable {
                 ((org.telegram.ui.p4) ((org.telegram.ui.g) obj).b).V(i14, true);
                 break;
             case 17:
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj;
-                int i16 = u1Var.v7;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) obj;
+                int i16 = t1Var.v7;
                 if (i14 == i16) {
-                    org.telegram.ui.Cells.e0 e0Var2 = (org.telegram.ui.Cells.e0) u1Var.o7.get(i16);
+                    org.telegram.ui.Cells.e0 e0Var2 = (org.telegram.ui.Cells.e0) t1Var.o7.get(i16);
                     if (e0Var2 != null) {
                         org.telegram.ui.Cells.z zVar = e0Var2.s;
                         if (zVar != null) {
                             zVar.setState(StateSet.NOTHING);
                         }
                         e0Var2.b(false);
-                        if (!u1Var.y7.scheduled) {
+                        if (!t1Var.y7.scheduled) {
                             if (e0Var2.j != null) {
-                                u1Var.k();
+                                t1Var.k();
                             } else if (e0Var2.i != null) {
-                                u1Var.k();
-                                org.telegram.ui.Cells.l1 l1Var = u1Var.Jc;
-                                if (l1Var != null) {
-                                    l1Var.H1(u1Var, e0Var2.i);
+                                t1Var.k();
+                                org.telegram.ui.Cells.k1 k1Var = t1Var.Jc;
+                                if (k1Var != null) {
+                                    k1Var.H1(t1Var, e0Var2.i);
                                 }
                             }
                         }
                     }
-                    u1Var.v7 = -1;
-                    u1Var.a3();
+                    t1Var.v7 = -1;
+                    t1Var.a3();
                     break;
                 }
                 break;
             case 18:
-                ((fe) obj).f.c(i14);
+                ((ee) obj).f.c(i14);
                 break;
             case 19:
-                ((bj) obj).a.E(this.b, 0, 0, 0, true, true);
+                ((bj) obj).a.F(this.b, 0, 0, 0, true, true);
                 break;
             case 20:
-                zn znVar = ((zi) obj).g;
-                if (znVar.vb == i14) {
-                    znVar.Ma();
+                bo boVar = ((zi) obj).g;
+                if (boVar.vb == i14) {
+                    boVar.Ma();
                     break;
                 }
                 break;
             case 21:
-                zn znVar2 = ((aj) obj).g;
-                if (znVar2.vb == i14) {
-                    znVar2.Ma();
+                bo boVar2 = ((aj) obj).g;
+                if (boVar2.vb == i14) {
+                    boVar2.Ma();
                     break;
                 }
                 break;
             case 22:
-                zn znVar3 = ((zi) obj).g;
-                if (znVar3.vb == i14) {
-                    znVar3.Ma();
+                bo boVar3 = ((zi) obj).g;
+                if (boVar3.vb == i14) {
+                    boVar3.Ma();
                     break;
                 }
                 break;
             case 23:
-                zn znVar4 = ((aj) obj).g;
-                if (znVar4.vb == i14) {
-                    znVar4.Ma();
+                bo boVar4 = ((aj) obj).g;
+                if (boVar4.vb == i14) {
+                    boVar4.Ma();
                     break;
                 }
                 break;
             case 24:
-                zn znVar5 = ((aj) obj).g;
-                if (znVar5.vb == i14) {
-                    znVar5.Ma();
+                bo boVar5 = ((aj) obj).g;
+                if (boVar5.vb == i14) {
+                    boVar5.Ma();
                     break;
                 }
                 break;
             case 25:
-                zn znVar6 = ((rm) obj).J0;
-                znVar6.z0.h1(i14, znVar6.y4);
+                bo boVar6 = ((tm) obj).J0;
+                boVar6.z0.h1(i14, boVar6.y4);
                 break;
             case 26:
-                i10 = ((org.telegram.ui.ActionBar.n2) ((ln) obj).a).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((nn) obj).a).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(i14, true);
                 break;
             case 27:
@@ -272,7 +272,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.t1((MessagesStorage.BooleanCallback) obj, i13), 250L);
                 break;
             case 28:
-                n90 n90Var = (n90) obj;
+                c90 c90Var = (c90) obj;
                 ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(i14).getPrivacyRules(11);
                 String string = LocaleController.getString(R.string.EditProfileBirthdayInfoContacts);
                 if (privacyRules != null && !privacyRules.isEmpty()) {
@@ -290,10 +290,10 @@ public final /* synthetic */ class n8 implements Runnable {
                         }
                     }
                 }
-                n90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
+                c90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
                 break;
             default:
-                ((org.telegram.ui.Components.n8) obj).b(i14);
+                ((org.telegram.ui.Components.m8) obj).b(i14);
                 break;
         }
     }

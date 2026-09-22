@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -30,15 +30,15 @@ public final class u4 extends FrameLayout {
     public Object f;
     public Object h;
 
-    public u4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public u4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.b = AndroidUtilities.dp(64.0f);
-        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
-        this.d = v9Var;
-        v9Var.setAspectFit(true);
-        v9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
-        addView(v9Var, w7.y5.c(-1.0f, -1));
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.d = u9Var;
+        u9Var.setAspectFit(true);
+        u9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
+        addView(u9Var, w7.x5.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, e6Var);
         this.e = radialProgress2;
         radialProgress2.E = 0.0f;
         radialProgress2.setIcon(10, false, false);
@@ -56,9 +56,9 @@ public final class u4 extends FrameLayout {
                 RadialProgress2 radialProgress2 = (RadialProgress2) obj;
                 super.dispatchDraw(canvas);
                 if (this.c) {
-                    Drawable drawable = ((org.telegram.ui.Components.v9) this.d).getImageReceiver().getDrawable();
+                    Drawable drawable = ((org.telegram.ui.Components.u9) this.d).getImageReceiver().getDrawable();
                     final int i12 = 1;
-                    if ((drawable instanceof org.telegram.ui.Components.c6) && ((org.telegram.ui.Components.c6) drawable).d[4] > 0) {
+                    if ((drawable instanceof org.telegram.ui.Components.b6) && ((org.telegram.ui.Components.b6) drawable).d[4] > 0) {
                         ValueAnimator valueAnimator = (ValueAnimator) this.h;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
@@ -135,18 +135,18 @@ public final class u4 extends FrameLayout {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                xd1 xd1Var = (xd1) this.h;
-                xc1 xc1Var = xd1Var.a;
+                wd1 wd1Var = (wd1) this.h;
+                wc1 wc1Var = wd1Var.a;
                 if (this.c) {
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-                    org.telegram.ui.ActionBar.j6.s(this, xd1Var.x0, xc1Var);
-                    Paint G = xc1Var.G("paintChatActionBackground");
+                    org.telegram.ui.ActionBar.i6.s(this, wd1Var.x0, wc1Var);
+                    Paint G = wc1Var.G("paintChatActionBackground");
                     ColorFilter colorFilter = G.getColorFilter();
                     G.setColorFilter((ColorMatrixColorFilter) this.f);
-                    md1 md1Var = xd1Var.x0;
-                    if (md1Var != null && (md1Var.getBackground() instanceof org.telegram.ui.Components.nc0) && xd1Var.l1 < 0.0f) {
+                    ld1 ld1Var = wd1Var.x0;
+                    if (ld1Var != null && (ld1Var.getBackground() instanceof org.telegram.ui.Components.cc0) && wd1Var.l1 < 0.0f) {
                         f7 = 0.33f;
                     }
                     int alpha = G.getAlpha();
@@ -154,10 +154,10 @@ public final class u4 extends FrameLayout {
                     canvas.drawRect(rectF, G);
                     G.setAlpha(alpha);
                     G.setColorFilter(colorFilter);
-                    if (xd1Var.M1) {
-                        float f10 = xd1Var.n1;
+                    if (wd1Var.M1) {
+                        float f10 = wd1Var.n1;
                         if (f10 > 0.0f) {
-                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * xd1Var.o1)));
+                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * wd1Var.o1)));
                         }
                     }
                     canvas.save();
@@ -213,9 +213,9 @@ public final class u4 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(xd1 xd1Var, Context context, boolean z10) {
+    public u4(wd1 wd1Var, Context context, boolean z10) {
         super(context);
-        this.h = xd1Var;
+        this.h = wd1Var;
         this.c = z10;
         Paint paint = new Paint(3);
         this.e = paint;

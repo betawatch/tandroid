@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Predicate {
     public final /* synthetic */ int a;
@@ -45,20 +45,20 @@ public final /* synthetic */ class q1 implements Predicate {
                 contains = ((HashSet) this.b).contains(Long.valueOf(((s1) obj).b));
                 break;
             default:
-                xh.r1 r1Var = (xh.r1) this.b;
+                xh.q1 q1Var = (xh.q1) this.b;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                    z10 = r1Var.b0.disallow_unique_stargifts;
+                    z10 = q1Var.b0.disallow_unique_stargifts;
                 } else {
-                    r1Var.getClass();
+                    q1Var.getClass();
                     if (starGift.limited) {
-                        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = r1Var.b0;
+                        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = q1Var.b0;
                         if (disallowedGiftsSettings.disallow_limited_stargifts) {
                             return starGift.can_upgrade && !disallowedGiftsSettings.disallow_unique_stargifts;
                         }
                         return true;
                     }
-                    z10 = r1Var.b0.disallow_unlimited_stargifts;
+                    z10 = q1Var.b0.disallow_unlimited_stargifts;
                 }
                 return true ^ z10;
         }

@@ -6,7 +6,7 @@ import java.io.InterruptedIOException;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class l implements p {
     public final b2.k b;
@@ -63,7 +63,7 @@ public final class l implements p {
         } else {
             min = Math.min(i12, i11);
             System.arraycopy(this.e, 0, bArr, i10, min);
-            e(min);
+            f(min);
         }
         int i13 = min;
         while (i13 < i11 && i13 != -1) {
@@ -75,18 +75,8 @@ public final class l implements p {
         return i13 != -1;
     }
 
-    public final void e(int i10) {
-        int i11 = this.h - i10;
-        this.h = i11;
-        this.f = 0;
-        byte[] bArr = this.e;
-        byte[] bArr2 = i11 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i11] : bArr;
-        System.arraycopy(bArr, i10, bArr2, 0, i11);
-        this.e = bArr2;
-    }
-
     @Override // c3.p
-    public final int f(int i10, int i11, byte[] bArr) {
+    public final int e(int i10, int i11, byte[] bArr) {
         l lVar;
         int min;
         b(i11);
@@ -109,10 +99,20 @@ public final class l implements p {
         return min;
     }
 
+    public final void f(int i10) {
+        int i11 = this.h - i10;
+        this.h = i11;
+        this.f = 0;
+        byte[] bArr = this.e;
+        byte[] bArr2 = i11 < bArr.length - TLObject.FLAG_19 ? new byte[65536 + i11] : bArr;
+        System.arraycopy(bArr, i10, bArr2, 0, i11);
+        this.e = bArr2;
+    }
+
     @Override // c3.p
     public final boolean g(int i10, boolean z10) {
         int min = Math.min(this.h, i10);
-        e(min);
+        f(min);
         int i11 = min;
         while (i11 < i10 && i11 != -1) {
             byte[] bArr = this.a;
@@ -149,7 +149,7 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final void j(int i10) {
+    public final void k(int i10) {
         s(i10, false);
     }
 
@@ -171,7 +171,7 @@ public final class l implements p {
         if (i12 != 0) {
             int min = Math.min(i12, i11);
             System.arraycopy(this.e, 0, bArr, i10, min);
-            e(min);
+            f(min);
             i13 = min;
         }
         if (i13 == 0) {
@@ -214,7 +214,7 @@ public final class l implements p {
     public final int skip(int i10) {
         l lVar;
         int min = Math.min(this.h, i10);
-        e(min);
+        f(min);
         if (min == 0) {
             byte[] bArr = this.a;
             lVar = this;

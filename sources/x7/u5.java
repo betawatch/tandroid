@@ -1,12 +1,12 @@
 package x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u5 implements ia.d {
     public static final u5 a = new u5();
 
     static {
-        v7.j0.q(v7.j0.k(c0.class, v7.j0.o(2, v7.j0.k(c0.class, new z(1)))));
+        org.telegram.ui.Cells.q3.t(w.c.k(c0.class, w.c.n(2, w.c.k(c0.class, new z(1)))));
     }
 
     @Override // ia.a

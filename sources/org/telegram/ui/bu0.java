@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bu0 extends ou0 {
     public final /* synthetic */ int p0;
@@ -87,7 +87,7 @@ public final class bu0 extends ou0 {
                     if (photoViewer.z3) {
                         if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
                             imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new gp0(this, 5)).start();
+                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new cr0(this, 4)).start();
                         } else if (imageViewArr[0].getTag() == null && !z11) {
                             imageViewArr[0].setTag(3);
                             imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();

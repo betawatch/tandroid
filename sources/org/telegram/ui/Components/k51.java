@@ -1,51 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class k51 extends yl0 {
-    public final /* synthetic */ r51 X2;
-    public final /* synthetic */ u51 Y2;
+public final class k51 extends URLSpan {
+    public final o01 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k51(u51 u51Var, Context context, r51 r51Var) {
-        super(context, null);
-        this.Y2 = u51Var;
-        this.X2 = r51Var;
+    public k51(String str, o01 o01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = o01Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean F0(float f7) {
-        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.Y2.E));
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.Y2.F = true;
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.X2.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Y2.L != null) {
-            return false;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        o01 o01Var = this.a;
+        if (o01Var != null) {
+            o01Var.a(textPaint);
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.Y2.H) {
-            return;
-        }
-        super.requestLayout();
+        textPaint.setUnderlineText(true);
     }
 }

@@ -17,7 +17,6 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -27,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class k implements c3.o, b0 {
     public j[] A;
@@ -36,7 +35,7 @@ public final class k implements c3.o, b0 {
     public long D;
     public int E;
     public r3.a F;
-    public final z3.k a;
+    public final z3.l a;
     public final int b;
     public final v c;
     public final v d;
@@ -63,8 +62,8 @@ public final class k implements c3.o, b0 {
     public long y;
     public c3.q z;
 
-    public k(z3.k kVar, int i10) {
-        this.a = kVar;
+    public k(z3.l lVar, int i10) {
+        this.a = lVar;
         this.b = i10;
         g0 g0Var = i0.b;
         this.j = a1.e;
@@ -345,8 +344,8 @@ public final class k implements c3.o, b0 {
                             p0 p0Var = aVar == null ? null : new p0(aVar);
                             b2.r rVar = new b2.r();
                             rVar.k = p0Var;
-                            k0.s(rVar, Z1);
-                            this.z.f1();
+                            hg.c.u(rVar, Z1);
+                            this.z.e1();
                             this.z.X1(new t(-9223372036854775807L));
                         }
                         z11 = false;
@@ -910,7 +909,7 @@ public final class k implements c3.o, b0 {
                     z10 = false;
                 }
                 p0 p0Var6 = p0Var3;
-                ArrayList j10 = c.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new s0.b(27));
+                ArrayList j10 = c.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new t0.a(18));
                 if (this.x) {
                     boolean z12 = arrayList5.size() == j10.size();
                     Locale locale = Locale.US;
@@ -971,7 +970,7 @@ public final class k implements c3.o, b0 {
                         ArrayList arrayList6 = this.i;
                         n.m(i20, p0Var4, a2, p0Var7, arrayList6.isEmpty() ? null : new p0(arrayList6), p0Var2, p0Var6);
                         a2.p = r0.n(str);
-                        k0.s(a2, Z1);
+                        hg.c.u(a2, Z1);
                         if (i20 == 2 && i15 == -1) {
                             i15 = arrayList4.size();
                         }
@@ -1026,7 +1025,7 @@ public final class k implements c3.o, b0 {
                     }
                 }
                 this.B = jArr;
-                this.z.f1();
+                this.z.e1();
                 this.z.X1(this);
                 arrayDeque.clear();
                 if (this.v) {

@@ -14,12 +14,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v50 {
     public final int a;
     public Emoji.EmojiDrawable c;
-    public org.telegram.ui.Components.p5 d;
+    public org.telegram.ui.Components.o5 d;
     public boolean e;
     public boolean f;
     public long g;
@@ -53,16 +53,16 @@ public final class v50 {
             this.j = z10;
             u50 u50Var = this.k;
             if (isEmpty) {
-                org.telegram.ui.Components.p5 p5Var = this.d;
-                if (p5Var != null) {
-                    p5Var.p(u50Var);
+                org.telegram.ui.Components.o5 o5Var = this.d;
+                if (o5Var != null) {
+                    o5Var.p(u50Var);
                     return;
                 }
                 return;
             }
-            org.telegram.ui.Components.p5 p5Var2 = this.d;
-            if (p5Var2 != null) {
-                p5Var2.b(u50Var);
+            org.telegram.ui.Components.o5 o5Var2 = this.d;
+            if (o5Var2 != null) {
+                o5Var2.b(u50Var);
             }
         }
     }
@@ -199,9 +199,9 @@ public final class v50 {
             }
         }
         if (document != null) {
-            org.telegram.ui.Components.p5 p5Var = this.d;
-            p5Var.e = document;
-            p5Var.j(false);
+            org.telegram.ui.Components.o5 o5Var = this.d;
+            o5Var.e = document;
+            o5Var.j(false);
         } else {
             FileLog.e("emoji \"" + this.l + "\" not found in addemoji/" + tL_inputStickerSetShortName.short_name);
         }

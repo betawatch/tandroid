@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import c0.l;
-import c5.u;
+import c5.v;
 import e0.p0;
 import i9.w;
 import java.io.File;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f implements Runnable {
     public final /* synthetic */ int a;
@@ -133,14 +133,14 @@ public final class f implements Runnable {
                                         String str4 = cVar2.b;
                                         shortcutInfoCompatSaverImpl2.b.put(str4, hVar);
                                         if (f7 != null) {
-                                            u uVar = new u(shortcutInfoCompatSaverImpl2, f7, str2, false, 11);
+                                            v vVar = new v(shortcutInfoCompatSaverImpl2, f7, str2, false, 11);
                                             l lVar = new l();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new e(lVar, uVar, false, 4));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new e(lVar, vVar, false, 4));
                                             w wVar2 = (w) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
                                             if (wVar2 != null) {
                                                 wVar2.cancel(false);
                                             }
-                                            lVar.a(new u(this, str4, lVar, false, 10), shortcutInfoCompatSaverImpl2.d);
+                                            lVar.a(new v(this, str4, lVar, false, 10), shortcutInfoCompatSaverImpl2.d);
                                         }
                                     }
                                 }

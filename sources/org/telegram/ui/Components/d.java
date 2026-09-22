@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -67,20 +67,20 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
     }
 
     private final void b(Object obj, Object obj2) {
-        ky kyVar = (ky) this.b;
+        jy jyVar = (jy) this.b;
         ArrayList arrayList = (ArrayList) obj;
-        ArrayList arrayList2 = kyVar.s;
+        ArrayList arrayList2 = jyVar.s;
         int size = arrayList2.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj3 = arrayList2.get(i10);
             i10++;
-            dy dyVar = (dy) obj3;
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = dyVar.b;
+            cy cyVar = (cy) obj3;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = cyVar.b;
             if (tL_messages_stickerSet != null) {
-                boolean z10 = tL_messages_stickerSet.set.id == kyVar.d;
-                int i11 = my.a;
-                y51 J = y51.J(my.class);
+                boolean z10 = tL_messages_stickerSet.set.id == jyVar.d;
+                int i11 = ly.a;
+                i51 J = i51.J(ly.class);
                 long j3 = tL_messages_stickerSet.set.id;
                 J.d = (int) ((j3 >>> 32) ^ j3);
                 J.B = j3;
@@ -88,9 +88,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 J.e = z10;
                 arrayList.add(J);
             } else {
-                TLRPC.StickerSetCovered stickerSetCovered = dyVar.a;
+                TLRPC.StickerSetCovered stickerSetCovered = cyVar.a;
                 if (stickerSetCovered != null) {
-                    arrayList.add(my.a(stickerSetCovered, dyVar, stickerSetCovered.set.id == kyVar.d));
+                    arrayList.add(ly.a(stickerSetCovered, cyVar, stickerSetCovered.set.id == jyVar.d));
                 }
             }
         }
@@ -113,8 +113,8 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
             if (longSparseIntArray.indexOfKey(tL_messages_stickerSet.set.id) < 0) {
                 longSparseIntArray.append(tL_messages_stickerSet.set.id, 1);
                 boolean z10 = tL_messages_stickerSet.set.id == fzVar.d;
-                int i11 = my.a;
-                y51 J = y51.J(my.class);
+                int i11 = ly.a;
+                i51 J = i51.J(ly.class);
                 long j3 = tL_messages_stickerSet.set.id;
                 J.d = (int) ((j3 >>> 32) ^ j3);
                 J.B = j3;
@@ -129,11 +129,11 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
         while (i12 < size2) {
             Object obj4 = arrayList3.get(i12);
             i12++;
-            dy dyVar = (dy) obj4;
-            TLRPC.StickerSet stickerSet = dyVar.c;
+            cy cyVar = (cy) obj4;
+            TLRPC.StickerSet stickerSet = cyVar.c;
             if (longSparseIntArray.indexOfKey(stickerSet.id) < 0) {
                 longSparseIntArray.append(stickerSet.id, 1);
-                arrayList.add(my.a(dyVar.a, dyVar, stickerSet.id == fzVar.d));
+                arrayList.add(ly.a(cyVar.a, cyVar, stickerSet.id == fzVar.d));
             }
         }
     }
@@ -162,10 +162,10 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
         for (int i10 = 0; i10 < d40Var.c.size(); i10++) {
             String str = (String) d40Var.c.get(i10);
             if (str.startsWith("#") || str.startsWith("$")) {
-                arrayList.add(y51.c(i10 + 1, str.startsWith("$") ? R.drawable.menu_cashtag : R.drawable.menu_hashtag, str.substring(1)));
+                arrayList.add(i51.c(i10 + 1, str.startsWith("$") ? R.drawable.menu_cashtag : R.drawable.menu_hashtag, str.substring(1)));
             }
         }
-        arrayList.add(y51.c(0, R.drawable.msg_clear_recent, LocaleController.getString(R.string.ClearHistory)));
+        arrayList.add(i51.c(0, R.drawable.msg_clear_recent, LocaleController.getString(R.string.ClearHistory)));
     }
 
     private final void f(Object obj, Object obj2) {
@@ -178,7 +178,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
         if (z10) {
             ai.v8 v8Var2 = e40Var.Q;
             int i11 = gg.m1.a;
-            y51 J = y51.J(gg.m1.class);
+            i51 J = i51.J(gg.m1.class);
             J.G = v8Var2;
             arrayList.add(J);
         }
@@ -186,16 +186,16 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
         while (i10 < arrayList2.size()) {
             int i12 = i10 + 1;
             MessageObject messageObject = (MessageObject) arrayList2.get(i10);
-            y51 y51Var = new y51(33);
-            y51Var.d = i12;
-            y51Var.G = messageObject;
-            arrayList.add(y51Var);
+            i51 i51Var = new i51(33);
+            i51Var.d = i12;
+            i51Var.G = messageObject;
+            arrayList.add(i51Var);
             i10 = i12;
         }
         if (e40Var.S || !e40Var.V) {
-            arrayList.add(y51.o(-2, 1));
-            arrayList.add(y51.o(-3, 1));
-            arrayList.add(y51.o(-4, 1));
+            arrayList.add(i51.o(-2, 1));
+            arrayList.add(i51.o(-3, 1));
+            arrayList.add(i51.o(-4, 1));
         }
         if (e40Var.R || !z10) {
             return;
@@ -204,19 +204,19 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
     }
 
     private final void g(Object obj, Object obj2) {
-        w70 w70Var = (w70) this.b;
+        l70 l70Var = (l70) this.b;
         Bitmap bitmap = (Bitmap) obj;
         Bitmap bitmap2 = (Bitmap) obj2;
-        y70 y70Var = w70Var.x;
-        y70Var.f.setAlpha(1.0f);
-        if (y70Var.u) {
-            w70Var.c = bitmap;
+        n70 n70Var = l70Var.x;
+        n70Var.f.setAlpha(1.0f);
+        if (n70Var.u) {
+            l70Var.c = bitmap;
         }
-        fh.b bVar = y70Var.n;
+        fh.b bVar = n70Var.n;
         if (bVar != null) {
             bVar.a(bitmap2);
-            gh.d.c(y70Var.n, w70Var);
-            ViewGroup viewGroup = y70Var.A;
+            gh.d.c(n70Var.n, l70Var);
+            ViewGroup viewGroup = n70Var.A;
             if (viewGroup != null) {
                 viewGroup.invalidate();
             }
@@ -224,78 +224,78 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
     }
 
     private final void h(Object obj, Object obj2) {
-        lh0 lh0Var = (lh0) this.b;
+        yg0 yg0Var = (yg0) this.b;
         ArrayList arrayList = (ArrayList) obj;
-        ArrayList arrayList2 = lh0Var.e;
-        ArrayList arrayList3 = lh0Var.n;
+        ArrayList arrayList2 = yg0Var.e;
+        ArrayList arrayList3 = yg0Var.n;
         int i10 = 0;
-        if (lh0Var.d == null) {
-            arrayList.add(y51.o(-1, 7));
-            arrayList.add(y51.o(-2, 7));
-            arrayList.add(y51.o(-3, 7));
-            lh0Var.Q = false;
+        if (yg0Var.d == null) {
+            arrayList.add(i51.o(-1, 7));
+            arrayList.add(i51.o(-2, 7));
+            arrayList.add(i51.o(-3, 7));
+            yg0Var.Q = false;
             return;
         }
-        boolean isEmpty = TextUtils.isEmpty(lh0Var.w);
+        boolean isEmpty = TextUtils.isEmpty(yg0Var.w);
         if (isEmpty) {
             if (!arrayList2.isEmpty()) {
-                arrayList.add(y51.q(LocaleController.getString(R.string.SearchPostsHeaderNews)));
+                arrayList.add(i51.q(LocaleController.getString(R.string.SearchPostsHeaderNews)));
             }
             int size = arrayList2.size();
             while (i10 < size) {
                 Object obj3 = arrayList2.get(i10);
                 i10++;
-                y51 y51Var = new y51(33);
-                y51Var.G = (MessageObject) obj3;
-                arrayList.add(y51Var);
+                i51 i51Var = new i51(33);
+                i51Var.G = (MessageObject) obj3;
+                arrayList.add(i51Var);
             }
         } else {
             if (!arrayList3.isEmpty()) {
-                arrayList.add(y51.q(LocaleController.getString(R.string.SearchPostsHeaderFound)));
+                arrayList.add(i51.q(LocaleController.getString(R.string.SearchPostsHeaderFound)));
             }
             int size2 = arrayList3.size();
             while (i10 < size2) {
                 Object obj4 = arrayList3.get(i10);
                 i10++;
-                y51 y51Var2 = new y51(33);
-                y51Var2.G = (MessageObject) obj4;
-                arrayList.add(y51Var2);
+                i51 i51Var2 = new i51(33);
+                i51Var2.G = (MessageObject) obj4;
+                arrayList.add(i51Var2);
             }
         }
-        if (lh0Var.v || ((lh0Var.M && !lh0Var.N) || (!isEmpty && !arrayList3.isEmpty() && !lh0Var.s))) {
-            arrayList.add(y51.o(lh0Var.L * 3, 7));
-            arrayList.add(y51.o((lh0Var.L * 3) + 1, 7));
-            arrayList.add(y51.o((lh0Var.L * 3) + 2, 7));
+        if (yg0Var.v || ((yg0Var.M && !yg0Var.N) || (!isEmpty && !arrayList3.isEmpty() && !yg0Var.s))) {
+            arrayList.add(i51.o(yg0Var.L * 3, 7));
+            arrayList.add(i51.o((yg0Var.L * 3) + 1, 7));
+            arrayList.add(i51.o((yg0Var.L * 3) + 2, 7));
         }
-        lh0Var.Q = arrayList.isEmpty();
+        yg0Var.Q = arrayList.isEmpty();
     }
 
     private final void i(Object obj, Object obj2) {
-        om0 om0Var = (om0) this.b;
-        om0Var.c = (Bitmap) obj;
+        am0 am0Var = (am0) this.b;
+        am0Var.c = (Bitmap) obj;
         Paint paint = new Paint(1);
-        om0Var.e = paint;
-        Bitmap bitmap = om0Var.c;
+        am0Var.e = paint;
+        Bitmap bitmap = am0Var.c;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        om0Var.d = bitmapShader;
+        am0Var.d = bitmapShader;
         paint.setShader(bitmapShader);
-        om0Var.f = new Matrix();
-        fh.b bVar = om0Var.h;
+        am0Var.f = new Matrix();
+        fh.b bVar = am0Var.h;
         bVar.a((Bitmap) obj2);
-        gh.d.c(bVar, om0Var.s);
-        ViewGroup viewGroup = om0Var.y;
+        gh.d.c(bVar, am0Var.s);
+        ViewGroup viewGroup = am0Var.y;
         if (viewGroup != null) {
             viewGroup.invalidate();
         }
     }
 
     private final void j(Object obj, Object obj2) {
-        iy0 iy0Var = (iy0) this.b;
+        vx0 vx0Var = (vx0) this.b;
         CharSequence charSequence = (CharSequence) obj;
-        iy0Var.h.setText(charSequence);
+        vx0Var.h.setText(charSequence);
         TLRPC.TL_stickers_renameStickerSet tL_stickers_renameStickerSet = new TLRPC.TL_stickers_renameStickerSet();
-        tL_stickers_renameStickerSet.stickerset = MediaDataController.getInputStickerSet(iy0Var.S.set);
+        tL_stickers_renameStickerSet.stickerset = MediaDataController.getInputStickerSet(vx0Var.S.set);
         tL_stickers_renameStickerSet.title = charSequence.toString();
         ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_renameStickerSet, new x1((Utilities.Callback) obj2, 14));
     }
@@ -309,20 +309,20 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(Object obj, Object obj2) {
-        y51 a2;
+        i51 a2;
         TL_iv.RichMessage richMessage;
-        y51 a10;
+        i51 a10;
         TL_iv.RichMessage richMessage2;
         String substring;
         String str;
-        y51 a11;
+        i51 a11;
         TL_iv.RichMessage richMessage3;
         String substring2;
         String substring3;
         boolean z10;
         String str2;
         MediaController.AudioEntry audioEntry;
-        m61 m61Var;
+        w51 w51Var;
         int i10;
         boolean z11;
         int i11 = this.a;
@@ -334,15 +334,15 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
             case 0:
                 e0 e0Var = (e0) obj3;
                 ArrayList arrayList = (ArrayList) obj;
-                m61 m61Var2 = (m61) obj2;
+                w51 w51Var2 = (w51) obj2;
                 boolean[] zArr = e0Var.p0;
                 boolean[] zArr2 = e0Var.q0;
                 d0 d0Var = e0Var.x0;
-                arrayList.add(y51.B(null));
-                arrayList.add(y51.l(e0Var.v0));
-                arrayList.add(y51.B(null));
-                m61Var2.E = 1;
-                m61Var2.U();
+                arrayList.add(i51.B(null));
+                arrayList.add(i51.l(e0Var.v0));
+                arrayList.add(i51.B(null));
+                w51Var2.E = 1;
+                w51Var2.U();
                 d0 d0Var2 = e0Var.w0;
                 int selectedTab = d0Var2 != null ? d0Var2.getSelectedTab() : 0;
                 int i14 = 6;
@@ -350,9 +350,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 if (selectedTab == 0) {
                     String str4 = e0Var.r0;
                     if (str4 == null || str4.equalsIgnoreCase(TranslateController.UNKNOWN_LANGUAGE)) {
-                        arrayList.add(q41.b(3, LocaleController.getString(R.string.AIEditorOriginalText), null, null, null));
+                        arrayList.add(a41.b(3, LocaleController.getString(R.string.AIEditorOriginalText), null, null, null));
                     } else {
-                        String D = l41.D(e0Var.r0, null, zArr2);
+                        String E = v31.E(e0Var.r0, null, zArr2);
                         String string = LocaleController.getString((zArr2 == null || !zArr2[0]) ? R.string.AIEditorFromOther : R.string.AIEditorFrom);
                         int indexOf = string.indexOf("%s");
                         if (indexOf < 0) {
@@ -363,12 +363,12 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             substring3 = string.substring(indexOf + 2);
                         }
                         if (TextUtils.isEmpty(substring2)) {
-                            D = l41.y(D);
+                            E = v31.y(E);
                         }
-                        arrayList.add(q41.b(3, substring2, D, substring3, null));
+                        arrayList.add(a41.b(3, substring2, E, substring3, null));
                     }
-                    arrayList.add(e0Var.i0() ? e0Var.j0(4, e0Var.Y, false) : u41.a(4, e0Var.X, e0Var.P0, new b(e0Var, 4), null, null));
-                    String D2 = l41.D(e0Var.s0, zArr, null);
+                    arrayList.add(e0Var.i0() ? e0Var.j0(4, e0Var.Y, false) : e41.a(4, e0Var.X, e0Var.P0, new b(e0Var, 4), null, null));
+                    String E2 = v31.E(e0Var.s0, zArr, null);
                     String string2 = LocaleController.getString((zArr == null || !zArr[0]) ? R.string.AIEditorToOther : R.string.AIEditorTo);
                     int indexOf2 = string2.indexOf("%s");
                     if (indexOf2 < 0) {
@@ -380,9 +380,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         str = substring4;
                     }
                     if (TextUtils.isEmpty(str)) {
-                        D2 = l41.y(D2);
+                        E2 = v31.y(E2);
                     }
-                    arrayList.add(q41.a(5, str, v7.j0.s(D2, ""), substring, new b(e0Var, i12), e0Var.t0, new b(e0Var, i14), null));
+                    arrayList.add(a41.a(5, str, w.c.g(E2, ""), substring, new b(e0Var, i12), e0Var.t0, new b(e0Var, i14), null));
                     if (e0Var.i0()) {
                         boolean z12 = e0Var.Z;
                         if (z12 || (richMessage3 = e0Var.b0) == null) {
@@ -391,19 +391,19 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         a11 = e0Var.j0(6, richMessage3, z12);
                     } else {
                         boolean z13 = e0Var.Z;
-                        a11 = u41.a(z13 ? 7 : 6, e0Var.a0, false, null, null, !z13 ? new b(e0Var, i15) : null);
+                        a11 = e41.a(z13 ? 7 : 6, e0Var.a0, false, null, null, !z13 ? new b(e0Var, i15) : null);
                     }
                     arrayList.add(a11);
                 } else if (selectedTab == 1) {
-                    arrayList.add(y51.k(d0Var));
+                    arrayList.add(i51.k(d0Var));
                     if (d0Var.getSelectedTone() instanceof z) {
-                        arrayList.add(y51.j(10, e0Var.z0));
-                        m61Var2.T();
-                        arrayList.add(y51.A(11, null));
-                        m61Var2.U();
+                        arrayList.add(i51.j(10, e0Var.z0));
+                        w51Var2.T();
+                        arrayList.add(i51.A(11, null));
+                        w51Var2.U();
                     }
                     if ((d0Var.getSelectedTab() >= 0 || e0Var.t0) && (!(d0Var.getSelectedTone() instanceof z) || TextUtils.equals(e0Var.A0.getText().toString(), e0Var.I0))) {
-                        arrayList.add(q41.a(7, LocaleController.getString(R.string.AIEditorResult), null, null, null, e0Var.t0, new b(e0Var, i14), null));
+                        arrayList.add(a41.a(7, LocaleController.getString(R.string.AIEditorResult), null, null, null, e0Var.t0, new b(e0Var, i14), null));
                         if (e0Var.i0()) {
                             boolean z14 = e0Var.c0;
                             if (z14 || (richMessage2 = e0Var.e0) == null) {
@@ -412,17 +412,17 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             a10 = e0Var.j0(8, richMessage2, z14);
                         } else {
                             boolean z15 = e0Var.c0;
-                            a10 = u41.a(z15 ? 7 : 6, e0Var.d0, false, null, null, !z15 ? new b(e0Var, i15) : null);
+                            a10 = e41.a(z15 ? 7 : 6, e0Var.d0, false, null, null, !z15 ? new b(e0Var, i15) : null);
                         }
                         arrayList.add(a10);
                     } else {
-                        arrayList.add(q41.a(5, LocaleController.getString(R.string.AIEditorOriginal), null, null, null, e0Var.t0, new b(e0Var, i14), null));
-                        arrayList.add(e0Var.i0() ? e0Var.j0(6, e0Var.Y, false) : u41.a(e0Var.c0 ? 7 : 6, e0Var.X, false, null, null, null));
+                        arrayList.add(a41.a(5, LocaleController.getString(R.string.AIEditorOriginal), null, null, null, e0Var.t0, new b(e0Var, i14), null));
+                        arrayList.add(e0Var.i0() ? e0Var.j0(6, e0Var.Y, false) : e41.a(e0Var.c0 ? 7 : 6, e0Var.X, false, null, null, null));
                     }
                 } else if (selectedTab == 2) {
-                    arrayList.add(q41.b(3, LocaleController.getString(R.string.AIEditorOriginal), null, null, null));
-                    arrayList.add(e0Var.i0() ? e0Var.j0(4, e0Var.Y, false) : u41.a(4, e0Var.X, e0Var.P0, new b(e0Var, 4), null, null));
-                    arrayList.add(q41.b(5, LocaleController.getString(R.string.AIEditorResult), null, null, null));
+                    arrayList.add(a41.b(3, LocaleController.getString(R.string.AIEditorOriginal), null, null, null));
+                    arrayList.add(e0Var.i0() ? e0Var.j0(4, e0Var.Y, false) : e41.a(4, e0Var.X, e0Var.P0, new b(e0Var, 4), null, null));
+                    arrayList.add(a41.b(5, LocaleController.getString(R.string.AIEditorResult), null, null, null));
                     if (e0Var.i0()) {
                         boolean z16 = e0Var.f0;
                         if (z16 || (richMessage = e0Var.h0) == null) {
@@ -431,59 +431,59 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         a2 = e0Var.j0(6, richMessage, z16);
                     } else {
                         boolean z17 = e0Var.f0;
-                        a2 = u41.a(z17 ? 7 : 6, e0Var.g0, false, null, null, !z17 ? new b(e0Var, i15) : null);
+                        a2 = e41.a(z17 ? 7 : 6, e0Var.g0, false, null, null, !z17 ? new b(e0Var, i15) : null);
                     }
                     arrayList.add(a2);
                 }
-                m61Var2.T();
-                arrayList.add(y51.B(null));
+                w51Var2.T();
+                arrayList.add(i51.B(null));
                 break;
             case 1:
-                q.R((q) obj3, (ArrayList) obj, (m61) obj2);
+                q.R((q) obj3, (ArrayList) obj, (w51) obj2);
                 break;
             case 2:
                 y yVar = (y) obj3;
                 ArrayList arrayList2 = (ArrayList) obj;
-                arrayList2.add(y51.B(null));
-                arrayList2.add(y51.l(yVar.X));
-                arrayList2.add(y51.B(null));
-                arrayList2.add(y51.k(yVar.a0));
-                arrayList2.add(y51.B(null));
-                arrayList2.add(y51.k(yVar.b0));
-                arrayList2.add(y51.B(null));
+                arrayList2.add(i51.B(null));
+                arrayList2.add(i51.l(yVar.X));
+                arrayList2.add(i51.B(null));
+                arrayList2.add(i51.k(yVar.a0));
+                arrayList2.add(i51.B(null));
+                arrayList2.add(i51.k(yVar.b0));
+                arrayList2.add(i51.B(null));
                 if (yVar.j0 != null) {
-                    y51 e = y51.e(1, LocaleController.getString(R.string.AIEditorDeleteStyle));
+                    i51 e = i51.e(1, LocaleController.getString(R.string.AIEditorDeleteStyle));
                     e.r = true;
                     arrayList2.add(e);
-                    arrayList2.add(y51.B(null));
+                    arrayList2.add(i51.B(null));
                 }
-                arrayList2.add(y51.l(yVar.c0));
+                arrayList2.add(i51.l(yVar.c0));
                 break;
             case 3:
-                ((g0) obj3).Q((ArrayList) obj, (m61) obj2);
+                ((g0) obj3).Q((ArrayList) obj, (w51) obj2);
                 break;
             case 4:
-                ((ChatActivityEnterView) obj3).f0((Canvas) obj, (Utilities.Callback0Return) obj2);
+                ((ChatActivityEnterView) obj3).g0((Canvas) obj, (Utilities.Callback0Return) obj2);
                 break;
             case 5:
                 gj gjVar = (gj) obj3;
                 ArrayList arrayList3 = (ArrayList) obj;
-                m61 m61Var3 = (m61) obj2;
+                w51 w51Var3 = (w51) obj2;
                 int i16 = gjVar.Q;
                 ArrayList arrayList4 = gjVar.N;
                 MessagesController.SavedMusicList savedMusicList = gjVar.K;
                 ArrayList arrayList5 = gjVar.L;
                 HashSet hashSet = gjVar.J;
                 ArrayList arrayList6 = gjVar.M;
-                arrayList3.add(y51.D(-100, AndroidUtilities.dp(1.0f)));
+                arrayList3.add(i51.D(-100, AndroidUtilities.dp(1.0f)));
                 int size = arrayList3.size();
                 if (TextUtils.isEmpty(gjVar.E)) {
-                    m61Var3.U();
+                    w51Var3.U();
                     int i17 = 0;
                     while (i17 < gjVar.I.size()) {
                         MediaController.AudioEntry audioEntry2 = (MediaController.AudioEntry) gjVar.I.get(i17);
                         audioEntry2.messageObject.setQuery(str3);
-                        y51 a12 = org.telegram.ui.Cells.j7.a(audioEntry2, new xi(gjVar, 0));
+                        i51 a12 = org.telegram.ui.Cells.h7.a(audioEntry2, new xi(gjVar, 0));
                         a12.K(hashSet.contains(audioEntry2));
                         a12.d = -1;
                         arrayList3.add(a12);
@@ -491,11 +491,11 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         str3 = null;
                     }
                     if (gjVar.H) {
-                        arrayList3.add(y51.o(11, 4));
-                        arrayList3.add(y51.o(12, 4));
-                        arrayList3.add(y51.o(13, 4));
+                        arrayList3.add(i51.o(11, 4));
+                        arrayList3.add(i51.o(12, 4));
+                        arrayList3.add(i51.o(13, 4));
                     }
-                    m61Var3.T();
+                    w51Var3.T();
                     if (savedMusicList != null) {
                         int size2 = savedMusicList.list.size();
                         if (size2 < arrayList5.size()) {
@@ -513,67 +513,67 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                                 MessageObject messageObject = savedMusicList.list.get(i18);
                                 int i19 = gjVar.m0;
                                 gjVar.m0 = i19 - 1;
-                                m61Var = m61Var3;
+                                w51Var = w51Var3;
                                 i10 = i18;
                                 audioEntry.id = i19;
                                 audioEntry.messageObject = messageObject;
                             } else {
-                                m61Var = m61Var3;
+                                w51Var = w51Var3;
                                 i10 = i18;
                             }
                             i18 = i10 + 1;
-                            m61Var3 = m61Var;
+                            w51Var3 = w51Var;
                         }
                     }
-                    m61 m61Var4 = m61Var3;
+                    w51 w51Var4 = w51Var3;
                     if (savedMusicList != null && arrayList5 != null && !arrayList5.isEmpty()) {
                         if (arrayList3.size() > size) {
-                            arrayList3.add(y51.A(-98, null));
+                            arrayList3.add(i51.A(-98, null));
                         }
-                        m61Var4.U();
-                        arrayList3.add(y51.s(45, LocaleController.getString(R.string.AudioSearchProfile)));
+                        w51Var4.U();
+                        arrayList3.add(i51.s(45, LocaleController.getString(R.string.AudioSearchProfile)));
                         for (int i20 = 0; i20 < arrayList5.size(); i20++) {
                             MediaController.AudioEntry audioEntry3 = (MediaController.AudioEntry) arrayList5.get(i20);
-                            y51 a13 = org.telegram.ui.Cells.j7.a(audioEntry3, new xi(gjVar, 0));
+                            i51 a13 = org.telegram.ui.Cells.h7.a(audioEntry3, new xi(gjVar, 0));
                             a13.K(hashSet.contains(audioEntry3));
                             arrayList3.add(a13);
                         }
                         if (savedMusicList.loading) {
-                            arrayList3.add(y51.o(41, 4));
-                            arrayList3.add(y51.o(42, 4));
-                            arrayList3.add(y51.o(43, 4));
+                            arrayList3.add(i51.o(41, 4));
+                            arrayList3.add(i51.o(42, 4));
+                            arrayList3.add(i51.o(43, 4));
                         }
                         if (!savedMusicList.loading && !savedMusicList.endReached) {
-                            y51 c10 = y51.c(gjVar.S, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                            i51 c10 = i51.c(gjVar.S, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                             c10.q = true;
                             arrayList3.add(c10);
                         }
-                        m61Var4.T();
+                        w51Var4.T();
                     }
                     if (arrayList6 != null && (!arrayList6.isEmpty() || gjVar.V >= 0 || gjVar.a0)) {
                         if (arrayList3.size() > size) {
-                            arrayList3.add(y51.A(-98, null));
+                            arrayList3.add(i51.A(-98, null));
                         }
-                        m61Var4.U();
-                        arrayList3.add(y51.s(((gjVar.V >= 0 || gjVar.a0) && arrayList6.isEmpty()) ? 25 : 20, LocaleController.getString(R.string.AudioSearchChats)));
+                        w51Var4.U();
+                        arrayList3.add(i51.s(((gjVar.V >= 0 || gjVar.a0) && arrayList6.isEmpty()) ? 25 : 20, LocaleController.getString(R.string.AudioSearchChats)));
                         for (int i21 = 0; i21 < arrayList6.size(); i21++) {
                             MediaController.AudioEntry audioEntry4 = (MediaController.AudioEntry) arrayList6.get(i21);
                             audioEntry4.messageObject.setQuery(gjVar.E);
-                            y51 a14 = org.telegram.ui.Cells.j7.a(audioEntry4, new xi(gjVar, 0));
+                            i51 a14 = org.telegram.ui.Cells.h7.a(audioEntry4, new xi(gjVar, 0));
                             a14.K(hashSet.contains(audioEntry4));
                             arrayList3.add(a14);
                         }
                         if (gjVar.V >= 0 || gjVar.a0) {
-                            arrayList3.add(y51.o(21, 4));
-                            arrayList3.add(y51.o(22, 4));
-                            arrayList3.add(y51.o(23, 4));
+                            arrayList3.add(i51.o(21, 4));
+                            arrayList3.add(i51.o(22, 4));
+                            arrayList3.add(i51.o(23, 4));
                         }
                         if (gjVar.d0) {
-                            y51 c11 = y51.c(i16, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                            i51 c11 = i51.c(i16, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                             c11.q = true;
                             arrayList3.add(c11);
                         }
-                        m61Var4.T();
+                        w51Var4.T();
                     }
                 } else {
                     String lowerCase = gjVar.E.toLowerCase();
@@ -585,26 +585,26 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         if (str5 != null) {
                             String lowerCase2 = str5.toLowerCase();
                             String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                            if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.l0.v(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, translitSafe2)) {
+                            if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.y0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y0.w(" ", translitSafe, translitSafe2)) {
                                 z10 = true;
                                 str2 = audioEntry5.title;
                                 if (str2 == null) {
                                     String lowerCase3 = str2.toLowerCase();
                                     boolean z19 = z10;
                                     String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
-                                    z10 = z19 || lowerCase3.startsWith(lowerCase) || org.telegram.messenger.l0.v(" ", lowerCase, lowerCase3) || translitSafe3.startsWith(translitSafe) || org.telegram.messenger.l0.v(" ", translitSafe, translitSafe3);
+                                    z10 = z19 || lowerCase3.startsWith(lowerCase) || org.telegram.messenger.y0.w(" ", lowerCase, lowerCase3) || translitSafe3.startsWith(translitSafe) || org.telegram.messenger.y0.w(" ", translitSafe, translitSafe3);
                                 }
                                 if (z10) {
                                     if (!z18) {
                                         if (arrayList3.size() > size) {
-                                            arrayList3.add(y51.A(-97, null));
+                                            arrayList3.add(i51.A(-97, null));
                                         }
-                                        m61Var3.U();
-                                        arrayList3.add(y51.s(10, LocaleController.getString(R.string.AudioSearchLocal)));
+                                        w51Var3.U();
+                                        arrayList3.add(i51.s(10, LocaleController.getString(R.string.AudioSearchLocal)));
                                         z18 = true;
                                     }
                                     audioEntry5.messageObject.setQuery(gjVar.E);
-                                    y51 a15 = org.telegram.ui.Cells.j7.a(audioEntry5, new xi(gjVar, 0));
+                                    i51 a15 = org.telegram.ui.Cells.h7.a(audioEntry5, new xi(gjVar, 0));
                                     a15.K(hashSet.contains(audioEntry5));
                                     a15.d = 10;
                                     arrayList3.add(a15);
@@ -618,57 +618,57 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         if (z10) {
                         }
                     }
-                    m61Var3.T();
+                    w51Var3.T();
                     if (arrayList6 != null && (!arrayList6.isEmpty() || gjVar.V >= 0 || gjVar.a0)) {
                         if (arrayList3.size() > size) {
-                            arrayList3.add(y51.A(-98, null));
+                            arrayList3.add(i51.A(-98, null));
                         }
-                        m61Var3.U();
-                        arrayList3.add(y51.s(((gjVar.V >= 0 || gjVar.a0) && arrayList6.isEmpty()) ? 25 : 20, LocaleController.getString(R.string.AudioSearchChats)));
+                        w51Var3.U();
+                        arrayList3.add(i51.s(((gjVar.V >= 0 || gjVar.a0) && arrayList6.isEmpty()) ? 25 : 20, LocaleController.getString(R.string.AudioSearchChats)));
                         for (int i23 = 0; i23 < arrayList6.size(); i23++) {
                             MediaController.AudioEntry audioEntry6 = (MediaController.AudioEntry) arrayList6.get(i23);
                             audioEntry6.messageObject.setQuery(gjVar.E);
-                            y51 a16 = org.telegram.ui.Cells.j7.a(audioEntry6, new xi(gjVar, 0));
+                            i51 a16 = org.telegram.ui.Cells.h7.a(audioEntry6, new xi(gjVar, 0));
                             a16.K(hashSet.contains(audioEntry6));
                             arrayList3.add(a16);
                         }
                         if (gjVar.V >= 0 || gjVar.a0) {
-                            arrayList3.add(y51.o(21, 4));
-                            arrayList3.add(y51.o(22, 4));
-                            arrayList3.add(y51.o(23, 4));
+                            arrayList3.add(i51.o(21, 4));
+                            arrayList3.add(i51.o(22, 4));
+                            arrayList3.add(i51.o(23, 4));
                         }
                         if (gjVar.d0) {
-                            y51 c12 = y51.c(i16, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                            i51 c12 = i51.c(i16, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                             c12.q = true;
                             arrayList3.add(c12);
                         }
-                        m61Var3.T();
+                        w51Var3.T();
                     }
                     if (arrayList4 != null && (!arrayList4.isEmpty() || gjVar.e0 >= 0 || gjVar.n0)) {
                         if (arrayList3.size() > size) {
-                            arrayList3.add(y51.A(-96, null));
+                            arrayList3.add(i51.A(-96, null));
                         }
-                        m61Var3.U();
-                        arrayList3.add(y51.s(((gjVar.e0 >= 0 || gjVar.n0) && arrayList4.isEmpty()) ? 35 : 30, LocaleController.getString(R.string.AudioSearchGlobal)));
+                        w51Var3.U();
+                        arrayList3.add(i51.s(((gjVar.e0 >= 0 || gjVar.n0) && arrayList4.isEmpty()) ? 35 : 30, LocaleController.getString(R.string.AudioSearchGlobal)));
                         int size3 = arrayList4.size();
                         for (int i24 = 0; i24 < size3; i24++) {
                             MediaController.AudioEntry audioEntry7 = (MediaController.AudioEntry) arrayList4.get(i24);
                             audioEntry7.messageObject.setQuery(gjVar.E);
-                            y51 a17 = org.telegram.ui.Cells.j7.a(audioEntry7, new xi(gjVar, 0));
+                            i51 a17 = org.telegram.ui.Cells.h7.a(audioEntry7, new xi(gjVar, 0));
                             a17.K(hashSet.contains(audioEntry7));
                             arrayList3.add(a17);
                         }
                         if (gjVar.e0 >= 0 || gjVar.n0) {
-                            arrayList3.add(y51.o(31, 4));
-                            arrayList3.add(y51.o(32, 4));
-                            arrayList3.add(y51.o(33, 4));
+                            arrayList3.add(i51.o(31, 4));
+                            arrayList3.add(i51.o(32, 4));
+                            arrayList3.add(i51.o(33, 4));
                         }
                         if (gjVar.h0) {
-                            y51 c13 = y51.c(gjVar.R, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                            i51 c13 = i51.c(gjVar.R, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                             c13.q = true;
                             arrayList3.add(c13);
                         }
-                        m61Var3.T();
+                        w51Var3.T();
                     }
                 }
                 if (arrayList3.size() <= size && !gjVar.H) {
@@ -676,7 +676,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         String string3 = LocaleController.getString(R.string.NoAudioFiles);
                         String string4 = LocaleController.getString(R.string.NoAudioFilesInfo);
                         int i25 = ej.a;
-                        y51 J = y51.J(ej.class);
+                        i51 J = i51.J(ej.class);
                         J.l = string3;
                         J.m = string4;
                         arrayList3.add(J);
@@ -684,13 +684,13 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         String string5 = LocaleController.getString(R.string.NoAudioFound);
                         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(gjVar.E.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, gjVar.E));
                         int i26 = ej.a;
-                        y51 J2 = y51.J(ej.class);
+                        i51 J2 = i51.J(ej.class);
                         J2.l = string5;
                         J2.m = replaceTags;
                         arrayList3.add(J2);
                     }
                 }
-                arrayList3.add(y51.A(-99, null));
+                arrayList3.add(i51.A(-99, null));
                 break;
             case 6:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj3;
@@ -726,7 +726,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     if (!arrayList10.isEmpty() && !z21) {
                         if (arrayList10.size() > 5) {
                             final int i29 = 1;
-                            arrayList7.add(y51.r(LocaleController.getString(R.string.SearchAppsMine), LocaleController.getString(rsVar.U ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.os
+                            arrayList7.add(i51.r(LocaleController.getString(R.string.SearchAppsMine), LocaleController.getString(rsVar.U ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.os
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
                                     switch (i29) {
@@ -744,13 +744,13 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                                 }
                             }));
                         } else {
-                            arrayList7.add(y51.q(LocaleController.getString(R.string.SearchAppsMine)));
+                            arrayList7.add(i51.q(LocaleController.getString(R.string.SearchAppsMine)));
                         }
                         for (int i30 = 0; i30 < arrayList10.size() && (i30 < 5 || rsVar.U); i30++) {
                             TLRPC.User user2 = (TLRPC.User) arrayList10.get(i30);
                             if (!hashSet2.contains(Long.valueOf(user2.id))) {
                                 hashSet2.add(Long.valueOf(user2.id));
-                                y51 v = y51.v(user2);
+                                i51 v = i51.v(user2);
                                 v.q = true;
                                 v.t = true;
                                 v.H = x2Var;
@@ -764,24 +764,24 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     if (arrayList11.isEmpty()) {
                         if (qsVar.c || !qsVar.e) {
                             if (!z21) {
-                                arrayList7.add(y51.n(30));
+                                arrayList7.add(i51.n(30));
                             }
-                            arrayList7.add(y51.n(29));
-                            arrayList7.add(y51.n(29));
-                            arrayList7.add(y51.n(29));
-                            arrayList7.add(y51.n(29));
+                            arrayList7.add(i51.n(29));
+                            arrayList7.add(i51.n(29));
+                            arrayList7.add(i51.n(29));
+                            arrayList7.add(i51.n(29));
                         }
                         z11 = false;
                     } else {
                         if (!z21) {
-                            arrayList7.add(y51.q(LocaleController.getString(R.string.SearchAppsPopular)));
+                            arrayList7.add(i51.q(LocaleController.getString(R.string.SearchAppsPopular)));
                         }
                         boolean z22 = false;
                         for (int i31 = 0; i31 < arrayList11.size(); i31++) {
                             TLRPC.User user3 = (TLRPC.User) arrayList11.get(i31);
                             if (!hashSet2.contains(Long.valueOf(user3.id))) {
                                 hashSet2.add(Long.valueOf(user3.id));
-                                y51 v9 = y51.v(user3);
+                                i51 v9 = i51.v(user3);
                                 v9.q = true;
                                 v9.r = true;
                                 v9.t = true;
@@ -791,14 +791,14 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             }
                         }
                         if (qsVar.c || !qsVar.e) {
-                            arrayList7.add(y51.n(29));
-                            arrayList7.add(y51.n(29));
-                            arrayList7.add(y51.n(29));
+                            arrayList7.add(i51.n(29));
+                            arrayList7.add(i51.n(29));
+                            arrayList7.add(i51.n(29));
                         }
                         z11 = z22;
                     }
                     if (z11) {
-                        arrayList7.add(y51.B(rsVar.W));
+                        arrayList7.add(i51.B(rsVar.W));
                         break;
                     }
                 } else {
@@ -807,10 +807,10 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     arrayList12.addAll(rsVar.S);
                     if (!arrayList12.isEmpty()) {
                         if (arrayList12.size() <= 5 || arrayList8.isEmpty() || z21) {
-                            arrayList7.add(y51.q(LocaleController.getString(R.string.SearchApps)));
+                            arrayList7.add(i51.q(LocaleController.getString(R.string.SearchApps)));
                         } else {
                             final int i32 = 0;
-                            arrayList7.add(y51.r(LocaleController.getString(R.string.SearchApps), LocaleController.getString(rsVar.V ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.os
+                            arrayList7.add(i51.r(LocaleController.getString(R.string.SearchApps), LocaleController.getString(rsVar.V ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.os
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
                                     switch (i32) {
@@ -833,58 +833,58 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             size4 = Math.min(5, size4);
                         }
                         for (int i33 = 0; i33 < size4; i33++) {
-                            y51 v10 = y51.v((TLObject) arrayList12.get(i33));
+                            i51 v10 = i51.v((TLObject) arrayList12.get(i33));
                             v10.t = true;
                             v10.H = x2Var;
                             arrayList7.add(v10);
                         }
                     }
                     if (!arrayList8.isEmpty() && !z21) {
-                        arrayList7.add(y51.q(LocaleController.getString(R.string.SearchMessages)));
+                        arrayList7.add(i51.q(LocaleController.getString(R.string.SearchMessages)));
                         int size5 = arrayList8.size();
                         int i34 = 0;
                         while (i34 < size5) {
                             Object obj4 = arrayList8.get(i34);
                             i34++;
-                            y51 y51Var = new y51(33);
-                            y51Var.G = (MessageObject) obj4;
-                            arrayList7.add(y51Var);
+                            i51 i51Var = new i51(33);
+                            i51Var.G = (MessageObject) obj4;
+                            arrayList7.add(i51Var);
                         }
                         if (rsVar.b0) {
-                            arrayList7.add(y51.n(1));
+                            arrayList7.add(i51.n(1));
                             break;
                         }
                     }
                 }
                 break;
             case 9:
-                final io0 io0Var = (io0) obj3;
+                final tn0 tn0Var = (tn0) obj3;
                 ArrayList arrayList13 = (ArrayList) obj;
-                ArrayList arrayList14 = io0Var.P;
-                ArrayList arrayList15 = io0Var.V;
-                int i35 = io0Var.N;
-                if (TextUtils.isEmpty(io0Var.b0)) {
+                ArrayList arrayList14 = tn0Var.P;
+                ArrayList arrayList15 = tn0Var.V;
+                int i35 = tn0Var.N;
+                if (TextUtils.isEmpty(tn0Var.b0)) {
                     if (arrayList15 != null && !arrayList15.isEmpty()) {
                         if (arrayList15.size() > 5) {
-                            arrayList13.add(y51.r(LocaleController.getString(R.string.SearchMyChannels), LocaleController.getString(io0Var.U ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.ss
+                            arrayList13.add(i51.r(LocaleController.getString(R.string.SearchMyChannels), LocaleController.getString(tn0Var.U ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.ss
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
                                     switch (i13) {
                                         case 0:
-                                            io0 io0Var2 = io0Var;
-                                            io0Var2.U = !io0Var2.U;
-                                            io0Var2.N(true);
-                                            if (io0Var2.U) {
-                                                AndroidUtilities.hideKeyboard(io0Var2.d0.getParentActivity().getCurrentFocus());
+                                            tn0 tn0Var2 = tn0Var;
+                                            tn0Var2.U = !tn0Var2.U;
+                                            tn0Var2.N(true);
+                                            if (tn0Var2.U) {
+                                                AndroidUtilities.hideKeyboard(tn0Var2.d0.getParentActivity().getCurrentFocus());
                                                 break;
                                             }
                                             break;
                                         default:
-                                            io0 io0Var3 = io0Var;
-                                            io0Var3.T = !io0Var3.T;
-                                            io0Var3.N(true);
-                                            if (io0Var3.T) {
-                                                AndroidUtilities.hideKeyboard(io0Var3.d0.getParentActivity().getCurrentFocus());
+                                            tn0 tn0Var3 = tn0Var;
+                                            tn0Var3.T = !tn0Var3.T;
+                                            tn0Var3.N(true);
+                                            if (tn0Var3.T) {
+                                                AndroidUtilities.hideKeyboard(tn0Var3.d0.getParentActivity().getCurrentFocus());
                                                 break;
                                             }
                                             break;
@@ -892,14 +892,14 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                                 }
                             }));
                         } else {
-                            arrayList13.add(y51.q(LocaleController.getString(R.string.SearchMyChannels)));
+                            arrayList13.add(i51.q(LocaleController.getString(R.string.SearchMyChannels)));
                         }
                         int size6 = arrayList15.size();
-                        if (!io0Var.U) {
+                        if (!tn0Var.U) {
                             size6 = Math.min(5, size6);
                         }
                         for (int i36 = 0; i36 < size6; i36++) {
-                            y51 v11 = y51.v((TLObject) arrayList15.get(i36));
+                            i51 v11 = i51.v((TLObject) arrayList15.get(i36));
                             v11.I = true;
                             arrayList13.add(v11);
                         }
@@ -923,26 +923,26 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             }
                         }
                         if (!arrayList16.isEmpty()) {
-                            arrayList13.add(y51.q(LocaleController.getString(R.string.SearchRecommendedChannels)));
+                            arrayList13.add(i51.q(LocaleController.getString(R.string.SearchRecommendedChannels)));
                         }
                         int size8 = arrayList16.size();
                         while (i13 < size8) {
                             Object obj5 = arrayList16.get(i13);
                             i13++;
-                            arrayList13.add(y51.v((TLRPC.Chat) obj5));
+                            arrayList13.add(i51.v((TLRPC.Chat) obj5));
                         }
                         break;
                     } else {
-                        arrayList13.add(y51.n(30));
-                        arrayList13.add(y51.n(29));
-                        arrayList13.add(y51.n(29));
-                        arrayList13.add(y51.n(29));
-                        arrayList13.add(y51.n(29));
+                        arrayList13.add(i51.n(30));
+                        arrayList13.add(i51.n(29));
+                        arrayList13.add(i51.n(29));
+                        arrayList13.add(i51.n(29));
+                        arrayList13.add(i51.n(29));
                         break;
                     }
                 } else {
                     ArrayList arrayList18 = new ArrayList();
-                    ArrayList arrayList19 = io0Var.Q;
+                    ArrayList arrayList19 = tn0Var.Q;
                     int size9 = arrayList19.size();
                     int i38 = 0;
                     while (i38 < size9) {
@@ -954,7 +954,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             arrayList18.add(chat3);
                         }
                     }
-                    ArrayList arrayList20 = io0Var.R;
+                    ArrayList arrayList20 = tn0Var.R;
                     int size10 = arrayList20.size();
                     int i39 = 0;
                     while (i39 < size10) {
@@ -966,7 +966,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             arrayList18.add(chat5);
                         }
                     }
-                    ArrayList arrayList21 = io0Var.S;
+                    ArrayList arrayList21 = tn0Var.S;
                     int size11 = arrayList21.size();
                     int i40 = 0;
                     while (i40 < size11) {
@@ -980,28 +980,28 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     }
                     if (!arrayList18.isEmpty()) {
                         if (arrayList18.size() <= 5 || arrayList14.isEmpty()) {
-                            arrayList13.add(y51.q(LocaleController.getString(R.string.SearchChannels)));
+                            arrayList13.add(i51.q(LocaleController.getString(R.string.SearchChannels)));
                         } else {
                             final int i41 = 1;
-                            arrayList13.add(y51.r(LocaleController.getString(R.string.SearchChannels), LocaleController.getString(io0Var.T ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.ss
+                            arrayList13.add(i51.r(LocaleController.getString(R.string.SearchChannels), LocaleController.getString(tn0Var.T ? R.string.ShowLess : R.string.ShowMore), new View.OnClickListener() { // from class: org.telegram.ui.Components.ss
                                 @Override // android.view.View.OnClickListener
                                 public final void onClick(View view) {
                                     switch (i41) {
                                         case 0:
-                                            io0 io0Var2 = io0Var;
-                                            io0Var2.U = !io0Var2.U;
-                                            io0Var2.N(true);
-                                            if (io0Var2.U) {
-                                                AndroidUtilities.hideKeyboard(io0Var2.d0.getParentActivity().getCurrentFocus());
+                                            tn0 tn0Var2 = tn0Var;
+                                            tn0Var2.U = !tn0Var2.U;
+                                            tn0Var2.N(true);
+                                            if (tn0Var2.U) {
+                                                AndroidUtilities.hideKeyboard(tn0Var2.d0.getParentActivity().getCurrentFocus());
                                                 break;
                                             }
                                             break;
                                         default:
-                                            io0 io0Var3 = io0Var;
-                                            io0Var3.T = !io0Var3.T;
-                                            io0Var3.N(true);
-                                            if (io0Var3.T) {
-                                                AndroidUtilities.hideKeyboard(io0Var3.d0.getParentActivity().getCurrentFocus());
+                                            tn0 tn0Var3 = tn0Var;
+                                            tn0Var3.T = !tn0Var3.T;
+                                            tn0Var3.N(true);
+                                            if (tn0Var3.T) {
+                                                AndroidUtilities.hideKeyboard(tn0Var3.d0.getParentActivity().getCurrentFocus());
                                                 break;
                                             }
                                             break;
@@ -1010,26 +1010,26 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                             }));
                         }
                         int size12 = arrayList18.size();
-                        if (!io0Var.T && !arrayList14.isEmpty()) {
+                        if (!tn0Var.T && !arrayList14.isEmpty()) {
                             size12 = Math.min(5, size12);
                         }
                         for (int i42 = 0; i42 < size12; i42++) {
-                            arrayList13.add(y51.v((TLObject) arrayList18.get(i42)));
+                            arrayList13.add(i51.v((TLObject) arrayList18.get(i42)));
                         }
                     }
                     if (!arrayList14.isEmpty()) {
-                        arrayList13.add(y51.q(LocaleController.getString(R.string.SearchMessages)));
+                        arrayList13.add(i51.q(LocaleController.getString(R.string.SearchMessages)));
                         int size13 = arrayList14.size();
                         int i43 = 0;
                         while (i43 < size13) {
                             Object obj9 = arrayList14.get(i43);
                             i43++;
-                            y51 y51Var2 = new y51(33);
-                            y51Var2.G = (MessageObject) obj9;
-                            arrayList13.add(y51Var2);
+                            i51 i51Var2 = new i51(33);
+                            i51Var2.G = (MessageObject) obj9;
+                            arrayList13.add(i51Var2);
                         }
-                        if (io0Var.Y) {
-                            arrayList13.add(y51.n(1));
+                        if (tn0Var.Y) {
+                            arrayList13.add(i51.n(1));
                             break;
                         }
                     }
@@ -1048,7 +1048,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 d(obj, obj2);
                 break;
             case 14:
-                ((ArrayList) obj).add(y51.j(-1, ((w30) obj3).X));
+                ((ArrayList) obj).add(i51.j(-1, ((w30) obj3).X));
                 break;
             case 15:
                 e(obj, obj2);
@@ -1069,10 +1069,10 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 j(obj, obj2);
                 break;
             case 21:
-                l41.p((l41) obj3, (String) obj, (Boolean) obj2);
+                v31.p((v31) obj3, (String) obj, (Boolean) obj2);
                 break;
             default:
-                ((p61) obj3).U((ArrayList) obj, (m61) obj2);
+                ((z51) obj3).U((ArrayList) obj, (w51) obj2);
                 break;
         }
     }

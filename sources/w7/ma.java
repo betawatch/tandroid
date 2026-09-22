@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final q9.n a;
@@ -18,13 +18,13 @@ public final class ma implements ja {
         l5.t.b(context);
         l5.r c10 = l5.t.a().c(aVar);
         if (j5.a.d.contains(new i5.c("json"))) {
-            new q9.n(new v7.b9(c10, 2));
+            new q9.n(new v7.a9(c10, 2));
         }
-        this.a = new q9.n(new v7.b9(c10, 3));
+        this.a = new q9.n(new v7.a9(c10, 3));
     }
 
     @Override // w7.ja
-    public final void a(org.telegram.ui.Cells.f3 f3Var) {
+    public final void a(n7.a1 a1Var) {
         f fVar;
         ia.d dVar;
         ia iaVar = this.b;
@@ -32,19 +32,19 @@ public final class ma implements ja {
         l5.s sVar = (l5.s) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        v7.s1 s1Var = (v7.s1) f3Var.b;
-        ((v7.e8) f3Var.c).h = false;
-        v7.e8 e8Var = (v7.e8) f3Var.c;
-        e8Var.f = Boolean.FALSE;
-        s1Var.b = new l9(e8Var);
+        v7.r1 r1Var = (v7.r1) a1Var.b;
+        ((v7.d8) a1Var.c).h = false;
+        v7.d8 d8Var = (v7.d8) a1Var.c;
+        d8Var.f = Boolean.FALSE;
+        r1Var.b = new l9(d8Var);
         try {
             pa.b();
-            k7 k7Var = new k7(s1Var);
-            v7.s1 s1Var2 = new v7.s1(4);
-            paVar.a(s1Var2);
-            HashMap hashMap = new HashMap((HashMap) s1Var2.b);
-            HashMap hashMap2 = new HashMap((HashMap) s1Var2.d);
-            e eVar = (e) s1Var2.c;
+            k7 k7Var = new k7(r1Var);
+            v7.r1 r1Var2 = new v7.r1(4);
+            paVar.a(r1Var2);
+            HashMap hashMap = new HashMap((HashMap) r1Var2.b);
+            HashMap hashMap2 = new HashMap((HashMap) r1Var2.d);
+            e eVar = (e) r1Var2.c;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             try {
                 fVar = new f(byteArrayOutputStream, hashMap, hashMap2, eVar);
@@ -55,7 +55,7 @@ public final class ma implements ja {
                 throw new ia.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(22));
+            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(17));
         } catch (UnsupportedEncodingException e) {
             throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
         }

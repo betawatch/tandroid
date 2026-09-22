@@ -26,18 +26,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.z80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
@@ -67,9 +67,9 @@ public final /* synthetic */ class ba implements Runnable {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
                 }
-                yc ycVar = caVar.H;
-                if (ycVar != null) {
-                    ycVar.c(false);
+                wc wcVar = caVar.H;
+                if (wcVar != null) {
+                    wcVar.c(false);
                 }
                 ViewParent parent = view.getParent();
                 if (parent instanceof ViewGroup) {
@@ -80,17 +80,17 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 1:
                 va vaVar = (va) this.b;
-                o90 o90Var = (o90) this.c;
-                o90 o90Var2 = vaVar.a;
-                if (o90Var != o90Var2 || o90Var2 == null) {
+                d90 d90Var = (d90) this.c;
+                d90 d90Var2 = vaVar.a;
+                if (d90Var != d90Var2 || d90Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = o90Var2.i;
+                CharacterStyle characterStyle = d90Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     wa waVar = vaVar.v;
-                    k90 k90Var = vaVar.c;
-                    Objects.requireNonNull(k90Var);
-                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(k90Var, 18));
+                    z80 z80Var = vaVar.c;
+                    Objects.requireNonNull(z80Var);
+                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(z80Var, 18));
                     vaVar.a = null;
                     return;
                 }
@@ -264,23 +264,23 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 24:
                 ci.p pVar = (ci.p) this.b;
-                qg.c2 c2Var = (qg.c2) this.c;
+                qg.e2 e2Var = (qg.e2) this.c;
                 ci.p7 p7Var = pVar.a;
-                if (c2Var.getWidth() <= 0) {
+                if (e2Var.getWidth() <= 0) {
                     p7Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new androidx.fragment.app.a0(pVar, 20)).start();
                     return;
                 }
-                float width = c2Var.getWidth() / p7Var.getWidth();
+                float width = e2Var.getWidth() / p7Var.getWidth();
                 ValueAnimator valueAnimator = pVar.w;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
                 pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
-                pVar.w.addUpdateListener(new ci.o7(pVar, p7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((p7Var.getWidth() / 2.0f) + p7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((p7Var.getHeight() / 2.0f) + p7Var.getY()), 0));
-                pVar.w.addListener(new z(4, pVar, c2Var));
+                pVar.w.addUpdateListener(new ci.o7(pVar, p7Var.getScaleX(), width, ((e2Var.getWidth() / 2.0f) + e2Var.getX()) - ((p7Var.getWidth() / 2.0f) + p7Var.getX()), ((e2Var.getHeight() / 2.0f) + e2Var.getY()) - ((p7Var.getHeight() / 2.0f) + p7Var.getY()), 0));
+                pVar.w.addListener(new z(4, pVar, e2Var));
                 pVar.w.setDuration(320L);
                 pVar.w.setInterpolator(qr.h);
-                pVar.v = c2Var;
+                pVar.v = e2Var;
                 pVar.w.start();
                 return;
             case 25:
@@ -330,11 +330,11 @@ public final /* synthetic */ class ba implements Runnable {
                 ci.x8 x8Var = (ci.x8) this.b;
                 TextView textView = (TextView) this.c;
                 ClipboardManager clipboardManager = (ClipboardManager) x8Var.getContext().getSystemService("clipboard");
-                org.telegram.ui.Cells.i3 i3Var = x8Var.Y.b;
-                if ((TextUtils.isEmpty(i3Var.getText()) || TextUtils.equals(i3Var.getText(), "https://") || TextUtils.isEmpty(i3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
+                org.telegram.ui.Cells.g3 g3Var = x8Var.Y.b;
+                if ((TextUtils.isEmpty(g3Var.getText()) || TextUtils.equals(g3Var.getText(), "https://") || TextUtils.isEmpty(g3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
                     i13 = 1;
                 }
-                rk.s(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), qr.h, 300L);
+                vl.r(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), qr.h, 300L);
                 return;
         }
     }

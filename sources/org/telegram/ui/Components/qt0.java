@@ -1,26 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class qt0 extends fv0 {
-    public final /* synthetic */ lv0 h;
+public class qt0 extends ga implements ai.s9 {
+    public int d3;
+    public int e3;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qt0(lv0 lv0Var, Context context) {
-        super(lv0Var, context);
-        this.h = lv0Var;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        lv0 lv0Var = this.h;
-        eu0 W = lv0Var.W(0);
-        if (W == null || W.r.getVisibility() != 0) {
-            return;
-        }
-        lv0Var.I.l();
+    @Override // ai.s9
+    public final void a(int[] iArr) {
+        iArr[0] = (getPaddingTop() - AndroidUtilities.dp(2.0f)) - this.d3;
+        iArr[1] = (getMeasuredHeight() - getPaddingBottom()) - this.e3;
     }
 }

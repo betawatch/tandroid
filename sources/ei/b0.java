@@ -11,20 +11,20 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.il0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.xl0;
-import w7.y5;
+import org.telegram.ui.Components.vk0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class b0 extends xl0 {
+public final class b0 extends kl0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -61,7 +61,7 @@ public final class b0 extends xl0 {
         String str = (String) this.c.get(i10);
         if (((Boolean) this.e.get(i10)).booleanValue()) {
             oq oqVar = new oq(R.drawable.mini_ephemeral_hidden_14, 0);
-            oqVar.setColorKey(j6.A6);
+            oqVar.setColorKey(i6.A6);
             oqVar.setTopOffset(1);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             spannableStringBuilder.append((CharSequence) " *");
@@ -84,20 +84,20 @@ public final class b0 extends xl0 {
         a0Var.b = p4Var;
         NotificationCenter.listenEmojiLoading(p4Var);
         p4Var.setTextSize(1, 16.0f);
-        int i11 = j6.G6;
-        p4Var.setTextColor(j6.w0(null, i11, false));
+        int i11 = i6.G6;
+        p4Var.setTextColor(i6.w0(null, i11, false));
         p4Var.setTag(Integer.valueOf(i11));
         p4Var.setMaxLines(2);
         p4Var.setEllipsize(TextUtils.TruncateAt.END);
-        a0Var.addView(p4Var, y5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        a0Var.addView(p4Var, x5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         a0Var.a = textView;
         textView.setTextSize(1, 14.0f);
-        int i12 = j6.y6;
-        textView.setTextColor(j6.w0(null, i12, false));
+        int i12 = i6.y6;
+        textView.setTextColor(i6.w0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        a0Var.addView(textView, y5.o(-2, -2, 0.0f, 16));
+        a0Var.addView(textView, x5.o(-2, -2, 0.0f, 16));
         a0Var.setLayoutParams(new s4.p0(-1, -2));
-        return new il0(a0Var);
+        return new vk0(a0Var);
     }
 }

@@ -1,65 +1,166 @@
 package m4;
 
 import android.os.Bundle;
-import android.os.SystemClock;
-import org.telegram.messenger.MediaDataController;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p1 {
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public final int a;
-    public final Bundle b;
+    public static final b2.a1 k;
+    public static final p1 l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public static final String q;
+    public static final String r;
+    public static final String s;
+    public static final String t;
+    public static final String u;
+    public static final String v;
+    public final b2.a1 a;
+    public final boolean b;
     public final long c;
-    public final n1 d;
+    public final long d;
+    public final long e;
+    public final int f;
+    public final long g;
+    public final long h;
+    public final long i;
+    public final long j;
 
     static {
+        b2.a1 a1Var = new b2.a1(null, 0, null, null, 0, 0L, 0L, -1, -1);
+        k = a1Var;
+        l = new p1(a1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
         String str = e2.d0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
+        m = Integer.toString(0, 36);
+        n = Integer.toString(1, 36);
+        o = Integer.toString(2, 36);
+        p = Integer.toString(3, 36);
+        q = Integer.toString(4, 36);
+        r = Integer.toString(5, 36);
+        s = Integer.toString(6, 36);
+        t = Integer.toString(7, 36);
+        u = Integer.toString(8, 36);
+        v = Integer.toString(9, 36);
     }
 
-    public p1(int i10) {
-        this(i10, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
-    }
-
-    public static p1 a(Bundle bundle) {
-        n1 n1Var;
-        int i10 = bundle.getInt(e, -1);
-        Bundle bundle2 = bundle.getBundle(f);
-        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
-        Bundle bundle3 = bundle.getBundle(h);
-        if (bundle3 != null) {
-            int i11 = bundle3.getInt(n1.d, MediaDataController.MAX_STYLE_RUNS_COUNT);
-            String string = bundle3.getString(n1.e, "");
-            Bundle bundle4 = bundle3.getBundle(n1.f);
-            if (bundle4 == null) {
-                bundle4 = Bundle.EMPTY;
-            }
-            n1Var = new n1(string, i11, bundle4);
-        } else {
-            n1Var = i10 != 0 ? new n1(i10) : null;
-        }
-        n1 n1Var2 = n1Var;
-        if (bundle2 == null) {
-            bundle2 = Bundle.EMPTY;
-        }
-        return new p1(i10, bundle2, j3, n1Var2);
-    }
-
-    public p1(int i10, Bundle bundle, long j3, n1 n1Var) {
-        e2.d.b(n1Var == null || i10 < 0);
-        this.a = i10;
-        this.b = new Bundle(bundle);
+    public p1(b2.a1 a1Var, boolean z10, long j3, long j10, long j11, int i10, long j12, long j13, long j14, long j15) {
+        e2.d.b(z10 == (a1Var.h != -1));
+        this.a = a1Var;
+        this.b = z10;
         this.c = j3;
-        if (n1Var == null && i10 < 0) {
-            n1Var = new n1(i10);
+        this.d = j10;
+        this.e = j11;
+        this.f = i10;
+        this.g = j12;
+        this.h = j13;
+        this.i = j14;
+        this.j = j15;
+    }
+
+    public final p1 a(boolean z10, boolean z11) {
+        if (z10 && z11) {
+            return this;
         }
-        this.d = n1Var;
+        return new p1(this.a.b(z10, z11), z10 && this.b, this.c, z10 ? this.d : -9223372036854775807L, z10 ? this.e : 0L, z10 ? this.f : 0, z10 ? this.g : 0L, z10 ? this.h : -9223372036854775807L, z10 ? this.i : -9223372036854775807L, z10 ? this.j : 0L);
+    }
+
+    public final Bundle b(int i10) {
+        Bundle bundle = new Bundle();
+        b2.a1 a1Var = this.a;
+        if (i10 < 3 || !k.a(a1Var)) {
+            bundle.putBundle(m, a1Var.c(i10));
+        }
+        boolean z10 = this.b;
+        if (z10) {
+            bundle.putBoolean(n, z10);
+        }
+        long j3 = this.c;
+        if (j3 != -9223372036854775807L) {
+            bundle.putLong(o, j3);
+        }
+        long j10 = this.d;
+        if (j10 != -9223372036854775807L) {
+            bundle.putLong(p, j10);
+        }
+        long j11 = this.e;
+        if (i10 < 3 || j11 != 0) {
+            bundle.putLong(q, j11);
+        }
+        int i11 = this.f;
+        if (i11 != 0) {
+            bundle.putInt(r, i11);
+        }
+        long j12 = this.g;
+        if (j12 != 0) {
+            bundle.putLong(s, j12);
+        }
+        long j13 = this.h;
+        if (j13 != -9223372036854775807L) {
+            bundle.putLong(t, j13);
+        }
+        long j14 = this.i;
+        if (j14 != -9223372036854775807L) {
+            bundle.putLong(u, j14);
+        }
+        long j15 = this.j;
+        if (i10 >= 3 && j15 == 0) {
+            return bundle;
+        }
+        bundle.putLong(v, j15);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && p1.class == obj.getClass()) {
+            p1 p1Var = (p1) obj;
+            if (this.c == p1Var.c && this.a.equals(p1Var.a) && this.b == p1Var.b && this.d == p1Var.d && this.e == p1Var.e && this.f == p1Var.f && this.g == p1Var.g && this.h == p1Var.h && this.i == p1Var.i && this.j == p1Var.j) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, Boolean.valueOf(this.b));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("SessionPositionInfo {PositionInfo {mediaItemIndex=");
+        b2.a1 a1Var = this.a;
+        sb2.append(a1Var.b);
+        sb2.append(", periodIndex=");
+        sb2.append(a1Var.e);
+        sb2.append(", positionMs=");
+        sb2.append(a1Var.f);
+        sb2.append(", contentPositionMs=");
+        sb2.append(a1Var.g);
+        sb2.append(", adGroupIndex=");
+        sb2.append(a1Var.h);
+        sb2.append(", adIndexInAdGroup=");
+        sb2.append(a1Var.i);
+        sb2.append("}, isPlayingAd=");
+        sb2.append(this.b);
+        sb2.append(", eventTimeMs=");
+        sb2.append(this.c);
+        sb2.append(", durationMs=");
+        sb2.append(this.d);
+        sb2.append(", bufferedPositionMs=");
+        sb2.append(this.e);
+        sb2.append(", bufferedPercentage=");
+        sb2.append(this.f);
+        sb2.append(", totalBufferedDurationMs=");
+        sb2.append(this.g);
+        sb2.append(", currentLiveOffsetMs=");
+        sb2.append(this.h);
+        sb2.append(", contentDurationMs=");
+        sb2.append(this.i);
+        sb2.append(", contentBufferedPositionMs=");
+        return a4.a.s(sb2, this.j, "}");
     }
 }

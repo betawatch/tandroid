@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class cv0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -28,10 +28,10 @@ public final class cv0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        zn znVar = this.a.l4;
-        if (znVar != null) {
-            znVar.Q7();
-            UndoView undoView = znVar.y3;
+        bo boVar = this.a.l4;
+        if (boVar != null) {
+            boVar.Q7();
+            UndoView undoView = boVar.y3;
             if (undoView == null || undoView.getVisibility() != 0) {
                 return;
             }

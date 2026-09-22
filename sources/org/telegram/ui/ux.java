@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ux extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -27,12 +27,12 @@ public final class ux extends AnimatorListenerAdapter {
                 uyVar.o3.unlock();
                 if (uyVar.w1 == animator) {
                     if (this.b) {
-                        uyVar.e0[0].a.d1();
+                        uyVar.e0[0].a.c1();
                     } else {
                         qy qyVar = uyVar.e0[0].a;
                         if (qyVar.i1) {
                             qyVar.i1 = false;
-                            qyVar.L0(false);
+                            qyVar.K0(false);
                         }
                     }
                     uyVar.w1 = null;
@@ -57,7 +57,7 @@ public final class ux extends AnimatorListenerAdapter {
                     uyVar.A4(false, true);
                     boolean z10 = this.b;
                     if (z10) {
-                        uyVar.e0[0].a.d1();
+                        uyVar.e0[0].a.c1();
                         lx lxVar = uyVar.E0;
                         if (lxVar != null) {
                             lxVar.setVisibility(8);
@@ -83,13 +83,13 @@ public final class ux extends AnimatorListenerAdapter {
                         }
                         ey eyVar2 = uyVar.C0;
                         if (eyVar2 != null) {
-                            eyVar2.B0.clear();
-                            eyVar2.K();
+                            eyVar2.A0.clear();
+                            eyVar2.J();
                         }
                         qy qyVar = uyVar.e0[0].a;
                         if (qyVar.i1) {
                             qyVar.i1 = false;
-                            qyVar.L0(false);
+                            qyVar.K0(false);
                         }
                         uyVar.q3 = false;
                         ox oxVar2 = uyVar.F3;

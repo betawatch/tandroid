@@ -2,9 +2,9 @@ package ci;
 
 import android.text.style.ClickableSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.d90;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class d4 implements Runnable {
         }
     }
 
-    public /* synthetic */ d4(f4 f4Var, o90 o90Var, ClickableSpan clickableSpan) {
+    public /* synthetic */ d4(f4 f4Var, d90 d90Var, ClickableSpan clickableSpan) {
         this.a = 0;
         this.b = f4Var;
     }

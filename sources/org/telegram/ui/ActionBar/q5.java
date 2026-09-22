@@ -1,18 +1,18 @@
 package org.telegram.ui.ActionBar;
 
 import android.util.SparseIntArray;
-import org.telegram.ui.xd1;
+import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class q5 extends f5 {
     public final /* synthetic */ int R = 1;
     public final /* synthetic */ Object S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(xd1 xd1Var, int i10, boolean z10) {
+    public q5(wd1 wd1Var, int i10, boolean z10) {
         super(i10, true, z10, null);
-        this.S = xd1Var;
+        this.S = wd1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.f5
@@ -21,7 +21,7 @@ public final class q5 extends f5 {
             case 0:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.S;
                 int indexOfKey = sparseIntArray.indexOfKey(i10);
-                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : j6.nl[i10];
+                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : i6.nl[i10];
             default:
                 return super.g(i10);
         }
@@ -41,7 +41,7 @@ public final class q5 extends f5 {
     public void n(int i10, int i11, int i12) {
         switch (this.R) {
             case 1:
-                if (!((xd1) this.S).d2) {
+                if (!((wd1) this.S).d2) {
                     super.n(i10, i11, i12);
                     break;
                 }
@@ -56,7 +56,7 @@ public final class q5 extends f5 {
     public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
         switch (this.R) {
             case 1:
-                if (!((xd1) this.S).d2) {
+                if (!((wd1) this.S).d2) {
                     super.o(i10, i11, i12, i13, i14, i15, z10, z11);
                     break;
                 }

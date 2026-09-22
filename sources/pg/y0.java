@@ -1,38 +1,68 @@
 package pg;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f1 b;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.ui.Components.ha;
 
-    public /* synthetic */ y0(f1 f1Var, int i10) {
-        this.a = i10;
-        this.b = f1Var;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class y0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ ha a;
+    public final /* synthetic */ c1 b;
+
+    public y0(c1 c1Var, ha haVar) {
+        this.b = c1Var;
+        this.a = haVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e1 e1Var = this.b.a;
-                if (e1Var != null) {
-                    e1Var.b();
-                    break;
-                }
-                break;
-            case 1:
-                f1 f1Var = this.b;
-                f1Var.c.a(f1Var.r);
-                d1 d1Var = f1Var.d;
-                d1Var.getClass();
-                d1Var.postRunnable(new b1(d1Var, 2));
-                f1Var.d = null;
-                break;
-            default:
-                f1 f1Var2 = this.b;
-                f1Var2.c.q(f1Var2.x);
-                break;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        if (surfaceTexture != null) {
+            c1 c1Var = this.b;
+            if (c1Var.d != null) {
+                return;
+            }
+            a1 a1Var = new a1(c1Var, surfaceTexture, this.a);
+            c1Var.d = a1Var;
+            a1Var.n = i10;
+            a1Var.r = i11;
+            c1Var.i();
+            c1Var.post(new x0(this, 1));
+            q0 q0Var = c1Var.c;
+            if (q0Var.v) {
+                q0Var.f.f(new o0(q0Var, q0Var.w, 0));
+                q0Var.w = null;
+                q0Var.v = false;
+            }
         }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        c1 c1Var = this.b;
+        if (c1Var.d != null && !c1Var.y) {
+            q0 q0Var = c1Var.c;
+            q0Var.f.f(new p2.b(1, q0Var, new x0(this, 2)));
+        }
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        c1 c1Var = this.b;
+        a1 a1Var = c1Var.d;
+        if (a1Var == null) {
+            return;
+        }
+        a1Var.n = i10;
+        a1Var.r = i11;
+        c1Var.i();
+        a1 a1Var2 = c1Var.d;
+        a1Var2.postRunnable(a1Var2.w);
+        c1Var.d.postRunnable(new x0(this, 0));
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

@@ -1,53 +1,64 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jc0 extends og.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class jc0 extends org.telegram.ui.Components.x50 {
+    public final /* synthetic */ lc0 d;
 
-    public jc0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    public jc0(lc0 lc0Var) {
+        this.d = lc0Var;
     }
 
-    public static jc0 b(int i10, String str) {
-        return new jc0(4, 0, str, i10, 0);
+    @Override // org.telegram.ui.Components.co0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    public static jc0 c(int i10, int i11, String str) {
-        return new jc0(3, i10, str, i11, 0);
+    @Override // org.telegram.ui.Components.x50
+    public final int h() {
+        return 5;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.x50
+    public final int i() {
+        return 100;
+    }
+
+    @Override // org.telegram.ui.Components.x50
+    public final int j() {
+        return LiteMode.getPowerSaverLevel();
+    }
+
+    @Override // org.telegram.ui.Components.x50
+    public final void k(int i10) {
+        lc0 lc0Var = this.d;
+        float f7 = i10 / 100.0f;
+        lc0Var.h.w.X(f7, true);
+        lc0Var.h.setProgress(f7);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
+        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
+        sb2.append(", ");
+        int powerSaverLevel = LiteMode.getPowerSaverLevel();
+        if (powerSaverLevel <= 0) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
+        } else if (powerSaverLevel >= 100) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
+        } else {
+            sb2.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
         }
-        if (!(obj instanceof jc0)) {
-            return false;
-        }
-        jc0 jc0Var = (jc0) obj;
-        int i10 = jc0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && jc0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && jc0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && jc0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(jc0Var.c, this.c);
+        accessibilityEvent.setContentDescription(sb2);
+        this.d.setContentDescription(sb2);
     }
 }

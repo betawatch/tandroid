@@ -8,15 +8,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class no extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public final /* synthetic */ int T;
     public Object U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ no(Context context, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var, int i12) {
-        super(i10, i11, context, f6Var);
+    public /* synthetic */ no(Context context, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var, int i12) {
+        super(i10, i11, context, e6Var);
         this.T = i12;
     }
 
@@ -55,8 +55,8 @@ public final class no extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         int i12;
         switch (this.T) {
             case 2:
-                y70 y70Var = (y70) this.U;
-                if (this == y70Var.A && (i12 = y70Var.X) > 0) {
+                n70 n70Var = (n70) this.U;
+                if (this == n70Var.A && (i12 = n70Var.X) > 0) {
                     i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
                 }
                 super.onMeasure(i10, i11);
@@ -68,9 +68,9 @@ public final class no extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public no(y70 y70Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, i11, context, f6Var);
+    public no(n70 n70Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(i10, i11, context, e6Var);
         this.T = 2;
-        this.U = y70Var;
+        this.U = n70Var;
     }
 }

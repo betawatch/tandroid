@@ -1,191 +1,192 @@
 package ah;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import ii.u0;
-import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.t31;
-import org.telegram.ui.Components.zo0;
-import yh.m3;
-import zg.n0;
+import android.os.Build;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class d implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class d extends Drawable {
+    public final Paint a;
+    public final ch.d b;
+    public final Matrix c;
+    public LinearGradient d;
+    public final Matrix e;
+    public LinearGradient f;
+    public BitmapShader g;
+    public ComposeShader h;
+    public final Matrix i;
+    public final Paint j;
+    public Bitmap k;
+    public int l;
+    public boolean m;
+    public final Paint n;
+    public int o;
+    public boolean p;
+    public int q;
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                ((e) this.b).invalidateSelf();
-                break;
-            case 1:
-                break;
-            case 2:
-                ((u0) this.b).b.invalidate();
-                break;
-            case 3:
-                ((eq) this.b).invalidateSelf();
-                break;
-            case 4:
-                ((zo0) this.b).b.run();
-                break;
-            case 5:
-                ((ed) this.b).invalidateSelf();
-                break;
-            case 6:
-                ((t31) this.b).invalidateSelf();
-                break;
-            case 7:
-                ((wg.a) this.b).c.invalidate();
-                break;
-            case 8:
-                ((wg.c) this.b).c.invalidate();
-                break;
-            case 9:
-                ((x4.d) this.b).invalidateSelf();
-                break;
-            case 10:
-                ((m3) this.b).f.invalidate();
-                break;
-            default:
-                n0 n0Var = (n0) this.b;
-                View view = n0Var.W;
-                if (view != null) {
-                    view.invalidate();
-                    if (n0Var.R && n0Var.W.getParent() != null && (n0Var.W.getParent().getParent() instanceof View)) {
-                        ((View) n0Var.W.getParent().getParent()).invalidate();
-                        break;
-                    }
-                }
-                break;
+    public d(ch.d dVar) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = new Matrix();
+        this.e = new Matrix();
+        this.i = new Matrix();
+        Paint paint2 = new Paint(1);
+        this.j = paint2;
+        this.n = new Paint(1);
+        this.q = 255;
+        this.b = dVar;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        paint2.setFilterBitmap(true);
+        b(AndroidUtilities.dp(40.0f), false);
+    }
+
+    public static LinearGradient a(int i10, boolean z10) {
+        int alpha = Color.alpha(i10);
+        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 285), i0.a.k(i10, (alpha * 176) / 285), i0.a.k(i10, (alpha * 232) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 255), i0.a.k(i10, (alpha * 176) / 255), i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
+    }
+
+    public final void b(int i10, boolean z10) {
+        if (this.l == i10 && this.m == z10) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        switch (this.a) {
-            case 0:
-                ((e) this.b).scheduleSelf(runnable, j3);
-                break;
-            case 1:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.scheduleDrawable(drawable, runnable, j3);
-                    break;
-                }
-                break;
-            case 2:
-                break;
-            case 3:
-                ((eq) this.b).scheduleSelf(runnable, j3);
-                break;
-            case 4:
-                break;
-            case 5:
-                ((ed) this.b).scheduleSelf(runnable, j3);
-                break;
-            case 6:
-                break;
-            case 7:
-                ((wg.a) this.b).c.invalidate();
-                break;
-            case 8:
-                ((wg.c) this.b).c.invalidate();
-                break;
-            case 9:
-                ((x4.d) this.b).scheduleSelf(runnable, j3);
-                break;
-            case 10:
-                break;
-            default:
-                View view = ((n0) this.b).W;
-                if (view != null) {
-                    view.scheduleDrawable(drawable, runnable, j3);
-                    break;
-                }
-                break;
+        this.l = i10;
+        this.m = z10;
+        LinearGradient a2 = a(-16777216, z10);
+        this.d = a2;
+        this.a.setShader(a2);
+        this.n.setShader(null);
+        Matrix matrix = this.c;
+        matrix.reset();
+        matrix.setScale(1.0f, i10);
+        if (i10 < 0) {
+            matrix.postTranslate(0.0f, -i10);
         }
+        this.d.setLocalMatrix(matrix);
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((e) this.b).unscheduleSelf(runnable);
-                break;
-            case 1:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 2:
-                break;
-            case 3:
-                ((eq) this.b).unscheduleSelf(runnable);
-                break;
-            case 4:
-                break;
-            case 5:
-                ((ed) this.b).unscheduleSelf(runnable);
-                break;
-            case 6:
-                break;
-            case 7:
-                ((wg.a) this.b).c.invalidate();
-                break;
-            case 8:
-                ((wg.c) this.b).c.invalidate();
-                break;
-            case 9:
-                ((x4.d) this.b).unscheduleSelf(runnable);
-                break;
-            case 10:
-                break;
-            default:
-                View view = ((n0) this.b).W;
-                if (view != null) {
-                    view.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int height;
+        int i10;
+        boolean z10;
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.q == 0) {
+            return;
         }
+        ch.d dVar = this.b;
+        fh.a i11 = dVar.i();
+        while (i11 instanceof fh.e) {
+            i11 = ((fh.e) i11).a;
+        }
+        boolean z11 = this.p;
+        Matrix matrix = this.c;
+        Matrix matrix2 = this.e;
+        if (!z11 && (i11 instanceof fh.c)) {
+            int color = ((fh.c) i11).a.getColor();
+            int i12 = this.o;
+            Paint paint = this.n;
+            if (i12 != color || this.f == null) {
+                LinearGradient a2 = a(color, this.m);
+                this.f = a2;
+                this.o = color;
+                paint.setShader(a2);
+            }
+            height = this.l < 0 ? bounds.height() + this.l : 0;
+            matrix2.set(matrix);
+            matrix2.postTranslate(bounds.left, bounds.top + height);
+            this.f.setLocalMatrix(matrix2);
+            paint.setAlpha(this.q);
+            canvas.drawRect(bounds, paint);
+            return;
+        }
+        if (z11 || !(i11 instanceof fh.b) || (i10 = Build.VERSION.SDK_INT) < 28) {
+            int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.q);
+            height = this.l < 0 ? bounds.height() + this.l : 0;
+            dVar.draw(canvas);
+            canvas.translate(bounds.left, bounds.top + height);
+            canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.a);
+            canvas.restoreToCount(saveLayerAlpha);
+            return;
+        }
+        fh.b bVar = (fh.b) i11;
+        Bitmap bitmap = bVar.d;
+        if (bitmap == null) {
+            return;
+        }
+        boolean z12 = true;
+        if (this.o != -16777216 || this.f == null) {
+            this.f = a(-16777216, this.m);
+            this.o = -16777216;
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        if (this.g == null || this.k != bitmap) {
+            this.k = bitmap;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.g = bitmapShader;
+            if (i10 >= 33) {
+                bitmapShader.setFilterMode(2);
+            }
+        } else {
+            z12 = z10;
+        }
+        Paint paint2 = this.j;
+        if (z12 || this.h == null) {
+            ComposeShader composeShader = new ComposeShader(this.g, this.f, PorterDuff.Mode.DST_IN);
+            this.h = composeShader;
+            paint2.setShader(composeShader);
+        }
+        height = this.l < 0 ? bounds.height() + this.l : 0;
+        matrix2.set(matrix);
+        matrix2.postTranslate(bounds.left, bounds.top + height);
+        this.f.setLocalMatrix(matrix2);
+        Matrix matrix3 = bVar.b;
+        Matrix matrix4 = this.i;
+        matrix4.set(matrix3);
+        matrix4.postTranslate(-dVar.a, -dVar.b);
+        this.g.setLocalMatrix(matrix4);
+        paint2.setAlpha(this.q);
+        canvas.drawRect(bounds, paint2);
     }
 
-    public /* synthetic */ d(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.q;
     }
 
-    private final void a(Drawable drawable) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
     }
 
-    private final void f(Drawable drawable, Runnable runnable) {
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.b.setBounds(rect);
     }
 
-    private final void g(Drawable drawable, Runnable runnable) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.q = i10;
     }
 
-    private final void h(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void i(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void b(Drawable drawable, Runnable runnable, long j3) {
-    }
-
-    private final void c(Drawable drawable, Runnable runnable, long j3) {
-    }
-
-    private final void d(Drawable drawable, Runnable runnable, long j3) {
-    }
-
-    private final void e(Drawable drawable, Runnable runnable, long j3) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

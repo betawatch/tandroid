@@ -1,39 +1,31 @@
 package xh;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class c2 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ a2 b;
+public final /* synthetic */ class c2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n2 b;
 
-    public c2(a2 a2Var) {
-        this.b = a2Var;
+    public /* synthetic */ c2(n2 n2Var, int i10) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (!this.a && editable.length() > 12) {
-            this.a = true;
-            editable.delete(12, editable.length());
-            a2 a2Var = this.b;
-            AndroidUtilities.shakeView(a2Var);
-            try {
-                a2Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            this.a = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.setReordering(true);
+                break;
+            case 1:
+                this.b.setReordering(true);
+                break;
+            case 2:
+                this.b.f(false);
+                break;
+            default:
+                this.b.setReordering(true);
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -7,25 +7,25 @@ import java.util.HashMap;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class n1 implements org.telegram.ui.Components.o91 {
+public final class n1 implements org.telegram.ui.Components.z81 {
     public final /* synthetic */ s1 a;
 
     public n1(s1 s1Var) {
         this.a = s1Var;
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final TextureView a(View view, boolean z10, float f7, int i10, boolean z11) {
         s1 s1Var = this.a;
         h4 h4Var = s1Var.x;
         if (z10) {
-            h4Var.R.addView(h4Var.Q, w7.y5.c(-1.0f, -1));
+            h4Var.R.addView(h4Var.Q, w7.x5.c(-1.0f, -1));
             h4Var.R.setVisibility(0);
             h4Var.R.a(f7, i10);
             h4Var.E0 = s1Var.b;
-            h4Var.P.addView(view, w7.y5.c(-1.0f, -1));
+            h4Var.P.addView(view, w7.x5.c(-1.0f, -1));
             h4Var.P.setVisibility(0);
         } else {
             h4Var.R.removeView(h4Var.Q);
@@ -36,12 +36,12 @@ public final class n1 implements org.telegram.ui.Components.o91 {
         return h4Var.Q;
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final void c(float f7) {
         this.a.x.R.a(f7, 0);
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final void d() {
         this.a.a.setVisibility(0);
         this.a.b.setVisibility(4);
@@ -52,11 +52,11 @@ public final class n1 implements org.telegram.ui.Components.o91 {
         s1Var.a.loadUrl(s1Var.v.url, hashMap);
     }
 
-    @Override // org.telegram.ui.Components.o91
-    public final void e(org.telegram.ui.Components.r91 r91Var, boolean z10) {
+    @Override // org.telegram.ui.Components.z81
+    public final void e(org.telegram.ui.Components.c91 c91Var, boolean z10) {
         h4 h4Var = this.a.x;
         if (!z10) {
-            if (h4Var.D0 == r91Var) {
+            if (h4Var.D0 == c91Var) {
                 h4Var.D0 = null;
             }
             try {
@@ -67,13 +67,13 @@ public final class n1 implements org.telegram.ui.Components.o91 {
                 return;
             }
         }
-        org.telegram.ui.Components.r91 r91Var2 = h4Var.D0;
-        if (r91Var2 != null && r91Var2 != r91Var) {
-            r91Var2.a.B();
-            r91Var2.n();
-            r91Var2.f0.d(true, true);
+        org.telegram.ui.Components.c91 c91Var2 = h4Var.D0;
+        if (c91Var2 != null && c91Var2 != c91Var) {
+            c91Var2.a.B();
+            c91Var2.n();
+            c91Var2.f0.d(true, true);
         }
-        h4Var.D0 = r91Var;
+        h4Var.D0 = c91Var;
         try {
             h4Var.L.getWindow().addFlags(128);
         } catch (Exception e7) {
@@ -81,26 +81,26 @@ public final class n1 implements org.telegram.ui.Components.o91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final TextureView f(View view, boolean z10, int i10, int i11, boolean z11) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final ViewGroup g() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final boolean h() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.z81
     public final void b() {
     }
 
-    @Override // org.telegram.ui.Components.o91
-    public final void i(boolean z10, org.telegram.ui.Components.j91 j91Var, float f7, boolean z11) {
+    @Override // org.telegram.ui.Components.z81
+    public final void i(boolean z10, org.telegram.ui.Components.t81 t81Var, float f7, boolean z11) {
     }
 }

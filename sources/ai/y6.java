@@ -14,9 +14,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.ql0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final LinearLayout a;
@@ -29,7 +29,7 @@ public final class y6 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final dm0 v;
+    public final ql0 v;
     public ValueAnimator w;
     public final /* synthetic */ j7 x;
 
@@ -42,48 +42,48 @@ public final class y6 extends FrameLayout {
         this.e = new RectF();
         this.n = new RectF();
         this.r = 1.0f;
-        int i10 = org.telegram.ui.ActionBar.j6.i6;
+        int i10 = org.telegram.ui.ActionBar.i6.i6;
         d dVar = j7Var.s;
-        paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, dVar));
+        paint.setColor(org.telegram.ui.ActionBar.i6.v0(i10, dVar));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(LocaleController.getString(R.string.AllViewers));
-        int i11 = org.telegram.ui.ActionBar.j6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, dVar));
+        int i11 = org.telegram.ui.ActionBar.i6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setText(LocaleController.getString(R.string.Contacts));
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, dVar));
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
         linearLayout.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        linearLayout.addView(textView, w7.y5.t(-2, -2, 0, 13, 0, 0, 0));
-        linearLayout.addView(textView2, w7.y5.t(-2, -2, 0, 0, 0, 0, 0));
+        linearLayout.addView(textView, w7.x5.t(-2, -2, 0, 13, 0, 0, 0));
+        linearLayout.addView(textView2, w7.x5.t(-2, -2, 0, 0, 0, 0, 0));
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.a = linearLayout2;
         linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        linearLayout2.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.j6.v0(i10, dVar)));
+        linearLayout2.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.i6.v0(i10, dVar)));
         linearLayout2.setOrientation(0);
-        dm0 dm0Var = new dm0(getContext());
-        this.v = dm0Var;
-        dm0Var.r = true;
-        dm0Var.a(R.drawable.menu_views_reactions3, false);
+        ql0 ql0Var = new ql0(getContext());
+        this.v = ql0Var;
+        ql0Var.r = true;
+        ql0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(dm0Var);
+        imageView.setImageDrawable(ql0Var);
         imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-        linearLayout2.addView(imageView, w7.y5.n(26, 26));
+        linearLayout2.addView(imageView, w7.x5.n(26, 26));
         ImageView imageView2 = new ImageView(getContext());
         imageView2.setImageResource(R.drawable.arrow_more);
-        linearLayout2.addView(imageView2, w7.y5.n(16, 26));
-        addView(linearLayout, w7.y5.c(-2.0f, -2));
-        addView(linearLayout2, w7.y5.d(-2, -2.0f, 5, 13.0f, 6.0f, 13.0f, 6.0f));
+        linearLayout2.addView(imageView2, w7.x5.n(16, 26));
+        addView(linearLayout, w7.x5.c(-2.0f, -2));
+        addView(linearLayout2, w7.x5.d(-2, -2.0f, 5, 13.0f, 6.0f, 13.0f, 6.0f));
         final int i12 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: ai.v6
             public final /* synthetic */ y6 b;

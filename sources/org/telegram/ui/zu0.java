@@ -9,13 +9,13 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class zu0 {
     public final View i;
     public boolean p;
     public final org.telegram.ui.Components.pq q;
-    public final org.telegram.ui.Components.sg0 r;
+    public final org.telegram.ui.Components.fg0 r;
     public final /* synthetic */ PhotoViewer s;
     public long a = 0;
     public float b = 0.0f;
@@ -49,10 +49,10 @@ public abstract class zu0 {
             float[] fArr = this.n;
             if (i10 >= fArr.length) {
                 a();
-                org.telegram.ui.Components.sg0 sg0Var = new org.telegram.ui.Components.sg0(28);
-                this.r = sg0Var;
-                sg0Var.h = 200;
-                this.q = new org.telegram.ui.Components.pq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), sg0Var);
+                org.telegram.ui.Components.fg0 fg0Var = new org.telegram.ui.Components.fg0(28);
+                this.r = fg0Var;
+                fg0Var.h = 200;
+                this.q = new org.telegram.ui.Components.pq(photoViewer.y.getDrawable(R.drawable.circle_big).mutate(), fg0Var);
                 return;
             }
             this.m[i10] = 1.0f;
@@ -134,7 +134,7 @@ public abstract class zu0 {
                 }
                 if (drawable != null) {
                     if (this.k != -2) {
-                        drawable.setAlpha((int) org.telegram.messenger.l0.z(1.0f, this.l, 255.0f, f10));
+                        drawable.setAlpha((int) org.telegram.messenger.y0.A(1.0f, this.l, 255.0f, f10));
                     } else {
                         drawable.setAlpha((int) (f10 * 255.0f));
                     }
@@ -167,16 +167,16 @@ public abstract class zu0 {
             return;
         }
         View view = this.i;
-        org.telegram.ui.Components.sg0 sg0Var = this.r;
-        if (sg0Var != null) {
+        org.telegram.ui.Components.fg0 fg0Var = this.r;
+        if (fg0Var != null) {
             boolean z12 = z11 && (i12 == 3 || i12 == 4);
             if (i10 == 3) {
-                sg0Var.a(false, z12);
+                fg0Var.a(false, z12);
             } else if (i10 == 4) {
-                sg0Var.a(true, z12);
+                fg0Var.a(true, z12);
             }
-            sg0Var.f = view;
-            sg0Var.invalidateSelf();
+            fg0Var.f = view;
+            fg0Var.invalidateSelf();
         }
         this.a = System.currentTimeMillis();
         if (!z10 || (i11 = this.h) == i10) {

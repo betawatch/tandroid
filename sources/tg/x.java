@@ -2,31 +2,31 @@ package tg;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x implements DialogInterface.OnShowListener {
+public final /* synthetic */ class x implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+    public final /* synthetic */ b0 b;
 
-    public /* synthetic */ x(a0 a0Var, int i10) {
+    public /* synthetic */ x(b0 b0Var, int i10) {
         this.a = i10;
-        this.b = a0Var;
+        this.b = b0Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
                 vg.r rVar = this.b.g0.r;
                 if (rVar != null) {
-                    rVar.setPaused(true);
+                    rVar.setPaused(false);
                     break;
                 }
                 break;
             default:
                 vg.r rVar2 = this.b.g0.r;
                 if (rVar2 != null) {
-                    rVar2.setPaused(true);
+                    rVar2.setPaused(false);
                     break;
                 }
                 break;

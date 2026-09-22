@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import n4.y;
-import w7.o6;
+import w7.n6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -50,7 +50,7 @@ public final class l {
         reentrantReadWriteLock.writeLock().unlock();
         if (b() == 0) {
             try {
-                kVar.b(new e(fVar));
+                kVar.a(new e(fVar));
             } catch (Throwable th3) {
                 d(th3);
             }
@@ -97,7 +97,7 @@ public final class l {
             f fVar = this.e;
             l lVar = (l) fVar.b;
             try {
-                lVar.f.b(new e(fVar));
+                lVar.f.a(new e(fVar));
             } catch (Throwable th2) {
                 lVar.d(th2);
             }
@@ -196,7 +196,7 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            r rVar = (r) ((com.google.firebase.messaging.t) yVar.a).d;
+                            r rVar = (r) ((com.google.firebase.messaging.t) yVar.b).d;
                             oVar = new o();
                             oVar.a = 1;
                             oVar.d = rVar;
@@ -220,7 +220,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!yVar.Q(charSequence, i12, i10, ((r) oVar.f).b)) {
+                                        if (!yVar.S(charSequence, i12, i10, ((r) oVar.f).b)) {
                                             if (xVar == null) {
                                                 xVar = new x((Spannable) new SpannableString(charSequence));
                                             }
@@ -230,7 +230,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !yVar.Q(charSequence, i12, i10, ((r) oVar.e).b))) {
+                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !yVar.S(charSequence, i12, i10, ((r) oVar.e).b))) {
                                 if (xVar == null) {
                                     xVar = new x(charSequence);
                                 }
@@ -258,7 +258,7 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                r rVar2 = (r) ((com.google.firebase.messaging.t) yVar.a).d;
+                r rVar2 = (r) ((com.google.firebase.messaging.t) yVar.b).d;
                 oVar = new o();
                 oVar.a = 1;
                 oVar.d = rVar2;
@@ -287,7 +287,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        o6.a(iVar, "initCallback cannot be null");
+        n6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

@@ -2,9 +2,9 @@ package r7;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import v7.h5;
+import v7.g5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e extends com.google.android.gms.common.api.internal.i {
     public final /* synthetic */ Object b;
@@ -17,6 +17,6 @@ public final class e extends com.google.android.gms.common.api.internal.i {
 
     @Override // com.google.android.gms.common.api.internal.j
     public final void H(Status status) {
-        h5.a(status, this.b, this.c);
+        g5.a(status, this.b, this.c);
     }
 }

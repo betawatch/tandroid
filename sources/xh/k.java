@@ -10,87 +10,87 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.o6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.v9;
-import w7.y5;
-import yh.w7;
+import org.telegram.ui.Components.u9;
+import w7.x5;
+import yh.x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final v9 a;
-    public final o6 b;
-    public final o6 c;
-    public final o6 d;
+    public final u9 a;
+    public final n6 b;
+    public final n6 c;
+    public final n6 d;
     public final oq[] e;
     public boolean f;
 
-    public k(Context context, f6 f6Var) {
+    public k(Context context, e6 e6Var) {
         super(context);
         this.e = new oq[1];
         setOrientation(0);
-        o6 o6Var = new o6(context, false, false, false);
-        this.c = o6Var;
-        int i10 = j6.G6;
-        o6Var.setTextColor(j6.v0(i10, f6Var));
-        o6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        o6Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        o6Var.setEllipsizeByGradient(true);
-        o6 o6Var2 = new o6(context, false, false, false);
-        this.d = o6Var2;
-        o6Var2.setTextColor(j6.v0(j6.y6, f6Var));
-        o6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        v9 v9Var = new v9(context);
-        this.a = v9Var;
-        o6 o6Var3 = new o6(context, false, false, false);
-        this.b = o6Var3;
-        o6Var3.setTextSize(AndroidUtilities.dp(15.0f));
-        o6Var3.setPadding(AndroidUtilities.dp(20.0f), 0, 0, 0);
-        o6Var3.setTextColor(j6.v0(i10, f6Var));
-        o6Var3.setTypeface(AndroidUtilities.bold());
-        o6Var3.setGravity(17);
-        addView(o6Var3, y5.o(66, -2, 0.0f, 16));
-        addView(v9Var, y5.o(32, 32, 0.0f, 16));
-        addView(o6Var, y5.o(0, -2, 1.0f, 16));
-        addView(o6Var2, y5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+        n6 n6Var = new n6(context, false, false, false);
+        this.c = n6Var;
+        int i10 = i6.G6;
+        n6Var.setTextColor(i6.v0(i10, e6Var));
+        n6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        n6Var.setEllipsizeByGradient(true);
+        n6 n6Var2 = new n6(context, false, false, false);
+        this.d = n6Var2;
+        n6Var2.setTextColor(i6.v0(i6.y6, e6Var));
+        n6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        u9 u9Var = new u9(context);
+        this.a = u9Var;
+        n6 n6Var3 = new n6(context, false, false, false);
+        this.b = n6Var3;
+        n6Var3.setTextSize(AndroidUtilities.dp(15.0f));
+        n6Var3.setPadding(AndroidUtilities.dp(20.0f), 0, 0, 0);
+        n6Var3.setTextColor(i6.v0(i10, e6Var));
+        n6Var3.setTypeface(AndroidUtilities.bold());
+        n6Var3.setGravity(17);
+        addView(n6Var3, x5.o(66, -2, 0.0f, 16));
+        addView(u9Var, x5.o(32, 32, 0.0f, 16));
+        addView(n6Var, x5.o(0, -2, 1.0f, 16));
+        addView(n6Var2, x5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
     public final void a(long j3, boolean z10) {
-        this.d.c(w7.X0(false, hg.k0.j((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(x7.X0(false, hg.c.k((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {
-        o6 o6Var = this.b;
+        n6 n6Var = this.b;
         if (!z10 || i10 > 3) {
             if (i10 >= 10000) {
-                o6Var.setTextSize(AndroidUtilities.dp(12.0f));
+                n6Var.setTextSize(AndroidUtilities.dp(12.0f));
             } else if (i10 >= 1000) {
-                o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+                n6Var.setTextSize(AndroidUtilities.dp(14.0f));
             } else {
-                o6Var.setTextSize(AndroidUtilities.dp(15.0f));
+                n6Var.setTextSize(AndroidUtilities.dp(15.0f));
             }
-            o6Var.c(Integer.toString(i10), z11, true);
+            n6Var.c(Integer.toString(i10), z11, true);
             return;
         }
         if (i10 == 1) {
-            o6Var.c(Emoji.replaceWithRestrictedEmoji("🥇", o6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥇", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
         } else if (i10 == 2) {
-            o6Var.c(Emoji.replaceWithRestrictedEmoji("🥈", o6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥈", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
         } else if (i10 == 3) {
-            o6Var.c(Emoji.replaceWithRestrictedEmoji("🥉", o6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+            n6Var.c(Emoji.replaceWithRestrictedEmoji("🥉", n6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
         }
     }
 
     public final void c(TLRPC.User user) {
-        g9 g9Var = new g9((f6) null);
-        g9Var.r(user);
-        v9 v9Var = this.a;
-        v9Var.e(user, g9Var);
-        v9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
+        f9 f9Var = new f9((e6) null);
+        f9Var.r(user);
+        u9 u9Var = this.a;
+        u9Var.e(user, f9Var);
+        u9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
         this.c.setText(UserObject.getUserName(user));
     }
 
@@ -103,7 +103,7 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), j6.k0);
+            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), i6.k0);
         }
     }
 

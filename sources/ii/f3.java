@@ -5,7 +5,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class f3 implements z4 {
     public final /* synthetic */ u a;
@@ -43,9 +43,9 @@ public final class f3 implements z4 {
         this.a.f = f7;
         a aVar = this.b;
         w3 w3Var = this.d;
-        View A1 = w3Var.A1(aVar);
-        if (A1 instanceof a1) {
-            a1 a1Var = (a1) A1;
+        View z12 = w3Var.z1(aVar);
+        if (z12 instanceof a1) {
+            a1 a1Var = (a1) z12;
             a1Var.h(a1Var.i());
             a1Var.k();
             a1Var.l(false);

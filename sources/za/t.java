@@ -4,10 +4,9 @@ import android.util.Log;
 import j$.util.Objects;
 import java.util.Collection;
 import java.util.Map;
-import v7.u7;
-import x7.d7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class t extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -47,37 +46,37 @@ public final class t extends kd.j implements rd.p {
                 jd.a aVar = jd.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     y yVar = (y) this.c;
-                    d7 d7Var = yVar.d;
+                    o0.a aVar2 = yVar.d;
                     ce.j jVar = new ce.j(yVar, 1);
                     this.b = 1;
-                    if (d7Var.u(jVar, this) == aVar) {
+                    if (aVar2.H(jVar, this) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 return gd.i.a;
             default:
-                jd.a aVar2 = jd.a.a;
+                jd.a aVar3 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     ab.c cVar = ab.c.a;
                     this.b = 1;
                     obj = cVar.b(this);
-                    if (obj == aVar2) {
-                        return aVar2;
+                    if (obj == aVar3) {
+                        return aVar3;
                     }
                 } else {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 Collection<w9.j> values = ((Map) obj).values();
                 String str = (String) this.c;

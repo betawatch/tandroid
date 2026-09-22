@@ -1,6 +1,5 @@
 package hd;
 
-import hg.k0;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
@@ -8,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o implements List, Serializable, RandomAccess {
     public static final o a = new o();
@@ -109,7 +108,7 @@ public final class o implements List, Serializable, RandomAccess {
         if (i10 == 0 && i11 == 0) {
             return this;
         }
-        throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "fromIndex: ", ", toIndex: "));
+        throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "fromIndex: ", ", toIndex: "));
     }
 
     @Override // java.util.List, java.util.Collection
@@ -136,7 +135,7 @@ public final class o implements List, Serializable, RandomAccess {
         if (i10 == 0) {
             return n.a;
         }
-        throw new IndexOutOfBoundsException(k0.h(i10, "Index: "));
+        throw new IndexOutOfBoundsException(hg.c.i(i10, "Index: "));
     }
 
     @Override // java.util.List, java.util.Collection

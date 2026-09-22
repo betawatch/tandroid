@@ -1,35 +1,13 @@
 package hg;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class t1 implements TextWatcher {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ Runnable[] b;
-
-    public t1(TextView textView, Runnable[] runnableArr) {
-        this.a = textView;
-        this.b = runnableArr;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a.getAlpha() > 0.0f) {
-            Runnable[] runnableArr = this.b;
-            AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
-            AndroidUtilities.runOnUIThread(runnableArr[0]);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+public final class t1 implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        return String.valueOf(charSequence).replaceAll("[^\\d_\\p{L}\\x{200c}\\x{00b7}\\x{0d80}-\\x{0dff}]", "");
     }
 }

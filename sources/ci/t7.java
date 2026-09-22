@@ -9,7 +9,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class t7 extends v7 {
     public final /* synthetic */ TLRPC.User b;
@@ -45,9 +45,9 @@ public final class t7 extends v7 {
 
     @Override // ci.v7
     public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.f9 f9Var = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.e6) null);
         TLRPC.User user = this.b;
-        g9Var.r(user);
-        imageReceiver.setForUserOrChat(user, g9Var);
+        f9Var.r(user);
+        imageReceiver.setForUserOrChat(user, f9Var);
     }
 }

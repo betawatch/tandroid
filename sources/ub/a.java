@@ -1,22 +1,22 @@
 package ub;
 
-import v7.d9;
-import v7.w8;
-import v7.z8;
+import v7.c9;
+import v7.v8;
+import v7.y8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
-    public final z8 a;
+    public final y8 a;
     public final e b;
     public final qb.d c;
 
     public a(e eVar, qb.d dVar) {
-        z8 c10;
+        y8 c10;
         this.b = eVar;
         this.c = dVar;
         String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
-        synchronized (d9.class) {
+        synchronized (c9.class) {
             byte b10 = (byte) (((byte) 1) | 2);
             if (b10 != 3) {
                 StringBuilder sb2 = new StringBuilder();
@@ -28,7 +28,7 @@ public final class a {
                 }
                 throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
             }
-            c10 = d9.c(new w8(str));
+            c10 = c9.c(new v8(str));
         }
         this.a = c10;
     }

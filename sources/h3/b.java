@@ -20,11 +20,11 @@ import e9.a1;
 import e9.g0;
 import e9.i0;
 import ei.d5;
-import hg.k0;
+import hg.c;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -54,7 +54,7 @@ public final class b implements o {
     public final void g(q qVar) {
         this.e = qVar;
         this.f = qVar.Z1(0, 1);
-        qVar.f1();
+        qVar.e1();
     }
 
     @Override // c3.o
@@ -179,7 +179,7 @@ public final class b implements o {
             h0 h0Var = this.f;
             r a2 = c10.a();
             a2.p = r0.n("audio/flac");
-            k0.s(a2, h0Var);
+            c.u(a2, h0Var);
             h0 h0Var2 = this.f;
             this.i.b();
             h0Var2.getClass();
@@ -247,21 +247,21 @@ public final class b implements o {
         if (this.n == -1) {
             u uVar4 = this.i;
             pVar.p();
-            pVar.j(1);
+            pVar.k(1);
             byte[] bArr4 = new byte[1];
             pVar.a(0, 1, bArr4);
             boolean z13 = (bArr4[0] & 1) == 1;
-            pVar.j(2);
+            pVar.k(2);
             r10 = z13 ? 7 : 6;
             v vVar6 = new v(r10);
             byte[] bArr5 = vVar6.a;
             int i22 = 0;
             while (i22 < r10) {
-                int f7 = pVar.f(i22, r10 - i22, bArr5);
-                if (f7 == -1) {
+                int e = pVar.e(i22, r10 - i22, bArr5);
+                if (e == -1) {
                     break;
                 }
-                i22 += f7;
+                i22 += e;
             }
             vVar6.I(i22);
             pVar.p();

@@ -7,7 +7,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class cu0 extends Fade {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final class cu0 extends Fade {
             case 0:
                 Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
                 if (this.b && !this.c && view == this.d.Q1) {
-                    onAppear.addListener(new gp0(this, 6));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new b3(this, 19));
+                    onAppear.addListener(new cr0(this, 5));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new b3(this, 20));
                 }
                 return onAppear;
             default:
@@ -55,8 +55,8 @@ public final class cu0 extends Fade {
             case 1:
                 Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
                 if (!this.b && this.c && view == this.d.Q1) {
-                    onDisappear.addListener(new gp0(this, 7));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new b3(this, 20));
+                    onDisappear.addListener(new cr0(this, 6));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new b3(this, 21));
                 }
                 return onDisappear;
             default:

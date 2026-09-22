@@ -1,32 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class yo0 extends n6 {
-    public final /* synthetic */ int W = 0;
-    public final /* synthetic */ Object X;
+public final class yo0 {
+    public final nu a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo0(Runnable runnable) {
-        super(false, true, true, true);
-        this.X = runnable;
+    public yo0(View view) {
+        nu nuVar = new nu(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = nuVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.W) {
-            case 0:
-                ((Runnable) this.X).run();
-                break;
-            default:
-                ((org.telegram.ui.z21) this.X).invalidate();
-                break;
+    public final void a(Canvas canvas, float f7) {
+        nu nuVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (nuVar = this.a) == null) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo0(org.telegram.ui.z21 z21Var) {
-        super(false, true, false, false);
-        this.X = z21Var;
+        nuVar.run();
     }
 }

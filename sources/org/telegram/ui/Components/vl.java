@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class vl extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class vl extends AnimatorListenerAdapter {
                     chatAttachAlertPhotoLayout.P.invalidate();
                 }
                 if (chatAttachAlertPhotoLayout.b0) {
-                    chatAttachAlertPhotoLayout.b.Z1.L0();
+                    chatAttachAlertPhotoLayout.b.Z1.K0();
                 }
                 dm dmVar2 = chatAttachAlertPhotoLayout.P;
                 if (dmVar2 != null) {
@@ -44,7 +44,7 @@ public final class vl extends AnimatorListenerAdapter {
                 break;
             default:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = this.b;
-                t91 t91Var = chatAttachAlertPhotoLayout2.l0;
+                e91 e91Var = chatAttachAlertPhotoLayout2.l0;
                 chatAttachAlertPhotoLayout2.f1.unlock();
                 chatAttachAlertPhotoLayout2.i1 = false;
                 chatAttachAlertPhotoLayout2.b.getWindow().clearFlags(128);
@@ -64,9 +64,9 @@ public final class vl extends AnimatorListenerAdapter {
                 if (f0Var != null) {
                     f0Var.setVisibility(8);
                 }
-                if (t91Var != null) {
-                    t91Var.setVisibility(8);
-                    t91Var.setTag(null);
+                if (e91Var != null) {
+                    e91Var.setVisibility(8);
+                    e91Var.setTag(null);
                 }
                 tl tlVar3 = chatAttachAlertPhotoLayout2.r;
                 if (tlVar3 != null) {

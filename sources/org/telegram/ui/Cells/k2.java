@@ -1,70 +1,47 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.uy;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class k2 extends ai.ca {
-    public final /* synthetic */ s2 S;
+public final class k2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(s2 s2Var) {
-        super(null, false);
-        this.S = s2Var;
+    public /* synthetic */ k2(r2 r2Var, int i10) {
+        this.a = i10;
+        this.b = r2Var;
     }
 
-    @Override // ai.ca
-    public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.O0) ? false : true;
-    }
-
-    @Override // ai.ca
-    public final boolean d(long j3) {
-        s2 s2Var = this.S;
-        int i10 = s2Var.F0;
-        uy uyVar = s2Var.z4;
-        if (uyVar == null || s2Var.O0) {
-            return false;
-        }
-        if (j3 > 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-            if (user == null || user.linked_community_id == 0) {
-                return false;
-            }
-            uyVar.showDialog(new fi.k0(uyVar, user.linked_community_id));
-            return true;
-        }
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        uyVar.showDialog(new fi.k0(uyVar, chat.linked_community_id));
-        return true;
-    }
-
-    @Override // ai.ca
-    public final void e() {
-        s2 s2Var = this.S;
-        o2 o2Var = s2Var.d0;
-        if (o2Var == null) {
-            return;
-        }
-        o2Var.f(s2Var);
-    }
-
-    @Override // ai.ca
-    public final void f(long j3) {
-        s2 s2Var = this.S;
-        o2 o2Var = s2Var.d0;
-        if (o2Var == null) {
-            return;
-        }
-        if (s2Var.J0 != 0) {
-            o2Var.c();
-        } else {
-            o2Var.e(s2Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r2 r2Var = this.b;
+                r2Var.R3 = 1.0f;
+                r2Var.U3 = null;
+                r2Var.V3 = null;
+                r2Var.W3 = null;
+                r2Var.invalidate();
+                break;
+            case 1:
+                r2 r2Var2 = this.b;
+                r2Var2.S3 = 1.0f;
+                r2Var2.invalidate();
+                break;
+            default:
+                r2 r2Var3 = this.b;
+                int i10 = (r2Var3.S2 ? 1 : 0) + (r2Var3.Q2 ? 2 : 0) + (r2Var3.R2 ? 4 : 0);
+                int i11 = r2Var3.r4;
+                if (i11 != i10) {
+                    r2Var3.z(i11, i10);
+                } else {
+                    r2Var3.v4 = false;
+                    r2Var3.t4 = i11;
+                }
+                r2Var3.invalidate();
+                break;
         }
     }
 }

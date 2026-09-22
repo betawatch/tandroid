@@ -3,17 +3,17 @@ package ci;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.fk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class v5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sk0 b;
+    public final /* synthetic */ fk0 b;
 
-    public /* synthetic */ v5(sk0 sk0Var, int i10) {
+    public /* synthetic */ v5(fk0 fk0Var, int i10) {
         this.a = i10;
-        this.b = sk0Var;
+        this.b = fk0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -28,11 +28,11 @@ public final class v5 extends AnimatorListenerAdapter {
                 break;
             default:
                 super.onAnimationEnd(animator);
-                sk0 sk0Var = this.b;
-                sk0Var.Q = null;
-                sk0Var.n0 = 0.0f;
-                sk0Var.l0 = null;
-                sk0Var.invalidate();
+                fk0 fk0Var = this.b;
+                fk0Var.Q = null;
+                fk0Var.n0 = 0.0f;
+                fk0Var.l0 = null;
+                fk0Var.invalidate();
                 break;
         }
     }

@@ -2,68 +2,68 @@ package ci;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class f extends dh.b {
     public final /* synthetic */ int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(i10, f6Var);
+    public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i10, e6Var);
         this.n = 2;
     }
 
+    @Override // dh.b, dh.a
+    public int a() {
+        switch (this.n) {
+            case 2:
+                return b() ? 117440511 : 285212672;
+            default:
+                return super.a();
+        }
+    }
+
     @Override // dh.b
-    public boolean a() {
+    public boolean b() {
         switch (this.n) {
             case 0:
                 return true;
             case 1:
                 return true;
             default:
-                return super.a();
-        }
-    }
-
-    @Override // dh.b, dh.a
-    public int b() {
-        switch (this.n) {
-            case 2:
-                return a() ? 117440511 : 285212672;
-            default:
                 return super.b();
         }
     }
 
     @Override // dh.b, dh.a
-    public int g() {
+    public int c() {
         switch (this.n) {
             case 2:
-                if (a()) {
+                if (b()) {
                     return 301989887;
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.g();
+                return super.c();
         }
     }
 
     @Override // dh.b, dh.a
-    public int x() {
+    public int m() {
         switch (this.n) {
             case 2:
-                if (a()) {
+                if (b()) {
                     return 83886079;
                 }
                 return TLObject.FLAG_29;
             default:
-                return super.x();
+                return super.m();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(org.telegram.ui.ActionBar.f6 f6Var, int i10, float f7, int i11) {
-        super(f6Var, i10, f7);
+    public /* synthetic */ f(org.telegram.ui.ActionBar.e6 e6Var, int i10, float f7, int i11) {
+        super(e6Var, i10, f7);
         this.n = i11;
     }
 }

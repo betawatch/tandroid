@@ -3,10 +3,10 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public interface z60 {
-    void g(TLRPC.User user);
+    void i(TLRPC.User user);
 
-    void i(int i10, ArrayList arrayList);
+    void j(int i10, ArrayList arrayList);
 }

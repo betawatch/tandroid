@@ -29,13 +29,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
-import org.telegram.ui.cm;
-import org.telegram.ui.lm;
-import org.telegram.ui.ph;
-import org.telegram.ui.wa0;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
+import org.telegram.ui.em;
+import org.telegram.ui.jh;
+import org.telegram.ui.nm;
+import org.telegram.ui.ua0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class s1 implements Runnable {
             case 1:
                 TLObject tLObject = (TLObject) this.c;
                 int i10 = this.b;
-                wa0 wa0Var = (wa0) this.d;
+                ua0 ua0Var = (ua0) this.d;
                 if (tLObject instanceof TL_stories.TL_albums) {
                     ArrayList<TL_stories.TL_storyAlbum> arrayList = ((TL_stories.TL_albums) tLObject).albums;
                     int size = arrayList.size();
@@ -70,12 +70,12 @@ public final /* synthetic */ class s1 implements Runnable {
                         i11++;
                         TL_stories.TL_storyAlbum tL_storyAlbum2 = tL_storyAlbum;
                         if (tL_storyAlbum2.album_id == i10) {
-                            wa0Var.accept(tL_storyAlbum2);
+                            ua0Var.accept(tL_storyAlbum2);
                             break;
                         }
                     }
                 }
-                wa0Var.accept(null);
+                ua0Var.accept(null);
                 break;
             case 2:
                 ac acVar = (ac) this.c;
@@ -105,11 +105,11 @@ public final /* synthetic */ class s1 implements Runnable {
                     r6Var.c1 = true;
                 }
                 r6Var.b(lVar);
-                qg.s1 s1Var = r6Var.k1;
-                int i15 = s1Var.d + 1;
-                s1Var.a(i15);
-                AndroidUtilities.updateImageViewImageAnimated(s1Var.a[i15], i14);
-                s1Var.e = true;
+                qg.u1 u1Var = r6Var.k1;
+                int i15 = u1Var.d + 1;
+                u1Var.a(i15);
+                AndroidUtilities.updateImageViewImageAnimated(u1Var.a[i15], i14);
+                u1Var.e = true;
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new n8(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 5));
@@ -179,9 +179,9 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 12:
-                hg.y yVar = (hg.y) this.c;
-                yVar.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
-                NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                hg.a0 a0Var = (hg.a0) this.c;
+                a0Var.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
+                NotificationCenter.getInstance(a0Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                 break;
             case 13:
                 i2.c1 c1Var = (i2.c1) this.c;
@@ -245,7 +245,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 HashMap hashMap = new HashMap(h4Var.u0[0].c.w);
                 ArrayList arrayList3 = new ArrayList(h4Var.u0[0].c.x);
                 h4Var.V0 = null;
-                Utilities.searchQueue.postRunnable(new ei.l3(h4Var, arrayList3, hashMap, str3, i24, 14));
+                Utilities.searchQueue.postRunnable(new ei.l3(h4Var, arrayList3, hashMap, str3, i24, 13));
                 break;
             case 23:
                 org.telegram.ui.h4 h4Var2 = (org.telegram.ui.h4) this.c;
@@ -285,27 +285,27 @@ public final /* synthetic */ class s1 implements Runnable {
                 f3VarArr2[0].dismiss();
                 break;
             case 27:
-                ((zn) this.c).Ka((ArrayList) this.d, this.b, false, false);
+                ((bo) this.c).Ka((ArrayList) this.d, this.b, false, false);
                 break;
             case 28:
-                zn znVar = (zn) this.c;
+                bo boVar = (bo) this.c;
                 int i29 = this.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                znVar.x0.w0(0, i29, null);
+                boVar.x0.v0(0, i29, null);
                 if (!AndroidUtilities.showKeyboard(editTextBoldCursor)) {
                     editTextBoldCursor.clearFocus();
                     editTextBoldCursor.requestFocus();
                 }
-                AndroidUtilities.runOnUIThread(new ph(0, editTextBoldCursor), 100L);
+                AndroidUtilities.runOnUIThread(new jh(0, editTextBoldCursor), 100L);
                 break;
             default:
-                cm cmVar = (cm) this.c;
+                em emVar = (em) this.c;
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.d;
                 int i30 = this.b;
-                cmVar.getClass();
+                emVar.getClass();
                 MessageObject messageObject = w0Var.getMessageObject();
-                lm lmVar = cmVar.a;
-                lmVar.Q.E(i30, messageObject.getId(), messageObject.getDialogId() == lmVar.Q.L6 ? 1 : 0, 0, true, true);
+                nm nmVar = emVar.a;
+                nmVar.Q.F(i30, messageObject.getId(), messageObject.getDialogId() == nmVar.Q.L6 ? 1 : 0, 0, true, true);
                 break;
         }
     }

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class q3 extends np {
     public final /* synthetic */ int d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, 21, f6Var);
+    public /* synthetic */ q3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, 21, e6Var);
         this.d = i10;
         this.e = viewGroup;
     }
@@ -26,7 +26,7 @@ public final class q3 extends np {
                 break;
             case 1:
                 super.invalidate();
-                ((org.telegram.ui.Cells.s2) this.e).invalidate();
+                ((org.telegram.ui.Cells.r2) this.e).invalidate();
                 break;
             default:
                 super.invalidate();
@@ -36,8 +36,8 @@ public final class q3 extends np {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q3(s3 s3Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, 24, f6Var);
+    public q3(s3 s3Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, 24, e6Var);
         this.d = 0;
         this.e = s3Var;
     }

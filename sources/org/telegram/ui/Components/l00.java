@@ -18,10 +18,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class l00 extends FrameLayout {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a = 0;
     public boolean b;
     public final Object c;
     public Object d;
@@ -41,14 +41,14 @@ public final class l00 extends FrameLayout {
             return;
         }
         textViewArr[1].setText(str);
-        ((h80) this.e).E = true;
+        ((w70) this.e).E = true;
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(qr.g);
         Property property = View.ALPHA;
         Property property2 = View.TRANSLATION_Y;
         animatorSet.playTogether(ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, 0.0f, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, AndroidUtilities.dp(10.0f), 0.0f));
-        animatorSet.addListener(new q8(this, 26));
+        animatorSet.addListener(new p8(this, 25));
         animatorSet.start();
     }
 
@@ -115,7 +115,7 @@ public final class l00 extends FrameLayout {
                         drawable2 = ((org.telegram.ui.ActionBar.f3) n00Var).shadowDrawable;
                         drawable2.draw(canvas);
                         if (f7 != 1.0f) {
-                            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                            org.telegram.ui.ActionBar.i6.t0.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false));
                             i14 = ((org.telegram.ui.ActionBar.f3) n00Var).backgroundPaddingLeft;
                             i15 = ((org.telegram.ui.ActionBar.f3) n00Var).backgroundPaddingTop;
                             int measuredWidth = getMeasuredWidth();
@@ -123,22 +123,22 @@ public final class l00 extends FrameLayout {
                             float f10 = measuredWidth - i16;
                             i17 = ((org.telegram.ui.ActionBar.f3) n00Var).backgroundPaddingTop;
                             rectF.set(i14, i15 + i23, f10, AndroidUtilities.dp(24.0f) + i17 + i23);
-                            canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f) * f7, AndroidUtilities.dp(12.0f) * f7, org.telegram.ui.ActionBar.j6.t0);
+                            canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f) * f7, AndroidUtilities.dp(12.0f) * f7, org.telegram.ui.ActionBar.i6.t0);
                         }
                         if (i11 > 0) {
-                            org.telegram.ui.ActionBar.j6.t0.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                            org.telegram.ui.ActionBar.i6.t0.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false));
                             i12 = ((org.telegram.ui.ActionBar.f3) n00Var).backgroundPaddingLeft;
                             float f11 = i12;
                             float f12 = AndroidUtilities.statusBarHeight - i11;
                             int measuredWidth2 = getMeasuredWidth();
                             i13 = ((org.telegram.ui.ActionBar.f3) n00Var).backgroundPaddingLeft;
-                            canvas.drawRect(f11, f12, measuredWidth2 - i13, AndroidUtilities.statusBarHeight, org.telegram.ui.ActionBar.j6.t0);
+                            canvas.drawRect(f11, f12, measuredWidth2 - i13, AndroidUtilities.statusBarHeight, org.telegram.ui.ActionBar.i6.t0);
                         }
                         z10 = i11 <= AndroidUtilities.statusBarHeight / 2;
                         bool = (Boolean) this.d;
                         if (bool != null || bool.booleanValue() != z10) {
-                            boolean z11 = AndroidUtilities.computePerceivedBrightness(n00Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5)) <= 0.721f;
-                            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v(n00Var.getThemedColor(org.telegram.ui.ActionBar.j6.s8), 855638016)) > 0.721f;
+                            boolean z11 = AndroidUtilities.computePerceivedBrightness(n00Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5)) <= 0.721f;
+                            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v(n00Var.getThemedColor(org.telegram.ui.ActionBar.i6.s8), 855638016)) > 0.721f;
                             this.d = Boolean.valueOf(z10);
                             if (!z10) {
                                 z11 = z12;
@@ -164,9 +164,9 @@ public final class l00 extends FrameLayout {
                 bool = (Boolean) this.d;
                 if (bool != null) {
                 }
-                if (AndroidUtilities.computePerceivedBrightness(n00Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5)) <= 0.721f) {
+                if (AndroidUtilities.computePerceivedBrightness(n00Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5)) <= 0.721f) {
                 }
-                if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v(n00Var.getThemedColor(org.telegram.ui.ActionBar.j6.s8), 855638016)) > 0.721f) {
+                if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v(n00Var.getThemedColor(org.telegram.ui.ActionBar.i6.s8), 855638016)) > 0.721f) {
                 }
                 this.d = Boolean.valueOf(z10);
                 if (!z10) {
@@ -212,7 +212,7 @@ public final class l00 extends FrameLayout {
         switch (this.a) {
             case 0:
                 super.onLayout(z10, i10, i11, i12, i13);
-                n00.F((n00) this.e);
+                n00.G((n00) this.e);
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -309,18 +309,18 @@ public final class l00 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l00(h80 h80Var, Context context, boolean z10) {
+    public l00(w70 w70Var, Context context, boolean z10) {
         super(context);
-        this.e = h80Var;
+        this.e = w70Var;
         this.d = new TextView[2];
         this.b = !z10;
         setBackground(null);
         View view = new View(context);
         this.c = view;
         if (!z10) {
-            view.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+            view.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
         }
-        addView(view, w7.y5.d(-1, -1.0f, 0, 16.0f, z10 ? 0.0f : 16.0f, 16.0f, 16.0f));
+        addView(view, w7.x5.d(-1, -1.0f, 0, 16.0f, z10 ? 0.0f : 16.0f, 16.0f, 16.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             ((TextView[]) this.d)[i10] = new TextView(context);
             ((TextView[]) this.d)[i10].setFocusable(false);
@@ -330,15 +330,15 @@ public final class l00 extends FrameLayout {
             ((TextView[]) this.d)[i10].setEllipsize(TextUtils.TruncateAt.END);
             ((TextView[]) this.d)[i10].setGravity(17);
             if (this.b) {
-                ((TextView[]) this.d)[i10].setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+                ((TextView[]) this.d)[i10].setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
                 ((TextView[]) this.d)[i10].setTypeface(AndroidUtilities.bold());
             } else {
-                ((TextView[]) this.d)[i10].setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
+                ((TextView[]) this.d)[i10].setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false));
             }
             ((TextView[]) this.d)[i10].setImportantForAccessibility(2);
             ((TextView[]) this.d)[i10].setTextSize(1, 14.0f);
             ((TextView[]) this.d)[i10].setPadding(0, 0, 0, this.b ? 0 : AndroidUtilities.dp(13.0f));
-            addView(((TextView[]) this.d)[i10], w7.y5.d(-2, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
+            addView(((TextView[]) this.d)[i10], w7.x5.d(-2, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
             if (i10 == 1) {
                 ((TextView[]) this.d)[i10].setAlpha(0.0f);
             }
@@ -354,14 +354,14 @@ public final class l00 extends FrameLayout {
         j5Var.setTextSize(16);
         j5Var.setEllipsizeByGradient(true);
         j5Var.setRightPadding(AndroidUtilities.dp(68.0f));
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        addView(j5Var, w7.y5.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
-        j9 j9Var = new j9(context, false);
-        this.d = j9Var;
-        j9Var.a.a = true;
-        j9Var.setStyle(11);
-        j9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
-        addView(j9Var, w7.y5.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 0, 4));
+        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false));
+        addView(j5Var, w7.x5.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
+        i9 i9Var = new i9(context, false);
+        this.d = i9Var;
+        i9Var.a.a = true;
+        i9Var.setStyle(11);
+        i9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
+        addView(i9Var, w7.x5.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 0, 4));
     }
 }

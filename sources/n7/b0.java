@@ -1,61 +1,42 @@
 package n7;
 
-import java.util.Iterator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class b0 extends o {
-    public final transient Object d;
+public final class b0 extends x implements Serializable {
+    public final x a;
 
-    public b0(Object obj) {
-        this.d = obj;
+    public b0(x xVar) {
+        this.a = xVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.equals(obj);
+    @Override // n7.x
+    public final x a() {
+        return this.a;
     }
 
-    @Override // n7.o, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.d.hashCode();
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj2, obj);
     }
 
-    @Override // n7.h
-    public final int i(Object[] objArr) {
-        objArr[0] = this.d;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new t(this.d);
-    }
-
-    @Override // n7.h
-    public final d0 p() {
-        return new t(this.d);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 1;
-    }
-
-    @Override // n7.o
-    public final m t() {
-        Object[] objArr = {this.d};
-        for (int i10 = 0; i10 < 1; i10++) {
-            i iVar = m.b;
-            if (objArr[i10] == null) {
-                throw new NullPointerException(hg.k0.h(i10, "at index "));
-            }
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return m.t(1, objArr);
+        if (obj instanceof b0) {
+            return this.a.equals(((b0) obj).a);
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection
+    public final int hashCode() {
+        return -this.a.hashCode();
+    }
+
     public final String toString() {
-        return a4.a.p("[", this.d.toString(), "]");
+        return this.a.toString().concat(".reverse()");
     }
 }

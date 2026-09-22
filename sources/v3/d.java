@@ -24,10 +24,10 @@ import java.io.EOFException;
 import java.math.RoundingMode;
 import java.util.List;
 import q3.m;
-import v7.q7;
-import v7.z7;
+import v7.p7;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -148,14 +148,14 @@ public final class d implements o {
                         pVar.a(10, w10, bArr);
                         p0Var = new q3.i(null).c(i14, bArr);
                     } else {
-                        pVar.j(w10);
+                        pVar.k(w10);
                     }
                     i13 += i14;
                 } catch (EOFException unused) {
                 }
             }
             pVar.p();
-            pVar.j(i13);
+            pVar.k(i13);
             this.l = p0Var;
             if (p0Var != null) {
                 this.e.b(p0Var);
@@ -186,7 +186,7 @@ public final class d implements o {
                         this.d.a(j3);
                         i10 = j3;
                     }
-                    pVar.j(h - 4);
+                    pVar.k(h - 4);
                 } else {
                     int i17 = i16 + 1;
                     if (i16 == i12) {
@@ -198,7 +198,7 @@ public final class d implements o {
                     }
                     if (z10) {
                         pVar.p();
-                        pVar.j(i11 + i17);
+                        pVar.k(i11 + i17);
                     } else {
                         pVar.q(1);
                     }
@@ -219,7 +219,7 @@ public final class d implements o {
         h0 Z1 = qVar.Z1(0, 1);
         this.i = Z1;
         this.j = Z1;
-        this.h.f1();
+        this.h.e1();
     }
 
     @Override // c3.o
@@ -393,16 +393,16 @@ public final class d implements o {
                                             if (length == -1 || length == j16) {
                                                 j14 = j16;
                                             } else {
-                                                StringBuilder t10 = a4.a.t(length, "VBRI data size mismatch: ", ", ");
+                                                StringBuilder u10 = a4.a.u(length, "VBRI data size mismatch: ", ", ");
                                                 j14 = j16;
-                                                t10.append(j14);
-                                                e2.a.n("VbriSeeker", t10.toString());
+                                                u10.append(j14);
+                                                e2.a.n("VbriSeeker", u10.toString());
                                             }
                                             if (j14 != j22) {
-                                                StringBuilder t11 = a4.a.t(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
-                                                t11.append(j22);
-                                                t11.append("\nSeeking will be inaccurate.");
-                                                e2.a.n("VbriSeeker", t11.toString());
+                                                StringBuilder u11 = a4.a.u(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
+                                                u11.append(j22);
+                                                u11.append("\nSeeking will be inaccurate.");
+                                                e2.a.n("VbriSeeker", u11.toString());
                                                 j14 = Math.max(j14, j22);
                                             }
                                             zVar = zVar2;
@@ -467,7 +467,7 @@ public final class d implements o {
                                             if (r27 != 0 && !r27.f() && (i25 & 1) != 0 && r27.l() != -9223372036854775807L && (r27.d() != -1 || pVar.getLength() != -1)) {
                                                 long e = r27.e() != -1 ? r27.e() : 0L;
                                                 long d = r27.d() != -1 ? r27.d() : pVar.getLength();
-                                                aVar2 = new a(d, z7.e(d0.Y(d - e, 8000000L, r27.l(), RoundingMode.HALF_UP)), -1, false, e);
+                                                aVar2 = new a(d, y7.e(d0.Y(d - e, 8000000L, r27.l(), RoundingMode.HALF_UP)), -1, false, e);
                                             } else if (r27 == 0 || !(r27.f() || (i25 & 1) == 0)) {
                                                 vVar = vVar2;
                                                 pVar.a(0, 4, vVar.a);
@@ -650,7 +650,7 @@ public final class d implements o {
                                 long j26 = length3;
                                 long j27 = j12;
                                 RoundingMode roundingMode = RoundingMode.HALF_UP;
-                                aVar = new a(j26, z7.b(d0.Y(j27, 8000000L, W3, roundingMode)), z7.b(q7.b(j27, j24, roundingMode)), false, position3 + i28);
+                                aVar = new a(j26, y7.b(d0.Y(j27, 8000000L, W3, roundingMode)), y7.b(p7.b(j27, j24, roundingMode)), false, position3 + i28);
                                 p0Var = this.l;
                                 long position2222 = pVar.getPosition();
                                 if (p0Var != null) {

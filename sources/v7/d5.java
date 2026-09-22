@@ -1,19 +1,15 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class d5 implements ia.d {
-    public static final d5 a = new d5();
+public abstract class d5 {
+    public abstract boolean a(c0.h hVar, c0.d dVar, c0.d dVar2);
 
-    static {
-        j0.q(org.telegram.ui.Cells.c1.l(h.class, j0.m(3, org.telegram.ui.Cells.c1.l(h.class, j0.m(2, org.telegram.ui.Cells.c1.l(h.class, new e(1)))))));
-    }
+    public abstract boolean b(c0.h hVar, Object obj, Object obj2);
 
-    @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+    public abstract boolean c(c0.h hVar, c0.g gVar, c0.g gVar2);
+
+    public abstract void d(c0.g gVar, c0.g gVar2);
+
+    public abstract void e(c0.g gVar, Thread thread);
 }

@@ -1,19 +1,19 @@
 package ci;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class u5 implements qg.w1 {
+public final class u5 implements qg.y1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qg.v2 b;
+    public final /* synthetic */ qg.x2 b;
     public final /* synthetic */ float c;
 
-    public /* synthetic */ u5(qg.v2 v2Var, float f7, int i10) {
+    public /* synthetic */ u5(qg.x2 x2Var, float f7, int i10) {
         this.a = i10;
-        this.b = v2Var;
+        this.b = x2Var;
         this.c = f7;
     }
 
-    @Override // qg.w1
+    @Override // qg.y1
     public final float get() {
         float baseFontSize;
         float f7;
@@ -30,18 +30,18 @@ public final class u5 implements qg.w1 {
         return baseFontSize / f7;
     }
 
-    @Override // qg.w1
-    public final void m(float f7) {
+    @Override // qg.y1
+    public final void l(float f7) {
         switch (this.a) {
             case 0:
-                qg.v2 v2Var = this.b;
-                v2Var.z0 = true;
-                v2Var.setBaseFontSize((int) (this.c * f7));
+                qg.x2 x2Var = this.b;
+                x2Var.z0 = true;
+                x2Var.setBaseFontSize((int) (this.c * f7));
                 break;
             default:
-                qg.v2 v2Var2 = this.b;
-                v2Var2.z0 = true;
-                v2Var2.setBaseFontSize((int) (this.c * f7));
+                qg.x2 x2Var2 = this.b;
+                x2Var2.z0 = true;
+                x2Var2.setBaseFontSize((int) (this.c * f7));
                 break;
         }
     }

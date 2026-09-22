@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -58,7 +58,7 @@ final class zzfu extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                u7.b(obj);
+                t7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j3 = this.zzc;
@@ -67,17 +67,17 @@ final class zzfu extends j implements p {
                 obj = zzgbVar.zzq(j3, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                u7.b(obj);
+                t7.b(obj);
             } else {
                 if (i10 != 2) {
-                    u7.b(obj);
+                    t7.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                u7.b(obj);
+                t7.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;

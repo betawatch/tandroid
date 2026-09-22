@@ -1,63 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q80 extends org.telegram.ui.zn {
-    public boolean Pc;
-    public final /* synthetic */ boolean Qc;
-    public final /* synthetic */ long Rc;
-    public final /* synthetic */ r80 Sc;
+public final class q80 extends hq0 {
+    public final /* synthetic */ v80 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q80(r80 r80Var, Bundle bundle, boolean z10, long j3) {
-        super(bundle);
-        this.Sc = r80Var;
-        this.Qc = z10;
-        this.Rc = j3;
-        this.Pc = false;
+    public q80(v80 v80Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.b1 = v80Var;
     }
 
-    public static void Xc(q80 q80Var, long j3, TLRPC.Chat chat) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        if (AndroidUtilities.isContextSafe(q80Var.getParentActivity())) {
-            Activity parentActivity = q80Var.getParentActivity();
-            int i10 = q80Var.currentAccount;
-            long j10 = -j3;
-            TLRPC.User currentUser = q80Var.getUserConfig().getCurrentUser();
-            boolean z10 = chat.admin_rights != null;
-            boolean z11 = chat.creator;
-            f6Var = ((org.telegram.ui.ActionBar.f3) q80Var.Sc).resourcesProvider;
-            o01.c(parentActivity, i10, j10, currentUser, null, z10, z11, f6Var);
-        }
-    }
-
-    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Pc || !this.Qc) {
-            return;
-        }
-        this.Pc = true;
-        MessagesController messagesController = getMessagesController();
-        long j3 = this.Rc;
-        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
-        if (ChatObject.canManageMyTag(chat)) {
-            pc J = xc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
-            J.r = false;
-            J.k(true);
-        } else {
-            pc Q = xc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
-            Q.r = false;
-            Q.k(true);
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
+            }
+            this.b1.e(R.raw.forward, AndroidUtilities.replaceTags(formatString));
         }
     }
 }

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gm extends f9 {
+public final class gm extends e9 {
     public final /* synthetic */ hm E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class gm extends f9 {
         this.E = hmVar;
     }
 
-    @Override // org.telegram.ui.Components.f9, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.e9, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         hm hmVar = this.E;
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(hmVar.v.K0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hmVar.v.K0, TLObject.FLAG_30));

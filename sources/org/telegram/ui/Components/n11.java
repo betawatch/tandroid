@@ -1,98 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.TextureView;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class n11 extends TextureView {
-    public static Boolean f;
-    public l11 a;
-    public final o1.a b;
-    public final ArrayList c;
-    public Runnable d;
-    public boolean e;
+public final class n11 extends EditTextBoldCursor {
+    public final /* synthetic */ p11 b;
 
-    public n11(Context context, Runnable runnable) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n11(p11 p11Var, Context context) {
         super(context);
-        this.b = new o1.a(this, 1);
-        this.c = new ArrayList();
-        this.d = runnable;
-        setOpaque(false);
-        setSurfaceTextureListener(new ki.c(this, 3));
+        this.b = p11Var;
     }
 
-    public static void b(Runnable runnable) {
-        if (runnable == null) {
-            return;
-        }
-        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
-            AndroidUtilities.runOnUIThread(runnable);
-        } else {
-            runnable.run();
-        }
-    }
-
-    public static boolean c() {
-        if (f == null) {
-            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
-        }
-        Boolean bool = f;
-        return bool == null || !bool.booleanValue();
-    }
-
-    public final void a(View view) {
-        int i10 = 0;
-        int i11 = 0;
-        boolean z10 = false;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            m11 m11Var = (m11) arrayList.get(i11);
-            if (m11Var.a == view) {
-                Runnable runnable = m11Var.d;
-                if (runnable != null) {
-                    b(runnable);
-                    m11Var.d = null;
-                }
-                arrayList.remove(i11);
-                i11--;
-                z10 = true;
-            }
-            i11++;
-        }
-        if (z10) {
-            return;
-        }
-        l11 l11Var = this.a;
-        ArrayList arrayList2 = l11Var.W;
-        if (l11Var.b.get()) {
-            Handler handler = l11Var.getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(5, view));
-                return;
-            }
-            while (i10 < arrayList2.size()) {
-                k11 k11Var = (k11) arrayList2.get(i10);
-                if (k11Var.a.contains(view)) {
-                    Runnable runnable2 = k11Var.f;
-                    if (runnable2 != null) {
-                        b(runnable2);
-                        k11Var.f = null;
-                    }
-                    arrayList2.remove(i10);
-                    i10--;
-                }
-                i10++;
-            }
-        }
+    @Override // org.telegram.ui.Components.du, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ViewGroup viewGroup;
+        MotionEvent obtain = MotionEvent.obtain(motionEvent);
+        float rawX = obtain.getRawX();
+        float rawY = obtain.getRawY();
+        ThemeEditorView.EditorAlert editorAlert = this.b.c;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) editorAlert).containerView;
+        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
+        editorAlert.c.dispatchTouchEvent(obtain);
+        obtain.recycle();
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

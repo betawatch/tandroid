@@ -9,21 +9,21 @@ import c3.h0;
 import e2.d0;
 import e2.v;
 import n4.y;
-import org.telegram.ui.Components.wo0;
-import u2.b1;
+import org.telegram.ui.Components.ho0;
+import u2.a1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n implements h0 {
-    public final b1 a;
-    public final y b = new y();
+    public final a1 a;
+    public final y b = new y(17);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ o e;
 
     public n(o oVar, y2.d dVar) {
         this.e = oVar;
-        this.a = new b1(dVar, null, null);
+        this.a = new a1(dVar, null, null);
     }
 
     @Override // c3.h0
@@ -45,7 +45,7 @@ public final class n implements h0 {
             l3.a aVar = this.c;
             aVar.clear();
             if (this.a.C(this.b, aVar, 0, false) == -4) {
-                aVar.e();
+                aVar.c();
             } else {
                 aVar = null;
             }
@@ -71,13 +71,13 @@ public final class n implements h0 {
                 }
             }
         }
-        b1 b1Var = this.a;
-        wo0 wo0Var = b1Var.a;
-        synchronized (b1Var) {
-            int i14 = b1Var.s;
-            i13 = i14 == 0 ? -1L : b1Var.i(i14);
+        a1 a1Var = this.a;
+        ho0 ho0Var = a1Var.a;
+        synchronized (a1Var) {
+            int i14 = a1Var.s;
+            i13 = i14 == 0 ? -1L : a1Var.i(i14);
         }
-        wo0Var.b(i13);
+        ho0Var.b(i13);
     }
 
     @Override // c3.h0
@@ -87,15 +87,15 @@ public final class n implements h0 {
 
     @Override // c3.h0
     public final int e(b2.k kVar, int i10, boolean z10) {
-        b1 b1Var = this.a;
-        b1Var.getClass();
-        return b1Var.e(kVar, i10, z10);
+        a1 a1Var = this.a;
+        a1Var.getClass();
+        return a1Var.e(kVar, i10, z10);
     }
 
     @Override // c3.h0
     public final void f(v vVar, int i10, int i11) {
-        b1 b1Var = this.a;
-        b1Var.getClass();
-        b1Var.f(vVar, i10, 0);
+        a1 a1Var = this.a;
+        a1Var.getClass();
+        a1Var.f(vVar, i10, 0);
     }
 }

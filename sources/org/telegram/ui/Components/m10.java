@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m10 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class m10 implements View.OnLongClickListener {
                 final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.V);
                 fragmentContextView.H.d(playbackSpeed, false);
                 org.telegram.ui.ActionBar.b1 b1Var = fragmentContextView.H;
-                int i11 = org.telegram.ui.ActionBar.j6.G8;
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, fragmentContextView.p0));
+                int i11 = org.telegram.ui.ActionBar.i6.G8;
+                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i11, fragmentContextView.p0));
                 org.telegram.ui.ActionBar.b1 b1Var2 = fragmentContextView.H;
-                b1Var2.N = fragmentContextView.h instanceof org.telegram.ui.zn;
+                b1Var2.N = fragmentContextView.h instanceof org.telegram.ui.bo;
                 b1Var2.F.setShader(null);
                 b1Var2.h = null;
                 Bitmap bitmap = b1Var2.f;
@@ -40,7 +40,7 @@ public final /* synthetic */ class m10 implements View.OnLongClickListener {
                     bitmap.recycle();
                     b1Var2.f = null;
                 }
-                fragmentContextView.F.B(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+                fragmentContextView.F.B(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
                 fragmentContextView.F.N();
                 fragmentContextView.r(false);
                 fragmentContextView.F.setDimMenu(0.3f);
@@ -60,16 +60,16 @@ public final /* synthetic */ class m10 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 1:
-                de0 de0Var = (de0) obj;
-                de0Var.r.setText("");
-                ci.m9.a(de0Var.s, true);
-                Drawable drawable = de0Var.a;
-                if (drawable instanceof nc0) {
-                    ((nc0) drawable).y();
+                sd0 sd0Var = (sd0) obj;
+                sd0Var.r.setText("");
+                ci.m9.a(sd0Var.s, true);
+                Drawable drawable = sd0Var.a;
+                if (drawable instanceof cc0) {
+                    ((cc0) drawable).y();
                 }
                 return true;
             default:
-                return wq0.n((wq0) obj);
+                return hq0.n((hq0) obj);
         }
     }
 }

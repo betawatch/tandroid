@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class r extends db.u {
     public static final p c = new p(db.t.a, 1);
@@ -30,7 +30,7 @@ public final class r extends db.u {
             return Boolean.valueOf(aVar.n());
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(hg.k0.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(hg.c.E(i10)));
         }
         aVar.t();
         return null;
@@ -49,7 +49,7 @@ public final class r extends db.u {
             arrayList = null;
         } else {
             aVar.b();
-            arrayList = new fb.n(true);
+            arrayList = new fb.m(true);
         }
         if (arrayList == null) {
             return a(aVar, x10);
@@ -67,7 +67,7 @@ public final class r extends db.u {
                     arrayList2 = null;
                 } else {
                     aVar.b();
-                    arrayList2 = new fb.n(true);
+                    arrayList2 = new fb.m(true);
                 }
                 boolean z10 = arrayList2 != null;
                 if (arrayList2 == null) {

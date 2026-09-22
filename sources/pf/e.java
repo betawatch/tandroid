@@ -12,9 +12,9 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e {
     public static int n;
@@ -27,7 +27,7 @@ public final class e {
     public final boolean f;
     public final rf.a g;
     public final sf.b h;
-    public final oi.f i;
+    public final ni.f i;
     public View j;
     public View k;
     public e0 l;
@@ -39,7 +39,7 @@ public final class e {
         sf.b bVar = new sf.b();
         this.h = bVar;
         h4 h4Var = new h4(this, 1);
-        oi.f fVar = new oi.f();
+        ni.f fVar = new ni.f();
         fVar.d = new u2(fVar, 11);
         fVar.a = h4Var;
         this.i = fVar;
@@ -131,13 +131,13 @@ public final class e {
         int width = view.getWidth() + i12;
         int height = view.getHeight() + i13;
         int i14 = iArr[0];
-        int b10 = q.b(i12, i14, decorView.getWidth() + i14);
+        int b10 = p.b(i12, i14, decorView.getWidth() + i14);
         int i15 = iArr[1];
-        int b11 = q.b(i13, i15, decorView.getHeight() + i15);
+        int b11 = p.b(i13, i15, decorView.getHeight() + i15);
         int i16 = iArr[0];
-        int b12 = q.b(width, i16, decorView.getWidth() + i16);
+        int b12 = p.b(width, i16, decorView.getWidth() + i16);
         int i17 = iArr[1];
-        int b13 = q.b(height, i17, decorView.getHeight() + i17);
+        int b13 = p.b(height, i17, decorView.getHeight() + i17);
         Rect rect = o;
         rect.set(b10, b11, b12, b13);
         sf.b bVar = this.h;

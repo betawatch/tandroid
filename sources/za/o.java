@@ -1,8 +1,8 @@
 package za;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public enum o implements ka.f {
+public enum o implements ka.g {
     /* JADX INFO: Fake field, exist only in values array */
     EF0(0),
     /* JADX INFO: Fake field, exist only in values array */
@@ -17,7 +17,7 @@ public enum o implements ka.f {
         this.a = i10;
     }
 
-    @Override // ka.f
+    @Override // ka.g
     public final int a() {
         return this.a;
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class om {
     public long i;
@@ -22,7 +22,7 @@ public final class om {
     public float q;
     public float r;
     public float s;
-    public w01 u;
+    public g01 u;
     public long v;
     public final org.telegram.ui.ActionBar.f5 x;
     public final m.c3 y;
@@ -43,9 +43,9 @@ public final class om {
 
     public om(pm pmVar) {
         this.z = pmVar;
-        org.telegram.ui.ActionBar.f6 f6Var = pmVar.P.n;
-        Drawable drawable = f6Var != null ? f6Var.getDrawable("drawableMsgOutMedia") : null;
-        this.x = (org.telegram.ui.ActionBar.f5) (drawable == null ? org.telegram.ui.ActionBar.j6.O0("drawableMsgOutMedia") : drawable);
+        org.telegram.ui.ActionBar.e6 e6Var = pmVar.P.n;
+        Drawable drawable = e6Var != null ? e6Var.getDrawable("drawableMsgOutMedia") : null;
+        this.x = (org.telegram.ui.ActionBar.f5) (drawable == null ? org.telegram.ui.ActionBar.i6.O0("drawableMsgOutMedia") : drawable);
         this.y = new m.c3();
     }
 
@@ -118,9 +118,9 @@ public final class om {
                 if (nmVar4.k > 0.0f || nmVar4.h + j12 > elapsedRealtime) {
                     nm.b(nmVar4, null, null, z10);
                 } else {
-                    vh.f fVar = nmVar4.s;
-                    if (fVar != null) {
-                        fVar.b(nmVar4.O.z);
+                    vh.g gVar = nmVar4.s;
+                    if (gVar != null) {
+                        gVar.b(nmVar4.O.z);
                         nmVar4.s = null;
                     }
                     arrayList.remove(i13);

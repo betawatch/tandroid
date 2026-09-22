@@ -1,37 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u21 implements Runnable {
+public final /* synthetic */ class u21 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n31 b;
+    public final /* synthetic */ w21 b;
 
-    public /* synthetic */ u21(n31 n31Var, int i10) {
+    public /* synthetic */ u21(w21 w21Var, int i10) {
         this.a = i10;
-        this.b = n31Var;
+        this.b = w21Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                n31 n31Var = this.b;
-                d31 d31Var = n31Var.G;
-                d31Var.x1(true);
-                b31 b31Var = n31Var.s;
-                b31Var.x1(true);
-                n31Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(b31Var);
-                AndroidUtilities.updateVisibleRows(d31Var);
+                w21 w21Var = this.b;
+                w21Var.getClass();
+                w21Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w21Var.h();
+                w21Var.g();
                 break;
             default:
-                n31 n31Var2 = this.b;
-                if (n31Var2.k()) {
-                    n31Var2.l();
-                    break;
-                }
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                w21 w21Var2 = this.b;
+                w21Var2.K = max;
+                w21Var2.h.invalidate();
                 break;
         }
     }

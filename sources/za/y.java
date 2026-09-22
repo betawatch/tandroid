@@ -2,17 +2,16 @@ package za;
 
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicReference;
-import x7.d7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class y implements s {
     public static final u e = new u();
-    public static final m1.c f = w7.r.a(r.a);
+    public static final m1.c f = w7.q.a(r.a);
     public final Context a;
     public final id.h b;
     public final AtomicReference c;
-    public final d7 d;
+    public final o0.a d;
 
     public y(Context context, id.h hVar) {
         kotlin.jvm.internal.i.e(context, "context");
@@ -20,11 +19,8 @@ public final class y implements s {
         this.b = hVar;
         this.c = new AtomicReference();
         e.getClass();
-        n4.y yVar = new n4.y(((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null));
-        d7 d7Var = new d7();
-        d7Var.a = yVar;
-        d7Var.b = this;
-        this.d = d7Var;
+        int i10 = 9;
+        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null)), this);
         zd.e0.q(zd.e0.b(hVar), new t(this, null, 0));
     }
 }

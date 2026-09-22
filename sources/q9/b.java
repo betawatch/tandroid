@@ -2,18 +2,18 @@ package q9;
 
 import java.util.Set;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public interface b {
-    Object b(Class cls);
+    Object a(Class cls);
 
-    q c(s sVar);
+    p b(r rVar);
 
-    pa.b e(Class cls);
+    pa.b c(Class cls);
 
-    pa.b i(s sVar);
+    pa.b e(r rVar);
 
-    Set l(s sVar);
+    Set f(r rVar);
 
-    Object m(s sVar);
+    Object i(r rVar);
 }

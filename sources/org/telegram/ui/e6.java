@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements Runnable {
     public final /* synthetic */ int a;
@@ -130,22 +130,22 @@ public final /* synthetic */ class e6 implements Runnable {
                     s6 s6Var4 = (s6) obj;
                     longSparseArray.put(s6Var4.a, s6Var4);
                 }
-                if (!z6.l0) {
-                    z6Var2.c0 = bVar2;
-                    w6 w6Var = z6Var2.M;
+                if (!z6.k0) {
+                    z6Var2.Y = bVar2;
+                    w6 w6Var = z6Var2.N;
                     if (w6Var != null) {
                         w6Var.setCacheModel(bVar2);
                     }
-                    z6Var2.y0(true);
-                    z6Var2.w0();
-                    if (z6Var2.V != null && !z6Var2.K && System.currentTimeMillis() - z6Var2.Y > 120) {
-                        k6 k6Var = z6Var2.V;
-                        long j3 = z6Var2.G;
+                    z6Var2.w0(true);
+                    z6Var2.v0();
+                    if (z6Var2.R != null && !z6Var2.L && System.currentTimeMillis() - z6Var2.U > 120) {
+                        k6 k6Var = z6Var2.R;
+                        long j3 = z6Var2.H;
                         boolean z12 = j3 > 0;
-                        long j10 = z6Var2.H;
+                        long j10 = z6Var2.I;
                         float f7 = 0.0f;
                         float f10 = j10 <= 0 ? 0.0f : j3 / j10;
-                        if (z6Var2.I > 0 && j10 > 0) {
+                        if (z6Var2.J > 0 && j10 > 0) {
                             f7 = (j10 - r11) / j10;
                         }
                         k6Var.b(f10, f7, z12);

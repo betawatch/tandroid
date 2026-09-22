@@ -5,7 +5,7 @@ import android.os.Looper;
 import com.google.android.gms.internal.cast.c0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o {
     public static final Object i = new Object();
@@ -39,7 +39,7 @@ public final class o {
             this.f = currentTimeMillis;
         }
         if (nVar2 != null) {
-            nVar2.t(this.c, j10, j11, currentTimeMillis);
+            nVar2.p(this.c, j10, j11, currentTimeMillis);
         }
         synchronized (obj) {
             try {
@@ -98,7 +98,7 @@ public final class o {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
                     n6.l.h(nVar);
-                    nVar.E(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    nVar.y(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;

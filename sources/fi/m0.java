@@ -19,17 +19,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.i21;
-import org.telegram.ui.Components.nx0;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.tv;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.ax0;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.sv;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -92,17 +92,17 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                tv tvVar = (tv) this.c;
+                sv svVar = (sv) this.c;
                 int[] iArr = (int[]) this.d;
                 ArrayList arrayList = (ArrayList) this.e;
-                n2 n2Var2 = tvVar.c;
+                n2 n2Var2 = svVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == this.b && iArr[1] > 0) {
-                    tvVar.dismiss();
-                    pc.g(n2Var2, new nx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    svVar.dismiss();
+                    oc.g(n2Var2, new ax0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
@@ -129,23 +129,23 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             default:
-                zc zcVar = (zc) this.c;
+                xc xcVar = (xc) this.c;
                 Context context = (Context) this.d;
-                f6 f6Var = (f6) this.e;
+                e6 e6Var = (e6) this.e;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new i21(this.b, context, f6Var, savedStarGift, 18), f6Var, null));
-                    zcVar.setText(spannableStringBuilder);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xcVar.getText());
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) yc.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new s11(this.b, context, e6Var, savedStarGift, 18), e6Var, null));
+                    xcVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ m0(tv tvVar, int[] iArr, int i10, ArrayList arrayList) {
+    public /* synthetic */ m0(sv svVar, int[] iArr, int i10, ArrayList arrayList) {
         this.a = 2;
-        this.c = tvVar;
+        this.c = svVar;
         this.d = iArr;
         this.b = i10;
         this.e = arrayList;

@@ -7,58 +7,58 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jk extends org.telegram.ui.Components.q81 {
+public final class jk extends org.telegram.ui.Components.a81 {
     public final /* synthetic */ Context a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
 
-    public jk(zn znVar, Context context) {
-        this.b = znVar;
+    public jk(bo boVar, Context context) {
+        this.b = boVar;
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.q81
+    @Override // org.telegram.ui.Components.a81
     public final void b(View view, int i10, int i11) {
-        if (view instanceof bo) {
-            ((bo) view).a.Jc(this.b.u3);
+        if (view instanceof eo) {
+            ((eo) view).a.Jc(this.b.u3);
         }
         WeakHashMap weakHashMap = r0.i0.a;
         r0.y.c(view);
     }
 
-    @Override // org.telegram.ui.Components.q81
+    @Override // org.telegram.ui.Components.a81
     public final View d(int i10) {
         Context context = this.a;
-        zn znVar = this.b;
+        bo boVar = this.b;
         if (i10 == 0) {
-            return new nn(znVar, context);
+            return new pn(boVar, context);
         }
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 7);
         bundle.putInt("searchType", i10);
-        bundle.putString("searchHashtag", znVar.u3);
-        ik ikVar = new ik(context, znVar.getParentLayout(), bundle, 0);
+        bundle.putString("searchHashtag", boVar.u3);
+        ik ikVar = new ik(context, boVar.getParentLayout(), bundle, 0);
         ikVar.h = false;
-        ao aoVar = ikVar.a;
-        aoVar.L.a = znVar.L;
-        aoVar.ca = znVar.ea;
-        aoVar.da = znVar;
-        aoVar.V8 = new g(this, 13);
+        co coVar = ikVar.a;
+        coVar.L.a = boVar.L;
+        coVar.ca = boVar.ea;
+        coVar.da = boVar;
+        coVar.V8 = new g(this, 13);
         return ikVar;
     }
 
-    @Override // org.telegram.ui.Components.q81
+    @Override // org.telegram.ui.Components.a81
     public final int e() {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.q81
+    @Override // org.telegram.ui.Components.a81
     public final CharSequence g(int i10) {
         return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
     }
 
-    @Override // org.telegram.ui.Components.q81
+    @Override // org.telegram.ui.Components.a81
     public final int h(int i10) {
         return i10;
     }

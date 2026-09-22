@@ -1,40 +1,17 @@
 package xh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class t3 extends org.telegram.ui.ActionBar.f1 {
-    public final int L;
-    public long M;
-    public r3 N;
+public enum t3 {
+    b(R.string.ResellGiftFilterSortPrice),
+    c(R.string.ResellGiftFilterSortDate),
+    d(R.string.ResellGiftFilterSortNumber);
 
-    public t3(Context context, int i10, f6 f6Var) {
-        super(0, context, f6Var, false, false);
-        this.L = i10;
-        setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        int v02 = j6.v0(j6.E8, f6Var);
-        int i11 = j6.F8;
-        c(v02, j6.v0(i11, f6Var));
-        e(j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
-        this.c.setTranslationX(AndroidUtilities.dp(2.0f));
-        a(2);
-        setBackground(null);
-        this.c.addOnAttachStateChangeListener(new ai.u2(this, 14));
-    }
+    public final int a;
 
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            size = AndroidUtilities.dp(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+    t3(int i10) {
+        this.a = i10;
     }
 }

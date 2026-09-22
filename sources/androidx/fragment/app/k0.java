@@ -26,8 +26,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class k0 {
     public final d0 A;
@@ -63,7 +64,7 @@ public abstract class k0 {
     public s y;
     public s z;
     public final ArrayList a = new ArrayList();
-    public final oi.f c = new oi.f(1);
+    public final ni.f c = new ni.f(1);
     public ArrayList d = new ArrayList();
     public final y f = new y(this);
     public a h = null;
@@ -80,10 +81,7 @@ public abstract class k0 {
     public k0() {
         DesugarCollections.synchronizedMap(new HashMap());
         this.n = new ArrayList();
-        n4.y yVar = new n4.y();
-        yVar.a = this;
-        yVar.b = new CopyOnWriteArrayList();
-        this.o = yVar;
+        this.o = new n4.y(this);
         this.p = new CopyOnWriteArrayList();
         final int i10 = 0;
         this.q = new q0.a(this) { // from class: androidx.fragment.app.z
@@ -416,7 +414,7 @@ public abstract class k0 {
         boolean z12;
         int i14;
         int i15;
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         ArrayList arrayList3 = this.n;
         boolean z13 = ((a) arrayList.get(i10)).o;
         ArrayList arrayList4 = this.N;
@@ -852,7 +850,7 @@ public abstract class k0 {
     }
 
     public final s C(int i10) {
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         ArrayList arrayList = (ArrayList) fVar.a;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             s sVar = (s) arrayList.get(size);
@@ -872,7 +870,7 @@ public abstract class k0 {
     }
 
     public final s D(String str) {
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         ArrayList arrayList = (ArrayList) fVar.a;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             s sVar = (s) arrayList.get(size);
@@ -961,7 +959,7 @@ public abstract class k0 {
         }
         if (z10 || i10 != this.v) {
             this.v = i10;
-            oi.f fVar = this.c;
+            ni.f fVar = this.c;
             HashMap hashMap = (HashMap) fVar.b;
             ArrayList arrayList = (ArrayList) fVar.a;
             int size = arrayList.size();
@@ -1080,7 +1078,7 @@ public abstract class k0 {
         if (sVar.R && v) {
             return;
         }
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         synchronized (((ArrayList) fVar.a)) {
             ((ArrayList) fVar.a).remove(sVar);
         }
@@ -1143,7 +1141,7 @@ public abstract class k0 {
                 hashMap.put(str2.substring(9), bundle3);
             }
         }
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         HashMap hashMap2 = (HashMap) fVar.c;
         HashMap hashMap3 = (HashMap) fVar.b;
         hashMap2.clear();
@@ -1224,7 +1222,7 @@ public abstract class k0 {
                 String str3 = (String) obj3;
                 s k10 = fVar.k(str3);
                 if (k10 == null) {
-                    throw new IllegalStateException(a4.a.p("No instantiated fragment for (", str3, ")"));
+                    throw new IllegalStateException(a4.a.q("No instantiated fragment for (", str3, ")"));
                 }
                 if (K(2)) {
                     Log.v("FragmentManager", "restoreSaveState: added (" + str3 + "): " + k10);
@@ -1295,11 +1293,11 @@ public abstract class k0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder k11 = hg.k0.k(i14, "restoreAllState: back stack #", " (index ");
-                    k11.append(aVar.s);
-                    k11.append("): ");
-                    k11.append(aVar);
-                    Log.v("FragmentManager", k11.toString());
+                    StringBuilder l4 = hg.c.l(i14, "restoreAllState: back stack #", " (index ");
+                    l4.append(aVar.s);
+                    l4.append("): ");
+                    l4.append(aVar);
+                    Log.v("FragmentManager", l4.toString());
                     PrintWriter printWriter = new PrintWriter(new t0());
                     aVar.g("  ", printWriter, false);
                     printWriter.close();
@@ -1313,9 +1311,9 @@ public abstract class k0 {
         this.k.set(m0Var.d);
         String str5 = m0Var.e;
         if (str5 != null) {
-            s k12 = fVar.k(str5);
-            this.z = k12;
-            r(k12);
+            s k11 = fVar.k(str5);
+            this.z = k11;
+            r(k11);
         }
         ArrayList arrayList5 = m0Var.f;
         if (arrayList5 != null) {
@@ -1337,7 +1335,7 @@ public abstract class k0 {
         A(true);
         this.H = true;
         this.O.i = true;
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         fVar.getClass();
         HashMap hashMap = (HashMap) fVar.b;
         ArrayList arrayList2 = new ArrayList(hashMap.size());
@@ -1362,7 +1360,7 @@ public abstract class k0 {
                     if (!bundle4.isEmpty()) {
                         bundle3.putBundle("savedInstanceState", bundle4);
                     }
-                    q0Var.a.D(sVar2, bundle4, false);
+                    q0Var.a.I(sVar2, bundle4, false);
                     Bundle bundle5 = new Bundle();
                     sVar2.g0.d(bundle5);
                     if (!bundle5.isEmpty()) {
@@ -1394,7 +1392,7 @@ public abstract class k0 {
         }
         HashMap hashMap2 = (HashMap) this.c.c;
         if (!hashMap2.isEmpty()) {
-            oi.f fVar2 = this.c;
+            ni.f fVar2 = this.c;
             synchronized (((ArrayList) fVar2.a)) {
                 try {
                     if (((ArrayList) fVar2.a).isEmpty()) {
@@ -1423,9 +1421,9 @@ public abstract class k0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder k10 = hg.k0.k(i10, "saveAllState: adding back stack #", ": ");
-                        k10.append(this.d.get(i10));
-                        Log.v("FragmentManager", k10.toString());
+                        StringBuilder l4 = hg.c.l(i10, "saveAllState: adding back stack #", ": ");
+                        l4.append(this.d.get(i10));
+                        Log.v("FragmentManager", l4.toString());
                     }
                 }
             } else {
@@ -1450,10 +1448,10 @@ public abstract class k0 {
             m0Var.n = new ArrayList(this.F);
             bundle2.putParcelable("state", m0Var);
             for (String str2 : this.m.keySet()) {
-                bundle2.putBundle(v7.j0.g("result_", str2), (Bundle) this.m.get(str2));
+                bundle2.putBundle(q3.i("result_", str2), (Bundle) this.m.get(str2));
             }
             for (String str3 : hashMap2.keySet()) {
-                bundle2.putBundle(v7.j0.g("fragment_", str3), (Bundle) hashMap2.get(str3));
+                bundle2.putBundle(q3.i("fragment_", str3), (Bundle) hashMap2.get(str3));
             }
         } else if (K(2)) {
             Log.v("FragmentManager", "saveAllState: no fragments!");
@@ -1486,7 +1484,7 @@ public abstract class k0 {
         }
         q0 g10 = g(sVar);
         sVar.J = this;
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         fVar.E(g10);
         if (!sVar.R) {
             fVar.c(sVar);
@@ -1539,7 +1537,7 @@ public abstract class k0 {
             }
             this.O = n0Var2;
         } else if (uVar != null) {
-            this.O = (n0) new aa.a(uVar.e.f(), n0.j).n(n0.class);
+            this.O = (n0) new aa.a(uVar.e.f(), n0.j).m(n0.class);
         } else {
             this.O = new n0(false);
         }
@@ -1557,10 +1555,10 @@ public abstract class k0 {
         u uVar3 = this.w;
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
-            String g11 = v7.j0.g("FragmentManager:", sVar != 0 ? a4.a.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(v7.j0.s(g11, "StartActivityForResult"), new f0(2), new android.support.v4.media.c(this, 2));
-            this.D = hVar.d(v7.j0.s(g11, "StartIntentSenderForResult"), new f0(0), new pb.c(this, 7));
-            this.E = hVar.d(v7.j0.s(g11, "RequestPermissions"), new f0(1), new a6.i(this, 5));
+            String i10 = q3.i("FragmentManager:", sVar != 0 ? a4.a.t(new StringBuilder(), sVar.e, ":") : "");
+            this.C = hVar.d(w.c.g(i10, "StartActivityForResult"), new f0(2), new a4.m(this, 3));
+            this.D = hVar.d(w.c.g(i10, "StartIntentSenderForResult"), new f0(0), new a6.m(this, 6));
+            this.E = hVar.d(w.c.g(i10, "RequestPermissions"), new f0(1), new a6.i(this, 5));
         }
         u uVar4 = this.w;
         if (uVar4 != null) {
@@ -1582,9 +1580,9 @@ public abstract class k0 {
         if (uVar8 == null || sVar != 0) {
             return;
         }
-        lf.h hVar2 = uVar8.e.c;
-        ((CopyOnWriteArrayList) hVar2.c).add(this.u);
-        ((Runnable) hVar2.b).run();
+        lf.i iVar = uVar8.e.c;
+        ((CopyOnWriteArrayList) iVar.c).add(this.u);
+        ((Runnable) iVar.b).run();
     }
 
     public final void b0(s sVar, androidx.lifecycle.n nVar) {
@@ -1728,7 +1726,7 @@ public abstract class k0 {
 
     public final q0 g(s sVar) {
         String str = sVar.e;
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         q0 q0Var = (q0) ((HashMap) fVar.b).get(str);
         if (q0Var != null) {
             return q0Var;
@@ -1774,7 +1772,7 @@ public abstract class k0 {
             if (K(2)) {
                 Log.v("FragmentManager", "remove from detach: " + sVar);
             }
-            oi.f fVar = this.c;
+            ni.f fVar = this.c;
             synchronized (((ArrayList) fVar.a)) {
                 ((ArrayList) fVar.a).remove(sVar);
             }
@@ -1883,7 +1881,7 @@ public abstract class k0 {
         A(true);
         x();
         u uVar = this.w;
-        oi.f fVar = this.c;
+        ni.f fVar = this.c;
         if (uVar != null) {
             z10 = ((n0) fVar.d).h;
         } else {
@@ -1921,14 +1919,14 @@ public abstract class k0 {
         }
         u uVar6 = this.w;
         if ((uVar6 != null) && this.y == null) {
-            lf.h hVar = uVar6.e.c;
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) hVar.c;
+            lf.i iVar = uVar6.e.c;
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) iVar.c;
             c0 c0Var = this.u;
             copyOnWriteArrayList.remove(c0Var);
-            if (((HashMap) hVar.d).remove(c0Var) != null) {
+            if (((HashMap) iVar.d).remove(c0Var) != null) {
                 throw new ClassCastException();
             }
-            ((Runnable) hVar.b).run();
+            ((Runnable) iVar.b).run();
         }
         this.w = null;
         this.x = null;
@@ -2115,10 +2113,10 @@ public abstract class k0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String s10 = v7.j0.s(str, "    ");
-        oi.f fVar = this.c;
+        String g10 = w.c.g(str, "    ");
+        ni.f fVar = this.c;
         ArrayList arrayList = (ArrayList) fVar.a;
-        String s11 = v7.j0.s(str, "    ");
+        String g11 = w.c.g(str, "    ");
         HashMap hashMap = (HashMap) fVar.b;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);
@@ -2128,7 +2126,7 @@ public abstract class k0 {
                 if (q0Var != null) {
                     s sVar = q0Var.c;
                     printWriter.println(sVar);
-                    sVar.i(s11, fileDescriptor, printWriter, strArr);
+                    sVar.i(g11, fileDescriptor, printWriter, strArr);
                 } else {
                     printWriter.println(BuildConfig.BETA_URL);
                 }
@@ -2171,7 +2169,7 @@ public abstract class k0 {
                 printWriter.print(i12);
                 printWriter.print(": ");
                 printWriter.println(aVar.toString());
-                aVar.g(s10, printWriter, true);
+                aVar.g(g10, printWriter, true);
             }
         }
         printWriter.print(str);

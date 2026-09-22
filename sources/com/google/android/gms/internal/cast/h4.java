@@ -13,12 +13,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public abstract class h4 extends v7.s5 implements i9.w {
+public abstract class h4 extends v7.r5 implements i9.w {
     public static final boolean d;
     public static final Logger e;
-    public static final v7.q5 f;
+    public static final v7.p5 f;
     public static final Object h;
     public volatile Object a;
     public volatile b4 b;
@@ -26,7 +26,7 @@ public abstract class h4 extends v7.s5 implements i9.w {
 
     static {
         boolean z10;
-        v7.q5 d4Var;
+        v7.p5 d4Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -157,7 +157,7 @@ public abstract class h4 extends v7.s5 implements i9.w {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.c1.j(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.q3.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -224,9 +224,9 @@ public abstract class h4 extends v7.s5 implements i9.w {
         if (g4Var2 != g4Var) {
             g4 g4Var3 = new g4();
             do {
-                v7.q5 q5Var = f;
-                q5Var.c(g4Var3, g4Var2);
-                if (q5Var.g(this, g4Var2, g4Var3)) {
+                v7.p5 p5Var = f;
+                p5Var.c(g4Var3, g4Var2);
+                if (p5Var.g(this, g4Var2, g4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -353,9 +353,9 @@ public abstract class h4 extends v7.s5 implements i9.w {
                 if (g4Var2 != g4Var) {
                     g4 g4Var3 = new g4();
                     while (true) {
-                        v7.q5 q5Var = f;
-                        q5Var.c(g4Var3, g4Var2);
-                        if (q5Var.g(this, g4Var2, g4Var3)) {
+                        v7.p5 p5Var = f;
+                        p5Var.c(g4Var3, g4Var2);
+                        if (p5Var.g(this, g4Var2, g4Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -433,7 +433,7 @@ public abstract class h4 extends v7.s5 implements i9.w {
                 if (isDone()) {
                     throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                 }
-                throw new TimeoutException(a4.a.C(str, " for ", h4Var));
+                throw new TimeoutException(a4.a.D(str, " for ", h4Var));
             }
         } else {
             throw new InterruptedException();

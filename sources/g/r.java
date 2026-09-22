@@ -3,7 +3,7 @@ package g;
 import android.os.Bundle;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -13,8 +13,8 @@ public final class r {
     public q e;
     public View f;
     public View g;
-    public l.l h;
-    public l.h i;
+    public l.k h;
+    public l.g i;
     public k.c j;
     public boolean k;
     public boolean l;

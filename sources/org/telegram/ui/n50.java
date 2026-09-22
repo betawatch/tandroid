@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class n50 extends org.telegram.ui.ActionBar.j5 {
     public LinearGradient M0;
@@ -39,10 +39,10 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
             this.T0 = 1.3f * f7;
             float textHeight = getTextHeight();
             float f10 = f7 * 2.0f;
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ih, false);
-            int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false);
-            int i11 = org.telegram.ui.ActionBar.j6.jh;
-            this.M0 = new LinearGradient(0.0f, textHeight, f10, 0.0f, new int[]{w02, w03, org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ih, false);
+            int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kh, false);
+            int i11 = org.telegram.ui.ActionBar.i6.jh;
+            this.M0 = new LinearGradient(0.0f, textHeight, f10, 0.0f, new int[]{w02, w03, org.telegram.ui.ActionBar.i6.w0(null, i11, false), org.telegram.ui.ActionBar.i6.w0(null, i11, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
             getPaint().setShader(this.M0);
             this.N0 = textWidth;
         }
@@ -59,7 +59,7 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
         float f7;
         long j3;
         float f10;
-        float b10;
+        float a2;
         float f11;
         if (this.M0 != null) {
             i60 i60Var = this.V0;
@@ -91,10 +91,10 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
                     this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
                 }
                 float f12 = j3;
-                b10 = org.telegram.ui.Cells.c1.b(f12 * 0.02f, i60Var.O0, 1.0f * f12, this.S0);
-                this.S0 = b10;
+                a2 = org.telegram.ui.Cells.q3.a(f12 * 0.02f, i60Var.O0, 1.0f * f12, this.S0);
+                this.S0 = a2;
                 f11 = this.R0;
-                if (b10 > f11) {
+                if (a2 > f11) {
                     this.S0 = f11;
                 }
                 float interpolation = org.telegram.ui.Components.qr.g.getInterpolation(this.S0 / f11);
@@ -123,10 +123,10 @@ public final class n50 extends org.telegram.ui.ActionBar.j5 {
             this.Q0 = this.P0;
             this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
             float f122 = j3;
-            b10 = org.telegram.ui.Cells.c1.b(f122 * 0.02f, i60Var.O0, 1.0f * f122, this.S0);
-            this.S0 = b10;
+            a2 = org.telegram.ui.Cells.q3.a(f122 * 0.02f, i60Var.O0, 1.0f * f122, this.S0);
+            this.S0 = a2;
             f11 = this.R0;
-            if (b10 > f11) {
+            if (a2 > f11) {
             }
             float interpolation2 = org.telegram.ui.Components.qr.g.getInterpolation(this.S0 / f11);
             float f132 = this.T0;

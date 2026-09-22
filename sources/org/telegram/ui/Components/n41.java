@@ -1,41 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n41 implements View.OnClickListener {
+public final class n41 extends s4.s0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w41 b;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ n41(w41 w41Var, int i10) {
-        this.a = i10;
-        this.b = w41Var;
+    public n41(q41 q41Var) {
+        this.a = 0;
+        this.c = q41Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
         switch (this.a) {
             case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            case 3:
-                w41 w41Var = this.b;
-                CharSequence charSequence = w41Var.c0;
-                if (charSequence != null) {
-                    w41Var.d0.run(charSequence);
+                if (i10 == 0) {
+                    this.b = 0;
+                    break;
                 }
-                w41Var.dismiss();
-                break;
-            default:
-                w41.P(this.b, view);
                 break;
         }
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                q41 q41Var = (q41) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = q41Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = q41Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    q41.m(q41Var);
+                    break;
+                }
+                break;
+            default:
+                int i12 = this.b + i11;
+                this.b = i12;
+                ((org.telegram.ui.e31) this.c).H.setAlpha((i12 * 1.0f) / AndroidUtilities.dp(6.0f));
+                break;
+        }
+    }
+
+    public n41(org.telegram.ui.e31 e31Var) {
+        this.a = 1;
+        this.c = e31Var;
+        this.b = 0;
     }
 }

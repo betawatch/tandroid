@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bt extends s4.s0 {
     public boolean a;
@@ -31,7 +31,7 @@ public final class bt extends s4.s0 {
 
     @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.i iVar;
+        ah.h hVar;
         ContactsActivity contactsActivity = this.c;
         int L0 = contactsActivity.n.L0();
         View childAt = recyclerView.getChildAt(0);
@@ -45,8 +45,8 @@ public final class bt extends s4.s0 {
             this.a = true;
         }
         contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (iVar = contactsActivity.t0) != null) {
-            iVar.f(i10, i11);
+        if (Build.VERSION.SDK_INT >= 31 && (hVar = contactsActivity.t0) != null) {
+            hVar.f(i10, i11);
             contactsActivity.g0();
         }
         ContactsActivity.d0(contactsActivity);

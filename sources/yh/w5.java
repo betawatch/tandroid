@@ -2,9 +2,9 @@ package yh;
 
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class w5 implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(zn.R9(this.c));
+                    U2.presentFragment(bo.R9(this.c));
                     break;
                 }
                 break;
@@ -43,7 +43,7 @@ public final /* synthetic */ class w5 implements Runnable {
                 }
                 org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    U3.presentFragment(zn.R9(this.c));
+                    U3.presentFragment(bo.R9(this.c));
                     break;
                 }
                 break;
@@ -51,7 +51,7 @@ public final /* synthetic */ class w5 implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
                 if (U4 != null) {
-                    U4.presentFragment(zn.R9(this.c));
+                    U4.presentFragment(bo.R9(this.c));
                     break;
                 }
                 break;

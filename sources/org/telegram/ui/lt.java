@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class lt extends org.telegram.ui.ActionBar.n1 {
     public final /* synthetic */ ot o;
@@ -25,12 +25,12 @@ public final class lt extends org.telegram.ui.ActionBar.n1 {
         }
         View view = stVar.h;
         if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.g8) {
-                ((org.telegram.ui.Cells.g8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.e8) {
-                ((org.telegram.ui.Cells.e8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.f2) {
-                ((org.telegram.ui.Cells.f2) view).setScaled(false);
+            if (view instanceof org.telegram.ui.Cells.f8) {
+                ((org.telegram.ui.Cells.f8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.d8) {
+                ((org.telegram.ui.Cells.d8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.e2) {
+                ((org.telegram.ui.Cells.e2) view).setScaled(false);
             }
             stVar.h = null;
         }

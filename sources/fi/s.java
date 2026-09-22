@@ -15,28 +15,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.zn;
-import w7.y5;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.yw0;
+import org.telegram.ui.bo;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class s extends n2 implements le.d {
     public final le.b a;
     public long b;
     public FrameLayout c;
-    public u61 d;
+    public e61 d;
     public jh.f e;
     public LinearLayout f;
     public ci.d h;
     public ci.d n;
-    public lx0 r;
+    public yw0 r;
     public TLRPC.ChatFull s;
     public t0 v;
 
@@ -45,17 +45,17 @@ public final class s extends n2 implements le.d {
         this.a = new le.b(0, this, qr.h, 320L, false);
     }
 
-    public static void U(s sVar, y51 y51Var) {
-        Object obj = y51Var.G;
+    public static void U(s sVar, i51 i51Var) {
+        Object obj = i51Var.G;
         if (obj instanceof gi.f) {
             gi.f fVar = (gi.f) obj;
             long j3 = fVar.a;
             TLRPC.Chat chat = MessagesController.getInstance(sVar.currentAccount).getChat(Long.valueOf(-j3));
             TLRPC.User user = MessagesController.getInstance(sVar.currentAccount).getUser(Long.valueOf(j3));
             if (user != null) {
-                sVar.presentFragment(zn.R9(user.id));
+                sVar.presentFragment(bo.R9(user.id));
             } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
-                sVar.presentFragment(zn.R9(-chat.id));
+                sVar.presentFragment(bo.R9(-chat.id));
             } else {
                 new hi.c(sVar.getParentActivity(), chat, new b9(23, sVar, fVar)).show();
             }
@@ -63,7 +63,7 @@ public final class s extends n2 implements le.d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         float f11 = 1.0f - f7;
         this.f.setAlpha(f11);
         this.f.setVisibility(f11 > 0.0f ? 0 : 8);
@@ -83,36 +83,36 @@ public final class s extends n2 implements le.d {
         boolean z10 = true;
         z10 = true;
         setHasOwnBackground(true);
-        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, xc.a0(this), this.currentAccount, this.b);
+        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, vc.a0(this), this.currentAccount, this.b);
         this.v = t0Var;
         t0Var.h = new xa.c(this, 20);
         t0Var.d();
         this.v.e();
         final int i10 = 0;
-        hg.k0.v(false, this.actionBar);
+        hg.c.x(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 5));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        int i11 = j6.a7;
-        frameLayout.setBackgroundColor(j6.w0(null, i11, false));
-        u61 u61Var = new u61(this, new bi.v(this, 19), new q(this), new q(this));
-        this.d = u61Var;
-        u61Var.setClipToPadding(false);
-        u61 u61Var2 = this.d;
-        u61Var2.Y2.r = false;
-        u61Var2.q1();
+        int i11 = i6.a7;
+        frameLayout.setBackgroundColor(i6.w0(null, i11, false));
+        e61 e61Var = new e61(this, new bi.v(this, 19), new q(this), new q(this));
+        this.d = e61Var;
+        e61Var.setClipToPadding(false);
+        e61 e61Var2 = this.d;
+        e61Var2.Y2.r = false;
+        e61Var2.p1();
         this.d.j(new ai.r(this, 6));
         this.actionBar.setAdaptiveBackground(this.d);
-        this.c.addView(this.d, y5.c(-1.0f, -1));
+        this.c.addView(this.d, x5.c(-1.0f, -1));
         jh.f fVar = new jh.f(context);
         this.e = fVar;
         fVar.setupColorKey(i11);
         this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f));
         this.e.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
-        this.c.addView(this.e, y5.g());
-        this.c.addView(this.actionBar, y5.e(-1, -2, 48));
+        this.c.addView(this.e, x5.g());
+        this.c.addView(this.actionBar, x5.e(-1, -2, 48));
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(0);
@@ -120,7 +120,7 @@ public final class s extends n2 implements le.d {
         ci.d dVar = new ci.d(context, this.resourceProvider, true);
         this.n = dVar;
         dVar.d();
-        this.n.setColor(i0.a.d(0.125f, getThemedColor(j6.d6), getThemedColor(j6.G6)));
+        this.n.setColor(i0.a.d(0.125f, getThemedColor(i6.d6), getThemedColor(i6.G6)));
         this.n.setText(LocaleController.getString(R.string.CommunityPendingRequestDeclineAll));
         this.n.e();
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: fi.r
@@ -142,7 +142,7 @@ public final class s extends n2 implements le.d {
                 }
             }
         });
-        this.f.addView(this.n, y5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.f.addView(this.n, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         ci.d dVar2 = new ci.d(context, this.resourceProvider, true);
         this.h = dVar2;
         dVar2.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
@@ -168,15 +168,15 @@ public final class s extends n2 implements le.d {
                 }
             }
         });
-        this.f.addView(this.h, y5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        this.c.addView(this.f, y5.e(-1, -2, 80));
-        lx0 lx0Var = new lx0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = lx0Var;
-        lx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        this.f.addView(this.h, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(this.f, x5.e(-1, -2, 80));
+        yw0 yw0Var = new yw0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = yw0Var;
+        yw0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
-        this.c.addView(this.r, y5.e(-2, -2, 17));
+        this.c.addView(this.r, x5.e(-2, -2, 17));
         TLRPC.ChatFull chatFull = this.s;
         if (chatFull != null && chatFull.requests_pending != 0) {
             z10 = false;

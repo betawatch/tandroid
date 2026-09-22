@@ -2,9 +2,9 @@ package ii;
 
 import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.p9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o2 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,86 +21,86 @@ public final /* synthetic */ class o2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 1:
-                View A1 = this.b.A1(this.c);
-                if (A1 instanceof d6) {
-                    d6 d6Var = (d6) A1;
+                View z12 = this.b.z1(this.c);
+                if (z12 instanceof d6) {
+                    d6 d6Var = (d6) z12;
                     d6Var.B();
                     d6Var.getEditText().setSelection(0);
                     break;
                 }
                 break;
             case 2:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 3:
-                this.b.d3(this.c, true);
+                this.b.c3(this.c, true);
                 break;
             case 4:
-                this.b.d3(this.c, false);
-                break;
-            case 5:
-                this.b.d3(this.c, true);
-                break;
-            case 6:
-                this.b.e3(this.c);
-                break;
-            case 7:
                 this.b.c3(this.c, false);
                 break;
-            case 8:
+            case 5:
                 this.b.c3(this.c, true);
+                break;
+            case 6:
+                this.b.d3(this.c);
+                break;
+            case 7:
+                this.b.b3(this.c, false);
+                break;
+            case 8:
+                this.b.b3(this.c, true);
                 break;
             case 9:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 10:
-                this.b.c3(this.c, true);
+                this.b.b3(this.c, true);
                 break;
             case 11:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 12:
-                this.b.d3(this.c, false);
+                this.b.c3(this.c, false);
                 break;
             case 13:
-                this.b.c3(this.c, true);
+                this.b.b3(this.c, true);
                 break;
             case 14:
                 w3 w3Var = this.b;
-                KeyEvent.Callback A12 = w3Var.A1(this.c);
-                if (A12 instanceof q9) {
-                    w3Var.n3.c0(0, 0, (q9) A12);
+                KeyEvent.Callback z13 = w3Var.z1(this.c);
+                if (z13 instanceof p9) {
+                    w3Var.n3.c0(0, 0, (p9) z13);
                     break;
                 }
                 break;
             case 15:
                 w3 w3Var2 = this.b;
-                KeyEvent.Callback A13 = w3Var2.A1(this.c);
-                if (A13 instanceof q9) {
-                    w3Var2.n3.c0(0, A13 instanceof d6 ? ((d6) A13).getEditText().length() : 0, (q9) A13);
+                KeyEvent.Callback z14 = w3Var2.z1(this.c);
+                if (z14 instanceof p9) {
+                    w3Var2.n3.c0(0, z14 instanceof d6 ? ((d6) z14).getEditText().length() : 0, (p9) z14);
                     break;
                 }
                 break;
             case 16:
-                this.b.g3(this.c);
+                this.b.f3(this.c);
                 break;
             case 17:
-                View A14 = this.b.A1(this.c);
-                if (A14 instanceof d6) {
-                    d6 d6Var2 = (d6) A14;
+                View z15 = this.b.z1(this.c);
+                if (z15 instanceof d6) {
+                    d6 d6Var2 = (d6) z15;
                     d6Var2.B();
                     d6Var2.getEditText().setSelection(0);
                     break;
                 }
                 break;
             case 18:
-                View A15 = this.b.A1(this.c);
-                if (!(A15 instanceof d6)) {
-                    if (A15 instanceof o5) {
-                        o5 o5Var = (o5) A15;
+                View z16 = this.b.z1(this.c);
+                if (!(z16 instanceof d6)) {
+                    if (z16 instanceof o5) {
+                        o5 o5Var = (o5) z16;
                         if (o5Var.getGrid().getChildCount() > 0) {
                             View childAt = o5Var.getGrid().getChildAt(0);
                             if (childAt instanceof r5) {
@@ -110,54 +110,54 @@ public final /* synthetic */ class o2 implements Runnable {
                         }
                     }
                 } else {
-                    d6 d6Var3 = (d6) A15;
+                    d6 d6Var3 = (d6) z16;
                     d6Var3.B();
                     d6Var3.getEditText().setSelection(d6Var3.getEditText().length());
                     break;
                 }
                 break;
             case 19:
-                this.b.f3(this.c);
+                this.b.e3(this.c);
                 break;
             case 20:
-                View A16 = this.b.A1(this.c);
-                if (A16 instanceof u0) {
-                    ((u0) A16).d.r();
+                View z17 = this.b.z1(this.c);
+                if (z17 instanceof u0) {
+                    ((u0) z17).d.r();
                     break;
                 }
                 break;
             case 21:
-                this.b.f3(this.c);
+                this.b.e3(this.c);
                 break;
             case 22:
-                this.b.f3(this.c);
+                this.b.e3(this.c);
                 break;
             case 23:
-                View A17 = this.b.A1(this.c);
-                if (A17 instanceof d6) {
-                    d6 d6Var4 = (d6) A17;
+                View z18 = this.b.z1(this.c);
+                if (z18 instanceof d6) {
+                    d6 d6Var4 = (d6) z18;
                     d6Var4.B();
                     d6Var4.getEditText().setSelection(0);
                     break;
                 }
                 break;
             case 24:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 25:
-                this.b.a5(this.c, "");
+                this.b.Z4(this.c, "");
                 break;
             case 26:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 27:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             case 28:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
             default:
-                this.b.e3(this.c);
+                this.b.d3(this.c);
                 break;
         }
     }

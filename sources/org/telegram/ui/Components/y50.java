@@ -1,55 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.TextureView;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class y50 extends TextureView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class y50 {
+    public final int a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y50(Object obj, Context context, int i10) {
-        super(context);
+    public y50(int i10, int i11) {
         this.a = i10;
-        this.b = obj;
+        this.b = i11;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        ki.p0 p0Var;
-        switch (this.a) {
-            case 0:
-                b60 b60Var = (b60) this.b;
-                if (!b60Var.x0 && (p0Var = b60Var.O) != null && p0Var.a == 3) {
-                    b60Var.x0 = true;
-                    try {
-                        b60Var.v0 = SystemClock.elapsedRealtimeNanos();
-                        b60Var.v();
-                    } finally {
-                        b60Var.x0 = false;
-                    }
-                }
-                super.invalidate();
-                return;
-            default:
-                super.invalidate();
-                return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && y50.class == obj.getClass()) {
+            y50 y50Var = (y50) obj;
+            if (this.a == y50Var.a && this.b == y50Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                vh.f fVar = (vh.f) this.b;
-                setMeasuredDimension(fVar.g, fVar.h);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("IntSize(");
+        sb2.append(this.a);
+        sb2.append(", ");
+        return a4.a.o(this.b, ")", sb2);
     }
 }

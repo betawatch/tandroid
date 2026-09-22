@@ -1,32 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class a61 extends URLSpan {
-    public final e11 a;
+public final class a61 extends s4.c0 {
+    public final /* synthetic */ e61 I;
 
-    public a61(String str, e11 e11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = e11Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a61(e61 e61Var, int i10) {
+        super(i10, false);
+        this.I = e61Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        e11 e11Var = this.a;
-        if (e11Var != null) {
-            e11Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(true);
+    @Override // s4.c0
+    public final int W0(s4.z0 z0Var) {
+        return this.I.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
     }
 }

@@ -44,7 +44,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -211,7 +211,7 @@ public final class u extends g.g {
     }
 
     public final int k(int i10, int i11) {
-        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a4.a.A(this.x, 9.0f, 16.0f, 0.5f);
+        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a4.a.B(this.x, 9.0f, 16.0f, 0.5f);
     }
 
     public final int l(boolean z10) {
@@ -368,14 +368,14 @@ public final class u extends g.g {
         n4.y yVar = this.i0;
         r rVar = this.j0;
         if (yVar != null) {
-            yVar.b0(rVar);
+            yVar.Z(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
             n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
             this.i0 = yVar2;
-            yVar2.Y(rVar);
-            MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.a).a.getMetadata();
+            yVar2.V(rVar);
+            MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
                 Parcel obtain = Parcel.obtain();
@@ -388,7 +388,7 @@ public final class u extends g.g {
                 mediaMetadataCompat = null;
             }
             this.l0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
-            android.support.v4.media.session.h hVar = (android.support.v4.media.session.h) this.i0.a;
+            android.support.v4.media.session.h hVar = (android.support.v4.media.session.h) this.i0.b;
             MediaSessionCompat$Token mediaSessionCompat$Token2 = hVar.e;
             if (mediaSessionCompat$Token2.a() != null) {
                 try {

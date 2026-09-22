@@ -13,14 +13,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g0 {
     public final ImageReceiver a;
-    public p5 b;
+    public o5 b;
     public p0 e;
     public View f;
     public boolean g;
@@ -39,10 +39,10 @@ public final class g0 {
     }
 
     public final void a(Canvas canvas) {
-        p5 p5Var = this.b;
+        o5 o5Var = this.b;
         Rect rect = this.c;
-        if (p5Var != null) {
-            l4 l4Var = p5Var.k;
+        if (o5Var != null) {
+            l4 l4Var = o5Var.k;
             if (l4Var != null) {
                 l4Var.setRoundRadius((int) (rect.width() * 0.1f));
             }
@@ -67,17 +67,17 @@ public final class g0 {
         ImageReceiver imageReceiver = this.a;
         if (z10) {
             imageReceiver.onAttachedToWindow();
-            p5 p5Var = this.b;
-            if (p5Var != null) {
-                p5Var.a(this.f);
+            o5 o5Var = this.b;
+            if (o5Var != null) {
+                o5Var.a(this.f);
                 return;
             }
             return;
         }
         imageReceiver.onDetachedFromWindow();
-        p5 p5Var2 = this.b;
-        if (p5Var2 != null) {
-            p5Var2.o(this.f);
+        o5 o5Var2 = this.b;
+        if (o5Var2 != null) {
+            o5Var2.o(this.f);
         }
     }
 
@@ -102,9 +102,9 @@ public final class g0 {
         }
         ImageReceiver imageReceiver = this.a;
         imageReceiver.clearImage();
-        p5 p5Var = this.b;
-        if (p5Var != null) {
-            p5Var.o(this.f);
+        o5 o5Var = this.b;
+        if (o5Var != null) {
+            o5Var.o(this.f);
             this.b = null;
         }
         this.e = p0Var;
@@ -113,20 +113,20 @@ public final class g0 {
         if (p0Var.f != null) {
             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(this.d).getReactionsMap().get(p0Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, j6.m6, 0.2f), 0L, "tgs", p0Var, 0);
+                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, i6.m6, 0.2f), 0L, "tgs", p0Var, 0);
                 return;
             }
             return;
         }
-        p5 p5Var2 = new p5(z10 ? 13 : 1, UserConfig.selectedAccount, p0Var.g);
-        this.b = p5Var2;
+        o5 o5Var2 = new o5(z10 ? 13 : 1, UserConfig.selectedAccount, p0Var.g);
+        this.b = o5Var2;
         if (this.g) {
-            p5Var2.a(this.f);
+            o5Var2.a(this.f);
         }
-        p5 p5Var3 = this.b;
+        o5 o5Var3 = this.b;
         this.j = -16777216;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP);
         this.k = porterDuffColorFilter;
-        p5Var3.setColorFilter(porterDuffColorFilter);
+        o5Var3.setColorFilter(porterDuffColorFilter);
     }
 }

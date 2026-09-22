@@ -1,69 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import j$.util.Objects;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q41 implements org.telegram.ui.Components.to0 {
-    public final /* synthetic */ org.telegram.ui.Components.uo0 a;
-    public final /* synthetic */ t41 b;
-    public final /* synthetic */ t41 c;
-    public final /* synthetic */ t41 d;
-    public final /* synthetic */ r41 e;
+public final class q41 extends og.a {
+    public final SaveToGallerySettingsHelper.DialogException c;
+    public final String d;
 
-    public q41(r41 r41Var, org.telegram.ui.Components.uo0 uo0Var, t41 t41Var, t41 t41Var2, t41 t41Var3) {
-        this.e = r41Var;
-        this.a = uo0Var;
-        this.b = t41Var;
-        this.c = t41Var2;
-        this.d = t41Var3;
+    public q41(int i10) {
+        super(i10, false);
+        this.c = null;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final void X(float f7, boolean z10) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
-        boolean isAttachedToWindow = this.a.isAttachedToWindow();
-        long j3 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
-        t41 t41Var = this.d;
-        t41 t41Var2 = this.b;
-        t41 t41Var3 = this.c;
-        if (f7 >= 1.0f) {
-            t41Var2.e(false, isAttachedToWindow);
-            t41Var3.e(false, isAttachedToWindow);
-            t41Var.e(true, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, false, 0.8f, isAttachedToWindow);
-        } else if (f7 == 0.0f) {
-            t41Var2.e(true, isAttachedToWindow);
-            t41Var3.e(false, isAttachedToWindow);
-            t41Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, false, 0.8f, isAttachedToWindow);
-        } else {
-            t41Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j3, true, false)), false, true);
-            t41Var2.e(false, isAttachedToWindow);
-            t41Var3.e(true, isAttachedToWindow);
-            t41Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(t41Var3, true, 0.8f, isAttachedToWindow);
+    public final boolean equals(Object obj) {
+        SaveToGallerySettingsHelper.DialogException dialogException;
+        if (this == obj) {
+            return true;
         }
-        if (z10) {
-            saveToGallerySettingsActivity.X().limitVideo = j3;
-            saveToGallerySettingsActivity.Y();
+        if (obj == null || q41.class != obj.getClass()) {
+            return false;
         }
+        q41 q41Var = (q41) obj;
+        if (this.a != q41Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, q41Var.d);
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
+        return dialogException2 == null || (dialogException = q41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        return null;
+    public q41(SaveToGallerySettingsHelper.DialogException dialogException) {
+        super(2, false);
+        this.c = dialogException;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final /* synthetic */ int l0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.to0
-    public final void B() {
+    public q41(int i10, String str) {
+        super(i10, false);
+        this.d = str;
+        this.c = null;
     }
 }

@@ -6,15 +6,15 @@ import android.view.ViewGroup;
 import java.lang.reflect.Method;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class du0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.sm0 b;
+    public final /* synthetic */ org.telegram.ui.Components.em0 b;
 
-    public /* synthetic */ du0(org.telegram.ui.Components.sm0 sm0Var, int i10) {
+    public /* synthetic */ du0(org.telegram.ui.Components.em0 em0Var, int i10) {
         this.a = i10;
-        this.b = sm0Var;
+        this.b = em0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

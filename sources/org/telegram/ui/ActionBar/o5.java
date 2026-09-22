@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class o5 extends Drawable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class o5 extends Drawable {
         int max = Math.max(bounds.width(), bounds.height()) / 2;
         int i10 = this.a;
         int i11 = this.b;
-        canvas.drawCircle((bounds.centerX() - i10) + i11, bounds.centerY(), max + i10 + i11, j6.z);
+        canvas.drawCircle((bounds.centerX() - i10) + i11, bounds.centerY(), max + i10 + i11, i6.z);
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -27,14 +27,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class du extends EditText {
     private static final int SPOILER_TIMEOUT = 10000;
     private static Boolean allowHackingTextCanvasCache;
     private ColorFilter animatedEmojiColorFilter;
-    private u5 animatedEmojiDrawables;
-    private vh.l clickDetector;
+    private t5 animatedEmojiDrawables;
+    private vh.m clickDetector;
     private boolean clipToPadding;
     public boolean drawAnimatedEmojiDrawables;
     private boolean editedWhileQuoteUpdating;
@@ -49,7 +49,7 @@ public abstract class du extends EditText {
     protected float offsetY;
     private Path path;
     private boolean postedSpoilerTimeout;
-    private ArrayList<bj0> quoteBlocks;
+    private ArrayList<oi0> quoteBlocks;
     private boolean quoteBlocksUpdating;
     public int quoteColor;
     private boolean[] quoteUpdateLayout;
@@ -59,11 +59,11 @@ public abstract class du extends EditText {
     private int selStart;
     private boolean shouldRevealSpoilersByTouch;
     private Runnable spoilerTimeout;
-    private List<vh.g> spoilers;
-    private Stack<vh.g> spoilersPool;
+    private List<vh.h> spoilers;
+    private Stack<vh.h> spoilersPool;
     public boolean suppressOnTextChanged;
     public boolean wrapCanvasToFixClipping;
-    private yc0 wrappedCanvas;
+    private nc0 wrappedCanvas;
 
     public du(Context context) {
         super(context, null, 0, R.style.EditTextNoBackgroundStyle);
@@ -78,7 +78,7 @@ public abstract class du extends EditText {
         this.rect = new Rect();
         this.wrapCanvasToFixClipping = allowHackingTextCanvas();
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
-            this.clickDetector = new vh.l(this, this.spoilers, new s(this, 28));
+            this.clickDetector = new vh.m(this, this.spoilers, new s(this, 28));
         }
     }
 
@@ -91,7 +91,7 @@ public abstract class du extends EditText {
         }
         duVar.spoilers.get(0).q = new cu(duVar, 3);
         float sqrt = (float) Math.sqrt(Math.pow(duVar.getHeight(), 2.0d) + Math.pow(duVar.getWidth(), 2.0d));
-        Iterator<vh.g> it = duVar.spoilers.iterator();
+        Iterator<vh.h> it = duVar.spoilers.iterator();
         while (it.hasNext()) {
             it.next().j(duVar.lastRippleX, duVar.lastRippleY, sqrt, true);
         }
@@ -113,10 +113,10 @@ public abstract class du extends EditText {
         boolean z10 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (f11 f11Var : (f11[]) spannable.getSpans(0, spannable.length(), f11.class)) {
-                int spanStart = spannable.getSpanStart(f11Var);
-                int spanEnd = spannable.getSpanEnd(f11Var);
-                if (f11Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
+            for (p01 p01Var : (p01[]) spannable.getSpans(0, spannable.length(), p01.class)) {
+                int spanStart = spannable.getSpanStart(p01Var);
+                int spanEnd = spannable.getSpanEnd(p01Var);
+                if (p01Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
                     removeCallbacks(this.spoilerTimeout);
                     this.postedSpoilerTimeout = false;
                     z10 = true;
@@ -131,7 +131,7 @@ public abstract class du extends EditText {
         postDelayed(this.spoilerTimeout, 10000L);
     }
 
-    public final void c(vh.g gVar, float f7, float f10) {
+    public final void c(vh.h hVar, float f7, float f10) {
         if (this.isSpoilersRevealed) {
             return;
         }
@@ -140,9 +140,9 @@ public abstract class du extends EditText {
         this.postedSpoilerTimeout = false;
         removeCallbacks(this.spoilerTimeout);
         setSpoilersRevealed(true, false);
-        gVar.q = new cu(this, 0);
+        hVar.q = new cu(this, 0);
         float sqrt = (float) Math.sqrt(Math.pow(getHeight(), 2.0d) + Math.pow(getWidth(), 2.0d));
-        Iterator<vh.g> it = this.spoilers.iterator();
+        Iterator<vh.h> it = this.spoilers.iterator();
         while (it.hasNext()) {
             it.next().j(f7, f10, sqrt, false);
         }
@@ -152,9 +152,9 @@ public abstract class du extends EditText {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         boolean z11;
-        vh.l lVar;
+        vh.m mVar;
         int paddingTop = getPaddingTop() - getScrollY();
-        ArrayList<bj0> arrayList = this.quoteBlocks;
+        ArrayList<oi0> arrayList = this.quoteBlocks;
         if (arrayList == null) {
             z10 = false;
         } else {
@@ -162,32 +162,32 @@ public abstract class du extends EditText {
             z10 = false;
             int i10 = 0;
             while (i10 < size) {
-                bj0 bj0Var = arrayList.get(i10);
+                oi0 oi0Var = arrayList.get(i10);
                 i10++;
-                bj0 bj0Var2 = bj0Var;
-                xi0 xi0Var = bj0Var2.e.J;
-                boolean z12 = bj0Var2.b() && bj0Var2.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
+                oi0 oi0Var2 = oi0Var;
+                ki0 ki0Var = oi0Var2.e.J;
+                boolean z12 = oi0Var2.b() && oi0Var2.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
                 if (motionEvent.getAction() == 0) {
-                    if (xi0Var != null) {
-                        xi0Var.b(z12);
+                    if (ki0Var != null) {
+                        ki0Var.b(z12);
                     }
                 } else if (motionEvent.getAction() == 1) {
-                    if (xi0Var != null && xi0Var.h && z12) {
-                        bj0Var2.e.e = !r5.e;
+                    if (ki0Var != null && ki0Var.h && z12) {
+                        oi0Var2.e.e = !r5.e;
                         invalidateQuotes(true);
                         z10 = true;
                     }
-                    if (xi0Var != null) {
-                        xi0Var.b(false);
+                    if (ki0Var != null) {
+                        ki0Var.b(false);
                     }
-                } else if (motionEvent.getAction() == 3 && xi0Var != null) {
-                    xi0Var.b(false);
+                } else if (motionEvent.getAction() == 3 && ki0Var != null) {
+                    ki0Var.b(false);
                 }
-                z10 = (xi0Var != null && xi0Var.h) || z10;
+                z10 = (ki0Var != null && ki0Var.h) || z10;
             }
         }
         if (!z10) {
-            if (this.shouldRevealSpoilersByTouch && (lVar = this.clickDetector) != null && ((GestureDetector) lVar.a.b).onTouchEvent(motionEvent)) {
+            if (this.shouldRevealSpoilersByTouch && (mVar = this.clickDetector) != null && ((GestureDetector) mVar.a.b).onTouchEvent(motionEvent)) {
                 if (motionEvent.getActionMasked() == 1) {
                     MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                     super.dispatchTouchEvent(obtain);
@@ -205,7 +205,7 @@ public abstract class du extends EditText {
     }
 
     public int emojiCacheType() {
-        return p5.g();
+        return o5.g();
     }
 
     public float getOffsetY() {
@@ -218,12 +218,12 @@ public abstract class du extends EditText {
             return null;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        dj0[] dj0VarArr = (dj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), dj0.class);
-        for (int length = dj0VarArr.length - 1; length >= 0; length--) {
-            dj0 dj0Var = dj0VarArr[length];
-            int spanStart = spannableStringBuilder.getSpanStart(dj0Var);
-            int spanEnd = spannableStringBuilder.getSpanEnd(dj0Var);
-            spannableStringBuilder.removeSpan(dj0Var);
+        qi0[] qi0VarArr = (qi0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), qi0.class);
+        for (int length = qi0VarArr.length - 1; length >= 0; length--) {
+            qi0 qi0Var = qi0VarArr[length];
+            int spanStart = spannableStringBuilder.getSpanStart(qi0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(qi0Var);
+            spannableStringBuilder.removeSpan(qi0Var);
             spannableStringBuilder.delete(spanStart, spanEnd);
         }
         return spannableStringBuilder;
@@ -232,14 +232,14 @@ public abstract class du extends EditText {
     public void invalidateEffects() {
         Editable text = getText();
         if (text != null) {
-            for (f11 f11Var : (f11[]) text.getSpans(0, text.length(), f11.class)) {
-                if (f11Var.c()) {
+            for (p01 p01Var : (p01[]) text.getSpans(0, text.length(), p01.class)) {
+                if (p01Var.c()) {
                     boolean z10 = this.isSpoilersRevealed;
-                    e11 e11Var = f11Var.b;
+                    o01 o01Var = p01Var.b;
                     if (z10) {
-                        e11Var.a |= 512;
+                        o01Var.a |= 512;
                     } else {
-                        e11Var.a &= -513;
+                        o01Var.a &= -513;
                     }
                 }
             }
@@ -265,9 +265,9 @@ public abstract class du extends EditText {
             this.quoteUpdateLayout[0] = false;
             this.editedWhileQuoteUpdating = false;
             this.quoteBlocksUpdating = true;
-            this.quoteBlocks = fj0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
+            this.quoteBlocks = si0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
             if (this.editedWhileQuoteUpdating) {
-                this.quoteBlocks = fj0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
+                this.quoteBlocks = si0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
             }
             this.quoteBlocksUpdating = false;
             this.editedWhileQuoteUpdating = false;
@@ -283,9 +283,9 @@ public abstract class du extends EditText {
     }
 
     public void invalidateSpoilers() {
-        u5 u5Var;
-        u5 u5Var2;
-        List<vh.g> list = this.spoilers;
+        t5 t5Var;
+        t5 t5Var2;
+        List<vh.h> list = this.spoilers;
         if (list == null) {
             return;
         }
@@ -297,22 +297,22 @@ public abstract class du extends EditText {
         }
         Layout layout = getLayout();
         if (layout != null && (layout.getText() instanceof Spannable)) {
-            if (this.drawAnimatedEmojiDrawables && (u5Var2 = this.animatedEmojiDrawables) != null) {
-                ArrayList arrayList = u5Var2.a;
+            if (this.drawAnimatedEmojiDrawables && (t5Var2 = this.animatedEmojiDrawables) != null) {
+                ArrayList arrayList = t5Var2.a;
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((t5) arrayList.get(i10)).d.recordPositions = false;
+                    ((s5) arrayList.get(i10)).d.recordPositions = false;
                 }
             }
-            Stack<vh.g> stack = this.spoilersPool;
-            List<vh.g> list2 = this.spoilers;
-            ArrayList<bj0> arrayList2 = this.quoteBlocks;
-            int i11 = vh.g.A;
+            Stack<vh.h> stack = this.spoilersPool;
+            List<vh.h> list2 = this.spoilers;
+            ArrayList<oi0> arrayList2 = this.quoteBlocks;
+            int i11 = vh.h.A;
             int measuredWidth = getMeasuredWidth();
-            vh.g.a(this, getLayout(), 0, measuredWidth > 0 ? measuredWidth : -2, (Spanned) getText(), stack, list2, arrayList2);
-            if (this.drawAnimatedEmojiDrawables && (u5Var = this.animatedEmojiDrawables) != null) {
-                ArrayList arrayList3 = u5Var.a;
+            vh.h.a(this, getLayout(), 0, measuredWidth > 0 ? measuredWidth : -2, (Spanned) getText(), stack, list2, arrayList2);
+            if (this.drawAnimatedEmojiDrawables && (t5Var = this.animatedEmojiDrawables) != null) {
+                ArrayList arrayList3 = t5Var.a;
                 for (int i12 = 0; i12 < arrayList3.size(); i12++) {
-                    ((t5) arrayList3.get(i12)).d.recordPositions = true;
+                    ((s5) arrayList3.get(i12)).d.recordPositions = true;
                 }
             }
         }
@@ -330,7 +330,7 @@ public abstract class du extends EditText {
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         removeCallbacks(this.spoilerTimeout);
-        y5.release(this, this.animatedEmojiDrawables);
+        x5.release(this, this.animatedEmojiDrawables);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -343,7 +343,7 @@ public abstract class du extends EditText {
         int paddingLeft = getPaddingLeft();
         if (!this.spoilers.isEmpty()) {
             this.path.rewind();
-            Iterator<vh.g> it = this.spoilers.iterator();
+            Iterator<vh.h> it = this.spoilers.iterator();
             while (it.hasNext()) {
                 Rect bounds = it.next().getBounds();
                 this.path.addRect(bounds.left + paddingLeft, bounds.top, bounds.right + paddingLeft, bounds.bottom, Path.Direction.CW);
@@ -352,20 +352,20 @@ public abstract class du extends EditText {
         }
         invalidateQuotes(false);
         for (int i10 = 0; i10 < this.quoteBlocks.size(); i10++) {
-            bj0 bj0Var = this.quoteBlocks.get(i10);
+            oi0 oi0Var = this.quoteBlocks.get(i10);
             int width = getWidth();
             int i11 = this.quoteColor;
             getPaint();
-            bj0Var.a(canvas, width, i11);
+            oi0Var.a(canvas, width, i11);
         }
         updateAnimatedEmoji(false);
         if (this.wrapCanvasToFixClipping) {
             if (this.wrappedCanvas == null) {
-                this.wrappedCanvas = new yc0();
+                this.wrappedCanvas = new nc0();
             }
-            yc0 yc0Var = this.wrappedCanvas;
-            yc0Var.a = canvas;
-            super.onDraw(yc0Var);
+            nc0 nc0Var = this.wrappedCanvas;
+            nc0Var.a = canvas;
+            super.onDraw(nc0Var);
         } else {
             super.onDraw(canvas);
         }
@@ -375,15 +375,15 @@ public abstract class du extends EditText {
             canvas.save();
             canvas.translate(getPaddingLeft(), 0.0f);
             canvas2 = canvas;
-            y5.drawAnimatedEmojis(canvas2, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
+            x5.drawAnimatedEmojis(canvas2, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
             canvas2.restore();
         }
         canvas2.restore();
         if (this.spoilers.isEmpty()) {
             return;
         }
-        vh.g gVar = this.spoilers.get(0);
-        if (gVar.m > 0.0f && gVar.n > 0.0f) {
+        vh.h hVar = this.spoilers.get(0);
+        if (hVar.m > 0.0f && hVar.n > 0.0f) {
             canvas2.save();
             canvas2.clipPath(this.path);
             this.path.rewind();
@@ -392,11 +392,11 @@ public abstract class du extends EditText {
             canvas2.translate(0.0f, -getPaddingTop());
             if (this.wrapCanvasToFixClipping) {
                 if (this.wrappedCanvas == null) {
-                    this.wrappedCanvas = new yc0();
+                    this.wrappedCanvas = new nc0();
                 }
-                yc0 yc0Var2 = this.wrappedCanvas;
-                yc0Var2.a = canvas2;
-                super.onDraw(yc0Var2);
+                nc0 nc0Var2 = this.wrappedCanvas;
+                nc0Var2.a = canvas2;
+                super.onDraw(nc0Var2);
             } else {
                 super.onDraw(canvas2);
             }
@@ -406,14 +406,14 @@ public abstract class du extends EditText {
         canvas2.save();
         canvas2.clipRect(this.rect);
         canvas2.translate(paddingLeft, 0.0f);
-        for (vh.g gVar2 : this.spoilers) {
-            Rect bounds2 = gVar2.getBounds();
+        for (vh.h hVar2 : this.spoilers) {
+            Rect bounds2 = hVar2.getBounds();
             Rect rect = this.rect;
             int i12 = rect.top;
             int i13 = bounds2.bottom;
             if ((i12 <= i13 && rect.bottom >= bounds2.top) || (bounds2.top <= rect.bottom && i13 >= i12)) {
-                gVar2.h(gVar2.y ? this.quoteColor : getPaint().getColor());
-                gVar2.draw(canvas2);
+                hVar2.h(hVar2.y ? this.quoteColor : getPaint().getColor());
+                hVar2.draw(canvas2);
             }
         }
         canvas2.restore();
@@ -463,12 +463,12 @@ public abstract class du extends EditText {
                     int lineForOffset = layout.getLineForOffset(i10);
                     int primaryHorizontal = (int) layout.getPrimaryHorizontal(i10);
                     int lineTop = (int) ((layout.getLineTop(lineForOffset) + layout.getLineBottom(lineForOffset)) / 2.0f);
-                    Iterator<vh.g> it = this.spoilers.iterator();
+                    Iterator<vh.h> it = this.spoilers.iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             break;
                         }
-                        vh.g next = it.next();
+                        vh.h next = it.next();
                         if (next.getBounds().contains(primaryHorizontal, lineTop)) {
                             break;
                         }
@@ -484,7 +484,7 @@ public abstract class du extends EditText {
     }
 
     public void recycleEmojis() {
-        y5.release(this, this.animatedEmojiDrawables);
+        x5.release(this, this.animatedEmojiDrawables);
     }
 
     public void resetFontMetricsCache() {
@@ -516,13 +516,13 @@ public abstract class du extends EditText {
         this.isSpoilersRevealed = z10;
         Editable text = getText();
         if (text != null) {
-            for (f11 f11Var : (f11[]) text.getSpans(0, text.length(), f11.class)) {
-                if (f11Var.c()) {
-                    e11 e11Var = f11Var.b;
+            for (p01 p01Var : (p01[]) text.getSpans(0, text.length(), p01.class)) {
+                if (p01Var.c()) {
+                    o01 o01Var = p01Var.b;
                     if (z10) {
-                        e11Var.a |= 512;
+                        o01Var.a |= 512;
                     } else {
-                        e11Var.a &= -513;
+                        o01Var.a &= -513;
                     }
                 }
             }
@@ -540,7 +540,7 @@ public abstract class du extends EditText {
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         if (!this.suppressOnTextChanged) {
             this.isSpoilersRevealed = false;
-            Stack<vh.g> stack = this.spoilersPool;
+            Stack<vh.h> stack = this.spoilersPool;
             if (stack != null) {
                 stack.clear();
             }
@@ -565,7 +565,7 @@ public abstract class du extends EditText {
             if (!z10 && this.lastLayout == getLayout() && this.lastTextLength == length) {
                 return;
             }
-            this.animatedEmojiDrawables = y5.update(emojiCacheType(), this, this.animatedEmojiDrawables, getLayout());
+            this.animatedEmojiDrawables = x5.update(emojiCacheType(), this, this.animatedEmojiDrawables, getLayout());
             this.lastLayout = getLayout();
             this.lastTextLength = length;
         }

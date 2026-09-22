@@ -6,20 +6,20 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ya0;
+import org.telegram.ui.Components.na0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class c4 extends ya0 {
+public final class c4 extends na0 {
     public final /* synthetic */ f6 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c4(f6 f6Var, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var2) {
-        super(context, j3, 0L, n2Var, f6Var2);
+    public c4(f6 f6Var, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, j3, 0L, n2Var, e6Var);
         this.V = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void f(Canvas canvas, Rect rect, float f7) {
         f6 f6Var = this.V;
         com.google.firebase.messaging.n nVar = f6Var.P1;

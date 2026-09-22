@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class rp extends yw0 {
+public final class rp extends lw0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -30,7 +30,7 @@ public final class rp extends yw0 {
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.lw0
     public final void b(int i10) {
         switch (this.a) {
             case 0:
@@ -50,7 +50,7 @@ public final class rp extends yw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.lw0
     public final void c(boolean z10) {
         switch (this.a) {
             case 0:
@@ -61,7 +61,7 @@ public final class rp extends yw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.lw0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -99,11 +99,11 @@ public final class rp extends yw0 {
                 float dpf23 = (AndroidUtilities.dpf2(0.5f) * interpolation) - (AndroidUtilities.dpf2(0.5f) * interpolation2);
                 Paint paint = this.g;
                 if (paint == null) {
-                    paint = org.telegram.ui.ActionBar.j6.d2;
+                    paint = org.telegram.ui.ActionBar.i6.d2;
                 }
                 Paint paint2 = (Paint) this.h;
                 if (paint2 == null) {
-                    paint2 = org.telegram.ui.ActionBar.j6.c2;
+                    paint2 = org.telegram.ui.ActionBar.i6.c2;
                 }
                 if (paint.getStrokeWidth() != AndroidUtilities.dp(0.8f)) {
                     paint.setStrokeWidth(AndroidUtilities.dp(0.8f));
@@ -138,7 +138,7 @@ public final class rp extends yw0 {
                 RectF rectF2 = (RectF) this.h;
                 Paint paint3 = this.g;
                 if (paint3 == null) {
-                    paint3 = org.telegram.ui.ActionBar.j6.d2;
+                    paint3 = org.telegram.ui.ActionBar.i6.d2;
                 }
                 Paint paint4 = paint3;
                 if (paint4.getStrokeWidth() != AndroidUtilities.dp(2.0f)) {
@@ -182,7 +182,7 @@ public final class rp extends yw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.lw0
     public final void e() {
         switch (this.a) {
             case 0:

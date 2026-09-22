@@ -4,9 +4,9 @@ import bf.p;
 import bf.s;
 import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Pattern;
-import v7.j0;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a extends h {
     public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
@@ -17,7 +17,7 @@ public final class a extends h {
         String a2 = a(e);
         if (a2 != null) {
             String i10 = e2.i(1, 1, a2);
-            bf.k kVar = new bf.k(1, j0.g("mailto:", i10), null);
+            bf.k kVar = new bf.k(1, q3.i("mailto:", i10), null);
             kVar.b(new s(i10));
             return kVar;
         }

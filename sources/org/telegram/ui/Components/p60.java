@@ -1,51 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class p60 extends yl0 {
-    public int X2;
-    public final /* synthetic */ c70 Y2;
+public final class p60 extends org.telegram.ui.Cells.ab {
+    public final TextView a0;
+    public final TextView b0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p60(c70 c70Var, Context context) {
-        super(context, null);
-        this.Y2 = c70Var;
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        c70 c70Var = this.Y2;
-        p60 p60Var = c70Var.V;
-        if (this.X2 != View.MeasureSpec.getSize(i11)) {
-            this.X2 = View.MeasureSpec.getSize(i11);
-            c70Var.a0 = true;
-            p60Var.setPadding(0, 0, 0, 0);
-            c70Var.a0 = false;
-            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            int measuredHeight = getMeasuredHeight();
-            int i12 = this.X2;
-            int i13 = (int) ((i12 / 5.0f) * 2.0f);
-            if (i13 < AndroidUtilities.dp(60.0f) + (i12 - measuredHeight)) {
-                i13 = this.X2 - measuredHeight;
-            }
-            c70Var.a0 = true;
-            p60Var.setPadding(0, i13, 0, 0);
-            c70Var.a0 = false;
-            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.Y2.a0) {
-            return;
-        }
-        super.requestLayout();
+    public p60(Context context) {
+        super(context, 6, 0, true);
+        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+        TextView textView = new TextView(context);
+        this.a0 = textView;
+        org.telegram.messenger.y0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f);
+        f7.addView(textView, w7.x5.q(-2, -2, 5));
+        TextView textView2 = new TextView(context);
+        this.b0 = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        f7.addView(textView2, w7.x5.t(-2, -2, 5, 0, 1, 0, 0));
+        addView(f7, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

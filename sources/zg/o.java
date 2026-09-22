@@ -3,16 +3,16 @@ package zg;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class o extends e0 {
     public final /* synthetic */ q h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(q qVar, Context context, f6 f6Var, int i10) {
-        super(context, i10, f6Var);
+    public o(q qVar, Context context, e6 e6Var, int i10) {
+        super(context, i10, e6Var);
         this.h = qVar;
     }
 

@@ -1,306 +1,57 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sl0 implements Runnable {
+public final /* synthetic */ class sl0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ sl0(Object obj, int i10) {
+    public /* synthetic */ sl0(PasskeysActivity passkeysActivity, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = passkeysActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        int i11;
-        mk mkVar;
-        int i12 = this.a;
-        int i13 = 0;
-        Object obj = this.b;
-        switch (i12) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        PasskeysActivity passkeysActivity = this.b;
+        switch (i10) {
             case 0:
-                ((PasscodeActivity) ((fe0) obj).n).h0();
-                break;
-            case 1:
-                PasskeysActivity.X((PasskeysActivity) obj);
-                break;
-            case 2:
-                TLObject tLObject = (TLObject) obj;
-                if (!(tLObject instanceof TLRPC.TL_help_passportConfig)) {
-                    SharedConfig.getCountryLangs();
-                    break;
-                } else {
-                    TLRPC.TL_help_passportConfig tL_help_passportConfig = (TLRPC.TL_help_passportConfig) tLObject;
-                    SharedConfig.setPassportConfig(tL_help_passportConfig.countries_langs.data, tL_help_passportConfig.hash);
-                    break;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String string = LocaleController.getString(R.string.PasskeyTopInfo);
+                int i11 = R.raw.passkey;
+                org.telegram.ui.Components.i51 i51Var = new org.telegram.ui.Components.i51(2);
+                i51Var.l = string;
+                i51Var.k = i11;
+                arrayList.add(i51Var);
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
+                    k60 k60Var = new k60(passkeysActivity, 15);
+                    int i13 = ul0.a;
+                    org.telegram.ui.Components.i51 J = org.telegram.ui.Components.i51.J(ul0.class);
+                    J.G = passkey;
+                    J.D = k60Var;
+                    arrayList.add(J);
                 }
-            case 3:
-                ((xm0) obj).a.finishFragment();
-                break;
-            case 4:
-                org.telegram.ui.Components.d5.x0(((bn0) obj).e.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
-                break;
-            case 5:
-                double currentTimeMillis = System.currentTimeMillis();
-                ln0 ln0Var = (ln0) ((ci.p2) obj).b;
-                double d = currentTimeMillis - ln0Var.G;
-                ln0Var.G = currentTimeMillis;
-                int i14 = (int) (ln0Var.E - d);
-                ln0Var.E = i14;
-                if (i14 <= 1000) {
-                    ln0Var.r.setVisibility(0);
-                    ln0Var.n.setVisibility(8);
-                    ln0Var.r();
-                    break;
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    org.telegram.ui.Components.i51 c10 = org.telegram.ui.Components.i51.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    c10.q = true;
+                    arrayList.add(c10);
                 }
-                break;
-            case 6:
-                kn0 kn0Var = (kn0) obj;
-                ln0 ln0Var2 = kn0Var.a;
-                int i15 = ln0Var2.y;
-                mn0 mn0Var = ln0Var2.s;
-                in0 in0Var = ln0Var2.n;
-                if (i15 < 1000) {
-                    if (mn0Var != null) {
-                        mn0Var.c = 1.0f;
-                        mn0Var.invalidate();
-                    }
-                    ln0Var2.s();
-                    int i16 = ln0Var2.L;
-                    if (i16 != 3) {
-                        if (i16 == 2 || i16 == 4) {
-                            int i17 = ln0Var2.M;
-                            if (i17 != 4 && i17 != 2) {
-                                if (i17 == 3) {
-                                    AndroidUtilities.setWaitingForSms(false);
-                                    NotificationCenter.getGlobalInstance().removeObserver(ln0Var2, NotificationCenter.didReceiveSmsCode);
-                                    ln0Var2.I = false;
-                                    ln0Var2.r();
-                                    ln0Var2.u();
-                                    break;
-                                }
-                            } else {
-                                if (i17 == 4) {
-                                    in0Var.setText(LocaleController.getString(R.string.Calling));
-                                } else {
-                                    in0Var.setText(LocaleController.getString(R.string.SendingSms));
-                                }
-                                ln0Var2.p();
-                                TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
-                                tL_auth_resendCode.phone_number = ln0Var2.a;
-                                tL_auth_resendCode.phone_code_hash = ln0Var2.b;
-                                i10 = ((org.telegram.ui.ActionBar.n2) ln0Var2.Q).currentAccount;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_auth_resendCode, new m(kn0Var, 16), 2);
-                                break;
-                            }
-                        }
-                    } else {
-                        AndroidUtilities.setWaitingForCall(false);
-                        NotificationCenter.getGlobalInstance().removeObserver(ln0Var2, NotificationCenter.didReceiveCall);
-                        ln0Var2.I = false;
-                        ln0Var2.r();
-                        ln0Var2.u();
-                        break;
-                    }
-                } else {
-                    int i18 = i15 / MediaDataController.MAX_STYLE_RUNS_COUNT;
-                    int i19 = i18 / 60;
-                    int i20 = i18 - (i19 * 60);
-                    int i21 = ln0Var2.M;
-                    if (i21 == 4 || i21 == 3) {
-                        in0Var.setText(LocaleController.formatString("CallText", R.string.CallText, Integer.valueOf(i19), Integer.valueOf(i20)));
-                    } else if (i21 == 2) {
-                        in0Var.setText(LocaleController.formatString("SmsText", R.string.SmsText, Integer.valueOf(i19), Integer.valueOf(i20)));
-                    }
-                    if (mn0Var != null) {
-                        mn0Var.c = 1.0f - (ln0Var2.y / ln0Var2.P);
-                        mn0Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                nf.f.s(((ho0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
-            case 8:
-                xo0 xo0Var = ((mo0) obj).a;
-                xo0Var.t0();
-                xo0Var.H0(true, false);
-                xo0Var.D0(false);
-                break;
-            case 9:
-                nf.f.s(((qo0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
-            case 10:
-                up0 up0Var = (up0) obj;
-                wp0 wp0Var = up0Var.c;
-                bq0 bq0Var = wp0Var.E;
-                cq0 cq0Var = wp0Var.p0;
-                if (bq0Var != null && wp0Var.L.size() > 1) {
-                    bq0Var.a(1, true);
-                    TL_stars.StarGift starGift = (TL_stars.StarGift) wp0Var.M.get(1);
-                    wp0Var.K = starGift;
-                    if (starGift == null) {
-                        xh.v3 v3Var = wp0Var.J;
-                        if (v3Var != null) {
-                            v3Var.f();
-                            wp0Var.J = null;
-                        }
-                    } else {
-                        xh.v3 v3Var2 = wp0Var.J;
-                        if (v3Var2 == null || v3Var2.b != starGift.id) {
-                            i11 = ((org.telegram.ui.ActionBar.n2) cq0Var).currentAccount;
-                            xh.v3 v3Var3 = new xh.v3(wp0Var.K.id, i11, new s3(up0Var, 13));
-                            wp0Var.J = v3Var3;
-                            v3Var3.g(false);
-                        }
-                    }
-                    wp0.a(wp0Var);
-                    (cq0Var.I.getCurrentPosition() == 1 ? cq0Var.n : cq0Var.h).e();
-                    break;
-                }
-                break;
-            case 11:
-                cr0 cr0Var = ((tq0) obj).h;
-                cr0Var.b0(cr0Var.P.getSearchField());
-                break;
-            case 12:
-                ((uq0) obj).z0.L.l();
-                break;
-            case 13:
-                ((vu0) obj).invalidate();
-                break;
-            case 14:
-                com.google.android.gms.common.api.internal.v vVar = (com.google.android.gms.common.api.internal.v) obj;
-                PhotoViewer photoViewer = (PhotoViewer) vVar.d;
-                long j3 = vVar.a;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.s2(j3);
-                if (photoViewer.c2 == 1) {
-                    long j10 = vVar.a;
-                    photoViewer.X7 = j10;
-                    if (photoViewer.W7 != j10) {
-                        photoViewer.W7 = -1L;
-                    }
-                }
-                vVar.c = null;
-                break;
-            case 15:
-                PhotoViewer photoViewer2 = ((et0) obj).a;
-                ImageView imageView = photoViewer2.E3;
-                if (imageView != null && imageView.getParent() != null) {
-                    ((ViewGroup) photoViewer2.E3.getParent()).removeView(photoViewer2.E3);
-                    if (photoViewer2.D3 != null) {
-                        ImageView imageView2 = photoViewer2.E3;
-                        if (imageView2 != null) {
-                            imageView2.setBackground(null);
-                        }
-                        AndroidUtilities.recycleBitmap(photoViewer2.D3);
-                        photoViewer2.D3 = null;
-                    }
-                    photoViewer2.E3 = null;
-                    break;
-                }
-                break;
-            case 16:
-                zn znVar = ((gt0) obj).d1.l4;
-                if (znVar != null && (mkVar = znVar.Y) != null) {
-                    mkVar.H0();
-                    break;
-                }
-                break;
-            case 17:
-                org.telegram.ui.Components.cl0 cl0Var = (org.telegram.ui.Components.cl0) ((gp0) obj).b;
-                PhotoViewer photoViewer3 = (PhotoViewer) cl0Var.c;
-                photoViewer3.H2 = false;
-                org.telegram.ui.Components.v71 v71Var = photoViewer3.F2;
-                if (v71Var != null) {
-                    v71Var.C();
-                }
-                ((PhotoViewer) cl0Var.c).I2 = null;
-                break;
-            case 18:
-                PhotoViewer photoViewer4 = ((ts0) obj).a;
-                photoViewer4.H2 = false;
-                org.telegram.ui.Components.v71 v71Var2 = photoViewer4.F2;
-                if (v71Var2 != null) {
-                    v71Var2.C();
-                }
-                photoViewer4.I2 = null;
-                break;
-            case 19:
-                fu0 fu0Var = (fu0) ((gp0) obj).b;
-                fu0Var.r.l7.unlock();
-                PhotoViewer photoViewer5 = fu0Var.r;
-                Runnable runnable = photoViewer5.p4;
-                if (runnable != null) {
-                    runnable.run();
-                    photoViewer5.p4 = null;
-                }
-                photoViewer5.x2(true);
-                break;
-            case 20:
-                PhotoViewer photoViewer6 = ((it0) obj).b;
-                Runnable runnable2 = photoViewer6.p4;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    photoViewer6.p4 = null;
-                    break;
-                }
-                break;
-            case 21:
-                ((qu0) obj).s.d(true);
-                break;
-            case 22:
-                ((uu0) obj).d = true;
-                break;
-            case 23:
-                PremiumPreviewFragment premiumPreviewFragment = ((cx0) obj).c;
-                premiumPreviewFragment.showDialog(new i41(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
-                break;
-            case 24:
-                ((org.telegram.messenger.mk) obj).run(0);
-                break;
-            case 25:
-                AndroidUtilities.addToClipboard((String) obj);
-                break;
-            case 26:
-                ((ci.f4) obj).e(true);
-                break;
-            case 27:
-                AndroidUtilities.addToClipboard("@" + UserObject.getPublicUsername((TLRPC.User) obj));
-                break;
-            case 28:
-                gz0 gz0Var = (gz0) obj;
-                gz0Var.G.getNotificationCenter().onAnimationFinish(gz0Var.F);
+                arrayList.add(org.telegram.ui.Components.i51.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new pl0(passkeysActivity, 1)), true)));
                 break;
             default:
-                ProfileActivity profileActivity = (ProfileActivity) ((ci.n6) obj).c;
-                if (profileActivity.n5 != 1.0f) {
-                    pz0 pz0Var = profileActivity.n0;
-                    while (pz0Var.D0.k(i13) != pz0Var.getRealCount() - 1) {
-                        i13++;
-                    }
-                    pz0Var.x(i13, true);
-                    break;
-                }
+                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
                 break;
         }
     }

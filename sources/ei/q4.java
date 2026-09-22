@@ -19,15 +19,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.kb;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.jb;
 import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.bo;
 import org.telegram.ui.c41;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class q4 extends ni implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -58,7 +58,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
     public int y;
 
     @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         j4 j4Var = this.n;
         CharSequence userName = UserObject.getUserName(MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
         try {
@@ -85,7 +85,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void E() {
+    public final void F() {
         if (this.n.N) {
             L();
         }
@@ -94,7 +94,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void F() {
+    public final void G() {
         a3 a3Var = this.J;
         a3Var.e(a3Var.getTopActionBarOffsetY() + (-a3Var.getOffsetY()));
     }
@@ -113,14 +113,14 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.show();
-        ((TextView) b2Var.d(-1)).setTextColor(j6.v0(j6.q7, this.a));
+        ((TextView) b2Var.d(-1)).setTextColor(i6.v0(i6.q7, this.a));
         return false;
     }
 
     public final void L() {
         vi viVar = this.b;
         org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-        if ((n2Var instanceof zn) && ((zn) n2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
+        if ((n2Var instanceof bo) && ((bo) n2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
             AndroidUtilities.hideKeyboard(viVar.f0.getFragmentView());
             AndroidUtilities.runOnUIThread(new g4(this, 1), 250L);
         } else {
@@ -135,7 +135,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         j4 j4Var = this.n;
         if (i10 != NotificationCenter.webViewResultSent) {
             if (i10 == NotificationCenter.didSetNewTheme) {
-                j4Var.n.b(j6.v0(j6.h5, this.a), 153);
+                j4Var.n.b(i6.v0(i6.h5, this.a), 153);
                 return;
             }
             return;
@@ -322,7 +322,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         if (i10 == i11) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.v);
-            viVar.f0.presentFragment(new zn(bundle));
+            viVar.f0.presentFragment(new bo(bundle));
             viVar.dismiss();
             return;
         }
@@ -370,10 +370,10 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
             if (i10 == R.id.menu_report_bot) {
                 int i13 = this.F;
                 Context context = getContext();
-                xc xcVar = new xc(kb.a(getContext()), this.a);
+                vc vcVar = new vc(jb.a(getContext()), this.a);
                 long j3 = this.v;
                 int i14 = c41.v;
-                c41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                c41.K(i13, context, j3, false, false, new ArrayList(), vcVar, null, new byte[0], null, null);
             }
         }
     }

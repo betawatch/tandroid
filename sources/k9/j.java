@@ -6,7 +6,7 @@ import java.util.Arrays;
 import n4.y;
 import n6.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j {
     public final String a;
@@ -30,12 +30,12 @@ public final class j {
     }
 
     public static j a(Context context) {
-        y yVar = new y(context, 26);
-        String O = yVar.O("google_app_id");
-        if (TextUtils.isEmpty(O)) {
+        of.b bVar = new of.b(context, 29);
+        String N = bVar.N("google_app_id");
+        if (TextUtils.isEmpty(N)) {
             return null;
         }
-        return new j(O, yVar.O("google_api_key"), yVar.O("firebase_database_url"), yVar.O("ga_trackingId"), yVar.O("gcm_defaultSenderId"), yVar.O("google_storage_bucket"), yVar.O("project_id"));
+        return new j(N, bVar.N("google_api_key"), bVar.N("firebase_database_url"), bVar.N("ga_trackingId"), bVar.N("gcm_defaultSenderId"), bVar.N("google_storage_bucket"), bVar.N("project_id"));
     }
 
     public final boolean equals(Object obj) {
@@ -51,13 +51,13 @@ public final class j {
     }
 
     public final String toString() {
-        m5.e eVar = new m5.e(this);
-        eVar.c(this.b, "applicationId");
-        eVar.c(this.a, "apiKey");
-        eVar.c(this.c, "databaseUrl");
-        eVar.c(this.e, "gcmSenderId");
-        eVar.c(this.f, "storageBucket");
-        eVar.c(this.g, "projectId");
-        return eVar.toString();
+        y yVar = new y(this);
+        yVar.e(this.b, "applicationId");
+        yVar.e(this.a, "apiKey");
+        yVar.e(this.c, "databaseUrl");
+        yVar.e(this.e, "gcmSenderId");
+        yVar.e(this.f, "storageBucket");
+        yVar.e(this.g, "projectId");
+        return yVar.toString();
     }
 }

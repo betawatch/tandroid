@@ -1,30 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pg implements Runnable {
+public final /* synthetic */ class pg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pg(zn znVar, TLRPC.User user, int i10) {
+    public /* synthetic */ pg(Object obj, int i10) {
         this.a = i10;
-        this.b = znVar;
-        this.c = user;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                zn znVar = this.b;
-                znVar.getClass();
-                znVar.presentFragment(zn.R9(this.c.id));
+                bo boVar = (bo) this.b;
+                boVar.b9 = true;
+                boVar.Z8 = 0;
+                boVar.pb = 0;
+                boVar.N4 = 0;
+                boVar.r9();
+                boVar.Nb(false);
+                break;
+            case 1:
+                wo woVar = (wo) this.b;
+                woVar.M0 = false;
+                woVar.b = null;
+                woVar.N0 = false;
+                break;
+            case 2:
+                ((wp) this.b).n = null;
                 break;
             default:
-                this.b.ma(this.c);
+                fc0 fc0Var = (fc0) this.b;
+                if (fc0Var.h >= 0) {
+                    ConnectionsManager.getInstance(fc0Var.b).cancelRequest(fc0Var.h, true);
+                    fc0Var.h = -1;
+                    break;
+                }
                 break;
         }
     }

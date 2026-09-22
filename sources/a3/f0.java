@@ -5,7 +5,7 @@ import b2.r0;
 import b2.x1;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final n4.y a;
@@ -39,7 +39,7 @@ public final class f0 {
 
     public final void a(long j3, long j10) {
         n4.y yVar = this.a;
-        f fVar = (f) yVar.b;
+        f fVar = (f) yVar.c;
         while (true) {
             e2.q qVar = this.f;
             int i10 = qVar.c;
@@ -71,7 +71,7 @@ public final class f0 {
                     rVar.x = x1Var.a;
                     rVar.y = x1Var.b;
                     rVar.q = r0.n("video/raw");
-                    yVar.a = new b2.s(rVar);
+                    yVar.b = new b2.s(rVar);
                     fVar.h.execute(new e(yVar, x1Var));
                 }
                 long nanoTime = z10 ? System.nanoTime() : zVar.b;
@@ -82,7 +82,7 @@ public final class f0 {
                 if (z11 && fVar.d != null) {
                     fVar.h.execute(new e(0, yVar));
                 }
-                b2.s sVar = (b2.s) yVar.a;
+                b2.s sVar = (b2.s) yVar.b;
                 fVar.i.b(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
                 j jVar = (j) fVar.c.remove();
                 jVar.c.I0(jVar.a, jVar.b, nanoTime);

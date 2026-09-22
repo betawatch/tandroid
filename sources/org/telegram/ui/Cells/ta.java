@@ -11,27 +11,27 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ta extends FrameLayout {
-    public final org.telegram.ui.Components.v9 a;
+    public final org.telegram.ui.Components.u9 a;
     public final TextView b;
     public TLRPC.TL_forumTopic c;
     public boolean d;
 
     public ta(Context context) {
         super(context);
-        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
-        this.a = v9Var;
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.a = u9Var;
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.l0.p(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);
+        org.telegram.messenger.y0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(v9Var, w7.y5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.y5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
+            addView(u9Var, w7.x5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.x5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
         } else {
-            addView(v9Var, w7.y5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.y5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
+            addView(u9Var, w7.x5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.x5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
         }
     }
 
@@ -41,9 +41,9 @@ public final class ta extends FrameLayout {
         if (this.d) {
             int dp = AndroidUtilities.dp(56.0f);
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             } else {
-                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             }
         }
     }
@@ -64,13 +64,13 @@ public final class ta extends FrameLayout {
         if (isEmpty) {
             textView.setText(AndroidUtilities.removeDiacritics(tL_forumTopic.title));
         } else {
-            textView.setText(AndroidUtilities.highlightText(AndroidUtilities.removeDiacritics(tL_forumTopic.title), tL_forumTopic.searchQuery, (org.telegram.ui.ActionBar.f6) null));
+            textView.setText(AndroidUtilities.highlightText(AndroidUtilities.removeDiacritics(tL_forumTopic.title), tL_forumTopic.searchQuery, (org.telegram.ui.ActionBar.e6) null));
         }
-        org.telegram.ui.Components.v9 v9Var = this.a;
-        ng.d.p(v9Var, tL_forumTopic, false, false, null);
-        if (v9Var == null || v9Var.getImageReceiver() == null || !(v9Var.getImageReceiver().getDrawable() instanceof ng.c)) {
+        org.telegram.ui.Components.u9 u9Var = this.a;
+        ng.d.p(u9Var, tL_forumTopic, false, false, null);
+        if (u9Var == null || u9Var.getImageReceiver() == null || !(u9Var.getImageReceiver().getDrawable() instanceof ng.c)) {
             return;
         }
-        ((ng.c) v9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.c9, false));
+        ((ng.c) u9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.c9, false));
     }
 }

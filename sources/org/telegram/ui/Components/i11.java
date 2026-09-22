@@ -1,30 +1,84 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class i11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l11 b;
-    public final /* synthetic */ k11 c;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-    public /* synthetic */ i11(l11 l11Var, k11 k11Var, int i10) {
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class i11 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j11 b;
+
+    public i11(j11 j11Var, int i10) {
+        this.b = j11Var;
         this.a = i10;
-        this.b = l11Var;
-        this.c = k11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b(this.c);
-                break;
-            case 1:
-                this.b.b(this.c);
-                break;
-            default:
-                this.b.b(this.c);
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0080 A[LOOP:0: B:13:0x0076->B:15:0x0080, LOOP_END] */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        int i11;
+        int i12;
+        j11 j11Var = this.b;
+        EditTextBoldCursor[] editTextBoldCursorArr = j11Var.n;
+        ThemeEditorView.EditorAlert editorAlert = j11Var.I;
+        if (editorAlert.K) {
+            return;
         }
+        editorAlert.K = true;
+        int intValue = Utilities.parseInt((CharSequence) editable.toString()).intValue();
+        int i13 = this.a;
+        if (intValue < 0) {
+            editTextBoldCursorArr[i13].setText("0");
+            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i13];
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            intValue = 0;
+        } else if (intValue > 255) {
+            editTextBoldCursorArr[i13].setText("255");
+            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i13];
+            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+            intValue = 255;
+        }
+        int b10 = j11Var.b();
+        if (i13 == 2) {
+            i10 = b10 & (-256);
+            i11 = intValue & 255;
+        } else if (i13 == 1) {
+            i10 = b10 & (-65281);
+            i11 = (intValue & 255) << 8;
+        } else {
+            if (i13 != 0) {
+                if (i13 == 3) {
+                    i10 = b10 & 16777215;
+                    i11 = (intValue & 255) << 24;
+                }
+                j11Var.c(b10);
+                for (i12 = 0; i12 < ThemeEditorView.this.c.size(); i12++) {
+                    ((org.telegram.ui.ActionBar.k6) ThemeEditorView.this.c.get(i12)).d(j11Var.b(), false, true);
+                }
+                editorAlert.K = false;
+            }
+            i10 = b10 & (-16711681);
+            i11 = (intValue & 255) << 16;
+        }
+        b10 = i10 | i11;
+        j11Var.c(b10);
+        while (i12 < ThemeEditorView.this.c.size()) {
+        }
+        editorAlert.K = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

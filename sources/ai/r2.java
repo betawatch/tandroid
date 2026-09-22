@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class r2 extends FrameLayout {
     public final FrameLayout a;
@@ -26,33 +26,33 @@ public final class r2 extends FrameLayout {
 
     public r2(Context context, dh.b bVar) {
         super(context);
-        w7.a6.a(this);
+        w7.z5.a(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
-        ah.m mVar = new ah.m();
-        mVar.a(bVar);
-        mVar.g.setColor(-14670806);
-        mVar.invalidateSelf();
-        mVar.f = AndroidUtilities.dp(1.0f);
-        frameLayout.setBackground(mVar);
-        addView(frameLayout, w7.y5.e(40, 40, 17));
+        ah.l lVar = new ah.l();
+        lVar.a(bVar);
+        lVar.g.setColor(-14670806);
+        lVar.invalidateSelf();
+        lVar.f = AndroidUtilities.dp(1.0f);
+        frameLayout.setBackground(lVar);
+        addView(frameLayout, w7.x5.e(40, 40, 17));
         View view = new View(context);
         this.b = view;
-        view.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(40.0f), -13522392));
-        frameLayout.addView(view, w7.y5.e(38, 38, 17));
+        view.setBackground(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(40.0f), -13522392));
+        frameLayout.addView(view, w7.x5.e(38, 38, 17));
         view.setAlpha(0.0f);
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);
         q2 q2Var = new q2(context);
         this.d = q2Var;
-        addView(q2Var, w7.y5.e(42, 42, 17));
+        addView(q2Var, w7.x5.e(42, 42, 17));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.75f);
         imageView.setScaleY(0.75f);
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, PorterDuff.Mode.SRC_IN));
-        frameLayout.addView(imageView, w7.y5.e(40, 40, 17));
+        frameLayout.addView(imageView, w7.x5.e(40, 40, 17));
         b(false, false);
     }
 

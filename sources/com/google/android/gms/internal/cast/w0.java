@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class w0 extends m0 {
     public final transient Object d;
@@ -39,6 +39,6 @@ public final class w0 extends m0 {
 
     @Override // java.util.AbstractCollection
     public final String toString() {
-        return a4.a.p("[", this.d.toString(), "]");
+        return a4.a.q("[", this.d.toString(), "]");
     }
 }

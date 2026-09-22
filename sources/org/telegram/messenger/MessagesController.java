@@ -100,22 +100,22 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.h80;
-import org.telegram.ui.Components.nc0;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.e31;
 import org.telegram.ui.Components.u40;
+import org.telegram.ui.Components.w70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.fg1;
-import org.telegram.ui.gh0;
-import org.telegram.ui.nq;
+import org.telegram.ui.bo;
+import org.telegram.ui.eg1;
+import org.telegram.ui.eh0;
+import org.telegram.ui.pq;
 import org.telegram.ui.uy;
-import org.telegram.ui.zn;
 import yf.r;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class MessagesController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static int DIALOG_FILTER_FLAG_BOTS = 16;
@@ -444,7 +444,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public PeerColors peerColors;
     private final long peerDialogRequestTimeout;
     private final a0.i peerDialogsRequested;
-    private final HashSet<Pair<yh.n5, AtomicBoolean>> pendingReportMessageDelivery;
+    private final HashSet<Pair<yh.o5, AtomicBoolean>> pendingReportMessageDelivery;
     public Set<String> pendingSuggestions;
     private LongSparseIntArray pendingUnreadCounter;
     public SparseArray<u40> photoSuggestion;
@@ -495,7 +495,7 @@ public class MessagesController extends BaseController implements NotificationCe
     private a0.i reloadingWebpagesPending;
     public boolean remoteConfigLoaded;
     private ArrayList<ReadTask> repliesReadTasks;
-    private final HashSet<yh.n5> reportedMessageDelivery;
+    private final HashSet<yh.o5> reportedMessageDelivery;
     private final Runnable requestIsUserContactBlockedRunnable;
     private boolean requestingContactToken;
     private TLRPC.messages_Dialogs resetDialogsAll;
@@ -659,7 +659,7 @@ public class MessagesController extends BaseController implements NotificationCe
     private static volatile MessagesController[] Instance = new MessagesController[4];
     private static final Object[] lockObjects = new Object[4];
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 1 extends CacheFetcher<Integer, TLRPC.TL_help_appConfig> {
         public 1() {
         }
@@ -795,7 +795,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 4 extends CacheFetcher<Integer, TLRPC.messages_AvailableEffects> {
         public 4() {
         }
@@ -946,7 +946,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 5 extends CacheFetcher<Void, TL_account.TL_webBrowserSettings> {
         public 5(int i10) {
             super(i10);
@@ -1075,7 +1075,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class ChannelRecommendations {
         public final ArrayList<TLObject> chats = new ArrayList<>();
         public int more;
@@ -1090,7 +1090,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class CommonChatsList {
         public ArrayList<TLRPC.Chat> chats;
         public final int currentAccount;
@@ -1129,7 +1129,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$load$1(int[] iArr, boolean z10, TLObject tLObject, TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new uj(this, iArr, tLObject, z10, 12));
+            AndroidUtilities.runOnUIThread(new vj(this, iArr, tLObject, z10, 12));
         }
 
         public void cancel() {
@@ -1165,9 +1165,9 @@ public class MessagesController extends BaseController implements NotificationCe
             this.loading = true;
             TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
             tL_messages_getCommonChats.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(this.dialogId);
-            tL_messages_getCommonChats.max_id = this.chats.isEmpty() ? 0L : ((TLRPC.Chat) hg.k0.g(1, this.chats)).id;
+            tL_messages_getCommonChats.max_id = this.chats.isEmpty() ? 0L : ((TLRPC.Chat) hg.c.h(1, this.chats)).id;
             tL_messages_getCommonChats.limit = isEmpty ? 15 : 30;
-            int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getCommonChats, new v0(this, r1, isEmpty, 4));
+            int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getCommonChats, new u0(this, r1, isEmpty, 4));
             this.currentRequestId = sendRequest;
             int[] iArr = {sendRequest};
         }
@@ -1183,7 +1183,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class CommunityPeerDialog {
         public final TLRPC.Chat chat;
         public final TLRPC.Dialog dialog;
@@ -1210,7 +1210,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class CommunityPeersDialog {
         public final ArrayList<CommunityPeerDialog> chatsYouAreIn = new ArrayList<>();
         public final ArrayList<CommunityPeerDialog> chatsYouCanView = new ArrayList<>();
@@ -1222,7 +1222,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class DiceFrameSuccess {
         public int frame;
         public int num;
@@ -1241,12 +1241,12 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface ErrorDelegate {
         boolean run(TLRPC.TL_error tL_error);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class FaqSearchResult {
         public int num;
         public String[] path;
@@ -1289,24 +1289,24 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface IsInChatCheckedCallback {
         void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface MessagesLoadedCallback {
         void onError();
 
         void onMessagesLoaded(boolean z10);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public interface NewMessageCallback {
         boolean onMessageReceived(TLRPC.Message message);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class PeerColor {
         public int channelLvl;
         public int groupLvl;
@@ -1573,15 +1573,15 @@ public class MessagesController extends BaseController implements NotificationCe
             return hasColor6(z10) ? getColor4(z10) : getColor2(z10);
         }
 
-        public int getColor(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        public int getColor(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
             int i11;
             if (i10 < 0 || i10 > 5) {
                 return 0;
             }
             if (!this.isDefaultName || (i11 = this.id) < 0 || i11 >= 7) {
-                return (f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[i10];
+                return (e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[i10];
             }
-            return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.r8[i11], f6Var);
+            return org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.r8[i11], e6Var);
         }
 
         public int getColor1(boolean z10) {
@@ -1633,23 +1633,23 @@ public class MessagesController extends BaseController implements NotificationCe
         }
 
         public int getColor1() {
-            return (org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[0];
+            return (org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[0];
         }
 
         public int getColor2() {
-            return (org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[1];
+            return (org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[1];
         }
 
         public int getColor3() {
-            return (org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[2];
+            return (org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[2];
         }
 
         public int getColor4() {
-            return (org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[3];
+            return (org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[3];
         }
 
         public int getColor5() {
-            return (org.telegram.ui.ActionBar.j6.I.q() ? this.darkColors : this.colors)[4];
+            return (org.telegram.ui.ActionBar.i6.I.q() ? this.darkColors : this.colors)[4];
         }
 
         public boolean hasColor2(boolean z10) {
@@ -1661,7 +1661,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class PeerColors {
         public static final int TYPE_NAME = 0;
         public static final int TYPE_PROFILE = 1;
@@ -1676,15 +1676,15 @@ public class MessagesController extends BaseController implements NotificationCe
         }
 
         private static int color(String str) {
-            String g10 = v7.j0.g("ff", str);
-            if (g10.length() > 1 && g10.charAt(0) == '+') {
-                g10 = g10.substring(1);
+            String i10 = org.telegram.ui.Cells.q3.i("ff", str);
+            if (i10.length() > 1 && i10.charAt(0) == '+') {
+                i10 = i10.substring(1);
             }
-            long parseLong = Long.parseLong(g10, 16);
+            long parseLong = Long.parseLong(i10, 16);
             if ((4294967295L & parseLong) == parseLong) {
                 return (int) parseLong;
             }
-            throw new NumberFormatException(a4.a.p("Input ", g10, " in base 16 is not in the range of an unsigned integer"));
+            throw new NumberFormatException(a4.a.q("Input ", i10, " in base 16 is not in the range of an unsigned integer"));
         }
 
         public static PeerColors fromJSON(int i10, TLRPC.TL_jsonObject tL_jsonObject, TLRPC.TL_jsonObject tL_jsonObject2, TLRPC.TL_jsonArray tL_jsonArray) {
@@ -1922,14 +1922,14 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class PrintingUser {
         public TLRPC.SendMessageAction action;
         public long lastTime;
         public long userId;
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class ReadTask {
         public long dialogId;
         public int maxDate;
@@ -1946,7 +1946,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class SavedMusicIds {
         public final int currentAccount;
         public final HashSet<Long> ids = new HashSet<>();
@@ -1992,7 +1992,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class SavedMusicList {
         public final int currentAccount;
         public final long dialogId;
@@ -2153,7 +2153,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class SendAsPeersInfo {
         private long loadTime;
         private boolean loading;
@@ -2167,7 +2167,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class SponsoredMessagesInfo {
         public long loadTime;
         public boolean loading;
@@ -2178,7 +2178,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class UnreadCounts {
         public boolean hasUnmutedUnreadDialogs;
         public int mentionCount;
@@ -2187,7 +2187,7 @@ public class MessagesController extends BaseController implements NotificationCe
         public int unreadCount;
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class UserActionUpdatesPts extends TLRPC.Updates {
         private UserActionUpdatesPts() {
         }
@@ -2197,7 +2197,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class UserActionUpdatesSeq extends TLRPC.Updates {
         private UserActionUpdatesSeq() {
         }
@@ -9659,16 +9659,16 @@ public class MessagesController extends BaseController implements NotificationCe
             return;
         }
         if (DialogObject.isEncryptedDialog(readTask.dialogId)) {
-            TLRPC.EncryptedChat k10 = l0.k(this, readTask.dialogId);
-            byte[] bArr = k10.auth_key;
-            if (bArr == null || bArr.length <= 1 || !(k10 instanceof TLRPC.TL_encryptedChat)) {
+            TLRPC.EncryptedChat l4 = y0.l(this, readTask.dialogId);
+            byte[] bArr = l4.auth_key;
+            if (bArr == null || bArr.length <= 1 || !(l4 instanceof TLRPC.TL_encryptedChat)) {
                 return;
             }
             TLRPC.TL_messages_readEncryptedHistory tL_messages_readEncryptedHistory = new TLRPC.TL_messages_readEncryptedHistory();
             TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat = new TLRPC.TL_inputEncryptedChat();
             tL_messages_readEncryptedHistory.peer = tL_inputEncryptedChat;
-            tL_inputEncryptedChat.chat_id = k10.id;
-            tL_inputEncryptedChat.access_hash = k10.access_hash;
+            tL_inputEncryptedChat.chat_id = l4.id;
+            tL_inputEncryptedChat.access_hash = l4.access_hash;
             tL_messages_readEncryptedHistory.max_date = readTask.maxDate;
             getConnectionsManager().sendRequest(tL_messages_readEncryptedHistory, new d5(19));
             return;
@@ -10429,7 +10429,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (callback != null) {
             callback.run(tL_messages_invitedUsers);
         } else {
-            org.telegram.ui.Components.d5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
+            org.telegram.ui.Components.c5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
         }
     }
 
@@ -10443,14 +10443,14 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUserToChat$302(ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, boolean z10, boolean z11) {
         if (errorDelegate.run(tL_error)) {
-            org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tLObject, Boolean.valueOf(z10 && !z11));
+            org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tLObject, Boolean.valueOf(z10 && !z11));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUserToChat$303(ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, boolean z10, boolean z11, TLRPC.InputUser inputUser) {
         if (errorDelegate == null) {
-            org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tLObject, Boolean.valueOf(z10 && !z11));
+            org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tLObject, Boolean.valueOf(z10 && !z11));
         }
         if (z10 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(UPDATE_MASK_CHAT));
@@ -10477,7 +10477,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (callback != null) {
             callback.run(tL_messages_invitedUsers);
         } else {
-            org.telegram.ui.Components.d5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
+            org.telegram.ui.Components.c5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
         }
     }
 
@@ -10594,20 +10594,20 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUsersToChannel$272(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_channels_inviteToChannel, Boolean.TRUE);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_channels_inviteToChannel, Boolean.TRUE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUsersToChannel$273(TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, long j3) {
         putUsers(tL_messages_invitedUsers.updates.users, false);
         putChats(tL_messages_invitedUsers.updates.chats, false);
-        org.telegram.ui.Components.d5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
+        org.telegram.ui.Components.c5.f(this.currentAccount, getChat(Long.valueOf(j3)), tL_messages_invitedUsers);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUsersToChannel$274(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel, long j3, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new pk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_channels_inviteToChannel, 22));
+            AndroidUtilities.runOnUIThread(new qk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_channels_inviteToChannel, 22));
         } else if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
             TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
             processUpdates(tL_messages_invitedUsers.updates, false);
@@ -10632,7 +10632,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addUsersToChat$296(TLRPC.Chat chat, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers) {
-        org.telegram.ui.Components.d5.f(this.currentAccount, chat, tL_messages_invitedUsers);
+        org.telegram.ui.Components.c5.f(this.currentAccount, chat, tL_messages_invitedUsers);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -10744,11 +10744,11 @@ public class MessagesController extends BaseController implements NotificationCe
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(fileLocation.volume_id);
                     sb2.append("_");
-                    String n10 = a4.a.n(fileLocation.local_id, "@50_50", sb2);
+                    String o9 = a4.a.o(fileLocation.local_id, "@50_50", sb2);
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(closestPhotoSizeWithSize.location.volume_id);
                     sb3.append("_");
-                    ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), true);
+                    ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), true);
                 }
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 800);
                 if (closestPhotoSizeWithSize2 != null && fileLocation2 != null) {
@@ -10791,7 +10791,7 @@ public class MessagesController extends BaseController implements NotificationCe
         putUsers(messages_messages.users, false);
         putChats(messages_messages.chats, false);
         getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-        n2Var.presentFragment(new zn(bundle), true);
+        n2Var.presentFragment(new bo(bundle), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -10990,7 +10990,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 StringBuilder sb2 = new StringBuilder("checkLastDialogMessage for ");
                 sb2.append(dialog.id);
                 sb2.append(" current dialog top message ");
-                l0.m(dialog2.top_message, sb2);
+                y0.n(dialog2.top_message, sb2);
             }
             if (dialog2.top_message == 0) {
                 deleteDialog(dialog.id, 3);
@@ -11364,7 +11364,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         this.promoDialogType = PROMO_TYPE_PSA;
                         this.promoPsaType = tL_help_promoData2.psa_type;
                     }
-                    this.proxyDialogAddress = v7.j0.s(str, str2);
+                    this.proxyDialogAddress = w.c.g(str, str2);
                     this.promoPsaMessage = tL_help_promoData2.psa_message;
                     this.nextPromoInfoCheckTime = tL_help_promoData2.expires;
                     SharedPreferences.Editor edit = getGlobalMainSettings().edit();
@@ -11407,7 +11407,7 @@ public class MessagesController extends BaseController implements NotificationCe
             tL_help_promoData2 = tL_help_promoData;
             if (!tL_help_promoData2.proxy) {
             }
-            this.proxyDialogAddress = v7.j0.s(str, str2);
+            this.proxyDialogAddress = w.c.g(str, str2);
             this.promoPsaMessage = tL_help_promoData2.psa_message;
             this.nextPromoInfoCheckTime = tL_help_promoData2.expires;
             SharedPreferences.Editor edit2 = getGlobalMainSettings().edit();
@@ -11439,7 +11439,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public static /* synthetic */ void lambda$checkSensitive$445(boolean[] zArr, View view) {
         boolean z10 = !zArr[0];
         zArr[0] = z10;
-        ((org.telegram.ui.Cells.a2) view).c(z10, true);
+        ((org.telegram.ui.Cells.z1) view).c(z10, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -11464,7 +11464,7 @@ public class MessagesController extends BaseController implements NotificationCe
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if (!bool.booleanValue()) {
             if (U != null) {
-                org.telegram.ui.Components.xc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
+                org.telegram.ui.Components.vc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
                 return;
             }
             return;
@@ -11472,7 +11472,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.sensitiveAgreed.add(Long.valueOf(j3));
         setContentSettings(true);
         if (U != null) {
-            org.telegram.ui.Components.xc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new ud(0, U)), true)).k(true);
+            org.telegram.ui.Components.vc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new ud(0, U)), true)).k(true);
         }
         zArr[0] = true;
         if (runnable != null) {
@@ -11481,9 +11481,9 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkSensitive$449(boolean z10, boolean[] zArr, TL_account.contentSettings contentsettings, Context context, long j3, boolean[] zArr2, Runnable runnable, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public /* synthetic */ void lambda$checkSensitive$449(boolean z10, boolean[] zArr, TL_account.contentSettings contentsettings, Context context, long j3, boolean[] zArr2, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         if (z10 || (zArr[0] && contentsettings != null && contentsettings.sensitive_can_change)) {
-            ThemeActivity.C0(this.currentAccount, context, new f2(this, j3, zArr2, runnable, 1), f6Var);
+            ThemeActivity.C0(this.currentAccount, context, new f2(this, j3, zArr2, runnable, 1), e6Var);
             return;
         }
         this.sensitiveAgreed.add(Long.valueOf(j3));
@@ -11510,7 +11510,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         final Context context2 = context;
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        final org.telegram.ui.ActionBar.f6 resourceProvider = U == null ? null : U.getResourceProvider();
+        final org.telegram.ui.ActionBar.e6 resourceProvider = U == null ? null : U.getResourceProvider();
         final boolean[] zArr = new boolean[1];
         FrameLayout frameLayout = new FrameLayout(context2);
         boolean z10 = this.config.needAgeVideoVerification.get() && !TextUtils.isEmpty(this.verifyAgeBotUsername);
@@ -11518,12 +11518,12 @@ public class MessagesController extends BaseController implements NotificationCe
         if (z10) {
             zArr[0] = true;
         } else if (contentsettings != null && contentsettings.sensitive_can_change) {
-            org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(context2, 1, resourceProvider);
-            a2Var.setBackground(org.telegram.ui.ActionBar.j6.K0(false));
-            a2Var.e(LocaleController.getString(R.string.MessageShowSensitiveContentAlways), "", zArr[0], false, false);
-            a2Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
-            frameLayout.addView(a2Var, w7.y5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-            a2Var.setOnClickListener(new w3(zArr, 1));
+            org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(context2, 1, resourceProvider);
+            z1Var.setBackground(org.telegram.ui.ActionBar.i6.K0(false));
+            z1Var.e(LocaleController.getString(R.string.MessageShowSensitiveContentAlways), "", zArr[0], false, false);
+            z1Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
+            frameLayout.addView(z1Var, w7.x5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+            z1Var.setOnClickListener(new w3(zArr, 1));
         }
         final boolean[] zArr2 = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, resourceProvider);
@@ -11542,7 +11542,7 @@ public class MessagesController extends BaseController implements NotificationCe
             final boolean z12 = z10;
             alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.messenger.tc
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i10) {
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i10) {
                     MessagesController.this.lambda$checkSensitive$449(z12, zArr, contentsettings, context2, j3, zArr2, runnable2, resourceProvider, b2Var2, i10);
                 }
             });
@@ -12027,7 +12027,7 @@ public class MessagesController extends BaseController implements NotificationCe
         getMessagesStorage().setLastDateValue(i11);
         getMessagesStorage().setLastQtsValue(i12);
         getDifference();
-        AndroidUtilities.runOnUIThread(new pk(this, messages_dialogs, iVar, iVar2, 24));
+        AndroidUtilities.runOnUIThread(new qk(this, messages_dialogs, iVar, iVar2, 24));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -12070,7 +12070,7 @@ public class MessagesController extends BaseController implements NotificationCe
         } catch (Exception e) {
             FileLog.e(e);
         }
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_channels_convertToGigagroup, Boolean.FALSE);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_channels_convertToGigagroup, Boolean.FALSE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -12158,7 +12158,7 @@ public class MessagesController extends BaseController implements NotificationCe
         } catch (Exception e) {
             FileLog.e(e);
         }
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_messages_migrateChat, Boolean.FALSE);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_messages_migrateChat, Boolean.FALSE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -12185,7 +12185,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createChat$256(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_messages_createChat tL_messages_createChat) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_messages_createChat, new Object[0]);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_messages_createChat, new Object[0]);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatDidFailCreate, new Object[0]);
     }
 
@@ -12198,14 +12198,14 @@ public class MessagesController extends BaseController implements NotificationCe
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatDidFailCreate, new Object[0]);
         } else {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatDidCreated, Long.valueOf(tL_messages_invitedUsers.updates.chats.get(0).id));
-            org.telegram.ui.Components.d5.f(this.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
+            org.telegram.ui.Components.c5.f(this.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createChat$258(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_messages_createChat tL_messages_createChat, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new pk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_messages_createChat, 23));
+            AndroidUtilities.runOnUIThread(new qk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_messages_createChat, 23));
         } else if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
             TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
             processUpdates(tL_messages_invitedUsers.updates, false);
@@ -12215,7 +12215,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createChat$259(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_createChannel tL_channels_createChannel) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_channels_createChannel, new Object[0]);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_channels_createChannel, new Object[0]);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatDidFailCreate, new Object[0]);
     }
 
@@ -12234,7 +12234,7 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createChat$261(org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_createChannel tL_channels_createChannel, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new pk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_channels_createChannel, 21));
+            AndroidUtilities.runOnUIThread(new qk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_channels_createChannel, 21));
             return;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
@@ -12631,15 +12631,15 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$didReceivedNotification$44(TLRPC.WallPaper wallPaper, TLRPC.TL_wallPaperSettings tL_wallPaperSettings, org.telegram.ui.ActionBar.b6 b6Var, File file, String str) {
-        org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         if (this.uploadingWallpaper == null || this.uploadingWallpaperInfo.s == null || wallPaper == null) {
             return;
         }
         wallPaper.settings = tL_wallPaperSettings;
         wallPaper.flags |= 4;
         b6Var.c = wallPaper.slug;
-        org.telegram.ui.ActionBar.i6 i6Var = b6Var.p;
-        if (i6Var != null && (((h6Var = b6Var.q) != null || i6Var.i0 == b6Var) && (h6Var == null || h6Var.y == b6Var))) {
+        org.telegram.ui.ActionBar.h6 h6Var = b6Var.p;
+        if (h6Var != null && (((g6Var = b6Var.q) != null || h6Var.i0 == b6Var) && (g6Var == null || g6Var.y == b6Var))) {
             b6Var.c();
         }
         ArrayList<TLRPC.WallPaper> arrayList = new ArrayList<>();
@@ -12650,7 +12650,7 @@ public class MessagesController extends BaseController implements NotificationCe
             StringBuilder sb2 = new StringBuilder();
             sb2.append(closestPhotoSizeWithSize.location.volume_id);
             sb2.append("_");
-            ImageLoader.getInstance().replaceImageInCache(Utilities.MD5(file.getAbsolutePath()) + "@100_100", a4.a.n(closestPhotoSizeWithSize.location.local_id, "@100_100", sb2), ImageLocation.getForDocument(closestPhotoSizeWithSize, wallPaper.document), false);
+            ImageLoader.getInstance().replaceImageInCache(Utilities.MD5(file.getAbsolutePath()) + "@100_100", a4.a.o(closestPhotoSizeWithSize.location.local_id, "@100_100", sb2), ImageLocation.getForDocument(closestPhotoSizeWithSize, wallPaper.document), false);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.wallpapersNeedReload, wallPaper.slug);
         ArrayList arrayList2 = this.uploadingWallpaperInfo.s;
@@ -12674,50 +12674,50 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$didReceivedNotification$46(TLObject tLObject, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public void lambda$didReceivedNotification$46(TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var) {
         if (!(tLObject instanceof TLRPC.TL_theme)) {
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, i6Var, h6Var);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, h6Var, g6Var);
             return;
         }
-        org.telegram.ui.ActionBar.j6.C1(i6Var, h6Var, (TLRPC.TL_theme) tLObject, this.currentAccount, false);
-        installTheme(i6Var, h6Var, i6Var == org.telegram.ui.ActionBar.j6.J);
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadedToServer, i6Var, h6Var);
+        org.telegram.ui.ActionBar.i6.C1(h6Var, g6Var, (TLRPC.TL_theme) tLObject, this.currentAccount, false);
+        installTheme(h6Var, g6Var, h6Var == org.telegram.ui.ActionBar.i6.J);
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadedToServer, h6Var, g6Var);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$47(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new ra(this, tLObject, i6Var, h6Var, 0));
+    public /* synthetic */ void lambda$didReceivedNotification$47(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new ra(this, tLObject, h6Var, g6Var, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$48(TLObject tLObject, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ void lambda$didReceivedNotification$48(TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var) {
         if (!(tLObject instanceof TLRPC.TL_theme)) {
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, i6Var, h6Var);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, h6Var, g6Var);
         } else {
-            org.telegram.ui.ActionBar.j6.C1(i6Var, h6Var, (TLRPC.TL_theme) tLObject, this.currentAccount, false);
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadedToServer, i6Var, h6Var);
+            org.telegram.ui.ActionBar.i6.C1(h6Var, g6Var, (TLRPC.TL_theme) tLObject, this.currentAccount, false);
+            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadedToServer, h6Var, g6Var);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$49(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new ra(this, tLObject, i6Var, h6Var, 1));
+    public /* synthetic */ void lambda$didReceivedNotification$49(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new ra(this, tLObject, h6Var, g6Var, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$50(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, i6Var, h6Var);
+    public /* synthetic */ void lambda$didReceivedNotification$50(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, h6Var, g6Var);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$51(TLRPC.TL_theme tL_theme, final org.telegram.ui.ActionBar.i6 i6Var, TLRPC.TL_inputThemeSettings tL_inputThemeSettings, final org.telegram.ui.ActionBar.h6 h6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        String n10 = tL_theme != null ? tL_theme.title : i6Var.n();
+    public /* synthetic */ void lambda$didReceivedNotification$51(TLRPC.TL_theme tL_theme, final org.telegram.ui.ActionBar.h6 h6Var, TLRPC.TL_inputThemeSettings tL_inputThemeSettings, final org.telegram.ui.ActionBar.g6 g6Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        String n10 = tL_theme != null ? tL_theme.title : h6Var.n();
         int lastIndexOf = n10.lastIndexOf(".attheme");
         if (lastIndexOf > 0) {
             n10 = n10.substring(0, lastIndexOf);
         }
         if (tLObject == null) {
-            AndroidUtilities.runOnUIThread(new z8(this, i6Var, h6Var, 12));
+            AndroidUtilities.runOnUIThread(new z8(this, h6Var, g6Var, 12));
             return;
         }
         TLRPC.Document document = (TLRPC.Document) tLObject;
@@ -12747,10 +12747,10 @@ public class MessagesController extends BaseController implements NotificationCe
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                     switch (i10) {
                         case 0:
-                            this.b.lambda$didReceivedNotification$47(i6Var, h6Var, tLObject2, tL_error2);
+                            this.b.lambda$didReceivedNotification$47(h6Var, g6Var, tLObject2, tL_error2);
                             break;
                         default:
-                            this.b.lambda$didReceivedNotification$49(i6Var, h6Var, tLObject2, tL_error2);
+                            this.b.lambda$didReceivedNotification$49(h6Var, g6Var, tLObject2, tL_error2);
                             break;
                     }
                 }
@@ -12784,10 +12784,10 @@ public class MessagesController extends BaseController implements NotificationCe
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                 switch (i12) {
                     case 0:
-                        this.b.lambda$didReceivedNotification$47(i6Var, h6Var, tLObject2, tL_error2);
+                        this.b.lambda$didReceivedNotification$47(h6Var, g6Var, tLObject2, tL_error2);
                         break;
                     default:
-                        this.b.lambda$didReceivedNotification$49(i6Var, h6Var, tLObject2, tL_error2);
+                        this.b.lambda$didReceivedNotification$49(h6Var, g6Var, tLObject2, tL_error2);
                         break;
                 }
             }
@@ -12913,7 +12913,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (this.availableEffects != messages_availableeffects) {
             this.availableEffects = messages_availableeffects;
             if (messages_availableeffects != null) {
-                org.telegram.ui.Components.p5.h(this.currentAccount).f(this.availableEffects.documents);
+                org.telegram.ui.Components.o5.h(this.currentAccount).f(this.availableEffects.documents);
             }
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.availableEffectsUpdate, new Object[0]);
         }
@@ -12943,7 +12943,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getBlockedPeers$113(boolean z10, TLRPC.TL_contacts_getBlocked tL_contacts_getBlocked, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new uj(this, tLObject, z10, tL_contacts_getBlocked, 11));
+        AndroidUtilities.runOnUIThread(new vj(this, tLObject, z10, tL_contacts_getBlocked, 11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -13086,7 +13086,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                 }
                                 arrayList = (ArrayList) iVar2.f(j11);
                                 if (arrayList == null) {
-                                    arrayList = l0.i(j11, iVar2);
+                                    arrayList = y0.j(j11, iVar2);
                                 }
                                 arrayList.add(messageObject);
                             }
@@ -13490,7 +13490,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
             }
             updates_difference2 = updates_difference;
-            getMessagesStorage().getStorageQueue().postRunnable(new pk(this, arrayList, updates_difference, iVar4, 25));
+            getMessagesStorage().getStorageQueue().postRunnable(new qk(this, arrayList, updates_difference, iVar4, 25));
             getSecretChatHelper().processPendingEncMessages();
         }
         if (updates_difference2.other_updates.isEmpty()) {
@@ -13548,11 +13548,11 @@ public class MessagesController extends BaseController implements NotificationCe
             if (sparseArray.size() != 0) {
                 messagesController = this;
                 AndroidUtilities.runOnUIThread(new wd(messagesController, sparseArray, 0));
-                Utilities.stageQueue.postRunnable(new pk(messagesController, updates_difference, iVar, iVar2, 26));
+                Utilities.stageQueue.postRunnable(new qk(messagesController, updates_difference, iVar, iVar2, 26));
             }
         }
         messagesController = this;
-        Utilities.stageQueue.postRunnable(new pk(messagesController, updates_difference, iVar, iVar2, 26));
+        Utilities.stageQueue.postRunnable(new qk(messagesController, updates_difference, iVar, iVar2, 26));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -13985,13 +13985,13 @@ public class MessagesController extends BaseController implements NotificationCe
                 TLRPC.User user = getUser(Long.valueOf(j3));
                 if (user != null) {
                     user.linked_community_id = z10 ? 0L : j10;
-                    user.flags2 = w7.d0.b(user.flags2, TLObject.FLAG_21, !z10);
+                    user.flags2 = w7.c0.b(user.flags2, TLObject.FLAG_21, !z10);
                 }
             } else {
                 TLRPC.Chat chat2 = getChat(Long.valueOf(-j3));
                 if (chat2 != null) {
                     chat2.linked_community_id = z10 ? 0L : j10;
-                    chat2.flags2 = w7.d0.b(chat2.flags2, 1048576, !z10);
+                    chat2.flags2 = w7.c0.b(chat2.flags2, 1048576, !z10);
                 }
             }
         }
@@ -14522,7 +14522,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (i12 == 0 || messages_messages.messages.isEmpty()) {
             i22 = i11;
         } else {
-            int i23 = ((TLRPC.Message) hg.k0.g(1, messages_messages.messages)).id;
+            int i23 = ((TLRPC.Message) hg.c.h(1, messages_messages.messages)).id;
             int size = messages_messages.messages.size() - 1;
             while (true) {
                 if (size < 0) {
@@ -14560,7 +14560,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (!messages_messages.messages.isEmpty()) {
             if (i12 != 0) {
-                int i25 = ((TLRPC.Message) hg.k0.g(1, messages_messages.messages)).id;
+                int i25 = ((TLRPC.Message) hg.c.h(1, messages_messages.messages)).id;
                 int size = messages_messages.messages.size() - 1;
                 while (true) {
                     if (size < 0) {
@@ -14613,7 +14613,7 @@ public class MessagesController extends BaseController implements NotificationCe
             if (i11 == 0 || messages_messages.messages.isEmpty()) {
                 i22 = i10;
             } else {
-                int i23 = ((TLRPC.Message) hg.k0.g(1, messages_messages.messages)).id;
+                int i23 = ((TLRPC.Message) hg.c.h(1, messages_messages.messages)).id;
                 int size = messages_messages.messages.size() - 1;
                 while (true) {
                     if (size < 0) {
@@ -14679,7 +14679,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (i12 == 0 || messages_messages.messages.isEmpty()) {
             i22 = i11;
         } else {
-            int i23 = ((TLRPC.Message) hg.k0.g(1, messages_messages.messages)).id;
+            int i23 = ((TLRPC.Message) hg.c.h(1, messages_messages.messages)).id;
             int size = messages_messages.messages.size() - 1;
             while (true) {
                 if (size < 0) {
@@ -15770,15 +15770,15 @@ public class MessagesController extends BaseController implements NotificationCe
     public /* synthetic */ void lambda$new$505() {
         int i10;
         a0.i iVar = new a0.i();
-        Iterator<Pair<yh.n5, AtomicBoolean>> it = this.pendingReportMessageDelivery.iterator();
+        Iterator<Pair<yh.o5, AtomicBoolean>> it = this.pendingReportMessageDelivery.iterator();
         while (true) {
             if (!it.hasNext()) {
                 break;
             }
-            Pair<yh.n5, AtomicBoolean> next = it.next();
-            Pair pair = (Pair) iVar.f(((yh.n5) next.first).a);
+            Pair<yh.o5, AtomicBoolean> next = it.next();
+            Pair pair = (Pair) iVar.f(((yh.o5) next.first).a);
             if (pair == null) {
-                long j3 = ((yh.n5) next.first).a;
+                long j3 = ((yh.o5) next.first).a;
                 Pair pair2 = new Pair(new HashSet(), (AtomicBoolean) next.second);
                 iVar.k(pair2, j3);
                 pair = pair2;
@@ -15786,7 +15786,7 @@ public class MessagesController extends BaseController implements NotificationCe
             if (!((AtomicBoolean) next.second).get()) {
                 ((AtomicBoolean) pair.second).set(false);
             }
-            ((HashSet) pair.first).add(Integer.valueOf(((yh.n5) next.first).b));
+            ((HashSet) pair.first).add(Integer.valueOf(((yh.o5) next.first).b));
         }
         this.pendingReportMessageDelivery.clear();
         for (i10 = 0; i10 < iVar.m(); i10++) {
@@ -15870,8 +15870,8 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (user.bot_has_main_app) {
             long j3 = user.id;
-            if (U instanceof zn) {
-                j3 = ((zn) U).a();
+            if (U instanceof bo) {
+                j3 = ((bo) U).a();
             } else if (U instanceof ProfileActivity) {
                 j3 = ((ProfileActivity) U).a();
             }
@@ -15895,7 +15895,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         TL_bots.BotInfo botInfo = botInfoArr[0];
         if (botInfo == null || !(botInfo.menu_button instanceof TL_bots.TL_botMenuButton)) {
-            U.presentFragment(zn.R9(user.id));
+            U.presentFragment(bo.R9(user.id));
             return;
         }
         if (U.getParentLayout() instanceof ActionBarLayout) {
@@ -15977,10 +15977,10 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (n2Var.getParentActivity() != null) {
             try {
-                if (n2Var instanceof zn) {
-                    ((zn) n2Var).qb();
+                if (n2Var instanceof bo) {
+                    ((bo) n2Var).qb();
                 }
-                org.telegram.ui.Components.xc.a0(n2Var).t(LocaleController.getString(R.string.NoUsernameFound), null).j();
+                org.telegram.ui.Components.vc.a0(n2Var).t(LocaleController.getString(R.string.NoUsernameFound), null).j();
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -16522,9 +16522,9 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
                 if (dialog == null) {
                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                        StringBuilder t10 = a4.a.t(keyAt, "can't update dialog ", " with new unread ");
-                        t10.append(longSparseIntArray.valueAt(i10));
-                        FileLog.d(t10.toString());
+                        StringBuilder u10 = a4.a.u(keyAt, "can't update dialog ", " with new unread ");
+                        u10.append(longSparseIntArray.valueAt(i10));
+                        FileLog.d(u10.toString());
                     }
                     this.pendingUnreadCounter.put(keyAt, longSparseIntArray.valueAt(i10));
                 }
@@ -16532,7 +16532,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     int i12 = dialog.unread_count;
                     dialog.unread_count = longSparseIntArray.valueAt(i10);
                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                        l0.m(dialog.unread_count, a4.a.t(keyAt, "update dialog ", " with new unread "));
+                        y0.n(dialog.unread_count, a4.a.u(keyAt, "update dialog ", " with new unread "));
                     }
                     if (i12 != 0 && dialog.unread_count == 0) {
                         if (!isDialogMuted(keyAt, 0L)) {
@@ -17189,7 +17189,7 @@ public class MessagesController extends BaseController implements NotificationCe
             this.loadingDialogs.put(i11, false);
         }
         this.dialogsLoaded = true;
-        int i23 = (!z10 || this.allDialogs.isEmpty()) ? 0 : ((TLRPC.Dialog) hg.k0.g(1, this.allDialogs)).last_message_date;
+        int i23 = (!z10 || this.allDialogs.isEmpty()) ? 0 : ((TLRPC.Dialog) hg.c.h(1, this.allDialogs)).last_message_date;
         int i24 = 0;
         int i25 = 0;
         boolean z13 = false;
@@ -17516,9 +17516,9 @@ public class MessagesController extends BaseController implements NotificationCe
             this.firstGettingTask = true;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder l4 = hg.k0.l("loaded folderId ", i18, " loadType ", i11, " count ");
-            l4.append(messages_dialogs.dialogs.size());
-            FileLog.d(l4.toString());
+            StringBuilder m10 = hg.c.m("loaded folderId ", i18, " loadType ", i11, " count ");
+            m10.append(messages_dialogs.dialogs.size());
+            FileLog.d(m10.toString());
         }
         final long[] dialogLoadOffsets = getUserConfig().getDialogLoadOffsets(i18);
         if (i11 == this.DIALOGS_LOAD_TYPE_CACHE && messages_dialogs.dialogs.size() == 0) {
@@ -17977,7 +17977,7 @@ public class MessagesController extends BaseController implements NotificationCe
         putUsers(messages_messages.users, z10);
         putChats(messages_messages.chats, z10);
         if (messages_messages.animatedEmoji != null && z11) {
-            org.telegram.ui.Components.p5.h(this.currentAccount).d(messages_messages.animatedEmoji);
+            org.telegram.ui.Components.o5.h(this.currentAccount).d(messages_messages.animatedEmoji);
         }
         if (i26 == 1) {
             i22 = i11;
@@ -18959,7 +18959,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                                                                 if (BuildVars.LOGS_ENABLED) {
                                                                     FileLog.d("Received call in update: " + phoneCall);
-                                                                    hg.k0.u(new StringBuilder("call id "), phoneCall.id);
+                                                                    hg.c.w(new StringBuilder("call id "), phoneCall.id);
                                                                 }
                                                                 VoIPDebugToSend voIPDebugToSend = this.voipDebug;
                                                                 if (voIPDebugToSend != null && (phoneCall instanceof TL_phone.TL_phoneCallDiscarded)) {
@@ -18988,7 +18988,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         FileLog.e("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z16);
                                                                         if (sharedInstance2 == null && VoIPService.callIShouldHavePutIntoIntent == null && z16) {
                                                                             if (BuildVars.LOGS_ENABLED) {
-                                                                                hg.k0.u(new StringBuilder("Starting service for call "), phoneCall.id);
+                                                                                hg.c.w(new StringBuilder("Starting service for call "), phoneCall.id);
                                                                             }
                                                                             VoIPService.callIShouldHavePutIntoIntent = phoneCall;
                                                                             FileLog.e("set VoIPService.callIShouldHavePutIntoIntent = " + phoneCall);
@@ -19094,7 +19094,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 long D = yh.u5.w(this.currentAccount).D(tL_updateMessageReactions.msg_id, peerId);
                                                                 if (D != 0) {
                                                                     c10 = 2;
-                                                                    MessageObject.addPaidReactions(this.currentAccount, tL_updateMessageReactions.reactions, (int) D, yh.u5.w(this.currentAccount).B(yh.n5.a(tL_updateMessageReactions.msg_id, peerId), tL_updateMessageReactions.reactions), true);
+                                                                    MessageObject.addPaidReactions(this.currentAccount, tL_updateMessageReactions.reactions, (int) D, yh.u5.w(this.currentAccount).B(yh.o5.a(tL_updateMessageReactions.msg_id, peerId), tL_updateMessageReactions.reactions), true);
                                                                 } else {
                                                                     c10 = 2;
                                                                 }
@@ -19112,7 +19112,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 TL_update.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TL_update.TL_updateMessageExtendedMedia) update;
                                                                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateExtendedMedia, Long.valueOf(DialogObject.getPeerDialogId(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
                                                             } else if (update instanceof TL_update.TL_updateTheme) {
-                                                                org.telegram.ui.ActionBar.j6.C1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, this.currentAccount, true);
+                                                                org.telegram.ui.ActionBar.i6.C1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, this.currentAccount, true);
                                                             } else if (update instanceof TL_update.TL_updateDialogFilter) {
                                                                 loadRemoteFilters(true);
                                                             } else if (update instanceof TL_update.TL_updateDialogFilterOrder) {
@@ -19215,7 +19215,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                     sb2.append(" text=");
                                                                     com.google.android.gms.internal.vision.e2.t(tL_updateTranscribedAudio.text, sb2);
                                                                 }
-                                                                if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !u31.g(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                                if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !e31.g(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
                                                                     getMessagesStorage().updateMessageVoiceTranscription(DialogObject.getPeerDialogId(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.msg_id, tL_updateTranscribedAudio.text, tL_updateTranscribedAudio.transcription_id, !tL_updateTranscribedAudio.pending);
                                                                     getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.voiceTranscriptionUpdate, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
                                                                 }
@@ -19253,7 +19253,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 }
                                                             } else if ((update instanceof TL_update.TL_updatePinnedSavedDialogs) || (update instanceof TL_update.TL_updateSavedDialogPinned)) {
                                                                 getSavedMessagesController().processUpdate(update);
-                                                            } else if (!hg.b2.f(this.currentAccount).j(update, null, 0)) {
+                                                            } else if (!hg.c2.f(this.currentAccount).j(update, null, 0)) {
                                                                 if (update instanceof TL_update.TL_updatePaidReactionPrivacy) {
                                                                     SharedPreferences.Editor edit = this.mainPreferences.edit();
                                                                     long currentTimeMillis = System.currentTimeMillis();
@@ -20513,18 +20513,18 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ void lambda$saveThemeToServer$119(String str, String str2, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public /* synthetic */ void lambda$saveThemeToServer$119(String str, String str2, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.h6 h6Var) {
         if (str == null) {
             this.uploadingThemes.remove(str2);
             return;
         }
-        this.uploadingThemes.put(str, h6Var != null ? h6Var : i6Var);
-        if (h6Var == null) {
-            i6Var.I = str2;
-            i6Var.H = str;
+        this.uploadingThemes.put(str, g6Var != null ? g6Var : h6Var);
+        if (g6Var == null) {
+            h6Var.I = str2;
+            h6Var.H = str;
         } else {
-            h6Var.v = str2;
-            h6Var.u = str;
+            g6Var.v = str2;
+            g6Var.u = str;
         }
         getFileLoader().uploadFile(str2, false, true, 67108864);
         getFileLoader().uploadFile(str, false, true, 16777216);
@@ -20638,7 +20638,7 @@ public class MessagesController extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void lambda$saveThemeToServer$120(String str, File file, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public void lambda$saveThemeToServer$120(String str, File file, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.h6 h6Var) {
         String str2;
         ?? r12;
         String str3;
@@ -20733,33 +20733,33 @@ public class MessagesController extends BaseController implements NotificationCe
         Drawable drawable4;
         Drawable bitmapDrawable;
         String absolutePath = file != null ? file.getAbsolutePath() : null;
-        int i45 = org.telegram.ui.ActionBar.j6.a;
+        int i45 = org.telegram.ui.ActionBar.i6.a;
         try {
             strArr = new String[1];
-            Q0 = org.telegram.ui.ActionBar.j6.Q0(new File(str), null, strArr);
-            if (h6Var != null) {
-                org.telegram.ui.ActionBar.j6.G(Q0, h6Var.b);
+            Q0 = org.telegram.ui.ActionBar.i6.Q0(new File(str), null, strArr);
+            if (g6Var != null) {
+                org.telegram.ui.ActionBar.i6.G(Q0, g6Var.b);
             }
-            r82 = org.telegram.ui.ActionBar.j6.ql.get(org.telegram.ui.ActionBar.j6.g5, -1);
+            r82 = org.telegram.ui.ActionBar.i6.ql.get(org.telegram.ui.ActionBar.i6.g5, -1);
             createBitmap = Bitmaps.createBitmap(560, 678, Bitmap.Config.ARGB_8888);
             canvas = new Canvas(createBitmap);
             paint = new Paint();
-            F0 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.s8);
-            F02 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.v8);
-            F03 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.Sd);
-            F04 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.Xd);
-            F05 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.ra);
-            F06 = org.telegram.ui.ActionBar.j6.F0(Q0, org.telegram.ui.ActionBar.j6.Aa);
-            Q0.get(org.telegram.ui.ActionBar.j6.Da);
-            i10 = Q0.get(org.telegram.ui.ActionBar.j6.Nd);
+            F0 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.s8);
+            F02 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.v8);
+            F03 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.Sd);
+            F04 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.Xd);
+            F05 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.ra);
+            F06 = org.telegram.ui.ActionBar.i6.F0(Q0, org.telegram.ui.ActionBar.i6.Aa);
+            Q0.get(org.telegram.ui.ActionBar.i6.Da);
+            i10 = Q0.get(org.telegram.ui.ActionBar.i6.Nd);
             try {
-                i11 = Q0.get(org.telegram.ui.ActionBar.j6.Od);
-                i12 = Q0.get(org.telegram.ui.ActionBar.j6.Pd);
-                i13 = Q0.get(org.telegram.ui.ActionBar.j6.Qd);
-                if (h6Var != null) {
+                i11 = Q0.get(org.telegram.ui.ActionBar.i6.Od);
+                i12 = Q0.get(org.telegram.ui.ActionBar.i6.Pd);
+                i13 = Q0.get(org.telegram.ui.ActionBar.i6.Qd);
+                if (g6Var != null) {
                     str5 = absolutePath;
                     c10 = 0;
-                    i14 = (int) h6Var.j;
+                    i14 = (int) g6Var.j;
                 } else {
                     str5 = absolutePath;
                     c10 = 0;
@@ -20774,44 +20774,44 @@ public class MessagesController extends BaseController implements NotificationCe
             str2 = null;
             r12 = str;
         }
-        if (i14 != 0 || h6Var == null) {
+        if (i14 != 0 || g6Var == null) {
             i15 = i13;
         } else {
             i15 = i13;
-            if (h6Var.j != 0) {
+            if (g6Var.j != 0) {
                 i16 = 0;
-                if (h6Var == null) {
+                if (g6Var == null) {
                     i17 = i16;
-                    i18 = (int) h6Var.k;
+                    i18 = (int) g6Var.k;
                 } else {
                     i17 = i16;
                     i18 = 0;
                 }
-                if (i18 == 0 || h6Var == null) {
+                if (i18 == 0 || g6Var == null) {
                     i19 = i18;
                 } else {
                     i19 = i18;
-                    if (h6Var.k != 0) {
+                    if (g6Var.k != 0) {
                         i20 = 0;
-                        if (h6Var != null) {
+                        if (g6Var != null) {
                             i21 = i20;
-                            i22 = (int) h6Var.l;
+                            i22 = (int) g6Var.l;
                         } else {
                             i21 = i20;
                             i22 = 0;
                         }
-                        if (i22 == 0 || h6Var == null) {
+                        if (i22 == 0 || g6Var == null) {
                             i23 = i22;
                         } else {
                             i23 = i22;
-                            if (h6Var.l != 0) {
+                            if (g6Var.l != 0) {
                                 i24 = 0;
-                                i25 = h6Var == null ? (int) h6Var.m : 0;
-                                if (i25 == 0 || h6Var == null) {
+                                i25 = g6Var == null ? (int) g6Var.m : 0;
+                                if (i25 == 0 || g6Var == null) {
                                     i26 = i25;
                                 } else {
                                     i26 = i25;
-                                    if (h6Var.m != 0) {
+                                    if (g6Var.m != 0) {
                                         i27 = 0;
                                         int i46 = i27;
                                         if (TextUtils.isEmpty(strArr[c10])) {
@@ -20837,21 +20837,21 @@ public class MessagesController extends BaseController implements NotificationCe
                                                     str3 = str2;
                                                     str4 = str3;
                                                     obj = obj2;
-                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                 }
                                             } catch (Exception e) {
                                                 e = e;
                                                 i28 = i17;
                                                 strArr2 = strArr;
                                             }
-                                            if (h6Var != null) {
+                                            if (g6Var != null) {
                                                 if (!TextUtils.isEmpty(queryParameter)) {
                                                     i28 = i17;
                                                     strArr2 = strArr;
                                                     try {
                                                         parseInt = Integer.parseInt(queryParameter.substring(0, 6), 16) | (-16777216);
                                                         try {
-                                                            h6Var.j = parseInt;
+                                                            g6Var.j = parseInt;
                                                         } catch (Exception e7) {
                                                             e = e7;
                                                             paint4 = paint;
@@ -20873,13 +20873,13 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         r32 = paint3;
                                                         r21 = i32;
                                                         ?? mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate2);
+                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate2);
                                                         Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate3);
+                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate3);
                                                         Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate4);
+                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate4);
                                                         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                                         org.telegram.ui.ActionBar.f5[] f5VarArr6 = new org.telegram.ui.ActionBar.f5[2];
                                                         i38 = 0;
                                                         for (i37 = 2; i38 < i37; i37 = 2) {
@@ -20926,7 +20926,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         SharedConfig.saveConfig();
                                                         str4 = file3.getAbsolutePath();
                                                         obj = r12;
-                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                     }
                                                     if (queryParameter.length() >= 13) {
                                                         try {
@@ -20936,7 +20936,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         if (AndroidUtilities.isValidWallChar(queryParameter.charAt(6))) {
                                                             parseInt2 = Integer.parseInt(queryParameter.substring(7, 13), 16) | (-16777216);
                                                             try {
-                                                                h6Var.k = parseInt2;
+                                                                g6Var.k = parseInt2;
                                                                 if (queryParameter.length() >= 20 || !AndroidUtilities.isValidWallChar(queryParameter.charAt(13))) {
                                                                     paint5 = paint;
                                                                     i29 = F0;
@@ -20946,7 +20946,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                     Paint paint8 = paint;
                                                                     i29 = F0;
                                                                     try {
-                                                                        h6Var.l = parseInt3;
+                                                                        g6Var.l = parseInt3;
                                                                         i24 = parseInt3;
                                                                         paint5 = paint8;
                                                                     } catch (Exception e12) {
@@ -20966,13 +20966,13 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         r32 = paint3;
                                                                         r21 = i32;
                                                                         ?? mutate22 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate22);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate22);
                                                                         Drawable mutate32 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate32);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate32);
                                                                         Drawable mutate42 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate42);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate42);
                                                                         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                                                         org.telegram.ui.ActionBar.f5[] f5VarArr62 = new org.telegram.ui.ActionBar.f5[2];
                                                                         i38 = 0;
                                                                         while (i38 < i37) {
@@ -21019,7 +21019,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         SharedConfig.saveConfig();
                                                                         str4 = file32.getAbsolutePath();
                                                                         obj = r12;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
                                                                 }
                                                                 if (queryParameter.length() == 27 || !AndroidUtilities.isValidWallChar(queryParameter.charAt(20))) {
@@ -21027,7 +21027,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 } else {
                                                                     int parseInt4 = Integer.parseInt(queryParameter.substring(21), 16) | (-16777216);
                                                                     try {
-                                                                        h6Var.m = parseInt4;
+                                                                        g6Var.m = parseInt4;
                                                                         i21 = parseInt2;
                                                                         i46 = parseInt4;
                                                                     } catch (Exception e13) {
@@ -21048,13 +21048,13 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         r32 = paint3;
                                                                         r21 = i32;
                                                                         ?? mutate222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate222);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate222);
                                                                         Drawable mutate322 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate322);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate322);
                                                                         Drawable mutate422 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate422);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate422);
                                                                         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                                                         org.telegram.ui.ActionBar.f5[] f5VarArr622 = new org.telegram.ui.ActionBar.f5[2];
                                                                         i38 = 0;
                                                                         while (i38 < i37) {
@@ -21101,7 +21101,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         SharedConfig.saveConfig();
                                                                         str4 = file322.getAbsolutePath();
                                                                         obj = r12;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
                                                                 }
                                                                 i30 = parseInt;
@@ -21123,13 +21123,13 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 r32 = paint3;
                                                                 r21 = i32;
                                                                 ?? mutate2222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                org.telegram.ui.ActionBar.j6.w1(F02, mutate2222);
+                                                                org.telegram.ui.ActionBar.i6.w1(F02, mutate2222);
                                                                 Drawable mutate3222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                org.telegram.ui.ActionBar.j6.w1(F02, mutate3222);
+                                                                org.telegram.ui.ActionBar.i6.w1(F02, mutate3222);
                                                                 Drawable mutate4222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                org.telegram.ui.ActionBar.j6.w1(F04, mutate4222);
+                                                                org.telegram.ui.ActionBar.i6.w1(F04, mutate4222);
                                                                 mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                                                org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                                                 org.telegram.ui.ActionBar.f5[] f5VarArr6222 = new org.telegram.ui.ActionBar.f5[2];
                                                                 i38 = 0;
                                                                 while (i38 < i37) {
@@ -21176,7 +21176,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 SharedConfig.saveConfig();
                                                                 str4 = file3222.getAbsolutePath();
                                                                 obj = r12;
-                                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                             }
                                                             i33 = F06;
                                                             i34 = i21;
@@ -21216,20 +21216,20 @@ public class MessagesController extends BaseController implements NotificationCe
                                             r21 = i32;
                                         }
                                         ?? mutate22222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate22222);
+                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate22222);
                                         Drawable mutate32222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                        org.telegram.ui.ActionBar.j6.w1(F02, mutate32222);
+                                        org.telegram.ui.ActionBar.i6.w1(F02, mutate32222);
                                         Drawable mutate42222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate42222);
+                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate42222);
                                         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                         org.telegram.ui.ActionBar.f5[] f5VarArr62222 = new org.telegram.ui.ActionBar.f5[2];
                                         i38 = 0;
                                         while (i38 < i37) {
                                             int i50 = i30;
                                             org.telegram.ui.ActionBar.q5 q5Var = new org.telegram.ui.ActionBar.q5(i38 == 1, Q0);
                                             f5VarArr62222[i38] = q5Var;
-                                            org.telegram.ui.ActionBar.j6.w1(i38 == 0 ? F05 : i33, q5Var);
+                                            org.telegram.ui.ActionBar.i6.w1(i38 == 0 ? F05 : i33, q5Var);
                                             i38++;
                                             i30 = i50;
                                         }
@@ -21264,7 +21264,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                 Bitmap decodeFile = BitmapFactory.decodeFile(str6, options);
                                                 if (decodeFile != null) {
                                                     try {
-                                                        if (r21 == 0 || h6Var == null) {
+                                                        if (r21 == 0 || g6Var == null) {
                                                             str6 = mutate22222;
                                                             f5VarArr3 = f5VarArr62222;
                                                             drawable = mutate42222;
@@ -21280,7 +21280,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 int i51 = r21;
                                                                 r21 = f5VarArr62222;
                                                                 drawable = mutate42222;
-                                                                nc0 nc0Var = new nc0(true, i482222, i34, i51, i35);
+                                                                cc0 cc0Var = new cc0(true, i482222, i34, i51, i35);
                                                                 if (createBitmap != null && createBitmap.getConfig() != config) {
                                                                     Bitmap copy = createBitmap.copy(config, false);
                                                                     try {
@@ -21337,12 +21337,12 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         SharedConfig.saveConfig();
                                                                         str4 = file32222.getAbsolutePath();
                                                                         obj = r12;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
                                                                 }
-                                                                nc0Var.t(decodeFile, (int) (h6Var.p * 100.0f));
-                                                                nc0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                                                                nc0Var.draw(canvas);
+                                                                cc0Var.t(decodeFile, (int) (g6Var.p * 100.0f));
+                                                                cc0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                                                                cc0Var.draw(canvas);
                                                                 f5VarArr3 = r21;
                                                             } catch (Throwable th7) {
                                                                 th = th7;
@@ -21396,7 +21396,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                 SharedConfig.saveConfig();
                                                                 str4 = file322222.getAbsolutePath();
                                                                 obj = r12;
-                                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                             }
                                                         }
                                                         z10 = true;
@@ -21497,7 +21497,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         SharedConfig.saveConfig();
                                                                         str4 = file3222222.getAbsolutePath();
                                                                         obj = r12;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
                                                                     try {
                                                                         fileInputStream.getChannel().position((long) r82);
@@ -21551,7 +21551,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         SharedConfig.saveConfig();
                                                                         str4 = file32222222.getAbsolutePath();
                                                                         obj = r12;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
                                                                 } catch (Throwable th11) {
                                                                     th = th11;
@@ -21603,7 +21603,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                     SharedConfig.saveConfig();
                                                                     str4 = file322222222.getAbsolutePath();
                                                                     obj = r12;
-                                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                 }
                                                             } else {
                                                                 try {
@@ -21682,9 +21682,9 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                         str3 = str2;
                                                                         str4 = str3;
                                                                         obj = obj22;
-                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                     }
-                                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                                 }
                                                             }
                                                             r32 = options2.outWidth;
@@ -21735,7 +21735,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                             r22 = str14;
                                                             f5VarArr4 = f5VarArr7;
                                                             if (!z10) {
-                                                                nc0 Q = org.telegram.ui.ActionBar.j6.Q(createBitmap.getWidth(), createBitmap.getHeight() - 120);
+                                                                cc0 Q = org.telegram.ui.ActionBar.i6.Q(createBitmap.getWidth(), createBitmap.getHeight() - 120);
                                                                 Q.setBounds(0, 120, createBitmap.getWidth(), createBitmap.getHeight() - 120);
                                                                 Q.draw(canvas);
                                                             }
@@ -21784,7 +21784,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                             SharedConfig.saveConfig();
                                                             str4 = file32222222222.getAbsolutePath();
                                                             obj = r12;
-                                                            AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                            AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                         }
                                                     }
                                                     z11 = false;
@@ -21829,7 +21829,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                     SharedConfig.saveConfig();
                                                     str4 = file322222222222.getAbsolutePath();
                                                     obj = r12;
-                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                    AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                                 }
                                                 str13 = str;
                                                 paint6 = r32;
@@ -21872,26 +21872,26 @@ public class MessagesController extends BaseController implements NotificationCe
                                                 SharedConfig.saveConfig();
                                                 str4 = file3222222222222.getAbsolutePath();
                                                 obj = r12;
-                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                             }
                                             if (i34 == 0) {
                                                 bitmapDrawable = new ColorDrawable(i482222);
                                                 drawable4 = mutate42222;
                                             } else if (i52 != 0) {
                                                 drawable4 = mutate42222;
-                                                bitmapDrawable = new nc0(true, i482222, i34, i52, i35);
+                                                bitmapDrawable = new cc0(true, i482222, i34, i52, i35);
                                             } else {
                                                 drawable4 = mutate42222;
-                                                int i53 = Q0.get(org.telegram.ui.ActionBar.j6.Rd, -1);
+                                                int i53 = Q0.get(org.telegram.ui.ActionBar.i6.Rd, -1);
                                                 if (i53 == -1) {
                                                     i53 = 45;
                                                 }
                                                 int[] iArr = {i482222, i12};
                                                 int width3 = createBitmap.getWidth();
                                                 int height3 = createBitmap.getHeight() - 120;
-                                                GradientDrawable.Orientation d = org.telegram.ui.Components.u9.d(i53);
+                                                GradientDrawable.Orientation d = org.telegram.ui.Components.t9.d(i53);
                                                 Resources resources = ApplicationLoader.applicationContext.getResources();
-                                                Rect e17 = org.telegram.ui.Components.u9.e(d, width3, height3);
+                                                Rect e17 = org.telegram.ui.Components.t9.e(d, width3, height3);
                                                 Bitmap createBitmap2 = Bitmap.createBitmap(width3, height3, Bitmap.Config.ARGB_8888);
                                                 Utilities.drawDitheredGradient(createBitmap2, iArr, e17.left, e17.top, e17.right, e17.bottom);
                                                 i492222 = 90;
@@ -21944,7 +21944,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                         SharedConfig.saveConfig();
                                         str4 = file32222222222222.getAbsolutePath();
                                         obj = r12;
-                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                                     }
                                 }
                                 i27 = i26 == 0 ? i26 : i15;
@@ -21952,13 +21952,13 @@ public class MessagesController extends BaseController implements NotificationCe
                                 if (TextUtils.isEmpty(strArr[c10])) {
                                 }
                                 ?? mutate222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                org.telegram.ui.ActionBar.j6.w1(F02, mutate222222);
+                                org.telegram.ui.ActionBar.i6.w1(F02, mutate222222);
                                 Drawable mutate322222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                org.telegram.ui.ActionBar.j6.w1(F02, mutate322222);
+                                org.telegram.ui.ActionBar.i6.w1(F02, mutate322222);
                                 Drawable mutate422222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                org.telegram.ui.ActionBar.j6.w1(F04, mutate422222);
+                                org.telegram.ui.ActionBar.i6.w1(F04, mutate422222);
                                 mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                                org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                                 org.telegram.ui.ActionBar.f5[] f5VarArr622222 = new org.telegram.ui.ActionBar.f5[2];
                                 i38 = 0;
                                 while (i38 < i37) {
@@ -22005,11 +22005,11 @@ public class MessagesController extends BaseController implements NotificationCe
                                 SharedConfig.saveConfig();
                                 str4 = file322222222222222.getAbsolutePath();
                                 obj = r12;
-                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                             }
                         }
                         i24 = i23 != 0 ? i23 : i12;
-                        if (h6Var == null) {
+                        if (g6Var == null) {
                         }
                         if (i25 == 0) {
                         }
@@ -22019,13 +22019,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         if (TextUtils.isEmpty(strArr[c10])) {
                         }
                         ?? mutate2222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                        org.telegram.ui.ActionBar.j6.w1(F02, mutate2222222);
+                        org.telegram.ui.ActionBar.i6.w1(F02, mutate2222222);
                         Drawable mutate3222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                        org.telegram.ui.ActionBar.j6.w1(F02, mutate3222222);
+                        org.telegram.ui.ActionBar.i6.w1(F02, mutate3222222);
                         Drawable mutate4222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                        org.telegram.ui.ActionBar.j6.w1(F04, mutate4222222);
+                        org.telegram.ui.ActionBar.i6.w1(F04, mutate4222222);
                         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                         org.telegram.ui.ActionBar.f5[] f5VarArr6222222 = new org.telegram.ui.ActionBar.f5[2];
                         i38 = 0;
                         while (i38 < i37) {
@@ -22072,18 +22072,18 @@ public class MessagesController extends BaseController implements NotificationCe
                         SharedConfig.saveConfig();
                         str4 = file3222222222222222.getAbsolutePath();
                         obj = r12;
-                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
                     }
                 }
                 i20 = i19 == 0 ? i19 : i11;
-                if (h6Var != null) {
+                if (g6Var != null) {
                 }
                 if (i22 == 0) {
                 }
                 i23 = i22;
                 if (i23 != 0) {
                 }
-                if (h6Var == null) {
+                if (g6Var == null) {
                 }
                 if (i25 == 0) {
                 }
@@ -22093,13 +22093,13 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (TextUtils.isEmpty(strArr[c10])) {
                 }
                 ?? mutate22222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-                org.telegram.ui.ActionBar.j6.w1(F02, mutate22222222);
+                org.telegram.ui.ActionBar.i6.w1(F02, mutate22222222);
                 Drawable mutate32222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                org.telegram.ui.ActionBar.j6.w1(F02, mutate32222222);
+                org.telegram.ui.ActionBar.i6.w1(F02, mutate32222222);
                 Drawable mutate42222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                org.telegram.ui.ActionBar.j6.w1(F04, mutate42222222);
+                org.telegram.ui.ActionBar.i6.w1(F04, mutate42222222);
                 mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+                org.telegram.ui.ActionBar.i6.w1(F04, mutate);
                 org.telegram.ui.ActionBar.f5[] f5VarArr62222222 = new org.telegram.ui.ActionBar.f5[2];
                 i38 = 0;
                 while (i38 < i37) {
@@ -22146,25 +22146,25 @@ public class MessagesController extends BaseController implements NotificationCe
                 SharedConfig.saveConfig();
                 str4 = file32222222222222222.getAbsolutePath();
                 obj = r12;
-                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+                AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
             }
         }
         i16 = i14 != 0 ? i14 : i10;
-        if (h6Var == null) {
+        if (g6Var == null) {
         }
         if (i18 == 0) {
         }
         i19 = i18;
         if (i19 == 0) {
         }
-        if (h6Var != null) {
+        if (g6Var != null) {
         }
         if (i22 == 0) {
         }
         i23 = i22;
         if (i23 != 0) {
         }
-        if (h6Var == null) {
+        if (g6Var == null) {
         }
         if (i25 == 0) {
         }
@@ -22174,13 +22174,13 @@ public class MessagesController extends BaseController implements NotificationCe
         if (TextUtils.isEmpty(strArr[c10])) {
         }
         ?? mutate222222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-        org.telegram.ui.ActionBar.j6.w1(F02, mutate222222222);
+        org.telegram.ui.ActionBar.i6.w1(F02, mutate222222222);
         Drawable mutate322222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-        org.telegram.ui.ActionBar.j6.w1(F02, mutate322222222);
+        org.telegram.ui.ActionBar.i6.w1(F02, mutate322222222);
         Drawable mutate422222222 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-        org.telegram.ui.ActionBar.j6.w1(F04, mutate422222222);
+        org.telegram.ui.ActionBar.i6.w1(F04, mutate422222222);
         mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-        org.telegram.ui.ActionBar.j6.w1(F04, mutate);
+        org.telegram.ui.ActionBar.i6.w1(F04, mutate);
         org.telegram.ui.ActionBar.f5[] f5VarArr622222222 = new org.telegram.ui.ActionBar.f5[2];
         i38 = 0;
         while (i38 < i37) {
@@ -22227,7 +22227,7 @@ public class MessagesController extends BaseController implements NotificationCe
         SharedConfig.saveConfig();
         str4 = file322222222222222222.getAbsolutePath();
         obj = r12;
-        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, h6Var, i6Var, 7));
+        AndroidUtilities.runOnUIThread(new b5(this, str4, obj, g6Var, h6Var, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -22340,7 +22340,7 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$setContentSettings$503(TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            org.telegram.ui.Components.xc.b0(tL_error);
+            org.telegram.ui.Components.vc.b0(tL_error);
         }
     }
 
@@ -22395,7 +22395,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (tL_error == null) {
             AndroidUtilities.runOnUIThread(new pa(this, j3, 4), 1000L);
         } else {
-            org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z10));
+            org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z10));
         }
     }
 
@@ -22442,13 +22442,13 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setParticipantBannedRole$91(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_editBanned tL_channels_editBanned, boolean z10) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_channels_editBanned, Boolean.valueOf(z10));
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_channels_editBanned, Boolean.valueOf(z10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setParticipantBannedRole$92(long j3, Runnable runnable, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_editBanned tL_channels_editBanned, boolean z10, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new ci.u1(this, tL_error, n2Var, tL_channels_editBanned, z10, 7));
+            AndroidUtilities.runOnUIThread(new ci.u1(this, tL_error, n2Var, tL_channels_editBanned, z10, 6));
             return;
         }
         processUpdates((TLRPC.Updates) tLObject, false);
@@ -22473,7 +22473,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setUserAdminRole$101(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_channels_editAdmin, Boolean.valueOf(z10), Boolean.valueOf(z11));
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_channels_editAdmin, Boolean.valueOf(z10), Boolean.valueOf(z11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -22508,7 +22508,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setUserAdminRole$106(TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin) {
-        org.telegram.ui.Components.d5.f0(this.currentAccount, tL_error, n2Var, tL_messages_editChatAdmin, Boolean.FALSE);
+        org.telegram.ui.Components.c5.f0(this.currentAccount, tL_error, n2Var, tL_messages_editChatAdmin, Boolean.FALSE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -22517,7 +22517,7 @@ public class MessagesController extends BaseController implements NotificationCe
             AndroidUtilities.runOnUIThread(new eb(this, j3, runnable, 0), 1000L);
             return;
         }
-        AndroidUtilities.runOnUIThread(new pk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_messages_editChatAdmin, 20));
+        AndroidUtilities.runOnUIThread(new qk((BaseController) this, tL_error, (Object) n2Var, (Object) tL_messages_editChatAdmin, 20));
         if (errorDelegate != null) {
             AndroidUtilities.runOnUIThread(new fb(errorDelegate, tL_error, 0));
         }
@@ -22672,7 +22672,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public /* synthetic */ void lambda$toggleChatJoinRequest$281(boolean z10, long j3, long j10) {
         TLRPC.ChatFull chatFull;
         if (z10 && (chatFull = getChatFull(j3)) != null) {
-            chatFull.flags2 = w7.d0.b(chatFull.flags2, TLObject.FLAG_23, j10 != 0);
+            chatFull.flags2 = w7.c0.b(chatFull.flags2, TLObject.FLAG_23, j10 != 0);
             chatFull.guard_bot_id = j10;
             getMessagesStorage().updateChatInfo(chatFull, false);
             NotificationCenter notificationCenter = getNotificationCenter();
@@ -22858,7 +22858,7 @@ public class MessagesController extends BaseController implements NotificationCe
             AndroidUtilities.runOnUIThread(new ai.p8(this, j3, str, runnable, 12));
             return;
         }
-        org.telegram.ui.Components.d5.f0(UserConfig.selectedAccount, tL_error, n2Var, tL_channels_updateUsername, new Object[0]);
+        org.telegram.ui.Components.c5.f0(UserConfig.selectedAccount, tL_error, n2Var, tL_channels_updateUsername, new Object[0]);
         if (runnable2 != null) {
             runnable2.run();
         }
@@ -22937,8 +22937,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 LocaleController.getInstance().loadRemoteLanguages(this.currentAccount);
             }
         }
-        org.telegram.ui.ActionBar.j6.h1(this.currentAccount, false);
-        org.telegram.ui.ActionBar.j6.F(false);
+        org.telegram.ui.ActionBar.i6.h1(this.currentAccount, false);
+        org.telegram.ui.ActionBar.i6.F(false);
         if (tL_config.static_maps_provider == null) {
             tL_config.static_maps_provider = "telegram";
         }
@@ -23291,38 +23291,38 @@ public class MessagesController extends BaseController implements NotificationCe
         int i26;
         int i27;
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder t10 = a4.a.t(j3, "load messages in chat ", " topic_id ");
-            t10.append(j11);
-            t10.append(" count ");
-            t10.append(i10);
-            t10.append(" max_id ");
-            t10.append(i11);
-            t10.append(" cache ");
-            t10.append(z11);
-            t10.append(" mindate = ");
+            StringBuilder u10 = a4.a.u(j3, "load messages in chat ", " topic_id ");
+            u10.append(j11);
+            u10.append(" count ");
+            u10.append(i10);
+            u10.append(" max_id ");
+            u10.append(i11);
+            u10.append(" cache ");
+            u10.append(z11);
+            u10.append(" mindate = ");
             i23 = i13;
-            t10.append(i23);
-            t10.append(" guid ");
-            t10.append(i14);
-            t10.append(" load_type ");
-            t10.append(i15);
-            t10.append(" last_message_id ");
-            t10.append(i16);
-            t10.append(" mode ");
-            t10.append(i17);
-            t10.append(" index ");
-            t10.append(i18);
-            t10.append(" firstUnread ");
-            t10.append(i19);
-            t10.append(" unread_count ");
-            t10.append(i20);
-            t10.append(" last_date ");
-            t10.append(i21);
-            t10.append(" queryFromServer ");
-            t10.append(z12);
-            t10.append(" isTopic ");
-            t10.append(z15);
-            FileLog.d(t10.toString());
+            u10.append(i23);
+            u10.append(" guid ");
+            u10.append(i14);
+            u10.append(" load_type ");
+            u10.append(i15);
+            u10.append(" last_message_id ");
+            u10.append(i16);
+            u10.append(" mode ");
+            u10.append(i17);
+            u10.append(" index ");
+            u10.append(i18);
+            u10.append(" firstUnread ");
+            u10.append(i19);
+            u10.append(" unread_count ");
+            u10.append(i20);
+            u10.append(" last_date ");
+            u10.append(i21);
+            u10.append(" queryFromServer ");
+            u10.append(z12);
+            u10.append(" isTopic ");
+            u10.append(z15);
+            FileLog.d(u10.toString());
         } else {
             i23 = i13;
         }
@@ -23502,9 +23502,9 @@ public class MessagesController extends BaseController implements NotificationCe
         tL_messages_getDialogs.offset_id = i10;
         tL_messages_getDialogs.offset_date = i11;
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder k10 = hg.k0.k(i10, "start migrate with id ", " date ");
-            k10.append(LocaleController.getInstance().getFormatterStats().format(i11 * 1000));
-            FileLog.d(k10.toString());
+            StringBuilder l4 = hg.c.l(i10, "start migrate with id ", " date ");
+            l4.append(LocaleController.getInstance().getFormatterStats().format(i11 * 1000));
+            FileLog.d(l4.toString());
         }
         if (i10 == 0) {
             tL_messages_getDialogs.offset_peer = new TLRPC.TL_inputPeerEmpty();
@@ -23870,7 +23870,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.verifyAgeBotUsername = null;
         this.verifyAgeCountry = "GB";
         this.ignoreRestrictionReasons = new HashSet();
-        l0.d(l0.d(this.mainPreferences.edit().remove("starsLocked").remove("getfileExperimentalParams").remove("smsjobsStickyNotificationEnabled").remove("channelRevenueWithdrawalEnabled"), "showAnnualPerMonth", "canEditFactcheck", "factcheckLengthLimit", "videoIgnoreAltDocuments"), "freezeSinceDate", "freezeUntilDate", "freezeAppealUrl", "verifyAgeBotUsername").remove("verifyAgeCountry").remove("ignoreRestrictionReasons").apply();
+        y0.d(y0.d(this.mainPreferences.edit().remove("starsLocked").remove("getfileExperimentalParams").remove("smsjobsStickyNotificationEnabled").remove("channelRevenueWithdrawalEnabled"), "showAnnualPerMonth", "canEditFactcheck", "factcheckLengthLimit", "videoIgnoreAltDocuments"), "freezeSinceDate", "freezeUntilDate", "freezeAppealUrl", "verifyAgeBotUsername").remove("verifyAgeCountry").remove("ignoreRestrictionReasons").apply();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x010b, code lost:
@@ -24090,13 +24090,13 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         SharedPreferences.Editor edit = this.notificationsPreferences.edit();
         if (peerSettings.business_bot_id != 0) {
-            edit.putLong(a4.a.o(j3, "dialog_botid"), peerSettings.business_bot_id);
+            edit.putLong(a4.a.p(j3, "dialog_botid"), peerSettings.business_bot_id);
             edit.putString("dialog_boturl" + j3, peerSettings.business_bot_manage_url);
             edit.putInt("dialog_botflags" + j3, (peerSettings.business_bot_paused ? 1 : 0) + (peerSettings.business_bot_can_reply ? 2 : 0));
         } else {
             edit.remove("dialog_botid" + j3).remove("dialog_boturl" + j3).remove("dialog_botflags" + j3);
         }
-        edit.putLong(a4.a.o(j3, "dialog_bar_paying_"), peerSettings.charge_paid_message_stars);
+        edit.putLong(a4.a.p(j3, "dialog_bar_paying_"), peerSettings.charge_paid_message_stars);
         if (this.notificationsPreferences.getInt("dialog_bar_vis3" + j3, 0) == 3) {
             edit.apply();
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(j3));
@@ -24104,25 +24104,25 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         boolean z11 = peerSettings.flags == 0;
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder t10 = a4.a.t(j3, "peer settings loaded for ", " add = ");
-            t10.append(peerSettings.add_contact);
-            t10.append(" block = ");
-            t10.append(peerSettings.block_contact);
-            t10.append(" spam = ");
-            t10.append(peerSettings.report_spam);
-            t10.append(" share = ");
-            t10.append(peerSettings.share_contact);
-            t10.append(" geo = ");
-            t10.append(peerSettings.report_geo);
-            t10.append(" hide = ");
-            t10.append(z11);
-            t10.append(" distance = ");
-            t10.append(peerSettings.geo_distance);
-            t10.append(" invite = ");
-            t10.append(peerSettings.invite_members);
-            FileLog.d(t10.toString());
+            StringBuilder u10 = a4.a.u(j3, "peer settings loaded for ", " add = ");
+            u10.append(peerSettings.add_contact);
+            u10.append(" block = ");
+            u10.append(peerSettings.block_contact);
+            u10.append(" spam = ");
+            u10.append(peerSettings.report_spam);
+            u10.append(" share = ");
+            u10.append(peerSettings.share_contact);
+            u10.append(" geo = ");
+            u10.append(peerSettings.report_geo);
+            u10.append(" hide = ");
+            u10.append(z11);
+            u10.append(" distance = ");
+            u10.append(peerSettings.geo_distance);
+            u10.append(" invite = ");
+            u10.append(peerSettings.invite_members);
+            FileLog.d(u10.toString());
         }
-        edit.putInt(a4.a.o(j3, "dialog_bar_vis3"), z11 ? 1 : 2);
+        edit.putInt(a4.a.p(j3, "dialog_bar_vis3"), z11 ? 1 : 2);
         edit.putBoolean("dialog_bar_share" + j3, peerSettings.share_contact);
         edit.putBoolean("dialog_bar_report" + j3, peerSettings.report_spam);
         edit.putBoolean("dialog_bar_add" + j3, peerSettings.add_contact);
@@ -24136,7 +24136,7 @@ public class MessagesController extends BaseController implements NotificationCe
         edit.putInt("dialog_bar_chat_with_date" + j3, peerSettings.request_chat_date);
         if (this.notificationsPreferences.getInt("dialog_bar_distance" + j3, -1) != -2) {
             if ((peerSettings.flags & 64) != 0) {
-                edit.putInt(a4.a.o(j3, "dialog_bar_distance"), peerSettings.geo_distance);
+                edit.putInt(a4.a.p(j3, "dialog_bar_distance"), peerSettings.geo_distance);
             } else {
                 edit.remove("dialog_bar_distance" + j3);
             }
@@ -24672,7 +24672,7 @@ public class MessagesController extends BaseController implements NotificationCe
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, n2Var.getResourceProvider());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DialogNotAvailable);
         HashMap hashMap = new HashMap();
-        int i10 = org.telegram.ui.ActionBar.j6.L5;
+        int i10 = org.telegram.ui.ActionBar.i6.L5;
         hashMap.put("info1", Integer.valueOf(n2Var.getThemedColor(i10)));
         hashMap.put("info2", Integer.valueOf(n2Var.getThemedColor(i10)));
         alertDialog$Builder.m(R.raw.not_available, 52, n2Var.getThemedColor(i10), hashMap);
@@ -24798,7 +24798,7 @@ public class MessagesController extends BaseController implements NotificationCe
                             i10 = 4;
                         }
                         if (formatString != null) {
-                            Paint paint = org.telegram.ui.ActionBar.j6.G0;
+                            Paint paint = org.telegram.ui.ActionBar.i6.G0;
                             if (paint == null) {
                                 paint = new Paint();
                                 paint.setTypeface(AndroidUtilities.bold());
@@ -25420,7 +25420,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 chatParticipant = null;
                 if (isInChatCheckedCallback != null && chatParticipant != null) {
                     TLRPC.ChatParticipants chatParticipants2 = chatFull.participants;
-                    isInChatCheckedCallback.run(true, (chatParticipants2 == null || chatParticipants2.admin_id != user.id) ? null : nq.o0(true), null);
+                    isInChatCheckedCallback.run(true, (chatParticipants2 == null || chatParticipants2.admin_id != user.id) ? null : pq.o0(true), null);
                     return;
                 }
             }
@@ -25452,7 +25452,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (isInChatCheckedCallback != null) {
             boolean z11 = chatParticipant2 != null;
             TLRPC.ChatParticipants chatParticipants4 = chatFull2.participants;
-            isInChatCheckedCallback.run(z11, (chatParticipants4 == null || chatParticipants4.admin_id != user.id) ? null : nq.o0(true), null);
+            isInChatCheckedCallback.run(z11, (chatParticipants4 == null || chatParticipants4.admin_id != user.id) ? null : pq.o0(true), null);
         }
     }
 
@@ -25473,7 +25473,7 @@ public class MessagesController extends BaseController implements NotificationCe
         tL_messages_getHistory.limit = 1;
         this.checkingLastMessagesDialogs.k(Boolean.TRUE, dialog.id);
         if (BuildVars.LOGS_ENABLED) {
-            hg.k0.u(new StringBuilder("checkLastDialogMessage for "), dialog.id);
+            hg.c.w(new StringBuilder("checkLastDialogMessage for "), dialog.id);
         }
         if (j3 == 0) {
             try {
@@ -25619,7 +25619,7 @@ public class MessagesController extends BaseController implements NotificationCe
         uy.x4[this.currentAccount] = false;
         this.notificationsPreferences.edit().clear().commit();
         this.emojiPreferences.edit().putLong("lastGifLoadTime", 0L).putLong("lastStickersLoadTime", 0L).putLong("lastStickersLoadTimeMask", 0L).putLong("lastStickersLoadTimeFavs", 0L).commit();
-        l0.d(this.mainPreferences.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
+        y0.d(this.mainPreferences.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("shortcut_widget", 0);
         SharedPreferences.Editor editor = null;
         ArrayList arrayList = null;
@@ -26075,11 +26075,11 @@ public class MessagesController extends BaseController implements NotificationCe
     public void didReceivedNotification(int i10, int i11, Object... objArr) {
         MessageObject messageObject;
         TLRPC.InputFile inputFile;
-        org.telegram.ui.ActionBar.i6 i6Var;
         org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         TLRPC.InputFile inputFile2;
         TLRPC.TL_theme tL_theme;
-        org.telegram.ui.ActionBar.i6 i6Var2;
+        org.telegram.ui.ActionBar.h6 h6Var2;
         TLRPC.TL_inputThemeSettings tL_inputThemeSettings;
         TLRPC.BaseTheme baseTheme = null;
         if (i10 == NotificationCenter.fileUploaded) {
@@ -26090,37 +26090,37 @@ public class MessagesController extends BaseController implements NotificationCe
                 String str3 = this.uploadingWallpaper;
                 if (str3 == null || !str3.equals(str)) {
                     Object obj = this.uploadingThemes.get(str);
-                    if (obj instanceof org.telegram.ui.ActionBar.i6) {
-                        i6Var = (org.telegram.ui.ActionBar.i6) obj;
-                        if (str.equals(i6Var.H)) {
-                            i6Var.J = inputFile3;
-                            i6Var.H = null;
-                        } else if (str.equals(i6Var.I)) {
-                            i6Var.K = inputFile3;
-                            i6Var.I = null;
+                    if (obj instanceof org.telegram.ui.ActionBar.h6) {
+                        h6Var = (org.telegram.ui.ActionBar.h6) obj;
+                        if (str.equals(h6Var.H)) {
+                            h6Var.J = inputFile3;
+                            h6Var.H = null;
+                        } else if (str.equals(h6Var.I)) {
+                            h6Var.K = inputFile3;
+                            h6Var.I = null;
                         }
-                        inputFile = i6Var.J;
-                        inputFile2 = i6Var.K;
-                        h6Var = null;
-                    } else if (obj instanceof org.telegram.ui.ActionBar.h6) {
-                        org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj;
-                        if (str.equals(h6Var2.u)) {
-                            h6Var2.w = inputFile3;
-                            h6Var2.u = null;
-                        } else if (str.equals(h6Var2.v)) {
-                            h6Var2.x = inputFile3;
-                            h6Var2.v = null;
+                        inputFile = h6Var.J;
+                        inputFile2 = h6Var.K;
+                        g6Var = null;
+                    } else if (obj instanceof org.telegram.ui.ActionBar.g6) {
+                        org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) obj;
+                        if (str.equals(g6Var2.u)) {
+                            g6Var2.w = inputFile3;
+                            g6Var2.u = null;
+                        } else if (str.equals(g6Var2.v)) {
+                            g6Var2.x = inputFile3;
+                            g6Var2.v = null;
                         }
-                        org.telegram.ui.ActionBar.i6 i6Var3 = h6Var2.b;
-                        TLRPC.InputFile inputFile4 = h6Var2.w;
-                        inputFile2 = h6Var2.x;
-                        i6Var = i6Var3;
+                        org.telegram.ui.ActionBar.h6 h6Var3 = g6Var2.b;
+                        TLRPC.InputFile inputFile4 = g6Var2.w;
+                        inputFile2 = g6Var2.x;
+                        h6Var = h6Var3;
                         inputFile = inputFile4;
-                        h6Var = h6Var2;
+                        g6Var = g6Var2;
                     } else {
                         inputFile = null;
-                        i6Var = null;
                         h6Var = null;
+                        g6Var = null;
                         inputFile2 = null;
                     }
                     this.uploadingThemes.remove(str);
@@ -26134,13 +26134,13 @@ public class MessagesController extends BaseController implements NotificationCe
                         uploadtheme.thumb = inputFile;
                         inputFile.name = "theme-preview.jpg";
                         uploadtheme.flags |= 1;
-                        if (h6Var != null) {
-                            h6Var.x = null;
-                            h6Var.w = null;
-                            tL_theme = h6Var.r;
+                        if (g6Var != null) {
+                            g6Var.x = null;
+                            g6Var.w = null;
+                            tL_theme = g6Var.r;
                             TLRPC.TL_inputThemeSettings tL_inputThemeSettings2 = new TLRPC.TL_inputThemeSettings();
-                            String str4 = i6Var.a;
-                            int i12 = org.telegram.ui.ActionBar.j6.a;
+                            String str4 = h6Var.a;
+                            int i12 = org.telegram.ui.ActionBar.i6.a;
                             if ("Blue".equals(str4)) {
                                 baseTheme = new TLRPC.TL_baseThemeClassic();
                             } else if ("Day".equals(str4)) {
@@ -26153,80 +26153,80 @@ public class MessagesController extends BaseController implements NotificationCe
                                 baseTheme = new TLRPC.TL_baseThemeNight();
                             }
                             tL_inputThemeSettings2.base_theme = baseTheme;
-                            tL_inputThemeSettings2.accent_color = h6Var.c;
-                            int i13 = h6Var.d;
+                            tL_inputThemeSettings2.accent_color = g6Var.c;
+                            int i13 = g6Var.d;
                             if (i13 != 0) {
                                 tL_inputThemeSettings2.flags |= 8;
                                 tL_inputThemeSettings2.outbox_accent_color = i13;
                             }
-                            int i14 = h6Var.e;
+                            int i14 = g6Var.e;
                             if (i14 != 0) {
                                 tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i14));
                                 tL_inputThemeSettings2.flags |= 1;
-                                int i15 = h6Var.f;
+                                int i15 = g6Var.f;
                                 if (i15 != 0) {
                                     tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i15));
-                                    int i16 = h6Var.g;
+                                    int i16 = g6Var.g;
                                     if (i16 != 0) {
                                         tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i16));
-                                        int i17 = h6Var.h;
+                                        int i17 = g6Var.h;
                                         if (i17 != 0) {
                                             tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i17));
                                         }
                                     }
                                 }
-                                tL_inputThemeSettings2.message_colors_animated = h6Var.i;
+                                tL_inputThemeSettings2.message_colors_animated = g6Var.i;
                             }
                             tL_inputThemeSettings2.flags |= 2;
                             tL_inputThemeSettings2.wallpaper_settings = new TLRPC.TL_wallPaperSettings();
-                            if (TextUtils.isEmpty(h6Var.o)) {
+                            if (TextUtils.isEmpty(g6Var.o)) {
                                 TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
                                 tL_inputWallPaperNoFile.id = 0L;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperNoFile;
                             } else {
                                 TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                                tL_inputWallPaperSlug.slug = h6Var.o;
+                                tL_inputWallPaperSlug.slug = g6Var.o;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperSlug;
                                 TLRPC.WallPaperSettings wallPaperSettings = tL_inputThemeSettings2.wallpaper_settings;
-                                wallPaperSettings.intensity = (int) (h6Var.p * 100.0f);
+                                wallPaperSettings.intensity = (int) (g6Var.p * 100.0f);
                                 wallPaperSettings.flags |= 8;
                             }
                             TLRPC.WallPaperSettings wallPaperSettings2 = tL_inputThemeSettings2.wallpaper_settings;
-                            wallPaperSettings2.motion = h6Var.q;
-                            long j3 = h6Var.j;
+                            wallPaperSettings2.motion = g6Var.q;
+                            long j3 = g6Var.j;
                             if (j3 != 0) {
                                 wallPaperSettings2.background_color = (int) j3;
                                 wallPaperSettings2.flags |= 1;
                             }
-                            long j10 = h6Var.k;
+                            long j10 = g6Var.k;
                             if (j10 != 0) {
                                 wallPaperSettings2.second_background_color = (int) j10;
                                 wallPaperSettings2.flags |= 16;
-                                wallPaperSettings2.rotation = AndroidUtilities.getWallpaperRotation(h6Var.n, true);
+                                wallPaperSettings2.rotation = AndroidUtilities.getWallpaperRotation(g6Var.n, true);
                             }
-                            long j11 = h6Var.l;
+                            long j11 = g6Var.l;
                             if (j11 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings3.third_background_color = (int) j11;
                                 wallPaperSettings3.flags |= 32;
                             }
-                            long j12 = h6Var.m;
+                            long j12 = g6Var.m;
                             if (j12 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings4.fourth_background_color = (int) j12;
                                 wallPaperSettings4.flags |= 64;
                             }
-                            org.telegram.ui.ActionBar.i6 i6Var4 = i6Var;
+                            org.telegram.ui.ActionBar.h6 h6Var4 = h6Var;
                             tL_inputThemeSettings = tL_inputThemeSettings2;
-                            i6Var2 = i6Var4;
+                            h6Var2 = h6Var4;
                         } else {
-                            i6Var.K = null;
-                            i6Var.J = null;
-                            tL_theme = i6Var.F;
-                            i6Var2 = i6Var;
+                            h6Var.K = null;
+                            h6Var.J = null;
+                            tL_theme = h6Var.F;
+                            h6Var2 = h6Var;
                             tL_inputThemeSettings = null;
                         }
-                        getConnectionsManager().sendRequest(uploadtheme, new t9(this, tL_theme, i6Var2, tL_inputThemeSettings, h6Var, 1));
+                        getConnectionsManager().sendRequest(uploadtheme, new t9(this, tL_theme, h6Var2, tL_inputThemeSettings, g6Var, 1));
                     }
                 } else {
                     TL_account.uploadWallPaper uploadwallpaper = new TL_account.uploadWallPaper();
@@ -26256,15 +26256,15 @@ public class MessagesController extends BaseController implements NotificationCe
                 String str8 = this.uploadingWallpaper;
                 if (str8 == null || !str8.equals(str6)) {
                     Object remove = this.uploadingThemes.remove(str6);
-                    if (remove instanceof org.telegram.ui.ActionBar.i6) {
-                        org.telegram.ui.ActionBar.i6 i6Var5 = (org.telegram.ui.ActionBar.i6) remove;
-                        i6Var5.K = null;
-                        i6Var5.J = null;
-                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, i6Var5, null);
-                    } else if (remove instanceof org.telegram.ui.ActionBar.h6) {
-                        org.telegram.ui.ActionBar.h6 h6Var3 = (org.telegram.ui.ActionBar.h6) remove;
-                        h6Var3.u = null;
-                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, h6Var3.b, h6Var3);
+                    if (remove instanceof org.telegram.ui.ActionBar.h6) {
+                        org.telegram.ui.ActionBar.h6 h6Var5 = (org.telegram.ui.ActionBar.h6) remove;
+                        h6Var5.K = null;
+                        h6Var5.J = null;
+                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, h6Var5, null);
+                    } else if (remove instanceof org.telegram.ui.ActionBar.g6) {
+                        org.telegram.ui.ActionBar.g6 g6Var3 = (org.telegram.ui.ActionBar.g6) remove;
+                        g6Var3.u = null;
+                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeUploadError, g6Var3.b, g6Var3);
                     }
                 } else {
                     this.uploadingWallpaper = null;
@@ -26686,7 +26686,7 @@ public class MessagesController extends BaseController implements NotificationCe
         TLRPC.TL_contacts_getBlocked tL_contacts_getBlocked = new TLRPC.TL_contacts_getBlocked();
         tL_contacts_getBlocked.offset = z10 ? 0 : this.blockePeers.size();
         tL_contacts_getBlocked.limit = z10 ? 20 : 100;
-        getConnectionsManager().sendRequest(tL_contacts_getBlocked, new v0(this, z10, tL_contacts_getBlocked, 3));
+        getConnectionsManager().sendRequest(tL_contacts_getBlocked, new u0(this, z10, tL_contacts_getBlocked, 3));
     }
 
     public ChannelBoostsController getBoostsController() {
@@ -27018,12 +27018,12 @@ public class MessagesController extends BaseController implements NotificationCe
         if (arrayList == null || arrayList.isEmpty()) {
             return null;
         }
-        MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+        MessageObject messageObject = (MessageObject) hg.c.h(1, arrayList);
         return !TextUtils.isEmpty(messageObject.caption) ? messageObject.caption.toString() : !TextUtils.isEmpty(messageObject.messageText) ? messageObject.messageText.toString() : "";
     }
 
     public long getForumLastTopicId(long j3) {
-        return this.mainPreferences.getLong(a4.a.o(j3, "forumlasttopic"), 1L);
+        return this.mainPreferences.getLong(a4.a.p(j3, "forumlasttopic"), 1L);
     }
 
     public String getFullName(long j3) {
@@ -27155,7 +27155,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (!getMessagesController().isDialogMuted(j3, j10)) {
             return LocaleController.getString(R.string.NotificationsUnmuted);
         }
-        int i10 = this.notificationsPreferences.getInt(l0.h(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL)), 0);
+        int i10 = this.notificationsPreferences.getInt(y0.i(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL)), 0);
         return i10 >= getConnectionsManager().getCurrentTime() ? LocaleController.formatString("NotificationsMutedForHint", R.string.NotificationsMutedForHint, LocaleController.formatTTLString(i10)) : LocaleController.getString(R.string.NotificationsMuted);
     }
 
@@ -27541,11 +27541,11 @@ public class MessagesController extends BaseController implements NotificationCe
         getMainSettings().edit().putInt("movecaptionhint", getMainSettings().getInt("movecaptionhint", 0) + 1).apply();
     }
 
-    public void installTheme(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
-        TLRPC.TL_theme tL_theme = h6Var != null ? h6Var.r : i6Var.F;
-        String str = h6Var != null ? h6Var.o : i6Var.e;
-        boolean z11 = h6Var == null && i6Var.h;
-        boolean z12 = h6Var != null ? h6Var.q : i6Var.n;
+    public void installTheme(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+        TLRPC.TL_theme tL_theme = g6Var != null ? g6Var.r : h6Var.F;
+        String str = g6Var != null ? g6Var.o : h6Var.e;
+        boolean z11 = g6Var == null && h6Var.h;
+        boolean z12 = g6Var != null ? g6Var.q : h6Var.n;
         TL_account.installTheme installtheme = new TL_account.installTheme();
         installtheme.dark = z10;
         if (tL_theme != null) {
@@ -27639,7 +27639,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean isDialogNotificationsSoundEnabled(long j3, long j10) {
-        return this.notificationsPreferences.getBoolean(l0.h(j3, j10, new StringBuilder("sound_enabled_")), true);
+        return this.notificationsPreferences.getBoolean(y0.i(j3, j10, new StringBuilder("sound_enabled_")), true);
     }
 
     public boolean isDialogVisible(long j3, boolean z10) {
@@ -28241,11 +28241,11 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (i12 == 0) {
                     return;
                 }
-                TLRPC.EncryptedChat k10 = l0.k(this, j3);
+                TLRPC.EncryptedChat l4 = y0.l(this, j3);
                 getMessagesStorage().processPendingRead(j3, i10, i11, i14);
                 getMessagesStorage().getStorageQueue().postRunnable(new y9(this, j3, i12, z10, i13, i11, 1));
-                if (k10 != null && k10.ttl > 0) {
-                    getMessagesStorage().createTaskForSecretChat(k10.id, i12, Math.max(getConnectionsManager().getCurrentTime(), i12), 0, null);
+                if (l4 != null && l4.ttl > 0) {
+                    getMessagesStorage().createTaskForSecretChat(l4.id, i12, Math.max(getConnectionsManager().getCurrentTime(), i12), 0, null);
                 }
             } else {
                 if (i10 == 0) {
@@ -28397,17 +28397,17 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void markMessageAsRead(long j3, long j10, int i10) {
-        TLRPC.EncryptedChat k10;
+        TLRPC.EncryptedChat l4;
         if (j10 == 0 || j3 == 0) {
             return;
         }
-        if ((i10 > 0 || i10 == Integer.MIN_VALUE) && DialogObject.isEncryptedDialog(j3) && (k10 = l0.k(this, j3)) != null) {
+        if ((i10 > 0 || i10 == Integer.MIN_VALUE) && DialogObject.isEncryptedDialog(j3) && (l4 = y0.l(this, j3)) != null) {
             ArrayList<Long> arrayList = new ArrayList<>();
             arrayList.add(Long.valueOf(j10));
-            getSecretChatHelper().sendMessagesReadMessage(k10, arrayList, null);
+            getSecretChatHelper().sendMessagesReadMessage(l4, arrayList, null);
             if (i10 > 0) {
                 int currentTime = getConnectionsManager().getCurrentTime();
-                getMessagesStorage().createTaskForSecretChat(k10.id, currentTime, currentTime, 0, arrayList);
+                getMessagesStorage().createTaskForSecretChat(l4.id, currentTime, currentTime, 0, arrayList);
             }
         }
     }
@@ -28591,7 +28591,7 @@ public class MessagesController extends BaseController implements NotificationCe
             }
         }
         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        boolean z11 = (R instanceof uy) || (R instanceof gh0);
+        boolean z11 = (R instanceof uy) || (R instanceof eh0);
         if (restrictionReason != null) {
             showCantOpenAlert(n2Var, restrictionReason);
             return;
@@ -28608,19 +28608,19 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (i10 == 2) {
             if (!ChatObject.isForum(chat)) {
-                n2Var.presentFragment(new zn(bundle), !z11, true);
+                n2Var.presentFragment(new bo(bundle), !z11, true);
                 return;
             } else {
-                HashSet hashSet = fg1.n1;
-                n2Var.presentFragment(fg1.E0(n2Var.getMessagesController(), n2Var.getMessagesStorage(), bundle), !z11, true);
+                HashSet hashSet = eg1.n1;
+                n2Var.presentFragment(eg1.E0(n2Var.getMessagesController(), n2Var.getMessagesStorage(), bundle), !z11, true);
                 return;
             }
         }
         if (!ChatObject.isForum(chat)) {
-            n2Var.presentFragment(new zn(bundle), z10 && !z11);
+            n2Var.presentFragment(new bo(bundle), z10 && !z11);
         } else {
-            HashSet hashSet2 = fg1.n1;
-            n2Var.presentFragment(fg1.E0(n2Var.getMessagesController(), n2Var.getMessagesStorage(), bundle), z10 && !z11);
+            HashSet hashSet2 = eg1.n1;
+            n2Var.presentFragment(eg1.E0(n2Var.getMessagesController(), n2Var.getMessagesStorage(), bundle), z10 && !z11);
         }
     }
 
@@ -28697,8 +28697,8 @@ public class MessagesController extends BaseController implements NotificationCe
             }
             NativeByteBuffer nativeByteBuffer2 = null;
             sortDialogs(null);
-            if (!z10 && !dialogs.isEmpty() && hg.k0.g(1, dialogs) == dialog && !this.dialogsEndReached.get(i10)) {
-                a4.a.x(1, dialogs);
+            if (!z10 && !dialogs.isEmpty() && hg.c.h(1, dialogs) == dialog && !this.dialogsEndReached.get(i10)) {
+                a4.a.y(1, dialogs);
             }
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
             if (!DialogObject.isEncryptedDialog(j3) && j10 != -1) {
@@ -28901,19 +28901,19 @@ public class MessagesController extends BaseController implements NotificationCe
             sb2.append(j11);
             sb2.append(" count ");
             j12 = 0;
-            hg.k0.t(sb2, i11, " max_id ", i12, " cache ");
+            hg.c.v(sb2, i11, " max_id ", i12, " cache ");
             sb2.append(z10);
             sb2.append(" guid ");
             sb2.append(i14);
             sb2.append(" load_type ");
-            hg.k0.t(sb2, i19, " last_message_id ", i16, " index ");
-            hg.k0.t(sb2, i21, " firstUnread ", i15, " unread_count ");
-            hg.k0.t(sb2, i17, " last_date ", i18, " queryFromServer ");
+            hg.c.v(sb2, i19, " last_message_id ", i16, " index ");
+            hg.c.v(sb2, i21, " firstUnread ", i15, " unread_count ");
+            hg.c.v(sb2, i17, " last_date ", i18, " queryFromServer ");
             sb2.append(z12);
             sb2.append(" isTopic ");
             sb2.append(z14);
             sb2.append(" mode ");
-            l0.m(i20, sb2);
+            y0.n(i20, sb2);
         } else {
             j12 = 0;
         }
@@ -29215,7 +29215,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (i25 != 9) {
                     Collections.sort(arrayList, new p(18));
                     if (!arrayList.isEmpty()) {
-                        ((MessageObject) hg.k0.g(1, arrayList)).messageOwner.welcomeTemplateFirst = true;
+                        ((MessageObject) hg.c.h(1, arrayList)).messageOwner.welcomeTemplateFirst = true;
                         messagesController3.welcomeMessages.k(arrayList, j16);
                     }
                 } else if (i25 == 1) {
@@ -29324,7 +29324,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     public void processNewChannelDifferenceParams(int i10, int i11, long j3) {
         if (BuildVars.LOGS_ENABLED) {
-            hg.k0.u(hg.k0.l("processNewChannelDifferenceParams pts = ", i10, " pts_count = ", i11, " channeldId = "), j3);
+            hg.c.w(hg.c.m("processNewChannelDifferenceParams pts = ", i10, " pts_count = ", i11, " channeldId = "), j3);
         }
         int i12 = this.channelsPts.get(j3);
         if (i12 == 0) {
@@ -29369,11 +29369,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     public void processNewDifferenceParams(int i10, int i11, int i12, int i13) {
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder l4 = hg.k0.l("processNewDifferenceParams seq = ", i10, " pts = ", i11, " date = ");
-            l4.append(i12);
-            l4.append(" pts_count = ");
-            l4.append(i13);
-            FileLog.d(l4.toString());
+            StringBuilder m10 = hg.c.m("processNewDifferenceParams seq = ", i10, " pts = ", i11, " date = ");
+            m10.append(i12);
+            m10.append(" pts_count = ");
+            m10.append(i13);
+            FileLog.d(m10.toString());
         }
         1 r02 = null;
         if (i11 != -1) {
@@ -29700,7 +29700,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         sb2.append(" channelId = ");
                         sb2.append(message.peer_id.channel_id);
                         sb2.append(" message_id = ");
-                        l0.m(message.id, sb2);
+                        y0.n(message.id, sb2);
                     }
                     if (!message.out) {
                         TLRPC.Peer peer = message.from_id;
@@ -30114,7 +30114,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         a0.i iVar36 = iVar20;
                         ArrayList arrayList33 = (ArrayList) iVar36.f(0L);
                         if (arrayList33 == null) {
-                            arrayList33 = l0.i(0L, iVar36);
+                            arrayList33 = y0.j(0L, iVar36);
                         }
                         arrayList33.addAll(tL_updateReadMessagesContents.messages);
                         i23 = i27;
@@ -30129,7 +30129,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         long j21 = -tL_updateChannelReadMessagesContents.channel_id;
                         ArrayList arrayList34 = (ArrayList) iVar37.f(j21);
                         if (arrayList34 == null) {
-                            arrayList34 = l0.i(j21, iVar37);
+                            arrayList34 = y0.j(j21, iVar37);
                         }
                         arrayList34.addAll(tL_updateChannelReadMessagesContents.messages);
                         iVar20 = iVar37;
@@ -30252,7 +30252,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                     a0.i iVar40 = iVar28;
                                     ArrayList arrayList39 = (ArrayList) iVar40.f(0L);
                                     if (arrayList39 == null) {
-                                        arrayList39 = l0.i(0L, iVar40);
+                                        arrayList39 = y0.j(0L, iVar40);
                                     }
                                     arrayList39.addAll(tL_updateDeleteMessages.messages);
                                     iVar28 = iVar40;
@@ -30299,7 +30299,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                     long peerId = MessageObject.getPeerId(tL_updateDeleteScheduledMessages.peer);
                                     ArrayList arrayList42 = (ArrayList) iVar42.f(peerId);
                                     if (arrayList42 == null) {
-                                        arrayList42 = l0.i(peerId, iVar42);
+                                        arrayList42 = y0.j(peerId, iVar42);
                                     }
                                     arrayList42.addAll(tL_updateDeleteScheduledMessages.messages);
                                     if (!tL_updateDeleteScheduledMessages.sent_messages.isEmpty()) {
@@ -30309,7 +30309,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                         a0.i iVar43 = iVar31;
                                         ArrayList arrayList43 = (ArrayList) iVar43.f(peerId);
                                         if (arrayList43 == null) {
-                                            arrayList43 = l0.i(peerId, iVar43);
+                                            arrayList43 = y0.j(peerId, iVar43);
                                         }
                                         arrayList43.addAll(tL_updateDeleteScheduledMessages.sent_messages);
                                         iVar31 = iVar43;
@@ -30491,7 +30491,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         a0.i iVar45 = iVar6 == null ? new a0.i() : iVar6;
                                                         ArrayList arrayList45 = (ArrayList) iVar45.f(j32);
                                                         if (arrayList45 == null) {
-                                                            arrayList45 = l0.i(j32, iVar45);
+                                                            arrayList45 = y0.j(j32, iVar45);
                                                         }
                                                         arrayList45.add(Long.valueOf(j33));
                                                         iVar6 = iVar45;
@@ -30647,7 +30647,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                     a0.i iVar46 = iVar32 == null ? new a0.i() : iVar32;
                                                     ArrayList arrayList48 = (ArrayList) iVar46.f(makeEncryptedDialogId);
                                                     if (arrayList48 == null) {
-                                                        arrayList48 = l0.i(makeEncryptedDialogId, iVar46);
+                                                        arrayList48 = y0.j(makeEncryptedDialogId, iVar46);
                                                     }
                                                     int size7 = decryptMessage.size();
                                                     ArrayList arrayList49 = arrayList38;
@@ -30914,7 +30914,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                     sb3.append(update);
                                                                     sb3.append(" channelId = ");
                                                                     arrayList22 = arrayList8;
-                                                                    hg.k0.u(sb3, tL_updateChannelTooLong.channel_id);
+                                                                    hg.c.w(sb3, tL_updateChannelTooLong.channel_id);
                                                                 } else {
                                                                     arrayList22 = arrayList8;
                                                                 }
@@ -31004,7 +31004,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                 StringBuilder sb4 = new StringBuilder();
                                                                                 sb4.append(update);
                                                                                 sb4.append(" channelId = ");
-                                                                                hg.k0.u(sb4, tL_updateReadChannelOutbox.channel_id);
+                                                                                hg.c.w(sb4, tL_updateReadChannelOutbox.channel_id);
                                                                             }
                                                                             if (longSparseIntArray2 == null) {
                                                                                 longSparseIntArray2 = new LongSparseIntArray();
@@ -31025,7 +31025,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                 StringBuilder sb5 = new StringBuilder();
                                                                                 sb5.append(update);
                                                                                 sb5.append(" channelId = ");
-                                                                                hg.k0.u(sb5, tL_updateDeleteChannelMessages.channel_id);
+                                                                                hg.c.w(sb5, tL_updateDeleteChannelMessages.channel_id);
                                                                             }
                                                                             if (iVar28 == null) {
                                                                                 iVar28 = new a0.i();
@@ -31034,7 +31034,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                             long j37 = -tL_updateDeleteChannelMessages.channel_id;
                                                                             ArrayList arrayList56 = (ArrayList) iVar50.f(j37);
                                                                             if (arrayList56 == null) {
-                                                                                arrayList56 = l0.i(j37, iVar50);
+                                                                                arrayList56 = y0.j(j37, iVar50);
                                                                             }
                                                                             arrayList56.addAll(tL_updateDeleteChannelMessages.messages);
                                                                             messagesController3 = messagesController4;
@@ -31044,7 +31044,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                 StringBuilder sb6 = new StringBuilder();
                                                                                 sb6.append(update);
                                                                                 sb6.append(" channelId = ");
-                                                                                hg.k0.u(sb6, ((TL_update.TL_updateChannel) update).channel_id);
+                                                                                hg.c.w(sb6, ((TL_update.TL_updateChannel) update).channel_id);
                                                                             }
                                                                             if (arrayList18 == null) {
                                                                                 arrayList18 = new ArrayList();
@@ -31074,7 +31074,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                 StringBuilder sb7 = new StringBuilder();
                                                                                 sb7.append(update);
                                                                                 sb7.append(" channelId = ");
-                                                                                hg.k0.u(sb7, tL_updateChannelMessageViews.channel_id);
+                                                                                hg.c.w(sb7, tL_updateChannelMessageViews.channel_id);
                                                                             }
                                                                             a0.i iVar51 = iVar25;
                                                                             if (iVar51 == null) {
@@ -31098,7 +31098,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                     StringBuilder sb8 = new StringBuilder();
                                                                                     sb8.append(update);
                                                                                     sb8.append(" channelId = ");
-                                                                                    hg.k0.u(sb8, tL_updateChannelMessageForwards.channel_id);
+                                                                                    hg.c.w(sb8, tL_updateChannelMessageForwards.channel_id);
                                                                                 }
                                                                                 iVar13 = iVar26;
                                                                                 if (iVar13 == null) {
@@ -31262,7 +31262,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                             StringBuilder sb9 = new StringBuilder();
                                                                                             sb9.append(update);
                                                                                             sb9.append(" channelId = ");
-                                                                                            hg.k0.u(sb9, tL_updatePinnedChannelMessages.channel_id);
+                                                                                            hg.c.w(sb9, tL_updatePinnedChannelMessages.channel_id);
                                                                                         }
                                                                                         messagesController4.getMessagesStorage().updatePinnedMessages(-tL_updatePinnedChannelMessages.channel_id, tL_updatePinnedChannelMessages.messages, tL_updatePinnedChannelMessages.pinned, -1, 0, false, null);
                                                                                     } else if (update instanceof TL_update.TL_updatePinnedMessages) {
@@ -31300,7 +31300,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                                     sparseBooleanArray2.put(tL_updateMessagePoll.msg_id, tL_updateMessagePoll.results.has_unread_votes);
                                                                                                     long j43 = tL_updateMessagePoll.top_msg_id;
                                                                                                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                                                                                                        hg.k0.u(a4.a.t(peerId2, "check poll vores for ", " "), j43);
+                                                                                                        hg.c.w(a4.a.u(peerId2, "check poll vores for ", " "), j43);
                                                                                                         j16 = peerId2;
                                                                                                         sparseBooleanArray = sparseBooleanArray2;
                                                                                                     } else {
@@ -31359,7 +31359,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                                         sparseBooleanArray3.put(tL_updateMessageReactions.msg_id, MessageObject.hasUnreadReactions(tL_updateMessageReactions.reactions));
                                                                                                         long peerDialogId2 = (messagesController4.isMonoForum(peerId3) && ChatObject.canManageMonoForum(messagesController4.currentAccount, peerId3)) ? DialogObject.getPeerDialogId(tL_updateMessageReactions.saved_peer_id) : tL_updateMessageReactions.top_msg_id;
                                                                                                         if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                                                                                                            hg.k0.u(a4.a.t(peerId3, "check reactions for ", " "), peerDialogId2);
+                                                                                                            hg.c.w(a4.a.u(peerId3, "check reactions for ", " "), peerDialogId2);
                                                                                                         }
                                                                                                         checkUnreadReactions(peerId3, peerDialogId2, sparseBooleanArray3);
                                                                                                         messagesController4 = this;
@@ -31483,7 +31483,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                                                                             }
                                                                                                             ArrayList arrayList65 = (ArrayList) iVar55.f(peerDialogId3);
                                                                                                             if (arrayList65 == null) {
-                                                                                                                arrayList65 = l0.i(peerDialogId3, iVar55);
+                                                                                                                arrayList65 = y0.j(peerDialogId3, iVar55);
                                                                                                             }
                                                                                                             arrayList65.addAll(tL_updateDeleteEphemeralMessages.ids);
                                                                                                             messagesController3 = messagesController4;
@@ -31856,7 +31856,7 @@ public class MessagesController extends BaseController implements NotificationCe
             } else {
                 sVar = sVar10;
                 arrayList4 = arrayList69;
-                messagesController2.getMessagesStorage().processEphemeralEditedMessages(rVar2.a, new ei.l3(messagesController2, rVar2, concurrentHashMap7, concurrentHashMap8, ConnectionsManager.getInstance(messagesController2.currentAccount).getCurrentTime(), 9));
+                messagesController2.getMessagesStorage().processEphemeralEditedMessages(rVar2.a, new ei.l3(messagesController2, rVar2, concurrentHashMap7, concurrentHashMap8, ConnectionsManager.getInstance(messagesController2.currentAccount).getCurrentTime(), 8));
             }
             if (rVar3.a.isEmpty()) {
                 messagesController = this;
@@ -32035,14 +32035,14 @@ public class MessagesController extends BaseController implements NotificationCe
         r1 = new java.lang.StringBuilder("need get diff TL_updatesCombined, seq: ");
         r1.append(r0.getMessagesStorage().getLastSeqValue());
         r1.append(" ");
-        org.telegram.messenger.l0.m(r32.seq_start, r1);
+        org.telegram.messenger.y0.n(r32.seq_start, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:135:0x056d, code lost:
     
         r1 = new java.lang.StringBuilder("need get diff TL_updates, seq: ");
         r1.append(r0.getMessagesStorage().getLastSeqValue());
         r1.append(" ");
-        org.telegram.messenger.l0.m(r32.seq, r1);
+        org.telegram.messenger.y0.n(r32.seq, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:137:0x0589, code lost:
     
@@ -32488,25 +32488,25 @@ public class MessagesController extends BaseController implements NotificationCe
                             messagesController.getMessagesStorage().setLastPtsValue(updates.pts);
                             boolean contains = messagesController.createdDialogIds.contains(Long.valueOf(tL_message.dialog_id));
                             MessageObject messageObject = new MessageObject(messagesController.currentAccount, tL_message, contains, contains);
-                            ArrayList<MessageObject> j15 = l0.j(messageObject);
+                            ArrayList<MessageObject> k10 = y0.k(messageObject);
                             ArrayList<TLRPC.Message> arrayList4 = new ArrayList<>();
                             arrayList4.add(tL_message);
                             if (z13) {
-                                boolean z20 = !updates.out && messagesController.updatePrintingUsersWithNewMessages(updates.user_id, j15);
+                                boolean z20 = !updates.out && messagesController.updatePrintingUsersWithNewMessages(updates.user_id, k10);
                                 if (z20) {
                                     messagesController.updatePrintingStrings();
                                 }
                                 messagesController = this;
-                                arrayList = j15;
-                                AndroidUtilities.runOnUIThread(new t8(this, z20, j12, j15, 2));
+                                arrayList = k10;
+                                AndroidUtilities.runOnUIThread(new t8(this, z20, j12, k10, 2));
                             } else {
-                                arrayList = j15;
+                                arrayList = k10;
                                 boolean updatePrintingUsersWithNewMessages = messagesController.updatePrintingUsersWithNewMessages(-updates.chat_id, arrayList);
                                 if (updatePrintingUsersWithNewMessages) {
                                     messagesController.updatePrintingStrings();
                                 }
                                 messagesController = this;
-                                AndroidUtilities.runOnUIThread(new uj(this, updatePrintingUsersWithNewMessages, updates, arrayList, 10));
+                                AndroidUtilities.runOnUIThread(new vj(this, updatePrintingUsersWithNewMessages, updates, arrayList, 10));
                             }
                             if (!messageObject.isOut()) {
                                 messagesController.getMessagesStorage().getStorageQueue().postRunnable(new ea(messagesController, arrayList, 1));
@@ -32519,7 +32519,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                 sb2.append(" ");
                                 sb2.append(updates.pts);
                                 sb2.append(" count = ");
-                                l0.m(updates.pts_count, sb2);
+                                y0.n(updates.pts_count, sb2);
                             }
                             if (messagesController.gettingDifference || messagesController.updatesStartWaitTimePts == 0 || Math.abs(System.currentTimeMillis() - messagesController.updatesStartWaitTimePts) <= 1500) {
                                 if (messagesController.updatesStartWaitTimePts == 0) {
@@ -32537,11 +32537,11 @@ public class MessagesController extends BaseController implements NotificationCe
                         messagesController.getSecretChatHelper().processPendingEncMessages();
                         if (!z10) {
                             for (int i16 = 0; i16 < messagesController.updatesQueueChannels.m(); i16++) {
-                                long j16 = messagesController.updatesQueueChannels.j(i16);
-                                if (arrayList2 == null || !arrayList2.contains(Long.valueOf(j16))) {
-                                    messagesController.processChannelsUpdatesQueue(j16, 0);
+                                long j15 = messagesController.updatesQueueChannels.j(i16);
+                                if (arrayList2 == null || !arrayList2.contains(Long.valueOf(j15))) {
+                                    messagesController.processChannelsUpdatesQueue(j15, 0);
                                 } else {
-                                    messagesController.getChannelDifference(j16);
+                                    messagesController.getChannelDifference(j15);
                                 }
                             }
                             if (i10 != 0) {
@@ -32624,10 +32624,10 @@ public class MessagesController extends BaseController implements NotificationCe
                     for (int i19 = 0; i19 < updates.updates.size(); i19++) {
                         TLRPC.Update update = updates.updates.get(i19);
                         if (update instanceof TL_update.TL_updateNewChannelMessage) {
-                            long j17 = ((TL_update.TL_updateNewChannelMessage) update).message.peer_id.channel_id;
-                            if (iVar.h(j17) >= 0) {
+                            long j16 = ((TL_update.TL_updateNewChannelMessage) update).message.peer_id.channel_id;
+                            if (iVar.h(j16) >= 0) {
                                 if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("need get diff because of min channel " + j17);
+                                    FileLog.d("need get diff because of min channel " + j16);
                                 }
                                 i12 = 1;
                                 if (i12 != 0) {
@@ -32665,7 +32665,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                         sb3.append(" ");
                                                         sb3.append(tL_updates.pts);
                                                         sb3.append(" count = ");
-                                                        l0.m(tL_updates.pts_count, sb3);
+                                                        y0.n(tL_updates.pts_count, sb3);
                                                     }
                                                     if (messagesController.gettingDifference || messagesController.updatesStartWaitTimePts == j11 || Math.abs(System.currentTimeMillis() - messagesController.updatesStartWaitTimePts) <= 1500) {
                                                         if (messagesController.updatesStartWaitTimePts == j11) {
@@ -32687,7 +32687,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                     StringBuilder sb4 = new StringBuilder("need get diff inner TL_updates, pts: ");
                                                     sb4.append(messagesController.getMessagesStorage().getLastPtsValue());
                                                     sb4.append(" ");
-                                                    l0.m(updates.seq, sb4);
+                                                    y0.n(updates.seq, sb4);
                                                 }
                                                 i14 = 1;
                                             }
@@ -32775,7 +32775,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                                             sb5.append(" need get diff, qts: ");
                                                             sb5.append(messagesController.getMessagesStorage().getLastQtsValue());
                                                             sb5.append(" ");
-                                                            l0.m(tL_updates3.pts, sb5);
+                                                            y0.n(tL_updates3.pts, sb5);
                                                         }
                                                         if (messagesController.gettingDifference || messagesController.updatesStartWaitTimeQts == j11 || Math.abs(System.currentTimeMillis() - messagesController.updatesStartWaitTimeQts) <= 1500) {
                                                             if (messagesController.updatesStartWaitTimeQts == j11) {
@@ -32884,9 +32884,9 @@ public class MessagesController extends BaseController implements NotificationCe
             if (updates instanceof UserActionUpdatesSeq) {
                 messagesController.getMessagesStorage().setLastSeqValue(updates.seq);
             } else if (updates instanceof UserActionUpdatesPts) {
-                long j18 = updates.chat_id;
-                if (j18 != 0) {
-                    messagesController.channelsPts.put(j18, updates.pts);
+                long j17 = updates.chat_id;
+                if (j17 != 0) {
+                    messagesController.channelsPts.put(j17, updates.pts);
                     messagesController.getMessagesStorage().saveChannelPts(updates.chat_id, updates.pts);
                 } else {
                     messagesController.getMessagesStorage().setLastPtsValue(updates.pts);
@@ -33253,7 +33253,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 long clientUserId = userConfig.getClientUserId();
                 registerdevice.other_uids.add(Long.valueOf(clientUserId));
                 if (BuildVars.LOGS_ENABLED) {
-                    l0.m(this.currentAccount, a4.a.t(clientUserId, "add other uid = ", " for account "));
+                    y0.n(this.currentAccount, a4.a.u(clientUserId, "add other uid = ", " for account "));
                 }
             }
         }
@@ -33768,12 +33768,12 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void reportMessageDelivery(long j3, int i10, boolean z10) {
-        yh.n5 n5Var = new yh.n5(j3, i10);
-        if (this.reportedMessageDelivery.contains(n5Var)) {
+        yh.o5 o5Var = new yh.o5(j3, i10);
+        if (this.reportedMessageDelivery.contains(o5Var)) {
             return;
         }
-        this.reportedMessageDelivery.add(n5Var);
-        this.pendingReportMessageDelivery.add(new Pair<>(n5Var, new AtomicBoolean(z10)));
+        this.reportedMessageDelivery.add(o5Var);
+        this.pendingReportMessageDelivery.add(new Pair<>(o5Var, new AtomicBoolean(z10)));
         AndroidUtilities.cancelRunOnUIThread(this.sendReportMessageDeliver);
         AndroidUtilities.runOnUIThread(this.sendReportMessageDeliver);
     }
@@ -33912,8 +33912,8 @@ public class MessagesController extends BaseController implements NotificationCe
         getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new v7(this, obj, tL_messages_saveRecentSticker, 6));
     }
 
-    public void saveTheme(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
-        TLRPC.TL_theme tL_theme = h6Var != null ? h6Var.r : i6Var.F;
+    public void saveTheme(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, boolean z11) {
+        TLRPC.TL_theme tL_theme = g6Var != null ? g6Var.r : h6Var.F;
         if (tL_theme != null) {
             TL_account.saveTheme savetheme = new TL_account.saveTheme();
             TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
@@ -33927,7 +33927,7 @@ public class MessagesController extends BaseController implements NotificationCe
         if (z11) {
             return;
         }
-        installTheme(i6Var, h6Var, z10);
+        installTheme(h6Var, g6Var, z10);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -33939,7 +33939,7 @@ public class MessagesController extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void saveThemeToServer(org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public void saveThemeToServer(org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var) {
         String str;
         File file;
         String str2;
@@ -33954,41 +33954,41 @@ public class MessagesController extends BaseController implements NotificationCe
         String str4;
         String str5;
         String str6;
-        if (i6Var == null) {
+        if (h6Var == null) {
             return;
         }
-        if (h6Var != 0) {
+        if (g6Var != 0) {
             File sharingDirectory = AndroidUtilities.getSharingDirectory();
             sharingDirectory.mkdirs();
             Locale locale = Locale.US;
-            File file2 = new File(sharingDirectory, h6Var.b.m() + "_" + h6Var.a + ".attheme");
-            SparseIntArray Q0 = org.telegram.ui.ActionBar.j6.Q0(null, h6Var.b.d, null);
+            File file2 = new File(sharingDirectory, g6Var.b.m() + "_" + g6Var.a + ".attheme");
+            SparseIntArray Q0 = org.telegram.ui.ActionBar.i6.Q0(null, g6Var.b.d, null);
             SparseIntArray clone = Q0.clone();
-            h6Var.c(Q0, clone);
-            if (TextUtils.isEmpty(h6Var.o)) {
+            g6Var.c(Q0, clone);
+            if (TextUtils.isEmpty(g6Var.o)) {
                 str3 = null;
             } else {
                 StringBuilder sb2 = new StringBuilder();
-                if (h6Var.q) {
+                if (g6Var.q) {
                     sb2.append("motion");
                 }
-                int i10 = clone.get(org.telegram.ui.ActionBar.j6.Nd);
+                int i10 = clone.get(org.telegram.ui.ActionBar.i6.Nd);
                 if (i10 == 0) {
                     i10 = -1;
                 }
-                int i11 = clone.get(org.telegram.ui.ActionBar.j6.Od);
+                int i11 = clone.get(org.telegram.ui.ActionBar.i6.Od);
                 if (i11 == 0) {
                     i11 = 0;
                 }
-                int i12 = clone.get(org.telegram.ui.ActionBar.j6.Pd);
+                int i12 = clone.get(org.telegram.ui.ActionBar.i6.Pd);
                 if (i12 == 0) {
                     i12 = 0;
                 }
-                int i13 = clone.get(org.telegram.ui.ActionBar.j6.Qd);
+                int i13 = clone.get(org.telegram.ui.ActionBar.i6.Qd);
                 if (i13 == 0) {
                     i13 = 0;
                 }
-                int i14 = clone.get(org.telegram.ui.ActionBar.j6.Rd);
+                int i14 = clone.get(org.telegram.ui.ActionBar.i6.Rd);
                 if (i14 == 0) {
                     i14 = 45;
                 }
@@ -34030,7 +34030,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
                 if (str4 == null || str5 == null) {
                     if (str4 != null) {
-                        lowerCase = a4.a.C(lowerCase, "-", str4) + "&rotation=" + i14;
+                        lowerCase = a4.a.D(lowerCase, "-", str4) + "&rotation=" + i14;
                     }
                 } else if (str6 != null) {
                     StringBuilder sb3 = new StringBuilder();
@@ -34039,13 +34039,13 @@ public class MessagesController extends BaseController implements NotificationCe
                     sb3.append(str4);
                     sb3.append("~");
                     sb3.append(str5);
-                    lowerCase = a4.a.s(sb3, "~", str6);
+                    lowerCase = a4.a.t(sb3, "~", str6);
                 } else {
                     lowerCase = lowerCase + "~" + str4 + "~" + str5;
                 }
-                str3 = "https://attheme.org?slug=" + h6Var.o + "&intensity=" + ((int) (h6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
+                str3 = "https://attheme.org?slug=" + g6Var.o + "&intensity=" + ((int) (g6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
                 if (sb2.length() > 0) {
-                    StringBuilder h = v7.j0.h(str3, "&mode=");
+                    StringBuilder h = w.c.h(str3, "&mode=");
                     h.append(sb2.toString());
                     str3 = h.toString();
                 }
@@ -34055,8 +34055,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 try {
                     int keyAt = clone.keyAt(i15);
                     int valueAt = clone.valueAt(i15);
-                    if (str3 == null || (org.telegram.ui.ActionBar.j6.Nd != keyAt && org.telegram.ui.ActionBar.j6.Od != keyAt && org.telegram.ui.ActionBar.j6.Pd != keyAt && org.telegram.ui.ActionBar.j6.Qd != keyAt)) {
-                        hg.k0.t(sb4, keyAt, "=", valueAt, "\n");
+                    if (str3 == null || (org.telegram.ui.ActionBar.i6.Nd != keyAt && org.telegram.ui.ActionBar.i6.Od != keyAt && org.telegram.ui.ActionBar.i6.Pd != keyAt && org.telegram.ui.ActionBar.i6.Qd != keyAt)) {
+                        hg.c.v(sb4, keyAt, "=", valueAt, "\n");
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -34079,13 +34079,13 @@ public class MessagesController extends BaseController implements NotificationCe
                             fileOutputStream2.close();
                         }
                         str = file2.getAbsolutePath();
-                        file = h6Var.d();
+                        file = g6Var.d();
                         str2 = str;
                         if (str2 == null) {
                             return;
                         }
-                        this.uploadingThemes.put(str2, h6Var == 0 ? h6Var : i6Var);
-                        Utilities.globalQueue.postRunnable(new b5(this, str2, (Object) file, h6Var, i6Var, 10));
+                        this.uploadingThemes.put(str2, g6Var == 0 ? g6Var : h6Var);
+                        Utilities.globalQueue.postRunnable(new b5(this, str2, (Object) file, g6Var, h6Var, 10));
                     } catch (Throwable th4) {
                         th3 = th4;
                         fileOutputStream = fileOutputStream2;
@@ -34117,15 +34117,15 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
             }
             str = file2.getAbsolutePath();
-            file = h6Var.d();
+            file = g6Var.d();
         } else {
-            str = i6Var.b;
+            str = h6Var.b;
             file = null;
         }
         str2 = str;
         if (str2 == null && !this.uploadingThemes.containsKey(str2)) {
-            this.uploadingThemes.put(str2, h6Var == 0 ? h6Var : i6Var);
-            Utilities.globalQueue.postRunnable(new b5(this, str2, (Object) file, h6Var, i6Var, 10));
+            this.uploadingThemes.put(str2, g6Var == 0 ? g6Var : h6Var);
+            Utilities.globalQueue.postRunnable(new b5(this, str2, (Object) file, g6Var, h6Var, 10));
         }
     }
 
@@ -34212,7 +34212,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     j10 = b6Var.l;
                     if (j10 != 0) {
                     }
-                    tL_wallPaper.dark = nc0.j(b6Var.d, b6Var.e, b6Var.f, b6Var.g);
+                    tL_wallPaper.dark = cc0.j(b6Var.d, b6Var.e, b6Var.f, b6Var.g);
                     tL_wallPaper.flags |= 4;
                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
                     tL_wallPaper.settings = tL_wallPaperSettings;
@@ -34257,7 +34257,7 @@ public class MessagesController extends BaseController implements NotificationCe
             } else {
                 tL_wallPaper.id = j10;
             }
-            tL_wallPaper.dark = nc0.j(b6Var.d, b6Var.e, b6Var.f, b6Var.g);
+            tL_wallPaper.dark = cc0.j(b6Var.d, b6Var.e, b6Var.f, b6Var.g);
             tL_wallPaper.flags |= 4;
             TLRPC.TL_wallPaperSettings tL_wallPaperSettings2 = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings2;
@@ -34517,7 +34517,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void setForumLastTopicId(long j3, long j10) {
-        this.mainPreferences.edit().putLong(a4.a.o(j3, "forumlasttopic"), j10).apply();
+        this.mainPreferences.edit().putLong(a4.a.p(j3, "forumlasttopic"), j10).apply();
     }
 
     public void setLastCreatedDialogId(long j3, boolean z10, boolean z11) {
@@ -34600,7 +34600,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     public void sortDialogs(a0.i iVar) {
         long j3;
-        TLRPC.EncryptedChat k10;
+        TLRPC.EncryptedChat l4;
         TLRPC.Chat chat;
         TLRPC.User currentUser;
         TLRPC.Dialog dialog;
@@ -34671,8 +34671,8 @@ public class MessagesController extends BaseController implements NotificationCe
                             long j10 = dialog2.id;
                             j3 = clientUserId;
                             if (!z13 || (chat = getChat(Long.valueOf(-j10))) == null || chat.collapsed_in_dialogs) {
-                                if (DialogObject.isEncryptedDialog(j10) && (k10 = l0.k(this, j10)) != null) {
-                                    j10 = k10.user_id;
+                                if (DialogObject.isEncryptedDialog(j10) && (l4 = y0.l(this, j10)) != null) {
+                                    j10 = l4.user_id;
                                 }
                                 if (this.sortingDialogFilter.includesDialog(getAccountInstance(), j10, dialog2)) {
                                     if (canAddToForward(dialog2)) {
@@ -35071,7 +35071,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void updateFilterDialogs(DialogFilter dialogFilter) {
-        TLRPC.EncryptedChat k10;
+        TLRPC.EncryptedChat l4;
         TLRPC.Chat chat;
         if (dialogFilter == null) {
             return;
@@ -35093,8 +35093,8 @@ public class MessagesController extends BaseController implements NotificationCe
             if ((dialog instanceof TLRPC.TL_dialog) || z10) {
                 long j3 = dialog.id;
                 if (!z10 || (chat = getChat(Long.valueOf(-j3))) == null || chat.collapsed_in_dialogs) {
-                    if (DialogObject.isEncryptedDialog(j3) && (k10 = l0.k(this, j3)) != null) {
-                        j3 = k10.user_id;
+                    if (DialogObject.isEncryptedDialog(j3) && (l4 = y0.l(this, j3)) != null) {
+                        j3 = l4.user_id;
                     }
                     if (dialogFilter.includesDialog(getAccountInstance(), j3, dialog)) {
                         if (canAddToForward(dialog)) {
@@ -35128,7 +35128,7 @@ public class MessagesController extends BaseController implements NotificationCe
         TLRPC.Chat chat;
         long j11;
         int i11;
-        hg.a2 a2Var;
+        hg.b2 b2Var;
         MessagesController messagesController2;
         MessageObject messageObject2;
         TLRPC.ChatFull chatFull;
@@ -35210,7 +35210,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         messagesController.getMediaDataController().loadReplyMessagesForMessages(arrayList, j3, i10, 0L, null, 0, null);
         if (i10 == 5) {
-            hg.b2 f7 = hg.b2.f(messagesController.currentAccount);
+            hg.c2 f7 = hg.c2.f(messagesController.currentAccount);
             ArrayList arrayList2 = f7.c;
             int size = arrayList.size();
             int i13 = 0;
@@ -35225,28 +35225,28 @@ public class MessagesController extends BaseController implements NotificationCe
                     while (true) {
                         if (i14 >= size2) {
                             i11 = size;
-                            a2Var = null;
+                            b2Var = null;
                             break;
                         }
                         Object obj = arrayList2.get(i14);
                         i14++;
-                        a2Var = (hg.a2) obj;
+                        b2Var = (hg.b2) obj;
                         i11 = size;
-                        if (TextUtils.equals(quickReplyName, a2Var.b)) {
+                        if (TextUtils.equals(quickReplyName, b2Var.b)) {
                             break;
                         }
                         size = i11;
                     }
-                    if (a2Var == null) {
-                        a2Var = new hg.a2();
-                        a2Var.g = true;
-                        a2Var.b = messageObject6.getQuickReplyName();
-                        a2Var.a = -1;
-                        a2Var.e = messageObject6;
-                        a2Var.d = messageObject6.getId();
-                        arrayList2.add(a2Var);
+                    if (b2Var == null) {
+                        b2Var = new hg.b2();
+                        b2Var.g = true;
+                        b2Var.b = messageObject6.getQuickReplyName();
+                        b2Var.a = -1;
+                        b2Var.e = messageObject6;
+                        b2Var.d = messageObject6.getId();
+                        arrayList2.add(b2Var);
                     }
-                    a2Var.h.add(Integer.valueOf(messageObject6.getId()));
+                    b2Var.h.add(Integer.valueOf(messageObject6.getId()));
                     AndroidUtilities.runOnUIThread(new ci.uc(f7, 25));
                     size = i11;
                 }
@@ -35332,11 +35332,11 @@ public class MessagesController extends BaseController implements NotificationCe
                 return false;
             }
             if (BuildVars.LOGS_ENABLED) {
-                StringBuilder t10 = a4.a.t(j3, "not found dialog with id ", " dictCount = ");
-                t10.append(messagesController.dialogs_dict.m());
-                t10.append(" allCount = ");
-                t10.append(messagesController.allDialogs.size());
-                FileLog.d(t10.toString());
+                StringBuilder u10 = a4.a.u(j3, "not found dialog with id ", " dictCount = ");
+                u10.append(messagesController.dialogs_dict.m());
+                u10.append(" allCount = ");
+                u10.append(messagesController.allDialogs.size());
+                FileLog.d(u10.toString());
             }
             final TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
             tL_dialog2.id = j3;
@@ -35754,7 +35754,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 AndroidUtilities.runOnUIThread(new r9(this, 5));
             }
         }
-        if (org.telegram.ui.ActionBar.j6.o == 1 && Math.abs(j10 - lastThemeCheckTime) >= 60) {
+        if (org.telegram.ui.ActionBar.i6.o == 1 && Math.abs(j10 - lastThemeCheckTime) >= 60) {
             AndroidUtilities.runOnUIThread(this.themeCheckRunnable);
             lastThemeCheckTime = j10;
         }
@@ -35804,11 +35804,11 @@ public class MessagesController extends BaseController implements NotificationCe
         sb2.append("/");
         sb2.append(fileLocation.volume_id);
         sb2.append("_");
-        this.uploadingAvatar = a4.a.n(fileLocation.local_id, ".jpg", sb2);
+        this.uploadingAvatar = a4.a.o(fileLocation.local_id, ".jpg", sb2);
         getFileLoader().uploadFile(this.uploadingAvatar, false, true, 16777216);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class ChatlistUpdatesStat {
         long lastRequestTime;
         TL_chatlists.TL_chatlists_chatlistUpdates lastValue;
@@ -36046,9 +36046,9 @@ public class MessagesController extends BaseController implements NotificationCe
                 tL_updates_getDifference.date = getConnectionsManager().getCurrentTime();
             }
             if (BuildVars.LOGS_ENABLED) {
-                StringBuilder l4 = hg.k0.l("start getDifference with date = ", i11, " pts = ", i10, " qts = ");
-                l4.append(i12);
-                FileLog.d(l4.toString());
+                StringBuilder m10 = hg.c.m("start getDifference with date = ", i11, " pts = ", i10, " qts = ");
+                m10.append(i12);
+                FileLog.d(m10.toString());
                 FileLog.d("getDifference: isUpdating = true");
             }
             getConnectionsManager().setIsUpdating(true);
@@ -36127,13 +36127,13 @@ public class MessagesController extends BaseController implements NotificationCe
 
     public boolean isDialogMuted(long j3, long j10, TLRPC.Chat chat) {
         Boolean bool;
-        int i10 = this.notificationsPreferences.getInt(l0.h(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY)), -1);
+        int i10 = this.notificationsPreferences.getInt(y0.i(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY)), -1);
         boolean z10 = false;
         if (i10 != -1) {
             if (i10 == 2) {
                 return true;
             }
-            return i10 == 3 && this.notificationsPreferences.getInt(l0.h(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL)), 0) >= getConnectionsManager().getCurrentTime();
+            return i10 == 3 && this.notificationsPreferences.getInt(y0.i(j3, j10, new StringBuilder(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL)), 0) >= getConnectionsManager().getCurrentTime();
         }
         if (chat != null) {
             if (ChatObject.isChannel(chat) && !chat.megagroup) {
@@ -36208,11 +36208,11 @@ public class MessagesController extends BaseController implements NotificationCe
         int i13 = NotificationCenter.dialogsNeedReload;
         notificationCenter.lambda$postNotificationNameOnUIThread$1(i13, new Object[0]);
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder l4 = hg.k0.l("folderId = ", i10, " load cacheOffset = ", i11, " count = ");
-            l4.append(i12);
-            l4.append(" cache = ");
-            l4.append(z10);
-            FileLog.d(l4.toString());
+            StringBuilder m10 = hg.c.m("folderId = ", i10, " load cacheOffset = ", i11, " count = ");
+            m10.append(i12);
+            m10.append(" cache = ");
+            m10.append(z10);
+            FileLog.d(m10.toString());
         }
         if (z10) {
             getMessagesStorage().getDialogs(i10, i11 == 0 ? 0 : this.nextDialogsCacheOffset.get(i10, 0), i12, i10 == 0 && i11 == 0);
@@ -36782,14 +36782,14 @@ public class MessagesController extends BaseController implements NotificationCe
             if (i10 != 0) {
                 return false;
             }
-            TLRPC.EncryptedChat k10 = l0.k(this, j3);
-            byte[] bArr = k10.auth_key;
-            if (bArr != null && bArr.length > 1 && (k10 instanceof TLRPC.TL_encryptedChat)) {
+            TLRPC.EncryptedChat l4 = y0.l(this, j3);
+            byte[] bArr = l4.auth_key;
+            if (bArr != null && bArr.length > 1 && (l4 instanceof TLRPC.TL_encryptedChat)) {
                 TLRPC.TL_messages_setEncryptedTyping tL_messages_setEncryptedTyping = new TLRPC.TL_messages_setEncryptedTyping();
                 TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat = new TLRPC.TL_inputEncryptedChat();
                 tL_messages_setEncryptedTyping.peer = tL_inputEncryptedChat;
-                tL_inputEncryptedChat.chat_id = k10.id;
-                tL_inputEncryptedChat.access_hash = k10.access_hash;
+                tL_inputEncryptedChat.chat_id = l4.id;
+                tL_inputEncryptedChat.access_hash = l4.access_hash;
                 tL_messages_setEncryptedTyping.typing = true;
                 iVar2.k(Boolean.TRUE, j10);
                 int sendRequest2 = getConnectionsManager().sendRequest(tL_messages_setEncryptedTyping, new lc(this, i10, j3, j10, 2), 2);
@@ -36934,7 +36934,7 @@ public class MessagesController extends BaseController implements NotificationCe
         updateEmojiStatus(0L, emojiStatus, starGift);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class DialogFilter {
         private static int dialogFilterPointer = 10;
         public int color;
@@ -36962,13 +36962,13 @@ public class MessagesController extends BaseController implements NotificationCe
         }
 
         public boolean alwaysShow(int i10, TLRPC.Dialog dialog) {
-            TLRPC.EncryptedChat k10;
+            TLRPC.EncryptedChat l4;
             if (dialog == null) {
                 return false;
             }
             long j3 = dialog.id;
-            if (DialogObject.isEncryptedDialog(j3) && (k10 = l0.k(MessagesController.getInstance(i10), j3)) != null) {
-                j3 = k10.user_id;
+            if (DialogObject.isEncryptedDialog(j3) && (l4 = y0.l(MessagesController.getInstance(i10), j3)) != null) {
+                j3 = l4.user_id;
             }
             return this.alwaysShow.contains(Long.valueOf(j3));
         }
@@ -37155,13 +37155,13 @@ public class MessagesController extends BaseController implements NotificationCe
                 @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
                 public void onError() {
                     eVar.b();
-                    n2Var.presentFragment(new zn(bundle));
+                    n2Var.presentFragment(new bo(bundle));
                 }
 
                 @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
                 public void onMessagesLoaded(boolean z10) {
                     eVar.b();
-                    n2Var.presentFragment(new zn(bundle));
+                    n2Var.presentFragment(new bo(bundle));
                 }
             });
             return false;
@@ -37287,21 +37287,21 @@ public class MessagesController extends BaseController implements NotificationCe
                 iVar = null;
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogDeleted, Long.valueOf(j3), 0);
                 getNotificationsController().deleteNotificationChannel(j3, 0L);
-                if (h80.J == this.currentAccount && (arrayList = h80.G) != null && j3 <= 0) {
+                if (w70.J == this.currentAccount && (arrayList = w70.G) != null && j3 <= 0) {
                     int size = arrayList.size();
                     int i21 = 0;
                     while (true) {
                         if (i21 >= size) {
                             break;
                         }
-                        if (MessageObject.getPeerId((TLRPC.Peer) h80.G.get(i21)) == j3) {
-                            h80.G.remove(i21);
+                        if (MessageObject.getPeerId((TLRPC.Peer) w70.G.get(i21)) == j3) {
+                            w70.G.remove(i21);
                             break;
                         }
                         i21++;
                     }
-                    if (h80.G.isEmpty()) {
-                        h80.G = null;
+                    if (w70.G.isEmpty()) {
+                        w70.G = null;
                     }
                 }
             } else {
@@ -37382,10 +37382,10 @@ public class MessagesController extends BaseController implements NotificationCe
                         tL_messageService.dialog_id = j3;
                         tL_messageService.peer_id = getPeer(j3);
                         boolean contains = this.createdDialogIds.contains(Long.valueOf(tL_messageService.dialog_id));
-                        ArrayList<MessageObject> j16 = l0.j(new MessageObject(this.currentAccount, tL_messageService, contains, contains));
+                        ArrayList<MessageObject> k10 = y0.k(new MessageObject(this.currentAccount, tL_messageService, contains, contains));
                         ArrayList<TLRPC.Message> arrayList3 = new ArrayList<>();
                         arrayList3.add(tL_messageService);
-                        updateInterfaceWithMessages(j3, j16, 0);
+                        updateInterfaceWithMessages(j3, k10, 0);
                         getMessagesStorage().putMessages(arrayList3, false, true, false, 0, false, 0, 0L);
                     } else {
                         dialog.top_message = 0;
@@ -37604,7 +37604,7 @@ public class MessagesController extends BaseController implements NotificationCe
         getConnectionsManager().sendRequest(tL_channels_updateEmojiStatus, null);
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class EmojiSound {
         public long accessHash;
         public byte[] fileReference;
@@ -37800,7 +37800,7 @@ public class MessagesController extends BaseController implements NotificationCe
             } else {
                 if (z14) {
                     if (i10 == 5) {
-                        hg.b2 f7 = hg.b2.f(this.currentAccount);
+                        hg.c2 f7 = hg.c2.f(this.currentAccount);
                         int size2 = arrayList.size();
                         int i15 = 0;
                         while (i15 < size2) {
@@ -37812,11 +37812,11 @@ public class MessagesController extends BaseController implements NotificationCe
                             int i16 = 0;
                             while (true) {
                                 if (i16 < arrayList6.size()) {
-                                    hg.a2 a2Var = (hg.a2) arrayList6.get(i16);
-                                    if (a2Var.h.contains(num3)) {
-                                        a2Var.h.remove(num3);
-                                        if (a2Var.a() <= 0) {
-                                            arrayList6.remove(a2Var);
+                                    hg.b2 b2Var = (hg.b2) arrayList6.get(i16);
+                                    if (b2Var.h.contains(num3)) {
+                                        b2Var.h.remove(num3);
+                                        if (b2Var.a() <= 0) {
+                                            arrayList6.remove(b2Var);
                                         }
                                         NotificationCenter.getInstance(f7.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                                     } else {
@@ -38110,7 +38110,7 @@ public class MessagesController extends BaseController implements NotificationCe
             return;
         }
         if (tL_updateWebBrowserException.delete) {
-            if (w7.d0.a(tL_updateWebBrowserException.flags, 1)) {
+            if (w7.c0.a(tL_updateWebBrowserException.flags, 1)) {
                 if (tL_updateWebBrowserException.open_external_browser) {
                     deleteWebBrowserExceptionFromList(this.webBrowserSettings.external_exceptions, tL_updateWebBrowserException.exception);
                 } else {
@@ -38504,7 +38504,7 @@ public class MessagesController extends BaseController implements NotificationCe
         return getInputUser(getUser(Long.valueOf(j3)));
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class DialogPhotos {
         public static final int STEP = 80;
         public final long dialogId;
@@ -39010,9 +39010,6 @@ public class MessagesController extends BaseController implements NotificationCe
     public static /* synthetic */ void lambda$unregistedPush$320(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
-    public void markSponsoredAsRead(long j3, MessageObject messageObject) {
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public void deleteParticipantFromChat(long j3, TLRPC.User user, TLRPC.Chat chat, boolean z10, boolean z11) {
         TLRPC.InputPeer inputPeer;
@@ -39085,6 +39082,9 @@ public class MessagesController extends BaseController implements NotificationCe
             deleteDialog(-j3, 0, z11);
         }
         getConnectionsManager().sendRequest(tL_messages_deleteChatUser, new v9(this, isChannel, user, j3), 64);
+    }
+
+    public void markSponsoredAsRead(long j3, MessageObject messageObject) {
     }
 
     public static TLRPC.InputPeer getInputPeer(TLRPC.Chat chat) {

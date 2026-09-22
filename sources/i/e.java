@@ -11,15 +11,15 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import m.m2;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.g8;
+import v7.f8;
 import x4.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class e extends f implements j0.b {
+public final class e extends g implements j0.b {
     public boolean E;
     public b F;
-    public g8 G;
+    public f8 G;
     public int H;
     public int I;
     public boolean J;
@@ -193,13 +193,13 @@ public final class e extends f implements j0.b {
         throw new XmlPullParserException(xmlResourceParser.getPositionDescription() + ": <transition> tag requires 'fromId' & 'toId' attributes");
     }
 
-    @Override // i.f, android.graphics.drawable.Drawable
+    @Override // i.g, android.graphics.drawable.Drawable
     public final void applyTheme(Resources.Theme theme) {
         super.applyTheme(theme);
         onStateChange(getState());
     }
 
-    @Override // i.f
+    @Override // i.g
     public final void d(b bVar) {
         this.a = bVar;
         int i10 = this.h;
@@ -231,12 +231,12 @@ public final class e extends f implements j0.b {
         return true;
     }
 
-    @Override // i.f, android.graphics.drawable.Drawable
+    @Override // i.g, android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         super.jumpToCurrentState();
-        g8 g8Var = this.G;
-        if (g8Var != null) {
-            g8Var.d();
+        f8 f8Var = this.G;
+        if (f8Var != null) {
+            f8Var.d();
             this.G = null;
             c(this.H);
             this.H = -1;
@@ -244,7 +244,7 @@ public final class e extends f implements j0.b {
         }
     }
 
-    @Override // i.f, android.graphics.drawable.Drawable
+    @Override // i.g, android.graphics.drawable.Drawable
     public final Drawable mutate() {
         if (!this.J) {
             f();
@@ -266,23 +266,23 @@ public final class e extends f implements j0.b {
     */
     public final boolean onStateChange(int[] iArr) {
         int i10;
-        g8 aVar;
+        f8 aVar;
         b bVar = this.F;
         int f7 = bVar.f(iArr);
         if (f7 < 0) {
             f7 = bVar.f(StateSet.WILD_CARD);
         }
         if (f7 != this.h) {
-            g8 g8Var = this.G;
-            if (g8Var != null) {
+            f8 f8Var = this.G;
+            if (f8Var != null) {
                 if (f7 != this.H) {
-                    if (f7 == this.I && g8Var.a()) {
-                        g8Var.b();
+                    if (f7 == this.I && f8Var.a()) {
+                        f8Var.b();
                         this.H = this.I;
                         this.I = f7;
                     } else {
                         i10 = this.H;
-                        g8Var.d();
+                        f8Var.d();
                     }
                 }
                 r2 = true;
@@ -321,13 +321,13 @@ public final class e extends f implements j0.b {
         return drawable != null ? drawable.setState(iArr) | r2 : r2;
     }
 
-    @Override // i.f, android.graphics.drawable.Drawable
+    @Override // i.g, android.graphics.drawable.Drawable
     public final boolean setVisible(boolean z10, boolean z11) {
         boolean visible = super.setVisible(z10, z11);
-        g8 g8Var = this.G;
-        if (g8Var != null && (visible || z11)) {
+        f8 f8Var = this.G;
+        if (f8Var != null && (visible || z11)) {
             if (z10) {
-                g8Var.c();
+                f8Var.c();
                 return visible;
             }
             jumpToCurrentState();

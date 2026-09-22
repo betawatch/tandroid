@@ -1,79 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public class zc extends n90 {
-    public ad L;
-    public ad M;
+public final class zc {
+    public float A;
+    public float B;
+    public float C;
+    public float D;
+    public final /* synthetic */ bd E;
+    public final Paint a;
+    public Bitmap b;
+    public float c;
+    public float d;
+    public final c6 e;
+    public final c6 f;
+    public float g;
+    public final c6 h;
+    public float i;
+    public final c6 j;
+    public final m6 k;
+    public float l;
+    public final c6 m;
+    public boolean n;
+    public final c6 o;
+    public final Path p;
+    public final Paint q;
+    public final RectF r;
+    public final Paint s;
+    public final Paint t;
+    public final RectF u;
+    public RadialGradient v;
+    public Matrix w;
+    public float x;
+    public float y;
+    public float z;
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.M == null || getMeasuredWidth() <= 0) {
-            return;
-        }
-        SpannableString spannableString = new SpannableString(" btn");
-        spannableString.setSpan(this.M, 1, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.M.a()) - AndroidUtilities.dp(4.0f), TextUtils.TruncateAt.END));
-        spannableStringBuilder.append((CharSequence) spannableString);
-        setText(spannableStringBuilder);
-        this.M = null;
+    public zc(bd bdVar) {
+        this.E = bdVar;
+        Paint paint = new Paint(3);
+        this.a = paint;
+        paint.setColor(-1);
+        qr qrVar = qr.h;
+        this.e = new c6(bdVar, 650L, qrVar);
+        this.f = new c6(bdVar, 650L, qrVar);
+        qr qrVar2 = qr.g;
+        this.h = new c6(bdVar, 0L, 150L, qrVar2);
+        this.i = 1.0f;
+        this.j = new c6(bdVar, 0L, 150L, qrVar2);
+        m6 m6Var = new m6(false, true, true, false);
+        this.k = m6Var;
+        this.m = new c6(bdVar, 0L, 150L, qrVar2);
+        this.o = new c6(bdVar, 0L, 200L, qrVar);
+        m6Var.r(-1);
+        m6Var.k(0.35f, 200L, qrVar);
+        m6Var.u(AndroidUtilities.bold());
+        m6Var.t(AndroidUtilities.dp(15.0f));
+        m6Var.b = 17;
+        this.p = new Path();
+        Paint paint2 = new Paint(1);
+        this.q = paint2;
+        this.r = new RectF();
+        this.s = new Paint(1);
+        Paint paint3 = new Paint(1);
+        this.t = paint3;
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+        this.u = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.n90, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Layout layout;
-        ad adVar;
-        Runnable runnable;
-        ad adVar2;
-        int action = motionEvent.getAction();
-        float x10 = motionEvent.getX() - getPaddingLeft();
-        int y3 = ((int) motionEvent.getY()) - getPaddingTop();
-        if ((getText() instanceof Spanned) && (layout = getLayout()) != null) {
-            int lineForVertical = layout.getLineForVertical(y3);
-            Spanned spanned = (Spanned) getText();
-            ad[] adVarArr = (ad[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), ad.class);
-            for (int i10 = 0; i10 < adVarArr.length; i10++) {
-                adVar = adVarArr[i10];
-                float primaryHorizontal = layout.getPrimaryHorizontal(spanned.getSpanStart(adVar));
-                float primaryHorizontal2 = layout.getPrimaryHorizontal(spanned.getSpanEnd(adVar));
-                if (primaryHorizontal2 < primaryHorizontal) {
-                    primaryHorizontal2 = primaryHorizontal;
-                    primaryHorizontal = primaryHorizontal2;
-                }
-                if (x10 >= primaryHorizontal && x10 <= primaryHorizontal2) {
-                    break;
-                }
+    public final void a(Canvas canvas, float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18) {
+        if (f18 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
+            return;
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        float sqrt = (float) Math.sqrt(2.0d);
+        if (bd.b0 < 0) {
+            bd.b0 = currentTimeMillis;
+        }
+        float f19 = (currentTimeMillis - bd.b0) / 10000.0f;
+        Bitmap bitmap = this.b;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            float f20 = width;
+            float dpf2 = AndroidUtilities.dpf2(15.0f) / f20;
+            float f21 = 7.0f;
+            int floor = (int) Math.floor((f13 % 360.0f) / 7.0f);
+            int ceil = (int) Math.ceil((f14 % 360.0f) / 7.0f);
+            while (floor <= ceil) {
+                float f22 = floor * f21;
+                float sin = (float) (((((Math.sin(2000.0f * f22) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f19)) % 1.0d);
+                float f23 = f20 * sqrt;
+                float f24 = f19;
+                double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
+                float e = (float) hg.c.e(bd.a(f22), lerp, f7);
+                int i10 = width;
+                float sin2 = (float) ((Math.sin(bd.a(f22)) * lerp) + f10);
+                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.z6.a(e, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                Paint paint = this.a;
+                paint.setAlpha(max);
+                float f25 = dpf2;
+                float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
+                canvas.save();
+                canvas.translate(e, sin2);
+                canvas.scale(sin3, sin3);
+                float f26 = -(i10 >> 1);
+                canvas.drawBitmap(this.b, f26, f26, paint);
+                canvas.restore();
+                floor++;
+                sqrt = sqrt;
+                width = i10;
+                f20 = f20;
+                dpf2 = f25;
+                f19 = f24;
+                f21 = 7.0f;
             }
         }
-        adVar = null;
-        if (action == 0) {
-            this.L = adVar;
-            if (adVar != null) {
-                adVar.c(this, true);
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            ad adVar3 = this.L;
-            if (adVar3 != null) {
-                adVar3.c(this, false);
-                if (action == 1 && (runnable = this.L.d) != null) {
-                    runnable.run();
-                }
-            }
-            this.L = null;
-        } else if (action == 2 && (adVar2 = this.L) != null && adVar2 != adVar) {
-            adVar2.c(this, false);
-            this.L = null;
-        }
-        return this.L != null || super.onTouchEvent(motionEvent);
     }
 }

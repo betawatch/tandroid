@@ -1,15 +1,15 @@
 package le;
 
 import android.view.View;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, y9 {
+public final /* synthetic */ class a implements d, x9 {
     public final /* synthetic */ View a;
 
     @Override // le.d
-    public void H(int i10, float f7, float f10, e eVar) {
+    public void D(int i10, float f7, float f10, e eVar) {
         this.a.invalidate();
     }
 

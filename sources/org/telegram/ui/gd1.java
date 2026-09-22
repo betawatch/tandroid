@@ -1,22 +1,31 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gd1 extends xd1 {
-    public final /* synthetic */ zn k2;
-    public final /* synthetic */ boolean l2;
+public final class gd1 implements nd1 {
+    public boolean a;
+    public final /* synthetic */ bo b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gd1(Object obj, zn znVar, boolean z10) {
-        super(obj, null, true);
-        this.k2 = znVar;
-        this.l2 = z10;
+    public gd1(bo boVar, boolean z10) {
+        this.b = boVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        xn xnVar = this.k2.ea;
-        xnVar.i(xnVar.f, xnVar.h, false, Boolean.valueOf(this.l2), false);
+    @Override // org.telegram.ui.nd1
+    public final boolean Y0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.nd1
+    public final boolean a() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.nd1
+    public final void o1(boolean z10) {
+        boolean z11 = !this.a;
+        this.a = z11;
+        zn znVar = this.b.ea;
+        znVar.i(znVar.f, znVar.h, z10, Boolean.valueOf(z11), false);
     }
 }

@@ -1,35 +1,86 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
+import android.widget.Scroller;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class yc1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Rect b;
-    public final /* synthetic */ xd1 c;
+public final class yc1 implements org.telegram.ui.Components.eo0, org.telegram.ui.Components.i20 {
+    public final /* synthetic */ wd1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc1(xd1 xd1Var, Context context, int i10, Rect rect) {
-        super(context);
-        this.c = xd1Var;
-        this.a = i10;
-        this.b = rect;
+    public /* synthetic */ yc1(wd1 wd1Var) {
+        this.a = wd1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.a;
-        Rect rect = this.b;
-        xd1 xd1Var = this.c;
-        if (i10 == 0) {
-            xd1Var.r.setBounds(xd1Var.V.getLeft() - rect.left, 0, xd1Var.V.getRight() + rect.right, getMeasuredHeight());
-        } else {
-            xd1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+    @Override // org.telegram.ui.Components.eo0
+    public void X(float f7, boolean z10) {
+        wd1 wd1Var = this.a;
+        wd1Var.l1 = f7;
+        wd1Var.k1();
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public /* synthetic */ CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public /* synthetic */ int m0() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public boolean onDown(MotionEvent motionEvent) {
+        Scroller scroller = this.a.c;
+        if (scroller == null) {
+            return true;
         }
-        xd1Var.r.draw(canvas);
+        scroller.abortAnimation();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        wd1 wd1Var = this.a;
+        Scroller scroller = wd1Var.c;
+        if (scroller == null) {
+            return true;
+        }
+        scroller.abortAnimation();
+        wd1Var.c.fling((int) wd1Var.X1, 0, Math.round(-f7), Math.round(f10), 0, (int) wd1Var.W1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        wd1Var.x0.postInvalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        wd1 wd1Var = this.a;
+        Scroller scroller = wd1Var.c;
+        if (scroller != null) {
+            scroller.abortAnimation();
+        }
+        wd1Var.X1 = Utilities.clamp(wd1Var.X1 + f7, wd1Var.W1, 0.0f);
+        wd1Var.V0();
+        wd1Var.x0.invalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public void B() {
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public void b1() {
+    }
+
+    @Override // org.telegram.ui.Components.i20
+    public void onLongPress(MotionEvent motionEvent) {
     }
 }

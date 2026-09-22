@@ -3,11 +3,11 @@ package o2;
 import b2.o0;
 import b2.p0;
 import java.util.Map;
-import u2.b1;
+import u2.a1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class p extends b1 {
+public final class p extends a1 {
     public final Map H;
     public b2.o I;
 
@@ -16,7 +16,7 @@ public final class p extends b1 {
         this.H = map;
     }
 
-    @Override // u2.b1
+    @Override // u2.a1
     public final b2.s p(b2.s sVar) {
         b2.o oVar;
         b2.o oVar2 = this.I;

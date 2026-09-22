@@ -10,12 +10,12 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jf0;
-import org.telegram.ui.Components.lf0;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.af0;
+import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.ye0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class ac extends FrameLayout {
     public final Rect a;
@@ -52,9 +52,9 @@ public final class ac extends FrameLayout {
             return;
         }
         this.c.endRecording();
-        org.telegram.ui.Components.ia iaVar = this.d.r0;
-        if (iaVar != null) {
-            iaVar.g(this, this.c);
+        org.telegram.ui.Components.ha haVar = this.d.r0;
+        if (haVar != null) {
+            haVar.g(this, this.c);
         }
         canvas.drawRenderNode(this.c);
     }
@@ -89,23 +89,23 @@ public final class ac extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         oc ocVar = this.d;
-        lf0 lf0Var = ocVar.F1;
-        if (lf0Var != null) {
-            float measuredWidth = lf0Var.getMeasuredWidth();
+        af0 af0Var = ocVar.F1;
+        if (af0Var != null) {
+            float measuredWidth = af0Var.getMeasuredWidth();
             float measuredHeight = ocVar.F1.getMeasuredHeight();
-            uk0 uk0Var = lf0Var.e;
-            uk0Var.a = 0.0f;
-            uk0Var.b = 0.0f;
-            uk0Var.c = measuredWidth;
-            uk0Var.d = measuredHeight;
+            hk0 hk0Var = af0Var.e;
+            hk0Var.a = 0.0f;
+            hk0Var.b = 0.0f;
+            hk0Var.c = measuredWidth;
+            hk0Var.d = measuredHeight;
         }
-        jf0 jf0Var = ocVar.E1;
-        if (jf0Var != null) {
-            float measuredWidth2 = jf0Var.getMeasuredWidth();
+        ye0 ye0Var = ocVar.E1;
+        if (ye0Var != null) {
+            float measuredWidth2 = ye0Var.getMeasuredWidth();
             float measuredHeight2 = ocVar.E1.getMeasuredHeight();
-            wv0 wv0Var = jf0Var.d;
-            wv0Var.a = measuredWidth2;
-            wv0Var.b = measuredHeight2;
+            jv0 jv0Var = ye0Var.d;
+            jv0Var.a = measuredWidth2;
+            jv0Var.b = measuredHeight2;
         }
     }
 

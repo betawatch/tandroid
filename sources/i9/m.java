@@ -3,11 +3,11 @@ package i9;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
-import v7.l8;
+import v7.k8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class m extends l8 {
+public final class m extends k8 {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -38,22 +38,22 @@ public final class m extends l8 {
         }
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean a(o oVar, c cVar, c cVar2) {
         return j.a(a, oVar, b, cVar, cVar2);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean b(o oVar, Object obj, Object obj2) {
         return k.a(a, oVar, d, obj, obj2);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean c(o oVar, n nVar, n nVar2) {
         return i.a(a, oVar, c, nVar, nVar2);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final c d(o oVar) {
         c cVar;
         c cVar2 = c.d;
@@ -66,7 +66,7 @@ public final class m extends l8 {
         return cVar;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final n e(o oVar) {
         n nVar;
         n nVar2 = n.c;
@@ -79,12 +79,12 @@ public final class m extends l8 {
         return nVar;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final void f(n nVar, n nVar2) {
         a.putObject(nVar, f, nVar2);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final void g(n nVar, Thread thread) {
         a.putObject(nVar, e, thread);
     }

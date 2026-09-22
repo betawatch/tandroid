@@ -4,33 +4,33 @@ import android.content.Context;
 import android.os.Build;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
-import yf.j0;
+import yf.i0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b extends ci.d implements le.d {
     public final le.b h0;
-    public final f6 i0;
+    public final e6 i0;
 
-    public b(Context context, f6 f6Var) {
-        super(context, f6Var, true);
+    public b(Context context, e6 e6Var) {
+        super(context, e6Var, true);
         this.h0 = new le.b(0, this, qr.h, 320L, true);
-        this.i0 = f6Var;
+        this.i0 = e6Var;
         e();
-        setOutlineProvider(j0.b);
+        setOutlineProvider(i0.b);
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, e eVar) {
-        f6 f6Var = this.i0;
-        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
+    public final void D(int i10, float f7, float f10, e eVar) {
+        e6 e6Var = this.i0;
+        boolean a2 = e6Var != null ? e6Var.a() : i6.I.q();
         float f11 = this.h0.e;
         setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
-        setColor(i0.a.d(f11, m(j6.d6), m(j6.Oh)));
-        setTextColor(i0.a.d(f11, m(j6.q7), m(j6.Sh)));
+        setColor(i0.a.d(f11, m(i6.d6), m(i6.Oh)));
+        setTextColor(i0.a.d(f11, m(i6.q7), m(i6.Sh)));
         if (Build.VERSION.SDK_INT >= 28) {
             if (a2) {
                 setOutlineAmbientShadowColor(553648127);
@@ -43,8 +43,8 @@ public final class b extends ci.d implements le.d {
     }
 
     public final int m(int i10) {
-        f6 f6Var = this.i0;
-        return f6Var != null ? f6Var.F0(i10) : j6.w0(null, i10, false);
+        e6 e6Var = this.i0;
+        return e6Var != null ? e6Var.G0(i10) : i6.w0(null, i10, false);
     }
 
     @Override // le.d

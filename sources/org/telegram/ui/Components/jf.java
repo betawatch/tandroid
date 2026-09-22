@@ -1,26 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final class jf implements o1.g {
-    public boolean a = false;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ sv0 c;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    public jf(float f7, sv0 sv0Var) {
-        this.b = f7;
-        this.c = sv0Var;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class jf extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ ChatActivityEnterView o;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jf(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = chatActivityEnterView;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        if (this.a || f7 < this.b) {
-            return;
-        }
-        this.a = true;
-        try {
-            this.c.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.J0.invalidate();
     }
 }

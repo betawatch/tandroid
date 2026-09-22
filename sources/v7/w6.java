@@ -1,11 +1,41 @@
 package v7;
 
-import java.io.Serializable;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class w6 {
-    public static d9.j a(d9.j jVar) {
-        return !(jVar instanceof d9.l) ? jVar instanceof d9.k ? jVar : jVar instanceof Serializable ? new d9.k(jVar) : new d9.l(jVar) : jVar;
+    public static Intent a(Context context, ComponentName componentName) {
+        String b10 = b(context, componentName);
+        if (b10 == null) {
+            return null;
+        }
+        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b10);
+        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+    }
+
+    public static String b(Context context, ComponentName componentName) {
+        String string;
+        PackageManager packageManager = context.getPackageManager();
+        int i10 = Build.VERSION.SDK_INT;
+        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i10 >= 29 ? 269222528 : i10 >= 24 ? 787072 : 640);
+        String str = activityInfo.parentActivityName;
+        if (str != null) {
+            return str;
+        }
+        Bundle bundle = activityInfo.metaData;
+        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
+            return null;
+        }
+        if (string.charAt(0) != '.') {
+            return string;
+        }
+        return context.getPackageName() + string;
     }
 }

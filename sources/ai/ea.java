@@ -10,7 +10,7 @@ import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class ea {
     public final int a;
@@ -18,16 +18,16 @@ public final class ea {
     public final o20 c;
     public int d;
     public int e;
-    public final org.telegram.ui.Components.g5 f;
-    public final org.telegram.ui.Components.g5 g;
+    public final org.telegram.ui.Components.f5 f;
+    public final org.telegram.ui.Components.f5 g;
 
     public ea(View view) {
         nu nuVar = new nu(1, view);
         this.a = UserConfig.selectedAccount;
         this.b = nuVar;
         qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.g5(nuVar, 350L, qrVar);
-        this.g = new org.telegram.ui.Components.g5(nuVar, 350L, qrVar);
+        this.f = new org.telegram.ui.Components.f5(nuVar, 350L, qrVar);
+        this.g = new org.telegram.ui.Components.f5(nuVar, 350L, qrVar);
         o20 o20Var = new o20();
         this.c = o20Var;
         o20Var.a = true;
@@ -48,12 +48,12 @@ public final class ea {
     }
 
     public final void b(boolean z10) {
-        d(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hk, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ik, false), z10);
+        d(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hk, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ik, false), z10);
     }
 
     public final void c(MessagesController.PeerColor peerColor, boolean z10) {
         if (peerColor != null) {
-            d(peerColor.getStoryColor1(org.telegram.ui.ActionBar.j6.I.q()), peerColor.getStoryColor2(org.telegram.ui.ActionBar.j6.I.q()), z10);
+            d(peerColor.getStoryColor1(org.telegram.ui.ActionBar.i6.I.q()), peerColor.getStoryColor2(org.telegram.ui.ActionBar.i6.I.q()), z10);
         } else {
             b(z10);
         }

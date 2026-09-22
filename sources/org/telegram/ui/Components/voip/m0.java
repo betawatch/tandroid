@@ -31,23 +31,23 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.u6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.l7;
 import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.ar0;
 import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.en0;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.yn0;
 import org.telegram.ui.a40;
 import org.telegram.ui.i60;
 import org.telegram.ui.w30;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public boolean A0;
@@ -64,7 +64,7 @@ public abstract class m0 extends FrameLayout {
     public boolean H0;
     public final h0 I;
     public float I0;
-    public final j9 J;
+    public final i9 J;
     public ValueAnimator J0;
     public final TextView K;
     public final UndoView[] K0;
@@ -99,7 +99,7 @@ public abstract class m0 extends FrameLayout {
     public final g0 f0;
     public boolean g0;
     public long h;
-    public final u6 h0;
+    public final l7 h0;
     public ChatObject.Call i0;
     public final i60 j0;
     public final e0 k0;
@@ -133,7 +133,7 @@ public abstract class m0 extends FrameLayout {
         this.O = 1.0f;
         this.V = true;
         final a40 a40Var = (a40) this;
-        this.h0 = new u6(a40Var, 27);
+        this.h0 = new l7(a40Var, 26);
         this.y0 = 1.0f;
         this.K0 = new UndoView[2];
         this.F = recyclerView;
@@ -148,21 +148,21 @@ public abstract class m0 extends FrameLayout {
         e0Var.setImageDrawable(g2Var);
         e0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         e0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        e0Var.setBackground(j6.f0(i0.a.k(-1, 55), 1, -1));
+        e0Var.setBackground(i6.f0(i0.a.k(-1, 55), 1, -1));
         View view = new View(context);
         this.m0 = view;
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.a.k(-16777216, 114)});
         this.a0 = gradientDrawable;
         view.setBackground(gradientDrawable);
-        addView(view, y5.c(120.0f, -1));
+        addView(view, x5.c(120.0f, -1));
         View view2 = new View(context);
         this.n0 = view2;
         GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.a.k(-16777216, 114)});
         this.b0 = gradientDrawable2;
         view2.setBackground(gradientDrawable2);
         view2.setVisibility((call == null || !h()) ? 8 : 0);
-        addView(view2, y5.e(160, -1, 5));
-        addView(e0Var, y5.e(56, -1, 51));
+        addView(view2, x5.e(160, -1, 5));
+        addView(e0Var, x5.e(56, -1, 51));
         final int i10 = 0;
         e0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.v
             @Override // android.view.View.OnClickListener
@@ -188,7 +188,7 @@ public abstract class m0 extends FrameLayout {
         this.l0 = f0Var;
         int dp = AndroidUtilities.dp(20.0f);
         int k10 = i0.a.k(-1, 100);
-        org.telegram.ui.Cells.z i02 = j6.i0(dp, dp, dp, dp, 0, k10, k10);
+        org.telegram.ui.Cells.z i02 = i6.i0(dp, dp, dp, dp, 0, k10, k10);
         g0 g0Var = new g0(a40Var, context, i02);
         this.f0 = g0Var;
         final int i11 = 1;
@@ -225,17 +225,17 @@ public abstract class m0 extends FrameLayout {
         nrVar.invalidateSelf();
         f0Var.setImageDrawable(nrVar);
         f0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        addView(f0Var, y5.e(56, -1, 51));
+        addView(f0Var, x5.e(56, -1, 51));
         TextView textView = new TextView(context);
         this.d0 = textView;
-        org.telegram.messenger.l0.p(textView, -1, 1, 15.0f);
+        org.telegram.messenger.y0.q(textView, -1, 1, 15.0f);
         textView.setText(LocaleController.getString(R.string.CallVideoPin));
         TextView textView2 = new TextView(context);
         this.e0 = textView2;
-        org.telegram.messenger.l0.p(textView2, -1, 1, 15.0f);
+        org.telegram.messenger.y0.q(textView2, -1, 1, 15.0f);
         textView2.setText(LocaleController.getString(R.string.CallVideoUnpin));
-        addView(textView, y5.e(-2, -2, 51));
-        addView(textView2, y5.e(-2, -2, 51));
+        addView(textView, x5.e(-2, -2, 51));
+        addView(textView2, x5.e(-2, -2, 51));
         ImageView imageView = new ImageView(context);
         this.v = imageView;
         imageView.setVisibility(4);
@@ -244,31 +244,31 @@ public abstract class m0 extends FrameLayout {
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrPipMode));
         int dp4 = AndroidUtilities.dp(4.0f);
         imageView.setPadding(dp4, dp4, dp4, dp4);
-        imageView.setBackground(j6.f0(i0.a.k(-1, 55), 1, -1));
+        imageView.setBackground(i6.f0(i0.a.k(-1, 55), 1, -1));
         imageView.setOnClickListener(new dt(23, a40Var, i60Var));
-        addView(imageView, y5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
-        h0 h0Var = new h0(a40Var, context, j6.b0(AndroidUtilities.dp(18.0f), i0.a.k(j6.w0(null, j6.tg, false), 204)));
+        addView(imageView, x5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
+        h0 h0Var = new h0(a40Var, context, i6.b0(AndroidUtilities.dp(18.0f), i0.a.k(i6.w0(null, i6.tg, false), 204)));
         this.I = h0Var;
-        j9 j9Var = new j9(context, true);
-        this.J = j9Var;
-        j9Var.setStyle(10);
+        i9 i9Var = new i9(context, true);
+        this.J = i9Var;
+        i9Var.setStyle(10);
         h0Var.setClipChildren(false);
         h0Var.setClipToPadding(false);
-        h0Var.addView(j9Var, y5.d(100, 32.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        h0Var.addView(i9Var, x5.d(100, 32.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.K = textView3;
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(-1);
         textView3.setLines(1);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
-        h0Var.addView(textView3, y5.e(-2, -2, 16));
-        addView(h0Var, y5.d(-2, 36.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
+        h0Var.addView(textView3, x5.e(-2, -2, 16));
+        addView(h0Var, x5.d(-2, 36.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         this.a = ViewConfiguration.get(getContext()).getScaledTouchSlop();
         for (int i12 = 0; i12 < 2; i12++) {
             this.K0[i12] = new i0(a40Var, context);
             this.K0[i12].setHideAnimationType(2);
             this.K0[i12].setAdditionalTranslationY(AndroidUtilities.dp(10.0f));
-            addView(this.K0[i12], y5.d(-1, -2.0f, 80, 16.0f, 0.0f, 0.0f, 8.0f));
+            addView(this.K0[i12], x5.d(-1, -2.0f, 80, 16.0f, 0.0f, 0.0f, 8.0f));
         }
         this.f0.setVisibility(8);
         setIsTablet(i60.G3);
@@ -282,13 +282,13 @@ public abstract class m0 extends FrameLayout {
             if (i60Var.a2 != null) {
                 i60Var.z3.a(!r1.V, true);
             }
-            u6 u6Var = this.h0;
+            l7 l7Var = this.h0;
             if (!z10 || !this.b) {
                 this.g0 = false;
-                AndroidUtilities.cancelRunOnUIThread(u6Var);
+                AndroidUtilities.cancelRunOnUIThread(l7Var);
             } else if (!this.g0) {
                 this.g0 = true;
-                AndroidUtilities.runOnUIThread(u6Var, 3000L);
+                AndroidUtilities.runOnUIThread(l7Var, 3000L);
             }
             u uVar = this.y;
             if (uVar != null) {
@@ -651,11 +651,11 @@ public abstract class m0 extends FrameLayout {
 
     public final void e() {
         boolean z10 = this.g0;
-        u6 u6Var = this.h0;
+        l7 l7Var = this.h0;
         if (z10) {
-            AndroidUtilities.cancelRunOnUIThread(u6Var);
+            AndroidUtilities.cancelRunOnUIThread(l7Var);
         }
-        AndroidUtilities.runOnUIThread(u6Var, 3000L);
+        AndroidUtilities.runOnUIThread(l7Var, 3000L);
         this.g0 = true;
     }
 
@@ -874,12 +874,12 @@ public abstract class m0 extends FrameLayout {
                                     uVar2.setScaleY(0.5f);
                                     uVar2.E = true;
                                 }
-                                en0 en0Var = new en0(this, uVar, uVar2, 17);
+                                fr0 fr0Var = new fr0(this, uVar, uVar2, 14);
                                 if (pVar.d.isFirstFrameRendered()) {
-                                    AndroidUtilities.runOnUIThread(en0Var, 250L);
-                                    uVar8.m0.add(en0Var);
+                                    AndroidUtilities.runOnUIThread(fr0Var, 250L);
+                                    uVar8.m0.add(fr0Var);
                                 } else {
-                                    en0Var.run();
+                                    fr0Var.run();
                                 }
                                 d();
                                 this.y = uVar8;
@@ -918,7 +918,7 @@ public abstract class m0 extends FrameLayout {
                         ofFloat2.addListener(new k0(this, uVar82, uVar));
                         if (uVar2 != null) {
                         }
-                        en0 en0Var2 = new en0(this, uVar, uVar2, 17);
+                        fr0 fr0Var2 = new fr0(this, uVar, uVar2, 14);
                         if (pVar.d.isFirstFrameRendered()) {
                         }
                         d();
@@ -984,12 +984,12 @@ public abstract class m0 extends FrameLayout {
                     uVar11.setScaleX(0.5f);
                     uVar11.setScaleY(0.5f);
                     uVar11.E = true;
-                    yn0 yn0Var = new yn0(28, this, uVar11);
+                    ar0 ar0Var = new ar0(22, this, uVar11);
                     if (uVar11.a.d.isFirstFrameRendered()) {
-                        yn0Var.run();
+                        ar0Var.run();
                     } else {
-                        AndroidUtilities.runOnUIThread(yn0Var, 250L);
-                        uVar11.m0.add(yn0Var);
+                        AndroidUtilities.runOnUIThread(ar0Var, 250L);
+                        uVar11.m0.add(ar0Var);
                     }
                     u uVar102 = new u(this, this.i0, i60Var);
                     uVar102.w = videoParticipant;
@@ -1367,7 +1367,7 @@ public abstract class m0 extends FrameLayout {
     }
 
     public void setVisibleParticipant(boolean z10) {
-        j9 j9Var;
+        i9 i9Var;
         boolean z11;
         long j3;
         if (!this.b || this.M0 || this.e == null || this.r != null || this.i0 == null) {
@@ -1382,7 +1382,7 @@ public abstract class m0 extends FrameLayout {
         long j10 = 500;
         if (System.currentTimeMillis() - this.O0 < 500) {
             if (this.P0 == null) {
-                i2.g0 g0Var = new i2.g0(this, 19);
+                i2.g0 g0Var = new i2.g0(this, 18);
                 this.P0 = g0Var;
                 AndroidUtilities.runOnUIThread(g0Var, (System.currentTimeMillis() - this.O0) + 50);
                 return;
@@ -1395,7 +1395,7 @@ public abstract class m0 extends FrameLayout {
         int i11 = 0;
         while (true) {
             int m10 = this.i0.currentSpeakingPeers.m();
-            j9Var = this.J;
+            i9Var = this.J;
             if (i10 >= m10) {
                 break;
             }
@@ -1418,14 +1418,14 @@ public abstract class m0 extends FrameLayout {
                         TLRPC.User user = peerId > 0 ? MessagesController.getInstance(currentAccount).getUser(Long.valueOf(peerId)) : null;
                         TLRPC.Chat chat = peerId <= 0 ? MessagesController.getInstance(currentAccount).getChat(Long.valueOf(peerId)) : null;
                         if (user != null || chat != null) {
-                            j9Var.b(i11, groupCallParticipant, currentAccount);
+                            i9Var.b(i11, groupCallParticipant, currentAccount);
                             if (i11 != 0) {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (user != null) {
-                                spannableStringBuilder.append(UserObject.getFirstName(user), new v51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(UserObject.getFirstName(user), new f51(AndroidUtilities.bold()), 0);
                             } else {
-                                spannableStringBuilder.append(chat.title, new v51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(chat.title, new f51(AndroidUtilities.bold()), 0);
                             }
                         }
                     }
@@ -1473,9 +1473,9 @@ public abstract class m0 extends FrameLayout {
         this.L = z12;
         invalidate();
         while (i11 < 3) {
-            j9Var.b(i11, null, currentAccount);
+            i9Var.b(i11, null, currentAccount);
             i11++;
         }
-        j9Var.a(z11);
+        i9Var.a(z11);
     }
 }

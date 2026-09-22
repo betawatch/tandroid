@@ -19,22 +19,22 @@ import d1.f;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.s0;
+import n7.t0;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.Cells.q3;
 import v0.i;
 import v0.n;
 import v0.o;
 import v0.p;
 import v0.q;
-import v7.j0;
-import v7.p6;
+import v7.o6;
 import w0.h;
-import w7.h8;
+import w7.g8;
 import x5.g;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -134,7 +134,7 @@ public final class e extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) f.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), j0.g("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), q3.i("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.w && str6 != null && xd.j.b(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
@@ -143,11 +143,11 @@ public final class e extends b1.d {
                 }
                 if (kVar instanceof c7.i) {
                     try {
-                        s0 s0Var = uVar.c;
+                        t0 t0Var = uVar.c;
                         try {
                             JSONObject jSONObject4 = new JSONObject();
-                            if (s0Var != null && s0Var.u().length > 0) {
-                                jSONObject4.put("rawId", u6.b.c(s0Var.u()));
+                            if (t0Var != null && t0Var.u().length > 0) {
+                                jSONObject4.put("rawId", u6.b.c(t0Var.u()));
                             }
                             String str7 = uVar.n;
                             if (str7 != null) {
@@ -270,7 +270,7 @@ public final class e extends b1.d {
             int i10 = 1;
             if (!it.hasNext()) {
                 boolean z11 = j3 > 241217000 ? request.b : false;
-                i7.b a2 = h8.a(context);
+                i7.b a2 = g8.a(context);
                 new x5.a(false, null, null, true, null, null, false);
                 x5.e eVar = new x5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z11);
                 v e = w.e();
@@ -294,7 +294,7 @@ public final class e extends b1.d {
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new x5.c(true, p6.a(jSONObject), optString);
+                    cVar = new x5.c(true, o6.a(jSONObject), optString);
                 }
                 z10 = true;
             }

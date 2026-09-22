@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class qm extends ni {
     public static final HashMap U = new HashMap();
@@ -38,7 +38,7 @@ public final class qm extends ni {
     public int R;
     public boolean S;
     public boolean T;
-    public org.telegram.ui.ActionBar.f6 n;
+    public org.telegram.ui.ActionBar.e6 n;
     public ai.w0 r;
     public s4.c0 s;
     public pm v;
@@ -57,7 +57,7 @@ public final class qm extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         pm pmVar = this.v;
         this.Q = true;
         if (niVar instanceof ChatAttachAlertPhotoLayout) {
@@ -69,11 +69,11 @@ public final class qm extends ni {
             pmVar.c();
             pmVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new tc(19, this, niVar));
-            postDelayed(new og(this, 25), 250L);
+            this.r.post(new oh(13, this, niVar));
+            postDelayed(new ng(this, 25), 250L);
             pmVar.i(this.P, false);
         } else {
-            F();
+            G();
         }
         ViewPropertyAnimator viewPropertyAnimator = this.O;
         if (viewPropertyAnimator != null) {
@@ -85,8 +85,8 @@ public final class qm extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void F() {
-        this.r.y0(0);
+    public final void G() {
+        this.r.x0(0);
     }
 
     public final void K() {
@@ -133,9 +133,9 @@ public final class qm extends ni {
     public final void dispatchDraw(Canvas canvas) {
         Drawable d;
         int i10;
-        org.telegram.ui.xn xnVar = this.b.r;
+        org.telegram.ui.zn znVar = this.b.r;
         boolean z10 = false;
-        if (xnVar != null && (d = xnVar.d()) != null) {
+        if (znVar != null && (d = znVar.d()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -167,10 +167,10 @@ public final class qm extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        il0 il0Var = (il0) w0Var.H(childAt);
+        vk0 vk0Var = (vk0) w0Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || il0Var == null || il0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || vk0Var == null || vk0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);
@@ -323,7 +323,7 @@ public final class qm extends ni {
                     this.R = 0;
                 }
                 if (w0Var.getPaddingTop() == this.R || w0Var.getPaddingBottom() != this.e) {
-                    w0Var.p1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
+                    w0Var.o1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
                     invalidate();
                 }
                 TextView textView = this.x;
@@ -347,7 +347,7 @@ public final class qm extends ni {
         }
         if (w0Var.getPaddingTop() == this.R) {
         }
-        w0Var.p1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
+        w0Var.o1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
         invalidate();
         TextView textView2 = this.x;
         if (!AndroidUtilities.isTablet()) {

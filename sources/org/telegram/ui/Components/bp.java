@@ -14,31 +14,31 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.gj1;
+import org.telegram.ui.hj1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bp implements ti {
     public final /* synthetic */ vi a;
     public final /* synthetic */ TL_stories.TL_premium_boostsStatus b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
     public final /* synthetic */ org.telegram.ui.g d;
     public final /* synthetic */ long e;
     public final /* synthetic */ org.telegram.ui.s3 f;
-    public final /* synthetic */ org.telegram.ui.bd h;
+    public final /* synthetic */ org.telegram.ui.ad h;
 
-    public bp(vi viVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.g gVar, long j3, org.telegram.ui.s3 s3Var, org.telegram.ui.bd bdVar) {
+    public bp(vi viVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.g gVar, long j3, org.telegram.ui.s3 s3Var, org.telegram.ui.ad adVar) {
         this.a = viVar;
         this.b = tL_premium_boostsStatus;
-        this.c = f6Var;
+        this.c = e6Var;
         this.d = gVar;
         this.e = j3;
         this.f = s3Var;
-        this.h = bdVar;
+        this.h = adVar;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         vi viVar = this.a;
         try {
             HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
@@ -55,7 +55,7 @@ public final class bp implements ti {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                ap apVar = new ap(new gj1(file, file, ""), loadBitmap, false, 0);
+                ap apVar = new ap(new hj1(file, file, ""), loadBitmap, false, 0);
                 apVar.V1 = this.b;
                 apVar.a.a = this.c;
                 apVar.p1 = this.d;
@@ -82,7 +82,7 @@ public final class bp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void V0(Object obj) {
+    public final void U0(Object obj) {
         ap apVar = new ap(obj, null, true, 1);
         apVar.V1 = this.b;
         apVar.a.a = this.c;
@@ -96,25 +96,25 @@ public final class bp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean f0() {
+    public final /* synthetic */ boolean c0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void y0(gh ghVar) {
-        ghVar.run();
+    public final void x0(fh fhVar) {
+        fhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void L0() {
+    public final /* synthetic */ void K0() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void k1(TLRPC.User user) {
+    public final /* synthetic */ void j1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void v0() {
+    public final /* synthetic */ void u0() {
     }
 
     @Override // org.telegram.ui.Components.ti

@@ -2,16 +2,15 @@ package o2;
 
 import com.google.android.gms.internal.cast.b5;
 import e2.d0;
-import hg.k0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import n4.y;
-import u2.c1;
-import v7.z7;
+import u2.b1;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class m implements c1 {
+public final class m implements b1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -21,13 +20,13 @@ public final class m implements c1 {
         this.a = i10;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
         if (i10 == -2) {
             qVar.e();
-            throw new b5(a4.a.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
+            throw new b5(a4.a.q("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
         }
         if (i10 == -1) {
             qVar.C();
@@ -65,7 +64,7 @@ public final class m implements c1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         if (this.c == -3) {
             return true;
@@ -78,7 +77,7 @@ public final class m implements c1 {
         return !qVar.A() && qVar.L[i10].x(qVar.j0);
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int f(y yVar, h2.h hVar, int i10) {
         b2.s sVar;
         if (this.c == -3) {
@@ -114,10 +113,10 @@ public final class m implements c1 {
                 if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
                     int C = qVar.L[i11].C(yVar, hVar, i10, qVar.j0);
                     if (C == -5) {
-                        b2.s sVar3 = (b2.s) yVar.b;
+                        b2.s sVar3 = (b2.s) yVar.c;
                         sVar3.getClass();
                         if (i11 == qVar.R) {
-                            int b10 = z7.b(qVar.L[i11].B());
+                            int b10 = y7.b(qVar.L[i11].B());
                             while (i12 < arrayList.size() && ((j) arrayList.get(i12)).v != b10) {
                                 i12++;
                             }
@@ -129,7 +128,7 @@ public final class m implements c1 {
                             }
                             sVar3 = sVar3.d(sVar);
                         }
-                        yVar.b = sVar3;
+                        yVar.c = sVar3;
                     }
                     return C;
                 }
@@ -138,7 +137,7 @@ public final class m implements c1 {
         return -3;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         Object next;
         Object obj;
@@ -155,7 +154,7 @@ public final class m implements c1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = k0.g(1, arrayList);
+                obj = hg.c.h(1, arrayList);
             }
             obj = null;
         } else {

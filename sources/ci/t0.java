@@ -13,18 +13,18 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class t0 extends View {
     public boolean E;
-    public final org.telegram.ui.Components.d6 F;
+    public final org.telegram.ui.Components.c6 F;
     public boolean G;
     public float H;
-    public final org.telegram.ui.Components.d6 I;
-    public final org.telegram.ui.Components.d6 J;
+    public final org.telegram.ui.Components.c6 I;
+    public final org.telegram.ui.Components.c6 J;
     public final RectF K;
     public final RectF L;
     public final RectF M;
@@ -38,8 +38,8 @@ public final class t0 extends View {
     public final Paint d;
     public final Paint e;
     public final Paint f;
-    public final org.telegram.ui.Components.yc h;
-    public kj0 n;
+    public final org.telegram.ui.Components.wc h;
+    public xi0 n;
     public final StaticLayout r;
     public final float s;
     public final float v;
@@ -62,14 +62,14 @@ public final class t0 extends View {
     }
 
     public final void b(int i10, int i11, CharSequence charSequence) {
-        kj0 kj0Var = this.n;
-        if (kj0Var != null) {
-            kj0Var.setCallback(null);
+        xi0 xi0Var = this.n;
+        if (xi0Var != null) {
+            xi0Var.setCallback(null);
             this.n.C(true);
         }
-        kj0 kj0Var2 = new kj0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
-        this.n = kj0Var2;
-        kj0Var2.setCallback(this);
+        xi0 xi0Var2 = new xi0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
+        this.n = xi0Var2;
+        xi0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.w = staticLayout;
@@ -172,9 +172,9 @@ public final class t0 extends View {
         }
         if (d10 > 0.0f) {
             float f13 = d10 * d;
-            kj0 kj0Var = this.n;
-            if (kj0Var != null) {
-                kj0Var.setAlpha((int) (f13 * f10));
+            xi0 xi0Var = this.n;
+            if (xi0Var != null) {
+                xi0Var.setAlpha((int) (f13 * f10));
                 this.n.setBounds((int) (rectF.left + AndroidUtilities.dp(9.0f)), (int) (rectF.top + AndroidUtilities.dp(6.0f)), (int) (rectF.left + AndroidUtilities.dp(45.0f)), (int) (rectF.top + AndroidUtilities.dp(f7)));
                 this.n.draw(canvas2);
             }
@@ -198,13 +198,13 @@ public final class t0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.M.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.h;
+        org.telegram.ui.Components.wc wcVar = this.h;
         if (action == 0 && (this.G || contains)) {
-            ycVar.c(contains);
+            wcVar.c(contains);
             return true;
         }
         if (motionEvent.getAction() == 1) {
-            if (ycVar.h) {
+            if (wcVar.h) {
                 if (contains) {
                     if (this.G) {
                         Runnable runnable = this.Q;
@@ -215,11 +215,11 @@ public final class t0 extends View {
                         a();
                     }
                 }
-                ycVar.c(false);
+                wcVar.c(false);
                 return true;
             }
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            wcVar.c(false);
             return true;
         }
         return super.onTouchEvent(motionEvent);
@@ -253,13 +253,13 @@ public final class t0 extends View {
         this.e = paint3;
         Paint paint4 = new Paint(1);
         this.f = paint4;
-        this.h = new org.telegram.ui.Components.yc(this);
+        this.h = new org.telegram.ui.Components.wc(this);
         this.E = false;
-        this.F = new org.telegram.ui.Components.d6(0.0f, this, 0L, 350L, qr.h);
+        this.F = new org.telegram.ui.Components.c6(0.0f, this, 0L, 350L, qr.h);
         this.G = true;
         this.H = 0.0f;
-        this.I = new org.telegram.ui.Components.d6(this);
-        this.J = new org.telegram.ui.Components.d6(this);
+        this.I = new org.telegram.ui.Components.c6(this);
+        this.J = new org.telegram.ui.Components.c6(this);
         this.K = new RectF();
         this.L = new RectF();
         this.M = new RectF();

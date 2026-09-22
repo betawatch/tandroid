@@ -1,6 +1,61 @@
 package n7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public interface c0 extends Iterable {
+public final class c0 extends p {
+    public final transient Object d;
+
+    public c0(Object obj) {
+        this.d = obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.equals(obj);
+    }
+
+    @Override // n7.p, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.d.hashCode();
+    }
+
+    @Override // n7.i
+    public final int i(Object[] objArr) {
+        objArr[0] = this.d;
+        return 1;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return new u(this.d);
+    }
+
+    @Override // n7.i
+    public final e0 p() {
+        return new u(this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return 1;
+    }
+
+    @Override // n7.p
+    public final n t() {
+        Object[] objArr = {this.d};
+        for (int i10 = 0; i10 < 1; i10++) {
+            j jVar = n.b;
+            if (objArr[i10] == null) {
+                throw new NullPointerException(hg.c.i(i10, "at index "));
+            }
+        }
+        return n.t(1, objArr);
+    }
+
+    @Override // java.util.AbstractCollection
+    public final String toString() {
+        return a4.a.q("[", this.d.toString(), "]");
+    }
 }

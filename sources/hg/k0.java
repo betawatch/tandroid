@@ -1,486 +1,270 @@
 package hg;
 
-import android.media.MediaMetadataRetriever;
-import androidx.car.app.hardware.common.CarZone;
-import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.cast.k4;
-import j$.util.DesugarCollections;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import ci.h2;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.FileLog;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.xc;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.ri;
+import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.vk0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class k0 {
-    public static void A(n2.g gVar, n2.g gVar2) {
-        if (gVar == gVar2) {
-            return;
-        }
-        if (gVar2 != null) {
-            gVar2.b(null);
-        }
-        if (gVar != null) {
-            gVar.a(null);
-        }
+public final class k0 extends ni implements NotificationCenter.NotificationCenterDelegate, le.d {
+    public final mz E;
+    public final ri F;
+    public final le.b n;
+    public final FrameLayout r;
+    public final ai.w0 s;
+    public final g0 v;
+    public final HashSet w;
+    public final h0 x;
+    public final i0 y;
+
+    public k0(Context context, e6 e6Var, vi viVar) {
+        super(context, e6Var, viVar);
+        this.n = new le.b(0, this, qr.h, 380L, false);
+        this.w = new HashSet();
+        this.y = new i0(this, context);
+        ui uiVar = new ui(context, i6.d6, e6Var);
+        uiVar.setVisibility(4);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.r = frameLayout;
+        ri riVar = new ri(context, e6Var, this.b);
+        this.F = riVar;
+        riVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        e0 e0Var = new e0(this);
+        h2 h2Var = riVar.r;
+        h2Var.addTextChangedListener(e0Var);
+        h2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
+        frameLayout.addView(uiVar, x5.g());
+        FrameLayout.LayoutParams d = x5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
+        frameLayout.addView(riVar, d);
+        mz mzVar = new mz(context, e6Var);
+        this.E = mzVar;
+        mzVar.c();
+        addView(mzVar, x5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        ai.w0 w0Var = new ai.w0(this, context, e6Var, 3);
+        this.s = w0Var;
+        w0Var.p1();
+        this.c = w0Var;
+        this.d = w0Var;
+        this.h = true;
+        this.f = true;
+        NotificationCenter.getGlobalInstance().listen(w0Var, NotificationCenter.emojiLoaded, new ai.y1(this, 20));
+        w0Var.setClipToPadding(false);
+        getContext();
+        g0 g0Var = new g0(this, AndroidUtilities.dp(9.0f), w0Var, 0);
+        this.v = g0Var;
+        w0Var.setLayoutManager(g0Var);
+        g0Var.P = false;
+        w0Var.setHorizontalScrollBarEnabled(false);
+        w0Var.setVerticalScrollBarEnabled(false);
+        w0Var.setClipToPadding(false);
+        addView(w0Var, x5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        h0 h0Var = new h0(this, context);
+        this.x = h0Var;
+        w0Var.setAdapter(h0Var);
+        w0Var.setGlowColor(i6.v0(i6.A5, this.a));
+        int i10 = 10;
+        w0Var.setOnItemClickListener(new ai.g(this, i10));
+        w0Var.setOnScrollListener(new ai.r(this, i10));
+        FrameLayout.LayoutParams e = x5.e(-1, 60, 51);
+        ((ViewGroup.MarginLayoutParams) e).height += AndroidUtilities.statusBarHeight;
+        addView(frameLayout, e);
+        L();
     }
 
-    public static /* synthetic */ String B(int i10) {
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
-    }
-
-    public static /* synthetic */ String C(int i10) {
-        switch (i10) {
-            case 1:
-                return "IDLE";
-            case 2:
-                return "STARTING";
-            case 3:
-                return "RECORDING";
-            case 4:
-                return "PAUSING";
-            case 5:
-                return "PREVIEWING";
-            case 6:
-                return "RESUMING";
-            case 7:
-                return "FINISHING";
-            case 8:
-                return "COMPLETED";
-            case 9:
-                return "ERROR";
-            case 10:
-                return "RELEASED";
-            default:
-                return BuildConfig.BETA_URL;
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getCurrentTop() {
+        ai.w0 w0Var = this.s;
+        if (w0Var.getChildCount() == 0) {
+            return -1000;
         }
-    }
-
-    public static /* synthetic */ String D(int i10) {
-        switch (i10) {
-            case 1:
-                return "BEGIN_ARRAY";
-            case 2:
-                return "END_ARRAY";
-            case 3:
-                return "BEGIN_OBJECT";
-            case 4:
-                return "END_OBJECT";
-            case 5:
-                return "NAME";
-            case 6:
-                return "STRING";
-            case 7:
-                return "NUMBER";
-            case 8:
-                return "BOOLEAN";
-            case 9:
-                return "NULL";
-            case 10:
-                return "END_DOCUMENT";
-            default:
-                return BuildConfig.BETA_URL;
+        int i10 = 0;
+        View childAt = w0Var.getChildAt(0);
+        vk0 vk0Var = (vk0) w0Var.G(childAt);
+        if (vk0Var == null) {
+            return -1000;
         }
-    }
-
-    public static int a(int i10) {
-        int[] d = m1.j.d(126);
-        if (i10 < 0 || i10 >= d.length) {
-            return 0;
+        int paddingTop = w0Var.getPaddingTop();
+        if (vk0Var.b() == 0 && childAt.getTop() >= 0) {
+            i10 = childAt.getTop();
         }
-        return d[i10];
+        return paddingTop - i10;
     }
 
-    public static int b(int i10, int i11, int i12, int i13) {
-        return i10 | i11 | i12 | 128 | i13;
+    @Override // org.telegram.ui.Components.ni
+    public final void E(ni niVar) {
+        this.v.h1(0, 0);
     }
 
-    public static /* synthetic */ String c(int i10) {
-        switch (i10) {
-            case 1:
-                return "Blues";
-            case 2:
-                return "Classic Rock";
-            case 3:
-                return "Country";
-            case 4:
-                return "Dance";
-            case 5:
-                return "Disco";
-            case 6:
-                return "Funk";
-            case 7:
-                return "Grunge";
-            case 8:
-                return "Hip-Hop";
-            case 9:
-                return "Jazz";
-            case 10:
-                return "Metal";
-            case 11:
-                return "New Age";
-            case 12:
-                return "Oldies";
-            case 13:
-                return "Other";
-            case 14:
-                return "Pop";
-            case 15:
-                return "R&B";
-            case 16:
-                return "Rap";
-            case 17:
-                return "Reggae";
-            case 18:
-                return "Rock";
-            case 19:
-                return "Techno";
-            case 20:
-                return "Industrial";
-            case 21:
-                return "Alternative";
-            case 22:
-                return "Ska";
-            case 23:
-                return "Death Metal";
-            case 24:
-                return "Pranks";
-            case 25:
-                return "Soundtrack";
-            case 26:
-                return "Euro-Techno";
-            case 27:
-                return "Ambient";
-            case 28:
-                return "Trip-Hop";
-            case 29:
-                return "Vocal";
-            case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                return "Jazz+Funk";
-            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                return "Fusion";
-            case 32:
-                return "Trance";
-            case 33:
-                return "Classical";
-            case 34:
-                return "Instrumental";
-            case 35:
-                return "Acid";
-            case 36:
-                return "House";
-            case 37:
-                return "Game";
-            case 38:
-                return "Sound Clip";
-            case Maneuver.TYPE_DESTINATION /* 39 */:
-                return "Gospel";
-            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                return "Noise";
-            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                return "AlternRock";
-            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                return "Bass";
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                return "Soul";
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                return "Punk";
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                return "Space";
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                return "Meditative";
-            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                return "Instrumental Pop";
-            case 48:
-                return "Instrumental Rock";
-            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                return "Ethnic";
-            case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                return "Gothic";
-            case 51:
-                return "Darkwave";
-            case 52:
-                return "Techno-Industrial";
-            case 53:
-                return "Electronic";
-            case 54:
-                return "Pop-Folk";
-            case 55:
-                return "Eurodance";
-            case 56:
-                return "Dream";
-            case 57:
-                return "Southern Rock";
-            case 58:
-                return "Comedy";
-            case 59:
-                return "Cult";
-            case 60:
-                return "Gangsta";
-            case 61:
-                return "Top 40";
-            case 62:
-                return "Christian Rap";
-            case 63:
-                return "Pop/Funk";
-            case 64:
-                return "Jungle";
-            case VoIPService.CALL_MIN_LAYER /* 65 */:
-                return "Native American";
-            case 66:
-                return "Cabaret";
-            case 67:
-                return "New Wave";
-            case 68:
-                return "Psychadelic";
-            case 69:
-                return "Rave";
-            case 70:
-                return "Showtunes";
-            case 71:
-                return "Trailer";
-            case 72:
-                return "Lo-Fi";
-            case 73:
-                return "Tribal";
-            case 74:
-                return "Acid Punk";
-            case 75:
-                return "Acid Jazz";
-            case 76:
-                return "Polka";
-            case 77:
-                return "Retro";
-            case 78:
-                return "Musical";
-            case 79:
-                return "Rock & Roll";
-            case 80:
-                return "Hard Rock";
-            case 81:
-                return "Folk";
-            case 82:
-                return "Folk-Rock";
-            case 83:
-                return "National Folk";
-            case 84:
-                return "Swing";
-            case 85:
-                return "Fast Fusion";
-            case 86:
-                return "Bebop";
-            case 87:
-                return "Latin";
-            case 88:
-                return "Revival";
-            case 89:
-                return "Celtic";
-            case 90:
-                return "Bluegrass";
-            case 91:
-                return "Avantgarde";
-            case 92:
-                return "Gothic Rock";
-            case 93:
-                return "Progressive Rock";
-            case 94:
-                return "Psychedelic Rock";
-            case 95:
-                return "Symphonic Rock";
-            case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
-                return "Slow Rock";
-            case 97:
-                return "Big Band";
-            case 98:
-                return "Chorus";
-            case 99:
-                return "Easy Listening";
-            case 100:
-                return "Acoustic";
-            case 101:
-                return "Humour";
-            case 102:
-                return "Speech";
-            case 103:
-                return "Chanson";
-            case 104:
-                return "Opera";
-            case 105:
-                return "Chamber Music";
-            case 106:
-                return "Sonata";
-            case 107:
-                return "Symphony";
-            case 108:
-                return "Booty Bass";
-            case 109:
-                return "Primus";
-            case 110:
-                return "Porn Groove";
-            case 111:
-                return "Satire";
-            case 112:
-                return "Slow Jam";
-            case 113:
-                return "Club";
-            case 114:
-                return "Tango";
-            case 115:
-                return "Samba";
-            case 116:
-                return "Folklore";
-            case 117:
-                return "Ballad";
-            case 118:
-                return "Power Ballad";
-            case 119:
-                return "Rhythmic Soul";
-            case 120:
-                return "Freestyle";
-            case 121:
-                return "Duet";
-            case 122:
-                return "Punk Rock";
-            case 123:
-                return "Drum Solo";
-            case 124:
-                return "A capella";
-            case 125:
-                return "Euro-House";
-            case 126:
-                return "Dance Hall";
-            default:
-                throw null;
+    @Override // org.telegram.ui.Components.ni
+    public final void G() {
+        this.s.x0(0);
+    }
+
+    public final void L() {
+        this.E.setVisibility(this.s.getAdapter().h() == 2 ? 0 : 8);
+        M();
+    }
+
+    public final void M() {
+        View childAt;
+        mz mzVar = this.E;
+        if (mzVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
+            mzVar.setTranslationY((childAt.getTop() + (mzVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
         }
     }
 
-    public static boolean d(int i10, boolean z10) {
-        int i11 = i10 & 7;
-        if (i11 != 4) {
-            return z10 && i11 == 3;
+    @Override // org.telegram.ui.Components.ni
+    public int getCurrentItemTop() {
+        ai.w0 w0Var = this.s;
+        if (w0Var.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        return true;
-    }
-
-    public static double e(double d, double d10, double d11) {
-        return (Math.cos(d) * d10) + d11;
-    }
-
-    public static int f(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) * i12) + i13;
-    }
-
-    public static Object g(int i10, ArrayList arrayList) {
-        return arrayList.get(arrayList.size() - i10);
-    }
-
-    public static String h(int i10, String str) {
-        return str + i10;
-    }
-
-    public static String i(int i10, String str, String str2) {
-        return str + i10 + str2;
-    }
-
-    public static String j(long j3, char c10, StringBuilder sb2) {
-        sb2.append(LocaleController.formatNumber(j3, c10));
-        return sb2.toString();
-    }
-
-    public static StringBuilder k(int i10, String str, String str2) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i10);
-        sb2.append(str2);
-        return sb2;
-    }
-
-    public static StringBuilder l(String str, int i10, String str2, int i11, String str3) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i10);
-        sb2.append(str2);
-        sb2.append(i11);
-        sb2.append(str3);
-        return sb2;
-    }
-
-    public static HashMap m(Class cls, la.a aVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, aVar);
-        return hashMap;
-    }
-
-    public static Map n(HashMap hashMap) {
-        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-    }
-
-    public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
-        hashMap.put(Integer.valueOf(i10), str);
-        hashMap.put(Integer.valueOf(i11), str2);
-    }
-
-    public static void p(int i10, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.a2 a2Var) {
-        alertDialog$Builder.h(LocaleController.getString(i10), a2Var);
-        alertDialog$Builder.o();
-    }
-
-    public static void q(int i10, Object[] objArr, xc xcVar, int i11, int i12) {
-        xcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
-    }
-
-    public static /* synthetic */ void r(MediaMetadataRetriever mediaMetadataRetriever) {
-        if (mediaMetadataRetriever instanceof AutoCloseable) {
-            mediaMetadataRetriever.close();
-        } else if (mediaMetadataRetriever instanceof ExecutorService) {
-            k4.b();
+        View childAt = w0Var.getChildAt(0);
+        vk0 vk0Var = (vk0) w0Var.G(childAt);
+        int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
+        int i10 = (top <= 0 || vk0Var == null || vk0Var.b() != 0) ? 0 : top;
+        le.b bVar = this.n;
+        if (top < 0 || vk0Var == null || vk0Var.b() != 0) {
+            bVar.a(true, true);
+            top = i10;
         } else {
-            if (!com.google.android.gms.internal.vision.e2.u(mediaMetadataRetriever)) {
-                throw new IllegalArgumentException();
+            bVar.a(false, true);
+        }
+        this.r.setTranslationY(top);
+        return AndroidUtilities.dp(12.0f) + top;
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(4.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public int getListTopPadding() {
+        return this.s.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public ArrayList<k6> getThemeDescriptions() {
+        j6 j6Var = new j6() { // from class: hg.d0
+            @Override // org.telegram.ui.ActionBar.j6
+            public final void b() {
+                ai.w0 w0Var = k0.this.s;
+                if (w0Var != null) {
+                    int childCount = w0Var.getChildCount();
+                    for (int i10 = 0; i10 < childCount; i10++) {
+                        w0Var.getChildAt(i10);
+                    }
+                }
             }
-            mediaMetadataRetriever.release();
+
+            @Override // org.telegram.ui.ActionBar.j6
+            public final /* synthetic */ void a(float f7) {
+            }
+        };
+        ArrayList<k6> arrayList = new ArrayList<>();
+        arrayList.add(new k6(this.E, 4, null, null, null, null, i6.c7));
+        arrayList.add(new k6(this.E, 2048, null, null, null, null, i6.h6));
+        int i10 = i6.A5;
+        ai.w0 w0Var = this.s;
+        arrayList.add(new k6(w0Var, 32768, null, null, null, null, i10));
+        arrayList.add(new k6(w0Var, 4096, null, null, null, null, i6.i6));
+        arrayList.add(new k6(w0Var, 0, new Class[]{View.class}, i6.k0, null, null, i6.d7));
+        int i11 = i6.q5;
+        arrayList.add(new k6(w0Var, 0, new Class[]{j0.class}, new String[]{"nameTextView"}, null, null, -1, null, i11));
+        arrayList.add(new k6(w0Var, 0, new Class[]{j0.class}, new String[]{"statusTextView"}, null, null, -1, j6Var, i11));
+        arrayList.add(new k6(w0Var, 0, new Class[]{j0.class}, null, i6.r0, null, i6.J7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.O7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.P7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.Q7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.R7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.S7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.T7));
+        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.U7));
+        return arrayList;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        M();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        this.b.getSheetContainer().invalidate();
+    }
+
+    public void setupBlurredSearchField(ah.c cVar) {
+        ri riVar = this.F;
+        if (riVar != null) {
+            riVar.setupBlurredBackground(cVar.c(riVar, eh.b.a(this.a), false));
         }
     }
 
-    public static void s(b2.r rVar, c3.h0 h0Var) {
-        h0Var.b(new b2.s(rVar));
+    @Override // org.telegram.ui.Components.ni
+    public final void y(int i10, int i11) {
+        int i12;
+        vi viVar = this.b;
+        if (viVar.r1.R() > AndroidUtilities.dp(20.0f)) {
+            i12 = AndroidUtilities.dp(8.0f);
+            viVar.setAllowNestedScroll(false);
+        } else {
+            if (!AndroidUtilities.isTablet()) {
+                Point point = AndroidUtilities.displaySize;
+                if (point.x > point.y) {
+                    i12 = (int) (i11 / 3.5f);
+                    viVar.setAllowNestedScroll(true);
+                }
+            }
+            i12 = (i11 / 5) * 2;
+            viVar.setAllowNestedScroll(true);
+        }
+        this.s.o1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
     }
 
-    public static void t(StringBuilder sb2, int i10, String str, int i11, String str2) {
-        sb2.append(i10);
-        sb2.append(str);
-        sb2.append(i11);
-        sb2.append(str2);
+    @Override // org.telegram.ui.Components.ni
+    public final void m() {
     }
 
-    public static void u(StringBuilder sb2, long j3) {
-        sb2.append(j3);
-        FileLog.d(sb2.toString());
+    @Override // le.d
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 
-    public static void v(boolean z10, org.telegram.ui.ActionBar.k kVar) {
-        kVar.setBackButtonDrawable(new g2(z10));
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
     }
 
-    public static int w(int i10, int i11, int i12, int i13) {
-        return Math.max(i13, Math.min(Math.max(i10, i11), i12));
-    }
-
-    public static Object x(int i10, ArrayList arrayList) {
-        return arrayList.remove(arrayList.size() - i10);
-    }
-
-    public static int y(int i10, int i11, int i12, int i13) {
-        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
-    }
-
-    public static int z(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) / i12) + i13;
+    @Override // le.d
+    public final void D(int i10, float f7, float f10, le.e eVar) {
     }
 }

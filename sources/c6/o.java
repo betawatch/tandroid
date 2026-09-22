@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o extends o6.a {
     public static final Parcelable.Creator<o> CREATOR = new v(14);
@@ -173,26 +173,26 @@ public final class o extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.r;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 2, this.a, i10);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.k(parcel, 2, this.a, i10);
         int i11 = this.b;
-        w7.f0.s(parcel, 3, 4);
+        w7.e0.s(parcel, 3, 4);
         parcel.writeInt(i11);
         boolean z10 = this.c;
-        w7.f0.s(parcel, 4, 4);
+        w7.e0.s(parcel, 4, 4);
         parcel.writeInt(z10 ? 1 : 0);
         double d = this.d;
-        w7.f0.s(parcel, 5, 8);
+        w7.e0.s(parcel, 5, 8);
         parcel.writeDouble(d);
         double d10 = this.e;
-        w7.f0.s(parcel, 6, 8);
+        w7.e0.s(parcel, 6, 8);
         parcel.writeDouble(d10);
         double d11 = this.f;
-        w7.f0.s(parcel, 7, 8);
+        w7.e0.s(parcel, 7, 8);
         parcel.writeDouble(d11);
-        w7.f0.j(parcel, 8, this.h);
-        w7.f0.l(parcel, 9, this.n);
-        w7.f0.r(parcel, q6);
+        w7.e0.j(parcel, 8, this.h);
+        w7.e0.l(parcel, 9, this.n);
+        w7.e0.r(parcel, q6);
     }
 
     public o(JSONObject jSONObject) {

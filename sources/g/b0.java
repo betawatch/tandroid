@@ -20,11 +20,11 @@ import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.voip.r0;
 import r0.i0;
 import r0.l0;
-import v7.k7;
+import v7.j7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class b0 extends k7 implements m.b {
+public final class b0 extends j7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
@@ -59,7 +59,7 @@ public final class b0 extends k7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a6.i(this, 19);
+        this.w = new a6.i(this, 20);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -332,7 +332,7 @@ public final class b0 extends k7 implements m.b {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new a6.i(this, 19);
+        this.w = new a6.i(this, 20);
         b(uVar.getWindow().getDecorView());
     }
 }

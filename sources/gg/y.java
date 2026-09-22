@@ -11,14 +11,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ol0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.gy;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements g0, ol0 {
+public final /* synthetic */ class y implements g0, bl0 {
     public final /* synthetic */ i0 a;
 
     public /* synthetic */ y(i0 i0Var) {
@@ -46,7 +46,7 @@ public final /* synthetic */ class y implements g0, ol0 {
         i0Var.l();
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.bl0
     public boolean d(int i10, View view) {
         TLRPC.User user;
         gy gyVar = this.a.U;
@@ -65,7 +65,7 @@ public final /* synthetic */ class y implements g0, ol0 {
                 uyVar.showDialog(b2Var);
                 TextView textView = (TextView) b2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(uyVar.getThemedColor(j6.q7));
+                    textView.setTextColor(uyVar.getThemedColor(i6.q7));
                 }
             }
         }

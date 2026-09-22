@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public abstract class k {
             case 6:
                 return 6L;
             default:
-                throw new IllegalArgumentException(hg.k0.h(i10, "Unrecognized FolderType: "));
+                throw new IllegalArgumentException(hg.c.i(i10, "Unrecognized FolderType: "));
         }
     }
 
@@ -198,12 +198,12 @@ public abstract class k {
     }
 
     public static int e(b2.e eVar) {
-        k2.e bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b() : new k2.e();
+        ka.c bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(4) : new ka.c(4);
         AudioAttributes.Builder builder = (AudioAttributes.Builder) bVar.b;
         builder.setContentType(eVar.a);
         builder.setFlags(eVar.b);
-        bVar.U(eVar.c);
-        AudioAttributes audioAttributes = bVar.g().a;
+        bVar.j(eVar.c);
+        AudioAttributes audioAttributes = bVar.a().a;
         audioAttributes.getClass();
         int flags = audioAttributes.getFlags();
         int usage = audioAttributes.getUsage();

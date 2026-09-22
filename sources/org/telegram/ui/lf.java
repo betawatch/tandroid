@@ -1,94 +1,82 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.regex.Pattern;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lf implements e2.h {
+public final /* synthetic */ class lf implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, vo0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ lf(zn znVar, int i10) {
+    public /* synthetic */ lf(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = znVar;
+        this.b = runnable;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.E1 = (ChannelBoostsController.CanApplyBoost) obj;
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = view instanceof org.telegram.ui.Cells.u1;
-                zn znVar = this.b;
-                if (!z10) {
-                    if (!(view instanceof org.telegram.ui.Cells.w0)) {
-                        if (!(view instanceof org.telegram.ui.Cells.w1)) {
-                            if (!(view instanceof org.telegram.ui.Cells.b0)) {
-                                if (view instanceof org.telegram.ui.Cells.h0) {
-                                    view.invalidate();
-                                    break;
-                                }
-                            } else {
-                                view.invalidate();
-                                break;
-                            }
-                        } else {
-                            ((org.telegram.ui.Cells.w1) view).getTextView().setTranslationX(znVar.R8() / 2.0f);
-                            break;
-                        }
-                    } else {
-                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-                        w0Var.e0 = znVar.t9();
-                        w0Var.i0 = znVar.C9();
-                        znVar.B9();
-                        znVar.Q8();
-                        int R8 = znVar.R8();
-                        if (w0Var.j0 != R8) {
-                            w0Var.j0 = R8;
-                            w0Var.invalidate();
-                            break;
-                        }
-                    }
-                } else {
-                    org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
-                    u1Var.E8 = znVar.t9();
-                    u1Var.F8 = znVar.C9();
-                    boolean B9 = znVar.B9();
-                    if (u1Var.G8 != B9) {
-                        u1Var.G8 = B9;
-                        znVar.x0.getClass();
-                        int S = RecyclerView.S(view);
-                        u1Var.n8 = true;
-                        u1Var.forceLayout();
-                        if (S >= 0) {
-                            znVar.A0.m(S);
-                        }
-                    }
-                    u1Var.H8 = znVar.Q8();
-                    int R82 = znVar.R8();
-                    if (u1Var.I8 != R82) {
-                        u1Var.I8 = R82;
-                        u1Var.y4();
-                        u1Var.invalidate();
-                        break;
-                    }
+    @Override // org.telegram.ui.vo0
+    public void a(int i10) {
+        int i11 = this.a;
+        Runnable runnable = this.b;
+        switch (i11) {
+            case 9:
+                Pattern pattern = LaunchActivity.B1;
+                if (i10 == 1) {
+                    runnable.run();
+                    break;
                 }
                 break;
             default:
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null) {
-                    zn znVar2 = this.b;
-                    znVar2.D1 = tL_premium_boostsStatus;
-                    znVar2.getMessagesController().getBoostsController().userCanBoostChannel(znVar2.T5, tL_premium_boostsStatus, new lf(znVar2, 0));
+                if (i10 == 1) {
+                    runnable.run();
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                this.b.run();
+                break;
+            default:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 3:
+                this.b.run();
+                break;
+            case 4:
+                this.b.run();
+                break;
+            case 5:
+                this.b.run();
+                break;
+            case 6:
+                this.b.run();
+                break;
+            case 7:
+                this.b.run();
+                break;
+            default:
+                this.b.run();
+                break;
+        }
+        return true;
     }
 }

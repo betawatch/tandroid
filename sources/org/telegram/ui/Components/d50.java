@@ -7,15 +7,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.camera.Size;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d50 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c60 b;
+    public final /* synthetic */ w50 b;
 
-    public /* synthetic */ d50(c60 c60Var, int i10) {
+    public /* synthetic */ d50(w50 w50Var, int i10) {
         this.a = i10;
-        this.b = c60Var;
+        this.b = w50Var;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:14|15|16|(11:18|(1:20)|21|22|(7:24|(1:26)|27|28|(1:30)|31|(0)(1:37))|42|43|28|(0)|31|(1:33))|48|21|22|(0)|42|43|28|(0)|31|(0)(0)) */
@@ -36,77 +36,77 @@ public final /* synthetic */ class d50 implements Runnable {
     */
     public final void run() {
         boolean z10;
-        m50 m50Var;
+        n50 n50Var;
         Handler handler;
         Camera.Size currentPictureSize;
         Camera.Size currentPreviewSize;
         switch (this.a) {
             case 0:
-                c60 c60Var = this.b;
-                if (c60Var.u0) {
-                    c60Var.t();
+                w50 w50Var = this.b;
+                if (w50Var.p0) {
+                    w50Var.p();
                     break;
                 }
                 break;
             case 1:
-                c60 c60Var2 = this.b;
-                Size[] sizeArr = c60Var2.n0;
-                if (c60Var2.t0 != null) {
-                    c60Var2.u();
+                w50 w50Var2 = this.b;
+                Size[] sizeArr = w50Var2.i0;
+                if (w50Var2.o0 != null) {
+                    w50Var2.r();
                     try {
-                        currentPreviewSize = c60Var2.t0.getCurrentPreviewSize();
+                        currentPreviewSize = w50Var2.o0.getCurrentPreviewSize();
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
                     if (currentPreviewSize.width == sizeArr[0].getWidth()) {
                         if (currentPreviewSize.height != sizeArr[0].getHeight()) {
                         }
-                        currentPictureSize = c60Var2.t0.getCurrentPictureSize();
-                        if (currentPictureSize.width == c60Var2.o0.getWidth()) {
-                            if (currentPictureSize.height == c60Var2.o0.getHeight()) {
+                        currentPictureSize = w50Var2.o0.getCurrentPictureSize();
+                        if (currentPictureSize.width == w50Var2.j0.getWidth()) {
+                            if (currentPictureSize.height == w50Var2.j0.getHeight()) {
                             }
                             z10 = false;
                             if (BuildVars.LOGS_ENABLED) {
                                 FileLog.d("InstantCamera camera initied");
                             }
-                            c60Var2.t0.setInitied();
-                            if (z10 && (m50Var = c60Var2.m0) != null && (handler = m50Var.getHandler()) != null) {
-                                m50Var.sendMessage(handler.obtainMessage(2), 0);
+                            w50Var2.o0.setInitied();
+                            if (z10 && (n50Var = w50Var2.h0) != null && (handler = n50Var.getHandler()) != null) {
+                                n50Var.sendMessage(handler.obtainMessage(2), 0);
                                 break;
                             }
                         }
-                        c60Var2.o0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                        FileLog.d("InstantCamera change picture size to w = " + c60Var2.o0.getWidth() + " h = " + c60Var2.o0.getHeight());
+                        w50Var2.j0 = new Size(currentPictureSize.width, currentPictureSize.height);
+                        FileLog.d("InstantCamera change picture size to w = " + w50Var2.j0.getWidth() + " h = " + w50Var2.j0.getHeight());
                         z10 = true;
                         if (BuildVars.LOGS_ENABLED) {
                         }
-                        c60Var2.t0.setInitied();
+                        w50Var2.o0.setInitied();
                         if (z10) {
                         }
                     }
                     sizeArr[0] = new Size(currentPreviewSize.width, currentPreviewSize.height);
                     FileLog.d("InstantCamera change preview size to w = " + sizeArr[0].getWidth() + " h = " + sizeArr[0].getHeight());
-                    currentPictureSize = c60Var2.t0.getCurrentPictureSize();
-                    if (currentPictureSize.width == c60Var2.o0.getWidth()) {
+                    currentPictureSize = w50Var2.o0.getCurrentPictureSize();
+                    if (currentPictureSize.width == w50Var2.j0.getWidth()) {
                     }
-                    c60Var2.o0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                    FileLog.d("InstantCamera change picture size to w = " + c60Var2.o0.getWidth() + " h = " + c60Var2.o0.getHeight());
+                    w50Var2.j0 = new Size(currentPictureSize.width, currentPictureSize.height);
+                    FileLog.d("InstantCamera change picture size to w = " + w50Var2.j0.getWidth() + " h = " + w50Var2.j0.getHeight());
                     z10 = true;
                     if (BuildVars.LOGS_ENABLED) {
                     }
-                    c60Var2.t0.setInitied();
+                    w50Var2.o0.setInitied();
                     if (z10) {
                     }
                 }
                 break;
             default:
-                c60 c60Var3 = this.b;
-                m50 m50Var2 = c60Var3.m0;
-                if (m50Var2 != null) {
-                    CameraSession cameraSession = c60Var3.t0;
-                    Handler handler2 = m50Var2.getHandler();
+                w50 w50Var3 = this.b;
+                n50 n50Var2 = w50Var3.h0;
+                if (n50Var2 != null) {
+                    CameraSession cameraSession = w50Var3.o0;
+                    Handler handler2 = n50Var2.getHandler();
                     if (handler2 != null) {
-                        m50Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
+                        n50Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
                         break;
                     }
                 }

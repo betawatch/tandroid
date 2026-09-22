@@ -6,9 +6,9 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o50 extends org.telegram.ui.Components.yl0 {
+public final class o50 extends org.telegram.ui.Components.ll0 {
     public final LongSparseIntArray X2;
     public final /* synthetic */ i60 Y2;
 
@@ -21,7 +21,7 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00bb  */
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -45,32 +45,32 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
         float f11 = 0.0f;
         while (i12 < childCount) {
             View childAt = getChildAt(i12);
-            s4.c1 H = H(childAt);
-            if (H != null) {
-                int i13 = H.f;
+            s4.c1 G = G(childAt);
+            if (G != null) {
+                int i13 = G.f;
                 if (i13 == 3 || i13 == 4 || i13 == 5 || i13 == 6 || i13 == 7) {
                     i10 = i12;
                     z10 = z13;
                 } else {
                     if (i13 == 1) {
-                        View view = H.a;
-                        if (view instanceof org.telegram.ui.Cells.f4) {
-                            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+                        View view = G.a;
+                        if (view instanceof org.telegram.ui.Cells.e4) {
+                            org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) view;
                             i10 = i12;
                             z11 = z13;
-                            i60Var.B2.append(f4Var.getPeerId(), 1);
-                            if (longSparseIntArray.get(f4Var.getPeerId(), 0) == 0) {
+                            i60Var.B2.append(e4Var.getPeerId(), 1);
+                            if (longSparseIntArray.get(e4Var.getPeerId(), 0) == 0) {
                                 z13 = true;
                                 if (!z12) {
                                     f11 = Math.max(f11, childAt.getY() + childAt.getMeasuredHeight());
                                     f10 = Math.min(f10, Math.max(0.0f, childAt.getY()));
-                                } else if (!i60Var.X.I.contains(H)) {
+                                } else if (!i60Var.X.I.contains(G)) {
                                     f10 = Math.min(f10, Math.max(0, childAt.getTop()));
                                     f11 = Math.max(f11, childAt.getBottom());
                                 }
                                 i12 = i10 + 1;
                             } else {
-                                longSparseIntArray.delete(f4Var.getPeerId());
+                                longSparseIntArray.delete(e4Var.getPeerId());
                                 z13 = z11;
                                 if (!z12) {
                                 }
@@ -114,7 +114,7 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         if (view == this.Y2.X2) {
             return false;
@@ -122,7 +122,7 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         super.onLayout(z10, i10, i11, i12, i13);
@@ -146,8 +146,8 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
         int childCount = o50Var.getChildCount();
         for (int i15 = 0; i15 < childCount; i15++) {
             View childAt = o50Var.getChildAt(i15);
-            s4.c1 H = o50Var.H(childAt);
-            if (H != null && (i14 = H.f) != 3 && i14 != 4 && i14 != 5 && i14 != 7 && !hashSet2.contains(H)) {
+            s4.c1 G = o50Var.G(childAt);
+            if (G != null && (i14 = G.f) != 3 && i14 != 4 && i14 != 5 && i14 != 7 && !hashSet2.contains(G)) {
                 w50Var.J = Math.max(w50Var.J, childAt.getY() + childAt.getMeasuredHeight());
                 w50Var.K = Math.min(w50Var.K, Math.max(0.0f, childAt.getY()));
             }
@@ -156,7 +156,7 @@ public final class o50 extends org.telegram.ui.Components.yl0 {
         o50Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.View
     public final void setVisibility(int i10) {
         if (getVisibility() != i10) {
             for (int i11 = 0; i11 < getChildCount(); i11++) {

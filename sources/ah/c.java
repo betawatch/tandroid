@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
@@ -15,7 +15,7 @@ public final class c {
     public pe.b e;
     public hh.k f;
     public ViewGroup g;
-    public li.i h;
+    public ki.e h;
     public boolean i;
 
     public c(fh.a aVar) {
@@ -35,7 +35,7 @@ public final class c {
         ch.d l4 = this.a.l();
         if (this.i && Build.VERSION.SDK_INT >= 33 && (l4 instanceof ch.e)) {
             ch.e eVar = (ch.e) l4;
-            eVar.P = new j(eVar.K);
+            eVar.P = new i(eVar.K);
         }
         l4.o(aVar);
         int i10 = this.b;
@@ -46,9 +46,9 @@ public final class c {
         if (bVar != null && view != null) {
             bVar.add(view);
         }
-        li.i iVar = this.h;
-        if (iVar != null && view != null) {
-            iVar.c.add(new li.h(view, l4));
+        ki.e eVar2 = this.h;
+        if (eVar2 != null && view != null) {
+            eVar2.d.add(new ki.d(view, l4));
         }
         hh.k kVar = this.f;
         if (kVar != null && (viewGroup = this.g) != null && view != null) {

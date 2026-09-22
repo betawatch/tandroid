@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -334,8 +334,8 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final void f(pb.c cVar) {
-        ((p0) cVar.b).o.x.post(new q4(cVar, 15));
+    public final void f(a6.m mVar) {
+        ((p0) mVar.b).o.x.post(new q4(mVar, 15));
     }
 
     @Override // com.google.android.gms.common.api.c

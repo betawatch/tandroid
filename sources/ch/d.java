@@ -18,12 +18,12 @@ import android.os.Build;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import v7.v7;
-import w7.q;
+import org.telegram.ui.ActionBar.i6;
+import v7.u7;
+import w7.p;
 import yf.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -126,7 +126,7 @@ public abstract class d extends Drawable {
         if (z10) {
             if (z11) {
                 canvas.save();
-                if (canvas.clipRect(0.0f, 0.0f, f7, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
+                if (canvas.clipRect(0.0f, 0.0f, f7, p.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
                     float f20 = fArr[0];
                     canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, f20, f20, paint);
                 }
@@ -135,7 +135,7 @@ public abstract class d extends Drawable {
             }
             float f21 = (0.0f + f7) / 2.0f;
             canvas.save();
-            if (canvas.clipRect(0.0f, 0.0f, f21, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
+            if (canvas.clipRect(0.0f, 0.0f, f21, p.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
                 f12 = 0.0f;
                 canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, fArr[0], fArr[1], paint);
             } else {
@@ -143,7 +143,7 @@ public abstract class d extends Drawable {
             }
             canvas.restore();
             canvas.save();
-            if (canvas.clipRect(f21, f12, f7, q.a((fArr[0] * 2.0f) + f12, f12, f10))) {
+            if (canvas.clipRect(f21, f12, f7, p.a((fArr[0] * 2.0f) + f12, f12, f10))) {
                 canvas.drawRoundRect(f12 - f19, f12 + f19, f7 + f19, f10 + f19, fArr[2], fArr[3], paint);
             }
             canvas.restore();
@@ -151,7 +151,7 @@ public abstract class d extends Drawable {
         }
         if (z11) {
             canvas.save();
-            if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
+            if (canvas.clipRect(0.0f, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
                 float f22 = 0.0f - f19;
                 float f23 = fArr[4];
                 canvas.drawRoundRect(f22, f22, f7 + f19, f10 - f19, f23, f23, paint);
@@ -161,13 +161,13 @@ public abstract class d extends Drawable {
         }
         float f24 = (0.0f + f7) / 2.0f;
         canvas.save();
-        if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f24, f10)) {
+        if (canvas.clipRect(0.0f, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f24, f10)) {
             float f25 = 0.0f - f19;
             canvas.drawRoundRect(f25, f25, f7 + f19, f10 - f19, fArr[6], fArr[7], paint);
         }
         canvas.restore();
         canvas.save();
-        if (canvas.clipRect(f24, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
+        if (canvas.clipRect(f24, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
             float f26 = 0.0f - f19;
             canvas.drawRoundRect(f26, f26, f7 + f19, f10 - f19, fArr[4], fArr[5], paint);
         }
@@ -184,13 +184,13 @@ public abstract class d extends Drawable {
         if (z10) {
             float f16 = f11 - f15;
             float f17 = f13 + f15;
-            if (canvas.clipRect(f16, f12, f17, q.a((2.0f * f7) + f12, f12, f14))) {
+            if (canvas.clipRect(f16, f12, f17, p.a((2.0f * f7) + f12, f12, f14))) {
                 canvas.drawRoundRect(f16, f12 + f15, f17, f14 + f15, f7, f7, paint);
             }
         } else {
             float f18 = f11 - f15;
             float f19 = f13 + f15;
-            if (canvas.clipRect(f18, q.a(f14 - (2.0f * f7), f12, f14), f19, f14)) {
+            if (canvas.clipRect(f18, p.a(f14 - (2.0f * f7), f12, f14), f19, f14)) {
                 canvas.drawRoundRect(f18, f12 - f15, f19, f14 - f15, f7, f7, paint);
             }
         }
@@ -235,7 +235,7 @@ public abstract class d extends Drawable {
         long j3 = aVar.a ? -1L : aVar.b;
         if (this.C == null || this.D != j3) {
             this.D = j3;
-            NinePatchDrawable b10 = v7.b(null, cVar.b, this.n, this.o, Color.alpha(i10) == 255 ? i10 : 1, new a(i10, this, z10));
+            NinePatchDrawable b10 = u7.b(null, cVar.b, this.n, this.o, Color.alpha(i10) == 255 ? i10 : 1, new a(i10, this, z10));
             this.C = b10;
             b10.getPadding(this.B);
         }
@@ -304,7 +304,7 @@ public abstract class d extends Drawable {
                 paint.setAlpha(this.l);
                 cVar.b(canvas, paint);
             }
-            int l1 = j6.l1(this.l / 255.0f, this.e);
+            int l1 = i6.l1(this.l / 255.0f, this.e);
             if (Color.alpha(l1) > 0) {
                 Paint paint2 = this.t;
                 paint2.setColor(l1);
@@ -328,13 +328,13 @@ public abstract class d extends Drawable {
         if (aVar == null || (i10 = this.l) == 0) {
             return;
         }
-        int l12 = j6.l1(i10 / 255.0f, this.e);
+        int l12 = i6.l1(i10 / 255.0f, this.e);
         if (Color.alpha(this.d) > 0 && this.l == 255) {
             float f7 = this.p;
             if (f7 > 0.0f) {
                 float f10 = this.n;
                 float f11 = this.o;
-                int l13 = j6.l1(f7, this.d);
+                int l13 = i6.l1(f7, this.d);
                 Paint paint3 = this.u;
                 paint3.setShadowLayer(f10, 0.0f, f11, l13);
                 cVar.c(canvas, paint3, this.m);
@@ -359,7 +359,7 @@ public abstract class d extends Drawable {
         canvas.clipPath(cVar.k);
         canvas.translate(rect2.left, rect2.top);
         canvas.translate(-f15, -f17);
-        aVar.v(canvas, f15, f17, f19, f21);
+        aVar.y(canvas, f15, f17, f19, f21);
         canvas.restore();
         if (Color.alpha(l12) > 0) {
             Paint paint4 = this.q;
@@ -387,8 +387,8 @@ public abstract class d extends Drawable {
     }
 
     public final void g(Canvas canvas) {
-        int l1 = j6.l1(this.l / 255.0f, this.f);
-        int l12 = j6.l1(this.l / 255.0f, this.g);
+        int l1 = i6.l1(this.l / 255.0f, this.f);
+        int l12 = i6.l1(this.l / 255.0f, this.g);
         int alpha = Color.alpha(l1);
         c cVar = this.j;
         Paint paint = this.r;
@@ -547,9 +547,9 @@ public abstract class d extends Drawable {
             return;
         }
         this.e = aVar.H();
-        this.d = this.c.x();
-        this.f = this.c.b();
-        this.g = this.c.g();
+        this.d = this.c.m();
+        this.f = this.c.a();
+        this.g = this.c.c();
     }
 
     public void m() {

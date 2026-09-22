@@ -18,9 +18,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URLDecoder;
 import java.util.ArrayList;
-import ki.j0;
-import ki.k0;
-import ki.o0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLoader;
@@ -29,9 +26,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedSettings;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -39,38 +35,36 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.af0;
-import org.telegram.ui.Components.it0;
-import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.wq0;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.hq0;
+import org.telegram.ui.Components.id;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.ce1;
-import org.telegram.ui.g81;
+import org.telegram.ui.be1;
+import org.telegram.ui.bo;
+import org.telegram.ui.e81;
+import org.telegram.ui.gc1;
 import org.telegram.ui.h4;
-import org.telegram.ui.hc1;
 import org.telegram.ui.i60;
-import org.telegram.ui.ja0;
 import org.telegram.ui.l50;
-import org.telegram.ui.lz0;
-import org.telegram.ui.mb;
-import org.telegram.ui.o41;
-import org.telegram.ui.pn0;
+import org.telegram.ui.lb;
+import org.telegram.ui.mz0;
+import org.telegram.ui.on0;
 import org.telegram.ui.rv0;
 import org.telegram.ui.t10;
 import org.telegram.ui.u3;
 import org.telegram.ui.uy;
 import org.telegram.ui.x10;
-import org.telegram.ui.zn;
+import pg.h1;
+import pg.j1;
 import pg.k1;
-import pg.m1;
-import pg.n1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -83,10 +77,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:165:0x03e8  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x03a6  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x021b  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0234 A[Catch: Exception -> 0x0274, TRY_LEAVE, TryCatch #11 {Exception -> 0x0274, blocks: (B:68:0x022c, B:72:0x0234, B:76:0x027d, B:75:0x0276, B:82:0x026c, B:80:0x0248), top: B:67:0x022c, inners: #5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0234 A[Catch: Exception -> 0x0274, TRY_LEAVE, TryCatch #10 {Exception -> 0x0274, blocks: (B:68:0x022c, B:72:0x0234, B:76:0x027d, B:75:0x0276, B:82:0x026c, B:80:0x0248), top: B:67:0x022c, inners: #4 }] */
     @Override // android.content.DialogInterface.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -150,10 +144,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 nf.f.s(h4Var.L, str3);
                 return;
             case 2:
-                mb mbVar = (mb) this.b;
+                lb lbVar = (lb) this.b;
                 String str4 = (String) this.c;
                 if (i10 == 0) {
-                    nf.f.o(mbVar.a.n.getParentActivity(), str4, true);
+                    nf.f.o(lbVar.a.n.getParentActivity(), str4, true);
                     return;
                 }
                 if (i10 == 1) {
@@ -167,10 +161,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 3:
-                zn znVar = (zn) this.b;
+                bo boVar = (bo) this.b;
                 String str5 = (String) this.c;
                 AndroidUtilities.addToClipboard(str5);
-                xc.a0(znVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
+                vc.a0(boVar).i(LocaleController.formatString(R.string.ExactTextCopied, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -182,20 +176,20 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     }
                 }
                 int i13 = i11;
-                if (xc.a(uyVar)) {
-                    xc.z(uyVar, i13, 0, null).j();
+                if (vc.a(uyVar)) {
+                    vc.z(uyVar, i13, 0, null).j();
                     return;
                 }
                 return;
             case 5:
-                af0 af0Var = (af0) this.b;
+                pe0 pe0Var = (pe0) this.b;
                 AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) this.c;
-                af0Var.getClass();
+                pe0Var.getClass();
                 if (i10 == 0) {
                     try {
                         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                            Toast.makeText(af0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
+                            Toast.makeText(pe0Var.r.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                             return;
                         }
                         return;
@@ -206,13 +200,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                it0 it0Var = (it0) this.b;
+                vs0 vs0Var = (vs0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    it0Var.a.R0(str6);
+                    vs0Var.a.R0(str6);
                     return;
                 }
-                it0Var.getClass();
+                vs0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -255,10 +249,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 i60Var.y3 = num;
                 i60Var.N1(true, true);
                 i60Var.y3 = null;
-                AndroidUtilities.runOnUIThread(new kd(l50Var, intValue, 15));
+                AndroidUtilities.runOnUIThread(new id(l50Var, intValue, 15));
                 return;
             case 9:
-                pn0 pn0Var = (pn0) this.b;
+                on0 on0Var = (on0) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 try {
                     tL_secureRequiredType = new TLRPC.TL_secureRequiredType();
@@ -269,12 +263,12 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 } catch (Exception unused3) {
                     tL_secureRequiredType = null;
                 }
-                if (!pn0.v1(tL_secureRequiredType.type)) {
-                    if (pn0.t1(tL_secureRequiredType.type)) {
+                if (!on0.v1(tL_secureRequiredType.type)) {
+                    if (on0.t1(tL_secureRequiredType.type)) {
                         tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
                         tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypeAddress();
                     }
-                    pn0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                    on0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                     return;
                 }
                 tL_secureRequiredType.selfie_required = true;
@@ -283,65 +277,47 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypePersonalDetails();
                 tL_secureRequiredType3 = tL_secureRequiredType;
                 tL_secureRequiredType = tL_secureRequiredType2;
-                pn0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                on0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                 return;
             case 10:
-                lz0.a((lz0) this.b, (Context) this.c, i10);
+                mz0.a((mz0) this.b, (Context) this.c, i10);
                 return;
             case 11:
-                o41 o41Var = (o41) this.b;
-                switch (((ja0) this.c).a) {
-                    case 11:
-                        SharedSettings.roundVideoOutputResolution.set(i10 == 0 ? o0.b : o0.c);
-                        break;
-                    case 12:
-                        SharedSettings.roundVideoCameraResolution.set(j0.values()[i10]);
-                        break;
-                    case 13:
-                        SharedSettings.roundVideoFrameRate.set(i10 == 0 ? k0.b : k0.c);
-                        break;
-                    default:
-                        SharedSettings.roundVideoVideoBitrate.set(o41.c[i10]);
-                        break;
-                }
-                o41Var.b.l();
+                e81 e81Var = (e81) this.b;
+                ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
+                vl.p(R.string.TextCopied, new vc(e81Var.getContainer(), null));
                 return;
             case 12:
-                g81 g81Var = (g81) this.b;
-                ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                rk.o(R.string.TextCopied, new xc(g81Var.getContainer(), null));
-                return;
-            case 13:
-                hc1 hc1Var = (hc1) this.b;
-                i6 i6Var = (i6) this.c;
-                ThemeActivity themeActivity = hc1Var.e;
+                gc1 gc1Var = (gc1) this.b;
+                h6 h6Var = (h6) this.c;
+                ThemeActivity themeActivity = gc1Var.e;
                 if (themeActivity.getParentActivity() == null) {
                     return;
                 }
                 if (i10 == 0) {
-                    if (i6Var.F == null) {
-                        themeActivity.getMessagesController().saveThemeToServer(i6Var, null);
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, i6Var, null);
+                    if (h6Var.F == null) {
+                        themeActivity.getMessagesController().saveThemeToServer(h6Var, null);
+                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, h6Var, null);
                         return;
                     }
-                    String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + i6Var.F.slug;
-                    themeActivity.showDialog(new wq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + h6Var.F.slug;
+                    themeActivity.showDialog(new hq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
                         d5Var = ((n2) themeActivity).parentLayout;
                         if (d5Var != null) {
-                            j6.t(i6Var, true, false);
+                            i6.t(h6Var, true, false);
                             d5Var2 = ((n2) themeActivity).parentLayout;
                             ((ActionBarLayout) d5Var2).U(true, true);
-                            new ThemeEditorView().c(themeActivity.getParentActivity(), i6Var);
+                            new ThemeEditorView().c(themeActivity.getParentActivity(), h6Var);
                             return;
                         }
                         return;
                     }
                     if (i10 == 3) {
-                        themeActivity.presentFragment(new ce1(i6Var, null, false));
+                        themeActivity.presentFragment(new be1(h6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
@@ -350,20 +326,20 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
                     alertDialog$Builder.a.R = LocaleController.getString("DeleteThemeTitle", R.string.DeleteThemeTitle);
                     alertDialog$Builder.a.T = LocaleController.getString("DeleteThemeAlert", R.string.DeleteThemeAlert);
-                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new rv0(14, hc1Var, i6Var));
+                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new rv0(13, gc1Var, h6Var));
                     alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                     b2 b2Var = alertDialog$Builder.a;
                     themeActivity.showDialog(b2Var);
                     TextView textView = (TextView) b2Var.d(-1);
                     if (textView != null) {
-                        textView.setTextColor(j6.w0(null, j6.q7, false));
+                        textView.setTextColor(i6.w0(null, i6.q7, false));
                         return;
                     }
                     return;
                 }
-                if (i6Var.b == null && i6Var.d == null) {
+                if (h6Var.b == null && h6Var.d == null) {
                     StringBuilder sb3 = new StringBuilder();
-                    int[] iArr = j6.nl;
+                    int[] iArr = i6.nl;
                     for (int i14 = 0; i14 < iArr.length; i14++) {
                         sb3.append(g5.i(i14));
                         sb3.append("=");
@@ -394,7 +370,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         if (fileOutputStream2 != null) {
                             fileOutputStream2.close();
                         }
-                        str = i6Var.a;
+                        str = h6Var.a;
                         if (!str.endsWith(".attheme")) {
                         }
                         file = new File(FileLoader.getDirectory(4), FileLoader.fixFileName(str));
@@ -415,10 +391,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         }
                     }
                 } else {
-                    String str9 = i6Var.d;
-                    p02 = str9 != null ? j6.p0(str9) : new File(i6Var.b);
+                    String str9 = h6Var.d;
+                    p02 = str9 != null ? i6.p0(str9) : new File(h6Var.b);
                 }
-                str = i6Var.a;
+                str = h6Var.a;
                 if (!str.endsWith(".attheme")) {
                     str = str.concat(".attheme");
                 }
@@ -446,28 +422,28 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     return;
                 }
             default:
-                n1 n1Var = (n1) this.b;
+                k1 k1Var = (k1) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
-                SharedPreferences sharedPreferences = n1Var.g;
-                ArrayList arrayList5 = n1Var.c;
+                SharedPreferences sharedPreferences = k1Var.g;
+                ArrayList arrayList5 = k1Var.c;
                 if (i10 != 0) {
-                    m1 m1Var = new m1();
-                    m1Var.a = i10 - 1;
-                    m1Var.b = arrayList4;
-                    arrayList5.add(m1Var);
+                    j1 j1Var = new j1();
+                    j1Var.a = i10 - 1;
+                    j1Var.b = arrayList4;
+                    arrayList5.add(j1Var);
                     String string = sharedPreferences.getString("moretemplates", null);
                     if (string == null) {
-                        sb2 = "" + m1Var.a;
+                        sb2 = "" + j1Var.a;
                     } else {
-                        StringBuilder h = v7.j0.h(string, "|");
-                        h.append(m1Var.a);
+                        StringBuilder h = w.c.h(string, "|");
+                        h.append(j1Var.a);
                         sb2 = h.toString();
                     }
                     for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                        StringBuilder h10 = v7.j0.h(sb2, ",");
-                        h10.append(Math.round(((k1) arrayList4.get(i15)).a));
+                        StringBuilder h10 = w.c.h(sb2, ",");
+                        h10.append(Math.round(((h1) arrayList4.get(i15)).a));
                         h10.append(",");
-                        h10.append(Math.round(((k1) arrayList4.get(i15)).b));
+                        h10.append(Math.round(((h1) arrayList4.get(i15)).b));
                         sb2 = h10.toString();
                     }
                     sharedPreferences.edit().putString("moretemplates", sb2).apply();
@@ -475,26 +451,26 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 StringBuilder sb4 = new StringBuilder("[");
                 for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                    m1 m1Var2 = (m1) arrayList5.get(i16);
+                    j1 j1Var2 = (j1) arrayList5.get(i16);
                     if (i16 > 0) {
                         sb4.append(",\n");
                     }
                     sb4.append("\t{\n\t\t\"shape\": ");
-                    sb4.append(m1Var2.a);
+                    sb4.append(j1Var2.a);
                     sb4.append(",\n\t\t\"points\": [");
-                    for (int i17 = 0; i17 < m1Var2.b.size(); i17++) {
+                    for (int i17 = 0; i17 < j1Var2.b.size(); i17++) {
                         if (i17 > 0) {
                             sb4.append(",");
                         }
-                        k1 k1Var = (k1) m1Var2.b.get(i17);
+                        h1 h1Var = (h1) j1Var2.b.get(i17);
                         sb4.append("[");
-                        sb4.append(Math.round(k1Var.a));
+                        sb4.append(Math.round(h1Var.a));
                         sb4.append(",");
-                        sb4.append(Math.round(k1Var.b));
+                        sb4.append(Math.round(h1Var.b));
                         sb4.append("]");
                     }
                     sb4.append("],\n\t\t\"freq\": ");
-                    sb4.append(Math.round(((m1Var2.c / n1Var.a) * 100.0f) * 100.0f) / 100.0f);
+                    sb4.append(Math.round(((j1Var2.c / k1Var.a) * 100.0f) * 100.0f) / 100.0f);
                     sb4.append("\n\t}");
                 }
                 sb4.append("\n]");

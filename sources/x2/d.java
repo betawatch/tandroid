@@ -2,32 +2,32 @@ package x2;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements d9.g {
-    public final /* synthetic */ q a;
-    public final /* synthetic */ j b;
+public final /* synthetic */ class d implements d9.f {
+    public final /* synthetic */ p a;
+    public final /* synthetic */ i b;
 
-    public /* synthetic */ d(q qVar, j jVar) {
-        this.a = qVar;
-        this.b = jVar;
+    public /* synthetic */ d(p pVar, i iVar) {
+        this.a = pVar;
+        this.b = iVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0069, code lost:
     
         if (r1.b != false) goto L42;
      */
-    @Override // d9.g
+    @Override // d9.f
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean apply(Object obj) {
         Boolean bool;
-        l lVar;
+        k kVar;
         b2.s sVar = (b2.s) obj;
-        q qVar = this.a;
-        qVar.getClass();
-        if (this.b.s0 && ((bool = qVar.k) == null || !bool.booleanValue())) {
+        p pVar = this.a;
+        pVar.getClass();
+        if (this.b.s0 && ((bool = pVar.k) == null || !bool.booleanValue())) {
             int i10 = sVar.J;
             if (i10 != -1 && i10 > 2) {
                 String str = sVar.r;
@@ -38,14 +38,14 @@ public final /* synthetic */ class d implements d9.g {
                         case "audio/ac4":
                         case "audio/eac3":
                             if (Build.VERSION.SDK_INT >= 32) {
-                                l lVar2 = qVar.i;
-                                if (lVar2 != null) {
+                                k kVar2 = pVar.i;
+                                if (kVar2 != null) {
                                     break;
                                 }
                             }
                             break;
                         default:
-                            if (Build.VERSION.SDK_INT >= 32 || (lVar = qVar.i) == null || !lVar.b || !lVar.b() || !qVar.i.c() || !qVar.i.a(qVar.j, sVar)) {
+                            if (Build.VERSION.SDK_INT >= 32 || (kVar = pVar.i) == null || !kVar.b || !kVar.b() || !pVar.i.c() || !pVar.i.a(pVar.j, sVar)) {
                                 return false;
                             }
                             break;

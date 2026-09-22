@@ -11,9 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.x7;
+import v7.w7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
@@ -126,7 +126,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = x7.b(num);
+            String b11 = w7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -137,7 +137,7 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new y(this, nVar, false));
+        this.q.a(b10, new y(this, nVar, false, 16));
     }
 
     public final long e(double d, long j3, long j10) {
@@ -182,8 +182,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                it.next().getClass();
-                throw new ClassCastException();
+                throw a4.a.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -198,8 +197,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                it.next().getClass();
-                throw new ClassCastException();
+                throw a4.a.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -214,8 +212,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                it.next().getClass();
-                throw new ClassCastException();
+                throw a4.a.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -243,8 +240,7 @@ public final class m extends p {
             }
             Iterator it2 = hVar.h.iterator();
             if (it2.hasNext()) {
-                it2.next().getClass();
-                throw new ClassCastException();
+                throw a4.a.k(it2);
             }
             Iterator it3 = hVar.i.iterator();
             while (it3.hasNext()) {

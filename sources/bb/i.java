@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.m;
 import k1.n;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import za.k0;
 import za.m0;
 import za.n0;
@@ -36,7 +36,7 @@ import za.y;
 import zd.c0;
 import zd.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final class i extends kd.j implements p {
             case 5:
                 return new i((y) this.c, (String) this.d, cVar, 5);
             default:
-                return new i((oi.f) this.c, (ArrayList) this.d, cVar, 6);
+                return new i((ni.f) this.c, (ArrayList) this.d, cVar, 6);
         }
     }
 
@@ -141,7 +141,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     l lVar2 = (l) obj4;
                     ce.b data = lVar2.a.getData();
                     this.c = lVar2;
@@ -156,7 +156,7 @@ public final class i extends kd.j implements p {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     lVar = (l) this.c;
-                    u7.b(obj);
+                    t7.b(obj);
                     b10 = obj;
                 }
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((n1.b) b10).a);
@@ -167,7 +167,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar3 = jd.a.a;
                 int i12 = this.b;
                 if (i12 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     k1.t tVar = (k1.t) this.c;
                     this.b = 1;
                     if (w7.i.a((List) obj4, tVar, this) == aVar3) {
@@ -177,7 +177,7 @@ public final class i extends kd.j implements p {
                     if (i12 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 return iVar2;
             case 2:
@@ -186,7 +186,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar4 = jd.a.a;
                 int i13 = this.b;
                 if (i13 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     if (atomicInteger2.get() <= 0) {
                         throw new IllegalStateException("Check failed.");
                     }
@@ -211,7 +211,7 @@ public final class i extends kd.j implements p {
                     if (i13 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     obj2 = null;
                     aVar = aVar4;
                     atomicInteger = atomicInteger2;
@@ -320,7 +320,7 @@ public final class i extends kd.j implements p {
                                             if (th3 == null) {
                                                 th3 = new be.i(str);
                                             }
-                                            l4.resumeWith(u7.a(th3));
+                                            l4.resumeWith(t7.a(th3));
                                         }
                                         obj3 = l4.r();
                                         jd.a aVar6 = jd.a.a;
@@ -366,7 +366,7 @@ public final class i extends kd.j implements p {
                     throw th2;
                 }
                 mVar = (m) this.c;
-                u7.b(obj);
+                t7.b(obj);
                 obj2 = null;
                 aVar = aVar4;
                 atomicInteger = atomicInteger2;
@@ -381,10 +381,10 @@ public final class i extends kd.j implements p {
                     if (i17 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     return obj;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 p pVar = (p) this.c;
                 this.b = 1;
                 Object invoke = pVar.invoke(obj4, this);
@@ -395,7 +395,7 @@ public final class i extends kd.j implements p {
                 jd.a aVar8 = jd.a.a;
                 int i18 = this.b;
                 if (i18 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     ab.c cVar2 = ab.c.a;
                     this.b = 1;
                     b11 = cVar2.b(this);
@@ -405,10 +405,10 @@ public final class i extends kd.j implements p {
                         if (i18 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        u7.b(obj);
-                        Boolean h = hVar6.a.h();
-                        if (h != null) {
-                            booleanValue = h.booleanValue();
+                        t7.b(obj);
+                        Boolean e10 = hVar6.a.e();
+                        if (e10 != null) {
+                            booleanValue = e10.booleanValue();
                         } else {
                             Boolean a2 = hVar6.b.a();
                             booleanValue = a2 != null ? a2.booleanValue() : true;
@@ -418,7 +418,7 @@ public final class i extends kd.j implements p {
                             return iVar2;
                         }
                         id.h hVar7 = (id.h) obj4;
-                        oi.f fVar = new oi.f();
+                        ni.f fVar = new ni.f();
                         fVar.a = hVar7;
                         fVar.c = new LinkedBlockingDeque(20);
                         fVar.d = new a9.d(fVar, 3);
@@ -441,12 +441,12 @@ public final class i extends kd.j implements p {
                             fVar.N(1);
                         }
                         k9.h hVar9 = lVar3.a;
-                        x2.h hVar10 = new x2.h(17);
+                        z3.a aVar9 = new z3.a(8);
                         hVar9.a();
-                        hVar9.j.add(hVar10);
+                        hVar9.j.add(aVar9);
                         return iVar2;
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     b11 = obj;
                 }
                 Collection values = ((Map) b11).values();
@@ -462,41 +462,41 @@ public final class i extends kd.j implements p {
                 Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events.");
                 return iVar2;
             case 5:
-                jd.a aVar9 = jd.a.a;
+                jd.a aVar10 = jd.a.a;
                 int i19 = this.b;
                 if (i19 != 0) {
                     if (i19 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     return iVar2;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 za.u uVar = y.e;
                 Context context = ((y) this.c).a;
                 uVar.getClass();
-                ki.e0 a10 = y.f.a(context, za.u.a[0]);
+                k2.u a10 = y.f.a(context, za.u.a[0]);
                 n nVar = new n((String) obj4, cVar, r83 == true ? 1 : 0);
                 this.b = 1;
-                return a10.a(new n1.c(nVar, null, 1), this) == aVar9 ? aVar9 : iVar2;
+                return a10.T(new n1.c(nVar, null, 1), this) == aVar10 ? aVar10 : iVar2;
             default:
                 ArrayList arrayList = (ArrayList) obj4;
-                oi.f fVar2 = (oi.f) this.c;
-                jd.a aVar10 = jd.a.a;
+                ni.f fVar2 = (ni.f) this.c;
+                jd.a aVar11 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     ab.c cVar3 = ab.c.a;
                     this.b = 1;
                     b12 = cVar3.b(this);
-                    if (b12 == aVar10) {
-                        return aVar10;
+                    if (b12 == aVar11) {
+                        return aVar11;
                     }
                 } else {
                     if (i20 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     b12 = obj;
                 }
                 Map map = (Map) b12;
@@ -509,7 +509,7 @@ public final class i extends kd.j implements p {
                     Iterator it2 = values2.iterator();
                     while (it2.hasNext()) {
                         if (((w9.j) it2.next()).a.a()) {
-                            ArrayList f7 = hd.g.f(new ArrayList(new hd.d(new Message[]{oi.f.a(fVar2, arrayList, 2), oi.f.a(fVar2, arrayList, 1)}, true)));
+                            ArrayList f7 = hd.g.f(new ArrayList(new hd.d(new Message[]{ni.f.a(fVar2, arrayList, 2), ni.f.a(fVar2, arrayList, 1)}, true)));
                             k0 k0Var = new k0();
                             if (f7.size() <= 1) {
                                 asList = hd.g.m(f7);
@@ -530,8 +530,8 @@ public final class i extends kd.j implements p {
                                         if (messenger2 != null) {
                                             messenger2.send(message);
                                         }
-                                    } catch (RemoteException e10) {
-                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e10);
+                                    } catch (RemoteException e11) {
+                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e11);
                                         fVar2.L(message);
                                     }
                                 } else {

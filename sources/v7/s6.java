@@ -1,65 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class s6 {
-    public static boolean a(String str, String str2) {
-        int i10;
-        char c10;
-        int length = str.length();
-        if (str == str2) {
-            return true;
+    public static boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
         }
-        if (length == str2.length()) {
-            while (i10 < length) {
-                char charAt = str.charAt(i10);
-                char charAt2 = str2.charAt(i10);
-                i10 = (charAt == charAt2 || ((c10 = (char) ((charAt | ' ') + (-97))) < 26 && c10 == ((char) ((charAt2 | ' ') + (-97))))) ? i10 + 1 : 0;
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public static String b(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'A' && charAt <= 'Z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c10 = charArray[i10];
-                    if (c10 >= 'A' && c10 <= 'Z') {
-                        charArray[i10] = (char) (c10 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
-        }
-        return str;
-    }
-
-    public static String c(String str) {
-        int length = str.length();
-        int i10 = 0;
-        while (i10 < length) {
-            char charAt = str.charAt(i10);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i10 < length) {
-                    char c10 = charArray[i10];
-                    if (c10 >= 'a' && c10 <= 'z') {
-                        charArray[i10] = (char) (c10 ^ ' ');
-                    }
-                    i10++;
-                }
-                return String.valueOf(charArray);
-            }
-            i10++;
-        }
-        return str;
+        return true;
     }
 }

@@ -26,9 +26,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
+public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public TL_iv.pageBlockChannel E;
     public final u70 a;
     public final f4 b;
@@ -57,17 +57,17 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
-        org.telegram.messenger.rk.l(R.string.ChannelJoin, textView, 19);
-        addView(textView, w7.y5.e(-2, 39, 53));
+        org.telegram.messenger.vl.l(R.string.ChannelJoin, textView, 19);
+        addView(textView, w7.x5.e(-2, 39, 53));
         textView.setOnClickListener(new ai.f2(23, this, u70Var));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.list_check);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.y5.e(39, 39, 53));
+        addView(imageView, w7.x5.e(39, 39, 53));
         org.telegram.ui.Components.tq tqVar = new org.telegram.ui.Components.tq(context, 0);
         this.c = tqVar;
-        addView(tqVar, w7.y5.e(39, 39, 53));
+        addView(tqVar, w7.x5.e(39, 39, 53));
     }
 
     public final void a(int i10, boolean z10) {
@@ -106,7 +106,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         this.x.start();
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.h;
         if (a3Var != null) {
@@ -194,7 +194,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
             String str = pageblockchannel.channel.title;
             int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
             TL_iv.pageBlockChannel pageblockchannel2 = this.E;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.ww0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.jw0.a;
             this.h = h4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
             int i12 = this.r;
             f4 f4Var = this.b;
@@ -227,15 +227,15 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.q9 {
         TextView textView = this.d;
         u70 u70Var = this.a;
         if (i10 == 0) {
-            int i11 = org.telegram.ui.ActionBar.j6.M6;
+            int i11 = org.telegram.ui.ActionBar.i6.M6;
             h4 h4Var = (h4) u70Var;
             h4Var.getClass();
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, i11, false);
             int red = Color.red(w02);
             int green = Color.green(w02);
             int blue = Color.blue(w02);
             h4Var.getClass();
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.J6, false));
             paint.setColor(Color.argb(34, red, green, blue));
             imageView.setColorFilter(new PorterDuffColorFilter(u70Var.a(), PorterDuff.Mode.MULTIPLY));
         } else {

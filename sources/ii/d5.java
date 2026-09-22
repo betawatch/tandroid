@@ -2,11 +2,11 @@ package ii;
 
 import android.graphics.Rect;
 import android.text.Layout;
-import org.telegram.ui.Cells.ca;
+import org.telegram.ui.Cells.ba;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class d5 implements ca {
+public final class d5 implements ba {
     public final /* synthetic */ int a;
     public final /* synthetic */ Layout b;
     public final /* synthetic */ int c;
@@ -19,21 +19,21 @@ public final class d5 implements ca {
         this.d = i11;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final Layout getLayout() {
         switch (this.a) {
         }
         return this.b;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final /* synthetic */ CharSequence getPrefix() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getRow() {
         switch (this.a) {
             case 0:
@@ -45,28 +45,28 @@ public final class d5 implements ca {
         }
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final /* synthetic */ Rect getSelectionBounds() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final CharSequence getText() {
         switch (this.a) {
         }
         return this.b.getText();
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getX() {
         switch (this.a) {
         }
         return this.c;
     }
 
-    @Override // org.telegram.ui.Cells.ca
+    @Override // org.telegram.ui.Cells.ba
     public final int getY() {
         switch (this.a) {
         }

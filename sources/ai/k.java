@@ -12,18 +12,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.g80;
+import org.telegram.ui.bo;
 import org.telegram.ui.f10;
 import org.telegram.ui.i60;
 import org.telegram.ui.l50;
 import org.telegram.ui.mk;
-import org.telegram.ui.uh1;
-import org.telegram.ui.zn;
+import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.k {
+public final /* synthetic */ class k implements t9, vh1, m4.f1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.l {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -34,16 +34,16 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.uh1
+    @Override // org.telegram.ui.vh1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
-                hg.a0 a0Var = (hg.a0) this.c;
-                ArrayList arrayList2 = a0Var.k;
-                ArrayList arrayList3 = a0Var.j;
+                hg.c0 c0Var = (hg.c0) this.c;
+                ArrayList arrayList2 = c0Var.k;
+                ArrayList arrayList3 = c0Var.j;
                 int i11 = 0;
                 if (this.b) {
-                    a0Var.f = i10;
+                    c0Var.f = i10;
                     arrayList3.clear();
                     arrayList3.addAll(arrayList);
                     while (i11 < arrayList3.size()) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
                         i11++;
                     }
                 } else {
-                    a0Var.g = i10;
+                    c0Var.g = i10;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
                     while (i11 < arrayList2.size()) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
                         i11++;
                     }
                 }
-                a0Var.e.run();
+                c0Var.e.run();
                 break;
             default:
                 f10 f10Var = (f10) this.c;
@@ -119,31 +119,17 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
 
     @Override // yf.m
     public void e(long j3) {
-        org.telegram.ui.Components.n6 n6Var = ((org.telegram.ui.Cells.u1) this.c).w4;
-        if (n6Var != null) {
-            n6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
-        }
-    }
-
-    @Override // m4.e1
-    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
-        switch (this.a) {
-            case 2:
-                e9.a1 z10 = e9.i0.z((b2.k0) this.c);
-                boolean z11 = this.b;
-                return a0Var.q(rVar, z10, z11 ? -1 : a0Var.t.l0(), z11 ? -9223372036854775807L : a0Var.t.J0());
-            default:
-                List list = (List) this.c;
-                boolean z12 = this.b;
-                return a0Var.q(rVar, list, z12 ? -1 : a0Var.t.l0(), z12 ? -9223372036854775807L : a0Var.t.J0());
+        org.telegram.ui.Components.m6 m6Var = ((org.telegram.ui.Cells.t1) this.c).w4;
+        if (m6Var != null) {
+            m6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 4:
-                org.telegram.ui.z6.Y((org.telegram.ui.z6) this.c, this.b);
+                org.telegram.ui.z6.V((org.telegram.ui.z6) this.c, this.b);
                 break;
             case 5:
             default:
@@ -152,14 +138,14 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
                 i60Var.k1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 6:
-                zn znVar = (zn) this.c;
-                mk mkVar = znVar.Y;
+                bo boVar = (bo) this.c;
+                mk mkVar = boVar.Y;
                 if (mkVar != null) {
                     if (!this.b) {
-                        mkVar.A();
+                        mkVar.B();
                         break;
                     } else {
-                        znVar.finishFragment();
+                        boVar.finishFragment();
                         break;
                     }
                 }
@@ -187,31 +173,45 @@ public final /* synthetic */ class k implements t9, uh1, m4.e1, org.telegram.ui.
         }
     }
 
-    @Override // vh.k
-    public void l(vh.g gVar, float f7, float f10) {
-        vh.n nVar = (vh.n) this.c;
-        if (nVar.d || !this.b) {
+    @Override // m4.f1
+    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
+        switch (this.a) {
+            case 2:
+                e9.a1 z10 = e9.i0.z((b2.k0) this.c);
+                boolean z11 = this.b;
+                return a0Var.q(rVar, z10, z11 ? -1 : a0Var.t.l0(), z11 ? -9223372036854775807L : a0Var.t.J0());
+            default:
+                List list = (List) this.c;
+                boolean z12 = this.b;
+                return a0Var.q(rVar, list, z12 ? -1 : a0Var.t.l0(), z12 ? -9223372036854775807L : a0Var.t.J0());
+        }
+    }
+
+    @Override // vh.l
+    public void j(vh.h hVar, float f7, float f10) {
+        vh.o oVar = (vh.o) this.c;
+        if (oVar.d || !this.b) {
             return;
         }
-        gVar.q = new vh.m(nVar, 0);
-        float sqrt = (float) Math.sqrt(Math.pow(nVar.getHeight(), 2.0d) + Math.pow(nVar.getWidth(), 2.0d));
-        ArrayList arrayList = nVar.b;
+        hVar.q = new vh.n(oVar, 0);
+        float sqrt = (float) Math.sqrt(Math.pow(oVar.getHeight(), 2.0d) + Math.pow(oVar.getWidth(), 2.0d));
+        ArrayList arrayList = oVar.b;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((vh.g) obj).j(f7, f10, sqrt, false);
+            ((vh.h) obj).j(f7, f10, sqrt, false);
         }
     }
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        r80 r80Var = (r80) this.c;
+        g80 g80Var = (g80) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            r80Var.setOnDismissListener(new m80(0, r80Var, this.b));
+            g80Var.setOnDismissListener(new b80(0, g80Var, this.b));
         }
-        r80Var.dismiss();
+        g80Var.dismiss();
         return false;
     }
 }

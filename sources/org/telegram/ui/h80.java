@@ -10,9 +10,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class h80 extends org.telegram.ui.Components.xl0 {
+public final class h80 extends org.telegram.ui.Components.kl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -28,12 +28,12 @@ public final class h80 extends org.telegram.ui.Components.xl0 {
     @Override // s4.h0
     public final void A(s4.c1 c1Var) {
         View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.q4) {
-            ((org.telegram.ui.Cells.q4) view).a.getImageReceiver().cancelLoadImage();
+        if (view instanceof org.telegram.ui.Cells.p4) {
+            ((org.telegram.ui.Cells.p4) view).a.getImageReceiver().cancelLoadImage();
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f != 2;
     }
@@ -90,7 +90,7 @@ public final class h80 extends org.telegram.ui.Components.xl0 {
         ContactsController.Contact contact;
         CharSequence charSequence;
         if (c1Var.f == 0) {
-            org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) c1Var.a;
+            org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) c1Var.a;
             boolean z10 = this.h;
             l80 l80Var = this.n;
             if (z10) {
@@ -100,11 +100,11 @@ public final class h80 extends org.telegram.ui.Components.xl0 {
                 contact = (ContactsController.Contact) l80Var.w.get(i10 - 2);
                 charSequence = null;
             }
-            q4Var.f = contact;
-            q4Var.h = charSequence;
-            q4Var.a();
+            p4Var.f = contact;
+            p4Var.h = charSequence;
+            p4Var.a();
             boolean containsKey = l80Var.F.containsKey(contact.key);
-            org.telegram.ui.Components.np npVar = q4Var.e;
+            org.telegram.ui.Components.np npVar = p4Var.e;
             if (npVar != null) {
                 npVar.a(containsKey, false);
             }
@@ -116,14 +116,14 @@ public final class h80 extends org.telegram.ui.Components.xl0 {
         View view;
         Context context = this.c;
         if (i10 == 1) {
-            org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(context);
-            int i11 = org.telegram.ui.ActionBar.j6.G6;
-            s8Var.e(i11, i11);
-            s8Var.s(LocaleController.getString(R.string.ShareTelegram2), "", false, R.drawable.msg_shareout, false);
-            view = s8Var;
+            org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
+            int i11 = org.telegram.ui.ActionBar.i6.G6;
+            r8Var.e(i11, i11);
+            r8Var.s(LocaleController.getString(R.string.ShareTelegram2), "", false, R.drawable.msg_shareout, false);
+            view = r8Var;
         } else {
-            view = i10 == 2 ? new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.q4(context, true);
+            view = i10 == 2 ? new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.q3) null) : new org.telegram.ui.Cells.p4(context, true);
         }
-        return new org.telegram.ui.Components.il0(view);
+        return new org.telegram.ui.Components.vk0(view);
     }
 }

@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -39,18 +40,18 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void d(a3.m mVar, Handler handler) {
+    public final /* synthetic */ boolean d(ia iaVar) {
+        return false;
+    }
+
+    @Override // r2.l
+    public final void e(a3.m mVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
     }
 
     @Override // r2.l
-    public final void e() {
+    public final void f() {
         this.a.detachOutputSurface();
-    }
-
-    @Override // r2.l
-    public final void f(int i10, long j3) {
-        this.a.releaseOutputBuffer(i10, j3);
     }
 
     @Override // r2.l
@@ -59,8 +60,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final int g() {
-        return this.a.dequeueInputBuffer(0L);
+    public final void g(int i10, long j3) {
+        this.a.releaseOutputBuffer(i10, j3);
     }
 
     @Override // r2.l
@@ -79,7 +80,12 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final int h(MediaCodec.BufferInfo bufferInfo) {
+    public final int h() {
+        return this.a.dequeueInputBuffer(0L);
+    }
+
+    @Override // r2.l
+    public final int i(MediaCodec.BufferInfo bufferInfo) {
         int dequeueOutputBuffer;
         do {
             dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
@@ -88,13 +94,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void i(int i10) {
+    public final void j(int i10) {
         this.a.setVideoScalingMode(i10);
-    }
-
-    @Override // r2.l
-    public final /* synthetic */ boolean j(k2.e eVar) {
-        return false;
     }
 
     @Override // r2.l

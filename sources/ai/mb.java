@@ -38,11 +38,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.bo;
 import org.telegram.ui.fz;
 import org.telegram.ui.gz;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -55,15 +55,15 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Matrix e;
     public final float[] f;
     public final View h;
-    public final org.telegram.ui.ActionBar.f6 n;
+    public final org.telegram.ui.ActionBar.e6 n;
     public ArrayList r;
     public final Rect s;
     public final RectF v;
     public final Paint w;
-    public final org.telegram.ui.Components.d6 x;
-    public final org.telegram.ui.Components.d6 y;
+    public final org.telegram.ui.Components.c6 x;
+    public final org.telegram.ui.Components.c6 y;
 
-    public mb(Context context, View view, org.telegram.ui.ActionBar.f6 f6Var) {
+    public mb(Context context, View view, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.a = null;
         this.b = null;
@@ -79,9 +79,9 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         this.E = new Path();
         this.G = false;
         this.h = view;
-        this.n = f6Var;
-        this.x = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
-        this.y = new org.telegram.ui.Components.d6(view, 0L, 360L, qr.h);
+        this.n = e6Var;
+        this.x = new org.telegram.ui.Components.c6(view, 0L, 120L, new LinearInterpolator());
+        this.y = new org.telegram.ui.Components.c6(view, 0L, 360L, qr.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -147,20 +147,20 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     if (storyItem != null) {
                         pbVar.c(storyItem.views, false);
                     }
-                    w7.a6.a(pbVar);
+                    w7.z5.a(pbVar);
                     view = pbVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
                     nd ndVar = new nd();
                     ndVar.c = tL_mediaAreaWeather.emoji;
                     ndVar.d = (float) tL_mediaAreaWeather.temperature_c;
-                    qg.t0 t0Var = new qg.t0(getContext(), AndroidUtilities.density);
-                    t0Var.setMaxWidth(AndroidUtilities.displaySize.x);
-                    t0Var.setIsVideo(true);
-                    t0Var.d(UserConfig.selectedAccount, ndVar.c);
-                    t0Var.setText(ndVar.a());
-                    t0Var.e(3, tL_mediaAreaWeather.color);
-                    view = new lb(getContext(), t0Var, mediaArea);
+                    qg.v0 v0Var = new qg.v0(getContext(), AndroidUtilities.density);
+                    v0Var.setMaxWidth(AndroidUtilities.displaySize.x);
+                    v0Var.setIsVideo(true);
+                    v0Var.d(UserConfig.selectedAccount, ndVar.c);
+                    v0Var.setText(ndVar.a());
+                    v0Var.e(3, tL_mediaAreaWeather.color);
+                    view = new lb(getContext(), v0Var, mediaArea);
                 } else {
                     view = new kb(getContext(), this.h, mediaArea);
                 }
@@ -196,13 +196,13 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 f7 = 0.0f;
                 f10 = 0.2f;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
-                canvas2.drawColor(org.telegram.ui.ActionBar.j6.l1(e, 402653184));
+                canvas2.drawColor(org.telegram.ui.ActionBar.i6.l1(e, 402653184));
                 for (int i10 = 0; i10 < getChildCount(); i10++) {
                     View childAt = getChildAt(i10);
                     if (childAt != frameLayout) {
-                        org.telegram.ui.Components.d6 d6Var = ((kb) childAt).a;
+                        org.telegram.ui.Components.c6 c6Var = ((kb) childAt).a;
                         kb kbVar3 = this.b;
-                        float e10 = d6Var.e(childAt == kbVar3 && kbVar3.s);
+                        float e10 = c6Var.e(childAt == kbVar3 && kbVar3.s);
                         if (e10 > 0.0f) {
                             canvas2.save();
                             rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
@@ -227,7 +227,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     this.F = ((v4) this).I.getPlayingBitmap();
                 }
                 if (this.F != null) {
-                    canvas2.drawColor(org.telegram.ui.ActionBar.j6.l1(e7, 805306368));
+                    canvas2.drawColor(org.telegram.ui.ActionBar.i6.l1(e7, 805306368));
                     canvas2.save();
                     Path path = this.E;
                     path.rewind();
@@ -352,7 +352,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 zg.p0 d10 = zg.p0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
-                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.p5.f(gzVar.b, d10.g));
+                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.o5.f(gzVar.b, d10.g));
                 }
                 float measuredHeight = pbVar.getMeasuredHeight();
                 float measuredWidth = pbVar.getMeasuredWidth();
@@ -376,7 +376,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        fz fzVar = (fz) hg.k0.g(1, arrayList);
+                        fz fzVar = (fz) hg.c.h(1, arrayList);
                         fzVar.getClass();
                         fzVar.e = f12;
                         fzVar.d = f11;
@@ -443,7 +443,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
                     bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
-                    ((v4) this).H.H(new zn(bundle));
+                    ((v4) this).H.H(new bo(bundle));
                     this.b = null;
                     invalidate();
                     return;
@@ -528,7 +528,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     int length = spannableStringBuilder.length();
                     spannableStringBuilder.append(TextUtils.ellipsize(tL_mediaAreaUrl.url, this.c.getTextPaint(), AndroidUtilities.displaySize.x * 0.6f, TextUtils.TruncateAt.END));
                     spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.l1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.i6.l1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.setSpan(new jb(0), length, spannableStringBuilder.length(), 33);
                     f4Var2.k(11.0f, 7.0f, 11.0f, 7.0f);
                     z10 = true;
@@ -560,7 +560,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     }
                     f4Var2.setOnClickListener(new v0(this, i10));
                     f4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(f4Var2, w7.y5.c(f15, -1));
+                    this.d.addView(f4Var2, w7.x5.c(f15, -1));
                     f4Var2.u();
                     b(true);
                 }
@@ -592,7 +592,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             }
             f4Var2.setOnClickListener(new v0(this, i10));
             f4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(f4Var2, w7.y5.c(f152, -1));
+            this.d.addView(f4Var2, w7.x5.c(f152, -1));
             f4Var2.u();
             b(true);
         }

@@ -1,29 +1,25 @@
 package xh;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class w4 extends View {
-    public final /* synthetic */ TL_stars.StarGift a;
-    public final /* synthetic */ float b;
+public final class w4 extends FrameLayout {
+    public final /* synthetic */ float a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w4(Context context, TL_stars.StarGift starGift, float f7) {
+    public w4(Context context, float f7) {
         super(context);
-        this.a = starGift;
-        this.b = f7;
+        this.a = f7;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (this.a == null) {
-            super.onMeasure(i10, i11);
-        } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i10) * this.b), TLObject.FLAG_30), i11);
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

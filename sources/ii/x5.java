@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class x5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -24,19 +24,30 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void I(CharSequence charSequence) {
+    public final void D(i1 i1Var, int i10, int i11) {
+        a6 a6Var;
+        q9 textSelectionHelper;
+        d6 d6Var = this.a;
+        if (d6Var.F || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        d6Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 5));
+    }
+
+    @Override // ii.h1
+    public final void M(CharSequence charSequence) {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             e3 e3Var = (e3) a6Var;
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            e3Var.a.u4(charSequence.toString());
+            e3Var.a.t4(charSequence.toString());
         }
     }
 
     @Override // ii.h1
-    public final void R(Editable editable) {
+    public final void W(Editable editable) {
         a aVar;
         d6 d6Var = this.a;
         if (d6Var.x == null) {
@@ -63,7 +74,7 @@ public final class x5 implements h1 {
         }
         a6 a6Var2 = d6Var.y;
         if (a6Var2 != null) {
-            ((e3) a6Var2).a.h3.l(d6Var, d6.b(editable.toString()));
+            ((e3) a6Var2).a.h3.g(d6Var, d6.b(editable.toString()));
         }
         String obj = editable.toString();
         a aVar2 = d6Var.x;
@@ -84,14 +95,14 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean V(boolean z10) {
+    public final boolean b0(boolean z10) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || (aVar = d6Var.x) == null) {
             return false;
         }
-        return ((e3) a6Var).a.X3(aVar, z10);
+        return ((e3) a6Var).a.W3(aVar, z10);
     }
 
     @Override // ii.h1
@@ -99,23 +110,23 @@ public final class x5 implements h1 {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             w3 w3Var = ((e3) a6Var).a;
-            w3.N1(w3Var, i1Var);
-            w3Var.h3.x(i1Var, true);
+            w3.M1(w3Var, i1Var);
+            w3Var.h3.t(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean d() {
+    public final boolean f() {
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || d6Var.x == null) {
             return false;
         }
-        return ((e3) a6Var).a.T4();
+        return ((e3) a6Var).a.S4();
     }
 
     @Override // ii.h1
-    public final void i(int i10, int i11) {
+    public final void j(int i10, int i11) {
         h2 h2Var;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -126,7 +137,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void l(i1 i1Var) {
+    public final void m(i1 i1Var) {
         int length;
         Spanned spanned;
         boolean z10;
@@ -138,7 +149,7 @@ public final class x5 implements h1 {
             return;
         }
         String obj = i1Var.getText().toString();
-        ((e3) d6Var.y).a.h3.l(d6Var, null);
+        ((e3) d6Var.y).a.h3.g(d6Var, null);
         String b10 = d6.b(obj);
         if (b10 != null) {
             ArrayList a2 = o0.a(b10);
@@ -165,7 +176,7 @@ public final class x5 implements h1 {
         a aVar = d6Var.x;
         w3 w3Var = ((e3) a6Var).a;
         ArrayList arrayList = w3Var.p4;
-        m61 m61Var = w3Var.Y2;
+        w51 w51Var = w3Var.Y2;
         ArrayList arrayList2 = w3Var.l3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -175,10 +186,10 @@ public final class x5 implements h1 {
         if (h2Var != null) {
             h2Var.d();
         }
-        View A1 = w3Var.A1(aVar);
-        boolean z11 = A1 instanceof d6;
+        View z12 = w3Var.z1(aVar);
+        boolean z11 = z12 instanceof d6;
         if (z11) {
-            i1 editText2 = ((d6) A1).getEditText();
+            i1 editText2 = ((d6) z12).getEditText();
             Spanned text2 = editText2.getText();
             length = editText2.getSelectionEnd();
             spanned = text2;
@@ -194,8 +205,8 @@ public final class x5 implements h1 {
             if (!aVar.k.isEmpty()) {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
-                w3Var.t4();
-                m61Var.N(false);
+                w3Var.s4();
+                w51Var.N(false);
                 h2 h2Var2 = w3Var.J3;
                 if (h2Var2 != null) {
                     h2Var2.h();
@@ -204,9 +215,9 @@ public final class x5 implements h1 {
                 return;
             }
             if (aVar.c > 0) {
-                w3Var.u2(indexOf);
-                w3Var.t4();
-                m61Var.N(false);
+                w3Var.t2(indexOf);
+                w3Var.s4();
+                w51Var.N(false);
                 h2 h2Var3 = w3Var.J3;
                 if (h2Var3 != null) {
                     h2Var3.h();
@@ -243,9 +254,9 @@ public final class x5 implements h1 {
         aVar2.k.addAll(arrayList4);
         int i12 = indexOf + 1;
         arrayList2.add(i12, aVar2);
-        w3Var.t4();
+        w3Var.s4();
         if (z10) {
-            m61Var.N(false);
+            w51Var.N(false);
             h2 h2Var4 = w3Var.J3;
             if (h2Var4 != null) {
                 h2Var4.h();
@@ -253,22 +264,22 @@ public final class x5 implements h1 {
             w3Var.post(new o2(w3Var, aVar2, 29));
             return;
         }
-        if (z11 && (text = (editText = ((d6) A1).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
+        if (z11 && (text = (editText = ((d6) z12).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
             editText.h = true;
             text.delete(length, text.length());
             editText.h = false;
         }
-        m61Var.S();
-        w3Var.q4(i12);
+        w51Var.S();
+        w3Var.p4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            m61Var.l();
+            w51Var.l();
         } else {
             s4.m0 itemAnimator = w3Var.getItemAnimator();
             w3Var.setItemAnimator(null);
-            m61Var.o(indexOf2);
+            w51Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                m61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                w51Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             w3Var.post(new y2(w3Var, itemAnimator, 0));
         }
@@ -280,7 +291,7 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean o(i1 i1Var) {
+    public final boolean q(i1 i1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;
@@ -295,14 +306,14 @@ public final class x5 implements h1 {
                     if (!TextUtils.isEmpty(htmlText)) {
                         HashMap hashMap = new HashMap();
                         try {
-                            ArrayList x42 = w3Var.x4(d4.z(htmlText, hashMap));
-                            if (!x42.isEmpty() && ((x42.size() != 1 || !w3.G3((a) x42.get(0))) && (indexOf = w3Var.l3.indexOf(aVar)) >= 0)) {
+                            ArrayList w42 = w3Var.w4(d4.z(htmlText, hashMap));
+                            if (!w42.isEmpty() && ((w42.size() != 1 || !w3.F3((a) w42.get(0))) && (indexOf = w3Var.l3.indexOf(aVar)) >= 0)) {
                                 int max = Math.max(0, Math.min(i1Var.getSelectionStart(), i1Var.getSelectionEnd()));
-                                boolean J4 = w3Var.J4(indexOf, indexOf, max, Math.max(max, Math.max(i1Var.getSelectionStart(), i1Var.getSelectionEnd())), x42);
-                                if (J4 && !hashMap.isEmpty()) {
+                                boolean I4 = w3Var.I4(indexOf, indexOf, max, Math.max(max, Math.max(i1Var.getSelectionStart(), i1Var.getSelectionEnd())), w42);
+                                if (I4 && !hashMap.isEmpty()) {
                                     w3Var.m3.putAll(hashMap);
                                 }
-                                return J4;
+                                return I4;
                             }
                         } catch (Exception e) {
                             FileLog.e(e);
@@ -316,35 +327,24 @@ public final class x5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean s(i1 i1Var) {
+    public final boolean t(i1 i1Var) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || (aVar = d6Var.x) == null) {
             return false;
         }
-        return w3.R1(((e3) a6Var).a, aVar, false);
+        return w3.Q1(((e3) a6Var).a, aVar, false);
     }
 
     @Override // ii.h1
-    public final void v() {
+    public final void x() {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || (aVar = d6Var.x) == null) {
             return;
         }
-        w3.R1(((e3) a6Var).a, aVar, true);
-    }
-
-    @Override // ii.h1
-    public final void z(i1 i1Var, int i10, int i11) {
-        a6 a6Var;
-        r9 textSelectionHelper;
-        d6 d6Var = this.a;
-        if (d6Var.F || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
-            return;
-        }
-        d6Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 5));
+        w3.Q1(((e3) a6Var).a, aVar, true);
     }
 }

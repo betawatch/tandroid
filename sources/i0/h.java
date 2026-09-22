@@ -17,9 +17,9 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
-import v7.j8;
+import v7.i8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -71,7 +71,7 @@ public class h extends f {
         return cls.getMethod("addFontFromAssetManager", AssetManager.class, String.class, cls2, Boolean.TYPE, cls2, cls2, cls2, FontVariationAxis[].class);
     }
 
-    @Override // i0.f, v7.i8
+    @Override // i0.f, v7.h8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         Method method = this.h;
@@ -114,7 +114,7 @@ public class h extends f {
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x00a2 A[SYNTHETIC] */
-    @Override // i0.f, v7.i8
+    @Override // i0.f, v7.h8
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -134,7 +134,7 @@ public class h extends f {
                         if (iVar.e == 0) {
                             Uri uri = iVar.a;
                             if (!hashMap.containsKey(uri)) {
-                                hashMap.put(uri, j8.e(context, uri));
+                                hashMap.put(uri, i8.e(context, uri));
                             }
                         }
                     }
@@ -196,7 +196,7 @@ public class h extends f {
         return null;
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         Object obj;
         Method method = this.h;

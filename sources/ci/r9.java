@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r9 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class r9 implements Runnable {
                 t0Var.a();
                 fi.s0 s0Var = t0Var.h;
                 if (s0Var != null) {
-                    s0Var.l();
+                    s0Var.e();
                 }
                 MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new fi.r0(t0Var, 2));
                 break;
@@ -74,23 +74,23 @@ public final /* synthetic */ class r9 implements Runnable {
                 ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
                 break;
             case 5:
-                zn.p0((zn) this.d, this.b, this.c);
+                bo.b0((bo) this.d, this.b, this.c);
                 break;
             default:
-                yh.o8 o8Var = (yh.o8) this.d;
+                yh.p8 p8Var = (yh.p8) this.d;
                 long j11 = this.b;
-                o8Var.F = j11;
-                o8Var.E = j11;
+                p8Var.F = j11;
+                p8Var.E = j11;
                 if (this.c) {
-                    ai.m1 m1Var = o8Var.G;
+                    ai.m1 m1Var = p8Var.G;
                     m1Var.c = j11;
-                    o8Var.H.set(m1Var);
+                    p8Var.H.set(m1Var);
                 }
-                o8Var.r();
-                o8Var.I.a(true, true);
-                yh.n8 n8Var = o8Var.y;
-                if (n8Var != null) {
-                    n8Var.setMyPrivacy(o8Var.E);
+                p8Var.r();
+                p8Var.I.a(true, true);
+                yh.o8 o8Var = p8Var.y;
+                if (o8Var != null) {
+                    o8Var.setMyPrivacy(p8Var.E);
                     break;
                 }
                 break;

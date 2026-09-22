@@ -2,7 +2,7 @@ package ii;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q2 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,20 +19,20 @@ public final /* synthetic */ class q2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        View A1;
-        View A12;
+        View z12;
+        View z13;
         switch (this.a) {
             case 0:
                 w3 w3Var = this.b;
                 a aVar = this.c;
                 if (aVar == null) {
                     w3Var.getClass();
-                    A1 = null;
+                    z12 = null;
                 } else {
-                    A1 = w3Var.A1(aVar);
+                    z12 = w3Var.z1(aVar);
                 }
-                if (A1 instanceof d6) {
-                    d6 d6Var = (d6) A1;
+                if (z12 instanceof d6) {
+                    d6 d6Var = (d6) z12;
                     d6Var.B();
                     d6Var.getEditText().setSelection(Math.min(this.d, d6Var.getEditText().length()));
                     break;
@@ -43,48 +43,48 @@ public final /* synthetic */ class q2 implements Runnable {
                 a aVar2 = this.c;
                 if (aVar2 == null) {
                     w3Var2.getClass();
-                    A12 = null;
+                    z13 = null;
                 } else {
-                    A12 = w3Var2.A1(aVar2);
+                    z13 = w3Var2.z1(aVar2);
                 }
-                if (A12 instanceof d6) {
-                    d6 d6Var2 = (d6) A12;
+                if (z13 instanceof d6) {
+                    d6 d6Var2 = (d6) z13;
                     d6Var2.B();
                     d6Var2.getEditText().setSelection(Math.min(this.d, d6Var2.getEditText().length()));
                     break;
                 }
                 break;
             case 2:
-                View A13 = this.b.A1(this.c);
-                if (A13 instanceof d6) {
-                    d6 d6Var3 = (d6) A13;
+                View z14 = this.b.z1(this.c);
+                if (z14 instanceof d6) {
+                    d6 d6Var3 = (d6) z14;
                     d6Var3.B();
                     d6Var3.getEditText().setSelection(Math.max(0, Math.min(this.d, d6Var3.getEditText().length())));
                     break;
                 }
                 break;
             case 3:
-                View A14 = this.b.A1(this.c);
-                if (A14 instanceof d6) {
-                    d6 d6Var4 = (d6) A14;
+                View z15 = this.b.z1(this.c);
+                if (z15 instanceof d6) {
+                    d6 d6Var4 = (d6) z15;
                     d6Var4.B();
                     d6Var4.getEditText().setSelection(Math.max(0, Math.min(this.d, d6Var4.getEditText().length())));
                     break;
                 }
                 break;
             case 4:
-                View A15 = this.b.A1(this.c);
-                if (A15 instanceof d6) {
-                    d6 d6Var5 = (d6) A15;
+                View z16 = this.b.z1(this.c);
+                if (z16 instanceof d6) {
+                    d6 d6Var5 = (d6) z16;
                     d6Var5.B();
                     d6Var5.getEditText().setSelection(Math.max(0, Math.min(this.d, d6Var5.getEditText().length())));
                     break;
                 }
                 break;
             default:
-                View A16 = this.b.A1(this.c);
-                if (A16 instanceof d6) {
-                    d6 d6Var6 = (d6) A16;
+                View z17 = this.b.z1(this.c);
+                if (z17 instanceof d6) {
+                    d6 d6Var6 = (d6) z17;
                     d6Var6.B();
                     d6Var6.getEditText().setSelection(Math.max(0, Math.min(this.d, d6Var6.getEditText().length())));
                     break;

@@ -2,9 +2,9 @@ package u2;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class h extends q1 {
+public final class h extends p1 {
     public final long l;
     public final long m;
     public final boolean n;
@@ -30,7 +30,7 @@ public final class h extends q1 {
         this.s = new b2.j1();
     }
 
-    @Override // u2.q1
+    @Override // u2.p1
     public final void A(b2.k1 k1Var) {
         if (this.u != null) {
             return;
@@ -85,7 +85,7 @@ public final class h extends q1 {
         }
     }
 
-    @Override // u2.q1, u2.a
+    @Override // u2.p1, u2.a
     public final boolean a(b2.k0 k0Var) {
         a aVar = this.k;
         return aVar.i().e.equals(k0Var.e) && aVar.a(k0Var);

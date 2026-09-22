@@ -4,9 +4,9 @@ import java.util.Calendar;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x20 implements org.telegram.ui.Components.bd0 {
+public final /* synthetic */ class x20 implements org.telegram.ui.Components.qc0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Calendar c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class x20 implements org.telegram.ui.Components.bd0
         this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.bd0
+    @Override // org.telegram.ui.Components.qc0
     public final String e(int i10) {
         switch (this.a) {
             case 0:

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new r0(18);
@@ -62,24 +62,24 @@ public final class m extends o6.a {
         String valueOf = String.valueOf(this.a);
         String valueOf2 = String.valueOf(this.c);
         String valueOf3 = String.valueOf(this.d);
-        StringBuilder v = a4.a.v("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
-        v.append(this.b);
-        v.append(", \n requireUserVerification=");
-        v.append(valueOf2);
-        v.append(", \n residentKeyRequirement=");
-        return a4.a.s(v, valueOf3, "\n }");
+        StringBuilder w10 = a4.a.w("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
+        w10.append(this.b);
+        w10.append(", \n requireUserVerification=");
+        w10.append(valueOf2);
+        w10.append(", \n residentKeyRequirement=");
+        return a4.a.t(w10, valueOf3, "\n }");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
+        int q6 = w7.e0.q(parcel, 20293);
         c cVar = this.a;
-        w7.f0.l(parcel, 2, cVar == null ? null : cVar.a);
-        w7.f0.a(parcel, 3, this.b);
+        w7.e0.l(parcel, 2, cVar == null ? null : cVar.a);
+        w7.e0.a(parcel, 3, this.b);
         j0 j0Var = this.c;
-        w7.f0.l(parcel, 4, j0Var == null ? null : j0Var.a);
+        w7.e0.l(parcel, 4, j0Var == null ? null : j0Var.a);
         e0 b10 = b();
-        w7.f0.l(parcel, 5, b10 != null ? b10.a : null);
-        w7.f0.r(parcel, q6);
+        w7.e0.l(parcel, 5, b10 != null ? b10.a : null);
+        w7.e0.r(parcel, q6);
     }
 }

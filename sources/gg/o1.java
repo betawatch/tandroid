@@ -15,20 +15,20 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Cells.s2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o1 extends xl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends kl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final zn f;
+    public final bo f;
     public int h;
     public int n;
-    public final f6 s;
+    public final e6 s;
     public final int v;
     public final boolean w;
     public String x;
@@ -38,15 +38,15 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
     public final int r = UserConfig.selectedAccount;
     public final uc E = new uc(this, 16);
 
-    public o1(Context context, zn znVar, f6 f6Var, int i10, boolean z10) {
-        this.s = f6Var;
+    public o1(Context context, bo boVar, e6 e6Var, int i10, boolean z10) {
+        this.s = e6Var;
         this.c = context;
-        this.f = znVar;
+        this.f = boVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -136,13 +136,13 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
             }
             return;
         }
-        s2 s2Var = (s2) view;
-        s2Var.s2 = true;
+        r2 r2Var = (r2) view;
+        r2Var.s2 = true;
         MessageObject messageObject = (MessageObject) E(i10);
         long dialogId = messageObject.getDialogId();
         int i14 = messageObject.messageOwner.date;
         if (this.w) {
-            s2Var.r0 = true;
+            r2Var.r0 = true;
             long savedDialogId = messageObject.getSavedDialogId();
             TLRPC.Message message = messageObject.messageOwner;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
@@ -164,31 +164,31 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
             i11 = i14;
             z10 = true;
         }
-        s2Var.W(dialogId, messageObject, i11, z10, false);
-        s2Var.setDialogCellDelegate(new l1(this));
+        r2Var.W(dialogId, messageObject, i11, z10, false);
+        r2Var.setDialogCellDelegate(new l1(this));
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View s2Var;
+        View r2Var;
         View view;
         if (i10 != 0) {
-            f6 f6Var = this.s;
+            e6 e6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                t00 t00Var = new t00(context, f6Var);
+                t00 t00Var = new t00(context, e6Var);
                 t00Var.setIsSingleCell(true);
                 t00Var.setViewType(7);
                 view = t00Var;
             } else if (i10 != 2) {
-                s2Var = null;
+                r2Var = null;
             } else {
-                view = new n1(context, f6Var);
+                view = new n1(context, e6Var);
             }
-            s2Var = view;
+            r2Var = view;
         } else {
-            s2Var = new s2(null, this.c, true, this.r, this.s);
+            r2Var = new r2(null, this.c, true, this.r, this.s);
         }
-        return com.google.android.gms.internal.vision.e2.k(s2Var, s2Var, -1, -2);
+        return com.google.android.gms.internal.vision.e2.k(r2Var, r2Var, -1, -2);
     }
 }

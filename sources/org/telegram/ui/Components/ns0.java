@@ -1,39 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ns0 extends s4.n0 {
-    public final /* synthetic */ hs0 a;
+public final class ns0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rt0 b;
+    public final /* synthetic */ yu0 c;
 
-    public ns0(hs0 hs0Var) {
-        this.a = hs0Var;
+    public /* synthetic */ ns0(yu0 yu0Var, rt0 rt0Var, int i10) {
+        this.a = i10;
+        this.c = yu0Var;
+        this.b = rt0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        if (!(view instanceof org.telegram.ui.Cells.u7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
+            default:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
         }
-        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
-        hs0 hs0Var = this.a;
-        hs0Var.r.getClass();
-        int S = RecyclerView.S(u7Var);
-        int i10 = hs0Var.s.J;
-        u7Var.a0 = S < i10;
-        int i11 = S % i10;
-        u7Var.V = i11 == 0;
-        u7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
     }
 }

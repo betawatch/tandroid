@@ -1,13 +1,13 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public enum a6 {
-    h(j6.Af, j6.Bf, j6.Cf, j6.Pf, j6.Qf, j6.Rf),
-    n(j6.Df, j6.Ef, j6.Ff, j6.Sf, j6.Tf, j6.Uf),
-    r(j6.Gf, j6.Hf, j6.If, j6.Vf, j6.Wf, j6.Xf),
-    s(j6.Jf, j6.Kf, j6.Lf, j6.Yf, j6.Zf, j6.ag),
-    v(j6.Mf, j6.Nf, j6.Of, j6.bg, j6.cg, j6.dg);
+    h(i6.Af, i6.Bf, i6.Cf, i6.Pf, i6.Qf, i6.Rf),
+    n(i6.Df, i6.Ef, i6.Ff, i6.Sf, i6.Tf, i6.Uf),
+    r(i6.Gf, i6.Hf, i6.If, i6.Vf, i6.Wf, i6.Xf),
+    s(i6.Jf, i6.Kf, i6.Lf, i6.Yf, i6.Zf, i6.ag),
+    v(i6.Mf, i6.Nf, i6.Of, i6.bg, i6.cg, i6.dg);
 
     public final int a;
     public final int b;

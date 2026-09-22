@@ -22,7 +22,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class c extends Handler {
                 }
             case 3:
                 m4.r rVar2 = (m4.r) msg.obj;
-                oi.f fVar = (oi.f) this.b;
+                ni.f fVar = (ni.f) this.b;
                 if (fVar.A(rVar2)) {
                     m4.q qVar = rVar2.d;
                     e2.d.h(qVar);
@@ -194,30 +194,30 @@ public final class c extends Handler {
                     return;
                 }
                 n2.b bVar2 = (n2.b) this.b;
-                n4.y yVar = bVar2.c;
+                of.b bVar3 = bVar2.c;
                 if (obj == bVar2.x) {
                     if (bVar2.o == 2 || bVar2.k()) {
                         bVar2.x = null;
                         if (obj2 instanceof Exception) {
-                            yVar.U((Exception) obj2, false);
+                            bVar3.P((Exception) obj2, false);
                             return;
                         }
                         try {
-                            bVar2.b.h0((byte[]) obj2);
-                            yVar.b = null;
-                            HashSet hashSet = (HashSet) yVar.a;
+                            bVar2.b.j0((byte[]) obj2);
+                            bVar3.c = null;
+                            HashSet hashSet = (HashSet) bVar3.b;
                             e9.i0 v = e9.i0.v(hashSet);
                             hashSet.clear();
                             e9.g0 listIterator = v.listIterator(0);
                             while (listIterator.hasNext()) {
-                                n2.b bVar3 = (n2.b) listIterator.next();
-                                if (bVar3.n()) {
-                                    bVar3.j(true);
+                                n2.b bVar4 = (n2.b) listIterator.next();
+                                if (bVar4.n()) {
+                                    bVar4.j(true);
                                 }
                             }
                             return;
                         } catch (Exception e10) {
-                            yVar.U(e10, true);
+                            bVar3.P(e10, true);
                             return;
                         }
                     }
@@ -235,12 +235,12 @@ public final class c extends Handler {
                 while (i14 < size) {
                     Object obj3 = arrayList.get(i14);
                     i14++;
-                    n2.b bVar4 = (n2.b) obj3;
-                    bVar4.p();
-                    if (Arrays.equals(bVar4.u, bArr)) {
-                        if (msg.what == 2 && bVar4.o == 4) {
+                    n2.b bVar5 = (n2.b) obj3;
+                    bVar5.p();
+                    if (Arrays.equals(bVar5.u, bArr)) {
+                        if (msg.what == 2 && bVar5.o == 4) {
                             String str2 = e2.d0.a;
-                            bVar4.j(false);
+                            bVar5.j(false);
                             return;
                         }
                         return;
@@ -355,10 +355,10 @@ public final class c extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                ki.e0 e0Var = (ki.e0) h3Var.f;
-                if (e0Var != null) {
+                ka.c cVar3 = (ka.c) h3Var.f;
+                if (cVar3 != null) {
                     b2.p pVar2 = (b2.p) h3Var.n;
-                    p4.e eVar = (p4.e) e0Var.b;
+                    p4.e eVar = (p4.e) cVar3.b;
                     p4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, pVar2);
@@ -409,7 +409,7 @@ public final class c extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(Looper looper, oi.f fVar) {
+    public c(Looper looper, ni.f fVar) {
         super(looper);
         this.a = 3;
         this.b = fVar;

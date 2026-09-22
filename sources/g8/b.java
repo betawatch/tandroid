@@ -3,9 +3,9 @@ package g8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.f0;
+import w7.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b extends o6.a {
     public static final Parcelable.Creator<b> CREATOR = new j(3);
@@ -37,15 +37,15 @@ public final class b extends o6.a {
 
     public final String toString() {
         String str;
-        StringBuilder u10 = a4.a.u("LastLocationRequest[");
+        StringBuilder v = a4.a.v("LastLocationRequest[");
         long j3 = this.a;
         if (j3 != Long.MAX_VALUE) {
-            u10.append("maxAge=");
-            r7.p.a(u10, j3);
+            v.append("maxAge=");
+            r7.p.a(v, j3);
         }
         int i10 = this.b;
         if (i10 != 0) {
-            u10.append(", ");
+            v.append(", ");
             if (i10 == 0) {
                 str = "GRANULARITY_PERMISSION_LEVEL";
             } else if (i10 == 1) {
@@ -56,36 +56,36 @@ public final class b extends o6.a {
                 }
                 str = "GRANULARITY_FINE";
             }
-            u10.append(str);
+            v.append(str);
         }
         if (this.c) {
-            u10.append(", bypass");
+            v.append(", bypass");
         }
         String str2 = this.d;
         if (str2 != null) {
-            u10.append(", moduleId=");
-            u10.append(str2);
+            v.append(", moduleId=");
+            v.append(str2);
         }
         r7.j jVar = this.e;
         if (jVar != null) {
-            u10.append(", impersonation=");
-            u10.append(jVar);
+            v.append(", impersonation=");
+            v.append(jVar);
         }
-        u10.append(']');
-        return u10.toString();
+        v.append(']');
+        return v.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 8);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 8);
         parcel.writeLong(this.a);
-        f0.s(parcel, 2, 4);
+        e0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f0.s(parcel, 3, 4);
+        e0.s(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        f0.l(parcel, 4, this.d);
-        f0.k(parcel, 5, this.e, i10);
-        f0.r(parcel, q6);
+        e0.l(parcel, 4, this.d);
+        e0.k(parcel, 5, this.e, i10);
+        e0.r(parcel, q6);
     }
 }

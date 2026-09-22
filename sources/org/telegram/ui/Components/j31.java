@@ -1,30 +1,45 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class j31 {
-    public static final j31 a;
-    public static final j31 b;
-    public static final j31 c;
-    public static final /* synthetic */ j31[] d;
+public final class j31 extends s4.s0 {
+    public final /* synthetic */ v31 a;
 
-    static {
-        j31 j31Var = new j31("TOP", 0);
-        a = j31Var;
-        j31 j31Var2 = new j31("LEFT", 1);
-        b = j31Var2;
-        j31 j31Var3 = new j31("BOTTOM", 2);
-        c = j31Var3;
-        d = new j31[]{j31Var, j31Var2, j31Var3};
+    public j31(v31 v31Var) {
+        this.a = v31Var;
     }
 
-    public static j31 valueOf(String str) {
-        return (j31) Enum.valueOf(j31.class, str);
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        v31 v31Var = this.a;
+        i31 i31Var = v31Var.H;
+        if (i10 == 0) {
+            v31Var.G = false;
+        }
+        if ((i10 == 0 || i10 == 2) && v31Var.z(false) > 0.0f && v31Var.z(false) < AndroidUtilities.dp(96.0f) && i31Var.canScrollVertically(1) && v31.u(v31Var)) {
+            v31Var.G = true;
+            i31Var.v0(0, (int) v31Var.z(false), null);
+        }
     }
 
-    public static j31[] values() {
-        return (j31[]) d.clone();
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        v31 v31Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) v31Var).containerView;
+        viewGroup.invalidate();
+        boolean canScrollVertically = v31Var.H.canScrollVertically(1);
+        View view = v31Var.L;
+        Boolean bool = v31Var.Q;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            v31Var.Q = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.vl.r(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), qr.h, 320L);
+        }
     }
 }

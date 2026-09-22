@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w1 extends k5 {
     public final /* synthetic */ int d;
@@ -41,19 +41,19 @@ public final class w1 extends k5 {
         switch (this.d) {
             case 0:
                 super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                setBackground(i6.G0(AndroidUtilities.dp(20.0f), i10));
                 break;
             case 1:
                 super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                setBackground(i6.G0(AndroidUtilities.dp(20.0f), i10));
                 break;
             case 2:
                 super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                setBackground(i6.G0(AndroidUtilities.dp(20.0f), i10));
                 break;
             default:
                 super.setTextColor(i10);
-                setBackgroundDrawable(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                setBackgroundDrawable(i6.G0(AndroidUtilities.dp(20.0f), i10));
                 break;
         }
     }

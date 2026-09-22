@@ -16,12 +16,12 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.w7;
-import w7.q7;
+import v7.v7;
+import w7.p7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public abstract class d2 implements l.c0 {
+public abstract class d2 implements l.b0 {
     public static final Method P;
     public static final Method Q;
     public static final Method R;
@@ -93,15 +93,15 @@ public abstract class d2 implements l.c0 {
         x xVar = new x(context, attributeSet, i10, 0);
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
-            q7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
+            p7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : w7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : v7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final boolean a() {
         return this.O.isShowing();
     }
@@ -114,7 +114,7 @@ public abstract class d2 implements l.c0 {
         this.f = i10;
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final void dismiss() {
         x xVar = this.O;
         xVar.dismiss();
@@ -127,12 +127,12 @@ public abstract class d2 implements l.c0 {
         return this.O.getBackground();
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final r1 f() {
         return this.c;
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final void h() {
         int i10;
         int a2;
@@ -190,7 +190,7 @@ public abstract class d2 implements l.c0 {
             paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
         }
         boolean z11 = xVar.getInputMethodMode() == 2;
-        q7.b(xVar, this.n);
+        p7.b(xVar, this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
             WeakHashMap weakHashMap = r0.i0.a;
@@ -255,7 +255,7 @@ public abstract class d2 implements l.c0 {
         xVar.setOutsideTouchable(true);
         xVar.setTouchInterceptor(this.H);
         if (this.v) {
-            q7.a(xVar, this.s);
+            p7.a(xVar, this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
             Method method3 = R;

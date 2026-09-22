@@ -16,15 +16,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import m4.q0;
+import k2.c0;
+import m4.u0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class t implements q {
-    public static final q0 d = new q0(13);
+    public static final u0 d = new u0(8);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -97,19 +98,14 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final Map c(byte[] bArr) {
-        return this.b.queryKeyStatus(bArr);
-    }
-
-    @Override // n2.q
-    public final void d(final l.d dVar) {
+    public final void a(final c0 c0Var) {
         this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: n2.s
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
                 t tVar = t.this;
-                l.d dVar2 = dVar;
+                c0 c0Var2 = c0Var;
                 tVar.getClass();
-                androidx.mediarouter.app.c cVar = ((e) dVar2.b).M;
+                androidx.mediarouter.app.c cVar = ((e) c0Var2.b).M;
                 cVar.getClass();
                 cVar.obtainMessage(i10, bArr).sendToTarget();
             }
@@ -117,7 +113,12 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final void h0(byte[] bArr) {
+    public final Map d(byte[] bArr) {
+        return this.b.queryKeyStatus(bArr);
+    }
+
+    @Override // n2.q
+    public final void j0(byte[] bArr) {
         this.b.provideProvisionResponse(bArr);
     }
 
@@ -299,18 +300,18 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final int l0() {
-        return 2;
-    }
-
-    @Override // n2.q
     public final p m() {
         MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
         return new p(provisionRequest.getDefaultUrl(), provisionRequest.getData());
     }
 
     @Override // n2.q
-    public final boolean q0(String str, byte[] bArr) {
+    public final int m0() {
+        return 2;
+    }
+
+    @Override // n2.q
+    public final boolean r0(String str, byte[] bArr) {
         MediaCrypto mediaCrypto;
         boolean equals;
         int i10 = Build.VERSION.SDK_INT;

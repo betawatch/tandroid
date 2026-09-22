@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k6 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -42,7 +42,7 @@ public final /* synthetic */ class k6 implements View.OnClickListener {
                 if (!zArr2[0]) {
                     zArr2[0] = true;
                     this.d.setLoading(true);
-                    this.c.run(0L, new tg.r(zArr2, this.e, this.f, 20));
+                    this.c.run(0L, new w9.v(zArr2, this.e, this.f, 17));
                     break;
                 }
                 break;

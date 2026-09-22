@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class oi extends qi {
     public TLRPC.User b;
@@ -15,36 +15,36 @@ public final class oi extends qi {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public oi(vi viVar, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         this.d = viVar;
         setWillNotDraw(false);
         setFocusable(true);
         setFocusableInTouchMode(true);
-        f6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
+        e6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
         oh.b bVar = new oh.b(context);
-        bVar.d = f6Var;
+        bVar.d = e6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         bVar.b.setVisibility(8);
         bVar.a(false);
-        v9 v9Var = new v9(context);
-        bVar.c = v9Var;
-        bVar.addView(v9Var, w7.y5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.cl, f6Var);
-        bVar.s = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.al, f6Var);
-        bVar.v = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.bl, f6Var);
+        u9 u9Var = new u9(context);
+        bVar.c = u9Var;
+        bVar.addView(u9Var, w7.x5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.w = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.cl, e6Var);
+        bVar.s = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.al, e6Var);
+        bVar.v = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.bl, e6Var);
         bVar.f();
         this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new i2(14));
-        addView(this.a, w7.y5.c(-1.0f, -1));
+        bVar.getBackupImageView().a.setDelegate(new o2(9));
+        addView(this.a, w7.x5.c(-1.0f, -1));
     }
 
     public final void a(boolean z10) {
         boolean z11 = this.c != null && (-this.b.id) == this.d.W0;
         this.a.e(z11, z10);
-        kj0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        xi0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
         if (!z10) {
             if (lottieAnimation != null) {
                 lottieAnimation.stop();

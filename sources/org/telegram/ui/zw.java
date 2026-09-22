@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class zw extends s4.s0 {
     public boolean a;
@@ -51,7 +51,7 @@ public final class zw extends s4.s0 {
                 if (uyVar.d1) {
                     qy qyVar = tyVar.a;
                     int i11 = qy.v3;
-                    qyVar.B1();
+                    qyVar.A1();
                     uyVar.d1 = false;
                 }
                 tyVar.d.l();
@@ -63,7 +63,7 @@ public final class zw extends s4.s0 {
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean] */
     @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.i iVar;
+        ah.h hVar;
         qy qyVar;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -93,13 +93,13 @@ public final class zw extends s4.s0 {
         int i15 = -1;
         int i16 = -1;
         for (int i17 = 0; i17 < recyclerView.getChildCount(); i17++) {
-            int S = RecyclerView.S(recyclerView.getChildAt(i17));
-            if (S >= 0) {
-                if (i15 == -1 || S > i15) {
-                    i15 = S;
+            int R = RecyclerView.R(recyclerView.getChildAt(i17));
+            if (R >= 0) {
+                if (i15 == -1 || R > i15) {
+                    i15 = R;
                 }
-                if (i16 == -1 || S < i16) {
-                    i16 = S;
+                if (i16 == -1 || R < i16) {
+                    i16 = R;
                 }
             }
         }
@@ -111,9 +111,9 @@ public final class zw extends s4.s0 {
             view3.invalidate();
         }
         if (uyVar.R0 != 10 && this.a && recyclerView.getChildCount() > 0 && i16 != -1) {
-            s4.c1 L = recyclerView.L(i16);
-            if (!uyVar.Z3() || (L != null && L.b() >= 0)) {
-                int top = L != null ? L.a.getTop() : 0;
+            s4.c1 K = recyclerView.K(i16);
+            if (!uyVar.Z3() || (K != null && K.b() >= 0)) {
+                int top = K != null ? K.a.getTop() : 0;
                 int i18 = uyVar.Y1;
                 if (i18 == i16) {
                     int i19 = uyVar.Z1;
@@ -145,7 +145,7 @@ public final class zw extends s4.s0 {
             if (kVar != null) {
                 kVar2 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
                 if (!kVar2.s() && !uyVar.e2 && !uyVar.F3.c()) {
-                    if (i11 > 0 && uyVar.Z3() && uyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.U(childAt).b() == 0) {
+                    if (i11 > 0 && uyVar.Z3() && uyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
                         int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
                         if (top2 + i11 > 0) {
                             if (top2 >= 0) {
@@ -177,9 +177,9 @@ public final class zw extends s4.s0 {
         ?? Z3 = uyVar.Z3();
         View childAt2 = tyVar.a.getChildAt(Z3 == true ? 1 : 0);
         uyVar.e.a(i16 > Z3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - uyVar.N) + ((float) AndroidUtilities.dp(5.0f)) < ((float) tyVar.a.getPaddingTop()), true);
-        if (i11 == 0 || (iVar = uyVar.k4) == null || Build.VERSION.SDK_INT < 31) {
+        if (i11 == 0 || (hVar = uyVar.k4) == null || Build.VERSION.SDK_INT < 31) {
             return;
         }
-        iVar.f(i10, i11);
+        hVar.f(i10, i11);
     }
 }

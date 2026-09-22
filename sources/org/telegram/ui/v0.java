@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v0 extends AnimatorListenerAdapter {
     public final /* synthetic */ h4 a;
@@ -29,20 +29,20 @@ public final class v0 extends AnimatorListenerAdapter {
             if (u3Var != null) {
                 u3Var.m();
             }
-            Object x10 = hg.k0.x(1, h4Var.d0);
+            Object z10 = hg.c.z(1, h4Var.d0);
             h4Var.O0.T(h4Var.u0[0].b);
-            org.telegram.ui.Cells.r9 r9Var = h4Var.O0;
-            r9Var.E0 = h4Var.u0[0].d;
-            r9Var.f(true);
+            org.telegram.ui.Cells.q9 q9Var = h4Var.O0;
+            q9Var.E0 = h4Var.u0[0].d;
+            q9Var.f(true);
             h4Var.i0(false);
             h4Var.f0();
             h4Var.u0[1].b();
             h4Var.u0[1].setVisibility(8);
-            if (x10 instanceof y2) {
-                ((y2) x10).a();
+            if (z10 instanceof y2) {
+                ((y2) z10).a();
             }
-            if (x10 instanceof TLRPC.WebPage) {
-                org.telegram.ui.web.j2.o((TLRPC.WebPage) x10);
+            if (z10 instanceof TLRPC.WebPage) {
+                org.telegram.ui.web.i2.o((TLRPC.WebPage) z10);
             }
         } else {
             h4Var.U();

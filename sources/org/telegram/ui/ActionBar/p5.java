@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p5 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
@@ -21,34 +21,34 @@ public final class p5 implements SensorEventListener {
             return;
         }
         if (f7 > 500.0f) {
-            j6.h = 1.0f;
+            i6.h = 1.0f;
         } else {
-            j6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
+            i6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
         }
-        if (j6.h > j6.q) {
-            if (j6.k) {
-                j6.k = false;
-                AndroidUtilities.cancelRunOnUIThread(j6.m);
+        if (i6.h > i6.q) {
+            if (i6.k) {
+                i6.k = false;
+                AndroidUtilities.cancelRunOnUIThread(i6.m);
             }
-            if (j6.j) {
+            if (i6.j) {
                 return;
             }
-            j6.j = true;
-            AndroidUtilities.runOnUIThread(j6.l, Math.abs(j6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+            i6.j = true;
+            AndroidUtilities.runOnUIThread(i6.l, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
             return;
         }
         if (MediaController.getInstance().isRecordingOrListeningByProximity()) {
             return;
         }
-        if (j6.j) {
-            j6.j = false;
-            AndroidUtilities.cancelRunOnUIThread(j6.l);
+        if (i6.j) {
+            i6.j = false;
+            AndroidUtilities.cancelRunOnUIThread(i6.l);
         }
-        if (j6.k) {
+        if (i6.k) {
             return;
         }
-        j6.k = true;
-        AndroidUtilities.runOnUIThread(j6.m, Math.abs(j6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+        i6.k = true;
+        AndroidUtilities.runOnUIThread(i6.m, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
     }
 
     @Override // android.hardware.SensorEventListener

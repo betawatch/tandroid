@@ -12,12 +12,12 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.y70;
-import w7.y5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.n70;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -41,17 +41,16 @@ public final class p3 implements n5.b {
         HashSet hashSet = new HashSet(unmodifiableSet);
         Iterator it = fVar2.values().iterator();
         if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
+            throw a4.a.k(it);
         }
         this.b = DesugarCollections.unmodifiableSet(hashSet);
     }
 
     public void a() {
         c(null);
-        y70 y70Var = (y70) this.c;
-        if (y70Var != null) {
-            y70Var.u();
+        n70 n70Var = (n70) this.c;
+        if (n70Var != null) {
+            n70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -60,7 +59,7 @@ public final class p3 implements n5.b {
     }
 
     public void b(d6 d6Var, ArrayList arrayList) {
-        f6 f6Var = (f6) this.b;
+        e6 e6Var = (e6) this.b;
         LinearLayout linearLayout = (LinearLayout) this.d;
         if (linearLayout == null) {
             return;
@@ -72,11 +71,11 @@ public final class p3 implements n5.b {
             Object obj = arrayList.get(i10);
             i10++;
             ii.o0 o0Var = (ii.o0) obj;
-            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, f6Var);
+            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, e6Var);
             n0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            n0Var.setBackground(j6.Y(j6.v0(j6.i6, f6Var), 0, 0));
+            n0Var.setBackground(i6.Y(i6.v0(i6.i6, e6Var), 0, 0));
             n0Var.setOnClickListener(new ai.d0(this, d6Var, o0Var, 10));
-            ((LinearLayout) this.d).addView(n0Var, y5.n(-1, 48));
+            ((LinearLayout) this.d).addView(n0Var, x5.n(-1, 48));
         }
     }
 
@@ -95,8 +94,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(d6 d6Var, String str) {
-        y70 y70Var;
-        y70 y70Var2;
+        n70 n70Var;
+        n70 n70Var2;
         if (str == null) {
             a();
             return;
@@ -107,13 +106,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(d6Var);
-        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (y70Var2 = (y70) this.c) != null && y70Var2.D()) {
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (n70Var2 = (n70) this.c) != null && n70Var2.D()) {
             return;
         }
-        if (((d6) this.f) == d6Var && (y70Var = (y70) this.c) != null && y70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((d6) this.f) == d6Var && (n70Var = (n70) this.c) != null && n70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(d6Var, a2);
-            ((y70) this.c).O();
+            ((n70) this.c).O();
             return;
         }
         a();
@@ -124,11 +123,11 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(d6Var, a2);
-        y70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
+        n70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
-        a10.r((LinearLayout) this.d, y5.n(220, -2));
+        a10.r((LinearLayout) this.d, x5.n(220, -2));
         a10.X = AndroidUtilities.dp(240.0f);
         a10.i = 3;
         a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
@@ -146,7 +145,7 @@ public final class p3 implements n5.b {
         Context context = (Context) ((fd.a) this.a).get();
         m5.d dVar = (m5.d) ((fd.a) this.b).get();
         s5.d dVar2 = (s5.d) ((fd.a) this.c).get();
-        lf.h hVar = (lf.h) ((lf.h) this.d).get();
+        lf.i iVar = (lf.i) ((lf.i) this.d).get();
         Executor executor = (Executor) ((fd.a) this.e).get();
         t5.c cVar = (t5.c) ((fd.a) this.f).get();
         rb.a aVar = new rb.a(23);
@@ -156,7 +155,7 @@ public final class p3 implements n5.b {
         bVar2.a = context;
         bVar2.b = dVar;
         bVar2.c = dVar2;
-        bVar2.d = hVar;
+        bVar2.d = iVar;
         bVar2.e = executor;
         bVar2.f = cVar;
         bVar2.g = aVar;
@@ -165,15 +164,15 @@ public final class p3 implements n5.b {
         return bVar2;
     }
 
-    public p3(ii.p0 p0Var, f6 f6Var) {
+    public p3(ii.p0 p0Var, e6 e6Var) {
         this.a = p0Var;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     public p3(String str, ba.c cVar, com.google.firebase.messaging.t tVar) {
         this.d = new com.google.firebase.messaging.m(this, false);
         this.e = new com.google.firebase.messaging.m(this, true);
-        this.f = new c5.a0(10, (byte) 0);
+        this.f = new c5.b0(10, (byte) 0);
         this.h = new AtomicMarkableReference(null, false);
         this.c = str;
         this.a = new x9.f(cVar);

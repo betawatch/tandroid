@@ -1,82 +1,11 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ao0 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ int[] d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ao0(Context context, int i10, int[] iArr, int[] iArr2) {
+public final class ao0 extends org.telegram.ui.Cells.d9 {
+    public ao0(Context context) {
         super(context);
-        this.b = i10;
-        this.c = iArr;
-        this.d = iArr2;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a = true;
-        int dp = AndroidUtilities.dp(9.0f);
-        int i12 = this.b;
-        int i13 = (i12 - 1) * dp;
-        int[] iArr = this.c;
-        float f7 = 1.0f;
-        if ((iArr[0] * i12) + i13 <= size) {
-            setWeightSum(1.0f);
-            int childCount = getChildCount();
-            for (int i14 = 0; i14 < childCount; i14++) {
-                getChildAt(i14).getLayoutParams().width = 0;
-                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
-            }
-        } else if (this.d[0] + i13 <= size) {
-            setWeightSum(1.0f);
-            int i15 = size - i13;
-            int childCount2 = getChildCount();
-            for (int i16 = 0; i16 < childCount2; i16++) {
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
-                layoutParams.width = 0;
-                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
-                layoutParams.weight = intValue;
-                f7 -= intValue;
-            }
-            float f10 = f7 / (i12 - 1);
-            if (f10 > 0.0f) {
-                int childCount3 = getChildCount();
-                for (int i17 = 0; i17 < childCount3; i17++) {
-                    View childAt = getChildAt(i17);
-                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
-                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
-                        layoutParams2.weight += f10;
-                    }
-                }
-            }
-        } else {
-            setWeightSum(0.0f);
-            int childCount4 = getChildCount();
-            for (int i18 = 0; i18 < childCount4; i18++) {
-                getChildAt(i18).getLayoutParams().width = -2;
-                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
-            }
-        }
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
     }
 }

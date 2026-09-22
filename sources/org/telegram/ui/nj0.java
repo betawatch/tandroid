@@ -1,28 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uj0 b;
-
-    public /* synthetic */ nj0(uj0 uj0Var, int i10) {
-        this.a = i10;
-        this.b = uj0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.U(true, false);
-                break;
-            default:
-                this.b.U(true, false);
-                break;
-        }
+public final class nj0 extends xg.c {
+    @Override // xg.c
+    public final int getHeaderHeight() {
+        return getResources().getConfiguration().orientation == 2 ? AndroidUtilities.dp(48.0f) : AndroidUtilities.dp(54.0f);
     }
 }

@@ -5,10 +5,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 final class zzew extends j implements p {
     Object zza;
@@ -54,7 +54,7 @@ final class zzew extends j implements p {
         if (this.zzb != 0) {
             pVar2 = (kotlin.jvm.internal.p) this.zza;
             try {
-                u7.b(obj);
+                t7.b(obj);
                 zzc = obj;
             } catch (Exception e) {
                 e = e;
@@ -65,7 +65,7 @@ final class zzew extends j implements p {
                 throw zzcgVar;
             }
         } else {
-            u7.b(obj);
+            t7.b(obj);
             kotlin.jvm.internal.p pVar3 = new kotlin.jvm.internal.p();
             try {
                 j3 = this.zzc;

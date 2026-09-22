@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class o extends pq {
     public final /* synthetic */ Drawable E;
@@ -27,10 +27,10 @@ public final class o extends pq {
     public final void draw(Canvas canvas) {
         lx lxVar = this.G;
         int i10 = lxVar.b;
-        int f7 = lxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8);
+        int f7 = lxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.i6.s8 : org.telegram.ui.ActionBar.i6.M8);
         if (this.y != f7) {
             this.y = f7;
-            int d = i0.a.d(0.1f, lxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.j6.A8 : org.telegram.ui.ActionBar.j6.P8), f7);
+            int d = i0.a.d(0.1f, lxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.i6.A8 : org.telegram.ui.ActionBar.i6.P8), f7);
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             this.E.setColorFilter(new PorterDuffColorFilter(d, mode));
             this.F.setColorFilter(new PorterDuffColorFilter(f7, mode));

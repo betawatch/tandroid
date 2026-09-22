@@ -8,8 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.pb1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -26,19 +27,19 @@ public final /* synthetic */ class a8 implements Utilities.CallbackReturn {
             case 0:
                 MessageObject messageObject = (MessageObject) obj;
                 ((g8) this.b).r0 = messageObject;
-                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.l0.j(messageObject), messageObject, 0L));
+                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.y0.k(messageObject), messageObject, 0L));
             case 1:
                 di.d dVar = (di.d) this.b;
                 return dVar.n[((Integer) obj).intValue() % dVar.n.length];
             case 2:
-                return new org.telegram.ui.web.g1(2, (org.telegram.ui.k0) this.b, (Integer) obj);
+                return new pb1(26, (org.telegram.ui.k0) this.b, (Integer) obj);
             case 3:
-                qg.n0 n0Var = (qg.n0) this.b;
+                qg.p0 p0Var = (qg.p0) this.b;
                 if (((Integer) obj).intValue() == 2) {
-                    vi viVar = new vi(n0Var.getContext(), new qg.y(n0Var), false, false, false, n0Var.Q1);
+                    vi viVar = new vi(p0Var.getContext(), new qg.y(p0Var), false, false, false, p0Var.Q1);
                     viVar.drawNavigationBar = true;
                     viVar.L1(LocaleController.getString(R.string.AddImage));
-                    viVar.Z1 = new qg.z(n0Var, viVar);
+                    viVar.Z1 = new qg.z(p0Var, viVar);
                     viVar.setOnDismissListener(new f1(7));
                     viVar.J1(1, false);
                     viVar.r1();
@@ -51,8 +52,8 @@ public final /* synthetic */ class a8 implements Utilities.CallbackReturn {
                 Paint[] paintArr = ((vg.r) this.b).h;
                 return paintArr[((Integer) obj).intValue() % paintArr.length];
             default:
-                yh.y6 y6Var = (yh.y6) this.b;
-                return y6Var.n[((Integer) obj).intValue() % y6Var.n.length];
+                yh.z6 z6Var = (yh.z6) this.b;
+                return z6Var.n[((Integer) obj).intValue() % z6Var.n.length];
         }
     }
 }

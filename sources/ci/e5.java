@@ -6,9 +6,9 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.ka0;
+import org.telegram.ui.bm0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements q0.a {
     public final /* synthetic */ int a;
@@ -61,9 +61,9 @@ public final /* synthetic */ class e5 implements q0.a {
                 ((pg.u) obj2).h(((Integer) obj).intValue());
                 break;
             case 5:
-                xh.z4 z4Var = (xh.z4) obj2;
+                xh.y4 y4Var = (xh.y4) obj2;
                 if (((c5.h) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(new xh.p4(z4Var, 1));
+                    AndroidUtilities.runOnUIThread(new xh.o4(y4Var, 1));
                     break;
                 }
                 break;
@@ -73,7 +73,7 @@ public final /* synthetic */ class e5 implements q0.a {
                 boolean z10 = i11 == 0;
                 String responseCodeString = z10 ? null : BillingController.getResponseCodeString(i11);
                 FileLog.d("StarsController.buy onResult " + z10 + " " + responseCodeString);
-                AndroidUtilities.runOnUIThread(new ka0(callback2, z10, responseCodeString, 13));
+                AndroidUtilities.runOnUIThread(new bm0(callback2, z10, responseCodeString, 12));
                 break;
         }
     }

@@ -4,52 +4,52 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ ef(zn znVar, int i10, int i11) {
+    public /* synthetic */ ef(bo boVar, int i10, int i11) {
         this.a = i11;
-        this.b = znVar;
+        this.b = boVar;
         this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Cells.u1 u1Var;
+        org.telegram.ui.Cells.t1 t1Var;
         MessageObject messageObject;
         switch (this.a) {
             case 0:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 1:
-                this.b.E(this.c, 0, 0, 0, false, true);
+                this.b.F(this.c, 0, 0, 0, false, true);
                 break;
             case 2:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 3:
-                zn znVar = this.b;
-                uj ujVar = znVar.x0;
+                bo boVar = this.b;
+                uj ujVar = boVar.x0;
                 if (ujVar != null) {
                     int childCount = ujVar.getChildCount();
                     for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = znVar.x0.getChildAt(i10);
-                        if ((childAt instanceof org.telegram.ui.Cells.u1) && (messageObject = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject.equals(znVar.G3)) {
-                            u1Var.g4(this.c, true, true);
+                        View childAt = boVar.x0.getChildAt(i10);
+                        if ((childAt instanceof org.telegram.ui.Cells.t1) && (messageObject = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) != null && messageObject.equals(boVar.G3)) {
+                            t1Var.g4(this.c, true, true);
                         }
                     }
                 }
-                znVar.G3 = null;
+                boVar.G3 = null;
                 break;
             case 4:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 5:
-                zn.V(this.b, this.c);
+                bo.V(this.b, this.c);
                 break;
             case 6:
                 this.b.actionBar.setSubtitle(LocaleController.formatPluralString("messages", this.c, new Object[0]));
@@ -58,10 +58,10 @@ public final /* synthetic */ class ef implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 8:
-                zn.G0(this.b, this.c);
+                bo.e0(this.b, this.c);
                 break;
             default:
-                zn.w1(this.b, this.c);
+                bo.e1(this.b, this.c);
                 break;
         }
     }

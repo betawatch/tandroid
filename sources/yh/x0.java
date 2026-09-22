@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class x0 implements Utilities.Callback3 {
         ci.t tVar;
         switch (this.a) {
             case 0:
-                ((y3) this.b).o2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
+                ((z3) this.b).o2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
                 break;
             case 1:
-                y3.v0((y3) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
+                z3.v0((z3) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
                 break;
             default:
                 oc ocVar = (oc) this.b;
@@ -80,7 +80,7 @@ public final /* synthetic */ class x0 implements Utilities.Callback3 {
                                 ocVar.I0.setSelected(tVar);
                                 int indexOf = ci.t.a().indexOf(tVar);
                                 if (indexOf >= 0) {
-                                    ocVar.I0.a.v0(indexOf);
+                                    ocVar.I0.a.u0(indexOf);
                                 }
                                 rb rbVar2 = ocVar.B0;
                                 if (rbVar2 != null) {

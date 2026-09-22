@@ -15,11 +15,11 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.ok;
 import p4.s0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class g extends BroadcastReceiver {
         if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
             Log.d("FirebaseMessaging", "Connectivity change received registered");
         }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -47,15 +47,15 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 1:
-                com.google.firebase.messaging.v vVar = (com.google.firebase.messaging.v) this.b;
-                if (vVar != null && vVar.a()) {
+                com.google.firebase.messaging.w wVar = (com.google.firebase.messaging.w) this.b;
+                if (wVar != null && wVar.a()) {
                     if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
                         Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                     }
-                    com.google.firebase.messaging.v vVar2 = (com.google.firebase.messaging.v) this.b;
-                    ((FirebaseMessaging) vVar2.d).getClass();
-                    FirebaseMessaging.b(vVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.unregisterReceiver(this);
+                    com.google.firebase.messaging.w wVar2 = (com.google.firebase.messaging.w) this.b;
+                    ((FirebaseMessaging) wVar2.d).getClass();
+                    FirebaseMessaging.b(wVar2, 0L);
+                    ((FirebaseMessaging) ((com.google.firebase.messaging.w) this.b).d).b.unregisterReceiver(this);
                     this.b = null;
                     return;
                 }
@@ -78,21 +78,21 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
                 g7 g7Var = (g7) this.b;
-                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (k2.e) g7Var.i));
+                g7Var.a(k2.b.b(context, intent, (b2.e) g7Var.j, (a6.m) g7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((ki.e0) ((m4.k0) this.b).k.b).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((k2.u) ((m4.l0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;
             case 7:
-                og ogVar = new og(this, 22);
+                ng ngVar = new ng(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((ok) this.b).r.postDelayed(ogVar, 1000L);
+                    ((ok) this.b).r.postDelayed(ngVar, 1000L);
                     return;
                 } else {
-                    ogVar.run();
+                    ngVar.run();
                     return;
                 }
             case 8:
@@ -108,8 +108,7 @@ public final class g extends BroadcastReceiver {
                     }
                     Iterator it = arrayList.iterator();
                     if (it.hasNext()) {
-                        it.next().getClass();
-                        throw new ClassCastException();
+                        throw a4.a.k(it);
                     }
                     return;
                 }

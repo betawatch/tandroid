@@ -10,9 +10,9 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class u extends ImageButton {
     public final e2.c a;
@@ -142,7 +142,7 @@ public class u extends ImageButton {
         j6.l lVar = this.b;
         ImageView imageView = (ImageView) lVar.b;
         if (i10 != 0) {
-            Drawable b10 = w7.b(imageView.getContext(), i10);
+            Drawable b10 = v7.b(imageView.getContext(), i10);
             if (b10 != null) {
                 l1.a(b10);
             }

@@ -2,17 +2,17 @@ package vb;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import c5.u;
+import c5.v;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import m.p3;
 import n6.i;
 import n6.l;
+import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.f3;
 import qb.m;
-import v7.s1;
+import v7.r1;
 import w7.d7;
 import w7.e7;
 import w7.ia;
@@ -21,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -92,9 +92,9 @@ public final class a {
         p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
         p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         e7 e7Var = new e7(p3Var);
-        s1 s1Var = new s1(5, false);
-        s1Var.c = e7Var;
-        m.a.execute(new u(a2, new f3(s1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        r1 r1Var = new r1(5, false);
+        r1Var.c = e7Var;
+        m.a.execute(new v(a2, new a1(r1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

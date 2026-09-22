@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.au0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w implements pg.u {
     public boolean a;
@@ -27,14 +27,14 @@ public final class w implements pg.u {
 
     @Override // pg.u
     public final void b(Canvas canvas) {
-        d0 d0Var = this.c.W0;
-        Matrix matrix = d0Var.getMatrix();
+        e0 e0Var = this.c.W0;
+        Matrix matrix = e0Var.getMatrix();
         canvas.save();
-        canvas.translate(d0Var.getX(), d0Var.getY());
+        canvas.translate(e0Var.getX(), e0Var.getY());
         canvas.concat(matrix);
-        float width = d0Var.getWidth();
+        float width = e0Var.getWidth();
         Bitmap bitmap = this.b;
-        canvas.scale(width / bitmap.getWidth(), d0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
+        canvas.scale(width / bitmap.getWidth(), e0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
     }
@@ -67,13 +67,13 @@ public final class w implements pg.u {
     @Override // pg.u
     public final void h(int i10) {
         au0 au0Var = this.c;
-        au0Var.w0(false);
-        pg.u0 u0Var = au0Var.V1;
-        u0Var.h(i10, true);
-        u0Var.g();
+        au0Var.x0(false);
+        pg.s0 s0Var = au0Var.V1;
+        s0Var.h(i10, true);
+        s0Var.g();
         au0Var.setNewColor(i10);
-        k0 k0Var = au0Var.G1;
-        k0Var.setSelectedColorIndex(u0Var.d());
-        k0Var.getAdapter().l();
+        l0 l0Var = au0Var.G1;
+        l0Var.setSelectedColorIndex(s0Var.d());
+        l0Var.getAdapter().l();
     }
 }

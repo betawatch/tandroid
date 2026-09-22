@@ -5,11 +5,11 @@ import ci.s7;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.wa0;
+import org.telegram.ui.ua0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class j implements l0, n2.k {
+public final class j implements k0, n2.k {
     public final Object a;
     public a5.a b;
     public n2.j c;
@@ -36,7 +36,7 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void c(int i10, f0 f0Var, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -47,7 +47,7 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void d(int i10, f0 f0Var, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -57,7 +57,7 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -67,7 +67,7 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
@@ -84,13 +84,13 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.j(new wa0(aVar, tVar, m10, i11, 1));
+            aVar.j(new ua0(aVar, tVar, m10, i11, 1));
         }
     }
 
@@ -101,7 +101,7 @@ public final class j implements l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
         if (l(i10, f0Var)) {
             a5.a aVar = this.b;

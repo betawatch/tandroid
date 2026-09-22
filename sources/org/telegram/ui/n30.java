@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class n30 extends kh.b {
     public final OvershootInterpolator d;
@@ -66,17 +66,17 @@ public final class n30 extends kh.b {
         int i10;
         float f13;
         RadialProgressView radialProgressView3;
-        org.telegram.ui.Components.aa aaVar;
-        org.telegram.ui.Components.aa aaVar2;
+        org.telegram.ui.Components.z9 z9Var;
+        org.telegram.ui.Components.z9 z9Var2;
         RectF rectF;
         float f14;
         int dp;
         float f15;
         float f16;
         RadialProgressView radialProgressView4;
-        org.telegram.ui.Components.aa aaVar3;
-        org.telegram.ui.Components.aa aaVar4;
-        org.telegram.ui.Components.aa aaVar5;
+        org.telegram.ui.Components.z9 z9Var3;
+        org.telegram.ui.Components.z9 z9Var4;
+        org.telegram.ui.Components.z9 z9Var5;
         float f17;
         Paint paint3;
         float f18;
@@ -95,8 +95,8 @@ public final class n30 extends kh.b {
         org.telegram.ui.Components.voip.v2 v2Var = i60Var.r;
         org.telegram.ui.Components.voip.v2 v2Var2 = i60Var.v;
         Matrix matrix3 = i60Var.S0;
-        org.telegram.ui.Components.aa aaVar6 = i60Var.N0;
-        org.telegram.ui.Components.aa aaVar7 = i60Var.M0;
+        org.telegram.ui.Components.z9 z9Var6 = i60Var.N0;
+        org.telegram.ui.Components.z9 z9Var7 = i60Var.M0;
         RectF rectF2 = i60Var.v0;
         Paint paint5 = i60Var.T0;
         RadialProgressView radialProgressView5 = i60Var.e0;
@@ -119,11 +119,11 @@ public final class n30 extends kh.b {
         if (h60Var4 != null) {
             h60Var4.b(0, measuredWidth, getMeasuredHeight(), j10, i60Var.O0);
         }
-        aaVar7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
+        z9Var7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
         RectF rectF3 = rectF2;
-        aaVar7.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
-        aaVar6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
-        aaVar6.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
+        z9Var7.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
+        z9Var6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
+        z9Var6.b = com.google.android.gms.internal.vision.e2.B(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
         float f20 = i60Var.P0;
         float f21 = i60Var.O0;
         if (f20 != f21) {
@@ -151,8 +151,8 @@ public final class n30 extends kh.b {
                 if (z10) {
                 }
                 float interpolation = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-                aaVar6.e(i60Var.O0, 1.0f);
-                aaVar7.e(i60Var.O0, 1.0f);
+                z9Var6.e(i60Var.O0, 1.0f);
+                z9Var7.e(i60Var.O0, 1.0f);
                 if (i60Var.M1 != null) {
                 }
                 canvas2 = canvas;
@@ -236,8 +236,8 @@ public final class n30 extends kh.b {
                     i60Var.n.a(i14, i13);
                     i60Var.f.a(i14, i13);
                     org.telegram.ui.Components.voip.v2 v2Var4 = i60Var.s;
-                    int i20 = org.telegram.ui.ActionBar.j6.Dg;
-                    v2Var4.a(org.telegram.ui.ActionBar.j6.w0(null, i20, false), org.telegram.ui.ActionBar.j6.w0(null, i20, false));
+                    int i20 = org.telegram.ui.ActionBar.i6.Dg;
+                    v2Var4.a(org.telegram.ui.ActionBar.i6.w0(null, i20, false), org.telegram.ui.ActionBar.i6.w0(null, i20, false));
                     i60Var.h.a(i13, i15);
                 }
                 h60 h60Var9 = i60Var.N1;
@@ -318,8 +318,8 @@ public final class n30 extends kh.b {
                 z11 = z10;
             }
             float interpolation2 = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-            aaVar6.e(i60Var.O0, 1.0f);
-            aaVar7.e(i60Var.O0, 1.0f);
+            z9Var6.e(i60Var.O0, 1.0f);
+            z9Var7.e(i60Var.O0, 1.0f);
             if (i60Var.M1 != null || i60Var.N1 == null || i60Var.r1()) {
                 canvas2 = canvas;
                 paint2 = paint6;
@@ -345,7 +345,7 @@ public final class n30 extends kh.b {
                         paint3.setShader(h60Var10.g);
                         f19 = f34;
                     }
-                    int offsetColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Kg, false), i60Var.U1, f18);
+                    int offsetColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kg, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Kg, false), i60Var.U1, f18);
                     Paint paint7 = paint;
                     paint7.setColor(offsetColor);
                     float measuredWidth2 = (int) ((v2Var3.getMeasuredWidth() / 2.0f) + v2Var3.getX());
@@ -368,18 +368,18 @@ public final class n30 extends kh.b {
                         canvas.save();
                         float B = com.google.android.gms.internal.vision.e2.B(0.807f, i60Var.O0, 0.878f, interpolation2);
                         canvas.scale(B, B, measuredWidth2, y3);
-                        aaVar6.a(measuredWidth2, y3, canvas, paint3);
+                        z9Var6.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
                         canvas.save();
                         float B2 = com.google.android.gms.internal.vision.e2.B(0.704f, i60Var.O0, 0.926f, interpolation2);
                         canvas.scale(B2, B2, measuredWidth2, y3);
-                        aaVar7.a(measuredWidth2, y3, canvas, paint3);
+                        z9Var7.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
                     }
                     paint3.setAlpha(255);
                     if (z11) {
                         canvas.drawCircle(measuredWidth2, y3, AndroidUtilities.dp(25.909092f), paint3);
-                        paint3.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Og, false));
+                        paint3.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Og, false));
                         if (f19 != 0.0f) {
                             paint3.setAlpha((int) (f19 * 255.0f));
                             paint3.setShader(null);
@@ -447,7 +447,7 @@ public final class n30 extends kh.b {
                     float f39 = ((f16 - dp3) + dp3) * f37;
                     float f40 = measuredWidth3 + f38;
                     f13 = interpolation2;
-                    aaVar = aaVar5;
+                    z9Var = z9Var5;
                     rectF = rectF3;
                     rectF.set(measuredWidth3 - f38, y10 - f39, f40, y10 + f39);
                     float dp4 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
@@ -469,8 +469,8 @@ public final class n30 extends kh.b {
                 } else if (i10 != 1 || i60Var.N1 == null) {
                     f13 = interpolation2;
                     radialProgressView3 = radialProgressView2;
-                    aaVar = aaVar6;
-                    aaVar2 = aaVar7;
+                    z9Var = z9Var6;
+                    z9Var2 = z9Var7;
                     rectF = rectF3;
                 } else {
                     if (!i60Var.r1()) {
@@ -487,24 +487,24 @@ public final class n30 extends kh.b {
                     } else {
                         f15 = f14;
                         f16 = dp2;
-                        paint2.setColor(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Kg, false), i60Var.U1, 1.0f));
+                        paint2.setColor(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kg, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Kg, false), i60Var.U1, 1.0f));
                     }
                     if (i60Var.r1()) {
                         radialProgressView4 = radialProgressView2;
-                        aaVar3 = aaVar6;
-                        aaVar4 = aaVar7;
+                        z9Var3 = z9Var6;
+                        z9Var4 = z9Var7;
                     } else {
-                        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Lg, false);
-                        int i23 = org.telegram.ui.ActionBar.j6.Kg;
+                        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Lg, false);
+                        int i23 = org.telegram.ui.ActionBar.i6.Kg;
                         radialProgressView4 = radialProgressView2;
-                        int offsetColor2 = AndroidUtilities.getOffsetColor(w02, org.telegram.ui.ActionBar.j6.w0(null, i23, false), i60Var.U1, 1.0f);
+                        int offsetColor2 = AndroidUtilities.getOffsetColor(w02, org.telegram.ui.ActionBar.i6.w0(null, i23, false), i60Var.U1, 1.0f);
                         paint2.setColor(offsetColor2);
                         paint2.setShader(null);
-                        int i24 = org.telegram.ui.ActionBar.j6.kg;
-                        aaVar4 = aaVar7;
-                        aaVar3 = aaVar6;
-                        v2Var.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false), org.telegram.ui.ActionBar.j6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
-                        v2Var2.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, i24, false), org.telegram.ui.ActionBar.j6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
+                        int i24 = org.telegram.ui.ActionBar.i6.kg;
+                        z9Var4 = z9Var7;
+                        z9Var3 = z9Var6;
+                        v2Var.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.w0(null, i24, false), org.telegram.ui.ActionBar.i6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
+                        v2Var2.a(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.w0(null, i24, false), org.telegram.ui.ActionBar.i6.w0(null, i23, false), i60Var.U1, 1.0f), offsetColor2);
                     }
                     float measuredWidth32 = (int) ((v2Var3.getMeasuredWidth() / 2.0f) + v2Var3.getX());
                     float y102 = (int) (v2Var3.getY() + AndroidUtilities.dp(f12));
@@ -528,24 +528,24 @@ public final class n30 extends kh.b {
                     }
                     canvas2.restore();
                     if (!i60Var.r1()) {
-                        aaVar2 = aaVar4;
-                        aaVar5 = aaVar3;
+                        z9Var2 = z9Var4;
+                        z9Var5 = z9Var3;
                     } else if (i60Var.V0 > 0.0f) {
                         canvas2.save();
                         float x13 = com.google.android.gms.internal.vision.e2.x(i60Var.O0, 0.807f, interpolation2, 0.878f);
                         canvas2.scale(x13, x13, measuredWidth32, y102);
-                        aaVar5 = aaVar3;
-                        aaVar5.a(measuredWidth32, y102, canvas2, paint2);
+                        z9Var5 = z9Var3;
+                        z9Var5.a(measuredWidth32, y102, canvas2, paint2);
                         canvas2.restore();
                         canvas2.save();
                         float x14 = com.google.android.gms.internal.vision.e2.x(i60Var.O0, 0.704f, interpolation2, 0.926f);
                         canvas2.scale(x14, x14, measuredWidth32, y102);
-                        aaVar2 = aaVar4;
-                        aaVar2.a(measuredWidth32, y102, canvas2, paint2);
+                        z9Var2 = z9Var4;
+                        z9Var2.a(measuredWidth32, y102, canvas2, paint2);
                         canvas2.restore();
                     } else {
-                        aaVar2 = aaVar4;
-                        aaVar5 = aaVar3;
+                        z9Var2 = z9Var4;
+                        z9Var5 = z9Var3;
                     }
                     if (i60.F3) {
                         if (i10 == 0) {
@@ -566,7 +566,7 @@ public final class n30 extends kh.b {
                     float f392 = ((f16 - dp32) + dp32) * f372;
                     float f402 = measuredWidth32 + f382;
                     f13 = interpolation2;
-                    aaVar = aaVar5;
+                    z9Var = z9Var5;
                     rectF = rectF3;
                     rectF.set(measuredWidth32 - f382, y102 - f392, f402, y102 + f392);
                     float dp42 = (f16 - AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f);
@@ -603,10 +603,10 @@ public final class n30 extends kh.b {
                 }
                 i10++;
                 rectF3 = rectF;
-                aaVar7 = aaVar2;
+                z9Var7 = z9Var2;
                 radialProgressView2 = radialProgressView3;
                 interpolation2 = f13;
-                aaVar6 = aaVar;
+                z9Var6 = z9Var;
             }
             super.dispatchDraw(canvas);
             if (i60Var.a2.r == null) {
@@ -616,8 +616,8 @@ public final class n30 extends kh.b {
         if (z10) {
         }
         float interpolation22 = (this.d.getInterpolation(i60Var.P1) * f7) + 0.4f;
-        aaVar6.e(i60Var.O0, 1.0f);
-        aaVar7.e(i60Var.O0, 1.0f);
+        z9Var6.e(i60Var.O0, 1.0f);
+        z9Var7.e(i60Var.O0, 1.0f);
         if (i60Var.M1 != null) {
         }
         canvas2 = canvas;

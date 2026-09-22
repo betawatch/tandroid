@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.d {
     public static final /* synthetic */ int s = 0;
@@ -15,15 +15,15 @@ public final class r0 extends oh.c implements le.d {
     public final oh.b[] n;
     public int r;
 
-    public r0(Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.web.b1 b1Var) {
+    public r0(Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.web.b1 b1Var) {
         super(context);
         this.f = new le.e(0, this, qr.h, 1600L);
         this.h = b1Var;
-        int i10 = org.telegram.ui.ActionBar.j6.Wk;
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.09411765f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        org.telegram.ui.ActionBar.j6.l1(0.1254902f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        int i10 = org.telegram.ui.ActionBar.i6.Wk;
+        int l1 = org.telegram.ui.ActionBar.i6.l1(0.09411765f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
+        org.telegram.ui.ActionBar.i6.l1(0.1254902f, org.telegram.ui.ActionBar.i6.v0(i10, e6Var));
         this.e.setColor(l1);
-        this.n = new oh.b[]{oh.b.b(context, f6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, f6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, f6Var, oh.a.J, R.string.GiftPreviewSymbols)};
+        this.n = new oh.b[]{oh.b.b(context, e6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, e6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, e6Var, oh.a.J, R.string.GiftPreviewSymbols)};
         int i11 = 0;
         while (true) {
             oh.b[] bVarArr = this.n;
@@ -31,7 +31,7 @@ public final class r0 extends oh.c implements le.d {
                 bVarArr[0].e(true, false);
                 return;
             } else {
-                this.a.addView(bVarArr[i11], w7.y5.l(1.0f, 0, -1));
+                this.a.addView(bVarArr[i11], w7.x5.l(1.0f, 0, -1));
                 this.n[i11].setOnClickListener(new ci.o4(this, i11, 27));
                 i11++;
             }
@@ -39,7 +39,7 @@ public final class r0 extends oh.c implements le.d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, le.e eVar) {
+    public final void D(int i10, float f7, float f10, le.e eVar) {
         b();
         invalidate();
     }

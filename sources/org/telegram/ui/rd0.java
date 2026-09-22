@@ -1,29 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rd0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yg0 b;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ rd0(yg0 yg0Var, int i10) {
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class rd0 implements org.telegram.ui.Components.ov0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+
+    public /* synthetic */ rd0(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = yg0Var;
+        this.b = n2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.Components.ov0
+    public final void H(int i10, boolean z10) {
+        lg0 lg0Var;
+        kl0 kl0Var;
         switch (this.a) {
             case 0:
-                yg0 yg0Var = this.b;
-                yg0Var.b[yg0Var.a].d();
-                yg0Var.k1(true, true);
+                wg0 wg0Var = (wg0) this.b;
+                if (i10 > AndroidUtilities.dp(20.0f) && wg0Var.h1()) {
+                    AndroidUtilities.hideKeyboard(wg0Var.fragmentView);
+                }
+                if (i10 <= AndroidUtilities.dp(20.0f) && (lg0Var = wg0Var.T) != null) {
+                    lg0Var.run();
+                    wg0Var.T = null;
+                    break;
+                }
                 break;
             default:
-                yg0 yg0Var2 = this.b;
-                yg0Var2.l0 = true;
-                if (yg0Var2.a != 0) {
-                    yg0Var2.u1(0, true, null, true);
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                if (i10 >= AndroidUtilities.dp(20.0f) && (kl0Var = passcodeActivity.P) != null) {
+                    kl0Var.run();
+                    passcodeActivity.P = null;
                     break;
                 }
                 break;

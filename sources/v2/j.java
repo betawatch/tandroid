@@ -2,13 +2,13 @@ package v2;
 
 import b2.s;
 import g2.b0;
-import v7.n7;
+import v7.m7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j extends e {
     public final d s;
-    public m5.e v;
+    public o0.a v;
     public long w;
     public volatile boolean x;
 
@@ -18,7 +18,7 @@ public final class j extends e {
     }
 
     @Override // y2.j
-    public final void D() {
+    public final void H() {
         this.x = true;
     }
 
@@ -48,7 +48,7 @@ public final class j extends e {
                 }
             }
         } finally {
-            n7.a(this.r);
+            m7.a(this.r);
         }
     }
 }

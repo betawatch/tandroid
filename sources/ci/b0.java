@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.TextureView;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,15 +46,15 @@ public final /* synthetic */ class b0 implements Runnable {
                 break;
             case 1:
                 ii.w3 w3Var = (ii.w3) this.e;
-                KeyEvent.Callback B4 = w3Var.B4(this.b);
-                if (B4 instanceof org.telegram.ui.Cells.q9) {
-                    w3Var.n3.c0(this.c, this.d, (org.telegram.ui.Cells.q9) B4);
+                KeyEvent.Callback A4 = w3Var.A4(this.b);
+                if (A4 instanceof org.telegram.ui.Cells.p9) {
+                    w3Var.n3.c0(this.c, this.d, (org.telegram.ui.Cells.p9) A4);
                     break;
                 }
                 break;
             case 2:
                 ii.l3 l3Var = (ii.l3) this.e;
-                ii.w3.L1(l3Var.b, this.b, this.c, this.d);
+                ii.w3.K1(l3Var.b, this.b, this.c, this.d);
                 break;
             default:
                 ((MessagesStorage) this.e).lambda$setMessageSeq$211(this.b, this.c, this.d);

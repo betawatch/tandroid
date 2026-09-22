@@ -2,21 +2,76 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class aw extends zv {
-    public final /* synthetic */ bw K;
+public final class aw extends mm0 {
+    public long h;
+    public boolean n;
+    public float r;
+    public final /* synthetic */ cw s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aw(bw bwVar, Context context, int i10, int i11) {
-        super(bwVar.s, context, i10, i11);
-        this.K = bwVar;
+    public aw(cw cwVar, Context context) {
+        super(context);
+        this.s = cwVar;
+        boolean z10 = cwVar.n;
+        this.n = z10;
+        this.r = z10 ? 1.0f : 0.0f;
+        setSmoothScrollingEnabled(true);
+        int i10 = 0;
+        setHorizontalScrollBarEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setNestedScrollingEnabled(true);
+        cc1 cc1Var = new cc1(this, context, 6);
+        this.b = cc1Var;
+        cc1Var.setOrientation(0);
+        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
+        while (true) {
+            int[] iArr = cw.e0;
+            if (i10 >= 8) {
+                return;
+            }
+            zv zvVar = new zv(this, context, iArr[i10], cw.f0[i10]);
+            zvVar.setContentDescription(cw.f(i10));
+            this.b.addView(zvVar);
+            i10++;
+        }
     }
 
-    @Override // android.view.View
+    public final void d(MotionEvent motionEvent) {
+        if (!this.n || this.d) {
+            return;
+        }
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.a = false;
+                return;
+            } else if (action != 2) {
+                return;
+            }
+        }
+        this.a = true;
+        if (!this.d) {
+            this.e = -1;
+        }
+        this.s.requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(Math.min(5.7f, this.b.getChildCount()) * 32.0f), this.r), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.K.d(motionEvent);
+        d(motionEvent);
         return super.onTouchEvent(motionEvent);
     }
 }

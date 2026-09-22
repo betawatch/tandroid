@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h20 extends s4.v {
     public final /* synthetic */ FiltersSetupActivity d;
@@ -48,16 +48,16 @@ public final class h20 extends s4.v {
         int i10 = filtersSetupActivity.r;
         ArrayList arrayList = filtersSetupActivity.n;
         if (b10 >= i10 && b11 >= i10) {
-            c20 c20Var = (c20) arrayList.get(b10);
-            c20 c20Var2 = (c20) arrayList.get(b11);
-            if (c20Var != null && c20Var2 != null && (dialogFilter = c20Var.d) != null && (dialogFilter2 = c20Var2.d) != null) {
+            b20 b20Var = (b20) arrayList.get(b10);
+            b20 b20Var2 = (b20) arrayList.get(b11);
+            if (b20Var != null && b20Var2 != null && (dialogFilter = b20Var.d) != null && (dialogFilter2 = b20Var2.d) != null) {
                 int i11 = dialogFilter.order;
                 dialogFilter.order = dialogFilter2.order;
                 dialogFilter2.order = i11;
                 ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
                 try {
-                    arrayList2.set(b10 - filtersSetupActivity.r, c20Var2.d);
-                    arrayList2.set(b11 - filtersSetupActivity.r, c20Var.d);
+                    arrayList2.set(b10 - filtersSetupActivity.r, b20Var2.d);
+                    arrayList2.set(b11 - filtersSetupActivity.r, b20Var.d);
                 } catch (Exception unused) {
                 }
                 filtersSetupActivity.e = true;
@@ -70,7 +70,7 @@ public final class h20 extends s4.v {
     @Override // s4.v
     public final void p(s4.c1 c1Var, int i10) {
         if (i10 != 0) {
-            this.d.a.J0(false);
+            this.d.a.I0(false);
             c1Var.a.setPressed(true);
         } else {
             AndroidUtilities.cancelRunOnUIThread(new g10(this, 4));

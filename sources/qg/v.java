@@ -9,12 +9,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.au0;
 import yh.u5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -35,21 +35,21 @@ public final /* synthetic */ class v implements Runnable {
         switch (i10) {
             case 0:
                 au0 au0Var = (au0) obj;
-                pg.t1 t1Var = au0Var.K1;
-                au0Var.s0(t1Var, null);
-                pg.u0.e(i11).j(t1Var.c);
+                pg.q1 q1Var = au0Var.K1;
+                au0Var.t0(q1Var, null);
+                pg.s0.e(i11).j(q1Var.c);
                 break;
             case 1:
-                n2 n2Var = (n2) obj;
-                n2Var.getClass();
+                p2 p2Var = (p2) obj;
+                p2Var.getClass();
                 NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                n2Var.h();
+                p2Var.h();
                 break;
             case 2:
-                n90 n90Var = ((tg.r0) obj).e;
+                c90 c90Var = ((tg.s0) obj).e;
                 try {
-                    if (n90Var.getLayout().getLineForOffset(i11) == 0) {
-                        n90Var.getEditableText().insert(i11, "\n");
+                    if (c90Var.getLayout().getLineForOffset(i11) == 0) {
+                        c90Var.getEditableText().insert(i11, "\n");
                         break;
                     }
                 } catch (Exception e) {

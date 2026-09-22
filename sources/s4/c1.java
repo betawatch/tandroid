@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public static final List u = Collections.EMPTY_LIST;
@@ -51,7 +51,7 @@ public abstract class c1 {
         if (recyclerView == null) {
             return -1;
         }
-        return recyclerView.O(this);
+        return recyclerView.N(this);
     }
 
     public final int c() {
@@ -142,7 +142,7 @@ public abstract class c1 {
         this.l &= -1025;
         this.r = 0;
         this.s = -1;
-        RecyclerView.n(this);
+        RecyclerView.m(this);
     }
 
     public final void p(int i10, int i11) {

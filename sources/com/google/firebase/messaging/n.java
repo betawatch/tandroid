@@ -31,7 +31,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import e9.a1;
-import e9.g0;
 import e9.i0;
 import e9.k0;
 import j$.util.DesugarCollections;
@@ -59,16 +58,15 @@ import m.m2;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.hy0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.ux0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mb1;
-import v7.e8;
-import v7.j0;
-import v7.w7;
-import w7.h6;
+import org.telegram.ui.kb1;
+import v7.d8;
+import v7.v7;
+import w7.g6;
 import y9.a2;
 import y9.l0;
 import y9.m0;
@@ -88,9 +86,9 @@ import y9.x0;
 import y9.y0;
 import y9.z1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class n implements f6 {
+public final class n implements e6 {
     public Object a;
     public Object b;
     public Object c;
@@ -148,7 +146,7 @@ public final class n implements f6 {
     }
 
     public static a2 d(l0 l0Var, p3 p3Var) {
-        List g10 = ((c5.a0) p3Var.f).g();
+        List g10 = ((c5.b0) p3Var.f).g();
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < g10.size(); i10++) {
             x9.l lVar = (x9.l) g10.get(i10);
@@ -194,12 +192,12 @@ public final class n implements f6 {
         return false;
     }
 
-    public static n k(Context context, w9.v vVar, ba.c cVar, w9.a aVar, x9.e eVar, p3 p3Var, n4.y yVar, da.b bVar, m5.e eVar2, w9.j jVar) {
-        w9.q qVar = new w9.q(context, vVar, aVar, yVar, bVar);
+    public static n k(Context context, w9.u uVar, ba.c cVar, w9.a aVar, x9.e eVar, p3 p3Var, n4.y yVar, da.b bVar, o0.a aVar2, w9.j jVar) {
+        w9.p pVar = new w9.p(context, uVar, aVar, yVar, bVar);
         ba.b bVar2 = new ba.b(cVar, bVar, jVar);
-        z9.a aVar2 = ca.a.b;
+        z9.a aVar3 = ca.a.b;
         l5.t.b(context);
-        return new n(qVar, bVar2, new ca.a(new ca.c(l5.t.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), eVar2)), eVar, p3Var, vVar);
+        return new n(pVar, bVar2, new ca.a(new ca.c(l5.t.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), aVar2)), eVar, p3Var, uVar);
     }
 
     public static ColorStateList l(Context context, int i10) {
@@ -273,7 +271,7 @@ public final class n implements f6 {
             }
             arrayList.add(new y9.d0(str, str2));
         }
-        Collections.sort(arrayList, new mb1(9));
+        Collections.sort(arrayList, new kb1(9));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
@@ -410,7 +408,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new hy0(this, i10, 0));
+                ofFloat.addUpdateListener(new ux0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -419,7 +417,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new hy0(this, i11, 1));
+                ofFloat2.addUpdateListener(new ux0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -428,7 +426,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new hy0(this, i12, 2));
+                ofFloat3.addUpdateListener(new ux0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -454,12 +452,7 @@ public final class n implements f6 {
         bitmapShader.setLocalMatrix(matrix);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int F0(int i10) {
-        return ((c6) this.f).C0.get(i10, j6.w0(null, i10, false));
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public Paint G(String str) {
         str.getClass();
         switch (str) {
@@ -474,8 +467,13 @@ public final class n implements f6 {
             case "paintChatActionText":
                 return (TextPaint) this.a;
             default:
-                return j6.S0(str);
+                return i6.S0(str);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public int G0(int i10) {
+        return ((c6) this.f).C0.get(i10, i6.w0(null, i10, false));
     }
 
     public void H(k1 k1Var) {
@@ -496,7 +494,7 @@ public final class n implements f6 {
                 e(aVar, (u2.f0) this.d, k1Var);
             }
         }
-        this.c = aVar.d();
+        this.c = aVar.e();
     }
 
     public void I() {
@@ -542,9 +540,9 @@ public final class n implements f6 {
                     e0Var.getClass();
                     Bundle bundle = new Bundle();
                     Bundle bundle2 = new Bundle();
-                    g0 g0Var = i0.b;
+                    e9.g0 g0Var = i0.b;
                     a1 a1Var = a1.e;
-                    this.f = new m4.t(launchActivity2, e0Var, a1Var, a1Var, a1Var, dVar, bundle, bundle2, new of.b(new g2.i(launchActivity2), 29));
+                    this.f = new m4.t(launchActivity2, e0Var, a1Var, a1Var, a1Var, dVar, bundle, bundle2, new n4.y(new g2.i(launchActivity2), 25));
                 }
             }
             if (eVar != null) {
@@ -595,7 +593,7 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public boolean a() {
         return ((c6) this.f).B0;
     }
@@ -622,24 +620,19 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int f0(int i10) {
-        return F0(i10);
-    }
-
     public l5.h g() {
         String str = ((String) this.a) == null ? " transportName" : "";
         if (((l5.m) this.c) == null) {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = j0.s(str, " eventMillis");
+            str = w.c.g(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = j0.s(str, " uptimeMillis");
+            str = w.c.g(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = j0.s(str, " autoMetadata");
+            str = w.c.g(str, " autoMetadata");
         }
         if (str.isEmpty()) {
             return new l5.h((String) this.a, (Integer) this.b, (l5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
@@ -647,12 +640,17 @@ public final class n implements f6 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int g1(int i10) {
-        return F0(i10);
+    @Override // org.telegram.ui.ActionBar.e6
+    public int g0(int i10) {
+        return G0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
+    public int g1(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
     public Drawable getDrawable(String str) {
         c6 c6Var = (c6) this.f;
         n nVar = c6Var.D0;
@@ -700,7 +698,7 @@ public final class n implements f6 {
             return c6Var.K0;
         }
         if (!str.equals("drawableMsgOutMediaSelected")) {
-            return j6.O0(str);
+            return i6.O0(str);
         }
         if (c6Var.L0 == null) {
             c6Var.L0 = new f5(1, true, true, nVar);
@@ -736,10 +734,10 @@ public final class n implements f6 {
             str = str.concat(" type");
         }
         if (((u1) this.c) == null) {
-            str = j0.s(str, " app");
+            str = w.c.g(str, " app");
         }
         if (((v1) this.d) == null) {
-            str = j0.s(str, " device");
+            str = w.c.g(str, " device");
         }
         if (str.isEmpty()) {
             return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
@@ -753,13 +751,13 @@ public final class n implements f6 {
             str = str.concat(" proximityOn");
         }
         if (((Integer) this.d) == null) {
-            str = j0.s(str, " orientation");
+            str = w.c.g(str, " orientation");
         }
         if (((Long) this.e) == null) {
-            str = j0.s(str, " ramUsed");
+            str = w.c.g(str, " ramUsed");
         }
         if (((Long) this.f) == null) {
-            str = j0.s(str, " diskUsed");
+            str = w.c.g(str, " diskUsed");
         }
         if (str.isEmpty()) {
             return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
@@ -767,9 +765,9 @@ public final class n implements f6 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public void m(float f7, float f10, int i10, int i11) {
-        j6.q(f7, f10, i10, i11);
+        i6.q(f7, f10, i10, i11);
     }
 
     public void n(pf.e eVar) {
@@ -794,13 +792,13 @@ public final class n implements f6 {
         ((pf.a) this.c).invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ boolean n0() {
-        return false;
-    }
-
     public Task o(Task task) {
         return task.continueWith(new a3.b(2), new a1.c(this, 22));
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public /* synthetic */ boolean p0() {
+        return false;
     }
 
     public pf.a q() {
@@ -812,10 +810,10 @@ public final class n implements f6 {
 
     public ColorStateList t(Context context, int i10) {
         if (i10 == R.drawable.abc_edit_text_material) {
-            return w7.a(context, R.color.abc_tint_edittext);
+            return v7.a(context, R.color.abc_tint_edittext);
         }
         if (i10 == R.drawable.abc_switch_track_mtrl_alpha) {
-            return w7.a(context, R.color.abc_tint_switch_track);
+            return v7.a(context, R.color.abc_tint_switch_track);
         }
         if (i10 != R.drawable.abc_switch_thumb_material) {
             if (i10 == R.drawable.abc_btn_default_mtrl_shape) {
@@ -828,19 +826,19 @@ public final class n implements f6 {
                 return l(context, a3.c(context, R.attr.colorAccent));
             }
             if (i10 == R.drawable.abc_spinner_mtrl_am_alpha || i10 == R.drawable.abc_spinner_textfield_background_material) {
-                return w7.a(context, R.color.abc_tint_spinner);
+                return v7.a(context, R.color.abc_tint_spinner);
             }
             if (f(i10, (int[]) this.b)) {
                 return a3.d(context, R.attr.colorControlNormal);
             }
             if (f(i10, (int[]) this.e)) {
-                return w7.a(context, R.color.abc_tint_default);
+                return v7.a(context, R.color.abc_tint_default);
             }
             if (f(i10, (int[]) this.f)) {
-                return w7.a(context, R.color.abc_tint_btn_checkable);
+                return v7.a(context, R.color.abc_tint_btn_checkable);
             }
             if (i10 == R.drawable.abc_seekbar_thumb_material) {
-                return w7.a(context, R.color.abc_tint_seek_thumb);
+                return v7.a(context, R.color.abc_tint_seek_thumb);
             }
             return null;
         }
@@ -870,10 +868,10 @@ public final class n implements f6 {
         Iterator<Map.Entry<Thread, StackTraceElement[]>> it;
         n4.y yVar;
         boolean equals = str2.equals("crash");
-        w9.q qVar = (w9.q) this.a;
-        Context context = qVar.a;
+        w9.p pVar = (w9.p) this.a;
+        Context context = pVar.a;
         int i10 = context.getResources().getConfiguration().orientation;
-        n4.y yVar2 = qVar.d;
+        n4.y yVar2 = pVar.d;
         Stack stack = new Stack();
         for (Throwable th3 = th2; th3 != null; th3 = th3.getCause()) {
             stack.push(th3);
@@ -897,7 +895,7 @@ public final class n implements f6 {
         if (name == null) {
             throw new NullPointerException("Null name");
         }
-        List d = w9.q.d(stackTraceElementArr, 4);
+        List d = w9.p.d(stackTraceElementArr, 4);
         if (d == null) {
             throw new NullPointerException("Null frames");
         }
@@ -917,7 +915,7 @@ public final class n implements f6 {
                         throw new NullPointerException("Null name");
                     }
                     it = it2;
-                    List d10 = w9.q.d(C, 0);
+                    List d10 = w9.p.d(C, 0);
                     if (d10 == null) {
                         throw new NullPointerException("Null frames");
                     }
@@ -929,14 +927,14 @@ public final class n implements f6 {
             }
         }
         List unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-        p0 c10 = w9.q.c(tVar2, 0);
+        p0 c10 = w9.p.c(tVar2, 0);
         q0 q0Var = new q0(0L, "0", "0");
-        List a10 = qVar.a();
+        List a10 = pVar.a();
         if (a10 == null) {
             throw new NullPointerException("Null binaries");
         }
         nVar.c = new m0(new n0(unmodifiableList, c10, null, q0Var, a10), null, null, valueOf, b10, a2, i10);
-        nVar.d = qVar.b(i10);
+        nVar.d = pVar.b(i10);
         l0 i12 = nVar.i();
         ba.b bVar = (ba.b) this.b;
         x9.e eVar = (x9.e) this.d;
@@ -948,7 +946,7 @@ public final class n implements f6 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            h6.a("String array is empty and is ignored by put method.");
+            g6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -960,7 +958,7 @@ public final class n implements f6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                h6.a(sb2.toString());
+                g6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -968,7 +966,7 @@ public final class n implements f6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    h6.a(sb3.toString());
+                    g6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -984,16 +982,16 @@ public final class n implements f6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                h6.a("Input Array of elements is too big, cutting off.");
+                g6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public ColorFilter x() {
-        return j6.v3;
+        return i6.v3;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:48:? -> B:43:0x0137). Please report as a decompilation issue!!! */
@@ -1030,12 +1028,12 @@ public final class n implements f6 {
                 ca.a aVar2 = (ca.a) this.c;
                 if (bVar2.a.f == null) {
                     try {
-                        str2 = (String) w9.x.a(((qa.c) ((w9.v) this.f).d).d());
+                        str2 = (String) w9.x.a(((qa.c) ((w9.u) this.f).d).d());
                     } catch (Exception e10) {
                         Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e10);
                         str2 = null;
                     }
-                    e8 a2 = bVar2.a.a();
+                    d8 a2 = bVar2.a.a();
                     a2.d = str2;
                     bVar = new w9.b(a2.a(), bVar2.b, bVar2.c);
                 } else {
@@ -1057,7 +1055,7 @@ public final class n implements f6 {
                                     arrayBlockingQueue = arrayBlockingQueue2;
                                     try {
                                         taskCompletionSource = taskCompletionSource2;
-                                        cVar.g.execute(new c5.u(cVar, bVar, taskCompletionSource2, false, 4));
+                                        cVar.g.execute(new c5.v(cVar, bVar, taskCompletionSource2, false, 4));
                                         bVar3.b("Closing task for report: " + bVar.b);
                                         taskCompletionSource.trySetResult(bVar);
                                     } catch (Throwable th2) {
@@ -1088,7 +1086,7 @@ public final class n implements f6 {
                         arrayBlockingQueue = arrayBlockingQueue2;
                     }
                 }
-                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new s0.b(this, 29)));
+                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new t0.a(this, 20)));
             }
             i12 = i13;
         }
@@ -1160,7 +1158,7 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public /* synthetic */ void L0(int i10, int i11) {
     }
 }

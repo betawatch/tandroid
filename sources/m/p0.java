@@ -17,9 +17,9 @@ import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -46,7 +46,7 @@ public final class p0 extends Spinner {
         this.n = new Rect();
         a3.a(this, getContext());
         int[] iArr = f.a.v;
-        lf.h Q = lf.h.Q(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        lf.i Q = lf.i.Q(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
         TypedArray typedArray2 = (TypedArray) Q.c;
         this.a = new e2.c(this);
         int resourceId = typedArray2.getResourceId(4, 0);
@@ -92,7 +92,7 @@ public final class p0 extends Spinner {
             i0Var.c = typedArray2.getString(2);
         } else if (i10 == 1) {
             m0 m0Var = new m0(this, this.b, attributeSet);
-            lf.h Q2 = lf.h.Q(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            lf.i Q2 = lf.i.Q(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
             this.h = ((TypedArray) Q2.c).getLayoutDimension(3, -2);
             m0Var.i(Q2.F(1));
             m0Var.S = typedArray2.getString(2);
@@ -331,7 +331,7 @@ public final class p0 extends Spinner {
 
     @Override // android.widget.Spinner
     public void setPopupBackgroundResource(int i10) {
-        setPopupBackgroundDrawable(w7.b(getPopupContext(), i10));
+        setPopupBackgroundDrawable(v7.b(getPopupContext(), i10));
     }
 
     @Override // android.widget.Spinner

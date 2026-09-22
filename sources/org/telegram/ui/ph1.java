@@ -1,18 +1,33 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ph1 {
-    public final int a;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final boolean b = true;
+public final /* synthetic */ class ph1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qh1 b;
 
-    public ph1(int i10) {
+    public /* synthetic */ ph1(qh1 qh1Var, int i10) {
         this.a = i10;
+        this.b = qh1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.y51 y51Var = this.b.a;
+                if (y51Var != null) {
+                    y51Var.Y2.N(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Components.y51 y51Var2 = this.b.a;
+                if (y51Var2 != null) {
+                    y51Var2.Y2.N(true);
+                    break;
+                }
+                break;
+        }
     }
 }

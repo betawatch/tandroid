@@ -9,21 +9,21 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg1;
+import org.telegram.ui.eg1;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Utilities.Callback {
-    public final /* synthetic */ fg1 a;
+    public final /* synthetic */ eg1 a;
     public final /* synthetic */ uy b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ v1(fg1 fg1Var, uy uyVar, long j3, int i10) {
-        this.a = fg1Var;
+    public /* synthetic */ v1(eg1 eg1Var, uy uyVar, long j3, int i10) {
+        this.a = eg1Var;
         this.b = uyVar;
         this.c = j3;
         this.d = i10;
@@ -35,10 +35,10 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        fg1 fg1Var = this.a;
+        eg1 eg1Var = this.a;
         uy uyVar = this.b;
-        if (fg1Var != null) {
-            fg1Var.finishFragment();
+        if (eg1Var != null) {
+            eg1Var.finishFragment();
             uyVar.removeSelfFromStack();
         } else {
             uyVar.finishFragment();
@@ -63,7 +63,7 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
                 chat = chat2;
             }
         }
-        xc a02 = xc.a0(U);
+        vc a02 = vc.a0(U);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(bool.booleanValue() ? R.string.BotSentRevokeVerifyRequest : R.string.BotSentVerifyRequest, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), replaceTags, null, null).k(false);

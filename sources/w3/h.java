@@ -17,7 +17,6 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.util.ArrayDeque;
@@ -27,11 +26,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
+import n4.y;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.a8;
-import v7.u6;
+import v7.t6;
+import v7.z7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -50,7 +50,7 @@ public final class h implements c3.o {
     public boolean L;
     public boolean M;
     public long N;
-    public final z3.k a;
+    public final z3.l a;
     public final int b;
     public final List c;
     public final byte[] h;
@@ -68,7 +68,7 @@ public final class h implements c3.o {
     public long x;
     public int y;
     public long z;
-    public final m5.e k = new m5.e(1, (byte) 0);
+    public final y k = new y(27);
     public final v l = new v(16);
     public final v e = new v(f2.o.a);
     public final v f = new v(6);
@@ -83,8 +83,8 @@ public final class h implements c3.o {
         P = new s(rVar);
     }
 
-    public h(z3.k kVar, int i10, b0 b0Var, List list, l2.n nVar) {
-        this.a = kVar;
+    public h(z3.l lVar, int i10, b0 b0Var, List list, l2.n nVar) {
+        this.a = lVar;
         this.b = i10;
         this.j = b0Var;
         this.c = DesugarCollections.unmodifiableList(list);
@@ -146,9 +146,9 @@ public final class h implements c3.o {
         int i11 = qVar.e;
         v vVar2 = qVar.n;
         if (B != i11) {
-            StringBuilder k10 = k0.k(B, "Senc sample count ", " is different from fragment sample count");
-            k10.append(qVar.e);
-            throw s0.a(null, k10.toString());
+            StringBuilder l4 = hg.c.l(B, "Senc sample count ", " is different from fragment sample count");
+            l4.append(qVar.e);
+            throw s0.a(null, l4.toString());
         }
         Arrays.fill(qVar.l, 0, B, z10);
         vVar2.G(vVar.a());
@@ -446,7 +446,7 @@ public final class h implements c3.o {
                         j11 = arrayList;
                         c10 = 0;
                     }
-                    this.I.f1();
+                    this.I.e1();
                 } else {
                     ArrayList arrayList9 = j11;
                     e2.d.g(sparseArray.size() == size3);
@@ -707,9 +707,9 @@ public final class h implements c3.o {
                                         int x10 = vVar6.x();
                                         int B2 = vVar6.B();
                                         if (B2 > qVar3.e) {
-                                            StringBuilder k11 = k0.k(B2, "Saiz sample count ", " is greater than fragment sample count");
-                                            k11.append(qVar3.e);
-                                            throw s0.a(null, k11.toString());
+                                            StringBuilder l4 = hg.c.l(B2, "Saiz sample count ", " is greater than fragment sample count");
+                                            l4.append(qVar3.e);
+                                            throw s0.a(null, l4.toString());
                                         }
                                         if (x10 == 0) {
                                             boolean[] zArr2 = qVar3.l;
@@ -1535,7 +1535,7 @@ public final class h implements c3.o {
                             ((f2.c) arrayDeque.peek()).d.add(dVar);
                         } else if (i16 == 1936286840) {
                             Pair f7 = f(pVar.getPosition(), vVar3);
-                            cVar2.s((c3.j) f7.second);
+                            cVar2.f((c3.j) f7.second);
                             if (!this.L) {
                                 this.B = ((Long) f7.first).longValue();
                                 this.I.X1((c3.b0) f7.second);
@@ -1583,7 +1583,7 @@ public final class h implements c3.o {
                             String str2 = s11;
                             byte[] bArr = new byte[vVar3.a()];
                             vVar3.h(0, vVar3.a(), bArr);
-                            v vVar4 = new v(this.k.y(new n3.a(str, str2, Y, z10, bArr)));
+                            v vVar4 = new v(this.k.N(new n3.a(str, str2, Y, z10, bArr)));
                             int a2 = vVar4.a();
                             h0[] h0VarArr = this.J;
                             int length = h0VarArr.length;
@@ -1649,14 +1649,14 @@ public final class h implements c3.o {
                             j18 += iArr2.length;
                         }
                         int i19 = (int) j18;
-                        u6.b(j18, "the total number of elements (%s) in the arrays must fit in an int", j18 == ((long) i19));
+                        t6.b(j18, "the total number of elements (%s) in the arrays must fit in an int", j18 == ((long) i19));
                         int[] iArr3 = new int[i19];
                         int i20 = 0;
                         for (int[] iArr4 : iArr) {
                             System.arraycopy(iArr4, 0, iArr3, i20, iArr4.length);
                             i20 += iArr4.length;
                         }
-                        qVar4.X1(new c3.j(iArr3, a8.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), a8.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), a8.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][]))));
+                        qVar4.X1(new c3.j(iArr3, z7.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), z7.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), z7.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][]))));
                         this.M = true;
                         return 1;
                     }
@@ -1689,7 +1689,7 @@ public final class h implements c3.o {
                         vVar.G((int) j21);
                         System.arraycopy(vVar5.a, 0, vVar.a, 0, 8);
                         pVar.readFully(vVar.a, 8, (int) (this.u - this.v));
-                        cVar2.s((c3.j) f(pVar.i(), vVar).second);
+                        cVar2.f((c3.j) f(pVar.i(), vVar).second);
                     } else {
                         pVar.g((int) (j21 - j22), true);
                     }

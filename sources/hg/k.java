@@ -2,32 +2,67 @@ package hg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.view.MotionEvent;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import android.widget.ToggleButton;
-import org.telegram.messenger.voip.VoIPService;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ju;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class k extends ImageView {
-    public final /* synthetic */ int a;
+public final class k extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public final Object c;
+    public final Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k(Context context, int i10) {
+    public k(n nVar, Context context) {
         super(context);
-        this.a = i10;
+        this.e = nVar;
+        this.b = -1;
+        this.c = new Rect();
+        this.d = new c6(this, 220L, qr.h);
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
-            case 2:
+            case 1:
+                l20 l20Var = (l20) this.d;
+                Path path = (Path) this.c;
+                vi viVar = (vi) this.e;
+                ch.d dVar = viVar.B0;
+                if (dVar != null) {
+                    dVar.setBounds(0, (int) viVar.V1, getMeasuredWidth(), getMeasuredHeight());
+                    viVar.B0.draw(canvas);
+                }
+                float dp = AndroidUtilities.dp(20.0f);
+                int dp2 = AndroidUtilities.dp(7.0f);
+                int dp3 = AndroidUtilities.dp(7.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f7 = dp2;
+                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), getHeight() - dp3);
+                path.rewind();
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
+                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
+                l20Var.b(canvas, rectF, 1, 1.0f);
+                rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
+                l20Var.b(canvas, rectF, 3, 1.0f);
+                canvas.restore();
+                canvas.restore();
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -35,77 +70,58 @@ public final class k extends ImageView {
         }
     }
 
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                float width = getWidth() / 2.0f;
+                c6 c6Var = (c6) this.d;
+                n nVar = (n) this.e;
+                float d = c6Var.d(nVar.n.getWidth(), false);
+                Rect rect = (Rect) this.c;
+                float f7 = d / 2.0f;
+                rect.set((int) (width - (nVar.n.getScaleX() * f7)), (int) (((1.0f - nVar.n.getScaleY()) * nVar.n.getHeight()) + nVar.n.getY()), (int) ((nVar.n.getScaleX() * f7) + width), (int) (nVar.n.getY() + nVar.n.getHeight()));
+                nVar.r.setBounds(rect);
+                nVar.r.draw(canvas);
+                return super.drawChild(canvas, view, j3);
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 1:
-                if (getAlpha() < 0.5f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 4:
-                super.onDraw(canvas);
-                invalidate();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 5:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
-                accessibilityNodeInfo.setCheckable(true);
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
+                int i14 = this.b;
+                vi viVar = (vi) this.e;
+                int top = i14 - viVar.w.getTop();
+                super.onLayout(z10, i10, i11, i12, i13);
+                this.b = getHeight();
+                if (viVar.w.getVisibility() == 0 && getHeight() - viVar.w.getTop() != top) {
+                    viVar.w.setTranslationY(viVar.w.getTranslationY() + ((getHeight() - viVar.w.getTop()) - top));
+                    viVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(qr.h).start();
                     break;
                 }
                 break;
             default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                super.onLayout(z10, i10, i11, i12, i13);
                 break;
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        float f7;
-        float f10;
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, i11);
-                Matrix imageMatrix = getImageMatrix();
-                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
-                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
-                int intrinsicWidth = getDrawable().getIntrinsicWidth();
-                int intrinsicHeight = getDrawable().getIntrinsicHeight();
-                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
-                    f7 = measuredHeight;
-                    f10 = intrinsicHeight;
-                } else {
-                    f7 = measuredWidth;
-                    f10 = intrinsicWidth;
+                n nVar = (n) this.e;
+                nVar.n.measure(i10, i11);
+                invalidate();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + nVar.n.getMeasuredHeight()), TLObject.FLAG_30));
+                if (this.b < 0) {
+                    this.b = getMeasuredHeight();
+                    break;
                 }
-                float f11 = f7 / f10;
-                imageMatrix.setScale(f11, f11);
-                setImageMatrix(imageMatrix);
-                break;
-            case 3:
-                int size = View.MeasureSpec.getSize(i10);
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -114,8 +130,10 @@ public final class k extends ImageView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(ju juVar, Context context) {
+    public k(vi viVar, Context context) {
         super(context);
-        this.a = 2;
+        this.e = viVar;
+        this.c = new Path();
+        this.d = new l20();
     }
 }

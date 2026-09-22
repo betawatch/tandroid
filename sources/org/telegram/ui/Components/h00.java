@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class h00 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,22 +30,22 @@ public final class h00 extends AnimatorListenerAdapter {
                 i00Var.invalidate();
                 break;
             case 1:
-                ((org.telegram.ui.web.w1) this.d).c(this.b, this.c, false);
+                ((org.telegram.ui.web.v1) this.d).c(this.b, this.c, false);
                 break;
             default:
-                yh.l8 l8Var = (yh.l8) this.d;
-                l8Var.c0 = this.c;
-                if (l8Var.getValue() != this.b) {
-                    l8Var.e(l8Var.getValue());
+                yh.m8 m8Var = (yh.m8) this.d;
+                m8Var.c0 = this.c;
+                if (m8Var.getValue() != this.b) {
+                    m8Var.e(m8Var.getValue());
                 }
-                l8Var.invalidate();
+                m8Var.invalidate();
                 break;
         }
     }
 
-    public h00(yh.l8 l8Var, float f7, int i10) {
+    public h00(yh.m8 m8Var, float f7, int i10) {
         this.a = 2;
-        this.d = l8Var;
+        this.d = m8Var;
         this.c = f7;
         this.b = i10;
     }

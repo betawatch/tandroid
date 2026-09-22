@@ -16,24 +16,24 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.o3;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class g extends x51 {
+public final class g extends h51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        x51.setup(new g());
+        h51.setup(new g());
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(20:89|(1:91)(1:146)|92|(1:(15:136|137|138|139|140|(5:124|(1:126)(1:131)|127|(1:129)|130)(1:101)|102|103|104|105|106|107|(1:109)|110|111)(1:135))(1:96)|97|(1:99)|124|(0)(0)|127|(0)|130|102|103|104|105|106|107|(0)|110|111) */
@@ -99,11 +99,11 @@ public final class g extends x51 {
     /* JADX WARN: Removed duplicated region for block: B:59:0x016d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0157  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x02d8  */
-    @Override // org.telegram.ui.Components.x51
+    @Override // org.telegram.ui.Components.h51
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, y51 y51Var, boolean z10, m61 m61Var, u61 u61Var) {
+    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
         FrameLayout.LayoutParams layoutParams;
         Bitmap bitmap;
         boolean z11;
@@ -112,24 +112,24 @@ public final class g extends x51 {
         Bitmap bitmap2;
         String str2;
         h hVar = (h) view;
-        Object obj = y51Var.H;
+        Object obj = i51Var.H;
         if (!(obj instanceof MessageObject)) {
             if (obj instanceof e1) {
                 e1 e1Var = (e1) obj;
-                CharSequence charSequence = y51Var.m;
+                CharSequence charSequence = i51Var.m;
                 String charSequence2 = charSequence == null ? null : charSequence.toString();
                 FrameLayout.LayoutParams layoutParams2 = hVar.d;
-                f6 f6Var = hVar.a;
-                v9 v9Var = hVar.b;
+                e6 e6Var = hVar.a;
+                u9 u9Var = hVar.b;
                 TextView textView = hVar.f;
                 TextView textView2 = hVar.e;
                 hVar.e();
                 String str3 = e1Var.c;
-                n2 n2Var = e1Var.d;
-                if (n2Var != null && !TextUtils.isEmpty(n2Var.c)) {
-                    textView2.setText(n2Var.c);
+                m2 m2Var = e1Var.d;
+                if (m2Var != null && !TextUtils.isEmpty(m2Var.c)) {
+                    textView2.setText(m2Var.c);
                 } else {
-                    if (n2Var == null || TextUtils.isEmpty(n2Var.d)) {
+                    if (m2Var == null || TextUtils.isEmpty(m2Var.d)) {
                         try {
                             String str4 = Uri.parse(str3).getHost().split("\\.")[r10.length - 2];
                             StringBuilder sb2 = new StringBuilder();
@@ -140,18 +140,18 @@ public final class g extends x51 {
                                 textView2.setText(sb2.toString());
                             } catch (Exception unused) {
                                 textView2.setText("");
-                                if (n2Var != null) {
+                                if (m2Var != null) {
                                 }
                                 if (textView2.getText() == null) {
                                 }
                                 BreakIterator characterInstance = BreakIterator.getCharacterInstance();
                                 characterInstance.setText(r1);
-                                pq pqVar = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance.first(), characterInstance.next()), 1));
+                                pq pqVar = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance.first(), characterInstance.next()), 1));
                                 int dp = AndroidUtilities.dp(28.0f);
                                 int dp2 = AndroidUtilities.dp(28.0f);
                                 pqVar.h = dp;
                                 pqVar.n = dp2;
-                                v9Var.setImageDrawable(pqVar);
+                                u9Var.setImageDrawable(pqVar);
                                 hVar.n.setVisibility(8);
                                 Uri parse = Uri.parse(str3);
                                 String str5 = nf.f.v(parse, null, null, nf.f.a(parse.getHost()), null);
@@ -173,18 +173,18 @@ public final class g extends x51 {
                         } catch (Exception unused2) {
                             layoutParams = layoutParams2;
                         }
-                        if (n2Var != null || (bitmap = n2Var.i) == null) {
+                        if (m2Var != null || (bitmap = m2Var.i) == null) {
                             String charSequence3 = textView2.getText() == null ? "" : textView2.getText().toString();
                             BreakIterator characterInstance2 = BreakIterator.getCharacterInstance();
                             characterInstance2.setText(charSequence3);
-                            pq pqVar2 = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance2.first(), characterInstance2.next()), 1));
+                            pq pqVar2 = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance2.first(), characterInstance2.next()), 1));
                             int dp3 = AndroidUtilities.dp(28.0f);
                             int dp22 = AndroidUtilities.dp(28.0f);
                             pqVar2.h = dp3;
                             pqVar2.n = dp22;
-                            v9Var.setImageDrawable(pqVar2);
+                            u9Var.setImageDrawable(pqVar2);
                         } else {
-                            v9Var.setImageBitmap(bitmap);
+                            u9Var.setImageBitmap(bitmap);
                         }
                         hVar.n.setVisibility(8);
                         Uri parse2 = Uri.parse(str3);
@@ -192,8 +192,8 @@ public final class g extends x51 {
                         String str62 = URLDecoder.decode(str52.replaceAll("\\+", "%2b"), "UTF-8");
                         textView.setText(str62);
                         if (!TextUtils.isEmpty(charSequence2)) {
-                            textView2.setText(AndroidUtilities.highlightText(textView2.getText(), charSequence2, f6Var));
-                            textView.setText(AndroidUtilities.highlightText(textView.getText(), charSequence2, f6Var));
+                            textView2.setText(AndroidUtilities.highlightText(textView2.getText(), charSequence2, e6Var));
+                            textView.setText(AndroidUtilities.highlightText(textView.getText(), charSequence2, e6Var));
                         }
                         textView2.setText(Emoji.replaceEmoji(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false));
                         textView.setText(Emoji.replaceEmoji(textView.getText(), textView.getPaint().getFontMetricsInt(), false));
@@ -206,21 +206,21 @@ public final class g extends x51 {
                         hVar.setWillNotDraw(!z10);
                         return;
                     }
-                    textView2.setText(n2Var.d);
+                    textView2.setText(m2Var.d);
                 }
                 layoutParams = layoutParams2;
-                if (n2Var != null) {
+                if (m2Var != null) {
                 }
                 if (textView2.getText() == null) {
                 }
                 BreakIterator characterInstance22 = BreakIterator.getCharacterInstance();
                 characterInstance22.setText(charSequence3);
-                pq pqVar22 = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance22.first(), characterInstance22.next()), 1));
+                pq pqVar22 = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance22.first(), characterInstance22.next()), 1));
                 int dp32 = AndroidUtilities.dp(28.0f);
                 int dp222 = AndroidUtilities.dp(28.0f);
                 pqVar22.h = dp32;
                 pqVar22.n = dp222;
-                v9Var.setImageDrawable(pqVar22);
+                u9Var.setImageDrawable(pqVar22);
                 hVar.n.setVisibility(8);
                 Uri parse22 = Uri.parse(str3);
                 String str522 = nf.f.v(parse22, null, null, nf.f.a(parse22.getHost()), null);
@@ -242,19 +242,19 @@ public final class g extends x51 {
             return;
         }
         MessageObject messageObject = (MessageObject) obj;
-        boolean z12 = y51Var.q;
-        CharSequence charSequence4 = y51Var.m;
+        boolean z12 = i51Var.q;
+        CharSequence charSequence4 = i51Var.m;
         String charSequence5 = charSequence4 == null ? null : charSequence4.toString();
-        boolean z13 = y51Var.e;
+        boolean z13 = i51Var.e;
         FrameLayout.LayoutParams layoutParams4 = hVar.d;
-        f6 f6Var2 = hVar.a;
+        e6 e6Var2 = hVar.a;
         TextView textView3 = hVar.f;
-        v9 v9Var2 = hVar.b;
+        u9 u9Var2 = hVar.b;
         TextView textView4 = hVar.e;
         hVar.e();
         TLRPC.WebPage webPage = MessageObject.getMedia(messageObject) != null ? MessageObject.getMedia(messageObject).webpage : null;
         String a2 = webPage != null ? webPage.url : k.a(messageObject);
-        n2 a10 = o2.b().a(AndroidUtilities.getHostAuthority(a2, true));
+        m2 a10 = n2.b().a(AndroidUtilities.getHostAuthority(a2, true));
         if (webPage != null && (str2 = webPage.title) != null) {
             textView4.setText(str2);
         } else if (webPage != null && (str = webPage.site_name) != null) {
@@ -273,7 +273,7 @@ public final class g extends x51 {
                         textView4.setText(sb3.toString());
                     } catch (Exception unused3) {
                         textView4.setText("");
-                        v9Var2.b();
+                        u9Var2.b();
                         if (a10 == null) {
                         }
                         if (webPage != null) {
@@ -282,12 +282,12 @@ public final class g extends x51 {
                         }
                         BreakIterator characterInstance3 = BreakIterator.getCharacterInstance();
                         characterInstance3.setText(r1);
-                        pq pqVar3 = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance3.first(), characterInstance3.next()), 0));
+                        pq pqVar3 = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance3.first(), characterInstance3.next()), 0));
                         int dp4 = AndroidUtilities.dp(28.0f);
                         int dp5 = AndroidUtilities.dp(28.0f);
                         pqVar3.h = dp4;
                         pqVar3.n = dp5;
-                        v9Var2.setImageDrawable(pqVar3);
+                        u9Var2.setImageDrawable(pqVar3);
                         hVar.h.setVisibility(8);
                         hVar.n.setVisibility(z12 ? 0 : 8);
                         String a11 = webPage != null ? webPage.url : k.a(messageObject);
@@ -309,21 +309,21 @@ public final class g extends x51 {
                 } catch (Exception unused4) {
                     z11 = z13;
                 }
-                v9Var2.b();
+                u9Var2.b();
                 if (a10 == null && (bitmap2 = a10.i) != null) {
-                    v9Var2.setImageBitmap(bitmap2);
+                    u9Var2.setImageBitmap(bitmap2);
                 } else if (webPage != null || (photo = webPage.photo) == null) {
                     String charSequence6 = textView4.getText() == null ? "" : textView4.getText().toString();
                     BreakIterator characterInstance32 = BreakIterator.getCharacterInstance();
                     characterInstance32.setText(charSequence6);
-                    pq pqVar32 = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance32.first(), characterInstance32.next()), 0));
+                    pq pqVar32 = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance32.first(), characterInstance32.next()), 0));
                     int dp42 = AndroidUtilities.dp(28.0f);
                     int dp52 = AndroidUtilities.dp(28.0f);
                     pqVar32.h = dp42;
                     pqVar32.n = dp52;
-                    v9Var2.setImageDrawable(pqVar32);
+                    u9Var2.setImageDrawable(pqVar32);
                 } else {
-                    v9Var2.j(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(32.0f), true, null, true), webPage.photo), AndroidUtilities.dp(32.0f) + "_" + AndroidUtilities.dp(32.0f), ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(32.0f), true, null, false), webPage.photo), AndroidUtilities.dp(32.0f) + "_" + AndroidUtilities.dp(32.0f), 0, messageObject);
+                    u9Var2.j(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(32.0f), true, null, true), webPage.photo), AndroidUtilities.dp(32.0f) + "_" + AndroidUtilities.dp(32.0f), ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(32.0f), true, null, false), webPage.photo), AndroidUtilities.dp(32.0f) + "_" + AndroidUtilities.dp(32.0f), 0, messageObject);
                 }
                 hVar.h.setVisibility(8);
                 hVar.n.setVisibility(z12 ? 0 : 8);
@@ -334,8 +334,8 @@ public final class g extends x51 {
                 String str82 = o3.p(a112);
                 textView3.setText(str82);
                 if (!TextUtils.isEmpty(charSequence5)) {
-                    textView4.setText(AndroidUtilities.highlightText(textView4.getText(), charSequence5, f6Var2));
-                    textView3.setText(AndroidUtilities.highlightText(textView3.getText(), charSequence5, f6Var2));
+                    textView4.setText(AndroidUtilities.highlightText(textView4.getText(), charSequence5, e6Var2));
+                    textView3.setText(AndroidUtilities.highlightText(textView3.getText(), charSequence5, e6Var2));
                 }
                 textView4.setText(Emoji.replaceEmoji(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false));
                 textView3.setText(Emoji.replaceEmoji(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false));
@@ -348,7 +348,7 @@ public final class g extends x51 {
             textView4.setText(a10.d);
         }
         z11 = z13;
-        v9Var2.b();
+        u9Var2.b();
         if (a10 == null) {
         }
         if (webPage != null) {
@@ -357,12 +357,12 @@ public final class g extends x51 {
         }
         BreakIterator characterInstance322 = BreakIterator.getCharacterInstance();
         characterInstance322.setText(charSequence6);
-        pq pqVar322 = new pq(j6.b0(AndroidUtilities.dp(6.0f), j6.l1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance322.first(), characterInstance322.next()), 0));
+        pq pqVar322 = new pq(i6.b0(AndroidUtilities.dp(6.0f), i6.l1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance322.first(), characterInstance322.next()), 0));
         int dp422 = AndroidUtilities.dp(28.0f);
         int dp522 = AndroidUtilities.dp(28.0f);
         pqVar322.h = dp422;
         pqVar322.n = dp522;
-        v9Var2.setImageDrawable(pqVar322);
+        u9Var2.setImageDrawable(pqVar322);
         hVar.h.setVisibility(8);
         hVar.n.setVisibility(z12 ? 0 : 8);
         String a1122 = webPage != null ? webPage.url : k.a(messageObject);
@@ -382,18 +382,18 @@ public final class g extends x51 {
         hVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final boolean contentsEquals(y51 y51Var, y51 y51Var2) {
-        return y51Var.H == y51Var2.H && TextUtils.equals(y51Var.m, y51Var2.m);
+    @Override // org.telegram.ui.Components.h51
+    public final boolean contentsEquals(i51 i51Var, i51 i51Var2) {
+        return i51Var.H == i51Var2.H && TextUtils.equals(i51Var.m, i51Var2.m);
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, f6 f6Var) {
-        return new h(context, f6Var);
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, e6 e6Var) {
+        return new h(context, e6Var);
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final boolean equals(y51 y51Var, y51 y51Var2) {
-        return y51Var.H == y51Var2.H && TextUtils.isEmpty(y51Var.m) == TextUtils.isEmpty(y51Var2.m);
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        return i51Var.H == i51Var2.H && TextUtils.isEmpty(i51Var.m) == TextUtils.isEmpty(i51Var2.m);
     }
 }

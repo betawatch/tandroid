@@ -1,60 +1,169 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.util.SparseBooleanArray;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ts0 extends t00 {
-    public final /* synthetic */ hs0 U;
-    public final /* synthetic */ lv0 V;
+public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ll0 a;
+    public final /* synthetic */ SparseBooleanArray b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ yu0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ts0(lv0 lv0Var, Context context, hs0 hs0Var) {
-        super(context, null);
-        this.V = lv0Var;
-        this.U = hs0Var;
+    public ts0(yu0 yu0Var, ll0 ll0Var, SparseBooleanArray sparseBooleanArray, t00 t00Var, int i10) {
+        this.e = yu0Var;
+        this.a = ll0Var;
+        this.b = sparseBooleanArray;
+        this.c = t00Var;
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.t00
-    public final int getColumnsCount() {
-        return this.V.m1[lv0.p0(this.U.F) ? 1 : 0];
-    }
-
-    @Override // org.telegram.ui.Components.t00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i10 = this.U.F;
-        if (i10 == 0 || i10 == 5) {
-            return 2;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 != 2 && i10 != 4) {
-            if (i10 == 3) {
-                return 5;
-            }
-            if (i10 != 7) {
-                if (i10 == 6) {
-                    if (this.V.I0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        yu0 yu0Var = this.e;
+        yu0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        final ll0 ll0Var = this.a;
+        s4.h0 adapter = ll0Var.getAdapter();
+        final int i10 = 2;
+        final int i11 = 1;
+        final int i12 = 0;
+        if (adapter == yu0Var.H || adapter == yu0Var.K || adapter == yu0Var.M || adapter == yu0Var.L) {
+            SparseBooleanArray sparseBooleanArray = this.b;
+            if (sparseBooleanArray != null) {
+                int childCount = ll0Var.getChildCount();
+                for (int i13 = 0; i13 < childCount; i13++) {
+                    int p5 = yu0.p(ll0Var.getChildAt(i13));
+                    if (p5 != 0 && sparseBooleanArray.get(p5, false)) {
+                        yu0Var.O1.put(p5, Float.valueOf(0.0f));
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                        ofFloat.addUpdateListener(new ci.x4(this, p5, ll0Var));
+                        ofFloat.addListener(new ei.v2(this, p5, 10));
+                        ofFloat.setStartDelay((int) ((Math.min(ll0Var.getMeasuredHeight(), Math.max(0, r10.getTop())) / ll0Var.getMeasuredHeight()) * 100.0f));
+                        ofFloat.setDuration(250L);
+                        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ss0
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                                switch (i12) {
+                                    case 0:
+                                        ll0 ll0Var2 = ll0Var;
+                                        if (ll0Var2.b1()) {
+                                            ll0Var2.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                    case 1:
+                                        ll0 ll0Var3 = ll0Var;
+                                        if (ll0Var3.b1()) {
+                                            ll0Var3.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                    default:
+                                        ll0 ll0Var4 = ll0Var;
+                                        if (ll0Var4.b1()) {
+                                            ll0Var4.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        });
+                        ofFloat.start();
                     }
-                } else if (lv0.p0(i10)) {
-                    return 27;
+                    ll0Var.invalidate();
                 }
-                return 1;
+            }
+            return true;
+        }
+        int childCount2 = ll0Var.getChildCount();
+        AnimatorSet animatorSet = new AnimatorSet();
+        for (int i14 = 0; i14 < childCount2; i14++) {
+            View childAt = ll0Var.getChildAt(i14);
+            View view = this.c;
+            if (childAt != view && RecyclerView.R(childAt) >= this.d - 1) {
+                childAt.setAlpha(0.0f);
+                int min = (int) ((Math.min(ll0Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / ll0Var.getMeasuredHeight()) * 100.0f);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                ofFloat2.setStartDelay(min);
+                ofFloat2.setDuration(200L);
+                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ss0
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        switch (i11) {
+                            case 0:
+                                ll0 ll0Var2 = ll0Var;
+                                if (ll0Var2.b1()) {
+                                    ll0Var2.invalidate();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                ll0 ll0Var3 = ll0Var;
+                                if (ll0Var3.b1()) {
+                                    ll0Var3.invalidate();
+                                    break;
+                                }
+                                break;
+                            default:
+                                ll0 ll0Var4 = ll0Var;
+                                if (ll0Var4.b1()) {
+                                    ll0Var4.invalidate();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                animatorSet.playTogether(ofFloat2);
+            }
+            if (view != null && view.getParent() == null) {
+                ll0Var.addView(view);
+                s4.o0 layoutManager = ll0Var.getLayoutManager();
+                if (layoutManager != null) {
+                    layoutManager.M(view);
+                    ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
+                    ofFloat3.addListener(new jd0(this, layoutManager));
+                    ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ss0
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            switch (i10) {
+                                case 0:
+                                    ll0 ll0Var2 = ll0Var;
+                                    if (ll0Var2.b1()) {
+                                        ll0Var2.invalidate();
+                                        break;
+                                    }
+                                    break;
+                                case 1:
+                                    ll0 ll0Var3 = ll0Var;
+                                    if (ll0Var3.b1()) {
+                                        ll0Var3.invalidate();
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    ll0 ll0Var4 = ll0Var;
+                                    if (ll0Var4.b1()) {
+                                        ll0Var4.invalidate();
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    });
+                    ofFloat3.start();
+                }
             }
         }
-        return 6;
-    }
-
-    @Override // org.telegram.ui.Components.t00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        lv0 lv0Var = this.V;
-        lv0Var.T0.setColor(lv0Var.h0(org.telegram.ui.ActionBar.j6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), lv0Var.T0);
-        super.onDraw(canvas);
+        animatorSet.start();
+        return true;
     }
 }

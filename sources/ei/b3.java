@@ -5,16 +5,16 @@ import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class b3 extends org.telegram.ui.web.d1 {
     public final /* synthetic */ k3 S0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(k3 k3Var, Context context, f6 f6Var, int i10) {
-        super(i10, context, f6Var, true);
+    public b3(k3 k3Var, Context context, e6 e6Var, int i10) {
+        super(i10, context, e6Var, true);
         this.S0 = k3Var;
     }
 

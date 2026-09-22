@@ -13,7 +13,7 @@ import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o extends MediaSession.Callback {
     public final /* synthetic */ p a;
@@ -60,7 +60,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         try {
             if (str.equals("android.support.v4.media.session.command.GET_EXTRA_BINDER")) {
@@ -81,15 +81,15 @@ public final class o extends MediaSession.Callback {
                 }
             } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM")) {
                 if (bundle != null) {
-                    this.a.b((l) w7.c0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR));
+                    this.a.b((l) w7.b0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR));
                 }
             } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT")) {
                 if (bundle != null) {
-                    this.a.c((l) w7.c0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR), bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX"));
+                    this.a.c((l) w7.b0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR), bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX"));
                 }
             } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM")) {
                 if (bundle != null) {
-                    this.a.q((l) w7.c0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR));
+                    this.a.q((l) w7.b0.a(bundle.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), l.CREATOR));
                 }
             } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT")) {
                 List list = a2.h;
@@ -115,7 +115,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         try {
             boolean equals = str.equals("android.support.v4.media.session.action.PLAY_FROM_URI");
@@ -124,7 +124,7 @@ public final class o extends MediaSession.Callback {
                 if (bundle != null) {
                     Uri uri = (Uri) bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI");
                     Bundle bundle2 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                    y.K(bundle2);
+                    y.O(bundle2);
                     pVar.l(uri, bundle2);
                 }
             } else if (str.equals("android.support.v4.media.session.action.PREPARE")) {
@@ -133,21 +133,21 @@ public final class o extends MediaSession.Callback {
                 if (bundle != null) {
                     String string = bundle.getString("android.support.v4.media.session.action.ARGUMENT_MEDIA_ID");
                     Bundle bundle3 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                    y.K(bundle3);
+                    y.O(bundle3);
                     pVar.n(string, bundle3);
                 }
             } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_SEARCH")) {
                 if (bundle != null) {
                     String string2 = bundle.getString("android.support.v4.media.session.action.ARGUMENT_QUERY");
                     Bundle bundle4 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                    y.K(bundle4);
+                    y.O(bundle4);
                     pVar.o(string2, bundle4);
                 }
             } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_URI")) {
                 if (bundle != null) {
                     Uri uri2 = (Uri) bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI");
                     Bundle bundle5 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                    y.K(bundle5);
+                    y.O(bundle5);
                     pVar.p(uri2, bundle5);
                 }
             } else if (str.equals("android.support.v4.media.session.action.SET_CAPTIONING_ENABLED")) {
@@ -164,8 +164,8 @@ public final class o extends MediaSession.Callback {
                 }
             } else if (str.equals("android.support.v4.media.session.action.SET_RATING")) {
                 if (bundle != null) {
-                    i0 i0Var = (i0) w7.c0.a(bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING"), i0.CREATOR);
-                    y.K(bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
+                    i0 i0Var = (i0) w7.b0.a(bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING"), i0.CREATOR);
+                    y.O(bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
                     pVar.v(i0Var);
                 }
             } else if (!str.equals("android.support.v4.media.session.action.SET_PLAYBACK_SPEED")) {
@@ -230,7 +230,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.j(str, bundle);
         a2.d(null);
@@ -242,7 +242,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.k(str, bundle);
         a2.d(null);
@@ -254,7 +254,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.l(uri, bundle);
         a2.d(null);
@@ -277,7 +277,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.n(str, bundle);
         a2.d(null);
@@ -289,7 +289,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.o(str, bundle);
         a2.d(null);
@@ -301,7 +301,7 @@ public final class o extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        y.K(bundle);
+        y.O(bundle);
         b(a2);
         this.a.p(uri, bundle);
         a2.d(null);

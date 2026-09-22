@@ -3,9 +3,9 @@ package com.google.android.gms.internal.play_billing;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Locale;
-import v7.f6;
+import v7.e6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,12 +27,12 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(hg.k0.i(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(hg.c.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a4.a.l(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a4.a.m(i11, i12, "End index: ", " >= "));
     }
 
     public static l1 q(int i10, int i11, byte[] bArr) {
@@ -62,7 +62,7 @@ public class l1 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + o9 + o());
                 }
                 if (o9 > l1Var.o()) {
-                    throw new IllegalArgumentException(a4.a.l(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(a4.a.m(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = l1Var.b;
                 int i12 = 0;
@@ -119,16 +119,16 @@ public class l1 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o9 = o();
         if (o() <= 50) {
-            concat = f6.a(this);
+            concat = e6.a(this);
         } else {
             int p5 = p(0, 47, o());
-            concat = f6.a(p5 == 0 ? c : new k1(this.b, p5)).concat("...");
+            concat = e6.a(p5 == 0 ? c : new k1(this.b, p5)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
         sb2.append(o9);
         sb2.append(" contents=\"");
-        return a4.a.s(sb2, concat, "\">");
+        return a4.a.t(sb2, concat, "\">");
     }
 }

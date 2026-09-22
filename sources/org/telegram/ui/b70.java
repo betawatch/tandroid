@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b70 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class b70 implements Runnable {
                         boolean z11 = false;
                         while (i10 < i11) {
                             String str5 = strArr[i10];
-                            ?? r72 = (str.startsWith(str5) || org.telegram.messenger.l0.v(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.l0.v(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
+                            ?? r72 = (str.startsWith(str5) || org.telegram.messenger.y0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.y0.w(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
                             if (r72 != 0) {
                                 arrayList = arrayList2;
                                 if (r72 == 1) {
@@ -112,7 +112,7 @@ public final /* synthetic */ class b70 implements Runnable {
                                     obj = null;
                                 } else {
                                     obj = null;
-                                    arrayList4.add(AndroidUtilities.generateSearchName(v7.j0.g("@", publicUsername), null, "@" + str5));
+                                    arrayList4.add(AndroidUtilities.generateSearchName(org.telegram.ui.Cells.q3.i("@", publicUsername), null, "@" + str5));
                                 }
                                 arrayList3.add(tLObject);
                                 i12++;
@@ -129,10 +129,10 @@ public final /* synthetic */ class b70 implements Runnable {
                         arrayList2 = arrayList;
                         i10 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new vq(c70Var3, arrayList3, arrayList4, 10));
+                    AndroidUtilities.runOnUIThread(new xq(c70Var3, arrayList3, arrayList4, 10));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new vq(c70Var3, new ArrayList(), new ArrayList(), 10));
+                    AndroidUtilities.runOnUIThread(new xq(c70Var3, new ArrayList(), new ArrayList(), 10));
                     break;
                 }
                 break;

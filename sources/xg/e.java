@@ -8,21 +8,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.bs0;
-import org.telegram.ui.Components.y70;
-import xh.g2;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.nr0;
+import xh.f2;
 import xh.m;
-import xh.o2;
-import xh.s2;
+import xh.n2;
+import xh.r2;
 import xh.v;
 import yh.a0;
-import yh.g5;
-import yh.m7;
-import yh.x4;
+import yh.h5;
+import yh.n7;
+import yh.y4;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,27 +54,27 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 ((xh.e) obj3).dismiss();
                 break;
             case 2:
-                m.R((m) obj3, (boolean[]) obj2, (f6) obj);
+                m.R((m) obj3, (boolean[]) obj2, (e6) obj);
                 break;
             case 3:
-                v.R((v) obj3, (Context) obj2, (f6) obj);
+                v.R((v) obj3, (Context) obj2, (e6) obj);
                 break;
             case 4:
-                v.P((v) obj3, (boolean[]) obj2, (f6) obj);
+                v.P((v) obj3, (boolean[]) obj2, (e6) obj);
                 break;
             case 5:
-                o2 o2Var = (o2) obj3;
-                ((y70) obj2).u();
-                bs0 bs0Var = o2Var.a;
-                g2 g2Var = new g2(o2Var, (TL_stars.SavedStarGift) obj, i12);
-                HashMap hashMap = s2.T;
-                bs0Var.h(null, g2Var);
+                n2 n2Var = (n2) obj3;
+                ((n70) obj2).u();
+                nr0 nr0Var = n2Var.a;
+                f2 f2Var = new f2(n2Var, (TL_stars.SavedStarGift) obj, i12);
+                HashMap hashMap = r2.T;
+                nr0Var.h(null, f2Var);
                 break;
             case 6:
                 Context context = (Context) obj2;
-                f6 f6Var = (f6) obj;
+                e6 e6Var = (e6) obj;
                 if (((a0) obj3).m0.a == zf.b.a) {
-                    new m7(context, f6Var).show();
+                    new n7(context, e6Var).show();
                     break;
                 }
                 break;
@@ -83,7 +83,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 final ci.d dVar = (ci.d) obj;
                 f3Var.setCanDismissWithSwipe(false);
                 dVar.setLoading(true);
-                ((x4) obj3).run(new Utilities.Callback() { // from class: yh.i6
+                ((y4) obj3).run(new Utilities.Callback() { // from class: yh.i6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
@@ -149,7 +149,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 final ci.d dVar2 = (ci.d) obj;
                 f3Var2.setCanDismissWithSwipe(false);
                 dVar2.setLoading(true);
-                ((g5) obj3).run(new Utilities.Callback() { // from class: yh.i6
+                ((h5) obj3).run(new Utilities.Callback() { // from class: yh.i6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;

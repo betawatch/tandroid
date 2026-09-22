@@ -12,8 +12,8 @@ import android.os.Looper;
 import android.os.Trace;
 import android.util.Log;
 import androidx.biometric.n;
-import c5.u;
-import c5.y;
+import c5.v;
+import c5.z;
 import e2.a0;
 import gg.x1;
 import i9.s;
@@ -26,17 +26,17 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import v7.i8;
-import w7.a8;
+import v7.h8;
+import w7.z7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final i8 a;
+    public static final h8 a;
     public static final k b;
 
     static {
-        a8.a("TypefaceCompat static init");
+        z7.a("TypefaceCompat static init");
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 29) {
             a = new j();
@@ -64,6 +64,7 @@ public abstract class e {
     
         if (r1.equals(r5) == false) goto L15;
      */
+    /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -77,6 +78,7 @@ public abstract class e {
             String str2 = gVar.e;
             a2 = null;
             boolean z10 = false;
+            Object[] objArr = 0;
             if (str2 != null && !str2.isEmpty()) {
                 typeface = Typeface.create(str2, 0);
                 Typeface create = Typeface.create(Typeface.DEFAULT, 0);
@@ -91,29 +93,29 @@ public abstract class e {
             boolean z11 = gVar.d == 0;
             int i14 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            a6.i iVar = new a6.i(23, z10);
+            a6.i iVar = new a6.i(24, z10);
             iVar.b = a0Var;
             o0.e eVar = gVar.b;
             int i15 = 2;
             if (eVar != null) {
-                Object[] objArr = {gVar.a, eVar};
+                Object[] objArr2 = {gVar.a, eVar};
                 ArrayList arrayList = new ArrayList(2);
                 for (int i16 = 0; i16 < 2; i16++) {
-                    Object obj = objArr[i16];
+                    Object obj = objArr2[i16];
                     Objects.requireNonNull(obj);
                     arrayList.add(obj);
                 }
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
             } else {
-                Object[] objArr2 = {gVar.a};
+                Object[] objArr3 = {gVar.a};
                 ArrayList arrayList2 = new ArrayList(1);
-                Object obj2 = objArr2[0];
+                Object obj2 = objArr3[0];
                 Objects.requireNonNull(obj2);
                 arrayList2.add(obj2);
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
             n nVar = new n(handler, 4);
-            m5.e eVar2 = new m5.e(4, iVar, nVar);
+            o0.a aVar = new o0.a((int) (objArr == true ? 1 : 0), (Object) iVar, (Object) nVar);
             int i17 = 19;
             if (!z11) {
                 String a10 = o0.h.a(i12, unmodifiableList);
@@ -122,26 +124,26 @@ public abstract class e {
                     nVar.execute(new s(i17, iVar, typeface2));
                     a2 = typeface2;
                 } else {
-                    y yVar = new y(eVar2, i13);
+                    z zVar = new z(aVar, i13);
                     synchronized (o0.h.c) {
                         try {
                             m mVar = o0.h.d;
                             ArrayList arrayList3 = (ArrayList) mVar.get(a10);
                             if (arrayList3 != null) {
-                                arrayList3.add(yVar);
+                                arrayList3.add(zVar);
                             } else {
                                 ArrayList arrayList4 = new ArrayList();
-                                arrayList4.add(yVar);
+                                arrayList4.add(zVar);
                                 mVar.put(a10, arrayList4);
                                 o0.f fVar = new o0.f(a10, context, unmodifiableList, i12, 1);
                                 ThreadPoolExecutor threadPoolExecutor = o0.h.b;
-                                y yVar2 = new y(a10, i15);
+                                z zVar2 = new z(a10, i15);
                                 Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
-                                u uVar = new u();
-                                uVar.b = fVar;
-                                uVar.c = yVar2;
-                                uVar.d = handler2;
-                                threadPoolExecutor.execute(uVar);
+                                v vVar = new v();
+                                vVar.b = fVar;
+                                vVar.c = zVar2;
+                                vVar.d = handler2;
+                                threadPoolExecutor.execute(vVar);
                             }
                         } finally {
                         }
@@ -151,10 +153,10 @@ public abstract class e {
                 if (unmodifiableList.size() > 1) {
                     throw new IllegalArgumentException("Fallbacks with blocking fetches are not supported for performance reasons");
                 }
-                o0.e eVar3 = (o0.e) unmodifiableList.get(0);
+                o0.e eVar2 = (o0.e) unmodifiableList.get(0);
                 k kVar = o0.h.a;
                 ArrayList arrayList5 = new ArrayList(1);
-                Object obj3 = new Object[]{eVar3}[0];
+                Object obj3 = new Object[]{eVar2}[0];
                 Objects.requireNonNull(obj3);
                 arrayList5.add(obj3);
                 String a11 = o0.h.a(i12, DesugarCollections.unmodifiableList(arrayList5));
@@ -163,19 +165,19 @@ public abstract class e {
                     nVar.execute(new s(i17, iVar, typeface3));
                     a2 = typeface3;
                 } else if (i14 == -1) {
-                    Object[] objArr3 = {eVar3};
+                    Object[] objArr4 = {eVar2};
                     ArrayList arrayList6 = new ArrayList(1);
-                    Object obj4 = objArr3[0];
+                    Object obj4 = objArr4[0];
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.g b10 = o0.h.b(a11, context, DesugarCollections.unmodifiableList(arrayList6), i12);
-                    eVar2.K(b10);
+                    aVar.J(b10);
                     a2 = b10.a;
                 } else {
                     try {
                         try {
-                            o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.f(a11, context, eVar3, i12, 0)).get(i14, TimeUnit.MILLISECONDS);
-                            eVar2.K(gVar2);
+                            o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.f(a11, context, eVar2, i12, 0)).get(i14, TimeUnit.MILLISECONDS);
+                            aVar.J(gVar2);
                             a2 = gVar2.a;
                         } catch (InterruptedException e) {
                             throw e;
@@ -185,7 +187,7 @@ public abstract class e {
                             throw new InterruptedException("timeout");
                         }
                     } catch (InterruptedException unused2) {
-                        ((n) eVar2.c).execute(new q4((a6.i) eVar2.b, -3));
+                        ((n) aVar.c).execute(new q4((a6.i) aVar.b, -3));
                     }
                 }
             }

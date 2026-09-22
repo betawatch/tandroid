@@ -1,80 +1,46 @@
 package tg;
 
-import ai.a6;
-import android.os.CountDownTimer;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Date;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.yl0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.mb;
+import org.telegram.ui.Components.oc;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class l0 extends CountDownTimer {
-    public final /* synthetic */ s0 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(s0 s0Var) {
-        super(Long.MAX_VALUE, 1000L);
-        this.a = s0Var;
+public final class l0 implements mb {
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ boolean a() {
+        return true;
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onTick(long j3) {
-        s0 s0Var = this.a;
-        yl0 yl0Var = s0Var.d;
-        ArrayList arrayList = s0Var.Y;
-        ArrayList arrayList2 = new ArrayList(arrayList.size());
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
-            if (tL_myBoost.cooldown_until_date > 0) {
-                arrayList2.add(tL_myBoost);
-            }
-            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
-                tL_myBoost.cooldown_until_date = 0;
-            }
-        }
-        if (arrayList2.isEmpty()) {
-            return;
-        }
-        for (int i11 = 0; i11 < yl0Var.getChildCount(); i11++) {
-            View childAt = yl0Var.getChildAt(i11);
-            if (childAt instanceof xg.l) {
-                xg.l lVar = (xg.l) childAt;
-                if (arrayList2.contains(lVar.getBoost())) {
-                    j5 j5Var = lVar.e;
-                    a6 a6Var = lVar.d;
-                    int i12 = lVar.I.cooldown_until_date;
-                    if (i12 > 0) {
-                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, xg.l.f((i12 * 1000) - System.currentTimeMillis())));
-                        a6Var.setAlpha(0.65f);
-                        j5Var.setAlpha(0.65f);
-                        lVar.i(0.3f, false);
-                    } else {
-                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.I.expires * 1000))));
-                        if (a6Var.getAlpha() < 1.0f) {
-                            a6Var.animate().alpha(1.0f).start();
-                            j5Var.animate().alpha(1.0f).start();
-                            lVar.i(1.0f, true);
-                        } else {
-                            a6Var.setAlpha(1.0f);
-                            j5Var.setAlpha(1.0f);
-                            lVar.i(1.0f, false);
-                        }
-                    }
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ boolean e() {
+        return true;
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onFinish() {
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ int f(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ boolean g(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.mb
+    public final int h(int i10) {
+        return AndroidUtilities.statusBarHeight;
+    }
+
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ void b(oc ocVar) {
+    }
+
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ void c(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ void d(oc ocVar) {
     }
 }

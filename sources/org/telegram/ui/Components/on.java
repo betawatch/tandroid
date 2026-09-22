@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class on implements TextWatcher {
     public final /* synthetic */ nn a;
@@ -27,15 +27,15 @@ public final class on implements TextWatcher {
         }
         int i10 = this.b;
         int i11 = i10 == 11 ? unVar.n0 : unVar.m0;
-        s4.c1 L = unVar.s.L(i11);
-        if (L != null && unVar.x != null) {
+        s4.c1 K = unVar.s.K(i11);
+        if (K != null && unVar.x != null) {
             for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                 editable.removeSpan(imageSpan);
             }
             Emoji.replaceEmoji(editable, nnVar.getEditField().getPaint().getFontMetricsInt(), false);
             unVar.x.setDirection(1);
             unVar.x.setDelegate(nnVar);
-            unVar.x.setTranslationY(L.a.getY());
+            unVar.x.setTranslationY(K.a.getY());
             unVar.x.e();
         }
         if (i10 == 11) {
@@ -43,8 +43,8 @@ public final class on implements TextWatcher {
         } else {
             unVar.N = editable;
         }
-        if (L != null) {
-            un.L(unVar, L.a, i11);
+        if (K != null) {
+            un.L(unVar, K.a, i11);
         }
         unVar.T();
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class x2 extends View {
     public float E;
@@ -24,14 +24,14 @@ public final class x2 extends View {
     public final w2 a;
     public final RectF b;
     public final Path c;
-    public final yh.i8 d;
-    public final org.telegram.ui.Components.d6 e;
-    public final org.telegram.ui.Components.d6 f;
-    public final org.telegram.ui.Components.n6 h;
+    public final yh.j8 d;
+    public final org.telegram.ui.Components.c6 e;
+    public final org.telegram.ui.Components.c6 f;
+    public final org.telegram.ui.Components.m6 h;
     public final Paint n;
     public final Paint r;
     public final Drawable s;
-    public final ah.m v;
+    public final ah.l v;
     public int w;
     public boolean x;
     public long y;
@@ -41,8 +41,8 @@ public final class x2 extends View {
         this.b = new RectF();
         this.c = new Path();
         qr qrVar = qr.h;
-        this.e = new org.telegram.ui.Components.d6(this, 320L, qrVar);
-        this.f = new org.telegram.ui.Components.d6(this, 320L, qrVar);
+        this.e = new org.telegram.ui.Components.c6(this, 320L, qrVar);
+        this.f = new org.telegram.ui.Components.c6(this, 320L, qrVar);
         Paint paint = new Paint(1);
         this.n = paint;
         Paint paint2 = new Paint(1);
@@ -50,23 +50,23 @@ public final class x2 extends View {
         this.F = new int[2];
         this.G = 1.0f;
         this.a = w2Var;
-        w7.a6.a(this);
+        w7.z5.a(this);
         this.s = context.getResources().getDrawable(R.drawable.star).mutate();
-        ah.m mVar = new ah.m();
-        this.v = mVar;
-        mVar.a(bVar);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true, false);
-        this.h = n6Var;
-        n6Var.r(-9866632);
-        n6Var.t(AndroidUtilities.dp(9.0f));
-        n6Var.setCallback(this);
-        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        n6Var.D = true;
+        ah.l lVar = new ah.l();
+        this.v = lVar;
+        lVar.a(bVar);
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
+        this.h = m6Var;
+        m6Var.r(-9866632);
+        m6Var.t(AndroidUtilities.dp(9.0f));
+        m6Var.setCallback(this);
+        m6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        m6Var.D = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         new oq(R.drawable.star, 0).setScale(1.8f, 1.8f);
         setCount(0);
-        this.d = new yh.i8(1, 50);
+        this.d = new yh.j8(1, 50);
     }
 
     @Override // android.view.View
@@ -87,11 +87,11 @@ public final class x2 extends View {
         int i11 = (int) rectF.top;
         int i12 = (int) rectF.right;
         int i13 = (int) rectF.bottom;
-        ah.m mVar = this.v;
-        mVar.setBounds(i10, i11, i12, i13);
-        mVar.g.setColor(d);
-        mVar.invalidateSelf();
-        mVar.draw(canvas);
+        ah.l lVar = this.v;
+        lVar.setBounds(i10, i11, i12, i13);
+        lVar.g.setColor(d);
+        lVar.invalidateSelf();
+        lVar.draw(canvas);
         int dp2 = AndroidUtilities.dp(20.0f);
         int width3 = (getWidth() - dp2) / 2;
         int height3 = (getHeight() - dp2) / 2;
@@ -106,19 +106,19 @@ public final class x2 extends View {
         path.addRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, Path.Direction.CW);
         canvas.clipPath(path);
         float lerp = AndroidUtilities.lerp(5.0f, 15.0f, e);
-        yh.i8 i8Var = this.d;
-        i8Var.h = lerp;
-        i8Var.g(rectF);
-        i8Var.d();
-        i8Var.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e));
+        yh.j8 j8Var = this.d;
+        j8Var.h = lerp;
+        j8Var.g(rectF);
+        j8Var.d();
+        j8Var.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e));
         invalidate();
         canvas.restore();
         if (e7 > 0.0f) {
             float dp3 = AndroidUtilities.dp(12.0f);
             float dp4 = AndroidUtilities.dp(6.0f);
-            org.telegram.ui.Components.n6 n6Var = this.h;
-            float max = Math.max(dp3, n6Var.d() + dp4);
-            float g10 = n6Var.g() * this.G * e7;
+            org.telegram.ui.Components.m6 m6Var = this.h;
+            float max = Math.max(dp3, m6Var.d() + dp4);
+            float g10 = m6Var.g() * this.G * e7;
             canvas.save();
             RectF rectF2 = AndroidUtilities.rectTmp;
             rectF2.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
@@ -127,9 +127,9 @@ public final class x2 extends View {
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, this.r);
             rectF2.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
-            canvas.translate(((max - n6Var.d()) / 2.0f) + rectF2.left, AndroidUtilities.dp(6.33f));
-            n6Var.r(i0.a.d(e, -9866632, -1));
-            n6Var.draw(canvas);
+            canvas.translate(((max - m6Var.d()) / 2.0f) + rectF2.left, AndroidUtilities.dp(6.33f));
+            m6Var.r(i0.a.d(e, -9866632, -1));
+            m6Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -142,11 +142,11 @@ public final class x2 extends View {
 
     public void setCount(int i10) {
         this.w = i10;
-        org.telegram.ui.Components.n6 n6Var = this.h;
+        org.telegram.ui.Components.m6 m6Var = this.h;
         if (i10 > 50000) {
-            n6Var.q(AndroidUtilities.formatWholeNumber(i10, 0), true, true);
+            m6Var.q(AndroidUtilities.formatWholeNumber(i10, 0), true, true);
         } else {
-            n6Var.q(LocaleController.formatNumber(i10, ','), true, true);
+            m6Var.q(LocaleController.formatNumber(i10, ','), true, true);
         }
         invalidate();
         requestLayout();

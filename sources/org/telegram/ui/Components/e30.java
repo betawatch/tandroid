@@ -6,7 +6,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class e30 {
     public float c;
@@ -30,21 +30,21 @@ public final class e30 {
         int i10 = this.i;
         if (i10 == 0) {
             int i11 = this.j;
-            int i12 = org.telegram.ui.ActionBar.j6.Tg;
-            if (i11 != org.telegram.ui.ActionBar.j6.w0(null, i12, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ug, false)) {
-                int w02 = org.telegram.ui.ActionBar.j6.w0(null, i12, false);
+            int i12 = org.telegram.ui.ActionBar.i6.Tg;
+            if (i11 != org.telegram.ui.ActionBar.i6.w0(null, i12, false) || this.k != org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ug, false)) {
+                int w02 = org.telegram.ui.ActionBar.i6.w0(null, i12, false);
                 this.j = w02;
-                int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ug, false);
+                int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ug, false);
                 this.k = w03;
                 this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w02, w03}, (float[]) null, Shader.TileMode.CLAMP);
             }
         } else if (i10 == 1) {
             int i13 = this.j;
-            int i14 = org.telegram.ui.ActionBar.j6.Vg;
-            if (i13 != org.telegram.ui.ActionBar.j6.w0(null, i14, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Wg, false)) {
-                int w04 = org.telegram.ui.ActionBar.j6.w0(null, i14, false);
+            int i14 = org.telegram.ui.ActionBar.i6.Vg;
+            if (i13 != org.telegram.ui.ActionBar.i6.w0(null, i14, false) || this.k != org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Wg, false)) {
+                int w04 = org.telegram.ui.ActionBar.i6.w0(null, i14, false);
                 this.j = w04;
-                int w05 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Wg, false);
+                int w05 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Wg, false);
                 this.k = w05;
                 this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w04, w05}, (float[]) null, Shader.TileMode.CLAMP);
             }
@@ -53,13 +53,13 @@ public final class e30 {
                 return;
             }
             int i15 = this.j;
-            int i16 = org.telegram.ui.ActionBar.j6.ih;
-            if (i15 != org.telegram.ui.ActionBar.j6.w0(null, i16, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false) || this.l != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false)) {
-                int w06 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false);
+            int i16 = org.telegram.ui.ActionBar.i6.ih;
+            if (i15 != org.telegram.ui.ActionBar.i6.w0(null, i16, false) || this.k != org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.jh, false) || this.l != org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kh, false)) {
+                int w06 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.jh, false);
                 this.k = w06;
-                int w07 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false);
+                int w07 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kh, false);
                 this.l = w07;
-                int w08 = org.telegram.ui.ActionBar.j6.w0(null, i16, false);
+                int w08 = org.telegram.ui.ActionBar.i6.w0(null, i16, false);
                 this.j = w08;
                 this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w06, w07, w08}, (float[]) null, Shader.TileMode.CLAMP);
             }
@@ -100,10 +100,10 @@ public final class e30 {
     public final void b() {
         int i10 = this.i;
         if (i10 == 0) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
-            this.b = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
         } else if (i10 == 3) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
             this.b = (Utilities.random.nextInt(100) * 0.1f) / 100.0f;
         } else {
             this.a = a4.a.e(Utilities.random.nextInt(100), 100.0f, 0.2f, 0.8f);

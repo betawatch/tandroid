@@ -1,29 +1,29 @@
 package x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n3 implements ia.d {
     public static final n3 a = new n3();
-    public static final ia.c b = new ia.c("durationMs", hg.k0.n(v7.j0.k(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("errorCode", hg.k0.n(v7.j0.k(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("isColdCall", hg.k0.n(v7.j0.k(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.n(v7.j0.k(c0.class, new z(4))));
-    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.n(v7.j0.k(c0.class, new z(5))));
-    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.n(v7.j0.k(c0.class, new z(6))));
-    public static final ia.c h = new ia.c("eventsCount", hg.k0.n(v7.j0.k(c0.class, new z(7))));
-    public static final ia.c i = new ia.c("otherErrors", hg.k0.n(v7.j0.k(c0.class, new z(8))));
-    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.n(v7.j0.k(c0.class, new z(9))));
-    public static final ia.c k = new ia.c("isAccelerated", hg.k0.n(v7.j0.k(c0.class, new z(10))));
+    public static final ia.c b = new ia.c("durationMs", hg.c.o(w.c.k(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("errorCode", hg.c.o(w.c.k(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("isColdCall", hg.c.o(w.c.k(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.c.o(w.c.k(c0.class, new z(4))));
+    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.c.o(w.c.k(c0.class, new z(5))));
+    public static final ia.c g = new ia.c("isNnApiEnabled", hg.c.o(w.c.k(c0.class, new z(6))));
+    public static final ia.c h = new ia.c("eventsCount", hg.c.o(w.c.k(c0.class, new z(7))));
+    public static final ia.c i = new ia.c("otherErrors", hg.c.o(w.c.k(c0.class, new z(8))));
+    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.c.o(w.c.k(c0.class, new z(9))));
+    public static final ia.c k = new ia.c("isAccelerated", hg.c.o(w.c.k(c0.class, new z(10))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {
-        h7 h7Var = (h7) obj;
+        g7 g7Var = (g7) obj;
         ia.e eVar = (ia.e) obj2;
-        eVar.a(b, h7Var.a);
-        eVar.a(c, h7Var.b);
-        eVar.a(d, h7Var.c);
-        eVar.a(e, h7Var.d);
-        eVar.a(f, h7Var.e);
+        eVar.a(b, g7Var.a);
+        eVar.a(c, g7Var.b);
+        eVar.a(d, g7Var.c);
+        eVar.a(e, g7Var.d);
+        eVar.a(f, g7Var.e);
         eVar.a(g, null);
         eVar.a(h, null);
         eVar.a(i, null);

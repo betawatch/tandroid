@@ -10,13 +10,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.m6;
-import org.telegram.ui.pr0;
-import yh.k5;
+import org.telegram.ui.or0;
+import yh.l5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 int i10 = this.b;
                 float f7 = iArr[0];
                 float f10 = i10;
-                m6Var.run(Float.valueOf((w7.q.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
+                m6Var.run(Float.valueOf((w7.p.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
                 break;
             case 3:
                 c10 c10Var = (c10) this.c;
@@ -61,31 +61,31 @@ public final /* synthetic */ class r4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new l3((qg.n2) this.c, this.b, (List) obj, new ArrayList(), (pr0) this.d, 29));
+                Utilities.themeQueue.postRunnable(new l3((qg.p2) this.c, this.b, (List) obj, new ArrayList(), (or0) this.d, 28));
                 break;
             default:
-                xh.s2 s2Var = (xh.s2) this.c;
+                xh.r2 r2Var = (xh.r2) this.c;
                 int i12 = this.b;
-                xh.o2 o2Var = (xh.o2) this.d;
+                xh.n2 n2Var2 = (xh.n2) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.ActionBar.n2 n2Var2 = s2Var.a;
-                k5 k5Var = s2Var.e;
-                k5Var.a(i12, arrayList);
-                o2Var.f(true);
-                s2Var.f(true);
-                s2Var.n();
-                TL_stars.TL_starGiftCollection c10 = k5Var.c(i12);
+                org.telegram.ui.ActionBar.n2 n2Var3 = r2Var.a;
+                l5 l5Var = r2Var.e;
+                l5Var.a(i12, arrayList);
+                n2Var2.f(true);
+                r2Var.f(true);
+                r2Var.n();
+                TL_stars.TL_starGiftCollection c10 = l5Var.c(i12);
                 if (c10 != null) {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            pc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), c10.title)));
+                            oc R = vc.a0(n2Var3).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.z3.D1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        pc R2 = xc.a0(n2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
+                        oc R2 = vc.a0(n2Var3).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
                         R2.r = false;
                         R2.j();
                         break;

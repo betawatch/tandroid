@@ -15,18 +15,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nc0;
+import org.telegram.ui.Components.cc0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.co;
+import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class ja extends LinearLayout {
-    public org.telegram.ui.Components.t9 a;
-    public org.telegram.ui.Components.t9 b;
+    public org.telegram.ui.Components.s9 a;
+    public org.telegram.ui.Components.s9 b;
     public Drawable c;
     public Drawable d;
-    public final u1[] e;
+    public final t1[] e;
     public final Drawable f;
     public final org.telegram.ui.ActionBar.d5 h;
     public final int n;
@@ -35,7 +35,7 @@ public class ja extends LinearLayout {
     public final g v;
     public Drawable w;
     public boolean x;
-    public final org.telegram.ui.Components.d6 y;
+    public final org.telegram.ui.Components.c6 y;
 
     public ja(Context context, org.telegram.ui.ActionBar.d5 d5Var, int i10) {
         this(context, d5Var, i10, 0L, null);
@@ -54,7 +54,7 @@ public class ja extends LinearLayout {
         return false;
     }
 
-    public u1[] getCells() {
+    public t1[] getCells() {
         return this.e;
     }
 
@@ -63,11 +63,11 @@ public class ja extends LinearLayout {
         super.invalidate();
         int i10 = 0;
         while (true) {
-            u1[] u1VarArr = this.e;
-            if (i10 >= u1VarArr.length) {
+            t1[] t1VarArr = this.e;
+            if (i10 >= t1VarArr.length) {
                 return;
             }
-            u1VarArr[i10].invalidate();
+            t1VarArr[i10].invalidate();
             i10++;
         }
     }
@@ -76,27 +76,27 @@ public class ja extends LinearLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         Drawable drawable = this.w;
-        if (drawable instanceof co) {
-            ((co) drawable).f(this);
+        if (drawable instanceof fo) {
+            ((fo) drawable).f(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.t9 t9Var = this.a;
-        if (t9Var != null) {
-            t9Var.dispose();
+        org.telegram.ui.Components.s9 s9Var = this.a;
+        if (s9Var != null) {
+            s9Var.dispose();
             this.a = null;
         }
-        org.telegram.ui.Components.t9 t9Var2 = this.b;
-        if (t9Var2 != null) {
-            t9Var2.dispose();
+        org.telegram.ui.Components.s9 s9Var2 = this.b;
+        if (s9Var2 != null) {
+            s9Var2.dispose();
             this.b = null;
         }
         Drawable drawable = this.w;
-        if (drawable instanceof co) {
-            ((co) drawable).g(this);
+        if (drawable instanceof fo) {
+            ((fo) drawable).g(this);
         }
     }
 
@@ -104,18 +104,18 @@ public class ja extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         Drawable drawable = this.w;
         if (drawable == null) {
-            drawable = org.telegram.ui.ActionBar.j6.s0();
+            drawable = org.telegram.ui.ActionBar.i6.s0();
         }
-        if (org.telegram.ui.ActionBar.j6.d != null) {
+        if (org.telegram.ui.ActionBar.i6.d != null) {
             invalidate();
         }
         Drawable drawable2 = this.c;
-        org.telegram.ui.Components.d6 d6Var = this.y;
+        org.telegram.ui.Components.c6 c6Var = this.y;
         if (drawable != drawable2 && drawable != null) {
-            if (org.telegram.ui.ActionBar.j6.sl == null && !this.x) {
-                org.telegram.ui.Components.t9 t9Var = this.a;
-                if (t9Var != null) {
-                    t9Var.dispose();
+            if (org.telegram.ui.ActionBar.i6.sl == null && !this.x) {
+                org.telegram.ui.Components.s9 s9Var = this.a;
+                if (s9Var != null) {
+                    s9Var.dispose();
                     this.a = null;
                 }
             } else {
@@ -123,11 +123,11 @@ public class ja extends LinearLayout {
                 this.b = this.a;
             }
             this.c = drawable;
-            d6Var.d(0.0f, true);
+            c6Var.d(0.0f, true);
         }
         boolean z10 = this.x;
         org.telegram.ui.ActionBar.d5 d5Var = this.h;
-        float d = z10 ? d6Var.d(1.0f, false) : d5Var.getThemeAnimationValue();
+        float d = z10 ? c6Var.d(1.0f, false) : d5Var.getThemeAnimationValue();
         int i10 = 0;
         while (i10 < 2) {
             Drawable drawable3 = i10 == 0 ? this.d : this.c;
@@ -135,10 +135,10 @@ public class ja extends LinearLayout {
                 int i11 = (i10 != 1 || this.d == null || (d5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
                 if (i11 > 0) {
                     drawable3.setAlpha(i11);
-                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof nc0)) {
+                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof cc0)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                        if (drawable3 instanceof org.telegram.ui.Components.u9) {
-                            this.a = ((org.telegram.ui.Components.u9) drawable3).c(canvas, this);
+                        if (drawable3 instanceof org.telegram.ui.Components.t9) {
+                            this.a = ((org.telegram.ui.Components.t9) drawable3).c(canvas, this);
                         } else {
                             drawable3.draw(canvas);
                         }
@@ -167,9 +167,9 @@ public class ja extends LinearLayout {
                         ci.o8.j(canvas, drawable3, getWidth(), getHeight());
                     }
                     if (i10 == 0 && this.d != null && d >= 1.0f) {
-                        org.telegram.ui.Components.t9 t9Var2 = this.b;
-                        if (t9Var2 != null) {
-                            t9Var2.dispose();
+                        org.telegram.ui.Components.s9 s9Var2 = this.b;
+                        if (s9Var2 != null) {
+                            s9Var2.dispose();
                             this.b = null;
                         }
                         this.d = null;
@@ -207,8 +207,8 @@ public class ja extends LinearLayout {
         if (drawable != null) {
             drawable.setCallback(this);
         }
-        if ((this.w instanceof co) && isAttachedToWindow()) {
-            ((co) this.w).f(this);
+        if ((this.w instanceof fo) && isAttachedToWindow()) {
+            ((fo) this.w).f(this);
         }
         invalidate();
     }
@@ -220,30 +220,30 @@ public class ja extends LinearLayout {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0411  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x046f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x046e A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ja(Context context, org.telegram.ui.ActionBar.d5 d5Var, int i10, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ja(Context context, org.telegram.ui.ActionBar.d5 d5Var, int i10, long j3, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         MessageObject messageObject;
         MessageObject messageObject2;
         int i11;
-        u1[] u1VarArr;
+        t1[] t1VarArr;
         Context context2 = context;
         int i12 = i10;
-        this.e = new u1[2];
+        this.e = new t1[2];
         this.s = -1;
         this.v = new g(this, 9);
-        this.y = new org.telegram.ui.Components.d6(this, 0L, 350L, qr.h);
+        this.y = new org.telegram.ui.Components.c6(this, 0L, 350L, qr.h);
         this.n = i12;
         int i13 = UserConfig.selectedAccount;
         this.h = d5Var;
         setWillNotDraw(false);
         setOrientation(1);
         setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
-        org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-        this.f = org.telegram.ui.ActionBar.j6.U0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.b7, f6Var2));
+        org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
+        this.f = org.telegram.ui.ActionBar.i6.U0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.b7, e6Var2));
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         if (i12 == 3) {
             boolean z10 = j3 < 0;
@@ -446,42 +446,42 @@ public class ja extends LinearLayout {
                 String string2 = LocaleController.getString(R.string.GroupThemePreviewSenderName);
                 tL_user.first_name = string2;
                 messageObject7.customName = string2;
-                messageObject7.customAvatarDrawable = new org.telegram.ui.Components.g9(0, tL_user);
+                messageObject7.customAvatarDrawable = new org.telegram.ui.Components.f9(0, tL_user);
             }
             messageObject = messageObject6;
             messageObject2 = messageObject7;
             i11 = 0;
             while (true) {
-                u1VarArr = this.e;
-                if (i11 < u1VarArr.length) {
+                t1VarArr = this.e;
+                if (i11 < t1VarArr.length) {
                     return;
                 }
                 int i15 = i12;
-                u1VarArr[i11] = new ia(this, context2, i13, f6Var2, context, i15);
-                this.e[i11].setDelegate(new k2.e(this, 9));
-                u1 u1Var = this.e[i11];
-                u1Var.N7 = i15 == 2 || i15 == 4;
-                u1Var.setFullyDraw(true);
+                t1VarArr[i11] = new ha(this, context2, i13, e6Var2, context, i15);
+                this.e[i11].setDelegate(new ia(this, 0));
+                t1 t1Var = this.e[i11];
+                t1Var.N7 = i15 == 2 || i15 == 4;
+                t1Var.setFullyDraw(true);
                 MessageObject messageObject8 = i11 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
                     this.e[i11].X3(messageObject8, null, false, false, false, false);
-                    addView(this.e[i11], w7.y5.n(-1, -2));
+                    addView(this.e[i11], w7.x5.n(-1, -2));
                 }
                 i11++;
                 context2 = context;
-                f6Var2 = f6Var;
+                e6Var2 = e6Var;
                 i12 = i15;
             }
         }
         messageObject2 = null;
         i11 = 0;
         while (true) {
-            u1VarArr = this.e;
-            if (i11 < u1VarArr.length) {
+            t1VarArr = this.e;
+            if (i11 < t1VarArr.length) {
             }
             i11++;
             context2 = context;
-            f6Var2 = f6Var;
+            e6Var2 = e6Var;
             i12 = i15;
         }
     }

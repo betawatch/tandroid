@@ -7,16 +7,16 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v0 extends o6.a {
     public static final Parcelable.Creator<v0> CREATOR = new r0(14);
     public final boolean a;
-    public final n7.s0 b;
+    public final n7.t0 b;
 
-    public v0(boolean z10, n7.s0 s0Var) {
+    public v0(boolean z10, n7.t0 t0Var) {
         this.a = z10;
-        this.b = s0Var;
+        this.b = t0Var;
     }
 
     public final JSONObject b() {
@@ -25,8 +25,8 @@ public final class v0 extends o6.a {
             if (this.a) {
                 jSONObject.put("enabled", true);
             }
-            n7.s0 s0Var = this.b;
-            byte[] u10 = s0Var == null ? null : s0Var.u();
+            n7.t0 t0Var = this.b;
+            byte[] u10 = t0Var == null ? null : t0Var.u();
             if (u10 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("first", Base64.encodeToString(Arrays.copyOf(u10, 32), 11));
@@ -54,16 +54,16 @@ public final class v0 extends o6.a {
     }
 
     public final String toString() {
-        return a4.a.p("AuthenticationExtensionsPrfOutputs{", b().toString(), "}");
+        return a4.a.q("AuthenticationExtensionsPrfOutputs{", b().toString(), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.s(parcel, 1, 4);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        n7.s0 s0Var = this.b;
-        w7.f0.c(parcel, 2, s0Var == null ? null : s0Var.u());
-        w7.f0.r(parcel, q6);
+        n7.t0 t0Var = this.b;
+        w7.e0.c(parcel, 2, t0Var == null ? null : t0Var.u());
+        w7.e0.r(parcel, q6);
     }
 }

@@ -2,16 +2,16 @@ package gg;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public interface b2 {
-    a0.i D();
+    a0.i F();
 
-    boolean L(int i10);
+    boolean O(int i10);
 
-    void O(ArrayList arrayList);
+    void Q(ArrayList arrayList);
 
-    void f(int i10);
+    void h(int i10);
 
-    a0.i y();
+    a0.i w();
 }

@@ -21,11 +21,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ int a;
@@ -57,11 +57,11 @@ public final /* synthetic */ class uc implements Runnable {
                                     if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
                                         String networkCountryIso = telephonyManager.getNetworkCountryIso();
                                         if (!TextUtils.isEmpty(networkCountryIso)) {
-                                            c10 = v7.s6.c(networkCountryIso);
+                                            c10 = v7.r6.c(networkCountryIso);
                                             fVar.o = c10;
                                         }
                                     }
-                                    c10 = v7.s6.c(Locale.getDefault().getCountry());
+                                    c10 = v7.r6.c(Locale.getDefault().getCountry());
                                     fVar.o = c10;
                                 }
                                 fVar.l = fVar.a(b10);
@@ -140,15 +140,15 @@ public final /* synthetic */ class uc implements Runnable {
                 }
                 return;
             case 3:
-                com.google.firebase.messaging.e0 e0Var = (com.google.firebase.messaging.e0) this.b;
-                Log.w("FirebaseMessaging", "Service took too long to process intent: " + e0Var.a.getAction() + " finishing.");
-                e0Var.b.trySetResult(null);
+                com.google.firebase.messaging.f0 f0Var = (com.google.firebase.messaging.f0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + f0Var.a.getAction() + " finishing.");
+                f0Var.b.trySetResult(null);
                 return;
             case 4:
                 di.f fVar = (di.f) this.b;
                 fVar.getClass();
                 try {
-                    yl0 currentListView = ((di.i) fVar.L0).R.getCurrentListView();
+                    ll0 currentListView = ((di.i) fVar.M0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -202,42 +202,42 @@ public final /* synthetic */ class uc implements Runnable {
                 ((e2.a0) this.b).getClass();
                 return;
             case 18:
-                hg.c cVar2 = (hg.c) this.b;
-                cVar2.c.Y2.N(true);
-                cVar2.V(true);
+                hg.d dVar = (hg.d) this.b;
+                dVar.c.Y2.N(true);
+                dVar.V(true);
                 return;
             case 19:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
+                org.telegram.ui.Components.vc.a0(LaunchActivity.R()).k(false).j();
                 return;
             case 20:
-                hg.l0 l0Var = (hg.l0) this.b;
-                m61 m61Var = l0Var.d0;
-                if (m61Var != null) {
-                    m61Var.N(true);
+                hg.m0 m0Var = (hg.m0) this.b;
+                w51 w51Var = m0Var.d0;
+                if (w51Var != null) {
+                    w51Var.N(true);
                 }
-                l0Var.T(true);
+                m0Var.T(true);
                 return;
             case 21:
-                hg.u0 u0Var = (hg.u0) ((pb.c) this.b).b;
-                u0Var.c.Y2.N(true);
-                u0Var.b0();
+                hg.v0 v0Var = (hg.v0) ((a6.m) this.b).b;
+                v0Var.c.Y2.N(true);
+                v0Var.b0();
                 return;
             case 22:
-                hg.w0 w0Var = (hg.w0) this.b;
-                w0Var.c.Y2.N(true);
-                w0Var.V(true);
+                hg.x0 x0Var = (hg.x0) this.b;
+                x0Var.c.Y2.N(true);
+                x0Var.V(true);
                 return;
             case 23:
-                hg.g1 g1Var = (hg.g1) this.b;
-                g1Var.a.Y2.N(true);
-                g1Var.Y(true);
+                hg.h1 h1Var = (hg.h1) this.b;
+                h1Var.a.Y2.N(true);
+                h1Var.Y(true);
                 return;
             case 24:
                 ((ai.e4) this.b).run(Boolean.FALSE);
                 return;
             case 25:
-                NotificationCenter.getInstance(((hg.b2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                NotificationCenter.getInstance(((hg.c2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 26:
                 com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) this.b;
@@ -251,23 +251,23 @@ public final /* synthetic */ class uc implements Runnable {
                 }
                 return;
             case 28:
-                i2.e0 e0Var2 = (i2.e0) this.b;
-                e2.c cVar3 = e0Var2.E;
-                Context context = e0Var2.e;
+                i2.e0 e0Var = (i2.e0) this.b;
+                e2.c cVar2 = e0Var.E;
+                Context context = e0Var.e;
                 String str2 = e2.d0.a;
                 Integer valueOf = Integer.valueOf(c2.d.e(context).generateAudioSessionId());
-                cVar3.f = valueOf;
-                e2.b bVar2 = new e2.b(cVar3, valueOf, i11);
-                e2.z zVar = (e2.z) cVar3.c;
+                cVar2.f = valueOf;
+                e2.b bVar2 = new e2.b(cVar2, valueOf, i11);
+                e2.z zVar = (e2.z) cVar2.c;
                 if (zVar.a.getLooper().getThread().isAlive()) {
                     zVar.c(bVar2);
                     return;
                 }
                 return;
             default:
-                i2.e0 e0Var3 = ((i2.b0) this.b).a;
-                e0Var3.t1(null);
-                e0Var3.m1(0, 0);
+                i2.e0 e0Var2 = ((i2.b0) this.b).a;
+                e0Var2.t1(null);
+                e0Var2.m1(0, 0);
                 return;
         }
     }

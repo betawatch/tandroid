@@ -15,7 +15,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
     public final u3 a;
@@ -32,11 +32,11 @@ public final class i3 extends Dialog {
         v3 windowView = u3Var.getWindowView();
         eb ebVar = new eb(this, getContext(), 8);
         this.c = ebVar;
-        paint.setColor(j6.w0(null, j6.a7, false));
+        paint.setColor(i6.w0(null, i6.a7, false));
         h3 h3Var = new h3(windowView);
         this.b = h3Var;
         setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(ebVar, w7.y5.e(-1, -2, 80));
+        h3Var.addView(ebVar, w7.x5.e(-1, -2, 80));
         h3Var.setClipToPadding(false);
     }
 
@@ -56,7 +56,7 @@ public final class i3 extends Dialog {
                 h3 h3Var = i3Var.b;
                 View view = (View) h3Var.a;
                 AndroidUtilities.removeFromParent(view);
-                h3Var.addView(view, w7.y5.e(-1, -1, 119));
+                h3Var.addView(view, w7.x5.e(-1, -1, 119));
             }
         }
     }

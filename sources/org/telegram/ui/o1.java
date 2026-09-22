@@ -6,7 +6,7 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class o1 extends WebChromeClient {
     public final /* synthetic */ int a;
@@ -83,12 +83,12 @@ public final class o1 extends WebChromeClient {
             default:
                 org.telegram.ui.Components.vu vuVar = (org.telegram.ui.Components.vu) this.b;
                 FrameLayout frameLayout = vuVar.e;
-                if (vuVar.d == null && !org.telegram.ui.Components.rg0.p0.P) {
+                if (vuVar.d == null && !org.telegram.ui.Components.eg0.p0.P) {
                     vuVar.I();
                     vuVar.d = view;
                     vuVar.getSheetContainer().setVisibility(4);
                     frameLayout.setVisibility(0);
-                    frameLayout.addView(view, w7.y5.c(-1.0f, -1));
+                    frameLayout.addView(view, w7.x5.c(-1.0f, -1));
                     vuVar.f = customViewCallback;
                     break;
                 } else {

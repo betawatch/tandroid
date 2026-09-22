@@ -6,9 +6,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.sh;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bd;
+import org.telegram.ui.ad;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements e2.h {
     public final /* synthetic */ int a;
@@ -36,56 +36,56 @@ public final /* synthetic */ class i implements e2.h {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof hg.x1) {
-                    ((hg.x1) view2).c.invalidate();
+                if (view2 instanceof hg.y1) {
+                    ((hg.y1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof hg.x1) {
-                    ((hg.x1) view3).d.a(false, true);
+                if (view3 instanceof hg.y1) {
+                    ((hg.y1) view3).d.a(false, true);
                     break;
                 }
                 break;
             case 5:
-                ((m4.j1) obj).e();
+                ((m4.k1) obj).e();
                 break;
             case 6:
-                ((m4.j1) obj).e0();
+                ((m4.k1) obj).e0();
                 break;
             case 7:
-                ((m4.j1) obj).z0();
+                ((m4.k1) obj).z0();
                 break;
             case 8:
-                ((m4.j1) obj).G0();
+                ((m4.k1) obj).G0();
                 break;
             case 9:
-                ((m4.j1) obj).V();
+                ((m4.k1) obj).V();
                 break;
             case 10:
-                ((m4.j1) obj).F();
+                ((m4.k1) obj).F();
                 break;
             case 11:
-                ((m4.j1) obj).F0();
+                ((m4.k1) obj).F0();
                 break;
             case 12:
-                ((m4.j1) obj).E0();
+                ((m4.k1) obj).E0();
                 break;
             case 13:
-                ((m4.j1) obj).L();
+                ((m4.k1) obj).L();
                 break;
             case 14:
-                ((m4.j1) obj).stop();
+                ((m4.k1) obj).stop();
                 break;
             case 15:
-                ((m4.j1) obj).b();
+                ((m4.k1) obj).b();
                 break;
             case 16:
-                ((m4.j1) obj).H();
+                ((m4.k1) obj).H();
                 break;
             case 17:
-                ((m4.j1) obj).v();
+                ((m4.k1) obj).v();
                 break;
             case 18:
                 ((View) obj).invalidate();
@@ -94,20 +94,20 @@ public final /* synthetic */ class i implements e2.h {
                 ((n2.j) obj).a();
                 break;
             case 20:
-                bd.Y0((View) obj);
+                ad.Y0((View) obj);
                 break;
             case 21:
                 View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
+                if ((view4 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view4).getMessageObject()) != null) {
                     messageObject.forceUpdate = true;
-                    messageObject.reactionsChanged = true;
                     break;
                 }
                 break;
             case 22:
                 View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
+                if ((view5 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view5).getMessageObject()) != null) {
                     messageObject2.forceUpdate = true;
+                    messageObject2.reactionsChanged = true;
                     break;
                 }
                 break;
@@ -122,31 +122,31 @@ public final /* synthetic */ class i implements e2.h {
                 }
             case 24:
                 View view7 = (View) obj;
-                if (!(view7 instanceof org.telegram.ui.Cells.i5)) {
-                    if (!(view7 instanceof hg.x1)) {
+                if (!(view7 instanceof org.telegram.ui.Cells.h5)) {
+                    if (!(view7 instanceof hg.y1)) {
                         view7.invalidate();
                         break;
                     } else {
-                        ((hg.x1) view7).c.invalidate();
+                        ((hg.y1) view7).c.invalidate();
                         break;
                     }
                 } else {
-                    org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view7;
-                    i5Var.b.invalidate();
-                    i5Var.c.invalidate();
+                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view7;
+                    h5Var.b.invalidate();
+                    h5Var.c.invalidate();
                     break;
                 }
             case 25:
                 View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.g8) {
-                    ((org.telegram.ui.Cells.g8) view8).a(true);
+                if (view8 instanceof org.telegram.ui.Cells.f8) {
+                    ((org.telegram.ui.Cells.f8) view8).a(true);
                     break;
                 }
                 break;
             case 26:
                 View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.g8) {
-                    ((org.telegram.ui.Cells.g8) view9).c(true);
+                if (view9 instanceof org.telegram.ui.Cells.f8) {
+                    ((org.telegram.ui.Cells.f8) view9).c(true);
                     break;
                 }
                 break;
@@ -159,7 +159,7 @@ public final /* synthetic */ class i implements e2.h {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new sh(27));
+                    AndroidUtilities.runOnUIThread(new sh(25));
                     break;
                 }
                 break;
@@ -173,7 +173,7 @@ public final /* synthetic */ class i implements e2.h {
         }
     }
 
-    public /* synthetic */ i(bd bdVar) {
+    public /* synthetic */ i(ad adVar) {
         this.a = 20;
     }
 }

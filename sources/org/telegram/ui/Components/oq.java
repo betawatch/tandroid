@@ -11,7 +11,7 @@ import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class oq extends ReplacementSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -79,16 +79,16 @@ public class oq extends ReplacementSpan {
                             i15 = this.verticalAlignment;
                             if (i15 != 1) {
                                 if (i15 == 2) {
-                                    int z11 = hg.k0.z(i14, i12, 2, i12);
+                                    int C = hg.c.C(i14, i12, 2, i12);
                                     Drawable drawable2 = this.drawable;
-                                    i17 = z11 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
+                                    i17 = C - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
                                 } else if (i15 == 0) {
                                     int i18 = i14 - i12;
                                     int i19 = this.size;
                                     if (i19 == 0) {
                                         i19 = this.drawable.getIntrinsicHeight();
                                     }
-                                    i17 = hg.k0.z(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
+                                    i17 = hg.c.C(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
                                 }
                             }
                             canvas.translate(f7 + this.translateX, i17 + this.translateY);
@@ -110,7 +110,7 @@ public class oq extends ReplacementSpan {
                             }
                             canvas.restore();
                         }
-                        i16 = org.telegram.ui.ActionBar.j6.w0(null, this.colorKey, false);
+                        i16 = org.telegram.ui.ActionBar.i6.w0(null, this.colorKey, false);
                     }
                 }
                 z10 = false;

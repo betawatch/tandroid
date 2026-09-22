@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.os.Trace;
 import b2.s;
 import h2.h;
-import hg.k0;
 import ii.b0;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
@@ -12,7 +11,7 @@ import l5.j;
 import n4.y;
 import u2.f0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f extends i2.f {
     public final j I;
@@ -193,7 +192,7 @@ public final class f extends i2.f {
         h hVar2;
         if (!this.X || this.Y == null) {
             y yVar = this.c;
-            yVar.f();
+            yVar.h();
             b bVar = this.T;
             if (bVar != null && this.Q != 3 && !this.L) {
                 if (this.U == null) {
@@ -212,7 +211,7 @@ public final class f extends i2.f {
                 }
                 int w10 = w(yVar, this.U, 0);
                 if (w10 == -5) {
-                    s sVar2 = (s) yVar.b;
+                    s sVar2 = (s) yVar.c;
                     e2.d.h(sVar2);
                     this.S = sVar2;
                     this.b0 = true;
@@ -220,7 +219,7 @@ public final class f extends i2.f {
                     return true;
                 }
                 if (w10 == -4) {
-                    this.U.e();
+                    this.U.c();
                     ByteBuffer byteBuffer = this.U.c;
                     if (byteBuffer == null || byteBuffer.remaining() <= 0) {
                         h hVar4 = this.U;
@@ -310,7 +309,7 @@ public final class f extends i2.f {
             j jVar = this.I;
             jVar.getClass();
             int c10 = j.c(sVar);
-            if (c10 != k0.b(4, 0, 0, 0) && c10 != k0.b(3, 0, 0, 0)) {
+            if (c10 != hg.c.b(4, 0, 0, 0) && c10 != hg.c.b(3, 0, 0, 0)) {
                 throw d(new c("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
             }
             b bVar = this.T;
@@ -438,7 +437,7 @@ public final class f extends i2.f {
         }
         if (this.S == null) {
             y yVar = this.c;
-            yVar.f();
+            yVar.h();
             h hVar = this.J;
             hVar.clear();
             int w10 = w(yVar, hVar, 2);
@@ -451,7 +450,7 @@ public final class f extends i2.f {
                 }
                 return;
             }
-            s sVar = (s) yVar.b;
+            s sVar = (s) yVar.c;
             e2.d.h(sVar);
             this.S = sVar;
             this.b0 = true;

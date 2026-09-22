@@ -1,23 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class kv0 {
-    public final int a;
-    public final int b;
-    public final jv0 c;
-    public final iv0 d;
-    public final /* synthetic */ lv0 e;
+public final /* synthetic */ class kv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ androidx.activity.g b;
 
-    public kv0(lv0 lv0Var, Context context, int i10) {
-        this.e = lv0Var;
-        this.b = i10;
-        int i11 = lv0Var.a2;
-        lv0Var.a2 = i11 + 1;
-        this.a = (i11 & 65535) | 65536;
-        this.c = new jv0(this, context, i10);
-        this.d = new iv0(lv0Var, context, i10, false);
+    public /* synthetic */ kv0(androidx.activity.g gVar, int i10) {
+        this.a = i10;
+        this.b = gVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        androidx.activity.g gVar = this.b;
+        switch (i10) {
+            case 0:
+                pv0 pv0Var = (pv0) gVar.c;
+                boolean z10 = pv0Var.O;
+                Paint paint = pv0Var.b0;
+                Paint paint2 = pv0Var.W;
+                if (!z10) {
+                    lv0 lv0Var = (lv0) gVar.d;
+                    if (lv0Var != null) {
+                        lv0Var.c.recycle();
+                    }
+                    pv0Var.P = false;
+                    break;
+                } else {
+                    lv0 lv0Var2 = pv0Var.Q;
+                    pv0Var.R = lv0Var2;
+                    pv0Var.a0.setShader(paint2.getShader());
+                    pv0Var.c0.setShader(paint.getShader());
+                    Bitmap bitmap = ((lv0) gVar.d).c;
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    paint2.setShader(new BitmapShader(bitmap, tileMode, tileMode));
+                    ((lv0) gVar.d).getClass();
+                    ValueAnimator valueAnimator = pv0Var.g0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    pv0Var.f0 = 0.0f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    pv0Var.g0 = ofFloat;
+                    ofFloat.addUpdateListener(new h70(gVar, 22));
+                    pv0Var.g0.addListener(new pk0(2, gVar, lv0Var2));
+                    pv0Var.g0.setDuration(50L);
+                    pv0Var.g0.start();
+                    pv0Var.N();
+                    pv0Var.Q = (lv0) gVar.d;
+                    AndroidUtilities.runOnUIThread(new kv0(gVar, 1), 16L);
+                    break;
+                }
+            default:
+                pv0 pv0Var2 = (pv0) gVar.c;
+                pv0Var2.P = false;
+                pv0Var2.W();
+                break;
+        }
     }
 }

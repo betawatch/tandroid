@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class g2 extends View implements org.telegram.ui.Cells.q9, d3 {
+public final class g2 extends View implements org.telegram.ui.Cells.p9, d3 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -32,7 +32,7 @@ public final class g2 extends View implements org.telegram.ui.Cells.q9, d3 {
         this.b = f4Var;
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -107,7 +107,7 @@ public final class g2 extends View implements org.telegram.ui.Cells.q9, d3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.rk.a(this);
+        return org.telegram.messenger.vl.b(this);
     }
 
     @Override // android.view.View

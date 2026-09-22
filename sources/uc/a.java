@@ -1,8 +1,8 @@
 package uc;
 
-import w7.t8;
+import w7.s8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public static final String[] o = {"34", "37"};
@@ -27,37 +27,37 @@ public final class a {
     public final String n;
 
     public a(String str, Integer num, Integer num2, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15) {
-        this.a = t8.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
+        this.a = s8.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
         this.c = num;
         this.d = num2;
-        this.b = t8.e(str2);
-        this.e = t8.e(str3);
-        this.f = t8.e(str4);
-        this.g = t8.e(str5);
-        this.h = t8.e(str6);
-        this.i = t8.e(str7);
-        this.j = t8.e(str8);
-        this.k = t8.e(str9);
-        this.m = t8.a(str10) == null ? a() : str10;
-        this.l = t8.e(str11) == null ? b() : str11;
-        t8.e(str12);
-        t8.b(str13);
-        t8.e(str14);
-        this.n = t8.e(str15);
+        this.b = s8.e(str2);
+        this.e = s8.e(str3);
+        this.f = s8.e(str4);
+        this.g = s8.e(str5);
+        this.h = s8.e(str6);
+        this.i = s8.e(str7);
+        this.j = s8.e(str8);
+        this.k = s8.e(str9);
+        this.m = s8.a(str10) == null ? a() : str10;
+        this.l = s8.e(str11) == null ? b() : str11;
+        s8.e(str12);
+        s8.b(str13);
+        s8.e(str14);
+        this.n = s8.e(str15);
     }
 
     public final String a() {
-        if (t8.d(this.m)) {
+        if (s8.d(this.m)) {
             String str = this.a;
-            if (!t8.d(str)) {
-                this.m = t8.c(str, o) ? "American Express" : t8.c(str, p) ? "Discover" : t8.c(str, q) ? "JCB" : t8.c(str, r) ? "Diners Club" : t8.c(str, s) ? "Visa" : t8.c(str, t) ? "MasterCard" : "Unknown";
+            if (!s8.d(str)) {
+                this.m = s8.c(str, o) ? "American Express" : s8.c(str, p) ? "Discover" : s8.c(str, q) ? "JCB" : s8.c(str, r) ? "Diners Club" : s8.c(str, s) ? "Visa" : s8.c(str, t) ? "MasterCard" : "Unknown";
             }
         }
         return this.m;
     }
 
     public final String b() {
-        if (!t8.d(this.l)) {
+        if (!s8.d(this.l)) {
             return this.l;
         }
         String str = this.a;

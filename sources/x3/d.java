@@ -14,9 +14,9 @@ import e9.g0;
 import e9.i0;
 import java.util.Arrays;
 import java.util.List;
-import u2.y0;
+import u2.x0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -122,7 +122,7 @@ public final class d implements o {
         }
         if (!this.c) {
             h0 Z1 = this.a.Z1(0, 1);
-            this.a.f1();
+            this.a.e1();
             i iVar = this.b;
             iVar.c = this.a;
             iVar.b = Z1;
@@ -147,20 +147,20 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long c10 = iVar2.d.c(pVar);
-            if (c10 >= 0) {
-                sVar.a = c10;
+            long b10 = iVar2.d.b(pVar);
+            if (b10 >= 0) {
+                sVar.a = b10;
                 return 1;
             }
-            if (c10 < -1) {
-                iVar2.a(-(c10 + 2));
+            if (b10 < -1) {
+                iVar2.a(-(b10 + 2));
             }
             if (!iVar2.l) {
-                b0 l4 = iVar2.d.l();
-                e2.d.h(l4);
-                iVar2.c.X1(l4);
+                b0 g10 = iVar2.d.g();
+                e2.d.h(g10);
+                iVar2.c.X1(g10);
                 h0 h0Var = iVar2.b;
-                l4.l();
+                g10.l();
                 h0Var.getClass();
                 iVar2.l = true;
             }
@@ -170,22 +170,22 @@ public final class d implements o {
             }
             iVar2.k = 0L;
             v vVar2 = eVar.b;
-            long b10 = iVar2.b(vVar2);
-            if (b10 >= 0) {
+            long b11 = iVar2.b(vVar2);
+            if (b11 >= 0) {
                 long j10 = iVar2.g;
-                if (j10 + b10 >= iVar2.e) {
+                if (j10 + b11 >= iVar2.e) {
                     iVar2.b.d(vVar2.c, vVar2);
                     iVar2.b.c((j10 * 1000000) / iVar2.i, 1, vVar2.c, 0, null);
                     iVar2.e = -1L;
                 }
             }
-            iVar2.g += b10;
+            iVar2.g += b11;
             return 0;
         }
         while (true) {
-            boolean b11 = eVar.b(pVar);
+            boolean b12 = eVar.b(pVar);
             v vVar3 = eVar.b;
-            if (!b11) {
+            if (!b12) {
                 iVar2.h = 3;
                 return -1;
             }
@@ -203,9 +203,9 @@ public final class d implements o {
                     iVar2.b.b(sVar2);
                     iVar2.m = true;
                 }
-                y0 y0Var = (y0) iVar2.j.c;
-                if (y0Var != null) {
-                    iVar2.d = y0Var;
+                x0 x0Var = (x0) iVar2.j.c;
+                if (x0Var != null) {
+                    iVar2.d = x0Var;
                 } else {
                     if (pVar.getLength() != j11) {
                         f fVar = eVar.a;

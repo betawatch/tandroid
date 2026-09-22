@@ -1,40 +1,30 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.ViewSwitcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fe0 extends ds {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class fe0 extends ViewSwitcher {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fe0(Object obj, Context context, int i10) {
+    public /* synthetic */ fe0(Context context, int i10) {
         super(context);
-        this.h = i10;
-        this.n = obj;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ds
-    public final void a() {
-        switch (this.h) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
             case 0:
-                ((ie0) this.n).h(null);
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 break;
-            case 1:
-                ((cf0) this.n).h(null);
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.E != 0) {
-                    passcodeActivity.g0();
-                    break;
-                } else {
-                    postDelayed(new sl0(this, 0), 260L);
-                    break;
-                }
             default:
-                ((ih1) this.n).C0();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 break;
         }
     }

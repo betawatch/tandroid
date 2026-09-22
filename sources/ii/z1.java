@@ -6,10 +6,10 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class z1 extends ImageView implements org.telegram.ui.ActionBar.z5 {
     public final int a;
@@ -18,25 +18,25 @@ public final class z1 extends ImageView implements org.telegram.ui.ActionBar.z5 
     public boolean d;
     public int e;
     public int f;
-    public final org.telegram.ui.ActionBar.f6 h;
+    public final org.telegram.ui.ActionBar.e6 h;
     public boolean n;
     public boolean r;
     public boolean s;
 
-    public z1(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public z1(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.e = 20;
-        this.f = j6.d6;
+        this.f = i6.d6;
         this.n = true;
         this.s = true;
         this.b = i10;
         this.a = i10;
-        this.h = f6Var;
+        this.h = e6Var;
         if (i10 != 0) {
             setImageResource(i10);
         }
         setScaleType(ImageView.ScaleType.CENTER);
-        w7.a6.a(this);
+        w7.z5.a(this);
         e();
     }
 
@@ -70,13 +70,13 @@ public final class z1 extends ImageView implements org.telegram.ui.ActionBar.z5 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         boolean z10 = this.r;
-        org.telegram.ui.ActionBar.f6 f6Var = this.h;
+        org.telegram.ui.ActionBar.e6 e6Var = this.h;
         if (!z10) {
-            setBackground(j6.Z(j6.v0(this.f, f6Var), j6.v0(j6.i6, f6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
-            setColorFilter(new PorterDuffColorFilter(j6.v0(j6.G6, f6Var), PorterDuff.Mode.SRC_IN));
+            setBackground(i6.Z(i6.v0(this.f, e6Var), i6.v0(i6.i6, e6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            setColorFilter(new PorterDuffColorFilter(i6.v0(i6.G6, e6Var), PorterDuff.Mode.SRC_IN));
         } else {
-            int w02 = j6.w0(null, this.s ? j6.Oh : j6.G6, false);
-            setBackground(j6.Z(j6.v(j6.v0(this.f, f6Var), j6.l1(0.1f, w02)), j6.l1(0.1f, w02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            int w02 = i6.w0(null, this.s ? i6.Oh : i6.G6, false);
+            setBackground(i6.Z(i6.v(i6.v0(this.f, e6Var), i6.l1(0.1f, w02)), i6.l1(0.1f, w02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
             setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         }
     }

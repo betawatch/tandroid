@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tx implements k70 {
     public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
@@ -41,10 +41,10 @@ public final class tx implements k70 {
                             bundle.putInt("step", 1);
                             bundle.putLong("chat_id", j3);
                             bundle.putBoolean("forcePublic", uyVar.G.has_username.booleanValue());
-                            md mdVar = new md(bundle);
-                            mdVar.t0 = new b5(runnable, 12);
-                            uyVar.presentFragment(mdVar);
-                            n2VarArr[1] = mdVar;
+                            ld ldVar = new ld(bundle);
+                            ldVar.t0 = new b5(runnable, 12);
+                            uyVar.presentFragment(ldVar);
+                            n2VarArr[1] = ldVar;
                             break;
                         } else {
                             runnable.run();
@@ -53,7 +53,7 @@ public final class tx implements k70 {
                     default:
                         tx txVar = this.b;
                         uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new yt(11, txVar, n2VarArr));
+                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new kw(5, txVar, n2VarArr));
                         break;
                 }
             }
@@ -78,10 +78,10 @@ public final class tx implements k70 {
                             bundle.putInt("step", 1);
                             bundle.putLong("chat_id", j3);
                             bundle.putBoolean("forcePublic", uyVar.G.has_username.booleanValue());
-                            md mdVar = new md(bundle);
-                            mdVar.t0 = new b5(runnable, 12);
-                            uyVar.presentFragment(mdVar);
-                            n2VarArr[1] = mdVar;
+                            ld ldVar = new ld(bundle);
+                            ldVar.t0 = new b5(runnable, 12);
+                            uyVar.presentFragment(ldVar);
+                            n2VarArr[1] = ldVar;
                             break;
                         } else {
                             runnable.run();
@@ -90,13 +90,13 @@ public final class tx implements k70 {
                     default:
                         tx txVar = this.b;
                         uy uyVar2 = txVar.b;
-                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new yt(11, txVar, n2VarArr));
+                        uyVar2.Q4(uyVar2.getMessagesController().getChat(Long.valueOf(j3)), runnable, new kw(5, txVar, n2VarArr));
                         break;
                 }
             }
         };
         org.telegram.ui.ActionBar.b2 b2Var = this.a;
-        Utilities.doCallbacks(callback, callback2, new lu(this, b2Var, j3, i13), new Utilities.Callback(this) { // from class: org.telegram.ui.sx
+        Utilities.doCallbacks(callback, callback2, new ku(this, b2Var, j3, i13), new Utilities.Callback(this) { // from class: org.telegram.ui.sx
             public final /* synthetic */ tx b;
 
             {
@@ -118,7 +118,7 @@ public final class tx implements k70 {
                             TLRPC.RequestPeerType requestPeerType = uyVar.G;
                             TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
                             Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new mf(6, runnable));
+                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new lf(6, runnable));
                             break;
                         }
                         break;
@@ -131,7 +131,7 @@ public final class tx implements k70 {
                         } else {
                             MessagesController messagesController2 = uyVar2.getMessagesController();
                             long j10 = j3;
-                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), nq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new mf(7, runnable2));
+                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), pq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new lf(7, runnable2));
                             break;
                         }
                 }
@@ -158,7 +158,7 @@ public final class tx implements k70 {
                             TLRPC.RequestPeerType requestPeerType = uyVar.G;
                             TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
                             Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new mf(6, runnable));
+                            messagesController.setUserAdminRole(j3, user, tL_chatAdminRights, null, false, uyVar, bool == null || !bool.booleanValue(), true, null, runnable, new lf(6, runnable));
                             break;
                         }
                         break;
@@ -171,7 +171,7 @@ public final class tx implements k70 {
                         } else {
                             MessagesController messagesController2 = uyVar2.getMessagesController();
                             long j10 = j3;
-                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), nq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new mf(7, runnable2));
+                            uyVar2.getMessagesController().setUserAdminRole(j10, uyVar2.getAccountInstance().getUserConfig().getCurrentUser(), pq.s0(messagesController2.getChat(Long.valueOf(j10)).admin_rights, uyVar2.G.user_admin_rights), null, false, uyVar2, false, true, null, runnable2, new lf(7, runnable2));
                             break;
                         }
                 }

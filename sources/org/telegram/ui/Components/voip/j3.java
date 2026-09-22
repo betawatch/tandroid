@@ -12,9 +12,9 @@ import android.graphics.PorterDuffXfermode;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j3 extends View {
     public final q1 E;
@@ -22,9 +22,9 @@ public final class j3 extends View {
     public float G;
     public float H;
     public float I;
-    public kj0 a;
-    public kj0 b;
-    public kj0 c;
+    public xi0 a;
+    public xi0 b;
+    public xi0 c;
     public final Paint d;
     public final Paint e;
     public final Paint f;
@@ -129,8 +129,8 @@ public final class j3 extends View {
             this.r = 0;
             this.w = 100;
             if (i10 == 3 || i10 == 1) {
-                kj0 kj0Var = this.b;
-                kj0Var.N(kj0Var.e[0] - 1, false, false);
+                xi0 xi0Var = this.b;
+                xi0Var.N(xi0Var.e[0] - 1, false, false);
             }
         } else {
             this.s = 0;
@@ -165,11 +165,11 @@ public final class j3 extends View {
         float f16 = -y3;
         nVar.B(f15, f16 - f13, (i11 * 1.12f) / ((Bitmap) nVar.c).getHeight(), q1Var.h);
         q1Var.c.z(f14, f16, q1Var.f - x10, q1Var.g - y3);
-        kj0 kj0Var = this.c;
+        xi0 xi0Var = this.c;
         Paint paint2 = this.e;
         Paint paint3 = this.d;
         int i12 = this.n;
-        if (kj0Var != null) {
+        if (xi0Var != null) {
             if (this.w > 20) {
                 Paint paint4 = this.f;
                 paint4.setAlpha((int) ((r1 * 35) / 100.0f));
@@ -266,7 +266,7 @@ public final class j3 extends View {
                     z10 = true;
                 }
                 if ((z11 || z10) && (i3Var = this.x) != null) {
-                    i3Var.f(this);
+                    i3Var.h(this);
                 }
             }
         } else if (action == 3) {

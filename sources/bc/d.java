@@ -10,12 +10,12 @@ import java.util.List;
 import k.i;
 import m.p3;
 import n6.l;
+import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.f3;
 import r0.l0;
 import r0.m0;
-import v7.s1;
-import w7.h9;
+import v7.r1;
+import w7.g9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -28,7 +28,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -103,11 +103,11 @@ public final /* synthetic */ class d implements vf {
         ig igVar = (ig) this.f;
         cf.c cVar = new cf.c();
         boolean z11 = false;
-        s1 s1Var = new s1(15, false);
-        s1Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
-        s1Var.d = gbVar;
-        s1Var.c = Boolean.valueOf(z10);
-        cVar.a = new va(s1Var);
+        r1 r1Var = new r1(15, false);
+        r1Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
+        r1Var.d = gbVar;
+        r1Var.c = Boolean.valueOf(z10);
+        cVar.a = new va(r1Var);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
@@ -126,17 +126,17 @@ public final /* synthetic */ class d implements vf {
             }
             i10 = 0;
         }
-        f3 f3Var = new f3(25);
-        f3Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        f3Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        cVar.b = new ra(f3Var);
+        a1 a1Var = new a1(28);
+        a1Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        a1Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        cVar.b = new ra(a1Var);
         cVar.c = fVar.e.a();
         if (igVar != null) {
             List list = igVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            h9.a(length, array);
+            g9.a(length, array);
             cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {

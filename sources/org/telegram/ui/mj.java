@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class mj implements MessagesStorage.BooleanCallback {
     public final /* synthetic */ boolean a;
@@ -16,15 +16,15 @@ public final class mj implements MessagesStorage.BooleanCallback {
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public final void run(boolean z10) {
-        zn znVar = this.b.b;
+        bo boVar = this.b.b;
         if (z10) {
-            TLRPC.User user = znVar.f;
+            TLRPC.User user = boVar.f;
             boolean z11 = this.a;
             if (user != null || z11) {
-                znVar.getMessagesStorage().getMessagesCount(znVar.T5, new lj(1, this, z11));
+                boVar.getMessagesStorage().getMessagesCount(boVar.T5, new lj(1, this, z11));
                 return;
             }
         }
-        znVar.qa(znVar.d4, z10);
+        boVar.qa(boVar.d4, z10);
     }
 }

@@ -1,73 +1,42 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class op0 implements Utilities.Callback {
+public final class op0 extends s4.s0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pp0 b;
+    public final /* synthetic */ up0 b;
 
-    public /* synthetic */ op0(pp0 pp0Var, int i10) {
+    public op0(up0 up0Var, int i10) {
+        this.b = up0Var;
         this.a = i10;
-        this.b = pp0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        aq0 aq0Var;
-        wp0 wp0Var;
-        switch (this.a) {
-            case 0:
-                Integer num = (Integer) obj;
-                pp0 pp0Var = this.b;
-                wp0 wp0Var2 = pp0Var.e;
-                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) wp0Var2.M.get(num);
-                wp0Var2.K = starGift;
-                cq0 cq0Var = wp0Var2.p0;
-                if (starGift == null) {
-                    xh.v3 v3Var = wp0Var2.J;
-                    if (v3Var != null) {
-                        v3Var.f();
-                        wp0Var2.J = null;
-                    }
-                } else {
-                    xh.v3 v3Var2 = wp0Var2.J;
-                    if (v3Var2 == null || v3Var2.b != starGift.id) {
-                        i10 = ((org.telegram.ui.ActionBar.n2) cq0Var).currentAccount;
-                        xh.v3 v3Var3 = new xh.v3(wp0Var2.K.id, i10, new op0(pp0Var, 2));
-                        wp0Var2.J = v3Var3;
-                        v3Var3.g(false);
-                    }
-                }
-                wp0.a(wp0Var2);
-                (cq0Var.I.getCurrentPosition() == 1 ? cq0Var.n : cq0Var.h).e();
-                break;
-            case 1:
-                wp0 wp0Var3 = this.b.e;
-                wp0Var3.h = ((Integer) obj).intValue();
-                wp0Var3.r = null;
-                wp0Var3.s = null;
-                wp0Var3.I = null;
-                wp0Var3.j(true);
-                wp0Var3.i();
-                wp0Var3.f(true);
-                vp0 vp0Var = wp0Var3.y;
-                if (vp0Var != null) {
-                    vp0Var.invalidate();
-                }
-                cq0 cq0Var2 = wp0Var3.p0;
-                wp0 wp0Var4 = cq0Var2.n;
-                if (wp0Var4 != null && (aq0Var = wp0Var4.a) != null && (wp0Var = cq0Var2.h) != null) {
-                    aq0Var.a(wp0Var.h);
-                    break;
-                }
-                break;
-            default:
-                this.b.e.e();
-                break;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        up0 up0Var = this.b;
+        aq0 aq0Var = up0Var.p0;
+        if (i11 != 0) {
+            aq0Var.D0(1);
         }
+        if (Build.VERSION.SDK_INT >= 31 && (hVar = aq0Var.f0) != null) {
+            hVar.f(i10, i11);
+        }
+        up0Var.h();
+        if (up0Var.K != null) {
+            if (up0Var.J == null || !up0Var.c()) {
+                return;
+            }
+            up0Var.J.g(false);
+            return;
+        }
+        yh.m5 m5Var = this.a == 1 ? aq0Var.c : aq0Var.b;
+        if (m5Var == null || !up0Var.c()) {
+            return;
+        }
+        m5Var.a();
     }
 }

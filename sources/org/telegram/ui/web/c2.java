@@ -1,57 +1,32 @@
 package org.telegram.ui.web;
 
-import android.webkit.ValueCallback;
-import android.webkit.WebView;
-import java.io.File;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements ValueCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j2 b;
-    public final /* synthetic */ WebView c;
-    public final /* synthetic */ File d;
-    public final /* synthetic */ b2 e;
-
-    public /* synthetic */ c2(j2 j2Var, WebView webView, File file, b2 b2Var, int i10) {
-        this.a = i10;
-        this.b = j2Var;
-        this.c = webView;
-        this.d = file;
-        this.e = b2Var;
+public final class c2 extends FrameLayout {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.webkit.ValueCallback
-    public final void onReceiveValue(Object obj) {
-        switch (this.a) {
-            case 0:
-                File file = this.d;
-                String absolutePath = file.getAbsolutePath();
-                j2 j2Var = this.b;
-                WebView webView = this.c;
-                webView.saveWebArchive(absolutePath, false, new c2(j2Var, webView, file, this.e, 1));
-                break;
-            default:
-                j2 j2Var2 = this.b;
-                File file2 = this.d;
-                b2 b2Var = this.e;
-                this.c.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new i0(1));
-                try {
-                    oi.f fVar = new oi.f(file2);
-                    j2Var2.b = fVar;
-                    if (!((ArrayList) fVar.b).isEmpty()) {
-                        b2Var.run(((m1) ((ArrayList) j2Var2.b.b).get(0)).a());
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                b2Var.run(null);
-                break;
-        }
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

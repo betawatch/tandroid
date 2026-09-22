@@ -6,20 +6,20 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class ni extends FrameLayout {
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.e6 a;
     public final vi b;
-    public yl0 c;
-    public yl0 d;
+    public ll0 c;
+    public ll0 d;
     public int e;
     public boolean f;
     public boolean h;
 
-    public ni(Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
+    public ni(Context context, org.telegram.ui.ActionBar.e6 e6Var, vi viVar) {
         super(context);
-        this.a = f6Var;
+        this.a = e6Var;
         this.b = viVar;
     }
 
@@ -87,7 +87,7 @@ public abstract class ni extends FrameLayout {
         return 0;
     }
 
-    public ArrayList<org.telegram.ui.ActionBar.l6> getThemeDescriptions() {
+    public ArrayList<org.telegram.ui.ActionBar.k6> getThemeDescriptions() {
         return null;
     }
 
@@ -116,13 +116,13 @@ public abstract class ni extends FrameLayout {
     public void A(int i10) {
     }
 
-    public void D(ni niVar) {
-    }
-
-    public void E() {
+    public void E(ni niVar) {
     }
 
     public void F() {
+    }
+
+    public void G() {
     }
 
     public void a(CharSequence charSequence) {

@@ -1,72 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class nt0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 c;
-    public final /* synthetic */ pt0 d;
+public final /* synthetic */ class nt0 implements gg.b2, org.telegram.ui.Cells.a5 {
+    public final /* synthetic */ pt0 a;
 
-    public /* synthetic */ nt0(pt0 pt0Var, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, int i10) {
-        this.a = i10;
-        this.d = pt0Var;
-        this.b = f1Var;
-        this.c = f1Var2;
+    public /* synthetic */ nt0(pt0 pt0Var) {
+        this.a = pt0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                lv0 lv0Var = this.d.d;
-                if (!lv0Var.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var = this.b;
-                    boolean z10 = f1Var.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var2 = this.c;
-                    if (!z10 && f1Var2.getCheckView().a.q) {
-                        float f7 = -lv0Var.s1;
-                        lv0Var.s1 = f7;
-                        AndroidUtilities.shakeViewSpring(f1Var2, f7);
-                        break;
-                    } else {
-                        f1Var2.setChecked(!f1Var2.getCheckView().a.q);
-                        if (f1Var2.getCheckView().a.q && f1Var.getCheckView().a.q) {
-                            lv0Var.t1[0].q = 0;
-                        } else {
-                            lv0Var.t1[0].q = 2;
-                        }
-                        lv0.s(lv0Var);
-                        break;
-                    }
-                }
-                break;
-            default:
-                lv0 lv0Var2 = this.d.d;
-                if (!lv0Var2.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var3 = this.b;
-                    boolean z11 = f1Var3.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var4 = this.c;
-                    if (!z11 && f1Var4.getCheckView().a.q) {
-                        float f10 = -lv0Var2.s1;
-                        lv0Var2.s1 = f10;
-                        AndroidUtilities.shakeViewSpring(f1Var4, f10);
-                        break;
-                    } else {
-                        f1Var4.setChecked(!f1Var4.getCheckView().a.q);
-                        if (f1Var3.getCheckView().a.q && f1Var4.getCheckView().a.q) {
-                            lv0Var2.t1[0].q = 0;
-                        } else {
-                            lv0Var2.t1[0].q = 1;
-                        }
-                        lv0.s(lv0Var2);
-                        break;
-                    }
-                }
-                break;
+    @Override // gg.b2
+    public /* synthetic */ a0.i F() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ boolean O(int i10) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.a5
+    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        pt0 pt0Var = this.a;
+        TLObject E = pt0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return pt0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, b5Var);
+    }
+
+    @Override // gg.b2
+    public void h(int i10) {
+        pt0 pt0Var = this.a;
+        pt0Var.l();
+        if (i10 != 1) {
+            return;
+        }
+        int i11 = pt0Var.r - 1;
+        pt0Var.r = i11;
+        if (i11 != 0) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            yu0 yu0Var = pt0Var.s;
+            rt0[] rt0VarArr = yu0Var.k0;
+            if (i12 >= rt0VarArr.length) {
+                return;
+            }
+            rt0 rt0Var = rt0VarArr[i12];
+            if (rt0Var.F == 7) {
+                if (pt0Var.h == 0) {
+                    rt0Var.w.e(false, true);
+                } else {
+                    yu0Var.z(rt0Var.h, 0, null);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i w() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ void Q(ArrayList arrayList) {
     }
 }

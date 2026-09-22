@@ -2,52 +2,28 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m0 implements c1, d1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f1 b;
+public final /* synthetic */ class m0 implements d1, e1 {
+    public final /* synthetic */ g1 a;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ m0(f1 f1Var, int i10, int i11) {
-        this.a = i11;
-        this.b = f1Var;
-        this.c = i10;
+    public /* synthetic */ m0(g1 g1Var, int i10, int i11) {
+        this.a = g1Var;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    @Override // m4.e1
+    public void a(k1 k1Var, r rVar, List list) {
+        g1 g1Var = this.a;
+        k1Var.P(g1Var.K0(rVar, k1Var, this.b), g1Var.K0(rVar, k1Var, this.c), list);
     }
 
     @Override // m4.d1
-    public void a(j1 j1Var, r rVar, List list) {
-        switch (this.a) {
-            case 1:
-                j1Var.b0(this.b.K0(rVar, j1Var, this.c), list);
-                break;
-            case 2:
-                f1 f1Var = this.b;
-                f1Var.getClass();
-                int size = list.size();
-                int i10 = this.c;
-                if (size != 1) {
-                    j1Var.P(f1Var.K0(rVar, j1Var, i10), f1Var.K0(rVar, j1Var, i10 + 1), list);
-                    break;
-                } else {
-                    j1Var.s0((b2.k0) list.get(0), f1Var.K0(rVar, j1Var, i10));
-                    break;
-                }
-            default:
-                j1Var.b0(this.b.K0(rVar, j1Var, this.c), list);
-                break;
-        }
-    }
-
-    @Override // m4.c1
-    public void f(j1 j1Var, r rVar) {
-        switch (this.a) {
-            case 0:
-                j1Var.Y(this.b.K0(rVar, j1Var, this.c));
-                break;
-            default:
-                j1Var.R(this.b.K0(rVar, j1Var, this.c));
-                break;
-        }
+    public void g(k1 k1Var, r rVar) {
+        g1 g1Var = this.a;
+        k1Var.S(g1Var.K0(rVar, k1Var, this.b), g1Var.K0(rVar, k1Var, this.c));
     }
 }

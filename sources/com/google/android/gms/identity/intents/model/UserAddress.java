@@ -5,9 +5,9 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import e6.i;
 import o6.a;
-import w7.f0;
+import w7.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class UserAddress extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<UserAddress> CREATOR = new i(8);
@@ -29,24 +29,24 @@ public final class UserAddress extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.l(parcel, 3, this.b);
-        f0.l(parcel, 4, this.c);
-        f0.l(parcel, 5, this.d);
-        f0.l(parcel, 6, this.e);
-        f0.l(parcel, 7, this.f);
-        f0.l(parcel, 8, this.h);
-        f0.l(parcel, 9, this.n);
-        f0.l(parcel, 10, this.r);
-        f0.l(parcel, 11, this.s);
-        f0.l(parcel, 12, this.v);
-        f0.l(parcel, 13, this.w);
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.l(parcel, 4, this.c);
+        e0.l(parcel, 5, this.d);
+        e0.l(parcel, 6, this.e);
+        e0.l(parcel, 7, this.f);
+        e0.l(parcel, 8, this.h);
+        e0.l(parcel, 9, this.n);
+        e0.l(parcel, 10, this.r);
+        e0.l(parcel, 11, this.s);
+        e0.l(parcel, 12, this.v);
+        e0.l(parcel, 13, this.w);
         boolean z10 = this.x;
-        f0.s(parcel, 14, 4);
+        e0.s(parcel, 14, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        f0.l(parcel, 15, this.y);
-        f0.l(parcel, 16, this.E);
-        f0.r(parcel, q6);
+        e0.l(parcel, 15, this.y);
+        e0.l(parcel, 16, this.E);
+        e0.r(parcel, q6);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c implements t2.a {
     public final long a;
@@ -19,13 +19,13 @@ public final class c implements t2.a {
     public final long f;
     public final long g;
     public final long h;
-    public final c5.a i;
+    public final lf.g i;
     public final d0 j;
     public final Uri k;
     public final i l;
     public final List m;
 
-    public c(long j3, long j10, long j11, boolean z10, long j12, long j13, long j14, long j15, i iVar, c5.a aVar, d0 d0Var, Uri uri, ArrayList arrayList) {
+    public c(long j3, long j10, long j11, boolean z10, long j12, long j13, long j14, long j15, i iVar, lf.g gVar, d0 d0Var, Uri uri, ArrayList arrayList) {
         this.a = j3;
         this.b = j10;
         this.c = j11;
@@ -35,7 +35,7 @@ public final class c implements t2.a {
         this.g = j14;
         this.h = j15;
         this.l = iVar;
-        this.i = aVar;
+        this.i = gVar;
         this.k = uri;
         this.j = d0Var;
         this.m = arrayList;

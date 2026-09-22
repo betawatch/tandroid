@@ -1,15 +1,16 @@
 package gb;
 
 import java.lang.reflect.Field;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u extends t {
-    public final fb.o b;
+    public final fb.n b;
 
-    public u(fb.o oVar, v vVar) {
+    public u(fb.n nVar, v vVar) {
         super(vVar);
-        this.b = oVar;
+        this.b = nVar;
     }
 
     @Override // gb.t
@@ -25,7 +26,7 @@ public final class u extends t {
             return;
         }
         if (sVar.h) {
-            throw new db.j(v7.j0.g("Cannot set value of 'static final' ", ib.c.d(field, false)));
+            throw new db.j(q3.i("Cannot set value of 'static final' ", ib.c.d(field, false)));
         }
         field.set(obj, read);
     }

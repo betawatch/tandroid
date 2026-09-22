@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class y00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -27,8 +27,8 @@ public abstract class y00 extends FrameLayout {
     public final int c;
     public final Drawable d;
     public final Drawable e;
-    public final org.telegram.ui.Components.o6 f;
-    public final org.telegram.ui.Components.o6 h;
+    public final org.telegram.ui.Components.n6 f;
+    public final org.telegram.ui.Components.n6 h;
     public final Paint n;
     public final Paint r;
     public float s;
@@ -43,38 +43,38 @@ public abstract class y00 extends FrameLayout {
         this.b = i10;
         this.c = i11;
         setImportantForAccessibility(1);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, true, true, false);
-        this.f = o6Var;
-        o6Var.setTextSize(AndroidUtilities.dp(15.66f));
-        o6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        o6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        o6Var.setEllipsizeByGradient(true);
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, true, true, false);
+        this.f = n6Var;
+        n6Var.setTextSize(AndroidUtilities.dp(15.66f));
+        n6Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        n6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        n6Var.setEllipsizeByGradient(true);
         boolean z10 = LocaleController.isRTL;
-        addView(o6Var, w7.y5.d(-1, 20.0f, 55, z10 ? 56.0f : 64.0f, 10.33f, z10 ? 64.0f : 56.0f, 0.0f));
-        org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(context, false, false, false);
-        this.h = o6Var2;
-        o6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        o6Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
-        o6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(n6Var, w7.x5.d(-1, 20.0f, 55, z10 ? 56.0f : 64.0f, 10.33f, z10 ? 64.0f : 56.0f, 0.0f));
+        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(context, false, false, false);
+        this.h = n6Var2;
+        n6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        n6Var2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        n6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z11 = LocaleController.isRTL;
-        addView(o6Var2, w7.y5.d(-1, 16.0f, 55, z11 ? 56.0f : 64.0f, 33.33f, z11 ? 64.0f : 56.0f, 0.0f));
+        addView(n6Var2, w7.x5.d(-1, 16.0f, 55, z11 ? 56.0f : 64.0f, 33.33f, z11 ? 64.0f : 56.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 1, -1));
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Uh, false);
+        imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 1, -1));
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Uh, false);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
         imageView.setOnClickListener(new a(this, 25));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, w7.y5.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 8.0f : 4.0f, 4.0f, z12 ? 4.0f : 8.0f, 4.0f));
+        addView(imageView, w7.x5.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 8.0f : 4.0f, 4.0f, z12 ? 4.0f : 8.0f, 4.0f));
         Paint paint = new Paint();
         this.n = paint;
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
+        paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false));
         Paint paint2 = new Paint();
         this.r = paint2;
-        paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.wj, false));
+        paint2.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.wj, false));
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_link_1).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, mode));
@@ -96,7 +96,7 @@ public abstract class y00 extends FrameLayout {
         tL_inputChatlistDialogFilter.filter_id = this.c;
         tL_chatlists_deleteExportedInvite.slug = substring;
         x00 x00Var = new x00(this, 2);
-        ConnectionsManager.getInstance(this.b).sendRequest(tL_chatlists_deleteExportedInvite, new oo(21, this, x00Var));
+        ConnectionsManager.getInstance(this.b).sendRequest(tL_chatlists_deleteExportedInvite, new qo(21, this, x00Var));
         AndroidUtilities.runOnUIThread(x00Var, 150L);
     }
 
@@ -106,8 +106,8 @@ public abstract class y00 extends FrameLayout {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
         if (n2Var instanceof f10) {
             ai.w0 w0Var = ((f10) n2Var).a;
-            org.telegram.ui.Components.y70 H = org.telegram.ui.Components.y70.H(n2Var, this);
-            H.W(w0Var.W0(this, false));
+            org.telegram.ui.Components.n70 H = org.telegram.ui.Components.n70.H(n2Var, this);
+            H.W(w0Var.V0(this, false));
             H.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new x00(this, 0), false);
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new x00(this, 1), true);
             if (LocaleController.isRTL) {
@@ -121,9 +121,9 @@ public abstract class y00 extends FrameLayout {
         if (this.x == null) {
             return;
         }
-        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
-        wi0Var.m(R.raw.qr_code_logo);
-        wi0Var.show();
+        org.telegram.ui.Components.ji0 ji0Var = new org.telegram.ui.Components.ji0(getContext(), LocaleController.getString(R.string.InviteByQRCode), this.x, LocaleController.getString(R.string.QRCodeLinkHelpFolder), false);
+        ji0Var.m(R.raw.qr_code_logo);
+        ji0Var.show();
     }
 
     public final void e(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite, boolean z10) {
@@ -138,11 +138,11 @@ public abstract class y00 extends FrameLayout {
             str = str.substring(8);
         }
         boolean isEmpty = TextUtils.isEmpty(tL_exportedChatlistInvite.title);
-        org.telegram.ui.Components.o6 o6Var = this.f;
+        org.telegram.ui.Components.n6 n6Var = this.f;
         if (isEmpty) {
-            o6Var.c(str, z11, true);
+            n6Var.c(str, z11, true);
         } else {
-            o6Var.c(tL_exportedChatlistInvite.title, z11, true);
+            n6Var.c(tL_exportedChatlistInvite.title, z11, true);
         }
         this.h.c(LocaleController.formatPluralString("FilterInviteChats", tL_exportedChatlistInvite.peers.size(), new Object[0]), z11, true);
         if (this.v != z10) {
@@ -163,8 +163,8 @@ public abstract class y00 extends FrameLayout {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z12 ? 1.0f : 0.0f);
             this.w = ofFloat;
-            ofFloat.addUpdateListener(new b3(this, 12));
-            this.w.addListener(new org.telegram.ui.Components.ba(28, this, z12));
+            ofFloat.addUpdateListener(new b3(this, 13));
+            this.w.addListener(new org.telegram.ui.Components.aa(28, this, z12));
             this.w.setInterpolator(org.telegram.ui.Components.qr.h);
             this.w.setDuration(350L);
             this.w.start();
@@ -195,7 +195,7 @@ public abstract class y00 extends FrameLayout {
             drawable2.draw(canvas);
         }
         if (this.v) {
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
@@ -205,8 +205,8 @@ public abstract class y00 extends FrameLayout {
         StringBuilder sb2 = new StringBuilder();
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.y;
         String str = "";
-        sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a4.a.s(new StringBuilder(), this.y.title, "\n "));
-        org.telegram.ui.Cells.c1.o(R.string.InviteLink, ", ", sb2);
+        sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a4.a.t(new StringBuilder(), this.y.title, "\n "));
+        org.telegram.messenger.vl.m(R.string.InviteLink, ", ", sb2);
         sb2.append((Object) this.h.getText());
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2 = this.y;
         if (tL_exportedChatlistInvite2 != null && TextUtils.isEmpty(tL_exportedChatlistInvite2.title)) {

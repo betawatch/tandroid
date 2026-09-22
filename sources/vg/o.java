@@ -2,11 +2,11 @@ package vg;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import rg.w1;
+import rg.v1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o extends w1 {
+public final class o extends v1 {
     public final /* synthetic */ r n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,19 +15,19 @@ public final class o extends w1 {
         this.n = rVar;
     }
 
-    @Override // rg.w1, android.view.View
+    @Override // rg.v1, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.n.b.setPaused(false);
     }
 
-    @Override // rg.w1, android.view.View
+    @Override // rg.v1, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.n.b.setPaused(true);
     }
 
-    @Override // rg.w1, android.view.View
+    @Override // rg.v1, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));

@@ -1,27 +1,37 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class rv0 {
-    public static final rv0 a;
-    public static final rv0 b;
-    public static final /* synthetic */ rv0[] c;
+public final class rv0 extends x50 {
+    public final /* synthetic */ tv0 d;
 
-    static {
-        rv0 rv0Var = new rv0("DEFAULT", 0);
-        a = rv0Var;
-        rv0 rv0Var2 = new rv0("RECORDING", 1);
-        b = rv0Var2;
-        c = new rv0[]{rv0Var, rv0Var2};
+    public rv0(tv0 tv0Var) {
+        this.d = tv0Var;
     }
 
-    public static rv0 valueOf(String str) {
-        return (rv0) Enum.valueOf(rv0.class, str);
+    @Override // org.telegram.ui.Components.co0
+    public final CharSequence d() {
+        tv0 tv0Var = this.d;
+        int i10 = tv0Var.I;
+        String[] strArr = tv0Var.F;
+        if (i10 < strArr.length) {
+            return strArr[i10];
+        }
+        return null;
     }
 
-    public static rv0[] values() {
-        return (rv0[]) c.clone();
+    @Override // org.telegram.ui.Components.x50
+    public final int i() {
+        return this.d.F.length - 1;
+    }
+
+    @Override // org.telegram.ui.Components.x50
+    public final int j() {
+        return this.d.I;
+    }
+
+    @Override // org.telegram.ui.Components.x50
+    public final void k(int i10) {
+        this.d.setOption(i10);
     }
 }

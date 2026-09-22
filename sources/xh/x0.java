@@ -1,16 +1,22 @@
 package xh;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.n90;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class x0 extends n90 {
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() < 0.95f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+public final class x0 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ org.telegram.messenger.voip.f a;
+
+    public x0(org.telegram.messenger.voip.f fVar) {
+        this.a = fVar;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.a.run();
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
     }
 }

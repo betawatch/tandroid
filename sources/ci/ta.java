@@ -23,17 +23,17 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.oe0;
-import org.telegram.ui.Components.s91;
-import org.telegram.ui.Components.t91;
-import org.telegram.ui.Components.uf0;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.de0;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, s91, Utilities.CallbackVoidReturn, k71, k9, m8 {
+public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, d91, Utilities.CallbackVoidReturn, t61, k9, m8 {
     public final /* synthetic */ int a;
     public final /* synthetic */ oc b;
 
@@ -43,7 +43,7 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
     }
 
     @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         int i10 = defaultWindowInsets.a;
         oc ocVar = this.b;
@@ -55,7 +55,7 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.s91
+    @Override // org.telegram.ui.Components.d91
     public void a(float f7) {
         oc ocVar = this.b;
         rb rbVar = ocVar.B0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         ocVar.j0(true);
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.t61
     public void b(vz vzVar) {
         MediaController.SavedFilterState savedFilterState;
         oc ocVar = this.b;
@@ -86,97 +86,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         return BitmapFactory.decodeFile(this.b.K1.L.getAbsolutePath(), options);
     }
 
-    @Override // ci.k9
-    public void g(final ga gaVar, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i10, b9 b9Var, final androidx.fragment.app.a0 a0Var) {
-        switch (this.a) {
-            case 10:
-                ArrayList arrayList = gaVar.b;
-                oc ocVar = this.b;
-                if (ocVar.K1 != null) {
-                    ocVar.X0.x(5, true);
-                    ocVar.K1.E0 = gaVar;
-                    int i11 = ocVar.c;
-                    int i12 = ja.a;
-                    SerializedData serializedData = new SerializedData(true);
-                    ja.c(serializedData, gaVar);
-                    SerializedData serializedData2 = new SerializedData(serializedData.length());
-                    serializedData.cleanup();
-                    ja.c(serializedData2, gaVar);
-                    MessagesController.getInstance(i11).getMainSettings().edit().putString("story_privacy2", Utilities.bytesToHex(serializedData2.toByteArray())).apply();
-                    serializedData2.cleanup();
-                    o8 o8Var = ocVar.K1;
-                    o8Var.G0 = z12;
-                    o8Var.H0 = z11;
-                    o8Var.F0.clear();
-                    ocVar.K1.F0.addAll(arrayList);
-                    o8 o8Var2 = ocVar.K1;
-                    o8Var2.l = true;
-                    o8Var2.v0 = inputPeer;
-                    ArrayList arrayList2 = ocVar.H1;
-                    if (arrayList2 != null) {
-                        int size = arrayList2.size();
-                        int i13 = 0;
-                        while (i13 < size) {
-                            Object obj = arrayList2.get(i13);
-                            i13++;
-                            o8 o8Var3 = (o8) obj;
-                            o8Var3.E0 = gaVar;
-                            ArrayList arrayList3 = o8Var3.F0;
-                            o8Var3.G0 = z12;
-                            o8Var3.H0 = z11;
-                            arrayList3.clear();
-                            arrayList3.addAll(arrayList);
-                            o8Var3.l = true;
-                            o8Var3.v0 = inputPeer;
-                        }
-                    }
-                    ocVar.i(new qa(ocVar, b9Var, 0));
-                    break;
-                }
-                break;
-            default:
-                int i14 = R.raw.permission_request_camera;
-                int i15 = R.string.PermissionNoCameraMicVideo;
-                String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
-                final oc ocVar2 = this.b;
-                oe0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.ra
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj2) {
-                        final oc ocVar3 = oc.this;
-                        int i16 = ocVar3.c;
-                        boolean booleanValue = ((Boolean) obj2).booleanValue();
-                        final androidx.fragment.app.a0 a0Var2 = a0Var;
-                        if (!booleanValue) {
-                            a0Var2.run();
-                            return;
-                        }
-                        rb rbVar = ocVar3.B0;
-                        final boolean z14 = rbVar == null || rbVar.isFrontface();
-                        final TL_stories.TL_startLive tL_startLive = new TL_stories.TL_startLive();
-                        tL_startLive.noforwards = true ^ z11;
-                        TLRPC.InputPeer inputPeer2 = inputPeer;
-                        tL_startLive.peer = inputPeer2 == null ? new TLRPC.TL_inputPeerSelf() : inputPeer2;
-                        final long clientUserId = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? UserConfig.getInstance(i16).getClientUserId() : DialogObject.getPeerDialogId(inputPeer2);
-                        tL_startLive.privacy_rules.addAll(gaVar.b);
-                        tL_startLive.random_id = Utilities.random.nextLong();
-                        final boolean z15 = z13;
-                        tL_startLive.rtmp_stream = z15;
-                        tL_startLive.messages_enabled = Boolean.valueOf(z10);
-                        tL_startLive.send_paid_messages_stars = Long.valueOf(i10);
-                        ConnectionsManager.getInstance(i16).sendRequest(tL_startLive, new RequestDelegate() { // from class: ci.sa
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                AndroidUtilities.runOnUIThread(new xa(oc.this, tLObject, tL_startLive, z15, clientUserId, z14, tL_error, a0Var2));
-                            }
-                        });
-                    }
-                });
-                break;
-        }
-    }
-
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 oc ocVar = this.b;
@@ -281,6 +192,95 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         }
     }
 
+    @Override // ci.k9
+    public void k(final ga gaVar, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i10, b9 b9Var, final androidx.fragment.app.a0 a0Var) {
+        switch (this.a) {
+            case 10:
+                ArrayList arrayList = gaVar.b;
+                oc ocVar = this.b;
+                if (ocVar.K1 != null) {
+                    ocVar.X0.x(5, true);
+                    ocVar.K1.E0 = gaVar;
+                    int i11 = ocVar.c;
+                    int i12 = ja.a;
+                    SerializedData serializedData = new SerializedData(true);
+                    ja.c(serializedData, gaVar);
+                    SerializedData serializedData2 = new SerializedData(serializedData.length());
+                    serializedData.cleanup();
+                    ja.c(serializedData2, gaVar);
+                    MessagesController.getInstance(i11).getMainSettings().edit().putString("story_privacy2", Utilities.bytesToHex(serializedData2.toByteArray())).apply();
+                    serializedData2.cleanup();
+                    o8 o8Var = ocVar.K1;
+                    o8Var.G0 = z12;
+                    o8Var.H0 = z11;
+                    o8Var.F0.clear();
+                    ocVar.K1.F0.addAll(arrayList);
+                    o8 o8Var2 = ocVar.K1;
+                    o8Var2.l = true;
+                    o8Var2.v0 = inputPeer;
+                    ArrayList arrayList2 = ocVar.H1;
+                    if (arrayList2 != null) {
+                        int size = arrayList2.size();
+                        int i13 = 0;
+                        while (i13 < size) {
+                            Object obj = arrayList2.get(i13);
+                            i13++;
+                            o8 o8Var3 = (o8) obj;
+                            o8Var3.E0 = gaVar;
+                            ArrayList arrayList3 = o8Var3.F0;
+                            o8Var3.G0 = z12;
+                            o8Var3.H0 = z11;
+                            arrayList3.clear();
+                            arrayList3.addAll(arrayList);
+                            o8Var3.l = true;
+                            o8Var3.v0 = inputPeer;
+                        }
+                    }
+                    ocVar.i(new qa(ocVar, b9Var, 0));
+                    break;
+                }
+                break;
+            default:
+                int i14 = R.raw.permission_request_camera;
+                int i15 = R.string.PermissionNoCameraMicVideo;
+                String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
+                final oc ocVar2 = this.b;
+                de0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.ra
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj2) {
+                        final oc ocVar3 = oc.this;
+                        int i16 = ocVar3.c;
+                        boolean booleanValue = ((Boolean) obj2).booleanValue();
+                        final androidx.fragment.app.a0 a0Var2 = a0Var;
+                        if (!booleanValue) {
+                            a0Var2.run();
+                            return;
+                        }
+                        rb rbVar = ocVar3.B0;
+                        final boolean z14 = rbVar == null || rbVar.isFrontface();
+                        final TL_stories.TL_startLive tL_startLive = new TL_stories.TL_startLive();
+                        tL_startLive.noforwards = true ^ z11;
+                        TLRPC.InputPeer inputPeer2 = inputPeer;
+                        tL_startLive.peer = inputPeer2 == null ? new TLRPC.TL_inputPeerSelf() : inputPeer2;
+                        final long clientUserId = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? UserConfig.getInstance(i16).getClientUserId() : DialogObject.getPeerDialogId(inputPeer2);
+                        tL_startLive.privacy_rules.addAll(gaVar.b);
+                        tL_startLive.random_id = Utilities.random.nextLong();
+                        final boolean z15 = z13;
+                        tL_startLive.rtmp_stream = z15;
+                        tL_startLive.messages_enabled = Boolean.valueOf(z10);
+                        tL_startLive.send_paid_messages_stars = Long.valueOf(i10);
+                        ConnectionsManager.getInstance(i16).sendRequest(tL_startLive, new RequestDelegate() { // from class: ci.sa
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                AndroidUtilities.runOnUIThread(new xa(oc.this, tLObject, tL_startLive, z15, clientUserId, z14, tL_error, a0Var2));
+                            }
+                        });
+                    }
+                });
+                break;
+        }
+    }
+
     @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
     public void onCameraInit() {
         oc ocVar = this.b;
@@ -289,10 +289,10 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
             C = null;
         }
         ocVar.e0(ocVar.f0 == 0 ? C : null);
-        t91 t91Var = ocVar.V0;
-        if (t91Var != null) {
+        e91 e91Var = ocVar.V0;
+        if (e91Var != null) {
             ocVar.T1 = 0.0f;
-            t91Var.b(0.0f, false);
+            e91Var.b(0.0f, false);
         }
         ocVar.m0(true);
     }
@@ -301,8 +301,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
     public Object run() {
         cc ccVar;
         oc ocVar = this.b;
-        uf0 uf0Var = ocVar.B1;
-        Bitmap uiBlurBitmap = uf0Var != null ? uf0Var.getUiBlurBitmap() : null;
+        jf0 jf0Var = ocVar.B1;
+        Bitmap uiBlurBitmap = jf0Var != null ? jf0Var.getUiBlurBitmap() : null;
         return (uiBlurBitmap != null || (ccVar = ocVar.X0) == null || ccVar.getTextureView() == null) ? uiBlurBitmap : ocVar.X0.getTextureView().getUiBlurBitmap();
     }
 }

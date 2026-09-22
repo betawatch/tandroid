@@ -1,60 +1,33 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class zc0 implements org.telegram.ui.Components.xt0 {
-    public final /* synthetic */ kd0 a;
+public final class zc0 extends s4.s0 {
+    public final /* synthetic */ id0 a;
 
-    public zc0(kd0 kd0Var) {
-        this.a = kd0Var;
+    public zc0(id0 id0Var) {
+        this.a = id0Var;
     }
 
-    @Override // org.telegram.ui.Components.xt0
-    public final void R() {
-        kd0 kd0Var = this.a;
-        ad0 ad0Var = kd0Var.K0;
-        int c02 = ad0Var == null ? 0 : ad0Var.c0(8);
-        kd0Var.L0.setText(LocaleController.formatPluralString("LocationStories", c02, new Object[0]));
-        yc0 yc0Var = kd0Var.T;
-        boolean z10 = c02 > 0;
-        if (yc0Var.i0 != z10) {
-            yc0Var.i0 = z10;
-            yc0Var.l();
-            kd0Var.U.w0(0, AndroidUtilities.dp(200.0f), null);
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        boolean z10 = i10 != 0;
+        id0 id0Var = this.a;
+        id0Var.Q = z10;
+        if (z10 || id0Var.L == null) {
+            return;
         }
+        id0Var.L = null;
     }
 
-    @Override // org.telegram.ui.Components.xt0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final org.telegram.ui.Components.yl0 f() {
-        return this.a.U;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final boolean p() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.xt0
-    public final void D() {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        id0 id0Var = this.a;
+        id0Var.A0(false);
+        if (id0Var.L != null) {
+            id0Var.N += i11;
+        }
     }
 }

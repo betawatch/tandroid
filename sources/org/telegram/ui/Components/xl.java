@@ -16,7 +16,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class xl extends cm {
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
@@ -38,7 +38,7 @@ public final class xl extends cm {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         chatAttachAlertPhotoLayout.m0();
-        AndroidUtilities.runOnUIThread(new og(this, 23), 150L);
+        AndroidUtilities.runOnUIThread(new ng(this, 23), 150L);
         chatAttachAlertPhotoLayout.A(ChatAttachAlertPhotoLayout.s1.size());
     }
 
@@ -51,7 +51,7 @@ public final class xl extends cm {
         if (z11 && (qtVar = viVar.R0) != null && (closeIntoObject = ((t40) qtVar.b).getCloseIntoObject()) != null) {
             return closeIntoObject;
         }
-        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
         if (L == null) {
             return null;
         }
@@ -90,8 +90,8 @@ public final class xl extends cm {
         int childCount = tlVar.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = tlVar.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.u5) {
-                ((org.telegram.ui.Cells.u5) childAt).g(true);
+            if (childAt instanceof org.telegram.ui.Cells.t5) {
+                ((org.telegram.ui.Cells.t5) childAt).g(true);
             }
         }
     }
@@ -99,7 +99,7 @@ public final class xl extends cm {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final void W(int i10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(chatAttachAlertPhotoLayout, i10);
         if (L != null) {
             L.getImageView().q(0, true);
             MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(i10);
@@ -107,29 +107,29 @@ public final class xl extends cm {
                 return;
             }
             if (b02.coverPath != null) {
-                L.getImageView().f(b02.coverPath, null, org.telegram.ui.ActionBar.j6.R4);
+                L.getImageView().f(b02.coverPath, null, org.telegram.ui.ActionBar.i6.R4);
                 return;
             }
             if (b02.thumbPath != null) {
-                L.getImageView().f(b02.thumbPath, null, org.telegram.ui.ActionBar.j6.R4);
+                L.getImageView().f(b02.thumbPath, null, org.telegram.ui.ActionBar.i6.R4);
                 return;
             }
             if (b02.path == null) {
-                L.getImageView().setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
+                L.getImageView().setImageDrawable(org.telegram.ui.ActionBar.i6.R4);
                 return;
             }
             L.getImageView().p(b02.orientation, b02.invert, true);
             if (b02.isVideo) {
-                L.getImageView().f("vthumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.j6.R4);
+                L.getImageView().f("vthumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.i6.R4);
                 return;
             }
-            L.getImageView().f("thumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.j6.R4);
+            L.getImageView().f("thumb://" + b02.imageId + ":" + b02.path, null, org.telegram.ui.ActionBar.i6.R4);
         }
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final void Z(int i10) {
-        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
             L.g(true);
         }
@@ -138,8 +138,8 @@ public final class xl extends cm {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final long a() {
         org.telegram.ui.ActionBar.n2 n2Var = this.b.b.f0;
-        if (n2Var instanceof org.telegram.ui.zn) {
-            return ((org.telegram.ui.zn) n2Var).a();
+        if (n2Var instanceof org.telegram.ui.bo) {
+            return ((org.telegram.ui.bo) n2Var).a();
         }
         return 0L;
     }
@@ -180,7 +180,7 @@ public final class xl extends cm {
                     MessageObject.addEntitiesToText(spannableStringBuilder, arrayList3, false, false, false, false);
                     charSequence2 = spannableStringBuilder;
                 }
-                this.b.b.m1().setText(y5.cloneSpans(charSequence2, 3));
+                this.b.b.m1().setText(x5.cloneSpans(charSequence2, 3));
             }
         }
     }
@@ -192,7 +192,7 @@ public final class xl extends cm {
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Cells.u5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
+        org.telegram.ui.Cells.t5 L = ChatAttachAlertPhotoLayout.L(this.b, i10);
         if (L != null) {
             return L.getImageView().getImageReceiver().getBitmapSafe();
         }
@@ -202,7 +202,7 @@ public final class xl extends cm {
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
     public final boolean l() {
         vi viVar = this.b.b;
-        return viVar != null && (viVar.f0 instanceof org.telegram.ui.zn);
+        return viVar != null && (viVar.f0 instanceof org.telegram.ui.bo);
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
@@ -251,7 +251,7 @@ public final class xl extends cm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        d5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
+        c5.a0(viVar.J1, viVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), viVar.n1(), new pl(this, z10, i11, z11));
     }
 
     @Override // org.telegram.ui.tu0, org.telegram.ui.bv0

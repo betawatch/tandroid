@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b41 extends FrameLayout {
     public int a;
@@ -16,7 +16,7 @@ public final class b41 extends FrameLayout {
     public TLRPC.TL_reportResultChooseOption c;
     public TLRPC.TL_reportResultAddComment d;
     public final FrameLayout e;
-    public final org.telegram.ui.Components.u61 f;
+    public final org.telegram.ui.Components.e61 f;
     public final t5 h;
     public a41 n;
     public FrameLayout r;
@@ -26,19 +26,19 @@ public final class b41 extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public b41(c41 c41Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.ActionBar.f6 f6Var2;
-        org.telegram.ui.ActionBar.f6 f6Var3;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.e6 e6Var3;
         int i10;
-        org.telegram.ui.ActionBar.f6 f6Var4;
+        org.telegram.ui.ActionBar.e6 e6Var4;
         this.v = c41Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, w7.y5.e(-1, -1, 119));
-        f6Var = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        t5 t5Var = new t5(context, f6Var);
+        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        e6Var = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
+        t5 t5Var = new t5(context, e6Var);
         TextView textView = (TextView) t5Var.d;
         this.h = t5Var;
         t5Var.e = new z31(this, 0);
@@ -50,31 +50,31 @@ public final class b41 extends FrameLayout {
             textView.setText(LocaleController.getString(R.string.Report2));
         }
         org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) t5Var.b;
-        int i11 = org.telegram.ui.ActionBar.j6.G6;
-        f6Var2 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        g2Var.a(org.telegram.ui.ActionBar.j6.v0(i11, f6Var2));
-        int i12 = org.telegram.ui.ActionBar.j6.h5;
-        f6Var3 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        t5Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var3));
-        addView(t5Var, w7.y5.e(-1, -2, 55));
+        int i11 = org.telegram.ui.ActionBar.i6.G6;
+        e6Var2 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
+        g2Var.a(org.telegram.ui.ActionBar.i6.v0(i11, e6Var2));
+        int i12 = org.telegram.ui.ActionBar.i6.h5;
+        e6Var3 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
+        t5Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i12, e6Var3));
+        addView(t5Var, w7.x5.e(-1, -2, 55));
         i10 = ((org.telegram.ui.ActionBar.f3) c41Var).currentAccount;
         b5 b5Var = new b5(this, 19);
-        ol0 ol0Var = new ol0(this, 16);
-        f6Var4 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
-        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(context, i10, 0, true, b5Var, ol0Var, null, f6Var4);
-        this.f = u61Var;
-        u61Var.setClipToPadding(false);
-        u61Var.X2.k1(true);
-        u61Var.setOnScrollListener(new h3(this, 26));
-        frameLayout.addView(u61Var, w7.y5.c(-1.0f, -1));
+        tl0 tl0Var = new tl0(this, 15);
+        e6Var4 = ((org.telegram.ui.ActionBar.f3) c41Var).resourcesProvider;
+        org.telegram.ui.Components.e61 e61Var = new org.telegram.ui.Components.e61(context, i10, 0, true, b5Var, tl0Var, null, e6Var4);
+        this.f = e61Var;
+        e61Var.setClipToPadding(false);
+        e61Var.X2.k1(true);
+        e61Var.setOnScrollListener(new h3(this, 26));
+        frameLayout.addView(e61Var, w7.x5.c(-1.0f, -1));
     }
 
     public final void a(int i10) {
         this.a = i10;
         this.h.b(i10 != 0);
-        org.telegram.ui.Components.u61 u61Var = this.f;
-        if (u61Var != null) {
-            u61Var.Y2.N(true);
+        org.telegram.ui.Components.e61 e61Var = this.f;
+        if (e61Var != null) {
+            e61Var.Y2.N(true);
         }
     }
 

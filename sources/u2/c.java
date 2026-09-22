@@ -1,28 +1,28 @@
 package u2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class c implements c1 {
-    public final c1 a;
+public final class c implements b1 {
+    public final b1 a;
     public boolean b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, c1 c1Var) {
+    public c(d dVar, b1 b1Var) {
         this.c = dVar;
-        this.a = c1Var;
+        this.a = b1Var;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         return !this.c.b() && this.a.e();
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int f(n4.y yVar, h2.h hVar, int i10) {
         d dVar = this.c;
         if (dVar.b()) {
@@ -32,11 +32,11 @@ public final class c implements c1 {
             hVar.setFlags(4);
             return -4;
         }
-        long t10 = dVar.t();
+        long s10 = dVar.s();
         int f7 = this.a.f(yVar, hVar, i10);
         if (f7 != -5) {
             long j3 = dVar.f;
-            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && t10 == Long.MIN_VALUE && !hVar.d))) {
+            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -44,7 +44,7 @@ public final class c implements c1 {
             this.b = true;
             return -4;
         }
-        b2.s sVar = (b2.s) yVar.b;
+        b2.s sVar = (b2.s) yVar.c;
         sVar.getClass();
         int i11 = sVar.N;
         int i12 = sVar.M;
@@ -60,11 +60,11 @@ public final class c implements c1 {
         b2.r a2 = sVar.a();
         a2.L = i12;
         a2.M = i11;
-        yVar.b = new b2.s(a2);
+        yVar.c = new b2.s(a2);
         return -5;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         if (this.c.b()) {
             return -3;

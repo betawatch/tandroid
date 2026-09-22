@@ -2,8 +2,9 @@ package s4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -122,13 +123,13 @@ public final class k {
                                 if (i21 == 4) {
                                     int i23 = d.b - 1;
                                     oVar.getClass();
-                                    bVar.k1(i23, 1);
+                                    bVar.l1(i23, 1);
                                 }
                             } else {
                                 if (i21 != 16) {
-                                    StringBuilder k10 = hg.k0.k(i18, "unknown flag for pos ", " ");
-                                    k10.append(Long.toBinaryString(i21));
-                                    throw new IllegalStateException(k10.toString());
+                                    StringBuilder l4 = hg.c.l(i18, "unknown flag for pos ", " ");
+                                    l4.append(Long.toBinaryString(i21));
+                                    throw new IllegalStateException(l4.toString());
                                 }
                                 arrayList.add(new l(i18, i18, true));
                                 i10 = i17;
@@ -136,7 +137,7 @@ public final class k {
                         } else {
                             iArr = iArr2;
                             i10 = i17;
-                            bVar.M0(i18, 1);
+                            bVar.O0(i18, 1);
                             int size2 = arrayList.size();
                             int i24 = 0;
                             while (i24 < size2) {
@@ -151,7 +152,7 @@ public final class k {
                         iArr2 = iArr;
                     }
                 } else {
-                    bVar.M0(i14, i16);
+                    bVar.O0(i14, i16);
                 }
             }
             int i25 = size;
@@ -166,16 +167,16 @@ public final class k {
                         if (i30 != 0) {
                             if (i30 != 4 && i30 != 8) {
                                 if (i30 != 16) {
-                                    StringBuilder k11 = hg.k0.k(i28, "unknown flag for pos ", " ");
-                                    k11.append(Long.toBinaryString(i30));
-                                    throw new IllegalStateException(k11.toString());
+                                    StringBuilder l10 = hg.c.l(i28, "unknown flag for pos ", " ");
+                                    l10.append(Long.toBinaryString(i30));
+                                    throw new IllegalStateException(l10.toString());
                                 }
                                 arrayList.add(new l(i28, i14, false));
                             }
                             bVar.D(d(i29 >> 5, arrayList, true).b, i14);
                             if (i30 == 4) {
                                 oVar.getClass();
-                                bVar.k1(i14, 1);
+                                bVar.l1(i14, 1);
                             }
                         } else {
                             bVar.k0(i14, 1);
@@ -196,7 +197,7 @@ public final class k {
                 int i33 = nVar.a + i32;
                 if ((iArr3[i33] & 31) == 2) {
                     oVar.getClass();
-                    bVar.k1(i33, 1);
+                    bVar.l1(i33, 1);
                 }
             }
             i11 = nVar.a;
@@ -208,7 +209,7 @@ public final class k {
     }
 
     public final void b(h0 h0Var) {
-        a(new k2.e(h0Var, 22));
+        a(new ia(h0Var, 12));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

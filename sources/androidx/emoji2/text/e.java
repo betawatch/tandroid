@@ -3,7 +3,7 @@ package androidx.emoji2.text;
 import java.util.ArrayList;
 import n4.y;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e extends v7.w {
     public final /* synthetic */ f a;
@@ -21,13 +21,7 @@ public final class e extends v7.w {
     public final void b(com.google.firebase.messaging.t tVar) {
         f fVar = this.a;
         fVar.c = tVar;
-        com.google.firebase.messaging.t tVar2 = (com.google.firebase.messaging.t) fVar.c;
-        new rb.a(2);
-        d dVar = ((l) fVar.b).h;
-        y yVar = new y();
-        yVar.a = tVar2;
-        yVar.b = dVar;
-        fVar.a = yVar;
+        fVar.a = new y((com.google.firebase.messaging.t) fVar.c, new rb.a(2), ((l) fVar.b).h);
         l lVar = (l) fVar.b;
         lVar.getClass();
         ArrayList arrayList = new ArrayList();

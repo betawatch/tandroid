@@ -2,19 +2,19 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class aj extends nf.e {
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ zn g;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ bo g;
 
-    public /* synthetic */ aj(zn znVar, int i10, org.telegram.ui.Cells.u1 u1Var, int i11) {
+    public /* synthetic */ aj(bo boVar, int i10, org.telegram.ui.Cells.t1 t1Var, int i11) {
         this.d = i11;
-        this.g = znVar;
+        this.g = boVar;
         this.e = i10;
-        this.f = u1Var;
+        this.f = t1Var;
     }
 
     @Override // nf.e
@@ -46,24 +46,24 @@ public final class aj extends nf.e {
         switch (this.d) {
             case 0:
                 int i10 = this.e;
-                zn znVar = this.g;
-                znVar.vb = i10;
-                znVar.wb = 6;
+                bo boVar = this.g;
+                boVar.vb = i10;
+                boVar.wb = 6;
                 this.f.invalidate();
                 break;
             case 1:
                 int i11 = this.e;
-                zn znVar2 = this.g;
-                znVar2.vb = i11;
-                znVar2.wb = 5;
-                znVar2.yb = null;
+                bo boVar2 = this.g;
+                boVar2.vb = i11;
+                boVar2.wb = 5;
+                boVar2.yb = null;
                 this.f.invalidate();
                 break;
             default:
                 int i12 = this.e;
-                zn znVar3 = this.g;
-                znVar3.vb = i12;
-                znVar3.wb = 7;
+                bo boVar3 = this.g;
+                boVar3.vb = i12;
+                boVar3.wb = 7;
                 this.f.invalidate();
                 break;
         }

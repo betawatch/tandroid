@@ -1,5 +1,6 @@
 package f6;
 
+import a6.m;
 import ai.q4;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -35,7 +36,7 @@ import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -80,11 +81,10 @@ public final class i {
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         cf.c cVar = new cf.c(context);
         this.h = cVar;
-        int i10 = 18;
-        cVar.e = new pb.c(this, i10);
+        cVar.e = new m(this, 17);
         cf.c cVar2 = new cf.c(context);
         this.i = cVar2;
-        cVar2.e = new xa.c(this, i10);
+        cVar2.e = new xa.c(this, 18);
         this.k = new c0(Looper.getMainLooper(), 0);
         g6.b bVar3 = g.u;
         e6.a aVar3 = bVar.f;
@@ -101,8 +101,8 @@ public final class i {
                 } else if (b10 == null || (b10.length) == 0) {
                     Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
                 } else {
-                    for (int i11 : b10) {
-                        if (i11 < 0 || i11 >= size) {
+                    for (int i10 : b10) {
+                        if (i10 < 0 || i10 >= size) {
                             Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
                             break;
                         }
@@ -155,9 +155,7 @@ public final class i {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:43:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00a9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -222,15 +220,13 @@ public final class i {
                             gVar.k = fVar2;
                             gVar.b();
                         }
-                        m6.a aVar = (list != null || list.isEmpty()) ? null : (m6.a) list.get(0);
-                        y yVar2 = new y();
-                        yVar2.a = aVar != null ? null : aVar.b;
-                        uri = (Uri) yVar2.a;
+                        y yVar2 = new y((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
+                        uri = (Uri) yVar2.b;
                         yVar = gVar.l;
-                        if (yVar != null || !g6.a.d(uri, (Uri) yVar.a)) {
+                        if (yVar != null || !g6.a.d(uri, (Uri) yVar.b)) {
                             cf.c cVar = gVar.i;
                             cVar.e = new of.b(16, gVar, yVar2);
-                            cVar.A(uri);
+                            cVar.z(uri);
                         }
                     }
                     z10 = false;
@@ -250,17 +246,14 @@ public final class i {
                     }
                     gVar.k = fVar22;
                     gVar.b();
-                    if (list != null) {
-                    }
-                    y yVar22 = new y();
-                    yVar22.a = aVar != null ? null : aVar.b;
-                    uri = (Uri) yVar22.a;
+                    y yVar22 = new y((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
+                    uri = (Uri) yVar22.b;
                     yVar = gVar.l;
                     if (yVar != null) {
                     }
                     cf.c cVar2 = gVar.i;
                     cVar2.e = new of.b(16, gVar, yVar22);
-                    cVar2.A(uri);
+                    cVar2.z(uri);
                 }
             }
             if (hVar.k()) {
@@ -346,7 +339,7 @@ public final class i {
         }
         b0 b0Var2 = this.p;
         MediaMetadataCompat mediaMetadataCompat = null;
-        if (b0Var2 != null && (metadata = ((android.support.v4.media.session.h) b0Var2.b.a).a.getMetadata()) != null) {
+        if (b0Var2 != null && (metadata = ((android.support.v4.media.session.h) b0Var2.b.b).a.getMetadata()) != null) {
             a0.f fVar = MediaMetadataCompat.d;
             Parcel obtain = Parcel.obtain();
             metadata.writeToParcel(obtain, 0);
@@ -356,9 +349,9 @@ public final class i {
             createFromParcel.b = metadata;
             mediaMetadataCompat = createFromParcel;
         }
-        android.support.v4.media.c cVar = mediaMetadataCompat == null ? new android.support.v4.media.c(0) : new android.support.v4.media.c(mediaMetadataCompat);
-        cVar.p0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        b0Var.e(new MediaMetadataCompat((Bundle) cVar.b));
+        a4.m mVar = mediaMetadataCompat == null ? new a4.m(1) : new a4.m(mediaMetadataCompat);
+        mVar.y0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -572,11 +565,10 @@ public final class i {
         b0 b0Var;
         c6.l lVar;
         MediaMetadata metadata;
-        int i11;
         MediaMetadataCompat createFromParcel;
         Bitmap bitmap;
         PendingIntent activity;
-        int i12;
+        int i11;
         b0 b0Var2 = this.p;
         if (b0Var2 == null) {
             return;
@@ -600,40 +592,40 @@ public final class i {
                     ArrayList a2 = j.a(qVar);
                     if (a2 != null) {
                         int size = a2.size();
-                        int i13 = 0;
-                        while (i13 < size) {
-                            Object obj = a2.get(i13);
-                            i13++;
+                        int i12 = 0;
+                        while (i12 < size) {
+                            Object obj = a2.get(i12);
+                            i12++;
                             ArrayList arrayList = a2;
                             e6.d dVar = (e6.d) obj;
-                            int i14 = size;
+                            int i13 = size;
                             String str = dVar.a;
                             if (TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
                                 j3 = c(str, i10, bundle) | j3;
                             } else {
                                 f(e0Var, str, dVar);
                             }
-                            size = i14;
+                            size = i13;
                             a2 = arrayList;
                         }
                     }
                 } else if (fVar != null) {
                     ArrayList arrayList2 = fVar.a;
                     int size2 = arrayList2.size();
-                    int i15 = 0;
-                    while (i15 < size2) {
-                        Object obj2 = arrayList2.get(i15);
-                        i15++;
+                    int i14 = 0;
+                    while (i14 < size2) {
+                        Object obj2 = arrayList2.get(i14);
+                        i14++;
                         ArrayList arrayList3 = arrayList2;
                         String str2 = (String) obj2;
                         if (TextUtils.equals(str2, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                            i12 = size2;
+                            i11 = size2;
                             j3 = c(str2, i10, bundle) | j3;
                         } else {
-                            i12 = size2;
+                            i11 = size2;
                             f(e0Var, str2, null);
                         }
-                        size2 = i12;
+                        size2 = i11;
                         arrayList2 = arrayList3;
                     }
                 }
@@ -679,32 +671,30 @@ public final class i {
         c6.l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
         String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
         b0 b0Var3 = this.p;
-        if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.a).a.getMetadata()) == null) {
-            i11 = 0;
+        if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.b).a.getMetadata()) == null) {
             createFromParcel = null;
         } else {
             a0.f fVar2 = MediaMetadataCompat.d;
             Parcel obtain = Parcel.obtain();
-            i11 = 0;
             metadata.writeToParcel(obtain, 0);
             obtain.setDataPosition(0);
             createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
             obtain.recycle();
             createFromParcel.b = metadata;
         }
-        android.support.v4.media.c cVar = createFromParcel == null ? new android.support.v4.media.c(i11) : new android.support.v4.media.c(createFromParcel);
-        cVar.q0(j10);
+        a4.m mVar = createFromParcel == null ? new a4.m(1) : new a4.m(createFromParcel);
+        mVar.z0(j10);
         if (string != null) {
-            cVar.r0("android.media.metadata.TITLE", string);
-            cVar.r0("android.media.metadata.DISPLAY_TITLE", string);
+            mVar.A0("android.media.metadata.TITLE", string);
+            mVar.A0("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            cVar.r0("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            mVar.A0("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        b0Var.e(new MediaMetadataCompat((Bundle) cVar.b));
+        b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
         Uri d = d(lVar);
         if (d != null) {
-            this.h.A(d);
+            this.h.z(d);
             bitmap = null;
         } else {
             bitmap = null;
@@ -712,7 +702,7 @@ public final class i {
         }
         Uri d10 = d(lVar);
         if (d10 != null) {
-            this.i.A(d10);
+            this.i.z(d10);
         } else {
             e(bitmap, 3);
         }

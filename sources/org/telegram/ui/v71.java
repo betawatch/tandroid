@@ -1,18 +1,23 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class v71 extends s4.s0 {
-    public final /* synthetic */ w71 a;
+public final class v71 implements View.OnClickListener {
+    public final /* synthetic */ e81 a;
 
-    public v71(w71 w71Var) {
-        this.a = w71Var;
+    public v71(e81 e81Var) {
+        this.a = e81Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        this.a.P();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Components.aj0 aj0Var = this.a.d;
+        if (aj0Var.b() || aj0Var.getAnimatedDrawable() == null) {
+            return;
+        }
+        aj0Var.getAnimatedDrawable().M(40);
+        aj0Var.d();
     }
 }

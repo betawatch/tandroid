@@ -1,5 +1,6 @@
 package da;
 
+import a4.m;
 import a6.i;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,20 +26,19 @@ import k5.l;
 import k5.t;
 import k5.u;
 import k5.w;
-import l5.m;
+import l5.h;
 import l5.o;
 import m.p3;
 import m1.j;
-import m5.f;
+import m5.e;
 import org.json.JSONObject;
 import org.telegram.ui.rv0;
-import s5.h;
-import v7.j0;
-import w7.g6;
+import s5.g;
+import w7.f6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -52,9 +52,9 @@ public final class b {
     public Object i;
 
     public static void f(String str, JSONObject jSONObject) {
-        StringBuilder u10 = a4.a.u(str);
-        u10.append(jSONObject.toString());
-        String sb2 = u10.toString();
+        StringBuilder v = a4.a.v(str);
+        v.append(jSONObject.toString());
+        String sb2 = v.toString();
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", sb2, null);
         }
@@ -66,19 +66,19 @@ public final class b {
             str = str.concat(" processName");
         }
         if (((Integer) this.c) == null) {
-            str = j0.s(str, " reasonCode");
+            str = w.c.g(str, " reasonCode");
         }
         if (((Integer) this.d) == null) {
-            str = j0.s(str, " importance");
+            str = w.c.g(str, " importance");
         }
         if (((Long) this.e) == null) {
-            str = j0.s(str, " pss");
+            str = w.c.g(str, " pss");
         }
         if (((Long) this.f) == null) {
-            str = j0.s(str, " rss");
+            str = w.c.g(str, " rss");
         }
         if (((Long) this.g) == null) {
-            str = j0.s(str, " timestamp");
+            str = w.c.g(str, " timestamp");
         }
         if (str.isEmpty()) {
             return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
@@ -92,25 +92,25 @@ public final class b {
             str = str.concat(" model");
         }
         if (((Integer) this.c) == null) {
-            str = j0.s(str, " cores");
+            str = w.c.g(str, " cores");
         }
         if (((Long) this.d) == null) {
-            str = j0.s(str, " ram");
+            str = w.c.g(str, " ram");
         }
         if (((Long) this.e) == null) {
-            str = j0.s(str, " diskSpace");
+            str = w.c.g(str, " diskSpace");
         }
         if (((Boolean) this.f) == null) {
-            str = j0.s(str, " simulator");
+            str = w.c.g(str, " simulator");
         }
         if (((Integer) this.g) == null) {
-            str = j0.s(str, " state");
+            str = w.c.g(str, " state");
         }
         if (((String) this.h) == null) {
-            str = j0.s(str, " manufacturer");
+            str = w.c.g(str, " manufacturer");
         }
         if (((String) this.i) == null) {
-            str = j0.s(str, " modelClass");
+            str = w.c.g(str, " modelClass");
         }
         if (str.isEmpty()) {
             return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
@@ -122,10 +122,10 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject t02 = ((android.support.v4.media.c) this.e).t0();
-                if (t02 != null) {
-                    a Q = ((i) this.c).Q(t02);
-                    f("Loaded cached settings: ", t02);
+                JSONObject B0 = ((m) this.e).B0();
+                if (B0 != null) {
+                    a Q = ((i) this.c).Q(B0);
+                    f("Loaded cached settings: ", B0);
                     ((na.d) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
                     if (j.b(3, i10) || Q.c >= currentTimeMillis) {
@@ -159,8 +159,8 @@ public final class b {
         return (a) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0406  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x03ea A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0407  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x03eb A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -180,12 +180,12 @@ public final class b {
         final l5.i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         t5.c cVar = (t5.c) bVar.f;
-        f a2 = ((m5.d) bVar.b).a(iVar2.a);
+        e a2 = ((m5.d) bVar.b).a(iVar2.a);
         long j10 = 0;
         while (true) {
             final int i13 = 0;
-            h hVar = (h) cVar;
-            if (!((Boolean) hVar.f(new t5.b(bVar) { // from class: r5.e
+            g gVar = (g) cVar;
+            if (!((Boolean) gVar.f(new t5.b(bVar) { // from class: r5.d
                 public final /* synthetic */ da.b b;
 
                 {
@@ -193,20 +193,20 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object g() {
+                public final Object i() {
                     Boolean bool;
                     switch (i13) {
                         case 0:
                             l5.i iVar3 = iVar2;
-                            h hVar2 = (h) ((s5.d) this.b.c);
-                            SQLiteDatabase a10 = hVar2.a();
+                            g gVar2 = (g) ((s5.d) this.b.c);
+                            SQLiteDatabase a10 = gVar2.a();
                             a10.beginTransaction();
                             try {
-                                Long b10 = h.b(a10, iVar3);
+                                Long b10 = g.b(a10, iVar3);
                                 if (b10 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = hVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -222,17 +222,17 @@ public final class b {
                                 a10.endTransaction();
                             }
                         default:
-                            h hVar3 = (h) ((s5.d) this.b.c);
-                            hVar3.getClass();
-                            return (Iterable) hVar3.c(new s5.e(0, hVar3, iVar2));
+                            g gVar3 = (g) ((s5.d) this.b.c);
+                            gVar3.getClass();
+                            return (Iterable) gVar3.c(new rv0(29, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                hVar.f(new t9(bVar, iVar2, j10, 7));
+                gVar.f(new t9(bVar, iVar2, j10, 7));
                 return;
             }
             final int i14 = 1;
-            Iterable iterable = (Iterable) hVar.f(new t5.b(bVar) { // from class: r5.e
+            Iterable iterable = (Iterable) gVar.f(new t5.b(bVar) { // from class: r5.d
                 public final /* synthetic */ da.b b;
 
                 {
@@ -240,20 +240,20 @@ public final class b {
                 }
 
                 @Override // t5.b
-                public final Object g() {
+                public final Object i() {
                     Boolean bool;
                     switch (i14) {
                         case 0:
                             l5.i iVar3 = iVar2;
-                            h hVar2 = (h) ((s5.d) this.b.c);
-                            SQLiteDatabase a10 = hVar2.a();
+                            g gVar2 = (g) ((s5.d) this.b.c);
+                            SQLiteDatabase a10 = gVar2.a();
                             a10.beginTransaction();
                             try {
-                                Long b10 = h.b(a10, iVar3);
+                                Long b10 = g.b(a10, iVar3);
                                 if (b10 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = hVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -269,9 +269,9 @@ public final class b {
                                 a10.endTransaction();
                             }
                         default:
-                            h hVar3 = (h) ((s5.d) this.b.c);
-                            hVar3.getClass();
-                            return (Iterable) hVar3.c(new s5.e(0, hVar3, iVar2));
+                            g gVar3 = (g) ((s5.d) this.b.c);
+                            gVar3.getClass();
+                            return (Iterable) gVar3.c(new rv0(29, gVar3, iVar2));
                     }
                 }
             });
@@ -279,7 +279,7 @@ public final class b {
                 return;
             }
             if (a2 == null) {
-                g6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                f6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new m5.a(3, -1L);
                 bArr = bArr2;
                 j3 = j10;
@@ -289,11 +289,10 @@ public final class b {
                 while (it.hasNext()) {
                     arrayList.add(((s5.b) it.next()).c);
                 }
-                int i15 = 29;
                 if (bArr2 != null) {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
-                    o5.a aVar3 = (o5.a) hVar.f(new v(cVar2, i15));
+                    o5.a aVar3 = (o5.a) gVar.f(new v(cVar2, 28));
                     n nVar = new n();
                     nVar.f = new HashMap();
                     nVar.d = Long.valueOf(((u5.a) bVar.g).q());
@@ -305,26 +304,26 @@ public final class b {
                     aVar4.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        aVar4.l(aVar3, byteArrayOutputStream);
+                        aVar4.j(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    nVar.c = new m(cVar3, byteArrayOutputStream.toByteArray());
+                    nVar.c = new l5.m(cVar3, byteArrayOutputStream.toByteArray());
                     arrayList.add(((j5.b) a2).a(nVar.g()));
                 }
                 j5.b bVar2 = (j5.b) a2;
                 HashMap hashMap = new HashMap();
                 int size = arrayList.size();
-                int i16 = 0;
-                while (i16 < size) {
-                    Object obj = arrayList.get(i16);
-                    i16++;
-                    l5.h hVar2 = (l5.h) obj;
-                    String str3 = hVar2.a;
+                int i15 = 0;
+                while (i15 < size) {
+                    Object obj = arrayList.get(i15);
+                    i15++;
+                    h hVar = (h) obj;
+                    String str3 = hVar.a;
                     if (hashMap.containsKey(str3)) {
-                        ((List) hashMap.get(str3)).add(hVar2);
+                        ((List) hashMap.get(str3)).add(hVar);
                     } else {
                         ArrayList arrayList2 = new ArrayList();
-                        arrayList2.add(hVar2);
+                        arrayList2.add(hVar);
                         hashMap.put(str3, arrayList2);
                     }
                 }
@@ -332,11 +331,11 @@ public final class b {
                 Iterator it2 = hashMap.entrySet().iterator();
                 while (it2.hasNext()) {
                     Map.Entry entry = (Map.Entry) it2.next();
-                    l5.h hVar3 = (l5.h) ((List) entry.getValue()).get(0);
+                    h hVar2 = (h) ((List) entry.getValue()).get(0);
                     w wVar = w.a;
                     long q6 = bVar2.f.q();
                     long q10 = bVar2.e.q();
-                    k5.j jVar = new k5.j(new k5.h(Integer.valueOf(hVar3.b("sdk-version")), hVar3.a("model"), hVar3.a("hardware"), hVar3.a("device"), hVar3.a("product"), hVar3.a("os-uild"), hVar3.a("manufacturer"), hVar3.a("fingerprint"), hVar3.a("locale"), hVar3.a("country"), hVar3.a("mcc_mnc"), hVar3.a("application_build")));
+                    k5.j jVar = new k5.j(new k5.h(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
                     try {
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
                         str2 = null;
@@ -345,9 +344,9 @@ public final class b {
                         num = null;
                     }
                     ArrayList arrayList4 = new ArrayList();
-                    for (l5.h hVar4 : (List) entry.getValue()) {
+                    for (h hVar3 : (List) entry.getValue()) {
                         Iterator it3 = it2;
-                        m mVar = hVar4.c;
+                        l5.m mVar = hVar3.c;
                         byte[] bArr3 = bArr2;
                         i5.c cVar4 = mVar.a;
                         byte[] bArr4 = mVar.b;
@@ -361,7 +360,7 @@ public final class b {
                             p3Var2.e = str4;
                             p3Var = p3Var2;
                         } else {
-                            String c11 = g6.c("CctTransportBackend");
+                            String c11 = f6.c("CctTransportBackend");
                             if (Log.isLoggable(c11, 5)) {
                                 Log.w(c11, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
@@ -369,12 +368,12 @@ public final class b {
                             bArr2 = bArr3;
                             j10 = j11;
                         }
-                        p3Var.a = Long.valueOf(hVar4.d);
-                        p3Var.c = Long.valueOf(hVar4.e);
-                        String str5 = (String) hVar4.f.get("tz-offset");
+                        p3Var.a = Long.valueOf(hVar3.d);
+                        p3Var.c = Long.valueOf(hVar3.e);
+                        String str5 = (String) hVar3.f.get("tz-offset");
                         p3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
-                        p3Var.h = new k5.n((u) u.a.get(hVar4.b("net-type")), (t) t.a.get(hVar4.b("mobile-subtype")));
-                        Integer num2 = hVar4.b;
+                        p3Var.h = new k5.n((u) u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
+                        Integer num2 = hVar3.b;
                         if (num2 != null) {
                             p3Var.b = num2;
                         }
@@ -383,7 +382,7 @@ public final class b {
                             str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) p3Var.f) == null) {
-                            str6 = j0.s(str6, " timezoneOffsetSeconds");
+                            str6 = w.c.g(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
@@ -418,37 +417,37 @@ public final class b {
                     str = null;
                 }
                 try {
-                    int i17 = 21;
-                    aa.a aVar5 = new aa.a(url, iVar3, str, i17);
+                    int i16 = 21;
+                    aa.a aVar5 = new aa.a(url, iVar3, str, i16);
                     d5 d5Var = new d5(bVar2, 29);
-                    int i18 = 5;
+                    int i17 = 5;
                     do {
                         c10 = d5Var.c(aVar5);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
-                            g6.a(url2, "CctTransportBackend", "Following redirect to: %s");
-                            aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i17);
+                            f6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            aVar5 = new aa.a(url2, (k5.i) aVar5.d, (String) aVar5.b, i16);
                         } else {
                             aVar5 = null;
                         }
                         if (aVar5 == null) {
                             break;
                         } else {
-                            i18--;
+                            i17--;
                         }
-                    } while (i18 >= 1);
-                    int i19 = c10.a;
-                    if (i19 == 200) {
+                    } while (i17 >= 1);
+                    int i18 = c10.a;
+                    if (i18 == 200) {
                         aVar2 = new m5.a(1, c10.b);
                     } else {
-                        if (i19 >= 500 || i19 == 404) {
+                        if (i18 >= 500 || i18 == 404) {
                             aVar = new m5.a(2, -1L);
-                        } else if (i19 == 400) {
+                        } else if (i18 == 400) {
                             try {
                                 aVar = new m5.a(4, -1L);
                             } catch (IOException e) {
                                 e = e;
-                                g6.b("CctTransportBackend", "Could not make request to the backend", e);
+                                f6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
                                 i12 = aVar2.a;
@@ -467,19 +466,18 @@ public final class b {
             i11 = 2;
             i12 = aVar2.a;
             if (i12 != i11) {
-                hVar.f(new z6(this, iterable, iVar, j3, 4));
-                ((lf.h) this.d).V(iVar, i10 + 1, true);
+                gVar.f(new z6(this, iterable, iVar, j3, 4));
+                ((lf.i) this.d).V(iVar, i10 + 1, true);
                 return;
             }
             bVar = this;
             iVar2 = iVar;
             j10 = j3;
-            int i20 = 1;
-            hVar.f(new rv0(27, bVar, iterable));
+            gVar.f(new rv0(26, bVar, iterable));
             if (i12 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    hVar.f(new r5.d(bVar, i20));
+                    gVar.f(new r5.e(bVar, 0));
                 }
             } else if (i12 == 4) {
                 HashMap hashMap2 = new HashMap();
@@ -492,7 +490,7 @@ public final class b {
                         hashMap2.put(str8, 1);
                     }
                 }
-                hVar.f(new rv0(28, bVar, hashMap2));
+                gVar.f(new rv0(27, bVar, hashMap2));
             }
             bArr2 = bArr;
         }

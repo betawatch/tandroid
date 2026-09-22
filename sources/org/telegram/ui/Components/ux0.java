@@ -1,54 +1,60 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ux0 implements Runnable {
+public final /* synthetic */ class ux0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ com.google.firebase.messaging.n b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ux0(TLObject tLObject, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = tLObject;
-        this.c = callback;
+    public /* synthetic */ ux0(com.google.firebase.messaging.n nVar, int i10, int i11) {
+        this.a = i11;
+        this.b = nVar;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                TLObject tLObject = this.b;
-                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
-                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
-                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
-                    }
-                    z10 = true;
-                } else {
-                    z10 = false;
-                }
-                this.c.run(Boolean.valueOf(z10));
+                ArrayList arrayList = (ArrayList) this.b.d;
+                Float f7 = (Float) valueAnimator.getAnimatedValue();
+                f7.getClass();
+                arrayList.set(this.c, f7);
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) this.b.e;
+                Float f10 = (Float) valueAnimator.getAnimatedValue();
+                f10.getClass();
+                arrayList2.set(this.c, f10);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) this.b.f;
+                Float f11 = (Float) valueAnimator.getAnimatedValue();
+                f11.getClass();
+                arrayList3.set(this.c, f11);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) this.b.d;
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                f12.getClass();
+                arrayList4.set(this.c, f12);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) this.b.e;
+                Float f13 = (Float) valueAnimator.getAnimatedValue();
+                f13.getClass();
+                arrayList5.set(this.c, f13);
                 break;
             default:
-                TLObject tLObject2 = this.b;
-                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
-                Utilities.Callback callback = this.c;
-                if (!z11) {
-                    callback.run(0L);
-                    break;
-                } else {
-                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
-                    break;
-                }
+                ArrayList arrayList6 = (ArrayList) this.b.f;
+                Float f14 = (Float) valueAnimator.getAnimatedValue();
+                f14.getClass();
+                arrayList6.set(this.c, f14);
+                break;
         }
     }
 }

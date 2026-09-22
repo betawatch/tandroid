@@ -4,7 +4,7 @@ import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rz implements Runnable {
     public final /* synthetic */ int a;
@@ -72,9 +72,9 @@ public final /* synthetic */ class rz implements Runnable {
                 vz vzVar3 = this.b;
                 int i18 = this.c;
                 int i19 = this.d;
-                oa oaVar = vzVar3.I;
-                oaVar.l = i18;
-                oaVar.m = i19;
+                na naVar = vzVar3.I;
+                naVar.l = i18;
+                naVar.m = i19;
                 break;
         }
     }

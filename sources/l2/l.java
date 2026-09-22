@@ -3,18 +3,18 @@ package l2;
 import b2.s;
 import e2.d0;
 import n4.y;
-import u2.c1;
+import u2.b1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class l implements c1 {
+public final class l implements b1 {
     public final s a;
     public long[] c;
     public boolean d;
     public m2.g e;
     public boolean f;
     public int h;
-    public final m5.e b = new m5.e(1, (byte) 0);
+    public final y b = new y(27);
     public long n = -9223372036854775807L;
 
     public l(m2.g gVar, s sVar, boolean z10) {
@@ -47,12 +47,12 @@ public final class l implements c1 {
         }
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         return true;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int f(y yVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
@@ -61,7 +61,7 @@ public final class l implements c1 {
             return -4;
         }
         if ((i10 & 2) != 0 || !this.f) {
-            yVar.b = this.a;
+            yVar.c = this.a;
             this.f = true;
             return -5;
         }
@@ -72,16 +72,16 @@ public final class l implements c1 {
             this.h = i11 + 1;
         }
         if ((i10 & 4) == 0) {
-            byte[] y3 = this.b.y(this.e.a[i11]);
-            hVar.c(y3.length);
-            hVar.c.put(y3);
+            byte[] N = this.b.N(this.e.a[i11]);
+            hVar.b(N.length);
+            hVar.c.put(N);
         }
         hVar.e = this.c[i11];
         hVar.setFlags(1);
         return -4;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         int max = Math.max(this.h, d0.a(this.c, j3, true));
         int i10 = max - this.h;
@@ -89,7 +89,7 @@ public final class l implements c1 {
         return i10;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
     }
 }

@@ -1,29 +1,31 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class wj0 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ ck0 b;
+public final class wj0 extends og.a {
+    public final zg.p0 c;
 
-    public wj0(ck0 ck0Var, s4.c0 c0Var) {
-        this.b = ck0Var;
-        this.a = c0Var;
+    public wj0(int i10, zg.p0 p0Var) {
+        super(i10, false);
+        this.c = p0Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int loadCount;
-        ck0 ck0Var = this.b;
-        if (ck0Var.w && ck0Var.x && !ck0Var.v) {
-            int N0 = this.a.N0();
-            int h = ck0Var.f.h() - 1;
-            loadCount = ck0Var.getLoadCount();
-            if (N0 >= h - loadCount) {
-                ck0Var.c();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && wj0.class == obj.getClass()) {
+            wj0 wj0Var = (wj0) obj;
+            int i10 = this.a;
+            int i11 = wj0Var.a;
+            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
+                zg.p0 p0Var = this.c;
+                return p0Var != null && p0Var.equals(wj0Var.c);
+            }
+            if (i10 == i11) {
+                return true;
             }
         }
+        return false;
     }
 }

@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.g01;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w01;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class u4 extends FrameLayout {
     public final Paint E;
@@ -28,34 +28,34 @@ public abstract class u4 extends FrameLayout {
     public final RectF G;
     public final Path H;
     public boolean I;
-    public final org.telegram.ui.Components.d6 J;
-    public w01 K;
+    public final org.telegram.ui.Components.c6 J;
+    public g01 K;
     public final Path L;
     public boolean M;
-    public final org.telegram.ui.Components.ma a;
+    public final org.telegram.ui.Components.la a;
     public final p4 b;
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
     public int f;
     public final androidx.fragment.app.a0 h;
-    public final org.telegram.ui.Components.yc n;
+    public final org.telegram.ui.Components.wc n;
     public final RectF r;
     public final RectF s;
     public final Paint v;
-    public w01 w;
+    public g01 w;
     public final Path x;
     public final RectF y;
 
     /* JADX WARN: Type inference failed for: r5v0, types: [ci.n4] */
-    public u4(Context context, ai.d dVar, org.telegram.ui.Components.ia iaVar) {
+    public u4(Context context, ai.d dVar, org.telegram.ui.Components.ha haVar) {
         super(context);
         this.c = new ArrayList();
         this.d = new ArrayList();
         this.e = new ArrayList();
         final fb fbVar = (fb) this;
         this.h = new androidx.fragment.app.a0(fbVar, 18);
-        this.n = new org.telegram.ui.Components.yc(this);
+        this.n = new org.telegram.ui.Components.wc(this);
         this.r = new RectF();
         this.s = new RectF();
         Paint paint = new Paint(1);
@@ -67,7 +67,7 @@ public abstract class u4 extends FrameLayout {
         this.F = new RectF();
         this.G = new RectF();
         this.H = new Path();
-        this.J = new org.telegram.ui.Components.d6(this, 0L, 320L, qr.h);
+        this.J = new org.telegram.ui.Components.c6(this, 0L, 320L, qr.h);
         this.L = new Path();
         this.M = true;
         path.rewind();
@@ -75,7 +75,7 @@ public abstract class u4 extends FrameLayout {
         path.lineTo(AndroidUtilities.dp(4.33f), AndroidUtilities.dp(4.33f));
         path.moveTo(-AndroidUtilities.dp(4.33f), AndroidUtilities.dp(4.33f));
         path.lineTo(AndroidUtilities.dp(4.33f), -AndroidUtilities.dp(4.33f));
-        this.a = new org.telegram.ui.Components.ma(iaVar, this, 0, !fbVar.O.r0.c());
+        this.a = new org.telegram.ui.Components.la(haVar, this, 0, !fbVar.O.r0.c());
         setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(44.0f));
         final int i10 = 0;
         p4 p4Var = new p4(fbVar, context, UserConfig.selectedAccount, new Utilities.Callback2() { // from class: ci.n4
@@ -87,15 +87,15 @@ public abstract class u4 extends FrameLayout {
                 switch (i11) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        m61 m61Var = (m61) obj2;
-                        m61Var.M();
+                        w51 w51Var = (w51) obj2;
+                        w51Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < fbVar2.d.size(); i14++) {
                             Integer num = (Integer) fbVar2.d.get(i14);
                             int intValue = num.intValue();
                             o8 o8Var = (o8) fbVar2.c.get(intValue);
                             int i15 = s4.a;
-                            y51 J = y51.J(s4.class);
+                            i51 J = i51.J(s4.class);
                             J.d = intValue;
                             J.G = o8Var;
                             J.z = i13;
@@ -107,7 +107,7 @@ public abstract class u4 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        m61Var.L();
+                        w51Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -117,7 +117,7 @@ public abstract class u4 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            fbVar2.d.add(Integer.valueOf(((y51) obj3).d));
+                            fbVar2.d.add(Integer.valueOf(((i51) obj3).d));
                         }
                         AndroidUtilities.forEachViews((RecyclerView) fbVar2.b, (e2.h) new ai.f3(fbVar2, 3));
                         break;
@@ -129,10 +129,10 @@ public abstract class u4 extends FrameLayout {
         p4Var.setClipToPadding(false);
         p4Var.setClipChildren(false);
         p4Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        addView(p4Var, w7.y5.e(-2, 120, 85));
-        p4Var.x1(true);
+        addView(p4Var, w7.x5.e(-2, 120, 85));
+        p4Var.w1(true);
         final int i11 = 1;
-        p4Var.C1(new Utilities.Callback2() { // from class: ci.n4
+        p4Var.B1(new Utilities.Callback2() { // from class: ci.n4
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 int i112 = i11;
@@ -141,15 +141,15 @@ public abstract class u4 extends FrameLayout {
                 switch (i112) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        m61 m61Var = (m61) obj2;
-                        m61Var.M();
+                        w51 w51Var = (w51) obj2;
+                        w51Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < fbVar2.d.size(); i14++) {
                             Integer num = (Integer) fbVar2.d.get(i14);
                             int intValue = num.intValue();
                             o8 o8Var = (o8) fbVar2.c.get(intValue);
                             int i15 = s4.a;
-                            y51 J = y51.J(s4.class);
+                            i51 J = i51.J(s4.class);
                             J.d = intValue;
                             J.G = o8Var;
                             J.z = i13;
@@ -161,7 +161,7 @@ public abstract class u4 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        m61Var.L();
+                        w51Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -171,7 +171,7 @@ public abstract class u4 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            fbVar2.d.add(Integer.valueOf(((y51) obj3).d));
+                            fbVar2.d.add(Integer.valueOf(((i51) obj3).d));
                         }
                         AndroidUtilities.forEachViews((RecyclerView) fbVar2.b, (e2.h) new ai.f3(fbVar2, 3));
                         break;
@@ -192,7 +192,7 @@ public abstract class u4 extends FrameLayout {
         }
         fb fbVar = (fb) this;
         boolean c10 = fbVar.O.r0.c();
-        org.telegram.ui.Components.ma maVar = this.a;
+        org.telegram.ui.Components.la laVar = this.a;
         Paint paint = this.E;
         if (c10) {
             if (canvas.isHardwareAccelerated()) {
@@ -202,13 +202,13 @@ public abstract class u4 extends FrameLayout {
                 path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
                 canvas.clipPath(path);
                 canvas.translate(0.0f, 0.0f);
-                maVar.b(canvas, true);
+                laVar.b(canvas, true);
                 canvas.restore();
             }
             paint.setAlpha(38);
             canvas.drawRoundRect(rectF, f7, f7, paint);
         } else {
-            Paint[] d = maVar.d();
+            Paint[] d = laVar.d();
             if (d[1] == null) {
                 paint.setAlpha(128);
                 canvas.drawRoundRect(rectF, f7, f7, paint);
@@ -252,7 +252,7 @@ public abstract class u4 extends FrameLayout {
         p4Var.animate().cancel();
         if (z11) {
             p4Var.setVisibility(0);
-            rk.s(p4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ai.n(10, this, z10)).setUpdateListener(new ai.a(this, 20)), qr.h, 360L);
+            vl.r(p4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ai.n(10, this, z10)).setUpdateListener(new ai.a(this, 20)), qr.h, 360L);
         } else {
             p4Var.setVisibility(z10 ? 0 : 8);
             p4Var.setAlpha(z10 ? 1.0f : 0.0f);
@@ -286,10 +286,10 @@ public abstract class u4 extends FrameLayout {
         paint.setStrokeWidth(dp);
         paint.setAlpha(255);
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) - AndroidUtilities.dp(0.9f), paint);
-        w01 w01Var = this.w;
+        g01 g01Var = this.w;
         p4 p4Var = this.b;
-        if (w01Var != null) {
-            w01Var.c(rectF.centerX() - (this.w.c / 2.0f), rectF.centerY() - AndroidUtilities.dp(0.6f), 1.0f - p4Var.getAlpha(), -1, canvas);
+        if (g01Var != null) {
+            g01Var.c(rectF.centerX() - (this.w.c / 2.0f), rectF.centerY() - AndroidUtilities.dp(0.6f), 1.0f - p4Var.getAlpha(), -1, canvas);
         }
         if (p4Var.getAlpha() > 0.0f) {
             canvas.save();
@@ -392,9 +392,9 @@ public abstract class u4 extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.r.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        org.telegram.ui.Components.yc ycVar = this.n;
+        org.telegram.ui.Components.wc wcVar = this.n;
         if (action == 0) {
-            ycVar.c(contains);
+            wcVar.c(contains);
             if (this.M && !contains) {
                 if (!this.y.contains(motionEvent.getX(), motionEvent.getY())) {
                     c(false, true);
@@ -403,17 +403,17 @@ public abstract class u4 extends FrameLayout {
             }
         } else if (motionEvent.getAction() == 2) {
             if (!contains) {
-                ycVar.c(false);
+                wcVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.h) {
+            if (wcVar.h) {
                 c(!this.M, true);
             }
-            ycVar.c(false);
+            wcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            ycVar.c(false);
+            wcVar.c(false);
         }
-        return ycVar.h || super.onTouchEvent(motionEvent);
+        return wcVar.h || super.onTouchEvent(motionEvent);
     }
 
     public void setSelected(int i10) {

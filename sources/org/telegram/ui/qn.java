@@ -1,52 +1,9 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rn b;
-
-    public /* synthetic */ qn(rn rnVar, int i10) {
-        this.a = i10;
-        this.b = rnVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar = this.b;
-                rnVar.f = floatValue;
-                View view = rnVar.h.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar2 = this.b;
-                rnVar2.f = floatValue2;
-                View view2 = rnVar2.h.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar3 = this.b;
-                rnVar3.f = floatValue3;
-                View view3 = rnVar3.h.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
-        }
-    }
+public final class qn {
+    public int a;
+    public int b;
+    public int c;
 }

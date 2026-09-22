@@ -3,9 +3,10 @@ package za;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import org.telegram.ui.Cells.ia;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g0 implements c0 {
     public static final double f = Math.random();
@@ -13,14 +14,14 @@ public final class g0 implements c0 {
     public final k9.h a;
     public final qa.d b;
     public final bb.h c;
-    public final w9.k d;
+    public final ia d;
     public final id.h e;
 
-    public g0(k9.h hVar, qa.d dVar, bb.h hVar2, w9.k kVar, id.h hVar3) {
+    public g0(k9.h hVar, qa.d dVar, bb.h hVar2, ia iaVar, id.h hVar3) {
         this.a = hVar;
         this.b = dVar;
         this.c = hVar2;
-        this.d = kVar;
+        this.d = iaVar;
         this.e = hVar3;
     }
 
@@ -42,7 +43,7 @@ public final class g0 implements c0 {
                     jd.a aVar = jd.a.a;
                     i10 = d0Var.c;
                     if (i10 != 0) {
-                        u7.b(obj);
+                        t7.b(obj);
                         Task d = ((qa.c) g0Var.b).d();
                         kotlin.jvm.internal.i.d(d, "firebaseInstallations.id");
                         d0Var.c = 1;
@@ -54,7 +55,7 @@ public final class g0 implements c0 {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        u7.b(obj);
+                        t7.b(obj);
                     }
                     return (String) obj;
                 }
@@ -85,7 +86,7 @@ public final class g0 implements c0 {
         f0 f0Var;
         int i10;
         boolean z10;
-        Boolean h;
+        Boolean e;
         if (cVar instanceof f0) {
             f0Var = (f0) cVar;
             int i11 = f0Var.d;
@@ -96,7 +97,7 @@ public final class g0 implements c0 {
                 i10 = f0Var.d;
                 z10 = true;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
                     bb.h hVar = g0Var.c;
                     f0Var.a = g0Var;
@@ -109,12 +110,12 @@ public final class g0 implements c0 {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     g0Var = f0Var.a;
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 bb.h hVar2 = g0Var.c;
-                h = hVar2.a.h();
-                if (h == null) {
-                    z10 = h.booleanValue();
+                e = hVar2.a.e();
+                if (e == null) {
+                    z10 = e.booleanValue();
                 } else {
                     Boolean a2 = hVar2.b.a();
                     if (a2 != null) {
@@ -140,8 +141,8 @@ public final class g0 implements c0 {
         if (i10 != 0) {
         }
         bb.h hVar22 = g0Var.c;
-        h = hVar22.a.h();
-        if (h == null) {
+        e = hVar22.a.e();
+        if (e == null) {
         }
         if (z10) {
         }

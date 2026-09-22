@@ -3,7 +3,7 @@ package le;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b implements d {
     public final int a;
@@ -24,10 +24,10 @@ public final class b implements d {
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, e eVar) {
+    public final void D(int i10, float f7, float f10, e eVar) {
         if (this.e != f7) {
             this.e = f7;
-            this.b.H(this.a, f7, -1.0f, null);
+            this.b.D(this.a, f7, -1.0f, null);
         }
     }
 
@@ -58,7 +58,7 @@ public final class b implements d {
             d dVar = this.b;
             if (f10 != f7) {
                 this.e = f7;
-                dVar.H(i10, f7, -1.0f, null);
+                dVar.D(i10, f7, -1.0f, null);
             }
             dVar.C(f7, i10);
         }

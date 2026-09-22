@@ -2,23 +2,23 @@ package fb;
 
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class p extends t {
+public final class p extends s {
     public final /* synthetic */ Method b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int c;
 
-    public p(Method method, Object obj) {
+    public p(int i10, Method method) {
         this.b = method;
-        this.c = obj;
+        this.c = i10;
     }
 
-    @Override // fb.t
+    @Override // fb.s
     public final Object a(Class cls) {
-        String J = of.b.J(cls);
-        if (J == null) {
-            return this.b.invoke(this.c, cls);
+        String E = of.b.E(cls);
+        if (E == null) {
+            return this.b.invoke(null, cls, Integer.valueOf(this.c));
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(J));
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(E));
     }
 }

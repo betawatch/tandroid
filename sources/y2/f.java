@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.SystemClock;
 import ci.uc;
 import e2.t;
-import e2.u;
 import e2.x;
 import e9.a1;
 import e9.i0;
@@ -14,8 +13,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
+import k2.u;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -27,7 +27,7 @@ public final class f implements c, c0 {
     public static f v;
     public final Context a;
     public final k0 b;
-    public final l.d c;
+    public final u c;
     public final x d;
     public final boolean e;
     public final r f;
@@ -46,7 +46,7 @@ public final class f implements c, c0 {
         x xVar = x.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = k0.a(hashMap);
-        this.c = new l.d(28);
+        this.c = new u(29);
         this.f = new r();
         this.d = xVar;
         this.e = true;
@@ -55,7 +55,7 @@ public final class f implements c, c0 {
             this.l = 1000000L;
             return;
         }
-        u a2 = u.a(context);
+        e2.u a2 = e2.u.a(context);
         int b10 = a2.b();
         this.n = b10;
         this.l = a(b10);
@@ -731,7 +731,7 @@ public final class f implements c, c0 {
                 i11 = i10;
                 j11 = j3;
                 j12 = j10;
-                bVar.a.post(new k2.j(bVar, i11, j11, j12, 1));
+                bVar.a.post(new k2.i(bVar, i11, j11, j12, 1));
             }
             i10 = i11;
             j3 = j11;

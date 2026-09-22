@@ -1,7 +1,7 @@
 package z2;
 
 import android.os.SystemClock;
-import hg.k0;
+import hg.c;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -10,7 +10,7 @@ import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -106,10 +106,10 @@ public abstract class b {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(k0.h(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(c.i(b11, "SNTP: Untrusted mode: "));
         }
         if (i10 == 0 || i10 > 15) {
-            throw new IOException(k0.h(i10, "SNTP: Untrusted stratum: "));
+            throw new IOException(c.i(i10, "SNTP: Untrusted stratum: "));
         }
         if (j3 == 0) {
             throw new IOException("SNTP: Zero transmitTime");

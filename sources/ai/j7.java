@@ -27,12 +27,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class j7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public i7 E;
@@ -40,7 +40,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
     public g9 G;
     public int H;
     public boolean I;
-    public final dl0 J;
+    public final qk0 J;
     public final jc K;
     public final t6 L;
     public final u6 M;
@@ -81,7 +81,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         this.v = jcVar.h;
         TextView textView = new TextView(context);
         this.h = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, dVar));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.j5, dVar));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(8.0f));
@@ -90,7 +90,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         p6 p6Var = new p6(this, context, dVar);
         this.r = p6Var;
         p6Var.setClipToPadding(false);
-        this.J = new dl0(p6Var, true);
+        this.J = new qk0(p6Var, true);
         pz pzVar = new pz(p6Var, 0);
         this.x = pzVar;
         p6Var.setLayoutManager(pzVar);
@@ -111,19 +111,19 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         View view = new View(getContext());
         this.a = view;
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        int i10 = org.telegram.ui.ActionBar.j6.h5;
-        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.j6.v0(i10, dVar), 0}));
-        frameLayout.addView(view, w7.y5.d(-1, 8.0f, 0, 0.0f, this.e - 8, 0.0f, 0.0f));
+        int i10 = org.telegram.ui.ActionBar.i6.h5;
+        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.i6.v0(i10, dVar), 0}));
+        frameLayout.addView(view, w7.x5.d(-1, 8.0f, 0, 0.0f, this.e - 8, 0.0f, 0.0f));
         View view2 = new View(getContext());
         this.b = view2;
-        view2.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i10, dVar));
-        frameLayout.addView(view2, w7.y5.d(-1, 10.0f, 0, 0.0f, this.e - 17, 0.0f, 0.0f));
+        view2.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i10, dVar));
+        frameLayout.addView(view2, w7.x5.d(-1, 10.0f, 0, 0.0f, this.e - 17, 0.0f, 0.0f));
         frameLayout.addView(y6Var);
         frameLayout.addView(textView);
         t6 t6Var = new t6(this, getContext(), dVar);
         this.L = t6Var;
         t6Var.setHint(LocaleController.getString(R.string.Search));
-        frameLayout.addView(t6Var, w7.y5.d(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
+        frameLayout.addView(t6Var, w7.x5.d(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
         addView(frameLayout);
     }
 
@@ -211,7 +211,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int S;
+        int R;
         int i12 = 0;
         if (i10 == NotificationCenter.storiesUpdated) {
             if (this.y.b != null) {
@@ -245,10 +245,10 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
                 return;
             }
             View childAt = p6Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Cells.p6) && (S = RecyclerView.S(childAt)) >= 0) {
+            if ((childAt instanceof org.telegram.ui.Cells.o6) && (R = RecyclerView.R(childAt)) >= 0) {
                 e7 e7Var = this.w;
-                if (S < e7Var.c.size()) {
-                    ((org.telegram.ui.Cells.p6) childAt).a(d(((z6) e7Var.c.get(S)).b) ? 1.0f : 0.5f, true);
+                if (R < e7Var.c.size()) {
+                    ((org.telegram.ui.Cells.o6) childAt).a(d(((z6) e7Var.c.get(R)).b) ? 1.0f : 0.5f, true);
                 }
             }
             i12++;
@@ -267,10 +267,10 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
                 break;
             }
             View childAt = p6Var.getChildAt(i10);
-            int T = RecyclerView.T(childAt);
-            if (T < i11 || i11 == -1) {
+            int S = RecyclerView.S(childAt);
+            if (S < i11 || i11 == -1) {
                 view = childAt;
-                i11 = T;
+                i11 = S;
             }
             i10++;
         }
@@ -397,14 +397,14 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z12 = u6Var.a;
-        dm0 dm0Var = y6Var.v;
+        ql0 ql0Var = y6Var.v;
         if (z12) {
             i7 i7Var = this.E;
             i10 = (i7Var == null || !i7Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        dm0Var.a(i10, z10);
+        ql0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */
@@ -548,7 +548,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         int i10 = this.v;
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
-        org.telegram.ui.Components.pc.a(this, new w4(this, 1));
+        org.telegram.ui.Components.oc.a(this, new w4(this, 1));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -562,7 +562,7 @@ public abstract class j7 extends FrameLayout implements NotificationCenter.Notif
         int i10 = this.v;
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesBlocklistUpdate);
-        org.telegram.ui.Components.pc.h(this);
+        org.telegram.ui.Components.oc.h(this);
     }
 
     @Override // android.view.ViewGroup

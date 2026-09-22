@@ -5,18 +5,18 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.Components.as0;
-import yh.u3;
+import org.telegram.ui.Components.sr0;
+import yh.v3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class n extends p1 {
-    public final /* synthetic */ u3 x;
+    public final /* synthetic */ v3 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(u3 u3Var, u3 u3Var2) {
-        super(u3Var2);
-        this.x = u3Var;
+    public n(v3 v3Var, v3 v3Var2) {
+        super(v3Var2);
+        this.x = v3Var;
     }
 
     @Override // org.telegram.ui.ActionBar.p1
@@ -45,7 +45,7 @@ public final class n extends p1 {
     public final void g(int i10, boolean z10) {
         q qVar = (q) this.x.c;
         qVar.w.setVisibility(0);
-        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new as0(17, this, z10)).start();
+        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new sr0(16, this, z10)).start();
     }
 
     @Override // org.telegram.ui.ActionBar.p1

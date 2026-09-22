@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,17 +59,17 @@ public final /* synthetic */ class mu0 implements Runnable {
                 cv0 cv0Var = (cv0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) cv0Var.a.N0.getLayoutParams();
                 ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                int z10 = org.telegram.messenger.rk.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int y3 = org.telegram.messenger.vl.y(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = cv0Var.a;
-                int i16 = z10 + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
+                int i16 = y3 + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
                 if (i16 != layoutParams.topMargin) {
                     layoutParams.topMargin = i16;
                     photoViewer.N0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) cv0Var.a.O0.getLayoutParams();
-                int z11 = org.telegram.messenger.rk.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int y10 = org.telegram.messenger.vl.y(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = cv0Var.a;
-                int i17 = z11 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
+                int i17 = y10 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
                 if (layoutParams2.topMargin != i17) {
                     layoutParams2.topMargin = i17;
                     photoViewer2.O0.setLayoutParams(layoutParams2);
@@ -105,7 +105,7 @@ public final /* synthetic */ class mu0 implements Runnable {
                 h4 h4Var2 = s1Var.x;
                 View view = h4Var2.O;
                 if (view != null) {
-                    h4Var2.P.addView(view, w7.y5.c(-1.0f, -1));
+                    h4Var2.P.addView(view, w7.x5.c(-1.0f, -1));
                     s1Var.x.P.setVisibility(0);
                     break;
                 }
@@ -136,11 +136,11 @@ public final /* synthetic */ class mu0 implements Runnable {
                     int i19 = 0;
                     int i20 = 0;
                     while (i19 < i18) {
-                        boolean z12 = f4Var.H;
-                        if (z12 && i19 == 0) {
+                        boolean z10 = f4Var.H;
+                        if (z10 && i19 == 0) {
                             iArr[i14] = i14;
                         } else {
-                            int i21 = z12 ? i19 - 1 : i19;
+                            int i21 = z10 ? i19 - 1 : i19;
                             TL_iv.PageBlock pageBlock2 = (i21 < 0 || i21 >= arrayList2.size()) ? pageBlock : (TL_iv.PageBlock) arrayList2.get(i21);
                             if (pageBlock2 == null || pageBlock2.cachedHeight == 0 || pageBlock2.cachedWidth != View.MeasureSpec.getSize(makeMeasureSpec)) {
                                 s4.c1 g10 = f4Var.g(vVar, f4.I(pageBlock2));
@@ -192,16 +192,16 @@ public final /* synthetic */ class mu0 implements Runnable {
                 c5 c5Var = (c5) this.b;
                 if (!c5Var.w) {
                     c5Var.w = true;
-                    org.telegram.ui.Components.om0.d(new b5(c5Var, i14));
+                    org.telegram.ui.Components.am0.d(new b5(c5Var, i14));
                     break;
                 }
                 break;
             case 13:
-                a6 a6Var = (a6) this.b;
-                a6Var.d.clear();
-                a6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(a6Var.e, a6Var.d);
-                a6Var.U();
-                a6Var.finishFragment();
+                b6 b6Var = (b6) this.b;
+                b6Var.d.clear();
+                b6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(b6Var.e, b6Var.d);
+                b6Var.U();
+                b6Var.finishFragment();
                 break;
             case 14:
                 b5 b5Var = (b5) this.b;
@@ -221,7 +221,7 @@ public final /* synthetic */ class mu0 implements Runnable {
                 }
                 try {
                     StatFs statFs = new StatFs(file.getPath());
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.m0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), b5Var));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.l0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), b5Var));
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -229,7 +229,7 @@ public final /* synthetic */ class mu0 implements Runnable {
                 }
             case 15:
                 Utilities.Callback callback = (Utilities.Callback) this.b;
-                z6.l0 = false;
+                z6.k0 = false;
                 long q02 = z6.q0(5, FileLoader.checkDirectory(4));
                 long q03 = z6.q0(4, FileLoader.checkDirectory(4));
                 long q04 = z6.q0(0, FileLoader.checkDirectory(100)) + z6.q0(0, FileLoader.checkDirectory(0));
@@ -244,10 +244,10 @@ public final /* synthetic */ class mu0 implements Runnable {
                     q011 = 0;
                 }
                 long j3 = q02 + q03 + q05 + q09 + q04 + q06 + q07 + q08 + q010 + q011;
-                z6.n0 = Long.valueOf(j3);
-                z6.m0 = System.currentTimeMillis();
-                if (!z6.l0) {
-                    AndroidUtilities.runOnUIThread(new c6(j3, 0, callback));
+                z6.m0 = Long.valueOf(j3);
+                z6.l0 = System.currentTimeMillis();
+                if (!z6.k0) {
+                    AndroidUtilities.runOnUIThread(new g6(j3, 0, callback));
                     break;
                 }
                 break;
@@ -255,42 +255,42 @@ public final /* synthetic */ class mu0 implements Runnable {
                 ((o6) this.b).dismiss();
                 break;
             case 17:
-                v9 v9Var = (v9) ((w5) this.b).b;
+                u9 u9Var = (u9) ((w5) this.b).b;
                 try {
-                    CameraView cameraView = v9Var.c;
-                    cameraView.focusToPoint(cameraView.getWidth() / 2, v9Var.c.getHeight() / 2, false);
+                    CameraView cameraView = u9Var.c;
+                    cameraView.focusToPoint(cameraView.getWidth() / 2, u9Var.c.getHeight() / 2, false);
                 } catch (Exception unused) {
                 }
-                CameraView cameraView2 = v9Var.c;
+                CameraView cameraView2 = u9Var.c;
                 if (cameraView2 != null) {
-                    v9Var.c0(cameraView2.getTextureView().getBitmap());
+                    u9Var.c0(cameraView2.getTextureView().getBitmap());
                     break;
                 }
                 break;
             case 18:
-                aa aaVar = (aa) this.b;
-                z9 z9Var = aaVar.a;
-                if (z9Var != null) {
-                    z9Var.requestFocus();
-                    AndroidUtilities.showKeyboard(aaVar.a);
+                z9 z9Var = (z9) this.b;
+                y9 y9Var = z9Var.a;
+                if (y9Var != null) {
+                    y9Var.requestFocus();
+                    AndroidUtilities.showKeyboard(z9Var.a);
                     break;
                 }
                 break;
             case 19:
-                ra raVar = (ra) this.b;
-                String str = raVar.r;
+                qa qaVar = (qa) this.b;
+                String str = qaVar.r;
                 if (str == null || str.length() > 0) {
-                    raVar.n = true;
-                    raVar.e0(raVar.v.size() <= 0);
-                    raVar.n = false;
+                    qaVar.n = true;
+                    qaVar.e0(qaVar.v.size() <= 0);
+                    qaVar.n = false;
                     break;
                 }
                 break;
             case 20:
-                lb lbVar = (lb) this.b;
-                if (lbVar.W != -1) {
-                    lbVar.Y.getNotificationCenter().onAnimationFinish(lbVar.W);
-                    lbVar.W = -1;
+                kb kbVar = (kb) this.b;
+                if (kbVar.W != -1) {
+                    kbVar.Y.getNotificationCenter().onAnimationFinish(kbVar.W);
+                    kbVar.W = -1;
                 }
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("admin logs chatItemAnimator enable notifications");
@@ -298,11 +298,11 @@ public final /* synthetic */ class mu0 implements Runnable {
                 }
                 break;
             case 21:
-                vb vbVar = ((ub) this.b).f;
-                vbVar.getNotificationCenter().onAnimationFinish(vbVar.K0);
+                ub ubVar = ((tb) this.b).f;
+                ubVar.getNotificationCenter().onAnimationFinish(ubVar.K0);
                 break;
             case 22:
-                org.telegram.ui.Components.xc.b0((TLRPC.TL_error) this.b);
+                org.telegram.ui.Components.vc.b0((TLRPC.TL_error) this.b);
                 break;
             case 23:
                 AtomicReference atomicReference = (AtomicReference) this.b;
@@ -315,7 +315,7 @@ public final /* synthetic */ class mu0 implements Runnable {
                 ((org.telegram.ui.ActionBar.k) this.b).invalidate();
                 break;
             case 25:
-                ((org.telegram.ui.Components.y70) this.b).s();
+                ((org.telegram.ui.Components.n70) this.b).s();
                 break;
             case 26:
                 ((y) this.b).run(Boolean.FALSE);
@@ -328,7 +328,7 @@ public final /* synthetic */ class mu0 implements Runnable {
                 break;
             default:
                 ci.y5 y5Var = (ci.y5) this.b;
-                i13 = ((org.telegram.ui.ActionBar.n2) ((zn) y5Var.e)).currentAccount;
+                i13 = ((org.telegram.ui.ActionBar.n2) ((bo) y5Var.e)).currentAccount;
                 NotificationCenter.getInstance(i13).onAnimationFinish(y5Var.b);
                 break;
         }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lj implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -20,23 +20,23 @@ public final /* synthetic */ class lj implements MessagesStorage.IntCallback {
     public final void run(int i10) {
         switch (this.a) {
             case 0:
-                zn znVar = ((nj) this.c).b;
-                if (i10 > 0 && znVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.xc.a0(znVar).m(this.b ? org.telegram.ui.Components.wc.G : org.telegram.ui.Components.wc.I, i10, 0, 0, znVar.ea).j();
+                bo boVar = ((nj) this.c).b;
+                if (i10 > 0 && boVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.vc.a0(boVar).m(this.b ? org.telegram.ui.Components.uc.G : org.telegram.ui.Components.uc.I, i10, 0, 0, boVar.ea).j();
                     break;
                 }
                 break;
             default:
                 mj mjVar = (mj) this.c;
-                zn znVar2 = mjVar.b.b;
+                bo boVar2 = mjVar.b.b;
                 if (i10 < 50) {
-                    znVar2.qa(znVar2.d4, true);
+                    boVar2.qa(boVar2.d4, true);
                     break;
                 } else {
-                    TLRPC.Chat chat = znVar2.e;
-                    TLRPC.User user = znVar2.f;
+                    TLRPC.Chat chat = boVar2.e;
+                    TLRPC.User user = boVar2.f;
                     boolean z10 = this.b;
-                    org.telegram.ui.Components.d5.s(znVar2, true, chat, user, false, false, false, z10, new y0(mjVar, z10));
+                    org.telegram.ui.Components.c5.s(boVar2, true, chat, user, false, false, false, z10, new y0(mjVar, z10));
                     break;
                 }
         }

@@ -15,11 +15,11 @@ import java.util.HashSet;
 import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import w7.f0;
+import w7.e0;
 import z5.c;
 import z5.d;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
@@ -175,21 +175,21 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.p(parcel, 2, new ArrayList(this.b));
-        f0.k(parcel, 3, this.c, i10);
-        f0.s(parcel, 4, 4);
+        e0.p(parcel, 2, new ArrayList(this.b));
+        e0.k(parcel, 3, this.c, i10);
+        e0.s(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        f0.s(parcel, 5, 4);
+        e0.s(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        f0.s(parcel, 6, 4);
+        e0.s(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        f0.l(parcel, 7, this.h);
-        f0.l(parcel, 8, this.n);
-        f0.p(parcel, 9, this.r);
-        f0.l(parcel, 10, this.s);
-        f0.r(parcel, q6);
+        e0.l(parcel, 7, this.h);
+        e0.l(parcel, 8, this.n);
+        e0.p(parcel, 9, this.r);
+        e0.l(parcel, 10, this.s);
+        e0.r(parcel, q6);
     }
 }

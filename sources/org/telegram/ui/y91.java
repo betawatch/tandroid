@@ -1,63 +1,52 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class y91 implements bh.a {
-    public final RectF a = new RectF();
-    public final /* synthetic */ x8 b;
-    public final /* synthetic */ bb1 c;
+public final class y91 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ za1 b;
 
-    public y91(bb1 bb1Var, x8 x8Var) {
-        this.c = bb1Var;
-        this.b = x8Var;
+    public /* synthetic */ y91(za1 za1Var, int i10) {
+        this.a = i10;
+        this.b = za1Var;
     }
 
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        aVar.a = true;
-    }
-
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        ah.o oVar;
-        View view;
-        dc dcVar;
-        bb1 bb1Var = this.c;
-        bb1Var.fragmentView.getMeasuredWidth();
-        bb1Var.fragmentView.getMeasuredHeight();
-        canvas.drawColor(bb1Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-        for (int i10 = 0; i10 < 3; i10++) {
-            if (i10 == 0) {
-                oVar = bb1Var.T;
-                view = bb1Var.S;
-            } else if (i10 != 1 || (dcVar = bb1Var.j0) == null) {
-                ke keVar = bb1Var.k0;
-                if (keVar != null) {
-                    oVar = keVar.b1;
-                    view = keVar;
-                } else {
-                    oVar = null;
-                    view = null;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        za1 za1Var;
+        ah.h hVar2;
+        za1 za1Var2;
+        ah.h hVar3;
+        switch (this.a) {
+            case 0:
+                za1 za1Var3 = this.b;
+                if (za1Var3.r0.size() != za1Var3.s0.size() && !za1Var3.w0 && za1Var3.U.N0() > za1Var3.X.c0 - 20) {
+                    za1Var3.h0();
                 }
-            } else {
-                oVar = dcVar.G;
-                view = dcVar;
-            }
-            if (oVar != null && view != null) {
-                x8 x8Var = this.b;
-                RectF rectF2 = this.a;
-                hh.k.c(view, x8Var, rectF2);
-                if (rectF2.right > 0.0f) {
-                    bb1Var.fragmentView.getMeasuredWidth();
+                if (Build.VERSION.SDK_INT >= 31 && (hVar = za1Var3.C0) != null) {
+                    hVar.f(i10, i11);
+                    za1.W(za1Var3);
+                    break;
                 }
-                canvas.save();
-                oVar.f(canvas, rectF);
-                canvas.restore();
-            }
+                break;
+            case 1:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar2 = (za1Var = this.b).C0) != null) {
+                    hVar2.f(i10, i11);
+                    za1.W(za1Var);
+                    break;
+                }
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (hVar3 = (za1Var2 = this.b).C0) != null) {
+                    hVar3.f(i10, i11);
+                    za1.W(za1Var2);
+                    break;
+                }
+                break;
         }
     }
 }

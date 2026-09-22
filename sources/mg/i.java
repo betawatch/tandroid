@@ -28,15 +28,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.q3;
 import org.telegram.ui.Cells.z;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -54,14 +54,14 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public yl0 y;
+    public ll0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
-        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
+        return p.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
     }
 
     public static float b(DisplayMetrics displayMetrics, float f7) {
-        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
+        return p.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
     }
 
     private List<a> getBuiltInDebugItems() {
@@ -71,7 +71,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         arrayList.add(new a("Show blur settings", new c(this, 0)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugGeneral)));
         arrayList.add(new a(LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug), new c(this, 1)));
-        arrayList.add(new a(j6.I.q() ? "Switch to day theme" : "Switch to dark theme", new ai.f(15)));
+        arrayList.add(new a(i6.I.q() ? "Switch to day theme" : "Switch to dark theme", new ai.f(15)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugSendLogs), new c(this, 2)));
         return arrayList;
     }
@@ -110,9 +110,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = n6Var.getTranslationX();
         final float translationY = n6Var.getTranslationY();
         k kVar = new k(new j(z10 ? 0.0f : 1000.0f));
-        l m10 = c1.m(1000.0f, 900.0f, 1.0f);
-        m10.i = z10 ? 1000.0f : 0.0f;
-        kVar.u = m10;
+        l l4 = q3.l(1000.0f, 900.0f, 1.0f);
+        l4.i = z10 ? 1000.0f : 0.0f;
+        kVar.u = l4;
         kVar.b(new o1.g() { // from class: mg.d
             @Override // o1.g
             public final void a(o1.h hVar, float f7, float f10) {
@@ -159,7 +159,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     }
 
     public final void d() {
-        z h02 = j6.h0(AndroidUtilities.dp(56.0f), j6.w0(null, j6.P9, false), j6.w0(null, j6.Q9, false));
+        z h02 = i6.h0(AndroidUtilities.dp(56.0f), i6.w0(null, i6.P9, false), i6.w0(null, i6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
@@ -170,9 +170,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         pqVar.f = dp2;
         this.b = pqVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        drawable.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.h5, false), mode));
+        drawable.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.h5, false), mode));
         this.w.setBackground(drawable);
-        this.x.setTextColor(j6.w0(null, j6.j5, false));
+        this.x.setTextColor(i6.w0(null, i6.j5, false));
         invalidate();
     }
 

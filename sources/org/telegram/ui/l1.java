@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class l1 extends View implements Drawable.Callback, org.telegram.ui.Cells.q9 {
+public final class l1 extends View implements Drawable.Callback, org.telegram.ui.Cells.p9 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -33,7 +33,7 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
         this.f = new AnimatedArrowDrawable(u70Var.a(), true);
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -117,7 +117,7 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
             int dp2 = size - AndroidUtilities.dp(54);
             TL_iv.pageBlockDetails pageblockdetails2 = this.h;
             f4 f4Var = this.b;
-            a3 p5 = h4.p(u70Var, this, null, richText, dp2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), 0, this.b);
+            a3 p5 = h4.p(u70Var, this, null, richText, dp2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.jw0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
                 dp = Math.max(dp, this.c.d.getHeight() + AndroidUtilities.dp(21.0f));

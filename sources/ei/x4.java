@@ -16,10 +16,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.r9;
-import org.telegram.ui.zn;
+import org.telegram.ui.Cells.q9;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -142,7 +142,7 @@ public final /* synthetic */ class x4 implements Runnable {
                                         i11 = i20;
                                         for (int i22 = 0; i22 < 3; i22++) {
                                             String str3 = strArr2[i22];
-                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.l0.v(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.y0.w(" ", str2, str3))) {
                                                 z10 = true;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 r42 = (z10 && publicUsername != null && publicUsername.startsWith(str2)) ? 2 : z10;
@@ -190,11 +190,11 @@ public final /* synthetic */ class x4 implements Runnable {
             case 2:
                 ii.r0 r0Var = (ii.r0) this.d;
                 ii.i1 i1Var = (ii.i1) this.e;
-                r9 r9Var = (r9) this.f;
+                q9 q9Var = (q9) this.f;
                 ii.u0 u0Var = r0Var.a;
                 int length2 = i1Var.length();
                 int i23 = this.b;
-                if (length2 >= i23 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && r9Var.k0(u0Var, 0, this.c, i23)) {
+                if (length2 >= i23 && i1Var.getSelectionStart() != i1Var.getSelectionEnd() && q9Var.k0(u0Var, 0, this.c, i23)) {
                     u0Var.n = true;
                     i1Var.setSelection(i23);
                     u0Var.n = false;
@@ -202,19 +202,19 @@ public final /* synthetic */ class x4 implements Runnable {
                 }
                 break;
             case 3:
-                android.support.v4.media.c cVar = (android.support.v4.media.c) this.d;
+                a4.m mVar = (a4.m) this.d;
                 ii.i1 i1Var2 = (ii.i1) this.e;
-                r9 r9Var2 = (r9) this.f;
-                g5 g5Var = (g5) cVar.b;
+                q9 q9Var2 = (q9) this.f;
+                g5 g5Var = (g5) mVar.b;
                 int length3 = i1Var2.length();
                 int i24 = this.b;
                 if (length3 >= i24 && i1Var2.getSelectionStart() != i1Var2.getSelectionEnd()) {
-                    if (r9Var2.y()) {
+                    if (q9Var2.y()) {
                         g5Var.w = true;
                         i1Var2.setSelection(i24);
                         g5Var.w = false;
                         break;
-                    } else if (r9Var2.k0(g5Var, 0, this.c, i24)) {
+                    } else if (q9Var2.k0(g5Var, 0, this.c, i24)) {
                         g5Var.w = true;
                         i1Var2.setSelection(i24);
                         g5Var.w = false;
@@ -223,13 +223,13 @@ public final /* synthetic */ class x4 implements Runnable {
                 }
                 break;
             case 4:
-                pb.c cVar2 = (pb.c) this.d;
+                a6.m mVar2 = (a6.m) this.d;
                 ii.i1 i1Var3 = (ii.i1) this.e;
-                r9 r9Var3 = (r9) this.f;
-                o5 o5Var = (o5) cVar2.b;
+                q9 q9Var3 = (q9) this.f;
+                o5 o5Var = (o5) mVar2.b;
                 int length4 = i1Var3.length();
                 int i25 = this.b;
-                if (length4 >= i25 && i1Var3.getSelectionStart() != i1Var3.getSelectionEnd() && r9Var3.k0(o5Var, 0, this.c, i25)) {
+                if (length4 >= i25 && i1Var3.getSelectionStart() != i1Var3.getSelectionEnd() && q9Var3.k0(o5Var, 0, this.c, i25)) {
                     o5Var.G = true;
                     i1Var3.setSelection(i25);
                     o5Var.G = false;
@@ -239,17 +239,17 @@ public final /* synthetic */ class x4 implements Runnable {
             case 5:
                 x5 x5Var = (x5) this.d;
                 ii.i1 i1Var4 = (ii.i1) this.e;
-                r9 r9Var4 = (r9) this.f;
+                q9 q9Var4 = (q9) this.f;
                 d6 d6Var = x5Var.a;
                 int length5 = i1Var4.length();
                 int i26 = this.b;
                 if (length5 >= i26 && i1Var4.getSelectionStart() != i1Var4.getSelectionEnd()) {
-                    if (r9Var4.y()) {
+                    if (q9Var4.y()) {
                         d6Var.F = true;
                         i1Var4.setSelection(i26);
                         d6Var.F = false;
                         break;
-                    } else if (r9Var4.k0(d6Var, 0, this.c, i26)) {
+                    } else if (q9Var4.k0(d6Var, 0, this.c, i26)) {
                         d6Var.F = true;
                         i1Var4.setSelection(i26);
                         d6Var.F = false;
@@ -260,17 +260,17 @@ public final /* synthetic */ class x4 implements Runnable {
             case 6:
                 y5 y5Var = (y5) this.d;
                 ii.i1 i1Var5 = (ii.i1) this.e;
-                r9 r9Var5 = (r9) this.f;
+                q9 q9Var5 = (q9) this.f;
                 d6 d6Var2 = y5Var.a;
                 int length6 = i1Var5.length();
                 int i27 = this.b;
                 if (length6 >= i27 && i1Var5.getSelectionStart() != i1Var5.getSelectionEnd()) {
-                    if (r9Var5.y()) {
+                    if (q9Var5.y()) {
                         d6Var2.n = true;
                         i1Var5.setSelection(i27);
                         d6Var2.n = false;
                         break;
-                    } else if (r9Var5.k0(d6Var2, 1, this.c, i27)) {
+                    } else if (q9Var5.k0(d6Var2, 1, this.c, i27)) {
                         d6Var2.n = true;
                         i1Var5.setSelection(i27);
                         d6Var2.n = false;
@@ -282,13 +282,13 @@ public final /* synthetic */ class x4 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             default:
-                zn znVar = (zn) this.d;
+                bo boVar = (bo) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
-                org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.f;
-                znVar.vb = this.b;
-                znVar.wb = this.c;
-                znVar.xb = characterStyle;
-                u1Var2.invalidate();
+                org.telegram.ui.Cells.t1 t1Var3 = (org.telegram.ui.Cells.t1) this.f;
+                boVar.vb = this.b;
+                boVar.wb = this.c;
+                boVar.xb = characterStyle;
+                t1Var3.invalidate();
                 break;
         }
     }
@@ -311,12 +311,12 @@ public final /* synthetic */ class x4 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ x4(zn znVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.u1 u1Var) {
+    public /* synthetic */ x4(bo boVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.t1 t1Var) {
         this.a = 8;
-        this.d = znVar;
+        this.d = boVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;
-        this.f = u1Var;
+        this.f = t1Var;
     }
 }

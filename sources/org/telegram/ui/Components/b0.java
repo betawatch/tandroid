@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b0 extends LinearLayout {
     public final RectF a;
     public final RectF b;
     public final RectF c;
     public final Paint d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
     public final /* synthetic */ d0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.f = d0Var;
-        this.e = f6Var;
+        this.e = e6Var;
         this.a = new RectF();
         this.b = new RectF();
         this.c = new RectF();
@@ -31,8 +31,8 @@ public final class b0 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        d6 d6Var = this.f.h;
-        float d = d6Var == null ? 0.0f : d6Var.d(r0.f, false);
+        c6 c6Var = this.f.h;
+        float d = c6Var == null ? 0.0f : c6Var.d(r0.f, false);
         double d10 = d;
         int floor = (int) Math.floor(d10);
         int ceil = (int) Math.ceil(d10);
@@ -49,7 +49,7 @@ public final class b0 extends LinearLayout {
         }
         RectF rectF3 = this.c;
         AndroidUtilities.lerp(rectF, rectF2, f7, rectF3);
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.e));
+        int l1 = org.telegram.ui.ActionBar.i6.l1(0.1f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, this.e));
         Paint paint = this.d;
         paint.setColor(l1);
         canvas.drawRoundRect(rectF3, AndroidUtilities.dp(r0.d), AndroidUtilities.dp(r0.d), paint);

@@ -1,10 +1,60 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import org.telegram.messenger.SharedConfig;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ku0 extends org.telegram.ui.kd0 {
-    @Override // org.telegram.ui.kd0
-    public final boolean h0() {
-        return true;
+public abstract class ku0 extends ScrollSlidingTextTabStrip {
+    public Paint p0;
+    public int q0;
+    public final Rect r0;
+    public final /* synthetic */ yu0 s0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ku0(yu0 yu0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.s0 = yu0Var;
+        this.q0 = 0;
+        this.r0 = new Rect();
+    }
+
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.q0 != 0) {
+            if (this.p0 == null) {
+                this.p0 = new Paint();
+            }
+            this.p0.setColor(this.q0);
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            Rect rect = this.r0;
+            rect.set(0, 0, measuredWidth, measuredHeight);
+            canvas.save();
+            canvas.translate(getScrollX(), 0.0f);
+            canvas.clipPath(this.f0);
+            if (SharedConfig.chatBlurEnabled()) {
+                this.s0.P(canvas, getY(), rect, this.p0);
+            } else {
+                canvas.drawPaint(this.p0);
+            }
+            canvas.translate(-getScrollX(), 0.0f);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.q0 = i10;
+        invalidate();
     }
 }

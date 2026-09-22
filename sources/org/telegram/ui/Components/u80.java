@@ -1,33 +1,13 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v80 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
+public interface u80 {
+    void a();
 
-    public /* synthetic */ u80(v80 v80Var, boolean z10, boolean z11, int i10) {
-        this.a = i10;
-        this.b = v80Var;
-        this.c = z10;
-        this.d = z11;
-    }
+    void c();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new u80(this.b, this.c, this.d, 1));
-                break;
-            default:
-                v80 v80Var = this.b;
-                v80Var.setJoinRequest(this.c);
-                v80Var.setJoinToSend(this.d);
-                break;
-        }
-    }
+    void i();
+
+    void j();
 }

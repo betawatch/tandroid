@@ -15,65 +15,65 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.nc;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class t5 {
-    public final n5 a;
+    public final o5 a;
     public final MessageObject b;
-    public final zn c;
-    public final pc d;
-    public final jc e;
-    public final ic f;
+    public final bo c;
+    public final oc d;
+    public final ic e;
+    public final hc f;
     public final boolean g;
     public long h;
     public long k;
     public boolean l;
     public boolean m;
-    public c4 o;
-    public final q5 p;
+    public d4 o;
+    public final r5 p;
     public final /* synthetic */ u5 q;
     public boolean i = false;
     public boolean j = false;
     public Long n = null;
 
-    public t5(u5 u5Var, n5 n5Var, MessageObject messageObject, zn znVar, boolean z10) {
+    public t5(u5 u5Var, o5 o5Var, MessageObject messageObject, bo boVar, boolean z10) {
         this.q = u5Var;
-        q5 q5Var = new q5(this, 0);
-        this.p = q5Var;
-        this.a = n5Var;
+        r5 r5Var = new r5(this, 0);
+        this.p = r5Var;
+        this.a = o5Var;
         this.b = messageObject;
-        this.c = znVar;
-        Context t10 = u5.t(znVar);
-        jc jcVar = new jc(t10, znVar.ea);
-        this.e = jcVar;
-        jcVar.c(R.raw.stars_topup, new String[0]);
-        jcVar.b.setText(d());
-        nc ncVar = new nc(t10, znVar.ea, true, false);
-        ncVar.e(LocaleController.getString(R.string.StarsSentUndo));
-        ncVar.a = new q5(this, 1);
-        ic icVar = new ic(t10, znVar.ea);
-        this.f = icVar;
-        icVar.b = 5000L;
-        icVar.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, znVar.ea));
-        ncVar.addView(icVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        ncVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
-        jcVar.setButton(ncVar);
-        pc b10 = xc.a0(znVar).b(jcVar, -1);
+        this.c = boVar;
+        Context t10 = u5.t(boVar);
+        ic icVar = new ic(t10, boVar.ea);
+        this.e = icVar;
+        icVar.c(R.raw.stars_topup, new String[0]);
+        icVar.b.setText(d());
+        mc mcVar = new mc(t10, boVar.ea, true, false);
+        mcVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        mcVar.a = new r5(this, 1);
+        hc hcVar = new hc(t10, boVar.ea);
+        this.f = hcVar;
+        hcVar.b = 5000L;
+        hcVar.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, boVar.ea));
+        mcVar.addView(hcVar, w7.x5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        mcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        icVar.setButton(mcVar);
+        oc b10 = vc.a0(boVar).b(icVar, -1);
         this.d = b10;
         b10.r = false;
         if (z10) {
             b10.k(true);
             this.m = true;
         }
-        b10.v = q5Var;
+        b10.v = r5Var;
         this.h = 0L;
         System.currentTimeMillis();
         this.g = messageObject.isPaidReactionChosen();
@@ -85,9 +85,9 @@ public final class t5 {
         AndroidUtilities.cancelRunOnUIThread(this.p);
         this.j = true;
         this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null) {
-            c4Var.c();
+        d4 d4Var = this.o;
+        if (d4Var != null) {
+            d4Var.c();
         }
         int i11 = (int) (-this.h);
         boolean z10 = this.g;
@@ -159,12 +159,12 @@ public final class t5 {
                 if (parentActivity == null) {
                     parentActivity = ApplicationLoader.applicationContext;
                 }
-                new l7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new r5(this, j3, i10), 0L).show();
+                new m7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new s5(this, j3, i10), 0L).show();
             }
         }
         this.d.b();
-        c4 c4Var = this.o;
-        if (c4Var != null && (messageObject = this.b) != null && messageObject.getId() == c4Var.c) {
+        d4 d4Var = this.o;
+        if (d4Var != null && (messageObject = this.b) != null && messageObject.getId() == d4Var.c) {
             this.o.c();
         }
         u5 u5Var3 = this.q;

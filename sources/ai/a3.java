@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.r80;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.g80;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 f6Var.J0.H(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                r80.q((r80) this.c, this.b);
+                g80.q((g80) this.c, this.b);
                 break;
             case 2:
                 uy uyVar = (uy) this.c;
@@ -51,7 +51,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 } else {
                     uyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 3);
                 }
-                xc.A(uyVar, !isDialogMuted, null).j();
+                vc.A(uyVar, !isDialogMuted, null).j();
                 uyVar.finishPreviewFragment();
                 break;
             case 3:
@@ -65,11 +65,11 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 xh.m.P((xh.m) this.c, this.b);
                 break;
             default:
-                xh.r1 r1Var = (xh.r1) this.c;
-                r1Var.getClass();
+                xh.q1 q1Var = (xh.q1) this.c;
+                q1Var.getClass();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    r1Var.dismiss();
+                    q1Var.dismiss();
                     U.presentFragment(ProfileActivity.m4(this.b));
                     break;
                 }

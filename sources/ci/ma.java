@@ -16,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.fg0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sg0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ma implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -128,11 +128,11 @@ public final /* synthetic */ class ma implements View.OnClickListener {
                         if (f4Var.getMeasuredWidth() < 0) {
                             f4Var.G = string;
                         } else {
-                            org.telegram.ui.Components.n6 n6Var = f4Var.H;
+                            org.telegram.ui.Components.m6 m6Var = f4Var.H;
                             if (!LocaleController.isRTL && z13) {
                                 z10 = true;
                             }
-                            n6Var.q(string, z10, true);
+                            m6Var.q(string, z10, true);
                         }
                         ocVar.k1.u();
                     }
@@ -144,7 +144,7 @@ public final /* synthetic */ class ma implements View.OnClickListener {
             case 3:
                 boolean k10 = ocVar.X0.k();
                 ocVar.X0.x(-9982, k10);
-                ((sg0) ocVar.j1.c).a(!k10, true);
+                ((fg0) ocVar.j1.c).a(!k10, true);
                 break;
             case 4:
                 if (ocVar.B0 != null && !ocVar.S1) {

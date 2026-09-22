@@ -8,13 +8,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import jd.a;
 import kotlin.jvm.internal.i;
-import v7.t7;
+import v7.s7;
 import zd.d2;
 import zd.e0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -35,13 +35,13 @@ public final class zzly extends zzg {
 
     public zzly() {
         int i10 = zzby.zza;
-        this.zzi = t7.a(zzlm.zza);
-        this.zzj = t7.a(zzln.zza);
-        this.zzk = t7.a(zzlo.zza);
-        this.zzl = t7.a(zzlp.zza);
-        this.zzm = t7.a(zzlq.zza);
-        this.zzn = t7.a(zzlr.zza);
-        this.zzo = t7.a(zzls.zza);
+        this.zzi = s7.a(zzlm.zza);
+        this.zzj = s7.a(zzln.zza);
+        this.zzk = s7.a(zzlo.zza);
+        this.zzl = s7.a(zzlp.zza);
+        this.zzm = s7.a(zzlq.zza);
+        this.zzn = s7.a(zzlr.zza);
+        this.zzo = s7.a(zzls.zza);
     }
 
     private final Application zzC() {

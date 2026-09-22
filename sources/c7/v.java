@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -117,7 +117,7 @@ public final class v extends o6.a {
         ArrayList arrayList2;
         JSONArray jSONArray2;
         String str2;
-        n7.d dVar;
+        n7.e eVar2;
         JSONObject jSONObject2 = jSONObject.getJSONObject("rp");
         String str3 = "id";
         y yVar = new y(jSONObject2.getString("id"), jSONObject2.getString("name"), jSONObject2.has("icon") ? jSONObject2.optString("icon") : null);
@@ -130,12 +130,12 @@ public final class v extends o6.a {
         for (int i11 = 0; i11 < jSONArray3.length(); i11++) {
             JSONObject jSONObject4 = jSONArray3.getJSONObject(i11);
             try {
-                dVar = new n7.e(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
+                eVar2 = new n7.f(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
             } catch (IllegalArgumentException unused) {
-                dVar = n7.b.a;
+                eVar2 = n7.c.a;
             }
-            if (dVar.b()) {
-                arrayList3.add(dVar.a());
+            if (eVar2.b()) {
+                arrayList3.add(eVar2.a());
             }
         }
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getDouble("timeout") / 1000.0d) : null;
@@ -296,47 +296,47 @@ public final class v extends o6.a {
         String valueOf6 = String.valueOf(this.r);
         String valueOf7 = String.valueOf(this.s);
         String valueOf8 = String.valueOf(this.v);
-        StringBuilder w10 = a4.a.w("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
-        a4.a.z(w10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
-        w10.append(this.e);
-        w10.append(", \n excludeList=");
-        w10.append(valueOf4);
-        w10.append(", \n authenticatorSelection=");
-        w10.append(valueOf5);
-        w10.append(", \n requestId=");
-        w10.append(this.n);
-        w10.append(", \n tokenBinding=");
-        w10.append(valueOf6);
-        w10.append(", \n attestationConveyancePreference=");
-        w10.append(valueOf7);
-        w10.append(", \n authenticationExtensions=");
-        w10.append(valueOf8);
-        w10.append("}");
-        return w10.toString();
+        StringBuilder x10 = a4.a.x("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
+        a4.a.A(x10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
+        x10.append(this.e);
+        x10.append(", \n excludeList=");
+        x10.append(valueOf4);
+        x10.append(", \n authenticatorSelection=");
+        x10.append(valueOf5);
+        x10.append(", \n requestId=");
+        x10.append(this.n);
+        x10.append(", \n tokenBinding=");
+        x10.append(valueOf6);
+        x10.append(", \n attestationConveyancePreference=");
+        x10.append(valueOf7);
+        x10.append(", \n authenticationExtensions=");
+        x10.append(valueOf8);
+        x10.append("}");
+        return x10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 2, this.a, i10);
-        w7.f0.k(parcel, 3, this.b, i10);
-        w7.f0.c(parcel, 4, this.c);
-        w7.f0.p(parcel, 5, this.d);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.k(parcel, 2, this.a, i10);
+        w7.e0.k(parcel, 3, this.b, i10);
+        w7.e0.c(parcel, 4, this.c);
+        w7.e0.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            w7.f0.s(parcel, 6, 8);
+            w7.e0.s(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        w7.f0.p(parcel, 7, this.f);
-        w7.f0.k(parcel, 8, this.h, i10);
-        w7.f0.i(parcel, 9, this.n);
-        w7.f0.k(parcel, 10, this.r, i10);
+        w7.e0.p(parcel, 7, this.f);
+        w7.e0.k(parcel, 8, this.h, i10);
+        w7.e0.i(parcel, 9, this.n);
+        w7.e0.k(parcel, 10, this.r, i10);
         e eVar = this.s;
-        w7.f0.l(parcel, 11, eVar == null ? null : eVar.a);
-        w7.f0.k(parcel, 12, this.v, i10);
-        w7.f0.l(parcel, 13, this.w);
-        w7.f0.k(parcel, 14, this.x, i10);
-        w7.f0.r(parcel, q6);
+        w7.e0.l(parcel, 11, eVar == null ? null : eVar.a);
+        w7.e0.k(parcel, 12, this.v, i10);
+        w7.e0.l(parcel, 13, this.w);
+        w7.e0.k(parcel, 14, this.x, i10);
+        w7.e0.r(parcel, q6);
     }
 
     public v(String str) {

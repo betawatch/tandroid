@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class q0 implements s0 {
     public static final q0 a = new q0();
@@ -9,11 +9,11 @@ public class q0 implements s0 {
 
     @Override // androidx.lifecycle.s0
     public p0 H(Class cls, v1.b bVar) {
-        return a(cls);
+        return b(cls);
     }
 
     @Override // androidx.lifecycle.s0
-    public p0 a(Class cls) {
+    public p0 b(Class cls) {
         try {
             Object newInstance = cls.getDeclaredConstructor(null).newInstance(null);
             kotlin.jvm.internal.i.d(newInstance, "{\n                modelC…wInstance()\n            }");

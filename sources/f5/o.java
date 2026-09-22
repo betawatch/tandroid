@@ -2,15 +2,16 @@ package f5;
 
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import w7.t6;
+import k2.c0;
+import w7.s6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ o0.b n;
-    public static final /* synthetic */ o0.b r;
-    public static final /* synthetic */ o0.b s;
-    public static final /* synthetic */ o0.b v;
+    public static final /* synthetic */ c0 n;
+    public static final /* synthetic */ c0 r;
+    public static final /* synthetic */ c0 s;
+    public static final /* synthetic */ c0 v;
     public long e;
     public long[] f;
     public int h;
@@ -30,7 +31,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = e5.b.i(byteBuffer);
-        int a2 = t6.a(e5.b.i(byteBuffer));
+        int a2 = s6.a(e5.b.i(byteBuffer));
         this.h = a2;
         if (this.e == 0) {
             this.f = new long[a2];
@@ -68,6 +69,6 @@ public final class o extends com.googlecode.mp4parser.c {
         sb2.append(this.e);
         sb2.append(";sampleCount=");
         e2.q(re.a.b(r, this, this));
-        return a4.a.r(sb2, this.e > 0 ? this.h : this.f.length, "]");
+        return a4.a.s(sb2, this.e > 0 ? this.h : this.f.length, "]");
     }
 }

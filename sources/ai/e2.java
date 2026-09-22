@@ -10,17 +10,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.eg0;
 import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.ur;
 import org.telegram.ui.Components.vu;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -81,24 +81,24 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 12:
-                rg0 rg0Var = rg0.p0;
-                vu vuVar = rg0Var.U;
+                eg0 eg0Var = eg0.p0;
+                vu vuVar = eg0Var.U;
                 if (vuVar != null) {
-                    vuVar.G();
+                    vuVar.H();
                 } else {
-                    PhotoViewer photoViewer = rg0Var.V;
+                    PhotoViewer photoViewer = eg0Var.V;
                     if (photoViewer != null) {
                         photoViewer.P0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                rg0.j(false);
+                eg0.j(false);
                 break;
             case 13:
                 org.telegram.ui.Components.voip.j1.j();
                 break;
             case 14:
-                ((org.telegram.ui.Cells.a2) view).c(!r6.b(), true);
+                ((org.telegram.ui.Cells.z1) view).c(!r6.b(), true);
                 break;
             case 15:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -110,7 +110,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                     break;
                 }
             case 16:
-                tg.m1.e0(0, null);
+                tg.n1.e0(0, null);
                 break;
             case 17:
                 ArrayList arrayList = ExternalActionActivity.x;
@@ -145,7 +145,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 int i16 = xh.m.A0;
                 break;
             case 25:
-                zc[] zcVarArr = xh.v.p0;
+                xc[] xcVarArr = xh.v.p0;
                 break;
             case 26:
                 int i17 = xh.c0.f0;

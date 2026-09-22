@@ -15,18 +15,18 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import ci.eb;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.l0;
+import org.telegram.messenger.y0;
 import r0.l1;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public float E;
     public int F;
     public final Rect G;
     public final RectF H;
-    public ah.e I;
+    public ah.d I;
     public float J;
     public float K;
     public boolean L;
@@ -53,10 +53,10 @@ public final class g extends FrameLayout {
         this.H = new RectF();
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, y5.e(-1, -2, 80));
+        addView(frameLayout, x5.e(-1, -2, 80));
         f0 f0Var = new f0(this, context, 5);
         this.d = f0Var;
-        addView(f0Var, y5.e(-1, -2, 80));
+        addView(f0Var, x5.e(-1, -2, 80));
         this.b = new eb(this, context, 5);
     }
 
@@ -83,8 +83,8 @@ public final class g extends FrameLayout {
     public final void b() {
         int i10;
         int measuredHeight;
-        ah.e eVar = this.I;
-        if (eVar == null || (i10 = eVar.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.J))) {
+        ah.d dVar = this.I;
+        if (dVar == null || (i10 = dVar.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.J))) {
             return;
         }
         this.I.setBounds(0, measuredHeight, getMeasuredWidth(), getMeasuredHeight());
@@ -147,7 +147,7 @@ public final class g extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), l0.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), y0.b(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
         int measuredHeight = getMeasuredHeight() - this.r;
         int round = Math.round(this.x);
         int measuredWidth = getMeasuredWidth() - Math.round(this.y);
@@ -241,8 +241,8 @@ public final class g extends FrameLayout {
         return this.L;
     }
 
-    public void setBackgroundWithFadeDrawable(ah.e eVar) {
-        this.I = eVar;
+    public void setBackgroundWithFadeDrawable(ah.d dVar) {
+        this.I = dVar;
     }
 
     public void setBlurredBottomHeight(float f7) {

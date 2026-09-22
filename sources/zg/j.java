@@ -5,12 +5,11 @@ import android.view.KeyEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.x8;
-import org.telegram.ui.Components.y5;
-import org.telegram.ui.fm0;
-import yh.s5;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.x5;
+import org.telegram.ui.em0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -23,7 +22,7 @@ public final /* synthetic */ class j implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        x8 x8Var;
+        w8 w8Var;
         switch (this.a) {
             case 0:
                 Boolean bool = (Boolean) obj;
@@ -32,13 +31,13 @@ public final /* synthetic */ class j implements Utilities.Callback {
                 if (!qVar.a0()) {
                     int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(qVar.n.getText());
-                    for (y5 y5Var : (y5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), y5.class)) {
-                        if (spannableStringBuilder.getSpanEnd(y5Var) == editTextSelectionEnd) {
-                            qVar.E.remove(Long.valueOf(y5Var.documentId));
-                            qVar.F.remove(Long.valueOf(y5Var.documentId));
-                            qVar.b.A(Long.valueOf(y5Var.documentId));
-                            if (y5Var.documentId == -1 && (x8Var = qVar.s) != null) {
-                                x8Var.setChecked(false);
+                    for (x5 x5Var : (x5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), x5.class)) {
+                        if (spannableStringBuilder.getSpanEnd(x5Var) == editTextSelectionEnd) {
+                            qVar.E.remove(Long.valueOf(x5Var.documentId));
+                            qVar.F.remove(Long.valueOf(x5Var.documentId));
+                            qVar.b.A(Long.valueOf(x5Var.documentId));
+                            if (x5Var.documentId == -1 && (w8Var = qVar.s) != null) {
+                                w8Var.setChecked(false);
                                 qVar.n.setMaxLength(qVar.J);
                             }
                             if (bool.booleanValue()) {
@@ -47,8 +46,8 @@ public final /* synthetic */ class j implements Utilities.Callback {
                                 AndroidUtilities.runOnUIThread(hVar, 350L);
                                 break;
                             } else {
-                                y5Var.setRemoved(new fm0(qVar, y5Var, editTextSelectionEnd, 19));
-                                qVar.W(y5Var);
+                                x5Var.setRemoved(new em0(qVar, x5Var, editTextSelectionEnd, 19));
+                                qVar.W(x5Var);
                                 qVar.Y(false);
                                 break;
                             }
@@ -66,7 +65,7 @@ public final /* synthetic */ class j implements Utilities.Callback {
                         qVar2.finishFragment();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new s5(4, qVar2, tL_error), qVar2.Q == null ? 200L : 0L);
+                        AndroidUtilities.runOnUIThread(new uh.i(28, qVar2, tL_error), qVar2.Q == null ? 200L : 0L);
                         break;
                     }
                 }

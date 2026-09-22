@@ -1,27 +1,13 @@
 package w7;
 
-import com.google.android.gms.tasks.Task;
-import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class h7 {
-    public static LanguageIdentifierImpl a() {
-        ub.a aVar = (ub.a) qb.g.c().a(ub.a.class);
-        ub.e eVar = aVar.b;
-        eVar.getClass();
-        v7.z8 z8Var = aVar.a;
-        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, z8Var, (Executor) aVar.c.a.get());
-        oi.f fVar = new oi.f();
-        fVar.c = languageIdentifierImpl.f;
-        v7.s1 s1Var = new v7.s1(3, false);
-        s1Var.d = LanguageIdentifierImpl.k();
-        fVar.d = new v7.h7(s1Var);
-        a5.a aVar2 = new a5.a(fVar, 1);
-        Task task = z8Var.e;
-        qb.m.a.execute(new com.google.android.gms.internal.cast.p(z8Var, aVar2, v7.k6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(z8Var.g), 6));
-        ((ub.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
-        return languageIdentifierImpl;
+    public static void a(int i10, Object[] objArr) {
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == null) {
+                throw new NullPointerException(hg.c.i(i11, "at index "));
+            }
+        }
     }
 }

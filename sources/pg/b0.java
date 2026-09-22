@@ -2,17 +2,17 @@ package pg;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
-    public final /* synthetic */ t0 c;
+    public final /* synthetic */ d0 b;
+    public final /* synthetic */ r0 c;
 
-    public /* synthetic */ b0(e0 e0Var, t0 t0Var, int i10) {
+    public /* synthetic */ b0(d0 d0Var, r0 r0Var, int i10) {
         this.a = i10;
-        this.b = e0Var;
-        this.c = t0Var;
+        this.b = d0Var;
+        this.c = r0Var;
     }
 
     @Override // java.lang.Runnable
@@ -22,9 +22,9 @@ public final /* synthetic */ class b0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new b0(this.b, this.c, 1));
                 break;
             default:
-                e0 e0Var = this.b;
-                e0Var.getClass();
-                e0Var.i = this.c.a;
+                d0 d0Var = this.b;
+                d0Var.getClass();
+                d0Var.i = this.c.a;
                 break;
         }
     }

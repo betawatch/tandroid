@@ -9,7 +9,7 @@ import org.telegram.messenger.ChatsWidgetProvider;
 import org.telegram.messenger.ContactsWidgetProvider;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class xy extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ dz a;
@@ -59,7 +59,7 @@ public final class xy extends org.telegram.ui.ActionBar.j {
         int i15 = y0Var.a;
         Object obj = y0Var.b;
         switch (i15) {
-            case 26:
+            case 25:
                 ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
                 int i16 = ChatsWidgetConfigActivity.F;
                 Intent intent = new Intent();

@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.Rect;
 import android.view.View;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.fo0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class k4 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -12,11 +12,11 @@ public final class k4 implements View.OnLayoutChangeListener {
     public final Object c;
     public final /* synthetic */ Object d;
 
-    public k4(uo0 uo0Var, uo0 uo0Var2, uo0 uo0Var3) {
+    public k4(fo0 fo0Var, fo0 fo0Var2, fo0 fo0Var3) {
         this.a = 1;
-        this.b = uo0Var;
-        this.c = uo0Var2;
-        this.d = uo0Var3;
+        this.b = fo0Var;
+        this.c = fo0Var2;
+        this.d = fo0Var3;
     }
 
     @Override // android.view.View.OnLayoutChangeListener
@@ -38,9 +38,9 @@ public final class k4 implements View.OnLayoutChangeListener {
                 }
                 break;
             default:
-                ((uo0) this.b).setProgress(org.telegram.ui.i5.c);
-                ((uo0) this.c).setProgress(org.telegram.ui.i5.d);
-                ((uo0) this.d).setProgress(org.telegram.ui.i5.e);
+                ((fo0) this.b).setProgress(org.telegram.ui.i5.c);
+                ((fo0) this.c).setProgress(org.telegram.ui.i5.d);
+                ((fo0) this.d).setProgress(org.telegram.ui.i5.e);
                 break;
         }
     }

@@ -20,14 +20,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class xb extends cw0 {
+public final class xb extends pv0 {
     public final Path A0;
     public final RectF B0;
     public final RectF C0;
@@ -61,7 +61,7 @@ public final class xb extends cw0 {
     /* JADX WARN: Removed duplicated region for block: B:224:0x0769  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x07c6  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final class xb extends cw0 {
         ca caVar3;
         int i10;
         f6 t10;
-        oj0 oj0Var;
+        bj0 bj0Var;
         jc jcVar = this.I0;
         RectF rectF5 = jcVar.T;
         gc gcVar = jcVar.s0;
@@ -296,7 +296,7 @@ public final class xb extends cw0 {
                             int saveCount = canvas.getSaveCount();
                             dc dcVar2 = gcVar.f;
                             if (dcVar2 != null) {
-                                dcVar2.f(f33, canvas, rectF11, jcVar.E);
+                                dcVar2.g(f33, canvas, rectF11, jcVar.E);
                             }
                             gcVar.c.draw(canvas);
                             ec ecVar2 = gcVar.e;
@@ -333,7 +333,7 @@ public final class xb extends cw0 {
                             AndroidUtilities.lerp(rectF4, rectF9, jcVar.U, rectF11);
                             int saveCount2 = canvas.getSaveCount();
                             if (gcVar != null && (dcVar = gcVar.f) != null) {
-                                dcVar.f(1.0f - f16, canvas, rectF11, jcVar.E);
+                                dcVar.g(1.0f - f16, canvas, rectF11, jcVar.E);
                             }
                             if (jcVar.V0) {
                                 boolean z13 = (gcVar == null || gcVar.l == null) ? false : true;
@@ -423,7 +423,7 @@ public final class xb extends cw0 {
                                     canvas.save();
                                 }
                                 canvas.translate(jcVar.K, jcVar.L);
-                                ((org.telegram.ui.Cells.s2) jcVar.M).A(canvas);
+                                ((org.telegram.ui.Cells.r2) jcVar.M).A(canvas);
                                 canvas.restore();
                             }
                         }
@@ -436,13 +436,13 @@ public final class xb extends cw0 {
                             jcVar.d = false;
                             jc.x1 = true;
                             jcVar.b0 = jcVar.W;
-                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (oj0Var = t10.o1.d) != null) {
-                                oj0 oj0Var2 = gcVar.d;
-                                oj0Var.c = oj0Var2.c;
-                                oj0Var.f = oj0Var2.f;
-                                oj0Var.b = oj0Var2.b;
-                                oj0Var.a = System.currentTimeMillis();
-                                oj0Var.c();
+                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (bj0Var = t10.o1.d) != null) {
+                                bj0 bj0Var2 = gcVar.d;
+                                bj0Var.c = bj0Var2.c;
+                                bj0Var.f = bj0Var2.f;
+                                bj0Var.b = bj0Var2.b;
+                                bj0Var.a = System.currentTimeMillis();
+                                bj0Var.c();
                             }
                             jcVar.E = true;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -552,7 +552,7 @@ public final class xb extends cw0 {
         boolean z11;
         zb zbVar;
         int i10;
-        sk0 sk0Var;
+        fk0 fk0Var;
         jc jcVar = this.I0;
         float[] fArr = jcVar.o0;
         f6 currentPeerView = jcVar.n0.getCurrentPeerView();
@@ -570,7 +570,7 @@ public final class xb extends cw0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (jcVar.p1 && currentPeerView != null && (sk0Var = currentPeerView.r3) != null) {
+        if (jcVar.p1 && currentPeerView != null && (fk0Var = currentPeerView.r3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -582,14 +582,14 @@ public final class xb extends cw0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            sk0Var.getHitRect(rect);
+            fk0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            sk0Var.dispatchTouchEvent(motionEvent);
+            fk0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -710,7 +710,7 @@ public final class xb extends cw0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         jc jcVar = this.I0;
@@ -718,7 +718,7 @@ public final class xb extends cw0 {
             org.telegram.ui.ActionBar.n2 n2Var = this.H0;
             AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
         }
-        org.telegram.ui.Components.pc.a(this, new wb(this));
+        org.telegram.ui.Components.oc.a(this, new wb(this));
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.articleClosed);
@@ -726,10 +726,10 @@ public final class xb extends cw0 {
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.pc.h(this);
+        org.telegram.ui.Components.oc.h(this);
         jc jcVar = this.I0;
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesUpdated);

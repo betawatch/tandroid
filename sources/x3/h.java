@@ -8,9 +8,9 @@ import e2.v;
 import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.Cells.f3;
+import n7.a1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -35,35 +35,35 @@ public final class h extends i {
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, f3 f3Var) {
+    public final boolean c(v vVar, long j3, a1 a1Var) {
         if (e(vVar, o)) {
             byte[] copyOf = Arrays.copyOf(vVar.a, vVar.c);
             int i10 = copyOf[9] & 255;
             ArrayList a2 = c3.b.a(copyOf);
-            if (((s) f3Var.b) == null) {
+            if (((s) a1Var.b) == null) {
                 r rVar = new r();
                 rVar.p = r0.n("audio/ogg");
                 rVar.q = r0.n("audio/opus");
                 rVar.I = i10;
                 rVar.J = 48000;
                 rVar.t = a2;
-                f3Var.b = new s(rVar);
+                a1Var.b = new s(rVar);
                 return true;
             }
         } else {
             if (!e(vVar, p)) {
-                e2.d.h((s) f3Var.b);
+                e2.d.h((s) a1Var.b);
                 return false;
             }
-            e2.d.h((s) f3Var.b);
+            e2.d.h((s) a1Var.b);
             if (!this.n) {
                 this.n = true;
                 vVar.K(8);
                 p0 r10 = c3.b.r(i0.w(c3.b.v(vVar, false, false).a));
                 if (r10 != null) {
-                    r a10 = ((s) f3Var.b).a();
-                    a10.k = r10.b(((s) f3Var.b).l);
-                    f3Var.b = new s(a10);
+                    r a10 = ((s) a1Var.b).a();
+                    a10.k = r10.b(((s) a1Var.b).l);
+                    a1Var.b = new s(a10);
                     return true;
                 }
             }

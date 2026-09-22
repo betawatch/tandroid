@@ -1,8 +1,6 @@
 package y9;
 
-import org.telegram.ui.Cells.f3;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c1 {
     public final String a;
@@ -10,9 +8,9 @@ public final class c1 {
     public final String c;
     public final String d;
     public final int e;
-    public final f3 f;
+    public final n7.a1 f;
 
-    public c1(String str, String str2, String str3, String str4, int i10, f3 f3Var) {
+    public c1(String str, String str2, String str3, String str4, int i10, n7.a1 a1Var) {
         if (str == null) {
             throw new NullPointerException("Null appIdentifier");
         }
@@ -30,7 +28,7 @@ public final class c1 {
         }
         this.d = str4;
         this.e = i10;
-        this.f = f3Var;
+        this.f = a1Var;
     }
 
     public final boolean equals(Object obj) {

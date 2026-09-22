@@ -9,24 +9,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.wm;
-import org.telegram.ui.cm;
-import org.telegram.ui.lm;
-import org.telegram.ui.ln;
+import org.telegram.ui.bo;
+import org.telegram.ui.em;
+import org.telegram.ui.nm;
+import org.telegram.ui.nn;
 import org.telegram.ui.sy;
 import org.telegram.ui.ty;
 import org.telegram.ui.uy;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -60,25 +60,25 @@ public final /* synthetic */ class z implements Runnable {
                 ConnectionsManager.lambda$onIntegrityCheckClassic$27(this.b, (String) this.d, (String) this.e, this.c);
                 break;
             case 2:
-                ((zn) this.d).didReceivedNotification(this.b, this.c, (Object[]) this.e);
+                ((bo) this.d).didReceivedNotification(this.b, this.c, (Object[]) this.e);
                 break;
             case 3:
-                cm cmVar = (cm) this.d;
+                em emVar = (em) this.d;
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.e;
-                cmVar.getClass();
+                emVar.getClass();
                 MessageObject messageObject = w0Var.getMessageObject();
-                lm lmVar = cmVar.a;
-                lmVar.Q.Xa(this.b, messageObject.getId(), true, messageObject.getDialogId() == lmVar.Q.L6 ? 1 : 0, true, 0, Integer.valueOf(this.c), null, null);
+                nm nmVar = emVar.a;
+                nmVar.Q.Xa(this.b, messageObject.getId(), true, messageObject.getDialogId() == nmVar.Q.L6 ? 1 : 0, true, 0, Integer.valueOf(this.c), null, null);
                 break;
             case 4:
-                ln lnVar = (ln) this.d;
-                u1 u1Var = (u1) this.e;
-                zn znVar = lnVar.a;
-                if (znVar.A1 != null) {
-                    u1Var.getLocationInWindow(new int[2]);
-                    znVar.A1.setTranslationY(rk.D(520.0f, r3[1] - r2.getTop(), this.b));
-                    znVar.A1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
-                    znVar.A1.u();
+                nn nnVar = (nn) this.d;
+                t1 t1Var = (t1) this.e;
+                bo boVar = nnVar.a;
+                if (boVar.A1 != null) {
+                    t1Var.getLocationInWindow(new int[2]);
+                    boVar.A1.setTranslationY(vl.D(520.0f, r3[1] - r2.getTop(), this.b));
+                    boVar.A1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
+                    boVar.A1.u();
                     break;
                 }
                 break;
@@ -118,7 +118,7 @@ public final /* synthetic */ class z implements Runnable {
                                     tyVar.q(true);
                                     if (!SharedConfig.archiveHidden && tyVar.c.L0() == 0) {
                                         uyVar.e2 = true;
-                                        tyVar.a.w0(0, -AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f), null);
+                                        tyVar.a.v0(0, -AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f), null);
                                     }
                                 }
                                 i10 = ((n2) uyVar).currentAccount;
@@ -139,17 +139,17 @@ public final /* synthetic */ class z implements Runnable {
                                     }
                                 }, 300L);
                             } else if (addDialogToFolder == 1) {
-                                s4.c1 L = tyVar.a.L(0);
-                                if (L != null) {
-                                    View view = L.a;
-                                    if (view instanceof s2) {
-                                        s2 s2Var = (s2) view;
-                                        if (s2Var.a2.n == 2) {
-                                            s2Var.b2 = true;
-                                            s2Var.c2 = 0.0f;
-                                            j6.u1.T(0.0f, true);
-                                            j6.u1.start();
-                                            s2Var.invalidate();
+                                s4.c1 K = tyVar.a.K(0);
+                                if (K != null) {
+                                    View view = K.a;
+                                    if (view instanceof r2) {
+                                        r2 r2Var = (r2) view;
+                                        if (r2Var.a2.n == 2) {
+                                            r2Var.b2 = true;
+                                            r2Var.c2 = 0.0f;
+                                            i6.u1.T(0.0f, true);
+                                            i6.u1.start();
+                                            r2Var.invalidate();
                                         }
                                     }
                                 }
@@ -202,9 +202,9 @@ public final /* synthetic */ class z implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ z(zn znVar, int i10, int i11, Object[] objArr) {
+    public /* synthetic */ z(bo boVar, int i10, int i11, Object[] objArr) {
         this.a = 2;
-        this.d = znVar;
+        this.d = boVar;
         this.b = i10;
         this.c = i11;
         this.e = objArr;

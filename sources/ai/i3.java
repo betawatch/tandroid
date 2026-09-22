@@ -30,14 +30,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.h01;
-import org.telegram.ui.ka0;
+import org.telegram.ui.bm0;
+import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,8 +65,8 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 f6 f6Var = (f6) this.c;
                 boolean z10 = this.b;
                 a5 a5Var = f6Var.c1;
-                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var.B0;
-                new xc(a5Var, f6Var2).o(z10 ? wc.h : wc.e, f6Var2).j();
+                org.telegram.ui.ActionBar.e6 e6Var = f6Var.B0;
+                new vc(a5Var, e6Var).o(z10 ? uc.h : uc.e, e6Var).j();
                 break;
             case 1:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -144,7 +144,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                                     if (context != null) {
                                         try {
                                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                                            alertDialog$Builder.m(R.raw.permission_request_location, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+                                            alertDialog$Builder.m(R.raw.permission_request_location, 72, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
                                             alertDialog$Builder.a.T = LocaleController.getString(R.string.GpsDisabledAlertText);
                                             alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new ld(context, i10));
                                             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
@@ -195,21 +195,21 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                     i3Var.run(location2);
                 }
             case 3:
-                h01 h01Var = (h01) this.c;
+                i01 i01Var = (i01) this.c;
                 boolean z13 = this.b;
-                ProfileActivity profileActivity = h01Var.b;
+                ProfileActivity profileActivity = i01Var.b;
                 if (profileActivity.getParentActivity() != null) {
-                    xc.a0(profileActivity).o(z13 ? wc.h : wc.e, null).j();
+                    vc.a0(profileActivity).o(z13 ? uc.h : uc.e, null).j();
                     break;
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ka0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 11));
+                AndroidUtilities.runOnUIThread(new bm0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 10));
                 break;
             case 5:
-                org.telegram.ui.web.a2 a2Var = (org.telegram.ui.web.a2) this.c;
-                a2Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                a2Var.a.Y2.N(true);
+                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.c;
+                z1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                z1Var.a.Y2.N(true);
                 break;
             default:
                 yh.u5 u5Var = (yh.u5) this.c;

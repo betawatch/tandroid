@@ -1,43 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class pn0 extends s4.j {
-    @Override // s4.j, s4.f1
-    public final boolean r(s4.c1 c1Var, b2.q0 q0Var, int i10, int i11, int i12, int i13) {
-        vn0 vn0Var;
-        un0 un0Var;
-        View view = c1Var.a;
-        if ((view instanceof vn0) && (un0Var = (vn0Var = (vn0) view).a) != null) {
-            un0Var.i = un0Var.N;
-            un0Var.g = un0Var.O;
-            un0Var.h = un0Var.P;
-            vn0Var.b.d(0.0f, true);
-            vn0Var.invalidate();
-        }
-        int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) view.getTranslationY());
-        R(c1Var);
-        int i14 = i12 - translationX;
-        int i15 = i13 - translationY;
-        if (i14 == 0 && i15 == 0) {
-            v(c1Var);
-            return false;
-        }
-        if (i14 != 0) {
-            view.setTranslationX(-i14);
-        }
-        if (i15 != 0) {
-            view.setTranslationY(-i15);
-        }
-        this.r.add(new s4.i(c1Var, translationX, translationY, i12, i13));
-        return true;
+public final class pn0 extends e40 {
+    public final /* synthetic */ org.telegram.ui.ey c0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pn0(org.telegram.ui.ey eyVar, ll0 ll0Var, Context context, int i10) {
+        super(ll0Var, context, i10);
+        this.c0 = eyVar;
     }
 
-    @Override // s4.f1
-    public final boolean t(s4.c1 c1Var) {
-        return true;
+    @Override // org.telegram.ui.Components.w51
+    public final void N(boolean z10) {
+        super.N(z10);
+        ln0 ln0Var = this.c0.s0;
+        ln0Var.e(false, z10);
+        ln0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        ln0Var.e.setVisibility(8);
     }
 }

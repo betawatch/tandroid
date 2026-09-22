@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class hz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Switch b;
+public final class hz0 {
+    public static final hz0 e = new hz0(false, new ez0(TLObject.FLAG_31, -2147483647), kz0.R, 0.0f);
+    public final boolean a;
+    public final ez0 b;
+    public final wy0 c;
+    public final float d;
 
-    public /* synthetic */ hz0(Switch r12, int i10) {
-        this.a = i10;
-        this.b = r12;
+    public hz0(boolean z10, ez0 ez0Var, wy0 wy0Var, float f7) {
+        this.a = z10;
+        this.b = ez0Var;
+        this.c = wy0Var;
+        this.d = f7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d = null;
-                break;
-            default:
-                this.b.e = null;
-                break;
+    public static wy0 a(hz0 hz0Var, boolean z10) {
+        wy0 wy0Var = hz0Var.c;
+        return wy0Var != kz0.R ? wy0Var : hz0Var.d == 0.0f ? z10 ? kz0.S : kz0.T : kz0.U;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || hz0.class != obj.getClass()) {
+            return false;
+        }
+        hz0 hz0Var = (hz0) obj;
+        return this.c.equals(hz0Var.c) && this.b.equals(hz0Var.b);
+    }
+
+    public final int hashCode() {
+        return this.c.hashCode() + (this.b.hashCode() * 31);
     }
 }

@@ -9,7 +9,7 @@ import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.p3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g extends n6.g {
     public final w5.b U;
@@ -17,14 +17,14 @@ public final class g extends n6.g {
     public g(Context context, Looper looper, p3 p3Var, w5.b bVar, k kVar, l lVar) {
         super(context, looper, 68, p3Var, kVar, lVar, 0);
         bVar = bVar == null ? w5.b.c : bVar;
-        m5.e eVar = new m5.e((char) 0, 26);
-        eVar.b = Boolean.FALSE;
+        o0.a aVar = new o0.a(21, (byte) 0);
+        aVar.b = Boolean.FALSE;
         w5.b bVar2 = w5.b.c;
         bVar.getClass();
-        eVar.b = Boolean.valueOf(bVar.a);
-        eVar.c = bVar.b;
-        eVar.c = e.a();
-        this.U = new w5.b(eVar);
+        aVar.b = Boolean.valueOf(bVar.a);
+        aVar.c = bVar.b;
+        aVar.c = e.a();
+        this.U = new w5.b(aVar);
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c

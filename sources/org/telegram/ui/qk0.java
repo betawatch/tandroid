@@ -1,63 +1,117 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class qk0 extends og.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public wk0 g;
-    public int h;
-    public boolean i;
+public final class qk0 extends org.telegram.ui.Components.kl0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public pk0 f;
+    public final gg.c2 h;
+    public final /* synthetic */ NotificationsCustomSettingsActivity n;
 
-    public static qk0 b(int i10, String str, boolean z10) {
-        qk0 qk0Var = new qk0(1, true);
-        qk0Var.c = i10;
-        qk0Var.e = str;
-        qk0Var.i = z10;
-        return qk0Var;
+    public qk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
+        this.n = notificationsCustomSettingsActivity;
+        this.c = context;
+        gg.c2 c2Var = new gg.c2(true);
+        this.h = c2Var;
+        c2Var.a = new hu(this, 25);
     }
 
-    public static qk0 c(int i10, String str, String str2) {
-        qk0 qk0Var = new qk0(5, true);
-        qk0Var.c = i10;
-        qk0Var.e = str;
-        qk0Var.f = str2;
-        return qk0Var;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
     }
 
-    public static qk0 d(int i10, String str) {
-        qk0 qk0Var = new qk0(4, true);
-        qk0Var.c = i10;
-        qk0Var.e = str;
-        return qk0Var;
-    }
-
-    @Override // og.a
-    public final boolean a(og.a aVar) {
-        if (this == aVar) {
-            return true;
+    public final Object E(int i10) {
+        if (i10 >= 0 && i10 < this.d.size()) {
+            return this.d.get(i10);
         }
-        if (qk0.class != aVar.getClass()) {
-            return false;
+        int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.d);
+        gg.c2 c2Var = this.h;
+        ArrayList arrayList = c2Var.e;
+        if (f7 < 0 || f7 >= arrayList.size()) {
+            return null;
         }
-        qk0 qk0Var = (qk0) aVar;
-        return this.c == qk0Var.c && this.d == qk0Var.d && this.h == qk0Var.h && this.i == qk0Var.i && Objects.equals(this.e, qk0Var.e) && Objects.equals(this.f, qk0Var.f) && this.g == qk0Var.g;
+        return c2Var.e.get(f7);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void F(String str) {
+        if (this.f != null) {
+            Utilities.searchQueue.cancelRunnable(this.f);
+            this.f = null;
         }
-        if (obj != null && qk0.class == obj.getClass()) {
-            qk0 qk0Var = (qk0) obj;
-            if (this.c == qk0Var.c && this.h == qk0Var.h && ((this.a == 8 || (this.d == qk0Var.d && Objects.equals(this.e, qk0Var.e) && (this.a == 6 || Objects.equals(this.f, qk0Var.f)))) && this.g == qk0Var.g)) {
-                return true;
+        if (str != null) {
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            pk0 pk0Var = new pk0(this, str, 0);
+            this.f = pk0Var;
+            dispatchQueue.postRunnable(pk0Var, 300L);
+            return;
+        }
+        this.d.clear();
+        this.e.clear();
+        this.h.f(null, null);
+        gg.c2 c2Var = this.h;
+        int i10 = this.n.s;
+        c2Var.g(null, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+        l();
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        int size = this.d.size();
+        ArrayList arrayList = this.h.e;
+        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 == this.d.size() ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
             }
+            ((org.telegram.ui.Cells.v3) view).setText(LocaleController.getString("AddToExceptions", R.string.AddToExceptions));
+            return;
         }
-        return false;
+        org.telegram.ui.Cells.ab abVar = (org.telegram.ui.Cells.ab) view;
+        if (i10 < this.d.size()) {
+            abVar.g((tk0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
+            abVar.setAddButtonVisible(false);
+        } else {
+            int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.d);
+            ArrayList arrayList = this.h.e;
+            abVar.d((TLObject) arrayList.get(f7), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), f7 != arrayList.size() - 1);
+            abVar.setAddButtonVisible(true);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View abVar;
+        if (i10 != 0) {
+            abVar = new org.telegram.ui.Cells.v3(this.c, null);
+            abVar.setBackgroundColor(0);
+            abVar.setTag(-33024);
+        } else {
+            abVar = new org.telegram.ui.Cells.ab(4, 0, this.c, null, false, true);
+        }
+        return new org.telegram.ui.Components.vk0(abVar);
     }
 }

@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ws0 extends org.telegram.ui.Cells.ba {
+public final class ws0 extends org.telegram.ui.Cells.aa {
     public final /* synthetic */ int v0 = 0;
 
-    public /* synthetic */ ws0(ai.wa waVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(waVar, f6Var);
+    public /* synthetic */ ws0(ai.wa waVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(waVar, e6Var);
     }
 
-    @Override // org.telegram.ui.Cells.ea
+    @Override // org.telegram.ui.Cells.da
     public final int p() {
         switch (this.v0) {
         }

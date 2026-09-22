@@ -1,58 +1,50 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ze1 extends FrameLayout {
-    public ValueAnimator a;
-    public boolean b;
-    public float c;
+public final class ze1 extends h71 {
+    public boolean d2;
+    public final /* synthetic */ af1 e2;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = ((1.0f - this.c) * 0.2f) + 0.8f;
-        canvas.save();
-        canvas.scale(f7, f7, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (isPressed()) {
-            float f10 = this.c;
-            if (f10 != 1.0f) {
-                this.c = Utilities.clamp(f10 + 0.16f, 1.0f, 0.0f);
-                invalidate();
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ze1(af1 af1Var, af1 af1Var2, Activity activity) {
+        super(af1Var2, activity, false, null, 3, null);
+        this.e2 = af1Var;
+        this.d2 = true;
+    }
+
+    @Override // org.telegram.ui.h71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.d2) {
+            this.d2 = false;
+            this.e2.f.s(null);
         }
     }
 
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        super.setPressed(z10);
-        if (this.b != z10) {
-            this.b = z10;
-            invalidate();
-            if (z10 && (valueAnimator = this.a) != null) {
-                valueAnimator.removeAllListeners();
-                this.a.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f7 = this.c;
-            if (f7 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
-                this.a = ofFloat;
-                ofFloat.addUpdateListener(new i21(this, 15));
-                this.a.addListener(new gp0(this, 24));
-                this.a.setInterpolator(new OvershootInterpolator(5.0f));
-                this.a.setDuration(350L);
-                this.a.start();
+    @Override // org.telegram.ui.h71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        int i11;
+        af1 af1Var = this.e2;
+        i10 = ((org.telegram.ui.ActionBar.n2) af1Var).currentAccount;
+        boolean z10 = false;
+        if (!TextUtils.isEmpty(UserConfig.getInstance(i10).defaultTopicIcons)) {
+            MediaDataController mediaDataController = af1Var.getMediaDataController();
+            i11 = ((org.telegram.ui.ActionBar.n2) af1Var).currentAccount;
+            TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = mediaDataController.getStickerSetByEmojiOrName(UserConfig.getInstance(i11).defaultTopicIcons);
+            if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.id) == MediaDataController.getStickerSetId(document)) {
+                z10 = true;
             }
         }
+        af1Var.b0(l4, z10);
     }
 }

@@ -7,28 +7,28 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class qk extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ bo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qk(zn znVar, Context context, int i10) {
+    public /* synthetic */ qk(bo boVar, Context context, int i10) {
         super(context);
         this.a = i10;
-        this.b = znVar;
+        this.b = boVar;
     }
 
     @Override // android.view.ViewGroup
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 1:
-                zn znVar = this.b;
-                if (view == znVar.U2) {
-                    ImageView imageView = znVar.S2;
+                bo boVar = this.b;
+                if (view == boVar.U2) {
+                    ImageView imageView = boVar.S2;
                     int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
-                    ImageView imageView2 = znVar.T2;
+                    ImageView imageView2 = boVar.T2;
                     if (imageView2 != null && imageView2.getVisibility() != 8) {
                         i14 += 48;
                     }

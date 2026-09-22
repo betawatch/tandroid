@@ -7,7 +7,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static void a(TLRPC.Photo photo, TLRPC.User user, boolean z10) {
@@ -39,11 +39,11 @@ public abstract class d0 {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(closestPhotoSizeWithSize.location.volume_id);
             sb2.append("_");
-            String n10 = a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
+            String o9 = a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
             StringBuilder sb3 = new StringBuilder();
             sb3.append(closestPhotoSizeWithSize3.location.volume_id);
             sb3.append("_");
-            ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize3.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), false);
+            ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize3.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), false);
         }
         if (closestPhotoSizeWithSize4 == null || closestPhotoSizeWithSize2 == null) {
             return;
@@ -52,10 +52,10 @@ public abstract class d0 {
         StringBuilder sb4 = new StringBuilder();
         sb4.append(closestPhotoSizeWithSize2.location.volume_id);
         sb4.append("_");
-        String n11 = a4.a.n(closestPhotoSizeWithSize2.location.local_id, "@150_150", sb4);
+        String o10 = a4.a.o(closestPhotoSizeWithSize2.location.local_id, "@150_150", sb4);
         StringBuilder sb5 = new StringBuilder();
         sb5.append(closestPhotoSizeWithSize4.location.volume_id);
         sb5.append("_");
-        ImageLoader.getInstance().replaceImageInCache(n11, a4.a.n(closestPhotoSizeWithSize4.location.local_id, "@150_150", sb5), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), false);
+        ImageLoader.getInstance().replaceImageInCache(o10, a4.a.o(closestPhotoSizeWithSize4.location.local_id, "@150_150", sb5), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), false);
     }
 }

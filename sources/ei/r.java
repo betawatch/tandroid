@@ -33,7 +33,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -46,7 +46,7 @@ public final class r {
     public boolean f;
     public String g;
     public String h;
-    public pb.c i;
+    public a6.m i;
     public ai.m0 j;
 
     public r(Context context, int i10, long j3) {
@@ -160,7 +160,7 @@ public final class r {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (new aa.a(new k6.h(context, 1)).i(15) == 0) {
+        if (new aa.a(new k6.h(context, 1)).f(15) == 0) {
             str = "unknown";
             if (str == null) {
                 jSONObject.put("available", true);
@@ -180,9 +180,9 @@ public final class r {
                 byte[] bArr = new byte[32];
                 new SecureRandom().nextBytes(bArr);
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                String o9 = a4.a.o(j3, "device_id");
+                String p5 = a4.a.p(j3, "device_id");
                 string = Utilities.bytesToHex(bArr);
-                edit.putString(o9, string).apply();
+                edit.putString(p5, string).apply();
             }
             jSONObject.put("device_id", string);
             return jSONObject;
@@ -250,7 +250,7 @@ public final class r {
         this.j = null;
         try {
             if (this.i == null) {
-                this.i = new pb.c(LaunchActivity.G1, f0.e.e(this.a), new p(this));
+                this.i = new a6.m(LaunchActivity.G1, f0.e.e(this.a), new p(this));
             }
             androidx.biometric.t i12 = i(z10);
             TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
@@ -288,8 +288,8 @@ public final class r {
                 this.i.a(d, null);
                 return;
             }
-            pb.c cVar = this.i;
-            cVar.getClass();
+            a6.m mVar = this.i;
+            mVar.getClass();
             int i13 = d.a;
             int i14 = i13 != 0 ? i13 : 15;
             if ((i14 & 255) == 255) {
@@ -298,7 +298,7 @@ public final class r {
             if (i10 < 30 && v7.m.a(i14)) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
             }
-            cVar.a(d, i12);
+            mVar.a(d, i12);
         } catch (Exception e7) {
             FileLog.e(e7);
             callback3.run(Boolean.FALSE, null, null);

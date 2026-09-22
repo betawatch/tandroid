@@ -1,31 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.widget.EditText;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class hd1 implements od1 {
-    public boolean a;
-    public final /* synthetic */ zn b;
-
-    public hd1(zn znVar, boolean z10) {
-        this.b = znVar;
-        this.a = z10;
+public final class hd1 extends org.telegram.ui.ActionBar.g5 {
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
     }
 
-    @Override // org.telegram.ui.od1
-    public final boolean V0() {
-        return true;
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 
-    @Override // org.telegram.ui.od1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.od1
-    public final void o1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        xn xnVar = this.b.ea;
-        xnVar.i(xnVar.f, xnVar.h, z10, Boolean.valueOf(z11), false);
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
     }
 }

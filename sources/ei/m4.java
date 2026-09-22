@@ -2,15 +2,15 @@ package ei;
 
 import android.view.ViewGroup;
 import java.util.LinkedList;
-import org.telegram.ui.Components.de0;
-import org.telegram.ui.Components.gh;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.fh;
 import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.nc0;
-import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.tb;
+import org.telegram.ui.Components.ng;
+import org.telegram.ui.Components.sb;
+import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements o1.f {
     public final /* synthetic */ int a;
@@ -52,41 +52,41 @@ public final /* synthetic */ class m4 implements o1.f {
                 }
                 break;
             case 1:
-                tb tbVar = (tb) this.b;
-                og ogVar = (og) this.c;
-                tbVar.setInOutOffset(0.0f);
+                sb sbVar = (sb) this.b;
+                ng ngVar = (ng) this.c;
+                sbVar.setInOutOffset(0.0f);
                 if (!z10) {
-                    ogVar.run();
+                    ngVar.run();
                     break;
                 }
                 break;
             case 2:
-                vi.r((vi) this.b, (org.telegram.messenger.video.o) this.c);
+                vi.r((vi) this.b, (org.telegram.ui.ActionBar.p) this.c);
                 break;
             case 3:
                 gi giVar = (gi) this.b;
-                gh ghVar = (gh) this.c;
+                fh fhVar = (fh) this.c;
                 vi viVar = (vi) giVar.d;
                 viVar.z0.setTranslationY(0.0f);
                 viVar.z0.k(viVar.l2);
                 viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
                 viewGroup.invalidate();
-                ghVar.run();
+                fhVar.run();
                 viVar.a2(0);
                 break;
             default:
-                de0 de0Var = (de0) this.b;
-                nc0 nc0Var = (nc0) this.c;
-                LinkedList linkedList = de0Var.M;
-                de0Var.L = null;
-                nc0Var.D = null;
-                nc0Var.z();
+                sd0 sd0Var = (sd0) this.b;
+                cc0 cc0Var = (cc0) this.c;
+                LinkedList linkedList = sd0Var.M;
+                sd0Var.L = null;
+                cc0Var.D = null;
+                cc0Var.z();
                 if (!z10) {
-                    nc0Var.h = 1.0f;
-                    nc0Var.z();
+                    cc0Var.h = 1.0f;
+                    cc0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        de0Var.N.poll();
+                        sd0Var.N.poll();
                         break;
                     }
                 }

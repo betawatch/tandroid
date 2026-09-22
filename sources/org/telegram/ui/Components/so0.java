@@ -1,45 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class so0 extends c8 {
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ Object F;
-    public final /* synthetic */ int y;
+public final class so0 extends FrameLayout {
+    public final /* synthetic */ cf a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ so0(Object obj, Context context, Context context2, int i10) {
+    public so0(cf cfVar, Context context) {
         super(context);
-        this.y = i10;
-        this.F = obj;
-        this.E = context2;
+        this.a = cfVar;
     }
 
-    @Override // org.telegram.ui.Components.c8
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                ca0 ca0Var = new ca0(this.E);
-                ca0Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Si, ((uo0) this.F).M));
-                ca0Var.setTextSize(1, 12.0f);
-                ca0Var.setEllipsize(TextUtils.TruncateAt.END);
-                ca0Var.setSingleLine(true);
-                ca0Var.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
-                return ca0Var;
-            default:
-                TextView textView = new TextView(this.E);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Pi, ((ProfileActivity) this.F).z0));
-                textView.setTextSize(0, AndroidUtilities.dp(13.5f));
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity(3);
-                return textView;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        cf cfVar = this.a;
+        View contentView = cfVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + cfVar.E;
+        iArr[1] = iArr[1] + cfVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
+        if (!cfVar.A && !cfVar.D) {
+            cfVar.D = true;
+            cfVar.l(new o1.k[0]);
+        }
+        return true;
     }
 }

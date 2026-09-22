@@ -1,39 +1,22 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fd1 extends w7.j0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class fd1 extends wd1 {
+    public final /* synthetic */ bo k2;
+    public final /* synthetic */ boolean l2;
 
-    public /* synthetic */ fd1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fd1(Object obj, bo boVar, boolean z10) {
+        super(obj, null, true);
+        this.k2 = boVar;
+        this.l2 = z10;
     }
 
-    @Override // w7.j0
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((ti1) this.b).v.invalidate();
-                break;
-        }
-    }
-
-    @Override // w7.j0
-    public void b(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                Point point = AndroidUtilities.displaySize;
-                if ((point.x <= point.y) == (i10 <= i11)) {
-                    ((xd1) this.b).x0.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        zn znVar = this.k2.ea;
+        znVar.i(znVar.f, znVar.h, false, Boolean.valueOf(this.l2), false);
     }
 }

@@ -1,17 +1,48 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class a7 {
-    public static float a(float f7, float f10, float f11, float f12) {
-        double d = f7 - f11;
-        double d10 = f10 - f12;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
+    public static void a(bf.s sVar, bf.s sVar2, int i10) {
+        if (sVar == null || sVar2 == null || sVar == sVar2) {
+            return;
+        }
+        StringBuilder sb2 = new StringBuilder(i10);
+        sb2.append(sVar.g);
+        bf.p pVar = (bf.p) sVar.f;
+        bf.p pVar2 = (bf.p) sVar2.f;
+        while (pVar != pVar2) {
+            sb2.append(((bf.s) pVar).g);
+            bf.p pVar3 = (bf.p) pVar.f;
+            pVar.g();
+            pVar = pVar3;
+        }
+        sVar.g = sb2.toString();
     }
 
-    public static float b(int i10, int i11, int i12, int i13) {
-        double d = i10 - i12;
-        double d10 = i11 - i13;
-        return (float) Math.sqrt((d10 * d10) + (d * d));
+    public static void b(bf.p pVar, bf.p pVar2) {
+        bf.s sVar = null;
+        bf.s sVar2 = null;
+        int i10 = 0;
+        while (pVar != null) {
+            if (pVar instanceof bf.s) {
+                sVar2 = (bf.s) pVar;
+                if (sVar == null) {
+                    sVar = sVar2;
+                }
+                i10 = sVar2.g.length() + i10;
+            } else {
+                a(sVar, sVar2, i10);
+                sVar = null;
+                sVar2 = null;
+                i10 = 0;
+            }
+            if (pVar == pVar2) {
+                break;
+            } else {
+                pVar = (bf.p) pVar.f;
+            }
+        }
+        a(sVar, sVar2, i10);
     }
 }

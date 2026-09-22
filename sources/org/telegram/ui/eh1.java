@@ -1,85 +1,138 @@
 package org.telegram.ui;
 
-import android.app.Dialog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eh1 implements Runnable {
+public final class eh1 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ih1 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ hh1 b;
 
-    public /* synthetic */ eh1(ih1 ih1Var, TLRPC.TL_error tL_error, int i10) {
+    public /* synthetic */ eh1(hh1 hh1Var, int i10) {
         this.a = i10;
-        this.b = ih1Var;
-        this.c = tL_error;
+        this.b = hh1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        TLRPC.TL_error tL_error = this.c;
-        ih1 ih1Var = this.b;
-        switch (i10) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        org.telegram.ui.Components.xi0 xi0Var;
+        switch (this.a) {
             case 0:
-                ih1Var.w0();
-                if (tL_error != null) {
-                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                        ih1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), tL_error.text);
-                        break;
-                    } else {
-                        int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
-                        ih1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
-                        break;
-                    }
-                } else {
-                    ih1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ih1Var.getParentActivity());
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new zg1(ih1Var, 3));
-                    String string = LocaleController.getString(R.string.PasswordReset);
-                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                    b2Var.T = string;
-                    b2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
-                    Dialog showDialog = ih1Var.showDialog(b2Var);
-                    if (showDialog != null) {
-                        showDialog.setCanceledOnTouchOutside(false);
-                        showDialog.setCancelable(false);
-                        break;
-                    }
-                }
+                this.b.getClass();
                 break;
             case 1:
-                ih1Var.w0();
-                if (tL_error != null) {
-                    if (!tL_error.text.startsWith("CODE_INVALID")) {
-                        if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                            ih1Var.G0(LocaleController.getString(R.string.AppName), tL_error.text);
-                            break;
+                hh1 hh1Var = this.b;
+                if (!hh1Var.M) {
+                    int i10 = hh1Var.O;
+                    if (i10 != 0) {
+                        if (i10 != 1) {
+                            if (i10 == 8 && editable.length() > 0) {
+                                hh1Var.H0(true);
+                                break;
+                            }
                         } else {
-                            int intValue2 = Utilities.parseInt((CharSequence) tL_error.text).intValue();
-                            ih1Var.G0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
-                            break;
+                            try {
+                                hh1Var.f0[6].P((int) ((Math.min(1.0f, hh1Var.n.getLayout().getLineWidth(0) / hh1Var.n.getWidth()) * 142.0f) + 18.0f));
+                                hh1Var.a.d();
+                                break;
+                            } catch (Exception e) {
+                                FileLog.e(e);
+                                return;
+                            }
                         }
                     } else {
-                        ih1Var.y0();
-                        break;
+                        org.telegram.ui.Components.xi0 animatedDrawable = hh1Var.a.getAnimatedDrawable();
+                        if (hh1Var.n.length() <= 0) {
+                            if (animatedDrawable != hh1Var.f0[3] || hh1Var.n.getTransformationMethod() != null) {
+                                org.telegram.ui.Components.xi0[] xi0VarArr = hh1Var.f0;
+                                if (animatedDrawable != xi0VarArr[5]) {
+                                    xi0VarArr[2].P(-1);
+                                    org.telegram.ui.Components.xi0 xi0Var2 = hh1Var.f0[2];
+                                    if (animatedDrawable != xi0Var2) {
+                                        hh1Var.a.setAnimation(xi0Var2);
+                                        hh1Var.f0[2].N(49, false, false);
+                                    }
+                                    hh1Var.a.d();
+                                    break;
+                                }
+                            }
+                            hh1Var.a.setAnimation(hh1Var.f0[4]);
+                            hh1Var.f0[4].T(0.0f, false);
+                            hh1Var.a.d();
+                            break;
+                        } else if (hh1Var.n.getTransformationMethod() != null) {
+                            org.telegram.ui.Components.xi0[] xi0VarArr2 = hh1Var.f0;
+                            if (animatedDrawable != xi0VarArr2[3]) {
+                                org.telegram.ui.Components.xi0 xi0Var3 = xi0VarArr2[2];
+                                if (animatedDrawable == xi0Var3) {
+                                    if (xi0Var3.a0 < 49) {
+                                        xi0Var3.P(49);
+                                        break;
+                                    }
+                                } else {
+                                    hh1Var.a.setAnimation(xi0Var3);
+                                    hh1Var.f0[2].P(49);
+                                    hh1Var.f0[2].T(0.0f, false);
+                                    hh1Var.a.d();
+                                    break;
+                                }
+                            }
+                        } else {
+                            org.telegram.ui.Components.xi0[] xi0VarArr3 = hh1Var.f0;
+                            if (animatedDrawable != xi0VarArr3[3] && animatedDrawable != (xi0Var = xi0VarArr3[5])) {
+                                hh1Var.a.setAnimation(xi0Var);
+                                hh1Var.f0[5].T(0.0f, false);
+                                hh1Var.a.d();
+                                break;
+                            }
+                        }
                     }
-                } else if (ih1Var.getParentActivity() != null) {
-                    ih1Var.u0(new ah1(ih1Var, 5));
-                    break;
                 }
                 break;
-            case 2:
-                ih1.e0(ih1Var, tL_error);
-                break;
             default:
-                ih1.Z(ih1Var, tL_error);
+                hh1 hh1Var2 = this.b;
+                if (hh1Var2.F) {
+                    if (hh1Var2.E.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
+                        AndroidUtilities.updateViewVisibilityAnimated(hh1Var2.E, true, 0.1f, true);
+                        break;
+                    } else if (hh1Var2.E.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
+                        AndroidUtilities.updateViewVisibilityAnimated(hh1Var2.E, false, 0.1f, true);
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

@@ -1,116 +1,893 @@
 package org.telegram.ui.Components;
 
+import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import j$.util.stream.IntStream;
-import java.util.Arrays;
-import java.util.stream.IntStream;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class m6 implements CharSequence {
-    public final CharSequence[] a;
-    public final int b;
+public class m6 extends Drawable {
+    public boolean A;
+    public boolean B;
+    public ng C;
+    public boolean D;
+    public boolean E;
+    public boolean F;
+    public int G;
+    public float H;
+    public boolean I;
+    public LinearGradient J;
+    public Matrix K;
+    public Paint L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public float P;
+    public float Q;
+    public int R;
+    public ValueAnimator S;
+    public int T;
+    public ColorFilter U;
+    public Runnable V;
+    public final TextPaint a;
+    public int b;
+    public boolean c;
+    public float d;
+    public float e;
+    public j6[] f;
+    public CharSequence g;
+    public float h;
+    public float i;
+    public j6[] j;
+    public CharSequence k;
+    public int l;
+    public float m;
+    public boolean n;
+    public ValueAnimator o;
+    public CharSequence p;
+    public boolean q;
+    public long r;
+    public TimeInterpolator s;
+    public float t;
+    public float u;
+    public float v;
+    public int w;
+    public final Rect x;
+    public boolean y;
+    public boolean z;
 
-    public m6(CharSequence charSequence) {
-        if (charSequence == null) {
-            this.a = new CharSequence[0];
-            this.b = 0;
-            return;
+    public m6(int i10) {
+        this(false, true, true, false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x001b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean j(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {
+        CharSequence charSequence3;
+        if (!(charSequence instanceof l6) || !(charSequence2 instanceof l6)) {
+            return charSequence.charAt(i10) == charSequence2.charAt(i11);
         }
-        this.b = charSequence.length();
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            if (charSequence.charAt(i11) == ' ') {
+        l6 l6Var = (l6) charSequence;
+        CharSequence charSequence4 = null;
+        if (i10 >= 0) {
+            CharSequence[] charSequenceArr = l6Var.a;
+            if (i10 < charSequenceArr.length) {
+                charSequence3 = charSequenceArr[i10];
+                l6 l6Var2 = (l6) charSequence2;
+                if (i11 >= 0) {
+                    CharSequence[] charSequenceArr2 = l6Var2.a;
+                    if (i11 < charSequenceArr2.length) {
+                        charSequence4 = charSequenceArr2[i11];
+                    }
+                }
+                if (charSequence3 == null || charSequence4 != null) {
+                    return charSequence3 != null && charSequence3.equals(charSequence4);
+                }
+                return true;
+            }
+        }
+        charSequence3 = null;
+        l6 l6Var22 = (l6) charSequence2;
+        if (i11 >= 0) {
+        }
+        if (charSequence3 == null) {
+        }
+        if (charSequence3 != null) {
+            return false;
+        }
+    }
+
+    public final void a(float f7) {
+        TextPaint textPaint = this.a;
+        textPaint.setAlpha((int) (this.w * f7));
+        if (this.O) {
+            textPaint.setShadowLayer(this.P, 0.0f, this.Q, org.telegram.ui.ActionBar.i6.l1(f7, this.R));
+        }
+    }
+
+    public final void b() {
+        ValueAnimator valueAnimator = this.o;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+    }
+
+    public final void c() {
+        if (this.j != null) {
+            int i10 = 0;
+            while (true) {
+                j6[] j6VarArr = this.j;
+                if (i10 >= j6VarArr.length) {
+                    break;
+                }
+                j6 j6Var = j6VarArr[i10];
+                m6 m6Var = j6Var.g;
+                if (m6Var.getCallback() instanceof View) {
+                    x5.release((View) m6Var.getCallback(), j6Var.a);
+                }
                 i10++;
             }
         }
-        this.a = new CharSequence[i10 + 1];
-        int i12 = 0;
-        int i13 = 0;
-        int i14 = 0;
-        while (true) {
-            int i15 = this.b;
-            if (i12 > i15) {
+        this.j = null;
+    }
+
+    public final float d() {
+        return (this.f == null || this.j == null) ? this.d : AndroidUtilities.lerp(this.h, this.d, this.m);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0101, code lost:
+    
+        if (r26.E == false) goto L46;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f7;
+        float f10;
+        TextPaint textPaint;
+        float f11;
+        float f12;
+        float f13;
+        float f14;
+        float f15;
+        boolean z10 = this.I;
+        Rect rect = this.x;
+        if (z10) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(rect);
+            rectF.right -= this.H;
+            canvas.saveLayerAlpha(rectF, 255, 31);
+        }
+        canvas.save();
+        canvas.translate(rect.left, rect.top);
+        int width = rect.width();
+        int height = rect.height();
+        if (this.f != null && this.j != null) {
+            float f16 = this.m;
+            if (f16 != 1.0f) {
+                float lerp = AndroidUtilities.lerp(this.h, this.d, f16);
+                float lerp2 = AndroidUtilities.lerp(this.i, this.e, this.m);
+                if (this.N) {
+                    canvas.translate(0.0f, (height - lerp2) / 2.0f);
+                }
+                int i10 = 0;
+                while (true) {
+                    j6[] j6VarArr = this.f;
+                    int length = j6VarArr.length;
+                    textPaint = this.a;
+                    if (i10 >= length) {
+                        break;
+                    }
+                    j6 j6Var = j6VarArr[i10];
+                    int i11 = j6Var.d;
+                    float f17 = j6Var.c;
+                    if (!this.c || this.E) {
+                        f13 = 0.0f;
+                    } else {
+                        f13 = 0.0f;
+                        f17 = this.d - (f17 + j6Var.f);
+                    }
+                    float f18 = this.m;
+                    float f19 = this.t;
+                    if (f19 > f13) {
+                        f18 = AndroidUtilities.cascade(f18, i10, j6VarArr.length, f19);
+                    }
+                    if (i11 >= 0) {
+                        j6 j6Var2 = this.j[i11];
+                        float f20 = j6Var2.c;
+                        if (this.c && !this.E) {
+                            f20 = this.h - (f20 + j6Var2.f);
+                        }
+                        f14 = AndroidUtilities.lerp(f20 - j6Var2.e, f17 - j6Var.e, this.m);
+                        a(1.0f);
+                        f15 = 0.0f;
+                    } else {
+                        f14 = f17 - j6Var.e;
+                        f15 = (1.0f - f18) * (-textPaint.getTextSize()) * this.u * (this.n ? 1.0f : -1.0f);
+                        a(f18);
+                    }
+                    canvas.save();
+                    float f21 = i11 >= 0 ? lerp : this.d;
+                    int i12 = this.b;
+                    if ((i12 | (-4)) != -1) {
+                        if ((i12 | (-6)) != -1) {
+                            if ((i12 | (-2)) == -1) {
+                                f14 = com.google.android.gms.internal.vision.e2.A(width, f21, 2.0f, f14);
+                            } else if (this.c) {
+                            }
+                        }
+                        f14 += width - f21;
+                    }
+                    canvas.translate(f14, f15);
+                    if (i11 < 0) {
+                        float f22 = this.v;
+                        if (f22 > f13) {
+                            float lerp3 = AndroidUtilities.lerp(1.0f - f22, 1.0f, this.m);
+                            canvas.scale(lerp3, lerp3, j6Var.f / 2.0f, j6Var.b.getHeight() / 2.0f);
+                        }
+                    }
+                    j6Var.a(canvas, i11 >= 0 ? 1.0f : this.m);
+                    canvas.restore();
+                    i10++;
+                }
+                int i13 = 0;
+                while (true) {
+                    j6[] j6VarArr2 = this.j;
+                    if (i13 >= j6VarArr2.length) {
+                        break;
+                    }
+                    j6 j6Var3 = j6VarArr2[i13];
+                    if (j6Var3.d < 0) {
+                        float f23 = this.m;
+                        float f24 = this.t;
+                        if (f24 > 0.0f) {
+                            f23 = AndroidUtilities.cascade(f23, i13, j6VarArr2.length, f24);
+                        }
+                        float f25 = j6Var3.c;
+                        float textSize = textPaint.getTextSize() * this.u * f23 * (this.n ? 1.0f : -1.0f);
+                        float f26 = 1.0f - f23;
+                        a(f26);
+                        canvas.save();
+                        boolean z11 = this.c;
+                        if (z11 && !this.E) {
+                            f25 = this.h - (f25 + j6Var3.f);
+                        }
+                        float f27 = f25 - j6Var3.e;
+                        int i14 = this.b;
+                        if ((i14 | (-4)) != -1) {
+                            if ((i14 | (-6)) == -1) {
+                                f11 = width;
+                                f12 = this.h;
+                            } else if ((i14 | (-2)) == -1) {
+                                f27 = com.google.android.gms.internal.vision.e2.A(width, this.h, 2.0f, f27);
+                            } else if (z11 && !this.E) {
+                                f11 = width;
+                                f12 = this.h;
+                            }
+                            f27 += f11 - f12;
+                        }
+                        canvas.translate(f27, textSize);
+                        float f28 = this.v;
+                        if (f28 > 0.0f) {
+                            float lerp4 = AndroidUtilities.lerp(1.0f, 1.0f - f28, this.m);
+                            canvas.scale(lerp4, lerp4, j6Var3.f / 2.0f, j6Var3.b.getHeight() / 2.0f);
+                        }
+                        j6Var3.a(canvas, f26);
+                        canvas.restore();
+                    }
+                    i13++;
+                }
+                canvas.restore();
+                if (this.I) {
+                    return;
+                }
+                float dp = AndroidUtilities.dp(16.0f);
+                if (this.J == null) {
+                    f10 = dp;
+                    this.J = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{16711680, -65536}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                    this.K = new Matrix();
+                    Paint paint = new Paint(1);
+                    this.L = paint;
+                    paint.setShader(this.J);
+                    this.L.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                } else {
+                    f10 = dp;
+                }
+                this.K.reset();
+                this.K.postTranslate((rect.right - this.H) - f10, 0.0f);
+                this.J.setLocalMatrix(this.K);
+                float f29 = rect.right - this.H;
+                canvas.drawRect(f29 - f10, rect.top, f29 + AndroidUtilities.dp(1.0f), rect.bottom, this.L);
+                canvas.restore();
                 return;
             }
-            if (i12 == i15 || charSequence.charAt(i12) == ' ') {
-                int i16 = i13 + 1;
-                this.a[i13] = charSequence.subSequence(i14, (i12 < this.b ? 1 : 0) + i12);
-                i14 = i12 + 1;
-                i13 = i16;
+        }
+        if (this.N) {
+            canvas.translate(0.0f, (height - this.e) / 2.0f);
+        }
+        if (this.f != null) {
+            a(1.0f);
+            for (int i15 = 0; i15 < this.f.length; i15++) {
+                canvas.save();
+                j6 j6Var4 = this.f[i15];
+                float f30 = j6Var4.c;
+                boolean z12 = this.c;
+                if (z12 && !this.E) {
+                    f30 = this.d - (f30 + j6Var4.f);
+                }
+                float f31 = f30 - j6Var4.e;
+                int i16 = this.b;
+                if ((i16 | (-4)) != -1) {
+                    if ((i16 | (-6)) == -1) {
+                        f31 += width - this.d;
+                        f7 = 0.0f;
+                        canvas.translate(f31, f7);
+                        j6Var4.a(canvas, 1.0f);
+                        canvas.restore();
+                    } else if ((i16 | (-2)) == -1) {
+                        f31 = com.google.android.gms.internal.vision.e2.A(width, this.d, 2.0f, f31);
+                    } else if (z12 && !this.E) {
+                        f31 += width - this.d;
+                    }
+                }
+                f7 = 0.0f;
+                canvas.translate(f31, f7);
+                j6Var4.a(canvas, 1.0f);
+                canvas.restore();
             }
-            i12++;
+        }
+        canvas.restore();
+        if (this.I) {
         }
     }
 
-    @Override // java.lang.CharSequence
-    public final char charAt(int i10) {
-        int i11 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i11 >= charSequenceArr.length) {
-                return (char) 0;
+    public final float e() {
+        return Math.max(this.d, this.h);
+    }
+
+    public final boolean f() {
+        ValueAnimator valueAnimator = this.o;
+        return valueAnimator != null && valueAnimator.isRunning();
+    }
+
+    public final float g() {
+        CharSequence charSequence = this.k;
+        float f7 = 0.0f;
+        float f10 = (charSequence == null || charSequence.length() <= 0) ? 0.0f : 1.0f;
+        CharSequence charSequence2 = this.g;
+        if (charSequence2 != null && charSequence2.length() > 0) {
+            f7 = 1.0f;
+        }
+        return AndroidUtilities.lerp(f10, f7, this.k != null ? this.m : 1.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final Rect getDirtyBounds() {
+        return this.x;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    public final StaticLayout h(int i10, CharSequence charSequence) {
+        if (i10 <= 0) {
+            Point point = AndroidUtilities.displaySize;
+            i10 = Math.min(point.x, point.y);
+        }
+        int i11 = i10;
+        int i12 = Build.VERSION.SDK_INT;
+        TextPaint textPaint = this.a;
+        return i12 >= 23 ? StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i11).setMaxLines(1).setLineSpacing(0.0f, 1.0f).setAlignment(Layout.Alignment.ALIGN_NORMAL).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(i11).setIncludePad(this.M).build() : new StaticLayout(charSequence, 0, charSequence.length(), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, this.M, TextUtils.TruncateAt.END, i11);
+    }
+
+    public final void i(k6 k6Var, CharSequence charSequence, int i10, int i11) {
+        if (!this.B || charSequence.length() <= 1) {
+            k6Var.b(charSequence);
+            return;
+        }
+        int i12 = 0;
+        while (i12 < charSequence.length()) {
+            int i13 = i12 + 1;
+            k6Var.b(charSequence.subSequence(i12, i13));
+            i12 = i13;
+        }
+    }
+
+    public final void k(float f7, long j3, TimeInterpolator timeInterpolator) {
+        this.u = f7;
+        this.r = j3;
+        this.t = 1.0f;
+        this.s = timeInterpolator;
+    }
+
+    public final void l(float f7, float f10, float f11, float f12) {
+        int i10 = (int) f7;
+        int i11 = (int) f10;
+        int i12 = (int) f11;
+        int i13 = (int) f12;
+        super.setBounds(i10, i11, i12, i13);
+        this.x.set(i10, i11, i12, i13);
+    }
+
+    public final void m(RectF rectF) {
+        setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+    }
+
+    public final void n(boolean z10) {
+        this.I = z10;
+        invalidateSelf();
+    }
+
+    public final void o(boolean z10, boolean z11, boolean z12) {
+        this.y = z10;
+        this.z = true;
+        this.A = z11;
+        this.B = z12;
+    }
+
+    public final void p(float f7, float f10, int i10) {
+        this.O = true;
+        this.P = f7;
+        this.Q = f10;
+        this.R = i10;
+        this.a.setShadowLayer(f7, 0.0f, f10, i10);
+    }
+
+    public final void q(CharSequence charSequence, boolean z10, boolean z11) {
+        int i10;
+        int i11;
+        final int i12 = 0;
+        boolean z12 = (this.g == null || charSequence == null) ? false : z10;
+        CharSequence charSequence2 = charSequence == null ? "" : charSequence;
+        int i13 = this.G;
+        if (i13 <= 0) {
+            i13 = this.x.width();
+        }
+        final int i14 = 1;
+        if (!z12) {
+            ValueAnimator valueAnimator = this.o;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
-            if (i10 < charSequenceArr[i11].length()) {
-                return charSequenceArr[i11].charAt(i10);
+            this.o = null;
+            this.p = null;
+            this.q = false;
+            this.m = 0.0f;
+            if (!charSequence2.equals(this.g)) {
+                if (this.j != null) {
+                    int i15 = 0;
+                    while (true) {
+                        j6[] j6VarArr = this.j;
+                        if (i15 >= j6VarArr.length) {
+                            break;
+                        }
+                        j6 j6Var = j6VarArr[i15];
+                        m6 m6Var = j6Var.g;
+                        if (m6Var.getCallback() instanceof View) {
+                            x5.release((View) m6Var.getCallback(), j6Var.a);
+                        }
+                        i15++;
+                    }
+                }
+                this.j = null;
+                this.f = new j6[]{new j6(this, h(i13, charSequence2), 0.0f, -1)};
+                this.g = charSequence2;
+                this.d = this.f[0].f;
+                this.e = r0.b.getHeight();
+                this.c = AndroidUtilities.isRTL(this.g);
             }
-            i10 -= charSequenceArr[i11].length();
-            i11++;
-        }
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ IntStream chars() {
-        return IntStream.Wrapper.convert(chars());
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ java.util.stream.IntStream codePoints() {
-        return IntStream.Wrapper.convert(codePoints());
-    }
-
-    @Override // java.lang.CharSequence
-    public final int length() {
-        return this.a.length;
-    }
-
-    @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i10, int i11) {
-        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i10, i11));
-    }
-
-    @Override // java.lang.CharSequence
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i10 >= charSequenceArr.length) {
-                return sb2.toString();
+            c();
+            this.k = null;
+            this.h = 0.0f;
+            this.i = 0.0f;
+            invalidateSelf();
+            Runnable runnable = this.V;
+            if (runnable != null) {
+                runnable.run();
+                return;
             }
-            sb2.append(charSequenceArr[i10]);
-            i10++;
+            return;
+        }
+        if (TextUtils.equals(charSequence2, this.g)) {
+            return;
+        }
+        if (this.D) {
+            ValueAnimator valueAnimator2 = this.o;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+                this.o = null;
+            }
+        } else if (f()) {
+            this.p = charSequence2;
+            this.q = z11;
+            return;
+        }
+        this.k = this.g;
+        this.g = charSequence2;
+        final ArrayList arrayList = new ArrayList();
+        final int i16 = i13;
+        final ArrayList arrayList2 = new ArrayList();
+        this.e = 0.0f;
+        this.d = 0.0f;
+        this.i = 0.0f;
+        this.h = 0.0f;
+        this.c = AndroidUtilities.isRTL(this.g);
+        org.telegram.ui.da daVar = new org.telegram.ui.da(this, i16, arrayList2, arrayList, 1);
+        k6 k6Var = new k6(this) { // from class: org.telegram.ui.Components.h6
+            public final /* synthetic */ m6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.Components.k6
+            public final void b(CharSequence charSequence3) {
+                switch (i12) {
+                    case 0:
+                        m6 m6Var2 = this.b;
+                        j6 j6Var2 = new j6(m6Var2, m6Var2.h(i16 - ((int) Math.ceil(m6Var2.d)), charSequence3), m6Var2.d, -1);
+                        arrayList.add(j6Var2);
+                        m6Var2.d += j6Var2.f;
+                        m6Var2.e = Math.max(m6Var2.e, r5.getHeight());
+                        break;
+                    default:
+                        m6 m6Var3 = this.b;
+                        j6 j6Var3 = new j6(m6Var3, m6Var3.h(i16 - ((int) Math.ceil(m6Var3.h)), charSequence3), m6Var3.h, -1);
+                        arrayList.add(j6Var3);
+                        m6Var3.h += j6Var3.f;
+                        m6Var3.i = Math.max(m6Var3.i, r5.getHeight());
+                        break;
+                }
+            }
+        };
+        k6 k6Var2 = new k6(this) { // from class: org.telegram.ui.Components.h6
+            public final /* synthetic */ m6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.Components.k6
+            public final void b(CharSequence charSequence3) {
+                switch (i14) {
+                    case 0:
+                        m6 m6Var2 = this.b;
+                        j6 j6Var2 = new j6(m6Var2, m6Var2.h(i16 - ((int) Math.ceil(m6Var2.d)), charSequence3), m6Var2.d, -1);
+                        arrayList2.add(j6Var2);
+                        m6Var2.d += j6Var2.f;
+                        m6Var2.e = Math.max(m6Var2.e, r5.getHeight());
+                        break;
+                    default:
+                        m6 m6Var3 = this.b;
+                        j6 j6Var3 = new j6(m6Var3, m6Var3.h(i16 - ((int) Math.ceil(m6Var3.h)), charSequence3), m6Var3.h, -1);
+                        arrayList2.add(j6Var3);
+                        m6Var3.h += j6Var3.f;
+                        m6Var3.i = Math.max(m6Var3.i, r5.getHeight());
+                        break;
+                }
+            }
+        };
+        CharSequence l6Var = this.y ? new l6(this.k) : this.k;
+        CharSequence l6Var2 = this.y ? new l6(this.g) : this.g;
+        if (this.F) {
+            i(k6Var2, l6Var, 0, l6Var.length());
+            i(k6Var, l6Var2, 0, l6Var2.length());
+        } else if (this.z) {
+            int min = Math.min(l6Var2.length(), l6Var.length());
+            if (this.A) {
+                ArrayList arrayList3 = new ArrayList();
+                int i17 = 1;
+                int i18 = 0;
+                for (int i19 = 0; i19 <= min; i19++) {
+                    int length = (l6Var2.length() - i19) - 1;
+                    int length2 = (l6Var.length() - i19) - 1;
+                    int i20 = (length < 0 || length2 < 0 || !j(length, length2, l6Var2, l6Var)) ? 0 : 1;
+                    if (i14 != i20 || i19 == min) {
+                        int i21 = i19 - i18;
+                        if (i21 > 0) {
+                            if (arrayList3.size() != 0) {
+                                i14 = i17;
+                            }
+                            arrayList3.add(Integer.valueOf(i21));
+                            i17 = i14;
+                        }
+                        i14 = i20;
+                        i18 = i19;
+                    }
+                }
+                int length3 = l6Var2.length() - min;
+                int length4 = l6Var.length() - min;
+                if (length3 > 0) {
+                    i(k6Var, l6Var2.subSequence(0, length3), 0, length3);
+                }
+                if (length4 > 0) {
+                    i(k6Var2, l6Var.subSequence(0, length4), 0, length4);
+                }
+                int size = arrayList3.size() - 1;
+                while (size >= 0) {
+                    int intValue = ((Integer) arrayList3.get(size)).intValue();
+                    if ((size % 2 == 0 ? 1 : 0) == i17) {
+                        i11 = size;
+                        if (l6Var2.length() > l6Var.length()) {
+                            daVar.b(l6Var2.subSequence(length3, length3 + intValue));
+                        } else {
+                            daVar.b(l6Var.subSequence(length4, length4 + intValue));
+                        }
+                    } else {
+                        i11 = size;
+                        int i22 = length3 + intValue;
+                        i(k6Var, l6Var2.subSequence(length3, i22), length3, i22);
+                        int i23 = length4 + intValue;
+                        i(k6Var2, l6Var.subSequence(length4, i23), length4, i23);
+                    }
+                    length3 += intValue;
+                    length4 += intValue;
+                    size = i11 - 1;
+                }
+            } else {
+                int i24 = 0;
+                int i25 = 0;
+                boolean z13 = true;
+                while (i24 <= min) {
+                    boolean z14 = i24 < min && j(i24, i24, l6Var2, l6Var);
+                    if (z13 != z14 || i24 == min) {
+                        if (i24 - i25 > 0) {
+                            if (z13) {
+                                i(daVar, l6Var2.subSequence(i25, i24), i25, i24);
+                            } else {
+                                i(k6Var, l6Var2.subSequence(i25, i24), i25, i24);
+                                i(k6Var2, l6Var.subSequence(i25, i24), i25, i24);
+                            }
+                        }
+                        i25 = i24;
+                        z13 = z14;
+                    }
+                    i24++;
+                }
+                if (l6Var2.length() - min > 0) {
+                    i(k6Var, l6Var2.subSequence(min, l6Var2.length()), min, l6Var2.length());
+                }
+                if (l6Var.length() - min > 0) {
+                    i(k6Var2, l6Var.subSequence(min, l6Var.length()), min, l6Var.length());
+                }
+            }
+        } else {
+            int min2 = Math.min(l6Var2.length(), l6Var.length());
+            int i26 = 0;
+            int i27 = 0;
+            int i28 = 0;
+            int i29 = 0;
+            boolean z15 = true;
+            while (i26 <= min2) {
+                boolean z16 = i26 < min2 && j(i26, i27, l6Var2, l6Var);
+                if (z15 != z16 || i26 == min2) {
+                    if (i26 == min2) {
+                        i26 = l6Var2.length();
+                        i27 = l6Var.length();
+                    }
+                    i10 = min2;
+                    int i30 = i26 - i28;
+                    boolean z17 = z15;
+                    int i31 = i27 - i29;
+                    if (i30 > 0 || i31 > 0) {
+                        if (i30 == i31 && z17) {
+                            daVar.b(l6Var2.subSequence(i28, i26));
+                        } else {
+                            if (i30 > 0) {
+                                i(k6Var, l6Var2.subSequence(i28, i26), i28, i26);
+                            }
+                            if (i31 > 0) {
+                                i(k6Var2, l6Var.subSequence(i29, i27), i29, i27);
+                            }
+                        }
+                    }
+                    i28 = i26;
+                    i29 = i27;
+                    z15 = z16;
+                } else {
+                    i10 = min2;
+                }
+                if (z16) {
+                    i27++;
+                }
+                i26++;
+                min2 = i10;
+            }
+        }
+        if (this.j != null) {
+            int i32 = 0;
+            while (true) {
+                j6[] j6VarArr2 = this.j;
+                if (i32 >= j6VarArr2.length) {
+                    break;
+                }
+                j6 j6Var2 = j6VarArr2[i32];
+                m6 m6Var2 = j6Var2.g;
+                if (m6Var2.getCallback() instanceof View) {
+                    x5.release((View) m6Var2.getCallback(), j6Var2.a);
+                }
+                i32++;
+            }
+        }
+        this.j = null;
+        j6[] j6VarArr3 = this.f;
+        if (j6VarArr3 == null || j6VarArr3.length != arrayList.size()) {
+            this.f = new j6[arrayList.size()];
+        }
+        arrayList.toArray(this.f);
+        c();
+        j6[] j6VarArr4 = this.j;
+        if (j6VarArr4 == null || j6VarArr4.length != arrayList2.size()) {
+            this.j = new j6[arrayList2.size()];
+        }
+        arrayList2.toArray(this.j);
+        ValueAnimator valueAnimator3 = this.o;
+        if (valueAnimator3 != null) {
+            valueAnimator3.cancel();
+        }
+        this.n = z11;
+        this.m = 0.0f;
+        this.o = ValueAnimator.ofFloat(0.0f, 1.0f);
+        Runnable runnable2 = this.V;
+        if (runnable2 != null) {
+            runnable2.run();
+        }
+        this.o.addUpdateListener(new i6(this, 0));
+        this.o.addListener(new org.telegram.ui.t4(this, 28));
+        this.o.setStartDelay(0L);
+        this.o.setDuration(this.r);
+        this.o.setInterpolator(this.s);
+        this.o.start();
+    }
+
+    public final void r(int i10) {
+        this.a.setColor(i10);
+        this.w = Color.alpha(i10);
+    }
+
+    public final void s(int i10, boolean z10) {
+        ValueAnimator valueAnimator = this.S;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.S = null;
+        }
+        if (!z10) {
+            r(i10);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.S = ofFloat;
+        ofFloat.addUpdateListener(new ci.d5(this, this.a.getColor(), i10, 2));
+        this.S.addListener(new ei.v2(this, i10, 4));
+        this.S.setDuration(240L);
+        this.S.setInterpolator(qr.h);
+        this.S.start();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.w = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        this.x.set(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    public final void t(float f7) {
+        TextPaint textPaint = this.a;
+        float textSize = textPaint.getTextSize();
+        textPaint.setTextSize(f7);
+        if (Math.abs(textSize - f7) > 0.5f) {
+            int i10 = this.G;
+            if (i10 <= 0) {
+                i10 = this.x.width();
+            }
+            int i11 = 0;
+            if (this.f != null) {
+                this.d = 0.0f;
+                this.e = 0.0f;
+                int i12 = 0;
+                while (true) {
+                    j6[] j6VarArr = this.f;
+                    if (i12 >= j6VarArr.length) {
+                        break;
+                    }
+                    StaticLayout h = h(i10 - ((int) Math.ceil(Math.min(this.d, this.h))), j6VarArr[i12].b.getText());
+                    j6[] j6VarArr2 = this.f;
+                    j6 j6Var = j6VarArr2[i12];
+                    j6VarArr2[i12] = new j6(this, h, j6Var.c, j6Var.d);
+                    this.d = this.d + this.f[i12].f;
+                    this.e = Math.max(this.e, r4.b.getHeight());
+                    i12++;
+                }
+            }
+            if (this.j != null) {
+                this.h = 0.0f;
+                this.i = 0.0f;
+                while (true) {
+                    j6[] j6VarArr3 = this.j;
+                    if (i11 >= j6VarArr3.length) {
+                        break;
+                    }
+                    StaticLayout h10 = h(i10 - ((int) Math.ceil(Math.min(this.d, this.h))), j6VarArr3[i11].b.getText());
+                    j6[] j6VarArr4 = this.j;
+                    j6 j6Var2 = j6VarArr4[i11];
+                    j6VarArr4[i11] = new j6(this, h10, j6Var2.c, j6Var2.d);
+                    this.h = this.h + this.j[i11].f;
+                    this.i = Math.max(this.i, r2.b.getHeight());
+                    i11++;
+                }
+            }
+            invalidateSelf();
         }
     }
 
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream chars() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).chars());
-        return convert;
+    public final void u(Typeface typeface) {
+        this.a.setTypeface(typeface);
     }
 
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream codePoints() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).codePoints());
-        return convert;
+    public m6(boolean z10, boolean z11, boolean z12, boolean z13) {
+        this.a = new TextPaint(1);
+        this.b = 0;
+        this.c = false;
+        this.l = 0;
+        this.m = 0.0f;
+        this.n = true;
+        this.r = 320L;
+        this.s = qr.h;
+        this.t = -1.0f;
+        this.u = 0.3f;
+        this.v = 0.0f;
+        this.w = 255;
+        this.x = new Rect();
+        this.M = true;
+        this.N = true;
+        this.O = false;
+        this.y = z10;
+        this.z = z11;
+        this.A = z12;
+        this.B = z13;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        super.setBounds(i10, i11, i12, i13);
+        this.x.set(i10, i11, i12, i13);
     }
 }

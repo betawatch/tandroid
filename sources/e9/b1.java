@@ -2,9 +2,9 @@ package e9;
 
 import j$.util.Objects;
 import java.util.AbstractMap;
-import v7.u6;
+import v7.t6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b1 extends i0 {
     public final /* synthetic */ c1 c;
@@ -16,7 +16,7 @@ public final class b1 extends i0 {
     @Override // java.util.List
     public final Object get(int i10) {
         c1 c1Var = this.c;
-        u6.c(i10, c1Var.h);
+        t6.c(i10, c1Var.h);
         Object[] objArr = c1Var.e;
         int i11 = i10 * 2;
         int i12 = c1Var.f;

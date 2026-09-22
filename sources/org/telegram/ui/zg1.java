@@ -1,37 +1,82 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zg1 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ih1 b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ zg1(ih1 ih1Var, int i10) {
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zg1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hh1 b;
+
+    public /* synthetic */ zg1(hh1 hh1Var, int i10) {
         this.a = i10;
-        this.b = ih1Var;
+        this.b = hh1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.finishFragment();
+                hh1 hh1Var = this.b;
+                EditTextBoldCursor editTextBoldCursor = hh1Var.n;
+                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
+                    hh1Var.n.requestFocus();
+                    AndroidUtilities.showKeyboard(hh1Var.n);
+                    break;
+                }
                 break;
             case 1:
-                ih1 ih1Var = this.b;
-                ih1Var.B0();
-                ih1Var.finishFragment();
+                hh1 hh1Var2 = this.b;
+                de0 de0Var = hh1Var2.w;
+                if (de0Var != null && de0Var.getVisibility() == 0) {
+                    hh1Var2.w.f[0].requestFocus();
+                    break;
+                }
                 break;
             case 2:
-                ih1 ih1Var2 = this.b;
-                ih1Var2.R = "";
-                ih1Var2.E0(false);
-                break;
+                int i10 = 0;
+                while (true) {
+                    gs[] gsVarArr = this.b.w.f;
+                    if (i10 >= gsVarArr.length) {
+                        break;
+                    } else {
+                        gsVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
             case 3:
-                ih1.a0(this.b);
+                hh1 hh1Var3 = this.b;
+                EditTextBoldCursor editTextBoldCursor2 = hh1Var3.n;
+                if (editTextBoldCursor2 != null) {
+                    if (editTextBoldCursor2.length() != 0) {
+                        hh1Var3.f0[2].P(49);
+                        hh1Var3.f0[2].T(0.0f, false);
+                        hh1Var3.a.d();
+                        break;
+                    } else {
+                        hh1Var3.F0(true);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                hh1 hh1Var4 = this.b;
+                if (hh1Var4.g0 != null) {
+                    hh1Var4.F0(false);
+                    break;
+                }
+                break;
+            case 5:
+                hh1.f0(this.b);
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new zg1(this.b, 7), 150L);
                 break;
             default:
-                ih1.X(this.b);
+                for (gs gsVar : this.b.w.f) {
+                    gsVar.i(0.0f);
+                }
                 break;
         }
     }

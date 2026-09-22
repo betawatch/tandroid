@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class ou0 extends NestedScrollView {
     public final Paint W;
@@ -57,8 +57,8 @@ public abstract class ou0 extends NestedScrollView {
         this.a0 = kVar;
         kVar.u.b(100.0f);
         kVar.j = 1.0f;
-        kVar.b(new vd0(this, i10));
-        kVar.a(new o9(this, i10));
+        kVar.b(new td0(this, i10));
+        kVar.a(new n9(this, i10));
         kVar.u.a(1.0f);
         try {
             Method declaredMethod = NestedScrollView.class.getDeclaredMethod("d", null);

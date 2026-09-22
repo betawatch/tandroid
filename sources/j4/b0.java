@@ -1,6 +1,6 @@
 package j4;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b0 implements g0 {
     public final a0 a;
@@ -75,7 +75,7 @@ public final class b0 implements g0 {
                         vVar2.I(this.c - 4);
                     }
                     vVar2.J(0);
-                    this.a.b(vVar2);
+                    this.a.a(vVar2);
                     this.d = 0;
                 }
             }
@@ -83,13 +83,13 @@ public final class b0 implements g0 {
     }
 
     @Override // j4.g0
-    public final void c(e2.b0 b0Var, c3.q qVar, f0 f0Var) {
-        this.a.c(b0Var, qVar, f0Var);
+    public final void b(e2.b0 b0Var, c3.q qVar, f0 f0Var) {
+        this.a.b(b0Var, qVar, f0Var);
         this.f = true;
     }
 
     @Override // j4.g0
-    public final void d() {
+    public final void c() {
         this.f = true;
     }
 }

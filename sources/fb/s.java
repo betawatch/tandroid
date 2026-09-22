@@ -1,10 +1,42 @@
 package fb;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamClass;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class s extends t {
-    @Override // fb.t
-    public final Object a(Class cls) {
-        throw new UnsupportedOperationException("Cannot allocate " + cls + ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly.");
+public abstract class s {
+    public static final s a;
+
+    static {
+        s rVar;
+        try {
+            Class<?> cls = Class.forName("sun.misc.Unsafe");
+            Field declaredField = cls.getDeclaredField("theUnsafe");
+            declaredField.setAccessible(true);
+            rVar = new o(cls.getMethod("allocateInstance", Class.class), declaredField.get(null));
+        } catch (Exception unused) {
+            try {
+                try {
+                    Method declaredMethod = ObjectStreamClass.class.getDeclaredMethod("getConstructorId", Class.class);
+                    declaredMethod.setAccessible(true);
+                    int intValue = ((Integer) declaredMethod.invoke(null, Object.class)).intValue();
+                    Method declaredMethod2 = ObjectStreamClass.class.getDeclaredMethod("newInstance", Class.class, Integer.TYPE);
+                    declaredMethod2.setAccessible(true);
+                    rVar = new p(intValue, declaredMethod2);
+                } catch (Exception unused2) {
+                    rVar = new r();
+                }
+            } catch (Exception unused3) {
+                Method declaredMethod3 = ObjectInputStream.class.getDeclaredMethod("newInstance", Class.class, Class.class);
+                declaredMethod3.setAccessible(true);
+                rVar = new q(declaredMethod3);
+            }
+        }
+        a = rVar;
     }
+
+    public abstract Object a(Class cls);
 }

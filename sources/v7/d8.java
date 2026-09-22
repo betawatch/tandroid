@@ -1,6 +1,42 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public abstract class d8 {
+public final class d8 {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public Object f;
+    public Object g;
+    public Object h;
+    public Integer i;
+    public Object j;
+    public Serializable k;
+
+    public y9.a0 a() {
+        String str = this.a == null ? " sdkVersion" : "";
+        if (this.b == null) {
+            str = str.concat(" gmpAppId");
+        }
+        if (this.i == null) {
+            str = w.c.g(str, " platform");
+        }
+        if (this.c == null) {
+            str = w.c.g(str, " installationUuid");
+        }
+        if (((String) this.k) == null) {
+            str = w.c.g(str, " buildVersion");
+        }
+        if (((String) this.f) == null) {
+            str = w.c.g(str, " displayVersion");
+        }
+        if (str.isEmpty()) {
+            return new y9.a0(this.a, this.b, this.i.intValue(), this.c, this.d, this.e, (String) this.k, (String) this.f, (y9.d2) this.g, (y9.j1) this.h, (y9.g1) this.j);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
+    }
 }

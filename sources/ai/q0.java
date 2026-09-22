@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -129,7 +129,7 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
                         pVar.a(false);
                         return;
                     }
-                    qg.c2 m0 = qbVar.m0(ocVar.K1.p0, true);
+                    qg.e2 m0 = qbVar.m0(ocVar.K1.p0, true);
                     ecVar.setHasRoundVideo(true);
                     ocVar.X0.s(ocVar.K1, m0, true);
                     AndroidUtilities.cancelRunOnUIThread(pVar.h);

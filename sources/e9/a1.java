@@ -1,9 +1,9 @@
 package e9;
 
 import j$.util.Objects;
-import v7.u6;
+import v7.t6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a1 extends i0 {
     public static final a1 e = new a1(0, new Object[0]);
@@ -17,7 +17,7 @@ public final class a1 extends i0 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        u6.c(i10, this.d);
+        t6.c(i10, this.d);
         Object obj = this.c[i10];
         Objects.requireNonNull(obj);
         return obj;

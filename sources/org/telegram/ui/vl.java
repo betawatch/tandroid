@@ -1,34 +1,50 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class vl extends org.telegram.ui.Components.n20 {
-    public final /* synthetic */ zn b;
+public final class vl extends tu0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ bo c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vl(zn znVar, Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(activity, n2Var);
-        this.b = znVar;
+    public vl(bo boVar, ArrayList arrayList, boolean[] zArr) {
+        this.c = boVar;
+        this.a = arrayList;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.ui.Components.n20
-    public final void m() {
-        zn znVar = this.b;
-        znVar.Q7();
-        UndoView undoView = znVar.y3;
-        if (undoView == null) {
-            return;
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (!this.b[size]) {
+                arrayList.remove(size);
+            }
         }
-        undoView.j(75, 0L, null);
-        znVar.getMessagesController().removeSuggestion(znVar.T5, "CONVERT_GIGAGROUP");
+        this.c.eb(arrayList, i11, z10, z11);
     }
 
-    @Override // org.telegram.ui.Components.n20
-    public final void n() {
-        zn znVar = this.b;
-        znVar.getMessagesController().convertToGigaGroup(znVar.getParentActivity(), znVar.e, znVar, new y0(this, 20));
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final boolean x(int i10) {
+        return this.b[i10];
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return i10;
     }
 }

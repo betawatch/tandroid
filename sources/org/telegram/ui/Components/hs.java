@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class hs {
-    public final org.telegram.ui.Cells.s2 a;
+    public final org.telegram.ui.Cells.r2 a;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public gs d = null;
 
-    public hs(org.telegram.ui.Cells.s2 s2Var) {
-        this.a = s2Var;
+    public hs(org.telegram.ui.Cells.r2 r2Var) {
+        this.a = r2Var;
     }
 
     public final void a(Canvas canvas, int i10) {
@@ -36,7 +36,7 @@ public final class hs {
                 break;
             }
             gs gsVar = (gs) arrayList.get(i11);
-            dp = org.telegram.messenger.rk.x(4.0f, gsVar.e, dp);
+            dp = org.telegram.messenger.vl.w(4.0f, gsVar.e, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,14 +56,14 @@ public final class hs {
             if (gsVar2 == null || gsVar2.a != size) {
                 gs gsVar3 = new gs();
                 gsVar3.a = size;
-                w01 w01Var = new w01(hg.k0.h(size, "+"), 10.0f, AndroidUtilities.bold());
-                w01Var.s(this.a);
-                gsVar3.c = w01Var;
+                g01 g01Var = new g01(hg.c.i(size, "+"), 10.0f, AndroidUtilities.bold());
+                g01Var.s(this.a);
+                gsVar3.c = g01Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                w01 w01Var2 = gsVar3.c;
-                gsVar3.e = dp2 + ((int) w01Var2.c);
-                w01Var2.j();
-                gsVar3.d = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n8, false);
+                g01 g01Var2 = gsVar3.c;
+                gsVar3.e = dp2 + ((int) g01Var2.c);
+                g01Var2.j();
+                gsVar3.d = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n8, false);
                 this.d = gsVar3;
             }
             if (LocaleController.isRTL) {

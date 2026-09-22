@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -232,53 +232,55 @@ public final class s {
     }
 
     public static String c(s sVar) {
+        char c10;
         int i10;
         String str;
         String str2;
-        int i11;
+        o oVar;
         if (sVar == null) {
             return BuildConfig.BETA_URL;
         }
-        int i12 = sVar.e;
+        int i11 = sVar.e;
         e9.i0 i0Var = sVar.c;
         String str3 = sVar.d;
-        int i13 = sVar.K;
-        int i14 = sVar.J;
-        int i15 = sVar.I;
+        int i12 = sVar.K;
+        int i13 = sVar.J;
+        int i14 = sVar.I;
         float f7 = sVar.C;
         j jVar = sVar.H;
         float f10 = sVar.E;
-        int i16 = sVar.B;
-        int i17 = sVar.A;
-        int i18 = sVar.z;
-        int i19 = sVar.y;
-        o oVar = sVar.v;
+        int i15 = sVar.B;
+        int i16 = sVar.A;
+        int i17 = sVar.z;
+        int i18 = sVar.y;
+        o oVar2 = sVar.v;
         String str4 = sVar.k;
-        int i20 = sVar.j;
+        int i19 = sVar.j;
         String str5 = sVar.q;
-        int i21 = sVar.f;
-        d9.f fVar = new d9.f(String.valueOf(','), 0);
-        StringBuilder u10 = a4.a.u("id=");
-        u10.append(sVar.a);
-        u10.append(", mimeType=");
-        u10.append(sVar.r);
+        int i20 = sVar.f;
+        xa.c cVar = new xa.c(String.valueOf(','));
+        StringBuilder v = a4.a.v("id=");
+        v.append(sVar.a);
+        v.append(", mimeType=");
+        v.append(sVar.r);
         if (str5 != null) {
-            u10.append(", container=");
-            u10.append(str5);
+            v.append(", container=");
+            v.append(str5);
         }
-        if (i20 != -1) {
-            u10.append(", bitrate=");
-            u10.append(i20);
+        if (i19 != -1) {
+            v.append(", bitrate=");
+            v.append(i19);
         }
         if (str4 != null) {
-            u10.append(", codecs=");
-            u10.append(str4);
+            v.append(", codecs=");
+            v.append(str4);
         }
-        if (oVar != null) {
+        if (oVar2 != null) {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            int i22 = 0;
-            while (i22 < oVar.d) {
-                UUID uuid = oVar.a[i22].b;
+            int i21 = 0;
+            c10 = 0;
+            while (i21 < oVar2.d) {
+                UUID uuid = oVar2.a[i21].b;
                 if (uuid.equals(i.b)) {
                     linkedHashSet.add("cenc");
                 } else if (uuid.equals(i.c)) {
@@ -290,122 +292,127 @@ public final class s {
                 } else if (uuid.equals(i.a)) {
                     linkedHashSet.add("universal");
                 } else {
-                    i11 = i22;
+                    oVar = oVar2;
                     linkedHashSet.add("unknown (" + uuid + ")");
-                    i22 = i11 + 1;
+                    i21++;
+                    oVar2 = oVar;
                 }
-                i11 = i22;
-                i22 = i11 + 1;
+                oVar = oVar2;
+                i21++;
+                oVar2 = oVar;
             }
-            u10.append(", drm=[");
-            fVar.a(u10, linkedHashSet.iterator());
-            u10.append(']');
+            v.append(", drm=[");
+            cVar.j(v, linkedHashSet.iterator());
+            v.append(']');
+        } else {
+            c10 = 0;
         }
-        if (i19 != -1 && i18 != -1) {
-            u10.append(", res=");
-            u10.append(i19);
-            u10.append("x");
-            u10.append(i18);
+        if (i18 != -1 && i17 != -1) {
+            v.append(", res=");
+            v.append(i18);
+            v.append("x");
+            v.append(i17);
         }
-        if (i17 != -1 && i16 != -1) {
-            u10.append(", decRes=");
-            u10.append(i17);
-            u10.append("x");
-            u10.append(i16);
+        if (i16 != -1 && i15 != -1) {
+            v.append(", decRes=");
+            v.append(i16);
+            v.append("x");
+            v.append(i15);
         }
         double d = f10;
-        int i23 = g9.c.a;
+        int i22 = g9.c.a;
         if (Math.copySign(d - 1.0d, 1.0d) > 0.001d && d != 1.0d && (!Double.isNaN(d) || !Double.isNaN(1.0d))) {
-            u10.append(", par=");
-            Object[] objArr = {Float.valueOf(f10)};
+            v.append(", par=");
+            Object[] objArr = new Object[1];
+            objArr[c10] = Float.valueOf(f10);
             String str6 = e2.d0.a;
-            u10.append(String.format(Locale.US, "%.3f", objArr));
+            v.append(String.format(Locale.US, "%.3f", objArr));
         }
         if (jVar != null) {
-            int i24 = jVar.f;
-            int i25 = jVar.e;
-            if ((i25 != -1 && i24 != -1) || jVar.d()) {
-                u10.append(", color=");
+            int i23 = jVar.f;
+            int i24 = jVar.e;
+            if ((i24 != -1 && i23 != -1) || jVar.d()) {
+                v.append(", color=");
                 if (jVar.d()) {
                     String b10 = j.b(jVar.a);
                     String a2 = j.a(jVar.b);
-                    String c10 = j.c(jVar.c);
+                    String c11 = j.c(jVar.c);
                     String str7 = e2.d0.a;
                     Locale locale = Locale.US;
-                    str2 = b10 + "/" + a2 + "/" + c10;
+                    str2 = b10 + "/" + a2 + "/" + c11;
                 } else {
                     str2 = "NA/NA/NA";
                 }
-                u10.append(str2 + "/" + ((i25 == -1 || i24 == -1) ? "NA/NA" : a4.a.k(i25, i24, "/")));
+                v.append(str2 + "/" + ((i24 == -1 || i23 == -1) ? "NA/NA" : a4.a.l(i24, i23, "/")));
             }
         }
         if (f7 != -1.0f) {
-            u10.append(", fps=");
-            u10.append(f7);
-        }
-        if (i15 != -1) {
-            u10.append(", maxSubLayers=");
-            u10.append(i15);
+            v.append(", fps=");
+            v.append(f7);
         }
         if (i14 != -1) {
-            u10.append(", channels=");
-            u10.append(i14);
+            v.append(", maxSubLayers=");
+            v.append(i14);
         }
         if (i13 != -1) {
-            u10.append(", sample_rate=");
-            u10.append(i13);
+            v.append(", channels=");
+            v.append(i13);
+        }
+        if (i12 != -1) {
+            v.append(", sample_rate=");
+            v.append(i12);
         }
         if (str3 != null) {
-            u10.append(", language=");
-            u10.append(str3);
+            v.append(", language=");
+            v.append(str3);
         }
         if (!i0Var.isEmpty()) {
-            u10.append(", labels=[");
-            fVar.a(u10, e9.q.w(i0Var, new ai.w1(10)).iterator());
-            u10.append("]");
+            v.append(", labels=[");
+            cVar.j(v, e9.q.w(i0Var, new ai.w1(10)).iterator());
+            v.append("]");
         }
-        if (i12 != 0) {
-            u10.append(", selectionFlags=[");
+        if (i11 != 0) {
+            v.append(", selectionFlags=[");
             String str8 = e2.d0.a;
             ArrayList arrayList = new ArrayList();
-            if ((i12 & 4) != 0) {
+            if ((i11 & 4) != 0) {
                 arrayList.add("auto");
             }
-            if ((i12 & 1) != 0) {
+            if ((i11 & 1) != 0) {
                 arrayList.add("default");
             }
-            if ((i12 & 2) != 0) {
+            if ((i11 & 2) != 0) {
                 arrayList.add("forced");
             }
-            fVar.a(u10, arrayList.iterator());
-            u10.append("]");
+            cVar.j(v, arrayList.iterator());
+            v.append("]");
         }
-        if (i21 != 0) {
-            u10.append(", roleFlags=[");
+        if (i20 != 0) {
+            v.append(", roleFlags=[");
             String str9 = e2.d0.a;
             ArrayList arrayList2 = new ArrayList();
-            if ((i21 & 1) != 0) {
+            if ((i20 & 1) != 0) {
                 arrayList2.add("main");
             }
-            if ((i21 & 2) != 0) {
+            if ((i20 & 2) != 0) {
                 arrayList2.add("alt");
             }
-            if ((i21 & 4) != 0) {
+            if ((i20 & 4) != 0) {
                 arrayList2.add("supplementary");
             }
-            if ((i21 & 8) != 0) {
+            if ((i20 & 8) != 0) {
                 arrayList2.add("commentary");
             }
-            if ((i21 & 16) != 0) {
+            if ((i20 & 16) != 0) {
                 arrayList2.add("dub");
             }
-            if ((i21 & 32) != 0) {
+            if ((i20 & 32) != 0) {
                 arrayList2.add("emergency");
             }
-            if ((i21 & 64) != 0) {
+            if ((i20 & 64) != 0) {
                 arrayList2.add("caption");
             }
-            i10 = i21;
+            i10 = i20;
             if ((i10 & 128) != 0) {
                 arrayList2.add("subtitle");
             }
@@ -433,32 +440,32 @@ public final class s {
             if ((i10 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            fVar.a(u10, arrayList2.iterator());
-            u10.append("]");
+            cVar.j(v, arrayList2.iterator());
+            v.append("]");
         } else {
-            i10 = i21;
+            i10 = i20;
         }
         if ((i10 & 32768) != 0) {
-            u10.append(", auxiliaryTrackType=");
-            int i26 = sVar.g;
+            v.append(", auxiliaryTrackType=");
+            int i25 = sVar.g;
             String str10 = e2.d0.a;
-            if (i26 == 0) {
+            if (i25 == 0) {
                 str = "undefined";
-            } else if (i26 == 1) {
+            } else if (i25 == 1) {
                 str = "original";
-            } else if (i26 == 2) {
+            } else if (i25 == 2) {
                 str = "depth-linear";
-            } else if (i26 == 3) {
+            } else if (i25 == 3) {
                 str = "depth-inverse";
             } else {
-                if (i26 != 4) {
+                if (i25 != 4) {
                     throw new IllegalStateException("Unsupported auxiliary track type");
                 }
                 str = "depth metadata";
             }
-            u10.append(str);
+            v.append(str);
         }
-        return u10.toString();
+        return v.toString();
     }
 
     public final r a() {
@@ -714,6 +721,6 @@ public final class s {
         sb2.append("], [");
         sb2.append(this.J);
         sb2.append(", ");
-        return a4.a.n(this.K, "])", sb2);
+        return a4.a.o(this.K, "])", sb2);
     }
 }

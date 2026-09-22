@@ -2,35 +2,35 @@ package ii;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class b6 extends x51 {
+public final class b6 extends h51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        x51.setup(new b6());
+        h51.setup(new b6());
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final void bindView(View view, y51 y51Var, boolean z10, m61 m61Var, u61 u61Var) {
-        ((d6) view).g((a) y51Var.G, (a6) y51Var.H, y51Var.r);
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
+        ((d6) view).g((a) i51Var.G, (a6) i51Var.H, i51Var.r);
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        d6 d6Var = new d6(context, f6Var);
-        d6Var.setBackground(new a2(j6.v0(j6.d6, f6Var)));
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        d6 d6Var = new d6(context, e6Var);
+        d6Var.setBackground(new a2(i6.v0(i6.d6, e6Var)));
         return d6Var;
     }
 
-    @Override // org.telegram.ui.Components.x51
+    @Override // org.telegram.ui.Components.h51
     public final boolean isClickable() {
         return false;
     }

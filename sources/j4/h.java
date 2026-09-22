@@ -2,11 +2,10 @@ package j4;
 
 import b2.r0;
 import c3.h0;
-import hg.k0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -25,7 +24,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         boolean z10;
         boolean z11;
         switch (this.a) {
@@ -98,7 +97,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void c() {
         switch (this.a) {
             case 0:
                 this.b = false;
@@ -112,7 +111,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 h0[] h0VarArr = (h0[]) this.g;
@@ -128,7 +127,7 @@ public final class h implements i {
                     rVar.q = r0.n("application/dvbsubs");
                     rVar.t = Collections.singletonList(e0Var.b);
                     rVar.d = e0Var.a;
-                    k0.s(rVar, Z1);
+                    hg.c.u(rVar, Z1);
                     h0VarArr[i10] = Z1;
                 }
                 break;
@@ -142,13 +141,13 @@ public final class h implements i {
                 rVar2.a = f0Var.e;
                 rVar2.p = r0.n("video/mp2t");
                 rVar2.q = r0.n("application/id3");
-                k0.s(rVar2, Z12);
+                hg.c.u(rVar2, Z12);
                 break;
         }
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
         int i10;
         switch (this.a) {
             case 0:
@@ -174,7 +173,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void f(int i10, long j3) {
         switch (this.a) {
             case 0:
                 if ((i10 & 4) != 0) {

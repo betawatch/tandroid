@@ -1,6 +1,6 @@
 package s4;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b implements e0 {
     public final e0 a;
@@ -19,7 +19,7 @@ public final class b implements e0 {
     }
 
     @Override // s4.e0
-    public final void M0(int i10, int i11) {
+    public final void O0(int i10, int i11) {
         int i12;
         if (this.b == 2 && (i12 = this.c) >= i10 && i12 <= i10 + i11) {
             this.d += i11;
@@ -41,9 +41,9 @@ public final class b implements e0 {
         if (i10 == 1) {
             e0Var.k0(this.c, this.d);
         } else if (i10 == 2) {
-            e0Var.M0(this.c, this.d);
+            e0Var.O0(this.c, this.d);
         } else if (i10 == 3) {
-            e0Var.k1(this.c, this.d);
+            e0Var.l1(this.c, this.d);
         }
         this.b = 0;
     }
@@ -66,7 +66,7 @@ public final class b implements e0 {
     }
 
     @Override // s4.e0
-    public final void k1(int i10, int i11) {
+    public final void l1(int i10, int i11) {
         int i12;
         int i13;
         int i14;

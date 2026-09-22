@@ -1,52 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gu0 extends org.telegram.ui.Cells.k7 {
-    public final /* synthetic */ int l0;
-    public final /* synthetic */ xl0 m0;
+public final class gu0 extends s4.v {
+    public final /* synthetic */ iu0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gu0(xl0 xl0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, 0, f6Var);
-        this.l0 = i10;
-        this.m0 = xl0Var;
+    public gu0(iu0 iu0Var) {
+        this.d = iu0Var;
     }
 
-    @Override // org.telegram.ui.Cells.k7
-    public final boolean d(MessageObject messageObject) {
-        switch (this.l0) {
-            case 0:
-                hu0 hu0Var = (hu0) this.m0;
-                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
-                    if (messageObject.isMusic()) {
-                        return MediaController.getInstance().setPlaylist(hu0Var.d, messageObject, hu0Var.v.c1);
-                    }
-                    return false;
-                }
-                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? hu0Var.d : null, false);
-                if (messageObject.isRoundVideo()) {
-                    MediaController.getInstance().setCurrentVideoVisible(false);
-                }
-                return playMessage;
-            default:
-                yu0 yu0Var = (yu0) this.m0;
-                int i10 = yu0Var.d;
-                lv0 lv0Var = yu0Var.f;
-                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
-                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
-                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? lv0Var.t1[i10].a : null, false);
-                    return playMessage2;
-                }
-                if (messageObject.isMusic()) {
-                    return MediaController.getInstance().setPlaylist(lv0Var.t1[i10].a, messageObject, lv0Var.c1);
-                }
-                return false;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        SavedMessagesController.SavedDialog r10;
+        int l4 = s4.v.l(0, 0);
+        yu0 yu0Var = this.d.x;
+        return (!yu0Var.C1 || recyclerView.getAdapter() == yu0Var.S || (r10 = r(c1Var)) == null || !r10.pinned) ? l4 : s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        iu0 iu0Var = this.d;
+        ArrayList arrayList = iu0Var.f;
+        yu0 yu0Var = iu0Var.x;
+        if (!yu0Var.C1 || recyclerView.getAdapter() == yu0Var.S) {
+            return false;
         }
+        SavedMessagesController.SavedDialog r10 = r(c1Var);
+        SavedMessagesController.SavedDialog r11 = r(c1Var2);
+        if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        arrayList.remove(b10);
+        arrayList.add(b11, r10);
+        iu0Var.p(b10, b11);
+        iu0Var.h = true;
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        qt0 qt0Var;
+        iu0 iu0Var = this.d;
+        jq0 jq0Var = iu0Var.n;
+        if (c1Var != null && (qt0Var = iu0Var.s) != null) {
+            qt0Var.d1(false);
+        }
+        if (i10 == 0) {
+            AndroidUtilities.cancelRunOnUIThread(jq0Var);
+            AndroidUtilities.runOnUIThread(jq0Var, 300L);
+        }
+    }
+
+    public final SavedMessagesController.SavedDialog r(s4.c1 c1Var) {
+        int b10;
+        if (c1Var != null && (b10 = c1Var.b()) >= 0) {
+            iu0 iu0Var = this.d;
+            if (b10 < iu0Var.f.size()) {
+                return (SavedMessagesController.SavedDialog) iu0Var.f.get(b10);
+            }
+        }
+        return null;
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

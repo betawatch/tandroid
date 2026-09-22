@@ -39,11 +39,11 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class jc implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.j2, rf.a {
     public static boolean A1;
@@ -217,7 +217,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                 return true;
             }
         }
-        if ((currentPeerView == null || (a4Var = currentPeerView.b2) == null || !a4Var.w0()) && jcVar.u1 == null) {
+        if ((currentPeerView == null || (a4Var = currentPeerView.b2) == null || !a4Var.x0()) && jcVar.u1 == null) {
             return AndroidUtilities.findClickableView(xbVar, f7, f10, currentPeerView);
         }
         return true;
@@ -357,7 +357,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             zb zbVar2 = new zb(this, this.h, context, this, this.y);
             this.n0 = zbVar2;
             zbVar2.setDelegate(new ac(this, d9Var, arrayList, context));
-            this.v.addView(this.n0, w7.y5.e(-1, -1, 1));
+            this.v.addView(this.n0, w7.x5.e(-1, -1, 1));
             this.y0 = new org.telegram.ui.k4(context);
             if (this.a) {
                 SurfaceView surfaceView = new SurfaceView(context);
@@ -378,11 +378,11 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             Paint paint = new Paint(1);
             oaVar.a = paint;
             oaVar.c = new q4(oaVar, i12);
-            oaVar.d = new org.telegram.ui.Components.d6(oaVar);
-            oaVar.e = new org.telegram.ui.Components.d6(oaVar);
+            oaVar.d = new org.telegram.ui.Components.c6(oaVar);
+            oaVar.e = new org.telegram.ui.Components.c6(oaVar);
             paint.setColor(-1);
             this.d1 = oaVar;
-            this.v.addView(oaVar, w7.y5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
+            this.v.addView(oaVar, w7.x5.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
         }
         ci.l4 l4Var2 = this.D0;
         if (l4Var2 != null) {
@@ -784,7 +784,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
                         int[] iArr = new int[2];
                         view.getLocationOnScreen(iArr);
                         View view2 = gcVar.a;
-                        if (view2 instanceof org.telegram.ui.Cells.u1) {
+                        if (view2 instanceof org.telegram.ui.Cells.t1) {
                             iArr[1] = view2.getPaddingTop() + iArr[1];
                         }
                         float f7 = iArr[0];
@@ -1070,7 +1070,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     @Override // org.telegram.ui.ActionBar.j2
-    public final /* synthetic */ xc getBulletinFactory() {
+    public final /* synthetic */ vc getBulletinFactory() {
         return null;
     }
 
@@ -1239,7 +1239,7 @@ public final class jc implements NotificationCenter.NotificationCenterDelegate, 
             }
             if (Math.abs(currentPage.c.getTranslationY() - p6Var.getPaddingTop()) > AndroidUtilities.dp(2.0f)) {
                 p6Var.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
-                p6Var.y0(0);
+                p6Var.x0(0);
                 return true;
             }
         }

@@ -5,25 +5,25 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class w0 extends View implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.e6 a;
     public final Paint b;
     public a c;
 
-    public w0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public w0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.b = new Paint();
-        this.a = f6Var;
+        this.a = e6Var;
         e();
     }
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
-        this.b.setColor(j6.v0(j6.Fk, this.a));
+        this.b.setColor(i6.v0(i6.Fk, this.a));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

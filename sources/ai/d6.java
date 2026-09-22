@@ -16,9 +16,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class d6 {
     public TL_stories.StoryItem a = null;
@@ -50,7 +50,7 @@ public final class d6 {
             StringBuilder sb2 = new StringBuilder("photo#");
             sb2.append(d6Var.a.media.photo.id);
             sb2.append("at");
-            return a4.a.n(d6Var.a.media.photo.dc_id, "dc", sb2);
+            return a4.a.o(d6Var.a.media.photo.dc_id, "dc", sb2);
         }
         if (messageMedia.document == null) {
             return "unknown";
@@ -58,7 +58,7 @@ public final class d6 {
         StringBuilder sb3 = new StringBuilder("doc#");
         sb3.append(d6Var.a.media.document.id);
         sb3.append("at");
-        return a4.a.n(d6Var.a.media.document.dc_id, "dc", sb3);
+        return a4.a.o(d6Var.a.media.document.dc_id, "dc", sb3);
     }
 
     public final boolean d() {
@@ -334,7 +334,7 @@ public final class d6 {
         }
         TL_stories.StoryItem storyItem = d6Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, l41.A())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, v31.A())) {
                 String str = d6Var.a.caption;
                 this.h = str;
                 CharSequence replaceEmoji2 = Emoji.replaceEmoji(str, h5Var.b0.getPaint().getFontMetricsInt(), false);

@@ -1,9 +1,16 @@
 package yf;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes.dex */
-public interface k0 {
-    void a(boolean z10);
+import android.view.Window;
+import java.lang.ref.WeakReference;
 
-    void destroy();
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes.dex */
+public final class k0 {
+    public int a;
+    public boolean b;
+    public final r5.e c;
+
+    public k0(Window window) {
+        this.c = new r5.e(new WeakReference(window), 17);
+    }
 }

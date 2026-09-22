@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uf0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.l70;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class gc extends FrameLayout {
     public float a;
@@ -43,7 +43,7 @@ public final class gc extends FrameLayout {
 
     public final void c() {
         if (this.e.J == 0) {
-            setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), -16777216));
+            setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(12.0f), -16777216));
         } else {
             setBackground(null);
         }
@@ -104,9 +104,9 @@ public final class gc extends FrameLayout {
             iVar.layout(0, 0, ocVar.S, ocVar.T);
             ocVar.c1.y();
         }
-        uf0 uf0Var = ocVar.B1;
-        if (uf0Var != null) {
-            uf0Var.layout(0, 0, uf0Var.getMeasuredWidth(), ocVar.B1.getMeasuredHeight());
+        jf0 jf0Var = ocVar.B1;
+        if (jf0Var != null) {
+            jf0Var.layout(0, 0, jf0Var.getMeasuredWidth(), ocVar.B1.getMeasuredHeight());
         }
         qb qbVar = ocVar.v1;
         if (qbVar != null) {
@@ -114,7 +114,7 @@ public final class gc extends FrameLayout {
         }
         for (int i16 = 0; i16 < getChildCount(); i16++) {
             View childAt = getChildAt(i16);
-            if (childAt instanceof w70) {
+            if (childAt instanceof l70) {
                 childAt.layout(0, 0, measuredWidth, measuredHeight);
             }
         }
@@ -142,9 +142,9 @@ public final class gc extends FrameLayout {
         if (iVar != null) {
             a(iVar, ocVar.S, ocVar.T);
         }
-        uf0 uf0Var = ocVar.B1;
-        if (uf0Var != null) {
-            a(uf0Var, size, size2);
+        jf0 jf0Var = ocVar.B1;
+        if (jf0Var != null) {
+            a(jf0Var, size, size2);
         }
         qb qbVar = ocVar.v1;
         if (qbVar != null) {
@@ -152,7 +152,7 @@ public final class gc extends FrameLayout {
         }
         for (int i12 = 0; i12 < getChildCount(); i12++) {
             View childAt = getChildAt(i12);
-            if (childAt instanceof w70) {
+            if (childAt instanceof l70) {
                 a(childAt, size, size2);
             }
         }

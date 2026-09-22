@@ -5,12 +5,12 @@ import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
 import com.google.android.gms.internal.vision.e2;
-import v7.w6;
+import v7.v6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e {
-    public final d9.j a;
+    public final d9.i a;
     public final Handler b;
     public o0 c;
     public b2.e d;
@@ -20,7 +20,7 @@ public final class e {
     public int e = 0;
 
     public e(Context context, Looper looper, o0 o0Var) {
-        this.a = w6.a(new d(context, 0));
+        this.a = v6.a(new d(context, 0));
         this.c = o0Var;
         this.b = new Handler(looper);
     }

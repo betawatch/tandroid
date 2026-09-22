@@ -9,14 +9,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.kb0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vb0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.mb1;
+import org.telegram.ui.kb1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class o1 extends yl0 implements NotificationCenter.NotificationCenterDelegate, l0 {
+public abstract class o1 extends ll0 implements NotificationCenter.NotificationCenterDelegate, l0 {
     public final ArrayList X2;
     public final s4.c0 Y2;
     public boolean Z2;
@@ -24,10 +24,10 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
     public final int b3;
     public boolean c3;
     public boolean d3;
-    public final pg.c1 e3;
+    public final qg.b0 e3;
     public final qr f3;
     public final ArrayList g3;
-    public final mb1 h3;
+    public final kb1 h3;
     public View i3;
     public boolean j3;
     public int k3;
@@ -42,10 +42,10 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         this.Z2 = true;
         this.a3 = true;
         s0 s0Var = (s0) this;
-        this.e3 = new pg.c1(s0Var, 2);
+        this.e3 = new qg.b0(s0Var, 1);
         this.f3 = new qr(0.0f, 0.5f, 0.5f, 1.0f);
         this.g3 = new ArrayList();
-        this.h3 = new mb1(6);
+        this.h3 = new kb1(6);
         this.l3 = -1;
         this.b3 = i10;
         s4.c0 c0Var = new s4.c0();
@@ -53,7 +53,7 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         setLayoutManager(c0Var);
         setAdapter(new l1(s0Var));
         setClipChildren(false);
-        setOnScrollListener(new vb0(s0Var, 13));
+        setOnScrollListener(new kb0(s0Var, 12));
         setOnItemClickListener(new ai.g(s0Var, 17));
         MediaDataController.getInstance(i10).preloadPremiumPreviewStickers();
         arrayList.clear();
@@ -73,7 +73,7 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.m3) {
             ArrayList arrayList = this.g3;
@@ -91,13 +91,13 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
             }
             Collections.sort(arrayList, this.h3);
             if ((this.a3 || this.j3) && arrayList.size() > 0 && !this.X2.isEmpty()) {
-                View view = (View) hg.k0.g(1, arrayList);
+                View view = (View) hg.c.h(1, arrayList);
                 this.i3 = view;
-                x1(view, !this.a3);
+                w1(view, !this.a3);
                 this.a3 = false;
                 this.j3 = false;
-            } else if (this.i3 != hg.k0.g(1, arrayList)) {
-                this.i3 = (View) hg.k0.g(1, arrayList);
+            } else if (this.i3 != hg.c.h(1, arrayList)) {
+                this.i3 = (View) hg.c.h(1, arrayList);
                 if (this.d3) {
                     try {
                         performHapticFeedback(3);
@@ -114,42 +114,42 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getInstance(this.b3).addObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
-        y1();
+        x1();
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.b3).removeObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.Z2 && !this.X2.isEmpty() && getChildCount() > 0) {
             this.Z2 = false;
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(this, 29));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 28));
         }
         int i14 = this.l3;
         if (i14 > 0) {
-            s4.c1 L = L(i14);
-            if (L != null) {
-                x1(L.a, false);
+            s4.c1 K = K(i14);
+            if (K != null) {
+                w1(K.a, false);
             }
             this.l3 = -1;
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (View.MeasureSpec.getSize(i11) > View.MeasureSpec.getSize(i10)) {
             this.k3 = View.MeasureSpec.getSize(i10);
@@ -164,9 +164,9 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
             this.n3 = z10;
             if (!z10) {
                 AndroidUtilities.cancelRunOnUIThread(this.e3);
-                x1(null, true);
+                w1(null, true);
             } else {
-                y1();
+                x1();
                 this.j3 = true;
                 invalidate();
             }
@@ -182,7 +182,7 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void x1(View view, boolean z10) {
+    public final void w1(View view, boolean z10) {
         this.c3 = view != null;
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             n1 n1Var = (n1) getChildAt(i10);
@@ -194,11 +194,11 @@ public abstract class o1 extends yl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void y1() {
+    public final void x1() {
         if (this.n3) {
-            pg.c1 c1Var = this.e3;
-            AndroidUtilities.cancelRunOnUIThread(c1Var);
-            AndroidUtilities.runOnUIThread(c1Var, 2700L);
+            qg.b0 b0Var = this.e3;
+            AndroidUtilities.cancelRunOnUIThread(b0Var);
+            AndroidUtilities.runOnUIThread(b0Var, 2700L);
         }
     }
 }

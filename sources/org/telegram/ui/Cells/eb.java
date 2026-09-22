@@ -21,11 +21,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.nc0;
-import org.telegram.ui.fj1;
+import org.telegram.ui.Components.cc0;
 import org.telegram.ui.gj1;
+import org.telegram.ui.hj1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class eb extends FrameLayout {
     public final ai.z5 a;
@@ -44,21 +44,21 @@ public final class eb extends FrameLayout {
         setWillNotDraw(false);
         ai.z5 z5Var = new ai.z5(this, context, 4);
         this.a = z5Var;
-        addView(z5Var, w7.y5.e(-1, -1, 51));
+        addView(z5Var, w7.x5.e(-1, -1, 51));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setImageResource(R.drawable.ic_gallery_background);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.y5.e(-1, -1, 51));
+        addView(imageView, w7.x5.e(-1, -1, 51));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
-        addView(view, w7.y5.c(-1.0f, -1));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.K0(false));
+        addView(view, w7.x5.c(-1.0f, -1));
         CheckBox checkBox = new CheckBox(context, R.drawable.round_check2);
         this.c = checkBox;
         checkBox.setVisibility(4);
-        checkBox.c(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i7, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k7, false));
-        addView(checkBox, w7.y5.d(22, 22.0f, 53, 0.0f, 2.0f, 2.0f, 0.0f));
+        checkBox.c(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i7, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k7, false));
+        addView(checkBox, w7.x5.d(22, 22.0f, 53, 0.0f, 2.0f, 2.0f, 0.0f));
     }
 
     public final void a(Object obj, Object obj2) {
@@ -93,19 +93,19 @@ public final class eb extends FrameLayout {
             TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
             if (wallPaperSettings.third_background_color != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
-                nc0 nc0Var = new nc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
-                if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.j6.I.q()) {
-                    z5Var2.setBackground(nc0Var);
+                cc0 cc0Var = new cc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
+                if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.i6.I.q()) {
+                    z5Var2.setBackground(cc0Var);
                     if (Build.VERSION.SDK_INT >= 29) {
                         z5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                     }
                 } else {
-                    z5Var2.getImageReceiver().setGradientBitmap(nc0Var.k);
+                    z5Var2.getImageReceiver().setGradientBitmap(cc0Var.k);
                 }
                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
-                patternColor2 = nc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+                patternColor2 = cc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             } else {
-                z5Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.X0(wallPaperSettings.background_color));
+                z5Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.X0(wallPaperSettings.background_color));
                 patternColor2 = AndroidUtilities.getPatternColor(tL_wallPaper.settings.background_color);
             }
             if (Build.VERSION.SDK_INT < 29 || tL_wallPaper.settings.third_background_color == 0) {
@@ -124,23 +124,23 @@ public final class eb extends FrameLayout {
             z5Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
             return;
         }
-        if (!(obj instanceof fj1)) {
-            if (obj instanceof gj1) {
-                gj1 gj1Var = (gj1) obj;
-                File file = gj1Var.e;
+        if (!(obj instanceof gj1)) {
+            if (obj instanceof hj1) {
+                hj1 hj1Var = (hj1) obj;
+                File file = hj1Var.e;
                 if (file != null) {
                     z5Var2.f(file.getAbsolutePath(), "180_180", null);
                     return;
                 }
-                File file2 = gj1Var.d;
+                File file2 = hj1Var.d;
                 if (file2 != null) {
                     z5Var2.f(file2.getAbsolutePath(), "180_180", null);
                     return;
-                } else if ("t".equals(gj1Var.a)) {
-                    z5Var2.setImageDrawable(org.telegram.ui.ActionBar.j6.W0(z5Var2, true));
+                } else if ("t".equals(hj1Var.a)) {
+                    z5Var2.setImageDrawable(org.telegram.ui.ActionBar.i6.W0(z5Var2, true));
                     return;
                 } else {
-                    z5Var2.setImageResource(gj1Var.c);
+                    z5Var2.setImageResource(hj1Var.c);
                     return;
                 }
             }
@@ -162,15 +162,15 @@ public final class eb extends FrameLayout {
             z5Var2.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, searchImage.photo), "180_180", ImageLocation.getForPhoto(closestPhotoSizeWithSize3, searchImage.photo), "100_100_b", closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0, "jpg", searchImage, 1);
             return;
         }
-        fj1 fj1Var = (fj1) obj;
-        File file3 = fj1Var.i;
-        int i10 = fj1Var.d;
-        int i11 = fj1Var.c;
-        int i12 = fj1Var.b;
-        if (file3 == null && fj1Var.g == null && !"d".equals(fj1Var.a)) {
+        gj1 gj1Var = (gj1) obj;
+        File file3 = gj1Var.i;
+        int i10 = gj1Var.d;
+        int i11 = gj1Var.c;
+        int i12 = gj1Var.b;
+        if (file3 == null && gj1Var.g == null && !"d".equals(gj1Var.a)) {
             z5Var2.setImageBitmap(null);
-            if (fj1Var.k) {
-                z5Var2.setBackground(new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
+            if (gj1Var.k) {
+                z5Var2.setBackground(new cc0(true, gj1Var.b, gj1Var.c, gj1Var.d, gj1Var.e));
                 return;
             } else if (i11 != 0) {
                 z5Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
@@ -181,35 +181,35 @@ public final class eb extends FrameLayout {
             }
         }
         if (i10 != 0) {
-            nc0 nc0Var2 = new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e);
-            if (fj1Var.h >= 0.0f) {
-                z5Var2.setBackground(new nc0(true, fj1Var.b, fj1Var.c, fj1Var.d, fj1Var.e));
+            cc0 cc0Var2 = new cc0(true, gj1Var.b, gj1Var.c, gj1Var.d, gj1Var.e);
+            if (gj1Var.h >= 0.0f) {
+                z5Var2.setBackground(new cc0(true, gj1Var.b, gj1Var.c, gj1Var.d, gj1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
                     z5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                 }
             } else {
-                z5Var2.getImageReceiver().setGradientBitmap(nc0Var2.k);
+                z5Var2.getImageReceiver().setGradientBitmap(cc0Var2.k);
             }
-            patternColor = nc0.g(i12, i11, i10, fj1Var.e);
+            patternColor = cc0.g(i12, i11, i10, gj1Var.e);
         } else {
             patternColor = AndroidUtilities.getPatternColor(i12);
         }
         int i13 = patternColor;
-        if ("d".equals(fj1Var.a)) {
-            if (fj1Var.m == null) {
-                fj1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
+        if ("d".equals(gj1Var.a)) {
+            if (gj1Var.m == null) {
+                gj1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
             }
-            z5Var2.setImageBitmap(fj1Var.m);
-            z5Var2.getImageReceiver().setAlpha(Math.abs(fj1Var.h));
+            z5Var2.setImageBitmap(gj1Var.m);
+            z5Var2.getImageReceiver().setAlpha(Math.abs(gj1Var.h));
             return;
         }
         if (file3 != null) {
             z5Var2.f(file3.getAbsolutePath(), "180_180", null);
             return;
         }
-        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(fj1Var.g.document.thumbs, 100);
-        z5Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, fj1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : fj1Var.g.document.size, "jpg", fj1Var.g, 1);
-        z5Var2.getImageReceiver().setAlpha(Math.abs(fj1Var.h));
+        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(gj1Var.g.document.thumbs, 100);
+        z5Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, gj1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : gj1Var.g.document.size, "jpg", gj1Var.g, 1);
+        z5Var2.getImageReceiver().setAlpha(Math.abs(gj1Var.h));
         if (Build.VERSION.SDK_INT < 29 || i10 == 0) {
             z5Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(i13), PorterDuff.Mode.SRC_IN));
         }

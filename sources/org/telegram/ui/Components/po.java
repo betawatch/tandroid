@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class po {
     public final org.telegram.ui.ActionBar.f1 a;
@@ -33,26 +33,26 @@ public final class po {
     public final TextView n;
     public int o;
 
-    public po(Context context, int i10, hh0 hh0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.f6 f6Var) {
+    public po(Context context, int i10, ug0 ug0Var, boolean z10, final oo ooVar, org.telegram.ui.ActionBar.e6 e6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         Integer num;
         this.g = i10;
         this.i = ooVar;
-        no noVar = new no(context, z10 ? R.drawable.popup_fixed_alert : 0, 0, f6Var, 0);
+        no noVar = new no(context, z10 ? R.drawable.popup_fixed_alert : 0, 0, e6Var, 0);
         noVar.U = new Path();
         this.f = noVar;
         noVar.setFitItems(true);
-        if (hh0Var != null) {
+        if (ug0Var != null) {
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
-            org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, f6Var);
+            org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, e6Var);
             this.a = c10;
-            c10.setOnClickListener(new k8(hh0Var, 1));
+            c10.setOnClickListener(new j8(ug0Var, 1));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout = noVar;
             num = 1;
         }
-        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), false, f6Var);
+        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), false, e6Var);
         this.b = c11;
         final int i11 = 0;
         c11.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -72,12 +72,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -85,16 +85,16 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, f6Var);
+        org.telegram.ui.ActionBar.f1 c12 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, e6Var);
         this.d = c12;
         final int i12 = 1;
         c12.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -114,12 +114,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -127,16 +127,16 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, f6Var);
+        org.telegram.ui.ActionBar.f1 c13 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, LocaleController.getString(R.string.MuteFor1h), false, e6Var);
         this.e = c13;
         final int i13 = 2;
         c13.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -156,12 +156,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -169,19 +169,19 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
             }
         });
         Integer num2 = num;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), false, f6Var).setOnClickListener(new mo(this, context, f6Var, i10, ooVar, 0));
+        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), false, e6Var).setOnClickListener(new mo(this, context, e6Var, i10, ooVar, 0));
         final int i14 = 3;
-        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), false, f6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
+        org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), false, e6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
             public final /* synthetic */ po b;
 
             {
@@ -198,12 +198,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -211,16 +211,16 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, "", false, f6Var);
+        org.telegram.ui.ActionBar.f1 c14 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, "", false, e6Var);
         this.c = c14;
         final int i15 = 4;
         c14.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
@@ -240,12 +240,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -253,10 +253,10 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
@@ -264,17 +264,17 @@ public final class po {
         });
         FrameLayout frameLayout = new FrameLayout(context);
         this.m = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H8, f6Var));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.y5.n(-1, 8));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.H8, e6Var));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, w7.x5.n(-1, 8));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, f6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, e6Var));
         frameLayout.setTag(R.id.fit_width_tag, num2);
         textView.setTag(R.id.fit_width_tag, num2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.y5.n(-2, -2));
-        textView.setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.I5, f6Var), 0, 6));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.x5.n(-2, -2));
+        textView.setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.I5, e6Var), 0, 6));
         final int i16 = 5;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.lo
             public final /* synthetic */ po b;
@@ -293,12 +293,12 @@ public final class po {
                     case 1:
                         po poVar = this.b;
                         poVar.a();
-                        ooVar.u(poVar.l);
+                        ooVar.t(poVar.l);
                         break;
                     case 2:
                         po poVar2 = this.b;
                         poVar2.a();
-                        ooVar.u(poVar2.k);
+                        ooVar.t(poVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -306,10 +306,10 @@ public final class po {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new og(ooVar, 27));
+                        AndroidUtilities.runOnUIThread(new ng(ooVar, 27));
                         break;
                     default:
-                        ooVar.k();
+                        ooVar.l();
                         this.b.a();
                         break;
                 }
@@ -396,7 +396,7 @@ public final class po {
         int i11;
         int i12;
         if (System.currentTimeMillis() - this.j < 200) {
-            AndroidUtilities.runOnUIThread(new a3.g0(this, j3, j10, hashSet, 13));
+            AndroidUtilities.runOnUIThread(new a3.g0(this, j3, j10, hashSet, 12));
             return;
         }
         int i13 = this.g;
@@ -405,11 +405,11 @@ public final class po {
         org.telegram.ui.ActionBar.f1 f1Var2 = this.c;
         if (isDialogMuted) {
             f1Var2.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
-            i10 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.x6, false);
+            i10 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.x6, false);
             f1Var.setVisibility(8);
         } else {
             f1Var2.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false);
             f1Var.setVisibility(0);
             if (MessagesController.getInstance(i13).isDialogNotificationsSoundEnabled(j3, j10)) {
                 f1Var.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
@@ -433,7 +433,7 @@ public final class po {
         if (i12 != 0) {
             this.l = i12;
             f1Var3.setVisibility(0);
-            f1Var3.getImageView().setImageDrawable(l21.a(i12));
+            f1Var3.getImageView().setImageDrawable(v11.a(i12));
             f1Var3.setText(b(i12));
         } else {
             f1Var3.setVisibility(8);
@@ -442,13 +442,13 @@ public final class po {
         if (i11 != 0) {
             this.k = i11;
             f1Var4.setVisibility(0);
-            f1Var4.getImageView().setImageDrawable(l21.a(i11));
+            f1Var4.getImageView().setImageDrawable(v11.a(i11));
             f1Var4.setText(b(i11));
         } else {
             f1Var4.setVisibility(8);
         }
         f1Var2.c(i10, i10);
-        f1Var2.setSelectorColor(org.telegram.ui.ActionBar.j6.l1(0.1f, i10));
+        f1Var2.setSelectorColor(org.telegram.ui.ActionBar.i6.l1(0.1f, i10));
         FrameLayout frameLayout = this.m;
         TextView textView = this.n;
         if (hashSet == null || hashSet.isEmpty()) {
@@ -457,7 +457,7 @@ public final class po {
         } else {
             frameLayout.setVisibility(0);
             textView.setVisibility(0);
-            textView.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("TopicNotificationsExceptions", hashSet.size(), new Object[0]), org.telegram.ui.ActionBar.j6.n6, 1, null));
+            textView.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("TopicNotificationsExceptions", hashSet.size(), new Object[0]), org.telegram.ui.ActionBar.i6.n6, 1, null));
         }
     }
 }

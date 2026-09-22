@@ -2,11 +2,11 @@ package ei;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class j1 implements org.telegram.ui.Cells.t0 {
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 P0() {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 O0() {
         return null;
     }
 
@@ -31,7 +31,7 @@ public final class j1 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void R0(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    public final /* synthetic */ void Q0(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -39,19 +39,19 @@ public final class j1 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void l0(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void k0(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void s0(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void r0(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void y1(long j3) {
+    public final /* synthetic */ void x1(long j3) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void z1(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void y1(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -67,11 +67,11 @@ public final class j1 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void h0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
+    public final /* synthetic */ void g0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void h1(org.telegram.ui.Cells.w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+    public final /* synthetic */ void g1(org.telegram.ui.Cells.w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
     }
 
     @Override // org.telegram.ui.Cells.t0

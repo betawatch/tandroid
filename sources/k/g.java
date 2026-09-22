@@ -10,11 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.lang.reflect.Constructor;
+import l.m;
 import l.n;
-import l.o;
-import l.s;
+import l.r;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -39,7 +39,7 @@ public final class g {
     public int w;
     public String x;
     public String y;
-    public o z;
+    public n z;
     public ColorStateList C = null;
     public PorterDuff.Mode D = null;
     public int b = 0;
@@ -90,25 +90,25 @@ public final class g {
                 fVar.b = cls.getMethod(str, f.c);
                 menuItem.setOnMenuItemClickListener(fVar);
             } catch (Exception e) {
-                StringBuilder v = a4.a.v("Couldn't resolve menu item onClick handler ", str, " in class ");
-                v.append(cls.getName());
-                InflateException inflateException = new InflateException(v.toString());
+                StringBuilder w10 = a4.a.w("Couldn't resolve menu item onClick handler ", str, " in class ");
+                w10.append(cls.getName());
+                InflateException inflateException = new InflateException(w10.toString());
                 inflateException.initCause(e);
                 throw inflateException;
             }
         }
         if (this.r >= 2) {
-            if (menuItem instanceof n) {
-                n nVar = (n) menuItem;
-                nVar.x = (nVar.x & (-5)) | 4;
-            } else if (menuItem instanceof s) {
-                s sVar = (s) menuItem;
-                l0.a aVar = sVar.c;
+            if (menuItem instanceof m) {
+                m mVar = (m) menuItem;
+                mVar.x = (mVar.x & (-5)) | 4;
+            } else if (menuItem instanceof r) {
+                r rVar = (r) menuItem;
+                l0.a aVar = rVar.c;
                 try {
-                    if (sVar.d == null) {
-                        sVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
+                    if (rVar.d == null) {
+                        rVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
                     }
-                    sVar.d.invoke(aVar, Boolean.TRUE);
+                    rVar.d.invoke(aVar, Boolean.TRUE);
                 } catch (Exception e7) {
                     Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e7);
                 }
@@ -127,10 +127,10 @@ public final class g {
                 menuItem.setActionView(i11);
             }
         }
-        o oVar = this.z;
-        if (oVar != null) {
+        n nVar = this.z;
+        if (nVar != null) {
             if (menuItem instanceof l0.a) {
-                ((l0.a) menuItem).a(oVar);
+                ((l0.a) menuItem).a(nVar);
             } else {
                 Log.w("MenuItemCompat", "setActionProvider: item does not implement SupportMenuItem; ignoring");
             }

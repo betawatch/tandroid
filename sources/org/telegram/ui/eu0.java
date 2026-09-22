@@ -9,7 +9,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class eu0 extends tu0 {
     public final ImageReceiver.BitmapHolder a;
@@ -55,7 +55,7 @@ public final class eu0 extends tu0 {
     public final void c0(VideoEditedInfo videoEditedInfo, boolean z10, int i10, boolean z11, boolean z12) {
         PhotoViewer photoViewer = this.g;
         if (photoViewer.l4 != null) {
-            pn pnVar = null;
+            rn rnVar = null;
             MessageObject messageObject = this.c;
             MessageObject messageObject2 = z11 ? messageObject : null;
             MediaController.PhotoEntry photoEntry = this.d;
@@ -64,27 +64,27 @@ public final class eu0 extends tu0 {
                 messageObject2.editingMessageEntities = photoEntry.entities;
             }
             if (z11 || messageObject == null) {
-                zn znVar = photoViewer.l4;
-                messageObject = znVar.n5;
-                pnVar = znVar.l5;
+                bo boVar = photoViewer.l4;
+                messageObject = boVar.n5;
+                rnVar = boVar.l5;
             }
-            pn pnVar2 = pnVar;
+            rn rnVar2 = rnVar;
             MessageObject messageObject3 = messageObject;
             if (photoEntry.isVideo) {
                 if (videoEditedInfo != null) {
                     AccountInstance accountInstance = photoViewer.l4.getAccountInstance();
                     String str = photoEntry.path;
                     long a2 = photoViewer.l4.a();
-                    zn znVar2 = photoViewer.l4;
-                    SendMessagesHelper.prepareSendingVideo(accountInstance, str, videoEditedInfo, null, null, a2, messageObject3, znVar2.X3, null, pnVar2, photoEntry.entities, photoEntry.ttl, messageObject2, z10, i10, 0, z12, photoEntry.hasSpoiler, photoEntry.caption, znVar2.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
+                    bo boVar2 = photoViewer.l4;
+                    SendMessagesHelper.prepareSendingVideo(accountInstance, str, videoEditedInfo, null, null, a2, messageObject3, boVar2.X3, null, rnVar2, photoEntry.entities, photoEntry.ttl, messageObject2, z10, i10, 0, z12, photoEntry.hasSpoiler, photoEntry.caption, boVar2.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
                     return;
                 }
                 MessageObject messageObject4 = messageObject2;
                 AccountInstance accountInstance2 = photoViewer.l4.getAccountInstance();
                 String str2 = photoEntry.path;
                 long a10 = photoViewer.l4.a();
-                zn znVar3 = photoViewer.l4;
-                SendMessagesHelper.prepareSendingVideo(accountInstance2, str2, null, null, null, a10, messageObject3, znVar3.X3, null, pnVar2, photoEntry.entities, photoEntry.ttl, messageObject4, z10, i10, 0, z12, photoEntry.hasSpoiler, photoEntry.caption, znVar3.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
+                bo boVar3 = photoViewer.l4;
+                SendMessagesHelper.prepareSendingVideo(accountInstance2, str2, null, null, null, a10, messageObject3, boVar3.X3, null, rnVar2, photoEntry.entities, photoEntry.ttl, messageObject4, z10, i10, 0, z12, photoEntry.hasSpoiler, photoEntry.caption, boVar3.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
                 return;
             }
             MessageObject messageObject5 = messageObject2;
@@ -93,8 +93,8 @@ public final class eu0 extends tu0 {
                 String str3 = photoEntry.imagePath;
                 String str4 = photoEntry.thumbPath;
                 long a11 = photoViewer.l4.a();
-                zn znVar4 = photoViewer.l4;
-                SendMessagesHelper.prepareSendingPhoto(accountInstance3, str3, str4, null, a11, messageObject3, znVar4.X3, null, pnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z10, i10, 0, 0, z12, photoEntry.caption, znVar4.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
+                bo boVar4 = photoViewer.l4;
+                SendMessagesHelper.prepareSendingPhoto(accountInstance3, str3, str4, null, a11, messageObject3, boVar4.X3, null, rnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z10, i10, 0, 0, z12, photoEntry.caption, boVar4.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
                 return;
             }
             if (photoEntry.path != null) {
@@ -102,8 +102,8 @@ public final class eu0 extends tu0 {
                 String str5 = photoEntry.path;
                 String str6 = photoEntry.thumbPath;
                 long a12 = photoViewer.l4.a();
-                zn znVar5 = photoViewer.l4;
-                SendMessagesHelper.prepareSendingPhoto(accountInstance4, str5, str6, null, a12, messageObject3, znVar5.X3, null, pnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z10, i10, 0, 0, z12, photoEntry.caption, znVar5.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
+                bo boVar5 = photoViewer.l4;
+                SendMessagesHelper.prepareSendingPhoto(accountInstance4, str5, str6, null, a12, messageObject3, boVar5.X3, null, rnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z10, i10, 0, 0, z12, photoEntry.caption, boVar5.C8(), 0L, 0L, photoViewer.l4.N8(), photoViewer.l4.g5);
             }
         }
     }

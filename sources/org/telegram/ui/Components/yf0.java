@@ -1,41 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yf0 implements Runnable {
+public final class yf0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ag0 b;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    public /* synthetic */ yf0(ag0 ag0Var, int i10) {
+    public /* synthetic */ yf0(PipRoundVideoView pipRoundVideoView, int i10) {
         this.a = i10;
-        this.b = ag0Var;
+        this.b = pipRoundVideoView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.iu0 iu0Var = this.b.a;
-                RadialProgressView radialProgressView = iu0Var.n;
-                View view = iu0Var.r;
-                radialProgressView.setVisibility(4);
-                if (iu0Var.F) {
-                    iu0Var.F = false;
-                    iu0Var.setPlaybackSpeed(iu0Var.E);
-                }
-                view.setEnabled(true);
-                view.setAlpha(1.0f);
-                PhotoViewer photoViewer = iu0Var.b;
-                if (photoViewer != null) {
-                    photoViewer.z0();
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
                     break;
                 }
                 break;
             default:
-                this.b.a.h.setVisibility(4);
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

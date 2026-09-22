@@ -31,14 +31,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.l0;
+import org.telegram.messenger.y0;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -55,13 +55,13 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public l71 d;
+    public u61 d;
     public g e;
     public final RectF f;
     public final RectF h;
     public float n;
     public final boolean r;
-    public final k2.e s;
+    public final a4.m s;
     public final Matrix v;
     public Bitmap w;
     public boolean x;
@@ -77,9 +77,9 @@ public class p extends FrameLayout implements a {
         this.f = new RectF();
         this.h = new RectF();
         this.c = new Matrix();
-        k2.e eVar = new k2.e(2);
-        eVar.b = new float[8];
-        this.s = eVar;
+        a4.m mVar = new a4.m(24, false);
+        mVar.b = new float[8];
+        this.s = mVar;
         this.v = new Matrix();
         this.F = false;
         ImageView imageView = new ImageView(context);
@@ -324,8 +324,8 @@ public class p extends FrameLayout implements a {
         d(rectF);
         o oVar = this.M;
         if (oVar != null) {
-            oVar.Z(false);
-            this.M.G(true);
+            oVar.g0(false);
+            this.M.L(true);
         }
     }
 
@@ -345,7 +345,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            l0.m(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            y0.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -463,9 +463,9 @@ public class p extends FrameLayout implements a {
         float f11 = (cropWidth - a2) / 2.0f;
         n nVar = this.L;
         float f12 = nVar.e;
-        k2.e eVar = this.s;
-        float[] fArr = (float[]) eVar.b;
-        float[] fArr2 = (float[]) eVar.b;
+        a4.m mVar = this.s;
+        float[] fArr = (float[]) mVar.b;
+        float[] fArr2 = (float[]) mVar.b;
         float f13 = rectF2.left;
         fArr[0] = f13;
         float f14 = rectF2.top;
@@ -552,9 +552,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        l71 l71Var = this.d;
-        if (l71Var != null) {
-            return l71Var.getVideoHeight();
+        u61 u61Var = this.d;
+        if (u61Var != null) {
+            return u61Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        l71 l71Var = this.d;
-        if (l71Var != null) {
-            return l71Var.getVideoWidth();
+        u61 u61Var = this.d;
+        if (u61Var != null) {
+            return u61Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -685,7 +685,7 @@ public class p extends FrameLayout implements a {
             if (!n.c(nVar2) && f11 == 0.0f && this.a.getLockAspectRatio() == 0.0f && !this.L.j) {
                 z10 = true;
             }
-            oVar.Z(z10);
+            oVar.g0(z10);
         }
         return this.L.j;
     }
@@ -719,8 +719,8 @@ public class p extends FrameLayout implements a {
         this.n = 0.0f;
         o oVar = this.M;
         if (oVar != null) {
-            oVar.Z(true);
-            this.M.G(false);
+            oVar.g0(true);
+            this.M.L(false);
         }
     }
 
@@ -748,7 +748,7 @@ public class p extends FrameLayout implements a {
             e(true, false, false, false);
             o oVar = this.M;
             if (oVar != null) {
-                oVar.Z(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
+                oVar.g0(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
             }
             if (((int) this.L.h) != 0) {
                 return true;
@@ -807,7 +807,7 @@ public class p extends FrameLayout implements a {
                     this.n = 0.0f;
                     o oVar = this.M;
                     if (oVar != null) {
-                        oVar.Z(false);
+                        oVar.g0(false);
                     }
                 }
                 try {
@@ -916,7 +916,7 @@ public class p extends FrameLayout implements a {
         matrix.postTranslate(cropAreaView.getCropCenterX(), cropAreaView.getCropCenterY());
         if (!this.x || this.J || z10) {
             q();
-            this.M.x();
+            this.M.z();
         }
         invalidate();
     }

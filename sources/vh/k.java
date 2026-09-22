@@ -1,7 +1,67 @@
 package vh;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.Iterator;
+import java.util.List;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public interface k {
-    void l(g gVar, float f7, float f10);
+public final class k extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ l c;
+    public final /* synthetic */ m d;
+
+    public k(m mVar, View view, List list, l lVar) {
+        this.d = mVar;
+        this.a = view;
+        this.b = list;
+        this.c = lVar;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x10 = (int) motionEvent.getX();
+        int y3 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y3;
+        int paddingLeft = x10 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        m mVar = this.d;
+        int i10 = paddingLeft - mVar.c;
+        int i11 = paddingTop - mVar.d;
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            if (((h) it.next()).getBounds().contains(i10, i11)) {
+                mVar.b = true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        m mVar = this.d;
+        if (mVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            mVar.b = false;
+            int x10 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x10 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i10 = paddingLeft - mVar.c;
+            int i11 = paddingTop - mVar.d;
+            for (h hVar : this.b) {
+                if (hVar.getBounds().contains(i10, i11)) {
+                    this.c.j(hVar, i10, i11);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

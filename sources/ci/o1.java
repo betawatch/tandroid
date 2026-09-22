@@ -13,25 +13,25 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class o1 extends View {
     public boolean a;
     public final int b;
-    public org.telegram.ui.Components.p5 c;
+    public org.telegram.ui.Components.o5 c;
     public final p1 d;
     public ImageReceiver e;
     public long f;
     public final ImageReceiver.BackgroundThreadDrawHolder[] h;
     public ImageReceiver n;
-    public final org.telegram.ui.Components.yc r;
+    public final org.telegram.ui.Components.wc r;
     public boolean s;
 
     public o1(Context context, p1 p1Var) {
         super(context);
         this.b = UserConfig.selectedAccount;
         this.h = new ImageReceiver.BackgroundThreadDrawHolder[2];
-        this.r = new org.telegram.ui.Components.yc(this);
+        this.r = new org.telegram.ui.Components.wc(this);
         setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         this.d = p1Var;
     }
@@ -40,9 +40,9 @@ public final class o1 extends View {
         if (this.f == (document == null ? 0L : document.id)) {
             return;
         }
-        org.telegram.ui.Components.p5 p5Var = this.c;
-        if (p5Var != null) {
-            p5Var.o(this);
+        org.telegram.ui.Components.o5 o5Var = this.c;
+        if (o5Var != null) {
+            o5Var.o(this);
         }
         if (document == null) {
             this.a = false;
@@ -53,7 +53,7 @@ public final class o1 extends View {
         this.a = true;
         this.f = document.id;
         int i10 = t2.G;
-        org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(this.b, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
+        org.telegram.ui.Components.o5 m10 = org.telegram.ui.Components.o5.m(this.b, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
         this.c = m10;
         if (this.s) {
             m10.a(this);
@@ -73,9 +73,9 @@ public final class o1 extends View {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.s = true;
-        org.telegram.ui.Components.p5 p5Var = this.c;
-        if (p5Var != null) {
-            p5Var.a(this);
+        org.telegram.ui.Components.o5 o5Var = this.c;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
         ImageReceiver imageReceiver = this.e;
         if (imageReceiver != null) {
@@ -87,9 +87,9 @@ public final class o1 extends View {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.s = false;
-        org.telegram.ui.Components.p5 p5Var = this.c;
-        if (p5Var != null) {
-            p5Var.o(this);
+        org.telegram.ui.Components.o5 o5Var = this.c;
+        if (o5Var != null) {
+            o5Var.o(this);
         }
         ImageReceiver imageReceiver = this.e;
         if (imageReceiver != null) {
@@ -105,9 +105,9 @@ public final class o1 extends View {
             this.e.draw(canvas);
             return;
         }
-        org.telegram.ui.Components.p5 p5Var = this.c;
-        if (p5Var != null) {
-            p5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+        org.telegram.ui.Components.o5 o5Var = this.c;
+        if (o5Var != null) {
+            o5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
             this.c.draw(canvas);
         }
     }
@@ -119,9 +119,9 @@ public final class o1 extends View {
     }
 
     public void setDrawable(Drawable drawable) {
-        org.telegram.ui.Components.p5 p5Var = this.c;
-        if (p5Var != null) {
-            p5Var.o(this);
+        org.telegram.ui.Components.o5 o5Var = this.c;
+        if (o5Var != null) {
+            o5Var.o(this);
         }
         this.c = null;
         this.f = 0L;

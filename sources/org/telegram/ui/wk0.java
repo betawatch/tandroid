@@ -1,12 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.net.Uri;
+import android.text.TextUtils;
+import java.io.File;
+import java.io.IOException;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class wk0 {
-    public int a;
+    public boolean a;
     public boolean b;
     public int c;
-    public long d;
-    public boolean e;
-    public boolean f;
+    public int d;
+    public TLRPC.Document e;
+    public String f;
+    public String g;
+
+    public final Uri a(int i10) {
+        if (!TextUtils.isEmpty(this.g)) {
+            return Uri.fromFile(new File(this.g));
+        }
+        TLRPC.Document document = this.e;
+        if (document == null) {
+            return null;
+        }
+        String str = document.file_name_fixed;
+        String documentExtension = FileLoader.getDocumentExtension(document);
+        if (documentExtension == null) {
+            return null;
+        }
+        String lowerCase = documentExtension.toLowerCase();
+        if (!str.endsWith(lowerCase)) {
+            str = a4.a.D(str, ".", lowerCase);
+        }
+        File file = new File(AndroidUtilities.getCacheDir(), str);
+        if (!file.exists()) {
+            try {
+                AndroidUtilities.copyFile(FileLoader.getInstance(i10).getPathToAttach(this.e), file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return Uri.fromFile(file);
+    }
 }

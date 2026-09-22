@@ -4,7 +4,7 @@ import android.util.Pair;
 import ei.d5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v0 {
     public final j2.f c;
@@ -334,13 +334,13 @@ public final class v0 {
         this.d.c(new gg.t(this, u10, t0Var2 == null ? null : t0Var2.g.a, 13));
     }
 
-    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.e1] */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.d1] */
     public final void m(long j3) {
         t0 t0Var = this.l;
         if (t0Var != null) {
             e2.d.g(t0Var.m == null);
             if (t0Var.e) {
-                t0Var.a.v(j3 - t0Var.p);
+                t0Var.a.u(j3 - t0Var.p);
             }
         }
     }

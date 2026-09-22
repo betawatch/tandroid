@@ -15,16 +15,16 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class b1 extends ImageView {
     public static final /* synthetic */ int L = 0;
     public ImageReceiver E;
-    public p5 F;
+    public o5 F;
     public float G;
     public boolean H;
     public boolean I;
@@ -32,8 +32,8 @@ public class b1 extends ImageView {
     public Integer K;
     public final int a;
     public final float[] b;
-    public final v1 c;
-    public final f6 d;
+    public final u1 c;
+    public final e6 d;
     public boolean e;
     public final float f;
     public boolean h;
@@ -45,7 +45,7 @@ public class b1 extends ImageView {
     public Paint x;
     public Paint y;
 
-    public b1(Context context, int i10, f6 f6Var) {
+    public b1(Context context, int i10, e6 e6Var) {
         super(context);
         this.b = new float[3];
         this.f = 1.0f;
@@ -56,23 +56,23 @@ public class b1 extends ImageView {
         this.x = new Paint(1);
         this.G = 1.0f;
         this.a = i10;
-        this.d = f6Var;
+        this.d = e6Var;
         setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i10 == 0) {
-            v1 v1Var = new v1(5);
-            this.c = v1Var;
-            v1Var.g();
-            v1Var.M = false;
-            v1Var.s = 4;
-            v1Var.t = 4;
-            v1Var.r = 2;
-            v1Var.o = 0.1f;
-            v1Var.c();
+            u1 u1Var = new u1(5);
+            this.c = u1Var;
+            u1Var.g();
+            u1Var.M = false;
+            u1Var.s = 4;
+            u1Var.t = 4;
+            u1Var.r = 2;
+            u1Var.o = 0.1f;
+            u1Var.c();
             return;
         }
         if (i10 == 2) {
             this.f = 0.8f;
-            this.x.setColor(j6.w0(null, j6.a7, false));
+            this.x.setColor(i6.w0(null, i6.a7, false));
         } else if (i10 == 3) {
             setScaleType(ImageView.ScaleType.CENTER);
             setImageResource(R.drawable.msg_archive_hide);
@@ -94,10 +94,10 @@ public class b1 extends ImageView {
             fArr[2] = 0.7f;
         }
         int HSVToColor = Color.HSVToColor(fArr);
-        int i11 = j6.d6;
-        f6 f6Var = this.d;
-        int d = i0.a.d(0.5f, HSVToColor, j6.v0(i11, f6Var));
-        int d10 = i0.a.d(0.4f, HSVToColor, j6.v0(i11, f6Var));
+        int i11 = i6.d6;
+        e6 e6Var = this.d;
+        int d = i0.a.d(0.5f, HSVToColor, i6.v0(i11, e6Var));
+        int d10 = i0.a.d(0.4f, HSVToColor, i6.v0(i11, e6Var));
         if (this.v != null && this.r == d10 && this.s == d) {
             return;
         }
@@ -155,19 +155,19 @@ public class b1 extends ImageView {
         if (this.H) {
             ImageReceiver imageReceiver = this.E;
             if (imageReceiver == null || imageReceiver.getBitmap() == null) {
-                p5 p5Var = this.F;
-                if (p5Var != null) {
-                    SparseArray sparseArray = p5.q;
-                    long i10 = p5Var.i();
+                o5 o5Var = this.F;
+                if (o5Var != null) {
+                    SparseArray sparseArray = o5.q;
+                    long i10 = o5Var.i();
                     if (i10 != 0) {
-                        if (p5.w == null) {
-                            p5.w = new HashMap();
+                        if (o5.w == null) {
+                            o5.w = new HashMap();
                         }
-                        Integer num = (Integer) p5.w.get(Long.valueOf(i10));
-                        if (num == null && (l4Var = p5Var.k) != null && l4Var.getBitmap() != null) {
-                            HashMap hashMap = p5.w;
+                        Integer num = (Integer) o5.w.get(Long.valueOf(i10));
+                        if (num == null && (l4Var = o5Var.k) != null && l4Var.getBitmap() != null) {
+                            HashMap hashMap = o5.w;
                             Long valueOf = Long.valueOf(i10);
-                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(p5Var.k.getBitmap()));
+                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(o5Var.k.getBitmap()));
                             hashMap.put(valueOf, valueOf2);
                             num = valueOf2;
                         }
@@ -279,14 +279,14 @@ public class b1 extends ImageView {
         rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(2.5f), AndroidUtilities.dpf2(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
         path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), direction);
         path.close();
-        v1 v1Var = this.c;
-        v1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        v1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
+        u1 u1Var = this.c;
+        u1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        u1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
     }
 
-    public void setAnimatedEmojiDrawable(p5 p5Var) {
-        this.F = p5Var;
-        if (p5Var != null) {
+    public void setAnimatedEmojiDrawable(o5 o5Var) {
+        this.F = o5Var;
+        if (o5Var != null) {
             this.H = true;
             invalidate();
         }
@@ -300,7 +300,7 @@ public class b1 extends ImageView {
         this.h = true;
         Integer num = this.K;
         if (num != null) {
-            i10 = j6.v(i10, num.intValue());
+            i10 = i6.v(i10, num.intValue());
         }
         if (this.n != i10) {
             this.n = i10;

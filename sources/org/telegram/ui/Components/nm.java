@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class nm {
     public TextPaint B;
@@ -33,7 +33,7 @@ public final class nm {
     public float m;
     public float n;
     public float o;
-    public vh.f s;
+    public vh.g s;
     public Bitmap v;
     public RectF f = null;
     public final RectF g = new RectF();
@@ -79,24 +79,24 @@ public final class nm {
         if (nmVar.c == null) {
             nmVar.c = new ImageReceiver(omVar.z);
             nmVar.d = new ImageReceiver(omVar.z);
-            nmVar.c.setDelegate(new a3(6, nmVar, photoEntry));
+            nmVar.c.setDelegate(new mf(5, nmVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {
-            nmVar.c.setImage(ImageLocation.getForPath(str), null, null, null, org.telegram.ui.ActionBar.j6.R4, 0L, null, null, 0);
+            nmVar.c.setImage(ImageLocation.getForPath(str), null, null, null, org.telegram.ui.ActionBar.i6.R4, 0L, null, null, 0);
             return;
         }
         if (photoEntry.path == null) {
-            nmVar.c.setImageBitmap(org.telegram.ui.ActionBar.j6.R4);
+            nmVar.c.setImageBitmap(org.telegram.ui.ActionBar.i6.R4);
             return;
         }
         if (photoEntry.isVideo) {
-            nmVar.c.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.j6.R4, 0L, null, null, 0);
+            nmVar.c.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.i6.R4, 0L, null, null, 0);
             nmVar.c.setAllowStartAnimation(true);
             return;
         }
         nmVar.c.setOrientation(photoEntry.orientation, true);
-        nmVar.c.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.j6.R4, 0L, null, null, 0);
+        nmVar.c.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.i6.R4, 0L, null, null, 0);
     }
 
     public static void b(nm nmVar, jm jmVar, MessageObject.GroupedMessagePosition groupedMessagePosition, boolean z10) {
@@ -267,15 +267,15 @@ public final class nm {
                 this.d.setAlpha(lerp);
                 this.d.draw(canvas);
                 if (this.s == null) {
-                    this.s = vh.f.e(pmVar2);
+                    this.s = vh.g.e(pmVar2);
                 }
-                vh.f fVar = this.s;
+                vh.g gVar = this.s;
                 int width = pmVar2.getWidth();
                 int height = pmVar2.getHeight();
                 pmVar = pmVar2;
                 c10 = 3;
                 c11 = 2;
-                fVar.c(canvas, pmVar, width, height, 1.0f, false);
+                gVar.c(canvas, pmVar, width, height, 1.0f, false);
                 canvas.restore();
                 pmVar.invalidate();
                 pmVar.invalidate();
@@ -302,13 +302,13 @@ public final class nm {
             this.d.draw(canvas);
             if (this.s == null) {
             }
-            vh.f fVar2 = this.s;
+            vh.g gVar2 = this.s;
             int width2 = pmVar2.getWidth();
             int height2 = pmVar2.getHeight();
             pmVar = pmVar2;
             c10 = 3;
             c11 = 2;
-            fVar2.c(canvas, pmVar, width2, height2, 1.0f, false);
+            gVar2.c(canvas, pmVar, width2, height2, 1.0f, false);
             canvas.restore();
             pmVar.invalidate();
             pmVar.invalidate();
@@ -387,21 +387,21 @@ public final class nm {
                 z11 = z12;
             }
             TextPaint textPaint2 = this.B;
-            int i17 = org.telegram.ui.ActionBar.j6.V9;
+            int i17 = org.telegram.ui.ActionBar.i6.V9;
             f11 = dp3;
-            textPaint2.setColor(org.telegram.ui.ActionBar.j6.v0(i17, qmVar.a));
+            textPaint2.setColor(org.telegram.ui.ActionBar.i6.v0(i17, qmVar.a));
             int length = str3.length();
             float f24 = (length == 0 || length == 1 || length == 2) ? 14.0f : length != 3 ? 8.0f : 10.0f;
             this.B.setTextSize(AndroidUtilities.dp(f24));
             float f25 = i15 / 2.0f;
             f12 = f23;
-            int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.W9, qmVar.a);
+            int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.W9, qmVar.a);
             Paint paint2 = this.z;
             paint2.setColor(v02);
             float f26 = (int) f25;
             float f27 = dp4;
             canvas2.drawCircle(f26, f26, f27, paint2);
-            int offsetColor = AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.j6.v0(i17, qmVar.a), 1.0f, 1.0f);
+            int offsetColor = AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.i6.v0(i17, qmVar.a), 1.0f, 1.0f);
             Paint paint3 = this.A;
             paint3.setColor(offsetColor);
             paint3.setStyle(Paint.Style.STROKE);
@@ -457,7 +457,7 @@ public final class nm {
                 Canvas canvas3 = new Canvas(this.G);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(0.0f, 0.0f, intrinsicWidth, max);
-                canvas3.drawRoundRect(rectF3, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.j6.i2);
+                canvas3.drawRoundRect(rectF3, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.i2);
                 int dp9 = AndroidUtilities.dp(5.0f);
                 int intrinsicHeight = (int) ((max - drawable.getIntrinsicHeight()) / 2.0f);
                 drawable.setBounds(dp9, intrinsicHeight, drawable.getIntrinsicWidth() + dp9, drawable.getIntrinsicHeight() + intrinsicHeight);
@@ -504,7 +504,7 @@ public final class nm {
         RectF f10 = f(e());
         float f11 = 1.0f - lerp;
         float f12 = lerp + 1.0f;
-        f10.set(a4.a.A(f10.width(), f11, 2.0f, f10.left), ((f10.height() * f11) / 2.0f) + f10.top, a4.a.A(f10.width(), f12, 2.0f, f10.left), ((f10.height() * f12) / 2.0f) + f10.top);
+        f10.set(a4.a.B(f10.width(), f11, 2.0f, f10.left), ((f10.height() * f11) / 2.0f) + f10.top, a4.a.B(f10.width(), f12, 2.0f, f10.left), ((f10.height() * f12) / 2.0f) + f10.top);
         return f10;
     }
 

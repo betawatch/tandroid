@@ -1,7 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import java.util.function.ToDoubleFunction;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public interface k71 {
-    void b(vz vzVar);
+public final /* synthetic */ class k71 implements ToDoubleFunction {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ k71(int i10) {
+        this.a = i10;
+    }
+
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((m71) obj).a;
+            case 1:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 2:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 3:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 4:
+                return yh.s0.P((TL_stars.starGiftAttributeBackdrop) obj);
+            case 5:
+                return yh.s0.P((TL_stars.starGiftAttributePattern) obj);
+            default:
+                return yh.s0.P((TL_stars.starGiftAttributeModel) obj);
+        }
+    }
 }

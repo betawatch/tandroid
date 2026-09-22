@@ -9,11 +9,11 @@ import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
 import org.telegram.messenger.BuildConfig;
-import v7.d9;
-import v7.k8;
-import v7.y7;
+import v7.c9;
+import v7.j8;
+import v7.x7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static boolean a = false;
@@ -44,15 +44,15 @@ public abstract class e {
                     return 0;
                 }
                 try {
-                    i8.e a2 = k8.a(context);
+                    i8.e a2 = j8.a(context);
                     try {
                         i8.a W0 = a2.W0();
                         l.h(W0);
-                        y7.a = W0;
+                        x7.a = W0;
                         s7.e Y0 = a2.Y0();
-                        if (d9.b == null) {
+                        if (c9.b == null) {
                             l.i(Y0, "delegate must not be null");
-                            d9.b = Y0;
+                            c9.b = Y0;
                         }
                         a = true;
                         try {

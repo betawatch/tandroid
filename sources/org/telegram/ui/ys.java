@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ys extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ContactsActivity a;
@@ -32,7 +32,7 @@ public final class ys extends org.telegram.ui.ActionBar.j {
         if (i10 != 100) {
             if (i10 != 1) {
                 if (i10 == 0) {
-                    contactsActivity.f.y0(0);
+                    contactsActivity.f.x0(0);
                     AndroidUtilities.doOnPreDraw(contactsActivity.Z.r, new dj(this, 14));
                     return;
                 }
@@ -55,7 +55,7 @@ public final class ys extends org.telegram.ui.ActionBar.j {
             alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactsSubtitle);
         }
         alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new vs(contactsActivity));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.lg0(21));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.in0(16));
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.show();
         b2Var.h();

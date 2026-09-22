@@ -1,195 +1,227 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.Property;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class y90 extends v7.i0 {
-    public int a;
-    public final TL_iv.PageBlock b;
-    public TL_iv.textConcat c = new TL_iv.textConcat();
+public final class y90 extends yu0 {
+    public AnimatorSet f2;
+    public final /* synthetic */ FrameLayout g2;
+    public final /* synthetic */ v90 h2;
+    public final /* synthetic */ ba0 i2;
 
-    public y90(TL_iv.PageBlock pageBlock) {
-        this.b = pageBlock;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y90(ba0 ba0Var, Context context, long j3, qu0 qu0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, ba0 ba0Var2, x90 x90Var, org.telegram.ui.ActionBar.e6 e6Var, FrameLayout frameLayout, v90 v90Var) {
+        super(context, j3, qu0Var, 0, null, chatFull, userFull, i10, 0, ba0Var2, x90Var, 0, e6Var, null);
+        this.i2 = ba0Var;
+        this.g2 = frameLayout;
+        this.h2 = v90Var;
     }
 
-    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
-        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean D() {
+        int i10 = this.i2.a;
+        return (i10 == 1 || i10 == 2) ? false : true;
     }
 
-    @Override // v7.i0
-    public final void a(bf.b bVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
+    @Override // org.telegram.ui.Components.yu0
+    public final void D0(SparseArray sparseArray) {
+        int size = sparseArray.size();
+        ba0 ba0Var = this.i2;
+        ba0Var.I = sparseArray;
+        int i10 = ba0Var.a;
+        if (i10 == 1 || i10 == 2) {
+            ba0Var.F.a();
+            ba0Var.F.c(LocaleController.formatPluralString("StoriesSelected", size, new Object[0]), !LocaleController.isRTL, true);
+            ci.d dVar = ba0Var.T;
+            if (dVar != null) {
+                dVar.setEnabled(size > 0);
+                ba0Var.T.b(size, true);
+                if (ba0Var.V.getClosestTab() == 8) {
+                    ba0Var.T.g(LocaleController.formatPluralString("ArchiveStories", size, new Object[0]), true, true);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void K0(boolean z10) {
+        int i10;
+        ba0 ba0Var = this.i2;
+        Activity parentActivity = ba0Var.getParentActivity();
+        i10 = ((org.telegram.ui.ActionBar.n2) ba0Var).classGuid;
+        AndroidUtilities.removeAdjustResize(parentActivity, i10);
+        AndroidUtilities.updateViewVisibilityAnimated(this.g2, !z10, 0.95f, true);
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void L0() {
+        super.L0();
+        this.i2.a0();
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void M0(float f7) {
+        ba0 ba0Var = this.i2;
+        if (ba0Var.a != 1) {
             return;
         }
-        this.a = i10 + 1;
-        try {
-            v(bVar);
-        } finally {
-            this.a--;
+        float f10 = f7 - 8.0f;
+        aa0 aa0Var = ba0Var.R;
+        if (aa0Var != null) {
+            aa0Var.setProgress(f10);
+        }
+        float f11 = 1.0f - f10;
+        ba0Var.v[0].setAlpha(f11);
+        ba0Var.v[0].setTranslationX(AndroidUtilities.dp(-12.0f) * f10);
+        ba0Var.v[1].setAlpha(f10);
+        ba0Var.v[1].setTranslationX(AndroidUtilities.dp(12.0f) * f11);
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean N() {
+        int i10 = this.i2.a;
+        return i10 == 1 || i10 == 2 || i10 == 3;
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void N0(boolean z10) {
+        aa0 aa0Var = this.i2.R;
+        if (aa0Var != null) {
+            aa0Var.setScrolling(z10);
         }
     }
 
-    @Override // v7.i0
-    public final void b(bf.c cVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
+    @Override // org.telegram.ui.Components.yu0
+    public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
+        this.h2.J(canvas, getY() + f7, rect, paint, true);
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void b1(boolean z10) {
+        ba0 ba0Var = this.i2;
+        if (ba0Var.a == 0) {
+            super.b1(z10);
             return;
         }
-        this.a = i10 + 1;
-        try {
-            v(cVar);
-        } finally {
-            this.a--;
+        if (this.C1 == z10) {
+            return;
         }
-    }
-
-    @Override // v7.i0
-    public final void c(bf.d dVar) {
-        TL_iv.textFixed textfixed = new TL_iv.textFixed();
-        textfixed.text = ba0.j(dVar.h);
-        w(textfixed);
-    }
-
-    @Override // v7.i0
-    public final void d(bf.e eVar) {
-        if (eVar instanceof ue.a) {
-            TL_iv.textStrike textstrike = new TL_iv.textStrike();
-            textstrike.text = y(eVar);
-            w(textstrike);
-        } else if (eVar instanceof zc.d) {
-            w(ba0.c(((zc.d) eVar).g));
+        this.C1 = z10;
+        AnimatorSet animatorSet = this.f2;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        int i10 = ba0Var.a;
+        if (i10 == 1 || i10 == 2) {
+            if (z10) {
+                g1(null);
+            }
+            this.L1 = z10;
+        }
+        if (z10) {
+            ba0Var.F.setVisibility(0);
+            FrameLayout frameLayout = ba0Var.S;
+            if (frameLayout != null) {
+                frameLayout.setVisibility(0);
+            }
         } else {
-            v(eVar);
+            ba0Var.s.setVisibility(0);
         }
-    }
-
-    @Override // v7.i0
-    public final void e(bf.g gVar) {
-        TL_iv.textItalic textitalic = new TL_iv.textItalic();
-        textitalic.text = y(gVar);
-        w(textitalic);
-    }
-
-    @Override // v7.i0
-    public final void i(bf.k kVar) {
-        w(y(kVar));
-    }
-
-    @Override // v7.i0
-    public final void k(bf.n nVar) {
-        if (!(nVar instanceof zc.a)) {
-            v(nVar);
-            return;
+        float f7 = 0.0f;
+        ba0Var.E.c(z10 ? 1.0f : 0.0f, true);
+        this.f2 = new AnimatorSet();
+        ArrayList arrayList = new ArrayList();
+        n6 n6Var = ba0Var.F;
+        float[] fArr = {z10 ? 1.0f : 0.0f};
+        Property property = View.ALPHA;
+        arrayList.add(ObjectAnimator.ofFloat(n6Var, (Property<n6, Float>) property, fArr));
+        arrayList.add(ObjectAnimator.ofFloat(ba0Var.s, (Property<FrameLayout, Float>) property, z10 ? 0.0f : 1.0f));
+        FrameLayout frameLayout2 = ba0Var.S;
+        if (frameLayout2 != null) {
+            arrayList.add(ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property, z10 ? 1.0f : 0.0f));
+            arrayList.add(ObjectAnimator.ofFloat(ba0Var.S, (Property<FrameLayout, Float>) View.TRANSLATION_Y, z10 ? 0.0f : r6.getMeasuredHeight()));
         }
-        if (!this.c.texts.isEmpty()) {
-            w(ba0.j("\n"));
+        org.telegram.ui.ActionBar.v0 v0Var = ba0Var.H;
+        if (v0Var != null) {
+            v0Var.setVisibility(0);
+            arrayList.add(ObjectAnimator.ofFloat(ba0Var.H, (Property<org.telegram.ui.ActionBar.v0, Float>) property, z10 ? 1.0f : 0.0f));
         }
-        w(ba0.c(((zc.a) nVar).g));
-        w(ba0.j("\n"));
-    }
-
-    @Override // v7.i0
-    public final void l(bf.o oVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
+        boolean z11 = c0(getClosestTab()) == 0;
+        org.telegram.ui.ActionBar.v0 v0Var2 = ba0Var.G;
+        if (v0Var2 != null) {
+            v0Var2.setVisibility(0);
+            org.telegram.ui.ActionBar.v0 v0Var3 = ba0Var.G;
+            if (!z10 && !z11) {
+                f7 = 1.0f;
+            }
+            arrayList.add(ObjectAnimator.ofFloat(v0Var3, (Property<org.telegram.ui.ActionBar.v0, Float>) property, f7));
         }
-        this.a = i10 + 1;
-        try {
-            v(oVar);
-        } finally {
-            this.a--;
+        aa0 aa0Var = ba0Var.R;
+        if (aa0Var != null) {
+            arrayList.add(ObjectAnimator.ofFloat(aa0Var, (Property<aa0, Float>) property, z10 ? 0.4f : 1.0f));
         }
+        this.f2.playTogether(arrayList);
+        this.f2.setDuration(300L);
+        this.f2.setInterpolator(qr.h);
+        this.f2.addListener(new org.telegram.ui.ActionBar.g(this, z10, z11, 4));
+        this.f2.start();
     }
 
-    @Override // v7.i0
-    public final void m(bf.q qVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(qVar);
-        } finally {
-            this.a--;
-        }
+    @Override // org.telegram.ui.Components.yu0
+    public final int getInitialTab() {
+        return this.i2.W;
     }
 
-    @Override // v7.i0
-    public final void n(bf.r rVar) {
-        if (!this.c.texts.isEmpty()) {
-            w(ba0.j("\n\n"));
-        }
-        v(rVar);
+    @Override // org.telegram.ui.Components.yu0
+    public final String getStoriesHashtag() {
+        return this.i2.h;
     }
 
-    @Override // v7.i0
-    public final void o(bf.s sVar) {
-        w(ba0.j(sVar.g));
+    @Override // org.telegram.ui.Components.yu0
+    public final String getStoriesHashtagUsername() {
+        return this.i2.n;
     }
 
-    @Override // v7.i0
-    public final void q(bf.d dVar) {
-        w(ba0.j(dVar.h));
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean l0() {
+        ba0 ba0Var = this.i2;
+        return ba0Var.a == 0 && ba0Var.e == ba0Var.getUserConfig().getClientUserId() && ba0Var.f == 0;
     }
 
-    @Override // v7.i0
-    public final void r(bf.g gVar) {
-        w(ba0.j("\n"));
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean m0() {
+        int i10 = this.i2.a;
+        return i10 == 1 || i10 == 2;
     }
 
-    @Override // v7.i0
-    public final void s(bf.k kVar) {
-        String str = kVar.h;
-        if (str == null) {
-            str = "";
-        }
-        String trim = str.trim();
-        if (trim.startsWith("mailto:")) {
-            TL_iv.RichText textemail = new TL_iv.textEmail();
-            textemail.text = y(kVar);
-            textemail.email = trim.substring(7);
-            w(textemail);
-            return;
-        }
-        if (trim.startsWith("tel:")) {
-            TL_iv.textPhone textphone = new TL_iv.textPhone();
-            textphone.text = y(kVar);
-            textphone.phone = trim.substring(4);
-            w(textphone);
-            return;
-        }
-        TL_iv.RichText texturl = new TL_iv.textUrl();
-        texturl.text = y(kVar);
-        texturl.url = trim;
-        w(texturl);
+    @Override // org.telegram.ui.Components.yu0
+    public final void o0() {
+        this.h2.M();
     }
 
-    @Override // v7.i0
-    public final void t(bf.g gVar) {
-        w(ba0.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean q0() {
+        return this.i2.a == 2;
     }
 
-    @Override // v7.i0
-    public final void u(bf.g gVar) {
-        TL_iv.textBold textbold = new TL_iv.textBold();
-        textbold.text = y(gVar);
-        w(textbold);
-    }
-
-    public final void w(TL_iv.RichText richText) {
-        this.c.texts.add(richText);
-    }
-
-    public final TL_iv.RichText y(bf.p pVar) {
-        TL_iv.textConcat textconcat = this.c;
-        this.c = new TL_iv.textConcat();
-        v(pVar);
-        TL_iv.RichText x10 = x(this.c);
-        this.c = textconcat;
-        return x10;
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean v0() {
+        int i10 = this.i2.a;
+        return i10 == 1 || i10 == 2;
     }
 }

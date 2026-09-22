@@ -5,24 +5,24 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class dk extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ zn l2;
+    public final /* synthetic */ bo l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk(Context context, org.telegram.ui.ActionBar.f6 f6Var, zn znVar) {
-        super(context, f6Var, false);
-        this.l2 = znVar;
+    public dk(Context context, org.telegram.ui.ActionBar.e6 e6Var, bo boVar) {
+        super(context, e6Var, false);
+        this.l2 = boVar;
     }
 
     @Override // org.telegram.ui.Cells.w0, android.view.View
     public final void onDraw(Canvas canvas) {
-        zn znVar = this.l2;
-        if (znVar.B8 != null) {
+        bo boVar = this.l2;
+        if (boVar.B8 != null) {
             return;
         }
-        float y3 = ((znVar.x0.getY() + znVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
+        float y3 = ((boVar.x0.getY() + boVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
         if (y3 <= 0.0f) {
             super.onDraw(canvas);
         } else if (y3 < getMeasuredHeight()) {
@@ -39,9 +39,9 @@ public final class dk extends org.telegram.ui.Cells.w0 {
         if (getAlpha() == 0.0f) {
             return false;
         }
-        zn znVar = this.l2;
-        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-        if (kVar.s() || znVar.A9()) {
+        bo boVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
+        if (kVar.s() || boVar.A9()) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -53,9 +53,9 @@ public final class dk extends org.telegram.ui.Cells.w0 {
         if (getAlpha() == 0.0f) {
             return false;
         }
-        zn znVar = this.l2;
-        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-        if (kVar.s() || znVar.A9()) {
+        bo boVar = this.l2;
+        kVar = ((org.telegram.ui.ActionBar.n2) boVar).actionBar;
+        if (kVar.s() || boVar.A9()) {
             return false;
         }
         return super.onTouchEvent(motionEvent);

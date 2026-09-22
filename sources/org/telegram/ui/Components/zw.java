@@ -1,63 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.util.Property;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class zw extends z4.g {
-    public final /* synthetic */ kz w0;
+public final class zw extends ImageView {
+    public final /* synthetic */ kz a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zw(kz kzVar, Context context) {
         super(context);
-        this.w0 = kzVar;
+        this.a = kzVar;
     }
 
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.w0.f) {
-            return false;
-        }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        try {
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (IllegalArgumentException unused) {
-            return false;
-        }
-    }
-
-    @Override // z4.g
-    public final void x(int i10, boolean z10) {
-        kz kzVar = this.w0;
-        ox oxVar = kzVar.I;
-        kz.a(kzVar, i10 == 1);
-        if (i10 != getCurrentItem()) {
-            super.x(i10, z10);
-            return;
-        }
-        if (i10 != 0) {
-            if (i10 == 1) {
-                kzVar.h0.y0(0);
-                return;
-            } else {
-                kzVar.D0.y0(1);
-                return;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ky kyVar;
+        int action = motionEvent.getAction();
+        kz kzVar = this.a;
+        if (action == 0) {
+            kzVar.P1 = true;
+            kzVar.Q1 = false;
+            AndroidUtilities.runOnUIThread(new id(kzVar, 350, 3), 350);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            kzVar.P1 = false;
+            if (!kzVar.Q1 && (kyVar = kzVar.t1) != null && kyVar.k()) {
+                try {
+                    kzVar.x.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
             }
         }
-        kzVar.Q0[1] = 0;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(oxVar, (Property<ox, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
-        ofFloat.setDuration(150L);
-        ofFloat.setInterpolator(qr.h);
-        ofFloat.start();
-        kzVar.F(1, 0);
-        if (oxVar != null) {
-            oxVar.j(0, true);
-        }
+        super.onTouchEvent(motionEvent);
+        return true;
     }
 }

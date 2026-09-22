@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class gi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,32 +30,33 @@ public final class gi extends AnimatorListenerAdapter {
                 ni niVar = viVar.y0;
                 Float valueOf = Float.valueOf(1.0f);
                 jiVar.getClass();
-                jiVar.a(niVar, valueOf);
+                jiVar.getClass();
+                jiVar.b(niVar, valueOf.floatValue());
                 viVar.X0.setAlpha(0.0f);
                 o1.k kVar = new o1.k(viVar.z0, o1.h.n, 0.0f);
                 kVar.u.a(0.75f);
                 kVar.u.b(500.0f);
-                kVar.b(new j7(this, 3));
-                kVar.a(new ei.m4(3, this, (gh) this.c));
+                kVar.b(new i7(this, 3));
+                kVar.a(new ei.m4(3, this, (fh) this.c));
                 viVar.t1 = kVar;
                 kVar.f();
                 break;
             case 1:
                 a5.a aVar = (a5.a) this.d;
-                ((yl0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((ll0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 aVar.c = null;
                 break;
             default:
-                yh.y3 y3Var = (yh.y3) this.d;
-                y3Var.T1();
-                yh.i2 i2Var = y3Var.f0;
+                yh.z3 z3Var = (yh.z3) this.d;
+                z3Var.T1();
+                yh.j2 j2Var = z3Var.f0;
                 int i10 = this.b;
-                i2Var.setVisibility(i10 == 0 ? 0 : 8);
-                y3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
-                y3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
-                y3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
-                y3Var.s2();
-                y3Var.Z0 = null;
+                j2Var.setVisibility(i10 == 0 ? 0 : 8);
+                z3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
+                z3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
+                z3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
+                z3Var.s2();
+                z3Var.Z0 = null;
                 Runnable runnable = (Runnable) this.c;
                 if (runnable != null) {
                     runnable.run();

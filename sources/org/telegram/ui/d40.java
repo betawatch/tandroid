@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d40 extends FrameLayout {
     public final Rect a;
@@ -76,7 +76,7 @@ public final class d40 extends FrameLayout {
         if (c40Var.i1) {
             for (int i14 = 0; i14 < c40Var.getChildCount(); i14++) {
                 childAt = c40Var.getChildAt(i14);
-                if (childAt instanceof org.telegram.ui.Components.yh0) {
+                if (childAt instanceof org.telegram.ui.Components.lh0) {
                     break;
                 }
             }

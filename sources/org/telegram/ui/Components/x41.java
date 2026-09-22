@@ -1,56 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
-    public final /* synthetic */ Context c;
+public final class x41 extends s4.s0 {
+    public final /* synthetic */ e51 a;
 
-    public /* synthetic */ x41(Context context, org.telegram.ui.ActionBar.f3[] f3VarArr) {
-        this.a = 3;
-        this.c = context;
-        this.b = f3VarArr;
+    public x41(e51 e51Var) {
+        this.a = e51Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.f3 f3Var;
-        org.telegram.ui.ActionBar.n2 n2Var;
-        switch (this.a) {
-            case 0:
-                this.b[0].dismiss();
-                nf.f.s(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
-                break;
-            case 1:
-                this.b[0].dismiss();
-                nf.f.u(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
-                break;
-            case 2:
-                this.b[0].dismiss();
-                nf.f.s(this.c, LocaleController.getString(R.string.CocoonFooterLink));
-                break;
-            default:
-                rw0 rw0Var = new rw0(this.c);
-                if (!AndroidUtilities.isTablet()) {
-                    org.telegram.ui.ActionBar.f3[] f3VarArr = this.b;
-                    if (!AndroidUtilities.hasDialogOnTop(f3VarArr[0].attachedFragment) && (f3Var = f3VarArr[0]) != null && (n2Var = f3Var.attachedFragment) != null) {
-                        rw0Var.makeAttached(n2Var);
-                    }
-                }
-                rw0Var.show();
-                break;
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        s4.s0 s0Var = this.a.y;
+        if (s0Var != null) {
+            s0Var.a(recyclerView, i10);
         }
     }
 
-    public /* synthetic */ x41(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
-        this.c = context;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        e51 e51Var = this.a;
+        d51 d51Var = e51Var.s;
+        u41 u41Var = e51Var.n;
+        s4.s0 s0Var = e51Var.y;
+        if (s0Var != null) {
+            s0Var.b(u41Var, i10, i11);
+        }
+        if (i11 <= 0 || u41Var.getAdapter() != d51Var || !e51Var.J || d51Var.r || d51Var.s) {
+            return;
+        }
+        if (e51Var.r.N0() >= ((d51Var.w + 1) - ((d51Var.v + 1) * 10)) - 1) {
+            e51 e51Var2 = d51Var.x;
+            if (!e51Var2.J || d51Var.r || d51Var.s) {
+                return;
+            }
+            d51Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = d51Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(e51Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new x1(d51Var, 17));
+        }
     }
 }

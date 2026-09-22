@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n1 {
     public final f a;
@@ -48,7 +48,7 @@ public final class n1 {
             }
             b(fVar);
             e2.d.g(fVar.n == 1);
-            fVar.c.f();
+            fVar.c.h();
             fVar.n = 0;
             fVar.r = null;
             fVar.s = null;
@@ -65,14 +65,14 @@ public final class n1 {
     }
 
     public final f d(t0 t0Var) {
-        u2.c1 c1Var;
-        if (t0Var != null && (c1Var = t0Var.c[this.b]) != null) {
+        u2.b1 b1Var;
+        if (t0Var != null && (b1Var = t0Var.c[this.b]) != null) {
             f fVar = this.a;
-            if (fVar.r == c1Var) {
+            if (fVar.r == b1Var) {
                 return fVar;
             }
             f fVar2 = this.c;
-            if (fVar2 != null && fVar2.r == c1Var) {
+            if (fVar2 != null && fVar2.r == b1Var) {
                 return fVar2;
             }
         }
@@ -88,13 +88,13 @@ public final class n1 {
     */
     public final boolean e(t0 t0Var, f fVar) {
         if (fVar != null) {
-            u2.c1[] c1VarArr = t0Var.c;
+            u2.b1[] b1VarArr = t0Var.c;
             int i10 = this.b;
-            u2.c1 c1Var = c1VarArr[i10];
-            u2.c1 c1Var2 = fVar.r;
-            if (c1Var2 != null) {
-                if (c1Var2 == c1Var) {
-                    if (c1Var != null && !fVar.k()) {
+            u2.b1 b1Var = b1VarArr[i10];
+            u2.b1 b1Var2 = fVar.r;
+            if (b1Var2 != null) {
+                if (b1Var2 == b1Var) {
+                    if (b1Var != null && !fVar.k()) {
                         t0 t0Var2 = t0Var.m;
                         if (t0Var.g.g) {
                             if (t0Var2 != null) {
@@ -138,7 +138,7 @@ public final class n1 {
             if (this.e) {
                 f fVar = this.a;
                 e2.d.g(fVar.n == 0);
-                fVar.c.f();
+                fVar.c.h();
                 fVar.s();
                 this.e = false;
                 return;
@@ -149,13 +149,13 @@ public final class n1 {
             f fVar2 = this.c;
             fVar2.getClass();
             e2.d.g(fVar2.n == 0);
-            fVar2.c.f();
+            fVar2.c.h();
             fVar2.s();
             this.f = false;
         }
     }
 
-    public final int j(f fVar, t0 t0Var, x2.w wVar, a3.q qVar) {
+    public final int j(f fVar, t0 t0Var, x2.v vVar, a3.q qVar) {
         f fVar2;
         int i10;
         if (fVar == null || fVar.n == 0 || (fVar == (fVar2 = this.a) && ((i10 = this.d) == 2 || i10 == 4))) {
@@ -164,23 +164,23 @@ public final class n1 {
         if (fVar == this.c && this.d == 3) {
             return 1;
         }
-        u2.c1 c1Var = fVar.r;
-        u2.c1[] c1VarArr = t0Var.c;
+        u2.b1 b1Var = fVar.r;
+        u2.b1[] b1VarArr = t0Var.c;
         int i11 = this.b;
-        boolean z10 = c1Var != c1VarArr[i11];
-        boolean b10 = wVar.b(i11);
+        boolean z10 = b1Var != b1VarArr[i11];
+        boolean b10 = vVar.b(i11);
         if (!b10 || z10) {
             if (!fVar.y) {
-                x2.s sVar = wVar.c[i11];
-                int length = sVar != null ? sVar.length() : 0;
+                x2.r rVar = vVar.c[i11];
+                int length = rVar != null ? rVar.length() : 0;
                 b2.s[] sVarArr = new b2.s[length];
                 for (int i12 = 0; i12 < length; i12++) {
-                    sVar.getClass();
-                    sVarArr[i12] = sVar.f(i12);
+                    rVar.getClass();
+                    sVarArr[i12] = rVar.f(i12);
                 }
-                u2.c1 c1Var2 = t0Var.c[i11];
-                c1Var2.getClass();
-                fVar.y(sVarArr, c1Var2, t0Var.e(), t0Var.p, t0Var.g.a);
+                u2.b1 b1Var2 = t0Var.c[i11];
+                b1Var2.getClass();
+                fVar.y(sVarArr, b1Var2, t0Var.e(), t0Var.p, t0Var.g.a);
                 return 3;
             }
             if (!fVar.l()) {

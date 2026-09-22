@@ -4,9 +4,10 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
 import java.util.HashMap;
+import org.telegram.ui.Cells.q3;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h, fb.o {
+public final /* synthetic */ class e implements h, fb.n {
     public final String a;
 
     public /* synthetic */ e(String str) {
@@ -29,15 +30,15 @@ public final /* synthetic */ class e implements h, fb.o {
             }
             str = "dav1";
         }
-        StringBuilder u10 = a4.a.u(str);
-        u10.append(i10 < 10 ? ".0" : ".");
-        u10.append(i10);
-        u10.append(x11 < 10 ? ".0" : ".");
-        u10.append(x11);
-        return new e(u10.toString());
+        StringBuilder v = a4.a.v(str);
+        v.append(i10 < 10 ? ".0" : ".");
+        v.append(i10);
+        v.append(x11 < 10 ? ".0" : ".");
+        v.append(x11);
+        return new e(v.toString());
     }
 
-    @Override // fb.o
+    @Override // fb.n
     public Object p2() {
         throw new db.j(this.a);
     }
@@ -66,7 +67,7 @@ public final /* synthetic */ class e implements h, fb.o {
                     bool = Boolean.TRUE;
                     z11 = true;
                 } else if (!f2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", org.telegram.ui.Cells.c1.k("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    Log.w("Gservices", q3.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
                 f2.e(obj, hashMap, str, bool);
                 z10 = z11;

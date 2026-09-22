@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vj implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class vj implements Runnable {
             case 0:
                 xj xjVar = this.b;
                 if (xjVar.f != null) {
-                    xjVar.v = org.telegram.messenger.rk.h(new StringBuilder("+"), xjVar.f.phone, gf.b.c());
+                    xjVar.v = org.telegram.messenger.vl.h(new StringBuilder("+"), xjVar.f.phone, gf.b.c());
                     xjVar.s = xjVar.f;
                     AndroidUtilities.runOnUIThread(new vj(xjVar, 1));
                     break;

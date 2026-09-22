@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.i51;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements e2.h {
     public final /* synthetic */ int a;
@@ -80,11 +80,11 @@ public final /* synthetic */ class f3 implements e2.h {
                 ci.p4 p4Var = u4Var.b;
                 if (view2 instanceof ci.t4) {
                     p4Var.getClass();
-                    int S = RecyclerView.S(view2);
-                    y51 G = p4Var.Y2.G(S);
+                    int R = RecyclerView.R(view2);
+                    i51 G = p4Var.Y2.G(R);
                     if (G != null) {
                         ci.t4 t4Var = (ci.t4) view2;
-                        t4Var.setPosition(u4Var.b(S));
+                        t4Var.setPosition(u4Var.b(R));
                         t4Var.b(u4Var.f == G.d, true);
                         boolean contains = u4Var.e.contains(Integer.valueOf(G.d));
                         if (t4Var.f != contains) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class f3 implements e2.h {
                 if (view3 instanceof ci.t4) {
                     ci.fb fbVar = p4Var2.f3;
                     fbVar.b.getClass();
-                    ((ci.t4) view3).setPosition(fbVar.b(RecyclerView.S(view3)));
+                    ((ci.t4) view3).setPosition(fbVar.b(RecyclerView.R(view3)));
                     view3.setPressed(false);
                     break;
                 }
@@ -111,27 +111,27 @@ public final /* synthetic */ class f3 implements e2.h {
                 ci.g8.P((ci.g8) this.b, (Long) obj);
                 break;
             case 6:
-                ((m4.j1) obj).f((b2.v0) this.b);
+                ((m4.k1) obj).f((b2.v0) this.b);
                 break;
             case 7:
-                ((m4.j1) obj).n((Surface) this.b);
+                ((m4.k1) obj).n((Surface) this.b);
                 break;
             case 8:
-                ((m4.j1) obj).C((b2.n0) this.b);
+                ((m4.k1) obj).C((b2.n0) this.b);
                 break;
             case 9:
-                z3.h hVar = (z3.h) this.b;
-                z3.a aVar = (z3.a) obj;
-                z3.g gVar = new z3.g(aVar.b, ob.a.C2(aVar.a, aVar.c));
-                hVar.c.add(gVar);
-                long j3 = hVar.j;
-                if (j3 == -9223372036854775807L || aVar.d >= j3) {
-                    hVar.b(gVar);
+                z3.i iVar = (z3.i) this.b;
+                z3.b bVar = (z3.b) obj;
+                z3.h hVar = new z3.h(bVar.b, ob.a.C2(bVar.a, bVar.c));
+                iVar.c.add(hVar);
+                long j3 = iVar.j;
+                if (j3 == -9223372036854775807L || bVar.d >= j3) {
+                    iVar.b(hVar);
                     break;
                 }
                 break;
             case 10:
-                ((e9.f0) this.b).b((z3.a) obj);
+                ((e9.f0) this.b).b((z3.b) obj);
                 break;
             default:
                 zg.q qVar = (zg.q) this.b;

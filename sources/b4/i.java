@@ -14,13 +14,12 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import v7.j0;
-import z3.l;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class i implements m {
+public final class i implements n {
     public static final byte[] n = {0, 7, 8, 15};
     public static final byte[] r = {0, 119, -120, -1};
     public static final byte[] s = {0, 17, 34, 51, 68, 85, 102, 119, -120, -103, -86, -69, -52, -35, -18, -1};
@@ -428,18 +427,18 @@ public final class i implements m {
         return new c(bArr2, bArr, h, i10);
     }
 
-    @Override // z3.m
-    public final int K() {
+    @Override // z3.n
+    public final int A() {
         return 2;
     }
 
-    @Override // z3.m
-    public final void M(byte[] bArr, int i10, int i11, l lVar, e2.h hVar) {
+    @Override // z3.n
+    public final void B(byte[] bArr, int i10, int i11, m mVar, e2.h hVar) {
         h hVar2;
-        z3.a aVar;
+        z3.b bVar;
         ArrayList arrayList;
         int i12;
-        b bVar;
+        b bVar2;
         h hVar3;
         f fVar;
         int i13;
@@ -595,16 +594,16 @@ public final class i implements m {
         d dVar4 = hVar2.i;
         if (dVar4 == null) {
             g0 g0Var = i0.b;
-            aVar = new z3.a(-9223372036854775807L, -9223372036854775807L, a1.e);
+            bVar = new z3.b(-9223372036854775807L, -9223372036854775807L, a1.e);
         } else {
-            b bVar2 = hVar2.h;
-            if (bVar2 == null) {
-                bVar2 = this.d;
+            b bVar3 = hVar2.h;
+            if (bVar3 == null) {
+                bVar3 = this.d;
             }
             Bitmap bitmap = this.h;
             Canvas canvas = this.c;
-            if (bitmap == null || bVar2.a + 1 != bitmap.getWidth() || bVar2.b + 1 != this.h.getHeight()) {
-                Bitmap createBitmap = Bitmap.createBitmap(bVar2.a + 1, bVar2.b + 1, Bitmap.Config.ARGB_8888);
+            if (bitmap == null || bVar3.a + 1 != bitmap.getWidth() || bVar3.b + 1 != this.h.getHeight()) {
+                Bitmap createBitmap = Bitmap.createBitmap(bVar3.a + 1, bVar3.b + 1, Bitmap.Config.ARGB_8888);
                 this.h = createBitmap;
                 canvas.setBitmap(createBitmap);
             }
@@ -615,18 +614,18 @@ public final class i implements m {
                 canvas.save();
                 e eVar = (e) sparseArray5.valueAt(i46);
                 f fVar4 = (f) hVar2.c.get(sparseArray5.keyAt(i46));
-                int i47 = eVar.a + bVar2.c;
-                int i48 = eVar.b + bVar2.e;
+                int i47 = eVar.a + bVar3.c;
+                int i48 = eVar.b + bVar3.e;
                 int i49 = fVar4.c;
                 int i50 = fVar4.f;
                 int i51 = fVar4.d;
                 int i52 = i47 + i49;
                 int i53 = i48 + i51;
                 SparseArray sparseArray6 = sparseArray5;
-                canvas.clipRect(i47, i48, Math.min(i52, bVar2.d), Math.min(i53, bVar2.f));
-                a aVar2 = (a) hVar2.d.get(i50);
-                if (aVar2 == null && (aVar2 = (a) hVar2.f.get(i50)) == null) {
-                    aVar2 = this.e;
+                canvas.clipRect(i47, i48, Math.min(i52, bVar3.d), Math.min(i53, bVar3.f));
+                a aVar = (a) hVar2.d.get(i50);
+                if (aVar == null && (aVar = (a) hVar2.f.get(i50)) == null) {
+                    aVar = this.e;
                 }
                 SparseArray sparseArray7 = fVar4.j;
                 int i54 = i46;
@@ -650,13 +649,13 @@ public final class i implements m {
                         int i60 = i56 + gVar.b;
                         int i61 = i51;
                         Paint paint2 = paint;
-                        bVar = bVar2;
+                        bVar2 = bVar3;
                         i14 = i49;
                         i13 = i57;
                         arrayList = arrayList2;
                         i12 = i56;
                         f fVar5 = fVar4;
-                        int[] iArr = i58 == 3 ? aVar2.d : i58 == 2 ? aVar2.c : aVar2.b;
+                        int[] iArr = i58 == 3 ? aVar.d : i58 == 2 ? aVar.c : aVar.b;
                         fVar = fVar5;
                         i15 = i55;
                         i16 = i61;
@@ -665,7 +664,7 @@ public final class i implements m {
                     } else {
                         arrayList = arrayList2;
                         i12 = i56;
-                        bVar = bVar2;
+                        bVar2 = bVar3;
                         hVar3 = hVar2;
                         fVar = fVar4;
                         i13 = i47;
@@ -680,11 +679,11 @@ public final class i implements m {
                     i47 = i13;
                     arrayList2 = arrayList;
                     sparseArray7 = sparseArray8;
-                    bVar2 = bVar;
+                    bVar3 = bVar2;
                     hVar2 = hVar3;
                     i51 = i16;
                 }
-                b bVar3 = bVar2;
+                b bVar4 = bVar3;
                 ArrayList arrayList3 = arrayList2;
                 h hVar5 = hVar2;
                 int i62 = i48;
@@ -694,29 +693,34 @@ public final class i implements m {
                 int i65 = i51;
                 if (fVar6.b) {
                     int i66 = fVar6.e;
-                    int i67 = i66 == 3 ? aVar2.d[fVar6.g] : i66 == 2 ? aVar2.c[fVar6.h] : aVar2.b[fVar6.i];
+                    int i67 = i66 == 3 ? aVar.d[fVar6.g] : i66 == 2 ? aVar.c[fVar6.h] : aVar.b[fVar6.i];
                     Paint paint3 = this.b;
                     paint3.setColor(i67);
                     canvas.drawRect(i63, i62, i52, i53, paint3);
                 }
                 Bitmap createBitmap2 = Bitmap.createBitmap(this.h, i63, i62, i64, i65);
-                float f12 = bVar3.a;
-                float f13 = bVar3.b;
+                float f12 = bVar4.a;
+                float f13 = bVar4.b;
                 arrayList3.add(new d2.b(null, null, null, createBitmap2, i62 / f13, 0, 0, i63 / f12, 0, TLObject.FLAG_31, -3.4028235E38f, i64 / f12, i65 / f13, false, -16777216, TLObject.FLAG_31, 0.0f, 0));
                 canvas.drawColor(0, PorterDuff.Mode.CLEAR);
                 canvas.restore();
                 i46 = i54 + 1;
-                bVar2 = bVar3;
+                bVar3 = bVar4;
                 arrayList2 = arrayList3;
                 sparseArray5 = sparseArray6;
                 hVar2 = hVar5;
             }
-            aVar = new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList2);
+            bVar = new z3.b(-9223372036854775807L, -9223372036854775807L, arrayList2);
         }
-        hVar.accept(aVar);
+        hVar.accept(bVar);
     }
 
-    @Override // z3.m
+    @Override // z3.n
+    public final /* synthetic */ z3.e r(int i10, int i11, byte[] bArr) {
+        return w.c.a(this, bArr, i11);
+    }
+
+    @Override // z3.n
     public final void reset() {
         h hVar = this.f;
         hVar.c.clear();
@@ -726,10 +730,5 @@ public final class i implements m {
         hVar.g.clear();
         hVar.h = null;
         hVar.i = null;
-    }
-
-    @Override // z3.m
-    public final /* synthetic */ z3.d u(int i10, int i11, byte[] bArr) {
-        return j0.a(this, bArr, i11);
     }
 }

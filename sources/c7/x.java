@@ -3,9 +3,9 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class x extends o6.a {
     public static final Parcelable.Creator<x> CREATOR = new w.a(27);
@@ -39,16 +39,16 @@ public final class x extends o6.a {
     }
 
     public final String toString() {
-        return c1.k("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
+        return q3.j("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
     }
 
     /* JADX WARN: Type inference failed for: r0v3, types: [c7.a, java.lang.Enum] */
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
+        int q6 = w7.e0.q(parcel, 20293);
         this.a.getClass();
-        w7.f0.l(parcel, 2, "public-key");
-        w7.f0.i(parcel, 3, Integer.valueOf(this.b.a.a()));
-        w7.f0.r(parcel, q6);
+        w7.e0.l(parcel, 2, "public-key");
+        w7.e0.i(parcel, 3, Integer.valueOf(this.b.a.a()));
+        w7.e0.r(parcel, q6);
     }
 }

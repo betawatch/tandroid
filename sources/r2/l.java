@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
+import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public interface l {
     void a(long j3, int i10, int i11, int i12);
@@ -16,15 +17,15 @@ public interface l {
 
     void c(int i10);
 
-    void d(a3.m mVar, Handler handler);
+    boolean d(ia iaVar);
 
-    void e();
+    void e(a3.m mVar, Handler handler);
 
-    void f(int i10, long j3);
+    void f();
 
     void flush();
 
-    int g();
+    void g(int i10, long j3);
 
     ByteBuffer getInputBuffer(int i10);
 
@@ -32,11 +33,11 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    int h(MediaCodec.BufferInfo bufferInfo);
+    int h();
 
-    void i(int i10);
+    int i(MediaCodec.BufferInfo bufferInfo);
 
-    boolean j(k2.e eVar);
+    void j(int i10);
 
     void k(Surface surface);
 

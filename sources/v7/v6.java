@@ -1,52 +1,11 @@
 package v7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class v6 {
-    public static String a(String str, Object... objArr) {
-        int indexOf;
-        String sb2;
-        int i10 = 0;
-        for (int i11 = 0; i11 < objArr.length; i11++) {
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").log(Level.WARNING, "Exception during lenientFormat for " + str2, (Throwable) e);
-                    StringBuilder v = a4.a.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
-                }
-            }
-            objArr[i11] = sb2;
-        }
-        StringBuilder sb3 = new StringBuilder((objArr.length * 16) + str.length());
-        int i12 = 0;
-        while (i10 < objArr.length && (indexOf = str.indexOf("%s", i12)) != -1) {
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
-            i12 = indexOf + 2;
-            i10++;
-        }
-        sb3.append((CharSequence) str, i12, str.length());
-        if (i10 < objArr.length) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
-            }
-            sb3.append(']');
-        }
-        return sb3.toString();
+    public static d9.i a(d9.i iVar) {
+        return !(iVar instanceof d9.k) ? iVar instanceof d9.j ? iVar : iVar instanceof Serializable ? new d9.j(iVar) : new d9.k(iVar) : iVar;
     }
 }

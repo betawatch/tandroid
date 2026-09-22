@@ -12,15 +12,15 @@ import android.widget.LinearLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.q6;
-import org.telegram.ui.vy0;
-import w7.y5;
+import org.telegram.ui.wy0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class x extends f3 {
     public static final /* synthetic */ int s = 0;
@@ -33,8 +33,8 @@ public final class x extends f3 {
     public u n;
     public boolean r;
 
-    public x(Context context, f6 f6Var) {
-        super(1, context, f6Var, true);
+    public x(Context context, e6 e6Var) {
+        super(1, context, e6Var, true);
         this.e = new Path();
         fixNavigationBar(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -48,12 +48,12 @@ public final class x extends f3 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(j6.f0(1090519039, 1, -1));
-        imageView.setOnClickListener(new vy0(13, this, context));
+        imageView.setBackground(i6.f0(1090519039, 1, -1));
+        imageView.setOnClickListener(new wy0(13, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(j6.f0(1090519039, 1, -1));
+        imageView2.setBackground(i6.f0(1090519039, 1, -1));
         imageView2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 5));
         q6 q6Var = new q6(this, context);
         this.d = q6Var;
@@ -69,17 +69,17 @@ public final class x extends f3 {
         d1Var.d = new w(this, context);
         p pVar = new p(context, this.resourcesProvider);
         pVar.setAdapter(new q(d1Var));
-        d1Var.addView(pVar, y5.l(1.0f, -1, 0));
-        d1Var.addView(q6Var, y5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        d1Var.addView(pVar, x5.l(1.0f, -1, 0));
+        d1Var.addView(q6Var, x5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, y5.n(28, 28));
-        linearLayout2.addView(pVar.n(8, false), y5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, y5.n(28, 28));
-        d1Var.addView(linearLayout2, y5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout2.addView(imageView, x5.n(28, 28));
+        linearLayout2.addView(pVar.n(8, false), x5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, x5.n(28, 28));
+        d1Var.addView(linearLayout2, x5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         this.b = d1Var;
-        linearLayout.addView(d1Var, y5.n(-1, 0));
+        linearLayout.addView(d1Var, x5.n(-1, 0));
         o oVar = new o(this, context, linearLayout);
         oVar.addView(linearLayout);
         setCustomView(oVar);

@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.rk0 {
+public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.ek0 {
     public final /* synthetic */ st a;
 
     public /* synthetic */ ft(st stVar) {
@@ -15,12 +15,12 @@ public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Component
     }
 
     @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
         this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
         return l1Var;
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
         if (p0Var == null) {
             return;
@@ -49,26 +49,26 @@ public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Component
         }
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public /* synthetic */ boolean q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.ek0
     public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

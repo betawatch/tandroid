@@ -10,16 +10,16 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class np extends View {
     public final CheckBoxBase a;
     public Drawable b;
     public int c;
 
-    public np(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public np(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.a = new CheckBoxBase(i10, this, f6Var);
+        this.a = new CheckBoxBase(i10, this, e6Var);
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -63,12 +63,12 @@ public class np extends View {
         int measuredWidth = getMeasuredWidth() >> 1;
         int measuredHeight = getMeasuredHeight() >> 1;
         Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.messenger.rk.y(2, measuredWidth, drawable), org.telegram.messenger.rk.d(2, measuredHeight, this.b), org.telegram.ui.Cells.c1.d(2, measuredWidth, this.b), org.telegram.messenger.rk.A(2, measuredHeight, this.b));
+        drawable.setBounds(org.telegram.messenger.vl.x(2, measuredWidth, drawable), org.telegram.messenger.vl.e(2, measuredHeight, this.b), org.telegram.messenger.vl.B(2, measuredWidth, this.b), org.telegram.messenger.vl.z(2, measuredHeight, this.b));
         this.b.draw(canvas);
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.2f));
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.U6, false));
+        paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.U6, false));
         canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - AndroidUtilities.dp(1.5f), paint);
     }
 
@@ -135,7 +135,7 @@ public class np extends View {
             }
             Drawable mutate = getContext().getDrawable(i10).mutate();
             this.b = mutate;
-            mutate.setColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.U6, false), PorterDuff.Mode.MULTIPLY);
+            mutate.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.U6, false), PorterDuff.Mode.MULTIPLY);
         }
     }
 

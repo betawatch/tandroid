@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class h extends db.u {
     public static final e c = new e();
@@ -27,8 +27,8 @@ public final class h extends db.u {
         if (!Locale.getDefault().equals(locale)) {
             arrayList.add(DateFormat.getDateTimeInstance(2, 2));
         }
-        if (fb.h.a >= 9) {
-            arrayList.add(new SimpleDateFormat(a4.a.C("MMM d, yyyy", " ", "h:mm:ss a"), locale));
+        if (fb.g.a >= 9) {
+            arrayList.add(new SimpleDateFormat(a4.a.D("MMM d, yyyy", " ", "h:mm:ss a"), locale));
         }
     }
 
@@ -51,9 +51,9 @@ public final class h extends db.u {
                             b10 = hb.a.b(v, new ParsePosition(0));
                             break;
                         } catch (ParseException e) {
-                            StringBuilder v9 = a4.a.v("Failed parsing '", v, "' as Date; at path ");
-                            v9.append(aVar.j());
-                            throw new db.j(v9.toString(), e);
+                            StringBuilder w10 = a4.a.w("Failed parsing '", v, "' as Date; at path ");
+                            w10.append(aVar.j());
+                            throw new db.j(w10.toString(), e);
                         }
                     }
                     Object obj = arrayList.get(i10);

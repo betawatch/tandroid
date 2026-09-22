@@ -1,11 +1,11 @@
 package ci;
 
 import android.view.ViewGroup;
-import org.telegram.ui.j71;
+import org.telegram.ui.h71;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class l1 extends w7.z5 {
+public final class l1 extends w7.y5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ViewGroup b;
 
@@ -14,26 +14,26 @@ public final class l1 extends w7.z5 {
         this.b = viewGroup;
     }
 
-    @Override // w7.z5
+    @Override // w7.y5
     public final void a() {
         switch (this.a) {
             case 0:
                 ((p1) this.b).b3 = false;
                 break;
             default:
-                ((j71) this.b).w1 = false;
+                ((h71) this.b).w1 = false;
                 break;
         }
     }
 
-    @Override // w7.z5
+    @Override // w7.y5
     public final void b() {
         switch (this.a) {
             case 0:
                 ((p1) this.b).b3 = true;
                 break;
             default:
-                ((j71) this.b).w1 = true;
+                ((h71) this.b).w1 = true;
                 break;
         }
     }

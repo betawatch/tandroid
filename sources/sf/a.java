@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.os.SystemClock;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationBadge;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public final SharedPreferences a;
@@ -25,7 +25,7 @@ public final class a {
         if (this.c == 0) {
             return;
         }
-        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * q.b(this.d, 0, 9)) / 10);
+        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * p.b(this.d, 0, 9)) / 10);
         this.c = 0L;
         this.d++;
         this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
@@ -33,7 +33,7 @@ public final class a {
 
     public final float b() {
         if (this.b > 0) {
-            return q.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
+            return p.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
         }
         return 0.5f;
     }

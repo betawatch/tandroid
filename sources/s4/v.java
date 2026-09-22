@@ -5,14 +5,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.m2;
+import org.telegram.ui.Cells.l2;
 import org.telegram.ui.bz;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class v {
-    public static final m2 b = new m2(1);
-    public static final m2 c = new m2(2);
+    public static final l2 b = new l2(1);
+    public static final l2 c = new l2(2);
     public int a = -1;
 
     public static int c(int i10, int i11) {
@@ -129,18 +129,18 @@ public abstract class v {
         }
         if (layoutManager.d()) {
             if (o0.x(view) <= recyclerView.getPaddingLeft()) {
-                recyclerView.v0(i10);
+                recyclerView.u0(i10);
             }
             if (o0.y(view) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
-                recyclerView.v0(i10);
+                recyclerView.u0(i10);
             }
         }
         if (layoutManager.e()) {
             if (o0.z(view) <= recyclerView.getPaddingTop()) {
-                recyclerView.v0(i10);
+                recyclerView.u0(i10);
             }
             if (o0.v(view) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
-                recyclerView.v0(i10);
+                recyclerView.u0(i10);
             }
         }
     }

@@ -15,14 +15,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.qe;
-import w7.y5;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.ue;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d {
     public final n2 a;
@@ -67,13 +67,13 @@ public final class d {
         }
         c cVar = this.m;
         if (cVar != null) {
-            cVar.f(z10, z11);
+            cVar.h(z10, z11);
         }
     }
 
     public final void b(ArrayList arrayList) {
-        arrayList.add(new l6(this.g, 4, null, null, null, null, j6.fe));
-        arrayList.add(new l6(this.h, 8, null, null, null, null, j6.de));
+        arrayList.add(new k6(this.g, 4, null, null, null, null, i6.fe));
+        arrayList.add(new k6(this.h, 8, null, null, null, null, i6.de));
     }
 
     public final FrameLayout c() {
@@ -81,7 +81,7 @@ public final class d {
             n2 n2Var = this.a;
             FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
             this.d = frameLayout;
-            frameLayout.setBackground(j6.K0(false));
+            frameLayout.setBackground(i6.K0(false));
             final int i10 = 0;
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: wh.a
                 public final /* synthetic */ d b;
@@ -113,29 +113,29 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, y5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
+            this.d.addView(this.f, x5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             int i11 = 1;
             h0 h0Var = new h0(i11, n2Var.getParentActivity(), false);
             this.e = h0Var;
             h0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            i9 i9Var = this.e.a;
-            for (int i12 = 0; i12 < i9Var.c.length; i12++) {
-                i9Var.l(0, null, 0);
+            h9 h9Var = this.e.a;
+            for (int i12 = 0; i12 < h9Var.c.length; i12++) {
+                h9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, y5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            this.f.addView(this.e, x5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(n2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            this.g.setTextColor(n2Var.getThemedColor(j6.fe));
+            this.g.setTextColor(n2Var.getThemedColor(i6.fe));
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, y5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.f.addView(this.g, x5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(n2Var.getParentActivity());
             this.h = imageView;
-            imageView.setBackground(j6.f0(n2Var.getThemedColor(j6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
-            this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(j6.de), PorterDuff.Mode.MULTIPLY));
+            imageView.setBackground(i6.f0(n2Var.getThemedColor(i6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+            this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(i6.de), PorterDuff.Mode.MULTIPLY));
             this.h.setContentDescription(LocaleController.getString(R.string.Close));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
@@ -167,7 +167,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, y5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
+            this.d.addView(this.h, x5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 e(chatFull.requests_pending, chatFull.recent_requesters, false);
@@ -176,8 +176,8 @@ public final class d {
         return this.d;
     }
 
-    public final void d(qe qeVar) {
-        this.m = qeVar;
+    public final void d(ue ueVar) {
+        this.m = ueVar;
     }
 
     public final void e(int i10, List list, boolean z10) {

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -101,13 +101,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             long j10 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
             if (j10 != 0) {
                 if (z11) {
-                    StringBuilder t10 = a4.a.t(j10, "tg://openmessage?user_id=", "&message_id=");
-                    t10.append(messageObject.getId());
-                    intent.setData(Uri.parse(t10.toString()));
+                    StringBuilder u10 = a4.a.u(j10, "tg://openmessage?user_id=", "&message_id=");
+                    u10.append(messageObject.getId());
+                    intent.setData(Uri.parse(u10.toString()));
                 } else {
-                    StringBuilder t11 = a4.a.t(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    t11.append(messageObject.getId());
-                    intent.setData(Uri.parse(t11.toString()));
+                    StringBuilder u11 = a4.a.u(j10, "tg://openmessage?chat_id=", "&message_id=");
+                    u11.append(messageObject.getId());
+                    intent.setData(Uri.parse(u11.toString()));
                 }
             }
         }
@@ -300,13 +300,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.f(this.playbackState.b());
         updateRepeatMode();
         updateShuffleMode();
-        android.support.v4.media.c cVar = new android.support.v4.media.c(0);
+        a4.m mVar = new a4.m(1);
         String str8 = str3;
-        cVar.r0("android.media.metadata.ALBUM_ARTIST", str8);
-        cVar.r0("android.media.metadata.ARTIST", str8);
-        cVar.q0(duration);
+        mVar.A0("android.media.metadata.ALBUM_ARTIST", str8);
+        mVar.A0("android.media.metadata.ARTIST", str8);
+        mVar.z0(duration);
         String str9 = str2;
-        cVar.r0("android.media.metadata.TITLE", str9);
+        mVar.A0("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -314,14 +314,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        cVar.r0("android.media.metadata.ALBUM", str6);
+        mVar.A0("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            cVar.p0("android.media.metadata.ALBUM_ART", bitmap3);
+            mVar.y0("android.media.metadata.ALBUM_ART", bitmap3);
         }
-        this.mediaSession.e(new MediaMetadataCompat((Bundle) cVar.b));
+        this.mediaSession.e(new MediaMetadataCompat((Bundle) mVar.b));
         builder.setVisibility(1);
         Notification build = builder.build();
         if (i10 >= 31) {
@@ -434,13 +434,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         if (z10) {
             return null;
         }
-        org.telegram.ui.ActionBar.j6.R(this);
-        org.telegram.ui.Components.g9 g9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.g9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.g9((TLRPC.Chat) tLObject);
-        g9Var.r = 1;
+        org.telegram.ui.ActionBar.i6.R(this);
+        org.telegram.ui.Components.f9 f9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.f9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.f9((TLRPC.Chat) tLObject);
+        f9Var.r = 1;
         float f11 = i10;
         Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(f11), AndroidUtilities.dp(f11), Bitmap.Config.ARGB_8888);
-        g9Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-        g9Var.draw(new Canvas(createBitmap));
+        f9Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+        f9Var.draw(new Canvas(createBitmap));
         return createBitmap;
     }
 
@@ -630,9 +630,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (MusicPlayerService.NOTIFY_REPEAT.equals(str)) {
                     SharedConfig.setRepeatMode((SharedConfig.repeatMode + 1) % 3);
                     MusicPlayerService.this.updateRepeatMode();
-                    org.telegram.ui.Components.i8 i8Var = org.telegram.ui.Components.i8.T0;
-                    if (i8Var != null) {
-                        i8Var.H0();
+                    org.telegram.ui.Components.h8 h8Var = org.telegram.ui.Components.h8.T0;
+                    if (h8Var != null) {
+                        h8Var.H0();
                     }
                 } else if (MusicPlayerService.NOTIFY_SHUFFLE.equals(str)) {
                     if (SharedConfig.shuffleMusic) {
@@ -641,9 +641,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                         MediaController.getInstance().setPlaybackOrderType(2);
                     }
                     MusicPlayerService.this.updateShuffleMode();
-                    org.telegram.ui.Components.i8 i8Var2 = org.telegram.ui.Components.i8.T0;
-                    if (i8Var2 != null) {
-                        i8Var2.H0();
+                    org.telegram.ui.Components.h8 h8Var2 = org.telegram.ui.Components.h8.T0;
+                    if (h8Var2 != null) {
+                        h8Var2.H0();
                     }
                 }
                 MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();

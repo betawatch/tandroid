@@ -11,36 +11,36 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.w51;
 import s4.p0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class g extends x51 {
+public final class g extends h51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        x51.setup(new g());
+        h51.setup(new g());
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final void bindView(View view, y51 y51Var, boolean z10, m61 m61Var, u61 u61Var) {
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
         h hVar = (h) view;
-        f fVar = (f) y51Var.G;
+        f fVar = (f) i51Var.G;
         TLRPC.User user = fVar.b;
         long j3 = fVar.a;
-        e eVar = (e) y51Var.H;
+        e eVar = (e) i51Var.H;
         boolean z11 = fVar.c;
-        boolean z12 = !y51Var.j;
-        v9 v9Var = hVar.c;
+        boolean z12 = !i51Var.j;
+        u9 u9Var = hVar.c;
         TextView textView = hVar.n;
         TextView textView2 = hVar.d;
         hVar.x = eVar;
@@ -50,7 +50,7 @@ public final class g extends x51 {
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
         TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
         hVar.f.setText(DialogObject.getName(j3));
-        hVar.h.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), j6.w0(null, j6.il, false), new ai.f(12)));
+        hVar.h.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), i6.w0(null, i6.il, false), new ai.f(12)));
         if (user2 != null) {
             textView2.setVisibility(8);
         } else if (chat == null || chat.participants_count <= 0) {
@@ -69,25 +69,25 @@ public final class g extends x51 {
         }
         hVar.w = z12;
         if (user2 != null) {
-            v9Var.e(user2, new g9(0, user2));
+            u9Var.e(user2, new f9(0, user2));
         } else {
-            v9Var.e(chat, new g9(chat));
+            u9Var.e(chat, new f9(chat));
         }
-        hVar.e.e(user, new g9(0, user));
+        hVar.e.e(user, new f9(0, user));
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, f6 f6Var) {
-        h hVar = new h(context, i10, f6Var);
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, e6 e6Var) {
+        h hVar = new h(context, i10, e6Var);
         hVar.setLayoutParams(new p0(-1, -2));
         hVar.setClickable(false);
         return hVar;
     }
 
-    @Override // org.telegram.ui.Components.x51
-    public final boolean equals(y51 y51Var, y51 y51Var2) {
-        f fVar = (f) y51Var.G;
-        f fVar2 = (f) y51Var2.G;
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        f fVar = (f) i51Var.G;
+        f fVar2 = (f) i51Var2.G;
         return fVar.a == fVar2.a && DialogObject.getDialogId(fVar.b) == DialogObject.getDialogId(fVar2.b);
     }
 }

@@ -1,29 +1,36 @@
 package n7;
 
-import java.io.Serializable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class f implements Serializable {
-    public final Object a;
+public final class f extends e {
+    public final c7.x a;
 
-    public f(Object obj) {
-        this.a = obj;
+    public f(c7.x xVar) {
+        this.a = xVar;
+    }
+
+    @Override // n7.e
+    public final Object a() {
+        return this.a;
+    }
+
+    @Override // n7.e
+    public final boolean b() {
+        return true;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof f) {
-            return a.h(this.a, ((f) obj).a);
+            return this.a.equals(((f) obj).a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+        return this.a.hashCode() + 1502476572;
     }
 
     public final String toString() {
-        return a4.a.p("Suppliers.ofInstance(", this.a.toString(), ")");
+        return a4.a.q("Optional.of(", this.a.toString(), ")");
     }
 }

@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class c00 extends s4.j {
     public final /* synthetic */ k00 F;
@@ -33,7 +33,7 @@ public final class c00 extends s4.j {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new b00(i00Var, 0));
-                ofFloat.addListener(new q8(i00Var, 21));
+                ofFloat.addListener(new p8(i00Var, 21));
                 i00Var.a = ofFloat;
                 ofFloat.setDuration(this.e);
                 ofFloat.start();
@@ -59,7 +59,7 @@ public final class c00 extends s4.j {
         boolean isEmpty4 = this.q.isEmpty();
         if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.1f);
-            ofFloat.addUpdateListener(new j6(this, 23));
+            ofFloat.addUpdateListener(new i6(this, 23));
             ofFloat.setDuration(this.e);
             ofFloat.start();
         }
@@ -151,7 +151,7 @@ public final class c00 extends s4.j {
                     i14 = translationX;
                     i15 = translationY;
                     z18 = false;
-                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.j6.L0.measureText(valueOf));
+                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.i6.L0.measureText(valueOf));
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
                     z17 = true;
                     i00Var.L = new StaticLayout(spannableStringBuilder, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
@@ -162,10 +162,10 @@ public final class c00 extends s4.j {
                     i15 = translationY;
                     z17 = true;
                     z18 = false;
-                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.j6.L0.measureText(valueOf));
+                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.i6.L0.measureText(valueOf));
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_CENTER;
                     i00Var.L = new StaticLayout(valueOf, textPaint2, ceil2, alignment2, 1.0f, 0.0f, false);
-                    i00Var.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.j6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
+                    i00Var.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.i6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
                 }
             }
             z10 = true;
@@ -236,13 +236,13 @@ public final class c00 extends s4.j {
                 StaticLayout staticLayout = new StaticLayout(spannableStringBuilder4, textPaint, dp, alignment3, 1.0f, 0.0f, false);
                 i00Var.P = staticLayout;
                 if (i00Var.l0) {
-                    i00Var.O = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, staticLayout);
+                    i00Var.O = x5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, staticLayout);
                 }
                 StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder5, textPaint, AndroidUtilities.dp(400.0f), alignment3, 1.0f, 0.0f, false);
                 i00Var.T = staticLayout2;
                 if (i00Var.l0) {
                     z16 = true;
-                    i00Var.S = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.S, staticLayout2);
+                    i00Var.S = x5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.S, staticLayout2);
                 } else {
                     z16 = true;
                 }
@@ -251,7 +251,7 @@ public final class c00 extends s4.j {
                 i00Var.a0 = charSequenceIndexOf == 0 ? 0.0f : -i00Var.T.getPrimaryHorizontal(charSequenceIndexOf);
                 i00Var.c0 = i00Var.b0;
                 i00Var.R = null;
-                y5.release(i00Var, i00Var.Q);
+                x5.release(i00Var, i00Var.Q);
             } else {
                 z12 = false;
                 CharSequence charSequence4 = i00Var.b.b;
@@ -260,18 +260,18 @@ public final class c00 extends s4.j {
                 StaticLayout staticLayout3 = new StaticLayout(charSequence4, textPaint, dp2, alignment4, 1.0f, 0.0f, false);
                 i00Var.P = staticLayout3;
                 if (i00Var.l0) {
-                    i00Var.O = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, staticLayout3);
+                    i00Var.O = x5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.O, staticLayout3);
                 }
                 StaticLayout staticLayout4 = new StaticLayout(i00Var.N, textPaint, AndroidUtilities.dp(400.0f), alignment4, 1.0f, 0.0f, false);
                 i00Var.R = staticLayout4;
                 if (i00Var.l0) {
                     z15 = true;
-                    i00Var.Q = y5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.Q, staticLayout4);
+                    i00Var.Q = x5.update(i00Var.b.g ? 26 : 0, i00Var, i00Var.Q, staticLayout4);
                 } else {
                     z15 = true;
                 }
                 i00Var.T = null;
-                y5.release(i00Var, i00Var.S);
+                x5.release(i00Var, i00Var.S);
                 i00Var.U = z15;
                 i00Var.a0 = 0.0f;
                 i00Var.c0 = i00Var.b0;

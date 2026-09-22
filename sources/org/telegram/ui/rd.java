@@ -1,26 +1,31 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd implements View.OnClickListener {
+public final /* synthetic */ class rd implements ug1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b;
+    public final /* synthetic */ je b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public /* synthetic */ rd(org.telegram.ui.ActionBar.f3 f3Var, int i10) {
+    public /* synthetic */ rd(je jeVar, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
         this.a = i10;
-        this.b = f3Var;
+        this.b = jeVar;
+        this.c = twoStepVerificationActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.ug1
+    public final void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
             case 0:
-                this.b.dismiss();
+                this.b.b0(false, tL_inputCheckPasswordSRP, this.c);
+                break;
+            case 1:
+                this.b.b0(true, tL_inputCheckPasswordSRP, this.c);
                 break;
             default:
-                this.b.dismiss();
+                this.b.b0(true, tL_inputCheckPasswordSRP, this.c);
                 break;
         }
     }

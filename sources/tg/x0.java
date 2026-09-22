@@ -1,43 +1,66 @@
 package tg;
 
-import android.util.Pair;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ x0(z0 z0Var, boolean z10, int i10) {
+    public /* synthetic */ x0(a1 a1Var, int i10) {
         this.a = i10;
-        this.b = z0Var;
-        this.c = z10;
+        this.b = a1Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                List list = (List) obj;
-                z0 z0Var = this.b;
-                ArrayList arrayList = z0Var.g0;
-                if (this.c) {
-                    z0Var.h0.addAll(list);
-                }
-                if (z0Var.r0 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    z0Var.b0(true, true);
-                    z0Var.X(true);
+                String str = (String) obj;
+                a1 a1Var = this.b;
+                ArrayList arrayList = a1Var.g0;
+                qg.b0 b0Var = a1Var.v0;
+                a1Var.n0 = str;
+                int i10 = a1Var.r0;
+                if (i10 == 1) {
+                    AndroidUtilities.cancelRunOnUIThread(b0Var);
+                    AndroidUtilities.runOnUIThread(b0Var, 350L);
+                    break;
+                } else if (i10 == 2) {
+                    if (!TextUtils.isEmpty(str)) {
+                        AndroidUtilities.cancelRunOnUIThread(b0Var);
+                        AndroidUtilities.runOnUIThread(b0Var, 350L);
+                        break;
+                    } else {
+                        AndroidUtilities.cancelRunOnUIThread(b0Var);
+                        arrayList.clear();
+                        arrayList.addAll(t.e(a1Var.q0.id));
+                        a1Var.a0(false, true);
+                        a1Var.X(true);
+                        break;
+                    }
+                } else if (i10 == 3) {
+                    a1Var.a0(false, true);
+                    a1Var.X(true);
                     break;
                 }
                 break;
             default:
-                z0.P(this.b, this.c, (Pair) obj);
+                List list = (List) obj;
+                a1 a1Var2 = this.b;
+                ArrayList arrayList2 = a1Var2.g0;
+                if (!TextUtils.isEmpty(a1Var2.n0)) {
+                    arrayList2.clear();
+                    arrayList2.addAll(list);
+                    a1Var2.b0(true, true);
+                    a1Var2.X(true);
+                    break;
+                }
                 break;
         }
     }

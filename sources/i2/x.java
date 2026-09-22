@@ -2,11 +2,11 @@ package i2;
 
 import android.os.Bundle;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.gh0;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.vc;
+import org.telegram.ui.eh0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements e2.m, p.a, GenericProvider {
     public final /* synthetic */ int a;
@@ -18,8 +18,8 @@ public final /* synthetic */ class x implements e2.m, p.a, GenericProvider {
     }
 
     @Override // p.a
-    public pc c(xc xcVar) {
-        return xcVar.k(this.b);
+    public oc c(vc vcVar) {
+        return vcVar.k(this.b);
     }
 
     @Override // e2.m
@@ -37,8 +37,8 @@ public final /* synthetic */ class x implements e2.m, p.a, GenericProvider {
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
         Bundle i10 = a4.a.i("afterSignup", this.b);
-        gh0 gh0Var = new gh0();
-        gh0Var.l0(i10);
-        return gh0Var;
+        eh0 eh0Var = new eh0();
+        eh0Var.l0(i10);
+        return eh0Var;
     }
 }

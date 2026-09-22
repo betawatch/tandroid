@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.ui.Cells.f3;
-import v7.b7;
+import n7.a1;
+import v7.a7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i implements cf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -23,7 +23,7 @@ public final class i implements cf.a {
     public static final Pattern l = Pattern.compile("^[\\p{Zs}\t\r\n\f]");
     public static final Pattern m = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
     public static final Pattern n = Pattern.compile("\\s+");
-    public final f3 a;
+    public final a1 a;
     public final BitSet b;
     public final HashMap c;
     public final HashMap d;
@@ -33,9 +33,9 @@ public final class i implements cf.a {
     public ye.b h;
     public f6.f i;
 
-    public i(f3 f3Var, List list, List list2) {
+    public i(a1 a1Var, List list, List list2) {
         k kVar;
-        this.a = f3Var;
+        this.a = a1Var;
         HashMap hashMap = new HashMap(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -236,7 +236,7 @@ public final class i implements cf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        b7.b(pVar3, pVar4);
+        a7.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -309,7 +309,7 @@ public final class i implements cf.a {
                         bVar5 = bVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        b7.b(pVar, (p) sVar.e);
+                        a7.b(pVar, (p) sVar.e);
                     }
                     aVar.d(sVar2, sVar, i10);
                     if (bVar4.g == 0) {

@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.ui.yh;
+import org.telegram.ui.xh;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int a;
@@ -17,7 +17,7 @@ public final class t0 {
     public View g;
     public int h;
     public View i;
-    public yh j;
+    public xh j;
     public int k = 0;
     public int l = 0;
     public Integer m;
@@ -49,11 +49,11 @@ public final class t0 {
         }
     }
 
-    public final void c(yh yhVar) {
-        this.j = yhVar;
+    public final void c(xh xhVar) {
+        this.j = xhVar;
         View view = this.i;
         if (view != null) {
-            view.setOnClickListener(yhVar);
+            view.setOnClickListener(xhVar);
         }
     }
 

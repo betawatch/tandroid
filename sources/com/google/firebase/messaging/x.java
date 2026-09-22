@@ -1,43 +1,42 @@
 package com.google.firebase.messaging;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
+import android.util.Log;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class x {
-    public static WeakReference d;
-    public final SharedPreferences a;
-    public cf.c b;
-    public final ScheduledThreadPoolExecutor c;
+    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public x(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
-        this.c = scheduledThreadPoolExecutor;
-        this.a = sharedPreferences;
-    }
-
-    public final synchronized w a() {
-        w wVar;
-        String v = this.b.v();
-        Pattern pattern = w.d;
-        wVar = null;
-        if (!TextUtils.isEmpty(v)) {
-            String[] split = v.split("!", -1);
-            if (split.length == 2) {
-                wVar = new w(split[0], split[1]);
-            }
+    public x(String str, String str2) {
+        String str3;
+        if (str2 == null || !str2.startsWith("/topics/")) {
+            str3 = str2;
+        } else {
+            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
+            str3 = str2.substring(8);
         }
-        return wVar;
+        if (str3 == null || !d.matcher(str3).matches()) {
+            throw new IllegalArgumentException(a4.a.q("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
+        }
+        this.a = str3;
+        this.b = str;
+        this.c = a4.a.D(str, "!", str2);
     }
 
-    public final synchronized void b() {
-        this.b = cf.c.t(this.a, this.c);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof x)) {
+            return false;
+        }
+        x xVar = (x) obj;
+        return this.a.equals(xVar.a) && this.b.equals(xVar.b);
     }
 
-    public final synchronized void c(w wVar) {
-        this.b.w(wVar.c);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.b, this.a});
     }
 }

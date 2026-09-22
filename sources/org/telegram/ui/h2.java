@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class h2 extends View implements org.telegram.ui.Cells.q9 {
+public final class h2 extends View implements org.telegram.ui.Cells.p9 {
     public final u70 a;
     public final f4 b;
     public a3 c;
@@ -46,7 +46,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.q9 {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.c;
         if (a3Var != null) {
@@ -206,7 +206,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.q9 {
         if (a3Var != null) {
             int lineCount = a3Var.d.getLineCount();
             int i17 = 4 - lineCount;
-            this.w = org.telegram.messenger.l0.C(f7, this.c.d.getHeight(), dp);
+            this.w = org.telegram.messenger.y0.C(f7, this.c.d.getHeight(), dp);
             dp5 = this.c.d.getHeight() + dp5;
             int i18 = 0;
             while (true) {
@@ -241,12 +241,12 @@ public final class h2 extends View implements org.telegram.ui.Cells.q9 {
             objArr[c10] = str2;
             formatString = LocaleController.formatString(i19, objArr);
         }
-        a3 p5 = h4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((f4Var == null || !f4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), i13, this.b);
+        a3 p5 = h4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((f4Var == null || !f4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.jw0.a(), i13, this.b);
         this.d = p5;
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;
             if (this.c != null) {
-                height = org.telegram.messenger.l0.C(f7, dp, height);
+                height = org.telegram.messenger.y0.C(f7, dp, height);
             }
             dp5 = height;
             a3 a3Var3 = this.d;

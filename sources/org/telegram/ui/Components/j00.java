@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j00 extends s4.v {
     public final xp d = new xp(this, 17);
@@ -122,9 +122,9 @@ public final class j00 extends s4.v {
     public final void p(s4.c1 c1Var, int i10) {
         if (i10 != 0) {
             k00 k00Var = this.e;
-            k00Var.F.J0(false);
+            k00Var.F.I0(false);
             c1Var.a.setPressed(true);
-            c1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(k00Var.b0, k00Var.a));
+            c1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(k00Var.b0, k00Var.a));
         } else {
             xp xpVar = this.d;
             AndroidUtilities.cancelRunOnUIThread(xpVar);

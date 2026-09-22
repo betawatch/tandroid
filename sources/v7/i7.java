@@ -1,14 +1,24 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class i7 {
-    public static void a(rd.p pVar, zd.a aVar, zd.a aVar2) {
+    public static final Object a(ee.s sVar, ee.s sVar2, rd.p pVar) {
+        Object vVar;
+        Object B;
         try {
-            ee.a.g(gd.i.a, w7.g.b(w7.g.a(aVar, aVar2, pVar)));
+            kotlin.jvm.internal.s.a(2, pVar);
+            vVar = pVar.invoke(sVar2, sVar);
         } catch (Throwable th2) {
-            aVar2.resumeWith(u7.a(th2));
-            throw th2;
+            vVar = new zd.v(th2, false);
         }
+        jd.a aVar = jd.a.a;
+        if (vVar == aVar || (B = sVar.B(vVar)) == zd.e0.e) {
+            return aVar;
+        }
+        if (B instanceof zd.v) {
+            throw ((zd.v) B).a;
+        }
+        return zd.e0.u(B);
     }
 }

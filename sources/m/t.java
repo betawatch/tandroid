@@ -3,17 +3,18 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import w7.p6;
+import org.telegram.ui.Cells.ia;
+import w7.o6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final k2.e b;
+    public final ia b;
 
     public t(TextView textView) {
         this.a = textView;
-        this.b = new k2.e(textView);
+        this.b = new ia(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i10) {
@@ -29,10 +30,10 @@ public final class t {
     }
 
     public final void b(boolean z10) {
-        ((p6) this.b.b).b(z10);
+        ((o6) this.b.b).b(z10);
     }
 
     public final void c(boolean z10) {
-        ((p6) this.b.b).c(z10);
+        ((o6) this.b.b).c(z10);
     }
 }

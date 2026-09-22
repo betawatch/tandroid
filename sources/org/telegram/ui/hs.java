@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class hs extends Drawable {
     public final Drawable a;
@@ -16,7 +16,7 @@ public final class hs extends Drawable {
     public int e;
     public final ArrayList c = new ArrayList();
     public boolean f = false;
-    public final org.telegram.ui.Components.d6 g = new org.telegram.ui.Components.d6(new dj(this, 13), 420, org.telegram.ui.Components.qr.h);
+    public final org.telegram.ui.Components.c6 g = new org.telegram.ui.Components.c6(new dj(this, 13), 420, org.telegram.ui.Components.qr.h);
     public int h = 255;
 
     public hs(Drawable drawable, Drawable drawable2) {

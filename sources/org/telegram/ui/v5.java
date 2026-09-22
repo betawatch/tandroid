@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v5 extends r20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -94,26 +94,26 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
                     } else {
                         tL_payments_checkedGiftCode.boost = boost;
                     }
-                    new tg.c0(v5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                    new tg.d0(v5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z10 && boost.user_id == -1) {
-                    org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(v5Var.getParentActivity(), v5Var.getResourceProvider());
-                    xbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    xbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                    xbVar.b.setSingleLine(false);
-                    xbVar.b.setMaxLines(2);
-                    org.telegram.ui.Components.pc.g(v5Var, xbVar, 2750).j();
+                    org.telegram.ui.Components.wb wbVar = new org.telegram.ui.Components.wb(v5Var.getParentActivity(), v5Var.getResourceProvider());
+                    wbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                    wbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
+                    wbVar.b.setSingleLine(false);
+                    wbVar.b.setMaxLines(2);
+                    org.telegram.ui.Components.oc.g(v5Var, wbVar, 2750).j();
                 } else if (!z11 && !z10) {
                     v5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                 }
             } else {
-                yh.w7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
+                yh.x7.e1(context, v5Var.Q, v5Var.P, boost, v5Var.getResourceProvider());
             }
         }
-        if (view instanceof org.telegram.ui.Cells.s8) {
-            tg.m.m(v5Var, v5Var.resourceProvider, j3, null);
+        if (view instanceof org.telegram.ui.Cells.r8) {
+            tg.o.m(v5Var, v5Var.resourceProvider, j3, null);
         }
         if (view instanceof yg.c) {
-            tg.m.m(v5Var, v5Var.resourceProvider, j3, ((yg.c) view).getPrepaidGiveaway());
+            tg.o.m(v5Var, v5Var.resourceProvider, j3, ((yg.c) view).getPrepaidGiveaway());
         }
         if (((u5) v5Var.a0.get(i10)).a == 9) {
             v5Var.E0(Boolean.valueOf(v5Var.b0 == 1));
@@ -178,7 +178,7 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         String string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannels : R.string.BoostingBoostForGroups);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannelsInfo : R.string.BoostingBoostForGroupsInfo));
         p5 p5Var = new p5(getParentActivity());
-        p5Var.addView(this.R != null ? this.c0 : new View(p5Var.getContext()), w7.y5.d(-1, this.R != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
+        p5Var.addView(this.R != null ? this.c0 : new View(p5Var.getContext()), w7.x5.d(-1, this.R != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
         m0(string, replaceTags, p5Var, new s5(this, getParentActivity()));
     }
 
@@ -277,8 +277,8 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.f0 = linearLayout;
         linearLayout.setOrientation(1);
-        this.f0.addView(new ai.q2(parentActivity), w7.y5.t(100, 100, 17, 0, 120, 0, 0));
-        ((ViewGroup) this.fragmentView).addView(this.f0, w7.y5.e(-1, -2, 17));
+        this.f0.addView(new ai.q2(parentActivity), w7.x5.t(100, 100, 17, 0, 120, 0, 0));
+        ((ViewGroup) this.fragmentView).addView(this.f0, w7.x5.e(-1, -2, 17));
         this.f0.setAlpha(0.0f);
         if (this.R == null) {
             this.f0.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
@@ -307,30 +307,30 @@ public final class v5 extends r20 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(2, fragmentStack) : null;
-        if (n2Var instanceof uo) {
+        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.q3.g(2, fragmentStack) : null;
+        if (n2Var instanceof wo) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(2, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.q3.g(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
-            if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof zn)) {
-                tg.i.f(n2Var2, chat, false);
+            if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof bo)) {
+                tg.k.f(n2Var2, chat, false);
                 return;
             }
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.c1.i(3, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.q3.g(3, fragmentStack2) : null;
         if (n2Var2 instanceof ProfileActivity) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
         }
         finishFragment();
-        if (n2Var3 instanceof zn) {
-            tg.i.f(n2Var3, chat, true);
+        if (n2Var3 instanceof bo) {
+            tg.k.f(n2Var3, chat, true);
         }
-        if (n2Var2 instanceof zn) {
-            tg.i.f(n2Var2, chat, true);
+        if (n2Var2 instanceof bo) {
+            tg.k.f(n2Var2, chat, true);
         }
     }
 

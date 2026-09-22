@@ -1,145 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class oa0 extends e71 {
-    public final int T;
-    public final na0 U;
-    public final t00 V;
-    public final lx0 W;
-    public final lx0 X;
-    public float Y;
-    public boolean Z;
+public final class oa0 implements Menu {
+    public final n70 a;
+    public final x2 b;
+    public final Runnable c;
 
-    public oa0(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        super(n2Var.getParentActivity(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
-        this.T = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        int i10 = org.telegram.ui.ActionBar.j6.a7;
-        setBackgroundColor(getThemedColor(i10));
-        this.L = i10;
-        this.K = i10;
-        G(0.0f);
-        fixNavigationBar(getThemedColor(i10));
-        this.G = false;
-        this.H = false;
-        na0 na0Var = new na0((wh.b) this, n2Var, this.container, j3);
-        this.U = na0Var;
-        na0Var.B = false;
-        setDimBehindAlpha(75);
-        this.w.J.setHint(LocaleController.getString(R.string.SearchMemberRequests));
-        wh.g gVar = na0Var.f;
-        this.f = gVar;
-        this.e = gVar;
-        this.d.setAdapter(gVar);
-        this.d.q1();
-        ai.w0 w0Var = this.d;
-        na0Var.p = w0Var;
-        w0Var.setOnItemClickListener(new ai.g(na0Var, 18));
-        s4.s0 onScrollListener = w0Var.getOnScrollListener();
-        if (onScrollListener == null) {
-            w0Var.setOnScrollListener(na0Var.D);
-        } else {
-            w0Var.setOnScrollListener(new ii.m3(8, na0Var, onScrollListener));
-        }
-        int indexOfChild = ((ViewGroup) this.d.getParent()).indexOfChild(this.d);
-        t00 b10 = na0Var.b();
-        this.V = b10;
-        this.containerView.addView(b10, indexOfChild, w7.y5.c(-1.0f, -1));
-        lx0 a2 = na0Var.a();
-        this.W = a2;
-        this.containerView.addView(a2, indexOfChild, w7.y5.c(-1.0f, -1));
-        lx0 c10 = na0Var.c();
-        this.X = c10;
-        this.containerView.addView(c10, indexOfChild, w7.y5.c(-1.0f, -1));
-        na0Var.e();
+    public oa0(n70 n70Var, x2 x2Var, Runnable runnable) {
+        this.a = n70Var;
+        this.b = x2Var;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.ui.Components.e71
-    public final void D(MotionEvent motionEvent, ci.h2 h2Var) {
-        org.telegram.ui.ActionBar.n2 n2Var;
-        int action = motionEvent.getAction();
-        na0 na0Var = this.U;
-        if (action == 0) {
-            this.Y = this.y;
-            na0Var.i(false);
-        } else if (motionEvent.getAction() == 1 && Math.abs(this.y - this.Y) < this.T && !this.Z) {
-            Activity findActivity = AndroidUtilities.findActivity(getContext());
-            if (findActivity instanceof LaunchActivity) {
-                LaunchActivity launchActivity = (LaunchActivity) findActivity;
-                n2Var = (org.telegram.ui.ActionBar.n2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
-            } else {
-                n2Var = null;
+    @Override // android.view.Menu
+    public final MenuItem add(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem findItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem getItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final boolean hasVisibleItems() {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performIdentifierAction(int i10, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final int size() {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
+        Runnable runnable = this.c;
+        if (runnable == null || !org.telegram.ui.ActionBar.x4.r.contains(Integer.valueOf(i11)) || !MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            id idVar = new id(this, i11, 4);
+            n70 n70Var = this.a;
+            n70Var.c(0, charSequence, idVar, false);
+            if (runnable != null && org.telegram.ui.ActionBar.x4.r.contains(Integer.valueOf(i11))) {
+                n70Var.M(runnable);
             }
-            if (n2Var instanceof org.telegram.ui.zn) {
-                boolean P9 = ((org.telegram.ui.zn) n2Var).P9();
-                this.Z = true;
-                AndroidUtilities.runOnUIThread(new bv(22, this, h2Var), P9 ? 200L : 0L);
-            } else {
-                this.Z = true;
-                setFocusable(true);
-                h2Var.requestFocus();
-                AndroidUtilities.runOnUIThread(new q1(4, h2Var));
-            }
         }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            na0Var.i(true);
-        }
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.e71
-    public final void F(String str) {
-        this.U.j(str);
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.e71
-    public final void I(int i10) {
-        super.I(i10);
-        this.V.setTranslationY(this.c.getMeasuredHeight() + i10);
-        float f7 = i10;
-        this.W.setTranslationY(f7);
-        this.X.setTranslationY(f7);
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(CharSequence charSequence) {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.e71
-    public final void L() {
-        ai.w0 w0Var = this.d;
-        if (w0Var.getChildCount() > 0) {
-            super.L();
-            return;
-        }
-        int paddingTop = w0Var.getVisibility() == 0 ? w0Var.getPaddingTop() - AndroidUtilities.dp(8.0f) : 0;
-        if (this.y != paddingTop) {
-            this.y = paddingTop;
-            I(paddingTop);
-        }
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, int i13) {
+        add(i10, i11, i12, LocaleController.getString(i13));
+        return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void onBackPressed() {
-        wh.m mVar = this.U.s;
-        if (mVar != null) {
-            mVar.e(false);
-        } else {
-            super.onBackPressed();
-        }
+    @Override // android.view.Menu
+    public final void clear() {
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void show() {
-        na0 na0Var = this.U;
-        if (na0Var.b && this.y == 0) {
-            this.y = AndroidUtilities.dp(8.0f);
-        }
-        super.show();
-        na0Var.b = false;
+    @Override // android.view.Menu
+    public final void close() {
+    }
+
+    @Override // android.view.Menu
+    public final void removeGroup(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void removeItem(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setQwertyMode(boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupEnabled(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupVisible(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
     }
 }

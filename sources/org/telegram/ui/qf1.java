@@ -1,28 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class qf1 extends dg1 {
-    public final /* synthetic */ fg1 i3;
+public final /* synthetic */ class qf1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rf1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qf1(fg1 fg1Var, Context context) {
-        super(fg1Var, context);
-        this.i3 = fg1Var;
+    public /* synthetic */ qf1(rf1 rf1Var, int i10) {
+        this.a = i10;
+        this.b = rf1Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean T0() {
-        ArrayList arrayList = this.i3.b;
-        return (getAdapter() == null || this.X1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((wf1) arrayList.get(0)).c == null || ((wf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
-    }
-
-    @Override // org.telegram.ui.dg1, org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.i3.y0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                rf1 rf1Var = this.b;
+                rf1Var.F = null;
+                if (rf1Var.G != -1) {
+                    rf1Var.H.getNotificationCenter().onAnimationFinish(rf1Var.G);
+                    rf1Var.G = -1;
+                    break;
+                }
+                break;
+            default:
+                rf1 rf1Var2 = this.b;
+                rf1Var2.F = null;
+                if (rf1Var2.G != -1) {
+                    rf1Var2.H.getNotificationCenter().onAnimationFinish(rf1Var2.G);
+                    rf1Var2.G = -1;
+                    break;
+                }
+                break;
+        }
     }
 }

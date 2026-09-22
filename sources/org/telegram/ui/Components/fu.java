@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class fu extends kz {
     public int P2;
@@ -12,8 +12,8 @@ public final class fu extends kz {
     public final /* synthetic */ ju S2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fu(ju juVar, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, Context context, boolean z11, boolean z12, org.telegram.ui.ActionBar.f6 f6Var, boolean z13) {
-        super(n2Var, z10, false, false, context, z11, null, null, z12, f6Var, false, z13);
+    public fu(ju juVar, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, Context context, boolean z11, boolean z12, org.telegram.ui.ActionBar.e6 e6Var, boolean z13) {
+        super(n2Var, z10, false, false, context, z11, null, null, z12, e6Var, false, z13);
         this.S2 = juVar;
     }
 
@@ -39,7 +39,7 @@ public final class fu extends kz {
             }
             if (this.R2 && (i14 = this.P2) > 0 && i15 > 0 && i15 != i14) {
                 setTranslationY(i15 - i14);
-                org.telegram.messenger.rk.s(animate().translationY(0.0f), org.telegram.ui.ActionBar.p1.w, 250L);
+                org.telegram.messenger.vl.r(animate().translationY(0.0f), org.telegram.ui.ActionBar.p1.w, 250L);
                 this.R2 = false;
             }
             this.Q2 = juVar.x;

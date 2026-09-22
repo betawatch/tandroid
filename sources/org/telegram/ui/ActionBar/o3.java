@@ -26,13 +26,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.g01;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w01;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bo;
 import org.telegram.ui.mk;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -50,11 +50,11 @@ public final class o3 extends FrameLayout {
     public final ActionBarLayout d;
     public final m3 e;
     public int f;
-    public final org.telegram.ui.Components.g5 h;
+    public final org.telegram.ui.Components.f5 h;
     public int n;
-    public final org.telegram.ui.Components.g5 r;
+    public final org.telegram.ui.Components.f5 r;
     public boolean s;
-    public final org.telegram.ui.Components.d6 v;
+    public final org.telegram.ui.Components.c6 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -65,15 +65,15 @@ public final class o3 extends FrameLayout {
         this.b = true;
         this.c = false;
         qr qrVar = qr.h;
-        this.h = new org.telegram.ui.Components.g5(this, 200L, qrVar, 0);
-        this.r = new org.telegram.ui.Components.g5(this, 200L, qrVar, 0);
-        this.v = new org.telegram.ui.Components.d6(this, 0L, 200L, qrVar);
+        this.h = new org.telegram.ui.Components.f5(this, 200L, qrVar, 0);
+        this.r = new org.telegram.ui.Components.f5(this, 200L, qrVar, 0);
+        this.v = new org.telegram.ui.Components.c6(this, 0L, 200L, qrVar);
         this.w = UserConfig.selectedAccount;
         this.E = new RectF();
         this.I = new HashSet();
         this.J = new HashSet();
         this.d = actionBarLayout;
-        setNavigationBarColor(j6.w0(null, j6.a7, false));
+        setNavigationBarColor(i6.w0(null, i6.a7, false));
         m3 m3Var = new m3(this, this);
         this.e = m3Var;
         r0.i0.k(this, m3Var);
@@ -107,7 +107,7 @@ public final class o3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        n3 n3Var = (n3) hg.k0.g(1, tabs);
+        n3 n3Var = (n3) hg.c.h(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.G1;
         x3 x3Var = launchActivity == null ? null : launchActivity.y0;
         if (x3Var != null && (valueAnimator = x3Var.d) != null) {
@@ -193,25 +193,25 @@ public final class o3 extends FrameLayout {
     }
 
     public final void e(n3 n3Var) {
-        zn znVar;
+        bo boVar;
         mk mkVar;
         n2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
-        boolean z10 = R instanceof zn;
-        if (z10 && (mkVar = (znVar = (zn) R).Y) != null) {
-            mkVar.P();
-            znVar.Y.n0(true, false, true);
+        boolean z10 = R instanceof bo;
+        if (z10 && (mkVar = (boVar = (bo) R).Y) != null) {
+            mkVar.Q();
+            boVar.Y.o0(true, false, true);
         }
         if (n3Var.J == null) {
             new ci.m2(23, this, n3Var).run(R);
             if (n3Var.C) {
-                if (z10 && ((zn) R).a() == n3Var.a.c) {
+                if (z10 && ((bo) R).a() == n3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, R, zn.R9(n3Var.a.c), 4), 220L);
+                AndroidUtilities.runOnUIThread(new p(this, R, bo.R9(n3Var.a.c), 1), 220L);
                 return;
             }
             return;
@@ -282,7 +282,7 @@ public final class o3 extends FrameLayout {
         b2[] b2VarArr = {b2Var};
         b2Var.setOnDismissListener(new k3(zArr, callback));
         b2VarArr[0].show();
-        ((TextView) b2VarArr[0].d(-1)).setTextColor(j6.w0(null, j6.q7, false));
+        ((TextView) b2VarArr[0].d(-1)).setTextColor(i6.w0(null, i6.q7, false));
     }
 
     public Paint getBackgroundPaint() {
@@ -356,7 +356,7 @@ public final class o3 extends FrameLayout {
             }
         }
         n();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, arrayList3, n3Var, 5), 320L);
+        AndroidUtilities.runOnUIThread(new p(this, arrayList3, n3Var, 2), 320L);
         o(true);
         invalidate();
         m3 m3Var = this.e;
@@ -373,7 +373,7 @@ public final class o3 extends FrameLayout {
                 z10 = false;
             }
             this.f = i10;
-            int v = j6.v(i10, j6.l1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            int v = i6.v(i10, i6.l1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
             this.n = v;
             this.s = AndroidUtilities.computePerceivedBrightness(v) < 0.721f;
             if (!z10) {
@@ -466,8 +466,8 @@ public final class o3 extends FrameLayout {
             n3 n3Var = tabs.get(i10);
             org.telegram.ui.h4 h4Var = n3Var.J;
             if (h4Var != null && !h4Var.d0.isEmpty()) {
-                Object g10 = hg.k0.g(1, n3Var.J.d0);
-                if ((g10 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) g10).id == webPage.id) {
+                Object h = hg.c.h(1, n3Var.J.d0);
+                if ((h instanceof TLRPC.WebPage) && ((TLRPC.WebPage) h).id == webPage.id) {
                     e(n3Var);
                     return n3Var;
                 }
@@ -491,7 +491,7 @@ public final class o3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     l3Var.u = null;
                 } else {
-                    l3Var.u = new w01(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    l3Var.u = new g01(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

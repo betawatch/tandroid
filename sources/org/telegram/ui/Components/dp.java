@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.gj1;
+import org.telegram.ui.hj1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class dp implements ti {
     public final /* synthetic */ mp a;
@@ -25,7 +25,7 @@ public final class dp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void C1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         mp mpVar = this.a;
         try {
             HashMap<Object, Object> selectedPhotos = mpVar.Y.j0.getSelectedPhotos();
@@ -42,7 +42,7 @@ public final class dp implements ti {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                ap apVar = new ap(new gj1(file, file, ""), loadBitmap, false, 2);
+                ap apVar = new ap(new hj1(file, file, ""), loadBitmap, false, 2);
                 apVar.V1 = mpVar.f0;
                 apVar.F1 = false;
                 apVar.E1 = false;
@@ -63,7 +63,7 @@ public final class dp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void V0(Object obj) {
+    public final void U0(Object obj) {
         ap apVar = new ap(obj, null, true, 3);
         mp mpVar = this.a;
         apVar.V1 = mpVar.f0;
@@ -73,25 +73,25 @@ public final class dp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean f0() {
+    public final /* synthetic */ boolean c0() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void y0(gh ghVar) {
-        ghVar.run();
+    public final void x0(fh fhVar) {
+        fhVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void L0() {
+    public final /* synthetic */ void K0() {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void k1(TLRPC.User user) {
+    public final /* synthetic */ void j1(TLRPC.User user) {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void v0() {
+    public final /* synthetic */ void u0() {
     }
 
     @Override // org.telegram.ui.Components.ti

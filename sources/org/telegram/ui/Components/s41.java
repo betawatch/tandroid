@@ -1,35 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class s41 extends vh.n {
-    public final org.telegram.ui.l20 R;
-    public final /* synthetic */ v41 S;
+public final class s41 {
+    public final /* synthetic */ b51 a;
+    public final /* synthetic */ e51 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s41(v41 v41Var, Context context) {
-        super(context);
-        this.S = v41Var;
-        this.R = new org.telegram.ui.l20();
+    public s41(e51 e51Var, b51 b51Var) {
+        this.b = e51Var;
+        this.a = b51Var;
     }
 
-    @Override // vh.n, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(8.0f) + this.S.d.getWidth();
-        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        ow0.a(canvas, getLayout());
-        canvas.restore();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
-        this.R.b(canvas, rectF, 2, 1.0f);
-        canvas.restore();
+    public final int a() {
+        return this.b.s.v;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        e51 e51Var = this.b;
+        u41 u41Var = e51Var.n;
+        if (z10) {
+            s4.h0 adapter = u41Var.getAdapter();
+            gg.g2 g2Var = e51Var.v;
+            if (adapter != g2Var) {
+                u41Var.setAdapter(g2Var);
+                if (u41Var.getAdapter().h() <= 0) {
+                    e51Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-u41Var.getPaddingTop()) + e51Var.E, false);
+                    return;
+                }
+                return;
+            }
+        }
+        if (z10) {
+            return;
+        }
+        s4.h0 adapter2 = u41Var.getAdapter();
+        d51 d51Var = e51Var.s;
+        if (adapter2 == d51Var) {
+            return;
+        }
+        u41Var.setAdapter(d51Var);
+        if (u41Var.getAdapter().h() <= 0) {
+        }
     }
 }

@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p70 implements TextWatcher {
     public final /* synthetic */ q70 a;
@@ -22,18 +22,18 @@ public final class p70 implements TextWatcher {
             t70Var.getConnectionsManager().cancelRequest(q70Var.c, true);
             q70Var.c = 0;
         }
-        yt ytVar = q70Var.d;
-        if (ytVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ytVar);
+        kw kwVar = q70Var.d;
+        if (kwVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(kwVar);
         }
         q70Var.e = null;
         if (trim.isEmpty()) {
             t70.a0(t70Var, null);
             return;
         }
-        yt ytVar2 = new yt(26, this, trim);
-        q70Var.d = ytVar2;
-        AndroidUtilities.runOnUIThread(ytVar2, 300L);
+        kw kwVar2 = new kw(20, this, trim);
+        q70Var.d = kwVar2;
+        AndroidUtilities.runOnUIThread(kwVar2, 300L);
     }
 
     @Override // android.text.TextWatcher

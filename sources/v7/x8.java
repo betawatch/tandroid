@@ -1,29 +1,7 @@
 package v7;
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class x8 implements y8 {
-    public final ArrayList a;
-
-    public x8(Context context, w8 w8Var) {
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        w8Var.getClass();
-        arrayList.add(new c9(context, w8Var));
-    }
-
-    @Override // v7.y8
-    public final void a(a5.a aVar) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((y8) obj).a(aVar);
-        }
-    }
+public interface x8 {
+    void a(a5.a aVar);
 }

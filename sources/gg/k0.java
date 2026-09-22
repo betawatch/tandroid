@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final class k0 extends AnimatorListenerAdapter {
             case 1:
                 View view = (View) this.c;
                 view.setTranslationY(0.0f);
-                if (view instanceof org.telegram.ui.Cells.u1) {
-                    ((org.telegram.ui.Cells.u1) view).getTransitionParams().h = false;
+                if (view instanceof org.telegram.ui.Cells.t1) {
+                    ((org.telegram.ui.Cells.t1) view).getTransitionParams().h = false;
                     break;
                 }
                 break;
@@ -73,8 +73,8 @@ public final class k0 extends AnimatorListenerAdapter {
                 s4.c1 c1Var2 = (s4.c1) this.b;
                 ji.n nVar = (ji.n) this.e;
                 View view2 = (View) this.c;
-                if (view2 instanceof org.telegram.ui.Cells.u1) {
-                    ((org.telegram.ui.Cells.u1) view2).getTransitionParams().h = false;
+                if (view2 instanceof org.telegram.ui.Cells.t1) {
+                    ((org.telegram.ui.Cells.t1) view2).getTransitionParams().h = false;
                 }
                 ((ViewPropertyAnimator) this.d).setListener(null);
                 if (nVar.y.remove(c1Var2)) {
@@ -96,10 +96,10 @@ public final class k0 extends AnimatorListenerAdapter {
                 atVar.A();
                 break;
             case 3:
-                ((lv0) this.e).H1 = false;
+                ((yu0) this.e).H1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((eu0) this.b).removeView(view3);
+                    ((rt0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -130,7 +130,7 @@ public final class k0 extends AnimatorListenerAdapter {
                         p2Var.e(true);
                     } else {
                         textViewArr[1].setText(p2Var.e);
-                        p2Var.a(textViewArr[0], textViewArr[1], new i2.g0(this, 25));
+                        p2Var.a(textViewArr[0], textViewArr[1], new i2.g0(this, 24));
                     }
                     p2Var.e = null;
                     break;

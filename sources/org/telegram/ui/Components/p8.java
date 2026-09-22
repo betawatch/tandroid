@@ -1,91 +1,262 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p8 implements org.telegram.ui.ActionBar.a2, lq {
+public final class p8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d9 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ p8(d9 d9Var, int i10) {
+    public /* synthetic */ p8(Object obj, int i10) {
         this.a = i10;
-        this.b = d9Var;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.lq
-    public /* synthetic */ int K0(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                this.b.finishFragment();
+            case 9:
+                ((wl) this.b).a.O = null;
                 break;
             default:
-                this.b.finishFragment();
+                super.onAnimationCancel(animator);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lq
-    public void v0(int i10, int i11, boolean z10) {
-        d9 d9Var = this.b;
-        if (i11 == 0) {
-            z8 z8Var = d9Var.Y;
-            int i12 = z8Var.c;
-            if (i12 != i10 && (i12 == 0 || i10 == 0)) {
-                z8 a2 = z8Var.a();
-                d9Var.Y = a2;
-                d9Var.a.b(a2, true);
-                d9Var.n0();
-            }
-            d9Var.Y.c = i10;
-        } else if (i11 == 1) {
-            z8 z8Var2 = d9Var.Y;
-            int i13 = z8Var2.d;
-            if (i13 != i10 && (i13 == 0 || i10 == 0)) {
-                z8 a10 = z8Var2.a();
-                d9Var.Y = a10;
-                d9Var.a.b(a10, true);
-                d9Var.n0();
-            }
-            d9Var.Y.d = i10;
-        } else if (i11 == 2) {
-            z8 z8Var3 = d9Var.Y;
-            int i14 = z8Var3.e;
-            if (i14 != i10 && (i14 == 0 || i10 == 0)) {
-                z8 a11 = z8Var3.a();
-                d9Var.Y = a11;
-                d9Var.a.b(a11, true);
-                d9Var.n0();
-            }
-            d9Var.Y.e = i10;
-        } else if (i11 == 3) {
-            z8 z8Var4 = d9Var.Y;
-            int i15 = z8Var4.f;
-            if (i15 != i10 && (i15 == 0 || i10 == 0)) {
-                z8 a12 = z8Var4.a();
-                d9Var.Y = a12;
-                d9Var.a.b(a12, true);
-                d9Var.n0();
-            }
-            d9Var.Y.f = i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                c9 c9Var = ((q8) this.b).b;
+                c9Var.f = false;
+                c9Var.e.setVisibility(8);
+                break;
+            case 1:
+                h9 h9Var = (h9) this.b;
+                if (h9Var.f != null) {
+                    h9Var.e = 1.0f;
+                    h9Var.n();
+                    if (h9Var.g) {
+                        h9Var.g = false;
+                        Runnable runnable = h9Var.j;
+                        if (runnable != null) {
+                            runnable.run();
+                        }
+                    }
+                    h9Var.f();
+                }
+                h9Var.f = null;
+                break;
+            case 2:
+                ((qf) this.b).f.b0.setVisibility(8);
+                break;
+            case 3:
+                ((tg) this.b).d0 = 1.0f;
+                break;
+            case 4:
+                ((ci) this.b).c.s.setVisibility(8);
+                break;
+            case 5:
+                ((ei) this.b).d.v.setVisibility(8);
+                break;
+            case 6:
+                vi viVar = (vi) this.b;
+                viVar.Z0 = null;
+                if (!viVar.q1) {
+                    if (viVar.X0.getTag() == null && viVar.Q0 == 0 && !viVar.T0) {
+                        viVar.a1.setVisibility(4);
+                    }
+                    viVar.i1.setVisibility(4);
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.v0 v0Var = viVar.e1;
+                    if (v0Var != null) {
+                        v0Var.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                super.onAnimationEnd(animator);
+                ok okVar = (ok) this.b;
+                okVar.s.setVisibility(8);
+                okVar.n = 0;
+                dk dkVar = okVar.r;
+                dkVar.setAlpha(1.0f);
+                dkVar.setScaleX(1.0f);
+                dkVar.setScaleY(1.0f);
+                dkVar.setTranslationX(0.0f);
+                dkVar.invalidate();
+                break;
+            case 8:
+                nk nkVar = (nk) this.b;
+                if (nkVar.X.H.getTag() == null) {
+                    nkVar.X.H.setVisibility(4);
+                }
+                nkVar.X.I = null;
+                break;
+            case 9:
+                wl wlVar = (wl) this.b;
+                if (animator.equals(wlVar.a.O)) {
+                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = wlVar.a;
+                    chatAttachAlertPhotoLayout.c0 = true;
+                    chatAttachAlertPhotoLayout.O = null;
+                    break;
+                }
+                break;
+            case 10:
+                pm pmVar = (pm) this.b;
+                qm qmVar = pmVar.P;
+                qmVar.J = null;
+                qmVar.K = false;
+                pmVar.invalidate();
+                break;
+            case 11:
+                mp mpVar = (mp) this.b;
+                ci.wb wbVar = mpVar.R;
+                if (wbVar != null) {
+                    if (wbVar.getParent() != null) {
+                        ((ViewGroup) mpVar.R.getParent()).removeView(mpVar.R);
+                    }
+                    mpVar.R = null;
+                }
+                mpVar.T = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 12:
+                CheckBox checkBox = (CheckBox) this.b;
+                if (animator.equals(checkBox.s)) {
+                    checkBox.s = null;
+                }
+                if (!checkBox.x) {
+                    checkBox.G = null;
+                    break;
+                }
+                break;
+            case 13:
+                CheckBoxBase checkBoxBase = (CheckBoxBase) this.b;
+                if (animator.equals(checkBoxBase.p)) {
+                    checkBoxBase.p = null;
+                }
+                if (!checkBoxBase.q) {
+                    checkBoxBase.C = null;
+                    break;
+                }
+                break;
+            case 14:
+                mq mqVar = (mq) this.b;
+                if (mqVar.K == mqVar.L) {
+                    mqVar.G.setVisibility(4);
+                }
+                mqVar.y = null;
+                break;
+            case 15:
+                vq vqVar = (vq) this.b;
+                vqVar.l = 1.0f;
+                vqVar.o = null;
+                vqVar.p = null;
+                vqVar.q = null;
+                View view = vqVar.H;
+                if (view != null) {
+                    if (vqVar.h == 0 && vqVar.G) {
+                        view.setVisibility(8);
+                    }
+                    vqVar.H.invalidate();
+                }
+                vqVar.c = -1;
+                break;
+            case 16:
+                ju juVar = (ju) this.b;
+                juVar.O = false;
+                juVar.d.setTranslationY(0.0f);
+                juVar.d.setAlpha(0.0f);
+                juVar.c(0.0f);
+                juVar.R = 0.0f;
+                juVar.j();
+                break;
+            case 17:
+                ((ru) this.b).a.O = false;
+                break;
+            case 18:
+                super.onAnimationEnd(animator);
+                ((jv) this.b).d = null;
+                break;
+            case 19:
+                ((kz) this.b).W = null;
+                break;
+            case 20:
+                super.onAnimationEnd(animator);
+                ((ty) this.b).n = null;
+                break;
+            case 21:
+                ((i00) this.b).a();
+                break;
+            case 22:
+                k00 k00Var = (k00) this.b;
+                k00Var.U = k00Var.c0;
+                k00Var.b0 = k00Var.f0;
+                k00Var.V = k00Var.d0;
+                k00Var.W = k00Var.e0;
+                k00Var.c0 = -1;
+                k00Var.d0 = -1;
+                k00Var.e0 = -1;
+                k00Var.f0 = -1;
+                break;
+            case 23:
+                y00 y00Var = (y00) this.b;
+                y00Var.s = 1.0f;
+                y00Var.invalidate();
+                break;
+            case 24:
+                n70 n70Var = (n70) this.b;
+                l70 l70Var = n70Var.x;
+                if (l70Var != null) {
+                    l70Var.setProgress(1.0f);
+                    n70Var.x.invalidate();
+                }
+                n70Var.m0 = null;
+                break;
+            case 25:
+                l00 l00Var = (l00) this.b;
+                ((w70) l00Var.e).E = false;
+                TextView[] textViewArr = (TextView[]) l00Var.d;
+                TextView textView = textViewArr[0];
+                textViewArr[0] = textViewArr[1];
+                textViewArr[1] = textView;
+                break;
+            case 26:
+                k80 k80Var = (k80) this.b;
+                if (!k80Var.f) {
+                    k80Var.c.setVisibility(8);
+                    break;
+                }
+                break;
+            case 27:
+                r80 r80Var = (r80) this.b;
+                FrameLayout frameLayout = r80Var.b;
+                ci.s6 s6Var = (ci.s6) r80Var.c;
+                if (s6Var.getParent() != null) {
+                    frameLayout.removeView(s6Var);
+                }
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.fa) r80Var.d);
+                break;
+            case 28:
+                pb0 pb0Var = (pb0) this.b;
+                pb0Var.c0.h = null;
+                pb0Var.e(pb0Var.S, pb0Var.R);
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) this.b;
+                numberTextView.d = null;
+                numberTextView.b.clear();
+                break;
         }
-        if (Build.VERSION.SDK_INT >= 23) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        }
-        d9Var.a.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.lq
-    public /* synthetic */ void l(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.lq
-    public /* synthetic */ void y() {
     }
 }

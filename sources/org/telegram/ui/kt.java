@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class kt implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
@@ -46,7 +46,7 @@ public final class kt implements View.OnClickListener {
             if (qtVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.d5.L(stVar.w, qtVar3.a(), new a1.d(qtVar3, document, str, obj, 10));
+                org.telegram.ui.Components.c5.L(stVar.w, qtVar3.a(), new a1.d(qtVar3, document, str, obj, 10));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
             MediaDataController.getInstance(stVar.r).addRecentSticker(0, stVar.b0, stVar.W, (int) (System.currentTimeMillis() / 1000), true);
@@ -55,7 +55,7 @@ public final class kt implements View.OnClickListener {
         } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
             stVar.l.o(stVar.W);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
-            stVar.l.F(stVar.W);
+            stVar.l.E(stVar.W);
         }
         stVar.p();
     }

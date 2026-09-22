@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityManager;
 import androidx.recyclerview.widget.RecyclerView;
 import e6.n;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
+import k2.c0;
+import lf.i;
 import r0.i0;
 import s4.c1;
 import s4.h0;
@@ -25,7 +26,7 @@ import s4.t0;
 import s4.u0;
 import s4.z0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -44,7 +45,7 @@ public final class e {
     }
 
     public void a(c1 c1Var, boolean z10) {
-        RecyclerView.n(c1Var);
+        RecyclerView.m(c1Var);
         if (c1Var.e(16384)) {
             c1Var.p(0, 16384);
             i0.k(c1Var.a, null);
@@ -56,7 +57,7 @@ public final class e {
                 h0Var.A(c1Var);
             }
             if (recyclerView.t0 != null) {
-                recyclerView.f.E(c1Var);
+                recyclerView.f.L(c1Var);
             }
         }
         c1Var.t = null;
@@ -76,10 +77,10 @@ public final class e {
         if (i10 >= 0 && i10 < recyclerView.t0.b()) {
             return !recyclerView.t0.g ? i10 : recyclerView.d.g(i10, 0);
         }
-        StringBuilder k10 = k0.k(i10, "invalid position ", ". State item count is ");
-        k10.append(recyclerView.t0.b());
-        k10.append(recyclerView.D());
-        throw new IndexOutOfBoundsException(k10.toString());
+        StringBuilder l4 = hg.c.l(i10, "invalid position ", ". State item count is ");
+        l4.append(recyclerView.t0.b());
+        l4.append(recyclerView.C());
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 
     public u0 c() {
@@ -130,20 +131,20 @@ public final class e {
 
     public void g(View view) {
         RecyclerView recyclerView = (RecyclerView) this.h;
-        c1 V = RecyclerView.V(view);
-        if (V.l()) {
+        c1 U = RecyclerView.U(view);
+        if (U.l()) {
             recyclerView.removeDetachedView(view, false);
         }
-        if (V.k()) {
-            V.p.k(V);
-        } else if (V.s()) {
-            V.l &= -33;
+        if (U.k()) {
+            U.p.k(U);
+        } else if (U.s()) {
+            U.l &= -33;
         }
-        h(V);
-        if (recyclerView.c0 == null || V.i()) {
+        h(U);
+        if (recyclerView.c0 == null || U.i()) {
             return;
         }
-        recyclerView.c0.f(V);
+        recyclerView.c0.f(U);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:46:0x009c, code lost:
@@ -170,14 +171,14 @@ public final class e {
             sb2.append(c1Var.k());
             sb2.append(" isAttached:");
             sb2.append(view.getParent() != null);
-            sb2.append(recyclerView.D());
+            sb2.append(recyclerView.C());
             throw new IllegalArgumentException(sb2.toString());
         }
         if (c1Var.l()) {
-            throw new IllegalArgumentException("Tmp detached view should be removed from RecyclerView before it can be recycled: " + c1Var + recyclerView.D());
+            throw new IllegalArgumentException("Tmp detached view should be removed from RecyclerView before it can be recycled: " + c1Var + recyclerView.C());
         }
         if (c1Var.r()) {
-            throw new IllegalArgumentException("Trying to recycle an ignored view holder. You should first call stopIgnoringView(view) before calling recycle." + recyclerView.D());
+            throw new IllegalArgumentException("Trying to recycle an ignored view holder. You should first call stopIgnoringView(view) before calling recycle." + recyclerView.C());
         }
         if ((c1Var.l & 16) == 0) {
             WeakHashMap weakHashMap = i0.a;
@@ -224,7 +225,7 @@ public final class e {
                     if (!z11) {
                         a(c1Var, true);
                         r5 = z11;
-                        recyclerView.f.E(c1Var);
+                        recyclerView.f.L(c1Var);
                         if (r5 || z12 || !z10) {
                             return;
                         }
@@ -234,7 +235,7 @@ public final class e {
                     r5 = z11;
                 }
                 z12 = false;
-                recyclerView.f.E(c1Var);
+                recyclerView.f.L(c1Var);
                 if (r5) {
                     return;
                 } else {
@@ -246,7 +247,7 @@ public final class e {
         if (c1Var.i()) {
         }
         z12 = false;
-        recyclerView.f.E(c1Var);
+        recyclerView.f.L(c1Var);
         if (r5) {
         }
     }
@@ -254,22 +255,22 @@ public final class e {
     public void i(View view) {
         m0 m0Var;
         RecyclerView recyclerView = (RecyclerView) this.h;
-        c1 V = RecyclerView.V(view);
-        if (!V.e(12) && V.m() && (m0Var = recyclerView.c0) != null && !m0Var.c(V, V.d())) {
+        c1 U = RecyclerView.U(view);
+        if (!U.e(12) && U.m() && (m0Var = recyclerView.c0) != null && !m0Var.c(U, U.d())) {
             if (((ArrayList) this.d) == null) {
                 this.d = new ArrayList();
             }
-            V.p = this;
-            V.q = true;
-            ((ArrayList) this.d).add(V);
+            U.p = this;
+            U.q = true;
+            ((ArrayList) this.d).add(U);
             return;
         }
-        if (V.h() && !V.j() && !recyclerView.w.b) {
-            throw new IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + recyclerView.D());
+        if (U.h() && !U.j() && !recyclerView.w.b) {
+            throw new IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + recyclerView.C());
         }
-        V.p = this;
-        V.q = false;
-        ((ArrayList) this.c).add(V);
+        U.p = this;
+        U.q = false;
+        ((ArrayList) this.c).add(U);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:245:0x0418, code lost:
@@ -291,7 +292,7 @@ public final class e {
         boolean z11;
         ViewGroup.LayoutParams layoutParams;
         p0 p0Var;
-        RecyclerView K;
+        RecyclerView J;
         c1 c1Var2;
         View view;
         c1 c1Var3;
@@ -303,10 +304,10 @@ public final class e {
         RecyclerView recyclerView = (RecyclerView) this.h;
         z0 z0Var = recyclerView.t0;
         if (i10 < 0 || i10 >= z0Var.b()) {
-            StringBuilder l4 = k0.l("Invalid item position ", i10, "(", i10, "). Item count:");
-            l4.append(z0Var.b());
-            l4.append(recyclerView.D());
-            throw new IndexOutOfBoundsException(l4.toString());
+            StringBuilder m10 = hg.c.m("Invalid item position ", i10, "(", i10, "). Item count:");
+            m10.append(z0Var.b());
+            m10.append(recyclerView.C());
+            throw new IndexOutOfBoundsException(m10.toString());
         }
         if (z0Var.g) {
             ArrayList arrayList3 = (ArrayList) this.d;
@@ -357,8 +358,8 @@ public final class e {
                     break;
                 }
                 view = (View) arrayList4.get(i15);
-                c1 V = RecyclerView.V(view);
-                if (V.c() == i10 && !V.h() && !V.j()) {
+                c1 U = RecyclerView.U(view);
+                if (U.c() == i10 && !U.h() && !U.j()) {
                     break;
                 }
                 i15++;
@@ -379,29 +380,29 @@ public final class e {
                     i16++;
                 }
             } else {
-                c1 V2 = RecyclerView.V(view);
-                lf.h hVar = recyclerView.e;
-                n nVar = (n) hVar.c;
-                int indexOfChild = ((RecyclerView) ((o0.b) hVar.b).b).indexOfChild(view);
+                c1 U2 = RecyclerView.U(view);
+                i iVar = recyclerView.e;
+                n nVar = (n) iVar.c;
+                int indexOfChild = ((RecyclerView) ((c0) iVar.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
                 if (!nVar.z(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                nVar.v(indexOfChild);
-                hVar.Y(view);
-                lf.h hVar2 = recyclerView.e;
-                n nVar2 = (n) hVar2.c;
-                int indexOfChild2 = ((RecyclerView) ((o0.b) hVar2.b).b).indexOfChild(view);
+                nVar.u(indexOfChild);
+                iVar.Y(view);
+                i iVar2 = recyclerView.e;
+                n nVar2 = (n) iVar2.c;
+                int indexOfChild2 = ((RecyclerView) ((c0) iVar2.b).b).indexOfChild(view);
                 int w10 = (indexOfChild2 == -1 || nVar2.z(indexOfChild2)) ? -1 : indexOfChild2 - nVar2.w(indexOfChild2);
                 if (w10 == -1) {
-                    throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + V2 + recyclerView.D());
+                    throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
                 }
                 recyclerView.e.y(w10);
                 i(view);
-                V2.a(8224);
-                c1Var3 = V2;
+                U2.a(8224);
+                c1Var3 = U2;
             }
             if (c1Var3 != null) {
                 if (c1Var3.j()) {
@@ -409,7 +410,7 @@ public final class e {
                 } else {
                     int i17 = c1Var3.c;
                     if (i17 < 0 || i17 >= recyclerView.w.h()) {
-                        throw new IndexOutOfBoundsException("Inconsistency detected. Invalid view holder adapter position" + c1Var3 + recyclerView.D());
+                        throw new IndexOutOfBoundsException("Inconsistency detected. Invalid view holder adapter position" + c1Var3 + recyclerView.C());
                     }
                     if (z0Var.g || recyclerView.w.j(c1Var3.c) == c1Var3.f) {
                         h0 h0Var = recyclerView.w;
@@ -441,10 +442,10 @@ public final class e {
             j10 = 3;
             int g11 = recyclerView.d.g(i10, 0);
             if (g11 < 0 || g11 >= recyclerView.w.h()) {
-                StringBuilder l10 = k0.l("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
-                l10.append(z0Var.b());
-                l10.append(recyclerView.D());
-                throw new IndexOutOfBoundsException(l10.toString());
+                StringBuilder m11 = hg.c.m("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
+                m11.append(z0Var.b());
+                m11.append(recyclerView.C());
+                throw new IndexOutOfBoundsException(m11.toString());
             }
             int j12 = recyclerView.w.j(g11);
             j11 = 4;
@@ -467,11 +468,11 @@ public final class e {
                             } else {
                                 arrayList.remove(size5);
                                 recyclerView.removeDetachedView(view2, false);
-                                c1 V3 = RecyclerView.V(view2);
-                                V3.p = null;
-                                V3.q = false;
-                                V3.l &= -33;
-                                h(V3);
+                                c1 U3 = RecyclerView.U(view2);
+                                U3.p = null;
+                                U3.q = false;
+                                U3.l &= -33;
+                                h(U3);
                             }
                         }
                         size5--;
@@ -529,8 +530,8 @@ public final class e {
                 }
                 bVar = null;
                 c1Var = recyclerView.w.g(recyclerView, j12);
-                if (RecyclerView.S0 && (K = RecyclerView.K(c1Var.a)) != null) {
-                    c1Var.b = new WeakReference(K);
+                if (RecyclerView.S0 && (J = RecyclerView.J(c1Var.a)) != null) {
+                    c1Var.b = new WeakReference(J);
                 }
                 long nanoTime2 = recyclerView.getNanoTime() - nanoTime;
                 t0 b10 = ((u0) this.g).b(j12);
@@ -551,7 +552,7 @@ public final class e {
         if (z10 && !z0Var.g && c1Var.e(8192)) {
             c1Var.p(0, 8192);
             if (z0Var.j) {
-                recyclerView.o0(c1Var, recyclerView.c0.l(z0Var, c1Var, m0.b(c1Var) | 4096, c1Var.d()));
+                recyclerView.n0(c1Var, recyclerView.c0.l(z0Var, c1Var, m0.b(c1Var) | 4096, c1Var.d()));
             }
         }
         if (!z0Var.g || !c1Var.g()) {

@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -82,10 +82,10 @@ public final class d implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            pVar.j(w10);
+            pVar.k(w10);
         }
         pVar.p();
-        pVar.j(i10);
+        pVar.k(i10);
         if (this.h == -1) {
             this.h = i10;
         }
@@ -95,14 +95,14 @@ public final class d implements c3.o {
     @Override // c3.o
     public final void g(c3.q qVar) {
         this.f = qVar;
-        this.b.e(qVar, new f0(0, 1));
-        qVar.f1();
+        this.b.d(qVar, new f0(0, 1));
+        qVar.e1();
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.k = false;
-        this.b.d();
+        this.b.c();
         this.g = j10;
     }
 
@@ -196,7 +196,7 @@ public final class d implements c3.o {
                             eVar.u = this.g;
                             this.k = true;
                         }
-                        eVar.b(vVar2);
+                        eVar.a(vVar2);
                         return 0;
                     }
                 }

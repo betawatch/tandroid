@@ -14,12 +14,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.vk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class w1 extends xl0 {
+public final class w1 extends kl0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -45,7 +45,7 @@ public final class w1 extends xl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -196,52 +196,52 @@ public final class w1 extends xl0 {
             return;
         }
         if (i11 == 2) {
-            org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) view;
+            org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) view;
             Object F = F(i10);
             if (!(F instanceof TLRPC.Document)) {
                 if (F instanceof TLRPC.BotInlineResult) {
-                    f2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
+                    e2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
                 }
             } else {
                 TLRPC.Document document = (TLRPC.Document) F;
-                f2Var.getClass();
-                f2Var.d(0, document, "gif" + document);
+                e2Var.getClass();
+                e2Var.d(0, document, "gif" + document);
             }
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.p8] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.o8] */
     /* JADX WARN: Type inference failed for: r9v10, types: [android.view.View] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.Cells.f2 f2Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.Cells.e2 e2Var;
         z1 z1Var = this.s;
         if (i10 == 0) {
-            f2Var = new View(z1Var.getContext());
+            e2Var = new View(z1Var.getContext());
         } else if (i10 == 1) {
             Context context = z1Var.getContext();
-            f6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
-            ?? p8Var = new org.telegram.ui.Cells.p8(context, false, false, f6Var, false);
-            p8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+            e6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
+            ?? o8Var = new org.telegram.ui.Cells.o8(context, false, false, e6Var, false);
+            o8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
             s4.p0 p0Var = new s4.p0(-1, -2);
             ((ViewGroup.MarginLayoutParams) p0Var).topMargin = AndroidUtilities.dp(2.5f);
             ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin = AndroidUtilities.dp(5.5f);
-            p8Var.setLayoutParams(p0Var);
-            f2Var = p8Var;
+            o8Var.setLayoutParams(p0Var);
+            e2Var = o8Var;
         } else {
-            org.telegram.ui.Cells.f2 f2Var2 = new org.telegram.ui.Cells.f2(z1Var.getContext());
-            f2Var2.getPhotoImage().setLayerNum(7);
-            if (f2Var2.c0 == null) {
-                org.telegram.ui.Components.yc ycVar = new org.telegram.ui.Components.yc(f2Var2, 1.0f, 3.0f);
-                ycVar.e = 120L;
-                f2Var2.c0 = ycVar;
+            org.telegram.ui.Cells.e2 e2Var2 = new org.telegram.ui.Cells.e2(z1Var.getContext());
+            e2Var2.getPhotoImage().setLayerNum(7);
+            if (e2Var2.c0 == null) {
+                org.telegram.ui.Components.wc wcVar = new org.telegram.ui.Components.wc(e2Var2, 1.0f, 3.0f);
+                wcVar.e = 120L;
+                e2Var2.c0 = wcVar;
             }
-            f2Var2.setIsKeyboard(true);
-            f2Var2.setCanPreviewGif(true);
-            f2Var = f2Var2;
+            e2Var2.setIsKeyboard(true);
+            e2Var2.setCanPreviewGif(true);
+            e2Var = e2Var2;
         }
-        return new il0(f2Var);
+        return new vk0(e2Var);
     }
 }

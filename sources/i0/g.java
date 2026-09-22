@@ -17,12 +17,12 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
+import v7.h8;
 import v7.i8;
-import v7.j8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class g extends i8 {
+public final class g extends h8 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -70,7 +70,7 @@ public final class g extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         int i11;
@@ -87,10 +87,10 @@ public final class g extends i8 {
             while (i11 < length) {
                 h0.f fVar = fVarArr[i11];
                 int i12 = fVar.f;
-                File d10 = j8.d(context);
+                File d10 = i8.d(context);
                 if (d10 != null) {
                     try {
-                        if (j8.b(d10, resources, i12)) {
+                        if (i8.b(d10, resources, i12)) {
                             try {
                                 fileInputStream = new FileInputStream(d10);
                             } catch (IOException unused2) {
@@ -117,7 +117,7 @@ public final class g extends i8 {
         return null;
     }
 
-    @Override // v7.i8
+    @Override // v7.h8
     public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
         Object obj;
         try {
@@ -135,7 +135,7 @@ public final class g extends i8 {
                     Uri uri = iVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) mVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = j8.e(context, uri);
+                        byteBuffer = i8.e(context, uri);
                         mVar.put(uri, byteBuffer);
                     }
                     if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {

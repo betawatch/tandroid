@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.TextUtils;
-import android.util.Range;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,13 +34,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import ki.k0;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.lu;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.c5;
@@ -51,7 +49,7 @@ import org.telegram.ui.x4;
 import org.telegram.ui.y0;
 import r0.i0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -141,13 +139,13 @@ public final class m implements c3.q {
             this.a = true;
             return qVar.Z1(i10, i11);
         }
-        z3.o oVar = (z3.o) sparseArray.get(i10);
-        if (oVar != null) {
-            return oVar;
+        z3.p pVar = (z3.p) sparseArray.get(i10);
+        if (pVar != null) {
+            return pVar;
         }
-        z3.o oVar2 = new z3.o(qVar.Z1(i10, i11), (z3.k) this.c);
-        sparseArray.put(i10, oVar2);
-        return oVar2;
+        z3.p pVar2 = new z3.p(qVar.Z1(i10, i11), (z3.l) this.c);
+        sparseArray.put(i10, pVar2);
+        return pVar2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -243,20 +241,20 @@ public final class m implements c3.q {
         arrayList.add(view);
     }
 
+    @Override // c3.q
+    public void e1() {
+        SparseArray sparseArray = (SparseArray) this.d;
+        ((c3.q) this.b).e1();
+        if (this.a) {
+            for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+                ((z3.p) sparseArray.valueAt(i10)).i = true;
+            }
+        }
+    }
+
     public int f(int i10, int i11, int i12) {
         dc.b bVar = (dc.b) this.b;
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
-    }
-
-    @Override // c3.q
-    public void f1() {
-        SparseArray sparseArray = (SparseArray) this.d;
-        ((c3.q) this.b).f1();
-        if (this.a) {
-            for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                ((z3.o) sparseArray.valueAt(i10)).i = true;
-            }
-        }
     }
 
     public ValueAnimator g(lu luVar, int i10, int i11, int i12, int i13) {
@@ -303,7 +301,7 @@ public final class m implements c3.q {
         if (i14 >= 0) {
             return new aa.a(this, fVar, eVarArr[length][i14][i15]);
         }
-        throw new cc.k(a4.a.p("Internal error: failed to encode \"", str, "\""));
+        throw new cc.k(a4.a.q("Internal error: failed to encode \"", str, "\""));
     }
 
     public byte[] i(UUID uuid, n2.o oVar) {
@@ -326,11 +324,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.b0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return w7.a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
     public byte[] j(n2.p pVar) {
-        return w7.b0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
+        return w7.a0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -505,7 +503,7 @@ public final class m implements c3.q {
         }
     }
 
-    public void v(ViewGroup viewGroup, f6 f6Var, x4 x4Var, v4 v4Var) {
+    public void v(ViewGroup viewGroup, e6 e6Var, x4 x4Var, v4 v4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -516,7 +514,7 @@ public final class m implements c3.q {
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            r4 r4Var2 = new r4(this, context, f6Var, v4Var);
+            r4 r4Var2 = new r4(this, context, e6Var, v4Var);
             this.d = r4Var2;
             y0 y0Var = new y0(this, 3);
             WeakHashMap weakHashMap = i0.a;
@@ -586,9 +584,9 @@ public final class m implements c3.q {
         }
     }
 
-    public m(c3.q qVar, z3.k kVar) {
+    public m(c3.q qVar, z3.l lVar) {
         this.b = qVar;
-        this.c = kVar;
+        this.c = lVar;
         this.d = new SparseArray();
     }
 
@@ -597,12 +595,5 @@ public final class m implements c3.q {
         this.c = new AtomicReference(null);
         this.a = z10;
         this.b = new AtomicMarkableReference(new x9.d(z10 ? 8192 : 1024), false);
-    }
-
-    public m(k0 k0Var, Range range, j6.l lVar, boolean z10) {
-        this.b = k0Var;
-        this.c = range;
-        this.d = lVar;
-        this.a = z10;
     }
 }

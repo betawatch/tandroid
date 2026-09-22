@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class gy {
     public final /* synthetic */ uy a;
@@ -18,20 +18,20 @@ public final class gy {
     public final long a() {
         uy uyVar = this.a;
         ox oxVar = uyVar.F3;
-        if (oxVar == null || !(oxVar.getFragment() instanceof fg1)) {
+        if (oxVar == null || !(oxVar.getFragment() instanceof eg1)) {
             return 0L;
         }
-        return -((fg1) uyVar.F3.getFragment()).a;
+        return -((eg1) uyVar.F3.getFragment()).a;
     }
 
     public final void b() {
         uy uyVar = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uyVar.getParentActivity());
-        org.telegram.ui.Components.go0 go0Var = uyVar.C0.c0;
-        if (go0Var.N && go0Var.P()) {
+        org.telegram.ui.Components.rn0 rn0Var = uyVar.C0.b0;
+        if (rn0Var.N && rn0Var.P()) {
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearSearchAlertPartialTitle);
-            org.telegram.ui.Components.go0 go0Var2 = uyVar.C0.c0;
-            ArrayList arrayList = go0Var2.N ? go0Var2.v0 : go0Var2.u0;
+            org.telegram.ui.Components.rn0 rn0Var2 = uyVar.C0.b0;
+            ArrayList arrayList = rn0Var2.N ? rn0Var2.v0 : rn0Var2.u0;
             alertDialog$Builder.a.T = LocaleController.formatPluralString("ClearSearchAlertPartial", arrayList != null ? arrayList.size() : 0, new Object[0]);
             final int i10 = 0;
             alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.fy
@@ -42,21 +42,21 @@ public final class gy {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
                     switch (i10) {
                         case 0:
-                            this.b.a.C0.c0.E();
+                            this.b.a.C0.b0.E();
                             break;
                         default:
                             uy uyVar2 = this.b.a;
-                            if (!uyVar2.C0.c0.P()) {
-                                org.telegram.ui.Components.go0 go0Var3 = uyVar2.C0.c0;
-                                go0Var3.j0.c();
-                                go0Var3.J.clear();
-                                go0Var3.l();
+                            if (!uyVar2.C0.b0.P()) {
+                                org.telegram.ui.Components.rn0 rn0Var3 = uyVar2.C0.b0;
+                                rn0Var3.j0.c();
+                                rn0Var3.J.clear();
+                                rn0Var3.l();
                                 break;
                             } else {
-                                uyVar2.C0.c0.E();
+                                uyVar2.C0.b0.E();
                                 break;
                             }
                     }
@@ -74,21 +74,21 @@ public final class gy {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i112) {
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i112) {
                     switch (i11) {
                         case 0:
-                            this.b.a.C0.c0.E();
+                            this.b.a.C0.b0.E();
                             break;
                         default:
                             uy uyVar2 = this.b.a;
-                            if (!uyVar2.C0.c0.P()) {
-                                org.telegram.ui.Components.go0 go0Var3 = uyVar2.C0.c0;
-                                go0Var3.j0.c();
-                                go0Var3.J.clear();
-                                go0Var3.l();
+                            if (!uyVar2.C0.b0.P()) {
+                                org.telegram.ui.Components.rn0 rn0Var3 = uyVar2.C0.b0;
+                                rn0Var3.j0.c();
+                                rn0Var3.J.clear();
+                                rn0Var3.l();
                                 break;
                             } else {
-                                uyVar2.C0.c0.E();
+                                uyVar2.C0.b0.E();
                                 break;
                             }
                     }
@@ -100,40 +100,40 @@ public final class gy {
         uyVar.showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);
         if (textView != null) {
-            textView.setTextColor(uyVar.getThemedColor(org.telegram.ui.ActionBar.j6.q7));
+            textView.setTextColor(uyVar.getThemedColor(org.telegram.ui.ActionBar.i6.q7));
         }
     }
 
     public final void c() {
         ey eyVar = this.a.C0;
         if (eyVar != null) {
-            org.telegram.ui.Components.dl0 dl0Var = eyVar.e0;
-            int i10 = eyVar.T0;
-            dl0Var.b(i10 > 0 ? i10 + 1 : 0);
-            eyVar.T0 = eyVar.c0.h();
+            org.telegram.ui.Components.qk0 qk0Var = eyVar.d0;
+            int i10 = eyVar.S0;
+            qk0Var.b(i10 > 0 ? i10 + 1 : 0);
+            eyVar.S0 = eyVar.b0.h();
         }
     }
 
     public final void d(boolean z10, boolean z11) {
         uy uyVar = this.a;
-        if (uyVar.C0.a0.getVisibility() == 0) {
+        if (uyVar.C0.W.getVisibility() == 0) {
             z11 = true;
         }
         if (uyVar.j2 && uyVar.k2) {
             ey eyVar = uyVar.C0;
-            if (eyVar.a0 != null) {
-                if (z10 || eyVar.c0.h() != 0) {
-                    uyVar.C0.a0.e(true, z11);
+            if (eyVar.W != null) {
+                if (z10 || eyVar.b0.h() != 0) {
+                    uyVar.C0.W.e(true, z11);
                 } else {
-                    uyVar.C0.a0.e(false, z11);
+                    uyVar.C0.W.e(false, z11);
                 }
             }
         }
-        if (z10 && uyVar.C0.c0.h() == 0) {
+        if (z10 && uyVar.C0.b0.h() == 0) {
             ey eyVar2 = uyVar.C0;
-            eyVar2.e0.a();
-            eyVar2.W.invalidate();
-            eyVar2.T0 = 0;
+            eyVar2.d0.a();
+            eyVar2.V.invalidate();
+            eyVar2.S0 = 0;
         }
     }
 }

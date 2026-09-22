@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v0 extends m0 {
     public static final Object[] r;
@@ -32,7 +32,7 @@ public final class v0 extends m0 {
         if (obj != null) {
             Object[] objArr = this.f;
             if (objArr.length != 0) {
-                int a2 = v7.o5.a(obj.hashCode());
+                int a2 = v7.n5.a(obj.hashCode());
                 while (true) {
                     int i10 = a2 & this.h;
                     Object obj2 = objArr[i10];

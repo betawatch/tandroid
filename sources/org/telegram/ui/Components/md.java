@@ -1,58 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import androidx.mediarouter.app.MediaRouteButton;
-import java.lang.reflect.Field;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class md extends MediaRouteButton {
-    public boolean a;
+public abstract class md extends LinearLayout {
+    public ImageView a;
+    public TextView b;
+    public Space c;
+    public boolean d;
 
-    public final void a() {
-        boolean b10 = b();
-        if (this.a != b10) {
-            this.a = b10;
-            c(b10);
+    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
+        if (this.a == null) {
+            this.a = imageView;
+            addView(imageView, layoutParams);
         }
     }
 
-    public final boolean b() {
-        Field declaredField;
-        try {
-            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
-            declaredField.setAccessible(true);
-        } catch (Exception unused) {
+    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
+        if (this.c == null) {
+            this.c = space;
+            addView(space, layoutParams);
         }
-        return ((Integer) declaredField.get(this)).intValue() > 0;
     }
 
-    public abstract void c(boolean z10);
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a();
+    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = textView;
+            addView(textView, layoutParams);
+        }
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        a();
+    public abstract void d();
+
+    public ImageView getImageView() {
+        return this.a;
     }
 
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
+    public TextView getTextView() {
+        return this.b;
     }
 
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onDraw(Canvas canvas) {
-        a();
+    public void setEditButton(boolean z10) {
+        this.d = z10;
     }
 
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
+    public void setOnlyIconMode(boolean z10) {
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setVisibility(z10 ? 8 : 0);
+        }
+        Space space = this.c;
+        if (space != null) {
+            space.setVisibility(z10 ? 8 : 0);
+        }
     }
 }

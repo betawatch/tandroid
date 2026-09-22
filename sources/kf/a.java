@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import bf.p;
 import com.google.firebase.messaging.d;
-import hg.k0;
+import hg.c;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.FilterInputStream;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a extends jf.a {
     public static final Logger s = Logger.getLogger(a.class.getName());
@@ -410,9 +410,9 @@ public final class a extends jf.a {
                                                             String str5 = this.h;
                                                             if (str5 == null || str5.trim().length() == 0) {
                                                                 if (k11.i() == 2) {
-                                                                    int a2 = k0.a(dataInputStream5.readShort() - r62);
+                                                                    int a2 = c.a(dataInputStream5.readShort() - r62);
                                                                     if (a2 != 0) {
-                                                                        this.h = k0.c(a2);
+                                                                        this.h = c.c(a2);
                                                                     }
                                                                 } else {
                                                                     this.h = k11.m();

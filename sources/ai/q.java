@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class q extends yl0 {
+public final class q extends ll0 {
     public final /* synthetic */ int X2;
     public final /* synthetic */ lx Y2;
 
@@ -24,7 +24,7 @@ public final class q extends yl0 {
         this.Y2 = lxVar;
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         switch (this.X2) {
@@ -35,12 +35,12 @@ public final class q extends yl0 {
                 int i10 = 0;
                 for (int i11 = 0; i11 < getChildCount(); i11++) {
                     a0 a0Var = (a0) getChildAt(i11);
-                    int S = RecyclerView.S(a0Var);
-                    a0Var.b = S;
+                    int R = RecyclerView.R(a0Var);
+                    a0Var.b = R;
                     boolean z10 = true;
                     a0Var.a = true;
-                    a0Var.d = S == 0;
-                    if (S != lxVar.y.size() - 1) {
+                    a0Var.d = R == 0;
+                    if (R != lxVar.y.size() - 1) {
                         z10 = false;
                     }
                     a0Var.c = z10;
@@ -70,7 +70,7 @@ public final class q extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 0:
@@ -86,7 +86,7 @@ public final class q extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.X2) {
             case 0:
@@ -99,7 +99,7 @@ public final class q extends yl0 {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i10, int i11) {
+    public void k0(int i10, int i11) {
         switch (this.X2) {
             case 1:
                 ci.f4 f4Var = this.Y2.J;
@@ -111,7 +111,7 @@ public final class q extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 1:
@@ -121,7 +121,7 @@ public final class q extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.X2) {
             case 0:
@@ -138,7 +138,7 @@ public final class q extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 1:

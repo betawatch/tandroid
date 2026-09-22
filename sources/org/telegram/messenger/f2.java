@@ -14,12 +14,12 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.jr0;
+import org.telegram.ui.ir0;
 import org.telegram.ui.oy;
 import org.telegram.ui.tx;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -82,7 +82,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new jr0(photoViewer, 16));
+                    AndroidUtilities.runOnUIThread(new ir0(photoViewer, 16));
                     break;
                 } else {
                     try {
@@ -100,15 +100,15 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                         break;
                     } catch (Exception e) {
                         FileLog.e(e);
-                        AndroidUtilities.runOnUIThread(new jr0(photoViewer, 17));
+                        AndroidUtilities.runOnUIThread(new ir0(photoViewer, 17));
                         return;
                     }
                 }
             default:
-                xh.c1 c1Var = (xh.c1) obj3;
+                xh.b1 b1Var = (xh.b1) obj3;
                 nf.e eVar = (nf.e) obj;
                 eVar.d();
-                c1Var.v1(j3, new ai.e4((xh.r1) obj4, eVar, (Utilities.Callback) obj2, c1Var, 17));
+                b1Var.v1(j3, new ai.e4((xh.q1) obj4, eVar, (Utilities.Callback) obj2, b1Var, 17));
                 break;
         }
     }

@@ -27,12 +27,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.cr0;
+import org.telegram.ui.Components.vv0;
+import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.xv0;
+import org.telegram.ui.ar0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class r2 implements Runnable {
                 }
                 final boolean z11 = this.c;
                 int i22 = this.b;
-                if (str == null || !v7.j0.r(str)) {
+                if (str == null || !w.c.p(str)) {
                     Context context = w3Var.getContext();
                     try {
                         if (context != null) {
@@ -225,7 +225,7 @@ public final /* synthetic */ class r2 implements Runnable {
                     str = null;
                 }
                 str2 = str;
-                if (str2 == null || !v7.j0.r(str2)) {
+                if (str2 == null || !w.c.p(str2)) {
                     return;
                 }
                 if (z11) {
@@ -266,10 +266,10 @@ public final /* synthetic */ class r2 implements Runnable {
                                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                                 photoEntry.setOrientation(i18, i17);
                                                 a aVar2 = aVar;
-                                                if (aVar2 == null || !w3.E3(aVar2.b)) {
-                                                    w3Var2.g2(photoEntry);
+                                                if (aVar2 == null || !w3.D3(aVar2.b)) {
+                                                    w3Var2.f2(photoEntry);
                                                 } else {
-                                                    w3Var2.U1(aVar2, photoEntry);
+                                                    w3Var2.T1(aVar2, photoEntry);
                                                 }
                                             }
                                         });
@@ -306,10 +306,10 @@ public final /* synthetic */ class r2 implements Runnable {
                                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                                 photoEntry.setOrientation(i18, i17);
                                                 a aVar2 = aVar;
-                                                if (aVar2 == null || !w3.E3(aVar2.b)) {
-                                                    w3Var2.g2(photoEntry);
+                                                if (aVar2 == null || !w3.D3(aVar2.b)) {
+                                                    w3Var2.f2(photoEntry);
                                                 } else {
-                                                    w3Var2.U1(aVar2, photoEntry);
+                                                    w3Var2.T1(aVar2, photoEntry);
                                                 }
                                             }
                                         });
@@ -357,10 +357,10 @@ public final /* synthetic */ class r2 implements Runnable {
                                     MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                     photoEntry.setOrientation(i18, i17);
                                     a aVar2 = aVar;
-                                    if (aVar2 == null || !w3.E3(aVar2.b)) {
-                                        w3Var2.g2(photoEntry);
+                                    if (aVar2 == null || !w3.D3(aVar2.b)) {
+                                        w3Var2.f2(photoEntry);
                                     } else {
-                                        w3Var2.U1(aVar2, photoEntry);
+                                        w3Var2.T1(aVar2, photoEntry);
                                     }
                                 }
                             });
@@ -411,10 +411,10 @@ public final /* synthetic */ class r2 implements Runnable {
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                 photoEntry.setOrientation(i18, i17);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !w3.E3(aVar2.b)) {
-                                    w3Var2.g2(photoEntry);
+                                if (aVar2 == null || !w3.D3(aVar2.b)) {
+                                    w3Var2.f2(photoEntry);
                                 } else {
-                                    w3Var2.U1(aVar2, photoEntry);
+                                    w3Var2.T1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -437,10 +437,10 @@ public final /* synthetic */ class r2 implements Runnable {
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                         photoEntry.setOrientation(i18, i17);
                         a aVar2 = aVar;
-                        if (aVar2 == null || !w3.E3(aVar2.b)) {
-                            w3Var2.g2(photoEntry);
+                        if (aVar2 == null || !w3.D3(aVar2.b)) {
+                            w3Var2.f2(photoEntry);
                         } else {
-                            w3Var2.U1(aVar2, photoEntry);
+                            w3Var2.T1(aVar2, photoEntry);
                         }
                     }
                 });
@@ -452,15 +452,15 @@ public final /* synthetic */ class r2 implements Runnable {
                 ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$65((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
                 return;
             case 3:
-                kw0 kw0Var = (kw0) this.d;
+                xv0 xv0Var = (xv0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.h;
-                RLottieNative[] rLottieNativeArr = kw0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = kw0Var.i1;
-                int[] iArr = kw0Var.e;
-                if (kw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new iw0(kw0Var, 0));
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.h;
+                RLottieNative[] rLottieNativeArr = xv0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = xv0Var.i1;
+                int[] iArr = xv0Var.e;
+                if (xv0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new vv0(xv0Var, 0));
                     return;
                 }
                 boolean z12 = false;
@@ -470,23 +470,23 @@ public final /* synthetic */ class r2 implements Runnable {
                     int i24 = this.b;
                     if (i23 >= length) {
                         if (z12) {
-                            AndroidUtilities.runOnUIThread(new iw0(kw0Var, 1));
+                            AndroidUtilities.runOnUIThread(new vv0(xv0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(kw0Var, this.c, i24, u1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(xv0Var, this.c, i24, t1Var));
                             return;
                         }
                     }
                     if (i23 <= 2) {
                         if (rLottieNativeArr2[i23] == null) {
                             if (i23 == 0) {
-                                int i25 = kw0Var.b1;
+                                int i25 = xv0Var.b1;
                                 i20 = i25 == 1 ? 5 : i25 == 2 ? 6 : i25 == 3 ? 7 : i25 == 4 ? 4 : 3;
                             } else if (i23 == 1) {
-                                int i26 = kw0Var.c1;
+                                int i26 = xv0Var.c1;
                                 i20 = i26 == 1 ? 11 : i26 == 2 ? 12 : i26 == 3 ? 13 : i26 == 4 ? 10 : 9;
                             } else {
-                                int i27 = kw0Var.d1;
+                                int i27 = xv0Var.d1;
                                 i20 = i27 == 1 ? 17 : i27 == 2 ? 18 : i27 == 3 ? 19 : i27 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i20);
@@ -495,13 +495,13 @@ public final /* synthetic */ class r2 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
                                 if (i23 <= 2) {
                                     rLottieNativeArr2[i23] = b10;
-                                    kw0Var.j1[i23] = iArr[0];
+                                    xv0Var.j1[i23] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i23 == 3 ? (char) 0 : (char) 4] = b10;
-                                    kw0Var.g1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    xv0Var.g1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new jw0(document, i24, messageObject, u1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new wv0(document, i24, messageObject, t1Var, tL_messages_stickerSet, 0));
                                 z12 = true;
                             }
                         }
@@ -523,13 +523,13 @@ public final /* synthetic */ class r2 implements Runnable {
                 org.telegram.ui.Components.voip.f2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             default:
-                cr0 cr0Var = (cr0) this.d;
+                ar0 ar0Var = (ar0) this.d;
                 String str4 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = cr0Var.h;
-                ArrayList arrayList = cr0Var.f;
-                ArrayList arrayList2 = cr0Var.n;
+                HashMap hashMap = ar0Var.h;
+                ArrayList arrayList = ar0Var.f;
+                ArrayList arrayList2 = ar0Var.n;
                 int size = arrayList2.size();
                 int i28 = 0;
                 while (true) {
@@ -543,16 +543,16 @@ public final /* synthetic */ class r2 implements Runnable {
                 }
                 arrayList2.add(0, str4);
                 while (arrayList2.size() > 20) {
-                    a4.a.x(1, arrayList2);
+                    a4.a.y(1, arrayList2);
                 }
-                cr0Var.c0();
-                if (this.b != cr0Var.y) {
+                ar0Var.c0();
+                if (this.b != ar0Var.y) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    cr0Var.w = messages_botresults.next_offset;
+                    ar0Var.w = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     i21 = 0;
                     for (int i29 = 0; i29 < size3; i29++) {
@@ -569,7 +569,7 @@ public final /* synthetic */ class r2 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, cr0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, ar0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -629,18 +629,18 @@ public final /* synthetic */ class r2 implements Runnable {
                             i21++;
                         }
                     }
-                    cr0Var.s = size2 == arrayList.size() || cr0Var.w == null;
+                    ar0Var.s = size2 == arrayList.size() || ar0Var.w == null;
                 } else {
                     i21 = 0;
                 }
-                cr0Var.r = false;
+                ar0Var.r = false;
                 if (i21 != 0) {
-                    cr0Var.L.s(size2, i21);
-                } else if (cr0Var.s) {
+                    ar0Var.L.s(size2, i21);
+                } else if (ar0Var.s) {
                     z10 = true;
-                    cr0Var.L.u(arrayList.size() - 1);
+                    ar0Var.L.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        cr0Var.N.e(false, z10);
+                        ar0Var.N.e(false, z10);
                         return;
                     }
                     return;
@@ -682,9 +682,9 @@ public final /* synthetic */ class r2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ r2(cr0 cr0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+    public /* synthetic */ r2(ar0 ar0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
         this.a = 5;
-        this.d = cr0Var;
+        this.d = ar0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;

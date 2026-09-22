@@ -1,128 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class an0 extends HorizontalScrollView {
-    public boolean a;
-    public LinearLayout b;
-    public ValueAnimator c;
-    public boolean d;
-    public int e;
-    public ValueAnimator f;
-
-    public an0(Context context) {
-        super(context);
-        this.e = -1;
+public final class an0 extends s4.j {
+    @Override // s4.j, s4.f1
+    public final boolean r(s4.c1 c1Var, b2.q0 q0Var, int i10, int i11, int i12, int i13) {
+        gn0 gn0Var;
+        fn0 fn0Var;
+        View view = c1Var.a;
+        if ((view instanceof gn0) && (fn0Var = (gn0Var = (gn0) view).a) != null) {
+            fn0Var.i = fn0Var.N;
+            fn0Var.g = fn0Var.O;
+            fn0Var.h = fn0Var.P;
+            gn0Var.b.d(0.0f, true);
+            gn0Var.invalidate();
+        }
+        int translationX = i10 + ((int) view.getTranslationX());
+        int translationY = i11 + ((int) view.getTranslationY());
+        R(c1Var);
+        int i14 = i12 - translationX;
+        int i15 = i13 - translationY;
+        if (i14 == 0 && i15 == 0) {
+            v(c1Var);
+            return false;
+        }
+        if (i14 != 0) {
+            view.setTranslationX(-i14);
+        }
+        if (i15 != 0) {
+            view.setTranslationY(-i15);
+        }
+        this.r.add(new s4.i(c1Var, translationX, translationY, i12, i13));
+        return true;
     }
 
-    public final void a(int i10) {
-        if (this.e == i10) {
-            return;
-        }
-        this.e = i10;
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (getScrollX() == i10) {
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i10);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new s70(this, 14));
-        this.f.setInterpolator(qr.h);
-        this.f.setDuration(250L);
-        this.f.addListener(new gd0(this, 10));
-        this.f.start();
-    }
-
-    public final void b(int i10, int i11) {
-        int measuredWidth;
-        if (getChildCount() <= 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(50.0f);
-        if (i10 < getScrollX() + dp) {
-            measuredWidth = i10 - dp;
-        } else {
-            if (i11 <= (getMeasuredWidth() - dp) + getScrollX()) {
-                return;
-            } else {
-                measuredWidth = (i11 - getMeasuredWidth()) + dp;
-            }
-        }
-        a(w7.q.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
-    }
-
-    public final void c() {
-        p5 p5Var;
-        ai.l4 l4Var;
-        kj0 kj0Var;
-        ValueAnimator valueAnimator;
-        int childCount = this.b.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = this.b.getChildAt(i10);
-            if (childAt instanceof zv) {
-                zv zvVar = (zv) childAt;
-                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
-                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!zvVar.y && z10 && (kj0Var = zvVar.e) != null && !kj0Var.k0 && !z11) {
-                    zvVar.e.T(0.0f, true);
-                    zvVar.e.start();
-                }
-                if (zvVar.y != z10) {
-                    zvVar.y = z10;
-                    if (z10) {
-                        zvVar.invalidate();
-                        rg.b1 b1Var = zvVar.f;
-                        if (b1Var != null) {
-                            b1Var.invalidate();
-                        }
-                        rg.b1 b1Var2 = zvVar.f;
-                        if (b1Var2 != null && (p5Var = zvVar.w) != null && (l4Var = p5Var.k) != null) {
-                            b1Var2.setImageReceiver(l4Var);
-                        }
-                        v9 v9Var = zvVar.d;
-                        if (v9Var != null) {
-                            v9Var.invalidate();
-                        }
-                    } else {
-                        zvVar.b();
-                    }
-                    zvVar.c();
-                }
-            }
-        }
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        c();
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        if ((Math.abs(i11 - i13) < 2 || i11 >= getMeasuredHeight() || i11 == 0) && !this.a) {
-            requestDisallowInterceptTouchEvent(false);
-        }
-        c();
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
-            motionEvent.getAction();
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // s4.f1
+    public final boolean t(s4.c1 c1Var) {
+        return true;
     }
 }

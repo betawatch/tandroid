@@ -3,8 +3,9 @@ package re;
 import com.google.firebase.messaging.t;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
+import k2.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -55,12 +56,12 @@ public final class a {
         }
     }
 
-    public static t b(o0.b bVar, Object obj, Object obj2) {
-        return new t(bVar, obj, obj2, c);
+    public static t b(c0 c0Var, Object obj, Object obj2) {
+        return new t(c0Var, obj, obj2, c);
     }
 
-    public static t c(o0.b bVar, Object obj, Object obj2, Object obj3) {
-        return new t(bVar, obj, obj2, new Object[]{obj3});
+    public static t c(c0 c0Var, Object obj, Object obj2, Object obj3) {
+        return new t(c0Var, obj, obj2, new Object[]{obj3});
     }
 
     public final ra.a d(String str, String str2, String str3, String str4, String str5) {
@@ -95,9 +96,9 @@ public final class a {
         return aVar;
     }
 
-    public final o0.b e(ra.a aVar) {
-        o0.b bVar = new o0.b(15, false);
-        bVar.b = aVar;
-        return bVar;
+    public final c0 e(ra.a aVar) {
+        c0 c0Var = new c0(23);
+        c0Var.b = aVar;
+        return c0Var;
     }
 }

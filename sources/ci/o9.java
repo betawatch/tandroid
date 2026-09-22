@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         switch (this.a) {
             case 0:
                 ba baVar = this.b;
@@ -104,7 +104,7 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
                             break;
                         } else {
                             iaVar.f1();
-                            iaVar.b.E(0);
+                            iaVar.b.D(0);
                             break;
                         }
                     } else if (i19 != 3) {
@@ -141,7 +141,7 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
                         } else {
                             iaVar.N = i19;
                             iaVar.f1();
-                            iaVar.b.E(0);
+                            iaVar.b.D(0);
                             break;
                         }
                     } else if (iaVar.Z) {
@@ -162,7 +162,7 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
                     } else if (!ia.l1(arrayList, hashMap).isEmpty()) {
                         iaVar.N = 3;
                         iaVar.f1();
-                        iaVar.b.E(0);
+                        iaVar.b.D(0);
                         break;
                     }
                 }
@@ -172,12 +172,12 @@ public final /* synthetic */ class o9 implements View.OnClickListener {
                 ia iaVar2 = baVar2.W;
                 if (iaVar2.O) {
                     iaVar2.M = 5;
-                    iaVar2.b.E(1);
+                    iaVar2.b.D(1);
                     break;
                 } else {
                     Context context = baVar2.getContext();
-                    f6Var = ((org.telegram.ui.ActionBar.f3) iaVar2).resourcesProvider;
-                    ia iaVar3 = new ia(context, f6Var);
+                    e6Var = ((org.telegram.ui.ActionBar.f3) iaVar2).resourcesProvider;
+                    ia iaVar3 = new ia(context, e6Var);
                     iaVar3.V = new q9(baVar2, 1);
                     iaVar3.Q = iaVar2.Q;
                     iaVar3.show();

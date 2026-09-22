@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new p0(this.b, this.c, this.d, 1));
                 break;
             default:
-                d5.e0(this.b, this.c, this.d);
+                c5.e0(this.b, this.c, this.d);
                 break;
         }
     }

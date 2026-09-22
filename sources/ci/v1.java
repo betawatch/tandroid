@@ -9,12 +9,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xx0;
-import org.telegram.ui.ai0;
+import org.telegram.ui.Components.kx0;
 import org.telegram.ui.i60;
-import org.telegram.ui.nh0;
+import org.telegram.ui.lh0;
+import org.telegram.ui.yh0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,19 +65,19 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new u1(this.d, (Object) tL_error, tLObject, this.b, this.c, 14));
+                AndroidUtilities.runOnUIThread(new u1(this.d, (Object) tL_error, tLObject, this.b, this.c, 13));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new ai.s4((xx0) this.d, tLObject, this.c, (org.telegram.ui.ActionBar.b2) this.b, 20));
+                AndroidUtilities.runOnUIThread(new ai.s4((kx0) this.d, tLObject, this.c, (org.telegram.ui.ActionBar.b2) this.b, 19));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new u1(this.d, (Object) tL_error, tLObject, this.b, this.c, 20));
+                AndroidUtilities.runOnUIThread(new u1(this.d, (Object) tL_error, tLObject, this.b, this.c, 19));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new ai.s4((i60) this.d, tLObject, (TLRPC.ChatFull) this.b, this.c, 22));
+                AndroidUtilities.runOnUIThread(new ai.s4((i60) this.d, tLObject, (TLRPC.ChatFull) this.b, this.c, 21));
                 break;
             case 6:
-                ai0 ai0Var = (ai0) this.d;
+                yh0 yh0Var = (yh0) this.d;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.b;
                 if (tL_error == null) {
                     TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
@@ -85,19 +85,19 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                         for (int i12 = 0; i12 < tL_messages_exportedChatInvites.invites.size(); i12++) {
                             if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i12)).link.equals(tL_chatInviteExported2.link)) {
                                 tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i12);
-                                AndroidUtilities.runOnUIThread(new nh0(ai0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
+                                AndroidUtilities.runOnUIThread(new lh0(yh0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
                                 break;
                             }
                         }
                     }
                 }
                 tL_chatInviteExported = null;
-                AndroidUtilities.runOnUIThread(new nh0(ai0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
+                AndroidUtilities.runOnUIThread(new lh0(yh0Var, tL_chatInviteExported, tL_error, tLObject, this.c, 0));
             case 7:
-                AndroidUtilities.runOnUIThread(new u1((NotificationCenter.NotificationCenterDelegate) this.d, (TLObject) tL_error, this.c, tLObject, this.b, 22));
+                AndroidUtilities.runOnUIThread(new u1((NotificationCenter.NotificationCenterDelegate) this.d, (TLObject) tL_error, this.c, tLObject, this.b, 21));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new pg.l0((yh.l5) this.d, (int[]) this.b, tLObject, this.c, 2));
+                AndroidUtilities.runOnUIThread(new tg.c((yh.m5) this.d, (int[]) this.b, tLObject, this.c));
                 break;
         }
     }

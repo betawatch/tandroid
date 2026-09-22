@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class w30 extends org.telegram.ui.Components.yl0 {
+public final class w30 extends org.telegram.ui.Components.ll0 {
     public final /* synthetic */ i60 X2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class w30 extends org.telegram.ui.Components.yl0 {
         this.X2 = i60Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         org.telegram.ui.Components.r20 r20Var = (org.telegram.ui.Components.r20) view;
         i60 i60Var = this.X2;
@@ -29,7 +29,7 @@ public final class w30 extends org.telegram.ui.Components.yl0 {
         w30 w30Var = i60Var.m2;
         r20Var.getClass();
         w30Var.getClass();
-        if (RecyclerView.S(r20Var) == -1 && r20Var.getRenderer() != null) {
+        if (RecyclerView.R(r20Var) == -1 && r20Var.getRenderer() != null) {
             return true;
         }
         if (r20Var.getTranslationY() == 0.0f || r20Var.getRenderer() == null || r20Var.getRenderer().c == null) {

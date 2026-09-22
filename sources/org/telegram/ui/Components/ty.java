@@ -12,14 +12,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ty extends ImageView {
     public int a;
-    public p5 b;
+    public o5 b;
     public boolean c;
-    public y5 d;
-    public xx e;
+    public x5 d;
+    public wx e;
     public final ImageReceiver.BackgroundThreadDrawHolder[] f;
     public float h;
     public ValueAnimator n;
@@ -28,7 +28,7 @@ public final class ty extends ImageView {
         super(context);
         this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
         setScaleType(ImageView.ScaleType.CENTER);
-        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
     }
 
     public final void a(Drawable drawable, boolean z10) {
@@ -36,7 +36,7 @@ public final class ty extends ImageView {
         this.c = z10;
     }
 
-    public y5 getSpan() {
+    public x5 getSpan() {
         return this.d;
     }
 
@@ -86,8 +86,8 @@ public final class ty extends ImageView {
             if (f7 != 0.0f) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.n = ofFloat;
-                ofFloat.addUpdateListener(new j6(this, 21));
-                this.n.addListener(new q8(this, 20));
+                ofFloat.addUpdateListener(new i6(this, 21));
+                this.n.addListener(new p8(this, 20));
                 this.n.setInterpolator(new OvershootInterpolator(5.0f));
                 this.n.setDuration(350L);
                 this.n.start();
@@ -95,7 +95,7 @@ public final class ty extends ImageView {
         }
     }
 
-    public void setSpan(y5 y5Var) {
-        this.d = y5Var;
+    public void setSpan(x5 x5Var) {
+        this.d = x5Var;
     }
 }

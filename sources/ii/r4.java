@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.n70;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                     List m10 = u4Var.m();
                     if (indexOf >= 0 && indexOf < m10.size() && indexOf < arrayList.size()) {
                         final u uVar = (u) m10.get(indexOf);
-                        y70 G = u4Var.N.a.h3.G((View) arrayList.get(indexOf));
+                        n70 D = u4Var.N.a.h3.D((View) arrayList.get(indexOf));
                         boolean z10 = uVar.n;
                         final int i10 = 0;
-                        G.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.s4
+                        D.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -59,13 +59,13 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                                     h2Var.d();
                                                 }
                                                 uVar2.n = !uVar2.n;
-                                                TL_iv.PageBlock O3 = w3.O3(aVar3, uVar2);
-                                                if (O3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) O3).spoiler = uVar2.n;
-                                                } else if (O3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) O3).spoiler = uVar2.n;
+                                                TL_iv.PageBlock N3 = w3.N3(aVar3, uVar2);
+                                                if (N3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) N3).spoiler = uVar2.n;
+                                                } else if (N3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) N3).spoiler = uVar2.n;
                                                 }
-                                                w3Var.o4(aVar3);
+                                                w3Var.n4(aVar3);
                                                 h2 h2Var2 = w3Var.J3;
                                                 if (h2Var2 != null) {
                                                     h2Var2.h();
@@ -79,7 +79,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                         u4 u4Var3 = u4Var;
                                         p3 p3Var2 = u4Var3.N;
                                         if (p3Var2 != null && (aVar4 = u4Var3.a) != null) {
-                                            w3.O1(aVar4, uVar, p3Var2.a);
+                                            w3.N1(aVar4, uVar, p3Var2.a);
                                             break;
                                         }
                                         break;
@@ -87,7 +87,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                             }
                         }, false);
                         final int i11 = 1;
-                        G.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.s4
+                        D.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.s4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -106,13 +106,13 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                                     h2Var.d();
                                                 }
                                                 uVar2.n = !uVar2.n;
-                                                TL_iv.PageBlock O3 = w3.O3(aVar3, uVar2);
-                                                if (O3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) O3).spoiler = uVar2.n;
-                                                } else if (O3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) O3).spoiler = uVar2.n;
+                                                TL_iv.PageBlock N3 = w3.N3(aVar3, uVar2);
+                                                if (N3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) N3).spoiler = uVar2.n;
+                                                } else if (N3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) N3).spoiler = uVar2.n;
                                                 }
-                                                w3Var.o4(aVar3);
+                                                w3Var.n4(aVar3);
                                                 h2 h2Var2 = w3Var.J3;
                                                 if (h2Var2 != null) {
                                                     h2Var2.h();
@@ -126,20 +126,20 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                                         u4 u4Var3 = u4Var;
                                         p3 p3Var2 = u4Var3.N;
                                         if (p3Var2 != null && (aVar4 = u4Var3.a) != null) {
-                                            w3.O1(aVar4, uVar, p3Var2.a);
+                                            w3.N1(aVar4, uVar, p3Var2.a);
                                             break;
                                         }
                                         break;
                                 }
                             }
                         }, true);
-                        G.a0(0.0f, -AndroidUtilities.dp(38.0f));
+                        D.a0(0.0f, -AndroidUtilities.dp(38.0f));
                         if (u4Var.H) {
-                            G.u = false;
-                            G.v = true;
-                            G.s = 0;
+                            D.u = false;
+                            D.v = true;
+                            D.s = 0;
                         }
-                        G.Z();
+                        D.Z();
                         break;
                     }
                 }
@@ -150,7 +150,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                 if (p3Var != null && (aVar = u4Var2.a) != null) {
                     w3 w3Var = p3Var.a;
                     w3Var.b4 = aVar;
-                    w3Var.h3.m(0);
+                    w3Var.h3.h(0);
                     break;
                 }
                 break;
@@ -160,28 +160,28 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                 if (p3Var2 != null && (aVar2 = u4Var3.a) != null) {
                     w3 w3Var2 = p3Var2.a;
                     w3Var2.getClass();
-                    if (w3.C3(aVar2.b)) {
+                    if (w3.B3(aVar2.b)) {
                         h2 h2Var = w3Var2.J3;
                         if (h2Var != null) {
                             h2Var.d();
                         }
-                        ArrayList<TL_iv.PageBlock> h32 = w3.h3(aVar2.b);
+                        ArrayList<TL_iv.PageBlock> g32 = w3.g3(aVar2.b);
                         TL_iv.PageBlock pageBlock = aVar2.b;
                         TL_iv.PageCaption pageCaption = pageBlock.caption;
                         if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
                             TL_iv.pageBlockCollage pageblockcollage = new TL_iv.pageBlockCollage();
-                            if (h32 == null) {
-                                h32 = new ArrayList<>();
+                            if (g32 == null) {
+                                g32 = new ArrayList<>();
                             }
-                            pageblockcollage.items = h32;
+                            pageblockcollage.items = g32;
                             pageblockcollage.caption = pageCaption;
                             pageblockslideshow = pageblockcollage;
                         } else {
                             TL_iv.pageBlockSlideshow pageblockslideshow2 = new TL_iv.pageBlockSlideshow();
-                            if (h32 == null) {
-                                h32 = new ArrayList<>();
+                            if (g32 == null) {
+                                g32 = new ArrayList<>();
                             }
-                            pageblockslideshow2.items = h32;
+                            pageblockslideshow2.items = g32;
                             pageblockslideshow2.caption = pageCaption;
                             pageblockslideshow = pageblockslideshow2;
                         }
@@ -190,9 +190,9 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                         if (h2Var2 != null) {
                             h2Var2.h();
                         }
-                        View A1 = w3Var2.A1(aVar2);
-                        if (A1 instanceof u4) {
-                            u4 u4Var4 = (u4) A1;
+                        View z12 = w3Var2.z1(aVar2);
+                        if (z12 instanceof u4) {
+                            u4 u4Var4 = (u4) z12;
                             ValueAnimator valueAnimator = u4Var4.i0;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();

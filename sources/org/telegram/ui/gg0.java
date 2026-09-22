@@ -1,79 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gg0 extends sg.e {
-    public final /* synthetic */ int b0;
+public final /* synthetic */ class gg0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gg0(Context context, int i10, int i11, int i12) {
-        super(context, i10, i11);
-        this.b0 = i12;
+    public /* synthetic */ gg0(kg0 kg0Var, int i10) {
+        this.a = i10;
+        this.b = kg0Var;
     }
 
-    @Override // sg.e
-    public void k() {
-        switch (this.b0) {
-            case 4:
-                break;
-            default:
-                super.k();
-                break;
-        }
-    }
-
-    @Override // sg.e, android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.b0) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
+                kg0 kg0Var = this.b;
+                kg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kg0Var.d.setAlpha(floatValue);
+                kg0Var.e.setAlpha(floatValue);
+                kg0Var.f.setProgress(floatValue);
+                FrameLayout frameLayout = kg0Var.w;
+                frameLayout.setAlpha(floatValue);
+                float f7 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f7);
+                frameLayout.setScaleY(f7);
                 break;
             default:
-                super.onAttachedToWindow();
+                kg0 kg0Var2 = this.b;
+                kg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kg0Var2.f.setProgress(floatValue2);
+                kg0Var2.d.setAlpha(floatValue2);
+                kg0Var2.e.setAlpha(floatValue2);
+                FrameLayout frameLayout2 = kg0Var2.w;
+                frameLayout2.setAlpha(floatValue2);
+                float f10 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f10);
+                frameLayout2.setScaleY(f10);
                 break;
         }
-    }
-
-    @Override // sg.e, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.b0) {
-            case 0:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    private final void l() {
     }
 }

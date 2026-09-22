@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class i3 implements z4 {
     public final /* synthetic */ u a;
@@ -26,10 +26,10 @@ public final class i3 implements z4 {
             uVar.j = i10;
             uVar.k = i11;
         }
-        View A1 = this.c.A1(this.b);
-        if (A1 instanceof u4) {
-            A1.requestLayout();
-            A1.invalidate();
+        View z12 = this.c.z1(this.b);
+        if (z12 instanceof u4) {
+            z12.requestLayout();
+            z12.invalidate();
         }
     }
 
@@ -46,13 +46,13 @@ public final class i3 implements z4 {
             uVar.k = i11;
         }
         a aVar = this.b;
-        TL_iv.PageBlock O3 = w3.O3(aVar, uVar);
-        if (O3 instanceof TL_iv.pageBlockPhoto) {
-            ((TL_iv.pageBlockPhoto) O3).photo_id = photo.id;
+        TL_iv.PageBlock N3 = w3.N3(aVar, uVar);
+        if (N3 instanceof TL_iv.pageBlockPhoto) {
+            ((TL_iv.pageBlockPhoto) N3).photo_id = photo.id;
         }
         w3 w3Var = this.c;
         w3Var.Z3.remove(uVar);
-        w3Var.o4(aVar);
+        w3Var.n4(aVar);
         w3Var.h3.onContentChanged();
     }
 
@@ -62,13 +62,13 @@ public final class i3 implements z4 {
         uVar.h = document;
         uVar.a = 2;
         a aVar = this.b;
-        TL_iv.PageBlock O3 = w3.O3(aVar, uVar);
-        if (O3 instanceof TL_iv.pageBlockVideo) {
-            ((TL_iv.pageBlockVideo) O3).video_id = document.id;
+        TL_iv.PageBlock N3 = w3.N3(aVar, uVar);
+        if (N3 instanceof TL_iv.pageBlockVideo) {
+            ((TL_iv.pageBlockVideo) N3).video_id = document.id;
         }
         w3 w3Var = this.c;
         w3Var.Z3.remove(uVar);
-        w3Var.o4(aVar);
+        w3Var.n4(aVar);
         w3Var.h3.onContentChanged();
     }
 
@@ -77,10 +77,10 @@ public final class i3 implements z4 {
         this.a.f = f7;
         a aVar = this.b;
         w3 w3Var = this.c;
-        View A1 = w3Var.A1(aVar);
-        if (A1 instanceof u4) {
-            A1.requestLayout();
-            A1.invalidate();
+        View z12 = w3Var.z1(aVar);
+        if (z12 instanceof u4) {
+            z12.requestLayout();
+            z12.invalidate();
         }
         w3Var.h3.onContentChanged();
     }
@@ -91,7 +91,7 @@ public final class i3 implements z4 {
         uVar.a = 3;
         w3 w3Var = this.c;
         w3Var.Z3.remove(uVar);
-        w3Var.r4(this.b, uVar);
+        w3Var.q4(this.b, uVar);
         w3Var.h3.onContentChanged();
     }
 

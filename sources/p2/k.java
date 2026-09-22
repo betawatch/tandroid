@@ -1,19 +1,42 @@
 package p2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class k {
-    public final long a;
-    public final boolean b;
+public abstract class k implements Comparable {
+    public final String a;
+    public final j b;
     public final long c;
-    public final long d;
-    public final boolean e;
+    public final int d;
+    public final long e;
+    public final b2.o f;
+    public final String h;
+    public final String n;
+    public final long r;
+    public final long s;
+    public final boolean v;
 
-    public k(long j3, boolean z10, long j10, long j11, boolean z11) {
-        this.a = j3;
-        this.b = z10;
-        this.c = j10;
-        this.d = j11;
-        this.e = z11;
+    public k(String str, j jVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10) {
+        this.a = str;
+        this.b = jVar;
+        this.c = j3;
+        this.d = i10;
+        this.e = j10;
+        this.f = oVar;
+        this.h = str2;
+        this.n = str3;
+        this.r = j11;
+        this.s = j12;
+        this.v = z10;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        Long l4 = (Long) obj;
+        long longValue = l4.longValue();
+        long j3 = this.e;
+        if (j3 > longValue) {
+            return 1;
+        }
+        return j3 < l4.longValue() ? -1 : 0;
     }
 }

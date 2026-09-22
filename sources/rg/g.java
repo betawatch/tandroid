@@ -14,21 +14,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.f9;
 import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.gg0;
-import w7.y5;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.eg0;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
-    public final v9 a;
+    public final u9 a;
     public final o20 b;
     public final int c;
     public final /* synthetic */ j d;
@@ -40,25 +40,25 @@ public final class g extends FrameLayout {
         o20 o20Var = new o20();
         this.b = o20Var;
         int i10 = jVar.f;
-        f6 f6Var = jVar.a;
+        e6 e6Var = jVar.a;
         if (i10 == 0) {
             this.c = AndroidUtilities.dp(150.0f);
-            v9 v9Var = new v9(context);
-            this.a = v9Var;
-            v9Var.setRoundRadius((int) (AndroidUtilities.dp(65.0f) / 2.0f));
-            addView(v9Var, y5.d(65, 65.0f, 1, 0.0f, 32.0f, 0.0f, 0.0f));
+            u9 u9Var = new u9(context);
+            this.a = u9Var;
+            u9Var.setRoundRadius((int) (AndroidUtilities.dp(65.0f) / 2.0f));
+            addView(u9Var, x5.d(65, 65.0f, 1, 0.0f, 32.0f, 0.0f, 0.0f));
             TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
-            g9 g9Var = new g9((f6) null);
-            g9Var.r(currentUser);
-            v9Var.getImageReceiver().setForUserOrChat(currentUser, g9Var);
+            f9 f9Var = new f9((e6) null);
+            f9Var.r(currentUser);
+            u9Var.getImageReceiver().setForUserOrChat(currentUser, f9Var);
             TextView textView = new TextView(context);
             e2.l(20.0f, 1, textView);
-            textView.setTextColor(j6.v0(j6.G6, f6Var));
+            textView.setTextColor(i6.v0(i6.G6, e6Var));
             textView.setText(LocaleController.getString(R.string.UpgradedStories));
-            addView(textView, y5.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
+            addView(textView, x5.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
             o20Var.m = true;
             o20Var.a = true;
-            o20Var.d(j6.w0(null, j6.Mj, false), j6.w0(null, j6.Lj, false), 0, 0);
+            o20Var.d(i6.w0(null, i6.Mj, false), i6.w0(null, i6.Lj, false), 0, 0);
             o20Var.c.setStyle(Paint.Style.STROKE);
             o20Var.c.setStrokeCap(Paint.Cap.ROUND);
             o20Var.c.setStrokeWidth(AndroidUtilities.dpf2(3.3f));
@@ -66,30 +66,30 @@ public final class g extends FrameLayout {
         }
         if (i10 == 1) {
             ei.f fVar = new ei.f(context, 4);
-            addView(fVar, y5.e(-1, 190, 55));
-            gg0 gg0Var = new gg0(context, 1, 1, 1);
-            gg0Var.setStarParticlesView(fVar);
+            addView(fVar, x5.e(-1, 190, 55));
+            eg0 eg0Var = new eg0(context, 1, 1, 1);
+            eg0Var.setStarParticlesView(fVar);
             Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
-            int i11 = j6.Mj;
-            canvas.drawColor(i0.a.d(0.5f, j6.v0(i11, f6Var), j6.v0(j6.h5, f6Var)));
-            gg0Var.setBackgroundBitmap(createBitmap);
-            sg.a aVar = gg0Var.b;
+            int i11 = i6.Mj;
+            canvas.drawColor(i0.a.d(0.5f, i6.v0(i11, e6Var), i6.v0(i6.h5, e6Var)));
+            eg0Var.setBackgroundBitmap(createBitmap);
+            sg.a aVar = eg0Var.b;
             aVar.w = i11;
-            aVar.x = j6.Lj;
+            aVar.x = i6.Lj;
             aVar.b();
-            addView(gg0Var, y5.e(160, 160, 1));
-            gg0Var.j(100L);
-            TextView f7 = org.telegram.messenger.l0.f(context, 1, 20.0f);
-            f7.setTypeface(AndroidUtilities.bold());
-            f7.setTextColor(j6.v0(j6.G6, f6Var));
-            rk.l(R.string.TelegramBusiness, f7, 17);
-            addView(f7, y5.d(-2, -2.0f, 1, 33.0f, 150.0f, 33.0f, 0.0f));
+            addView(eg0Var, x5.e(160, 160, 1));
+            eg0Var.j(100L);
+            TextView g10 = org.telegram.messenger.y0.g(context, 1, 20.0f);
+            g10.setTypeface(AndroidUtilities.bold());
+            g10.setTextColor(i6.v0(i6.G6, e6Var));
+            vl.l(R.string.TelegramBusiness, g10, 17);
+            addView(g10, x5.d(-2, -2.0f, 1, 33.0f, 150.0f, 33.0f, 0.0f));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
-            textView2.setTextColor(j6.v0(j6.z6, f6Var));
-            rk.l(R.string.TelegramBusinessSubtitle2, textView2, 17);
-            addView(textView2, y5.d(-2, -2.0f, 1, 33.0f, 183.0f, 33.0f, 20.0f));
+            textView2.setTextColor(i6.v0(i6.z6, e6Var));
+            vl.l(R.string.TelegramBusinessSubtitle2, textView2, 17);
+            addView(textView2, x5.d(-2, -2.0f, 1, 33.0f, 183.0f, 33.0f, 20.0f));
         }
     }
 

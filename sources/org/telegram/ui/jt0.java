@@ -8,7 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class jt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ float a;
@@ -42,14 +42,14 @@ public final class jt0 extends AnimatorListenerAdapter {
         photoViewer.C1.c.setRotated(false);
         float f7 = this.a;
         if (Math.abs(f7) > 0.0f) {
-            org.telegram.ui.Components.ff0 ff0Var = photoViewer.C1;
-            lg.f fVar = ff0Var.c;
+            org.telegram.ui.Components.ue0 ue0Var = photoViewer.C1;
+            lg.f fVar = ue0Var.c;
             if (fVar != null) {
                 fVar.b(0.0f);
                 fVar.setRotated(false);
             }
-            if (ff0Var.b.m(f7)) {
-                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
+            if (ue0Var.b.m(f7)) {
+                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.i6.zf), PorterDuff.Mode.MULTIPLY));
             } else {
                 photoViewer.b1.setColorFilter((ColorFilter) null);
             }

@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ww implements Runnable {
     public final /* synthetic */ int a;
@@ -34,11 +34,11 @@ public final /* synthetic */ class ww implements Runnable {
                     int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     int i12 = -1;
                     for (int i13 = 0; i13 < tyVar.a.getChildCount(); i13++) {
-                        int S = RecyclerView.S(tyVar.a.getChildAt(i13));
+                        int R = RecyclerView.R(tyVar.a.getChildAt(i13));
                         View childAt = tyVar.a.getChildAt(i13);
-                        if (S != -1 && childAt != null && childAt.getTop() < i11) {
+                        if (R != -1 && childAt != null && childAt.getTop() < i11) {
                             i11 = childAt.getTop();
-                            i12 = S;
+                            i12 = R;
                             view = childAt;
                         }
                     }

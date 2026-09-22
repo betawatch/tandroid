@@ -7,34 +7,34 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.bb1;
-import org.telegram.ui.na1;
-import org.telegram.ui.of;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.za;
+import org.telegram.ui.la1;
+import org.telegram.ui.nf;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class g extends ab {
-    public m61 X;
-    public final na1 Y;
+public final class g extends za {
+    public w51 X;
+    public final la1 Y;
 
-    public g(Activity activity, f6 f6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
-        super(activity, null, true, false, 2, f6Var);
-        setBackgroundColor(j6.v0(j6.a7, f6Var));
+    public g(Activity activity, e6 e6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
+        super(activity, null, true, false, 2, e6Var);
+        setBackgroundColor(i6.v0(i6.a7, e6Var));
         this.occupyNavigationBar = true;
         this.drawNavigationBar = false;
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
-        this.Y = bb1.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
-        yl0 yl0Var = this.d;
+        this.Y = za1.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
+        ll0 ll0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        yl0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
+        ll0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.setSections(true);
         z n10 = this.e.n();
@@ -43,22 +43,22 @@ public final class g extends ab {
         this.X.N(false);
     }
 
-    public static int P(int i10, long j3, int i11, of ofVar) {
+    public static int P(int i10, long j3, int i11, nf nfVar) {
         TL_stats.TL_statsGetPollStats tL_statsGetPollStats = new TL_stats.TL_statsGetPollStats();
         tL_statsGetPollStats.peer = MessagesController.getInstance(i10).getInputPeer(j3);
         tL_statsGetPollStats.msg_id = i11;
-        return ConnectionsManager.getInstance(i10).sendRequestTyped(tL_statsGetPollStats, new org.telegram.messenger.a(), new hi.a(ofVar, 10));
+        return ConnectionsManager.getInstance(i10).sendRequestTyped(tL_statsGetPollStats, new org.telegram.messenger.a(), new hi.a(nfVar, 10));
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final xl0 v(yl0 yl0Var) {
-        m61 m61Var = new m61(yl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 9), this.resourcesProvider);
-        this.X = m61Var;
-        m61Var.r = false;
-        return m61Var;
+    @Override // org.telegram.ui.Components.za
+    public final kl0 v(ll0 ll0Var) {
+        w51 w51Var = new w51(ll0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 9), this.resourcesProvider);
+        this.X = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final CharSequence y() {
         return LocaleController.getString(R.string.PollV2StatsPollStats);
     }

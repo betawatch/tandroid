@@ -2,19 +2,19 @@ package gg;
 
 import android.view.ViewGroup;
 import ci.eb;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.vk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class q1 extends xl0 {
+public final class q1 extends kl0 {
     public k1 c;
     public Integer d;
     public eb e;
     public boolean f;
     public int h;
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.b() == 0) {
             return false;
@@ -52,6 +52,6 @@ public final class q1 extends xl0 {
         }
         eb ebVar = new eb(this, viewGroup.getContext(), 4);
         this.e = ebVar;
-        return new il0(ebVar);
+        return new vk0(ebVar);
     }
 }

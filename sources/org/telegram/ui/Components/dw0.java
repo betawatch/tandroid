@@ -1,72 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public abstract class dw0 extends cw0 {
-    public Activity w0;
-    public final Rect x0;
-    public int y0;
-    public boolean z0;
+public final class dw0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public dw0(Context context, Activity activity) {
-        super(context, null);
-        this.x0 = new Rect();
-        setActivity(activity);
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
     }
 
-    @Override // org.telegram.ui.Components.cw0
-    public int R() {
-        View rootView = getRootView();
-        Rect rect = this.x0;
-        getWindowVisibleDisplayFrame(rect);
-        if (this.z0) {
-            return ((rootView.getHeight() - (rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView)) - (rect.bottom - rect.top);
-        }
-        int height = (this.w0.getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
-        if (height <= Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.statusBarHeight)) {
-            return 0;
-        }
-        return height;
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
     }
 
-    @Override // org.telegram.ui.Components.cw0
-    public void S() {
-        if (this.n == null && this.r.isEmpty()) {
-            return;
-        }
-        this.y0 = R();
-        Point point = AndroidUtilities.displaySize;
-        post(new as0(3, this, point.x > point.y));
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
     }
 
-    @Override // org.telegram.ui.Components.cw0
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
     }
 
-    @Override // org.telegram.ui.Components.cw0
-    public int getKeyboardHeight() {
-        return this.y0;
-    }
-
-    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        S();
-    }
-
-    public void setActivity(Activity activity) {
-        this.w0 = activity;
-    }
-
-    public void setWithoutWindow(boolean z10) {
-        this.z0 = z10;
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.cw0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
+                int i10;
+                dw0 dw0Var = dw0.this;
+                int i11 = dw0Var.a;
+                if (i11 <= 0 || (i10 = dw0Var.b) <= 0) {
+                    dw0Var.end();
+                    return;
+                }
+                int i12 = i11 - 1;
+                dw0Var.a = i12;
+                if (dw0Var.c != null) {
+                    float[] fArr = dw0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        dw0Var.end();
+                        return;
+                    }
+                    float interpolation = dw0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
+                    float[] fArr2 = dw0Var.e;
+                    float f7 = fArr2[0];
+                    dw0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
+                    dw0Var.c.onAnimationUpdate(dw0Var);
+                }
+            }
+        });
+        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

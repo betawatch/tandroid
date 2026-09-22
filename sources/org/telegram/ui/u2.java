@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class u2 extends View implements org.telegram.ui.Cells.q9, d3 {
+public final class u2 extends View implements org.telegram.ui.Cells.p9, d3 {
     public a3 a;
     public TL_iv.pageBlockTitle b;
     public int c;
@@ -27,7 +27,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.q9, d3 {
         this.f = f4Var;
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.p9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         a3 a3Var = this.a;
         if (a3Var != null) {
@@ -69,7 +69,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.q9, d3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.rk.a(this);
+        return org.telegram.messenger.vl.b(this);
     }
 
     @Override // android.view.View
@@ -141,7 +141,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.q9, d3 {
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockTitle pageblocktitle2 = this.b;
             f4 f4Var = this.f;
-            a3 p5 = h4.p(u70Var2, this, null, richText, dp, 0, pageblocktitle2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ww0.a(), 0, this.f);
+            a3 p5 = h4.p(u70Var2, this, null, richText, dp, 0, pageblocktitle2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.jw0.a(), 0, this.f);
             this.a = p5;
             if (p5 != null) {
                 u70Var.getClass();

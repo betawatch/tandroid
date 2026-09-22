@@ -9,7 +9,7 @@ import c3.p;
 import c3.s;
 import e2.d;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -54,7 +54,7 @@ public final class a {
             i iVar = this.b;
             if (j12 <= j13) {
                 this.c = null;
-                iVar.e();
+                iVar.d();
                 return c(pVar, j3, sVar);
             }
             long position = j11 - pVar.getPosition();
@@ -69,7 +69,7 @@ public final class a {
             long j15 = b10.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.e();
+                iVar.d();
                 return c(pVar, j11, sVar);
             }
             if (i10 == -2) {
@@ -86,7 +86,7 @@ public final class a {
                         pVar.q((int) position2);
                     }
                     this.c = null;
-                    iVar.e();
+                    iVar.d();
                     return c(pVar, j15, sVar);
                 }
                 fVar.e = j14;

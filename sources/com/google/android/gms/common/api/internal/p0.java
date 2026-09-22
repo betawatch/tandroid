@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.p3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -40,7 +40,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     public p0(h hVar, com.google.android.gms.common.api.j jVar) {
         this.o = hVar;
         Looper looper = hVar.x.getLooper();
-        lf.h a2 = jVar.a();
+        lf.i a2 = jVar.a();
         a0.g gVar = (a0.g) a2.b;
         String str = (String) a2.c;
         String str2 = (String) a2.d;
@@ -54,7 +54,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             ((n6.g) a10).N = str3;
         }
         if (str3 != null && (a10 instanceof q)) {
-            a4.a.y(a10);
+            a4.a.z(a10);
             throw null;
         }
         this.b = a10;
@@ -67,7 +67,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = hVar.e;
         com.google.android.gms.internal.cast.c0 c0Var = hVar.x;
-        lf.h a11 = jVar.a();
+        lf.i a11 = jVar.a();
         this.j = new d1(context, c0Var, new p3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
@@ -289,9 +289,9 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         try {
-            int Z = hVar.h.Z(hVar.e, cVar);
-            if (Z != 0) {
-                k6.a aVar = new k6.a(Z, null);
+            int a02 = hVar.h.a0(hVar.e, cVar);
+            if (a02 != 0) {
+                k6.a aVar = new k6.a(a02, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;
@@ -417,7 +417,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         b(new k6.a(4));
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.j()) {
-            cVar.f(new pb.c(this, 14));
+            cVar.f(new a6.m(this, 13));
         }
     }
 

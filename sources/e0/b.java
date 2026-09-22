@@ -36,7 +36,7 @@ import javax.crypto.Mac;
 import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(TextView textView, PorterDuff.Mode mode) {
@@ -63,8 +63,8 @@ public abstract class b {
         popupWindow.setOverlapAnchor(z10);
     }
 
-    public static void G(AudioTrack audioTrack, k2.e eVar) {
-        audioTrack.setPreferredDevice(eVar == null ? null : (AudioDeviceInfo) eVar.b);
+    public static void G(AudioTrack audioTrack, a6.m mVar) {
+        audioTrack.setPreferredDevice(mVar == null ? null : (AudioDeviceInfo) mVar.b);
     }
 
     public static void H(PopupWindow popupWindow, int i10) {
@@ -243,7 +243,7 @@ public abstract class b {
 
     public static boolean l(Context context) {
         try {
-            FingerprintManager a2 = x2.h.a(context.getSystemService("fingerprint"));
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
             if (a2 == null) {
                 return false;
             }
@@ -262,13 +262,13 @@ public abstract class b {
         return textPaint.hasGlyph(str);
     }
 
-    public static boolean o(AudioManager audioManager, k2.e eVar) {
+    public static boolean o(AudioManager audioManager, a6.m mVar) {
         AudioDeviceInfo[] audioDeviceInfoArr;
-        if (eVar == null) {
+        if (mVar == null) {
             audioManager.getClass();
             audioDeviceInfoArr = audioManager.getDevices(2);
         } else {
-            audioDeviceInfoArr = new AudioDeviceInfo[]{(AudioDeviceInfo) eVar.b};
+            audioDeviceInfoArr = new AudioDeviceInfo[]{(AudioDeviceInfo) mVar.b};
         }
         e9.l0 l0Var = new e9.l0(4);
         Integer[] numArr = {8, 7};
@@ -298,7 +298,7 @@ public abstract class b {
 
     public static boolean p(Context context) {
         try {
-            FingerprintManager a2 = x2.h.a(context.getSystemService("fingerprint"));
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
             if (a2 == null) {
                 return false;
             }
@@ -333,45 +333,45 @@ public abstract class b {
         activity.requestPermissions(strArr, i10);
     }
 
-    public static void w(k2.q qVar, Object obj) {
-        k2.e eVar;
-        AudioDeviceInfo c10 = j2.e.c(obj);
-        k2.f0 f0Var = (k2.f0) qVar;
-        if (c10 == null) {
-            eVar = null;
+    public static void w(k2.p pVar, Object obj) {
+        a6.m mVar;
+        AudioDeviceInfo b10 = j2.e.b(obj);
+        k2.g0 g0Var = (k2.g0) pVar;
+        if (b10 == null) {
+            mVar = null;
         } else {
-            f0Var.getClass();
-            eVar = new k2.e(c10, 0);
+            g0Var.getClass();
+            mVar = new a6.m(b10, 29);
         }
-        f0Var.c0 = eVar;
-        g7 g7Var = f0Var.z;
+        g0Var.c0 = mVar;
+        g7 g7Var = g0Var.z;
         if (g7Var != null) {
-            g7Var.c(c10);
+            g7Var.c(b10);
         }
-        AudioTrack audioTrack = f0Var.x;
+        AudioTrack audioTrack = g0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, f0Var.c0);
+            G(audioTrack, g0Var.c0);
         }
     }
 
-    public static void x(k2.q qVar, Object obj) {
-        k2.e eVar;
-        AudioDeviceInfo c10 = j2.e.c(obj);
-        k2.f0 f0Var = (k2.f0) qVar;
-        if (c10 == null) {
-            eVar = null;
+    public static void x(k2.p pVar, Object obj) {
+        a6.m mVar;
+        AudioDeviceInfo b10 = j2.e.b(obj);
+        k2.g0 g0Var = (k2.g0) pVar;
+        if (b10 == null) {
+            mVar = null;
         } else {
-            f0Var.getClass();
-            eVar = new k2.e(c10, 0);
+            g0Var.getClass();
+            mVar = new a6.m(b10, 29);
         }
-        f0Var.c0 = eVar;
-        g7 g7Var = f0Var.z;
+        g0Var.c0 = mVar;
+        g7 g7Var = g0Var.z;
         if (g7Var != null) {
-            g7Var.c(c10);
+            g7Var.c(b10);
         }
-        AudioTrack audioTrack = f0Var.x;
+        AudioTrack audioTrack = g0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, f0Var.c0);
+            G(audioTrack, g0Var.c0);
         }
     }
 

@@ -3,23 +3,23 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class hk extends FragmentContextView {
     public final /* synthetic */ int P0;
-    public final /* synthetic */ zn Q0;
+    public final /* synthetic */ bo Q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(zn znVar, Context context, zn znVar2, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, znVar2, null, true, f6Var);
+    public hk(bo boVar, Context context, bo boVar2, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, boVar2, null, true, e6Var);
         this.P0 = i10;
         switch (i10) {
             case 1:
-                this.Q0 = znVar;
-                super(context, znVar2, null, false, f6Var);
+                this.Q0 = boVar;
+                super(context, boVar2, null, false, e6Var);
                 break;
             default:
-                this.Q0 = znVar;
+                this.Q0 = boVar;
                 break;
         }
     }
@@ -28,12 +28,12 @@ public final class hk extends FragmentContextView {
     public final void setVisibility(int i10) {
         switch (this.P0) {
             case 0:
-                zn znVar = this.Q0;
-                znVar.M0.i(znVar.a2, i10 == 0, true);
+                bo boVar = this.Q0;
+                boVar.M0.i(boVar.a2, i10 == 0, true);
                 break;
             default:
-                zn znVar2 = this.Q0;
-                znVar2.M0.i(znVar2.Y1, i10 == 0, true);
+                bo boVar2 = this.Q0;
+                boVar2.M0.i(boVar2.Y1, i10 == 0, true);
                 break;
         }
     }

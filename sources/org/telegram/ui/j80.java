@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j80 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final Paint a;
@@ -39,11 +39,11 @@ public final class j80 extends FrameLayout implements org.telegram.ui.ActionBar.
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.outline_search_1_24);
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.l1(0.6f, l80Var.getThemedColor(i10)), PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.y5.d(24, 24.0f, 51, 11.0f, 8.0f, 11.0f, 8.0f));
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.l1(0.6f, l80Var.getThemedColor(i10)), PorterDuff.Mode.SRC_IN));
+        addView(imageView, w7.x5.d(24, 24.0f, 51, 11.0f, 8.0f, 11.0f, 8.0f));
         v1Var.setClipChildren(true);
-        addView(v1Var, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 40.0f));
+        addView(v1Var, w7.x5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 40.0f));
         ci.h2 h2Var = new ci.h2(this, context, 7);
         this.d = h2Var;
         h2Var.setHint(LocaleController.getString(R.string.Search));
@@ -64,8 +64,8 @@ public final class j80 extends FrameLayout implements org.telegram.ui.ActionBar.
             h2Var.setLocalePreferredLineHeightForMinimumUsed(false);
         }
         h2Var.setTextColor(l80Var.getThemedColor(i10));
-        h2Var.setHintTextColor(l80Var.getThemedColor(org.telegram.ui.ActionBar.j6.H6));
-        addView(h2Var, w7.y5.d(-1, 40.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+        h2Var.setHintTextColor(l80Var.getThemedColor(org.telegram.ui.ActionBar.i6.H6));
+        addView(h2Var, w7.x5.d(-1, 40.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         e();
     }
 
@@ -75,7 +75,7 @@ public final class j80 extends FrameLayout implements org.telegram.ui.ActionBar.
         float dpf22 = AndroidUtilities.dpf2(0.33f);
         Paint paint = this.a;
         paint.setShadowLayer(dpf2, 0.0f, dpf22, 285212672);
-        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        int i10 = org.telegram.ui.ActionBar.i6.d6;
         l80 l80Var = this.f;
         paint.setColor(l80Var.getThemedColor(i10));
         RectF rectF = AndroidUtilities.rectTmp;
@@ -109,8 +109,8 @@ public final class j80 extends FrameLayout implements org.telegram.ui.ActionBar.
 
     @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
-        int themedColor = this.f.getThemedColor(org.telegram.ui.ActionBar.j6.a7);
-        this.e = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.j6.l1(1.0f, themedColor), org.telegram.ui.ActionBar.j6.l1(0.0f, themedColor)});
+        int themedColor = this.f.getThemedColor(org.telegram.ui.ActionBar.i6.a7);
+        this.e = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.i6.l1(1.0f, themedColor), org.telegram.ui.ActionBar.i6.l1(0.0f, themedColor)});
     }
 
     @Override // android.widget.FrameLayout, android.view.View

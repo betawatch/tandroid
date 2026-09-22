@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a40 extends org.telegram.ui.Components.voip.m0 {
     public final /* synthetic */ i60 Q0;
@@ -100,7 +100,7 @@ public final class a40 extends org.telegram.ui.Components.voip.m0 {
         i60 i60Var = this.Q0;
         float f7 = i60Var.U1;
         a40 a40Var = i60Var.a2;
-        ((org.telegram.ui.ActionBar.f3) i60Var).navBarColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gg, false), Math.max(f7, a40Var == null ? 0.0f : a40Var.c), 1.0f);
+        ((org.telegram.ui.ActionBar.f3) i60Var).navBarColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.jg, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gg, false), Math.max(f7, a40Var == null ? 0.0f : a40Var.c), 1.0f);
         viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
         viewGroup.invalidate();
         i60Var.B1(i60Var.U1);

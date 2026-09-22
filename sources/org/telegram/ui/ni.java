@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ni implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final class ni implements View.OnTouchListener {
         i50 i50Var;
         switch (this.a) {
             case 0:
-                zn znVar = (zn) this.d;
+                bo boVar = (bo) this.d;
                 if (motionEvent.getActionMasked() != 0) {
                     if (motionEvent.getActionMasked() == 4) {
-                        znVar.A7(true);
+                        boVar.A7(true);
                         break;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.n1 n1Var = znVar.Q8;
+                    org.telegram.ui.ActionBar.n1 n1Var = boVar.Q8;
                     if (n1Var != null && n1Var.isShowing()) {
-                        View contentView = znVar.Q8.getContentView();
+                        View contentView = boVar.Q8.getContentView();
                         int[] iArr = this.b;
                         contentView.getLocationInWindow(iArr);
                         int i10 = iArr[0];
@@ -43,7 +43,7 @@ public final class ni implements View.OnTouchListener {
                         Rect rect = this.c;
                         rect.set(i10, i11, measuredWidth, measuredHeight);
                         if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            znVar.A7(true);
+                            boVar.A7(true);
                             break;
                         }
                     }
@@ -79,9 +79,9 @@ public final class ni implements View.OnTouchListener {
         return false;
     }
 
-    public ni(zn znVar, Rect rect) {
+    public ni(bo boVar, Rect rect) {
         this.a = 0;
-        this.d = znVar;
+        this.d = boVar;
         this.c = rect;
         this.b = new int[2];
     }

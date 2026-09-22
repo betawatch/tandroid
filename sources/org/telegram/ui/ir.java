@@ -1,47 +1,59 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ir implements q0.a {
-    public final /* synthetic */ int a;
+public final class ir implements nr {
+    public final /* synthetic */ ur a;
 
-    public /* synthetic */ ir(int i10) {
-        this.a = i10;
+    public ir(ur urVar) {
+        this.a = urVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.u5) {
-                    org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
-                    u5Var.c(u5Var.getPhotoEntry() != null && u5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
-                    u5Var.setHighQuality(u5Var.getPhotoEntry() != null && u5Var.getPhotoEntry().isHighQuality());
-                    u5Var.f(u5Var.getPhotoEntry() != null ? u5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
-                    break;
-                }
-                break;
-            case 2:
-                View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.vn0) {
-                    ((org.telegram.ui.Components.vn0) view2).a(false, true);
-                    break;
-                }
-                break;
-            default:
-                View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.vn0) {
-                    ((org.telegram.ui.Components.vn0) view3).a(false, true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.nr
+    public final void c(long j3, TLObject tLObject) {
+        ur urVar = this.a;
+        if (urVar.K.f(j3) == null) {
+            or w02 = urVar.w0();
+            urVar.F.add(tLObject);
+            urVar.K.k(tLObject, j3);
+            urVar.z0(urVar.F);
+            urVar.A0(w02);
         }
+    }
+
+    @Override // org.telegram.ui.nr
+    public final void d(long j3) {
+        ur urVar = this.a;
+        if (urVar.K.f(j3) == null) {
+            or w02 = urVar.w0();
+            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
+            if (j3 > 0) {
+                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                tL_channelParticipantBanned.peer = tL_peerUser;
+                tL_peerUser.user_id = j3;
+            } else {
+                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                tL_channelParticipantBanned.peer = tL_peerChannel;
+                tL_peerChannel.channel_id = -j3;
+            }
+            tL_channelParticipantBanned.date = urVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantBanned.kicked_by = urVar.getAccountInstance().getUserConfig().clientUserId;
+            urVar.s.kicked_count++;
+            urVar.F.add(tL_channelParticipantBanned);
+            urVar.K.k(tL_channelParticipantBanned, j3);
+            urVar.z0(urVar.F);
+            urVar.A0(w02);
+        }
+    }
+
+    @Override // org.telegram.ui.nr
+    public final /* synthetic */ void a(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.nr
+    public final /* synthetic */ void b(long j3) {
     }
 }

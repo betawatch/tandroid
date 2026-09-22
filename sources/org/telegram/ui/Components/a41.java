@@ -1,27 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class a41 extends s4.j {
-    public final /* synthetic */ l41 F;
-
-    public a41(l41 l41Var) {
-        this.F = l41Var;
+public final class a41 extends h51 {
+    static {
+        h51.setup(new a41());
     }
 
-    @Override // s4.j
-    public final void O() {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    public static i51 a(int i10, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, n nVar) {
+        i51 J = i51.J(a41.class);
+        J.d = i10;
+        J.l = charSequence;
+        J.m = charSequence2;
+        J.n = charSequence3;
+        J.D = onClickListener;
+        J.e = z10;
+        J.E = onClickListener2;
+        J.G = nVar;
+        return J;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    public static i51 b(int i10, String str, String str2, String str3, x31 x31Var) {
+        return a(i10, str, str2, str3, x31Var, false, null, null);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z10, w51 w51Var, e61 e61Var) {
+        b41 b41Var = (b41) view;
+        CharSequence charSequence = i51Var.l;
+        CharSequence charSequence2 = i51Var.m;
+        CharSequence charSequence3 = i51Var.n;
+        View.OnClickListener onClickListener = i51Var.D;
+        boolean z11 = i51Var.e;
+        View.OnClickListener onClickListener2 = i51Var.E;
+        Object obj = i51Var.G;
+        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
+        LinearLayout linearLayout = b41Var.r;
+        LinearLayout linearLayout2 = b41Var.h;
+        LinearLayout linearLayout3 = b41Var.b;
+        b41Var.c.setText(charSequence);
+        b41Var.d.setText(charSequence2);
+        b41Var.e.setText(charSequence3);
+        b41Var.f.setVisibility(onClickListener != null ? 0 : 8);
+        linearLayout3.setOnClickListener(onClickListener);
+        linearLayout3.setClickable(onClickListener != null);
+        b41Var.n.a(z11, false);
+        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
+        linearLayout2.setOnClickListener(onClickListener2);
+        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
+        linearLayout.setOnClickListener(new dt(19, b41Var, onClickListener3));
+        b41Var.e();
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean contentsEquals(i51 i51Var, i51 i51Var2) {
+        return TextUtils.equals(i51Var.l, i51Var2.l) && TextUtils.equals(i51Var.m, i51Var2.m) && TextUtils.equals(i51Var.n, i51Var2.n) && i51Var.E == i51Var2.E;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new b41(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        return i51Var.d == i51Var2.d;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean isClickable() {
+        return false;
     }
 }

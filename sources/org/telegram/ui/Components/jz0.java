@@ -1,52 +1,18 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jz0 {
-    public final /* synthetic */ int a;
+public interface jz0 {
+    cz0 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
 
-    public /* synthetic */ jz0(int i10) {
-        this.a = i10;
-    }
+    Paint getHeaderPaint();
 
-    public final int a(qz0 qz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return TLObject.FLAG_31;
-            default:
-                return TLObject.FLAG_31;
-        }
-    }
+    Paint getLinePaint();
 
-    public final int b(qz0 qz0Var, int i10) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i10;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
-    }
+    Paint getStripPaint();
 
-    public int c(int i10, int i11) {
-        switch (this.a) {
-            case 4:
-                return i11;
-            default:
-                return i10;
-        }
-    }
+    void onLayoutChild(cz0 cz0Var, int i10, int i11);
 }

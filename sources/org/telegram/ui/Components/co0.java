@@ -1,98 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.os.Bundle;
 import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class co0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.uy b;
-    public final /* synthetic */ org.telegram.ui.ey c;
+public abstract class co0 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final ai.u2 b = new ai.u2(this, 9);
 
-    public /* synthetic */ co0(org.telegram.ui.ey eyVar, org.telegram.ui.uy uyVar, int i10) {
-        this.a = i10;
-        this.c = eyVar;
-        this.b = uyVar;
+    public abstract boolean a();
+
+    public abstract boolean b();
+
+    public abstract void c(boolean z10);
+
+    public CharSequence d() {
+        return null;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
+        }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
         }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.gy gyVar;
-        int i12;
-        yl0 yl0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ey eyVar = this.c;
-                eyVar.p0.V();
-                eyVar.T(i10, i11);
-                break;
-            case 1:
-                org.telegram.ui.ey eyVar2 = this.c;
-                eyVar2.w0.W();
-                eyVar2.T(i10, i11);
-                break;
-            case 2:
-                org.telegram.ui.ey eyVar3 = this.c;
-                go0 go0Var = eyVar3.c0;
-                s4.c0 c0Var = eyVar3.d0;
-                int L0 = c0Var.L0();
-                int N0 = c0Var.N0();
-                int abs = Math.abs(c0Var.N0() - L0) + 1;
-                int h = recyclerView.getAdapter().h();
-                if (abs > 0 && (((go0Var.U.a() != 0 && !go0Var.X) || !go0Var.W) && (N0 == h - 1 || ((gyVar = go0Var.U) != null && gyVar.a() != 0 && (i12 = go0Var.Y) >= 0 && L0 <= i12 && N0 >= i12)))) {
-                    go0Var.Q();
-                }
-                eyVar3.T(i10, i11);
-                break;
-            default:
-                org.telegram.ui.ey eyVar4 = this.c;
-                io0 io0Var = eyVar4.k0;
-                if (io0Var.Y && !io0Var.W && !TextUtils.isEmpty(io0Var.b0) && (yl0Var = io0Var.d) != null) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < yl0Var.getChildCount()) {
-                            if (!(yl0Var.getChildAt(i13) instanceof t00)) {
-                                i13++;
-                            } else if (io0Var.Y && !io0Var.W && !TextUtils.isEmpty(io0Var.b0)) {
-                                io0Var.V(true);
-                            }
-                        }
-                    }
-                }
-                eyVar4.T(i10, i11);
-                break;
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i10, Bundle bundle) {
+        if (i10 != 4096 && i10 != 8192) {
+            return false;
         }
+        c(i10 == 8192);
+        if (view != null) {
+            WeakHashMap weakHashMap = r0.i0.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new ny(26, this, view);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i10, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i10, bundle)) {
+            return true;
+        }
+        return g(view, i10, bundle);
     }
 }

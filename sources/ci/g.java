@@ -15,27 +15,27 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.fu;
 import org.telegram.ui.Components.ju;
 import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class g extends ju {
-    public org.telegram.ui.Components.ma V;
+    public org.telegram.ui.Components.la V;
     public ch.d W;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 a0;
-    public final /* synthetic */ org.telegram.ui.Components.ia b0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 a0;
+    public final /* synthetic */ org.telegram.ui.Components.ha b0;
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, cw0 cw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ia iaVar) {
-        super(context, cw0Var, null, i10, true, dVar);
+    public g(m mVar, Context context, pv0 pv0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.ha haVar) {
+        super(context, pv0Var, null, i10, true, dVar);
         this.c0 = mVar;
-        this.a0 = f6Var;
-        this.b0 = iaVar;
+        this.a0 = e6Var;
+        this.b0 = haVar;
     }
 
     @Override // org.telegram.ui.Components.ju
@@ -62,7 +62,7 @@ public final class g extends ju {
                 emojiView.w0 = false;
                 emojiView.w2 = false;
                 emojiView.setShouldDrawBackground(false);
-                if (mVar instanceof org.telegram.ui.Components.ld) {
+                if (mVar instanceof org.telegram.ui.Components.jd) {
                     emojiView.setPadding(0, 0, 0, AndroidUtilities.navigationBarHeight);
                     emojiView.c = 3;
                 }
@@ -87,7 +87,7 @@ public final class g extends ju {
         int i11;
         WindowInsets rootWindowInsets;
         m mVar = this.c0;
-        ah.m mVar2 = mVar.d;
+        ah.l lVar = mVar.d;
         RectF rectF = mVar.z0;
         rectF.set(0.0f, 0.0f, fuVar.getWidth(), AndroidUtilities.dp(29.0f) + fuVar.getHeight());
         int i12 = 0;
@@ -121,12 +121,12 @@ public final class g extends ju {
         }
         if (mVar.g()) {
             if (this.V == null) {
-                this.V = new org.telegram.ui.Components.ma(this.b0, fuVar, 7, false);
+                this.V = new org.telegram.ui.Components.la(this.b0, fuVar, 7, false);
             }
             mVar.h(this.V, canvas, mVar.z0, AndroidUtilities.dp(29.0f), false, 0.0f, -fuVar.getY(), false);
-            mVar2.k = AndroidUtilities.dp(29.0f);
-            mVar2.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, AndroidUtilities.dp(29.0f) + ((int) rectF.bottom));
-            mVar2.draw(canvas);
+            lVar.k = AndroidUtilities.dp(29.0f);
+            lVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, AndroidUtilities.dp(29.0f) + ((int) rectF.bottom));
+            lVar.draw(canvas);
             return;
         }
         Paint paint = mVar.e;

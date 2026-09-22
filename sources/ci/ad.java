@@ -18,14 +18,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public class ad extends View implements x2 {
     public final Path a;
     public final Paint b;
     public final Paint c;
     public boolean d;
-    public final org.telegram.ui.Components.d6 e;
+    public final org.telegram.ui.Components.c6 e;
     public Drawable f;
     public Bitmap h;
     public int n;
@@ -38,7 +38,7 @@ public class ad extends View implements x2 {
         this.b = paint;
         Paint paint2 = new Paint(3);
         this.c = paint2;
-        this.e = new org.telegram.ui.Components.d6(this, 0L, 380L, qr.h);
+        this.e = new org.telegram.ui.Components.c6(this, 0L, 380L, qr.h);
         paint.setColor(-1);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }

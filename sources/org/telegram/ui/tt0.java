@@ -8,7 +8,7 @@ import android.util.Property;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class tt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class tt0 extends AnimatorListenerAdapter {
                         AnimatorSet animatorSet = photoViewer.U7;
                         fv0 fv0Var = photoViewer.O7;
                         Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(fv0Var, (Property<fv0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.dg0, Float>) property, 0.0f));
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(fv0Var, (Property<fv0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.sf0, Float>) property, 0.0f));
                     } else {
                         if (photoViewer.S4) {
                             photoViewer.j0.setVisibility(8);
@@ -106,7 +106,7 @@ public final class tt0 extends AnimatorListenerAdapter {
                         Property property2 = View.TRANSLATION_Y;
                         animatorSet2.playTogether(ObjectAnimator.ofFloat(t5Var, (Property<t5, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.P0, (Property<t5, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.S0, (Property<ii.y1, Float>) property2, 0.0f));
                     }
-                    photoViewer.U7.addListener(new gp0(this, 9));
+                    photoViewer.U7.addListener(new cr0(this, 8));
                     photoViewer.U7.setDuration(200L);
                     photoViewer.U7.setInterpolator(AndroidUtilities.decelerateInterpolator);
                     photoViewer.U7.start();

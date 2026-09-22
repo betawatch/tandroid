@@ -1,9 +1,9 @@
 package ce;
 
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g implements c {
     public final /* synthetic */ c a;
@@ -33,7 +33,7 @@ public final class g implements c {
                 jd.a aVar = jd.a.a;
                 i10 = fVar.d;
                 if (i10 != 0) {
-                    u7.b(obj2);
+                    t7.b(obj2);
                     try {
                         c cVar2 = this.a;
                         fVar.a = this;
@@ -53,7 +53,7 @@ public final class g implements c {
                     }
                     gVar = fVar.a;
                     try {
-                        u7.b(obj2);
+                        t7.b(obj2);
                     } catch (Throwable th3) {
                         th = th3;
                         gVar.b.a = th;

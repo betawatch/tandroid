@@ -77,13 +77,13 @@ import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.nc0;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class ImageLoader {
     public static final String AUTOPLAY_FILTER = "g";
@@ -122,7 +122,7 @@ public class ImageLoader {
     private static byte[] headerThumb = new byte[12];
     private static volatile ImageLoader Instance = null;
     private HashMap<String, Integer> bitmapUseCounts = new HashMap<>();
-    ArrayList<org.telegram.ui.Components.c6> cachedAnimatedFileDrawables = new ArrayList<>();
+    ArrayList<org.telegram.ui.Components.b6> cachedAnimatedFileDrawables = new ArrayList<>();
     private HashMap<String, CacheImage> imageLoadingByUrl = new HashMap<>();
     private HashMap<String, CacheImage> imageLoadingByUrlPframe = new HashMap<>();
     public ConcurrentHashMap<String, CacheImage> imageLoadingByKeys = new ConcurrentHashMap<>();
@@ -133,7 +133,7 @@ public class ImageLoader {
     private LinkedList<HttpImageTask> httpTasks = new LinkedList<>();
     private LinkedList<ArtworkLoadTask> artworkTasks = new LinkedList<>();
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 5 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
@@ -317,7 +317,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class 6 extends BroadcastReceiver {
         public 6() {
         }
@@ -341,7 +341,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static /* synthetic */ class 7 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$CompressFormat;
 
@@ -366,7 +366,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class ArtworkLoadTask extends AsyncTask<Void, Void, String> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -584,7 +584,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class CacheImage {
         protected ArtworkLoadTask artworkTask;
         protected CacheOutTask cacheTask;
@@ -632,55 +632,55 @@ public class ImageLoader {
             boolean z10;
             char c10;
             char c11;
-            org.telegram.ui.Components.c6 c6Var;
+            org.telegram.ui.Components.b6 b6Var;
             Drawable drawable2 = drawable;
-            if (drawable2 instanceof org.telegram.ui.Components.c6) {
-                org.telegram.ui.Components.c6 c6Var2 = (org.telegram.ui.Components.c6) drawable2;
-                if (!c6Var2.n0) {
+            if (drawable2 instanceof org.telegram.ui.Components.b6) {
+                org.telegram.ui.Components.b6 b6Var2 = (org.telegram.ui.Components.b6) drawable2;
+                if (!b6Var2.n0) {
                     boolean z11 = false;
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
                         ImageReceiver imageReceiver = (ImageReceiver) arrayList.get(i10);
                         if (i10 == 0) {
-                            c6Var = c6Var2;
+                            b6Var = b6Var2;
                             z10 = z11;
                         } else {
-                            AnimatedFileDrawableStream animatedFileDrawableStream = c6Var2.u0;
+                            AnimatedFileDrawableStream animatedFileDrawableStream = b6Var2.u0;
                             if (animatedFileDrawableStream != null) {
-                                File file = c6Var2.G;
-                                long j3 = c6Var2.H;
-                                int i11 = c6Var2.I;
+                                File file = b6Var2.G;
+                                long j3 = b6Var2.H;
+                                int i11 = b6Var2.I;
                                 TLRPC.Document document = animatedFileDrawableStream.getDocument();
-                                ImageLocation location = c6Var2.u0.getLocation();
-                                Object parentObject = c6Var2.u0.getParentObject();
+                                ImageLocation location = b6Var2.u0.getLocation();
+                                Object parentObject = b6Var2.u0.getParentObject();
                                 z10 = z11;
-                                long j10 = c6Var2.M;
+                                long j10 = b6Var2.M;
                                 c10 = 1;
-                                int i12 = c6Var2.J;
+                                int i12 = b6Var2.J;
                                 c11 = 0;
-                                AnimatedFileDrawableStream animatedFileDrawableStream2 = c6Var2.u0;
-                                c6Var = new org.telegram.ui.Components.c6(file, false, j3, i11, document, location, parentObject, j10, i12, animatedFileDrawableStream2 != null && animatedFileDrawableStream2.isPreview());
+                                AnimatedFileDrawableStream animatedFileDrawableStream2 = b6Var2.u0;
+                                b6Var = new org.telegram.ui.Components.b6(file, false, j3, i11, document, location, parentObject, j10, i12, animatedFileDrawableStream2 != null && animatedFileDrawableStream2.isPreview());
                             } else {
                                 z10 = z11;
                                 c10 = 1;
                                 c11 = 0;
-                                c6Var = new org.telegram.ui.Components.c6(c6Var2.G, false, c6Var2.H, c6Var2.I, c6Var2.o0, null, null, c6Var2.M, c6Var2.J, false);
+                                b6Var = new org.telegram.ui.Components.b6(b6Var2.G, false, b6Var2.H, b6Var2.I, b6Var2.o0, null, null, b6Var2.M, b6Var2.J, false);
                             }
-                            int[] iArr = c6Var.d;
-                            int[] iArr2 = c6Var2.d;
+                            int[] iArr = b6Var.d;
+                            int[] iArr2 = b6Var2.d;
                             iArr[c11] = iArr2[c11];
                             iArr[c10] = iArr2[c10];
                         }
-                        if (imageReceiver.setImageBitmapByKey(c6Var, this.key, this.type, false, ((Integer) arrayList2.get(i10)).intValue())) {
-                            if (c6Var == c6Var2) {
+                        if (imageReceiver.setImageBitmapByKey(b6Var, this.key, this.type, false, ((Integer) arrayList2.get(i10)).intValue())) {
+                            if (b6Var == b6Var2) {
                                 z11 = true;
                             }
-                        } else if (c6Var != c6Var2) {
-                            c6Var.u();
+                        } else if (b6Var != b6Var2) {
+                            b6Var.u();
                         }
                         z11 = z10;
                     }
                     if (!z11) {
-                        c6Var2.u();
+                        b6Var2.u();
                     }
                     if (str == null) {
                         ImageLoader.this.decrementUseCount(str);
@@ -916,7 +916,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class CacheOutTask implements Runnable {
         private CacheImage cacheImage;
         private boolean isCancelled;
@@ -944,7 +944,7 @@ public class ImageLoader {
                 int k10 = i0.a.k(wallPaperSettings2.background_color, 255);
                 int k11 = i0.a.k(wallPaper.settings.second_background_color, 255);
                 int averageColor = AndroidUtilities.getAverageColor(k10, k11);
-                GradientDrawable gradientDrawable = new GradientDrawable(org.telegram.ui.Components.u9.d(wallPaper.settings.rotation), new int[]{k10, k11});
+                GradientDrawable gradientDrawable = new GradientDrawable(org.telegram.ui.Components.t9.d(wallPaper.settings.rotation), new int[]{k10, k11});
                 gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                 gradientDrawable.draw(canvas);
                 i10 = averageColor;
@@ -954,12 +954,12 @@ public class ImageLoader {
                 int k14 = i0.a.k(wallPaper.settings.third_background_color, 255);
                 int i11 = wallPaper.settings.fourth_background_color;
                 int k15 = i11 == 0 ? 0 : i0.a.k(i11, 255);
-                int g10 = nc0.g(k12, k13, k14, k15);
-                nc0 nc0Var = new nc0();
-                nc0Var.n(k12, k13, k14, k15);
-                nc0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                nc0Var.t(bitmap, wallPaper.settings.intensity);
-                nc0Var.draw(canvas);
+                int g10 = cc0.g(k12, k13, k14, k15);
+                cc0 cc0Var = new cc0();
+                cc0Var.n(k12, k13, k14, k15);
+                cc0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                cc0Var.t(bitmap, wallPaper.settings.intensity);
+                cc0Var.draw(canvas);
                 i10 = g10;
                 z10 = false;
             }
@@ -984,28 +984,28 @@ public class ImageLoader {
             BitmapDrawable bitmapDrawable;
             Drawable drawable3;
             boolean z10 = false;
-            if (drawable instanceof kj0) {
-                kj0 kj0Var = (kj0) drawable;
+            if (drawable instanceof xi0) {
+                xi0 xi0Var = (xi0) drawable;
                 Drawable drawable4 = (Drawable) ImageLoader.this.lottieMemCache.get(this.cacheImage.key);
                 if (drawable4 == null) {
-                    ImageLoader.this.lottieMemCache.put(this.cacheImage.key, kj0Var);
-                    drawable3 = kj0Var;
+                    ImageLoader.this.lottieMemCache.put(this.cacheImage.key, xi0Var);
+                    drawable3 = xi0Var;
                 } else {
-                    kj0Var.C(false);
+                    xi0Var.C(false);
                     drawable3 = drawable4;
                 }
                 ImageLoader.this.incrementUseCount(this.cacheImage.key);
                 str = this.cacheImage.key;
                 drawable2 = drawable3;
-            } else if (drawable instanceof org.telegram.ui.Components.c6) {
-                org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) drawable;
-                if (c6Var.n0) {
+            } else if (drawable instanceof org.telegram.ui.Components.b6) {
+                org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) drawable;
+                if (b6Var.n0) {
                     BitmapDrawable fromLottieCache = ImageLoader.this.getFromLottieCache(this.cacheImage.key);
                     if (fromLottieCache == null) {
-                        ImageLoader.this.lottieMemCache.put(this.cacheImage.key, c6Var);
-                        bitmapDrawable = c6Var;
+                        ImageLoader.this.lottieMemCache.put(this.cacheImage.key, b6Var);
+                        bitmapDrawable = b6Var;
                     } else {
-                        c6Var.u();
+                        b6Var.u();
                         bitmapDrawable = fromLottieCache;
                     }
                     ImageLoader.this.incrementUseCount(this.cacheImage.key);
@@ -1049,7 +1049,7 @@ public class ImageLoader {
             ImageLoader.this.imageLoadQueue.postRunnable(new f0(this, drawable2, str, 2), this.cacheImage.priority);
         }
 
-        private void loadLastFrame(kj0 kj0Var, int i10, int i11, boolean z10, boolean z11) {
+        private void loadLastFrame(xi0 xi0Var, int i10, int i11, boolean z10, boolean z11) {
             Bitmap createBitmap;
             Canvas canvas;
             Drawable bitmapDrawable;
@@ -1063,11 +1063,11 @@ public class ImageLoader {
                 createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
                 canvas = new Canvas(createBitmap);
             }
-            kj0Var.b();
-            Bitmap createBitmap2 = Bitmap.createBitmap(kj0Var.b, kj0Var.c, Bitmap.Config.ARGB_8888);
-            kj0Var.C0 = z10 ? kj0Var.e[0] - 1 : 0;
-            kj0Var.a(createBitmap2);
-            kj0Var.c();
+            xi0Var.b();
+            Bitmap createBitmap2 = Bitmap.createBitmap(xi0Var.b, xi0Var.c, Bitmap.Config.ARGB_8888);
+            xi0Var.C0 = z10 ? xi0Var.e[0] - 1 : 0;
+            xi0Var.a(createBitmap2);
+            xi0Var.c();
             canvas.save();
             if (!z10 || !z11) {
                 canvas.scale(createBitmap2.getWidth() / i10, createBitmap2.getHeight() / i11, i10 / 2.0f, i11 / 2.0f);
@@ -1081,7 +1081,7 @@ public class ImageLoader {
                 canvas.drawBitmap(createBitmap2, 0.0f, 0.0f, paint);
                 bitmapDrawable = new BitmapDrawable(createBitmap);
             }
-            kj0Var.C(false);
+            xi0Var.C(false);
             createBitmap2.recycle();
             onPostExecute(bitmapDrawable);
         }
@@ -1212,7 +1212,7 @@ public class ImageLoader {
         /* JADX WARN: Type inference failed for: r14v56 */
         /* JADX WARN: Type inference failed for: r14v57 */
         /* JADX WARN: Type inference failed for: r14v58 */
-        /* JADX WARN: Type inference failed for: r18v18, types: [org.telegram.ui.Components.c6] */
+        /* JADX WARN: Type inference failed for: r18v18, types: [org.telegram.ui.Components.b6] */
         /* JADX WARN: Type inference failed for: r2v103 */
         /* JADX WARN: Type inference failed for: r2v104 */
         /* JADX WARN: Type inference failed for: r2v70 */
@@ -1234,7 +1234,7 @@ public class ImageLoader {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void run() {
-            h21 h21Var;
+            r11 r11Var;
             Bitmap bitmap;
             Object obj;
             byte[] bArr;
@@ -1301,7 +1301,7 @@ public class ImageLoader {
             MediaMetadataRetriever mediaMetadataRetriever;
             b2.n1 n1Var;
             boolean z30;
-            org.telegram.ui.Components.c6 c6Var;
+            org.telegram.ui.Components.b6 b6Var;
             int i17;
             int i18;
             boolean z31;
@@ -1327,8 +1327,8 @@ public class ImageLoader {
             b2.n1 n1Var3;
             int i24;
             int i25;
-            kj0 kj0Var;
-            kj0 kj0Var2;
+            xi0 xi0Var;
+            xi0 xi0Var2;
             byte[] bArr3;
             char c13;
             boolean z39;
@@ -1355,12 +1355,12 @@ public class ImageLoader {
                     if (i28 == 5) {
                         try {
                             CacheImage cacheImage3 = this.cacheImage;
-                            h21Var = new h21(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
+                            r11Var = new r11(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
                         } catch (Throwable th3) {
                             FileLog.e(th3);
-                            h21Var = null;
+                            r11Var = null;
                         }
-                        onPostExecute(h21Var);
+                        onPostExecute(r11Var);
                         return;
                     }
                     if (i28 == 3 || i28 == 4) {
@@ -1526,7 +1526,7 @@ public class ImageLoader {
                             r22 = min;
                         }
                         if (str8 != null) {
-                            kj0Var2 = "🎰".equals(str8) ? new kw0(str8, i21, i20) : new ij0(str8, i21, i20);
+                            xi0Var2 = "🎰".equals(str8) ? new xv0(str8, i21, i20) : new vi0(str8, i21, i20);
                             i24 = i20;
                             i25 = i21;
                         } else {
@@ -1563,10 +1563,10 @@ public class ImageLoader {
                                         }
                                         if (z38) {
                                         }
-                                        kj0Var2 = kj0Var;
+                                        xi0Var2 = xi0Var;
                                         if (z36) {
                                         }
-                                        loadLastFrame(kj0Var2, i24, i25, z36, z34);
+                                        loadLastFrame(xi0Var2, i24, i25, z36, z34);
                                         return;
                                     }
                                 } catch (Throwable th4) {
@@ -1623,13 +1623,13 @@ public class ImageLoader {
                                         File file2 = this.cacheImage.finalFilePath;
                                         i24 = i20;
                                         i25 = i21;
-                                        kj0Var = new kj0(file2, ImageLoader.decompressGzip(file2), i25, i24, n1Var3, z37, i23, z41);
+                                        xi0Var = new xi0(file2, ImageLoader.decompressGzip(file2), i25, i24, n1Var3, z37, i23, z41);
                                     } else {
                                         i24 = i20;
                                         i25 = i21;
-                                        kj0Var = new kj0(this.cacheImage.finalFilePath, null, i25, i24, n1Var3, z37, i23, z41);
+                                        xi0Var = new xi0(this.cacheImage.finalFilePath, null, i25, i24, n1Var3, z37, i23, z41);
                                     }
-                                    kj0Var2 = kj0Var;
+                                    xi0Var2 = xi0Var;
                                 }
                             }
                             z38 = false;
@@ -1649,14 +1649,14 @@ public class ImageLoader {
                             }
                             if (z38) {
                             }
-                            kj0Var2 = kj0Var;
+                            xi0Var2 = xi0Var;
                         }
                         if (!z36 || z33) {
-                            loadLastFrame(kj0Var2, i24, i25, z36, z34);
+                            loadLastFrame(xi0Var2, i24, i25, z36, z34);
                             return;
                         } else {
-                            kj0Var2.K(i22);
-                            onPostExecute(kj0Var2);
+                            xi0Var2.K(i22);
+                            onPostExecute(xi0Var2);
                             return;
                         }
                     }
@@ -2206,10 +2206,10 @@ public class ImageLoader {
                                                                         bitmap2 = MediaStore.Images.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), l10.longValue(), 1, options);
                                                                     } else if (l10.longValue() == 0) {
                                                                         try {
-                                                                            ?? c6Var2 = new org.telegram.ui.Components.c6(file3, true, 0L, 0, null, null, null, 0L, 0, true);
-                                                                            bitmap2 = c6Var2.q(0L, true);
-                                                                            c6Var2.u();
-                                                                            i32 = c6Var2;
+                                                                            ?? b6Var2 = new org.telegram.ui.Components.b6(file3, true, 0L, 0, null, null, null, 0L, 0, true);
+                                                                            bitmap2 = b6Var2.q(0L, true);
+                                                                            b6Var2.u();
+                                                                            i32 = b6Var2;
                                                                         } catch (Throwable th17) {
                                                                             th = th17;
                                                                             file3 = file3;
@@ -2836,23 +2836,23 @@ public class ImageLoader {
                             int i43 = this.cacheImage.cacheType;
                             int i44 = i43 > 1 ? i43 : i42;
                             CacheImage cacheImage8 = this.cacheImage;
-                            org.telegram.ui.Components.c6 c6Var3 = new org.telegram.ui.Components.c6(cacheImage8.finalFilePath, z29, z28 ? 0L : j10, cacheImage8.priority, z28 ? null : document2, (document2 != null || z28) ? null : cacheImage8.imageLocation, cacheImage8.parentObject, j3, cacheImage8.currentAccount, false, 0, 0, n1Var, i44, !ImageLoader.AUTOPLAY_FILTER_NONLOOP.equals(cacheImage8.filter));
+                            org.telegram.ui.Components.b6 b6Var3 = new org.telegram.ui.Components.b6(cacheImage8.finalFilePath, z29, z28 ? 0L : j10, cacheImage8.priority, z28 ? null : document2, (document2 != null || z28) ? null : cacheImage8.imageLocation, cacheImage8.parentObject, j3, cacheImage8.currentAccount, false, 0, 0, n1Var, i44, !ImageLoader.AUTOPLAY_FILTER_NONLOOP.equals(cacheImage8.filter));
                             z30 = z29;
                             boolean z45 = MessageObject.isWebM(document2) || MessageObject.isVideoSticker(document2) || ImageLoader.this.isAnimatedAvatar(this.cacheImage.filter);
-                            c6Var3.n0 = z45;
+                            b6Var3.n0 = z45;
                             if (z45) {
-                                c6Var3.b = false;
-                                c6Var3.v0 = true;
+                                b6Var3.b = false;
+                                b6Var3.v0 = true;
                             }
-                            c6Var = c6Var3;
+                            b6Var = b6Var3;
                             if (!z30) {
-                                c6Var.A(z25);
+                                b6Var.A(z25);
                                 Thread.interrupted();
-                                onPostExecute(c6Var);
+                                onPostExecute(b6Var);
                                 return;
                             }
-                            Bitmap q6 = c6Var.q(0L, false);
-                            c6Var.u();
+                            Bitmap q6 = b6Var.q(0L, false);
+                            b6Var.u();
                             Thread.interrupted();
                             if (q6 == null) {
                                 onPostExecute(null);
@@ -2878,12 +2878,12 @@ public class ImageLoader {
                             int i46 = this.cacheImage.cacheType;
                             int i47 = i46 <= 1 ? i46 : i45;
                             CacheImage cacheImage9 = this.cacheImage;
-                            c6Var = new org.telegram.ui.Components.c6(cacheImage9.finalFilePath, z46, 0L, cacheImage9.priority, !z28 ? null : cacheImage9.imageLocation.document, null, null, j3, cacheImage9.currentAccount, false, i17, i18, n1Var, i47, true);
+                            b6Var = new org.telegram.ui.Components.b6(cacheImage9.finalFilePath, z46, 0L, cacheImage9.priority, !z28 ? null : cacheImage9.imageLocation.document, null, null, j3, cacheImage9.currentAccount, false, i17, i18, n1Var, i47, true);
                             z31 = !MessageObject.isWebM(this.cacheImage.imageLocation.document) || MessageObject.isVideoSticker(this.cacheImage.imageLocation.document) || ImageLoader.this.isAnimatedAvatar(this.cacheImage.filter);
-                            c6Var.n0 = z31;
+                            b6Var.n0 = z31;
                             if (z31) {
-                                c6Var.b = false;
-                                c6Var.v0 = true;
+                                b6Var.b = false;
+                                b6Var.v0 = true;
                             }
                             if (!z30) {
                             }
@@ -2899,10 +2899,10 @@ public class ImageLoader {
                     if (i462 <= 1) {
                     }
                     CacheImage cacheImage92 = this.cacheImage;
-                    c6Var = new org.telegram.ui.Components.c6(cacheImage92.finalFilePath, z46, 0L, cacheImage92.priority, !z28 ? null : cacheImage92.imageLocation.document, null, null, j3, cacheImage92.currentAccount, false, i17, i18, n1Var, i47, true);
+                    b6Var = new org.telegram.ui.Components.b6(cacheImage92.finalFilePath, z46, 0L, cacheImage92.priority, !z28 ? null : cacheImage92.imageLocation.document, null, null, j3, cacheImage92.currentAccount, false, i17, i18, n1Var, i47, true);
                     if (MessageObject.isWebM(this.cacheImage.imageLocation.document)) {
                     }
-                    c6Var.n0 = z31;
+                    b6Var.n0 = z31;
                     if (z31) {
                     }
                     if (!z30) {
@@ -2913,7 +2913,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class HttpFileTask extends AsyncTask<Void, Void, Boolean> {
         private int currentAccount;
         private String ext;
@@ -3143,7 +3143,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class HttpImageTask extends AsyncTask<Void, Void, Boolean> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -3521,7 +3521,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class MessageThumb {
         BitmapDrawable drawable;
         String key;
@@ -3532,7 +3532,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class PhotoSizeFromPhoto extends TLRPC.PhotoSize {
         public final TLRPC.InputPhoto inputPhoto;
         public final TLRPC.Photo photo;
@@ -3547,7 +3547,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public static class ThumbGenerateInfo {
         private boolean big;
         private String filter;
@@ -3561,7 +3561,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+    /* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
     public class ThumbGenerateTask implements Runnable {
         private ThumbGenerateInfo info;
         private int mediaType;
@@ -3582,7 +3582,7 @@ public class ImageLoader {
         public /* synthetic */ void lambda$run$1(String str, ArrayList arrayList, BitmapDrawable bitmapDrawable, ArrayList arrayList2) {
             removeTask();
             if (this.info.filter != null) {
-                StringBuilder h = v7.j0.h(str, "@");
+                StringBuilder h = w.c.h(str, "@");
                 h.append(this.info.filter);
                 str = h.toString();
             }
@@ -3689,7 +3689,7 @@ public class ImageLoader {
     public ImageLoader() {
         ff.c cVar = new ff.c();
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        cVar.a = new ff.a(cVar, new PriorityBlockingQueue(10, new fb.j(1)));
+        cVar.a = new ff.a(cVar, new PriorityBlockingQueue(10, new fb.i(1)));
         this.cacheOutQueue = cVar;
         this.cacheThumbOutQueue = new DispatchQueue("cacheThumbOutQueue");
         this.thumbGeneratingQueue = new DispatchQueue("thumbGeneratingQueue");
@@ -3769,24 +3769,24 @@ public class ImageLoader {
             @Override // org.telegram.messenger.LruCache
             public void entryRemoved(boolean z11, String str, BitmapDrawable bitmapDrawable, BitmapDrawable bitmapDrawable2) {
                 Integer num = (Integer) ImageLoader.this.bitmapUseCounts.get(str);
-                boolean z12 = bitmapDrawable instanceof org.telegram.ui.Components.c6;
+                boolean z12 = bitmapDrawable instanceof org.telegram.ui.Components.b6;
                 if (z12) {
-                    ImageLoader.this.cachedAnimatedFileDrawables.remove((org.telegram.ui.Components.c6) bitmapDrawable);
+                    ImageLoader.this.cachedAnimatedFileDrawables.remove((org.telegram.ui.Components.b6) bitmapDrawable);
                 }
                 if (num == null || num.intValue() == 0) {
                     if (z12) {
-                        ((org.telegram.ui.Components.c6) bitmapDrawable).u();
+                        ((org.telegram.ui.Components.b6) bitmapDrawable).u();
                     }
-                    if (bitmapDrawable instanceof kj0) {
-                        ((kj0) bitmapDrawable).C(false);
+                    if (bitmapDrawable instanceof xi0) {
+                        ((xi0) bitmapDrawable).C(false);
                     }
                 }
             }
 
             @Override // org.telegram.messenger.LruCache
             public BitmapDrawable put(String str, BitmapDrawable bitmapDrawable) {
-                if (bitmapDrawable instanceof org.telegram.ui.Components.c6) {
-                    ImageLoader.this.cachedAnimatedFileDrawables.add((org.telegram.ui.Components.c6) bitmapDrawable);
+                if (bitmapDrawable instanceof org.telegram.ui.Components.b6) {
+                    ImageLoader.this.cachedAnimatedFileDrawables.add((org.telegram.ui.Components.b6) bitmapDrawable);
                 }
                 return (BitmapDrawable) super.put(str, (String) bitmapDrawable);
             }
@@ -4034,7 +4034,7 @@ public class ImageLoader {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_fileLocationToBeDeprecated.volume_id);
             sb2.append("_");
-            File file = new File(z10 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, ".jpg", sb2));
+            File file = new File(z10 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, ".jpg", sb2));
             new File(str).renameTo(file);
             tL_photoSize_layer127.size = (int) file.length();
             return tL_photoSize_layer127;
@@ -4162,7 +4162,7 @@ public class ImageLoader {
                             i11 = closestPhotoSizeWithSize.h;
                             i10 = closestPhotoSizeWithSize.w;
                         }
-                        PointF C2 = org.telegram.ui.Cells.u1.C2(i10, i11, 0, 0);
+                        PointF C2 = org.telegram.ui.Cells.t1.C2(i10, i11, 0, 0);
                         Locale locale = Locale.US;
                         String str = ImageLocation.getStrippedKey(message, message, photoSize) + "_false@" + ((int) (C2.x / AndroidUtilities.density)) + "_" + ((int) (C2.y / AndroidUtilities.density)) + "_b";
                         if (!getInstance().isInMemCache(str, false) && (strippedPhotoBitmap = getStrippedPhotoBitmap(photoSize.bytes, null)) != null) {
@@ -4188,7 +4188,7 @@ public class ImageLoader {
             tL_photoSize_layer127.size = findPhotoCachedSize.size;
             tL_photoSize_layer127.type = findPhotoCachedSize.type;
             if (pathToAttach.exists() && message.grouped_id == 0) {
-                PointF C22 = org.telegram.ui.Cells.u1.C2(findPhotoCachedSize.w, findPhotoCachedSize.h, 0, 0);
+                PointF C22 = org.telegram.ui.Cells.t1.C2(findPhotoCachedSize.w, findPhotoCachedSize.h, 0, 0);
                 Locale locale2 = Locale.US;
                 String str2 = findPhotoCachedSize.location.volume_id + "_" + findPhotoCachedSize.location.local_id + "@" + ((int) (C22.x / AndroidUtilities.density)) + "_" + ((int) (C22.y / AndroidUtilities.density)) + "_b";
                 if (!getInstance().isInMemCache(str2, false)) {
@@ -4225,11 +4225,11 @@ public class ImageLoader {
     /* JADX INFO: Access modifiers changed from: private */
     public BitmapDrawable getFromLottieCache(String str) {
         BitmapDrawable bitmapDrawable = this.lottieMemCache.get(str);
-        if (!(bitmapDrawable instanceof org.telegram.ui.Components.c6)) {
+        if (!(bitmapDrawable instanceof org.telegram.ui.Components.b6)) {
             return bitmapDrawable;
         }
-        org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) bitmapDrawable;
-        if (!c6Var.c0 && c6Var.G0 < 15) {
+        org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) bitmapDrawable;
+        if (!b6Var.c0 && b6Var.G0 < 15) {
             return bitmapDrawable;
         }
         this.lottieMemCache.remove(str);
@@ -4632,7 +4632,7 @@ public class ImageLoader {
                         sb2.append(document2.dc_id);
                         sb2.append("_");
                         str7 = "_";
-                        file3 = new File(directory, a4.a.r(sb2, document2.id, ".jpg"));
+                        file3 = new File(directory, a4.a.s(sb2, document2.id, ".jpg"));
                         if (file3.exists()) {
                             z14 = true;
                             if (!TextUtils.isEmpty(str8)) {
@@ -4751,7 +4751,7 @@ public class ImageLoader {
                             } else {
                                 i23 = i15;
                                 if (i23 == 2) {
-                                    file5 = new File(FileLoader.getDirectory(4), v7.j0.s(str9, ".enc"));
+                                    file5 = new File(FileLoader.getDirectory(4), w.c.g(str9, ".enc"));
                                 }
                                 z18 = z23;
                             }
@@ -4802,7 +4802,7 @@ public class ImageLoader {
                                 sb3.append(document5.dc_id);
                                 sb3.append(str7);
                                 str15 = ".svg";
-                                file6 = new File(directory2, a4.a.r(sb3, document5.id, ".temp"));
+                                file6 = new File(directory2, a4.a.s(sb3, document5.id, ".temp"));
                             } else {
                                 str15 = ".svg";
                                 str14 = AUTOPLAY_FILTER_NONLOOP;
@@ -4866,7 +4866,7 @@ public class ImageLoader {
                                 str11 = str13;
                                 sb4.append(imageLocation.location.volume_id);
                                 sb4.append(str18);
-                                file = new File(directory3, a4.a.n(imageLocation.location.local_id, ".temp", sb4));
+                                file = new File(directory3, a4.a.o(imageLocation.location.local_id, ".temp", sb4));
                                 z14 = z23;
                                 j11 = 0;
                             }
@@ -4895,7 +4895,7 @@ public class ImageLoader {
                             cacheImage6.imageType = i22;
                         }
                         if (i20 == 2) {
-                            cacheImage6.encryptionKeyPath = new File(FileLoader.getInternalCacheDir(), v7.j0.s(str9, ".enc.key"));
+                            cacheImage6.encryptionKeyPath = new File(FileLoader.getInternalCacheDir(), w.c.g(str9, ".enc.key"));
                         }
                         boolean z25 = z14;
                         String str19 = str6;
@@ -4928,7 +4928,7 @@ public class ImageLoader {
                         }
                         String str20 = imageLocation.path;
                         if (str20 != null) {
-                            cacheImage6.tempFilePath = new File(FileLoader.getDirectory(4), v7.j0.s(Utilities.MD5(str20), "_temp.jpg"));
+                            cacheImage6.tempFilePath = new File(FileLoader.getDirectory(4), w.c.g(Utilities.MD5(str20), "_temp.jpg"));
                             cacheImage6.finalFilePath = file;
                             if (imageLocation.path.startsWith(str19)) {
                                 ArtworkLoadTask artworkLoadTask = new ArtworkLoadTask(cacheImage6);
@@ -5119,7 +5119,7 @@ public class ImageLoader {
         }
         cacheImage.url = str2;
         this.imageLoadingByUrl.put(str2, cacheImage);
-        cacheImage.tempFilePath = new File(FileLoader.getDirectory(4), v7.j0.s(Utilities.MD5(forPath.path), "_temp.jpg"));
+        cacheImage.tempFilePath = new File(FileLoader.getDirectory(4), w.c.g(Utilities.MD5(forPath.path), "_temp.jpg"));
         cacheImage.finalFilePath = file;
         ArtworkLoadTask artworkLoadTask = new ArtworkLoadTask(cacheImage);
         cacheImage.artworkTask = artworkLoadTask;
@@ -5541,10 +5541,10 @@ public class ImageLoader {
             if (filterKeys != null) {
                 for (int i11 = 0; i11 < filterKeys.size(); i11++) {
                     String str3 = filterKeys.get(i11);
-                    String C = a4.a.C(str, "@", str3);
-                    String C2 = a4.a.C(str2, "@", str3);
-                    performReplace(C, C2);
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReplacedPhotoInMemCache, C, C2, imageLocation);
+                    String D = a4.a.D(str, "@", str3);
+                    String D2 = a4.a.D(str2, "@", str3);
+                    performReplace(D, D2);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReplacedPhotoInMemCache, D, D2, imageLocation);
                 }
             } else {
                 performReplace(str, str2);
@@ -5733,7 +5733,7 @@ public class ImageLoader {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(tL_fileLocationToBeDeprecated.volume_id);
                 sb2.append("_");
-                FileOutputStream fileOutputStream = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, str, sb2)));
+                FileOutputStream fileOutputStream = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, str, sb2)));
                 createScaledBitmap.compress(compressFormat, i12, fileOutputStream);
                 if (!z11) {
                     photoSize.size = (int) fileOutputStream.getChannel().size();
@@ -5781,7 +5781,7 @@ public class ImageLoader {
         StringBuilder sb22 = new StringBuilder();
         sb22.append(tL_fileLocationToBeDeprecated.volume_id);
         sb22.append("_");
-        FileOutputStream fileOutputStream2 = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, str, sb22)));
+        FileOutputStream fileOutputStream2 = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, str, sb22)));
         createScaledBitmap.compress(compressFormat, i12, fileOutputStream2);
         if (!z11) {
         }
@@ -5826,16 +5826,16 @@ public class ImageLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int sizeOfBitmapDrawable(BitmapDrawable bitmapDrawable) {
-        if (bitmapDrawable instanceof org.telegram.ui.Components.c6) {
-            org.telegram.ui.Components.c6 c6Var = (org.telegram.ui.Components.c6) bitmapDrawable;
-            return Math.max(c6Var.getIntrinsicHeight() * c6Var.getIntrinsicWidth(), c6Var.j0 * c6Var.i0) * 12;
+        if (bitmapDrawable instanceof org.telegram.ui.Components.b6) {
+            org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) bitmapDrawable;
+            return Math.max(b6Var.getIntrinsicHeight() * b6Var.getIntrinsicWidth(), b6Var.j0 * b6Var.i0) * 12;
         }
-        if (!(bitmapDrawable instanceof kj0)) {
+        if (!(bitmapDrawable instanceof xi0)) {
             return bitmapDrawable.getBitmap().getByteCount();
         }
-        kj0 kj0Var = (kj0) bitmapDrawable;
-        int i10 = kj0Var.b * kj0Var.c;
-        return kj0Var.G ? i10 * 2 : i10 * 8;
+        xi0 xi0Var = (xi0) bitmapDrawable;
+        int i10 = xi0Var.b * xi0Var.c;
+        return xi0Var.G ? i10 * 2 : i10 * 8;
     }
 
     private boolean useLottieMemCache(ImageLocation imageLocation, String str) {
@@ -5875,7 +5875,7 @@ public class ImageLoader {
         if (imageReceiver == null) {
             return;
         }
-        HashMap hashMap = org.telegram.ui.web.j2.f;
+        HashMap hashMap = org.telegram.ui.web.i2.f;
         if (hashMap != null) {
             Iterator it = hashMap.entrySet().iterator();
             while (true) {
@@ -5897,7 +5897,7 @@ public class ImageLoader {
                     i10++;
                 }
                 if (arrayList.isEmpty()) {
-                    org.telegram.ui.web.j2.f.remove(str);
+                    org.telegram.ui.web.i2.f.remove(str);
                     break;
                 }
             }
@@ -6254,7 +6254,7 @@ public class ImageLoader {
             str3 = Utilities.MD5(((WebFile) tLObject).url);
         }
         if (str2 != null) {
-            str3 = a4.a.C(str3, "@", str2);
+            str3 = a4.a.D(str3, "@", str2);
         }
         return getFromMemCache(str3);
     }
@@ -6366,7 +6366,7 @@ public class ImageLoader {
 
     public void replaceImageInCache(String str, String str2, ImageLocation imageLocation, boolean z10) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new pk(this, str, str2, imageLocation, 9));
+            AndroidUtilities.runOnUIThread(new qk(this, str, str2, imageLocation, 9));
         } else {
             lambda$replaceImageInCache$5(str, str2, imageLocation);
         }
@@ -6477,7 +6477,7 @@ public class ImageLoader {
                 }
             }
             Drawable drawable = findInPreloadImageReceivers2;
-            if ((drawable instanceof kj0 ? ((kj0) drawable).u() : drawable instanceof org.telegram.ui.Components.c6 ? ((org.telegram.ui.Components.c6) drawable).s() : true) && drawable != null) {
+            if ((drawable instanceof xi0 ? ((xi0) drawable).u() : drawable instanceof org.telegram.ui.Components.b6 ? ((org.telegram.ui.Components.b6) drawable).s() : true) && drawable != null) {
                 cancelLoadingForImageReceiver(imageReceiver3, true);
                 imageReceiver3.setImageBitmapByKey(drawable, mediaKey, 3, true, newGuid);
                 if (!imageReceiver.isForcePreview()) {
@@ -6687,7 +6687,7 @@ public class ImageLoader {
                                                 z16 = z12;
                                                 String key2 = imageLocation6.getKey(parentObject, imageLocation3 != null ? imageLocation3 : imageLocation2, true);
                                                 if (imageLocation6.path != null) {
-                                                    StringBuilder h = v7.j0.h(key2, ".");
+                                                    StringBuilder h = w.c.h(key2, ".");
                                                     h.append(getHttpUrlExtension(imageLocation6.path, "jpg"));
                                                     key2 = h.toString();
                                                     imageLocation7 = imageLocation2;
@@ -6695,14 +6695,14 @@ public class ImageLoader {
                                                     TLRPC.PhotoSize photoSize = imageLocation6.photoSize;
                                                     imageLocation7 = imageLocation2;
                                                     if ((photoSize instanceof TLRPC.TL_photoStrippedSize) || (photoSize instanceof TLRPC.TL_photoPathSize)) {
-                                                        key2 = a4.a.C(key2, ".", str11);
+                                                        key2 = a4.a.D(key2, ".", str11);
                                                     } else {
                                                         if (imageLocation6.location != null) {
-                                                            String C = a4.a.C(key2, ".", str11);
+                                                            String D = a4.a.D(key2, ".", str11);
                                                             if (imageReceiver.getExt() == null) {
                                                                 TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = imageLocation6.location;
                                                                 if (tL_fileLocationToBeDeprecated.key == null) {
-                                                                    str12 = C;
+                                                                    str12 = D;
                                                                     if (tL_fileLocationToBeDeprecated.volume_id != -2147483648L || tL_fileLocationToBeDeprecated.local_id >= 0) {
                                                                         key2 = str12;
                                                                     }
@@ -6710,18 +6710,18 @@ public class ImageLoader {
                                                                     z192 = true;
                                                                 }
                                                             }
-                                                            str12 = C;
+                                                            str12 = D;
                                                             key2 = str12;
                                                             z192 = true;
                                                         } else {
                                                             WebFile webFile = imageLocation6.webFile;
                                                             if (webFile != null) {
                                                                 String mimeTypePart = FileLoader.getMimeTypePart(webFile.mime_type);
-                                                                StringBuilder h10 = v7.j0.h(key2, ".");
+                                                                StringBuilder h10 = w.c.h(key2, ".");
                                                                 h10.append(getHttpUrlExtension(imageLocation6.webFile.url, mimeTypePart));
                                                                 key2 = h10.toString();
                                                             } else if (imageLocation6.secureDocument != null) {
-                                                                key2 = a4.a.C(key2, ".", str11);
+                                                                key2 = a4.a.D(key2, ".", str11);
                                                             } else if (imageLocation6.document != null) {
                                                                 if (i12 == 0 && z182) {
                                                                     key = "q_".concat(key);
@@ -6737,13 +6737,13 @@ public class ImageLoader {
                                                                 } else if ("video/x-matroska".equals(imageLocation6.document.mime_type)) {
                                                                     str20 = ".mkv";
                                                                 }
-                                                                key2 = v7.j0.s(key2, str20);
+                                                                key2 = w.c.g(key2, str20);
                                                                 if (MessageObject.isVideoDocument(imageLocation6.document) || MessageObject.isGifDocument(imageLocation6.document) || MessageObject.isRoundVideoDocument(imageLocation6.document) || MessageObject.canPreviewDocument(imageLocation6.document)) {
                                                                     z192 = false;
                                                                 }
                                                                 z192 = true;
                                                             } else if (parentObject instanceof TLRPC.StickerSet) {
-                                                                key2 = a4.a.C(key2, ".", str11);
+                                                                key2 = a4.a.D(key2, ".", str11);
                                                             }
                                                         }
                                                         i10 = i12 + 1;
@@ -6803,15 +6803,15 @@ public class ImageLoader {
                                         String key3 = thumbLocation.getKey(parentObject, strippedLocation, false);
                                         String key4 = thumbLocation.getKey(parentObject, strippedLocation, true);
                                         if (thumbLocation.path != null) {
-                                            StringBuilder h11 = v7.j0.h(key4, ".");
+                                            StringBuilder h11 = w.c.h(key4, ".");
                                             h11.append(getHttpUrlExtension(thumbLocation.path, "jpg"));
                                             key4 = h11.toString();
                                         } else {
                                             TLRPC.PhotoSize photoSize2 = thumbLocation.photoSize;
                                             if ((photoSize2 instanceof TLRPC.TL_photoStrippedSize) || (photoSize2 instanceof TLRPC.TL_photoPathSize)) {
-                                                key4 = a4.a.C(key4, ".", ext);
+                                                key4 = a4.a.D(key4, ".", ext);
                                             } else if (thumbLocation.location != null) {
-                                                key4 = a4.a.C(key4, ".", ext);
+                                                key4 = a4.a.D(key4, ".", ext);
                                             }
                                         }
                                         str132 = key4;
@@ -6820,13 +6820,13 @@ public class ImageLoader {
                                         str5 = null;
                                     }
                                     if (str3 != null && mediaFilter2 != null) {
-                                        str3 = a4.a.C(str3, "@", mediaFilter2);
+                                        str3 = a4.a.D(str3, "@", mediaFilter2);
                                     }
                                     if (str4 != null && imageFilter2 != null) {
-                                        str4 = a4.a.C(str4, "@", imageFilter2);
+                                        str4 = a4.a.D(str4, "@", imageFilter2);
                                     }
                                     if (str5 != null && thumbFilter2 != null) {
-                                        str5 = a4.a.C(str5, "@", thumbFilter2);
+                                        str5 = a4.a.D(str5, "@", thumbFilter2);
                                     }
                                     if (imageReceiver.getUniqKeyPrefix() != null && str4 != null) {
                                         str4 = imageReceiver.getUniqKeyPrefix() + str4;
@@ -6918,13 +6918,13 @@ public class ImageLoader {
                                 if (thumbLocation != null) {
                                 }
                                 if (str3 != null) {
-                                    str3 = a4.a.C(str3, "@", mediaFilter2);
+                                    str3 = a4.a.D(str3, "@", mediaFilter2);
                                 }
                                 if (str4 != null) {
-                                    str4 = a4.a.C(str4, "@", imageFilter2);
+                                    str4 = a4.a.D(str4, "@", imageFilter2);
                                 }
                                 if (str5 != null) {
-                                    str5 = a4.a.C(str5, "@", thumbFilter2);
+                                    str5 = a4.a.D(str5, "@", thumbFilter2);
                                 }
                                 if (imageReceiver.getUniqKeyPrefix() != null) {
                                     str4 = imageReceiver.getUniqKeyPrefix() + str4;

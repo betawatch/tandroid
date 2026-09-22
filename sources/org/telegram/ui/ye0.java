@@ -1,22 +1,65 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ye0 extends TimerTask {
-    public final /* synthetic */ ze0 a;
+public final /* synthetic */ class ye0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ af0 b;
 
-    public ye0(ze0 ze0Var) {
-        this.a = ze0Var;
+    public /* synthetic */ ye0(af0 af0Var, int i10) {
+        this.a = i10;
+        this.b = af0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
+    @Override // java.lang.Runnable
     public final void run() {
-        if (this.a.N == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                af0 af0Var = this.b;
+                org.telegram.ui.Components.aj0 aj0Var = af0Var.e;
+                aj0Var.getAnimatedDrawable().N(0, false, false);
+                aj0Var.d();
+                de0 de0Var = af0Var.a;
+                if (de0Var != null) {
+                    de0Var.f[0].requestFocus();
+                    break;
+                }
+                break;
+            case 1:
+                af0 af0Var2 = this.b;
+                int i10 = 0;
+                af0Var2.w = false;
+                while (true) {
+                    gs[] gsVarArr = af0Var2.a.f;
+                    if (i10 >= gsVarArr.length) {
+                        break;
+                    } else {
+                        gsVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 2:
+                af0 af0Var3 = this.b;
+                af0Var3.postDelayed(new ye0(af0Var3, 3), 150L);
+                ye0 ye0Var = af0Var3.x;
+                af0Var3.removeCallbacks(ye0Var);
+                af0Var3.postDelayed(ye0Var, 3000L);
+                af0Var3.w = true;
+                break;
+            default:
+                de0 de0Var2 = this.b.a;
+                int i11 = 0;
+                de0Var2.e = false;
+                de0Var2.f[0].requestFocus();
+                while (true) {
+                    gs[] gsVarArr2 = de0Var2.f;
+                    if (i11 >= gsVarArr2.length) {
+                        break;
+                    } else {
+                        gsVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
         }
-        AndroidUtilities.runOnUIThread(new g10(this, 22));
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class e3 implements a6 {
     public final /* synthetic */ w3 a;
@@ -31,7 +31,7 @@ public final class e3 implements a6 {
         w3 w3Var = this.a;
         u3 u3Var = w3Var.h3;
         if (i10 == 7) {
-            w3Var.S4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
+            w3Var.R4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
         }
         w3Var.b4 = null;
         w3Var.c4 = aVar;
@@ -41,9 +41,9 @@ public final class e3 implements a6 {
         }
         if (aVar != null) {
             d6.f(aVar.b, "");
-            View A1 = w3Var.A1(aVar);
-            if (A1 instanceof d6) {
-                ((d6) A1).getEditText().setTextSilently("");
+            View z12 = w3Var.z1(aVar);
+            if (z12 instanceof d6) {
+                ((d6) z12).getEditText().setTextSilently("");
             }
         }
         h2 h2Var2 = w3Var.J3;
@@ -52,20 +52,20 @@ public final class e3 implements a6 {
         }
         switch (i10) {
             case 1:
-                u3Var.m(3);
+                u3Var.h(3);
                 break;
             case 2:
-                u3Var.m(6);
+                u3Var.h(6);
                 break;
             case 3:
                 r.U(w3Var.getContext(), "", new ai.y1(w3Var, 28), w3Var.g3);
                 break;
             case 4:
             case 5:
-                u3Var.m(1);
+                u3Var.h(1);
                 break;
             case 6:
-                w3Var.u3();
+                w3Var.t3();
                 break;
         }
     }
@@ -74,15 +74,15 @@ public final class e3 implements a6 {
         boolean z12 = pageBlock instanceof TL_iv.pageBlockBlockquote;
         w3 w3Var = this.a;
         if (!z12) {
-            w3Var.S4(aVar, pageBlock, i10, i11, z10, z11);
+            w3Var.R4(aVar, pageBlock, i10, i11, z10, z11);
             return;
         }
         if (aVar == null) {
-            aVar = w3Var.Y4();
+            aVar = w3Var.X4();
         }
         if (aVar != null) {
             ArrayList arrayList = aVar.k;
-            if (w3Var.l3.indexOf(aVar) < 0 || w3.y3(aVar) || aVar.i) {
+            if (w3Var.l3.indexOf(aVar) < 0 || w3.x3(aVar) || aVar.i) {
                 return;
             }
             h2 h2Var = w3Var.J3;
@@ -106,14 +106,14 @@ public final class e3 implements a6 {
                 aVar.b = new TL_iv.pageBlockParagraph();
                 arrayList.add(Long.valueOf(q0.a()));
             }
-            w3Var.t4();
+            w3Var.s4();
             if (z13 && (w3Var.findFocus() instanceof i1)) {
-                w3Var.Y1();
+                w3Var.X1();
                 h2 h2Var2 = w3Var.J3;
                 if (h2Var2 != null) {
                     h2Var2.h();
                 }
-                w3Var.e3(aVar);
+                w3Var.d3(aVar);
                 return;
             }
             w3Var.Y2.N(false);

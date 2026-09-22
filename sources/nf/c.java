@@ -18,7 +18,7 @@ import org.telegram.ui.h4;
 import org.telegram.ui.l3;
 import s4.c1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -42,7 +42,7 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c1 L;
+        c1 K;
         int i10 = 0;
         switch (this.a) {
             case 0:
@@ -115,8 +115,8 @@ public final /* synthetic */ class c implements Runnable {
                                         }
                                     } else {
                                         f4 f4Var = l3VarArr[i10].c;
-                                        if (f4Var.E == webPage2 && (L = h4Var.u0[i10].b.L(f4Var.h() - 1)) != null) {
-                                            h4Var.u0[i10].c.y(L);
+                                        if (f4Var.E == webPage2 && (K = h4Var.u0[i10].b.K(f4Var.h() - 1)) != null) {
+                                            h4Var.u0[i10].c.y(K);
                                         }
                                         i10++;
                                     }

@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class GeoGebraLogoBox extends Box {
     private static final Color gray = new Color(102, 102, 102);
@@ -36,7 +36,7 @@ public class GeoGebraLogoBox extends Box {
         Color color = graphics2D.getColor();
         Stroke stroke = graphics2D.getStroke();
         float f11 = this.height;
-        graphics2D.translate(a.A(f11, 0.25f, 2.15f, f7), f10 - (f11 * 0.81395346f));
+        graphics2D.translate(a.B(f11, 0.25f, 2.15f, f7), f10 - (f11 * 0.81395346f));
         graphics2D.setColor(gray);
         graphics2D.setStroke(st);
         float f12 = this.height;

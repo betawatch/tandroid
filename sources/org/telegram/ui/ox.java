@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ox extends m41 {
     public boolean S;
@@ -40,7 +40,7 @@ public final class ox extends m41 {
         this.T.a.invalidate();
         this.T.d.l();
         this.T.G.l();
-        this.T.a.z1(null, 0.0f, z10);
+        this.T.a.y1(null, 0.0f, z10);
         uyVar.y = false;
         this.U.requestLayout();
         if (!c()) {
@@ -53,7 +53,7 @@ public final class ox extends m41 {
         }
         ey eyVar = uyVar.C0;
         if (eyVar != null) {
-            eyVar.S();
+            eyVar.R();
         }
         uyVar.V4(false, true);
         uyVar.D3();
@@ -90,7 +90,7 @@ public final class ox extends m41 {
             uyVar.Q = false;
             uyVar.C4(-uyVar.T3());
         }
-        this.T.a.C0();
+        this.T.a.B0();
         ty tyVar5 = this.T;
         gg.m mVar2 = tyVar5.G;
         mVar2.h = tyVar5.s;
@@ -107,9 +107,9 @@ public final class ox extends m41 {
         this.T.G.l();
         float f7 = !z10 ? uyVar.N : -uyVar.N;
         ty tyVar8 = this.T;
-        tyVar8.a.z1(tyVar8.F, f7, false);
+        tyVar8.a.y1(tyVar8.F, f7, false);
         this.T.a.setClipChildren(false);
-        this.T.a.C0();
+        this.T.a.B0();
         uyVar.D3();
         uyVar.U4();
     }
@@ -162,7 +162,7 @@ public final class ox extends m41 {
         }
         if (uyVar.V2 != 0 || uyVar.X2 != 0) {
             Paint paint = uyVar.f1;
-            int i10 = org.telegram.ui.ActionBar.j6.d6;
+            int i10 = org.telegram.ui.ActionBar.i6.d6;
             paint.setColor(i0.a.d(f7, uyVar.getThemedColor(i10), uyVar.getThemedColor(i10)));
         }
         ty tyVar = this.T;

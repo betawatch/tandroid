@@ -7,15 +7,20 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 import n4.y;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class d extends a implements l.j {
+public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
     public y e;
     public WeakReference f;
     public boolean h;
-    public l.l n;
+    public l.k n;
+
+    @Override // l.i
+    public final boolean A(l.k kVar, MenuItem menuItem) {
+        return ((ni.f) this.e.b).G(this, menuItem);
+    }
 
     @Override // k.a
     public final void a() {
@@ -23,7 +28,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.S(this);
+        this.e.T(this);
     }
 
     @Override // k.a
@@ -36,7 +41,7 @@ public final class d extends a implements l.j {
     }
 
     @Override // k.a
-    public final l.l c() {
+    public final l.k c() {
         return this.n;
     }
 
@@ -57,7 +62,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.T(this, this.n);
+        this.e.U(this, this.n);
     }
 
     @Override // k.a
@@ -97,17 +102,12 @@ public final class d extends a implements l.j {
         this.d.setTitleOptional(z10);
     }
 
-    @Override // l.j
-    public final void r(l.l lVar) {
+    @Override // l.i
+    public final void t(l.k kVar) {
         g();
         m.h hVar = this.d.d;
         if (hVar != null) {
             hVar.l();
         }
-    }
-
-    @Override // l.j
-    public final boolean w(l.l lVar, MenuItem menuItem) {
-        return ((oi.f) this.e.a).G(this, menuItem);
     }
 }

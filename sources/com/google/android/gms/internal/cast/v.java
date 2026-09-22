@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class v {
     public static final /* synthetic */ int a = 0;
@@ -24,7 +24,7 @@ public abstract class v {
     public static void b(Parcel parcel) {
         int dataAvail = parcel.dataAvail();
         if (dataAvail > 0) {
-            throw new BadParcelableException(hg.k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(hg.c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
     }
 

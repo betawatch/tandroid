@@ -13,11 +13,12 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Cells.q3;
+import v7.s6;
 import v7.t6;
-import v7.u6;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -33,7 +34,7 @@ public abstract class q {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(hg.k0.h(i11, "at index "));
+                throw new NullPointerException(hg.c.i(i11, "at index "));
             }
         }
     }
@@ -47,7 +48,7 @@ public abstract class q {
 
     public static Object f(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(hg.k0.h(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(hg.c.i(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }
@@ -80,25 +81,25 @@ public abstract class q {
         }
     }
 
-    public static j1 j(Set set, d9.g gVar) {
+    public static j1 j(Set set, d9.f fVar) {
         if (set instanceof SortedSet) {
             Set set2 = (SortedSet) set;
             if (!(set2 instanceof j1)) {
-                return new k1(set2, gVar);
+                return new k1(set2, fVar);
             }
             j1 j1Var = (j1) set2;
-            d9.g gVar2 = j1Var.b;
-            gVar2.getClass();
-            return new k1((SortedSet) j1Var.a, new d9.h(Arrays.asList(gVar2, gVar)));
+            d9.f fVar2 = j1Var.b;
+            fVar2.getClass();
+            return new k1((SortedSet) j1Var.a, new d9.g(Arrays.asList(fVar2, fVar)));
         }
         if (!(set instanceof j1)) {
             set.getClass();
-            return new j1(set, gVar);
+            return new j1(set, fVar);
         }
         j1 j1Var2 = (j1) set;
-        d9.g gVar3 = j1Var2.b;
-        gVar3.getClass();
-        return new j1(j1Var2.a, new d9.h(Arrays.asList(gVar3, gVar)));
+        d9.f fVar3 = j1Var2.b;
+        fVar3.getClass();
+        return new j1(j1Var2.a, new d9.g(Arrays.asList(fVar3, fVar)));
     }
 
     public static Object k(AbstractCollection abstractCollection, String str) {
@@ -113,7 +114,7 @@ public abstract class q {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return org.telegram.ui.Cells.c1.i(1, list);
+            return q3.g(1, list);
         }
         Iterator it = iterable.iterator();
         do {
@@ -133,8 +134,8 @@ public abstract class q {
     }
 
     public static i1 n(Set set, m0 m0Var) {
-        u6.d(set, "set1");
-        u6.d(m0Var, "set2");
+        t6.d(set, "set1");
+        t6.d(m0Var, "set2");
         return new i1(set, m0Var);
     }
 
@@ -145,7 +146,7 @@ public abstract class q {
     public static ArrayList p(Object... objArr) {
         int length = objArr.length;
         e(length, "arraySize");
-        ArrayList arrayList = new ArrayList(z7.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(y7.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -188,7 +189,7 @@ public abstract class q {
             while (true) {
                 int i15 = u10 - 1;
                 int i16 = iArr[i15];
-                if ((i16 & i12) != i13 || !t6.a(obj, objArr[i15]) || (objArr2 != null && !t6.a(obj2, objArr2[i15]))) {
+                if ((i16 & i12) != i13 || !s6.a(obj, objArr[i15]) || (objArr2 != null && !s6.a(obj2, objArr2[i15]))) {
                     int i17 = i16 & i10;
                     if (i17 == 0) {
                         break;
@@ -201,9 +202,9 @@ public abstract class q {
         return -1;
     }
 
-    public static void r(List list, d9.g gVar, int i10, int i11) {
+    public static void r(List list, d9.f fVar, int i10, int i11) {
         for (int size = list.size() - 1; size > i11; size--) {
-            if (gVar.apply(list.get(size))) {
+            if (fVar.apply(list.get(size))) {
                 list.remove(size);
             }
         }

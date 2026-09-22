@@ -3,19 +3,19 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w31 implements y31 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ org.telegram.ui.Components.yn0 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ org.telegram.ui.Components.ny d;
 
-    public w31(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.yn0 yn0Var) {
+    public w31(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.ny nyVar) {
         this.a = n2Var;
         this.b = context;
-        this.c = f6Var;
-        this.d = yn0Var;
+        this.c = e6Var;
+        this.d = nyVar;
     }
 
     @Override // org.telegram.ui.y31
@@ -25,7 +25,7 @@ public final class w31 implements y31 {
 
     @Override // org.telegram.ui.y31
     public final void b() {
-        AndroidUtilities.runOnUIThread(new rx0(26, this.a, this.d), 200L);
+        AndroidUtilities.runOnUIThread(new iy0(20, this.a, this.d), 200L);
     }
 
     @Override // org.telegram.ui.y31

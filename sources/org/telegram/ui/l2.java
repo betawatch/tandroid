@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class l2 implements z4.e {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class l2 implements z4.e {
                 ((d80) this.b).H = i10;
                 break;
             default:
-                ((xd1) this.b).a0.invalidate();
+                ((wd1) this.b).a0.invalidate();
                 break;
         }
     }
@@ -44,10 +44,10 @@ public final class l2 implements z4.e {
                 break;
             case 1:
                 d80 d80Var = (d80) this.b;
-                org.telegram.ui.Components.ra raVar = d80Var.e;
-                raVar.b = f7;
-                raVar.c = i10;
-                raVar.invalidate();
+                org.telegram.ui.Components.qa qaVar = d80Var.e;
+                qaVar.b = f7;
+                qaVar.c = i10;
+                qaVar.invalidate();
                 float measuredWidth2 = d80Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
                     Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (d80Var.H * measuredWidth2)) / measuredWidth2);

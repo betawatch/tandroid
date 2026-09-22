@@ -3,7 +3,7 @@ package r2;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g extends h2.h {
     public long r;
@@ -16,12 +16,12 @@ public final class g extends h2.h {
         this.s = 0;
     }
 
-    public final boolean h(h2.h hVar) {
+    public final boolean e(h2.h hVar) {
         ByteBuffer byteBuffer;
         e2.d.b(!hVar.getFlag(TLObject.FLAG_30));
         e2.d.b(!hVar.hasSupplementalData());
         e2.d.b(!hVar.isEndOfStream());
-        if (i()) {
+        if (f()) {
             if (this.s >= this.v) {
                 return false;
             }
@@ -42,14 +42,14 @@ public final class g extends h2.h {
         }
         ByteBuffer byteBuffer3 = hVar.c;
         if (byteBuffer3 != null) {
-            c(byteBuffer3.remaining());
+            b(byteBuffer3.remaining());
             this.c.put(byteBuffer3);
         }
         this.r = hVar.e;
         return true;
     }
 
-    public final boolean i() {
+    public final boolean f() {
         return this.s > 0;
     }
 }

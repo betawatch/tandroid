@@ -12,21 +12,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.kb;
 import org.telegram.ui.Components.lb;
-import org.telegram.ui.Components.mb;
-import org.telegram.ui.Components.nc;
-import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.LaunchActivity;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class j0 extends mb {
-    public final f6 a;
+public final class j0 extends lb {
+    public final e6 a;
     public final h0 b;
     public final i0 c;
     public final TextView d;
@@ -34,12 +34,12 @@ public final class j0 extends mb {
     public k0 f;
     public int h;
 
-    public j0(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public j0(Context context, e6 e6Var) {
+        super(context, e6Var);
         this.h = 0;
-        this.a = f6Var;
+        this.a = e6Var;
         h0 h0Var = new h0(AndroidUtilities.dp(10.0f));
-        h0Var.a.setColor(j6.v0(j6.Fi, f6Var));
+        h0Var.a.setColor(i6.v0(i6.Fi, e6Var));
         this.b = h0Var;
         setBackground(h0Var);
         ImageView imageView = new ImageView(context);
@@ -47,21 +47,21 @@ public final class j0 extends mb {
         i0 i0Var = new i0(context, imageView);
         this.c = i0Var;
         imageView.setImageDrawable(i0Var);
-        addView(imageView, y5.d(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, x5.d(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, y5.d(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
+        addView(linearLayout, x5.d(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
-        int i10 = j6.Hi;
-        textView.setTextColor(j6.v0(i10, f6Var));
+        int i10 = i6.Hi;
+        textView.setTextColor(i6.v0(i10, e6Var));
         textView.setTypeface(AndroidUtilities.bold());
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = h;
         h.setTextSize(1, 13.0f);
-        h.setTextColor(j6.v0(i10, f6Var));
-        linearLayout.addView(h, y5.t(-1, -2, 55, 0, 0, 0, 0));
+        h.setTextColor(i6.v0(i10, e6Var));
+        linearLayout.addView(h, x5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     private void setButton(int i10) {
@@ -70,15 +70,15 @@ public final class j0 extends mb {
         }
         this.h = i10;
         if (i10 == 0) {
-            setButton((lb) null);
+            setButton((kb) null);
             return;
         }
-        f6 f6Var = this.a;
+        e6 e6Var = this.a;
         if (i10 == 1) {
-            nc ncVar = new nc(getContext(), f6Var, true);
-            ncVar.e(LocaleController.getString(R.string.BotFileDownloadCancel));
+            mc mcVar = new mc(getContext(), e6Var, true);
+            mcVar.e(LocaleController.getString(R.string.BotFileDownloadCancel));
             final int i11 = 0;
-            ncVar.a = new Runnable(this) { // from class: ei.g0
+            mcVar.a = new Runnable(this) { // from class: ei.g0
                 public final /* synthetic */ j0 b;
 
                 {
@@ -91,7 +91,7 @@ public final class j0 extends mb {
                     switch (i11) {
                         case 0:
                             j0 j0Var = this.b;
-                            pc bulletin = j0Var.getBulletin();
+                            oc bulletin = j0Var.getBulletin();
                             if (bulletin != null) {
                                 bulletin.j = 2750;
                                 bulletin.i(true);
@@ -104,7 +104,7 @@ public final class j0 extends mb {
                             break;
                         default:
                             j0 j0Var2 = this.b;
-                            pc bulletin2 = j0Var2.getBulletin();
+                            oc bulletin2 = j0Var2.getBulletin();
                             if (bulletin2 != null) {
                                 bulletin2.b();
                             }
@@ -119,16 +119,16 @@ public final class j0 extends mb {
                 }
             };
             if (getBulletin() != null) {
-                ncVar.c = getBulletin();
+                mcVar.c = getBulletin();
             }
-            setButton(ncVar);
+            setButton(mcVar);
             return;
         }
         if (i10 == 2) {
-            nc ncVar2 = new nc(getContext(), f6Var, true);
-            ncVar2.e(LocaleController.getString(R.string.BotFileDownloadOpen));
+            mc mcVar2 = new mc(getContext(), e6Var, true);
+            mcVar2.e(LocaleController.getString(R.string.BotFileDownloadOpen));
             final int i12 = 1;
-            ncVar2.a = new Runnable(this) { // from class: ei.g0
+            mcVar2.a = new Runnable(this) { // from class: ei.g0
                 public final /* synthetic */ j0 b;
 
                 {
@@ -141,7 +141,7 @@ public final class j0 extends mb {
                     switch (i12) {
                         case 0:
                             j0 j0Var = this.b;
-                            pc bulletin = j0Var.getBulletin();
+                            oc bulletin = j0Var.getBulletin();
                             if (bulletin != null) {
                                 bulletin.j = 2750;
                                 bulletin.i(true);
@@ -154,7 +154,7 @@ public final class j0 extends mb {
                             break;
                         default:
                             j0 j0Var2 = this.b;
-                            pc bulletin2 = j0Var2.getBulletin();
+                            oc bulletin2 = j0Var2.getBulletin();
                             if (bulletin2 != null) {
                                 bulletin2.b();
                             }
@@ -169,9 +169,9 @@ public final class j0 extends mb {
                 }
             };
             if (getBulletin() != null) {
-                ncVar2.c = getBulletin();
+                mcVar2.c = getBulletin();
             }
-            setButton(ncVar2);
+            setButton(mcVar2);
         }
     }
 
@@ -179,19 +179,19 @@ public final class j0 extends mb {
         k0 k0Var2 = this.f;
         i0 i0Var = this.c;
         if (k0Var2 != k0Var) {
-            d6 d6Var = i0Var.k;
+            c6 c6Var = i0Var.k;
             i0Var.h = false;
-            d6Var.getClass();
-            d6Var.d(0.0f, true);
-            kj0 kj0Var = i0Var.l;
-            if (kj0Var != null) {
-                kj0Var.C(true);
+            c6Var.getClass();
+            c6Var.d(0.0f, true);
+            xi0 xi0Var = i0Var.l;
+            if (xi0Var != null) {
+                xi0Var.C(true);
                 i0Var.l = null;
             }
-            d6 d6Var2 = i0Var.i;
+            c6 c6Var2 = i0Var.i;
             i0Var.f = false;
-            d6Var2.getClass();
-            d6Var2.d(0.0f, true);
+            c6Var2.getClass();
+            c6Var2.d(0.0f, true);
         }
         this.f = k0Var;
         this.d.setText(k0Var.c);
@@ -217,7 +217,7 @@ public final class j0 extends mb {
             return false;
         }
         if (k0Var.i) {
-            pc bulletin = getBulletin();
+            oc bulletin = getBulletin();
             if (bulletin != null) {
                 bulletin.b();
             }
@@ -228,14 +228,14 @@ public final class j0 extends mb {
             setButton(2);
             if (!i0Var.h) {
                 i0Var.h = true;
-                kj0 kj0Var2 = new kj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                i0Var.l = kj0Var2;
-                kj0Var2.R(i0Var.a);
+                xi0 xi0Var2 = new xi0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                i0Var.l = xi0Var2;
+                xi0Var2.R(i0Var.a);
                 i0Var.l.J(true);
                 i0Var.l.start();
                 i0Var.g = 1.0f;
             }
-            pc bulletin2 = getBulletin();
+            oc bulletin2 = getBulletin();
             if (bulletin2 != null) {
                 bulletin2.i(false);
                 bulletin2.j = 5000;
@@ -245,7 +245,7 @@ public final class j0 extends mb {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.mb, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.lb, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
     }

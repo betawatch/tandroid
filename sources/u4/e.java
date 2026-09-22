@@ -15,15 +15,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import lf.i;
 import org.xmlpull.v1.XmlSerializer;
-import w9.p;
+import w9.o;
 import x8.m;
 import y8.b1;
 import y8.k0;
 import y8.v0;
 import zd.y0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -45,11 +46,11 @@ public final class e implements Runnable {
                 ArrayList arrayList = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList);
                 File file = shortcutInfoCompatSaverImpl.f;
-                lf.h hVar = new lf.h(file);
-                File file2 = (File) hVar.c;
+                i iVar = new i(file);
+                File file2 = (File) iVar.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    FileOutputStream X = hVar.X();
+                    FileOutputStream X = iVar.X();
                     try {
                         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(X);
                         XmlSerializer newSerializer = Xml.newSerializer();
@@ -81,7 +82,7 @@ public final class e implements Runnable {
                         } catch (IOException e) {
                             Log.e("AtomicFile", "Failed to close file output stream", e);
                         }
-                        lf.h.U(file2, file);
+                        i.U(file2, file);
                         return;
                     } catch (Exception e7) {
                         e = e7;
@@ -154,7 +155,7 @@ public final class e implements Runnable {
                     return;
                 }
             case 5:
-                p.a((p) this.c, (da.b) this.b);
+                o.a((o) this.c, (da.b) this.b);
                 return;
             case 6:
                 x1.a aVar = (x1.a) this.c;

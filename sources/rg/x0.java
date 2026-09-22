@@ -21,24 +21,24 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.qa;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ra;
-import org.telegram.ui.Components.x7;
+import org.telegram.ui.Components.w7;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.c80;
 import org.telegram.ui.kx0;
 import org.telegram.ui.lx0;
-import org.telegram.ui.o81;
 import org.telegram.ui.t5;
-import w7.y5;
-import yh.y3;
+import org.telegram.ui.w81;
+import w7.x5;
+import yh.z3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class x0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -50,7 +50,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     public int K;
     public int L;
     public int M;
-    public x7 N;
+    public w7 N;
     public final n2 b;
     public final p0 c;
     public final ArrayList d;
@@ -65,8 +65,8 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     public final SvgHelper.SvgDrawable x;
     public final int y;
 
-    public x0(Context context, int i10, f6 f6Var) {
-        this(null, context, UserConfig.selectedAccount, false, i10, true, null, f6Var);
+    public x0(Context context, int i10, e6 e6Var) {
+        this(null, context, UserConfig.selectedAccount, false, i10, true, null, e6Var);
     }
 
     public final void A() {
@@ -151,20 +151,20 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.billingProductDetailsUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.premiumPromoUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        x7 x7Var = new x7(this, getContext(), 7);
-        this.N = x7Var;
-        x7Var.setBackgroundColor(getThemedColor(j6.h5));
-        this.N.setTitleColor(getThemedColor(j6.G6));
-        this.N.A(getThemedColor(j6.z8), false);
-        x7 x7Var2 = this.N;
-        int i10 = j6.y8;
-        x7Var2.B(getThemedColor(i10), false);
+        w7 w7Var = new w7(this, getContext(), 7);
+        this.N = w7Var;
+        w7Var.setBackgroundColor(getThemedColor(i6.h5));
+        this.N.setTitleColor(getThemedColor(i6.G6));
+        this.N.A(getThemedColor(i6.z8), false);
+        w7 w7Var2 = this.N;
+        int i10 = i6.y8;
+        w7Var2.B(getThemedColor(i10), false);
         this.N.B(getThemedColor(i10), true);
         this.N.setCastShadows(true);
         this.N.setExtraHeight(AndroidUtilities.dp(2.0f));
         this.N.setBackButtonImage(R.drawable.ic_ab_back);
-        this.N.setActionBarMenuOnItemClick(new o81(this, 11));
-        this.containerView.addView(this.N, y5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.N.setActionBarMenuOnItemClick(new w81(this, 10));
+        this.containerView.addView(this.N, x5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.N.getLayoutParams()).topMargin = (-this.backgroundPaddingTop) - AndroidUtilities.dp(2.0f);
         AndroidUtilities.updateViewVisibilityAnimated(this.N, false, 1.0f, false);
         int i11 = this.G;
@@ -195,7 +195,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
                 n0Var.setOffset(r0.getMeasuredWidth());
                 this.w = true;
                 ofFloat.addUpdateListener(new l6(n0Var, 12));
-                ofFloat.addListener(new cl0(20, this, n0Var));
+                ofFloat.addListener(new pk0(20, this, n0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(qr.h);
@@ -304,24 +304,24 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
     */
     public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var) {
         this(n2Var, context, i10, z10, i11, z11, lx0Var, r0);
-        f6 f6Var;
+        e6 e6Var;
         if (n2Var == null) {
-            f6Var = null;
+            e6Var = null;
         } else if (n2Var.getLastStoryViewer() != null && !n2Var.getLastStoryViewer().H0) {
-            f6Var = n2Var.getLastStoryViewer().y;
+            e6Var = n2Var.getLastStoryViewer().y;
         } else {
-            f6Var = n2Var.getResourceProvider();
+            e6Var = n2Var.getResourceProvider();
         }
     }
 
-    public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var, f6 f6Var) {
-        super(1, context, f6Var, false);
+    public x0(n2 n2Var, Context context, int i10, boolean z10, int i11, boolean z11, lx0 lx0Var, e6 e6Var) {
+        super(1, context, e6Var, false);
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
         this.K = 255;
         this.b = n2Var;
         this.J = lx0Var;
-        fixNavigationBar(getThemedColor(j6.h5));
+        fixNavigationBar(getThemedColor(i6.h5));
         this.y = i11;
         this.E = z11;
         this.x = SvgHelper.getDrawable(AndroidUtilities.readRes(R.raw.star_loader));
@@ -357,7 +357,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
         this.useBackgroundTopPadding = false;
-        z0 z0Var = new z0(j6.ak, j6.bk, j6.ck, -1, null);
+        z0 z0Var = new z0(i6.ak, i6.bk, i6.ck, -1, null);
         z0Var.o = 1.1f;
         z0Var.p = 1.5f;
         z0Var.q = -0.2f;
@@ -372,8 +372,8 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         int dp = AndroidUtilities.dp(12.0f);
         int k10 = i0.a.k(-1, 40);
         int k11 = i0.a.k(-1, 100);
-        imageView.setBackground(j6.i0(dp, dp, dp, dp, k10, k11, k11));
-        frameLayout.addView(imageView, y5.e(24, 24, 17));
+        imageView.setBackground(i6.i0(dp, dp, dp, dp, k10, k11, k11));
+        frameLayout.addView(imageView, x5.e(24, 24, 17));
         final int i13 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: rg.q0
             public final /* synthetic */ x0 b;
@@ -394,7 +394,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
                 }
             }
         });
-        f0Var.addView(n6Var, y5.t(-1, -2, 1, 0, 16, 0, 0));
+        f0Var.addView(n6Var, x5.t(-1, -2, 1, 0, 16, 0, 0));
         u0 u0Var = new u0(this, getContext());
         this.n = u0Var;
         u0Var.setOverScrollMode(2);
@@ -402,21 +402,21 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         u0Var.setAdapter(new c80(this, 2));
         this.G = i12;
         u0Var.setCurrentItem(i12);
-        f0Var.addView(u0Var, y5.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
-        f0Var.addView(frameLayout, y5.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
-        ra raVar = new ra(getContext(), u0Var, this.d.size());
-        u0Var.b(new v0(this, raVar));
+        f0Var.addView(u0Var, x5.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
+        f0Var.addView(frameLayout, x5.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
+        qa qaVar = new qa(getContext(), u0Var, this.d.size());
+        u0Var.b(new v0(this, qaVar));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.addView(f0Var);
         linearLayout.setOrientation(1);
-        int i14 = j6.V8;
-        int i15 = j6.P9;
-        raVar.n = i14;
-        raVar.r = i15;
+        int i14 = i6.V8;
+        int i15 = i6.P9;
+        qaVar.n = i14;
+        qaVar.r = i15;
         if (!z11) {
-            linearLayout.addView(raVar, y5.t(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
+            linearLayout.addView(qaVar, x5.t(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
         }
-        p0 p0Var = new p0(getContext(), f6Var, true);
+        p0 p0Var = new p0(getContext(), e6Var, true);
         this.c = p0Var;
         p0Var.r.setOnClickListener(new m5(this, n2Var, z11, kx0Var2, 5));
         final int i16 = 1;
@@ -440,11 +440,11 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(getContext());
-        frameLayout2.addView(p0Var, y5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        frameLayout2.setBackgroundColor(getThemedColor(j6.h5));
-        linearLayout.addView(frameLayout2, y5.q(-1, 68, 80));
+        frameLayout2.addView(p0Var, x5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        frameLayout2.setBackgroundColor(getThemedColor(i6.h5));
+        linearLayout.addView(frameLayout2, x5.q(-1, 68, 80));
         if (i11 == 40) {
-            p0Var.b(y3.g2(LocaleController.getString(R.string.Understood)), true, false);
+            p0Var.b(z3.g2(LocaleController.getString(R.string.Understood)), true, false);
         } else if (UserConfig.getInstance(i10).isPremium()) {
             p0Var.b(LocaleController.getString(R.string.OK), false, false);
         }

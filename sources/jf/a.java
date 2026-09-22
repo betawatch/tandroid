@@ -5,9 +5,9 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.RandomAccessFile;
-import lf.m;
+import lf.n;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class a {
     public String a;
@@ -53,7 +53,7 @@ public abstract class a {
                 }
                 return bVar2;
             }
-            return new m(bufferedInputStream, file.length());
+            return new n(bufferedInputStream, file.length());
         } catch (Exception unused) {
             return null;
         }

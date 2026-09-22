@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.bf;
+import org.telegram.ui.af;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class y {
     public z a;
@@ -15,7 +15,7 @@ public final class y {
     public int e;
     public Drawable f;
     public int g;
-    public f6 h;
+    public e6 h;
     public float i;
     public Boolean j;
     public Boolean k;
@@ -77,16 +77,16 @@ public final class y {
         }
     }
 
-    public final void b(bf bfVar) {
+    public final void b(af afVar) {
         v0 v0Var = this.m;
         if (v0Var != null) {
-            bfVar.run(v0Var);
+            afVar.run(v0Var);
             return;
         }
         if (this.n == null) {
             this.n = new ArrayList();
         }
-        this.n.add(bfVar);
+        this.n.add(afVar);
     }
 
     public final void c() {

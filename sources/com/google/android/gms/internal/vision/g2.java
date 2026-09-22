@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g2 implements o2 {
     public final l0 a;
@@ -17,7 +17,7 @@ public final class g2 implements o2 {
     @Override // com.google.android.gms.internal.vision.o2
     public final boolean a(Object obj) {
         this.c.getClass();
-        a4.a.y(obj);
+        a4.a.z(obj);
         throw null;
     }
 
@@ -26,14 +26,14 @@ public final class g2 implements o2 {
         this.b.getClass();
         ((f1) obj).zzb.e = false;
         this.c.getClass();
-        a4.a.y(obj);
+        a4.a.z(obj);
         throw null;
     }
 
     @Override // com.google.android.gms.internal.vision.o2
     public final void c(Object obj, y1 y1Var) {
         this.c.getClass();
-        a4.a.y(obj);
+        a4.a.z(obj);
         throw null;
     }
 

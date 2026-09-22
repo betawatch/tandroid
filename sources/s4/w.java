@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class w extends GestureDetector.SimpleOnGestureListener {
     public boolean a = true;
@@ -23,16 +23,16 @@ public final class w extends GestureDetector.SimpleOnGestureListener {
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public final void onLongPress(MotionEvent motionEvent) {
-        c1 U;
+        c1 T;
         if (this.a) {
             y yVar = this.b;
             View k10 = yVar.k(motionEvent);
             v vVar = yVar.x;
-            if (k10 == null || (U = yVar.H.U(k10)) == null) {
+            if (k10 == null || (T = yVar.H.T(k10)) == null) {
                 return;
             }
             RecyclerView recyclerView = yVar.H;
-            int e = vVar.e(recyclerView, U);
+            int e = vVar.e(recyclerView, T);
             WeakHashMap weakHashMap = r0.i0.a;
             if ((vVar.b(e, recyclerView.getLayoutDirection()) & 16711680) != 0) {
                 int pointerId = motionEvent.getPointerId(0);
@@ -46,7 +46,7 @@ public final class w extends GestureDetector.SimpleOnGestureListener {
                     yVar.r = 0.0f;
                     yVar.n = 0.0f;
                     if (vVar.k()) {
-                        yVar.p(U, 2);
+                        yVar.p(T, 2);
                     }
                 }
             }

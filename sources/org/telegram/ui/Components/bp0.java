@@ -1,30 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class bp0 implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kp0 b;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-    public /* synthetic */ bp0(kp0 kp0Var, int i10) {
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bp0 implements r0.n, org.telegram.ui.ActionBar.l1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hq0 b;
+
+    public /* synthetic */ bp0(hq0 hq0Var, int i10) {
         this.a = i10;
-        this.b = kp0Var;
+        this.b = hq0Var;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
+        hq0 hq0Var = this.b;
+        hq0Var.processLegacyContainerInsets(g10);
+        i0.b f7 = l1Var.a.f(519);
+        if (!hq0Var.G0.equals(f7)) {
+            hq0Var.G0 = f7;
+            hq0Var.container.requestLayout();
+        }
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.l1
+    public void o(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
+        org.telegram.ui.ActionBar.n1 n1Var2;
         switch (this.a) {
-            case 0:
-                this.b.o.setScaleX(1.0f / f7);
-                break;
             case 1:
-                this.b.o.setScaleY(1.0f / f7);
-                break;
-            case 2:
-                this.b.o.setScaleX(1.0f / f7);
+                hq0 hq0Var = this.b;
+                hq0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = hq0Var.J0) != null && n1Var.isShowing()) {
+                    hq0Var.J0.d(true);
+                    break;
+                }
                 break;
             default:
-                this.b.o.setScaleY(1.0f / f7);
+                hq0 hq0Var2 = this.b;
+                hq0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var2 = hq0Var2.J0) != null && n1Var2.isShowing()) {
+                    hq0Var2.J0.d(true);
+                    break;
+                }
                 break;
         }
     }

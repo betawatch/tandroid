@@ -19,7 +19,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class p extends androidx.fragment.app.s {
     public final Handler k0 = new Handler(Looper.getMainLooper());
@@ -337,7 +337,7 @@ public class p extends androidx.fragment.app.s {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        k6.h hVar = new k6.h(applicationContext, (char) 0);
+        k6.h hVar = new k6.h(applicationContext, 3);
         int i12 = Build.VERSION.SDK_INT;
         int i13 = (i12 < 23 || (g10 = e0.b.g(applicationContext)) == null || !e0.b.q(g10)) ? 12 : (i12 < 23 || (g11 = e0.b.g(applicationContext)) == null || !e0.b.m(g11)) ? 11 : 0;
         if (i13 != 0) {
@@ -398,11 +398,11 @@ public class p extends androidx.fragment.app.s {
                 xVar9.h = new aa.a(new v(xVar9));
             }
             aa.a aVar4 = xVar9.h;
-            if (((pb.c) aVar4.c) == null) {
-                aVar4.c = new pb.c(aVar4, i10);
+            if (((a6.m) aVar4.c) == null) {
+                aVar4.c = new a6.m(aVar4, 2);
             }
             try {
-                hVar.c(aVar, pVar, (pb.c) aVar4.c);
+                hVar.b(aVar, pVar, (a6.m) aVar4.c);
             } catch (NullPointerException e7) {
                 Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e7);
                 T(1, v7.p.a(applicationContext, 1));
@@ -429,7 +429,7 @@ public class p extends androidx.fragment.app.s {
         if (k() == null) {
             return;
         }
-        x xVar = (x) new aa.a(k()).n(x.class);
+        x xVar = (x) new aa.a(k()).m(x.class);
         this.l0 = xVar;
         if (xVar.r == null) {
             xVar.r = new androidx.lifecycle.z();
@@ -444,12 +444,12 @@ public class p extends androidx.fragment.app.s {
         if (xVar3.t == null) {
             xVar3.t = new androidx.lifecycle.z();
         }
-        xVar3.t.d(this, new android.support.v4.media.c(this, 1));
+        xVar3.t.d(this, new a4.m(this, 2));
         x xVar4 = this.l0;
         if (xVar4.u == null) {
             xVar4.u = new androidx.lifecycle.z();
         }
-        xVar4.u.d(this, new pb.c(this, 4));
+        xVar4.u.d(this, new a6.m(this, 3));
         x xVar5 = this.l0;
         if (xVar5.v == null) {
             xVar5.v = new androidx.lifecycle.z();

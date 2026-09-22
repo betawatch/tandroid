@@ -1,45 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hg0 b;
+    public final /* synthetic */ s3 b;
 
-    public /* synthetic */ dg0(hg0 hg0Var, int i10) {
+    public /* synthetic */ dg0(s3 s3Var, int i10) {
         this.a = i10;
-        this.b = hg0Var;
+        this.b = s3Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10;
         switch (this.a) {
             case 0:
-                yg0 yg0Var = this.b.v;
-                yg0Var.u1(0, true, null, true);
-                yg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 1:
-                yg0 yg0Var2 = this.b.v;
-                yg0Var2.u1(0, true, null, true);
-                yg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 2:
-                this.b.p();
-                break;
-            case 3:
-                this.b.b.setLoading(false);
+                this.b.run("CANCELLED");
                 break;
             default:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                yg0 yg0Var3 = this.b.v;
-                i10 = ((org.telegram.ui.ActionBar.n2) yg0Var3).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i10);
-                yg0Var3.presentFragment(premiumPreviewFragment);
+                AndroidUtilities.runOnUIThread(new dg0(this.b, 0));
                 break;
         }
     }

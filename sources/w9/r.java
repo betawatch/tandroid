@@ -1,89 +1,103 @@
 package w9;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.util.Log;
-import java.lang.Thread;
-import java.util.concurrent.atomic.AtomicBoolean;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class r implements Thread.UncaughtExceptionHandler {
-    public final k a;
-    public final da.b b;
-    public final Thread.UncaughtExceptionHandler c;
-    public final t9.a d;
-    public final AtomicBoolean e = new AtomicBoolean(false);
+public final class r {
+    public final SharedPreferences a;
+    public final k9.h b;
+    public final Object c;
+    public TaskCompletionSource d;
+    public boolean e;
+    public boolean f;
+    public Boolean g;
+    public final TaskCompletionSource h;
 
-    public r(k kVar, da.b bVar, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, t9.a aVar) {
-        this.a = kVar;
-        this.b = bVar;
-        this.c = uncaughtExceptionHandler;
-        this.d = aVar;
-    }
-
-    public final boolean a(Thread thread, Throwable th2) {
-        if (thread == null) {
-            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null thread", null);
-            return false;
-        }
-        if (th2 == null) {
-            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null throwable", null);
-            return false;
-        }
-        if (!this.d.b()) {
-            return true;
-        }
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; native crash exists for session.", null);
-        }
-        return false;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0035, code lost:
-    
-        r0.uncaughtException(r10, r11);
-        r4.set(false);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x003b, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0045, code lost:
-    
-        if (android.util.Log.isLoggable("FirebaseCrashlytics", 3) == false) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0030, code lost:
-    
-        if (android.util.Log.isLoggable("FirebaseCrashlytics", 3) != false) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0032, code lost:
-    
-        android.util.Log.d("FirebaseCrashlytics", "Completed exception processing. Invoking default exception handler.", null);
-     */
-    @Override // java.lang.Thread.UncaughtExceptionHandler
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x007c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void uncaughtException(Thread thread, Throwable th2) {
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.c;
-        AtomicBoolean atomicBoolean = this.e;
-        atomicBoolean.set(true);
-        try {
-            try {
-                if (a(thread, th2)) {
-                    this.a.b(this.b, thread, th2);
-                } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
-                }
-            } catch (Exception e) {
-                Log.e("FirebaseCrashlytics", "An error occurred in the uncaught exception handler", e);
-            }
-        } catch (Throwable th3) {
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", "Completed exception processing. Invoking default exception handler.", null);
-            }
-            uncaughtExceptionHandler.uncaughtException(thread, th2);
-            atomicBoolean.set(false);
-            throw th3;
+    public r(k9.h hVar) {
+        Boolean bool;
+        Boolean bool2;
+        PackageManager packageManager;
+        ApplicationInfo applicationInfo;
+        Bundle bundle;
+        Object obj = new Object();
+        this.c = obj;
+        this.d = new TaskCompletionSource();
+        this.e = false;
+        this.f = false;
+        this.h = new TaskCompletionSource();
+        hVar.a();
+        Context context = hVar.a;
+        this.b = hVar;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.crashlytics", 0);
+        this.a = sharedPreferences;
+        if (sharedPreferences.contains("firebase_crashlytics_collection_enabled")) {
+            this.f = false;
+            bool = Boolean.valueOf(sharedPreferences.getBoolean("firebase_crashlytics_collection_enabled", true));
+        } else {
+            bool = null;
         }
+        if (bool == null) {
+            try {
+                packageManager = context.getPackageManager();
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e);
+            }
+            if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
+                bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
+                if (bool2 != null) {
+                    this.f = false;
+                    bool = null;
+                } else {
+                    this.f = true;
+                    bool = Boolean.valueOf(Boolean.TRUE.equals(bool2));
+                }
+            }
+            bool2 = null;
+            if (bool2 != null) {
+            }
+        }
+        this.g = bool;
+        synchronized (obj) {
+            try {
+                if (a()) {
+                    this.d.trySetResult(null);
+                    this.e = true;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final synchronized boolean a() {
+        boolean z10;
+        Boolean bool = this.g;
+        if (bool != null) {
+            z10 = bool.booleanValue();
+        } else {
+            try {
+                z10 = this.b.h();
+            } catch (IllegalStateException unused) {
+                z10 = false;
+            }
+        }
+        String j3 = q3.j("Crashlytics automatic data collection ", z10 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", j3, null);
+        }
+        return z10;
     }
 }

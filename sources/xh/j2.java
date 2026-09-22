@@ -1,24 +1,33 @@
 package xh;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.bs0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.nr0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class j2 extends u61 {
-    public final /* synthetic */ bs0 f3;
+public final class j2 extends s4.j {
+    public final /* synthetic */ nr0 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(Context context, int i10, hi.a aVar, i2 i2Var, i2 i2Var2, f6 f6Var, bs0 bs0Var) {
-        super(context, i10, 0, false, aVar, i2Var, i2Var2, f6Var, 3, 1);
-        this.f3 = bs0Var;
+    public j2(nr0 nr0Var) {
+        this.F = nr0Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.f3.o();
+    @Override // s4.j
+    public final void M() {
+        this.F.o();
+    }
+
+    @Override // s4.j
+    public final void O() {
+        this.F.o();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.o();
+    }
+
+    @Override // s4.j
+    public final void Q() {
+        this.F.o();
     }
 }

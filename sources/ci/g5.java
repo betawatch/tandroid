@@ -2,7 +2,7 @@ package ci;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g5 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,9 +17,9 @@ public final /* synthetic */ class g5 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                qg.x1 x1Var = this.b.d1;
-                if (x1Var != null) {
-                    x1Var.invalidate();
+                qg.z1 z1Var = this.b.d1;
+                if (z1Var != null) {
+                    z1Var.invalidate();
                     break;
                 }
                 break;
@@ -31,7 +31,7 @@ public final /* synthetic */ class g5 implements Runnable {
                 break;
             default:
                 r6 r6Var = this.b;
-                boolean z10 = pg.u0.e(r6Var.F1).k;
+                boolean z10 = pg.s0.e(r6Var.F1).k;
                 int i10 = 0;
                 while (true) {
                     List list = pg.l.b;
@@ -48,7 +48,7 @@ public final /* synthetic */ class g5 implements Runnable {
                         o6Var.setSelected(false);
                         o6Var.setOnClickListener(new ai.v0(s1Var, 10));
                         o6Var.setOnLongClickListener(new n5(r6Var, 0));
-                        r6Var.I1.a(o6Var, w7.y5.n(-1, 48));
+                        r6Var.I1.a(o6Var, w7.x5.n(-1, 48));
                         i10++;
                     }
                 }

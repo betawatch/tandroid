@@ -11,13 +11,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class q2 extends n2 {
     public zg.g0 i;
     public zg.g0 j;
     public int k;
-    public final org.telegram.ui.Components.d6 l;
+    public final org.telegram.ui.Components.c6 l;
     public Timer m;
     public final ai.ob n;
     public final ArrayList o;
@@ -30,7 +30,7 @@ public final class q2 extends n2 {
         this.p = r2Var;
         this.i = new zg.g0(r2Var);
         this.j = new zg.g0(r2Var);
-        this.l = new org.telegram.ui.Components.d6(r2Var);
+        this.l = new org.telegram.ui.Components.c6(r2Var);
         this.n = new ai.ob(r2Var);
         this.o = new ArrayList();
         this.a = 3;

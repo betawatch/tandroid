@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import m.j2;
-import org.telegram.ui.Components.pd0;
+import org.telegram.ui.Components.dd0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -56,34 +56,34 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
                     break;
                 }
             case 1:
-                l.f fVar = (l.f) obj;
-                ArrayList arrayList = fVar.n;
-                if (fVar.a() && arrayList.size() > 0 && !((l.e) arrayList.get(0)).a.N) {
-                    View view = fVar.E;
+                l.e eVar = (l.e) obj;
+                ArrayList arrayList = eVar.n;
+                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.N) {
+                    View view = eVar.E;
                     if (view != null && view.isShown()) {
                         int size = arrayList.size();
                         while (i11 < size) {
                             Object obj2 = arrayList.get(i11);
                             i11++;
-                            ((l.e) obj2).a.h();
+                            ((l.d) obj2).a.h();
                         }
                         break;
                     } else {
-                        fVar.dismiss();
+                        eVar.dismiss();
                         break;
                     }
                 }
                 break;
             case 2:
-                l.d0 d0Var = (l.d0) obj;
-                j2 j2Var = d0Var.n;
-                if (d0Var.a() && !j2Var.N) {
-                    View view2 = d0Var.x;
+                l.c0 c0Var = (l.c0) obj;
+                j2 j2Var = c0Var.n;
+                if (c0Var.a() && !j2Var.N) {
+                    View view2 = c0Var.x;
                     if (view2 != null && view2.isShown()) {
                         j2Var.h();
                         break;
                     } else {
-                        d0Var.dismiss();
+                        c0Var.dismiss();
                         break;
                     }
                 }
@@ -108,16 +108,16 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
                     m0Var.dismiss();
                     break;
                 } else {
-                    m0Var.r();
+                    m0Var.q();
                     m0Var.h();
                     break;
                 }
                 break;
             default:
-                pd0 pd0Var = (pd0) obj;
-                pd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                pd0Var.h = pd0Var.e.getCurrentItem();
-                pd0.a(pd0Var, pd0Var.h, 0);
+                dd0 dd0Var = (dd0) obj;
+                dd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                dd0Var.h = dd0Var.e.getCurrentItem();
+                dd0.a(dd0Var, dd0Var.h, 0);
                 break;
         }
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
     public final z4.g b;
@@ -27,7 +27,7 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
 
     public l30(Context context, TLRPC.Chat chat, boolean z10) {
         super(context, false);
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fg, false);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.fg, false);
         this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
         g30 g30Var = new g30(this, context);
         this.containerView = g30Var;
@@ -43,15 +43,15 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
         } else {
             textView.setText(LocaleController.getString(R.string.VoipRecordVoiceChat));
         }
-        org.telegram.messenger.l0.p(textView, -1, 1, 20.0f);
+        org.telegram.messenger.y0.q(textView, -1, 1, 20.0f);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 29.0f, 24.0f, 0.0f));
+        this.containerView.addView(textView, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 29.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(getContext());
         textView2.setText(LocaleController.getString(R.string.VoipRecordVoiceChatInfo));
         textView2.setTextColor(-1);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView2, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 62.0f, 24.0f, 0.0f));
+        this.containerView.addView(textView2, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 62.0f, 24.0f, 0.0f));
         this.e = new TextView[3];
         z4.g gVar = new z4.g(context);
         this.b = gVar;
@@ -61,36 +61,36 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
         AndroidUtilities.setViewPagerEdgeEffectColor(gVar, 2130706432);
         gVar.setAdapter(new k30(this));
         gVar.setPageMargin(0);
-        this.containerView.addView(gVar, w7.y5.d(-1, -1.0f, 1, 0.0f, 100.0f, 0.0f, 130.0f));
+        this.containerView.addView(gVar, w7.x5.d(-1, -1.0f, 1, 0.0f, 100.0f, 0.0f, 130.0f));
         gVar.b(new h30(this));
         View view = new View(getContext());
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.LEFT_RIGHT;
         view.setBackground(new GradientDrawable(orientation, new int[]{w02, 0}));
-        this.containerView.addView(view, w7.y5.d(120, -1.0f, 51, 0.0f, 100.0f, 0.0f, 130.0f));
+        this.containerView.addView(view, w7.x5.d(120, -1.0f, 51, 0.0f, 100.0f, 0.0f, 130.0f));
         View view2 = new View(getContext());
         view2.setBackground(new GradientDrawable(orientation, new int[]{0, w02}));
-        this.containerView.addView(view2, w7.y5.d(120, -1.0f, 53, 0.0f, 100.0f, 0.0f, 130.0f));
+        this.containerView.addView(view2, w7.x5.d(120, -1.0f, 53, 0.0f, 100.0f, 0.0f, 130.0f));
         i30 i30Var = new i30(this, getContext());
         this.c = i30Var;
         i30Var.setMinWidth(AndroidUtilities.dp(64.0f));
         i30Var.setTag(-1);
         i30Var.setTextSize(1, 14.0f);
-        int i11 = org.telegram.ui.ActionBar.j6.ng;
-        i30Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        int i11 = org.telegram.ui.ActionBar.i6.ng;
+        i30Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
         i30Var.setGravity(17);
         i30Var.setTypeface(AndroidUtilities.bold());
         i30Var.setText(LocaleController.getString(R.string.VoipRecordStart));
         if (Build.VERSION.SDK_INT >= 23) {
             int dp = AndroidUtilities.dp(6.0f);
-            int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i11, false), 76);
-            i30Var.setForeground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 0, k10, k10));
+            int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i11, false), 76);
+            i30Var.setForeground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, 0, k10, k10));
         }
         i30Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         i30Var.setOnClickListener(new f0(this, 23));
-        this.containerView.addView(i30Var, w7.y5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
+        this.containerView.addView(i30Var, w7.x5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
-        this.containerView.addView(linearLayout, w7.y5.e(-2, 64, 80));
+        this.containerView.addView(linearLayout, w7.x5.e(-2, 64, 80));
         int i12 = 0;
         while (true) {
             TextView[] textViewArr = this.e;
@@ -104,7 +104,7 @@ public abstract class l30 extends org.telegram.ui.ActionBar.f3 {
             this.e[i12].setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             this.e[i12].setGravity(16);
             this.e[i12].setSingleLine(true);
-            this.d.addView(this.e[i12], w7.y5.n(-2, -1));
+            this.d.addView(this.e[i12], w7.x5.n(-2, -1));
             if (i12 == 0) {
                 this.e[i12].setText(LocaleController.getString(R.string.VoipRecordAudio));
             } else if (i12 == 1) {

@@ -1,6 +1,6 @@
 package ci;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p9 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class p9 implements Runnable {
         switch (this.a) {
             case 0:
                 ia iaVar = this.b.W;
-                org.telegram.ui.Components.pc.h(iaVar.container);
+                org.telegram.ui.Components.oc.h(iaVar.container);
                 super/*org.telegram.ui.ActionBar.f3*/.dismiss();
                 break;
             case 1:
@@ -24,7 +24,7 @@ public final /* synthetic */ class p9 implements Runnable {
                 baVar.v.setLoading(false);
                 ia iaVar2 = baVar.W;
                 iaVar2.f1();
-                iaVar2.b.E(0);
+                iaVar2.b.D(0);
                 break;
             case 2:
                 this.b.U = false;
@@ -32,7 +32,7 @@ public final /* synthetic */ class p9 implements Runnable {
             case 3:
                 ia iaVar3 = this.b.W;
                 iaVar3.M = 6;
-                iaVar3.b.E(1);
+                iaVar3.b.D(1);
                 break;
             case 4:
                 ba baVar2 = this.b;

@@ -28,13 +28,13 @@ import java.util.ArrayList;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.ww0;
-import org.telegram.ui.Components.yw0;
-import org.telegram.ui.k11;
+import org.telegram.ui.l11;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class j5 extends View implements Drawable.Callback {
     public final Path A0;
@@ -48,7 +48,7 @@ public class j5 extends View implements Drawable.Callback {
     public float G;
     public float G0;
     public float H;
-    public org.telegram.ui.Components.u5 H0;
+    public org.telegram.ui.Components.t5 H0;
     public int I;
     public int I0;
     public int J;
@@ -210,7 +210,7 @@ public class j5 extends View implements Drawable.Callback {
         int i10 = 0;
         while (i10 < size) {
             int i11 = i10 + 1;
-            Rect bounds = ((vh.g) arrayList.get(i10)).getBounds();
+            Rect bounds = ((vh.h) arrayList.get(i10)).getBounds();
             path.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
             i10 = i11;
         }
@@ -262,9 +262,9 @@ public class j5 extends View implements Drawable.Callback {
                         this.F = indexOf;
                         if (indexOf >= 0) {
                             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence2);
-                            org.telegram.ui.Cells.q2 q2Var = new org.telegram.ui.Cells.q2(this.y.getIntrinsicWidth());
+                            org.telegram.ui.Cells.p2 p2Var = new org.telegram.ui.Cells.p2(this.y.getIntrinsicWidth());
                             int i15 = this.F;
-                            valueOf.setSpan(q2Var, i15, this.E.length() + i15, 0);
+                            valueOf.setSpan(p2Var, i15, this.E.length() + i15, 0);
                             charSequence3 = valueOf;
                         } else {
                             i11 = (i11 - this.y.getIntrinsicWidth()) - this.I;
@@ -301,7 +301,7 @@ public class j5 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c10 = ww0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
+                        StaticLayout c10 = jw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
                         i14 = i16;
                         this.e = c10;
                         if (c10 != null) {
@@ -319,12 +319,12 @@ public class j5 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = ww0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
+                            this.e = jw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c11 = ww0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
+                    StaticLayout c11 = jw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
                     i13 = i16;
                     this.c = c11;
                 } else {
@@ -352,7 +352,7 @@ public class j5 extends View implements Drawable.Callback {
                 arrayList.clear();
                 StaticLayout staticLayout2 = this.c;
                 if (staticLayout2 != null && (staticLayout2.getText() instanceof Spannable)) {
-                    vh.g.b(this, this.c, -2, -2, stack, arrayList);
+                    vh.h.b(this, this.c, -2, -2, stack, arrayList);
                 }
                 a(i13);
             } catch (Exception unused) {
@@ -362,9 +362,9 @@ public class j5 extends View implements Drawable.Callback {
             this.e0 = 0;
             this.g0 = 0;
         }
-        org.telegram.ui.Components.y5.release(this, this.H0);
+        org.telegram.ui.Components.x5.release(this, this.H0);
         if (this.K0) {
-            this.H0 = org.telegram.ui.Components.y5.update(this.I0, this, this.H0, this.c);
+            this.H0 = org.telegram.ui.Components.x5.update(this.I0, this, this.H0, this.c);
         }
         invalidate();
     }
@@ -376,18 +376,18 @@ public class j5 extends View implements Drawable.Callback {
         if (f7 <= 0.0f || this.u0 == 0) {
             canvas.save();
             c(canvas);
-            org.telegram.ui.Components.u5 u5Var = this.H0;
-            if (u5Var != null) {
-                u5Var.a();
+            org.telegram.ui.Components.t5 t5Var = this.H0;
+            if (t5Var != null) {
+                t5Var.a();
             }
             this.c.draw(canvas);
             canvas.restore();
-            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.c, this.H0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.J0);
+            org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, this.c, this.H0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.J0);
             int size = arrayList.size();
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ((vh.g) obj).draw(canvas);
+                ((vh.h) obj).draw(canvas);
             }
             return;
         }
@@ -398,21 +398,21 @@ public class j5 extends View implements Drawable.Callback {
         float f12 = this.a;
         float f13 = -this.u0;
         float f14 = this.M;
-        this.a = org.telegram.ui.Cells.c1.b(this.v0, f14, f13 * f14, f12);
+        this.a = org.telegram.ui.Cells.q3.a(this.v0, f14, f13 * f14, f12);
         canvas.save();
         c(canvas);
-        org.telegram.ui.Components.u5 u5Var2 = this.H0;
-        if (u5Var2 != null) {
-            u5Var2.a();
+        org.telegram.ui.Components.t5 t5Var2 = this.H0;
+        if (t5Var2 != null) {
+            t5Var2.a();
         }
         this.c.draw(canvas);
         canvas.restore();
-        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.c, this.H0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.J0);
+        org.telegram.ui.Components.x5.drawAnimatedEmojis(canvas, this.c, this.H0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.J0);
         int size2 = arrayList.size();
         while (i10 < size2) {
             Object obj2 = arrayList.get(i10);
             i10++;
-            ((vh.g) obj2).draw(canvas);
+            ((vh.h) obj2).draw(canvas);
         }
         canvas.restore();
     }
@@ -431,17 +431,17 @@ public class j5 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(yw0 yw0Var, String str) {
+    public final void g(lw0 lw0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == yw0Var) {
+        if (drawable == lw0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = yw0Var;
-        if (yw0Var != null) {
-            yw0Var.setCallback(this);
+        this.y = lw0Var;
+        if (lw0Var != null) {
+            lw0Var.setCallback(this);
         }
         f();
         this.E = str;
@@ -714,14 +714,14 @@ public class j5 extends View implements Drawable.Callback {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.K0 = true;
-        this.H0 = org.telegram.ui.Components.y5.update(this.I0, this, this.H0, this.c);
+        this.H0 = org.telegram.ui.Components.x5.update(this.I0, this, this.H0, this.c);
     }
 
     @Override // android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.K0 = false;
-        org.telegram.ui.Components.y5.release(this, this.H0);
+        org.telegram.ui.Components.x5.release(this, this.H0);
         this.j0 = false;
     }
 
@@ -730,33 +730,33 @@ public class j5 extends View implements Drawable.Callback {
         int intrinsicWidth;
         float f7;
         float f10;
-        int z10;
+        int C;
         int i10;
-        int z11;
+        int C2;
         int i11;
-        int z12;
+        int C3;
         int i12;
         float f11;
         float f12;
-        boolean z13;
-        float b10;
-        int z14;
+        boolean z10;
+        float c10;
+        int C4;
         int i13;
-        int z15;
+        int C5;
         int i14;
         float f13;
-        int z16;
+        int C6;
         int i15;
-        int z17;
+        int C7;
         int i16;
-        int z18;
+        int C8;
         int i17;
-        int z19;
+        int C9;
         int i18;
         super.onDraw(canvas);
         this.a = 0.0f;
         this.b = 0.0f;
-        boolean z20 = this.P && (this.Q || this.R != 0.0f);
+        boolean z11 = this.P && (this.Q || this.R != 0.0f);
         this.f0 = this.e0;
         Drawable drawable = this.v;
         if (drawable == null || this.k0) {
@@ -806,13 +806,13 @@ public class j5 extends View implements Drawable.Callback {
             int intrinsicWidth2 = (int) (r3.getIntrinsicWidth() * this.H);
             int intrinsicHeight = (int) (this.w.getIntrinsicHeight() * this.H);
             if ((this.n & 112) == 16) {
-                z19 = (getMeasuredHeight() - intrinsicHeight) / 2;
+                C9 = (getMeasuredHeight() - intrinsicHeight) / 2;
                 i18 = this.K;
             } else {
-                z19 = hg.k0.z(this.g0, intrinsicHeight, 2, getPaddingTop());
+                C9 = hg.c.C(this.g0, intrinsicHeight, 2, getPaddingTop());
                 i18 = this.K;
             }
-            int i28 = z19 + i18;
+            int i28 = C9 + i18;
             f7 = 0.0f;
             this.w.setBounds(i26, i28, i26 + intrinsicWidth2, i28 + intrinsicHeight);
             this.h0 = i26 + (intrinsicWidth2 >> 1);
@@ -832,13 +832,13 @@ public class j5 extends View implements Drawable.Callback {
             int intrinsicWidth3 = (int) (this.x.getIntrinsicWidth() * this.H);
             int intrinsicHeight2 = (int) (this.x.getIntrinsicHeight() * this.H);
             if ((this.n & 112) == 16) {
-                z18 = (getMeasuredHeight() - intrinsicHeight2) / 2;
+                C8 = (getMeasuredHeight() - intrinsicHeight2) / 2;
                 i17 = this.K;
             } else {
-                z18 = hg.k0.z(this.g0, intrinsicHeight2, 2, getPaddingTop());
+                C8 = hg.c.C(this.g0, intrinsicHeight2, 2, getPaddingTop());
                 i17 = this.K;
             }
-            int i31 = z18 + i17;
+            int i31 = C8 + i17;
             this.x.setBounds(i29, i31, i29 + intrinsicWidth3, intrinsicHeight2 + i31);
             this.x.draw(canvas);
             this.f0 = this.I + intrinsicWidth3 + this.f0;
@@ -860,13 +860,13 @@ public class j5 extends View implements Drawable.Callback {
                 int intrinsicHeight3 = (int) (this.w.getIntrinsicHeight() * this.H);
                 int i33 = this.e0 + i25 + this.I + ((int) (-this.R)) + dp;
                 if ((this.n & 112) == 16) {
-                    z17 = (getMeasuredHeight() - intrinsicHeight3) / 2;
+                    C7 = (getMeasuredHeight() - intrinsicHeight3) / 2;
                     i16 = this.K;
                 } else {
-                    z17 = hg.k0.z(this.g0, intrinsicHeight3, 2, getPaddingTop());
+                    C7 = hg.c.C(this.g0, intrinsicHeight3, 2, getPaddingTop());
                     i16 = this.K;
                 }
-                int i34 = z17 + i16;
+                int i34 = C7 + i16;
                 f10 = 16.0f;
                 this.w.setBounds(i33, i34, i33 + intrinsicWidth4, i34 + intrinsicHeight3);
                 this.h0 = i33 + (intrinsicWidth4 >> 1);
@@ -881,13 +881,13 @@ public class j5 extends View implements Drawable.Callback {
                     i35 += ((int) (r6.getIntrinsicWidth() * this.H)) + this.I;
                 }
                 if ((this.n & 112) == 16) {
-                    z16 = (getMeasuredHeight() - intrinsicHeight4) / 2;
+                    C6 = (getMeasuredHeight() - intrinsicHeight4) / 2;
                     i15 = this.K;
                 } else {
-                    z16 = hg.k0.z(this.g0, intrinsicHeight4, 2, getPaddingTop());
+                    C6 = hg.c.C(this.g0, intrinsicHeight4, 2, getPaddingTop());
                     i15 = this.K;
                 }
-                int i36 = z16 + i15;
+                int i36 = C6 + i15;
                 this.x.setBounds(i35, i36, intrinsicWidth5 + i35, intrinsicHeight4 + i36);
                 this.x.draw(canvas);
             }
@@ -899,7 +899,7 @@ public class j5 extends View implements Drawable.Callback {
                 canvas.save();
                 int maxTextWidth = getMaxTextWidth() - this.r0;
                 Drawable drawable6 = this.w;
-                canvas.clipRect(i25, 0, maxTextWidth - AndroidUtilities.dp((drawable6 == null || (drawable6 instanceof org.telegram.ui.Components.n5) || !this.l0) ? 0.0f : 2.0f), getMeasuredHeight());
+                canvas.clipRect(i25, 0, maxTextWidth - AndroidUtilities.dp((drawable6 == null || (drawable6 instanceof org.telegram.ui.Components.m5) || !this.l0) ? 0.0f : 2.0f), getMeasuredHeight());
             }
             Emoji.emojiDrawingUseAlpha = false;
             if (this.O != null) {
@@ -975,13 +975,13 @@ public class j5 extends View implements Drawable.Callback {
                 int intrinsicWidth6 = (int) (r3.getIntrinsicWidth() * this.H);
                 int intrinsicHeight5 = (int) (this.w.getIntrinsicHeight() * this.H);
                 if ((this.n & 112) == 16) {
-                    z15 = (getMeasuredHeight() - intrinsicHeight5) / 2;
+                    C5 = (getMeasuredHeight() - intrinsicHeight5) / 2;
                     i14 = this.K;
                 } else {
-                    z15 = hg.k0.z(this.g0, intrinsicHeight5, 2, getPaddingTop());
+                    C5 = hg.c.C(this.g0, intrinsicHeight5, 2, getPaddingTop());
                     i14 = this.K;
                 }
-                int i43 = z15 + i14;
+                int i43 = C5 + i14;
                 this.w.setBounds(i41, i43, i41 + intrinsicWidth6, i43 + intrinsicHeight5);
                 this.h0 = i41 + (intrinsicWidth6 >> 1);
                 this.i0 = i43 + (intrinsicHeight5 >> 1);
@@ -1000,23 +1000,23 @@ public class j5 extends View implements Drawable.Callback {
                 int intrinsicWidth7 = (int) (this.x.getIntrinsicWidth() * this.H);
                 int intrinsicHeight6 = (int) (this.x.getIntrinsicHeight() * this.H);
                 if ((this.n & 112) == 16) {
-                    z14 = (getMeasuredHeight() - intrinsicHeight6) / 2;
+                    C4 = (getMeasuredHeight() - intrinsicHeight6) / 2;
                     i13 = this.K;
                 } else {
-                    z14 = hg.k0.z(this.g0, intrinsicHeight6, 2, getPaddingTop());
+                    C4 = hg.c.C(this.g0, intrinsicHeight6, 2, getPaddingTop());
                     i13 = this.K;
                 }
-                int i46 = z14 + i13;
+                int i46 = C4 + i13;
                 this.x.setBounds(i44, i46, i44 + intrinsicWidth7, intrinsicHeight6 + i46);
                 this.x.draw(canvas);
                 this.f0 = this.I + intrinsicWidth7 + this.f0;
             }
-            if (z20) {
+            if (z11) {
                 if (this.R < AndroidUtilities.dp(10.0f)) {
                     this.U.setAlpha((int) ((this.R / AndroidUtilities.dp(10.0f)) * 255.0f));
                 } else {
                     if (this.R > (AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)) {
-                        this.U.setAlpha((int) rk.w(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
+                        this.U.setAlpha((int) vl.v(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
                     } else {
                         this.U.setAlpha(255);
                     }
@@ -1032,13 +1032,13 @@ public class j5 extends View implements Drawable.Callback {
                 if (!this.o0) {
                     int maxTextWidth2 = (getMaxTextWidth() - this.r0) - this.a0;
                     Drawable drawable7 = this.w;
-                    canvas.translate(maxTextWidth2 - AndroidUtilities.dp((drawable7 == null || (drawable7 instanceof org.telegram.ui.Components.n5) || !this.l0) ? 0.0f : 2.0f), 0.0f);
+                    canvas.translate(maxTextWidth2 - AndroidUtilities.dp((drawable7 == null || (drawable7 instanceof org.telegram.ui.Components.m5) || !this.l0) ? 0.0f : 2.0f), 0.0f);
                 }
                 canvas.drawRect(i25, 0.0f, this.a0, getMeasuredHeight(), this.W);
                 canvas.restore();
             }
             if (!this.P || (!this.Q && this.R == 0.0f)) {
-                z13 = true;
+                z10 = true;
             } else {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 long j3 = elapsedRealtime - this.S;
@@ -1048,17 +1048,17 @@ public class j5 extends View implements Drawable.Callback {
                 int i47 = this.T;
                 if (i47 > 0) {
                     this.T = (int) (i47 - j3);
-                    z13 = true;
+                    z10 = true;
                 } else {
                     int dp2 = AndroidUtilities.dp(f10) + this.f0;
                     if (this.R < AndroidUtilities.dp(100.0f)) {
-                        b10 = a4.a.e(this.R, AndroidUtilities.dp(100.0f), 20.0f, 30.0f);
-                        z13 = true;
+                        c10 = a4.a.e(this.R, AndroidUtilities.dp(100.0f), 20.0f, 30.0f);
+                        z10 = true;
                     } else {
-                        z13 = true;
-                        b10 = this.R >= ((float) (dp2 - AndroidUtilities.dp(100.0f))) ? rk.b(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f) : 50.0f;
+                        z10 = true;
+                        c10 = this.R >= ((float) (dp2 - AndroidUtilities.dp(100.0f))) ? vl.c(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f) : 50.0f;
                     }
-                    float dp3 = ((j3 / 1000.0f) * AndroidUtilities.dp(b10)) + this.R;
+                    float dp3 = ((j3 / 1000.0f) * AndroidUtilities.dp(c10)) + this.R;
                     this.R = dp3;
                     this.S = elapsedRealtime;
                     if (dp3 > dp2) {
@@ -1069,7 +1069,7 @@ public class j5 extends View implements Drawable.Callback {
                 }
                 invalidate();
             }
-            Emoji.emojiDrawingUseAlpha = z13;
+            Emoji.emojiDrawingUseAlpha = z10;
             if (this.k0 || this.l0 || this.n0 || this.r0 > 0) {
                 canvas.restore();
             }
@@ -1079,13 +1079,13 @@ public class j5 extends View implements Drawable.Callback {
             int intrinsicWidth8 = drawable8.getIntrinsicWidth();
             int intrinsicHeight7 = this.v.getIntrinsicHeight();
             if ((this.n & 112) == 16) {
-                z12 = (getMeasuredHeight() - intrinsicHeight7) / 2;
+                C3 = (getMeasuredHeight() - intrinsicHeight7) / 2;
                 i12 = this.J;
             } else {
-                z12 = hg.k0.z(this.g0, intrinsicHeight7, 2, getPaddingTop());
+                C3 = hg.c.C(this.g0, intrinsicHeight7, 2, getPaddingTop());
                 i12 = this.J;
             }
-            int i48 = z12 + i12;
+            int i48 = C3 + i12;
             this.v.setBounds(0, i48, intrinsicWidth8, intrinsicHeight7 + i48);
             this.v.draw(canvas);
         }
@@ -1096,13 +1096,13 @@ public class j5 extends View implements Drawable.Callback {
             int intrinsicWidth9 = (int) (this.w.getIntrinsicWidth() * this.H);
             int intrinsicHeight8 = (int) (this.w.getIntrinsicHeight() * this.H);
             if ((this.n & 112) == 16) {
-                z11 = (getMeasuredHeight() - intrinsicHeight8) / 2;
+                C2 = (getMeasuredHeight() - intrinsicHeight8) / 2;
                 i11 = this.K;
             } else {
-                z11 = hg.k0.z(this.g0, intrinsicHeight8, 2, getPaddingTop());
+                C2 = hg.c.C(this.g0, intrinsicHeight8, 2, getPaddingTop());
                 i11 = this.K;
             }
-            int i50 = z11 + i11;
+            int i50 = C2 + i11;
             this.w.setBounds(min, i50, min + intrinsicWidth9, i50 + intrinsicHeight8);
             this.h0 = min + (intrinsicWidth9 >> 1);
             this.i0 = i50 + (intrinsicHeight8 >> 1);
@@ -1120,13 +1120,13 @@ public class j5 extends View implements Drawable.Callback {
         int intrinsicWidth10 = (int) (this.x.getIntrinsicWidth() * this.H);
         int intrinsicHeight9 = (int) (this.x.getIntrinsicHeight() * this.H);
         if ((this.n & 112) == 16) {
-            z10 = (getMeasuredHeight() - intrinsicHeight9) / 2;
+            C = (getMeasuredHeight() - intrinsicHeight9) / 2;
             i10 = this.K;
         } else {
-            z10 = hg.k0.z(this.g0, intrinsicHeight9, 2, getPaddingTop());
+            C = hg.c.C(this.g0, intrinsicHeight9, 2, getPaddingTop());
             i10 = this.K;
         }
-        int i52 = z10 + i10;
+        int i52 = C + i10;
         this.x.setBounds(min2, i52, intrinsicWidth10 + min2, intrinsicHeight9 + i52);
         this.x.draw(canvas);
     }
@@ -1171,7 +1171,7 @@ public class j5 extends View implements Drawable.Callback {
         }
         setMeasuredDimension(size, size2);
         if ((this.n & 112) == 16) {
-            this.d0 = hg.k0.z((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.g0, 2, getPaddingTop());
+            this.d0 = hg.c.C((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.g0, 2, getPaddingTop());
         } else {
             this.d0 = getPaddingTop();
         }
@@ -1189,7 +1189,7 @@ public class j5 extends View implements Drawable.Callback {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 Object obj = this.w;
                 if (obj instanceof i5) {
-                    ((k11) ((i5) obj)).f.c(true);
+                    ((l11) ((i5) obj)).f.c(true);
                 }
             } else if (motionEvent.getAction() == 2 && this.E0) {
                 if (Math.abs(motionEvent.getX() - this.F0) >= AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.G0) >= AndroidUtilities.touchSlop) {
@@ -1197,7 +1197,7 @@ public class j5 extends View implements Drawable.Callback {
                     getParent().requestDisallowInterceptTouchEvent(false);
                     Object obj2 = this.w;
                     if (obj2 instanceof i5) {
-                        ((k11) ((i5) obj2)).f.c(false);
+                        ((l11) ((i5) obj2)).f.c(false);
                     }
                 }
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -1205,7 +1205,7 @@ public class j5 extends View implements Drawable.Callback {
                     this.D0.onClick(this);
                     Object obj3 = this.w;
                     if (obj3 instanceof i5) {
-                        ((k11) ((i5) obj3)).f.c(false);
+                        ((l11) ((i5) obj3)).f.c(false);
                     }
                 }
                 this.E0 = false;
@@ -1258,10 +1258,10 @@ public class j5 extends View implements Drawable.Callback {
 
     public void setEmojiCacheType(int i10) {
         if (i10 != this.I0) {
-            org.telegram.ui.Components.y5.release(this, this.H0);
+            org.telegram.ui.Components.x5.release(this, this.H0);
             this.I0 = i10;
             if (this.K0) {
-                this.H0 = org.telegram.ui.Components.y5.update(i10, this, this.H0, this.c);
+                this.H0 = org.telegram.ui.Components.x5.update(i10, this, this.H0, this.c);
             }
         }
     }
@@ -1388,8 +1388,8 @@ public class j5 extends View implements Drawable.Callback {
     }
 
     public void setSideDrawablesColor(int i10) {
-        j6.w1(i10, this.w);
-        j6.w1(i10, this.v);
+        i6.w1(i10, this.w);
+        i6.w1(i10, this.v);
     }
 
     public void setTextColor(int i10) {

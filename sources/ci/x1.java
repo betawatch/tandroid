@@ -2,16 +2,16 @@ package ci;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.iy0;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.jj;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.y51;
-import org.telegram.ui.wp0;
+import org.telegram.ui.Components.vx0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class x1 extends g.p {
     public final /* synthetic */ int c;
@@ -71,19 +71,19 @@ public final class x1 extends g.p {
                 qyVar.B1();
                 return qyVar.R.get(i10);
             case 5:
-                iy0 iy0Var = (iy0) this.d;
-                if ((iy0Var.W == null || !(iy0Var.d.e.get(i10) instanceof Integer)) && i10 != iy0Var.d.h) {
+                vx0 vx0Var = (vx0) this.d;
+                if ((vx0Var.W == null || !(vx0Var.d.e.get(i10) instanceof Integer)) && i10 != vx0Var.d.h) {
                     return 1;
                 }
-                return iy0Var.d.d;
+                return vx0Var.d.d;
             case 6:
-                wp0 wp0Var = (wp0) this.d;
-                if (i10 < wp0Var.b0 || i10 >= wp0Var.c0) {
-                    return (i10 < wp0Var.d0 || i10 >= wp0Var.e0) ? 3 : 1;
+                up0 up0Var = (up0) this.d;
+                if (i10 < up0Var.b0 || i10 >= up0Var.c0) {
+                    return (i10 < up0Var.d0 || i10 >= up0Var.e0) ? 3 : 1;
                 }
                 return 1;
             case 7:
-                y51 G = ((xh.h4) this.d).i0.G(i10 - 1);
+                i51 G = ((xh.g4) this.d).i0.G(i10 - 1);
                 if (G == null || (i11 = G.u) == -1) {
                     return 3;
                 }
@@ -95,7 +95,7 @@ public final class x1 extends g.p {
                 if (n0Var == null || i10 == 0) {
                     return nzVar.J;
                 }
-                y51 G2 = n0Var.G(i10 - 1);
+                i51 G2 = n0Var.G(i10 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? nzVar.J : i12;
         }
     }

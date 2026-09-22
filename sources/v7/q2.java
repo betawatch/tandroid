@@ -1,33 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class q2 implements ia.d {
     public static final q2 a = new q2();
-    public static final ia.c b = new ia.c("durationMs", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("errorCode", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("isColdCall", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(3))));
-    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(4))));
-    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(5))));
-    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(6))));
-    public static final ia.c h = new ia.c("eventsCount", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(7))));
-    public static final ia.c i = new ia.c("otherErrors", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(8))));
-    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(9))));
-    public static final ia.c k = new ia.c("isAccelerated", hg.k0.n(org.telegram.ui.Cells.c1.l(h.class, new e(10))));
+
+    static {
+        org.telegram.ui.Cells.q3.t(org.telegram.ui.Cells.q3.k(h.class, org.telegram.ui.Cells.q3.m(2, org.telegram.ui.Cells.q3.k(h.class, new e(1)))));
+    }
 
     @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        c6 c6Var = (c6) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, c6Var.a);
-        eVar.a(c, c6Var.b);
-        eVar.a(d, c6Var.c);
-        eVar.a(e, null);
-        eVar.a(f, null);
-        eVar.a(g, null);
-        eVar.a(h, null);
-        eVar.a(i, null);
-        eVar.a(j, null);
-        eVar.a(k, null);
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

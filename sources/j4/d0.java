@@ -9,9 +9,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.u8;
+import v7.t8;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -20,7 +20,7 @@ public final class d0 implements c3.o {
     public final e2.v d;
     public final SparseIntArray e;
     public final f f;
-    public final z3.k g;
+    public final z3.l g;
     public final SparseArray h;
     public final SparseBooleanArray i;
     public final SparseBooleanArray j;
@@ -35,11 +35,11 @@ public final class d0 implements c3.o {
     public int s;
     public int t;
 
-    public d0(int i10, int i11, z3.k kVar, e2.b0 b0Var, f fVar) {
+    public d0(int i10, int i11, z3.l lVar, e2.b0 b0Var, f fVar) {
         this.f = fVar;
         this.a = i10;
         this.b = i11;
-        this.g = kVar;
+        this.g = lVar;
         if (i10 == 1 || i10 == 2) {
             this.c = Collections.singletonList(b0Var);
         } else {
@@ -130,7 +130,7 @@ public final class d0 implements c3.o {
                 this.s = 0;
                 return;
             } else {
-                ((g0) sparseArray.valueAt(i11)).d();
+                ((g0) sparseArray.valueAt(i11)).c();
                 i11++;
             }
         }
@@ -200,7 +200,7 @@ public final class d0 implements c3.o {
                             break;
                         }
                         if (vVar.a[i16] == 71) {
-                            long a2 = u8.a(vVar, i16, i15);
+                            long a2 = t8.a(vVar, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j3 = a2;
                                 break;
@@ -242,7 +242,7 @@ public final class d0 implements c3.o {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = u8.a(vVar, i20, i15);
+                                long a10 = t8.a(vVar, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j3 = a10;
                                     break;
@@ -359,7 +359,7 @@ public final class d0 implements c3.o {
                         return r12;
                     }
                     if (i32 != ((i33 + 1) & 15)) {
-                        g0Var.d();
+                        g0Var.c();
                     }
                 }
                 if (z12) {

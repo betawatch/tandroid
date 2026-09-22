@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i30 extends s4.n0 {
     public final /* synthetic */ i60 a;
@@ -17,15 +17,15 @@ public final class i30 extends s4.n0 {
     @Override // s4.n0
     public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
         recyclerView.getClass();
-        int S = RecyclerView.S(view);
-        if (S >= 0) {
+        int R = RecyclerView.R(view);
+        if (R >= 0) {
             rect.setEmpty();
             c60 c60Var = this.a.P;
             int i10 = c60Var.G;
-            if (S < i10 || S >= c60Var.H) {
+            if (R < i10 || R >= c60Var.H) {
                 return;
             }
-            int i11 = S - i10;
+            int i11 = R - i10;
             int i12 = i60.F3 ? 6 : 2;
             int i13 = i11 % i12;
             if (i13 == 0) {

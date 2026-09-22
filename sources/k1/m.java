@@ -1,8 +1,8 @@
 package k1;
 
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class m extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class m extends kd.j implements rd.p {
                 int i10 = this.b;
                 gd.i iVar = gd.i.a;
                 if (i10 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     k kVar = (k) this.c;
                     boolean z10 = kVar instanceof i;
                     a0 a0Var = this.d;
@@ -72,11 +72,11 @@ public final class m extends kd.j implements rd.p {
                         if (!(b0Var instanceof b)) {
                             if (b0Var instanceof h) {
                                 if (b0Var == iVar2.a) {
-                                    obj2 = a0Var.f(this);
+                                    obj2 = a0Var.e(this);
                                     break;
                                 }
                             } else if (kotlin.jvm.internal.i.a(b0Var, c0.a)) {
-                                obj2 = a0Var.f(this);
+                                obj2 = a0Var.e(this);
                                 break;
                             } else if (b0Var instanceof g) {
                                 throw new IllegalStateException("Can't read in final state.");
@@ -88,7 +88,7 @@ public final class m extends kd.j implements rd.p {
                         }
                     } else if (kVar instanceof j) {
                         this.b = 2;
-                        if (a0.b(a0Var, (j) kVar, this) == aVar) {
+                        if (a0.a(a0Var, (j) kVar, this) == aVar) {
                             return aVar;
                         }
                     }
@@ -96,7 +96,7 @@ public final class m extends kd.j implements rd.p {
                     if (i10 != 1 && i10 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 return iVar;
             default:
@@ -108,10 +108,10 @@ public final class m extends kd.j implements rd.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     return gd.i.a;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 ce.c cVar = (ce.c) this.c;
                 b0 b0Var2 = (b0) nVar.c();
                 if (!(b0Var2 instanceof b)) {
@@ -119,7 +119,7 @@ public final class m extends kd.j implements rd.p {
                 }
                 n nVar2 = new n(b0Var2, null, 0);
                 this.b = 1;
-                nVar.u(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar2), this);
+                nVar.H(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar2), this);
                 return aVar2;
         }
     }

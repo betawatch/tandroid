@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -399,9 +399,9 @@ public final class TelegramQRCodeWriter {
                                     int i33 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                                     for (int i34 = 3; i31 < i34; i34 = 3) {
                                         aa.a aVar5 = aVarArr[i31];
-                                        int r10 = aVar5.r((hc.f) aVar5.c);
-                                        if (jc.c.c(r10, fVarArr[i31], cVar3) && r10 < i33) {
-                                            i33 = r10;
+                                        int q6 = aVar5.q((hc.f) aVar5.c);
+                                        if (jc.c.c(q6, fVarArr[i31], cVar3) && q6 < i33) {
+                                            i33 = q6;
                                             i32 = i31;
                                         }
                                         i31++;
@@ -441,10 +441,10 @@ public final class TelegramQRCodeWriter {
                                         i35 = i36;
                                     }
                                     fVar2 = (hc.f) aVar6.c;
-                                    c5.a0 a0Var = fVar2.c[cVar2.ordinal()];
+                                    c5.b0 b0Var = fVar2.c[cVar2.ordinal()];
                                     int i41 = fVar2.d;
-                                    int i42 = a0Var.b;
-                                    b2.q0[] q0VarArr = (b2.q0[]) a0Var.c;
+                                    int i42 = b0Var.b;
+                                    b2.q0[] q0VarArr = (b2.q0[]) b0Var.c;
                                     int i43 = 0;
                                     for (b2.q0 q0Var : q0VarArr) {
                                         i43 += q0Var.a;
@@ -567,7 +567,7 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i72 >= arrayList4.size()) {
-                                            fc.b bVar7 = (fc.b) hg.k0.g(1, arrayList4);
+                                            fc.b bVar7 = (fc.b) hg.c.h(1, arrayList4);
                                             int size2 = arrayList4.size();
                                             fc.b bVar8 = bVar7;
                                             while (size2 <= i72) {
@@ -687,10 +687,10 @@ public final class TelegramQRCodeWriter {
                                         }
                                     }
                                     if (i85 != aVar10.e()) {
-                                        StringBuilder k10 = hg.k0.k(i85, "Interleaving error: ", " and ");
-                                        k10.append(aVar10.e());
-                                        k10.append(" differ.");
-                                        throw new cc.k(k10.toString());
+                                        StringBuilder l4 = hg.c.l(i85, "Interleaving error: ", " and ");
+                                        l4.append(aVar10.e());
+                                        l4.append(" differ.");
+                                        throw new cc.k(l4.toString());
                                     }
                                     int i90 = (fVar5.a * 4) + 17;
                                     jc.b bVar12 = new jc.b(i90, i90);
@@ -1016,10 +1016,10 @@ public final class TelegramQRCodeWriter {
                                 int i252 = i14;
                                 if (!z11) {
                                 }
-                                c5.a0 a0Var2 = fVar2.c[cVar2.ordinal()];
+                                c5.b0 b0Var2 = fVar2.c[cVar2.ordinal()];
                                 int i412 = fVar2.d;
-                                int i422 = a0Var2.b;
-                                b2.q0[] q0VarArr2 = (b2.q0[]) a0Var2.c;
+                                int i422 = b0Var2.b;
+                                b2.q0[] q0VarArr2 = (b2.q0[]) b0Var2.c;
                                 int i432 = 0;
                                 while (r13 < r12) {
                                 }
@@ -1039,10 +1039,10 @@ public final class TelegramQRCodeWriter {
                         int i2522 = i14;
                         if (!z11) {
                         }
-                        c5.a0 a0Var22 = fVar2.c[cVar2.ordinal()];
+                        c5.b0 b0Var22 = fVar2.c[cVar2.ordinal()];
                         int i4122 = fVar2.d;
-                        int i4222 = a0Var22.b;
-                        b2.q0[] q0VarArr22 = (b2.q0[]) a0Var22.c;
+                        int i4222 = b0Var22.b;
+                        b2.q0[] q0VarArr22 = (b2.q0[]) b0Var22.c;
                         int i4322 = 0;
                         while (r13 < r12) {
                         }
@@ -1065,10 +1065,10 @@ public final class TelegramQRCodeWriter {
                 int i25222 = i14;
                 if (!z11) {
                 }
-                c5.a0 a0Var222 = fVar2.c[cVar2.ordinal()];
+                c5.b0 b0Var222 = fVar2.c[cVar2.ordinal()];
                 int i41222 = fVar2.d;
-                int i42222 = a0Var222.b;
-                b2.q0[] q0VarArr222 = (b2.q0[]) a0Var222.c;
+                int i42222 = b0Var222.b;
+                b2.q0[] q0VarArr222 = (b2.q0[]) b0Var222.c;
                 int i43222 = 0;
                 while (r13 < r12) {
                 }
@@ -1095,10 +1095,10 @@ public final class TelegramQRCodeWriter {
         int i252222 = i14;
         if (!z11) {
         }
-        c5.a0 a0Var2222 = fVar2.c[cVar2.ordinal()];
+        c5.b0 b0Var2222 = fVar2.c[cVar2.ordinal()];
         int i412222 = fVar2.d;
-        int i422222 = a0Var2222.b;
-        b2.q0[] q0VarArr2222 = (b2.q0[]) a0Var2222.c;
+        int i422222 = b0Var2222.b;
+        b2.q0[] q0VarArr2222 = (b2.q0[]) b0Var2222.c;
         int i432222 = 0;
         while (r13 < r12) {
         }

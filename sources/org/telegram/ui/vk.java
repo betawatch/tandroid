@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class vk extends pv0 {
     public vk(ViewGroup viewGroup, ViewGroup viewGroup2) {
@@ -17,20 +17,20 @@ public final class vk extends pv0 {
     public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
         if (f7 > 0.0f) {
             View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.u1) {
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+            if (view instanceof org.telegram.ui.Cells.t1) {
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
                 int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, u1Var.getMeasuredHeight() + f11);
+                int min = (int) Math.min(f13, t1Var.getMeasuredHeight() + f11);
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(f10, max, u1Var.getMeasuredWidth() + f10, min);
+                rectF.set(f10, max, t1Var.getMeasuredWidth() + f10, min);
                 canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-                canvas.translate(f10, f11 + u1Var.getPaddingTop());
-                u1Var.Ed = true;
-                u1Var.Y1(canvas);
-                if (u1Var.f4() && u1Var.getCurrentMessagesGroup() == null) {
-                    u1Var.m2(1.0f, canvas, false);
+                canvas.translate(f10, f11 + t1Var.getPaddingTop());
+                t1Var.Ed = true;
+                t1Var.Y1(canvas);
+                if (t1Var.f4() && t1Var.getCurrentMessagesGroup() == null) {
+                    t1Var.m2(1.0f, canvas, false);
                 }
-                u1Var.Ed = false;
+                t1Var.Ed = false;
                 canvas.restore();
             }
         }

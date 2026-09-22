@@ -16,9 +16,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.ph0, org.telegram.ui.Components.ol0, FlagSecureReason.FlagSecureCondition, le.d, z60, org.telegram.ui.Components.uw0 {
+public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, r0.n, org.telegram.ui.Components.ch0, org.telegram.ui.Components.bl0, FlagSecureReason.FlagSecureCondition, le.d, z60, org.telegram.ui.Components.hw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
 
@@ -28,12 +28,12 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
     }
 
     @Override // le.d
-    public void H(int i10, float f7, float f10, le.e eVar) {
+    public void D(int i10, float f7, float f10, le.e eVar) {
         this.b.U4();
     }
 
     @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
         int i10 = l1Var.a.f(519).d;
         ProfileActivity profileActivity = this.b;
         profileActivity.l6 = i10;
@@ -46,22 +46,22 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
                 profileActivity.s5.setLayoutParams(marginLayoutParams);
             }
         }
-        l01 l01Var = profileActivity.O;
-        if (l01Var != null) {
-            l01Var.setPagesPaddingBottom(profileActivity.l6 + profileActivity.j6);
-            org.telegram.ui.Components.bs0 bs0Var = profileActivity.O.V;
-            if (bs0Var != null) {
-                bs0Var.setButtonOffset(profileActivity.l6 + profileActivity.k6);
+        m01 m01Var = profileActivity.O;
+        if (m01Var != null) {
+            m01Var.setPagesPaddingBottom(profileActivity.l6 + profileActivity.j6);
+            org.telegram.ui.Components.nr0 nr0Var = profileActivity.O.V;
+            if (nr0Var != null) {
+                nr0Var.setButtonOffset(profileActivity.l6 + profileActivity.k6);
             }
         }
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.bl0
     public boolean d(int i10, View view) {
         ProfileActivity profileActivity = this.b;
-        j11 j11Var = profileActivity.e;
-        if (j11Var.w || j11Var.v.isEmpty()) {
+        k11 k11Var = profileActivity.e;
+        if (k11Var.w || k11Var.v.isEmpty()) {
             return false;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(profileActivity.getParentActivity(), 0, profileActivity.z0);
@@ -75,41 +75,26 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
         if (textView == null) {
             return true;
         }
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
         return true;
     }
 
-    @Override // org.telegram.ui.z60
-    public void i(int i10, ArrayList arrayList) {
-        TLRPC.ChatParticipants chatParticipants;
-        HashSet hashSet = new HashSet();
-        ArrayList arrayList2 = new ArrayList();
-        ProfileActivity profileActivity = this.b;
-        TLRPC.ChatFull chatFull = profileActivity.u2;
-        if (chatFull != null && (chatParticipants = chatFull.participants) != null && chatParticipants.participants != null) {
-            for (int i11 = 0; i11 < profileActivity.u2.participants.participants.size(); i11++) {
-                hashSet.add(Long.valueOf(profileActivity.u2.participants.participants.get(i11).user_id));
-            }
-        }
-        profileActivity.getMessagesController().addUsersToChat(profileActivity.E2, profileActivity, arrayList, i10, new g3(arrayList2, 5), new g3(profileActivity, 6), new rf0(profileActivity, arrayList2, hashSet, 23));
-    }
-
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
                 profileActivity.getMessagesController().blockPeer(profileActivity.e1);
-                if (org.telegram.ui.Components.xc.a(profileActivity)) {
-                    org.telegram.ui.Components.xc.d(profileActivity, true).j();
+                if (org.telegram.ui.Components.vc.a(profileActivity)) {
+                    org.telegram.ui.Components.vc.d(profileActivity, true).j();
                     break;
                 }
                 break;
             case 5:
-                j11 j11Var = this.b.e;
-                j11Var.v.clear();
+                k11 k11Var = this.b.e;
+                k11Var.v.clear();
                 MessagesController.getGlobalMainSettings().edit().remove("settingsSearchRecent2").commit();
-                j11Var.l();
+                k11Var.l();
                 break;
             default:
                 ProfileActivity profileActivity2 = this.b;
@@ -120,6 +105,21 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
                 profileActivity2.getConnectionsManager().switchBackend(true);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.z60
+    public void j(int i10, ArrayList arrayList) {
+        TLRPC.ChatParticipants chatParticipants;
+        HashSet hashSet = new HashSet();
+        ArrayList arrayList2 = new ArrayList();
+        ProfileActivity profileActivity = this.b;
+        TLRPC.ChatFull chatFull = profileActivity.u2;
+        if (chatFull != null && (chatParticipants = chatFull.participants) != null && chatParticipants.participants != null) {
+            for (int i11 = 0; i11 < profileActivity.u2.participants.participants.size(); i11++) {
+                hashSet.add(Long.valueOf(profileActivity.u2.participants.participants.get(i11).user_id));
+            }
+        }
+        profileActivity.getMessagesController().addUsersToChat(profileActivity.E2, profileActivity, arrayList, i10, new g3(arrayList2, 5), new g3(profileActivity, 6), new pf0(profileActivity, arrayList2, hashSet, 23));
     }
 
     @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
@@ -141,7 +141,7 @@ public final /* synthetic */ class ky0 implements org.telegram.ui.ActionBar.a2, 
     }
 
     @Override // org.telegram.ui.z60
-    public /* synthetic */ void g(TLRPC.User user) {
+    public /* synthetic */ void i(TLRPC.User user) {
     }
 
     @Override // le.d

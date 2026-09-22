@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.fv;
+import org.telegram.ui.ev;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class s extends c0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new fv(1);
+        this.O = new ev(1);
         this.P = new Rect();
         y1(i10);
     }
@@ -119,7 +119,7 @@ public class s extends c0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final View R(View view, int i10, of.e eVar, z0 z0Var) {
-        View G;
+        View F;
         int r10;
         int i11;
         int i12;
@@ -131,13 +131,13 @@ public class s extends c0 {
         z0 z0Var2 = z0Var;
         RecyclerView recyclerView = this.b;
         if (recyclerView != null) {
-            G = recyclerView.G(view);
-            if (G != null) {
+            F = recyclerView.F(view);
+            if (F != null) {
             }
         }
-        G = null;
-        if (G != null) {
-            r rVar = (r) G.getLayoutParams();
+        F = null;
+        if (F != null) {
+            r rVar = (r) F.getLayoutParams();
             int i15 = rVar.e;
             int i16 = rVar.f + i15;
             if (super.R(view, i10, eVar, z0Var) != null) {
@@ -166,13 +166,13 @@ public class s extends c0 {
                     }
                     int t13 = t1(i17, eVar2, z0Var2);
                     View q6 = q(i17);
-                    if (q6 == G) {
+                    if (q6 == F) {
                         break;
                     }
                     if (!q6.hasFocusable() || t13 == t12) {
                         r rVar2 = (r) q6.getLayoutParams();
                         int i22 = rVar2.e;
-                        view3 = G;
+                        view3 = F;
                         int i23 = rVar2.f + i22;
                         if (q6.hasFocusable() && i22 == i15 && i23 == i16) {
                             return q6;
@@ -190,7 +190,7 @@ public class s extends c0 {
                             } else {
                                 if (view4 == null) {
                                     i14 = i19;
-                                    if (!(this.c.J(q6) && this.d.J(q6))) {
+                                    if (!(this.c.v(q6) && this.d.v(q6))) {
                                         if (min <= i21) {
                                             if (min == i21) {
                                             }
@@ -219,13 +219,13 @@ public class s extends c0 {
                         i17 += i12;
                         eVar2 = eVar;
                         z0Var2 = z0Var;
-                        G = view3;
+                        F = view3;
                         r10 = i13;
                     } else {
                         if (view4 != null) {
                             break;
                         }
-                        view3 = G;
+                        view3 = F;
                         i14 = i19;
                         i13 = r10;
                     }
@@ -234,7 +234,7 @@ public class s extends c0 {
                     i17 += i12;
                     eVar2 = eVar;
                     z0Var2 = z0Var;
-                    G = view3;
+                    F = view3;
                     r10 = i13;
                 }
                 return view4 != null ? view4 : view2;
@@ -244,11 +244,11 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+    public void U(of.e eVar, z0 z0Var, View view, s0.c cVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (!(layoutParams instanceof r)) {
-            T(view, dVar);
+            T(view, cVar);
             return;
         }
         r rVar = (r) layoutParams;
@@ -329,7 +329,7 @@ public class s extends c0 {
             int i22 = a0Var.d;
             int v12 = v1(i22, eVar, z0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hg.k0.l("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a4.a.o(this.J, " spans.", hg.c.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = a0Var.c(eVar)) == null) {
@@ -767,7 +767,7 @@ public class s extends c0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(hg.k0.h(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(hg.c.i(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();
@@ -784,7 +784,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new fv(1);
+        this.O = new ev(1);
         this.P = new Rect();
         y1(i10);
     }

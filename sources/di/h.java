@@ -11,40 +11,40 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.wa;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.va;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.za;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bo;
 import org.telegram.ui.mk;
-import org.telegram.ui.zn;
 import s4.j;
-import w7.y5;
+import w7.x5;
 import yh.u5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class h extends ab implements NotificationCenter.NotificationCenterDelegate {
+public final class h extends za implements NotificationCenter.NotificationCenterDelegate {
     public final zf.a X;
     public final d1 Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public m61 b0;
+    public w51 b0;
 
-    public h(Context context, f6 f6Var, zf.a aVar, boolean z10, Runnable runnable) {
-        super(context, null, false, false, f6Var);
+    public h(Context context, e6 e6Var, zf.a aVar, boolean z10, Runnable runnable) {
+        super(context, null, false, false, e6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        yl0 yl0Var = this.d;
+        ll0 ll0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        yl0Var.setPadding(i10, 0, i10, 0);
+        ll0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ai.g(this, 7));
         j jVar = new j();
         jVar.m = false;
@@ -52,10 +52,10 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
         jVar.o(qr.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
-        setBackgroundColor(j6.v0(j6.h5, f6Var));
+        setBackgroundColor(i6.v0(i6.h5, e6Var));
         this.X = aVar;
         final int i12 = 1;
-        d1 d1Var = new d1(context, 1, f6Var);
+        d1 d1Var = new d1(context, 1, e6Var);
         this.Y = d1Var;
         ((TextView) d1Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, zf.a.i(aVar.b - u5.y(this.currentAccount, true).s().b, zf.b.b).d()));
         TextView textView = (TextView) d1Var.d;
@@ -65,7 +65,7 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
         ci.d dVar = new ci.d(getContext(), getResourcesProvider(), true);
-        frameLayout.addView(dVar, y5.t(-1, 48, 17, 20, 10, 20, 20));
+        frameLayout.addView(dVar, x5.t(-1, 48, 17, 20, 10, 20, 20));
         if (z10 || i.B0()) {
             dVar.g(LocaleController.getString(R.string.TopUpViaFragment), false, true);
             dVar.setOnClickListener(new View.OnClickListener(this) { // from class: di.g
@@ -109,9 +109,9 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        m61 m61Var = this.b0;
-        if (m61Var != null) {
-            m61Var.N(false);
+        w51 w51Var = this.b0;
+        if (w51Var != null) {
+            w51Var.N(false);
         }
     }
 
@@ -119,18 +119,18 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            m61 m61Var = this.b0;
-            if (m61Var != null) {
-                m61Var.N(true);
+            w51 w51Var = this.b0;
+            if (w51Var != null) {
+                w51Var.N(true);
             }
             zf.a s10 = u5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             zf.a aVar = this.X;
             textView.setText(LocaleController.formatString(i12, zf.a.i(aVar.b - s10.b, zf.b.b).d()));
-            wa waVar = this.e;
-            if (waVar != null) {
-                waVar.setTitle(y());
+            va vaVar = this.e;
+            if (vaVar != null) {
+                vaVar.setTitle(y());
             }
             if (s10.b < aVar.b || (runnable = this.a0) == null) {
                 return;
@@ -170,10 +170,10 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
             return;
         }
         n2 R = LaunchActivity.R();
-        if (R instanceof zn) {
-            zn znVar = (zn) R;
-            if (znVar.x9() && (mkVar = znVar.Y) != null) {
-                mkVar.P();
+        if (R instanceof bo) {
+            bo boVar = (bo) R;
+            if (boVar.x9() && (mkVar = boVar.Y) != null) {
+                mkVar.Q();
             }
         }
         super.show();
@@ -181,14 +181,14 @@ public final class h extends ab implements NotificationCenter.NotificationCenter
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final xl0 v(yl0 yl0Var) {
-        m61 m61Var = new m61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
-        this.b0 = m61Var;
-        return m61Var;
+    @Override // org.telegram.ui.Components.za
+    public final kl0 v(ll0 ll0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
+        this.b0 = w51Var;
+        return w51Var;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final CharSequence y() {
         d1 d1Var = this.Y;
         if (d1Var == null) {

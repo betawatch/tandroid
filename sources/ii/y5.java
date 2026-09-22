@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class y5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -14,19 +14,30 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void I(CharSequence charSequence) {
+    public final void D(i1 i1Var, int i10, int i11) {
+        a6 a6Var;
+        q9 textSelectionHelper;
+        d6 d6Var = this.a;
+        if (d6Var.n || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        i1Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 6));
+    }
+
+    @Override // ii.h1
+    public final void M(CharSequence charSequence) {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             e3 e3Var = (e3) a6Var;
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            e3Var.a.u4(charSequence.toString());
+            e3Var.a.t4(charSequence.toString());
         }
     }
 
     @Override // ii.h1
-    public final void R(Editable editable) {
+    public final void W(Editable editable) {
         d6 d6Var = this.a;
         if (d6Var.x == null) {
             return;
@@ -59,7 +70,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean V(boolean z10) {
+    public final /* synthetic */ boolean b0(boolean z10) {
         return false;
     }
 
@@ -68,23 +79,23 @@ public final class y5 implements h1 {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             w3 w3Var = ((e3) a6Var).a;
-            w3.N1(w3Var, i1Var);
-            w3Var.h3.x(i1Var, true);
+            w3.M1(w3Var, i1Var);
+            w3Var.h3.t(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean d() {
+    public final boolean f() {
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || d6Var.x == null) {
             return false;
         }
-        return ((e3) a6Var).a.T4();
+        return ((e3) a6Var).a.S4();
     }
 
     @Override // ii.h1
-    public final void i(int i10, int i11) {
+    public final void j(int i10, int i11) {
         h2 h2Var;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
@@ -95,23 +106,23 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void l(i1 i1Var) {
+    public final void m(i1 i1Var) {
         a aVar;
         d6 d6Var = this.a;
         a6 a6Var = d6Var.y;
         if (a6Var == null || (aVar = d6Var.x) == null) {
             return;
         }
-        w3.Q1(((e3) a6Var).a, aVar);
+        w3.P1(((e3) a6Var).a, aVar);
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean o(i1 i1Var) {
+    public final /* synthetic */ boolean q(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final boolean s(i1 i1Var) {
+    public final boolean t(i1 i1Var) {
         d6 d6Var = this.a;
         d6Var.f.r();
         i1 i1Var2 = d6Var.f;
@@ -120,17 +131,6 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void z(i1 i1Var, int i10, int i11) {
-        a6 a6Var;
-        r9 textSelectionHelper;
-        d6 d6Var = this.a;
-        if (d6Var.n || i10 == i11 || (a6Var = d6Var.y) == null || (textSelectionHelper = ((e3) a6Var).a.getTextSelectionHelper()) == null) {
-            return;
-        }
-        i1Var.post(new ei.x4(this, i1Var, i11, textSelectionHelper, i10, 6));
-    }
-
-    @Override // ii.h1
-    public final void v() {
+    public final void x() {
     }
 }

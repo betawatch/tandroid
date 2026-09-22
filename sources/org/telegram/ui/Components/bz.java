@@ -22,9 +22,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class bz extends xl0 {
+public final class bz extends kl0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -40,9 +40,9 @@ public final class bz extends xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
-        return c1Var.a instanceof yl0;
+        return c1Var.a instanceof ll0;
     }
 
     public final int E(Object obj) {
@@ -341,21 +341,21 @@ public final class bz extends xl0 {
         SparseArray sparseArray = this.h;
         if (i12 == 0) {
             TLRPC.Document document = (TLRPC.Document) sparseArray.get(i10);
-            org.telegram.ui.Cells.g8 g8Var = (org.telegram.ui.Cells.g8) view;
-            g8Var.d(document, null, this.n.get(i10), null, false, false);
-            g8Var.setRecent(kzVar.j1.contains(document));
+            org.telegram.ui.Cells.f8 f8Var = (org.telegram.ui.Cells.f8) view;
+            f8Var.d(document, null, this.n.get(i10), null, false, false);
+            f8Var.setRecent(kzVar.j1.contains(document));
             return;
         }
         ArrayList<TLRPC.Document> arrayList = null;
         if (i12 == 1) {
-            org.telegram.ui.Cells.m3 m3Var = (org.telegram.ui.Cells.m3) view;
+            org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) view;
             if (i10 != this.s) {
-                m3Var.setHeight(AndroidUtilities.dp(82.0f));
+                k3Var.setHeight(AndroidUtilities.dp(82.0f));
                 return;
             }
             int i13 = this.r.get(i10 - 1, TLObject.FLAG_31);
             if (i13 == Integer.MIN_VALUE) {
-                m3Var.setHeight(1);
+                k3Var.setHeight(1);
                 return;
             }
             Object obj = this.e.get(i13);
@@ -365,36 +365,36 @@ public final class bz extends xl0 {
                 arrayList = "recent".equals(obj) ? kzVar.j1 : kzVar.k1;
             }
             if (arrayList == null) {
-                m3Var.setHeight(1);
+                k3Var.setHeight(1);
                 return;
             } else if (arrayList.isEmpty()) {
-                m3Var.setHeight(AndroidUtilities.dp(8.0f));
+                k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.rk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), kzVar.h.getHeight());
-                m3Var.setHeight(B > 0 ? B : 1);
+                int A = org.telegram.messenger.vl.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), kzVar.h.getHeight());
+                k3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
         }
         final int i14 = 0;
         if (i12 != 2) {
             if (i12 == 3) {
-                ((org.telegram.ui.Cells.o8) view).setIsLast(i10 == this.s - 1);
+                ((org.telegram.ui.Cells.n8) view).setIsLast(i10 == this.s - 1);
                 return;
             } else {
                 if (i12 != 5) {
                     return;
                 }
-                ((org.telegram.ui.Cells.p8) view).c(LocaleController.getString(MediaDataController.getInstance(i11).loadFeaturedPremium ? R.string.FeaturedStickersPremium : R.string.FeaturedStickers), R.drawable.msg_close, LocaleController.getString(R.string.AccDescrCloseTrendingStickers), 0, 0);
+                ((org.telegram.ui.Cells.o8) view).c(LocaleController.getString(MediaDataController.getInstance(i11).loadFeaturedPremium ? R.string.FeaturedStickersPremium : R.string.FeaturedStickers), R.drawable.msg_close, LocaleController.getString(R.string.AccDescrCloseTrendingStickers), 0, 0);
                 return;
             }
         }
-        org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
-        p8Var.setHeaderOnClick(null);
+        org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
+        o8Var.setHeaderOnClick(null);
         if (i10 == kzVar.f1) {
             int i15 = (kzVar.g1 && kzVar.h1 == null) ? 0 : kzVar.h1 != null ? R.drawable.msg_mini_customize : R.drawable.msg_close;
             TLRPC.Chat chat = kzVar.J1 != null ? MessagesController.getInstance(i11).getChat(Long.valueOf(kzVar.J1.id)) : null;
-            p8Var.b(i15, LocaleController.formatString("CurrentGroupStickers", R.string.CurrentGroupStickers, chat != null ? chat.title : "Group Stickers"));
+            o8Var.b(i15, LocaleController.formatString("CurrentGroupStickers", R.string.CurrentGroupStickers, chat != null ? chat.title : "Group Stickers"));
             return;
         }
         Object obj2 = sparseArray.get(i10);
@@ -402,9 +402,9 @@ public final class bz extends xl0 {
             final TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
             TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
             if (stickerSet != null) {
-                p8Var.b(0, stickerSet.title);
+                o8Var.b(0, stickerSet.title);
                 if (tL_messages_stickerSet.set.creator && !kzVar.M2) {
-                    p8Var.setEdit(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.az
+                    o8Var.setEdit(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.az
                         public final /* synthetic */ bz b;
 
                         {
@@ -424,7 +424,7 @@ public final class bz extends xl0 {
                         }
                     });
                 }
-                p8Var.setHeaderOnClick(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.az
+                o8Var.setHeaderOnClick(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.az
                     public final /* synthetic */ bz b;
 
                     {
@@ -448,11 +448,11 @@ public final class bz extends xl0 {
             return;
         }
         if (obj2 == kzVar.j1) {
-            p8Var.c(LocaleController.getString(R.string.RecentStickers), R.drawable.msg_close, LocaleController.getString(R.string.ClearRecentStickersAlertTitle), 0, 0);
+            o8Var.c(LocaleController.getString(R.string.RecentStickers), R.drawable.msg_close, LocaleController.getString(R.string.ClearRecentStickersAlertTitle), 0, 0);
         } else if (obj2 == kzVar.k1) {
-            p8Var.b(0, LocaleController.getString(R.string.FavoriteStickers));
+            o8Var.b(0, LocaleController.getString(R.string.FavoriteStickers));
         } else if (obj2 == kzVar.l1) {
-            p8Var.b(0, LocaleController.getString(R.string.PremiumStickers));
+            o8Var.b(0, LocaleController.getString(R.string.PremiumStickers));
         }
     }
 
@@ -471,30 +471,30 @@ public final class bz extends xl0 {
                 view = new gg.f2(z11 ? 1 : 0, context, kzVar.Z1, z10 ? 1 : 0);
                 break;
             case 1:
-                view = new org.telegram.ui.Cells.m3(context);
+                view = new org.telegram.ui.Cells.k3(context);
                 break;
             case 2:
-                org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(this.c, false, false, kzVar.Z1, kzVar.i2);
-                p8Var.setOnIconClickListener(new dt(i11, this, p8Var));
-                view = p8Var;
+                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(this.c, false, false, kzVar.Z1, kzVar.i2);
+                o8Var.setOnIconClickListener(new dt(i11, this, o8Var));
+                view = o8Var;
                 break;
             case 3:
-                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(context);
-                o8Var.setOrientation(1);
+                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
+                n8Var.setOrientation(1);
                 TextView textView = new TextView(context);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.We, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.We, false));
                 textView.setTextSize(1, 14.0f);
                 textView.setText(LocaleController.getString(R.string.GroupStickersInfo));
-                o8Var.addView(textView, w7.y5.t(-1, -2, 51, 17, 4, 17, 0));
+                n8Var.addView(textView, w7.x5.t(-1, -2, 51, 17, 4, 17, 0));
                 TextView textView2 = new TextView(context);
-                o8Var.a = textView2;
+                n8Var.a = textView2;
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
                 textView2.setGravity(17);
-                org.telegram.messenger.l0.p(textView2, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false), 1, 14.0f);
-                textView2.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+                org.telegram.messenger.y0.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, 14.0f);
+                textView2.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
-                o8Var.addView(textView2, w7.y5.t(-2, 28, 51, 17, 10, 14, 8));
-                o8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
+                n8Var.addView(textView2, w7.x5.t(-2, 28, 51, 17, 10, 14, 8));
+                n8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
                     public final /* synthetic */ bz b;
 
                     {
@@ -506,9 +506,9 @@ public final class bz extends xl0 {
                         switch (i12) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -527,16 +527,16 @@ public final class bz extends xl0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.zn) {
-                                    ((org.telegram.ui.zn) n2Var).Y9();
+                                if (n2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) n2Var).Y9();
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                o8Var.setLayoutParams(new s4.p0(-1, -2));
-                view = o8Var;
+                n8Var.setLayoutParams(new s4.p0(-1, -2));
+                view = n8Var;
                 break;
             case 4:
                 View view2 = new View(context);
@@ -544,8 +544,8 @@ public final class bz extends xl0 {
                 view = view2;
                 break;
             case 5:
-                org.telegram.ui.Cells.p8 p8Var2 = new org.telegram.ui.Cells.p8(this.c, false, false, kzVar.Z1, kzVar.i2);
-                p8Var2.setOnIconClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
+                org.telegram.ui.Cells.o8 o8Var2 = new org.telegram.ui.Cells.o8(this.c, false, false, kzVar.Z1, kzVar.i2);
+                o8Var2.setOnIconClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
                     public final /* synthetic */ bz b;
 
                     {
@@ -557,9 +557,9 @@ public final class bz extends xl0 {
                         switch (i13) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -578,15 +578,15 @@ public final class bz extends xl0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.zn) {
-                                    ((org.telegram.ui.zn) n2Var).Y9();
+                                if (n2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) n2Var).Y9();
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                view = p8Var2;
+                view = o8Var2;
                 break;
             case 6:
                 iz izVar = new iz(kzVar, false);
@@ -605,9 +605,9 @@ public final class bz extends xl0 {
                 linearLayout.setOrientation(1);
                 linearLayout.setGravity(17);
                 int dp = AndroidUtilities.dp(13.0f);
-                int i14 = org.telegram.ui.ActionBar.j6.Me;
-                linearLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(dp, org.telegram.ui.ActionBar.j6.l1(0.12f, kzVar.z(i14))));
-                w7.a6.b(linearLayout, 0.1f, 1.5f);
+                int i14 = org.telegram.ui.ActionBar.i6.Me;
+                linearLayout.setBackground(org.telegram.ui.ActionBar.i6.b0(dp, org.telegram.ui.ActionBar.i6.l1(0.12f, kzVar.z(i14))));
+                w7.z5.b(linearLayout, 0.1f, 1.5f);
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zy
                     public final /* synthetic */ bz b;
 
@@ -620,9 +620,9 @@ public final class bz extends xl0 {
                         switch (i11) {
                             case 0:
                                 kz kzVar2 = this.b.v;
-                                ly lyVar = kzVar2.t1;
-                                if (lyVar != null) {
-                                    lyVar.y(kzVar2.J1.id);
+                                ky kyVar = kzVar2.t1;
+                                if (kyVar != null) {
+                                    kyVar.y(kzVar2.J1.id);
                                     break;
                                 }
                                 break;
@@ -641,8 +641,8 @@ public final class bz extends xl0 {
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.n2 n2Var = this.b.v.Y1;
-                                if (n2Var instanceof org.telegram.ui.zn) {
-                                    ((org.telegram.ui.zn) n2Var).Y9();
+                                if (n2Var instanceof org.telegram.ui.bo) {
+                                    ((org.telegram.ui.bo) n2Var).Y9();
                                     break;
                                 }
                                 break;
@@ -652,18 +652,18 @@ public final class bz extends xl0 {
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.menu_sticker_add);
                 imageView.setColorFilter(new PorterDuffColorFilter(kzVar.z(i14), PorterDuff.Mode.SRC_IN));
-                linearLayout.addView(imageView, w7.y5.t(24, 24, 17, 0, 0, 0, 0));
+                linearLayout.addView(imageView, w7.x5.t(24, 24, 17, 0, 0, 0, 0));
                 TextView textView3 = new TextView(context);
                 textView3.setGravity(17);
                 textView3.setTextColor(kzVar.z(i14));
                 textView3.setTextSize(1, 11.0f);
                 textView3.setTypeface(AndroidUtilities.bold());
                 textView3.setText(LocaleController.getString(R.string.Create));
-                linearLayout.addView(textView3, w7.y5.t(-1, -2, 17, 0, 3, 0, 0));
-                frameLayout.addView(linearLayout, w7.y5.d(-1, -1.0f, 119, 8.0f, 8.0f, 8.0f, 8.0f));
+                linearLayout.addView(textView3, w7.x5.t(-1, -2, 17, 0, 3, 0, 0));
+                frameLayout.addView(linearLayout, w7.x5.d(-1, -1.0f, 119, 8.0f, 8.0f, 8.0f, 8.0f));
                 view = frameLayout;
                 break;
         }
-        return new il0(view);
+        return new vk0(view);
     }
 }

@@ -13,9 +13,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.fc1;
+import org.telegram.ui.ec1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class qn implements TextWatcher {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class qn implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        s4.c1 U;
+        s4.c1 T;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -38,20 +38,20 @@ public final class qn implements TextWatcher {
                 un unVar = ((sn) obj).d;
                 pn pnVar = (pn) this.c;
                 if (pnVar.getTag() == null) {
-                    s4.c1 L = unVar.s.L(unVar.p0);
-                    if (L != null && unVar.x != null) {
+                    s4.c1 K = unVar.s.K(unVar.p0);
+                    if (K != null && unVar.x != null) {
                         for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan);
                         }
                         Emoji.replaceEmoji(editable, pnVar.getEditField().getPaint().getFontMetricsInt(), false);
                         unVar.x.setDirection(1);
                         unVar.x.setDelegate(pnVar);
-                        unVar.x.setTranslationY(L.a.getY());
+                        unVar.x.setTranslationY(K.a.getY());
                         unVar.x.e();
                     }
                     unVar.P = editable;
-                    if (L != null) {
-                        un.L(unVar, L.a, unVar.p0);
+                    if (K != null) {
+                        un.L(unVar, K.a, unVar.p0);
                     }
                     unVar.T();
                     break;
@@ -59,13 +59,13 @@ public final class qn implements TextWatcher {
                 break;
             case 1:
                 un unVar2 = ((sn) obj).d;
-                fc1 fc1Var = unVar2.s;
+                ec1 ec1Var = unVar2.s;
                 rn rnVar = (rn) this.c;
-                View G = fc1Var.G(rnVar);
-                U = G != null ? fc1Var.U(G) : null;
-                if (U != null) {
-                    View view = U.a;
-                    int b10 = U.b();
+                View F = ec1Var.F(rnVar);
+                T = F != null ? ec1Var.T(F) : null;
+                if (T != null) {
+                    View view = T.a;
+                    int b10 = T.b();
                     int i11 = b10 - unVar2.t0;
                     if (i11 >= 0 && i11 < unVar2.K.length) {
                         if (unVar2.x != null) {
@@ -112,20 +112,20 @@ public final class qn implements TextWatcher {
                 org.telegram.ui.aw0 aw0Var = ((org.telegram.ui.yv0) obj).d;
                 org.telegram.ui.vv0 vv0Var = (org.telegram.ui.vv0) this.c;
                 if (vv0Var.getTag() == null) {
-                    s4.c1 L2 = aw0Var.c.L(aw0Var.i0);
-                    if (L2 != null && aw0Var.Q != null) {
+                    s4.c1 K2 = aw0Var.c.K(aw0Var.i0);
+                    if (K2 != null && aw0Var.Q != null) {
                         for (ImageSpan imageSpan3 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan3);
                         }
                         Emoji.replaceEmoji(editable, vv0Var.getEditField().getPaint().getFontMetricsInt(), false);
                         aw0Var.Q.setDirection(1);
                         aw0Var.Q.setDelegate(vv0Var);
-                        aw0Var.Q.setTranslationY(L2.a.getY());
+                        aw0Var.Q.setTranslationY(K2.a.getY());
                         aw0Var.Q.e();
                     }
                     aw0Var.E = editable;
-                    if (L2 != null) {
-                        org.telegram.ui.aw0.c0(aw0Var, L2.a, aw0Var.i0);
+                    if (K2 != null) {
+                        org.telegram.ui.aw0.c0(aw0Var, K2.a, aw0Var.i0);
                     }
                     aw0Var.i0();
                     break;
@@ -135,20 +135,20 @@ public final class qn implements TextWatcher {
                 org.telegram.ui.aw0 aw0Var2 = ((org.telegram.ui.yv0) obj).d;
                 org.telegram.ui.wv0 wv0Var = (org.telegram.ui.wv0) this.c;
                 if (wv0Var.getTag() == null) {
-                    s4.c1 L3 = aw0Var2.c.L(aw0Var2.i0);
-                    if (L3 != null && aw0Var2.Q != null) {
+                    s4.c1 K3 = aw0Var2.c.K(aw0Var2.i0);
+                    if (K3 != null && aw0Var2.Q != null) {
                         for (ImageSpan imageSpan4 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan4);
                         }
                         Emoji.replaceEmoji(editable, wv0Var.getEditField().getPaint().getFontMetricsInt(), false);
                         aw0Var2.Q.setDirection(1);
                         aw0Var2.Q.setDelegate(wv0Var);
-                        aw0Var2.Q.setTranslationY(L3.a.getY());
+                        aw0Var2.Q.setTranslationY(K3.a.getY());
                         aw0Var2.Q.e();
                     }
                     aw0Var2.F = editable;
-                    if (L3 != null) {
-                        org.telegram.ui.aw0.c0(aw0Var2, L3.a, aw0Var2.j0);
+                    if (K3 != null) {
+                        org.telegram.ui.aw0.c0(aw0Var2, K3.a, aw0Var2.j0);
                     }
                     aw0Var2.i0();
                     break;
@@ -156,13 +156,13 @@ public final class qn implements TextWatcher {
                 break;
             case 6:
                 org.telegram.ui.aw0 aw0Var3 = ((org.telegram.ui.yv0) obj).d;
-                fc1 fc1Var2 = aw0Var3.c;
+                ec1 ec1Var2 = aw0Var3.c;
                 org.telegram.ui.xv0 xv0Var = (org.telegram.ui.xv0) this.c;
-                View G2 = fc1Var2.G(xv0Var);
-                U = G2 != null ? fc1Var2.U(G2) : null;
-                if (U != null) {
-                    View view2 = U.a;
-                    int b11 = U.b() - aw0Var3.n0;
+                View F2 = ec1Var2.F(xv0Var);
+                T = F2 != null ? ec1Var2.T(F2) : null;
+                if (T != null) {
+                    View view2 = T.a;
+                    int b11 = T.b() - aw0Var3.n0;
                     if (b11 >= 0 && b11 < aw0Var3.v.length) {
                         if (aw0Var3.Q != null) {
                             for (ImageSpan imageSpan5 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
@@ -191,7 +191,7 @@ public final class qn implements TextWatcher {
                 pg.v vVar = (pg.v) obj;
                 pg.x xVar = vVar.f;
                 if (!vVar.e && ((String) this.c) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.c).toString(), editable.toString())) {
-                    int b12 = w7.q.b(Integer.parseInt(editable.toString()), 0, 255);
+                    int b12 = w7.p.b(Integer.parseInt(editable.toString()), 0, 255);
                     int i12 = vVar.d;
                     int argb = i12 != 1 ? i12 != 2 ? Color.argb(Color.alpha(xVar.f), b12, Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), Color.green(xVar.f), b12) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), b12, Color.blue(xVar.f));
                     int i13 = pg.x.s;
@@ -201,27 +201,27 @@ public final class qn implements TextWatcher {
                 break;
             case 8:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.h3) obj).Y2.N(true);
+                ((xh.g3) obj).Y2.N(true);
                 break;
             case 9:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.f3) obj).Y2.N(true);
+                ((xh.e3) obj).Y2.N(true);
                 break;
             case 10:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.g3) obj).Y2.N(true);
+                ((xh.f3) obj).Y2.N(true);
                 break;
             case 11:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.c4) obj).Y2.N(true);
+                ((xh.b4) obj).Y2.N(true);
                 break;
             case 12:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.d4) obj).Y2.N(true);
+                ((xh.c4) obj).Y2.N(true);
                 break;
             default:
                 ((String[]) this.c)[0] = editable.toString();
-                ((xh.e4) obj).Y2.N(true);
+                ((xh.d4) obj).Y2.N(true);
                 break;
         }
     }
@@ -231,7 +231,7 @@ public final class qn implements TextWatcher {
         switch (this.a) {
             case 2:
                 EditText editText = (EditText) this.c;
-                editText.post(new org.telegram.ui.vq(this, editText, (AtomicReference) this.b, 25));
+                editText.post(new org.telegram.ui.xq(this, editText, (AtomicReference) this.b, 25));
                 break;
             case 7:
                 this.c = charSequence.toString();

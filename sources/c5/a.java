@@ -1,48 +1,67 @@
 package c5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.content.Context;
+import android.util.Log;
+import java.io.IOException;
+import java.io.InputStream;
+import n7.a1;
+import org.telegram.ui.Cells.q3;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
-    public final /* synthetic */ int a;
+    public String a;
     public String b;
-    public String c;
 
-    public /* synthetic */ a() {
-        this.a = 1;
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    public q a() {
-        if ("first_party".equals(this.c)) {
+    public r a() {
+        if ("first_party".equals(this.b)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
-        if (this.b == null) {
+        if (this.a == null) {
             throw new IllegalArgumentException("Product id must be provided.");
         }
-        if (this.c != null) {
-            return new q(this);
+        if (this.b != null) {
+            return new r(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 3:
-                return this.b + ", " + this.c;
-            default:
-                return super.toString();
+    public a(a1 a1Var) {
+        Context context = (Context) a1Var.b;
+        int e = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e != 0) {
+            this.a = "Unity";
+            String string = context.getResources().getString(e);
+            this.b = string;
+            String i10 = q3.i("Unity Editor version is: ", string);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", i10, null);
+                return;
+            }
+            return;
         }
-    }
-
-    public /* synthetic */ a(int i10, String str, String str2) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-    }
-
-    public a(String str, String str2) {
-        this.a = 4;
-        n6.l.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
-        this.b = str;
-        this.c = (str2 == null || str2.length() <= 0) ? null : str2;
+        if (context.getAssets() != null) {
+            try {
+                InputStream open = context.getAssets().open("flutter_assets/NOTICES.Z");
+                if (open != null) {
+                    open.close();
+                }
+                this.a = "Flutter";
+                this.b = null;
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
+                    return;
+                }
+                return;
+            } catch (IOException unused) {
+            }
+        }
+        this.a = null;
+        this.b = null;
     }
 }

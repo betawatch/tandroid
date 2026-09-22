@@ -15,60 +15,60 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.f9;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.v9;
-import w7.y5;
+import org.telegram.ui.Components.u9;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
-    public final f6 a;
-    public final g9 b;
-    public final v9 c;
+    public final e6 a;
+    public final f9 b;
+    public final u9 c;
     public final a6 d;
     public final j5 e;
     public final RadioButton f;
     public final Paint h;
     public boolean n;
 
-    public c(Context context, f6 f6Var) {
+    public c(Context context, e6 e6Var) {
         super(context);
-        g9 g9Var = new g9((f6) null);
-        this.b = g9Var;
+        f9 f9Var = new f9((e6) null);
+        this.b = f9Var;
         this.h = new Paint(1);
-        this.a = f6Var;
+        this.a = e6Var;
         View view = new View(context);
-        addView(view, y5.n(-1, -1));
-        view.setBackgroundColor(j6.v0(j6.h5, f6Var));
-        g9Var.r = AndroidUtilities.dp(40.0f);
-        v9 v9Var = new v9(context);
-        this.c = v9Var;
-        v9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(v9Var);
+        addView(view, x5.n(-1, -1));
+        view.setBackgroundColor(i6.v0(i6.h5, e6Var));
+        f9Var.r = AndroidUtilities.dp(40.0f);
+        u9 u9Var = new u9(context);
+        this.c = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(u9Var);
         a6 a6Var = new a6(context, 5);
         this.d = a6Var;
         NotificationCenter.listenEmojiLoading(a6Var);
-        NotificationCenter.listenEmojiLoading(v9Var);
+        NotificationCenter.listenEmojiLoading(u9Var);
         a6Var.setTextSize(16);
-        int i10 = j6.j5;
-        a6Var.setTextColor(j6.v0(i10, f6Var));
+        int i10 = i6.j5;
+        a6Var.setTextColor(i6.v0(i10, e6Var));
         a6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(a6Var);
         j5 j5Var = new j5(context);
         this.e = j5Var;
         j5Var.setTextSize(14);
-        j5Var.setTextColor(j6.v0(i10, f6Var));
+        j5Var.setTextColor(i6.v0(i10, e6Var));
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(j5Var);
         RadioButton radioButton = new RadioButton(context);
         this.f = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(j6.v0(j6.j7, f6Var), j6.v0(j6.E5, f6Var));
+        radioButton.b(i6.v0(i6.j7, e6Var), i6.v0(i6.E5, e6Var));
         addView(radioButton);
         d();
         if (b()) {
@@ -95,7 +95,7 @@ public abstract class c extends FrameLayout {
         float f10;
         float f11;
         float f12;
-        this.c.setLayoutParams(y5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
+        this.c.setLayoutParams(x5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
         boolean z10 = LocaleController.isRTL;
         int i10 = (z10 ? 5 : 3) | 16;
         if (z10) {
@@ -108,7 +108,7 @@ public abstract class c extends FrameLayout {
         } else {
             f10 = 20.0f;
         }
-        this.d.setLayoutParams(y5.d(-1, -2.0f, i10, f7, 0.0f, f10, 0.0f));
+        this.d.setLayoutParams(x5.d(-1, -2.0f, i10, f7, 0.0f, f10, 0.0f));
         boolean z11 = LocaleController.isRTL;
         int i11 = (z11 ? 5 : 3) | 16;
         if (z11) {
@@ -121,16 +121,16 @@ public abstract class c extends FrameLayout {
         } else {
             f12 = 20.0f;
         }
-        this.e.setLayoutParams(y5.d(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
+        this.e.setLayoutParams(x5.d(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(y5.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
+        this.f.setLayoutParams(x5.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.n) {
-            int v02 = j6.v0(j6.d7, this.a);
+            int v02 = i6.v0(i6.d7, this.a);
             Paint paint = this.h;
             paint.setColor(v02);
             int i10 = b() ? 105 : 70;

@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class i0 extends nf.e {
     public final /* synthetic */ int d = 0;
@@ -12,10 +12,10 @@ public final class i0 extends nf.e {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public i0(h4 h4Var, a3 a3Var, org.telegram.ui.Components.o90 o90Var) {
+    public i0(h4 h4Var, a3 a3Var, org.telegram.ui.Components.d90 d90Var) {
         this.e = h4Var;
         this.f = a3Var;
-        this.g = o90Var;
+        this.g = d90Var;
     }
 
     @Override // nf.e
@@ -41,7 +41,7 @@ public final class i0 extends nf.e {
         switch (this.d) {
             case 1:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ak(((ln) this.g).a, 9), 250L);
+                    AndroidUtilities.runOnUIThread(new ak(((nn) this.g).a, 9), 250L);
                     break;
                 }
                 break;
@@ -55,18 +55,18 @@ public final class i0 extends nf.e {
     public final void d() {
         switch (this.d) {
             case 0:
-                org.telegram.ui.Components.o90 o90Var = (org.telegram.ui.Components.o90) this.g;
+                org.telegram.ui.Components.d90 d90Var = (org.telegram.ui.Components.d90) this.g;
                 h4 h4Var = (h4) this.e;
-                org.telegram.ui.Components.k90 k90Var = h4Var.c;
+                org.telegram.ui.Components.z80 z80Var = h4Var.c;
                 a3 a3Var = (a3) this.f;
                 h4Var.s = a3Var != null ? a3Var.b : null;
-                k90Var.l(h4Var.v, true);
+                z80Var.l(h4Var.v, true);
                 if (a3Var != null) {
-                    h4Var.v = org.telegram.ui.Components.k90.i(a3Var.d, o90Var.i, 0.0f);
-                    int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ld, false);
-                    h4Var.v.f(org.telegram.ui.ActionBar.j6.l1(0.8f, w02), org.telegram.ui.ActionBar.j6.l1(1.3f, w02), org.telegram.ui.ActionBar.j6.l1(1.0f, w02), org.telegram.ui.ActionBar.j6.l1(4.0f, w02));
+                    h4Var.v = org.telegram.ui.Components.z80.i(a3Var.d, d90Var.i, 0.0f);
+                    int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ld, false);
+                    h4Var.v.f(org.telegram.ui.ActionBar.i6.l1(0.8f, w02), org.telegram.ui.ActionBar.i6.l1(1.3f, w02), org.telegram.ui.ActionBar.i6.l1(1.0f, w02), org.telegram.ui.ActionBar.i6.l1(4.0f, w02));
                     h4Var.v.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                    k90Var.b(h4Var.v, a3Var);
+                    z80Var.b(h4Var.v, a3Var);
                 }
                 View view = h4Var.s;
                 if (view != null) {
@@ -75,19 +75,19 @@ public final class i0 extends nf.e {
                 super.d();
                 break;
             default:
-                ln lnVar = (ln) this.g;
-                lnVar.a.vb = ((MessageObject) this.e).getId();
-                zn znVar = lnVar.a;
-                znVar.wb = 0;
-                znVar.xb = null;
-                ((org.telegram.ui.Cells.u1) this.f).invalidate();
+                nn nnVar = (nn) this.g;
+                nnVar.a.vb = ((MessageObject) this.e).getId();
+                bo boVar = nnVar.a;
+                boVar.wb = 0;
+                boVar.xb = null;
+                ((org.telegram.ui.Cells.t1) this.f).invalidate();
                 break;
         }
     }
 
-    public i0(ln lnVar, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var) {
-        this.g = lnVar;
+    public i0(nn nnVar, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var) {
+        this.g = nnVar;
         this.e = messageObject;
-        this.f = u1Var;
+        this.f = t1Var;
     }
 }

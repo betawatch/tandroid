@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.j0;
-import z3.d;
-import z3.l;
+import w.c;
+import z3.e;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class a implements m {
+public final class a implements n {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
     public static final Pattern e = Pattern.compile("\\{\\\\.*?\\}");
     public final StringBuilder a = new StringBuilder();
@@ -208,17 +208,17 @@ public final class a implements m {
         return parseLong3 * 1000;
     }
 
-    @Override // z3.m
-    public final int K() {
+    @Override // z3.n
+    public final int A() {
         return 1;
     }
 
-    @Override // z3.m
-    public final void M(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    @Override // z3.n
+    public final void B(byte[] bArr, int i10, int i11, m mVar, h hVar) {
         String k10;
         String str;
         a aVar = this;
-        long j3 = lVar.a;
+        long j3 = mVar.a;
         v vVar = aVar.c;
         vVar.H(i10 + i11, bArr);
         vVar.J(i10);
@@ -227,7 +227,7 @@ public final class a implements m {
             F = StandardCharsets.UTF_8;
         }
         long j10 = -9223372036854775807L;
-        ArrayList arrayList = (j3 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
+        ArrayList arrayList = (j3 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
         while (true) {
             String k11 = vVar.k(F);
             if (k11 == null) {
@@ -292,9 +292,9 @@ public final class a implements m {
                         }
                     }
                     if (j12 == j13 || b11 >= j12) {
-                        hVar.accept(new z3.a(b10, b11 - b10, i0.z(a(fromHtml, str))));
+                        hVar.accept(new z3.b(b10, b11 - b10, i0.z(a(fromHtml, str))));
                     } else if (arrayList != null) {
-                        arrayList.add(new z3.a(b10, b11 - b10, i0.z(a(fromHtml, str))));
+                        arrayList.add(new z3.b(b10, b11 - b10, i0.z(a(fromHtml, str))));
                     }
                     aVar = this;
                     j10 = j13;
@@ -311,17 +311,17 @@ public final class a implements m {
             while (i14 < size) {
                 Object obj = arrayList.get(i14);
                 i14++;
-                hVar.accept((z3.a) obj);
+                hVar.accept((z3.b) obj);
             }
         }
     }
 
-    @Override // z3.m
-    public final /* synthetic */ d u(int i10, int i11, byte[] bArr) {
-        return j0.a(this, bArr, i11);
+    @Override // z3.n
+    public final /* synthetic */ e r(int i10, int i11, byte[] bArr) {
+        return c.a(this, bArr, i11);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final /* synthetic */ void reset() {
     }
 }

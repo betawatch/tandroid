@@ -1,29 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AccountInstance;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a80 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class a80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AccountInstance b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ g80 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ a80(AccountInstance accountInstance, int i10, int i11) {
-        this.a = i11;
-        this.b = accountInstance;
-        this.c = i10;
+    public /* synthetic */ a80(g80 g80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i10) {
+        this.a = i10;
+        this.b = g80Var;
+        this.c = tL_chatInviteJoinResultWebView;
+        this.d = j3;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                g80.p(this.b, this.c, this.d);
                 break;
             default:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                g80.o(this.b, this.c, this.d);
                 break;
         }
     }

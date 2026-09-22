@@ -1,31 +1,24 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ck0 b;
-    public final /* synthetic */ TLObject c;
+public final class tj0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ fk0 b;
 
-    public /* synthetic */ tj0(ck0 ck0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = ck0Var;
-        this.c = tLObject;
+    public tj0(fk0 fk0Var, float f7) {
+        this.b = fk0Var;
+        this.a = f7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ck0 ck0Var = this.b;
-                NotificationCenter.getInstance(ck0Var.b).doOnIdle(new tj0(ck0Var, this.c, 1));
-                break;
-            default:
-                ck0.a(this.b, this.c);
-                break;
-        }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        fk0 fk0Var = this.b;
+        fk0Var.o0 = floatValue;
+        fk0Var.n0 = (1.0f - fk0Var.o0) * this.a;
+        fk0Var.invalidate();
     }
 }

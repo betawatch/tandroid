@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class y20 extends AnimatorListenerAdapter {
     public final /* synthetic */ View a;
@@ -17,13 +17,13 @@ public final class y20 extends AnimatorListenerAdapter {
     public final /* synthetic */ View e;
     public final /* synthetic */ z20 f;
 
-    public y20(z20 z20Var, x20 x20Var, ai.f0 f0Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.v7 v7Var) {
+    public y20(z20 z20Var, x20 x20Var, ai.f0 f0Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.u7 u7Var) {
         this.f = z20Var;
         this.a = x20Var;
         this.b = f0Var;
         this.c = windowManager;
         this.d = frameLayout;
-        this.e = v7Var;
+        this.e = u7Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

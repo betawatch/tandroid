@@ -1,95 +1,51 @@
 package ni;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import l.d;
-import org.telegram.tgnet.SerializedData;
+import android.text.TextUtils;
+import java.net.IDN;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class a {
-    public static SparseIntArray b;
-    public static final a c = new a();
-    public final SparseArray a;
+    public int a;
+    public String b;
+    public int c;
+    public String d;
+    public String e;
+    public String f;
 
-    public a() {
-        this.a = new SparseArray();
-    }
-
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
+    public final b a() {
+        if (this.a == 3) {
+            String str = this.b;
+            if (TextUtils.isEmpty(str)) {
+                str = "";
             } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
-        }
-    }
-
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String c(Context context, String str, int i10) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i10 == 0) {
-            return b10;
-        }
-        if (context != null && i10 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                int indexOf = str.indexOf(47);
+                String substring = indexOf >= 0 ? str.substring(0, indexOf) : str;
+                String substring2 = indexOf >= 0 ? str.substring(indexOf + 1) : null;
+                if (!TextUtils.isEmpty(substring) && substring.indexOf(58) < 0 && substring.indexOf(63) < 0 && substring.indexOf(35) < 0 && (substring2 == null || (substring2.length() <= 128 && b.g.matcher(substring2).matches()))) {
                     try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i11 = 0; i11 < readInt32; i11++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        String lowerCase = IDN.toASCII(substring, 3).toLowerCase(Locale.US);
+                        if (substring2 == null) {
+                            str = lowerCase;
+                        } else {
+                            str = lowerCase + '/' + substring2;
                         }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
+                    } catch (IllegalArgumentException unused) {
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
             }
-            int i12 = b.get(i10);
-            if (i12 != 0) {
-                return (String) this.a.get(i12);
+            this.b = str;
+            if (str == null || str.indexOf(47) < 0) {
+                this.f = this.f.toLowerCase(Locale.US);
+            } else {
+                String b10 = b.b(this.f);
+                if (b10 == null) {
+                    b10 = this.f.toLowerCase(Locale.US);
+                }
+                this.f = b10;
             }
         }
-        return null;
-    }
-
-    public a(d dVar) {
-        SparseArray sparseArray = (SparseArray) dVar.b;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+        return new b(this);
     }
 }

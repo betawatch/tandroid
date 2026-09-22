@@ -1,83 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import java.util.List;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class v7 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class v7 implements MessagesStorage.BooleanCallback {
+    public final /* synthetic */ h8 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.c = notificationCenterDelegate;
-        this.b = -1;
+    public v7(h8 h8Var) {
+        this.a = h8Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
-                if (this.b != measuredWidth) {
-                    this.b = measuredWidth;
-                    ((i8) this.c).L.l();
-                    break;
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public final void run(boolean z10) {
+        org.telegram.ui.ActionBar.d5 d5Var;
+        org.telegram.ui.ActionBar.d5 d5Var2;
+        org.telegram.ui.ActionBar.d5 d5Var3;
+        org.telegram.ui.ActionBar.d5 d5Var4;
+        h8 h8Var = this.a;
+        h8Var.finishFragment();
+        d5Var = ((org.telegram.ui.ActionBar.n2) h8Var).parentLayout;
+        if (d5Var != null) {
+            d5Var2 = ((org.telegram.ui.ActionBar.n2) h8Var).parentLayout;
+            if (d5Var2.getFragmentStack().size() >= 2) {
+                d5Var3 = ((org.telegram.ui.ActionBar.n2) h8Var).parentLayout;
+                List fragmentStack = d5Var3.getFragmentStack();
+                d5Var4 = ((org.telegram.ui.ActionBar.n2) h8Var).parentLayout;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(d5Var4.getFragmentStack().size() - 2);
+                if (n2Var instanceof bo) {
+                    ((bo) n2Var).S7(h8Var.P, h8Var.Q + 86400, z10);
+                    return;
                 }
-                break;
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int i14 = i13 - i11;
-                int i15 = this.b;
-                if (i15 != -1 && Math.abs(i15 - i14) > AndroidUtilities.dp(20.0f)) {
-                    ((nq) this.c).b.y0(r3.V - 1);
-                }
-                this.b = i14;
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                Point point = AndroidUtilities.displaySize;
-                int i16 = point.x + point.y;
-                int i17 = this.b;
-                if (i17 > 0 && i17 != i16) {
-                    setVisibility(8);
-                    org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) this.c;
-                    z20Var.w = false;
-                    z20Var.a();
-                }
-                this.b = i16;
-                break;
+                return;
+            }
         }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i10);
-                if (i10 == 8) {
-                    this.b = -1;
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
+        bo boVar = h8Var.N;
+        if (boVar != null) {
+            boVar.S7(h8Var.P, h8Var.Q + 86400, z10);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v7(i8 i8Var, Context context) {
-        super(context);
-        this.a = 0;
-        this.c = i8Var;
     }
 }

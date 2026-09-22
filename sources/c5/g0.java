@@ -1,255 +1,187 @@
 package c5;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Build;
-import android.os.Bundle;
-import com.android.billingclient.api.Purchase;
-import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.h3;
-import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.m3;
-import com.google.android.gms.internal.play_billing.o1;
-import com.google.android.gms.internal.play_billing.o3;
-import com.google.android.gms.internal.play_billing.p3;
-import com.google.android.gms.internal.play_billing.q2;
-import com.google.android.gms.internal.play_billing.s1;
-import com.google.android.gms.internal.play_billing.t3;
-import com.google.android.gms.internal.play_billing.v3;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class g0 extends BroadcastReceiver {
-    public boolean a;
-    public final boolean b;
-    public final /* synthetic */ g c;
+public abstract class g0 {
+    public static final h a;
+    public static final h b;
+    public static final h c;
+    public static final h d;
+    public static final h e;
+    public static final h f;
+    public static final h g;
+    public static final h h;
+    public static final h i;
+    public static final h j;
+    public static final h k;
+    public static final h l;
+    public static final h m;
+    public static final h n;
+    public static final h o;
+    public static final h p;
 
-    public g0(g gVar, boolean z10) {
-        this.c = gVar;
-        this.b = z10;
+    static {
+        c3.a a2 = h.a();
+        a2.b = 3;
+        a2.a = "Google Play In-app Billing API version is less than 3";
+        a2.a();
+        c3.a a10 = h.a();
+        a10.b = 3;
+        a10.a = "Google Play In-app Billing API version is less than 9";
+        a10.a();
+        c3.a a11 = h.a();
+        a11.b = 3;
+        a11.a = "Billing service unavailable on device.";
+        a = a11.a();
+        c3.a a12 = h.a();
+        a12.b = 2;
+        a12.a = "Billing service unavailable on device.";
+        b = a12.a();
+        c3.a a13 = h.a();
+        a13.b = 5;
+        a13.a = "Client is already in the process of connecting to billing service.";
+        c = a13.a();
+        c3.a a14 = h.a();
+        a14.b = 5;
+        a14.a = "The list of SKUs can't be empty.";
+        a14.a();
+        c3.a a15 = h.a();
+        a15.b = 5;
+        a15.a = "SKU type can't be empty.";
+        a15.a();
+        c3.a a16 = h.a();
+        a16.b = 5;
+        a16.a = "Product type can't be empty.";
+        d = a16.a();
+        c3.a a17 = h.a();
+        a17.b = -2;
+        a17.a = "Client does not support extra params.";
+        e = a17.a();
+        c3.a a18 = h.a();
+        a18.b = 5;
+        a18.a = "Invalid purchase token.";
+        a18.a();
+        c3.a a19 = h.a();
+        a19.b = 6;
+        a19.a = "An internal error occurred.";
+        f = a19.a();
+        c3.a a20 = h.a();
+        a20.b = 5;
+        a20.a = "SKU can't be null.";
+        a20.a();
+        c3.a a21 = h.a();
+        a21.b = 0;
+        g = a21.a();
+        c3.a a22 = h.a();
+        a22.b = -1;
+        a22.a = "Service connection is disconnected.";
+        h = a22.a();
+        c3.a a23 = h.a();
+        a23.b = 2;
+        a23.a = "Timeout communicating with service.";
+        i = a23.a();
+        c3.a a24 = h.a();
+        a24.b = -2;
+        a24.a = "Client does not support subscriptions.";
+        j = a24.a();
+        c3.a a25 = h.a();
+        a25.b = -2;
+        a25.a = "Client does not support subscriptions update.";
+        a25.a();
+        c3.a a26 = h.a();
+        a26.b = -2;
+        a26.a = "Client does not support get purchase history.";
+        a26.a();
+        c3.a a27 = h.a();
+        a27.b = -2;
+        a27.a = "Client does not support price change confirmation.";
+        a27.a();
+        c3.a a28 = h.a();
+        a28.b = -2;
+        a28.a = "Play Store version installed does not support cross selling products.";
+        a28.a();
+        c3.a a29 = h.a();
+        a29.b = -2;
+        a29.a = "Client does not support multi-item purchases.";
+        k = a29.a();
+        c3.a a30 = h.a();
+        a30.b = -2;
+        a30.a = "Client does not support offer_id_token.";
+        l = a30.a();
+        c3.a a31 = h.a();
+        a31.b = -2;
+        a31.a = "Client does not support ProductDetails.";
+        m = a31.a();
+        c3.a a32 = h.a();
+        a32.b = -2;
+        a32.a = "Client does not support in-app messages.";
+        a32.a();
+        c3.a a33 = h.a();
+        a33.b = -2;
+        a33.a = "Client does not support user choice billing.";
+        a33.a();
+        c3.a a34 = h.a();
+        a34.b = -2;
+        a34.a = "Play Store version installed does not support external offer.";
+        a34.a();
+        c3.a a35 = h.a();
+        a35.b = -2;
+        a35.a = "Play Store version installed does not support multi-item purchases with season pass in one cart.";
+        a35.a();
+        c3.a a36 = h.a();
+        a36.b = -2;
+        a36.a = "Play Store version installed does not support querying AutoPay plan purchase.";
+        a36.a();
+        c3.a a37 = h.a();
+        a37.b = -2;
+        a37.a = "Play Store version installed does not support including suspended subscriptions.";
+        a37.a();
+        c3.a a38 = h.a();
+        a38.b = 5;
+        a38.a = "Unknown feature";
+        a38.a();
+        c3.a a39 = h.a();
+        a39.b = -2;
+        a39.a = "Play Store version installed does not support get billing config.";
+        a39.a();
+        c3.a a40 = h.a();
+        a40.b = -2;
+        a40.a = "Query product details with serialized docid is not supported.";
+        a40.a();
+        c3.a a41 = h.a();
+        a41.b = -2;
+        a41.a = "Play Store version installed does not support launching external offer flow.";
+        a41.a();
+        c3.a a42 = h.a();
+        a42.b = 4;
+        a42.a = "Item is unavailable for purchase.";
+        n = a42.a();
+        c3.a a43 = h.a();
+        a43.b = -2;
+        a43.a = "Query product details with developer specified account is not supported.";
+        a43.a();
+        c3.a a44 = h.a();
+        a44.b = -2;
+        a44.a = "Play Store version installed does not support alternative billing only.";
+        a44.a();
+        c3.a a45 = h.a();
+        a45.b = 5;
+        a45.a = "To use this API you must specify a PurchasesUpdateListener when initializing a BillingClient.";
+        o = a45.a();
+        c3.a a46 = h.a();
+        a46.b = 6;
+        a46.a = "An error occurred while retrieving billing override.";
+        p = a46.a();
+        c3.a a47 = h.a();
+        a47.b = -2;
+        a47.a = "Play Store version installed does not support the provided billing program.";
+        a47.a();
     }
 
-    public final synchronized void a(Context context, IntentFilter intentFilter) {
-        try {
-            if (this.a) {
-                return;
-            }
-            if (Build.VERSION.SDK_INT >= 33) {
-                context.registerReceiver(this, intentFilter, true != this.b ? 4 : 2);
-            } else {
-                context.registerReceiver(this, intentFilter);
-            }
-            this.a = true;
-        } catch (Throwable th2) {
-            throw th2;
-        }
-    }
-
-    public final synchronized void b(Context context, IntentFilter intentFilter) {
-        g0 g0Var;
-        try {
-            try {
-                if (this.a) {
-                    return;
-                }
-                if (Build.VERSION.SDK_INT >= 33) {
-                    g0Var = this;
-                    context.registerReceiver(g0Var, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null, true != this.b ? 4 : 2);
-                } else {
-                    g0Var = this;
-                    context.registerReceiver(this, intentFilter, "com.google.android.finsky.permission.PLAY_BILLING_LIBRARY_BROADCAST", null);
-                }
-                g0Var.a = true;
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            throw th;
-        }
-    }
-
-    public final void c(Bundle bundle, h hVar, int i10, m3 m3Var, long j3, boolean z10) {
-        o1 d;
-        try {
-            if (bundle.getByteArray("FAILURE_LOGGING_PAYLOAD") == null) {
-                ((of.b) ((e0) this.c.d)).d0(d0.b(23, i10, hVar, null, m3Var), j3, z10);
-                return;
-            }
-            e0 e0Var = (e0) this.c.d;
-            byte[] byteArray = bundle.getByteArray("FAILURE_LOGGING_PAYLOAD");
-            int i11 = o1.a;
-            synchronized (o1.class) {
-                int i12 = o1.a;
-                q2 q2Var = q2.c;
-                d = s1.d();
-                int i13 = o1.a;
-            }
-            ((of.b) e0Var).d0(g3.n(byteArray, d), j3, z10);
-        } catch (Throwable unused) {
-            com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Failed parsing Api failure.");
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0237  */
-    @Override // android.content.BroadcastReceiver
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onReceive(Context context, Intent intent) {
-        m3 m3Var;
-        h e;
-        long j3;
-        ArrayList arrayList;
-        h hVar;
-        p3 p3Var;
-        int intValue;
-        String action = intent.getAction();
-        int hashCode = action.hashCode();
-        m3 m3Var2 = m3.d;
-        m3 m3Var3 = m3.c;
-        m3 m3Var4 = m3.e;
-        if (hashCode == -1484087650) {
-            if (action.equals("com.android.vending.billing.PURCHASES_UPDATED")) {
-                m3Var = m3Var3;
-            }
-            m3Var = m3.b;
-        } else if (hashCode != -337612916) {
-            if (hashCode == 345207161 && action.equals("com.android.vending.billing.ALTERNATIVE_BILLING")) {
-                m3Var = m3Var4;
-            }
-            m3Var = m3.b;
-        } else {
-            if (action.equals("com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED")) {
-                m3Var = m3Var2;
-            }
-            m3Var = m3.b;
-        }
-        int i10 = (m3Var.equals(m3Var2) || m3Var.equals(m3Var4)) ? 2 : m3Var.equals(m3Var3) ? 32 : 1;
-        Bundle extras = intent.getExtras();
-        g gVar = this.c;
-        if (extras == null) {
-            com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Bundle is null.");
-            e0 e0Var = (e0) gVar.d;
-            h hVar2 = f0.f;
-            ((of.b) e0Var).a0(d0.b(11, i10, hVar2, null, m3Var));
-            p pVar = (p) gVar.c;
-            if (pVar != null) {
-                pVar.onPurchasesUpdated(hVar2, null);
-                return;
-            }
-            return;
-        }
-        if (i10 == 2) {
-            int i11 = com.google.android.gms.internal.play_billing.u.a;
-            c3.a a2 = h.a();
-            a2.b = com.google.android.gms.internal.play_billing.u.a("BillingBroadcastManager", intent.getExtras());
-            Bundle extras2 = intent.getExtras();
-            if (extras2 == null) {
-                com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Unexpected null bundle received!");
-            } else {
-                Object obj = extras2.get("SUB_RESPONSE_CODE");
-                if (obj == null) {
-                    com.google.android.gms.internal.play_billing.u.g("BillingBroadcastManager", "getLaunchBillingFlowSubResponseCodeFromBundle() got null response code, assuming OK");
-                } else if (obj instanceof Integer) {
-                    intValue = ((Integer) obj).intValue();
-                    a2.c = intValue;
-                    a2.a = com.google.android.gms.internal.play_billing.u.f("BillingBroadcastManager", intent.getExtras());
-                    e = a2.a();
-                } else {
-                    com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Unexpected type for bundle sub response code: ".concat(obj.getClass().getName()));
-                }
-            }
-            intValue = 0;
-            a2.c = intValue;
-            a2.a = com.google.android.gms.internal.play_billing.u.f("BillingBroadcastManager", intent.getExtras());
-            e = a2.a();
-        } else {
-            e = com.google.android.gms.internal.play_billing.u.e("BillingBroadcastManager", intent);
-        }
-        long j10 = extras.getLong("billingClientTransactionId", 0L);
-        boolean z10 = extras.getBoolean("wasServiceAutoReconnected", false);
-        if (!m3Var.equals(m3Var3) && !m3Var.equals(m3Var2)) {
-            if (m3Var.equals(m3Var4)) {
-                if (e.a != 0) {
-                    c(extras, e, i10, m3Var, j10, z10);
-                    p pVar2 = (p) gVar.c;
-                    com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-                    pVar2.onPurchasesUpdated(e, com.google.android.gms.internal.play_billing.v.e);
-                    return;
-                }
-                gVar.getClass();
-                com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "AlternativeBillingListener and UserChoiceBillingListener is null.");
-                e0 e0Var2 = (e0) gVar.d;
-                h hVar3 = f0.f;
-                ((of.b) e0Var2).d0(d0.b(77, i10, hVar3, null, m3Var), j10, z10);
-                p pVar4 = (p) gVar.c;
-                com.google.android.gms.internal.play_billing.p pVar5 = com.google.android.gms.internal.play_billing.r.b;
-                pVar4.onPurchasesUpdated(hVar3, com.google.android.gms.internal.play_billing.v.e);
-                return;
-            }
-            return;
-        }
-        ArrayList<String> stringArrayList = extras.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
-        ArrayList<String> stringArrayList2 = extras.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
-        ArrayList arrayList2 = new ArrayList();
-        if (stringArrayList == null || stringArrayList2 == null) {
-            j3 = 0;
-            Purchase j11 = com.google.android.gms.internal.play_billing.u.j(extras.getString("INAPP_PURCHASE_DATA"), extras.getString("INAPP_DATA_SIGNATURE"));
-            if (j11 == null) {
-                com.google.android.gms.internal.play_billing.u.g("BillingHelper", "Couldn't find single purchase data as well.");
-                arrayList = null;
-                if (e.a != 0) {
-                    e0 e0Var3 = (e0) gVar.d;
-                    i3 c10 = d0.c(i10, m3Var);
-                    of.b bVar = (of.b) e0Var3;
-                    bVar.getClass();
-                    try {
-                        h3 h3Var = (h3) c10.g();
-                        t3 t3Var = (t3) c10.n().g();
-                        t3Var.c();
-                        v3.n((v3) t3Var.b, z10);
-                        h3Var.c();
-                        i3.p((i3) h3Var.b, (v3) t3Var.a());
-                        i3 i3Var = (i3) h3Var.a();
-                        if (j10 == j3) {
-                            p3Var = (p3) bVar.b;
-                        } else {
-                            o3 o3Var = (o3) ((p3) bVar.b).g();
-                            o3Var.c();
-                            p3.r((p3) o3Var.b, j10);
-                            p3Var = (p3) o3Var.a();
-                        }
-                        bVar.j0(i3Var, p3Var);
-                    } catch (Throwable th2) {
-                        com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-                    }
-                    hVar = e;
-                } else {
-                    hVar = e;
-                    c(extras, hVar, i10, m3Var, j10, z10);
-                }
-                ((p) gVar.c).onPurchasesUpdated(hVar, arrayList);
-            }
-            arrayList2.add(j11);
-        } else {
-            j3 = 0;
-            com.google.android.gms.internal.play_billing.u.g("BillingHelper", "Found purchase list of " + stringArrayList.size() + " items");
-            for (int i12 = 0; i12 < stringArrayList.size() && i12 < stringArrayList2.size(); i12++) {
-                Purchase j12 = com.google.android.gms.internal.play_billing.u.j(stringArrayList.get(i12), stringArrayList2.get(i12));
-                if (j12 != null) {
-                    arrayList2.add(j12);
-                }
-            }
-        }
-        arrayList = arrayList2;
-        if (e.a != 0) {
-        }
-        ((p) gVar.c).onPurchasesUpdated(hVar, arrayList);
+    public static h a(int i10, String str) {
+        c3.a a2 = h.a();
+        a2.b = i10;
+        a2.a = str;
+        return a2.a();
     }
 }

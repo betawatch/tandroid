@@ -1,33 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y81 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i91 b;
+public final class y81 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ f91 b1;
 
-    public /* synthetic */ y81(i91 i91Var, int i10) {
-        this.a = i10;
-        this.b = i91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y81(f91 f91Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.b1 = f91Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                i91 i91Var = this.b;
-                i91Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new y81(i91Var, 1));
-                break;
-            default:
-                this.b.getMessagesController().loadAppConfig();
-                break;
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new iy0(this, iVar, i10, 26), 250L);
         }
     }
 }

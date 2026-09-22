@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.xv0;
-import org.telegram.ui.Components.yv0;
+import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.j(obj);
+                        bVar.k(obj);
                         return;
                     }
                     return;
@@ -113,7 +113,7 @@ public final class g implements Runnable {
                     n6.l.h(aVar2);
                     sVar = r0Var.g;
                     if (sVar == null) {
-                        sVar.a(aVar2, new j2.e(22));
+                        sVar.a(aVar2, new j2.e(17));
                         return;
                     }
                     return;
@@ -157,18 +157,18 @@ public final class g implements Runnable {
                 return;
             case 7:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((yv0) this.d).c, this.b);
-                ((yv0) this.d).getClass();
-                cw0 cw0Var = (cw0) this.c;
-                cw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + cw0Var.j0);
-                int i16 = cw0Var.i0 + 1;
-                cw0Var.i0 = i16;
+                Utilities.stackBlurBitmap(((lv0) this.d).c, this.b);
+                ((lv0) this.d).getClass();
+                pv0 pv0Var = (pv0) this.c;
+                pv0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + pv0Var.j0);
+                int i16 = pv0Var.i0 + 1;
+                pv0Var.i0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (cw0Var.j0 / cw0Var.i0));
-                    cw0Var.i0 = 0;
-                    cw0Var.j0 = 0;
+                    FileLog.d("chat blur generating average time" + (pv0Var.j0 / pv0Var.i0));
+                    pv0Var.i0 = 0;
+                    pv0Var.j0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new xv0(this, i10));
+                AndroidUtilities.runOnUIThread(new kv0(this, i10));
                 return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(cw0 cw0Var) {
+    public g(pv0 pv0Var) {
         this.a = 7;
-        this.c = cw0Var;
+        this.c = pv0Var;
     }
 }

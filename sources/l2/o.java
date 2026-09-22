@@ -4,13 +4,12 @@ import android.os.Handler;
 import android.os.Message;
 import e2.d0;
 import java.util.TreeMap;
-import ki.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class o implements Handler.Callback {
     public final y2.d a;
-    public final e0 b;
+    public final ka.c b;
     public m2.c f;
     public boolean h;
     public boolean n;
@@ -19,9 +18,9 @@ public final class o implements Handler.Callback {
     public final Handler d = d0.o(this);
     public final m3.b c = new m3.b(1);
 
-    public o(m2.c cVar, e0 e0Var, y2.d dVar) {
+    public o(m2.c cVar, ka.c cVar2, y2.d dVar) {
         this.f = cVar;
-        this.b = e0Var;
+        this.b = cVar2;
         this.a = dVar;
     }
 

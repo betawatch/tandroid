@@ -1,94 +1,51 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class r7 extends nj0 {
-    public float r;
-    public float s;
-    public boolean v;
-    public final org.telegram.ui.Cells.u6 w;
-    public final /* synthetic */ float x;
-    public final /* synthetic */ i8 y;
+public final class r7 extends kd {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r7(i8 i8Var, Context context, float f7) {
+    public /* synthetic */ r7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
         super(context);
-        this.y = i8Var;
-        this.x = f7;
-        this.w = new org.telegram.ui.Cells.u6(this, 4);
+        this.b = i10;
+        this.c = notificationCenterDelegate;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
-    
-        if (r5 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        i8 i8Var = this.y;
-        r7 r7Var = i8Var.L;
-        if (i8Var.T.v || i8Var.H0 == -1) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        org.telegram.ui.Cells.u6 u6Var = this.w;
-        if (action == 0) {
-            this.v = false;
-            this.r = rawX;
-            this.s = rawY;
-            AndroidUtilities.runOnUIThread(u6Var, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
-            }
-            setPressed(true);
-            return true;
-        }
-        if (action != 1) {
-            if (action == 2) {
-                float f7 = rawX - this.r;
-                float f10 = rawY - this.s;
-                float f11 = (f10 * f10) + (f7 * f7);
-                float f12 = this.x;
-                if (f11 > f12 * f12 && !this.v) {
-                    AndroidUtilities.cancelRunOnUIThread(u6Var);
-                    setPressed(false);
+    @Override // org.telegram.ui.Components.kd
+    public final void c(boolean z10) {
+        switch (this.b) {
+            case 0:
+                h8 h8Var = (h8) this.c;
+                h8Var.D0();
+                org.telegram.ui.yr yrVar = h8Var.O;
+                if (yrVar != null) {
+                    yrVar.a(b5.d.u());
+                    break;
                 }
-            }
-            return true;
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var = photoViewer.F0;
+                if (f1Var != null) {
+                    f1Var.d(z10);
+                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
+                }
+                g71 g71Var = photoViewer.F2;
+                if (g71Var != null) {
+                    g71Var.O(b5.d.u() || photoViewer.r);
+                }
+                org.telegram.ui.yr yrVar2 = photoViewer.w0;
+                if (yrVar2 != null) {
+                    yrVar2.a(b5.d.u());
+                    break;
+                }
+                break;
         }
-        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
-            MediaController.getInstance().playNextMessage();
-            r7Var.setProgress(0.0f);
-            r7Var.d();
-        }
-        AndroidUtilities.cancelRunOnUIThread(u6Var);
-        if (i8Var.J0 > 0) {
-            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
-            if (MediaController.getInstance().isMessagePaused()) {
-                i8Var.L0 = 0L;
-                i8Var.N0.run();
-            }
-        }
-        i8Var.H0 = 0;
-        setPressed(false);
-        i8Var.J0 = 0;
-        i8Var.I0 = -1.0f;
-        return true;
     }
 }

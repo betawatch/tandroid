@@ -13,12 +13,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.aa0;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
+import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,24 +69,24 @@ public final /* synthetic */ class y7 implements Runnable {
                 SendMessagesHelper.lambda$finishGroup$117((AccountInstance) this.d, this.c, this.b);
                 break;
             case 6:
-                BotForumHelper.BotDraftAnimationsPool botDraftAnimationsPool = ((org.telegram.ui.Cells.u1) this.d).Pd;
+                BotForumHelper.BotDraftAnimationsPool botDraftAnimationsPool = ((org.telegram.ui.Cells.t1) this.d).Pd;
                 if (botDraftAnimationsPool != null) {
                     botDraftAnimationsPool.removeAnimator(this.c, this.b);
                     break;
                 }
                 break;
             case 7:
-                lv0.n((lv0) this.d, this.c, this.b);
+                yu0.n((yu0) this.d, this.c, this.b);
                 break;
             default:
                 Long l4 = (Long) this.d;
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    zn R9 = zn.R9(l4.longValue());
+                    bo R9 = bo.R9(l4.longValue());
                     U.presentFragment(R9);
                     TLRPC.Chat chat = MessagesController.getInstance(this.b).getChat(Long.valueOf(-l4.longValue()));
                     if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new aa0(R9, this.c, chat, 1), 250L);
+                        AndroidUtilities.runOnUIThread(new z90(R9, this.c, chat, 1), 250L);
                         break;
                     }
                 }

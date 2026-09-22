@@ -11,29 +11,29 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class pk extends ni {
     public final kz n;
-    public final yl0 r;
+    public final ll0 r;
     public final s4.c0 s;
     public final HorizontalScrollView v;
     public final boolean w;
 
-    public pk(vi viVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
-        super(context, f6Var, viVar);
+    public pk(vi viVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, viVar);
         this.w = z10;
         this.f = true;
         org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
         boolean z11 = !z10;
-        kz kzVar = new kz(n2Var, z11, z10, false, getContext(), true, null, null, false, f6Var, false, true);
+        kz kzVar = new kz(n2Var, z11, z10, false, getContext(), true, null, null, false, e6Var, false, true);
         this.n = kzVar;
         kzVar.w0 = false;
         kzVar.I(z11, z10, false, false);
         kzVar.n2 = true;
-        ax axVar = kzVar.x;
-        if (axVar != null) {
-            axVar.setVisibility(8);
+        zw zwVar = kzVar.x;
+        if (zwVar != null) {
+            zwVar.setVisibility(8);
         }
         kzVar.o2 = true;
         ImageView imageView = kzVar.y;
@@ -41,10 +41,10 @@ public final class pk extends ni {
             imageView.setVisibility(8);
         }
         kzVar.M2 = true;
-        addView(kzVar, w7.y5.c(-1.0f, -1));
+        addView(kzVar, w7.x5.c(-1.0f, -1));
         HorizontalScrollView y3 = kzVar.y(z11 ? 1 : 0);
         this.v = y3;
-        yl0 x10 = kzVar.x(z11 ? 1 : 0);
+        ll0 x10 = kzVar.x(z11 ? 1 : 0);
         this.r = x10;
         x10.j(new ai.r(this, 21));
         this.s = (s4.c0) x10.getLayoutManager();
@@ -52,7 +52,7 @@ public final class pk extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void D(ni niVar) {
+    public final void E(ni niVar) {
         vi viVar = this.b;
         try {
             viVar.X0.getTitleTextView().setBuildFullLayout(true);
@@ -63,25 +63,25 @@ public final class pk extends ni {
     }
 
     @Override // org.telegram.ui.Components.ni
-    public final void F() {
-        this.r.y0(0);
+    public final void G() {
+        this.r.x0(0);
     }
 
     @Override // org.telegram.ui.Components.ni
     public int getCurrentItemTop() {
-        yl0 yl0Var = this.r;
-        if (yl0Var.getChildCount() <= 0) {
-            yl0Var.setTopGlowOffset(yl0Var.getPaddingTop());
+        ll0 ll0Var = this.r;
+        if (ll0Var.getChildCount() <= 0) {
+            ll0Var.setTopGlowOffset(ll0Var.getPaddingTop());
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        View childAt = yl0Var.getChildAt(0);
-        il0 il0Var = (il0) yl0Var.H(childAt);
+        View childAt = ll0Var.getChildAt(0);
+        vk0 vk0Var = (vk0) ll0Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(36.0f);
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || il0Var == null || il0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || vk0Var == null || vk0Var.b() != 0) {
             top = dp;
         }
-        yl0Var.setTopGlowOffset(top);
+        ll0Var.setTopGlowOffset(top);
         return top;
     }
 
@@ -106,8 +106,8 @@ public final class pk extends ni {
         this.v.setTranslationY(Math.max(0, getCurrentItemTop()));
     }
 
-    public void setDelegate(ly lyVar) {
-        this.n.setDelegate(lyVar);
+    public void setDelegate(ky kyVar) {
+        this.n.setDelegate(kyVar);
     }
 
     @Override // android.view.View
@@ -128,7 +128,7 @@ public final class pk extends ni {
         int i12;
         int dp;
         int dp2;
-        yl0 yl0Var;
+        ll0 ll0Var;
         ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         if (!AndroidUtilities.isTablet()) {
             Point point = AndroidUtilities.displaySize;
@@ -139,9 +139,9 @@ public final class pk extends ni {
                     dp = 0;
                 }
                 dp2 = AndroidUtilities.dp(36.0f) + dp;
-                yl0Var = this.r;
-                if (yl0Var.getPaddingTop() == dp2) {
-                    yl0Var.setPadding(AndroidUtilities.dp(6.0f), dp2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                ll0Var = this.r;
+                if (ll0Var.getPaddingTop() == dp2) {
+                    ll0Var.setPadding(AndroidUtilities.dp(6.0f), dp2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -152,8 +152,8 @@ public final class pk extends ni {
         if (dp < 0) {
         }
         dp2 = AndroidUtilities.dp(36.0f) + dp;
-        yl0Var = this.r;
-        if (yl0Var.getPaddingTop() == dp2) {
+        ll0Var = this.r;
+        if (ll0Var.getPaddingTop() == dp2) {
         }
     }
 }

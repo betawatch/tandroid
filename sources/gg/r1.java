@@ -3,7 +3,7 @@ package gg;
 import java.util.ArrayList;
 import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class r1 implements b2 {
     public final /* synthetic */ zs a;
@@ -13,17 +13,17 @@ public final class r1 implements b2 {
     }
 
     @Override // gg.b2
-    public final a0.i D() {
+    public final a0.i F() {
         return null;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ boolean L(int i10) {
+    public final /* synthetic */ boolean O(int i10) {
         return true;
     }
 
     @Override // gg.b2
-    public final void f(int i10) {
+    public final void h(int i10) {
         zs zsVar = this.a;
         zsVar.l();
         if (i10 != 0) {
@@ -32,11 +32,11 @@ public final class r1 implements b2 {
     }
 
     @Override // gg.b2
-    public final /* synthetic */ a0.i y() {
+    public final /* synthetic */ a0.i w() {
         return null;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ void O(ArrayList arrayList) {
+    public final /* synthetic */ void Q(ArrayList arrayList) {
     }
 }

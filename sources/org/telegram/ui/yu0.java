@@ -15,19 +15,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class yu0 extends View {
     public final Paint a;
-    public final org.telegram.ui.Components.n6 b;
+    public final org.telegram.ui.Components.m6 b;
     public final TextPaint c;
     public StaticLayout d;
     public float e;
     public float f;
-    public final org.telegram.ui.Components.n6 h;
+    public final org.telegram.ui.Components.m6 h;
     public String n;
     public boolean r;
-    public final org.telegram.ui.Components.d6 s;
+    public final org.telegram.ui.Components.c6 s;
     public boolean v;
     public int w;
 
@@ -39,30 +39,30 @@ public final class yu0 extends View {
         this.c = textPaint;
         this.r = false;
         org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
-        this.s = new org.telegram.ui.Components.d6(this, 0L, 350L, qrVar);
+        this.s = new org.telegram.ui.Components.c6(this, 0L, 350L, qrVar);
         paint.setColor(2130706432);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true, false);
-        this.b = n6Var;
-        n6Var.k(0.3f, 320L, qrVar);
-        n6Var.r(-1);
-        n6Var.t(AndroidUtilities.dp(14.0f));
-        n6Var.u(AndroidUtilities.bold());
-        n6Var.setCallback(this);
-        n6Var.q("0", true, true);
-        n6Var.G = AndroidUtilities.displaySize.x;
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
+        this.b = m6Var;
+        m6Var.k(0.3f, 320L, qrVar);
+        m6Var.r(-1);
+        m6Var.t(AndroidUtilities.dp(14.0f));
+        m6Var.u(AndroidUtilities.bold());
+        m6Var.setCallback(this);
+        m6Var.q("0", true, true);
+        m6Var.G = AndroidUtilities.displaySize.x;
         textPaint.setColor(-1);
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
         c();
-        org.telegram.ui.Components.n6 n6Var2 = new org.telegram.ui.Components.n6(false, true, true, false);
-        this.h = n6Var2;
-        n6Var2.k(0.3f, 320L, qrVar);
-        n6Var2.r(-1);
-        n6Var2.t(AndroidUtilities.dp(14.0f));
-        n6Var2.u(AndroidUtilities.bold());
-        n6Var2.setCallback(this);
-        n6Var2.q("0", true, true);
-        n6Var2.G = AndroidUtilities.displaySize.x;
+        org.telegram.ui.Components.m6 m6Var2 = new org.telegram.ui.Components.m6(false, true, true, false);
+        this.h = m6Var2;
+        m6Var2.k(0.3f, 320L, qrVar);
+        m6Var2.r(-1);
+        m6Var2.t(AndroidUtilities.dp(14.0f));
+        m6Var2.u(AndroidUtilities.bold());
+        m6Var2.setCallback(this);
+        m6Var2.q("0", true, true);
+        m6Var2.G = AndroidUtilities.displaySize.x;
     }
 
     public final void a(int i10, int i11) {
@@ -126,10 +126,10 @@ public final class yu0 extends View {
         if (d <= 0.0f) {
             return;
         }
-        org.telegram.ui.Components.n6 n6Var = this.b;
-        float d10 = n6Var.d() + this.e;
-        org.telegram.ui.Components.n6 n6Var2 = this.h;
-        float d11 = n6Var2.d() + d10 + AndroidUtilities.dp(18.0f);
+        org.telegram.ui.Components.m6 m6Var = this.b;
+        float d10 = m6Var.d() + this.e;
+        org.telegram.ui.Components.m6 m6Var2 = this.h;
+        float d11 = m6Var2.d() + d10 + AndroidUtilities.dp(18.0f);
         float f7 = ((1.0f - d) * (-AndroidUtilities.dp(8.0f))) + this.w;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set((getWidth() - d11) / 2.0f, AndroidUtilities.dpf2(10.0f) + f7, (getWidth() + d11) / 2.0f, AndroidUtilities.dpf2(33.0f) + f7);
@@ -140,20 +140,20 @@ public final class yu0 extends View {
         paint.setAlpha(alpha);
         canvas.save();
         canvas.translate(((getWidth() - d11) / 2.0f) + AndroidUtilities.dp(9.0f), f7 + AndroidUtilities.dp(9.5f));
-        n6Var.setBounds(0, 0, (int) n6Var.d(), AndroidUtilities.dp(23.0f));
+        m6Var.setBounds(0, 0, (int) m6Var.d(), AndroidUtilities.dp(23.0f));
         int i10 = (int) (d * 255.0f);
-        n6Var.w = i10;
-        n6Var.draw(canvas);
-        canvas.translate(n6Var.d(), 0.0f);
+        m6Var.w = i10;
+        m6Var.draw(canvas);
+        canvas.translate(m6Var.d(), 0.0f);
         canvas.save();
         canvas.translate((-(this.d.getWidth() - this.e)) / 2.0f, ((this.f / 2.0f) + (AndroidUtilities.dp(23.0f) - this.d.getHeight())) / 2.0f);
         this.c.setAlpha(i10);
         this.d.draw(canvas);
         canvas.restore();
         canvas.translate(this.e, 0.0f);
-        n6Var2.setBounds(0, 0, (int) n6Var2.d(), AndroidUtilities.dp(23.0f));
-        n6Var2.w = i10;
-        n6Var2.draw(canvas);
+        m6Var2.setBounds(0, 0, (int) m6Var2.d(), AndroidUtilities.dp(23.0f));
+        m6Var2.w = i10;
+        m6Var2.draw(canvas);
         canvas.restore();
     }
 
@@ -163,7 +163,7 @@ public final class yu0 extends View {
         this.w = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
         this.b.G = size;
         this.h.G = size;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.rk.C(43.0f, this.w, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.vl.C(43.0f, this.w, TLObject.FLAG_30));
     }
 
     @Override // android.view.View

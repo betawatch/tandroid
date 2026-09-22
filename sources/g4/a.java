@@ -5,7 +5,6 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import d2.b;
 import e2.d;
 import e2.d0;
 import e2.h;
@@ -13,18 +12,19 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
+import hg.c;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import v7.j0;
-import z3.l;
+import z3.b;
+import z3.e;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class a implements m {
+public final class a implements n {
     public final v a = new v();
     public final boolean b;
     public final int c;
@@ -89,13 +89,13 @@ public final class a implements m {
         }
     }
 
-    @Override // z3.m
-    public final int K() {
+    @Override // z3.n
+    public final int A() {
         return 2;
     }
 
-    @Override // z3.m
-    public final void M(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    @Override // z3.n
+    public final void B(byte[] bArr, int i10, int i11, m mVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -118,7 +118,7 @@ public final class a implements m {
         }
         if (v.isEmpty()) {
             g0 g0Var = i0.b;
-            hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, a1.e));
+            hVar.accept(new b(-9223372036854775807L, -9223372036854775807L, a1.e));
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v);
@@ -148,10 +148,10 @@ public final class a implements m {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder k10 = k0.k(D4, "Truncating styl end (", ") to cueText.length() (");
-                        k10.append(spannableStringBuilder.length());
-                        k10.append(").");
-                        e2.a.n("Tx3gParser", k10.toString());
+                        StringBuilder l4 = c.l(D4, "Truncating styl end (", ") to cueText.length() (");
+                        l4.append(spannableStringBuilder.length());
+                        l4.append(").");
+                        e2.a.n("Tx3gParser", l4.toString());
                         D4 = spannableStringBuilder.length();
                     }
                     if (D3 >= D4) {
@@ -178,15 +178,15 @@ public final class a implements m {
             i13 = 1;
             i14 = 2;
         }
-        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+        hVar.accept(new b(-9223372036854775807L, -9223372036854775807L, i0.z(new d2.b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    @Override // z3.m
-    public final /* synthetic */ z3.d u(int i10, int i11, byte[] bArr) {
-        return j0.a(this, bArr, i11);
+    @Override // z3.n
+    public final /* synthetic */ e r(int i10, int i11, byte[] bArr) {
+        return w.c.a(this, bArr, i11);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final /* synthetic */ void reset() {
     }
 }

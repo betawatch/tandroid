@@ -5,7 +5,7 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public final void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 h hVar = this.b;
@@ -34,9 +34,9 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
             default:
                 h hVar2 = this.b;
                 hVar2.getClass();
-                yg0 yg0Var = new yg0();
-                yg0Var.F = 2;
-                hVar2.presentFragment(yg0Var, true);
+                wg0 wg0Var = new wg0();
+                wg0Var.F = 2;
+                hVar2.presentFragment(wg0Var, true);
                 break;
         }
     }

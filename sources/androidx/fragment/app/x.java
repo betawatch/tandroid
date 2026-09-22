@@ -17,7 +17,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import r0.l1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class x extends FrameLayout {
     public final ArrayList a;
@@ -43,7 +43,7 @@ public final class x extends FrameLayout {
         s C = k0Var.C(id2);
         if (classAttribute != null && C == null) {
             if (id2 == -1) {
-                throw new IllegalStateException(a4.a.p("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
+                throw new IllegalStateException(a4.a.q("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
             }
             d0 H = k0Var.H();
             context.getClassLoader();

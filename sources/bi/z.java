@@ -21,37 +21,37 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.l0;
+import org.telegram.messenger.y0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.u7;
+import org.telegram.ui.Cells.t7;
+import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.mr0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.y81;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zr0;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
     public static LongSparseArray F;
     public final n2 a;
     public final int b;
-    public final f6 c;
+    public final e6 c;
     public final long d;
     public final t8 e;
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final y81 r;
+    public final h81 r;
     public Boolean s;
     public int v;
     public float w;
@@ -68,10 +68,10 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         this.a = n2Var;
         int currentAccount = n2Var.getCurrentAccount();
         this.b = currentAccount;
-        f6 resourceProvider = n2Var.getResourceProvider();
+        e6 resourceProvider = n2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
-        setBackgroundColor(j6.v(j6.v0(j6.d6, resourceProvider), j6.l1(0.04f, j6.v0(j6.G6, resourceProvider))));
+        setBackgroundColor(i6.v(i6.v0(i6.d6, resourceProvider), i6.l1(0.04f, i6.v0(i6.G6, resourceProvider))));
         if (F == null) {
             F = new LongSparseArray();
         }
@@ -90,17 +90,17 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             t8Var = t8Var2;
         }
         this.e = t8Var;
-        zr0 zr0Var = (zr0) this;
-        a aVar = new a(zr0Var, context);
+        mr0 mr0Var = (mr0) this;
+        a aVar = new a(mr0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(zr0Var, context));
-        addView(aVar, y5.e(-1, -1, 119));
-        y81 n10 = aVar.n(9, true);
+        aVar.setAdapter(new b(mr0Var, context));
+        addView(aVar, x5.e(-1, -1, 119));
+        h81 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(zr0Var, 11));
-        addView(n10, y5.e(-1, 42, 48));
+        n10.setPreTabClick(new a1.c(mr0Var, 11));
+        addView(n10, x5.e(-1, 42, 48));
         i(false);
     }
 
@@ -317,7 +317,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         return t8Var;
     }
 
-    public yl0 getCurrentListView() {
+    public ll0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof u) {
             return ((u) currentView).f;
@@ -413,14 +413,14 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(l0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(y0.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         oq oqVar = new oq(R.drawable.msg_filled_plus, 0);
         oqVar.setScale(0.9f, 0.9f);
         oqVar.spaceScaleX = 0.85f;
         spannableString.setSpan(oqVar, 0, 1, 33);
-        y81 y81Var = this.r;
-        y81Var.a(-1, spannableString);
-        y81Var.x.l();
+        h81 h81Var = this.r;
+        h81Var.a(-1, spannableString);
+        h81Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -431,7 +431,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                y81Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                h81Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }
@@ -452,9 +452,9 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             j jVar = uVar.f;
             for (int i10 = 0; i10 < jVar.getChildCount(); i10++) {
                 View childAt = jVar.getChildAt(i10);
-                if (childAt instanceof u7) {
-                    u7 u7Var = (u7) childAt;
-                    u7Var.i(uVar.W.c(u7Var.getMessageObject()), true);
+                if (childAt instanceof t7) {
+                    t7 t7Var = (t7) childAt;
+                    t7Var.i(uVar.W.c(t7Var.getMessageObject()), true);
                 }
             }
         }

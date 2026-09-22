@@ -1,33 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class m51 extends g.p {
-    public final /* synthetic */ u51 c;
+public class m51 extends URLSpan {
+    public final boolean a;
+    public final o01 b;
+    public TLObject c;
+    public String d;
 
-    public m51(u51 u51Var) {
-        this.c = u51Var;
+    public m51(String str) {
+        this(str, (o01) null);
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        u51 u51Var = this.c;
-        s4.h0 adapter = u51Var.n.getAdapter();
-        t51 t51Var = u51Var.s;
-        if (adapter == t51Var) {
-            if ((t51Var.d.get(i10) instanceof Integer) || i10 >= t51Var.w) {
-                return t51Var.v;
-            }
-            return 1;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            nf.f.s(view.getContext(), url);
+            return;
         }
-        gg.g2 g2Var = u51Var.v;
-        SparseArray sparseArray = g2Var.s;
-        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
-            return g2Var.e.a();
+        nf.f.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i10 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        o01 o01Var = this.b;
+        if (o01Var != null) {
+            o01Var.a(textPaint);
         }
-        return 1;
+        textPaint.setUnderlineText(i10 == color && !this.a);
+    }
+
+    public m51(String str, int i10) {
+        this(str, (o01) null);
+        this.a = true;
+    }
+
+    public m51(String str, o01 o01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = o01Var;
     }
 }

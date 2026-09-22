@@ -1,31 +1,17 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class jk0 extends og.a {
-    public final zg.p0 c;
+public final /* synthetic */ class jk0 {
+    public final /* synthetic */ ok0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    public jk0(int i10, zg.p0 p0Var) {
-        super(i10, false);
-        this.c = p0Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && jk0.class == obj.getClass()) {
-            jk0 jk0Var = (jk0) obj;
-            int i10 = this.a;
-            int i11 = jk0Var.a;
-            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
-                zg.p0 p0Var = this.c;
-                return p0Var != null && p0Var.equals(jk0Var.c);
-            }
-            if (i10 == i11) {
-                return true;
-            }
-        }
-        return false;
+    public /* synthetic */ jk0(ok0 ok0Var, int i10, int i11, boolean z10) {
+        this.a = ok0Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
     }
 }

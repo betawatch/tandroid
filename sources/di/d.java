@@ -6,13 +6,13 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import ci.a8;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
+import rg.u1;
 import rg.v1;
-import rg.w1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class d extends w1 {
+public final class d extends v1 {
     public Paint[] n;
     public final /* synthetic */ int r;
     public final /* synthetic */ int s;
@@ -25,33 +25,33 @@ public final class d extends w1 {
         b();
     }
 
-    @Override // rg.w1
+    @Override // rg.v1
     public final void a() {
-        v1 v1Var = new v1(this.r);
-        this.a = v1Var;
-        v1Var.N = 106;
+        u1 u1Var = new u1(this.r);
+        this.a = u1Var;
+        u1Var.N = 106;
         int i10 = 0;
-        v1Var.M = false;
-        v1Var.G = false;
-        v1Var.K = true;
-        v1Var.H = true;
-        v1Var.J = false;
-        v1Var.m = true;
-        v1Var.h = true;
+        u1Var.M = false;
+        u1Var.G = false;
+        u1Var.K = true;
+        u1Var.H = true;
+        u1Var.J = false;
+        u1Var.m = true;
+        u1Var.h = true;
         if (this.s == 1) {
-            v1Var.k = AndroidUtilities.dp(24.0f);
+            u1Var.k = AndroidUtilities.dp(24.0f);
         }
         this.n = new Paint[20];
         while (true) {
             Paint[] paintArr = this.n;
             if (i10 >= paintArr.length) {
-                v1 v1Var2 = this.a;
-                v1Var2.l = new a8(this, 1);
-                v1Var2.r = 17;
-                v1Var2.s = 18;
-                v1Var2.t = 19;
-                v1Var2.P = j6.G6;
-                v1Var2.c();
+                u1 u1Var2 = this.a;
+                u1Var2.l = new a8(this, 1);
+                u1Var2.r = 17;
+                u1Var2.s = 18;
+                u1Var2.t = 19;
+                u1Var2.P = i6.G6;
+                u1Var2.c();
                 return;
             }
             paintArr[i10] = new Paint(1);
@@ -60,7 +60,7 @@ public final class d extends w1 {
         }
     }
 
-    @Override // rg.w1
+    @Override // rg.v1
     public final int getStarsRectWidth() {
         return getMeasuredWidth();
     }

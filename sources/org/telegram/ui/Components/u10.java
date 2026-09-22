@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class u10 implements oe.a {
     public final ViewGroup a;
@@ -14,10 +14,10 @@ public final class u10 implements oe.a {
         lh.c cVar = new lh.c(x5Var.getContext());
         this.b = cVar;
         cVar.setBackgroundColor(i0.a.k(-16777216, 34));
-        vh.n nVar = cVar.v;
-        nVar.setMaxLines(1);
-        nVar.setSingleLine(true);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        vh.o oVar = cVar.v;
+        oVar.setMaxLines(1);
+        oVar.setSingleLine(true);
+        oVar.setEllipsize(TextUtils.TruncateAt.END);
         cVar.set(groupCallMessage);
         cVar.setAlpha(0.0f);
         this.a = x5Var;

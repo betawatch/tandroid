@@ -3,10 +3,9 @@ package j4;
 import b2.r0;
 import c3.h0;
 import ei.d5;
-import hg.k0;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -72,7 +71,7 @@ public final class c0 {
                         rVar.d = sVar.d;
                         rVar.N = sVar.O;
                         rVar.t = sVar.u;
-                        k0.s(rVar, Z1);
+                        hg.c.u(rVar, Z1);
                         h0VarArr[i10] = Z1;
                         i10++;
                     }
@@ -100,7 +99,7 @@ public final class c0 {
                         rVar2.d = sVar2.d;
                         rVar2.N = sVar2.O;
                         rVar2.t = sVar2.u;
-                        k0.s(rVar2, Z12);
+                        hg.c.u(rVar2, Z12);
                         h0VarArr2[i11] = Z12;
                         i11++;
                     }

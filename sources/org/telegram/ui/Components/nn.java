@@ -6,54 +6,54 @@ import android.view.ActionMode;
 import android.view.Menu;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class nn extends org.telegram.ui.Cells.e6 {
+public final class nn extends org.telegram.ui.Cells.d6 {
     public final /* synthetic */ int F;
     public final /* synthetic */ sn G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nn(sn snVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(context, i10, null, f6Var);
+    public nn(sn snVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(context, i10, null, e6Var);
         this.G = snVar;
         this.F = i11;
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void g(org.telegram.ui.Cells.d6 d6Var, ActionMode actionMode) {
+    @Override // org.telegram.ui.Cells.d6
+    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
         un unVar = this.G.d;
-        if (!unVar.n && this.F == 11 && d6Var.isFocused() && d6Var.hasSelection()) {
+        if (!unVar.n && this.F == 11 && c6Var.isFocused() && c6Var.hasSelection()) {
             Menu menu = actionMode.getMenu();
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.zn.k8(menu, ((org.telegram.ui.zn) unVar.b.f0).h, false, true, true, true);
+            org.telegram.ui.bo.k8(menu, ((org.telegram.ui.bo) unVar.b.f0).h, false, true, true, true);
         }
     }
 
-    @Override // org.telegram.ui.Cells.e6
+    @Override // org.telegram.ui.Cells.d6
     public final void i(boolean z10) {
         un.M(this.G.d, this, z10);
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void j(org.telegram.ui.Cells.e6 e6Var) {
-        un.N(this.G.d, e6Var);
+    @Override // org.telegram.ui.Cells.d6
+    public final void j(org.telegram.ui.Cells.d6 d6Var) {
+        un.N(this.G.d, d6Var);
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void k(org.telegram.ui.Cells.d6 d6Var) {
-        this.G.d.b.t1(d6Var, true);
+    @Override // org.telegram.ui.Cells.d6
+    public final void k(org.telegram.ui.Cells.c6 c6Var) {
+        this.G.d.b.t1(c6Var, true);
     }
 
-    @Override // org.telegram.ui.Cells.e6
+    @Override // org.telegram.ui.Cells.d6
     public final boolean l(ArrayList arrayList) {
         un unVar = this.G.d;
         if (arrayList.isEmpty()) {
             return false;
         }
-        org.telegram.ui.Cells.d6 d6Var = this.d;
-        d6Var.getText().replace(d6Var.getSelectionStart(), d6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        org.telegram.ui.Cells.c6 c6Var = this.d;
+        c6Var.getText().replace(c6Var.getSelectionStart(), c6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
         int i10 = 0;
         while (!arrayList.isEmpty() && i10 < unVar.J) {
             for (int length = unVar.K.length - 1; length > i10; length--) {

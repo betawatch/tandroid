@@ -9,14 +9,15 @@ import androidx.savedstate.Recreator;
 import b2.x0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.d0;
+import gg.x1;
 import java.util.ArrayList;
 import java.util.Map;
 import kotlin.jvm.internal.i;
 import m.p;
 import m4.a0;
-import m4.k0;
+import m4.l0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n implements i9.r, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -147,7 +148,7 @@ public final class n implements i9.r, com.google.android.gms.common.api.internal
                 a0 a0Var = (a0) this.d;
                 m4.r rVar = (m4.r) this.c;
                 boolean z10 = this.b;
-                w7.u.b(a0Var.t, (m4.s) obj);
+                w7.t.b(a0Var.t, (m4.s) obj);
                 d0.H(a0Var.t);
                 if (z10) {
                     a0Var.p(rVar);
@@ -156,10 +157,10 @@ public final class n implements i9.r, com.google.android.gms.common.api.internal
                 break;
             default:
                 m4.s sVar = (m4.s) obj;
-                a0 a0Var2 = ((k0) this.d).g;
+                a0 a0Var2 = ((l0) this.d).g;
                 Handler handler = a0Var2.l;
                 m4.r rVar2 = (m4.r) this.c;
-                d0.U(handler, new ki.l(a0Var2, rVar2, new s4(this, sVar, this.b, rVar2, 8)));
+                d0.U(handler, new x1(a0Var2, rVar2, new s4(this, sVar, this.b, rVar2, 7)));
                 break;
         }
     }

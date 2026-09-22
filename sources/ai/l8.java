@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l8 implements Runnable {
     public final /* synthetic */ int a;
@@ -117,26 +117,26 @@ public final /* synthetic */ class l8 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopics$3((TLRPC.TL_messages_savedDialogsSlice) obj2, this.b, (a0.i) obj, this.c);
                 break;
             case 9:
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj3;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                int i14 = u1Var.I7;
+                int i14 = t1Var.I7;
                 if (user == null) {
                     if (chat == null) {
-                        u1Var.X8[i12].n(j3, "", "");
+                        t1Var.X8[i12].n(j3, "", "");
                         break;
                     } else {
-                        u1Var.X8[i12].k(i14, chat);
-                        u1Var.W8[i12].setForUserOrChat(chat, u1Var.X8[i12]);
+                        t1Var.X8[i12].k(i14, chat);
+                        t1Var.W8[i12].setForUserOrChat(chat, t1Var.X8[i12]);
                         break;
                     }
                 } else {
-                    u1Var.X8[i12].m(i14, user);
-                    u1Var.W8[i12].setForUserOrChat(user, u1Var.X8[i12]);
+                    t1Var.X8[i12].m(i14, user);
+                    t1Var.W8[i12].setForUserOrChat(user, t1Var.X8[i12]);
                     break;
                 }
             case 10:
-                new xh.z4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
+                new xh.y4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
                 break;
             case 11:
                 yh.n nVar = (yh.n) obj;

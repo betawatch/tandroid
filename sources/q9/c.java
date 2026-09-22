@@ -3,9 +3,9 @@ package q9;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import java.lang.reflect.InvocationTargetException;
-import v7.j0;
+import org.telegram.ui.Cells.q3;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements pa.b {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final /* synthetic */ class c implements pa.b {
                     Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
                     return null;
                 } catch (IllegalAccessException e) {
-                    throw new m(a4.a.p("Could not instantiate ", str, "."), e);
+                    throw new m(a4.a.q("Could not instantiate ", str, "."), e);
                 } catch (InstantiationException e7) {
-                    throw new m(a4.a.p("Could not instantiate ", str, "."), e7);
+                    throw new m(a4.a.q("Could not instantiate ", str, "."), e7);
                 } catch (NoSuchMethodException e10) {
-                    throw new m(j0.g("Could not instantiate ", str), e10);
+                    throw new m(q3.i("Could not instantiate ", str), e10);
                 } catch (InvocationTargetException e11) {
-                    throw new m(j0.g("Could not instantiate ", str), e11);
+                    throw new m(q3.i("Could not instantiate ", str), e11);
                 }
             case 1:
                 return (ComponentRegistrar) this.b;

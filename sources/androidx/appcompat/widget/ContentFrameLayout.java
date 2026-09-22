@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import a4.m;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -8,7 +9,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import g.s;
-import l.l;
+import l.k;
 import m.h;
 import m.i1;
 import m.j1;
@@ -16,7 +17,7 @@ import m.l3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -89,7 +90,7 @@ public class ContentFrameLayout extends FrameLayout {
         super.onDetachedFromWindow();
         i1 i1Var = this.n;
         if (i1Var != null) {
-            s sVar = (s) ((android.support.v4.media.c) i1Var).b;
+            s sVar = (s) ((m) i1Var).b;
             j1 j1Var = sVar.s;
             if (j1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
@@ -117,9 +118,9 @@ public class ContentFrameLayout extends FrameLayout {
             if (l0Var != null) {
                 l0Var.b();
             }
-            l lVar = sVar.o(0).h;
-            if (lVar != null) {
-                lVar.c(true);
+            k kVar = sVar.o(0).h;
+            if (kVar != null) {
+                kVar.c(true);
             }
         }
     }

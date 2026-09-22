@@ -1,54 +1,32 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mo implements Runnable {
+public final /* synthetic */ class mo implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uo b;
+    public final /* synthetic */ wo b;
 
-    public /* synthetic */ mo(uo uoVar, int i10) {
+    public /* synthetic */ mo(wo woVar, int i10) {
         this.a = i10;
-        this.b = uoVar;
+        this.b = woVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                uo.V(this.b);
+                AndroidUtilities.runOnUIThread(new q1(this.b, tL_error, tLObject, 27));
                 break;
             case 1:
-                uo.a0(this.b);
-                break;
-            case 2:
-                uo uoVar = this.b;
-                uoVar.b.dismiss();
-                uoVar.finishFragment();
-                break;
-            case 3:
-                uo uoVar2 = this.b;
-                uoVar2.M.setChecked(uoVar2.x0.autotranslation);
+                AndroidUtilities.runOnUIThread(new oo(this.b, 1));
                 break;
             default:
-                uo uoVar3 = this.b;
-                uoVar3.e.setImageDrawable(uoVar3.r);
-                uoVar3.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
-                TLRPC.User user = uoVar3.D0;
-                if (user != null) {
-                    user.photo = null;
-                    uoVar3.getMessagesController().putUser(uoVar3.D0, true);
-                }
-                uoVar3.O0 = true;
-                if (uoVar3.R0 == null) {
-                    uoVar3.R0 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
-                }
-                uoVar3.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
-                uoVar3.b0.e.setAnimation(uoVar3.R0);
+                AndroidUtilities.runOnUIThread(new oo(this.b, 4));
                 break;
         }
     }

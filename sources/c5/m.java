@@ -1,48 +1,161 @@
 package c5;
 
+import e9.a1;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class m {
-    public final String a;
-    public final xa.c b;
+public final class m implements w2.a {
+    public final ArrayList a;
 
-    public m(JSONObject jSONObject) {
-        jSONObject.optString("basePlanId");
-        jSONObject.optString("offerId").getClass();
-        this.a = jSONObject.getString("offerIdToken");
-        this.b = new xa.c(jSONObject.getJSONArray("pricingPhases"));
-        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
-        if (optJSONObject != null) {
-            optJSONObject.getInt("commitmentPaymentsCount");
-            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
-        }
-        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
-        if (optJSONObject2 != null) {
-            optJSONObject2.getString("productId");
-            optJSONObject2.optString("title");
-            optJSONObject2.optString("name");
-            optJSONObject2.optString("description");
-            optJSONObject2.optString("basePlanId");
-            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
-            if (optJSONObject3 != null) {
-                optJSONObject3.optString("billingPeriod");
-                optJSONObject3.optString("priceCurrencyCode");
-                optJSONObject3.optString("formattedPrice");
-                optJSONObject3.optLong("priceAmountMicros");
-                optJSONObject3.optInt("recurrenceMode");
-                optJSONObject3.optInt("billingCycleCount");
-            }
-        }
+    public m(JSONArray jSONArray) {
         ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-        if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                arrayList.add(optJSONArray.getString(i10));
+        if (jSONArray != null) {
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
+                if (optJSONObject != null) {
+                    arrayList.add(new l(optJSONObject));
+                }
             }
         }
+        this.a = arrayList;
+    }
+
+    @Override // w2.a
+    public long a(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            return Long.MIN_VALUE;
+        }
+        if (j3 < ((z3.b) arrayList.get(0)).b) {
+            return ((z3.b) arrayList.get(0)).b;
+        }
+        for (int i10 = 1; i10 < arrayList.size(); i10++) {
+            z3.b bVar = (z3.b) arrayList.get(i10);
+            long j10 = bVar.b;
+            long j11 = bVar.b;
+            if (j3 < j10) {
+                long j12 = ((z3.b) arrayList.get(i10 - 1)).d;
+                return (j12 == -9223372036854775807L || j12 <= j3 || j12 >= j11) ? j11 : j12;
+            }
+        }
+        long j13 = ((z3.b) e9.q.l(arrayList)).d;
+        if (j13 == -9223372036854775807L || j3 >= j13) {
+            return Long.MIN_VALUE;
+        }
+        return j13;
+    }
+
+    @Override // w2.a
+    public e9.i0 b(long j3) {
+        int f7 = f(j3);
+        if (f7 == 0) {
+            e9.g0 g0Var = e9.i0.b;
+            return a1.e;
+        }
+        z3.b bVar = (z3.b) this.a.get(f7 - 1);
+        long j10 = bVar.d;
+        if (j10 == -9223372036854775807L || j3 < j10) {
+            return bVar.a;
+        }
+        e9.g0 g0Var2 = e9.i0.b;
+        return a1.e;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002d  */
+    @Override // w2.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean c(z3.b bVar, long j3) {
+        boolean z10;
+        int size;
+        long j10 = bVar.b;
+        e2.d.b(j10 != -9223372036854775807L);
+        if (j10 <= j3) {
+            long j11 = bVar.d;
+            if (j11 == -9223372036854775807L || j3 < j11) {
+                z10 = true;
+                ArrayList arrayList = this.a;
+                for (size = arrayList.size() - 1; size >= 0; size--) {
+                    if (j10 >= ((z3.b) arrayList.get(size)).b) {
+                        arrayList.add(size + 1, bVar);
+                        return z10;
+                    }
+                    if (((z3.b) arrayList.get(size)).b <= j3) {
+                        z10 = false;
+                    }
+                }
+                arrayList.add(0, bVar);
+                return z10;
+            }
+        }
+        z10 = false;
+        ArrayList arrayList2 = this.a;
+        while (size >= 0) {
+        }
+        arrayList2.add(0, bVar);
+        return z10;
+    }
+
+    @Override // w2.a
+    public void clear() {
+        this.a.clear();
+    }
+
+    @Override // w2.a
+    public long d(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty() || j3 < ((z3.b) arrayList.get(0)).b) {
+            return -9223372036854775807L;
+        }
+        for (int i10 = 1; i10 < arrayList.size(); i10++) {
+            long j10 = ((z3.b) arrayList.get(i10)).b;
+            if (j3 == j10) {
+                return j10;
+            }
+            if (j3 < j10) {
+                z3.b bVar = (z3.b) arrayList.get(i10 - 1);
+                long j11 = bVar.d;
+                return (j11 == -9223372036854775807L || j11 > j3) ? bVar.b : j11;
+            }
+        }
+        z3.b bVar2 = (z3.b) e9.q.l(arrayList);
+        long j12 = bVar2.d;
+        return (j12 == -9223372036854775807L || j3 < j12) ? bVar2.b : j12;
+    }
+
+    @Override // w2.a
+    public void e(long j3) {
+        int f7 = f(j3);
+        if (f7 == 0) {
+            return;
+        }
+        ArrayList arrayList = this.a;
+        long j10 = ((z3.b) arrayList.get(f7 - 1)).d;
+        if (j10 == -9223372036854775807L || j10 >= j3) {
+            f7--;
+        }
+        arrayList.subList(0, f7).clear();
+    }
+
+    public int f(long j3) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i10 >= arrayList.size()) {
+                return arrayList.size();
+            }
+            if (j3 < ((z3.b) arrayList.get(i10)).b) {
+                return i10;
+            }
+            i10++;
+        }
+    }
+
+    public m() {
+        this.a = new ArrayList();
     }
 }

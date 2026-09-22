@@ -20,9 +20,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f4 extends org.telegram.ui.Components.xl0 {
+public final class f4 extends org.telegram.ui.Components.kl0 {
     public TLRPC.WebPage E;
     public TL_iv.pageBlockChannel F;
     public boolean G;
@@ -147,7 +147,7 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
         return 100;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 23 || i10 == 24;
@@ -299,7 +299,7 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                 if (r1Var != null) {
                     photo = null;
                     r10 = 0;
-                    r1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                    r1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 } else {
                     photo = null;
                     r10 = 0;
@@ -335,9 +335,9 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                                 r1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 s1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.r91 r91Var = s1Var.b;
-                            if (r91Var != null) {
-                                r91Var.setVisibility(4);
+                            org.telegram.ui.Components.c91 c91Var = s1Var.b;
+                            if (c91Var != null) {
+                                c91Var.setVisibility(4);
                                 s1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -349,9 +349,9 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                                     s1Var.a.stopLoading();
                                     s1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.r91 r91Var2 = s1Var.b;
-                                if (r91Var2 != null) {
-                                    r91Var2.setVisibility(0);
+                                org.telegram.ui.Components.c91 c91Var2 = s1Var.b;
+                                if (c91Var2 != null) {
+                                    c91Var2.setVisibility(0);
                                 }
                             } else {
                                 r1 r1Var6 = s1Var.a;
@@ -361,9 +361,9 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     s1Var.a.loadUrl(s1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.r91 r91Var3 = s1Var.b;
-                                if (r91Var3 != null) {
-                                    r91Var3.setVisibility(4);
+                                org.telegram.ui.Components.c91 c91Var3 = s1Var.b;
+                                if (c91Var3 != null) {
+                                    c91Var3.setVisibility(4);
                                     s1Var.b.g(null, null, null, null, false);
                                 }
                             }
@@ -806,7 +806,7 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                     }
                 }
                 j1Var.b.l();
-                j1Var.a.setGlowColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                j1Var.a.setGlowColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 j1Var.requestLayout();
                 break;
             case 18:
@@ -824,13 +824,13 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                     z0Var.L = messageObject.getDocument();
                 }
                 z0Var.h = z11;
-                org.telegram.ui.Components.qo0 qo0Var = z0Var.f;
-                int i51 = org.telegram.ui.ActionBar.j6.ud;
+                org.telegram.ui.Components.bo0 bo0Var = z0Var.f;
+                int i51 = org.telegram.ui.ActionBar.i6.ud;
                 ((h4) u70Var).getClass();
-                int w02 = org.telegram.ui.ActionBar.j6.w0(null, i51, false);
-                int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.vd, false);
-                int i52 = org.telegram.ui.ActionBar.j6.xd;
-                qo0Var.h(w02, w03, org.telegram.ui.ActionBar.j6.w0(null, i52, false), org.telegram.ui.ActionBar.j6.w0(null, i52, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.wd, false));
+                int w02 = org.telegram.ui.ActionBar.i6.w0(null, i51, false);
+                int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.vd, false);
+                int i52 = org.telegram.ui.ActionBar.i6.xd;
+                bo0Var.h(w02, w03, org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.wd, false));
                 z0Var.a(false);
                 z0Var.requestLayout();
                 break;
@@ -1421,7 +1421,7 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
         }
         view.setLayoutParams(new s4.p0(-1, -2));
         view.setFocusable(true);
-        return new org.telegram.ui.Components.il0(view);
+        return new org.telegram.ui.Components.vk0(view);
     }
 
     @Override // s4.h0
@@ -1444,7 +1444,7 @@ public final class f4 extends org.telegram.ui.Components.xl0 {
                 textView.setGravity(21);
                 textView2.setText(LocaleController.formatPluralStringComma("Views", i11));
             }
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.M6, false);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.M6, false);
             textView.setTextColor(h4Var.a());
             textView2.setTextColor(h4Var.a());
             textView.setBackgroundColor(Color.argb(34, Color.red(w02), Color.green(w02), Color.blue(w02)));

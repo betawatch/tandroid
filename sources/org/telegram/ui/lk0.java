@@ -1,78 +1,16 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ int d;
+public final class lk0 extends s4.j {
+    public final /* synthetic */ NotificationsCustomSettingsActivity F;
 
-    public /* synthetic */ lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, View view, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = view;
-        this.d = i10;
+    public lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.F = notificationsCustomSettingsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.b;
-                ArrayList arrayList = notificationsCustomSettingsActivity.I;
-                View view = this.c;
-                if (!(view instanceof org.telegram.ui.Cells.z8)) {
-                    notificationsCustomSettingsActivity.l0(true);
-                    break;
-                } else {
-                    int i10 = this.d;
-                    if (i10 >= 0 && i10 < arrayList.size()) {
-                        ((qk0) arrayList.get(i10)).h = notificationsCustomSettingsActivity.f0();
-                    }
-                    ((org.telegram.ui.Cells.z8) view).b(notificationsCustomSettingsActivity.f0(), LocaleController.getString("LedColor", R.string.LedColor), true);
-                    break;
-                }
-                break;
-            case 1:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity2 = this.b;
-                ArrayList arrayList2 = notificationsCustomSettingsActivity2.I;
-                View view2 = this.c;
-                if (!(view2 instanceof org.telegram.ui.Cells.fa)) {
-                    notificationsCustomSettingsActivity2.l0(true);
-                    break;
-                } else {
-                    int i11 = this.d;
-                    if (i11 >= 0 && i11 < arrayList2.size()) {
-                        ((qk0) arrayList2.get(i11)).f = notificationsCustomSettingsActivity2.g0();
-                    }
-                    org.telegram.ui.Cells.fa faVar = (org.telegram.ui.Cells.fa) view2;
-                    faVar.c(LocaleController.getString("PopupNotification", R.string.PopupNotification), notificationsCustomSettingsActivity2.g0(), true, faVar.h);
-                    break;
-                }
-                break;
-            default:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity3 = this.b;
-                ArrayList arrayList3 = notificationsCustomSettingsActivity3.I;
-                View view3 = this.c;
-                if (!(view3 instanceof org.telegram.ui.Cells.fa)) {
-                    notificationsCustomSettingsActivity3.l0(true);
-                    break;
-                } else {
-                    int i12 = this.d;
-                    if (i12 >= 0 && i12 < arrayList3.size()) {
-                        ((qk0) arrayList3.get(i12)).f = notificationsCustomSettingsActivity3.h0();
-                    }
-                    org.telegram.ui.Cells.fa faVar2 = (org.telegram.ui.Cells.fa) view3;
-                    faVar2.c(LocaleController.getString("NotificationsImportance", R.string.NotificationsImportance), notificationsCustomSettingsActivity3.h0(), true, faVar2.h);
-                    break;
-                }
-                break;
-        }
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.a.invalidate();
     }
 }

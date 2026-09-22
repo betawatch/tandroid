@@ -10,7 +10,7 @@ import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class n extends b2.g {
     public final u2 b;
@@ -26,13 +26,13 @@ public final class n extends b2.g {
         this.b.l();
     }
 
-    public final SparseArray Z0(lf.h hVar) {
+    public final SparseArray Z0(lf.i iVar) {
         m[] mVarArr;
-        if (hVar == null) {
+        if (iVar == null) {
             throw new IllegalArgumentException("No frame supplied.");
         }
-        g3 b10 = g3.b(hVar);
-        Bitmap bitmap = (Bitmap) hVar.d;
+        g3 b10 = g3.b(iVar);
+        Bitmap bitmap = (Bitmap) iVar.d;
         u2 u2Var = this.b;
         if (bitmap != null) {
             if (u2Var.k()) {
@@ -59,7 +59,7 @@ public final class n extends b2.g {
                 throw new IllegalArgumentException("Internal barcode detector error; check logcat output.");
             }
         } else {
-            ByteBuffer I = hVar.I();
+            ByteBuffer I = iVar.I();
             n6.l.h(I);
             if (u2Var.k()) {
                 try {

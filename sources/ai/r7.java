@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class r7 extends FrameLayout {
     public final l7 E;
@@ -51,7 +51,7 @@ public final class r7 extends FrameLayout {
         this.h = k7Var;
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.s = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, dVar), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, dVar), PorterDuff.Mode.MULTIPLY));
         p7 p7Var = new p7(this, context);
         this.e = p7Var;
         l7 l7Var = new l7(this, context);
@@ -60,8 +60,8 @@ public final class r7 extends FrameLayout {
         o7 o7Var = new o7(this, jcVar, context);
         this.a = o7Var;
         l7Var.setAdapter(o7Var);
-        p7Var.addView(l7Var, w7.y5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(k7Var, w7.y5.c(-1.0f, -1));
+        p7Var.addView(l7Var, w7.x5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(k7Var, w7.x5.c(-1.0f, -1));
         addView(p7Var);
         setVisibility(4);
     }

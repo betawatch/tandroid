@@ -22,13 +22,13 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.m70;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements x70 {
-    public final org.telegram.ui.Cells.ba W;
+public class xa extends NestedScrollView implements m70 {
+    public final org.telegram.ui.Cells.aa W;
     public final o1.k a0;
     public final wa b0;
     public boolean c0;
@@ -53,7 +53,7 @@ public class xa extends NestedScrollView implements x70 {
     public boolean v0;
     public boolean w0;
 
-    public xa(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public xa(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.q0 = -1;
@@ -65,9 +65,9 @@ public class xa extends NestedScrollView implements x70 {
         NotificationCenter.listenEmojiLoading(this);
         wa waVar = new wa(this, getContext());
         this.b0 = waVar;
-        org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(waVar, f6Var);
-        this.W = baVar;
-        baVar.i0 = false;
+        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(waVar, e6Var);
+        this.W = aaVar;
+        aaVar.i0 = false;
         frameLayout.addView(waVar, -1, -2);
         addView(frameLayout, new ViewGroup.LayoutParams(-1, -2));
         paint.setColor(-16777216);
@@ -195,7 +195,7 @@ public class xa extends NestedScrollView implements x70 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.m70
     public final void a(RectF rectF) {
         va vaVar;
         wa waVar = this.b0;
@@ -214,7 +214,7 @@ public class xa extends NestedScrollView implements x70 {
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.x70
+    @Override // org.telegram.ui.Components.m70
     public final void b(Canvas canvas, float f7) {
         va vaVar;
         wa waVar = this.b0;
@@ -457,7 +457,7 @@ public class xa extends NestedScrollView implements x70 {
         return true;
     }
 
-    public void F(org.telegram.ui.Components.y5 y5Var) {
+    public void F(org.telegram.ui.Components.x5 x5Var) {
     }
 
     public void I(sa saVar) {

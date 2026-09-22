@@ -12,13 +12,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kb;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.jb;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bo;
 import org.telegram.ui.c41;
-import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 Paint paint = k3Var.O;
                 a3 a3Var = k3Var.v;
                 if (a3Var.getSwipeOffsetY() > 0.0f) {
-                    paint.setAlpha((int) ((1.0f - w7.q.a(a3Var.getSwipeOffsetY() / a3Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
+                    paint.setAlpha((int) ((1.0f - w7.p.a(a3Var.getSwipeOffsetY() / a3Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
                 } else {
                     paint.setAlpha(64);
                 }
@@ -114,7 +114,7 @@ public final /* synthetic */ class e2 implements Runnable {
             case 9:
                 Activity activity = k3Var.k0;
                 if (activity instanceof LaunchActivity) {
-                    ((LaunchActivity) activity).p0(zn.R9(k3Var.H));
+                    ((LaunchActivity) activity).p0(bo.R9(k3Var.H));
                 }
                 k3Var.k(true);
                 break;
@@ -147,10 +147,10 @@ public final /* synthetic */ class e2 implements Runnable {
             case 14:
                 int i13 = k3Var.G;
                 Context context = k3Var.getContext();
-                xc xcVar = new xc(kb.a(k3Var.getContext()), k3Var.E);
+                vc vcVar = new vc(jb.a(k3Var.getContext()), k3Var.E);
                 long j3 = k3Var.H;
                 int i14 = c41.v;
-                c41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                c41.K(i13, context, j3, false, false, new ArrayList(), vcVar, null, new byte[0], null, null);
                 break;
             case 15:
                 k3.j(k3Var.G, k3Var.H, new e2(k3Var, 16));

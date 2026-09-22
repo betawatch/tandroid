@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.lx0;
-import org.telegram.ui.pn0;
+import org.telegram.ui.on0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,12 +69,12 @@ public final /* synthetic */ class y5 implements Runnable {
                 }
                 if (tLObject != null) {
                     MessagesController.getInstance(i11).putUsers(authorizationform.users, false);
-                    pn0 pn0Var = new pn0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, (String) null, authorizationform, (TL_account.Password) tLObject);
-                    pn0Var.C1 = true;
+                    on0 on0Var = new on0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, (String) null, authorizationform, (TL_account.Password) tLObject);
+                    on0Var.C1 = true;
                     if (AndroidUtilities.isTablet()) {
-                        externalActionActivity.d.c(-1, pn0Var);
+                        externalActionActivity.d.c(-1, on0Var);
                     } else {
-                        externalActionActivity.c.c(-1, pn0Var);
+                        externalActionActivity.c.c(-1, on0Var);
                     }
                     if (!AndroidUtilities.isTablet()) {
                         externalActionActivity.e.setVisibility(8);
@@ -95,21 +95,21 @@ public final /* synthetic */ class y5 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
                 if (!(((TLObject) obj7) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.Components.d5.f0(i11, tL_error, n2Var, tL_payments_canPurchaseStore, new Object[0]);
+                    org.telegram.ui.Components.c5.f0(i11, tL_error, n2Var, tL_payments_canPurchaseStore, new Object[0]);
                     return;
                 }
                 Activity parentActivity = n2Var != null ? n2Var.getParentActivity() : AndroidUtilities.getActivity();
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = n2Var.getAccountInstance();
                 of.b bVar = new of.b(7, z10);
-                bVar.X(BillingController.PREMIUM_PRODUCT_DETAILS);
+                bVar.U(BillingController.PREMIUM_PRODUCT_DETAILS);
                 lx0Var.a();
                 String str3 = lx0Var.g.a;
                 if (TextUtils.isEmpty(str3)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
                 bVar.c = str3;
-                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.H()), fVar, false);
+                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.C()), fVar, false);
                 return;
         }
     }

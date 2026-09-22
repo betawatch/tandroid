@@ -1,12 +1,12 @@
 package ci;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.ol0;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.zk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,17 +26,17 @@ public final /* synthetic */ class o3 implements Runnable {
                 f3 f3Var = this.b.c.d;
                 f3Var.getClass();
                 s3 s3Var = this.c;
-                int S = RecyclerView.S(s3Var);
-                if (S != -1) {
-                    ml0 ml0Var = f3Var.V0;
-                    if (ml0Var == null) {
-                        nl0 nl0Var = f3Var.W0;
-                        if (nl0Var != null) {
-                            nl0Var.c(0.0f, 0.0f, S, s3Var);
+                int R = RecyclerView.R(s3Var);
+                if (R != -1) {
+                    zk0 zk0Var = f3Var.V0;
+                    if (zk0Var == null) {
+                        al0 al0Var = f3Var.W0;
+                        if (al0Var != null) {
+                            al0Var.c(0.0f, 0.0f, R, s3Var);
                             break;
                         }
                     } else {
-                        ml0Var.d(S, s3Var);
+                        zk0Var.d(R, s3Var);
                         break;
                     }
                 }
@@ -45,17 +45,17 @@ public final /* synthetic */ class o3 implements Runnable {
                 f3 f3Var2 = this.b.c.d;
                 f3Var2.getClass();
                 s3 s3Var2 = this.c;
-                int S2 = RecyclerView.S(s3Var2);
-                if (S2 != -1) {
-                    ol0 ol0Var = f3Var2.X0;
-                    if (ol0Var == null) {
-                        pl0 pl0Var = f3Var2.Y0;
-                        if (pl0Var != null) {
-                            pl0Var.c(0.0f, 0.0f, S2, s3Var2);
+                int R2 = RecyclerView.R(s3Var2);
+                if (R2 != -1) {
+                    bl0 bl0Var = f3Var2.X0;
+                    if (bl0Var == null) {
+                        cl0 cl0Var = f3Var2.Y0;
+                        if (cl0Var != null) {
+                            cl0Var.c(0.0f, 0.0f, R2, s3Var2);
                             break;
                         }
                     } else {
-                        ol0Var.d(S2, s3Var2);
+                        bl0Var.d(R2, s3Var2);
                         break;
                     }
                 }

@@ -1,20 +1,78 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.view.ViewGroup;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o7 extends org.telegram.ui.Cells.u7 {
-    public final /* synthetic */ p7 G0;
+public final class o7 extends g7 {
+    public org.telegram.ui.Cells.s7 n;
+    public final ArrayList r;
+    public org.telegram.ui.Components.pq s;
+    public final /* synthetic */ s7 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o7(p7 p7Var, Context context, org.telegram.ui.Cells.t7 t7Var, int i10) {
-        super(context, t7Var, i10);
-        this.G0 = p7Var;
+    public o7(s7 s7Var) {
+        super(s7Var, 1);
+        this.v = s7Var;
+        this.r = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Cells.u7
-    public final void h() {
-        this.G0.v.E.H0(null, (zh.a) getTag(), true);
+    @Override // org.telegram.ui.g7, org.telegram.ui.f7
+    public final void F() {
+        super.F();
+        ArrayList arrayList = this.r;
+        arrayList.clear();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i10 >= arrayList2.size()) {
+                return;
+            }
+            arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0, 0L));
+            i10++;
+        }
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (this.s == null) {
+            org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.X9, false)), org.telegram.ui.ActionBar.i6.R4);
+            this.s = pqVar;
+            pqVar.w = true;
+        }
+        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) c1Var.a;
+        zh.a aVar = ((m7) this.e.get(i10)).d;
+        Object tag = t7Var.getTag();
+        ImageReceiver imageReceiver = t7Var.c;
+        boolean z10 = aVar == tag;
+        t7Var.setTag(aVar);
+        int max = (int) Math.max(100.0f, AndroidUtilities.getRealScreenSize().x / AndroidUtilities.density);
+        int i11 = aVar.d;
+        File file = aVar.a;
+        if (i11 == 1) {
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
+            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), true);
+        } else {
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
+            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), false);
+        }
+        t7Var.i(this.v.f.j.contains(aVar), z10);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        if (this.n == null) {
+            this.n = new org.telegram.ui.Cells.s7(viewGroup.getContext(), null);
+        }
+        n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
+        n7Var.setStyle(1);
+        return new org.telegram.ui.Components.vk0(n7Var);
     }
 }

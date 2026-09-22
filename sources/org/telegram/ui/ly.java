@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class ly extends org.telegram.ui.ActionBar.g5 {
     public final /* synthetic */ uy f;
@@ -71,8 +71,8 @@ public final class ly extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
         org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.Components.go0 go0Var;
-        org.telegram.ui.Components.go0 go0Var2;
+        org.telegram.ui.Components.rn0 rn0Var;
+        org.telegram.ui.Components.rn0 rn0Var2;
         uy uyVar = this.f;
         uyVar.j2 = true;
         org.telegram.ui.ActionBar.v0 v0Var = uyVar.D1;
@@ -83,13 +83,13 @@ public final class ly extends org.telegram.ui.ActionBar.g5 {
         ty tyVar = uyVar.e0[0];
         if (tyVar != null) {
             if (uyVar.n2 != null) {
-                tyVar.a.d1();
+                tyVar.a.c1();
                 ey eyVar = uyVar.C0;
                 if (eyVar != null) {
-                    ai.w0 w0Var = eyVar.W;
+                    ai.w0 w0Var = eyVar.V;
                     if (w0Var.i1) {
                         w0Var.i1 = false;
-                        w0Var.L0(false);
+                        w0Var.K0(false);
                     }
                 }
             }
@@ -117,10 +117,10 @@ public final class ly extends org.telegram.ui.ActionBar.g5 {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
         uyVar.m3();
         ey eyVar2 = uyVar.C0;
-        if (eyVar2 != null && (go0Var2 = eyVar2.c0) != null) {
-            go0Var2.c = gg.f0.d;
+        if (eyVar2 != null && (rn0Var2 = eyVar2.b0) != null) {
+            rn0Var2.c = gg.f0.d;
         }
-        if ((eyVar2 != null && (go0Var = eyVar2.c0) != null && go0Var.N()) || uyVar.getMessagesController().getTotalDialogsCount() > 10 || uyVar.s3 || uyVar.K) {
+        if ((eyVar2 != null && (rn0Var = eyVar2.b0) != null && rn0Var.N()) || uyVar.getMessagesController().getTotalDialogsCount() > 10 || uyVar.s3 || uyVar.K) {
             uyVar.k2 = true;
             if (!uyVar.p3) {
                 uyVar.O4(true, false, true, false);
@@ -134,11 +134,11 @@ public final class ly extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         ey eyVar;
-        org.telegram.ui.Components.go0 go0Var;
+        org.telegram.ui.Components.rn0 rn0Var;
         String obj = editText.getText().toString();
         boolean isEmpty = obj.isEmpty();
         uy uyVar = this.f;
-        if (!isEmpty || (((eyVar = uyVar.C0) != null && (go0Var = eyVar.c0) != null && go0Var.N()) || uyVar.s3 || uyVar.K)) {
+        if (!isEmpty || (((eyVar = uyVar.C0) != null && (rn0Var = eyVar.b0) != null && rn0Var.N()) || uyVar.s3 || uyVar.K)) {
             uyVar.k2 = true;
             if (!uyVar.p3) {
                 uyVar.O4(true, false, true, false);
@@ -147,9 +147,9 @@ public final class ly extends org.telegram.ui.ActionBar.g5 {
         ey eyVar2 = uyVar.C0;
         if (eyVar2 != null) {
             View currentView = eyVar2.getCurrentView();
-            boolean z10 = TextUtils.isEmpty(eyVar2.L0) ? true : !eyVar2.f0;
-            eyVar2.L0 = obj;
-            eyVar2.P(currentView, eyVar2.getCurrentPosition(), obj, z10);
+            boolean z10 = TextUtils.isEmpty(eyVar2.K0) ? true : !eyVar2.e0;
+            eyVar2.K0 = obj;
+            eyVar2.O(currentView, eyVar2.getCurrentPosition(), obj, z10);
         }
     }
 }

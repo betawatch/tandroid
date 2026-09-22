@@ -8,20 +8,20 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class px extends j71 {
-    public final /* synthetic */ a71[] d2;
+public final class px extends h71 {
+    public final /* synthetic */ y61[] d2;
     public final /* synthetic */ uy e2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public px(uy uyVar, uy uyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.f6 f6Var, a71[] a71VarArr) {
-        super(uyVar2, activity, true, num, 0, f6Var);
+    public px(uy uyVar, uy uyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.e6 e6Var, y61[] y61VarArr) {
+        super(uyVar2, activity, true, num, 0, e6Var);
         this.e2 = uyVar;
-        this.d2 = a71VarArr;
+        this.d2 = y61VarArr;
     }
 
-    @Override // org.telegram.ui.j71
+    @Override // org.telegram.ui.h71
     public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         int i10;
         if (tL_starGiftUnique == null) {
@@ -32,15 +32,15 @@ public final class px extends j71 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.j71
+    @Override // org.telegram.ui.h71
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         TLRPC.TL_emojiStatus tL_emojiStatus;
         TLRPC.EmojiStatus emojiStatus;
         int i10;
         int i11;
         int i12;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        a71[] a71VarArr = this.d2;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        y61[] y61VarArr = this.d2;
         uy uyVar = this.e2;
         if (l4 == null) {
             emojiStatus = new TLRPC.TL_emojiStatusEmpty();
@@ -54,15 +54,15 @@ public final class px extends j71 {
                     i11 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
                     i12 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
                     long clientUserId = UserConfig.getInstance(i12).getClientUserId();
-                    f6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-                    yh.y3 y3Var = new yh.y3(context, i11, clientUserId, f6Var, null);
-                    y3Var.j2(n10, null);
-                    y3Var.m2();
-                    y3Var.show();
-                    a71 a71Var = a71VarArr[0];
-                    if (a71Var != null) {
+                    e6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
+                    yh.z3 z3Var = new yh.z3(context, i11, clientUserId, e6Var, null);
+                    z3Var.j2(n10, null);
+                    z3Var.m2();
+                    z3Var.show();
+                    y61 y61Var = y61VarArr[0];
+                    if (y61Var != null) {
                         uyVar.M0 = null;
-                        a71Var.dismiss();
+                        y61Var.dismiss();
                         return;
                     }
                     return;
@@ -96,10 +96,10 @@ public final class px extends j71 {
             p0Var.h = longValue;
             oVar.a(p0Var);
         }
-        a71 a71Var2 = a71VarArr[0];
-        if (a71Var2 != null) {
+        y61 y61Var2 = y61VarArr[0];
+        if (y61Var2 != null) {
             uyVar.M0 = null;
-            a71Var2.dismiss();
+            y61Var2.dismiss();
         }
     }
 }

@@ -2,20 +2,20 @@ package ci;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.dw;
+import org.telegram.ui.Components.cw;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class c2 extends dw {
+public final class c2 extends cw {
     public final /* synthetic */ e2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var), false);
+    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, e6Var), false);
         this.g0 = e2Var;
     }
 
-    @Override // org.telegram.ui.Components.dw
+    @Override // org.telegram.ui.Components.cw
     public final boolean h(int i10) {
         int i11;
         int paddingTop;
@@ -30,10 +30,10 @@ public final class c2 extends dw {
         }
         if (l2Var != null && (k2Var = l2Var.f) != null) {
             if (k2Var.getSelectedCategory() != null) {
-                p1.x1(p1Var, 0, 0);
-                l2Var.f.G1(null);
+                p1.w1(p1Var, 0, 0);
+                l2Var.f.F1(null);
             }
-            l2Var.f.E1();
+            l2Var.f.D1();
             l2Var.b();
         }
         if (d2Var != null) {
@@ -59,7 +59,7 @@ public final class c2 extends dw {
                 e2Var.n = f7;
                 paddingTop = p1Var.getPaddingTop();
             }
-            p1.x1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
+            p1.w1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
         }
         return true;
     }

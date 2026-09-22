@@ -9,10 +9,10 @@ import q9.a;
 import q9.j;
 import qb.d;
 import qb.g;
-import w7.h9;
+import w7.g9;
 import z7.i;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class SubjectSegmentationRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -28,7 +28,7 @@ public class SubjectSegmentationRegistrar implements ComponentRegistrar {
         a b11 = a10.b();
         z7.g gVar = i.b;
         Object[] objArr = {b10, b11};
-        h9.a(2, objArr);
+        g9.a(2, objArr);
         return i.r(2, objArr);
     }
 }

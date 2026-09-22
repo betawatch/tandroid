@@ -5,10 +5,10 @@ import b2.s;
 import c3.h0;
 import e2.v;
 import g2.b0;
-import u2.b1;
-import v7.n7;
+import u2.a1;
+import v7.m7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class i extends a {
     public final int E;
@@ -26,27 +26,27 @@ public final class i extends a {
     }
 
     @Override // y2.j
-    public final void D() {
+    public final void H() {
         this.I = true;
     }
 
     @Override // y2.j
     public final void a() {
-        m5.e eVar = this.x;
-        e2.d.h(eVar);
+        o0.a aVar = this.x;
+        e2.d.h(aVar);
         if (this.H == 0) {
             long j3 = this.F;
-            for (b1 b1Var : (b1[]) eVar.c) {
-                if (b1Var.F != j3) {
-                    b1Var.F = j3;
-                    b1Var.z = true;
+            for (a1 a1Var : (a1[]) aVar.c) {
+                if (a1Var.F != j3) {
+                    a1Var.F = j3;
+                    a1Var.z = true;
                 }
             }
             d dVar = this.G;
             long j10 = this.v;
             long j11 = j10 == -9223372036854775807L ? -9223372036854775807L : j10 - this.F;
             long j12 = this.w;
-            dVar.a(eVar, j11, j12 != -9223372036854775807L ? j12 - this.F : -9223372036854775807L);
+            dVar.a(aVar, j11, j12 != -9223372036854775807L ? j12 - this.F : -9223372036854775807L);
         }
         try {
             g2.m b10 = this.b.b(this.H);
@@ -68,18 +68,18 @@ public final class i extends a {
             int i10 = sVar.Q;
             int i11 = sVar.R;
             if (r0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
-                h0 W = eVar.W(4);
+                h0 U = aVar.U(4);
                 int i12 = i10 * i11;
                 long j13 = (this.n - this.h) / i12;
                 for (int i13 = 1; i13 < i12; i13++) {
-                    W.d(0, new v());
-                    W.c(i13 * j13, 0, 0, 0, null);
+                    U.d(0, new v());
+                    U.c(i13 * j13, 0, 0, 0, null);
                 }
             }
-            n7.a(this.r);
+            m7.a(this.r);
             this.J = !this.I;
         } catch (Throwable th2) {
-            n7.a(this.r);
+            m7.a(this.r);
             throw th2;
         }
     }

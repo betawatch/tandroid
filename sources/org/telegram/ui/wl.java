@@ -1,22 +1,69 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class wl extends ci.f4 {
-    public final /* synthetic */ zn L0;
+public final class wl extends tu0 {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ MediaController.PhotoEntry b;
+    public final /* synthetic */ bo c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wl(zn znVar, Activity activity) {
-        super(activity, 3);
-        this.L0 = znVar;
+    public wl(bo boVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
+        this.c = boVar;
+        this.a = messageObject;
+        this.b = photoEntry;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.L0.C1);
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return bo.A1(this.c, this.a, null, i10, z10, true);
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final boolean O() {
+        bo boVar = this.c;
+        if (boVar.Y == null || !boVar.x9()) {
+            return false;
+        }
+        boVar.Y.Q();
+        return true;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final MessageObject U() {
+        MessageObject messageObject = this.c.p5;
+        MessageObject messageObject2 = this.a;
+        if (messageObject == messageObject2) {
+            return messageObject2;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void e(CharSequence charSequence) {
+        this.c.Y.g1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        bo boVar = this.c;
+        if (boVar.p5 != this.a) {
+            return;
+        }
+        MediaController.PhotoEntry photoEntry = this.b;
+        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
+            boVar.q(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
+        } else {
+            boVar.Y.e0();
+        }
     }
 }

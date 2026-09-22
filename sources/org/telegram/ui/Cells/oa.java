@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
@@ -48,19 +48,19 @@ public final /* synthetic */ class oa implements Runnable {
             case 1:
                 o0 o0Var = (o0) this.b;
                 n0 n0Var = (n0) this.c;
-                u1 u1Var = o0Var.a;
+                t1 t1Var = o0Var.a;
                 n0 n0Var2 = o0Var.F;
                 if (n0Var == n0Var2) {
                     n0Var2.n.c(false);
                     n0 n0Var3 = o0Var.F;
                     if (!n0Var3.g) {
                         TLObject tLObject2 = n0Var3.o;
-                        u1 u1Var2 = o0Var.a;
-                        if (u1Var2.getDelegate() != null) {
-                            u1Var2.getDelegate().B0(u1Var2, tLObject2, true);
+                        t1 t1Var2 = o0Var.a;
+                        if (t1Var2.getDelegate() != null) {
+                            t1Var2.getDelegate().A0(t1Var2, tLObject2, true);
                         }
-                    } else if (u1Var.getDelegate() != null) {
-                        u1Var.getDelegate().x2();
+                    } else if (t1Var.getDelegate() != null) {
+                        t1Var.getDelegate().x2();
                     }
                 }
                 o0Var.F = null;
@@ -97,33 +97,33 @@ public final /* synthetic */ class oa implements Runnable {
                 break;
             case 3:
                 org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
-                xc.a0(n2Var2).d0((TLRPC.TL_error) this.c, false);
+                vc.a0(n2Var2).d0((TLRPC.TL_error) this.c, false);
                 break;
             case 4:
                 w0 w0Var2 = (w0) this.b;
                 w0Var2.X0.h2(w0Var2, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
                 break;
             case 5:
-                u1 u1Var3 = (u1) this.b;
-                u1Var3.O0.draw((Canvas) this.c);
+                t1 t1Var3 = (t1) this.b;
+                t1Var3.O0.draw((Canvas) this.c);
                 break;
             case 6:
-                ((u1) this.b).post(new b1(8, (u1) this.c));
+                ((t1) this.b).post(new b1(8, (t1) this.c));
                 break;
             case 7:
-                n8 n8Var = (n8) this.b;
+                m8 m8Var = (m8) this.b;
                 TLRPC.Document document = (TLRPC.Document) this.c;
-                if (n8Var.r.documents.isEmpty()) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = n8Var.r;
+                if (m8Var.r.documents.isEmpty()) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = m8Var.r;
                     if (tL_messages_stickerSet.set.thumb_document_id == document.id) {
                         tL_messages_stickerSet.documents.add(document);
-                        n8Var.d(n8Var.r, n8Var.f, n8Var.s);
+                        m8Var.d(m8Var.r, m8Var.f, m8Var.s);
                         break;
                     }
                 }
                 break;
             default:
-                ((qa) this.b).x1((org.telegram.ui.ActionBar.i6) this.c);
+                ((qa) this.b).w1((org.telegram.ui.ActionBar.h6) this.c);
                 break;
         }
     }

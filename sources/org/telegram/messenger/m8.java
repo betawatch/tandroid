@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.i21;
+import org.telegram.ui.Components.s11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ab0;
-import org.telegram.ui.nq;
+import org.telegram.ui.pq;
 import org.telegram.ui.uy;
+import org.telegram.ui.ya0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -142,12 +142,12 @@ public final /* synthetic */ class m8 implements Runnable {
                 boolean z10 = this.b;
                 int i11 = this.c;
                 if (!z10 || tL_chatAdminRights != null || TextUtils.isEmpty(str2)) {
-                    nq nqVar = new nq(user.id, -this.d, tL_chatAdminRights2, null, null, str3, 2, true, !z10, str2);
-                    nqVar.X0 = new ab0(uyVar, i11);
-                    ((ActionBarLayout) launchActivity.O()).Q(nqVar, false);
+                    pq pqVar = new pq(user.id, -this.d, tL_chatAdminRights2, null, null, str3, 2, true, !z10, str2);
+                    pqVar.X0 = new ya0(uyVar, i11);
+                    ((ActionBarLayout) launchActivity.O()).Q(pqVar, false);
                     break;
                 } else {
-                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, uyVar, true, new i21(launchActivity, i11, chat, uyVar, 3), null);
+                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, uyVar, true, new s11(launchActivity, i11, chat, uyVar, 3), null);
                     break;
                 }
         }

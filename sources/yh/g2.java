@@ -4,14 +4,14 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class g2 extends ClickableSpan {
     public final /* synthetic */ long a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ z3 b;
 
-    public g2(y3 y3Var, long j3) {
-        this.b = y3Var;
+    public g2(z3 z3Var, long j3) {
+        this.b = z3Var;
         this.a = j3;
     }
 

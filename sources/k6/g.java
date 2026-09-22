@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -29,8 +29,8 @@ public abstract class g {
             if (!c) {
                 try {
                     PackageInfo b10 = w6.b.a(context).b(64, "com.google.android.gms");
-                    h.d(context);
-                    if (b10 == null || h.f(b10, false) || !h.f(b10, true)) {
+                    h.c(context);
+                    if (b10 == null || h.e(b10, false) || !h.e(b10, true)) {
                         b = false;
                     } else {
                         b = true;
@@ -114,13 +114,13 @@ public abstract class g {
                         }
                     }
                     packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-                    h.d(context);
-                    if (h.f(packageInfo2, true)) {
+                    h.c(context);
+                    if (h.e(packageInfo2, true)) {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
                         if (z10) {
                             n6.l.h(packageInfo);
-                            if (!h.f(packageInfo, true)) {
+                            if (!h.e(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }
                         }
@@ -147,8 +147,8 @@ public abstract class g {
                 }
             }
             packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-            h.d(context);
-            if (h.f(packageInfo2, true)) {
+            h.c(context);
+            if (h.e(packageInfo2, true)) {
             }
             return 9;
         } catch (PackageManager.NameNotFoundException unused3) {

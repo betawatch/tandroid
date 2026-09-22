@@ -1,17 +1,91 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class yf extends MessageObject {
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean isOutOwner() {
-        return true;
+public final class yf extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ ChatActivityEnterView f;
+
+    public yf(ChatActivityEnterView chatActivityEnterView, boolean z10, float f7, float f10, float f11, float f12) {
+        this.f = chatActivityEnterView;
+        this.a = z10;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean needDrawShareButton() {
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        float f7;
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        boolean z10 = this.a;
+        if (z10) {
+            int i10 = ChatActivityEnterView.n5;
+            chatActivityEnterView.c0();
+        }
+        wo0 wo0Var = chatActivityEnterView.p0;
+        if (wo0Var != null) {
+            wo0Var.setVisibility(z10 ? 0 : 8);
+            chatActivityEnterView.p0.setAlpha(this.d);
+            chatActivityEnterView.p0.setTranslationX(this.e);
+            f7 = chatActivityEnterView.p0.getTranslationX();
+        } else {
+            f7 = 0.0f;
+        }
+        chatActivityEnterView.Q0.setTranslationX(f7);
+        chatActivityEnterView.G = f7;
+        chatActivityEnterView.K1();
+        chatActivityEnterView.requestLayout();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
+        }
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        wo0 wo0Var = chatActivityEnterView.p0;
+        if (wo0Var != null) {
+            wo0Var.setVisibility(8);
+        }
+        chatActivityEnterView.Q0.setTranslationX(0.0f);
+        chatActivityEnterView.G = 0.0f;
+        chatActivityEnterView.K1();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        float f7;
+        boolean z10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        if (z10) {
+            int i10 = ChatActivityEnterView.n5;
+            chatActivityEnterView.c0();
+            chatActivityEnterView.p0.setVisibility(0);
+        }
+        wo0 wo0Var = chatActivityEnterView.p0;
+        if (wo0Var != null) {
+            wo0Var.setAlpha(this.b);
+            chatActivityEnterView.p0.setTranslationX(this.c);
+            f7 = chatActivityEnterView.p0.getTranslationX();
+        } else {
+            f7 = 0.0f;
+        }
+        chatActivityEnterView.Q0.setTranslationX(f7);
+        chatActivityEnterView.G = f7;
+        chatActivityEnterView.K1();
+        ei.c0 c0Var = chatActivityEnterView.l0;
+        if (c0Var == null || c0Var.getTag() != null) {
+            return;
+        }
+        chatActivityEnterView.B0.clear();
     }
 }

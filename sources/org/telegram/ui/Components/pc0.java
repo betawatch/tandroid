@@ -1,36 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RuntimeShader;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class pc0 {
-    public final RuntimeShader a;
-    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
-    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
+public final class pc0 implements Runnable {
+    public boolean a;
+    public final /* synthetic */ uc0 b;
 
-    public pc0(int i10) {
-        oc0.b();
-        this.a = oc0.a(AndroidUtilities.readRes(i10));
+    public pc0(uc0 uc0Var) {
+        this.b = uc0Var;
     }
 
-    public final void a(float[] fArr) {
-        float[] fArr2 = this.b;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
-        }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformGradient", fArr2);
-    }
-
-    public final void b(float[] fArr) {
-        float[] fArr2 = this.c;
-        if (Arrays.equals(fArr, fArr2)) {
-            return;
-        }
-        System.arraycopy(fArr, 0, fArr2, 0, 4);
-        this.a.setFloatUniform("transformPattern", fArr2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10 = this.a;
+        uc0 uc0Var = this.b;
+        uc0Var.a(z10);
+        uc0Var.postDelayed(this, uc0Var.L);
     }
 }

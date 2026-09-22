@@ -12,15 +12,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class w2 extends View {
     public final int a;
     public final RectF b;
-    public final org.telegram.ui.Components.n6 c;
+    public final org.telegram.ui.Components.m6 c;
     public final s2 d;
     public final ArrayList e;
     public final int[] f;
@@ -33,21 +33,21 @@ public final class w2 extends View {
         super(context);
         this.b = new RectF();
         qr qrVar = qr.f;
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false, false);
-        this.c = n6Var;
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, false, false, false);
+        this.c = m6Var;
         this.e = new ArrayList();
         this.f = new int[]{R.raw.star_reaction_effect1, R.raw.star_reaction_effect2, R.raw.star_reaction_effect3, R.raw.star_reaction_effect4, R.raw.star_reaction_effect5};
         this.h = new ArrayList();
         this.s = true;
         this.a = i10;
-        n6Var.setCallback(this);
-        n6Var.o(false, true, false);
-        n6Var.t(AndroidUtilities.dp(40.0f));
-        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        n6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), 0);
-        n6Var.G = AndroidUtilities.displaySize.x;
-        n6Var.r(-1);
-        n6Var.b = 17;
+        m6Var.setCallback(this);
+        m6Var.o(false, true, false);
+        m6Var.t(AndroidUtilities.dp(40.0f));
+        m6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        m6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), 0);
+        m6Var.G = AndroidUtilities.displaySize.x;
+        m6Var.r(-1);
+        m6Var.b = 17;
         this.d = new s2(this, 0);
     }
 
@@ -96,15 +96,15 @@ public final class w2 extends View {
             if (i11 >= size) {
                 break;
             }
-            kj0 kj0Var = (kj0) arrayList.get(i11);
-            if (kj0Var.a0 >= kj0Var.e[0]) {
+            xi0 xi0Var = (xi0) arrayList.get(i11);
+            if (xi0Var.a0 >= xi0Var.e[0]) {
                 arrayList.remove(i11);
                 i11--;
             } else {
                 float f10 = dp / 2.0f;
-                kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f10), (int) (rectF.centerY() - f10), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f10), (int) (rectF.centerY() + f10));
-                kj0Var.setAlpha((int) (w2Var.n * 255.0f));
-                kj0Var.draw(canvas2);
+                xi0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f10), (int) (rectF.centerY() - f10), (int) org.telegram.ui.Cells.q3.a(AndroidUtilities.dp(15.0f), lerp, rectF.left, f10), (int) (rectF.centerY() + f10));
+                xi0Var.setAlpha((int) (w2Var.n * 255.0f));
+                xi0Var.draw(canvas2);
             }
             i11++;
         }
@@ -131,9 +131,9 @@ public final class w2 extends View {
             Paint paint = v2Var.e;
             int i13 = (int) (lerp2 * 255.0f);
             paint.setAlpha(i13);
-            kj0 kj0Var2 = v2Var.d;
-            if (kj0Var2 != null) {
-                kj0Var2.setAlpha(i13);
+            xi0 xi0Var2 = v2Var.d;
+            if (xi0Var2 != null) {
+                xi0Var2.setAlpha(i13);
             }
             imageReceiver.setAlpha(lerp2);
             canvas2.save();
@@ -157,7 +157,7 @@ public final class w2 extends View {
             v2Var.g.c(AndroidUtilities.dp(18.0f), f15, lerp2, -1, canvas3);
             canvas2 = canvas3;
             canvas2.restore();
-            if (kj0Var2 != null) {
+            if (xi0Var2 != null) {
                 canvas2.save();
                 canvas2.translate(AndroidUtilities.dp(4.0f) * f13, 0.0f);
                 canvas2.rotate(f14);
@@ -166,8 +166,8 @@ public final class w2 extends View {
                 int dp5 = AndroidUtilities.dp(90.0f);
                 int i15 = (-dp5) / 2;
                 int i16 = dp5 / 2;
-                kj0Var2.setBounds(i15, AndroidUtilities.dp(8.0f) + i15, i16, AndroidUtilities.dp(8.0f) + i16);
-                kj0Var2.draw(canvas2);
+                xi0Var2.setBounds(i15, AndroidUtilities.dp(8.0f) + i15, i16, AndroidUtilities.dp(8.0f) + i16);
+                xi0Var2.draw(canvas2);
                 canvas2.restore();
             }
             if (d >= 1.0f || e >= 1.0f) {

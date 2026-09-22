@@ -3,16 +3,16 @@ package yh;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ z3 b;
     public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ w1(y3 y3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+    public /* synthetic */ w1(z3 z3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
         this.a = i10;
-        this.b = y3Var;
+        this.b = z3Var;
         this.c = tL_payments_paymentResult;
     }
 

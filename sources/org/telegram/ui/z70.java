@@ -5,7 +5,7 @@ import android.view.TextureView;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class z70 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final class z70 implements TextureView.SurfaceTextureListener {
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 if (photoViewer.B2 != null) {
-                    org.telegram.ui.Components.rg0 rg0Var = org.telegram.ui.Components.rg0.p0;
-                    if (rg0Var.P && org.telegram.ui.Components.rg0.p() != null && org.telegram.ui.Components.rg0.p().b.a != 0) {
-                        (rg0Var != null ? rg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
-                        (rg0Var != null ? rg0Var.l0 : null).setVisibility(0);
+                    org.telegram.ui.Components.eg0 eg0Var = org.telegram.ui.Components.eg0.p0;
+                    if (eg0Var.P && org.telegram.ui.Components.eg0.p() != null && org.telegram.ui.Components.eg0.p().b.a != 0) {
+                        (eg0Var != null ? eg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
+                        (eg0Var != null ? eg0Var.l0 : null).setVisibility(0);
                         return false;
                     }
                     if (photoViewer.F3) {

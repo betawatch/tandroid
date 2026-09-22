@@ -5,9 +5,9 @@ import j$.util.Objects;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public boolean a;
@@ -83,7 +83,7 @@ public final class p0 {
     public final p0 a() {
         String findAnimatedEmojiEmoticon;
         long j3 = this.g;
-        return (j3 == 0 || (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(p5.f(UserConfig.selectedAccount, j3), null)) == null) ? this : b(findAnimatedEmojiEmoticon);
+        return (j3 == 0 || (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(o5.f(UserConfig.selectedAccount, j3), null)) == null) ? this : b(findAnimatedEmojiEmoticon);
     }
 
     public final boolean equals(Object obj) {
@@ -127,12 +127,12 @@ public final class p0 {
             return this.f;
         }
         long j3 = this.g;
-        if (j3 != 0 && (f7 = p5.f(UserConfig.selectedAccount, j3)) != null) {
+        if (j3 != 0 && (f7 = o5.f(UserConfig.selectedAccount, j3)) != null) {
             return MessageObject.findAnimatedEmojiEmoticon(f7, null);
         }
         StringBuilder sb2 = new StringBuilder("VisibleReaction{");
         sb2.append(this.g);
         sb2.append(", ");
-        return a4.a.s(sb2, this.f, "}");
+        return a4.a.t(sb2, this.f, "}");
     }
 }

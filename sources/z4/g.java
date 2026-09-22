@@ -25,28 +25,26 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import fb.j;
-import hg.k0;
+import fb.i;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.m2;
-import pg.c1;
+import org.telegram.ui.Cells.l2;
+import qg.b0;
 import r0.a0;
 import r0.i0;
 import s4.d1;
-import x7.d7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
-    public static final j t0 = new j(6);
-    public static final m2 u0 = new m2(5);
-    public static final j v0 = new j(7);
+    public static final i t0 = new i(6);
+    public static final l2 u0 = new l2(5);
+    public static final i v0 = new i(7);
     public int E;
     public float F;
     public float G;
@@ -90,7 +88,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final c1 q0;
+    public final b0 q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -111,7 +109,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new c1(this, 12);
+        this.q0 = new b0(this, 11);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -132,10 +130,7 @@ public class g extends ViewGroup {
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
-        d7 d7Var = new d7();
-        d7Var.b = this;
-        d7Var.a = new Rect();
-        a0.j(this, d7Var);
+        a0.j(this, new o0.a(this));
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -498,12 +493,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            c1 c1Var = this.q0;
+            b0 b0Var = this.q0;
             if (!z10) {
-                c1Var.run();
+                b0Var.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(c1Var);
+                postOnAnimation(b0Var);
             }
         }
     }
@@ -570,7 +565,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) k0.g(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) hg.c.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -1445,7 +1440,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) k0.g(1, arrayList);
+        c cVar2 = (c) hg.c.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1664,7 +1659,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            k0.t(sb2, this.a, ", found: ", b10, " Pager id: ");
+            hg.c.v(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

@@ -1,61 +1,122 @@
 package qg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import ai.bb;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import ci.n6;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.qr;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o0 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class o0 extends LinearLayout {
+    public final TextView a;
+    public final n6 b;
+    public ImageView c;
+    public ImageView d;
+    public float e;
+    public boolean f;
+    public ValueAnimator h;
+    public final ImageView n;
+    public final /* synthetic */ p0 r;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z10);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z10);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z10);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o0(p0 p0Var, Context context) {
+        super(context);
+        this.r = p0Var;
+        setOrientation(0);
+        int i10 = i6.i6;
+        eh.a aVar = p0Var.Q1;
+        setBackground(i6.f0(i6.v0(i10, aVar), 2, -1));
+        n6 n6Var = new n6(this, context);
+        this.b = n6Var;
+        addView(n6Var, x5.t(-2, -2, 19, 16, 0, 16, 0));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        ImageView imageView2 = this.c;
+        int i11 = i6.E8;
+        imageView2.setColorFilter(i6.v0(i11, aVar));
+        n6Var.addView(this.c, x5.e(-2, -2, 17));
+        ImageView imageView3 = new ImageView(context);
+        this.d = imageView3;
+        imageView3.setScaleType(scaleType);
+        this.d.setColorFilter(i6.v0(i11, aVar));
+        this.d.setVisibility(8);
+        n6Var.addView(this.d, x5.e(-2, -2, 17));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(i6.v0(i11, aVar));
+        textView.setTextSize(1, 16.0f);
+        addView(textView, x5.t(-2, -2, 19, 0, 0, 16, 0));
+        ImageView imageView4 = new ImageView(context);
+        this.n = imageView4;
+        imageView4.setImageResource(R.drawable.msg_text_check);
+        imageView4.setScaleType(scaleType);
+        imageView4.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.h7, aVar), PorterDuff.Mode.MULTIPLY));
+        imageView4.setVisibility(8);
+        addView(imageView4, x5.n(50, -1));
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i10;
-        int i11 = this.e ? i10 | 8 : i10 & (-9);
-        this.a = i11;
-        int i12 = this.f ? i11 | 16 : i11 & (-17);
-        this.a = i12;
-        outputSerializedData.writeInt32(i12);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
+    public final void a(int i10, boolean z10, boolean z11) {
+        if (!z11) {
+            this.c.setImageResource(i10);
+            return;
         }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.h = null;
+            a(i10, false, false);
+            return;
         }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
+        this.f = z10;
+        this.d.setImageResource(i10);
+        this.d.setVisibility(0);
+        this.d.setAlpha(1.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new bb(11, this, z10));
+        this.h.addListener(new n0(this, 0));
+        this.h.setInterpolator(qr.h);
+        this.h.setDuration(420L);
+        this.h.start();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.View
+    public final boolean performClick() {
+        p0 p0Var = this.r;
+        org.telegram.ui.ActionBar.n1 n1Var = p0Var.R1;
+        if (n1Var != null && n1Var.isShowing()) {
+            p0Var.R1.d(true);
         }
+        return super.performClick();
+    }
+
+    public void setIcon(int i10) {
+        a(i10, true, false);
+    }
+
+    @Override // android.view.View
+    public void setSelected(boolean z10) {
+        this.n.setVisibility(z10 ? 0 : 8);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

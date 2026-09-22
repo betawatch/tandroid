@@ -4,7 +4,7 @@ import java.util.concurrent.locks.LockSupport;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.a1;
 import zd.c2;
 import zd.d0;
@@ -14,7 +14,7 @@ import zd.v;
 import zd.w0;
 import zd.x;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class l {
     public static final n1.d c = new n1.d("firebase_sessions_enabled");
@@ -126,18 +126,18 @@ public final class l {
                 jd.a aVar = jd.a.a;
                 i10 = jVar.c;
                 if (i10 != 0) {
-                    u7.b(obj2);
+                    t7.b(obj2);
                     k1.f fVar = this.a;
                     k kVar = new k(obj, dVar, this, null);
                     jVar.c = 1;
-                    if (fVar.a(new n1.c(kVar, null, 1), jVar) == aVar) {
+                    if (fVar.T(new n1.c(kVar, null, 1), jVar) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj2);
+                    t7.b(obj2);
                 }
                 return gd.i.a;
             }

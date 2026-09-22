@@ -6,7 +6,7 @@ import android.view.View;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class v implements View.OnClickListener {
     public final View a;
@@ -35,10 +35,10 @@ public final class v implements View.OnClickListener {
                     } else {
                         str = " with id '" + view2.getContext().getResources().getResourceEntryName(id2) + "'";
                     }
-                    StringBuilder v = a4.a.v("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
-                    v.append(view2.getClass());
-                    v.append(str);
-                    throw new IllegalStateException(v.toString());
+                    StringBuilder w10 = a4.a.w("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+                    w10.append(view2.getClass());
+                    w10.append(str);
+                    throw new IllegalStateException(w10.toString());
                 }
                 try {
                     if (!context.isRestricted() && (method = context.getClass().getMethod(str2, View.class)) != null) {

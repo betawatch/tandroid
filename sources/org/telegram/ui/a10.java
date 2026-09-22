@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a10 implements TextWatcher {
     public final /* synthetic */ c10 a;
@@ -23,25 +23,25 @@ public final class a10 implements TextWatcher {
         f10 f10Var = this.a.e;
         if (!TextUtils.equals(editable, f10Var.w)) {
             f10Var.n = !TextUtils.isEmpty(editable);
-            f10Var.w = org.telegram.ui.Components.y5.onlyEmojiSpans(editable);
+            f10Var.w = org.telegram.ui.Components.x5.onlyEmojiSpans(editable);
             t00 t00Var = f10Var.I;
             if (t00Var != null) {
-                t00Var.e(org.telegram.ui.Components.y5.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
+                t00Var.e(org.telegram.ui.Components.x5.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
             }
             u00 u00Var = f10Var.J;
             if (u00Var != null) {
-                org.telegram.ui.Cells.v3 v3Var = u00Var.r;
+                org.telegram.ui.Cells.u3 u3Var = u00Var.r;
                 if (f10.k0(f10Var.w)) {
                     str = LocaleController.getString(f10Var.x ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
                 } else {
                     str = null;
                 }
-                v3Var.setText(str);
+                u3Var.setText(str);
             }
             kVar = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
             CharSequence charSequence = f10Var.w;
             kVar2 = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
-            kVar.setTitle(org.telegram.ui.Components.y5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
+            kVar.setTitle(org.telegram.ui.Components.x5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
         }
         f10Var.i0(true);
     }

@@ -1,44 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class td0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ de0 b;
+public final class td0 extends sd0 {
+    public final /* synthetic */ ud0 b0;
 
-    public /* synthetic */ td0(de0 de0Var, int i10) {
-        this.a = i10;
-        this.b = de0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public td0(ud0 ud0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.b0 = ud0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                de0 de0Var = this.b;
-                de0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                de0Var.P = floatValue;
-                de0Var.f(floatValue);
-                de0Var.setAlpha(de0Var.P);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                de0 de0Var2 = this.b;
-                ai.x5 x5Var = de0Var2.e;
-                x5Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
-                x5Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
-                x5Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
-                TextView textView = de0Var2.w;
-                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
-                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
-                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue2));
-                de0Var2.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
-                break;
+    @Override // org.telegram.ui.Components.sd0
+    public final void f(float f7) {
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity == null) {
+            return;
         }
+        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
+        z3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        z3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+    }
+
+    @Override // org.telegram.ui.Components.sd0
+    public final void h() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
+        z3Var.setScaleX(1.0f);
+        z3Var.setScaleY(1.0f);
     }
 }

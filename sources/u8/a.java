@@ -4,9 +4,9 @@ import android.graphics.PointF;
 import android.os.Parcel;
 import android.os.Parcelable;
 import p7.j;
-import w7.f0;
+import w7.e0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new j(24);
@@ -20,10 +20,10 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.o(parcel, 2, this.a, i10);
-        f0.s(parcel, 3, 4);
+        int q6 = e0.q(parcel, 20293);
+        e0.o(parcel, 2, this.a, i10);
+        e0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        f0.r(parcel, q6);
+        e0.r(parcel, q6);
     }
 }

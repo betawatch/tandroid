@@ -1,22 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
-/* loaded from: classes3.dex */
-public final class df implements k81, c5 {
-    public final /* synthetic */ ChatActivityEnterView a;
+import android.view.ViewTreeObserver;
 
-    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes3.dex */
+public final class df implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ fv0 a;
+    public final /* synthetic */ uo0 b;
+
+    public df(fv0 fv0Var, uo0 uo0Var) {
+        this.a = fv0Var;
+        this.b = uo0Var;
     }
 
-    @Override // org.telegram.ui.Components.c5
-    public void J(int i10, int i11, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
-        mf mfVar = chatActivityEnterView.L0;
-        if (mfVar != null) {
-            mfVar.h(!T0);
-            chatActivityEnterView.L0 = null;
-        }
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        fv0 fv0Var = this.a;
+        fv0Var.post(new org.telegram.ui.ActionBar.p(this, fv0Var, this.b, 8));
     }
 }

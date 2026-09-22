@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class cj implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -18,9 +18,9 @@ public final class cj implements ValueAnimator.AnimatorUpdateListener {
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                zn znVar = (zn) this.b;
-                znVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                znVar.X0.invalidate();
+                bo boVar = (bo) this.b;
+                boVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                boVar.X0.invalidate();
                 break;
             case 1:
                 uy uyVar = (uy) this.b;
@@ -32,7 +32,7 @@ public final class cj implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             default:
-                ((xd1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((wd1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

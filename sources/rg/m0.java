@@ -5,24 +5,24 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class m0 extends org.telegram.ui.Cells.q {
-    public v1 e;
+    public u1 e;
     public Paint f;
     public float h;
 
     @Override // org.telegram.ui.Cells.q, android.view.View
     public final void draw(Canvas canvas) {
         int dp = AndroidUtilities.dp(10.0f);
-        v1 v1Var = this.e;
-        v1Var.c.set(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), getMeasuredWidth() - AndroidUtilities.dp(5.0f), getMeasuredHeight() - AndroidUtilities.dp(5.0f));
+        u1 u1Var = this.e;
+        u1Var.c.set(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), getMeasuredWidth() - AndroidUtilities.dp(5.0f), getMeasuredHeight() - AndroidUtilities.dp(5.0f));
         float f7 = -dp;
-        v1Var.a.set(f7, f7, getWidth() + dp, getHeight() + dp);
+        u1Var.a.set(f7, f7, getWidth() + dp, getHeight() + dp);
         canvas.save();
         float f10 = 1.0f - this.h;
         canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        v1Var.d(canvas);
+        u1Var.d(canvas);
         canvas.restore();
         invalidate();
         RectF rectF = AndroidUtilities.rectTmp;

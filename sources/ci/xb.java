@@ -2,10 +2,10 @@ package ci;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.cq0;
-import org.telegram.ui.xd1;
+import org.telegram.ui.aq0;
+import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class xb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,28 +33,28 @@ public final class xb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.bd bdVar = (org.telegram.ui.bd) this.c;
-                bdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bdVar.m0.invalidate();
-                if (!this.b && bdVar.n0 > 0.5f) {
+                org.telegram.ui.ad adVar = (org.telegram.ui.ad) this.c;
+                adVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                adVar.m0.invalidate();
+                if (!this.b && adVar.n0 > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             case 2:
-                cq0 cq0Var = (cq0) this.c;
-                cq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cq0Var.X.invalidate();
-                if (!this.b && cq0Var.Y > 0.5f) {
+                aq0 aq0Var = (aq0) this.c;
+                aq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                aq0Var.X.invalidate();
+                if (!this.b && aq0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             default:
-                xd1 xd1Var = (xd1) this.c;
-                xd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xd1Var.h2.invalidate();
-                if (!this.b && xd1Var.i2 > 0.5f) {
+                wd1 wd1Var = (wd1) this.c;
+                wd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wd1Var.h2.invalidate();
+                if (!this.b && wd1Var.i2 > 0.5f) {
                     this.b = true;
                     break;
                 }

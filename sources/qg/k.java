@@ -6,40 +6,40 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.au0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n0 b;
+    public final /* synthetic */ p0 b;
 
-    public /* synthetic */ k(n0 n0Var, int i10) {
+    public /* synthetic */ k(p0 p0Var, int i10) {
         this.a = i10;
-        this.b = n0Var;
+        this.b = p0Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                n0 n0Var = this.b;
-                if (!n0Var.T0) {
-                    n0Var.B0(0);
+                p0 p0Var = this.b;
+                if (!p0Var.T0) {
+                    p0Var.C0(0);
                     break;
                 } else {
-                    n0Var.r0(null, true);
+                    p0Var.s0(null, true);
                     break;
                 }
             case 1:
-                n0 n0Var2 = this.b;
-                int i10 = n0Var2.g1;
-                n0Var2.B0(1);
-                n0Var2.postDelayed(new n(n0Var2, 1), 350L);
-                x xVar = new x(n0Var2.getContext(), n0Var2.Q1, false, false);
-                xVar.y = new q(n0Var2);
-                xVar.q0(new a8(n0Var2, 3));
-                xVar.setOnDismissListener(new s(n0Var2, i10));
+                p0 p0Var2 = this.b;
+                int i10 = p0Var2.g1;
+                p0Var2.C0(1);
+                p0Var2.postDelayed(new n(p0Var2, 1), 350L);
+                x xVar = new x(p0Var2.getContext(), p0Var2.Q1, false, false);
+                xVar.y = new q(p0Var2);
+                xVar.q0(new a8(p0Var2, 3));
+                xVar.setOnDismissListener(new s(p0Var2, i10));
                 xVar.show();
-                PhotoViewer photoViewer = ((au0) n0Var2).o2;
+                PhotoViewer photoViewer = ((au0) p0Var2).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
@@ -48,30 +48,30 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 }
                 break;
             case 2:
-                n0 n0Var3 = this.b;
-                j jVar = n0Var3.S0;
-                if ((jVar instanceof v2) && !n0Var3.T0) {
-                    v2 v2Var = (v2) jVar;
-                    n0Var3.T0 = true;
-                    v2Var.q();
-                    View focusedView = v2Var.getFocusedView();
+                p0 p0Var3 = this.b;
+                j jVar = p0Var3.S0;
+                if ((jVar instanceof x2) && !p0Var3.T0) {
+                    x2 x2Var = (x2) jVar;
+                    p0Var3.T0 = true;
+                    x2Var.q();
+                    View focusedView = x2Var.getFocusedView();
                     focusedView.requestFocus();
                     AndroidUtilities.showKeyboard(focusedView);
                 }
-                org.telegram.ui.ActionBar.n1 n1Var = n0Var3.R1;
+                org.telegram.ui.ActionBar.n1 n1Var = p0Var3.R1;
                 if (n1Var != null && n1Var.isShowing()) {
-                    n0Var3.R1.d(true);
+                    p0Var3.R1.d(true);
                     break;
                 }
                 break;
             case 3:
-                n0.b0(this.b);
+                p0.b0(this.b);
                 break;
             default:
-                n0 n0Var4 = this.b;
-                n0Var4.B0(2);
-                if (!(n0Var4.S0 instanceof v2)) {
-                    n0Var4.j0(true);
+                p0 p0Var4 = this.b;
+                p0Var4.C0(2);
+                if (!(p0Var4.S0 instanceof x2)) {
+                    p0Var4.j0(true);
                     break;
                 }
                 break;

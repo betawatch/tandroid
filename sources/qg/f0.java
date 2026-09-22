@@ -1,27 +1,66 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
 import org.telegram.ui.au0;
+import org.telegram.ui.ir0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class f0 extends View {
-    public final /* synthetic */ au0 a;
+public final class f0 implements pg.b1 {
+    public final /* synthetic */ ir0 a;
+    public final /* synthetic */ au0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(au0 au0Var, Context context) {
-        super(context);
-        this.a = au0Var;
+    public f0(au0 au0Var, ir0 ir0Var) {
+        this.b = au0Var;
+        this.a = ir0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        d0 d0Var = this.a.W0;
-        if (d0Var != null) {
-            d0Var.d(canvas);
+    @Override // pg.b1
+    public final void a() {
+        this.a.run();
+    }
+
+    @Override // pg.b1
+    public final void b() {
+        g0 g0Var = this.b.X0;
+        if (g0Var != null) {
+            g0Var.invalidate();
         }
+    }
+
+    @Override // pg.b1
+    public final void c() {
+        au0 au0Var = this.b;
+        if (au0Var.k1) {
+            au0Var.k1 = false;
+        } else {
+            au0Var.t1.b(1);
+            au0Var.b((pg.m) pg.m.a.get(0));
+        }
+    }
+
+    @Override // pg.b1
+    public final boolean d() {
+        au0 au0Var = this.b;
+        boolean z10 = au0Var.S0 == null;
+        if (!z10) {
+            au0Var.s0(null, true);
+        }
+        return z10;
+    }
+
+    @Override // pg.b1
+    public final void e() {
+        au0 au0Var = this.b;
+        au0Var.F0.a.e();
+        au0Var.l1.setViewHidden(false);
+    }
+
+    @Override // pg.b1
+    public final void f() {
+        au0 au0Var = this.b;
+        if (au0Var.S0 != null) {
+            au0Var.s0(null, true);
+        }
+        au0Var.l1.setViewHidden(true);
     }
 }

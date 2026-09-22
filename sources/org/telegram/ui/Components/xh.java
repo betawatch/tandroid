@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class xh extends FrameLayout {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final class xh extends FrameLayout {
                         viVar.V1 = top;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
                         viVar.X1 = ofFloat;
-                        ofFloat.addUpdateListener(new j6(this, 10));
+                        ofFloat.addUpdateListener(new i6(this, 10));
                         viVar.X1.setInterpolator(qr.f);
                         viVar.X1.setDuration(200L);
                         viVar.X1.start();

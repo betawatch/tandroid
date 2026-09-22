@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class x31 extends FrameLayout {
-    public final org.telegram.ui.Components.d6 a;
+    public final org.telegram.ui.Components.c6 a;
     public float b;
     public final Path c;
     public Boolean d;
@@ -24,7 +24,7 @@ public final class x31 extends FrameLayout {
     public x31(c41 c41Var, Context context) {
         super(context);
         this.e = c41Var;
-        this.a = new org.telegram.ui.Components.d6(this, 250L, org.telegram.ui.Components.qr.h);
+        this.a = new org.telegram.ui.Components.c6(this, 250L, org.telegram.ui.Components.qr.h);
         this.c = new Path();
     }
 
@@ -32,9 +32,9 @@ public final class x31 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
-        org.telegram.ui.Components.m61 m61Var;
+        org.telegram.ui.Components.w51 w51Var;
         View[] viewArr;
-        org.telegram.ui.Components.y51 G;
+        org.telegram.ui.Components.i51 G;
         c41 c41Var = this.e;
         View[] viewPages = c41Var.b.getViewPages();
         float f7 = 0.0f;
@@ -48,22 +48,22 @@ public final class x31 extends FrameLayout {
             } else {
                 b41 b41Var = (b41) view;
                 FrameLayout frameLayout = b41Var.e;
-                org.telegram.ui.Components.u61 u61Var = b41Var.f;
+                org.telegram.ui.Components.e61 e61Var = b41Var.f;
                 float clamp = Utilities.clamp(1.0f - Math.abs(b41Var.getTranslationX() / b41Var.getMeasuredWidth()), 1.0f, f7);
                 float f10 = this.b;
                 float paddingTop = frameLayout.getPaddingTop();
                 int i13 = 0;
                 while (true) {
-                    int childCount = u61Var.getChildCount();
-                    m61Var = u61Var.Y2;
+                    int childCount = e61Var.getChildCount();
+                    w51Var = e61Var.Y2;
                     if (i13 >= childCount) {
                         break;
                     }
-                    View childAt = u61Var.getChildAt(i13);
-                    u61Var.X2.getClass();
+                    View childAt = e61Var.getChildAt(i13);
+                    e61Var.X2.getClass();
                     int H = s4.o0.H(childAt);
                     View[] viewArr2 = viewPages;
-                    if (H >= 0 && H < m61Var.x.size() && (G = m61Var.G(H)) != null && G.a == 28) {
+                    if (H >= 0 && H < w51Var.x.size() && (G = w51Var.G(H)) != null && G.a == 28) {
                         paddingTop = childAt.getY() + frameLayout.getPaddingTop();
                     }
                     i13++;
@@ -76,12 +76,12 @@ public final class x31 extends FrameLayout {
                     float f11 = -t5Var.getHeight();
                     int i14 = 0;
                     while (true) {
-                        if (i14 >= u61Var.getChildCount()) {
+                        if (i14 >= e61Var.getChildCount()) {
                             break;
                         }
-                        View childAt2 = u61Var.getChildAt(i14);
-                        u61Var.X2.getClass();
-                        if (m61Var.G(s4.o0.H(childAt2)).a == 28) {
+                        View childAt2 = e61Var.getChildAt(i14);
+                        e61Var.X2.getClass();
+                        if (w51Var.G(s4.o0.H(childAt2)).a == 28) {
                             f11 = childAt2.getY() + frameLayout.getPaddingTop();
                             break;
                         }
@@ -116,8 +116,8 @@ public final class x31 extends FrameLayout {
         boolean z10 = f13 > ((float) AndroidUtilities.statusBarHeight) / 2.0f;
         Boolean bool = this.d;
         if (bool == null || bool.booleanValue() != z10) {
-            boolean z11 = AndroidUtilities.computePerceivedBrightness(c41Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5)) > 0.721f;
-            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.v(c41Var.getThemedColor(org.telegram.ui.ActionBar.j6.s8), 855638016)) > 0.721f;
+            boolean z11 = AndroidUtilities.computePerceivedBrightness(c41Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5)) > 0.721f;
+            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v(c41Var.getThemedColor(org.telegram.ui.ActionBar.i6.s8), 855638016)) > 0.721f;
             this.d = Boolean.valueOf(z10);
             if (!z10) {
                 z11 = z12;

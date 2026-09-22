@@ -2,9 +2,9 @@ package xb;
 
 import java.util.Arrays;
 import n6.l;
-import v7.s1;
+import v7.r1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -36,28 +36,28 @@ public final class a {
     }
 
     public final String toString() {
-        s1 s1Var = new s1(a.class.getSimpleName(), 11);
-        s1 s1Var2 = new s1(10, false);
-        ((s1) s1Var.c).c = s1Var2;
-        s1Var.c = s1Var2;
-        s1Var2.d = this.a;
-        s1Var2.b = "text";
+        r1 r1Var = new r1(a.class.getSimpleName(), 11);
+        r1 r1Var2 = new r1(10, false);
+        ((r1) r1Var.c).c = r1Var2;
+        r1Var.c = r1Var2;
+        r1Var2.d = this.a;
+        r1Var2.b = "text";
         String valueOf = String.valueOf(this.b);
         y7.a aVar = new y7.a(10, false);
-        ((s1) s1Var.c).c = aVar;
-        s1Var.c = aVar;
+        ((r1) r1Var.c).c = aVar;
+        r1Var.c = aVar;
         aVar.d = valueOf;
         aVar.b = "confidence";
         String valueOf2 = String.valueOf(this.c);
         y7.a aVar2 = new y7.a(10, false);
-        ((s1) s1Var.c).c = aVar2;
+        ((r1) r1Var.c).c = aVar2;
         aVar2.d = valueOf2;
         aVar2.b = "index";
-        s1 s1Var3 = new s1(10, false);
-        aVar2.c = s1Var3;
-        s1Var.c = s1Var3;
-        s1Var3.d = this.d;
-        s1Var3.b = "mid";
-        return s1Var.toString();
+        r1 r1Var3 = new r1(10, false);
+        aVar2.c = r1Var3;
+        r1Var.c = r1Var3;
+        r1Var3.d = this.d;
+        r1Var3.b = "mid";
+        return r1Var.toString();
     }
 }

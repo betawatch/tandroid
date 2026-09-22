@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class q4 implements d6.h {
     public final /* synthetic */ cf.c a;
@@ -12,47 +12,10 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void B(d6.f fVar) {
-    }
-
-    @Override // d6.h
-    public void C(d6.f fVar, String str) {
-        y6 y6Var = new y6(new a5.a(4, 2));
-        cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
-        x6 x6Var = (x6) cVar.d;
-        n6.l.h(x6Var);
-        x6Var.a((d6.c) fVar);
-        x6 x6Var2 = (x6) cVar.d;
-        n6.l.h(x6Var2);
-        String str2 = x6Var2.k;
-        if (str2 == null) {
-            x6Var2.k = str;
-        } else {
-            if (TextUtils.equals(str, str2)) {
-                return;
-            }
-            x6Var2.b(4);
-        }
-    }
-
-    @Override // d6.h
-    public void F(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(6, 2);
-        aVar.c = Integer.valueOf(i10);
-        y6 y6Var = new y6(aVar);
-        cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
-        x6 x6Var = (x6) cVar.d;
-        n6.l.h(x6Var);
-        x6Var.a((d6.c) fVar);
-    }
-
-    @Override // d6.h
-    public void f(d6.f fVar, String str) {
+    public void c(d6.f fVar, String str) {
         y6 y6Var = new y6(new a5.a(7, 2));
         cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
+        cf.c.E(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);
@@ -70,42 +33,42 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public void k(d6.f fVar, int i10) {
+    public void f(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(5, 2);
         aVar.c = Integer.valueOf(i10);
         y6 y6Var = new y6(aVar);
         cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
-        cVar.F();
+        cf.c.E(cVar, y6Var);
+        cVar.G();
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void o(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
         y6 y6Var = new y6(new a5.a(4, 2));
         cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
+        cf.c.E(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);
     }
 
     @Override // d6.h
-    public void s(d6.f fVar, int i10) {
+    public void j(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(9, 2);
         aVar.c = Integer.valueOf(i10);
         cf.c cVar = this.a;
         aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-        cf.c.D(cVar, new y6(aVar));
-        cVar.F();
+        cf.c.E(cVar, new y6(aVar));
+        cVar.G();
     }
 
     @Override // d6.h
-    public void v(d6.f fVar) {
+    public void k(d6.f fVar) {
         d6.c cVar = (d6.c) fVar;
         a5.a aVar = new a5.a(2, 2);
         cf.c cVar2 = this.a;
         aVar.d = Boolean.valueOf(((d) cVar2.b).d == 2);
-        cf.c.D(cVar2, new y6(aVar));
+        cf.c.E(cVar2, new y6(aVar));
         x6 x6Var = (x6) cVar2.d;
         n6.l.h(x6Var);
         x6Var.a(cVar);
@@ -113,12 +76,49 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public void z(d6.f fVar, int i10) {
+    public void m(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(8, 2);
         aVar.c = Integer.valueOf(i10);
         y6 y6Var = new y6(aVar);
         cf.c cVar = this.a;
-        cf.c.D(cVar, y6Var);
-        cVar.F();
+        cf.c.E(cVar, y6Var);
+        cVar.G();
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void v(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void w(d6.f fVar, String str) {
+        y6 y6Var = new y6(new a5.a(4, 2));
+        cf.c cVar = this.a;
+        cf.c.E(cVar, y6Var);
+        x6 x6Var = (x6) cVar.d;
+        n6.l.h(x6Var);
+        x6Var.a((d6.c) fVar);
+        x6 x6Var2 = (x6) cVar.d;
+        n6.l.h(x6Var2);
+        String str2 = x6Var2.k;
+        if (str2 == null) {
+            x6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            x6Var2.b(4);
+        }
+    }
+
+    @Override // d6.h
+    public void x(d6.f fVar, int i10) {
+        a5.a aVar = new a5.a(6, 2);
+        aVar.c = Integer.valueOf(i10);
+        y6 y6Var = new y6(aVar);
+        cf.c cVar = this.a;
+        cf.c.E(cVar, y6Var);
+        x6 x6Var = (x6) cVar.d;
+        n6.l.h(x6Var);
+        x6Var.a((d6.c) fVar);
     }
 }

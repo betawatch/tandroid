@@ -2,9 +2,9 @@ package ai;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class wb implements org.telegram.ui.Components.nb {
+public final class wb implements org.telegram.ui.Components.mb {
     public final float[] a = new float[2];
     public final /* synthetic */ xb b;
 
@@ -12,17 +12,17 @@ public final class wb implements org.telegram.ui.Components.nb {
         this.b = xbVar;
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final /* synthetic */ boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final int f(int i10) {
         jc jcVar = this.b.I0;
         f6 t10 = jcVar.t();
@@ -36,25 +36,25 @@ public final class wb implements org.telegram.ui.Components.nb {
         return (int) (r4.getMeasuredHeight() - (fArr[1] + a5Var.getMeasuredHeight()));
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final /* synthetic */ boolean g(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final /* synthetic */ int h(int i10) {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void b(org.telegram.ui.Components.pc pcVar) {
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ void b(org.telegram.ui.Components.oc ocVar) {
     }
 
-    @Override // org.telegram.ui.Components.nb
+    @Override // org.telegram.ui.Components.mb
     public final /* synthetic */ void c(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void d(org.telegram.ui.Components.pc pcVar) {
+    @Override // org.telegram.ui.Components.mb
+    public final /* synthetic */ void d(org.telegram.ui.Components.oc ocVar) {
     }
 }

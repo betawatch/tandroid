@@ -1,37 +1,21 @@
 package rg;
 
+import android.graphics.Paint;
 import android.graphics.RectF;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class s1 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public long e;
-    public float f;
-    public final /* synthetic */ t1 g;
-
-    public s1(t1 t1Var) {
-        this.g = t1Var;
-    }
-
-    public final void a(long j3, boolean z10) {
-        t1 t1Var = this.g;
-        RectF rectF = t1Var.a;
-        this.e = j3 + t1Var.h + Utilities.fastRandom.nextInt(MediaDataController.MAX_STYLE_RUNS_COUNT);
-        RectF rectF2 = z10 ? t1Var.b : rectF;
-        float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF2.width()) + rectF2.left;
-        float abs2 = Math.abs(Utilities.fastRandom.nextInt() % rectF2.height()) + rectF2.top;
-        this.a = abs;
-        this.b = abs2;
-        double atan2 = Math.atan2(abs - rectF.centerX(), this.b - rectF.centerY());
-        this.c = (float) Math.sin(atan2);
-        this.d = (float) Math.cos(atan2);
-        Utilities.fastRandom.nextInt(50);
-        this.f = 0.0f;
-    }
+    public int i;
+    public final RectF a = new RectF();
+    public final RectF b = new RectF();
+    public final Paint c = new Paint();
+    public final ArrayList e = new ArrayList();
+    public float f = 1.0f;
+    public final long h = 2000;
+    public final float j = 1000.0f / AndroidUtilities.screenRefreshRate;
+    public final int g = 200;
+    public final float[] d = new float[800];
 }

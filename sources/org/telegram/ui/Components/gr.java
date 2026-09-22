@@ -13,10 +13,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gr extends ab {
-    public final f80 X;
+public final class gr extends za {
+    public final u70 X;
     public final ArrayList Y;
     public final boolean Z;
     public final boolean a0;
@@ -27,7 +27,7 @@ public final class gr extends ab {
     public final org.telegram.ui.ActionBar.n2 f0;
     public final long g0;
 
-    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, f80 f80Var) {
+    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, u70 u70Var) {
         super(n2Var, false);
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
         this.f0 = n2Var;
@@ -35,14 +35,14 @@ public final class gr extends ab {
         this.v = 0.26f;
         ArrayList arrayList2 = new ArrayList(arrayList);
         this.Y = arrayList2;
-        this.X = f80Var;
+        this.X = u70Var;
         boolean isChannelOrGiga = ChatObject.isChannelOrGiga(chat);
         this.b0 = isChannelOrGiga;
         this.d0 = (TLRPC.Peer) arrayList2.get(0);
         this.Z = arrayList2.size() > 1;
         this.a0 = ChatObject.canManageCalls(chat);
         Context context = this.containerView.getContext();
-        this.containerView.addView(new ci.eb(this, context, 16), w7.y5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(new ci.eb(this, context, 16), w7.x5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setGravity(17);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -51,13 +51,13 @@ public final class gr extends ab {
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(isChannelOrGiga ? LocaleController.formatString(R.string.VoipChannelStartVoiceChat, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStartVoiceChat, new Object[0]));
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
         int dp = AndroidUtilities.dp(8.0f);
-        int i10 = org.telegram.ui.ActionBar.j6.Oh;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false), 120);
-        textView.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, w02, k10, k10));
-        this.containerView.addView(textView, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
+        int i10 = org.telegram.ui.ActionBar.i6.Oh;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i10, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false), 120);
+        textView.setBackground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, w02, k10, k10));
+        this.containerView.addView(textView, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
         textView2.setEllipsize(truncateAt);
@@ -66,11 +66,11 @@ public final class gr extends ab {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(isChannelOrGiga ? LocaleController.formatString(R.string.VoipChannelScheduleVoiceChat, new Object[0]) : LocaleController.formatString(R.string.VoipGroupScheduleVoiceChat, new Object[0]));
         textView2.setLetterSpacing(0.025f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         int dp2 = AndroidUtilities.dp(8.0f);
-        int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
-        textView2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, 0, k11, k11));
-        this.containerView.addView(textView2, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
+        int k11 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 120);
+        textView2.setBackground(org.telegram.ui.ActionBar.i6.i0(dp2, dp2, dp2, dp2, 0, k11, k11));
+        this.containerView.addView(textView2, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
         final int i11 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dr
             public final /* synthetic */ gr b;
@@ -111,9 +111,9 @@ public final class gr extends ab {
                 }
             }
         });
-        yl0 yl0Var = this.d;
+        ll0 ll0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        yl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
+        ll0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
         this.d.setOnItemClickListener(new j(this, 4));
         fixNavigationBar();
         N();
@@ -139,12 +139,12 @@ public final class gr extends ab {
         }
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final xl0 v(yl0 yl0Var) {
+    @Override // org.telegram.ui.Components.za
+    public final kl0 v(ll0 ll0Var) {
         return new er(this);
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final CharSequence y() {
         return this.b0 ? LocaleController.getString(R.string.StartVoipChannelTitle) : LocaleController.getString(R.string.StartVoipChatTitle);
     }

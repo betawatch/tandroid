@@ -9,16 +9,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.f80 {
+public final /* synthetic */ class f50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.u70 {
     public final /* synthetic */ l50 a;
 
     public /* synthetic */ f50(l50 l50Var) {
         this.a = l50Var;
     }
 
-    @Override // org.telegram.ui.Components.f80
+    @Override // org.telegram.ui.Components.u70
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         i60 i60Var = this.a.b;
         ChatObject.Call call = i60Var.a1;
@@ -68,7 +68,7 @@ public final /* synthetic */ class f50 implements org.telegram.ui.ActionBar.a2, 
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         l50 l50Var = this.a;
         i60 i60Var = l50Var.b;
         ChatObject.Call call = i60Var.a1;

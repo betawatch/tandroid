@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.al0, org.telegram.ui.Components.ol0, r0.n {
+public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.nk0, org.telegram.ui.Components.bl0, r0.n {
     public final /* synthetic */ ContactsActivity a;
 
     public /* synthetic */ vs(ContactsActivity contactsActivity) {
@@ -15,7 +15,7 @@ public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, o
     }
 
     @Override // r0.n
-    public r0.l1 P0(View view, r0.l1 l1Var) {
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
         int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
         ContactsActivity contactsActivity = this.a;
         contactsActivity.q0 = i10;
@@ -25,12 +25,12 @@ public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, o
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.nk0
     public void a() {
         this.a.g0();
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.bl0
     public boolean d(int i10, View view) {
         ContactsActivity contactsActivity = this.a;
         s4.h0 adapter = contactsActivity.f.getAdapter();
@@ -38,9 +38,9 @@ public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, o
         if (adapter == atVar) {
             int S = atVar.S(i10);
             int Q = contactsActivity.d.Q(i10);
-            org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
-            if (pcVar != null) {
-                pcVar.b();
+            org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
+            if (ocVar != null) {
+                ocVar.b();
             }
             if (Q < 0 || S < 0) {
                 return false;
@@ -51,18 +51,18 @@ public final /* synthetic */ class vs implements org.telegram.ui.ActionBar.a2, o
             contactsActivity.r0((org.telegram.ui.Cells.ab) view);
             return true;
         }
-        if (z10 || contactsActivity.L || !(view instanceof org.telegram.ui.Cells.j6)) {
+        if (z10 || contactsActivity.L || !(view instanceof org.telegram.ui.Cells.i6)) {
             return false;
         }
-        org.telegram.ui.Cells.j6 j6Var = (org.telegram.ui.Cells.j6) view;
-        if (j6Var.getUser() != null && j6Var.getUser().contact) {
-            contactsActivity.r0(j6Var);
+        org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
+        if (i6Var.getUser() != null && i6Var.getUser().contact) {
+            contactsActivity.r0(i6Var);
         }
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void k(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         ContactsActivity contactsActivity = this.a;
         contactsActivity.getClass();
         a0.i iVar = contactsActivity.d0;

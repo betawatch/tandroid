@@ -2,20 +2,27 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w4 extends FrameLayout {
-    public FrameLayout a;
+    public RadialProgressView a;
+    public TextView b;
+    public ImageView c;
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(73.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(56.0f) * 2.5f), TLObject.FLAG_30));
     }
 
-    public void setOnButtonClick(View.OnClickListener onClickListener) {
-        this.a.setOnClickListener(onClickListener);
+    public void setLoading(boolean z10) {
+        this.a.setVisibility(z10 ? 0 : 4);
+        this.b.setVisibility(z10 ? 4 : 0);
+        this.c.setVisibility(z10 ? 4 : 0);
     }
 }

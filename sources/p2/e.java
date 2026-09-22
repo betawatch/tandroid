@@ -1,31 +1,46 @@
 package p2;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class e {
     public final String a;
-    public Uri c;
-    public Uri d;
-    public boolean j;
-    public Boolean o;
-    public String p;
-    public String q;
-    public final HashMap b = new HashMap();
-    public long e = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public ArrayList i = new ArrayList();
-    public long k = -9223372036854775807L;
-    public long l = -9223372036854775807L;
-    public ArrayList m = new ArrayList();
-    public ArrayList n = new ArrayList();
+    public final int b;
+    public final double c;
+    public final String d;
 
-    public e(String str) {
+    public e(String str, double d) {
         this.a = str;
+        this.b = 2;
+        this.c = d;
+        this.d = null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        return this.b == eVar.b && Double.compare(this.c, eVar.c) == 0 && Objects.equals(this.a, eVar.a) && Objects.equals(this.d, eVar.d);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.b), Double.valueOf(this.c), this.d);
+    }
+
+    public e(int i10, String str, String str2) {
+        boolean z10 = true;
+        if (i10 == 1 && !str2.startsWith("0x") && !str2.startsWith("0X")) {
+            z10 = false;
+        }
+        e2.d.g(z10);
+        this.a = str;
+        this.b = i10;
+        this.d = str2;
+        this.c = 0.0d;
     }
 }

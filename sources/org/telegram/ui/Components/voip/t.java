@@ -11,14 +11,14 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.aa;
-import org.telegram.ui.Components.g9;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.z9;
 import org.telegram.ui.h60;
 import org.telegram.ui.i60;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class t extends View {
     public h60 E;
@@ -27,9 +27,9 @@ public final class t extends View {
     public final /* synthetic */ u H;
     public final ImageReceiver a;
     public final ImageReceiver b;
-    public final g9 c;
-    public final aa d;
-    public final aa e;
+    public final f9 c;
+    public final z9 d;
+    public final z9 e;
     public final Paint f;
     public final Paint h;
     public float n;
@@ -46,7 +46,7 @@ public final class t extends View {
         this.H = uVar;
         this.a = new ImageReceiver();
         this.b = new ImageReceiver();
-        this.c = new g9((f6) null);
+        this.c = new f9((e6) null);
         Paint paint = new Paint(1);
         this.f = paint;
         Paint paint2 = new Paint(1);
@@ -54,17 +54,17 @@ public final class t extends View {
         this.x = new h60[3];
         this.F = -1;
         this.G = 1.0f;
-        aa aaVar = new aa(9);
-        this.d = aaVar;
-        aa aaVar2 = new aa(12);
-        this.e = aaVar2;
-        aaVar.a = AndroidUtilities.dp(76.0f);
-        aaVar.b = AndroidUtilities.dp(92.0f);
-        aaVar.b();
-        aaVar2.a = AndroidUtilities.dp(80.0f);
-        aaVar2.b = AndroidUtilities.dp(95.0f);
-        aaVar2.b();
-        paint.setColor(i0.a.d(0.0f, j6.w0(null, j6.pg, false), j6.w0(null, j6.qg, false)));
+        z9 z9Var = new z9(9);
+        this.d = z9Var;
+        z9 z9Var2 = new z9(12);
+        this.e = z9Var2;
+        z9Var.a = AndroidUtilities.dp(76.0f);
+        z9Var.b = AndroidUtilities.dp(92.0f);
+        z9Var.b();
+        z9Var2.a = AndroidUtilities.dp(80.0f);
+        z9Var2.b = AndroidUtilities.dp(95.0f);
+        z9Var2.b();
+        paint.setColor(i0.a.d(0.0f, i6.w0(null, i6.pg, false), i6.w0(null, i6.qg, false)));
         paint.setAlpha(102);
         paint2.setColor(i0.a.k(-16777216, 127));
     }
@@ -82,11 +82,11 @@ public final class t extends View {
             h60VarArr[i10] = new h60(i10);
             int i11 = tVar.F;
             if (i11 == 2) {
-                h60VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{j6.w0(null, j6.ih, false), j6.w0(null, j6.kh, false), j6.w0(null, j6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                h60VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{i6.w0(null, i6.ih, false), i6.w0(null, i6.kh, false), i6.w0(null, i6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i11 == 1) {
-                h60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{j6.w0(null, j6.Fg, false), j6.w0(null, j6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                h60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{i6.w0(null, i6.Fg, false), i6.w0(null, i6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                h60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{j6.w0(null, j6.Jg, false), j6.w0(null, j6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                h60VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{i6.w0(null, i6.Jg, false), i6.w0(null, i6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
         h60 h60Var = h60VarArr[tVar.F];
@@ -169,11 +169,11 @@ public final class t extends View {
             h60Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
         }
         float f19 = this.n;
-        aa aaVar = this.e;
-        aaVar.e(f19, 1.0f);
+        z9 z9Var = this.e;
+        z9Var.e(f19, 1.0f);
         float f20 = this.n;
-        aa aaVar2 = this.d;
-        aaVar2.e(f20, 1.0f);
+        z9 z9Var2 = this.d;
+        z9Var2.e(f20, 1.0f);
         for (int i10 = 0; i10 < 2; i10++) {
             Paint paint = this.f;
             if (i10 != 0 || (h60Var2 = this.E) == null) {
@@ -186,8 +186,8 @@ public final class t extends View {
                 f7 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f7 * 76.0f));
-            aaVar.a(this.v, this.w, canvas, paint);
-            aaVar2.a(this.v, this.w, canvas, paint);
+            z9Var.a(this.v, this.w, canvas, paint);
+            z9Var2.a(this.v, this.w, canvas, paint);
         }
         canvas.restore();
         float f21 = (this.n * 0.2f) + 1.0f;

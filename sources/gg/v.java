@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.gy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class v implements Runnable {
                 String str3 = this.c;
                 messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
                 AndroidUtilities.runOnUIThread(new l3(i0Var2, this.d, arrayList, arrayList2, arrayList3, 2));
-                s0.z1(str3, i0Var2.y0);
+                s0.y1(str3, i0Var2.y0);
                 i0Var2.z0 = false;
                 if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
                     i0Var2.z0 = true;

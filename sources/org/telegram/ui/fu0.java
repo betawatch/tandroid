@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class fu0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -141,10 +141,10 @@ public final class fu0 implements ViewTreeObserver.OnPreDrawListener {
         backgroundDrawable.setAlpha(0);
         photoViewer.e0.setAlpha(0.0f);
         photoViewer.j0.setAlpha(0.0f);
-        h90 h90Var = new h90(this, clippingImageViewArr, this.h, this.n, this.f, 15);
-        photoViewer.p4 = h90Var;
+        g90 g90Var = new g90(this, clippingImageViewArr, this.h, this.n, this.f, 15);
+        photoViewer.p4 = g90Var;
         if (photoViewer.l2) {
-            h90Var.run();
+            g90Var.run();
             photoViewer.p4 = null;
             photoViewer.e0.setAlpha(1.0f);
             backgroundDrawable.setAlpha(255);
@@ -158,39 +158,39 @@ public final class fu0 implements ViewTreeObserver.OnPreDrawListener {
             AnimatorSet animatorSet = new AnimatorSet();
             ArrayList arrayList = new ArrayList((photoViewer.c2 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
             for (int i13 = 0; i13 < clippingImageViewArr.length; i13++) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i13], org.telegram.ui.Components.r6.f, 0.0f, 1.0f);
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i13], org.telegram.ui.Components.q6.f, 0.0f, 1.0f);
                 if (i13 == 0) {
-                    ofFloat.addUpdateListener(new b3(this, 22));
+                    ofFloat.addUpdateListener(new b3(this, 23));
                 }
                 arrayList.add(ofFloat);
             }
             if (clippingImageViewArr.length > 1) {
                 arrayList.add(ObjectAnimator.ofFloat(photoViewer.h0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
             }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.r6.d, 0, 255));
+            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.q6.d, 0, 255));
             vu0 vu0Var = photoViewer.e0;
             Property property = View.ALPHA;
             arrayList.add(ObjectAnimator.ofFloat(vu0Var, (Property<vu0, Float>) property, 0.0f, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
             if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ff0, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ue0, Float>) property, 0.0f, 1.0f));
             }
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(200L);
-            animatorSet.addListener(new gp0(this, 8));
+            animatorSet.addListener(new cr0(this, 7));
             photoViewer.e0.setLayerType(2, null);
             photoViewer.x2(false);
             photoViewer.o4 = System.currentTimeMillis();
-            AndroidUtilities.runOnUIThread(new fj0(25, this, animatorSet));
+            AndroidUtilities.runOnUIThread(new ml0(19, this, animatorSet));
         }
-        backgroundDrawable.d = new fj0(26, this, dv0Var);
-        zn znVar = photoViewer.l4;
-        if (znVar == null || znVar.getFragmentView() == null) {
+        backgroundDrawable.d = new ml0(20, this, dv0Var);
+        bo boVar = photoViewer.l4;
+        if (boVar == null || boVar.getFragmentView() == null) {
             return true;
         }
-        zn znVar2 = photoViewer.l4;
-        znVar2.Q7();
-        UndoView undoView = znVar2.y3;
+        bo boVar2 = photoViewer.l4;
+        boVar2.Q7();
+        UndoView undoView = boVar2.y3;
         if (undoView != null) {
             z10 = true;
             undoView.e(1, false);

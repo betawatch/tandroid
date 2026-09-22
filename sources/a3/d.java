@@ -39,15 +39,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.lx;
 import org.telegram.ui.uy;
 import v7.i8;
-import v7.j8;
-import w7.a8;
+import w7.z7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +62,7 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.J();
+                ((f) this.b).g.C();
                 return;
             case 1:
                 ((w) this.b).k--;
@@ -185,7 +184,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((k90) this.b).d(true);
+                ((z80) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -253,7 +252,7 @@ public final /* synthetic */ class d implements Runnable {
                 androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) this.b;
                 synchronized (pVar.d) {
                     try {
-                        if (pVar.n == null) {
+                        if (pVar.h == null) {
                             return;
                         }
                         try {
@@ -273,12 +272,12 @@ public final /* synthetic */ class d implements Runnable {
                                 Context context = pVar.a;
                                 uVar.getClass();
                                 o0.i[] iVarArr = {d};
-                                i8 i8Var = i0.e.a;
-                                a8.a("TypefaceCompat.createFromFontInfo");
+                                v7.h8 h8Var = i0.e.a;
+                                z7.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, iVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = j8.e(pVar.a, d.a);
+                                    MappedByteBuffer e = i8.e(pVar.a, d.a);
                                     if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }
@@ -288,14 +287,14 @@ public final /* synthetic */ class d implements Runnable {
                                         Trace.endSection();
                                         synchronized (pVar.d) {
                                             try {
-                                                v7.w wVar = pVar.n;
+                                                v7.w wVar = pVar.h;
                                                 if (wVar != null) {
                                                     wVar.b(tVar);
                                                 }
                                             } finally {
                                             }
                                         }
-                                        pVar.a();
+                                        pVar.b();
                                         return;
                                     } finally {
                                         int i13 = n0.g.a;
@@ -309,11 +308,11 @@ public final /* synthetic */ class d implements Runnable {
                         } catch (Throwable th3) {
                             synchronized (pVar.d) {
                                 try {
-                                    v7.w wVar2 = pVar.n;
+                                    v7.w wVar2 = pVar.h;
                                     if (wVar2 != null) {
                                         wVar2.a(th3);
                                     }
-                                    pVar.a();
+                                    pVar.b();
                                     return;
                                 } finally {
                                 }

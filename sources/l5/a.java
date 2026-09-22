@@ -1,15 +1,13 @@
 package l5;
 
-import hg.k0;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a implements ia.d {
     public static final a a = new a();
-    public static final ia.c b = new ia.c("window", k0.n(k0.m(la.e.class, new la.a(1))));
-    public static final ia.c c = new ia.c("logSourceMetrics", k0.n(k0.m(la.e.class, new la.a(2))));
-    public static final ia.c d = new ia.c("globalMetrics", k0.n(k0.m(la.e.class, new la.a(3))));
-    public static final ia.c e = new ia.c("appNamespace", k0.n(k0.m(la.e.class, new la.a(4))));
+    public static final ia.c b = new ia.c("window", hg.c.o(hg.c.n(la.e.class, new la.a(1))));
+    public static final ia.c c = new ia.c("logSourceMetrics", hg.c.o(hg.c.n(la.e.class, new la.a(2))));
+    public static final ia.c d = new ia.c("globalMetrics", hg.c.o(hg.c.n(la.e.class, new la.a(3))));
+    public static final ia.c e = new ia.c("appNamespace", hg.c.o(hg.c.n(la.e.class, new la.a(4))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

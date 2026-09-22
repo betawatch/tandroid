@@ -1,37 +1,75 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eq implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class eq implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nq b;
+    public final /* synthetic */ pq b;
 
-    public /* synthetic */ eq(nq nqVar, int i10) {
+    public /* synthetic */ eq(pq pqVar, int i10) {
         this.a = i10;
-        this.b = nqVar;
+        this.b = pqVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                nq nqVar = this.b;
-                nqVar.h.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                nqVar.h.invalidateSelf();
+                this.b.r0(true);
                 break;
-            default:
-                nq nqVar2 = this.b;
-                nqVar2.getClass();
-                nqVar2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                FrameLayout frameLayout = nqVar2.e;
-                if (frameLayout != null) {
-                    frameLayout.invalidate();
+            case 1:
+                pq pqVar = this.b;
+                pqVar.t0(true);
+                hq hqVar = new hq(pqVar, 0);
+                if (!pqVar.K && !pqVar.L) {
+                    pqVar.getMessagesController().addUserToChat(pqVar.w.id, pqVar.v, 0, pqVar.Y0, pqVar, true, hqVar, new eq(pqVar, 3));
+                    break;
+                } else {
+                    pqVar.getMessagesController().setUserAdminRole(pqVar.w.id, pqVar.v, pqVar.K ? pqVar.M : pq.o0(false), pqVar.S, false, pqVar, pqVar.Z0, pqVar.K, pqVar.Y0, hqVar, new eq(pqVar, 2));
                     break;
                 }
                 break;
+            case 2:
+            case 3:
+            default:
+                pq pqVar2 = this.b;
+                pqVar2.getClass();
+                pqVar2.presentFragment(new hh1(6, null));
+                break;
+            case 4:
+                this.b.finishFragment();
+                break;
+            case 5:
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                pq pqVar3 = this.b;
+                x5 x5Var = new x5(16, pqVar3, twoStepVerificationActivity);
+                twoStepVerificationActivity.Z = 0;
+                twoStepVerificationActivity.b0 = x5Var;
+                pqVar3.presentFragment(twoStepVerificationActivity);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j3) {
+        pq.U(this.b, j3);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 2:
+                this.b.t0(false);
+                return true;
+            case 3:
+                this.b.t0(false);
+                return true;
+            default:
+                return pq.W(this.b, tL_error);
         }
     }
 }

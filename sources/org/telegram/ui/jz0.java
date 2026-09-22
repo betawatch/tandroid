@@ -1,40 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jz0 implements DialogInterface.OnClickListener {
+public final /* synthetic */ class jz0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ mz0 b;
 
-    public /* synthetic */ jz0(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public /* synthetic */ jz0(mz0 mz0Var, int i10) {
+        this.a = i10;
+        this.b = mz0Var;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i11 = 2 - i10;
-                if (i11 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i11);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                mz0 mz0Var = this.b;
+                mz0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new jz0(mz0Var, 1));
+                break;
             default:
-                int i12 = 2 - i10;
-                if (i12 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i12);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
+                this.b.c.getMessagesController().loadAppConfig();
+                break;
         }
     }
 }

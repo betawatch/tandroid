@@ -1,46 +1,85 @@
 package w7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.GestureDetector;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static final int a(int i10, int i11, int i12) {
-        if (i12 > 0) {
-            if (i10 < i11) {
-                int i13 = i11 % i12;
-                if (i13 < 0) {
-                    i13 += i12;
-                }
-                int i14 = i10 % i12;
-                if (i14 < 0) {
-                    i14 += i12;
-                }
-                int i15 = (i13 - i14) % i12;
-                if (i15 < 0) {
-                    i15 += i12;
-                }
-                return i11 - i15;
-            }
-        } else {
-            if (i12 >= 0) {
-                throw new IllegalArgumentException("Step is zero.");
-            }
-            if (i10 > i11) {
-                int i16 = -i12;
-                int i17 = i10 % i16;
-                if (i17 < 0) {
-                    i17 += i16;
-                }
-                int i18 = i11 % i16;
-                if (i18 < 0) {
-                    i18 += i16;
-                }
-                int i19 = (i17 - i18) % i16;
-                if (i19 < 0) {
-                    i19 += i16;
-                }
-                return i19 + i11;
-            }
+    public static mg.i a;
+
+    public static void a(LaunchActivity launchActivity, boolean z10, boolean z11) {
+        mg.i iVar = a;
+        if (z10 == (iVar != null)) {
+            return;
         }
-        return i11;
+        if (z10) {
+            mg.i iVar2 = new mg.i(launchActivity);
+            iVar2.r = new mg.c(iVar2, 3);
+            iVar2.E = new ArrayList();
+            mg.f fVar = new mg.f(iVar2);
+            iVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
+            iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
+            k2.u uVar = new k2.u(launchActivity, fVar);
+            ((GestureDetector) uVar.b).setIsLongpressEnabled(false);
+            ci.n6 n6Var = new ci.n6(iVar2, launchActivity, uVar, 2);
+            iVar2.a = n6Var;
+            ImageView imageView = new ImageView(launchActivity);
+            imageView.setImageResource(R.drawable.device_phone_android);
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.O9, false), PorterDuff.Mode.SRC_IN));
+            n6Var.addView(imageView);
+            n6Var.setVisibility(8);
+            iVar2.addView(n6Var, x5.c(56.0f, 56));
+            LinearLayout linearLayout = new LinearLayout(launchActivity);
+            iVar2.w = linearLayout;
+            linearLayout.setOrientation(1);
+            linearLayout.setVisibility(8);
+            TextView textView = new TextView(launchActivity);
+            iVar2.x = textView;
+            textView.setTextSize(1, 20.0f);
+            textView.setText(LocaleController.getString(R.string.DebugMenu));
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
+            linearLayout.addView(textView, x5.n(-1, -2));
+            ll0 ll0Var = new ll0(launchActivity, null);
+            iVar2.y = ll0Var;
+            ll0Var.setLayoutManager(new s4.c0());
+            ll0Var.setAdapter(new mg.g(iVar2, launchActivity));
+            ll0Var.setOnItemClickListener(new ai.g(iVar2, 13));
+            linearLayout.addView(ll0Var, x5.l(1.0f, -1, 0));
+            iVar2.addView(linearLayout, x5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
+            iVar2.d();
+            iVar2.setFitsSystemWindows(true);
+            iVar2.setWillNotDraw(false);
+            a = iVar2;
+            launchActivity.w0.addView(iVar2, new FrameLayout.LayoutParams(-1, -1));
+            mg.i iVar3 = a;
+            iVar3.a.setVisibility(0);
+            o1.k kVar = new o1.k(new o1.j(0.0f));
+            kVar.u = org.telegram.ui.Cells.q3.l(1000.0f, 750.0f, 0.75f);
+            kVar.b(new ai.qa(2, iVar3));
+            kVar.f();
+        } else {
+            iVar.getClass();
+            launchActivity.w0.removeView(a);
+            a = null;
+        }
+        if (z11) {
+            SharedConfig.isFloatingDebugActive = z10;
+            SharedConfig.saveConfig();
+        }
     }
 }

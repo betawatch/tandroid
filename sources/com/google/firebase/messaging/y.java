@@ -1,0 +1,43 @@
+package com.google.firebase.messaging;
+
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
+/* loaded from: classes.dex */
+public final class y {
+    public static WeakReference d;
+    public final SharedPreferences a;
+    public cf.c b;
+    public final ScheduledThreadPoolExecutor c;
+
+    public y(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+        this.c = scheduledThreadPoolExecutor;
+        this.a = sharedPreferences;
+    }
+
+    public final synchronized x a() {
+        x xVar;
+        String u10 = this.b.u();
+        Pattern pattern = x.d;
+        xVar = null;
+        if (!TextUtils.isEmpty(u10)) {
+            String[] split = u10.split("!", -1);
+            if (split.length == 2) {
+                xVar = new x(split[0], split[1]);
+            }
+        }
+        return xVar;
+    }
+
+    public final synchronized void b() {
+        this.b = cf.c.s(this.a, this.c);
+    }
+
+    public final synchronized void c(x xVar) {
+        this.b.v(xVar.c);
+    }
+}

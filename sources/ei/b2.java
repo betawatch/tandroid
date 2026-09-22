@@ -7,11 +7,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.sr;
+import org.telegram.ui.bo;
 import org.telegram.ui.tw0;
-import org.telegram.ui.zn;
+import org.telegram.ui.ur;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class b2 implements Runnable {
             case 1:
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(zn.Q9(this.c, this.b));
+                    U.presentFragment(bo.Q9(this.c, this.b));
                     break;
                 }
                 break;
@@ -48,9 +48,9 @@ public final /* synthetic */ class b2 implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            sr srVar = new sr(bundle);
-                            srVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
-                            U2.presentFragment(srVar);
+                            ur urVar = new ur(bundle);
+                            urVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
+                            U2.presentFragment(urVar);
                             break;
                         } else {
                             U2.presentFragment(new tw0(j10));

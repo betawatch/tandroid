@@ -3,18 +3,18 @@ package gg;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.rn0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ i0 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ q(go0 go0Var, long j3, int i10) {
+    public /* synthetic */ q(rn0 rn0Var, long j3, int i10) {
         this.a = i10;
-        this.b = go0Var;
+        this.b = rn0Var;
         this.c = j3;
     }
 

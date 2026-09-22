@@ -1,40 +1,27 @@
 package org.telegram.ui.web;
 
+import android.util.Base64InputStream;
+import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FilterInputStream;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class l1 extends FileInputStream {
-    public final long a;
+public final class l1 {
+    public final HashMap a = new HashMap();
+    public File b;
+    public long c;
+    public long d;
 
-    public l1(File file, long j3, long j10) {
-        super(file);
-        this.a = j10;
-        if (j3 > 0 && skip(j3) != j3) {
-            throw new RuntimeException("BoundedInputStream failed to skip");
+    public final FilterInputStream a() {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new k1(this.b, this.c, this.d));
+        HashMap hashMap = this.a;
+        m1 m1Var = (m1) hashMap.get("content-transfer-encoding");
+        if ("base64".equals(m1Var == null ? null : m1Var.a)) {
+            return new Base64InputStream(bufferedInputStream, 0);
         }
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read() {
-        if (getChannel().position() >= this.a) {
-            return -1;
-        }
-        return super.read();
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long position = getChannel().position();
-        long j3 = this.a;
-        if (position >= j3) {
-            return -1;
-        }
-        long position2 = j3 - getChannel().position();
-        if (i11 > position2) {
-            i11 = (int) position2;
-        }
-        return super.read(bArr, i10, i11);
+        m1 m1Var2 = (m1) hashMap.get("content-transfer-encoding");
+        return "quoted-printable".equalsIgnoreCase(m1Var2 != null ? m1Var2.a : null) ? new n1(bufferedInputStream) : bufferedInputStream;
     }
 }

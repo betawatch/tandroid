@@ -5,12 +5,12 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.jk0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class m0 {
-    public hh.h a;
+    public ka.c a;
     public ArrayList b;
     public long c;
     public long d;
@@ -44,9 +44,9 @@ public abstract class m0 {
     public abstract boolean c(c1 c1Var, List list);
 
     public final void d(c1 c1Var) {
-        hh.h hVar = this.a;
-        if (hVar != null) {
-            RecyclerView recyclerView = hVar.a;
+        ka.c cVar = this.a;
+        if (cVar != null) {
+            RecyclerView recyclerView = (RecyclerView) cVar.b;
             boolean z10 = true;
             c1Var.q(true);
             View view = c1Var.a;
@@ -58,26 +58,26 @@ public abstract class m0 {
                 return;
             }
             of.e eVar = recyclerView.b;
-            recyclerView.z0();
-            lf.h hVar2 = recyclerView.e;
-            e6.n nVar = (e6.n) hVar2.c;
-            o0.b bVar = (o0.b) hVar2.b;
-            int indexOfChild = ((RecyclerView) bVar.b).indexOfChild(view);
+            recyclerView.y0();
+            lf.i iVar = recyclerView.e;
+            e6.n nVar = (e6.n) iVar.c;
+            k2.c0 c0Var = (k2.c0) iVar.b;
+            int indexOfChild = ((RecyclerView) c0Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                hVar2.Y(view);
+                iVar.Y(view);
             } else if (nVar.z(indexOfChild)) {
                 nVar.B(indexOfChild);
-                hVar2.Y(view);
-                bVar.l(indexOfChild);
+                iVar.Y(view);
+                c0Var.r(indexOfChild);
             } else {
                 z10 = false;
             }
             if (z10) {
-                c1 V = RecyclerView.V(view);
-                eVar.k(V);
-                eVar.h(V);
+                c1 U = RecyclerView.U(view);
+                eVar.k(U);
+                eVar.h(U);
             }
-            recyclerView.A0(!z10);
+            recyclerView.z0(!z10);
             if (z10 || !c1Var.l()) {
                 return;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            wk0 wk0Var = (wk0) arrayList.get(i10);
-            wk0Var.a.d(wk0Var.b, wk0Var.c, wk0Var.d, false);
+            jk0 jk0Var = (jk0) arrayList.get(i10);
+            jk0Var.a.c(jk0Var.b, jk0Var.c, jk0Var.d, false);
         }
         arrayList.clear();
     }

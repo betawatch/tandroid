@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class i {
     /* JADX WARN: Removed duplicated region for block: B:16:0x006d  */
@@ -34,7 +34,7 @@ public abstract class i {
                 Object obj2 = jd.a.a;
                 i10 = cVar2.d;
                 if (i10 != 0) {
-                    v7.u7.b(obj);
+                    v7.t7.b(obj);
                     ArrayList arrayList = new ArrayList();
                     k1.e eVar = new k1.e(list, arrayList, null);
                     cVar2.a = arrayList;
@@ -51,13 +51,13 @@ public abstract class i {
                         it = cVar2.b;
                         pVar = (kotlin.jvm.internal.p) cVar2.a;
                         try {
-                            v7.u7.b(obj);
+                            v7.t7.b(obj);
                         } catch (Throwable th3) {
                             Object obj3 = pVar.a;
                             if (obj3 == null) {
                                 pVar.a = th3;
                             } else {
-                                v7.s7.a((Throwable) obj3, th3);
+                                v7.r7.a((Throwable) obj3, th3);
                             }
                         }
                         while (it.hasNext()) {
@@ -76,7 +76,7 @@ public abstract class i {
                         throw th2;
                     }
                     list2 = (List) cVar2.a;
-                    v7.u7.b(obj);
+                    v7.t7.b(obj);
                 }
                 pVar = new kotlin.jvm.internal.p();
                 it = list2.iterator();

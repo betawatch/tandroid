@@ -1,9 +1,8 @@
 package fh;
 
-import ah.f;
-import ah.i;
+import ah.h;
+import ah.j;
 import ah.k;
-import ah.l;
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
 import android.graphics.RectF;
@@ -14,12 +13,12 @@ import android.os.Build;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class d implements a {
     public final a a;
-    public l c;
-    public i d;
+    public k c;
+    public h d;
     public int e;
     public a f;
     public boolean h;
@@ -27,7 +26,7 @@ public final class d implements a {
     public RecordingCanvas r;
     public Runnable v;
     public final pe.b s = new pe.b(true);
-    public final RenderNode b = f.c();
+    public final RenderNode b = ah.e.c();
 
     public d(a aVar) {
         this.a = aVar;
@@ -110,9 +109,9 @@ public final class d implements a {
         this.b.setPosition(0, 0, i10, i11);
     }
 
-    public final void j(k kVar) {
+    public final void j(j jVar) {
         if (this.c == null) {
-            this.c = new l(this.b, kVar);
+            this.c = new k(this.b, jVar);
         }
     }
 
@@ -128,12 +127,12 @@ public final class d implements a {
     }
 
     @Override // fh.a
-    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
-        i iVar;
+    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
+        h hVar;
         if (!canvas.isHardwareAccelerated()) {
             a aVar = this.a;
             if (aVar != null) {
-                aVar.v(canvas, f7, f10, f11, f12);
+                aVar.y(canvas, f7, f10, f11, f12);
                 return;
             }
             return;
@@ -143,16 +142,16 @@ public final class d implements a {
         }
         a aVar2 = this.f;
         if (aVar2 != null) {
-            aVar2.v(canvas, f7, f10, f11, f12);
+            aVar2.y(canvas, f7, f10, f11, f12);
         }
         canvas.save();
         if (!this.h) {
             canvas.clipRect(f7, f10, f11, f12);
         }
-        if (Build.VERSION.SDK_INT < 31 || (iVar = this.d) == null) {
+        if (Build.VERSION.SDK_INT < 31 || (hVar = this.d) == null) {
             canvas.drawRenderNode(this.b);
         } else {
-            iVar.c(canvas, this.e);
+            hVar.c(canvas, this.e);
         }
         canvas.restore();
     }

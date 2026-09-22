@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class pt extends org.telegram.ui.Components.xl0 {
+public final class pt extends org.telegram.ui.Components.kl0 {
     public final /* synthetic */ ArrayList c;
     public final /* synthetic */ st d;
 
@@ -22,7 +22,7 @@ public final class pt extends org.telegram.ui.Components.xl0 {
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -37,27 +37,27 @@ public final class pt extends org.telegram.ui.Components.xl0 {
         rt rtVar = (rt) c1Var.a;
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) this.c.get(i10);
         org.telegram.ui.ActionBar.j5 j5Var = rtVar.b;
-        org.telegram.ui.Components.v9 v9Var = rtVar.a;
+        org.telegram.ui.Components.u9 u9Var = rtVar.a;
         rtVar.d = stickerSetCovered;
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
             j5Var.l(LocaleController.getString(R.string.NewStickerPack), false);
-            v9Var.setImageResource(R.drawable.msg_addbot);
+            u9Var.setImageResource(R.drawable.msg_addbot);
             return;
         }
         j5Var.l(stickerSetCovered.set.title, false);
         TLRPC.Document document = stickerSetCovered.cover;
         if (document == null) {
-            v9Var.l(null, null, null, null, null, 0);
+            u9Var.l(null, null, null, null, null, 0);
             return;
         }
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.cover, org.telegram.ui.ActionBar.j6.a7, 1.0f, 1.0f, rtVar.c);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.cover, org.telegram.ui.ActionBar.i6.a7, 1.0f, 1.0f, rtVar.c);
         if (svgThumb == null) {
-            v9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", null, stickerSetCovered);
+            u9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", null, stickerSetCovered);
         } else if (closestPhotoSizeWithSize != null) {
-            v9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
+            u9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
         } else {
-            v9Var.i(ImageLocation.getForDocument(stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
+            u9Var.i(ImageLocation.getForDocument(stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
         }
     }
 
@@ -65,6 +65,6 @@ public final class pt extends org.telegram.ui.Components.xl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         rt rtVar = new rt(viewGroup.getContext(), this.d.c0);
         rtVar.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(48.0f)));
-        return new org.telegram.ui.Components.il0(rtVar);
+        return new org.telegram.ui.Components.vk0(rtVar);
     }
 }

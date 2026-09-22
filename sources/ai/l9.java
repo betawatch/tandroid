@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class l9 {
     public static final Comparator X = Comparator$-CC.comparingInt(new f7(1));
@@ -381,7 +381,7 @@ public final class l9 {
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
-        return ((k9) hg.k0.g(1, arrayList)).I;
+        return ((k9) hg.c.h(1, arrayList)).I;
     }
 
     public final void O(long j3) {
@@ -559,9 +559,9 @@ public final class l9 {
                                 FileLoader.getInstance(i10).loadFile(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
-                            org.telegram.ui.Components.p5 p5Var = new org.telegram.ui.Components.p5(1, i10, d.g);
-                            p5Var.m = true;
-                            p5Var.v();
+                            org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(1, i10, d.g);
+                            o5Var.m = true;
+                            o5Var.v();
                         }
                     }
                 }
@@ -860,7 +860,7 @@ public final class l9 {
             this.d = 0;
         }
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.l0.i(j3, iVar);
+            arrayList = org.telegram.messenger.y0.j(j3, iVar);
         }
         arrayList.add(k9Var);
     }
@@ -1163,21 +1163,21 @@ public final class l9 {
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
     }
 
-    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         int i10 = this.a;
         tL_stories_canSendStory.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, f6Var), 1024);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, e6Var), 1024);
     }
 
     public final void k0(long j3, List list) {
         ArrayList arrayList;
-        StringBuilder t10 = a4.a.t(j3, "updateDeletedStoriesInLists ", " storyItems[");
-        t10.append(list.size());
-        t10.append("] {");
-        t10.append(h0(list));
-        t10.append("}");
-        FileLog.d(t10.toString());
+        StringBuilder u10 = a4.a.u(j3, "updateDeletedStoriesInLists ", " storyItems[");
+        u10.append(list.size());
+        u10.append("] {");
+        u10.append(h0(list));
+        u10.append("}");
+        FileLog.d(u10.toString());
         d9 A = A(j3, 0, -1, false);
         l9 l9Var = this;
         d9 A2 = l9Var.A(j3, 1, -1, false);
@@ -1293,7 +1293,7 @@ public final class l9 {
                         if (storyItem.firstFramePath == null) {
                             storyItem.firstFramePath = storyItem2.firstFramePath;
                         }
-                        org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
+                        org.telegram.messenger.y0.n(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
                     }
                 } else {
                     i12++;
@@ -1301,9 +1301,9 @@ public final class l9 {
             }
             if (!z11) {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                    org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
+                    org.telegram.messenger.y0.n(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
                 } else if (z10) {
-                    org.telegram.messenger.l0.m(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
+                    org.telegram.messenger.y0.n(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
                     peerStories.stories.add(storyItem);
                     peerStories.checkedExpired = false;
                 }
@@ -1397,12 +1397,12 @@ public final class l9 {
 
     public final void n0(long j3, List list, boolean z10) {
         ArrayList arrayList;
-        StringBuilder t10 = a4.a.t(j3, "updateStoriesInLists ", " storyItems[");
-        t10.append(list.size());
-        t10.append("] {");
-        t10.append(h0(list));
-        t10.append("}");
-        FileLog.d(t10.toString());
+        StringBuilder u10 = a4.a.u(j3, "updateStoriesInLists ", " storyItems[");
+        u10.append(list.size());
+        u10.append("] {");
+        u10.append(h0(list));
+        u10.append("}");
+        FileLog.d(u10.toString());
         d9 A = A(j3, 0, -1, false);
         l9 l9Var = this;
         d9 A2 = l9Var.A(j3, 1, -1, false);
@@ -1502,14 +1502,14 @@ public final class l9 {
 
     public final void p0(long j3, TL_stories.StoryItem storyItem, boolean z10) {
         String str;
-        StringBuilder t10 = a4.a.t(j3, "StoriesController updateStoryItem ", " ");
+        StringBuilder u10 = a4.a.u(j3, "StoriesController updateStoryItem ", " ");
         if (storyItem == null) {
             str = BuildConfig.BETA_URL;
         } else {
             str = storyItem.id + "@" + storyItem.dialogId;
         }
-        t10.append(str);
-        FileLog.d(t10.toString());
+        u10.append(str);
+        FileLog.d(u10.toString());
         n0(j3, Collections.singletonList(storyItem), z10);
         this.k.k(j3, storyItem);
         l0(j3, Collections.singletonList(storyItem), false);

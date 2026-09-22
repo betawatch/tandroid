@@ -1,82 +1,30 @@
 package pg;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
+    public final /* synthetic */ q0 b;
 
-    public /* synthetic */ n0(s0 s0Var, int i10) {
+    public /* synthetic */ n0(q0 q0Var, int i10) {
         this.a = i10;
-        this.b = s0Var;
+        this.b = q0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final s0 s0Var = this.b;
-                final int i10 = 1;
-                s0Var.f.f(new Runnable() { // from class: pg.m0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                s0 s0Var2 = s0Var;
-                                s0Var2.getClass();
-                                s0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                l.d dVar = s0Var2.a;
-                                if (dVar != null) {
-                                    dVar.V();
-                                    break;
-                                }
-                                break;
-                            default:
-                                s0 s0Var3 = s0Var;
-                                s0Var3.getClass();
-                                s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                l.d dVar2 = s0Var3.a;
-                                if (dVar2 != null) {
-                                    dVar2.V();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                q0 q0Var = this.b;
+                q0Var.c = null;
+                k2.u uVar = q0Var.a;
+                if (uVar != null) {
+                    uVar.W();
+                    break;
+                }
                 break;
             default:
-                final s0 s0Var2 = this.b;
-                final int i11 = 0;
-                s0Var2.f.f(new Runnable() { // from class: pg.m0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                s0 s0Var22 = s0Var2;
-                                s0Var22.getClass();
-                                s0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                l.d dVar = s0Var22.a;
-                                if (dVar != null) {
-                                    dVar.V();
-                                    break;
-                                }
-                                break;
-                            default:
-                                s0 s0Var3 = s0Var2;
-                                s0Var3.getClass();
-                                s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                l.d dVar2 = s0Var3.a;
-                                if (dVar2 != null) {
-                                    dVar2.V();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                this.b.b();
                 break;
         }
     }

@@ -3,33 +3,32 @@ package c5;
 import android.content.Context;
 import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
 import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
-import hg.k0;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g {
     public boolean a;
     public Object b;
     public Object c;
     public Object d;
-    public Object e = new g0(this, true);
-    public Object f = new g0(this, false);
+    public Object e = new h0(this, true);
+    public Object f = new h0(this, false);
 
-    public g(Context context, p pVar, of.b bVar) {
+    public g(Context context, q qVar, of.b bVar) {
         this.b = context;
-        this.c = pVar;
+        this.c = qVar;
         this.d = bVar;
     }
 
-    public d9.j a(int i10) {
-        d9.j jVar;
-        d9.j jVar2;
+    public d9.i a(int i10) {
+        d9.i iVar;
+        d9.i iVar2;
         HashMap hashMap = (HashMap) this.c;
-        d9.j jVar3 = (d9.j) hashMap.get(Integer.valueOf(i10));
-        if (jVar3 != null) {
-            return jVar3;
+        d9.i iVar3 = (d9.i) hashMap.get(Integer.valueOf(i10));
+        if (iVar3 != null) {
+            return iVar3;
         }
         final of.b bVar = (of.b) this.e;
         bVar.getClass();
@@ -40,13 +39,13 @@ public final class g {
                 if (i10 != 2) {
                     final int i13 = 3;
                     if (i10 == 3) {
-                        jVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
+                        iVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
                     } else {
                         if (i10 != 4) {
-                            throw new IllegalArgumentException(k0.h(i10, "Unrecognized contentType: "));
+                            throw new IllegalArgumentException(hg.c.i(i10, "Unrecognized contentType: "));
                         }
-                        jVar = new d9.j() { // from class: u2.o
-                            @Override // d9.j
+                        iVar = new d9.i() { // from class: u2.o
+                            @Override // d9.i
                             public final Object get() {
                                 switch (i13) {
                                     case 0:
@@ -56,15 +55,15 @@ public final class g {
                                     case 2:
                                         return p.e((Class) this, bVar);
                                     default:
-                                        return new w0(bVar, (c3.m) ((c5.g) this).b);
+                                        return new v0(bVar, (c3.m) ((c5.g) this).b);
                                 }
                             }
                         };
                     }
                 } else {
                     final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(u2.e0.class);
-                    jVar2 = new d9.j() { // from class: u2.o
-                        @Override // d9.j
+                    iVar2 = new d9.i() { // from class: u2.o
+                        @Override // d9.i
                         public final Object get() {
                             switch (i12) {
                                 case 0:
@@ -74,15 +73,15 @@ public final class g {
                                 case 2:
                                     return p.e((Class) asSubclass, bVar);
                                 default:
-                                    return new w0(bVar, (c3.m) ((c5.g) asSubclass).b);
+                                    return new v0(bVar, (c3.m) ((c5.g) asSubclass).b);
                             }
                         }
                     };
                 }
             } else {
                 final GenericDeclaration asSubclass2 = Class.forName("androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory").asSubclass(u2.e0.class);
-                jVar2 = new d9.j() { // from class: u2.o
-                    @Override // d9.j
+                iVar2 = new d9.i() { // from class: u2.o
+                    @Override // d9.i
                     public final Object get() {
                         switch (i11) {
                             case 0:
@@ -92,17 +91,17 @@ public final class g {
                             case 2:
                                 return p.e((Class) asSubclass2, bVar);
                             default:
-                                return new w0(bVar, (c3.m) ((c5.g) asSubclass2).b);
+                                return new v0(bVar, (c3.m) ((c5.g) asSubclass2).b);
                         }
                     }
                 };
             }
-            jVar = jVar2;
+            iVar = iVar2;
         } else {
             final Class asSubclass3 = DashMediaSource$Factory.class.asSubclass(u2.e0.class);
             final int i14 = 0;
-            jVar = new d9.j() { // from class: u2.o
-                @Override // d9.j
+            iVar = new d9.i() { // from class: u2.o
+                @Override // d9.i
                 public final Object get() {
                     switch (i14) {
                         case 0:
@@ -112,12 +111,12 @@ public final class g {
                         case 2:
                             return p.e((Class) asSubclass3, bVar);
                         default:
-                            return new w0(bVar, (c3.m) ((c5.g) asSubclass3).b);
+                            return new v0(bVar, (c3.m) ((c5.g) asSubclass3).b);
                     }
                 }
             };
         }
-        hashMap.put(Integer.valueOf(i10), jVar);
-        return jVar;
+        hashMap.put(Integer.valueOf(i10), iVar);
+        return iVar;
     }
 }

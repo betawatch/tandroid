@@ -12,10 +12,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class cb implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        wv0 wv0Var;
+        jv0 jv0Var;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         switch (this.a) {
             case 0:
@@ -112,16 +112,16 @@ public final /* synthetic */ class cb implements Utilities.Callback2 {
                             float f7 = (!(tLObject instanceof TLRPC.Photo) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) == null) ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
                             if (f7 > 1.0f) {
                                 float floor = (float) Math.floor(Math.max(qbVar2.R1, k6Var.getMeasuredWidth()) * 0.5d);
-                                wv0Var = new wv0(floor, floor / f7);
+                                jv0Var = new jv0(floor, floor / f7);
                             } else {
                                 float floor2 = (float) Math.floor(Math.max(qbVar2.S1, k6Var.getMeasuredHeight()) * 0.5d);
-                                wv0Var = new wv0(f7 * floor2, floor2);
+                                jv0Var = new jv0(f7 * floor2, floor2);
                             }
-                            qg.y1 y1Var = new qg.y1(qbVar2.getContext(), qbVar2.e0(), wv0Var, tLObject);
-                            y1Var.setDelegate(qbVar2);
-                            k6Var.addView(y1Var);
+                            qg.a2 a2Var = new qg.a2(qbVar2.getContext(), qbVar2.e0(), jv0Var, tLObject);
+                            a2Var.setDelegate(qbVar2);
+                            k6Var.addView(a2Var);
                             qbVar2.g0();
-                            qbVar2.d0(y1Var);
+                            qbVar2.d0(a2Var);
                         }
                         ocVar.f(false);
                     }
@@ -141,15 +141,15 @@ public final /* synthetic */ class cb implements Utilities.Callback2 {
                 Integer num = (Integer) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (!profileActivity.M3()) {
-                    if (org.telegram.ui.Components.xc.a(profileActivity)) {
+                    if (org.telegram.ui.Components.vc.a(profileActivity)) {
                         int intValue = num.intValue();
                         boolean z12 = this.b;
                         if (intValue == 1) {
-                            org.telegram.ui.Components.xc.l(null, profileActivity, z12).j();
+                            org.telegram.ui.Components.vc.l(null, profileActivity, z12).j();
                         } else if (num.intValue() == 2) {
-                            org.telegram.ui.Components.xc.l(DialogObject.getShortName(profileActivity.e1), profileActivity, z12).j();
+                            org.telegram.ui.Components.vc.l(DialogObject.getShortName(profileActivity.e1), profileActivity, z12).j();
                         } else if (tL_error != null) {
-                            org.telegram.ui.Components.xc.b0(tL_error);
+                            org.telegram.ui.Components.vc.b0(tL_error);
                         }
                     }
                     FlagSecureReason flagSecureReason = profileActivity.X1;

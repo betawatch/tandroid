@@ -5,25 +5,25 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class t extends yh.v3 {
+public final class t extends yh.w3 {
     public final Path A0;
     public final float[] B0;
     public final /* synthetic */ v C0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(v vVar, Context context, f6 f6Var, o oVar, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6) {
-        super(context, f6Var, oVar, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
+    public t(v vVar, Context context, e6 e6Var, o oVar, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6) {
+        super(context, e6Var, oVar, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
         this.C0 = vVar;
         this.A0 = new Path();
         this.B0 = new float[8];
     }
 
-    @Override // yh.v3, android.view.ViewGroup, android.view.View
+    @Override // yh.w3, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         canvas.save();
         canvas.clipPath(this.A0);
@@ -31,21 +31,21 @@ public final class t extends yh.v3 {
         canvas.restore();
     }
 
-    @Override // yh.v3
+    @Override // yh.w3
     public final int getFinalHeight() {
         return AndroidUtilities.dp(288.0f);
     }
 
-    @Override // yh.v3
+    @Override // yh.w3
     public final float getRealHeight() {
         return AndroidUtilities.dp(288.0f);
     }
 
-    @Override // yh.v3
+    @Override // yh.w3
     public final void j(int i10) {
         v vVar = this.C0;
         TextView textView = vVar.b0;
-        if (textView == null || !j6.B1(textView.getBackground(), i10, false)) {
+        if (textView == null || !i6.B1(textView.getBackground(), i10, false)) {
             return;
         }
         vVar.b0.invalidate();

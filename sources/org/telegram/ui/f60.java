@@ -25,7 +25,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class f60 extends FrameLayout {
     public int E;
@@ -35,10 +35,10 @@ public final class f60 extends FrameLayout {
     public final float[] I;
     public boolean J;
     public final /* synthetic */ i60 K;
-    public final org.telegram.ui.Components.nj0 a;
+    public final org.telegram.ui.Components.aj0 a;
     public final TextView b;
     public final TLRPC.GroupCallParticipant c;
-    public final org.telegram.ui.Components.kj0 d;
+    public final org.telegram.ui.Components.xi0 d;
     public boolean e;
     public float f;
     public float h;
@@ -66,29 +66,29 @@ public final class f60 extends FrameLayout {
         this.r = ChatObject.getParticipantVolume(groupCallParticipant) / 20000.0f;
         this.G = 1.0f;
         setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.speaker, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        this.d = kj0Var;
-        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
-        this.a = nj0Var;
-        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        nj0Var.setAnimation(kj0Var);
-        nj0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(nj0Var, w7.y5.d(-2, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
-        kj0Var.P(this.r == 0.0d ? 17 : 34);
-        kj0Var.N(kj0Var.f - 1, false, true);
+        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.speaker, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+        this.d = xi0Var;
+        org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(context);
+        this.a = aj0Var;
+        aj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        aj0Var.setAnimation(xi0Var);
+        aj0Var.setTag(this.r == 0.0d ? 1 : null);
+        addView(aj0Var, w7.x5.d(-2, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        xi0Var.P(this.r == 0.0d ? 17 : 34);
+        xi0Var.N(xi0Var.f - 1, false, true);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hg, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hg, false));
         textView.setTextSize(1, 16.0f);
         double participantVolume = ChatObject.getParticipantVolume(groupCallParticipant) / 100.0d;
         Locale locale = Locale.US;
         textView.setText(((int) (participantVolume > 0.0d ? Math.max(participantVolume, 1.0d) : 0.0d)) + "%");
         textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
-        addView(textView, w7.y5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(textView, w7.x5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -140,16 +140,16 @@ public final class f60 extends FrameLayout {
             }
         }
         Integer num = this.r == 0.0d ? 1 : null;
-        org.telegram.ui.Components.nj0 nj0Var = this.a;
-        if ((nj0Var.getTag() != null || num == null) && (nj0Var.getTag() == null || num != null)) {
+        org.telegram.ui.Components.aj0 aj0Var = this.a;
+        if ((aj0Var.getTag() != null || num == null) && (aj0Var.getTag() == null || num != null)) {
             return;
         }
         int i10 = this.r == 0.0d ? 17 : 34;
-        org.telegram.ui.Components.kj0 kj0Var = this.d;
-        kj0Var.P(i10);
-        kj0Var.M(this.r != 0.0d ? 17 : 0);
-        kj0Var.start();
-        nj0Var.setTag(num);
+        org.telegram.ui.Components.xi0 xi0Var = this.d;
+        xi0Var.P(i10);
+        xi0Var.M(this.r != 0.0d ? 17 : 0);
+        xi0Var.start();
+        aj0Var.setTag(num);
     }
 
     public final boolean b(MotionEvent motionEvent) {
@@ -285,9 +285,9 @@ public final class f60 extends FrameLayout {
         Canvas canvas2 = canvas;
         canvas2.drawPath(path, paint);
         int participantVolume = (int) (ChatObject.getParticipantVolume(f60Var.c) / 100.0d);
-        org.telegram.ui.Components.nj0 nj0Var = f60Var.a;
-        int dp4 = AndroidUtilities.dp(5.0f) + (nj0Var.getMeasuredWidth() / 2) + nj0Var.getLeft();
-        int measuredHeight2 = (nj0Var.getMeasuredHeight() / 2) + nj0Var.getTop();
+        org.telegram.ui.Components.aj0 aj0Var = f60Var.a;
+        int dp4 = AndroidUtilities.dp(5.0f) + (aj0Var.getMeasuredWidth() / 2) + aj0Var.getLeft();
+        int measuredHeight2 = (aj0Var.getMeasuredHeight() / 2) + aj0Var.getTop();
         int i14 = 0;
         while (true) {
             float[] fArr2 = f60Var.I;

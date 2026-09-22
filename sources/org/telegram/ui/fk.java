@@ -12,23 +12,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fk extends org.telegram.ui.Components.ya0 {
+public final class fk extends org.telegram.ui.Components.na0 {
     public boolean V;
-    public final /* synthetic */ zn W;
+    public final /* synthetic */ bo W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fk(zn znVar, Context context, long j3, long j10, zn znVar2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, j3, j10, znVar2, f6Var);
-        this.W = znVar;
+    public fk(bo boVar, Context context, long j3, long j10, bo boVar2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, j3, j10, boVar2, e6Var);
+        this.W = boVar;
         this.V = true;
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final boolean a() {
-        zn znVar = this.W;
-        return znVar.R.getVisibility() != 0 || znVar.n3;
+        bo boVar = this.W;
+        return boVar.R.getVisibility() != 0 || boVar.n3;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -39,37 +39,37 @@ public final class fk extends org.telegram.ui.Components.ya0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void j() {
         this.W.sc();
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void k(TLRPC.BotInlineResult botInlineResult) {
-        zn znVar = this.W;
-        if (znVar.getParentActivity() == null || botInlineResult.content == null) {
+        bo boVar = this.W;
+        if (boVar.getParentActivity() == null || botInlineResult.content == null) {
             return;
         }
         if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            znVar.xa(0, botInlineResult.content.url, null, null, false);
+            boVar.xa(0, botInlineResult.content.url, null, null, false);
             return;
         }
         int[] inlineResultWidthAndHeight = MessageObject.getInlineResultWidthAndHeight(botInlineResult);
-        zl zlVar = znVar.Ia;
+        bm bmVar = boVar.Ia;
         String str = botInlineResult.title;
         if (str == null) {
             str = "";
         }
         String str2 = botInlineResult.description;
         String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.vu.J(znVar, null, zlVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, znVar.x9());
+        org.telegram.ui.Components.vu.J(boVar, null, bmVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, boVar.x9());
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void l(boolean z10) {
         String string;
-        zn znVar = this.W;
-        mk mkVar = znVar.Y;
+        bo boVar = this.W;
+        mk mkVar = boVar.Y;
         if (mkVar != null) {
             gg.k1 adapter = getAdapter();
             TLRPC.User user = adapter.w0;
@@ -80,42 +80,42 @@ public final class fk extends org.telegram.ui.Components.ya0 {
                 string = (str == null || !str.equals("gif")) ? null : LocaleController.getString(R.string.SearchGifsTitle);
             }
             mkVar.setCaption(string);
-            org.telegram.ui.Components.we weVar = znVar.Y.P1;
-            if (weVar == null) {
+            org.telegram.ui.Components.ue ueVar = boVar.Y.O1;
+            if (ueVar == null) {
                 return;
             }
             if (!z10) {
-                weVar.e = false;
+                ueVar.e = false;
                 return;
             }
-            weVar.e = true;
-            weVar.b = System.currentTimeMillis();
-            weVar.invalidateSelf();
+            ueVar.e = true;
+            ueVar.b = System.currentTimeMillis();
+            ueVar.invalidateSelf();
         }
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void m() {
-        zn znVar = this.W;
-        if (znVar.Z4 && ((getAdapter().R == null || znVar.a5 || znVar.b5) && znVar.h != null && getAdapter().R != null)) {
+        bo boVar = this.W;
+        if (boVar.Z4 && ((getAdapter().R == null || boVar.a5 || boVar.b5) && boVar.h != null && getAdapter().R != null)) {
             SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
             if (!globalMainSettings.getBoolean("secretbot", false)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(znVar.getParentActivity(), 0, znVar.ea);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(boVar.getParentActivity(), 0, boVar.ea);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.SecretChatContextBotAlert);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                znVar.showDialog(alertDialog$Builder.a);
+                boVar.showDialog(alertDialog$Builder.a);
                 globalMainSettings.edit().putBoolean("secretbot", true).commit();
             }
         }
-        znVar.sc();
+        boVar.sc();
     }
 
-    @Override // org.telegram.ui.Components.ya0
+    @Override // org.telegram.ui.Components.na0
     public final void n(boolean z10) {
         if (this.V != z10) {
-            zn znVar = this.W;
-            AndroidUtilities.updateViewShow(znVar.d1, !znVar.isInPreviewMode() && z10, false, true);
+            bo boVar = this.W;
+            AndroidUtilities.updateViewShow(boVar.d1, !boVar.isInPreviewMode() && z10, false, true);
             this.V = z10;
         }
     }

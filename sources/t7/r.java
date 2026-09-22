@@ -2,20 +2,20 @@ package t7;
 
 import android.content.Context;
 import java.util.ArrayList;
+import v7.v8;
 import v7.w8;
-import v7.x8;
-import v7.z8;
+import v7.y8;
 import w7.ia;
 import w7.ka;
 import w7.la;
+import x7.ba;
 import x7.ca;
-import x7.da;
-import x7.ga;
+import x7.fa;
 import z7.sf;
 import z7.uf;
 import z7.wf;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class r extends b2.g {
     public final /* synthetic */ int b;
@@ -42,15 +42,15 @@ public final class r extends b2.g {
                 arrayList.add(bVar);
                 return new q(c10.b(), (qb.k) c10.a(qb.k.class));
             case 1:
-                w8 w8Var = (w8) obj;
+                v8 v8Var = (v8) obj;
                 qb.g c11 = qb.g.c();
-                return new z8(c11.b(), (qb.k) c11.a(qb.k.class), new x8(qb.g.c().b(), w8Var), w8Var.a);
+                return new y8(c11.b(), (qb.k) c11.a(qb.k.class), new w8(qb.g.c().b(), v8Var), v8Var.a);
             case 2:
                 qb.g c12 = qb.g.c();
                 return new la(c12.b(), (qb.k) c12.a(qb.k.class), new ka(qb.g.c().b(), (ia) obj));
             case 3:
                 qb.g c13 = qb.g.c();
-                return new ga(c13.b(), (qb.k) c13.a(qb.k.class), new da(qb.g.c().b(), (ca) obj));
+                return new fa(c13.b(), (qb.k) c13.a(qb.k.class), new ca(qb.g.c().b(), (ba) obj));
             default:
                 qb.g c14 = qb.g.c();
                 return new wf(c14.b(), (qb.k) c14.a(qb.k.class), new uf(qb.g.c().b(), (sf) obj));

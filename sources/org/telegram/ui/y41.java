@@ -1,26 +1,62 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y41 implements View.OnApplyWindowInsetsListener {
+public final class y41 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.Components.em0 b;
 
-    public /* synthetic */ y41(Object obj, int i10) {
+    public /* synthetic */ y41(org.telegram.ui.Components.em0 em0Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = em0Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
+                secretMediaViewer.Z.getNextView().setText((CharSequence) null);
+                bu0 bu0Var = secretMediaViewer.a0;
+                bu0Var.l0 = false;
+                if (bu0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) bu0Var.o0.getLayoutParams()).topMargin = bu0Var.m0;
+                    bu0Var.m0 = -1;
+                    bu0Var.requestLayout();
+                    break;
+                }
+                break;
             default:
-                return f71.b((y51) this.b, view, windowInsets);
+                ((SecretMediaViewer) this.b.b).Z.setTranslationY(0.0f);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                bu0 bu0Var = ((SecretMediaViewer) this.b.b).a0;
+                Method method = bu0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(bu0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

@@ -1,41 +1,57 @@
 package xh;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.yl0;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import yh.m5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class f4 extends m61 {
-    public final /* synthetic */ h4 N;
+public final class f4 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final m5 b;
+    public final u3 c;
+    public y3 d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f4(h4 h4Var, yl0 yl0Var, Context context, int i10, hi.a aVar, f6 f6Var) {
-        super(yl0Var, context, i10, 0, false, aVar, f6Var);
-        this.N = h4Var;
+    public f4(int i10, long j3) {
+        this.a = i10;
+        m5 m5Var = new m5(i10, 0L, false);
+        this.b = m5Var;
+        m5Var.p = j3;
+        u3 u3Var = new u3(j3, i10, new org.telegram.ui.web.b1(this, 19));
+        u3Var.s = true;
+        this.c = u3Var;
     }
 
-    @Override // org.telegram.ui.Components.m61, s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        f6 f6Var;
-        f6 f6Var2;
-        h4 h4Var = this.N;
-        if (i10 == 0) {
-            Context context = h4Var.getContext();
-            int i11 = j6.L6;
-            f6Var2 = ((org.telegram.ui.ActionBar.f3) h4Var).resourcesProvider;
-            return new il0(new org.telegram.ui.Cells.n4(context, i11, 13, 12, 4, false, false, f6Var2));
+    public final void a() {
+        if (this.e) {
+            return;
         }
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+        this.b.a();
+        this.c.g(false);
+        this.e = true;
+    }
+
+    public final void b() {
+        if (this.e) {
+            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
+            m5 m5Var = this.b;
+            if (m5Var.m != -1) {
+                ConnectionsManager.getInstance(m5Var.a).cancelRequest(m5Var.m, true);
+                m5Var.m = -1;
+            }
+            m5Var.i = false;
+            this.c.f();
+            this.e = false;
         }
-        Context context2 = h4Var.getContext();
-        int i12 = j6.L6;
-        f6Var = ((org.telegram.ui.ActionBar.f3) h4Var).resourcesProvider;
-        return new il0(new org.telegram.ui.Cells.n4(context2, i12, 13, 12, 4, false, true, f6Var));
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        y3 y3Var;
+        if (i10 == NotificationCenter.starUserGiftsLoaded && objArr[1] == this.b && (y3Var = this.d) != null) {
+            y3Var.run();
+        }
     }
 }

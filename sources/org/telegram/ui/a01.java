@@ -1,115 +1,148 @@
 package org.telegram.ui;
 
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class a01 extends org.telegram.ui.Components.q6 {
-    public final /* synthetic */ ProfileActivity b;
+public final class a01 extends tu0 {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a01(ProfileActivity profileActivity) {
-        super("avatarAnimationProgress", 0);
-        this.b = profileActivity;
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.q6
-    public final void c(Object obj, float f7) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.v0 v0Var;
-        int v02;
-        ProfileActivity profileActivity = this.b;
-        profileActivity.E5 = f7;
-        Drawable[] drawableArr = profileActivity.E;
-        Drawable[] drawableArr2 = profileActivity.I;
-        Drawable[] drawableArr3 = profileActivity.y;
-        rz0 rz0Var = profileActivity.u0;
-        if (rz0Var != null) {
-            rz0Var.setActionBarActionMode(f7);
-        }
-        yh.g0 g0Var = profileActivity.v0;
-        if (g0Var != null) {
-            g0Var.setActionBarActionMode(f7);
-        }
-        profileActivity.d1.invalidate();
-        int v03 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.vh, profileActivity.z0);
-        int i10 = org.telegram.ui.ActionBar.j6.Oi;
-        int v04 = org.telegram.ui.ActionBar.j6.v0(i10, profileActivity.z0);
-        int offsetColor = AndroidUtilities.getOffsetColor(v03, v04, f7, 1.0f);
-        profileActivity.f[1].setTextColor(offsetColor);
-        Drawable drawable = profileActivity.x;
-        if (drawable != null) {
-            if (profileActivity.Q5 != null) {
-                offsetColor = -1;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
+    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.Components.u9] */
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final dv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        TLRPC.Chat chat;
+        TLRPC.ChatPhoto chatPhoto;
+        TLRPC.FileLocation fileLocation2;
+        dv0 dv0Var;
+        int i11;
+        boolean z12;
+        long j3;
+        qz0 qz0Var;
+        qz0 qz0Var2;
+        org.telegram.ui.Components.nh0 nh0Var;
+        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
+        TLRPC.User user;
+        TLRPC.UserProfilePhoto userProfilePhoto;
+        if (fileLocation != null) {
+            ProfileActivity profileActivity = this.a;
+            if (profileActivity.Y.getScaleX() <= 0.96f || !z11) {
+                if (profileActivity.e1 == 0 ? profileActivity.f1 == 0 || (chat = profileActivity.getMessagesController().getChat(Long.valueOf(profileActivity.f1))) == null || (chatPhoto = chat.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1))) == null || (userProfilePhoto = user.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
+                    fileLocation2 = null;
+                }
+                boolean z13 = false;
+                boolean z14 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
+                qz0 qz0Var3 = profileActivity.n0;
+                if (qz0Var3 != null) {
+                    int realCount = qz0Var3.getRealCount();
+                    i11 = 0;
+                    while (i11 < realCount) {
+                        ImageLocation G = profileActivity.n0.G(i11);
+                        if (G != null && (tL_fileLocationToBeDeprecated = G.location) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
+                            dv0Var = null;
+                            if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.dc_id == fileLocation.dc_id) {
+                                z14 = true;
+                                break;
+                            }
+                        }
+                        i11++;
+                    }
+                }
+                dv0Var = null;
+                i11 = -1;
+                if (!z14) {
+                    return dv0Var;
+                }
+                pz0 pz0Var = profileActivity.e0;
+                if (i11 >= 0 && (qz0Var = profileActivity.n0) != null && qz0Var.getVisibility() == 0) {
+                    if (i11 != profileActivity.n0.getRealPosition() && (nh0Var = (qz0Var2 = profileActivity.n0).D0) != null) {
+                        qz0Var2.x(nh0Var.j() + i11, false);
+                    }
+                    ?? currentItemView = profileActivity.n0.getCurrentItemView();
+                    if (currentItemView != 0) {
+                        pz0Var = currentItemView;
+                        z12 = true;
+                        int[] iArr = new int[2];
+                        pz0Var.getLocationInWindow(iArr);
+                        dv0 dv0Var2 = new dv0();
+                        dv0Var2.b = iArr[0];
+                        dv0Var2.c = iArr[1];
+                        dv0Var2.d = pz0Var;
+                        ImageReceiver imageReceiver = pz0Var.getImageReceiver();
+                        dv0Var2.a = imageReceiver;
+                        j3 = profileActivity.e1;
+                        if (j3 == 0) {
+                            dv0Var2.f = j3;
+                        } else {
+                            long j10 = profileActivity.f1;
+                            if (j10 != 0) {
+                                dv0Var2.f = -j10;
+                            }
+                        }
+                        dv0Var2.e = imageReceiver.getBitmapSafe();
+                        dv0Var2.g = -1L;
+                        dv0Var2.h = pz0Var.getImageReceiver().getRoundRadius(true);
+                        dv0Var2.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                        dv0Var2.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                        if (!z12 && profileActivity.Y.getScaleX() > 0.96f) {
+                            z13 = true;
+                        }
+                        dv0Var2.r = z13;
+                        dv0Var2.s = z12;
+                        return dv0Var2;
+                    }
+                }
+                z12 = false;
+                int[] iArr2 = new int[2];
+                pz0Var.getLocationInWindow(iArr2);
+                dv0 dv0Var22 = new dv0();
+                dv0Var22.b = iArr2[0];
+                dv0Var22.c = iArr2[1];
+                dv0Var22.d = pz0Var;
+                ImageReceiver imageReceiver2 = pz0Var.getImageReceiver();
+                dv0Var22.a = imageReceiver2;
+                j3 = profileActivity.e1;
+                if (j3 == 0) {
+                }
+                dv0Var22.e = imageReceiver2.getBitmapSafe();
+                dv0Var22.g = -1L;
+                dv0Var22.h = pz0Var.getImageReceiver().getRoundRadius(true);
+                dv0Var22.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                dv0Var22.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                if (!z12) {
+                    z13 = true;
+                }
+                dv0Var22.r = z13;
+                dv0Var22.s = z12;
+                return dv0Var22;
             }
-            drawable.setColorFilter(offsetColor, PorterDuff.Mode.MULTIPLY);
         }
-        if (profileActivity.L != null) {
-            profileActivity.L.b(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h8, profileActivity.z0), v04, f7, 1.0f));
-        }
-        int v05 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, profileActivity.z0);
-        int v06 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y8, profileActivity.z0);
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar.B(AndroidUtilities.getOffsetColor(v05, v06, f7, 1.0f), false);
-        MessagesController.PeerColor peerColor = profileActivity.Q5;
-        int v07 = peerColor != null ? 1090519039 : peerColor != null ? 553648127 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.f8, profileActivity.z0);
-        int v08 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z8, profileActivity.z0);
-        kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar2.A(AndroidUtilities.getOffsetColor(v07, v08, f7, 1.0f), false);
-        profileActivity.d1.invalidate();
-        profileActivity.T0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, profileActivity.z0));
-        profileActivity.Q0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, profileActivity.z0));
-        profileActivity.R0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, profileActivity.z0));
-        profileActivity.S0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, profileActivity.z0));
-        if (drawableArr3[0] != null) {
-            drawableArr3[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.zh, profileActivity.z0), org.telegram.ui.ActionBar.j6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr3[1] != null) {
-            MessagesController.PeerColor peerColor2 = profileActivity.Q5;
-            if (peerColor2 != null) {
-                v02 = org.telegram.ui.ActionBar.j6.b(0.1f, org.telegram.ui.ActionBar.j6.I.q() ? -0.1f : -0.08f, i0.a.d(0.4f, peerColor2.getColor2(), profileActivity.Q5.hasColor6(org.telegram.ui.ActionBar.j6.I.q()) ? profileActivity.Q5.getColor5() : profileActivity.Q5.getColor3()));
-            } else {
-                v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.zh, profileActivity.z0);
-            }
-            drawableArr3[1].setColorFilter(AndroidUtilities.getOffsetColor(v02, org.telegram.ui.ActionBar.j6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr2[0] != null) {
-            drawableArr2[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ah, profileActivity.z0), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr2[1] != null) {
-            drawableArr2[1].setColorFilter(AndroidUtilities.getOffsetColor(profileActivity.Q5 == null ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Ah, profileActivity.z0) : -1, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr[0] != null) {
-            drawableArr[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.zh, profileActivity.z0), org.telegram.ui.ActionBar.j6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr[1] != null) {
-            drawableArr[1].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.zh, profileActivity.z0), org.telegram.ui.ActionBar.j6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        profileActivity.X4();
-        ProfileActivity profileActivity2 = profileActivity.o0.n;
-        if (profileActivity2.L0) {
-            v0Var = profileActivity2.Q0;
-        } else if (profileActivity2.N0) {
-            v0Var = profileActivity2.S0;
-        } else {
-            v0Var = profileActivity2.U0;
-            if (v0Var == null) {
-                v0Var = null;
-            }
-        }
-        if (v0Var != null) {
-            if (profileActivity.M0 || profileActivity.N0 || profileActivity.L0) {
-                profileActivity.l4(0, profileActivity.y3(), true);
-            }
-        }
+        return null;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(this.b.E5);
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void G() {
+        this.a.e0.getImageReceiver().setVisible(true, true);
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.bv0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.q0.q(str, str2, z10);
     }
 }

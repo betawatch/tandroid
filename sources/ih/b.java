@@ -4,22 +4,22 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.wq;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final f6 a;
+    public final e6 a;
     public a b;
     public wq c;
     public boolean d;
 
-    public b(Context context, f6 f6Var) {
+    public b(Context context, e6 e6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = e6Var;
     }
 
     public final void a(int i10, boolean z10) {
@@ -27,7 +27,7 @@ public final class b extends FrameLayout {
             wq wqVar = new wq(getContext(), this.a);
             this.c = wqVar;
             wqVar.setReverse(this.d);
-            addView(this.c, y5.e(-1, 28, 48));
+            addView(this.c, x5.e(-1, 28, 48));
         }
         this.c.a.c(i10, z10);
     }
@@ -50,7 +50,7 @@ public final class b extends FrameLayout {
             aVar.d = imageView;
             imageView.setBackground(aVar.e);
             aVar.d.setVisibility(8);
-            aVar.addView(aVar.d, y5.e(46, 46, 17));
+            aVar.addView(aVar.d, x5.e(46, 46, 17));
         }
         le.b bVar = aVar.a;
         if (!bVar.f && bVar.e == 0.0f) {

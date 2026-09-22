@@ -3,7 +3,7 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class bz extends s4.v {
     public boolean d;
@@ -44,8 +44,8 @@ public final class bz extends s4.v {
             arrayList.set(i11, (Long) arrayList.get(i12));
             arrayList.set(i12, l4);
             azVar.p(b10, b11);
-            ((org.telegram.ui.Cells.h4) c1Var.a).setDrawDivider(b11 != dzVar.r - 1);
-            ((org.telegram.ui.Cells.h4) c1Var2.a).setDrawDivider(b10 != dzVar.r - 1);
+            ((org.telegram.ui.Cells.g4) c1Var.a).setDrawDivider(b11 != dzVar.r - 1);
+            ((org.telegram.ui.Cells.g4) c1Var2.a).setDrawDivider(b10 != dzVar.r - 1);
             this.d = true;
         }
         return true;
@@ -55,7 +55,7 @@ public final class bz extends s4.v {
     public final void p(s4.c1 c1Var, int i10) {
         dz dzVar = this.e;
         if (i10 != 0) {
-            dzVar.b.J0(false);
+            dzVar.b.I0(false);
             c1Var.a.setPressed(true);
         } else if (this.d) {
             cz czVar = dzVar.f;

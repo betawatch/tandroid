@@ -9,15 +9,15 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m6 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ KeyEvent.Callback f;
     public final /* synthetic */ Object h;
@@ -25,14 +25,14 @@ public final /* synthetic */ class m6 implements View.OnClickListener {
     public final /* synthetic */ Context r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ m6(ci.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, String str) {
+    public /* synthetic */ m6(ci.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, String str) {
         this.f = dVar;
         this.b = i10;
         this.h = starsSubscription;
         this.n = f3VarArr;
         this.e = j3;
         this.r = activity;
-        this.d = f6Var;
+        this.d = e6Var;
         this.c = z10;
         this.s = str;
     }
@@ -55,33 +55,33 @@ public final /* synthetic */ class m6 implements View.OnClickListener {
                         l8Var.run();
                         break;
                     } else {
-                        new l7(activity, this.d, starsSubscription.pricing.amount, this.c ? 8 : j3 < 0 ? 2 : 7, str, l8Var, j3).show();
+                        new m7(activity, this.d, starsSubscription.pricing.amount, this.c ? 8 : j3 < 0 ? 2 : 7, str, l8Var, j3).show();
                         break;
                     }
                 }
                 break;
             default:
-                o8 o8Var = (o8) this.f;
+                p8 p8Var = (p8) this.f;
                 MessageObject messageObject = (MessageObject) this.h;
-                zn znVar = (zn) this.n;
+                bo boVar = (bo) this.n;
                 TLRPC.Chat chat = (TLRPC.Chat) this.s;
-                if (!o8Var.R) {
-                    long value = o8Var.r.getValue();
-                    if ((o8Var.P != null || (messageObject != null && znVar != null)) && o8Var.V == null) {
+                if (!p8Var.R) {
+                    long value = p8Var.r.getValue();
+                    if ((p8Var.P != null || (messageObject != null && boVar != null)) && p8Var.V == null) {
                         int i11 = this.b;
                         if (!MessagesController.getInstance(i11).isFrozen()) {
                             u5 y10 = u5.y(i11, false);
-                            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(o8Var, value, y10, messageObject, znVar, 15);
+                            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(p8Var, value, y10, messageObject, boVar, 15);
                             if (y10.e && y10.p().amount < value) {
                                 boolean z10 = this.c;
                                 Context context = this.r;
-                                org.telegram.ui.ActionBar.f6 f6Var = this.d;
+                                org.telegram.ui.ActionBar.e6 e6Var = this.d;
                                 long j10 = this.e;
                                 if (!z10) {
-                                    new l7(context, f6Var, value, 5, chat == null ? "" : chat.title, fVar, j10).show();
+                                    new m7(context, e6Var, value, 5, chat == null ? "" : chat.title, fVar, j10).show();
                                     break;
                                 } else {
-                                    new l7(context, f6Var, value, 17, DialogObject.getShortName(i11, j10), fVar, j10).show();
+                                    new m7(context, e6Var, value, 17, DialogObject.getShortName(i11, j10), fVar, j10).show();
                                     break;
                                 }
                             } else {
@@ -98,14 +98,14 @@ public final /* synthetic */ class m6 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ m6(o8 o8Var, MessageObject messageObject, zn znVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j3, TLRPC.Chat chat) {
-        this.f = o8Var;
+    public /* synthetic */ m6(p8 p8Var, MessageObject messageObject, bo boVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, TLRPC.Chat chat) {
+        this.f = p8Var;
         this.h = messageObject;
-        this.n = znVar;
+        this.n = boVar;
         this.b = i10;
         this.c = z10;
         this.r = context;
-        this.d = f6Var;
+        this.d = e6Var;
         this.e = j3;
         this.s = chat;
     }

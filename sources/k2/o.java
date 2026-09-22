@@ -1,29 +1,16 @@
 package k2;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public interface o {
-    void E();
+public final class o extends Exception {
+    public final int a;
+    public final boolean b;
+    public final b2.s c;
 
-    void M(Exception exc);
-
-    void P();
-
-    void S(l lVar);
-
-    void a0();
-
-    void e(long j3);
-
-    void e0(l lVar);
-
-    void n();
-
-    void onAudioSessionIdChanged(int i10);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void p();
-
-    void w(int i10, long j3, long j10);
+    public o(int i10, b2.s sVar, boolean z10) {
+        super(hg.c.i(i10, "AudioTrack write failed: "));
+        this.b = z10;
+        this.a = i10;
+        this.c = sVar;
+    }
 }

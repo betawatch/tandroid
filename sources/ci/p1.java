@@ -10,13 +10,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.ok0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final class p1 extends yl0 {
-    public bl0 X2;
+public final class p1 extends ll0 {
+    public ok0 X2;
     public boolean Y2;
     public float Z2;
     public float a3;
@@ -39,7 +39,7 @@ public final class p1 extends yl0 {
         this.h3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     }
 
-    public static void x1(p1 p1Var, int i10, int i11) {
+    public static void w1(p1 p1Var, int i10, int i11) {
         if (p1Var.X2 == null || !(p1Var.getLayoutManager() instanceof s4.s)) {
             return;
         }
@@ -48,7 +48,7 @@ public final class p1 extends yl0 {
         int L0 = sVar.L0();
         if ((m10 == null && Math.abs(i10 - L0) > sVar.J * 9.0f) || !SharedConfig.animationsEnabled()) {
             p1Var.X2.b = sVar.L0() < i10 ? 0 : 1;
-            p1Var.X2.d(i10, i11, false, false);
+            p1Var.X2.c(i10, i11, false, false);
         } else {
             m1 m1Var = new m1(p1Var, p1Var.getContext(), 0);
             m1Var.a = i10;
@@ -57,7 +57,7 @@ public final class p1 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -108,7 +108,7 @@ public final class p1 extends yl0 {
                     int y3 = this.b3 ? (int) o1Var.getY() : o1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.x(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.z(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(o1Var);
@@ -132,13 +132,13 @@ public final class p1 extends yl0 {
             }
             ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i13);
             o1 o1Var2 = (o1) arrayList7.get(i10);
-            int S = RecyclerView.S(o1Var2);
+            int R = RecyclerView.R(o1Var2);
             while (true) {
                 if (i10 >= arrayList5.size()) {
                     n1Var = null;
                     break;
                 } else {
-                    if (((n1) arrayList5.get(i10)).M == S) {
+                    if (((n1) arrayList5.get(i10)).M == R) {
                         n1Var = (n1) arrayList5.get(i10);
                         arrayList5.remove(i10);
                         break;
@@ -151,9 +151,9 @@ public final class p1 extends yl0 {
                     n1Var = new n1(this);
                     n1Var.l(7);
                 } else {
-                    n1Var = (n1) hg.k0.x(1, arrayList2);
+                    n1Var = (n1) hg.c.z(1, arrayList2);
                 }
-                n1Var.M = S;
+                n1Var.M = R;
                 n1Var.e();
             }
             arrayList6.add(n1Var);
@@ -198,10 +198,10 @@ public final class p1 extends yl0 {
         super.setLayoutManager(o0Var);
         this.X2 = null;
         if (o0Var instanceof s4.c0) {
-            bl0 bl0Var = new bl0(this, (s4.c0) o0Var);
-            this.X2 = bl0Var;
-            bl0Var.i = new l1(this, 0);
-            bl0Var.h = new a1.c(this, 15);
+            ok0 ok0Var = new ok0(this, (s4.c0) o0Var);
+            this.X2 = ok0Var;
+            ok0Var.i = new l1(this, 0);
+            ok0Var.h = new a1.c(this, 15);
         }
     }
 }

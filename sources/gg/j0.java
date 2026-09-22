@@ -1,76 +1,54 @@
 package gg;
 
 import android.animation.ValueAnimator;
-import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import ci.n6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.b31;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.d00;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.h81;
 import org.telegram.ui.Components.k00;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.y81;
-import org.telegram.ui.Components.ya0;
+import org.telegram.ui.Components.l21;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.na0;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.sr;
 import org.telegram.ui.tw;
-import org.telegram.ui.z6;
+import org.telegram.ui.ur;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j0 extends s4.c0 {
     public final /* synthetic */ int I;
     public final /* synthetic */ Object J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(int i10, n2 n2Var) {
-        super(1, false);
+    public /* synthetic */ j0(ViewGroup viewGroup, int i10) {
+        super(0, false);
         this.I = i10;
-        this.J = n2Var;
+        this.J = viewGroup;
     }
 
     @Override // s4.o0
-    public void P(View view) {
-        switch (this.I) {
-            case 1:
-                z6 z6Var = (z6) this.J;
-                if (view != z6Var.M) {
-                    super.P(view);
-                    break;
-                } else {
-                    view.measure(View.MeasureSpec.makeMeasureSpec(z6Var.b.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(z6Var.b.getMeasuredHeight(), TLObject.FLAG_30));
-                    break;
-                }
-            default:
-                super.P(view);
-                break;
-        }
-    }
-
-    @Override // s4.o0
-    public void S(of.e eVar, s4.z0 z0Var, s0.d dVar) {
+    public void S(of.e eVar, s4.z0 z0Var, s0.c cVar) {
         switch (this.I) {
             case 0:
-                super.S(eVar, z0Var, dVar);
+                super.S(eVar, z0Var, cVar);
                 if (!((s0) this.J).isEnabled()) {
-                    dVar.p(false);
+                    cVar.p(false);
                     break;
                 }
                 break;
-            case 7:
-                super.S(eVar, z0Var, dVar);
-                if (((y81) this.J).V) {
-                    dVar.p(false);
+            case 6:
+                super.S(eVar, z0Var, cVar);
+                if (((h81) this.J).V) {
+                    cVar.p(false);
                     break;
                 }
                 break;
             default:
-                super.S(eVar, z0Var, dVar);
+                super.S(eVar, z0Var, cVar);
                 break;
         }
     }
@@ -78,8 +56,8 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0
     public int W0(s4.z0 z0Var) {
         switch (this.I) {
-            case 6:
-                if (!((b31) this.J).a3) {
+            case 5:
+                if (!((l21) this.J).a3) {
                     break;
                 } else {
                     break;
@@ -91,9 +69,9 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0
     public void k1(boolean z10) {
         switch (this.I) {
-            case 4:
+            case 3:
                 super.k1(z10);
-                ((ya0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
+                ((na0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -104,56 +82,56 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0, s4.o0
     public int m0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
-            case 3:
-                y70 y70Var = ((tw) ((k00) this.J).J).b.L0;
-                if (y70Var != null && y70Var.D()) {
+            case 2:
+                n70 n70Var = ((tw) ((k00) this.J).J).b.L0;
+                if (n70Var != null && n70Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, z0Var);
-            case 4:
+            case 3:
             default:
                 return super.m0(i10, eVar, z0Var);
-            case 5:
-                sk0 sk0Var = (sk0) this.J;
-                ai.w0 w0Var = sk0Var.b;
-                if (i10 < 0 && sk0Var.B0 != 0.0f) {
-                    float pullingLeftProgress = sk0Var.getPullingLeftProgress();
-                    sk0Var.B0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (sk0Var.getPullingLeftProgress() > 1.0f)) {
+            case 4:
+                fk0 fk0Var = (fk0) this.J;
+                ai.w0 w0Var = fk0Var.b;
+                if (i10 < 0 && fk0Var.B0 != 0.0f) {
+                    float pullingLeftProgress = fk0Var.getPullingLeftProgress();
+                    fk0Var.B0 += i10;
+                    if ((pullingLeftProgress > 1.0f) != (fk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    float f7 = sk0Var.B0;
+                    float f7 = fk0Var.B0;
                     if (f7 < 0.0f) {
                         i10 = (int) f7;
-                        sk0Var.B0 = 0.0f;
+                        fk0Var.B0 = 0.0f;
                     } else {
                         i10 = 0;
                     }
-                    n6 n6Var = sk0Var.S;
+                    n6 n6Var = fk0Var.S;
                     if (n6Var != null) {
                         n6Var.invalidate();
                     }
                     w0Var.invalidate();
                 }
                 int m0 = super.m0(i10, eVar, z0Var);
-                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && sk0Var.q()) {
-                    ValueAnimator valueAnimator = sk0Var.y0;
+                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && fk0Var.q()) {
+                    ValueAnimator valueAnimator = fk0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        sk0Var.y0.cancel();
+                        fk0Var.y0.cancel();
                     }
-                    float pullingLeftProgress2 = sk0Var.getPullingLeftProgress();
-                    sk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + sk0Var.B0;
-                    if ((pullingLeftProgress2 > 1.0f) != (sk0Var.getPullingLeftProgress() > 1.0f)) {
+                    float pullingLeftProgress2 = fk0Var.getPullingLeftProgress();
+                    fk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + fk0Var.B0;
+                    if ((pullingLeftProgress2 > 1.0f) != (fk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
                     }
-                    n6 n6Var2 = sk0Var.S;
+                    n6 n6Var2 = fk0Var.S;
                     if (n6Var2 != null) {
                         n6Var2.invalidate();
                     }
@@ -166,9 +144,9 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0, s4.o0
     public int o0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
-            case 2:
-                sr srVar = (sr) this.J;
-                if (srVar.R || srVar.O != 0 || srVar.F.size() != 0) {
+            case 1:
+                ur urVar = (ur) this.J;
+                if (urVar.R || urVar.O != 0 || urVar.F.size() != 0) {
                     break;
                 }
                 break;
@@ -179,15 +157,15 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0, s4.o0
     public void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
         switch (this.I) {
-            case 3:
+            case 2:
                 d00 d00Var = new d00(this, recyclerView.getContext());
                 d00Var.a = i10;
                 w0(d00Var);
                 break;
-            case 7:
-                s81 s81Var = new s81(this, recyclerView.getContext());
-                s81Var.a = i10;
-                w0(s81Var);
+            case 6:
+                c81 c81Var = new c81(this, recyclerView.getContext());
+                c81Var.a = i10;
+                w0(c81Var);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);
@@ -200,11 +178,11 @@ public final class j0 extends s4.c0 {
         switch (this.I) {
             case 0:
                 return false;
-            case 3:
+            case 2:
                 return true;
-            case 4:
+            case 3:
                 return false;
-            case 8:
+            case 7:
                 return false;
             default:
                 return super.y0();
@@ -214,7 +192,7 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0
     public void z0(s4.z0 z0Var, int[] iArr) {
         switch (this.I) {
-            case 8:
+            case 7:
                 iArr[1] = ((StickersActivity) this.J).a.getHeight();
                 break;
             default:
@@ -223,15 +201,15 @@ public final class j0 extends s4.c0 {
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(ViewGroup viewGroup, int i10) {
-        super(0, false);
-        this.I = i10;
-        this.J = viewGroup;
-    }
-
     public /* synthetic */ j0(Object obj, int i10) {
         this.I = i10;
         this.J = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j0(ur urVar) {
+        super(1, false);
+        this.I = 1;
+        this.J = urVar;
     }
 }

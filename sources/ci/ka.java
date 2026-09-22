@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
@@ -194,8 +194,8 @@ public final /* synthetic */ class ka implements Runnable {
                     if (qbVar != null && qbVar.R0 != null) {
                         while (r10 < ocVar.v1.R0.getChildCount()) {
                             View childAt = ocVar.v1.R0.getChildAt(r10);
-                            if (childAt instanceof qg.f1) {
-                                ((qg.f1) childAt).setupTheme(ocVar.K1);
+                            if (childAt instanceof qg.h1) {
+                                ((qg.h1) childAt).setupTheme(ocVar.K1);
                             }
                             r10++;
                         }
@@ -323,7 +323,7 @@ public final /* synthetic */ class ka implements Runnable {
                                 zcVar.G = true;
                                 sc scVar = zcVar.a;
                                 if (scVar != null) {
-                                    scVar.L(true);
+                                    scVar.Q(true);
                                     break;
                                 }
                             }
@@ -344,7 +344,7 @@ public final /* synthetic */ class ka implements Runnable {
             case 19:
                 nc ncVar2 = ocVar.n;
                 ai.d dVar = ocVar.a;
-                new org.telegram.ui.Components.xc(ncVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.j6.gc, 0, new ka(ocVar, 27), dVar)).k(true);
+                new org.telegram.ui.Components.vc(ncVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.i6.gc, 0, new ka(ocVar, 27), dVar)).k(true);
                 break;
             case 20:
                 ia iaVar = ocVar.q0;
@@ -398,11 +398,11 @@ public final /* synthetic */ class ka implements Runnable {
                 oc.F2 = null;
                 nc ncVar3 = ocVar.n;
                 if (ncVar3 != null) {
-                    org.telegram.ui.Components.pc.h(ncVar3);
+                    org.telegram.ui.Components.oc.h(ncVar3);
                 }
                 ai.f0 f0Var = ocVar.l0;
                 if (f0Var != null) {
-                    org.telegram.ui.Components.pc.h(f0Var);
+                    org.telegram.ui.Components.oc.h(f0Var);
                 }
                 bc bcVar3 = ocVar.A0;
                 if (bcVar3 != null) {

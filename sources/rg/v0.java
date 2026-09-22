@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ra;
+import org.telegram.ui.Components.qa;
 import org.telegram.ui.kx0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class v0 implements z4.e {
-    public final /* synthetic */ ra a;
+    public final /* synthetic */ qa a;
     public final /* synthetic */ x0 b;
 
-    public v0(x0 x0Var, ra raVar) {
+    public v0(x0 x0Var, qa qaVar) {
         this.b = x0Var;
-        this.a = raVar;
+        this.a = qaVar;
     }
 
     @Override // z4.e
@@ -40,10 +40,10 @@ public final class v0 implements z4.e {
 
     @Override // z4.e
     public final void b(float f7, int i10, int i11) {
-        ra raVar = this.a;
-        raVar.b = f7;
-        raVar.c = i10;
-        raVar.invalidate();
+        qa qaVar = this.a;
+        qaVar.b = f7;
+        qaVar.c = i10;
+        qaVar.invalidate();
         x0 x0Var = this.b;
         x0Var.G = i10;
         x0Var.H = i11 > 0 ? i10 + 1 : i10 - 1;
@@ -115,7 +115,7 @@ public final class v0 implements z4.e {
         if (i16 != x0Var.K) {
             x0Var.K = i16;
             x0Var.r.invalidate();
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.r0(this, 28));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 27));
         }
     }
 

@@ -12,7 +12,6 @@ import c6.l;
 import e6.n;
 import g2.h;
 import g2.m;
-import hg.k0;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,22 +28,22 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import m1.j;
-import m4.q0;
+import m4.u0;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.Components.xg;
+import org.telegram.ui.Components.wg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final q0 f;
+    public final u0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -67,7 +66,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new q0(16);
+        this.f = new u0(11);
         this.g = new u();
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -98,14 +97,14 @@ public final class d extends i {
     }
 
     public static String j(String str, String str2) {
-        return a4.a.p("http://", str, str2);
+        return a4.a.q("http://", str, str2);
     }
 
     @Override // yc.i
     public final yc.g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder k10 = k0.k(incrementAndGet, "Request ", " ");
+        StringBuilder l4 = hg.c.l(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";
@@ -159,28 +158,28 @@ public final class d extends i {
                 str = BuildConfig.BETA_URL;
                 break;
         }
-        k10.append(str);
-        k10.append(" ");
-        k10.append(dVar.f);
-        k10.append(" ");
-        k10.append((String) dVar.i.get("range"));
-        Log.d("CAST_SERVER", k10.toString());
+        l4.append(str);
+        l4.append(" ");
+        l4.append(dVar.f);
+        l4.append(" ");
+        l4.append((String) dVar.i.get("range"));
+        Log.d("CAST_SERVER", l4.toString());
         try {
-            yc.g k11 = k(dVar);
-            xg xgVar = k11.e;
-            xgVar.put("Access-Control-Allow-Origin", "*");
-            xgVar.put("Access-Control-Max-Age", "3628800");
-            xgVar.put("Access-Control-Allow-Methods", "*");
-            xgVar.put("Access-Control-Allow-Headers", "*");
-            return k11;
+            yc.g k10 = k(dVar);
+            wg wgVar = k10.e;
+            wgVar.put("Access-Control-Allow-Origin", "*");
+            wgVar.put("Access-Control-Max-Age", "3628800");
+            wgVar.put("Access-Control-Allow-Methods", "*");
+            wgVar.put("Access-Control-Allow-Headers", "*");
+            return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             yc.g c10 = i.c(yc.f.n, "text/plain", "Error reading file");
-            xg xgVar2 = c10.e;
-            xgVar2.put("Access-Control-Allow-Origin", "*");
-            xgVar2.put("Access-Control-Max-Age", "3628800");
-            xgVar2.put("Access-Control-Allow-Methods", "*");
-            xgVar2.put("Access-Control-Allow-Headers", "*");
+            wg wgVar2 = c10.e;
+            wgVar2.put("Access-Control-Allow-Origin", "*");
+            wgVar2.put("Access-Control-Max-Age", "3628800");
+            wgVar2.put("Access-Control-Allow-Methods", "*");
+            wgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }

@@ -3,10 +3,10 @@ package ai;
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.gg0;
+import org.telegram.ui.eg0;
 import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 2:
-                AndroidUtilities.hideKeyboard((hg.s) this.b);
+                AndroidUtilities.hideKeyboard((hg.u) this.b);
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard((hg.r1) this.b);
+                AndroidUtilities.hideKeyboard((hg.s1) this.b);
                 break;
             case 4:
                 ((ii.r) this.b).O = null;
@@ -76,9 +76,9 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
-                gg0 gg0Var = k1Var.r0;
-                if (gg0Var != null) {
-                    gg0Var.setDialogVisible(false);
+                eg0 eg0Var = k1Var.r0;
+                if (eg0Var != null) {
+                    eg0Var.setDialogVisible(false);
                 }
                 k1Var.q0.setPaused(false);
                 break;
@@ -92,7 +92,7 @@ public final /* synthetic */ class g5 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
                 break;
             default:
-                ((u2.j0) this.b).run();
+                ((uh.i) this.b).run();
                 break;
         }
     }

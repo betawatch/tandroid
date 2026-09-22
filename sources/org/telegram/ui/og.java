@@ -1,45 +1,48 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class og implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class og implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ bo b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ og(Object obj, int i10) {
+    public /* synthetic */ og(bo boVar, String str, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = boVar;
+        this.c = str;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                zn znVar = (zn) this.b;
-                znVar.b9 = true;
-                znVar.Z8 = 0;
-                znVar.pb = 0;
-                znVar.N4 = 0;
-                znVar.r9();
-                znVar.Nb(false);
-                break;
-            case 1:
-                uo uoVar = (uo) this.b;
-                uoVar.M0 = false;
-                uoVar.b = null;
-                uoVar.N0 = false;
-                break;
-            case 2:
-                ((up) this.b).n = null;
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    bo boVar = this.b;
+                    String str = this.c;
+                    if (booleanValue) {
+                        boVar.getMessagesController().addWebBrowserException(str, false);
+                    }
+                    boVar.getParentActivity();
+                    nf.f.n(str);
+                    break;
+                }
                 break;
             default:
-                hc0 hc0Var = (hc0) this.b;
-                if (hc0Var.h >= 0) {
-                    ConnectionsManager.getInstance(hc0Var.b).cancelRequest(hc0Var.h, true);
-                    hc0Var.h = -1;
+                bo boVar2 = this.b;
+                boVar2.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        boVar2.getMessagesController().addWebBrowserException(str2, true);
+                    }
+                    nf.f.m(boVar2.getParentActivity(), str2, false, null);
                     break;
                 }
                 break;

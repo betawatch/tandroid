@@ -13,19 +13,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.fd0;
-import org.telegram.ui.Components.pc;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.uc0;
+import org.telegram.ui.aa;
 import org.telegram.ui.b3;
-import org.telegram.ui.ba;
 import org.telegram.ui.i60;
 import org.telegram.ui.n40;
 import org.telegram.ui.o40;
 import org.telegram.ui.q40;
 import org.telegram.ui.s30;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,11 +60,11 @@ public final /* synthetic */ class f implements View.OnClickListener {
         Object obj7 = this.b;
         switch (i10) {
             case 0:
-                ((VideoAds) obj7).lambda$show$17((pc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (f6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
+                ((VideoAds) obj7).lambda$show$17((oc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (e6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
                 break;
             default:
                 i60 i60Var = (i60) obj7;
-                fd0 fd0Var = (fd0) obj6;
+                uc0 uc0Var = (uc0) obj6;
                 n40 n40Var = (n40) obj5;
                 o40 o40Var = (o40) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
@@ -74,7 +74,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 i60Var.X0 = ofFloat;
                 ofFloat.setDuration(600L);
-                i60Var.X0.addUpdateListener(new b3(i60Var, 14));
+                i60Var.X0.addUpdateListener(new b3(i60Var, 15));
                 i60Var.X0.addListener(new q40(i60Var));
                 i60Var.X0.start();
                 if (ChatObject.isChannelOrGiga(i60Var.Z0)) {
@@ -83,8 +83,8 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     s30Var.b(LocaleController.getString(R.string.VoipGroupVoiceChat), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = d5.g(null, null, 0L, 604800L, 3, fd0Var, n40Var, o40Var);
-                calendar.setTimeInMillis((fd0Var.getValue() * 86400000) + System.currentTimeMillis());
+                boolean g10 = c5.g(null, null, 0L, 604800L, 3, uc0Var, n40Var, o40Var);
+                calendar.setTimeInMillis((uc0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i11 = 11;
                 calendar.set(11, n40Var.getValue());
                 calendar.set(12, o40Var.getValue());
@@ -98,7 +98,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 creategroupcall.random_id = Utilities.random.nextInt();
                 creategroupcall.schedule_date = i60Var.k2;
                 creategroupcall.flags |= 2;
-                accountInstance.getConnectionsManager().sendRequest(creategroupcall, new ba(i60Var, chat, inputPeer, i11), 2);
+                accountInstance.getConnectionsManager().sendRequest(creategroupcall, new aa(i60Var, chat, inputPeer, i11), 2);
                 break;
         }
     }

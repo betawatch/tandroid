@@ -1,20 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ad0 implements Runnable {
-    public boolean a;
-    public final /* synthetic */ fd0 b;
-
-    public ad0(fd0 fd0Var) {
-        this.b = fd0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10 = this.a;
-        fd0 fd0Var = this.b;
-        fd0Var.a(z10);
-        fd0Var.postDelayed(this, fd0Var.L);
-    }
+public final class ad0 {
+    public Paint a;
+    public Paint b;
+    public View c;
+    public i2.z d;
+    public long e;
+    public RectF f;
+    public float g;
+    public float h;
+    public float i;
+    public Path j;
+    public boolean k;
+    public boolean l;
 }

@@ -1,31 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class zh0 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ ai0 a;
+public final /* synthetic */ class zh0 implements qc0, sc0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ei0 b;
 
-    public zh0(ai0 ai0Var) {
-        this.a = ai0Var;
+    public /* synthetic */ zh0(ei0 ei0Var, int i10) {
+        this.a = i10;
+        this.b = ei0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        wh0 wh0Var = this.a.h.G0;
-        if (wh0Var != null) {
-            wh0Var.d();
+    @Override // org.telegram.ui.Components.qc0
+    public String e(int i10) {
+        int i11 = this.a;
+        ei0 ei0Var = this.b;
+        switch (i11) {
+            case 0:
+                return ei0Var.O ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i10)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i10));
+            default:
+                if (!ei0Var.O) {
+                    if (i10 == 1) {
+                        return LocaleController.formatString("MetersShort", R.string.MetersShort, 50);
+                    }
+                    if (i10 > 1) {
+                        i10--;
+                    }
+                    return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i10 * 100));
+                }
+                if (i10 == 1) {
+                    return LocaleController.formatString("FootsShort", R.string.FootsShort, Integer.valueOf(MediaDataController.MAX_LINKS_COUNT));
+                }
+                if (i10 > 1) {
+                    i10--;
+                }
+                Locale locale = Locale.US;
+                return hg.c.i(i10, ".");
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.ui.Components.sc0
+    public void q(uc0 uc0Var, int i10) {
+        ei0 ei0Var = this.b;
+        try {
+            ei0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        ei0Var.c(true);
     }
 }

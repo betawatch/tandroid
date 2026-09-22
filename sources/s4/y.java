@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public class y extends n0 {
     public int E;
@@ -27,7 +27,7 @@ public class y extends n0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public l.d N;
+    public k2.u N;
     public w O;
     public Rect Q;
     public long R;
@@ -46,9 +46,9 @@ public class y extends n0 {
     public int w = -1;
     public int y = 0;
     public final ArrayList F = new ArrayList();
-    public final pg.c1 I = new pg.c1(this, 3);
+    public final qg.b0 I = new qg.b0(this, 2);
     public View M = null;
-    public final tl0 P = new tl0(this);
+    public final gl0 P = new gl0(this);
 
     public y(v vVar) {
         this.x = vVar;
@@ -147,17 +147,17 @@ public class y extends n0 {
         }
     }
 
-    public final void e(yl0 yl0Var) {
+    public final void e(ll0 ll0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == yl0Var) {
+        if (recyclerView == ll0Var) {
             return;
         }
-        tl0 tl0Var = this.P;
+        gl0 gl0Var = this.P;
         if (recyclerView != null) {
-            recyclerView.q0(this);
+            recyclerView.p0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(tl0Var);
-            if (recyclerView2.F == tl0Var) {
+            recyclerView2.E.remove(gl0Var);
+            if (recyclerView2.F == gl0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -189,21 +189,21 @@ public class y extends n0 {
                 this.N = null;
             }
         }
-        this.H = yl0Var;
-        if (yl0Var != null) {
-            yl0Var.getResources();
+        this.H = ll0Var;
+        if (ll0Var != null) {
+            ll0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(tl0Var);
+            this.H.E.add(gl0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new l.d(this.H.getContext(), this.O);
+            this.N = new k2.u(this.H.getContext(), this.O);
         }
     }
 
@@ -247,7 +247,7 @@ public class y extends n0 {
                     float abs2 = Math.abs(y3);
                     float f7 = this.G;
                     if ((abs >= f7 || abs2 >= f7) && ((abs <= abs2 || !layoutManager.d()) && ((abs2 <= abs || !layoutManager.e()) && (k10 = k(motionEvent)) != null))) {
-                        c1Var = this.H.U(k10);
+                        c1Var = this.H.T(k10);
                     }
                 }
                 if (c1Var == null) {
@@ -349,7 +349,7 @@ public class y extends n0 {
                 return view2;
             }
         }
-        return this.H.F(x10, y3);
+        return this.H.E(x10, y3);
     }
 
     public final void l(float[] fArr) {
@@ -410,7 +410,7 @@ public class y extends n0 {
                     } else {
                         i10 = i17;
                         if (q6.getBottom() >= round2 && q6.getTop() <= height && q6.getRight() >= round && q6.getLeft() <= width) {
-                            c1 U = this.H.U(q6);
+                            c1 T = this.H.T(q6);
                             int abs5 = Math.abs(i15 - ((q6.getRight() + q6.getLeft()) / 2));
                             int abs6 = Math.abs(i16 - ((q6.getBottom() + q6.getTop()) / 2));
                             int i18 = (abs6 * abs6) + (abs5 * abs5);
@@ -429,7 +429,7 @@ public class y extends n0 {
                                 i19++;
                                 size = i21;
                             }
-                            this.K.add(i20, U);
+                            this.K.add(i20, T);
                             this.L.add(i20, Integer.valueOf(i18));
                             i17 = i10 + 1;
                             view2 = view;

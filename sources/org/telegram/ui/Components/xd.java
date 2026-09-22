@@ -1,33 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xd implements View.OnLongClickListener {
+public final /* synthetic */ class xd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ xd(ChatActivityEnterView chatActivityEnterView, int i10) {
+    public /* synthetic */ xd(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
         this.a = i10;
         this.b = chatActivityEnterView;
+        this.c = z10;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        kf kfVar;
         int i10 = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
+        boolean z10 = this.c;
         switch (i10) {
             case 0:
-                int i11 = ChatActivityEnterView.n5;
-                break;
-            default:
-                pf pfVar = chatActivityEnterView.E0;
-                if (pfVar != null && pfVar.length() > 0) {
+                if (!z10) {
+                    chatActivityEnterView.s1.setVisibility(8);
+                    break;
+                } else {
+                    int i11 = ChatActivityEnterView.n5;
+                    chatActivityEnterView.getClass();
                     break;
                 }
-                break;
+            case 1:
+                if (!z10) {
+                    chatActivityEnterView.t1.setVisibility(8);
+                    break;
+                } else {
+                    int i12 = ChatActivityEnterView.n5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                qd qdVar = chatActivityEnterView2.F4;
+                chatActivityEnterView2.M0 = System.currentTimeMillis();
+                boolean U0 = chatActivityEnterView2.U0(0, false, 0, true, 0L);
+                if (!z10 && (kfVar = chatActivityEnterView2.L0) != null) {
+                    kfVar.h(!U0);
+                    chatActivityEnterView2.L0 = null;
+                    break;
+                } else {
+                    chatActivityEnterView2.E4 = !U0;
+                    AndroidUtilities.cancelRunOnUIThread(qdVar);
+                    AndroidUtilities.runOnUIThread(qdVar, 500L);
+                    break;
+                }
         }
-        return chatActivityEnterView.F0(view);
     }
 }

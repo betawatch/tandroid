@@ -9,14 +9,14 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.fg1;
+import org.telegram.ui.eg1;
 import org.telegram.ui.oy;
-import org.telegram.ui.tj0;
+import org.telegram.ui.qj0;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c0 implements tj0, oy {
+public final /* synthetic */ class c0 implements qj0, oy {
     public final /* synthetic */ d1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -41,7 +41,7 @@ public final /* synthetic */ class c0 implements tj0, oy {
         return false;
     }
 
-    @Override // org.telegram.ui.tj0
+    @Override // org.telegram.ui.qj0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -65,7 +65,7 @@ public final /* synthetic */ class c0 implements tj0, oy {
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;

@@ -1,7 +1,22 @@
 package n7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+import j$.util.Objects;
+import java.util.Comparator;
+
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class q0 {
-    public static final /* synthetic */ int a = 0;
+    public static final Comparator a;
+
+    static {
+        Comparator comparator;
+        try {
+            Object[] enumConstants = Class.forName(q0.class.getName().concat("$UnsafeComparator")).getEnumConstants();
+            Objects.requireNonNull(enumConstants);
+            comparator = (Comparator) enumConstants[0];
+        } catch (Throwable unused) {
+            comparator = p0.a;
+        }
+        a = comparator;
+    }
 }

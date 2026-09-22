@@ -11,14 +11,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.u9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class w2 extends FrameLayout {
-    public final xh.f1 a;
+    public final xh.e1 a;
     public final FrameLayout b;
-    public final v9 c;
+    public final u9 c;
     public final TextView d;
     public final FrameLayout e;
     public final ImageView f;
@@ -28,28 +28,28 @@ public final class w2 extends FrameLayout {
     public w2(Context context) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, w7.y5.d(-1, -1.0f, 119, 6.0f, 6.0f, 6.0f, 6.0f));
-        frameLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.j6.l1(0.12f, -4530177)));
-        frameLayout.setForeground(new l3(AndroidUtilities.dp(18.0f), 0));
+        addView(frameLayout, w7.x5.d(-1, -1.0f, 119, 6.0f, 6.0f, 6.0f, 6.0f));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.i6.l1(0.12f, -4530177)));
+        frameLayout.setForeground(new m3(AndroidUtilities.dp(18.0f), 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_add_album);
         imageView.setScaleX(1.25f);
         imageView.setScaleY(1.25f);
-        frameLayout.addView(imageView, w7.y5.e(24, 24, 17));
+        frameLayout.addView(imageView, w7.x5.e(24, 24, 17));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b = frameLayout2;
-        xh.f1 f1Var = new xh.f1(frameLayout2, null, false);
-        this.a = f1Var;
-        frameLayout2.setBackground(f1Var);
-        f1Var.s = AndroidUtilities.dp(18.0f);
-        f1Var.u = false;
-        frameLayout.addView(frameLayout2, w7.y5.e(-1, -1, 119));
+        xh.e1 e1Var = new xh.e1(frameLayout2, null, false);
+        this.a = e1Var;
+        frameLayout2.setBackground(e1Var);
+        e1Var.s = AndroidUtilities.dp(18.0f);
+        e1Var.u = false;
+        frameLayout.addView(frameLayout2, w7.x5.e(-1, -1, 119));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
         frameLayout2.setScaleY(0.6f);
-        v9 v9Var = new v9(context);
-        this.c = v9Var;
-        frameLayout2.addView(v9Var, w7.y5.e(52, 52, 17));
+        u9 u9Var = new u9(context);
+        this.c = u9Var;
+        frameLayout2.addView(u9Var, w7.x5.e(52, 52, 17));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
@@ -58,16 +58,16 @@ public final class w2 extends FrameLayout {
         textView.setTextSize(1, 10.0f);
         textView.setTextColor(-1);
         textView.setAlpha(0.0f);
-        addView(textView, w7.y5.d(-2, 15.33f, 51, 2.0f, 0.0f, 2.0f, 0.0f));
+        addView(textView, w7.x5.d(-2, 15.33f, 51, 2.0f, 0.0f, 2.0f, 0.0f));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.e = frameLayout3;
         frameLayout3.setAlpha(0.0f);
-        addView(frameLayout3, w7.y5.d(20, 20.0f, 53, 2.0f, 0.0f, 2.0f, 0.0f));
+        addView(frameLayout3, w7.x5.d(20, 20.0f, 53, 2.0f, 0.0f, 2.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        frameLayout3.addView(imageView2, w7.y5.e(12, 12, 17));
+        frameLayout3.addView(imageView2, w7.x5.e(12, 12, 17));
         b(false, false);
     }
 
@@ -77,16 +77,16 @@ public final class w2 extends FrameLayout {
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u5.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) u5.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
             TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) u5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
-            xh.f1 f1Var = this.a;
-            f1Var.d(stargiftattributebackdrop);
-            f1Var.e(stargiftattributepattern);
-            w7.Z0(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
-            int b10 = org.telegram.ui.ActionBar.j6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.j6.l1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
+            xh.e1 e1Var = this.a;
+            e1Var.d(stargiftattributebackdrop);
+            e1Var.e(stargiftattributepattern);
+            x7.Z0(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
+            int b10 = org.telegram.ui.ActionBar.i6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.i6.l1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
             String G0 = ei.l.G0(starGift.craft_chance_permille);
             TextView textView = this.d;
             textView.setText(G0);
-            textView.setBackground(new l3(AndroidUtilities.dp(10.0f), b10));
-            this.e.setBackground(new l3(AndroidUtilities.dp(10.0f), b10));
+            textView.setBackground(new m3(AndroidUtilities.dp(10.0f), b10));
+            this.e.setBackground(new m3(AndroidUtilities.dp(10.0f), b10));
         }
         b(starGift != null, z10);
     }

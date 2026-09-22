@@ -1,66 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gb0 extends z81 {
-    public final /* synthetic */ gc0 U;
+public final class gb0 extends org.telegram.ui.Cells.r9 {
+    public final /* synthetic */ pb0 B0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gb0(gc0 gc0Var, Context context, cc0 cc0Var) {
-        super(context, cc0Var);
-        this.U = gc0Var;
+    public gb0(pb0 pb0Var) {
+        this.B0 = pb0Var;
+        this.h0 = pb0Var.c0.F;
     }
 
-    @Override // org.telegram.ui.Components.z81, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        int i10 = 0;
-        while (true) {
-            View[] viewArr = this.U.f.e;
-            if (i10 >= viewArr.length) {
-                z10 = false;
-                break;
-            }
-            View view = viewArr[i10];
-            if (view != null) {
-                ac0 ac0Var = (ac0) view;
-                if (ac0Var.a == 0) {
-                    z10 = ac0Var.e.i;
-                    break;
-                }
-            }
-            i10++;
+    @Override // org.telegram.ui.Cells.da
+    public final boolean A(MessageObject messageObject) {
+        pb0 pb0Var = this.B0;
+        return pb0Var.a == 0 && !pb0Var.c0.d.isSecret && y();
+    }
+
+    @Override // org.telegram.ui.Cells.da
+    public final void J(int i10, int i11, MessageObject messageObject) {
+        org.telegram.ui.rn rnVar;
+        MessageObject messageObject2;
+        pb0 pb0Var = this.B0;
+        gb0 gb0Var = pb0Var.e;
+        int i12 = gb0Var.v - gb0Var.u;
+        vb0 vb0Var = pb0Var.c0;
+        if (i12 > MessagesController.getInstance(vb0Var.w).quoteLengthMax) {
+            pb0Var.f();
+            return;
         }
-        if (z10) {
+        MessagePreviewParams messagePreviewParams = vb0Var.d;
+        messagePreviewParams.quoteStart = gb0Var.u;
+        messagePreviewParams.quoteEnd = gb0Var.v;
+        MessageObject c10 = pb0Var.c(messageObject);
+        if (c10 != null && ((rnVar = vb0Var.d.quote) == null || (messageObject2 = rnVar.a) == null || messageObject2.getId() != c10.getId())) {
+            vb0Var.d.quote = org.telegram.ui.rn.b(i10, i11, c10);
+        }
+        vb0Var.b();
+        vb0Var.a(true);
+    }
+
+    @Override // org.telegram.ui.Cells.da
+    public final boolean b() {
+        MessageObject c10;
+        TLRPC.Message message;
+        pb0 pb0Var = this.B0;
+        if (pb0Var.a == 0 && (c10 = pb0Var.c(null)) != null && (message = c10.messageOwner) != null && message.rich_message != null) {
             return false;
         }
-        return B(motionEvent);
+        MessagePreviewParams messagePreviewParams = pb0Var.c0.d;
+        return messagePreviewParams == null || !messagePreviewParams.noforwards;
     }
 
-    @Override // org.telegram.ui.Components.z81
-    public final void u() {
-        View view = this.e[0];
-        if (view instanceof ac0) {
-            ((ac0) view).e.W();
+    @Override // org.telegram.ui.Cells.da
+    public final boolean e() {
+        MessageObject c10;
+        TLRPC.Message message;
+        pb0 pb0Var = this.B0;
+        int i10 = pb0Var.a;
+        if (i10 != 0 || pb0Var.c0.d.isSecret) {
+            return false;
         }
+        return i10 != 0 || (c10 = pb0Var.c(null)) == null || (message = c10.messageOwner) == null || message.rich_message == null;
     }
 
-    @Override // org.telegram.ui.Components.z81
-    public final void w(boolean z10) {
-        gc0 gc0Var = this.U;
-        gc0Var.e.setSelectedTab(gc0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof ac0) {
-            ((ac0) view).e.H();
-        }
-        View view2 = viewArr[1];
-        if (view2 instanceof ac0) {
-            ((ac0) view2).e.H();
+    @Override // org.telegram.ui.Cells.da
+    public final org.telegram.ui.ActionBar.e6 r() {
+        return this.h0;
+    }
+
+    @Override // org.telegram.ui.Cells.r9, org.telegram.ui.Cells.da
+    public final void x() {
+        super.x();
+        hb0 hb0Var = this.B0.f;
+        if (hb0Var != null) {
+            hb0Var.invalidate();
         }
     }
 }

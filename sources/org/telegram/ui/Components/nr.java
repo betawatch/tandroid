@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class nr extends Drawable {
     public final Drawable a;
@@ -78,7 +78,7 @@ public final class nr extends Drawable {
                     this.g = 1.0f;
                 }
                 int i11 = this.f;
-                w02 = i11 >= 0 ? -1 : org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+                w02 = i11 >= 0 ? -1 : org.telegram.ui.ActionBar.i6.w0(null, i11, false);
                 i10 = this.e;
                 Drawable drawable = this.a;
                 Paint paint = this.c;

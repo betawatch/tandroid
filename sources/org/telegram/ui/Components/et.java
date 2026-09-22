@@ -13,7 +13,7 @@ import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class et extends org.telegram.ui.ActionBar.f3 {
     public static /* synthetic */ void m(et etVar) {
@@ -28,15 +28,15 @@ public final class et extends org.telegram.ui.ActionBar.f3 {
         final et etVar = new et(activity, false);
         etVar.setApplyBottomPadding(false);
         etVar.setApplyTopPadding(false);
-        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        int i10 = org.telegram.ui.ActionBar.i6.d6;
         etVar.fixNavigationBar(etVar.getThemedColor(i10));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(activity);
         frameLayout.addView(linearLayout);
         ImageView imageView = new ImageView(activity);
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(etVar.getThemedColor(org.telegram.ui.ActionBar.j6.i6), 1, -1));
-        imageView.setColorFilter(etVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ji));
+        imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(etVar.getThemedColor(org.telegram.ui.ActionBar.i6.i6), 1, -1));
+        imageView.setColorFilter(etVar.getThemedColor(org.telegram.ui.ActionBar.i6.Ji));
         imageView.setImageResource(R.drawable.ic_layer_close);
         final int i11 = 0;
         imageView.setOnClickListener(new View.OnClickListener(etVar) { // from class: org.telegram.ui.Components.ct
@@ -60,25 +60,25 @@ public final class et extends org.telegram.ui.ActionBar.f3 {
         });
         int dp = AndroidUtilities.dp(8.0f);
         imageView.setPadding(dp, dp, dp, dp);
-        frameLayout.addView(imageView, w7.y5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        mx0 mx0Var = new mx0(activity, etVar.currentAccount);
-        mx0Var.setStickerNum(9);
-        mx0Var.getImageReceiver().setAutoRepeat(1);
-        linearLayout.addView(mx0Var, w7.y5.t(110, 110, 1, 0, 26, 0, 0));
+        frameLayout.addView(imageView, w7.x5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
+        zw0 zw0Var = new zw0(activity, etVar.currentAccount);
+        zw0Var.setStickerNum(9);
+        zw0Var.getImageReceiver().setAutoRepeat(1);
+        linearLayout.addView(zw0Var, w7.x5.t(110, 110, 1, 0, 26, 0, 0));
         TextView textView = new TextView(activity);
         textView.setGravity(1);
-        int i12 = org.telegram.ui.ActionBar.j6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        int i12 = org.telegram.ui.ActionBar.i6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         textView.setTextSize(1, 20.0f);
         textView.setText(LocaleController.getString(R.string.DownloadedFiles));
-        linearLayout.addView(textView, w7.y5.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
+        linearLayout.addView(textView, w7.x5.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         textView2.setGravity(1);
         textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         textView2.setText(LocaleController.formatString("DownloadedFilesMessage", R.string.DownloadedFilesMessage, new Object[0]));
-        linearLayout.addView(textView2, w7.y5.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
+        linearLayout.addView(textView2, w7.x5.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
         TextView textView3 = new TextView(activity);
         textView3.setGravity(17);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -87,13 +87,13 @@ public final class et extends org.telegram.ui.ActionBar.f3 {
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setText(LocaleController.getString(R.string.ManageDeviceStorage));
-        textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        textView3.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
         int dp2 = AndroidUtilities.dp(8.0f);
-        int i13 = org.telegram.ui.ActionBar.j6.Oh;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i13, false);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
-        textView3.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, w02, k10, k10));
-        linearLayout.addView(textView3, w7.y5.d(-1, 48.0f, 0, 14.0f, 28.0f, 14.0f, 6.0f));
+        int i13 = org.telegram.ui.ActionBar.i6.Oh;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i13, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 120);
+        textView3.setBackground(org.telegram.ui.ActionBar.i6.i0(dp2, dp2, dp2, dp2, w02, k10, k10));
+        linearLayout.addView(textView3, w7.x5.d(-1, 48.0f, 0, 14.0f, 28.0f, 14.0f, 6.0f));
         TextView textView4 = new TextView(activity);
         textView4.setGravity(17);
         textView4.setEllipsize(truncateAt);
@@ -101,12 +101,12 @@ public final class et extends org.telegram.ui.ActionBar.f3 {
         textView4.setTextSize(1, 14.0f);
         textView4.setTypeface(AndroidUtilities.bold());
         textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
-        textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
+        textView4.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
         int dp3 = AndroidUtilities.dp(8.0f);
-        int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i13, false), 120);
-        textView4.setBackground(org.telegram.ui.ActionBar.j6.i0(dp3, dp3, dp3, dp3, 0, k11, k11));
+        int k11 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i13, false), 120);
+        textView4.setBackground(org.telegram.ui.ActionBar.i6.i0(dp3, dp3, dp3, dp3, 0, k11, k11));
         textView4.setLetterSpacing(0.025f);
-        linearLayout.addView(textView4, w7.y5.d(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
+        linearLayout.addView(textView4, w7.x5.d(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
         NestedScrollView nestedScrollView = new NestedScrollView(activity);
         nestedScrollView.addView(frameLayout);
         etVar.setCustomView(nestedScrollView);

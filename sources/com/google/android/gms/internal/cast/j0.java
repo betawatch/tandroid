@@ -9,7 +9,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class j0 extends g0 implements List, RandomAccess, j$.util.List {
     public static final h0 b = new h0(o0.e, 0);
@@ -128,7 +128,7 @@ public abstract class j0 extends g0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: q */
     public j0 subList(int i10, int i11) {
-        v7.l5.c(i10, i11, size());
+        v7.k5.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? o0.e : new i0(this, i10, i12);
     }
@@ -146,7 +146,7 @@ public abstract class j0 extends g0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List
     /* renamed from: s, reason: merged with bridge method [inline-methods] */
     public final h0 listIterator(int i10) {
-        v7.l5.b(i10, size());
+        v7.k5.b(i10, size());
         return isEmpty() ? b : new h0(this, i10);
     }
 

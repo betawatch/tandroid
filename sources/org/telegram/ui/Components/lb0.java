@@ -1,34 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
+import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ac0 b;
+public final class lb0 implements zk0 {
+    public final /* synthetic */ pb0 a;
 
-    public /* synthetic */ lb0(ac0 ac0Var, int i10) {
-        this.a = i10;
-        this.b = ac0Var;
+    public lb0(pb0 pb0Var) {
+        this.a = pb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ac0 ac0Var = this.b;
-                sb0 sb0Var = ac0Var.f;
-                if (!ac0Var.c0.d.webpageTop) {
-                    sb0Var.x0(sb0Var.computeVerticalScrollRange() - (sb0Var.computeVerticalScrollExtent() + sb0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
-                    break;
-                } else {
-                    sb0Var.x0(-sb0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
-                    break;
-                }
-            default:
-                this.b.g(true, false);
-                break;
+    @Override // org.telegram.ui.Components.zk0
+    public final void d(int i10, View view) {
+        pb0 pb0Var = this.a;
+        if (pb0Var.a != 1 || pb0Var.r.previewMessages.size() <= 1) {
+            return;
         }
+        int id2 = pb0Var.r.previewMessages.get(i10).getId();
+        boolean z10 = pb0Var.r.selectedIds.get(id2, false);
+        boolean z11 = !z10;
+        if (pb0Var.r.selectedIds.size() == 1 && z10) {
+            return;
+        }
+        if (z10) {
+            pb0Var.r.selectedIds.delete(id2);
+        } else {
+            pb0Var.r.selectedIds.put(id2, z11);
+        }
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            ((org.telegram.ui.Cells.t1) view).L3(z11, z11, true);
+        }
+        pb0Var.k(true);
     }
 }

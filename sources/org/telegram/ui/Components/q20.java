@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q20 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -59,13 +59,13 @@ public final /* synthetic */ class q20 implements ValueAnimator.AnimatorUpdateLi
                 }
                 break;
             default:
-                yh.l8 l8Var = (yh.l8) view;
-                l8Var.getClass();
+                yh.m8 m8Var = (yh.m8) view;
+                m8Var.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l8Var.r = i0.a.d(floatValue2, i14, i13);
-                l8Var.s = i0.a.d(floatValue2, i12, i11);
-                l8Var.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{l8Var.r, l8Var.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                l8Var.invalidate();
+                m8Var.r = i0.a.d(floatValue2, i14, i13);
+                m8Var.s = i0.a.d(floatValue2, i12, i11);
+                m8Var.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{m8Var.r, m8Var.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                m8Var.invalidate();
                 break;
         }
     }

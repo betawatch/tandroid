@@ -1,89 +1,200 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
+import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ql0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+public final class ql0 extends Drawable implements Animator.AnimatorListener {
+    public final Context a;
+    public ColorFilter b;
+    public Drawable d;
+    public Drawable e;
+    public ValueAnimator f;
+    public boolean r;
+    public int c = 0;
+    public float h = 1.0f;
+    public final ArrayList n = new ArrayList();
 
-    public /* synthetic */ ql0(Object obj, float f7, float f10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = f10;
+    public ql0(Context context) {
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f7 = this.c;
-        float f10 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                yl0 yl0Var = (yl0) ((tl0) obj).b;
-                if (yl0Var.e1 != null && (view = yl0Var.N1) != null) {
-                    yl0Var.i1(view, f10, f7, true);
-                    yl0Var.e1 = null;
-                    break;
-                }
-                break;
-            default:
-                ai.k6 k6Var = (ai.k6) obj;
-                sg.e eVar = (sg.e) k6Var.b;
-                ValueAnimator valueAnimator = eVar.S;
-                sg.b bVar = eVar.a0;
-                sg.b bVar2 = eVar.W;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    eVar.S.cancel();
-                    eVar.S = null;
-                }
-                AnimatorSet animatorSet = eVar.T;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    eVar.T.cancel();
-                    eVar.T = null;
-                }
-                if (Math.abs(eVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(eVar.U);
-                    eVar.T = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(eVar.b.d, f10);
-                    ofFloat.addUpdateListener(bVar2);
-                    long j3 = 220;
-                    ofFloat.setDuration(j3);
-                    qr qrVar = qr.h;
-                    ofFloat.setInterpolator(qrVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat2.addUpdateListener(bVar2);
-                    ofFloat2.setStartDelay(j3);
-                    ofFloat2.setDuration(600L);
-                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(eVar.b.g, f7);
-                    ofFloat3.addUpdateListener(bVar);
-                    ofFloat3.setDuration(j3);
-                    ofFloat3.setInterpolator(qrVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
-                    ofFloat4.addUpdateListener(bVar);
-                    ofFloat4.setStartDelay(j3);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    eVar.T.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    eVar.T.addListener(new pg.d0(k6Var, 6));
-                    eVar.T.start();
-                    break;
-                } else {
-                    eVar.i();
-                    break;
-                }
+    public final void a(int i10, boolean z10) {
+        if (this.c == i10) {
+            return;
         }
+        b(this.a.getDrawable(i10).mutate(), z10);
+        this.c = i10;
+    }
+
+    public final void b(Drawable drawable, boolean z10) {
+        if (drawable == null) {
+            this.d = null;
+            this.e = null;
+            invalidateSelf();
+            return;
+        }
+        if (getBounds() == null || getBounds().isEmpty()) {
+            z10 = false;
+        }
+        Drawable drawable2 = this.d;
+        if (drawable == drawable2) {
+            drawable2.setColorFilter(this.b);
+            return;
+        }
+        this.c = 0;
+        this.e = drawable2;
+        this.d = drawable;
+        drawable.setColorFilter(this.b);
+        c(this.d, getBounds());
+        c(this.e, getBounds());
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.f.cancel();
+        }
+        if (!z10) {
+            this.h = 1.0f;
+            this.e = null;
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.f = ofFloat;
+        ofFloat.addUpdateListener(new h70(this, 10));
+        this.f.addListener(this);
+        this.f.setDuration(150L);
+        this.f.start();
+    }
+
+    public final void c(Drawable drawable, Rect rect) {
+        int height;
+        int intrinsicHeight;
+        int width;
+        int intrinsicWidth;
+        if (drawable == null) {
+            return;
+        }
+        if (this.r) {
+            drawable.setBounds(rect);
+            return;
+        }
+        if (drawable.getIntrinsicHeight() < 0) {
+            height = rect.top;
+            intrinsicHeight = rect.bottom;
+        } else {
+            height = ((rect.height() - drawable.getIntrinsicHeight()) / 2) + rect.top;
+            intrinsicHeight = drawable.getIntrinsicHeight() + height;
+        }
+        if (drawable.getIntrinsicWidth() < 0) {
+            width = rect.left;
+            intrinsicWidth = rect.right;
+        } else {
+            width = ((rect.width() - drawable.getIntrinsicWidth()) / 2) + rect.left;
+            intrinsicWidth = drawable.getIntrinsicWidth() + width;
+        }
+        drawable.setBounds(width, height, intrinsicWidth, intrinsicHeight);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        if (this.h == 1.0f || this.d == null) {
+            Drawable drawable = this.d;
+            if (drawable != null) {
+                drawable.setAlpha(255);
+                this.d.draw(canvas);
+            }
+        } else {
+            canvas.save();
+            float f7 = this.h;
+            canvas.scale(f7, f7, centerX, centerY);
+            this.d.setAlpha((int) (this.h * 255.0f));
+            this.d.draw(canvas);
+            canvas.restore();
+        }
+        float f10 = this.h;
+        if (f10 == 1.0f || this.e == null) {
+            Drawable drawable2 = this.e;
+            if (drawable2 != null) {
+                drawable2.setAlpha(255);
+                this.e.draw(canvas);
+                return;
+            }
+            return;
+        }
+        float f11 = 1.0f - f10;
+        canvas.save();
+        canvas.scale(f11, f11, centerX, centerY);
+        this.e.setAlpha((int) (f11 * 255.0f));
+        this.e.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        ArrayList arrayList = this.n;
+        if (arrayList != null) {
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                ((View) arrayList.get(i10)).invalidate();
+            }
+        }
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.e = null;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        c(this.d, rect);
+        c(this.e, rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b = colorFilter;
+        Drawable drawable = this.d;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
+        }
+        Drawable drawable2 = this.e;
+        if (drawable2 != null) {
+            drawable2.setColorFilter(colorFilter);
+        }
+        invalidateSelf();
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationRepeat(Animator animator) {
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

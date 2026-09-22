@@ -1,64 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class s81 implements u9 {
-    public TLObject a = null;
-    public TLRPC.TL_error b = null;
-    public final /* synthetic */ SessionsActivity c;
+public final /* synthetic */ class s81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f91 b;
 
-    public s81(SessionsActivity sessionsActivity) {
-        this.c = sessionsActivity;
+    public /* synthetic */ s81(f91 f91Var, int i10) {
+        this.a = i10;
+        this.b = f91Var;
     }
 
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ String I0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final void K(String str) {
-        TLObject tLObject = this.a;
-        if (!(tLObject instanceof TLRPC.TL_authorization)) {
-            if (this.b != null) {
-                AndroidUtilities.runOnUIThread(new r81(this, 0));
-                return;
-            }
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c.Y2.N(true);
+                break;
+            case 1:
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                break;
+            case 2:
+                f91 f91Var = this.b;
+                f91Var.c.postOnAnimation(new s81(f91Var, 3));
+                break;
+            case 3:
+                this.b.i0();
+                break;
+            default:
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
+                break;
         }
-        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-        boolean z10 = tL_authorization.password_pending;
-        SessionsActivity sessionsActivity = this.c;
-        if (z10) {
-            sessionsActivity.f.add(0, tL_authorization);
-            sessionsActivity.V = 4;
-            sessionsActivity.k0(false);
-        } else {
-            sessionsActivity.e.add(0, tL_authorization);
-        }
-        sessionsActivity.m0();
-        sessionsActivity.a.l();
-        sessionsActivity.s.m(0L, this.a, 11);
-    }
-
-    @Override // org.telegram.ui.u9
-    public final boolean e1(String str, m9 m9Var) {
-        this.a = null;
-        this.b = null;
-        AndroidUtilities.runOnUIThread(new rf0(this, str, m9Var, 29), 750L);
-        return true;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void onDismiss() {
     }
 }

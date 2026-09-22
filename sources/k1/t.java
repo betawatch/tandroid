@@ -1,9 +1,9 @@
 package k1;
 
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class t {
     public final /* synthetic */ ie.a a;
@@ -52,7 +52,7 @@ public final class t {
                     jd.a aVar3 = jd.a.a;
                     i10 = sVar.n;
                     if (i10 != 0) {
-                        u7.b(obj2);
+                        t7.b(obj2);
                         sVar.a = eVar;
                         ie.a aVar4 = this.a;
                         sVar.b = aVar4;
@@ -80,7 +80,7 @@ public final class t {
                             pVar3 = (kotlin.jvm.internal.p) sVar.b;
                             aVar = (ie.a) sVar.a;
                             try {
-                                u7.b(obj2);
+                                t7.b(obj2);
                                 pVar3.a = obj;
                                 pVar = pVar3;
                                 Object obj3 = pVar.a;
@@ -96,7 +96,7 @@ public final class t {
                         pVar = (kotlin.jvm.internal.p) sVar.b;
                         aVar2 = (ie.a) sVar.a;
                         try {
-                            u7.b(obj2);
+                            t7.b(obj2);
                             if (!kotlin.jvm.internal.i.a(obj2, pVar.a)) {
                                 aVar = aVar2;
                                 Object obj32 = pVar.a;
@@ -107,7 +107,7 @@ public final class t {
                             sVar.b = pVar;
                             sVar.c = obj2;
                             sVar.n = 3;
-                            if (a0Var2.j(obj2, sVar) != aVar3) {
+                            if (a0Var2.i(obj2, sVar) != aVar3) {
                                 obj = obj2;
                                 pVar3 = pVar;
                                 aVar = aVar2;
@@ -130,7 +130,7 @@ public final class t {
                     nVar = (kotlin.jvm.internal.n) sVar.c;
                     ?? r72 = (ie.a) sVar.b;
                     rd.p pVar5 = (rd.p) sVar.a;
-                    u7.b(obj2);
+                    t7.b(obj2);
                     a0Var = a0Var3;
                     pVar2 = pVar5;
                     dVar = r72;

@@ -3,9 +3,9 @@ package r3;
 import b2.m0;
 import b2.o0;
 import b2.s;
-import v7.a8;
+import v7.z7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final long a;
@@ -46,7 +46,7 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return a8.b(this.e) + ((a8.b(this.d) + ((a8.b(this.c) + ((a8.b(this.b) + ((a8.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        return z7.b(this.e) + ((z7.b(this.d) + ((z7.b(this.c) + ((z7.b(this.b) + ((z7.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {

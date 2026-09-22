@@ -6,30 +6,30 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class pk extends org.telegram.ui.Components.od {
+public final class pk extends org.telegram.ui.Components.md {
     public final /* synthetic */ boolean e;
-    public final /* synthetic */ zn f;
+    public final /* synthetic */ bo f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pk(zn znVar, Context context, boolean z10) {
+    public pk(bo boVar, Context context, boolean z10) {
         super(context);
-        this.f = znVar;
+        this.f = boVar;
         this.e = z10;
     }
 
-    @Override // org.telegram.ui.Components.od
+    @Override // org.telegram.ui.Components.md
     public final void d() {
         int dp = this.e ? AndroidUtilities.dp(4.0f) : 0;
-        int i10 = org.telegram.ui.ActionBar.j6.ve;
-        zn znVar = this.f;
-        setBackground(org.telegram.ui.ActionBar.j6.W(AndroidUtilities.dp(19.0f), 436207615 & znVar.getThemedColor(i10), dp, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f)));
-        getImageView().setColorFilter(new PorterDuffColorFilter(znVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
-        getTextView().setTextColor(znVar.getThemedColor(i10));
+        int i10 = org.telegram.ui.ActionBar.i6.ve;
+        bo boVar = this.f;
+        setBackground(org.telegram.ui.ActionBar.i6.W(AndroidUtilities.dp(19.0f), 436207615 & boVar.getThemedColor(i10), dp, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f)));
+        getImageView().setColorFilter(new PorterDuffColorFilter(boVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
+        getTextView().setTextColor(boVar.getThemedColor(i10));
     }
 
-    @Override // org.telegram.ui.Components.od
+    @Override // org.telegram.ui.Components.md
     public final void setEditButton(boolean z10) {
         super.setEditButton(z10);
         if (this.e) {

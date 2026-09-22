@@ -3,7 +3,7 @@ package ie;
 import k1.a0;
 import rd.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g extends kotlin.jvm.internal.j implements l {
     public final /* synthetic */ int b;
@@ -30,7 +30,7 @@ public final class g extends kotlin.jvm.internal.j implements l {
                 Object obj2 = a0.s;
                 a0 a0Var = (a0) this.c;
                 synchronized (obj2) {
-                    a0.r.remove(a0Var.c().getAbsolutePath());
+                    a0.r.remove(a0Var.b().getAbsolutePath());
                 }
                 return gd.i.a;
         }

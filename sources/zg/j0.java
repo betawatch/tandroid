@@ -2,14 +2,14 @@ package zg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.ui.Components.p5;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.u9;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class j0 extends v9 {
+public final class j0 extends u9 {
     public boolean G;
-    public p5 H;
+    public o5 H;
     public d I;
     public boolean J;
     public final /* synthetic */ l0 K;
@@ -21,13 +21,13 @@ public final class j0 extends v9 {
         getImageReceiver().setFileLoadingPriority(3);
     }
 
-    @Override // org.telegram.ui.Components.v9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.J = true;
-        p5 p5Var = this.H;
-        if (p5Var != null) {
-            p5Var.a(this);
+        o5 o5Var = this.H;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
         d dVar = this.I;
         if (dVar != null) {
@@ -35,13 +35,13 @@ public final class j0 extends v9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.J = false;
-        p5 p5Var = this.H;
-        if (p5Var != null) {
-            p5Var.o(this);
+        o5 o5Var = this.H;
+        if (o5Var != null) {
+            o5Var.o(this);
         }
         d dVar = this.I;
         if (dVar != null) {
@@ -49,11 +49,11 @@ public final class j0 extends v9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v9, android.view.View
+    @Override // org.telegram.ui.Components.u9, android.view.View
     public final void onDraw(Canvas canvas) {
-        p5 p5Var = this.H;
-        if (p5Var != null) {
-            p5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        o5 o5Var = this.H;
+        if (o5Var != null) {
+            o5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.H.setAlpha(255);
             this.H.draw(canvas);
             this.G = true;

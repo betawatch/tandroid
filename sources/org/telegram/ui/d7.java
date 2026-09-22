@@ -2,30 +2,30 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class d7 implements org.telegram.ui.Components.ml0 {
-    public final /* synthetic */ org.telegram.ui.Components.yl0 a;
+public final class d7 implements org.telegram.ui.Components.zk0 {
+    public final /* synthetic */ org.telegram.ui.Components.ll0 a;
     public final /* synthetic */ e7 b;
 
-    public d7(e7 e7Var, org.telegram.ui.Components.yl0 yl0Var) {
+    public d7(e7 e7Var, org.telegram.ui.Components.ll0 ll0Var) {
         this.b = e7Var;
-        this.a = yl0Var;
+        this.a = ll0Var;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.zk0
     public final void d(int i10, View view) {
-        t7 t7Var = this.b.e;
-        org.telegram.ui.Components.yl0 yl0Var = this.a;
-        g7 g7Var = (g7) yl0Var.getAdapter();
-        n7 n7Var = (n7) g7Var.e.get(i10);
-        if (view instanceof org.telegram.ui.Cells.u7) {
-            t7.a(t7Var, n7Var, (p7) g7Var, yl0Var);
+        s7 s7Var = this.b.d;
+        org.telegram.ui.Components.ll0 ll0Var = this.a;
+        f7 f7Var = (f7) ll0Var.getAdapter();
+        m7 m7Var = (m7) f7Var.e.get(i10);
+        if (view instanceof org.telegram.ui.Cells.t7) {
+            s7.a(s7Var, m7Var, (o7) f7Var, ll0Var);
             return;
         }
-        j7 j7Var = t7Var.E;
-        if (j7Var != null) {
-            j7Var.H0(n7Var.c, n7Var.d, false);
+        i7 i7Var = s7Var.v;
+        if (i7Var != null) {
+            i7Var.H0(m7Var.c, m7Var.d, false);
         }
     }
 }

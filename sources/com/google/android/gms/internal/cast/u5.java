@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class u5 extends w4 implements RandomAccess, l5, f6 {
     public static final u5 d = new u5(new long[0], 0, false);
@@ -26,7 +26,7 @@ public final class u5 extends w4 implements RandomAccess, l5, f6 {
         long longValue = ((Long) obj).longValue();
         i();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         long[] jArr = this.b;
@@ -131,7 +131,7 @@ public final class u5 extends w4 implements RandomAccess, l5, f6 {
 
     public final void n(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
     }
 

@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final /* synthetic */ ActionBarLayout E;
@@ -55,7 +55,7 @@ public final class w extends FrameLayout {
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
         int paddingBottom = getPaddingBottom();
-        Paint l02 = j6.l0(i10);
+        Paint l02 = i6.l0(i10);
         a4 a4Var = a4.c;
         if (paddingLeft <= 0 || this.w == a4Var) {
             canvas2 = canvas;
@@ -130,16 +130,16 @@ public final class w extends FrameLayout {
         }
         z3 z3Var = actionBarLayout.x;
         boolean z10 = false;
-        int color = z3Var != null ? z3Var.getInternalNavbarPaint().getColor() : j6.w0(null, j6.a7, false);
+        int color = z3Var != null ? z3Var.getInternalNavbarPaint().getColor() : i6.w0(null, i6.a7, false);
         if (this == actionBarLayout.w) {
-            org.telegram.ui.Components.d6 d6Var = actionBarLayout.b1;
+            org.telegram.ui.Components.c6 c6Var = actionBarLayout.b1;
             s sVar = actionBarLayout.G;
             if (sVar != null && sVar.hasSheet()) {
                 z10 = true;
             }
-            float e = d6Var.e(z10);
+            float e = c6Var.e(z10);
             if (e > 0.0f) {
-                a(canvas, this.y, j6.l1(e, color));
+                a(canvas, this.y, i6.l1(e, color));
             }
         } else {
             n2 lastFragment = actionBarLayout.getLastFragment();
@@ -194,7 +194,7 @@ public final class w extends FrameLayout {
         Drawable drawable;
         ArrayList<j2> arrayList;
         ActionBarLayout actionBarLayout = this.E;
-        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) org.telegram.ui.Cells.c1.i(1, actionBarLayout.O0) : null;
+        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) org.telegram.ui.Cells.q3.g(1, actionBarLayout.O0) : null;
         s sVar = actionBarLayout.G;
         if (sVar != null && (arrayList = sVar.sheetsStack) != null && !arrayList.isEmpty()) {
             n2Var = actionBarLayout.G;
@@ -245,7 +245,7 @@ public final class w extends FrameLayout {
                 }
                 this.n = navigationBarColor;
                 this.h = i16;
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, i16, new int[]{j6.l1(0.1f, navigationBarColor), j6.l1(1.0f, navigationBarColor)}, new float[]{0.0f, 0.88f}, Shader.TileMode.CLAMP);
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, i16, new int[]{i6.l1(0.1f, navigationBarColor), i6.l1(1.0f, navigationBarColor)}, new float[]{0.0f, 0.88f}, Shader.TileMode.CLAMP);
                 this.r = linearGradient;
                 this.v.setShader(linearGradient);
             }
@@ -267,12 +267,12 @@ public final class w extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.c != 0) {
-            int i10 = j6.d6;
-            int w02 = j6.w0(null, i10, false);
+            int i10 = i6.d6;
+            int w02 = i6.w0(null, i10, false);
             int i11 = this.e;
             Paint paint = this.d;
             if (i11 != w02) {
-                int w03 = j6.w0(null, i10, false);
+                int w03 = i6.w0(null, i10, false);
                 this.e = w03;
                 paint.setColor(w03);
             }

@@ -20,13 +20,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.uj;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -132,8 +132,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             ViewGroup viewGroup = this.f;
             RectF rectF3 = H;
             if (k.c(childAt, viewGroup, rectF3)) {
-                if (childAt instanceof u1) {
-                    messageObject = ((u1) childAt).getMessageObject();
+                if (childAt instanceof t1) {
+                    messageObject = ((t1) childAt).getMessageObject();
                 } else if (childAt instanceof w0) {
                     messageObject = ((w0) childAt).getMessageObject();
                 }
@@ -230,8 +230,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         j3 = uptimeMillis;
                         float f7 = rectF8.top - rectF6.top;
                         float f10 = height - (rectF6.bottom - rectF8.bottom);
-                        dVar3.l = Math.min(dVar3.l, q.a(f7, 0.0f, height));
-                        dVar3.m = Math.max(dVar3.m, q.a(f10, 0.0f, height));
+                        dVar3.l = Math.min(dVar3.l, p.a(f7, 0.0f, height));
+                        dVar3.m = Math.max(dVar3.m, p.a(f10, 0.0f, height));
                         dVar3.k = Math.max(dVar3.k, rectF8.height());
                         dVar3.j = Math.max(dVar3.j, height);
                         if (dVar3.i || dVar3.g <= 300) {
@@ -362,7 +362,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.G.setTextSize(AndroidUtilities.dp(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = j6.Ll;
+            Paint paint = i6.Ll;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.w;
@@ -370,10 +370,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i10 = 0; i10 < size; i10++) {
                 d dVar = (d) longSparseArray.valueAt(i10);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, j6.Ml);
+                canvas.drawRect(rectF2, i6.Ml);
                 canvas.save();
-                canvas.translate(rectF2.left, q.a(q.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), j6.Kl);
+                canvas.translate(rectF2.left, p.a(p.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), i6.Kl);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.G);

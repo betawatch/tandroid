@@ -1,25 +1,24 @@
 package q9;
 
-import hg.k0;
-import w7.s6;
+import w7.r6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class j {
-    public final s a;
+    public final r a;
     public final int b;
     public final int c;
 
     public j(int i10, int i11, Class cls) {
-        this(s.a(cls), i10, i11);
+        this(r.a(cls), i10, i11);
     }
 
     public static j a(Class cls) {
         return new j(1, 0, cls);
     }
 
-    public static j b(s sVar) {
-        return new j(sVar, 1, 0);
+    public static j b(r rVar) {
+        return new j(rVar, 1, 0);
     }
 
     public final boolean equals(Object obj) {
@@ -49,16 +48,16 @@ public final class j {
             str = "provider";
         } else {
             if (i11 != 2) {
-                throw new AssertionError(k0.h(i11, "Unsupported injection: "));
+                throw new AssertionError(hg.c.i(i11, "Unsupported injection: "));
             }
             str = "deferred";
         }
-        return a4.a.s(sb2, str, "}");
+        return a4.a.t(sb2, str, "}");
     }
 
-    public j(s sVar, int i10, int i11) {
-        s6.a(sVar, "Null dependency anInterface.");
-        this.a = sVar;
+    public j(r rVar, int i10, int i11) {
+        r6.a(rVar, "Null dependency anInterface.");
+        this.a = rVar;
         this.b = i10;
         this.c = i11;
     }

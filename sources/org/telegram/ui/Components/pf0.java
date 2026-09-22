@@ -1,80 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import android.webkit.JavascriptInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class pf0 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ia b;
-    public final /* synthetic */ uf0 c;
+public final class pf0 {
+    public final /* synthetic */ org.telegram.ui.iu0 a;
 
-    public pf0(uf0 uf0Var, boolean z10, ia iaVar) {
-        this.c = uf0Var;
-        this.a = z10;
-        this.b = iaVar;
+    public pf0(org.telegram.ui.iu0 iu0Var) {
+        this.a = iu0Var;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        uf0 uf0Var = this.c;
-        TextureView textureView = uf0Var.i0;
-        if (uf0Var.l0 != null || surfaceTexture == null) {
-            return;
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        AndroidUtilities.runOnUIThread(new id(this, Integer.parseInt(str), 5));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        AndroidUtilities.runOnUIThread(new nf0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f7) {
+        this.a.J = f7;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i10) {
+        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i10) {
+        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        org.telegram.ui.iu0 iu0Var = this.a;
+        iu0Var.H = i11;
+        String str = iu0Var.s;
+        if (str != null) {
+            qf0.a(iu0Var, str);
+            iu0Var.s = null;
         }
-        vz vzVar = new vz(surfaceTexture, uf0Var.C0, uf0Var.H0, uf0Var.w0, this.a, this.b, i10, i11);
-        uf0Var.l0 = vzVar;
-        if (!this.a) {
-            vzVar.i(uf0Var.J0, uf0Var.K0);
-            vz vzVar2 = uf0Var.l0;
-            Matrix transform = textureView.getTransform(null);
-            int width = textureView.getWidth();
-            int height = textureView.getHeight();
-            oa oaVar = vzVar2.I;
-            if (oaVar != null) {
-                Matrix matrix = oaVar.v;
-                transform.invert(matrix);
-                float f7 = width;
-                float f10 = height;
-                matrix.preScale(f7, f10);
-                matrix.postScale(1.0f / f7, 1.0f / f10);
-                oaVar.c(matrix);
-                vzVar2.e(false, false, false);
+    }
+
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.iu0 iu0Var = this.a;
+        boolean z10 = iu0Var.G;
+        boolean z11 = false;
+        int i10 = 1;
+        iu0Var.G = parseInt == 1 || parseInt == 3;
+        iu0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i10 = 2;
+                }
             }
+            i10 = 3;
+        } else {
+            i10 = 4;
         }
-        uf0Var.l0.f(uf0Var);
-        vz vzVar3 = uf0Var.l0;
-        vzVar3.getClass();
-        vzVar3.postRunnable(new rz(vzVar3, i10, i11, 1));
-        uf0Var.l0.e(true, true, false);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        uf0 uf0Var = this.c;
-        vz vzVar = uf0Var.l0;
-        if (vzVar == null) {
-            return true;
+        if (i10 == 3 && iu0Var.h.getVisibility() != 4) {
+            AndroidUtilities.runOnUIThread(new nf0(this, 1), 300L);
         }
-        vzVar.postRunnable(new sz(vzVar, 0));
-        uf0Var.l0 = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        uf0 uf0Var = this.c;
-        vz vzVar = uf0Var.l0;
-        if (vzVar != null) {
-            vzVar.postRunnable(new rz(vzVar, i10, i11, 1));
-            uf0Var.l0.e(false, true, false);
-            uf0Var.l0.postRunnable(new jc0(this, 7));
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        AndroidUtilities.runOnUIThread(new i2.f0(this, z11, i10, 1));
     }
 }

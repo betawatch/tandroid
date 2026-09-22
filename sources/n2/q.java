@@ -3,8 +3,9 @@ package n2;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import k2.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public interface q {
     h2.b B(byte[] bArr);
@@ -17,21 +18,21 @@ public interface q {
 
     byte[] X(byte[] bArr, byte[] bArr2);
 
-    Map c(byte[] bArr);
+    void a(c0 c0Var);
 
-    void d(l.d dVar);
+    Map d(byte[] bArr);
 
-    void h0(byte[] bArr);
+    void j0(byte[] bArr);
 
     o k0(byte[] bArr, List list, int i10, HashMap hashMap);
 
     void l(byte[] bArr, j2.k kVar);
 
-    int l0();
-
     p m();
 
-    boolean q0(String str, byte[] bArr);
+    int m0();
+
+    boolean r0(String str, byte[] bArr);
 
     void release();
 }

@@ -1,57 +1,13 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.au0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class j0 extends FrameLayout {
-    public final /* synthetic */ au0 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(au0 au0Var, Context context) {
-        super(context);
-        this.a = au0Var;
-        setWillNotDraw(false);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        au0 au0Var = this.a;
-        Paint paint = au0Var.B1;
-        p1 p1Var = au0Var.u1;
-        paint.setAlpha((int) ((1.0f - au0Var.D1) * p1Var.getAlpha() * 102.0f));
-        RectF rectF = AndroidUtilities.rectTmp;
-        p1Var.b(rectF);
-        float translationY = p1Var.getTranslationY() + au0Var.c1.getTranslationY() + p1Var.getTop() + r4.getTop();
-        float f7 = rectF.left;
-        u1 u1Var = au0Var.v1;
-        rectF.set(AndroidUtilities.lerp(f7, u1Var.getLeft(), au0Var.D1), AndroidUtilities.lerp(rectF.top + translationY, u1Var.getTop() - u1Var.getTranslationY(), au0Var.D1), AndroidUtilities.lerp(rectF.right, u1Var.getRight(), au0Var.D1), AndroidUtilities.lerp(translationY + rectF.bottom, u1Var.getBottom() - u1Var.getTranslationY(), au0Var.D1));
-        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, au0Var.D1));
-        Paint paint2 = au0Var.C1;
-        int alpha = paint2.getAlpha();
-        paint2.setAlpha((int) (alpha * au0Var.D1));
-        canvas.drawRoundRect(rectF, dp, dp, paint2);
-        paint2.setAlpha(alpha);
-        canvas.drawRoundRect(rectF, dp, dp, paint);
-    }
-
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() == 0) {
-            au0 au0Var = this.a;
-            if (au0Var.E1) {
-                au0Var.z0(false);
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+        return false;
     }
 }

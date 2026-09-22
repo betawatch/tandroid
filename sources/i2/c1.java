@@ -5,9 +5,9 @@ import android.util.Pair;
 import ei.l3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class c1 implements u2.l0, n2.k {
+public final class c1 implements u2.k0, n2.k {
     public final e1 a;
     public final /* synthetic */ f1 b;
 
@@ -32,7 +32,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void c(int i10, u2.f0 f0Var, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -40,7 +40,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void d(int i10, u2.f0 f0Var, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -48,7 +48,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void e(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -56,7 +56,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void f(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -72,7 +72,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void h(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, int i11) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -88,7 +88,7 @@ public final class c1 implements u2.l0, n2.k {
         }
     }
 
-    @Override // u2.l0
+    @Override // u2.k0
     public final void j(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {

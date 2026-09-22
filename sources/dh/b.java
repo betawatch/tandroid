@@ -3,13 +3,13 @@ package dh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class b implements a {
-    public final f6 a;
+    public final e6 a;
     public final int b;
     public final float c;
     public int d;
@@ -17,8 +17,8 @@ public class b implements a {
     public int f;
     public int h;
 
-    public b(int i10, f6 f6Var) {
-        this(f6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    public b(int i10, e6 e6Var) {
+        this(e6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
     @Override // dh.a
@@ -26,18 +26,23 @@ public class b implements a {
         return this.d;
     }
 
-    public boolean a() {
-        return AndroidUtilities.computePerceivedBrightness(j6.v0(this.b, this.a)) < 0.721f;
-    }
-
     @Override // dh.a
-    public int b() {
+    public int a() {
         return this.f;
     }
 
-    public final void c() {
-        this.d = j6.l1(this.c, j6.v0(this.b, this.a));
-        if (a()) {
+    public boolean b() {
+        return AndroidUtilities.computePerceivedBrightness(i6.v0(this.b, this.a)) < 0.721f;
+    }
+
+    @Override // dh.a
+    public int c() {
+        return this.h;
+    }
+
+    public final void d() {
+        this.d = i6.l1(this.c, i6.v0(this.b, this.a));
+        if (b()) {
             this.f = 687865855;
             this.h = 352321535;
             this.e = 0;
@@ -49,19 +54,14 @@ public class b implements a {
     }
 
     @Override // dh.a
-    public int g() {
-        return this.h;
-    }
-
-    @Override // dh.a
-    public int x() {
+    public int m() {
         return this.e;
     }
 
-    public b(f6 f6Var, int i10, float f7) {
-        this.a = f6Var;
+    public b(e6 e6Var, int i10, float f7) {
+        this.a = e6Var;
         this.b = i10;
         this.c = f7;
-        c();
+        d();
     }
 }

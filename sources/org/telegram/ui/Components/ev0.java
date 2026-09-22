@@ -1,7 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public interface ev0 {
-    void M();
+public final class ev0 {
+    public static final ev0 a;
+    public static final ev0 b;
+    public static final /* synthetic */ ev0[] c;
+
+    static {
+        ev0 ev0Var = new ev0("DEFAULT", 0);
+        a = ev0Var;
+        ev0 ev0Var2 = new ev0("RECORDING", 1);
+        b = ev0Var2;
+        c = new ev0[]{ev0Var, ev0Var2};
+    }
+
+    public static ev0 valueOf(String str) {
+        return (ev0) Enum.valueOf(ev0.class, str);
+    }
+
+    public static ev0[] values() {
+        return (ev0[]) c.clone();
+    }
 }

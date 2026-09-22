@@ -13,13 +13,13 @@ import android.widget.ImageView;
 import le.d;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout implements d {
     public final le.b a;
@@ -27,7 +27,7 @@ public final class a extends FrameLayout implements d {
     public ImageView c;
     public ImageView d;
     public tp e;
-    public f6 f;
+    public e6 f;
     public float h;
     public ch.d n;
 
@@ -39,35 +39,35 @@ public final class a extends FrameLayout implements d {
         this.h = 1.0f;
     }
 
-    public static a c(c cVar, Context context, dh.a aVar, f6 f6Var) {
-        int v02 = j6.v0(j6.Wk, f6Var);
+    public static a c(c cVar, Context context, dh.a aVar, e6 e6Var) {
+        int v02 = i6.v0(i6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = j6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(j6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, dh.a aVar, f6 f6Var, int i10, int i11) {
-        int v02 = j6.v0(j6.Wk, f6Var);
+    public static a d(Context context, c cVar, dh.a aVar, e6 e6Var, int i10, int i11) {
+        int v02 = i6.v0(i6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = j6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(j6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
         return aVar2;
     }
 
     @Override // le.d
-    public final void H(int i10, float f7, float f10, e eVar) {
+    public final void D(int i10, float f7, float f10, e eVar) {
         if (i10 == 0) {
             a();
             b();
@@ -130,7 +130,7 @@ public final class a extends FrameLayout implements d {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, y5.e(i11, i11, 17));
+            addView(this.c, x5.e(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);
@@ -142,13 +142,13 @@ public final class a extends FrameLayout implements d {
             dVar.v();
             invalidate();
         }
-        int i10 = j6.Wk;
-        int v02 = j6.v0(i10, this.f);
-        setIconColor(j6.v0(i10, this.f));
+        int i10 = i6.Wk;
+        int v02 = i6.v0(i10, this.f);
+        setIconColor(i6.v0(i10, this.f));
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = j6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(j6.W(dp, l1, dp2, dp2, dp2, dp2));
+        setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
     }
 
     @Override // android.view.View

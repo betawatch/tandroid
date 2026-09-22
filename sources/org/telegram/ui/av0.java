@@ -14,13 +14,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class av0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout a;
     public final ai.x5 b;
     public final org.telegram.ui.ActionBar.j5[] c;
-    public final org.telegram.ui.Components.o6 d;
+    public final org.telegram.ui.Components.n6 d;
     public AnimatorSet e;
     public AnimatorSet f;
     public boolean h;
@@ -33,13 +33,13 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
         FrameLayout frameLayout = new FrameLayout(activity);
         this.a = frameLayout;
         frameLayout.setPadding(AndroidUtilities.dp(56.0f), 0, 0, 0);
-        addView(frameLayout, w7.y5.e(-1, -1, 119));
-        ai.x5 x5Var = new ai.x5(activity, 26);
+        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        ai.x5 x5Var = new ai.x5(activity, 25);
         this.b = x5Var;
         x5Var.setPivotX(AndroidUtilities.dp(16.0f));
         x5Var.setPadding(AndroidUtilities.dp(16.0f), 0, 0, 0);
         x5Var.setClipToPadding(false);
-        frameLayout.addView(x5Var, w7.y5.e(-1, -1, 119));
+        frameLayout.addView(x5Var, w7.x5.e(-1, -1, 119));
         this.c = new org.telegram.ui.ActionBar.j5[2];
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new org.telegram.ui.ActionBar.j5(activity);
@@ -49,25 +49,25 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setDrawablePadding(AndroidUtilities.dp(4.0f));
             this.c[i10].setScrollNonFitText(true);
-            this.b.addView(this.c[i10], w7.y5.e(-1, -2, 19));
+            this.b.addView(this.c[i10], w7.x5.e(-1, -2, 19));
         }
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(activity, true, false, false);
-        this.d = o6Var;
-        o6Var.b(0.4f, 320L, org.telegram.ui.Components.qr.h);
-        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        o6Var.setGravity(19);
-        o6Var.setTextColor(-1);
-        o6Var.setEllipsizeByGradient(true);
-        o6Var.setImportantForAccessibility(1);
-        o6Var.setAccessibilityLiveRegion(1);
-        this.a.addView(o6Var, w7.y5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(activity, true, false, false);
+        this.d = n6Var;
+        n6Var.b(0.4f, 320L, org.telegram.ui.Components.qr.h);
+        n6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        n6Var.setGravity(19);
+        n6Var.setTextColor(-1);
+        n6Var.setEllipsizeByGradient(true);
+        n6Var.setImportantForAccessibility(1);
+        n6Var.setAccessibilityLiveRegion(1);
+        this.a.addView(n6Var, w7.x5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public final void a(CharSequence charSequence, boolean z10) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         boolean z11 = !isEmpty;
         boolean z12 = this.h;
-        org.telegram.ui.Components.o6 o6Var = this.d;
+        org.telegram.ui.Components.n6 n6Var = this.d;
         if (z11 != z12) {
             this.h = z11;
             AnimatorSet animatorSet = this.f;
@@ -79,10 +79,10 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
             ai.x5 x5Var = this.b;
             if (z10) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(n6Var, (Property<org.telegram.ui.Components.n6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
                 float[] fArr = {dp};
                 Property property = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(o6Var, (Property<org.telegram.ui.Components.o6, Float>) property, fArr));
+                arrayList.add(ObjectAnimator.ofFloat(n6Var, (Property<org.telegram.ui.Components.n6, Float>) property, fArr));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(x5Var, (Property<ai.x5, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
@@ -92,18 +92,18 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
                 this.f.setInterpolator(org.telegram.ui.Components.qr.h);
                 this.f.start();
             } else {
-                o6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
-                o6Var.setTranslationY(dp);
+                n6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
+                n6Var.setTranslationY(dp);
                 x5Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
                 x5Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
                 x5Var.setScaleY(isEmpty ? 1.0f : 0.87f);
             }
         }
-        o6Var.c(charSequence, z10, true);
+        n6Var.c(charSequence, z10, true);
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = null;
         }
-        o6Var.setContentDescription(charSequence);
+        n6Var.setContentDescription(charSequence);
     }
 
     public final void b(boolean z10) {
@@ -184,7 +184,7 @@ public final class av0 extends FrameLayout implements NotificationCenter.Notific
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.e = animatorSet2;
         animatorSet2.playTogether(arrayList);
-        this.e.addListener(new gp0(this, 10));
+        this.e.addListener(new cr0(this, 9));
         this.e.setDuration(320L);
         this.e.setInterpolator(org.telegram.ui.Components.qr.h);
         this.e.start();

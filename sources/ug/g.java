@@ -17,50 +17,50 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.s8;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Cells.w3;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.vy0;
+import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.yw0;
 import org.telegram.ui.web.b1;
-import org.telegram.ui.web.g1;
+import org.telegram.ui.wy0;
 import s4.c1;
 import s4.p0;
-import w7.y5;
+import tg.d1;
+import w7.x5;
 import xg.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class g extends og.b {
-    public final f6 d;
+    public final e6 d;
     public final Context e;
-    public yl0 f;
+    public ll0 f;
     public ArrayList n;
     public boolean s;
-    public w3 v;
+    public v3 v;
     public final boolean w;
     public boolean x;
     public final HashMap r = new HashMap();
     public boolean y = true;
     public final boolean h = true;
 
-    public g(Context context, f6 f6Var, boolean z10) {
+    public g(Context context, e6 e6Var, boolean z10) {
         this.e = context;
         this.w = z10;
-        this.d = f6Var;
+        this.d = e6Var;
         b1 b1Var = new b1(this, 15);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new g1(26, messagesStorage, b1Var));
+        messagesStorage.getStorageQueue().postRunnable(new p2.b(20, messagesStorage, b1Var));
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -139,7 +139,7 @@ public final class g extends og.b {
             }
             if (i12 == 5) {
                 try {
-                    ((lx0) view).b.getImageReceiver().startAnimation();
+                    ((yw0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -147,9 +147,9 @@ public final class g extends og.b {
             }
             if (i12 != 8) {
                 if (i12 == 9) {
-                    s8 s8Var = (s8) view;
-                    s8Var.e(j6.v6, j6.u6);
-                    s8Var.m(fVar.j, fVar.g, false);
+                    r8 r8Var = (r8) view;
+                    r8Var.e(i6.v6, i6.u6);
+                    r8Var.m(fVar.j, fVar.g, false);
                     return;
                 } else {
                     if (i12 == 10) {
@@ -158,31 +158,31 @@ public final class g extends og.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(fVar.q);
-                        frameLayout.addView(fVar.q, y5.c(-2.0f, -1));
+                        frameLayout.addView(fVar.q, x5.c(-2.0f, -1));
                         return;
                     }
                     return;
                 }
             }
-            w3 w3Var = (w3) view;
-            if (TextUtils.equals(w3Var.getText(), fVar.g)) {
+            v3 v3Var = (v3) view;
+            if (TextUtils.equals(v3Var.getText(), fVar.g)) {
                 String str = fVar.h;
                 if (str == null) {
                     str = "";
                 }
-                w3Var.b(str, fVar.m);
+                v3Var.b(str, fVar.m);
             } else {
-                w3Var.setText(Emoji.replaceWithRestrictedEmoji(fVar.g, w3Var.getTextView(), (Runnable) null));
+                v3Var.setText(Emoji.replaceWithRestrictedEmoji(fVar.g, v3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(fVar.h)) {
                     String str2 = fVar.h;
-                    vy0 vy0Var = fVar.m;
-                    v3 v3Var = w3Var.b;
-                    v3Var.c(str2, false, true);
-                    v3Var.setOnClickListener(vy0Var);
-                    v3Var.setVisibility(0);
+                    wy0 wy0Var = fVar.m;
+                    u3 u3Var = v3Var.b;
+                    u3Var.c(str2, false, true);
+                    u3Var.setOnClickListener(wy0Var);
+                    u3Var.setVisibility(0);
                 }
             }
-            this.v = w3Var;
+            this.v = v3Var;
             return;
         }
         l lVar = (l) view;
@@ -193,15 +193,15 @@ public final class g extends og.b {
             lVar.v.setVisibility(8);
             lVar.G = null;
             lVar.H = null;
-            v9 v9Var = lVar.c;
-            v9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-            v9Var.setImageDrawable(pqVar);
+            u9 u9Var = lVar.c;
+            u9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+            u9Var.setImageDrawable(pqVar);
             a6 a6Var = lVar.d;
             a6Var.k(charSequence);
             boolean[] zArr = lVar.r;
             zArr[0] = false;
             lVar.setSubtitle(str3);
-            lVar.e.setTextColor(j6.v0(zArr[0] ? j6.n5 : j6.r5, lVar.a));
+            lVar.e.setTextColor(i6.v0(zArr[0] ? i6.n5 : i6.r5, lVar.a));
             np npVar = lVar.s;
             if (npVar != null) {
                 npVar.setAlpha(1.0f);
@@ -214,7 +214,7 @@ public final class g extends og.b {
                 String str4 = fVar.h;
                 if (str4 != null) {
                     lVar.setSubtitle(str4);
-                    lVar.e.setTextColor(j6.v0(j6.r5, this.d));
+                    lVar.e.setTextColor(i6.v0(i6.r5, this.d));
                 }
             } else {
                 TLRPC.Chat chat = fVar.e;
@@ -246,21 +246,21 @@ public final class g extends og.b {
             lVar.setDivider(false);
         }
         lVar.setOptions(fVar.n);
-        tg.c1 c1Var2 = fVar.o;
-        tg.c1 c1Var3 = fVar.p;
+        d1 d1Var = fVar.o;
+        d1 d1Var2 = fVar.p;
         ImageView imageView = lVar.E;
         ImageView imageView2 = lVar.x;
-        boolean z11 = c1Var2 != null;
+        boolean z11 = d1Var != null;
         lVar.w = z11;
         imageView2.setVisibility((z11 && lVar.F) ? 0 : 8);
-        imageView2.setOnClickListener(c1Var2);
-        z10 = c1Var3 != null;
+        imageView2.setOnClickListener(d1Var);
+        z10 = d1Var2 != null;
         lVar.y = z10;
         if (z10 && lVar.F) {
             i13 = 0;
         }
         imageView.setVisibility(i13);
-        imageView.setOnClickListener(c1Var3);
+        imageView.setOnClickListener(d1Var2);
         lVar.g(this.y, false);
     }
 
@@ -275,17 +275,17 @@ public final class g extends og.b {
         } else if (i10 == 3) {
             lVar = new l(this.e, this.w, this.x, this.d, this.s);
         } else {
-            f6 f6Var = this.d;
+            e6 e6Var = this.d;
             if (i10 == 5) {
-                lx0 lx0Var = new lx0(context, null, 1, f6Var);
-                lx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                lx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                lx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = lx0Var;
+                yw0 yw0Var = new yw0(context, null, 1, e6Var);
+                yw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                yw0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                yw0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                lVar = yw0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
-                    xg.d dVar = new xg.d(context, f6Var);
+                    xg.d dVar = new xg.d(context, e6Var);
                     dVar.setTag(-33024);
                     lVar = dVar;
                     if (z10) {
@@ -293,7 +293,7 @@ public final class g extends og.b {
                         lVar = dVar;
                     }
                 } else if (i10 == 6) {
-                    xg.b bVar = new xg.b(context, f6Var);
+                    xg.b bVar = new xg.b(context, e6Var);
                     bVar.setTag(-33024);
                     lVar = bVar;
                     if (z10) {
@@ -301,24 +301,24 @@ public final class g extends og.b {
                         lVar = bVar;
                     }
                 } else if (i10 == 8) {
-                    w3 w3Var = new w3(context, f6Var);
-                    w3Var.setTag(-33024);
-                    lVar = w3Var;
+                    v3 v3Var = new v3(context, e6Var);
+                    v3Var.setTag(-33024);
+                    lVar = v3Var;
                     if (z10) {
-                        w3Var.setBackground(null);
-                        lVar = w3Var;
+                        v3Var.setBackground(null);
+                        lVar = v3Var;
                     }
                 } else if (i10 == 9) {
-                    s8 s8Var = new s8(context, f6Var);
-                    s8Var.n = 16;
-                    s8Var.w = 19;
-                    lVar = s8Var;
+                    r8 r8Var = new r8(context, e6Var);
+                    r8Var.n = 16;
+                    r8Var.w = 19;
+                    lVar = r8Var;
                 } else {
                     lVar = i10 == 10 ? new FrameLayout(context) : new View(context);
                 }
             }
         }
-        return new il0(lVar);
+        return new vk0(lVar);
     }
 
     @Override // s4.h0

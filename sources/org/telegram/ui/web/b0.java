@@ -33,14 +33,14 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.LaunchActivity;
-import w7.y5;
+import w7.x5;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class b0 implements Runnable {
     /* JADX WARN: Type inference failed for: r4v7, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
     /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     /* JADX WARN: Type inference failed for: r6v8, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.o6] */
+    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.n6] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -124,25 +124,25 @@ public final /* synthetic */ class b0 implements Runnable {
                     linearLayout.setOrientation(0);
                     ImageView imageView = new ImageView(context);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    imageView.setBackground(j6.K(AndroidUtilities.dp(44.0f), j6.w0(null, j6.Oh, false)));
+                    imageView.setBackground(i6.K(AndroidUtilities.dp(44.0f), i6.w0(null, i6.Oh, false)));
                     imageView.setImageResource(R.drawable.msg_round_file_s);
-                    linearLayout.addView(imageView, y5.t(44, 44, 19, 0, 0, 10, 0));
+                    linearLayout.addView(imageView, x5.t(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
-                    TextView f7 = org.telegram.messenger.l0.f(context, 1, 15.0f);
-                    f7.setTypeface(AndroidUtilities.bold());
-                    f7.setText(str6);
-                    f7.setTextColor(j6.w0(null, j6.n5, false));
-                    linearLayout2.addView(f7, y5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
-                    ?? o6Var = new o6(context, true, true, true);
-                    o6Var.setTextSize(AndroidUtilities.dp(12.0f));
+                    TextView g10 = org.telegram.messenger.y0.g(context, 1, 15.0f);
+                    g10.setTypeface(AndroidUtilities.bold());
+                    g10.setText(str6);
+                    g10.setTextColor(i6.w0(null, i6.n5, false));
+                    linearLayout2.addView(g10, x5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
+                    ?? n6Var = new n6(context, true, true, true);
+                    n6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    s90 s90Var = new s90(AndroidUtilities.dp(55.0f), o6Var);
-                    int i13 = j6.Ed;
-                    s90Var.a(j6.l1(0.35f, j6.w0(null, i13, false)), j6.l1(0.075f, j6.w0(null, i13, false)));
-                    spannableString.setSpan(s90Var, 0, 1, 33);
-                    o6Var.setText(spannableString);
-                    bi.v vVar = new bi.v(o6Var, 14);
+                    h90 h90Var = new h90(AndroidUtilities.dp(55.0f), n6Var);
+                    int i13 = i6.Ed;
+                    h90Var.a(i6.l1(0.35f, i6.w0(null, i13, false)), i6.l1(0.075f, i6.w0(null, i13, false)));
+                    spannableString.setSpan(h90Var, 0, 1, 33);
+                    n6Var.setText(spannableString);
+                    bi.v vVar = new bi.v(n6Var, 14);
                     HashMap hashMap2 = ei.l0.h;
                     if (hashMap2.containsKey(str5)) {
                         Pair pair = (Pair) hashMap2.get(str5);
@@ -150,14 +150,14 @@ public final /* synthetic */ class b0 implements Runnable {
                     } else {
                         new ei.f0(str5, vVar).execute(str5);
                     }
-                    o6Var.setTextColor(j6.w0(null, i13, false));
-                    linearLayout2.addView(o6Var, y5.n(-1, 15));
-                    linearLayout.addView(linearLayout2, y5.t(-1, -2, 23, 0, 0, 0, 2));
+                    n6Var.setTextColor(i6.w0(null, i13, false));
+                    linearLayout2.addView(n6Var, x5.n(-1, 15));
+                    linearLayout.addView(linearLayout2, x5.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.n(linearLayout);
                     final boolean[] zArr = new boolean[1];
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
                         @Override // org.telegram.ui.ActionBar.a2
-                        public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i12) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -180,7 +180,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     });
                     alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
                         @Override // org.telegram.ui.ActionBar.a2
-                        public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i11) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -255,7 +255,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     }
                     d1 d1Var5 = z0Var.Q;
                     if (d1Var5 != null) {
-                        new xc(d1Var5, d1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
+                        new vc(d1Var5, d1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
                         break;
                     }
                 } catch (Exception e) {
@@ -348,7 +348,7 @@ public final /* synthetic */ class b0 implements Runnable {
                                         File directory = FileLoader.getDirectory(4);
                                         StringBuilder sb3 = new StringBuilder();
                                         sb3.append(FileLoader.fixFileName(str14 == null ? "file" : str14));
-                                        sb3.append(i14 > 0 ? hg.k0.i(i14, " (", ")") : "");
+                                        sb3.append(i14 > 0 ? hg.c.j(i14, " (", ")") : "");
                                         file = new File(directory, sb3.toString());
                                         i14++;
                                     } else {
@@ -395,23 +395,23 @@ public final /* synthetic */ class b0 implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                d2 d2Var = (d2) obj3;
+                c2 c2Var = (c2) obj3;
                 String str16 = (String) obj2;
-                b2 b2Var3 = (b2) obj;
+                a2 a2Var = (a2) obj;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
                     if (!BuildVars.DEBUG_PRIVATE_VERSION) {
                         webView.onPause();
                         webView.destroy();
                         AndroidUtilities.removeFromParent(webView);
-                        AndroidUtilities.removeFromParent(d2Var);
+                        AndroidUtilities.removeFromParent(c2Var);
                     }
                     try {
                         file = new JSONObject(str16);
                     } catch (Exception e14) {
                         FileLog.e(e14);
                     }
-                    b2Var3.run(file);
+                    a2Var.run(file);
                     break;
                 }
                 break;

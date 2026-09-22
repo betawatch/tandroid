@@ -3,7 +3,7 @@ package ci;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class r8 implements TextWatcher {
     public final /* synthetic */ ai.ba a;
@@ -18,7 +18,7 @@ public final class r8 implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         this.a.run();
         x8 x8Var = this.b;
-        org.telegram.ui.Cells.k3 k3Var = x8Var.Y;
+        org.telegram.ui.Cells.i3 i3Var = x8Var.Y;
         if (x8Var.c0) {
             return;
         }
@@ -28,9 +28,9 @@ public final class r8 implements TextWatcher {
         }
         String substring = editable.toString().substring(8);
         x8Var.c0 = true;
-        k3Var.b.setText(substring);
-        org.telegram.ui.Cells.i3 i3Var = k3Var.b;
-        i3Var.setSelection(0, i3Var.getText().length());
+        i3Var.b.setText(substring);
+        org.telegram.ui.Cells.g3 g3Var = i3Var.b;
+        g3Var.setSelection(0, g3Var.getText().length());
         x8Var.c0 = false;
         x8Var.d0 = false;
         x8.S(x8Var, substring);

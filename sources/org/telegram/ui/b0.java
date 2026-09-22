@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,25 +24,25 @@ public final /* synthetic */ class b0 implements Runnable {
                 h4Var.h0.M.c(this.b, true);
                 break;
             case 1:
-                org.telegram.ui.Components.hb hbVar = (org.telegram.ui.Components.hb) this.c;
-                if (hbVar.a.getTranslationX() == this.b) {
-                    hbVar.y.b();
+                org.telegram.ui.Components.gb gbVar = (org.telegram.ui.Components.gb) this.c;
+                if (gbVar.a.getTranslationX() == this.b) {
+                    gbVar.y.b();
                     break;
                 }
                 break;
             case 2:
                 org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
                 float f7 = this.b;
-                mi1 mi1Var = a1Var.c;
+                ni1 ni1Var = a1Var.c;
                 if (f7 > 0.0f) {
-                    int i10 = mi1Var.w;
+                    int i10 = ni1Var.w;
                     if (i10 < 2) {
-                        mi1Var.c(i10 + 1, true);
+                        ni1Var.c(i10 + 1, true);
                     }
                 } else {
-                    int i11 = mi1Var.w;
+                    int i11 = ni1Var.w;
                     if (i11 > 0) {
-                        mi1Var.c(i11 - 1, true);
+                        ni1Var.c(i11 - 1, true);
                     }
                 }
                 a1Var.b = false;

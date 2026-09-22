@@ -23,7 +23,6 @@ import ci.l2;
 import ci.l7;
 import ci.nb;
 import ci.nc;
-import ci.oc;
 import ci.p1;
 import ci.p2;
 import ci.q2;
@@ -52,13 +51,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.u9;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,8 +85,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 0:
                 Iterator it = ((k0) this.b).n.iterator();
                 if (it.hasNext()) {
-                    it.next().getClass();
-                    throw new ClassCastException();
+                    throw a4.a.k(it);
                 }
                 return;
             case 1:
@@ -108,9 +106,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                zr0 zr0Var = uVar.W;
+                mr0 mr0Var = uVar.W;
                 t8 t8Var = uVar.a;
-                zr0Var.a(t8Var == null ? "" : t8Var.E);
+                mr0Var.a(t8Var == null ? "" : t8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -137,7 +135,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 10:
                 z5 z5Var = (z5) this.b;
-                pc.e();
+                oc.e();
                 rg.x0 x0Var = new rg.x0((n2) new y3(z5Var), 14, false);
                 x0Var.setOnDismissListener(new f1(0));
                 x0Var.show();
@@ -168,7 +166,7 @@ public final /* synthetic */ class a0 implements Runnable {
                     d2Var.x = recentStickers.size() + d2Var.x;
                     d2Var.I = d2Var.H;
                     d2Var.l();
-                    p1.x1(e2Var.b, 0, 0);
+                    p1.w1(e2Var.b, 0, 0);
                     e2Var.f.c(false);
                     e2Var.e.n(false);
                     return;
@@ -260,10 +258,10 @@ public final /* synthetic */ class a0 implements Runnable {
             case 23:
                 nc ncVar = (nc) this.b;
                 ncVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                ncVar.w0.J(AndroidUtilities.emptyMotionEvent());
+                ncVar.w0.y(AndroidUtilities.emptyMotionEvent());
                 return;
             case 24:
-                oc ocVar = ((nb) this.b).k0;
+                ci.oc ocVar = ((nb) this.b).k0;
                 ocVar.v(true);
                 ocVar.A0.setCameraThumb(ocVar.A());
                 return;
@@ -272,7 +270,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 26:
                 rb rbVar = (rb) this.b;
-                oc ocVar2 = rbVar.b0;
+                ci.oc ocVar2 = rbVar.b0;
                 if (ocVar2.Q1 || ocVar2.P1 || ocVar2.B0 == null || ocVar2.f0 != 0 || ocVar2.m1 == null) {
                     return;
                 }
@@ -284,7 +282,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 MessagesController.getGlobalMainSettings().edit().putInt("storysvddualhint", MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 27:
-                ((v9) this.b).setVisibility(8);
+                ((u9) this.b).setVisibility(8);
                 return;
             case 28:
                 rc rcVar = (rc) this.b;

@@ -1,112 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class n81 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z81 b;
+public final class n81 implements org.telegram.ui.iq0 {
+    public final /* synthetic */ p81 a;
 
-    public /* synthetic */ n81(z81 z81Var, int i10) {
-        this.a = i10;
-        this.b = z81Var;
+    public n81(p81 p81Var) {
+        this.a = p81Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                z81 z81Var = this.b;
-                View[] viewArr = z81Var.e;
-                View[] viewArr2 = z81Var.e;
-                if (viewArr[1] != null) {
-                    z81Var.G();
-                    z81Var.h.put(z81Var.f[1], viewArr2[1]);
-                    z81Var.removeView(viewArr2[1]);
-                    z81Var.F(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
-                }
-                z81Var.R = null;
-                z81Var.x(true);
-                o81 o81Var = z81Var.M;
-                if (o81Var != null) {
-                    o81Var.v.invalidate();
-                    z81Var.M.v.g1();
-                    z81Var.M.invalidate();
-                }
-                z81Var.u();
-                z81Var.J.unlock();
-                break;
-            case 1:
-                z81 z81Var2 = this.b;
-                z81Var2.w = null;
-                View[] viewArr3 = z81Var2.e;
-                if (viewArr3[1] != null) {
-                    if (!z81Var2.F) {
-                        z81Var2.G();
-                    }
-                    z81Var2.h.put(z81Var2.f[1], viewArr3[1]);
-                    z81Var2.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
-                }
-                z81Var2.x = false;
-                z81Var2.I = false;
-                o81 o81Var2 = z81Var2.M;
-                if (o81Var2 != null) {
-                    o81Var2.setEnabled(true);
-                }
-                z81Var2.x(false);
-                z81Var2.u();
-                z81Var2.J.unlock();
-                break;
-            case 2:
-                z81 z81Var3 = this.b;
-                z81Var3.w = null;
-                View[] viewArr4 = z81Var3.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    z81Var3.removeView(view);
-                    viewArr4[1] = null;
-                }
-                z81Var3.x = false;
-                o81 o81Var3 = z81Var3.M;
-                if (o81Var3 != null) {
-                    o81Var3.setEnabled(true);
-                    o81 o81Var4 = z81Var3.M;
-                    o81Var4.J = false;
-                    o81Var4.a = 1.0f;
-                    o81Var4.v.g1();
-                    z81Var3.M.invalidate();
-                    break;
-                }
-                break;
-            default:
-                z81 z81Var4 = this.b;
-                z81Var4.w = null;
-                View[] viewArr5 = z81Var4.e;
-                if (viewArr5[1] != null) {
-                    if (!z81Var4.F) {
-                        z81Var4.G();
-                    }
-                    z81Var4.h.put(z81Var4.f[1], viewArr5[1]);
-                    z81Var4.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                z81Var4.x = false;
-                z81Var4.I = false;
-                o81 o81Var5 = z81Var4.M;
-                if (o81Var5 != null) {
-                    o81Var5.setEnabled(true);
-                }
-                z81Var4.x(false);
-                z81Var4.u();
-                z81Var4.J.unlock();
-                break;
+    @Override // org.telegram.ui.iq0
+    public final void a(ArrayList arrayList) {
+        p81 p81Var = this.a;
+        try {
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
+            if (sendingMediaInfo.path != null) {
+                p81Var.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
+                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(p81Var.e));
+                p81Var.d.b(p81Var.e, loadBitmap, true);
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    @Override // org.telegram.ui.iq0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.a.b.startActivityForResult(intent, 11);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

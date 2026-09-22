@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class dz implements yy {
     public String a;
@@ -35,11 +35,11 @@ public final class dz implements yy {
 
     @Override // org.telegram.ui.Components.yy
     public final void d() {
-        ww wwVar = this.w.Q.G0;
-        if (wwVar.F) {
+        vw vwVar = this.w.Q.G0;
+        if (vwVar.F) {
             return;
         }
-        wwVar.e(true);
+        vwVar.e(true);
         Utilities.raceCallbacks(new xp(this, 16), new cz(this, 0));
     }
 

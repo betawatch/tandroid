@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.q7;
-import v7.z7;
+import v7.p7;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class g implements b1 {
     public Object a;
@@ -389,8 +389,8 @@ public abstract class g implements b1 {
             return 100;
         }
         String str = e2.d0.a;
-        long d = q7.d(c02, 100L);
-        return e2.d0.h(z7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
+        long d = p7.d(c02, 100L);
+        return e2.d0.h(y7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
     }
 
     public g(String str, Bundle data) {

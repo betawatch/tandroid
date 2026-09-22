@@ -1,43 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Rect;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class gs0 extends org.telegram.ui.a21 {
-    public final /* synthetic */ lv0 H;
+public final class gs0 extends t00 {
+    public final /* synthetic */ ur0 U;
+    public final /* synthetic */ yu0 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gs0(lv0 lv0Var, Context context, cw0 cw0Var, ai.x8 x8Var, fs0 fs0Var) {
-        super(context, cw0Var, x8Var, fs0Var);
-        this.H = lv0Var;
+    public gs0(yu0 yu0Var, Context context, ur0 ur0Var) {
+        super(context, null);
+        this.V = yu0Var;
+        this.U = ur0Var;
     }
 
-    @Override // org.telegram.ui.a21
-    public final void a() {
-        ks0 ks0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.F;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        lv0 lv0Var = this.H;
-        eu0[] eu0VarArr = lv0Var.k0;
-        if (eu0VarArr != null) {
-            for (eu0 eu0Var : eu0VarArr) {
-                if (eu0Var != null && (ks0Var = eu0Var.h) != null) {
-                    int paddingLeft = ks0Var.getPaddingLeft();
-                    int Z = lv0Var.Z(eu0Var.F);
-                    int paddingRight = eu0Var.h.getPaddingRight();
-                    ks0 ks0Var2 = eu0Var.h;
-                    int Y = lv0Var.Y(lv0Var.v0());
-                    ks0Var2.e3 = Y;
-                    ks0Var.setPadding(paddingLeft, Z, paddingRight, Y);
+    @Override // org.telegram.ui.Components.t00
+    public final int getColumnsCount() {
+        return this.V.m1[yu0.p0(this.U.F) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.t00
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i10 = this.U.F;
+        if (i10 == 0 || i10 == 5) {
+            return 2;
+        }
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 != 2 && i10 != 4) {
+            if (i10 == 3) {
+                return 5;
+            }
+            if (i10 != 7) {
+                if (i10 == 6) {
+                    if (this.V.I0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (yu0.p0(i10)) {
+                    return 27;
                 }
+                return 1;
             }
         }
-        lv0Var.K();
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.t00, android.view.View
+    public final void onDraw(Canvas canvas) {
+        yu0 yu0Var = this.V;
+        yu0Var.T0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.i6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), yu0Var.T0);
+        super.onDraw(canvas);
     }
 }

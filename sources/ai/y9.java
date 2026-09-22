@@ -24,7 +24,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class y9 {
     public int a;
@@ -363,9 +363,9 @@ public final class y9 {
             for (int i15 = 0; i15 < arrayList3.size(); i15++) {
                 tL_stories_getStoriesByID.id.add(Integer.valueOf(e((MessageObject) arrayList3.get(i15))));
             }
-            StringBuilder t10 = a4.a.t(j10, "fillMessagesWithStories: getStoriesByID did=", " ids=");
-            t10.append(TextUtils.join(",", tL_stories_getStoriesByID.id));
-            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new x9(y9Var, Timer.start(timer2, t10.toString()), arrayList3, j10, z10, timer2, iArr, runnable));
+            StringBuilder u10 = a4.a.u(j10, "fillMessagesWithStories: getStoriesByID did=", " ids=");
+            u10.append(TextUtils.join(",", tL_stories_getStoriesByID.id));
+            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new x9(y9Var, Timer.start(timer2, u10.toString()), arrayList3, j10, z10, timer2, iArr, runnable));
             if (i10 != 0) {
                 ConnectionsManager.getInstance(i11).bindRequestToGuid(sendRequest, i10);
             }

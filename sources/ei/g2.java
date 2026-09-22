@@ -2,11 +2,11 @@ package ei;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.ov0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g2 implements bw0 {
+public final /* synthetic */ class g2 implements ov0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
@@ -15,8 +15,8 @@ public final /* synthetic */ class g2 implements bw0 {
         this.b = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.Components.bw0
-    public final void G(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.ov0
+    public final void H(int i10, boolean z10) {
         switch (this.a) {
             case 0:
                 a3 a3Var = ((k3) this.b).v;

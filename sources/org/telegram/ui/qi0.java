@@ -1,44 +1,141 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class qi0 extends org.telegram.ui.Components.ug {
-    public final /* synthetic */ org.telegram.ui.Components.ug l0;
-    public final /* synthetic */ boolean m0;
-    public final /* synthetic */ dj0 n0;
+public final /* synthetic */ class qi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi0(dj0 dj0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ug ugVar, boolean z10) {
-        super(i10, context, f6Var, false);
-        this.n0 = dj0Var;
-        this.l0 = ugVar;
-        this.m0 = z10;
+    public /* synthetic */ qi0(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.ug
-    public final boolean d() {
-        return this.l0.d();
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final boolean e() {
-        return this.l0.e();
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final boolean f() {
-        return (this.m0 && this.n0.q0 && this.r <= 0) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final int getFillColor() {
-        return this.l0.getFillColor();
-    }
-
-    @Override // org.telegram.ui.Components.ug
-    public final boolean j() {
-        return this.l0.j();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                this.b.showAsSheet(new PremiumPreviewFragment(0, "effect"), l2Var);
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n2 n2Var = this.b;
+                if (n2Var instanceof PremiumPreviewFragment) {
+                    PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) n2Var;
+                    premiumPreviewFragment.p0 = true;
+                    premiumPreviewFragment.getMediaDataController().loadPremiumPromo(false);
+                    premiumPreviewFragment.a.x0(0);
+                } else {
+                    PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, null);
+                    premiumPreviewFragment2.p0 = true;
+                    if (n2Var != null) {
+                        n2Var.presentFragment(premiumPreviewFragment2);
+                    } else {
+                        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                        if (U != null) {
+                            U.presentFragment(premiumPreviewFragment2);
+                        }
+                    }
+                }
+                if (n2Var != null && (n2Var.getParentActivity() instanceof LaunchActivity)) {
+                    try {
+                        n2Var.getFragmentView().performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    ((LaunchActivity) n2Var.getParentActivity()).x0.c(false);
+                    break;
+                }
+                break;
+            case 2:
+                this.b.presentFragment(new DataSettingsActivity());
+                break;
+            case 3:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 4:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 5:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 6:
+                this.b.presentFragment(new WallpapersListActivity(1));
+                break;
+            case 7:
+                this.b.presentFragment(new NotificationsCustomSettingsActivity(2, new ArrayList(), null, true));
+                break;
+            case 8:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 9:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 10:
+                org.telegram.messenger.vl.n(3, this.b);
+                break;
+            case 11:
+                org.telegram.messenger.vl.n(3, this.b);
+                break;
+            case 12:
+                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
+                rg.x0 x0Var = new rg.x0(n2Var2, 5, false);
+                x0Var.B();
+                n2Var2.showDialog(x0Var);
+                break;
+            case 13:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 14:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 15:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 16:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 17:
+                org.telegram.messenger.vl.n(1, this.b);
+                break;
+            case 18:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 19:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 20:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 21:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 22:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 23:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 24:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 25:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 26:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 27:
+                org.telegram.messenger.vl.n(0, this.b);
+                break;
+            case 28:
+                this.b.presentFragment(new StickersActivity(0, null));
+                break;
+            default:
+                this.b.presentFragment(new StickersActivity(0, null));
+                break;
+        }
     }
 }

@@ -9,12 +9,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class x1 extends HorizontalScrollView {
     public final l20 a;
-    public final org.telegram.ui.Components.d6 b;
-    public final org.telegram.ui.Components.d6 c;
+    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.c6 c;
     public final /* synthetic */ d2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,8 +23,8 @@ public final class x1 extends HorizontalScrollView {
         this.d = d2Var;
         this.a = new l20();
         qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.d6(this, 300L, qrVar);
-        this.c = new org.telegram.ui.Components.d6(this, 300L, qrVar);
+        this.b = new org.telegram.ui.Components.c6(this, 300L, qrVar);
+        this.c = new org.telegram.ui.Components.c6(this, 300L, qrVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View

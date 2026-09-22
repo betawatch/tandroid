@@ -4,11 +4,11 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import v7.d8;
-import w7.u8;
+import v7.c8;
+import w7.t8;
 
 /* loaded from: classes.dex */
-public abstract class f extends d8 {
+public abstract class f extends c8 {
     public static boolean a(Object[] objArr, Object obj) {
         int i10;
         kotlin.jvm.internal.i.e(objArr, "<this>");
@@ -69,7 +69,7 @@ public abstract class f extends d8 {
             if (i10 > 1) {
                 sb2.append((CharSequence) ",");
             }
-            u8.a(sb2, obj, null);
+            t8.a(sb2, obj, null);
         }
         sb2.append((CharSequence) "]");
         return sb2.toString();

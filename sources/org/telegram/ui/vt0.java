@@ -14,7 +14,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class vt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class vt0 extends AnimatorListenerAdapter {
             }
             photoViewer.I1 = null;
         } else if (i10 == 3) {
-            photoViewer.L1.n0(false);
+            photoViewer.L1.o0(false);
             try {
                 photoViewer.e0.removeView(photoViewer.L1.getView());
             } catch (Exception e7) {
@@ -61,15 +61,15 @@ public final class vt0 extends AnimatorListenerAdapter {
         } else if (i10 == 4) {
             photoViewer.O1 = true;
             photoViewer.e0.invalidate();
-            photoViewer.e0.post(new fj0(23, this, photoViewer.N1));
+            photoViewer.e0.post(new ml0(17, this, photoViewer.N1));
             photoViewer.N1 = null;
             photoViewer.v5.m(false, true);
             photoViewer.w5.m(false, true);
         } else if (i10 == 5) {
             photoViewer.q5.setVisibility(8);
-            org.telegram.ui.Components.vf0 vf0Var = photoViewer.q5;
-            vf0Var.d = null;
-            vf0Var.a.o(false, null, 0L, 0.0f);
+            org.telegram.ui.Components.kf0 kf0Var = photoViewer.q5;
+            kf0Var.d = null;
+            kf0Var.a.o(false, null, 0L, 0.0f);
         }
         photoViewer.p6 = null;
         int i11 = photoViewer.u4;
@@ -129,9 +129,9 @@ public final class vt0 extends AnimatorListenerAdapter {
         t5 t5Var2 = photoViewer.P0;
         Property property2 = View.ALPHA;
         arrayList2.add(ObjectAnimator.ofFloat(t5Var2, (Property<t5, Float>) property2, 1.0f));
-        qg.n2 n2Var = photoViewer.p5;
-        if (n2Var != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(n2Var, (Property<qg.n2, Float>) property2, 1.0f));
+        qg.p2 p2Var = photoViewer.p5;
+        if (p2Var != null) {
+            arrayList2.add(ObjectAnimator.ofFloat(p2Var, (Property<qg.p2, Float>) property2, 1.0f));
         }
         ai.n4 n4Var = photoViewer.s5;
         if (n4Var != null) {
@@ -139,7 +139,7 @@ public final class vt0 extends AnimatorListenerAdapter {
         }
         arrayList2.add(ObjectAnimator.ofFloat(photoViewer.S0, (Property<ii.y1, Float>) property, 0.0f));
         if (photoViewer.c2 != 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.F, (Property<org.telegram.ui.Components.x7, Float>) property, 0.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.F, (Property<org.telegram.ui.Components.w7, Float>) property, 0.0f));
         }
         if (photoViewer.i2) {
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.Q1, (Property<ru0, Float>) property, 0.0f));
@@ -149,7 +149,7 @@ public final class vt0 extends AnimatorListenerAdapter {
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.N0, (Property<CheckBox, Float>) property2, 1.0f));
             arrayList2.add(ObjectAnimator.ofFloat(photoViewer.O0, (Property<PhotoViewer.CounterView, Float>) property2, 1.0f));
         } else if (i13 == 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ff0, Float>) property2, 1.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ue0, Float>) property2, 1.0f));
         }
         if (photoViewer.e1.getTag() != null) {
             photoViewer.e1.setVisibility(photoViewer.d2 ? 8 : 0);
@@ -157,7 +157,7 @@ public final class vt0 extends AnimatorListenerAdapter {
         }
         if (photoViewer.f1.getTag() != null) {
             photoViewer.f1.setVisibility((!photoViewer.d2 && photoViewer.J4 && ((bv0Var = photoViewer.d) == null || bv0Var.N())) ? 0 : 8);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.f1, (Property<org.telegram.ui.Components.p90, Float>) property2, 1.0f));
+            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.f1, (Property<org.telegram.ui.Components.e90, Float>) property2, 1.0f));
         }
         if (photoViewer.g1.getTag() != null) {
             photoViewer.g1.setVisibility(photoViewer.d2 ? 8 : 0);

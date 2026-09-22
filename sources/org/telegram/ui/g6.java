@@ -1,30 +1,29 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g6 implements ViewTreeObserver.OnPreDrawListener {
+public final /* synthetic */ class g6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ g6(Object obj, int i10) {
+    public /* synthetic */ g6(long j3, int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = obj;
+        this.b = callback;
+        this.c = j3;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((z6) this.b).z0();
+                this.b.run(Long.valueOf(this.c));
                 break;
             default:
-                kVar = ((org.telegram.ui.ActionBar.n2) ((bl) this.b).d).actionBar;
-                kVar.invalidate();
+                this.b.run(Long.valueOf(this.c));
                 break;
         }
-        return true;
     }
 }

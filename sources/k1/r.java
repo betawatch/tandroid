@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class r extends kd.c {
     public a0 a;
@@ -27,6 +27,6 @@ public final class r extends kd.c {
     public final Object invokeSuspend(Object obj) {
         this.h = obj;
         this.r |= TLObject.FLAG_31;
-        return this.n.d(this);
+        return this.n.c(this);
     }
 }

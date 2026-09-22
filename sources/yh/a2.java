@@ -3,16 +3,16 @@ package yh;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+    public final /* synthetic */ z3 b;
     public final /* synthetic */ TL_stars.TL_starGiftUnique c;
 
-    public /* synthetic */ a2(y3 y3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10) {
+    public /* synthetic */ a2(z3 z3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10) {
         this.a = i10;
-        this.b = y3Var;
+        this.b = z3Var;
         this.c = tL_starGiftUnique;
     }
 
@@ -20,13 +20,13 @@ public final /* synthetic */ class a2 implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                y3.j0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
+                z3.j0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
                 break;
             case 1:
-                y3.h0(this.b, this.c, (Utilities.Callback) obj, (Boolean) obj2);
+                z3.h0(this.b, this.c, (Utilities.Callback) obj, (Boolean) obj2);
                 break;
             default:
-                y3.O0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
+                z3.O0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
                 break;
         }
     }

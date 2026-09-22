@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.Window;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.g71;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class wh implements ValueAnimator.AnimatorUpdateLis
                 AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
                 break;
             default:
-                ((MediaController) this.b).lambda$cleanupPlayer$10((v71) this.c, valueAnimator);
+                ((MediaController) this.b).lambda$cleanupPlayer$10((g71) this.c, valueAnimator);
                 break;
         }
     }

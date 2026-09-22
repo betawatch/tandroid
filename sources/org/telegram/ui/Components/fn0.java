@@ -1,79 +1,42 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class fn0 extends s4.o {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ kn0 k;
+public final class fn0 extends zg.n0 {
+    public final /* synthetic */ gn0 h0;
 
-    public fn0(kn0 kn0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = kn0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fn0(gn0 gn0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(null, i10, view, tL_reactionCount, false, true, e6Var);
+        this.h0 = gn0Var;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
+    @Override // zg.n0
+    public final boolean e() {
+        return this.w > 0 || this.u || this.F.l != 1.0f;
     }
 
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        MessageObject messageObject;
-        kn0 kn0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == kn0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == kn0Var.x) {
-                return true;
-            }
-        }
-        MessageObject messageObject2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
-        } else {
-            messageObject = (MessageObject) this.g.get(i10 - i12);
-        }
-        int i14 = kn0Var.v;
-        if (i11 < i14 || i11 >= kn0Var.w) {
-            int i15 = kn0Var.y;
-            if (i11 >= i15 && i11 < kn0Var.E) {
-                messageObject2 = (MessageObject) kn0Var.f.get(i11 - i15);
-            }
-        } else {
-            messageObject2 = (MessageObject) kn0Var.e.get(i11 - i14);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
+    @Override // zg.n0
+    public final boolean i() {
+        return !e();
     }
 
-    @Override // s4.o
-    public final int d() {
-        return this.k.r;
+    @Override // zg.n0
+    public final int j() {
+        return 18;
     }
 
-    @Override // s4.o
-    public final int e() {
-        return this.b;
+    @Override // zg.n0
+    public final void s(float f7) {
+        int i10 = this.i;
+        gn0 gn0Var = this.h0;
+        this.N = i0.a.d(f7, i10, org.telegram.ui.ActionBar.i6.v0(gn0Var.e ? org.telegram.ui.ActionBar.i6.Fj : org.telegram.ui.ActionBar.i6.va, gn0Var.s.c));
+        int d = i0.a.d(f7, this.g, gn0Var.e ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Cj, gn0Var.s.c) : 0);
+        this.O = d;
+        this.N = org.telegram.ui.ActionBar.i6.v(d, this.N);
+        this.P = i0.a.d(f7, this.h, gn0Var.e ? 1526726655 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wa, gn0Var.s.c));
     }
 }

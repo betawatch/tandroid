@@ -8,11 +8,11 @@ import b2.w1;
 import ci.uc;
 import gg.x1;
 import java.util.ArrayList;
-import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.g71;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class b0 implements a3.l0, k2.k, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
+public final class b0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ e0 a;
 
     public b0(e0 e0Var) {
@@ -42,7 +42,7 @@ public final class b0 implements a3.l0, k2.k, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (((v71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+            if (((g71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
@@ -81,7 +81,7 @@ public final class b0 implements a3.l0, k2.k, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((v71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+            ((g71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

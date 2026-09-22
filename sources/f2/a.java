@@ -7,10 +7,10 @@ import e2.d0;
 import e2.v;
 import java.util.ArrayList;
 import java.util.Arrays;
-import v7.v6;
-import v7.z7;
+import v7.u6;
+import v7.y7;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
@@ -97,9 +97,9 @@ public final class a implements o0 {
         if (i10 == 0) {
             if (str.equals("auxiliary.tracks.map")) {
                 ArrayList d = d();
-                StringBuilder u10 = a4.a.u("track types = ");
-                new d9.f(String.valueOf(','), 0).a(u10, d.iterator());
-                sb2 = u10.toString();
+                StringBuilder v = a4.a.v("track types = ");
+                new xa.c(String.valueOf(',')).j(v, d.iterator());
+                sb2 = v.toString();
             }
             sb2 = d0.c0(bArr);
         } else if (i10 == 1) {
@@ -108,16 +108,16 @@ public final class a implements o0 {
             boolean z10 = bArr.length >= 4;
             int length = bArr.length;
             if (!z10) {
-                throw new IllegalArgumentException(v6.a("array too small: %s < %s", Integer.valueOf(length), 4));
+                throw new IllegalArgumentException(u6.a("array too small: %s < %s", Integer.valueOf(length), 4));
             }
-            sb2 = String.valueOf(Float.intBitsToFloat(z7.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+            sb2 = String.valueOf(Float.intBitsToFloat(y7.c(bArr[0], bArr[1], bArr[2], bArr[3])));
         } else if (i10 == 67) {
             boolean z11 = bArr.length >= 4;
             int length2 = bArr.length;
             if (!z11) {
-                throw new IllegalArgumentException(v6.a("array too small: %s < %s", Integer.valueOf(length2), 4));
+                throw new IllegalArgumentException(u6.a("array too small: %s < %s", Integer.valueOf(length2), 4));
             }
-            sb2 = String.valueOf(z7.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+            sb2 = String.valueOf(y7.c(bArr[0], bArr[1], bArr[2], bArr[3]));
         } else if (i10 != 75) {
             if (i10 == 78) {
                 sb2 = String.valueOf(new v(bArr).C());

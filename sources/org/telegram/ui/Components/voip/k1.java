@@ -1,19 +1,19 @@
 package org.telegram.ui.Components.voip;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.aj0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ o1 b;
-    public final /* synthetic */ nj0 c;
+    public final /* synthetic */ aj0 c;
 
-    public /* synthetic */ k1(o1 o1Var, nj0 nj0Var, int i10) {
+    public /* synthetic */ k1(o1 o1Var, aj0 aj0Var, int i10) {
         this.a = i10;
         this.b = o1Var;
-        this.c = nj0Var;
+        this.c = aj0Var;
     }
 
     @Override // java.lang.Runnable

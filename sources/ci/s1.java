@@ -4,35 +4,30 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.of;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.nf;
 import org.telegram.ui.qt;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class s1 implements qt {
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ MessageObject A() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean B() {
+    public final /* synthetic */ boolean A() {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean D() {
+    public final /* synthetic */ boolean C() {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
+    public final /* synthetic */ boolean D(TLRPC.Document document) {
         return false;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ String G(boolean z10) {
+    public final /* synthetic */ String F(boolean z10) {
         return null;
     }
 
@@ -102,7 +97,7 @@ public final class s1 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ y70 i(n6 n6Var) {
+    public final /* synthetic */ n70 i(n6 n6Var) {
         return null;
     }
 
@@ -122,20 +117,33 @@ public final class s1 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ boolean y() {
+    public final /* synthetic */ boolean x() {
         return true;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void C(TLRPC.Document document) {
+    public final /* synthetic */ MessageObject z() {
+        return null;
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void F(TLRPC.Document document) {
+    public final /* synthetic */ void B(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void E(TLRPC.Document document) {
     }
 
     @Override // org.telegram.ui.qt
     public final /* synthetic */ void H(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void L() {
     }
 
     @Override // org.telegram.ui.qt
@@ -159,22 +167,6 @@ public final class s1 implements qt {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void v(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.qt
-    public final /* synthetic */ void z(String str) {
-    }
-
-    @Override // org.telegram.ui.qt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.qt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.qt
     public final /* synthetic */ void r() {
     }
 
@@ -183,19 +175,27 @@ public final class s1 implements qt {
     }
 
     @Override // org.telegram.ui.qt
+    public final /* synthetic */ void u(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void y(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
     public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
+    public final /* synthetic */ void v(TLRPC.StickerSet stickerSet, String str) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
+    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
     }
 
     @Override // org.telegram.ui.qt
-    public final /* synthetic */ void u(CharSequence charSequence, String str, of ofVar) {
+    public final /* synthetic */ void G(CharSequence charSequence, String str, nf nfVar) {
     }
 
     @Override // org.telegram.ui.qt

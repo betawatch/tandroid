@@ -1,58 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class yw extends FrameLayout {
-    public final Paint a;
-    public final /* synthetic */ kz b;
+public final class yw extends z4.g {
+    public final /* synthetic */ kz w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public yw(kz kzVar, Context context) {
         super(context);
-        this.b = kzVar;
-        this.a = new Paint();
+        this.w0 = kzVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        kz kzVar = this.b;
-        xw xwVar = kzVar.B0;
-        float dp = AndroidUtilities.dp(50.0f) * kzVar.t1.p();
-        if (dp > getMeasuredHeight()) {
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        kz kzVar = this.w0;
+        nx nxVar = kzVar.I;
+        kz.a(kzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
             return;
         }
-        canvas.save();
-        if (dp != 0.0f) {
-            canvas.clipRect(0.0f, dp, getMeasuredWidth(), getMeasuredHeight());
-        }
-        int z10 = kzVar.z(org.telegram.ui.ActionBar.j6.He);
-        Paint paint = this.a;
-        paint.setColor(z10);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), xwVar.getExpandedOffset() + AndroidUtilities.dp(36.0f), paint);
-        super.dispatchDraw(canvas);
-        if (xwVar.s != null) {
-            canvas.save();
-            float f7 = xwVar.c0 - xwVar.d0;
-            float f10 = xwVar.v;
-            if (f10 > 0.0f) {
-                f7 = ((xwVar.s.getX() - xwVar.getScrollX()) * xwVar.v) + ((1.0f - f10) * f7);
+        if (i10 != 0) {
+            if (i10 == 1) {
+                kzVar.h0.x0(0);
+                return;
+            } else {
+                kzVar.D0.x0(1);
+                return;
             }
-            canvas.translate(f7, 0.0f);
-            xwVar.s.draw(canvas);
-            canvas.restore();
         }
-        canvas.restore();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.b.Y();
+        kzVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(nxVar, (Property<nx, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(qr.h);
+        ofFloat.start();
+        kzVar.G(1, 0);
+        if (nxVar != null) {
+            nxVar.j(0, true);
+        }
     }
 }

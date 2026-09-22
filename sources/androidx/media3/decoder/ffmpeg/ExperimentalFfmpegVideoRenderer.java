@@ -9,9 +9,9 @@ import b2.r0;
 import b2.s;
 import e2.d0;
 import h2.e;
-import hg.k0;
+import hg.c;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends a3.a {
     public static final int r0 = ((d0.f(720, 64) * d0.f(1280, 64)) * 6144) / 2;
@@ -34,13 +34,13 @@ public final class ExperimentalFfmpegVideoRenderer extends a3.a {
         String str = sVar.r;
         String str2 = FfmpegLibrary.a;
         if (!r0.m(str)) {
-            return k0.b(0, 0, 0, 0);
+            return c.b(0, 0, 0, 0);
         }
         if (!FfmpegLibrary.d(str)) {
-            return k0.b(1, 0, 0, 0);
+            return c.b(1, 0, 0, 0);
         }
         if (sVar.S != 0) {
-            return k0.b(2, 0, 0, 0);
+            return c.b(2, 0, 0, 0);
         }
         return 140;
     }

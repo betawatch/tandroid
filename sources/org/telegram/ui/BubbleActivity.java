@@ -18,13 +18,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
     public static BubbleActivity a0;
     public boolean P;
     public final ArrayList Q = new ArrayList();
-    public org.telegram.ui.Components.de0 R;
+    public org.telegram.ui.Components.sd0 R;
     public ActionBarLayout S;
     public org.telegram.ui.ActionBar.z3 T;
     public Intent U;
@@ -70,11 +70,11 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
 
     @Override // androidx.fragment.app.v, androidx.activity.l, android.app.Activity
     public final void onActivityResult(int i10, int i11, Intent intent) {
-        org.telegram.ui.Components.g91 g91Var;
+        org.telegram.ui.Components.p81 p81Var;
         super.onActivityResult(i10, i11, intent);
         ThemeEditorView themeEditorView = ThemeEditorView.n;
-        if (themeEditorView != null && (g91Var = themeEditorView.k) != null) {
-            g91Var.a(i10, i11, intent);
+        if (themeEditorView != null && (p81Var = themeEditorView.k) != null) {
+            p81Var.a(i10, i11, intent);
         }
         if (this.S.getFragmentStack().isEmpty()) {
             return;
@@ -123,8 +123,8 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
             SharedConfig.lastPauseTime = (int) (SystemClock.elapsedRealtime() / 1000);
         }
         AndroidUtilities.fillStatusBarHeight(this, false);
-        org.telegram.ui.ActionBar.j6.R(this);
-        org.telegram.ui.ActionBar.j6.J(this, false);
+        org.telegram.ui.ActionBar.i6.R(this);
+        org.telegram.ui.ActionBar.i6.J(this, false);
         ActionBarLayout actionBarLayout = new ActionBarLayout(this, false);
         this.S = actionBarLayout;
         actionBarLayout.setInBubbleMode(true);
@@ -133,15 +133,15 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
         this.T = z3Var;
         setContentView(z3Var, new ViewGroup.LayoutParams(-1, -1));
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        this.T.addView(relativeLayout, w7.y5.c(-1.0f, -1));
-        relativeLayout.addView(this.S.getView(), w7.y5.w(-1, -1));
+        this.T.addView(relativeLayout, w7.x5.c(-1.0f, -1));
+        relativeLayout.addView(this.S.getView(), w7.x5.w(-1, -1));
         this.T.setParentActionBarLayout(this.S);
         this.S.setDrawerLayoutContainer(this.T);
         this.S.setFragmentStack(this.Q);
         this.S.setDelegate(this);
-        org.telegram.ui.Components.de0 de0Var = new org.telegram.ui.Components.de0(this);
-        this.R = de0Var;
-        this.T.addView(de0Var, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.sd0 sd0Var = new org.telegram.ui.Components.sd0(this);
+        this.R = sd0Var;
+        this.T.addView(sd0Var, w7.x5.c(-1.0f, -1));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.S.X();
         y(getIntent(), false, bundle != null, false, UserConfig.selectedAccount);
@@ -206,9 +206,9 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
             }
         }
         SharedConfig.saveConfig();
-        org.telegram.ui.Components.de0 de0Var = this.R;
-        if (de0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(de0Var.R);
+        org.telegram.ui.Components.sd0 sd0Var = this.R;
+        if (sd0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(sd0Var.R);
         }
         a0 = null;
     }
@@ -220,7 +220,7 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
             if (!this.S.getFragmentStack().isEmpty()) {
                 ((org.telegram.ui.ActionBar.n2) this.S.getFragmentStack().get(this.S.getFragmentStack().size() - 1)).onRequestPermissionsResultFragment(i10, strArr, iArr);
             }
-            ti1.q(i10, iArr);
+            ui1.q(i10, iArr);
         }
     }
 
@@ -251,7 +251,7 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
     }
 
     public final void y(Intent intent, boolean z10, boolean z11, boolean z12, int i10) {
-        zn znVar;
+        bo boVar;
         if (!z12 && (AndroidUtilities.needShowPasscode(true) || SharedConfig.isWaitingForPasscodeEnter)) {
             z();
             this.U = intent;
@@ -268,7 +268,7 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
             return;
         }
         if (intent.getAction() == null || !intent.getAction().startsWith("com.tmessages.openchat")) {
-            znVar = null;
+            boVar = null;
         } else {
             long longExtra = intent.getLongExtra("chatId", 0L);
             long longExtra2 = intent.getLongExtra("userId", 0L);
@@ -280,17 +280,17 @@ public class BubbleActivity extends h5 implements org.telegram.ui.ActionBar.a5 {
                 this.Z = -longExtra;
                 bundle.putLong("chat_id", longExtra);
             }
-            znVar = new zn(bundle);
-            znVar.setInBubbleMode(true);
-            znVar.setCurrentAccount(this.O);
+            boVar = new bo(bundle);
+            boVar.setInBubbleMode(true);
+            boVar.setCurrentAccount(this.O);
         }
-        if (znVar == null) {
+        if (boVar == null) {
             finish();
             return;
         }
         NotificationCenter.getInstance(this.O).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(this.Z));
         this.S.X();
-        this.S.c(-1, znVar);
+        this.S.c(-1, boVar);
         AccountInstance.getInstance(this.O).getNotificationsController().setOpenedInBubble(this.Z, true);
         AccountInstance.getInstance(this.O).getConnectionsManager().setAppPaused(false, false);
         this.S.c0();

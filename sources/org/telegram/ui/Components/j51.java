@@ -1,45 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class j51 extends ln0 {
-    public final /* synthetic */ u51 h;
+public final class j51 extends m51 {
+    public static boolean h = true;
+    public final int e;
+    public final o01 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j51(u51 u51Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, 14.0f, f6Var);
-        this.h = u51Var;
+    public j51(String str, int i10, o01 o01Var) {
+        super(str, (o01) null);
+        this.e = i10;
+        this.f = o01Var;
     }
 
-    @Override // org.telegram.ui.Components.ln0
-    public final void a(String str) {
-        gg.g2 g2Var = this.h.v;
-        gg.e2 e2Var = g2Var.S;
-        int i10 = g2Var.c;
-        if (g2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.N, true);
-            g2Var.N = 0;
-        }
-        if (g2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(g2Var.O, true);
-            g2Var.O = 0;
-        }
-        if (TextUtils.isEmpty(str)) {
-            g2Var.R = null;
-            g2Var.F.clear();
-            g2Var.I.clear();
-            g2Var.E.clear();
-            g2Var.e.b(false);
-            g2Var.l();
+    @Override // org.telegram.ui.Components.m51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, h ? org.telegram.ui.ActionBar.i6.hc : org.telegram.ui.ActionBar.i6.fc, false));
         } else {
-            g2Var.R = str.toLowerCase();
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, h ? org.telegram.ui.ActionBar.i6.gc : org.telegram.ui.ActionBar.i6.ec, false));
         }
-        AndroidUtilities.cancelRunOnUIThread(e2Var);
-        AndroidUtilities.runOnUIThread(e2Var, 300L);
+        o01 o01Var = this.f;
+        if (o01Var != null) {
+            o01Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
+        }
     }
 }

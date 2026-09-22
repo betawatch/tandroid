@@ -16,9 +16,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
-import c5.c0;
-import c5.f0;
-import c5.v;
+import c5.d0;
+import c5.g0;
+import c5.w;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.c1;
 import com.google.android.gms.internal.cast.q4;
@@ -40,14 +40,14 @@ import m.c3;
 import m.l1;
 import m.q;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.q2;
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Cells.p2;
+import org.telegram.ui.Components.m6;
 import org.telegram.ui.ug;
 import r0.i0;
-import v7.w7;
-import w7.d0;
+import v7.v7;
+import w7.c0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, le.k {
     public static l e;
@@ -68,7 +68,7 @@ public final class l implements OnSuccessListener, le.k {
         synchronized (l.class) {
             try {
                 if (e == null) {
-                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new v("MessengerIpcClient")));
+                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new w("MessengerIpcClient")));
                     l lVar2 = new l();
                     lVar2.d = new j(lVar2);
                     lVar2.a = 1;
@@ -150,10 +150,19 @@ public final class l implements OnSuccessListener, le.k {
         if (TextUtils.isEmpty((String) this.d) && !a2) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
-        if (TextUtils.isEmpty((String) this.d) || !a2) {
-            return new l((String) this.b, (String) this.c, (String) this.d, this.a);
+        if (!TextUtils.isEmpty((String) this.d) && a2) {
+            throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
         }
-        throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
+        String str = (String) this.b;
+        String str2 = (String) this.c;
+        String str3 = (String) this.d;
+        int i12 = this.a;
+        l lVar = new l();
+        lVar.b = str;
+        lVar.c = str2;
+        lVar.d = str3;
+        lVar.a = i12;
+        return lVar;
     }
 
     public int e() {
@@ -171,12 +180,12 @@ public final class l implements OnSuccessListener, le.k {
         ImageView imageView = (ImageView) this.b;
         Context context = imageView.getContext();
         int[] iArr = f.a.f;
-        lf.h Q = lf.h.Q(context, attributeSet, iArr, i10);
+        lf.i Q = lf.i.Q(context, attributeSet, iArr, i10);
         TypedArray typedArray = (TypedArray) Q.c;
         i0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
         try {
             Drawable drawable3 = imageView.getDrawable();
-            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = w7.b(imageView.getContext(), resourceId)) != null) {
+            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = v7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable3);
             }
             if (drawable3 != null) {
@@ -262,7 +271,7 @@ public final class l implements OnSuccessListener, le.k {
 
     public void j(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = d0.b(this.a, 1 << i10, z10);
+        int b10 = c0.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -271,12 +280,12 @@ public final class l implements OnSuccessListener, le.k {
     }
 
     public void k(Throwable th2) {
-        c0 c0Var = (c0) this.d;
+        d0 d0Var = (d0) this.d;
         if (th2 instanceof TimeoutException) {
-            c0Var.F(102, 28, f0.p);
+            d0Var.F(102, 28, g0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            c0Var.F(95, 28, f0.p);
+            d0Var.F(95, 28, g0.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();
@@ -352,13 +361,6 @@ public final class l implements OnSuccessListener, le.k {
         }
     }
 
-    public /* synthetic */ l(Object obj, Object obj2, Object obj3, int i10) {
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.a = i10;
-    }
-
     public l(int i10) {
         switch (i10) {
             case 2:
@@ -374,19 +376,19 @@ public final class l implements OnSuccessListener, le.k {
                 this.a = 0;
                 break;
             default:
-                n6 n6Var = new n6(true, true, true, false);
-                this.d = n6Var;
+                m6 m6Var = new m6(true, true, true, false);
+                this.d = m6Var;
                 Paint paint = new Paint(1);
-                n6Var.t(AndroidUtilities.dp(13.0f));
-                n6Var.r(-1);
-                n6Var.u(AndroidUtilities.bold());
+                m6Var.t(AndroidUtilities.dp(13.0f));
+                m6Var.r(-1);
+                m6Var.u(AndroidUtilities.bold());
                 paint.setColor(i0.a.k(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;
-                spannableStringBuilder.append((CharSequence) " ").setSpan(new q2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                 this.c = spannableStringBuilder2;
-                spannableStringBuilder2.append((CharSequence) " ").setSpan(new q2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder2.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 break;
         }
     }

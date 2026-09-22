@@ -2,17 +2,17 @@ package x9;
 
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class l {
-    public static final k2.e a;
+    public static final ka.c a;
 
     static {
-        ka.d dVar = new ka.d();
+        ka.e eVar = new ka.e();
         a aVar = a.a;
-        dVar.m(l.class, aVar);
-        dVar.m(b.class, aVar);
-        a = new k2.e(dVar, 1);
+        eVar.m(l.class, aVar);
+        eVar.m(b.class, aVar);
+        a = new ka.c(eVar, 0);
     }
 
     public static b a(String str) {

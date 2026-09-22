@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class ix0 extends org.telegram.ui.Components.xl0 {
+public final class ix0 extends org.telegram.ui.Components.kl0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ jx0 d;
 
@@ -14,7 +14,7 @@ public final class ix0 extends org.telegram.ui.Components.xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return !((lx0) this.d.n.d.get(c1Var.b())).a.current;
     }
@@ -35,7 +35,7 @@ public final class ix0 extends org.telegram.ui.Components.xl0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         hx0 hx0Var = new hx0(this, this.c);
-        hx0Var.setCirclePaintProvider(new rv0(2, this, hx0Var));
-        return new org.telegram.ui.Components.il0(hx0Var);
+        hx0Var.setCirclePaintProvider(new rv0(1, this, hx0Var));
+        return new org.telegram.ui.Components.vk0(hx0Var);
     }
 }

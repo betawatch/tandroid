@@ -35,11 +35,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.vl;
 import org.telegram.ui.Components.qt;
-import org.telegram.ui.dc1;
+import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class x4 {
     public static final j4 p = new j4();
@@ -51,7 +51,7 @@ public final class x4 {
     public final int i;
     public Runnable j;
     public qt k;
-    public final f6 n;
+    public final e6 n;
     public final ah.c o;
     public final Rect c = new Rect();
     public final Rect d = new Rect();
@@ -61,11 +61,11 @@ public final class x4 {
     public final k4 l = new k4(this);
     public final a4.e m = new a4.e(23);
 
-    public x4(Context context, View view, int i10, f6 f6Var, ah.c cVar) {
+    public x4(Context context, View view, int i10, e6 e6Var, ah.c cVar) {
         this.a = view;
         this.i = i10;
         this.o = cVar;
-        this.n = f6Var;
+        this.n = e6Var;
         this.b = new v4(this, context, view);
     }
 
@@ -79,7 +79,7 @@ public final class x4 {
 
     public static LinearLayout b(x4 x4Var, Context context, MenuItem menuItem, boolean z10, boolean z11, boolean z12) {
         int v02;
-        f6 f6Var = x4Var.n;
+        e6 e6Var = x4Var.n;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
@@ -95,25 +95,25 @@ public final class x4 {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int v03 = j6.v0(j6.i6, f6Var);
+        int v03 = i6.v0(i6.i6, e6Var);
         int i10 = x4Var.i;
         if (i10 == 0) {
-            v02 = j6.v0(j6.j5, f6Var);
+            v02 = i6.v0(i6.j5, e6Var);
             textView.setTextColor(v02);
         } else if (i10 == 2) {
             v02 = -328966;
             textView.setTextColor(-328966);
             v03 = 553648127;
         } else if (i10 == 1) {
-            v02 = j6.v0(j6.G6, f6Var);
+            v02 = i6.v0(i6.G6, e6Var);
             textView.setTextColor(v02);
         } else {
-            v02 = j6.v0(j6.G6, f6Var);
+            v02 = i6.v0(i6.G6, e6Var);
         }
         if (z11 || z12) {
-            linearLayout.setBackground(j6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
+            linearLayout.setBackground(i6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
         } else {
-            linearLayout.setBackground(j6.f0(v03, 2, -1));
+            linearLayout.setBackground(i6.f0(v03, 2, -1));
         }
         textView.setPaddingRelative(AndroidUtilities.dp(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.dp(z10 ? 42.0f : 48.0f)));
@@ -121,9 +121,9 @@ public final class x4 {
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_mini_lock3);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.l1(0.4f, v02), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.l1(0.4f, v02), PorterDuff.Mode.SRC_IN));
         imageView.setVisibility(8);
-        linearLayout.addView(imageView, w7.y5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        linearLayout.addView(imageView, w7.x5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
             e(linearLayout, menuItem, x4Var.j != null);
         }
@@ -207,16 +207,16 @@ public final class x4 {
         v4Var.J = null;
         v4Var.N = false;
         v4Var.n();
-        dc1 dc1Var = v4Var.g;
-        dc1Var.removeAllViews();
-        dc1Var.setPaddingRelative(0, 0, 0, 0);
+        cc1 cc1Var = v4Var.g;
+        cc1Var.removeAllViews();
+        cc1Var.setPaddingRelative(0, 0, 0, 0);
         u4 u4Var = v4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) u4Var.getAdapter();
         arrayAdapter.clear();
         u4Var.setAdapter((ListAdapter) arrayAdapter);
         v4Var.f.removeAllViews();
         v4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), rk.B(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), vl.A(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
@@ -248,7 +248,7 @@ public final class x4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(v4Var.L);
-                dc1Var.addView(b10);
+                cc1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -261,10 +261,10 @@ public final class x4 {
             i10 = 0;
         } else {
             i10 = 0;
-            dc1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            cc1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        dc1Var.measure(i10, i10);
-        v4Var.J = new Size(dc1Var.getMeasuredWidth(), dc1Var.getMeasuredHeight());
+        cc1Var.measure(i10, i10);
+        v4Var.J = new Size(cc1Var.getMeasuredWidth(), cc1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) u4Var.getAdapter();
             arrayAdapter2.clear();

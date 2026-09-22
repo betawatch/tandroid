@@ -1,10 +1,8 @@
 package ge;
 
-import w7.n;
-
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b a;
@@ -27,7 +25,7 @@ public final class b {
         e = bVar5;
         b[] bVarArr = {bVar, bVar2, bVar3, bVar4, bVar5};
         f = bVarArr;
-        n.a(bVarArr);
+        w7.m.a(bVarArr);
     }
 
     public static b valueOf(String str) {

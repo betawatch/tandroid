@@ -17,11 +17,11 @@ import org.telegram.messenger.camera.CameraSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.ta0;
+import org.telegram.ui.Components.ia0;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class y0 implements Runnable {
                 String str2 = (String) this.e;
                 MessagesStorage messagesStorage = (MessagesStorage) this.r;
                 String str3 = (String) this.f;
-                ta0 ta0Var = k1Var.V;
+                ia0 ia0Var = k1Var.V;
                 if (str.equals(k1Var.r0)) {
                     k1Var.u0 = 0;
                     boolean z11 = this.b;
                     if (z11 && tLObject == null) {
                         k1Var.T(false, user, str, str2);
-                    } else if (ta0Var != null) {
-                        ta0Var.b(false);
+                    } else if (ia0Var != null) {
+                        ia0Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -114,7 +114,7 @@ public final /* synthetic */ class y0 implements Runnable {
                         k1Var.K = null;
                         k1Var.P = null;
                         k1Var.o0 = false;
-                        ta0Var.a((k1Var.R.isEmpty() && k1Var.T == null && k1Var.U == null) ? false : true);
+                        ia0Var.a((k1Var.R.isEmpty() && k1Var.T == null && k1Var.U == null) ? false : true);
                         if (!z10) {
                             k1Var.l();
                             break;
@@ -134,7 +134,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 ((MediaDataController) this.c).lambda$broadcastPinnedMessage$169((ArrayList) this.d, this.b, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (a0.i) this.n, (a0.i) this.r);
                 break;
             case 3:
-                ((SendMessagesHelper) this.c).lambda$sendCallback$43((TLRPC.TL_error) this.d, (TLObject) this.h, (TwoStepVerificationActivity) this.e, this.b, (MessageObject) this.f, (TL_keyboard.KeyboardButtonProto) this.n, (zn) this.r);
+                ((SendMessagesHelper) this.c).lambda$sendCallback$43((TLRPC.TL_error) this.d, (TLObject) this.h, (TwoStepVerificationActivity) this.e, this.b, (MessageObject) this.f, (TL_keyboard.KeyboardButtonProto) this.n, (bo) this.r);
                 break;
             default:
                 ((CameraController) this.c).lambda$recordVideo$14((Camera) this.d, (CameraSession) this.e, this.b, (File) this.f, (CameraInfo) this.h, (CameraController.VideoTakeCallback) this.n, (Runnable) this.r);
@@ -166,7 +166,7 @@ public final /* synthetic */ class y0 implements Runnable {
         this.r = iVar2;
     }
 
-    public /* synthetic */ y0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, zn znVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+    public /* synthetic */ y0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, bo boVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
         this.a = 3;
         this.c = sendMessagesHelper;
         this.d = tL_error;
@@ -175,6 +175,6 @@ public final /* synthetic */ class y0 implements Runnable {
         this.b = z10;
         this.f = messageObject;
         this.n = keyboardButtonProto;
-        this.r = znVar;
+        this.r = boVar;
     }
 }

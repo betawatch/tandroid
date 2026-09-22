@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public final /* synthetic */ v5 a;
@@ -37,7 +37,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.e6 e6Var;
                 int i11 = i10;
                 s5 s5Var = this.b;
                 switch (i11) {
@@ -61,9 +61,9 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, f6Var, j10, null);
-                        tg.m.e.setOnHideListener(new r5(s5Var, 0));
+                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.o.m(v5Var3, e6Var, j10, null);
+                        tg.o.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:
                         v5 v5Var4 = s5Var.a;
@@ -85,7 +85,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.e6 e6Var;
                 int i112 = i11;
                 s5 s5Var = this.b;
                 switch (i112) {
@@ -109,9 +109,9 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, f6Var, j10, null);
-                        tg.m.e.setOnHideListener(new r5(s5Var, 0));
+                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.o.m(v5Var3, e6Var, j10, null);
+                        tg.o.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:
                         v5 v5Var4 = s5Var.a;
@@ -133,7 +133,7 @@ public final class s5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.e6 e6Var;
                 int i112 = i12;
                 s5 s5Var = this.b;
                 switch (i112) {
@@ -157,9 +157,9 @@ public final class s5 extends FrameLayout {
                         v5 v5Var3 = s5Var.a;
                         v5Var3.w0(true);
                         long j10 = v5Var3.P;
-                        f6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
-                        tg.m.m(v5Var3, f6Var, j10, null);
-                        tg.m.e.setOnHideListener(new r5(s5Var, 0));
+                        e6Var = ((org.telegram.ui.ActionBar.n2) v5Var3).resourceProvider;
+                        tg.o.m(v5Var3, e6Var, j10, null);
+                        tg.o.e.setOnHideListener(new r5(s5Var, 0));
                         break;
                     default:
                         v5 v5Var4 = s5Var.a;
@@ -173,11 +173,11 @@ public final class s5 extends FrameLayout {
         });
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(t5Var, w7.y5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(t5Var, w7.x5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         if (MessagesController.getInstance(v5Var.Q).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(v5Var.g0)) {
-            linearLayout.addView(t5Var2, w7.y5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+            linearLayout.addView(t5Var2, w7.x5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(t5Var3, w7.y5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, w7.y5.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
+        linearLayout.addView(t5Var3, w7.x5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        addView(linearLayout, w7.x5.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

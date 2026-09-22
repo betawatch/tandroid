@@ -7,7 +7,6 @@ import c3.f0;
 import com.google.android.gms.internal.vision.e2;
 import e2.v;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.Arrays;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -143,12 +142,12 @@ public abstract class n {
             vVar.K(10);
             int D = vVar.D();
             if (D > 0) {
-                String h = k0.h(D, "");
+                String i11 = hg.c.i(D, "");
                 int D2 = vVar.D();
                 if (D2 > 0) {
-                    h = h + "/" + D2;
+                    i11 = i11 + "/" + D2;
                 }
-                return new q3.o(str, null, i0.z(h));
+                return new q3.o(str, null, i0.z(i11));
             }
         }
         e2.a.n("MetadataUtil", "Failed to parse index/count attribute: " + dd.k.a(i10));
@@ -413,7 +412,7 @@ public abstract class n {
                     }
                     z13 = z14;
                 } else if (i16 != 0) {
-                    pVar.j(i16);
+                    pVar.k(i16);
                 }
                 j12 = j3;
                 length = j15;

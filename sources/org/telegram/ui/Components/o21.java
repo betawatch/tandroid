@@ -1,37 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
-public final class o21 extends TextView {
-    public View a;
-    public ViewPropertyAnimator b;
-    public boolean c;
-    public yq0 d;
+public final class o21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ x21 b;
 
-    public final void a() {
-        if (this.a == null) {
-            return;
-        }
-        View view = (View) getParent();
-        int i10 = 0;
-        int i11 = 0;
-        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
-            i11 += view2.getTop();
-            i10 += view2.getLeft();
-        }
-        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
-        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
-        setTranslationY(i11 - getMeasuredHeight());
+    public o21(x21 x21Var, boolean z10) {
+        this.b = x21Var;
+        this.a = z10;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        x21 x21Var = this.b;
+        long j3 = x21Var.c;
+        if (x21Var.U == animator) {
+            boolean z10 = this.a;
+            x21Var.R = z10 ? 1.0f : 0.0f;
+            x21Var.n();
+            x21Var.S = false;
+            x21Var.E.setImageResource(x21Var.P ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
+            x21Var.U = null;
+            MessagesController.getInstance(x21Var.b).getMainSettings().edit().putBoolean(a4.a.p(j3, "topicssidetabs"), x21Var.Q).putBoolean(a4.a.p(j3, "topicssidetabsb"), x21Var.P).apply();
+            Boolean bool = x21Var.T;
+            if (bool != null && z10 != bool.booleanValue()) {
+                boolean booleanValue = x21Var.T.booleanValue();
+                x21Var.T = null;
+                x21Var.d(booleanValue);
+            }
+            AndroidUtilities.runOnUIThread(new jq0(this, 19));
+        }
     }
 }

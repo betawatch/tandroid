@@ -27,12 +27,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.oe0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.de0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.rx0;
+import org.telegram.ui.iy0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final class w0 {
     public static final HashMap g = new HashMap();
@@ -191,7 +191,7 @@ public final class w0 {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.T = replaceTags;
         v0 v0Var = new v0(this.a, UserConfig.getInstance(i11).getCurrentUser(), user);
-        int w02 = j6.w0(null, j6.L5, false);
+        int w02 = i6.w0(null, i6.L5, false);
         b2Var.b0 = v0Var;
         b2Var.c0 = w02;
         if (a() || !i()) {
@@ -203,7 +203,7 @@ public final class w0 {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     switch (i12) {
                         case 0:
                             w0 w0Var = this.b;
@@ -212,7 +212,7 @@ public final class w0 {
                             boolean a2 = w0Var.a();
                             org.telegram.ui.web.r rVar2 = rVar;
                             if (!a2) {
-                                oe0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -257,7 +257,7 @@ public final class w0 {
             }
 
             @Override // org.telegram.ui.ActionBar.a2
-            public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+            public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                 switch (i10) {
                     case 0:
                         w0 w0Var = this.b;
@@ -266,7 +266,7 @@ public final class w0 {
                         boolean a2 = w0Var.a();
                         org.telegram.ui.web.r rVar2 = rVar;
                         if (!a2) {
-                            oe0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
+                            de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(8, w0Var, rVar2));
                             break;
                         } else {
                             w0Var.d = true;
@@ -346,7 +346,7 @@ public final class w0 {
         if (context != null) {
             try {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                alertDialog$Builder.m(R.raw.permission_request_location, 72, j6.w0(null, j6.L5, false), null);
+                alertDialog$Builder.m(R.raw.permission_request_location, 72, i6.w0(null, i6.L5, false), null);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.GpsDisabledAlertText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new ld(context, 1));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
@@ -362,12 +362,12 @@ public final class w0 {
         SharedPreferences.Editor edit = this.a.getSharedPreferences("botlocation_" + this.b, 0).edit();
         StringBuilder sb2 = new StringBuilder();
         long j3 = this.c;
-        edit.putBoolean(a4.a.r(sb2, j3, "_granted"), this.e);
+        edit.putBoolean(a4.a.s(sb2, j3, "_granted"), this.e);
         edit.putBoolean(j3 + "_requested", this.d);
         edit.apply();
     }
 
-    public final void m(boolean z10, final rx0 rx0Var) {
+    public final void m(boolean z10, final iy0 iy0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z10 || a()) {
@@ -376,8 +376,8 @@ public final class w0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (rx0Var != null) {
-                rx0Var.run();
+            if (iy0Var != null) {
+                iy0Var.run();
             }
         } else {
             Activity f7 = f();
@@ -392,7 +392,7 @@ public final class w0 {
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.T = replaceTags;
             v0 v0Var = new v0(this.a, UserConfig.getInstance(i11).getCurrentUser(), user);
-            int w02 = j6.w0(null, j6.L5, false);
+            int w02 = i6.w0(null, i6.L5, false);
             b2Var.b0 = v0Var;
             b2Var.c0 = w02;
             if (i()) {
@@ -406,12 +406,12 @@ public final class w0 {
                     }
 
                     @Override // org.telegram.ui.ActionBar.a2
-                    public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                    public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                         switch (i12) {
                             case 0:
                                 w0 w0Var = this.b;
                                 if (!w0Var.a()) {
-                                    oe0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, rx0Var));
+                                    de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, iy0Var));
                                     break;
                                 } else {
                                     w0Var.d = true;
@@ -432,7 +432,7 @@ public final class w0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = rx0Var;
+                                Runnable runnable = iy0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -450,12 +450,12 @@ public final class w0 {
                 }
 
                 @Override // org.telegram.ui.ActionBar.a2
-                public final void k(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
                     switch (i10) {
                         case 0:
                             w0 w0Var = this.b;
                             if (!w0Var.a()) {
-                                oe0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, rx0Var));
+                                de0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ci.m2(9, w0Var, iy0Var));
                                 break;
                             } else {
                                 w0Var.d = true;
@@ -476,7 +476,7 @@ public final class w0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = rx0Var;
+                            Runnable runnable = iy0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

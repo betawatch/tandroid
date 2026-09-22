@@ -9,17 +9,18 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import k2.c0;
 import t7.u;
-import w7.m;
+import w7.l;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class c extends m {
+public final class c extends l {
     public final v a = new v();
     public final h b = new h();
     public b0 c;
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         b eVar;
         long j3;
@@ -80,7 +81,7 @@ public final class c extends m {
                     vVar.x();
                     vVar.x();
                 }
-                arrayList.add(new a4.m(arrayList2));
+                arrayList.add(new c0(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (i12 == 5) {

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public static final Parcelable.Creator<g> CREATOR = new r0(10);
@@ -68,17 +68,17 @@ public final class g extends o6.a {
     }
 
     public final String toString() {
-        return a4.a.p("AuthenticationExtensionsClientOutputs{", b().toString(), "}");
+        return a4.a.q("AuthenticationExtensionsClientOutputs{", b().toString(), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 1, this.a, i10);
-        w7.f0.k(parcel, 2, this.b, i10);
-        w7.f0.k(parcel, 3, this.c, i10);
-        w7.f0.k(parcel, 4, this.d, i10);
-        w7.f0.l(parcel, 5, this.e);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.e0.q(parcel, 20293);
+        w7.e0.k(parcel, 1, this.a, i10);
+        w7.e0.k(parcel, 2, this.b, i10);
+        w7.e0.k(parcel, 3, this.c, i10);
+        w7.e0.k(parcel, 4, this.d, i10);
+        w7.e0.l(parcel, 5, this.e);
+        w7.e0.r(parcel, q6);
     }
 }

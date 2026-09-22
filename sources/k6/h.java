@@ -10,26 +10,35 @@ import android.os.Build;
 import android.os.CancellationSignal;
 import android.util.Log;
 import b2.p;
-import b2.r0;
-import b2.s;
-import e2.d0;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.Cells.f3;
 import v7.w;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
-public final class h implements androidx.emoji2.text.k, r2.k {
+public final class h implements androidx.emoji2.text.k {
     public static h b;
     public final Context a;
 
-    public /* synthetic */ h(Context context, char c10) {
-        this.a = context;
+    public h(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = context.getApplicationContext();
+                break;
+            case 2:
+                this.a = context.getApplicationContext();
+                break;
+            case 3:
+                this.a = context;
+                break;
+            default:
+                this.a = context.getApplicationContext();
+                break;
+        }
     }
 
-    public static h d(Context context) {
+    public static h c(Context context) {
         n6.l.h(context);
         synchronized (h.class) {
             try {
@@ -44,7 +53,7 @@ public final class h implements androidx.emoji2.text.k, r2.k {
         return b;
     }
 
-    public static final l e(PackageInfo packageInfo, l... lVarArr) {
+    public static final l d(PackageInfo packageInfo, l... lVarArr) {
         Signature[] signatureArr = packageInfo.signatures;
         if (signatureArr != null) {
             if (signatureArr.length != 1) {
@@ -67,13 +76,13 @@ public final class h implements androidx.emoji2.text.k, r2.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean f(PackageInfo packageInfo, boolean z10) {
+    public static final boolean e(PackageInfo packageInfo, boolean z10) {
         PackageInfo packageInfo2;
         if (z10) {
             if (packageInfo == null) {
                 packageInfo2 = null;
                 if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
+                    if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
                         return true;
                     }
                 }
@@ -86,32 +95,20 @@ public final class h implements androidx.emoji2.text.k, r2.k {
         }
         packageInfo2 = packageInfo;
         if (packageInfo != null) {
-            if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
+            if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
             }
         }
         return false;
     }
 
-    @Override // r2.k
-    public r2.l a(com.google.firebase.messaging.n nVar) {
-        Context context;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 23 || (i10 < 31 && ((context = this.a) == null || i10 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen")))) {
-            return new rb.a(20).a(nVar);
-        }
-        int h = r0.h(((s) nVar.c).r);
-        e2.a.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + d0.G(h));
-        return new f3(new r2.b(h, 0), new r2.b(h, 1), false, 11).a(nVar);
-    }
-
     @Override // androidx.emoji2.text.k
-    public void b(w wVar) {
+    public void a(w wVar) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         threadPoolExecutor.execute(new k0(this, wVar, threadPoolExecutor, 11));
     }
 
-    public void c(aa.a aVar, p pVar, pb.c cVar) {
+    public void b(aa.a aVar, p pVar, a6.m mVar) {
         CancellationSignal cancellationSignal;
         FingerprintManager g10;
         if (pVar != null) {
@@ -134,20 +131,6 @@ public final class h implements androidx.emoji2.text.k, r2.k {
         if (Build.VERSION.SDK_INT < 23 || (g10 = e0.b.g(this.a)) == null) {
             return;
         }
-        e0.b.a(g10, e0.b.M(aVar), cancellationSignal, new k0.a(cVar));
-    }
-
-    public h(Context context, int i10) {
-        switch (i10) {
-            case 1:
-                this.a = context.getApplicationContext();
-                break;
-            case 2:
-                this.a = context.getApplicationContext();
-                break;
-            default:
-                this.a = context.getApplicationContext();
-                break;
-        }
+        e0.b.a(g10, e0.b.M(aVar), cancellationSignal, new k0.a(mVar));
     }
 }

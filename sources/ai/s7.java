@@ -18,14 +18,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.vc;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.fg1;
+import org.telegram.ui.eg1;
 import org.telegram.ui.i50;
 import org.telegram.ui.i60;
-import org.telegram.ui.lk0;
+import org.telegram.ui.ik0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -46,15 +46,15 @@ public final /* synthetic */ class s7 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                w7.m((w7) this.c, (TLRPC.User) this.d, this.b, (org.telegram.ui.ActionBar.f6) this.e);
+                w7.m((w7) this.c, (TLRPC.User) this.d, this.b, (org.telegram.ui.ActionBar.e6) this.e);
                 break;
             case 1:
-                org.telegram.ui.vb.W((org.telegram.ui.vb) this.c, this.b, (ArrayList) this.d, (Integer) this.e);
+                org.telegram.ui.ub.W((org.telegram.ui.ub) this.c, this.b, (ArrayList) this.d, (Integer) this.e);
                 break;
             case 2:
                 int[] iArr = (int[]) this.c;
                 AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.d;
-                lk0 lk0Var = (lk0) this.e;
+                ik0 ik0Var = (ik0) this.e;
                 iArr[0] = ((Integer) view.getTag()).intValue();
                 SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
                 int i10 = this.b;
@@ -67,7 +67,7 @@ public final /* synthetic */ class s7 implements View.OnClickListener {
                 }
                 edit.commit();
                 alertDialog$Builder.a.L0.run();
-                lk0Var.run();
+                ik0Var.run();
                 break;
             case 3:
                 i60 i60Var = (i60) this.c;
@@ -112,9 +112,9 @@ public final /* synthetic */ class s7 implements View.OnClickListener {
                 try {
                     AndroidUtilities.addToClipboard(str);
                     if (this.b == profileActivity.O3) {
-                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
+                        vc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
                     } else {
-                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
+                        vc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
                     }
                     break;
                 } catch (Exception e) {
@@ -122,19 +122,19 @@ public final /* synthetic */ class s7 implements View.OnClickListener {
                     return;
                 }
             default:
-                fg1 fg1Var = (fg1) this.c;
+                eg1 eg1Var = (eg1) this.c;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
-                MessagesController messagesController = fg1Var.getMessagesController();
-                long j3 = -fg1Var.a;
+                MessagesController messagesController = eg1Var.getMessagesController();
+                long j3 = -eg1Var.a;
                 if (!messagesController.isDialogMuted(j3, tL_forumTopic.id)) {
                     actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
                     break;
                 } else {
-                    fg1Var.getNotificationsController().muteDialog(j3, tL_forumTopic.id, false);
-                    fg1Var.finishPreviewFragment();
-                    if (xc.a(fg1Var)) {
-                        xc.z(fg1Var, 4, 0, fg1Var.getResourceProvider()).j();
+                    eg1Var.getNotificationsController().muteDialog(j3, tL_forumTopic.id, false);
+                    eg1Var.finishPreviewFragment();
+                    if (vc.a(eg1Var)) {
+                        vc.z(eg1Var, 4, 0, eg1Var.getResourceProvider()).j();
                         break;
                     }
                 }

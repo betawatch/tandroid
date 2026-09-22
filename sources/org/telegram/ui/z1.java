@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class z1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.z5, d3 {
     public final u70 a;
@@ -24,11 +24,11 @@ public final class z1 extends HorizontalScrollView implements org.telegram.ui.Ac
         this.a = u70Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        addView(frameLayout, w7.y5.c(-2.0f, -2));
+        addView(frameLayout, w7.x5.c(-2.0f, -2));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, w7.y5.c(-2.0f, -2));
+        frameLayout.addView(imageView, w7.x5.c(-2.0f, -2));
         e();
     }
 

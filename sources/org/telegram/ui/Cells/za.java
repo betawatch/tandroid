@@ -19,14 +19,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class za extends FrameLayout {
-    public final org.telegram.ui.Components.v9 a;
+    public final org.telegram.ui.Components.u9 a;
     public final ai.a6 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final ImageView d;
-    public final org.telegram.ui.Components.g9 e;
+    public final org.telegram.ui.Components.f9 e;
     public TLObject f;
     public CharSequence h;
     public int n;
@@ -35,38 +35,38 @@ public final class za extends FrameLayout {
     public final int v;
     public final int w;
 
-    public za(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public za(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.s = UserConfig.selectedAccount;
-        this.v = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var);
-        this.w = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, f6Var);
-        this.e = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
-        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(context);
-        this.a = v9Var;
-        v9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
+        this.v = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, e6Var);
+        this.w = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.n6, e6Var);
+        this.e = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.e6) null);
+        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
+        this.a = u9Var;
+        u9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(v9Var, w7.y5.d(48, 48.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11, 11.0f, z10 ? 11 : 0.0f, 0.0f));
+        addView(u9Var, w7.x5.d(48, 48.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11, 11.0f, z10 ? 11 : 0.0f, 0.0f));
         ai.a6 a6Var = new ai.a6(context, 3);
         this.b = a6Var;
         NotificationCenter.listenEmojiLoading(a6Var);
-        a6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        a6Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, e6Var));
         a6Var.setTextSize(17);
         a6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(a6Var, w7.y5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28 : 72, 14.5f, z11 ? 72 : 28, 0.0f));
+        addView(a6Var, w7.x5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28 : 72, 14.5f, z11 ? 72 : 28, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(14);
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(j5Var, w7.y5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72, 37.5f, z12 ? 72 : 28.0f, 0.0f));
+        addView(j5Var, w7.x5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72, 37.5f, z12 ? 72 : 28.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.m6, f6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.m6, e6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(8);
         boolean z13 = LocaleController.isRTL;
-        addView(imageView, w7.y5.d(-2, -2.0f, (z13 ? 5 : 3) | 16, z13 ? 0.0f : 16.0f, 0.0f, z13 ? 16.0f : 0.0f, 0.0f));
+        addView(imageView, w7.x5.d(-2, -2.0f, (z13 ? 5 : 3) | 16, z13 ? 0.0f : 16.0f, 0.0f, z13 ? 16.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLObject tLObject, String str) {
@@ -99,13 +99,13 @@ public final class za extends FrameLayout {
             chat = null;
         }
         int i10 = this.s;
-        org.telegram.ui.Components.g9 g9Var = this.e;
+        org.telegram.ui.Components.f9 f9Var = this.e;
         if (user != null) {
-            g9Var.m(i10, user);
+            f9Var.m(i10, user);
         } else if (chat != null) {
-            g9Var.k(i10, chat);
+            f9Var.k(i10, chat);
         } else {
-            g9Var.n(this.n, "#", null);
+            f9Var.n(this.n, "#", null);
         }
         if (user != null) {
             this.r = UserObject.getUserName(user);
@@ -115,13 +115,13 @@ public final class za extends FrameLayout {
         this.b.k(this.r);
         CharSequence charSequence = this.h;
         int i11 = this.v;
-        org.telegram.ui.Components.v9 v9Var = this.a;
+        org.telegram.ui.Components.u9 u9Var = this.a;
         org.telegram.ui.ActionBar.j5 j5Var = this.c;
         if (charSequence != null) {
             j5Var.setTextColor(i11);
             j5Var.l(this.h, false);
-            if (v9Var != null) {
-                v9Var.e(user, g9Var);
+            if (u9Var != null) {
+                u9Var.e(user, f9Var);
             }
         } else if (user != null) {
             if (user.bot) {
@@ -138,7 +138,7 @@ public final class za extends FrameLayout {
                 j5Var.setTextColor(i11);
                 j5Var.l(LocaleController.formatUserStatus(i10, user), false);
             }
-            v9Var.e(user, g9Var);
+            u9Var.e(user, f9Var);
         } else if (chat != null) {
             j5Var.setTextColor(i11);
             if (!ChatObject.isChannel(chat) || chat.megagroup) {
@@ -162,11 +162,11 @@ public final class za extends FrameLayout {
                     j5Var.l(LocaleController.getString(R.string.ChannelPrivate), false);
                 }
             }
-            v9Var.e(chat, g9Var);
+            u9Var.e(chat, f9Var);
         } else {
-            v9Var.setImageDrawable(g9Var);
+            u9Var.setImageDrawable(f9Var);
         }
-        v9Var.setRoundRadius(AndroidUtilities.dp((chat == null || !chat.forum) ? 24.0f : 14.0f));
+        u9Var.setRoundRadius(AndroidUtilities.dp((chat == null || !chat.forum) ? 24.0f : 14.0f));
         ImageView imageView = this.d;
         if (imageView.getVisibility() != 0) {
             imageView.getVisibility();

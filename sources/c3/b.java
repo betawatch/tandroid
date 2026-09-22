@@ -12,9 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
-import org.telegram.ui.ja0;
+import org.telegram.ui.js0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -446,14 +446,14 @@ public abstract class b {
         }
         int l4 = l(hVar);
         int i11 = hVar.i(4);
-        String h10 = hg.k0.h(i10, "mp4a.40.");
+        String i12 = hg.c.i(i10, "mp4a.40.");
         if (i10 == 5 || i10 == 29) {
             l4 = l(hVar);
-            int i12 = hVar.i(5);
-            if (i12 == 31) {
-                i12 = hVar.i(6) + 32;
+            int i13 = hVar.i(5);
+            if (i13 == 31) {
+                i13 = hVar.i(6) + 32;
             }
-            i10 = i12;
+            i10 = i13;
             if (i10 == 22) {
                 i11 = hVar.i(4);
             }
@@ -477,14 +477,14 @@ public abstract class b {
             if (hVar.h()) {
                 hVar.t(14);
             }
-            boolean h11 = hVar.h();
+            boolean h10 = hVar.h();
             if (i11 == 0) {
                 throw new UnsupportedOperationException();
             }
             if (i10 == 6 || i10 == 20) {
                 hVar.t(3);
             }
-            if (h11) {
+            if (h10) {
                 if (i10 == 22) {
                     hVar.t(16);
                 }
@@ -500,20 +500,20 @@ public abstract class b {
                 case 21:
                 case 22:
                 case 23:
-                    int i13 = hVar.i(2);
-                    if (i13 == 2 || i13 == 3) {
-                        throw s0.c("Unsupported epConfig: " + i13);
+                    int i14 = hVar.i(2);
+                    if (i14 == 2 || i14 == 3) {
+                        throw s0.c("Unsupported epConfig: " + i14);
                     }
             }
         }
-        int i14 = b[i11];
-        if (i14 == -1) {
+        int i15 = b[i11];
+        if (i15 == -1) {
             throw s0.a(null, null);
         }
         a aVar = new a();
         aVar.b = l4;
-        aVar.c = i14;
-        aVar.a = h10;
+        aVar.c = i15;
+        aVar.a = i12;
         return aVar;
     }
 
@@ -603,7 +603,7 @@ public abstract class b {
     }
 
     public static p0 s(p pVar, boolean z10) {
-        ja0 ja0Var = z10 ? null : q3.i.b;
+        js0 js0Var = z10 ? null : q3.i.b;
         e2.v vVar = new e2.v(10);
         p0 p0Var = null;
         int i10 = 0;
@@ -621,16 +621,16 @@ public abstract class b {
                     byte[] bArr = new byte[i11];
                     System.arraycopy(vVar.a, 0, bArr, 0, 10);
                     pVar.a(10, w10, bArr);
-                    p0Var = new q3.i(ja0Var).c(i11, bArr);
+                    p0Var = new q3.i(js0Var).c(i11, bArr);
                 } else {
-                    pVar.j(w10);
+                    pVar.k(w10);
                 }
                 i10 += i11;
             } catch (EOFException unused) {
             }
         }
         pVar.p();
-        pVar.j(i10);
+        pVar.k(i10);
         if (p0Var == null || p0Var.a.length == 0) {
             return null;
         }

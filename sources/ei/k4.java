@@ -5,26 +5,26 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.vv0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes4.dex */
 public class k4 extends View {
-    public final vv0 a;
+    public final iv0 a;
     public final Paint b;
     public float c;
     public o1.k d;
 
-    public k4(Context context, f6 f6Var) {
+    public k4(Context context, e6 e6Var) {
         super(context);
-        vv0 vv0Var = new vv0(new d2.c(19), new d2.c(20));
-        vv0Var.c = 100.0f;
-        this.a = vv0Var;
+        iv0 iv0Var = new iv0(new d2.c(18), new d2.c(19));
+        iv0Var.c = 100.0f;
+        this.a = iv0Var;
         Paint paint = new Paint(1);
         this.b = paint;
-        paint.setColor(j6.v0(j6.Oh, f6Var));
+        paint.setColor(i6.v0(i6.Oh, e6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);

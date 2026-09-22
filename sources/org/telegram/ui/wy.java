@@ -18,7 +18,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-604327a55faa45f8c448443d3bbcc0b388776b2c5ab434dc7b56c8748365860a */
+/* compiled from: r8-map-id-e506a87262d42a59d49ceeb11de21243ca58d8dd989db9ff2eb23aa08d8dd348 */
 /* loaded from: classes3.dex */
 public final class wy extends View implements NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
@@ -30,8 +30,8 @@ public final class wy extends View implements NotificationCenter.NotificationCen
     public float h;
     public final ImageReceiver n;
     public final ImageReceiver r;
-    public final org.telegram.ui.Components.kj0 s;
-    public final org.telegram.ui.Components.kj0 v;
+    public final org.telegram.ui.Components.xi0 s;
+    public final org.telegram.ui.Components.xi0 v;
     public boolean w;
     public int x;
     public boolean y;
@@ -48,21 +48,21 @@ public final class wy extends View implements NotificationCenter.NotificationCen
         this.c = i10;
         imageReceiver.ignoreNotifications = true;
         imageReceiver2.ignoreNotifications = true;
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.download_progress, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.s = kj0Var;
-        org.telegram.ui.Components.kj0 kj0Var2 = new org.telegram.ui.Components.kj0(R.raw.download_finish, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = kj0Var2;
-        imageReceiver.setImageBitmap(kj0Var);
-        imageReceiver2.setImageBitmap(kj0Var2);
+        org.telegram.ui.Components.xi0 xi0Var = new org.telegram.ui.Components.xi0(R.raw.download_progress, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.s = xi0Var;
+        org.telegram.ui.Components.xi0 xi0Var2 = new org.telegram.ui.Components.xi0(R.raw.download_finish, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = xi0Var2;
+        imageReceiver.setImageBitmap(xi0Var);
+        imageReceiver2.setImageBitmap(xi0Var2);
         imageReceiver.setAutoRepeat(1);
-        kj0Var.K(1);
-        kj0Var.start();
+        xi0Var.K(1);
+        xi0Var.start();
     }
 
     public final void a() {
-        int i10 = org.telegram.ui.ActionBar.j6.v8;
-        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i10, false), PorterDuff.Mode.SRC_IN));
-        this.v.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i10, false), PorterDuff.Mode.SRC));
+        int i10 = org.telegram.ui.ActionBar.i6.v8;
+        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i10, false), PorterDuff.Mode.SRC_IN));
+        this.v.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i10, false), PorterDuff.Mode.SRC));
         invalidate();
     }
 
@@ -180,20 +180,20 @@ public final class wy extends View implements NotificationCenter.NotificationCen
             return;
         }
         int i10 = this.x;
-        int i11 = org.telegram.ui.ActionBar.j6.v8;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+        int i11 = org.telegram.ui.ActionBar.i6.v8;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i11, false);
         ImageReceiver imageReceiver = this.r;
         ImageReceiver imageReceiver2 = this.n;
         Paint paint = this.a;
         Paint paint2 = this.b;
         if (i10 != w02) {
-            this.x = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            int w03 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+            this.x = org.telegram.ui.ActionBar.i6.w0(null, i11, false);
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
+            paint2.setColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
+            int w03 = org.telegram.ui.ActionBar.i6.w0(null, i11, false);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
             imageReceiver2.setColorFilter(new PorterDuffColorFilter(w03, mode));
-            imageReceiver.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), mode));
+            imageReceiver.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i11, false), mode));
             paint2.setAlpha(100);
         }
         float f7 = this.f;
@@ -232,9 +232,9 @@ public final class wy extends View implements NotificationCenter.NotificationCen
             imageReceiver2.draw(canvas);
         }
         if (this.e == 1.0f && !this.w && this.s.a0 == 0) {
-            org.telegram.ui.Components.kj0 kj0Var = this.v;
-            kj0Var.N(0, false, false);
-            kj0Var.start();
+            org.telegram.ui.Components.xi0 xi0Var = this.v;
+            xi0Var.N(0, false, false);
+            xi0Var.start();
             this.w = true;
         }
         canvas.restore();
